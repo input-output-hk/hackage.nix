@@ -21,15 +21,15 @@
       synopsis = "fibonacci algebra";
       description = "fibonacci algebra";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-noprelude" or (errorHandler.buildDepError "base-noprelude"))
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

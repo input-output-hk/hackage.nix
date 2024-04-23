@@ -13,7 +13,7 @@
       blaze_html_0_5 = false;
       dev = false;
       library-only = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "hledger-web"; version = "0.18.2"; };
@@ -26,7 +26,7 @@
       synopsis = "A web interface for the hledger accounting tool.";
       description = "hledger is a library and set of user tools for working\nwith financial data (or anything that can be tracked in a\ndouble-entry accounting ledger.) It is a haskell port and\nfriendly fork of John Wiegley's Ledger. hledger provides\ncommand-line, curses and web interfaces, and aims to be a\nreliable, practical tool for daily use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = if flags.library-only then true else false; };
       exes = {
@@ -61,16 +61,16 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (if flags.blaze_html_0_5
+          ] ++ (if flags.blaze_html_0_5
             then [
               (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
               (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-              ]
+            ]
             else [
               (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-              ]);
+            ]);
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Sugar with Scheme";
       description = "Please see the README on GitHub at <https://github.com/jxv/sugar#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."sugar" or (errorHandler.buildDepError "sugar"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sugar-scheme-test-suite" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."sugar" or (errorHandler.buildDepError "sugar"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

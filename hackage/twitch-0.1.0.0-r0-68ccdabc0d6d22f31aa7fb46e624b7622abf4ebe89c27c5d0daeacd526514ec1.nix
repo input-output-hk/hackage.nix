@@ -21,7 +21,7 @@
       synopsis = "A high level file watcher API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

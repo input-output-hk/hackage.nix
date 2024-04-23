@@ -21,7 +21,7 @@
       synopsis = "Visualisation of Strange Attractors in 3-Dimensions";
       description = "This software uses innovative techniques to achieve 3-D visualisation\nof the point sets known as Strange Attractors resulting from iteration\nof non-linear maps on points in Euclidean Space.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Attrac" = {
@@ -32,9 +32,9 @@
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

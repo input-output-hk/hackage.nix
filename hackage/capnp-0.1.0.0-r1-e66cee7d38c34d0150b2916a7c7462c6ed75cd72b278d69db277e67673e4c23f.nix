@@ -21,7 +21,7 @@
       synopsis = "Cap'n Proto for Haskell";
       description = "A native Haskell implementation of the Cap'N Proto cerialization format.\n\nThis library is currently serialization-only. RPC support is planned but not\nyet implemented. It works, but bear in mind that the API is considered\nunstable, and is likely to change to accomodate RPC, facilitate improved\nperformance, etc.\n\nThe 'Data.Capnp.Tutorial' module is the best place to start reading; the\nreference documentation can seem bewildering without that context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."data-default-instances-vector" or (errorHandler.buildDepError "data-default-instances-vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "capnpc-haskell" = {
           depends = [
@@ -65,10 +65,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "simple-tests" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."heredoc" or (errorHandler.buildDepError "heredoc"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

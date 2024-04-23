@@ -21,11 +21,11 @@
       synopsis = "Generic diff and patch";
       description = "Get an efficient, optimal, type-safe diff and patch function for your\ndatatypes of choice by defining a simple GADT and some class instances.\n\nExtracted from Eelco Lempsink's Thesis (<http://eelco.lempsink.nl/thesis.pdf>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

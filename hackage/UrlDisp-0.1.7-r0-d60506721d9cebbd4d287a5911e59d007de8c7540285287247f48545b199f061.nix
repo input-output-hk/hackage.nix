@@ -21,7 +21,7 @@
       synopsis = "Url dispatcher. Helps to retain friendly URLs in web applications.";
       description = "The aim of urldisp is to provide a simple, declarative and expressive URL routing in web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."MaybeT" or (errorHandler.buildDepError "MaybeT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

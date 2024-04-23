@@ -21,7 +21,7 @@
       synopsis = "Commonmark (markdown) to HTML renderer.";
       description = "See <https://github.com/zudov/haskell-comark#readme README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."comark-syntax" or (errorHandler.buildDepError "comark-syntax"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "comark-html-profile" = {
-          depends = (pkgs.lib).optionals (flags.profile) [
+          depends = pkgs.lib.optionals (flags.profile) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."comark-html" or (errorHandler.buildDepError "comark-html"))
@@ -42,10 +42,10 @@
             (hsPkgs."comark-testutils" or (errorHandler.buildDepError "comark-testutils"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
-            ];
+          ];
           buildable = if flags.profile then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."comark-html" or (errorHandler.buildDepError "comark-html"))
             (hsPkgs."comark-testutils" or (errorHandler.buildDepError "comark-testutils"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "progit-bench" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."comark-testutils" or (errorHandler.buildDepError "comark-testutils"))
             (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

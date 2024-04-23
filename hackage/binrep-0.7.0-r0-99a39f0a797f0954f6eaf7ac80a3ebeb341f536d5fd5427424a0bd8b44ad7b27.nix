@@ -21,7 +21,7 @@
       synopsis = "Encode precise binary representations directly in types";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."refined1" or (errorHandler.buildDepError "refined1"))
           (hsPkgs."strongweak" or (errorHandler.buildDepError "strongweak"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
+        ] ++ pkgs.lib.optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,13 +60,13 @@
             (hsPkgs."refined1" or (errorHandler.buildDepError "refined1"))
             (hsPkgs."strongweak" or (errorHandler.buildDepError "strongweak"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
+          ] ++ pkgs.lib.optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."refined1" or (errorHandler.buildDepError "refined1"))
             (hsPkgs."strongweak" or (errorHandler.buildDepError "strongweak"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
+          ] ++ pkgs.lib.optional (flags.icu) (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "StackExchange API interface";
       description = "Provides interface for StackExchange v2.1 API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rep-watcher" = {
           depends = [
@@ -44,18 +44,18 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = if !flags.enable-examples then false else true;
-          };
+        };
         "badges-watcher" = {
           depends = [
             (hsPkgs."aeson-lens" or (errorHandler.buildDepError "aeson-lens"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = if !flags.enable-examples then false else true;
-          };
+        };
         "server-side-authentication" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,10 +63,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.enable-examples then false else true;
-          };
         };
+      };
       tests = {
         "api" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."libstackexchange" or (errorHandler.buildDepError "libstackexchange"))
-            ];
+          ];
           buildable = if !flags.enable-doctests then false else true;
-          };
         };
       };
-    }
+    };
+  }

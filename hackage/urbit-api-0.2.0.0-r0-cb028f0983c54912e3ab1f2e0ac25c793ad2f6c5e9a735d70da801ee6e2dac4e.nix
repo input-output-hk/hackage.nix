@@ -21,7 +21,7 @@
       synopsis = "Talk to Urbit from Haskell";
       description = "@urbit-api@ is a Haskell library that helps you connect to the Urbit\nAPI.\n\nBuilt on req, conduit, and aeson for stability and simplicity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."req-conduit" or (errorHandler.buildDepError "req-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

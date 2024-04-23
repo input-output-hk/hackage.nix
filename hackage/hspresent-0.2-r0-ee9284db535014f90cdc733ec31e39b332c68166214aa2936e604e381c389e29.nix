@@ -21,7 +21,7 @@
       synopsis = "A terminal presentation tool";
       description = "Hspresent is a simple program that lets you give powerpoint-like presentations\nin your terminal (for certain definitions of powerpoint-like). It's extremely\nbasic and unintelligent. Don't expect much.\n\nInvoke like `hspresent /path/to/your/presentation`. Left and right arrow keys\nmove between slides, and hitting `q` or `Ctrl-C` quits the presentation.\n\nThe file format is really simple right now. Slides are separated by lines\nconsisting of the characters `--`. You can put the single character `.` on a\nline to demarcate a split frame. A split frame really creates a new frame with\nthe contents of the previous frame copied at the front (this is similar to how\nbeamer works).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "hspresent" = { buildable = true; }; };
       };
-    }
+      exes = { "hspresent" = { buildable = true; }; };
+    };
+  }

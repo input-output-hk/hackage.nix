@@ -21,7 +21,7 @@
       synopsis = "Simple git utility to use and manage clone cache";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gitcache" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

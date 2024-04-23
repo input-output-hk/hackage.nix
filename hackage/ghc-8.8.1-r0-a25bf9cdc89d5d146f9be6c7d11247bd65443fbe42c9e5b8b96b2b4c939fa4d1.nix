@@ -13,7 +13,7 @@
       integer-simple = false;
       integer-gmp = false;
       buildable = false;
-      };
+    };
     package = {
       specVersion = "2.0";
       identifier = { name = "ghc"; version = "8.8.1"; };
@@ -26,7 +26,7 @@
       synopsis = "The GHC API";
       description = "GHC's functionality can be useful for more things than just\ncompiling Haskell programs. Important use cases are programs\nthat analyse (and perhaps transform) Haskell code. Others\ninclude loading Haskell code dynamically in a GHCi-like manner.\nFor this reason, a lot of GHC's functionality is made available\nthrough this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((((([
@@ -47,12 +47,12 @@
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."ghc-heap" or (errorHandler.buildDepError "ghc-heap"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-          ] ++ (pkgs.lib).optional (!(system.isLinux && system.isX86_64 && (compiler.isGhc && (compiler.version).eq "8.8.1"))) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (pkgs.lib).optional (!flags.buildable) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (if system.isWindows
+        ] ++ pkgs.lib.optional (!(system.isLinux && system.isX86_64 && (compiler.isGhc && compiler.version.eq "8.8.1"))) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ pkgs.lib.optional (!flags.buildable) (hsPkgs."base" or (errorHandler.buildDepError "base"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")))) ++ (pkgs.lib).optional (flags.integer-gmp && flags.integer-simple) (hsPkgs."invalid-cabal-flag-settings" or (errorHandler.buildDepError "invalid-cabal-flag-settings"))) ++ (pkgs.lib).optional (flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))) ++ (pkgs.lib).optional (flags.integer-simple) (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"));
+          ] ++ pkgs.lib.optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo")))) ++ pkgs.lib.optional (flags.integer-gmp && flags.integer-simple) (hsPkgs."invalid-cabal-flag-settings" or (errorHandler.buildDepError "invalid-cabal-flag-settings"))) ++ pkgs.lib.optional (flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))) ++ pkgs.lib.optional (flags.integer-simple) (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

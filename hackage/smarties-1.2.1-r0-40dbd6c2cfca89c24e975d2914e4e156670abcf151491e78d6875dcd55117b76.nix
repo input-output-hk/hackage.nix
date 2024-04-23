@@ -21,7 +21,7 @@
       synopsis = "Haskell Behavior Tree Library";
       description = "Please see the README on Github at <https://github.com/githubuser/smarties#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pronouns" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."smarties" or (errorHandler.buildDepError "smarties"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "slimes" = {
           depends = [
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
@@ -65,9 +65,9 @@
             (hsPkgs."smarties" or (errorHandler.buildDepError "smarties"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tutorial" = {
           depends = [
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
@@ -81,10 +81,10 @@
             (hsPkgs."smarties" or (errorHandler.buildDepError "smarties"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "smarties-test" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."smarties" or (errorHandler.buildDepError "smarties"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

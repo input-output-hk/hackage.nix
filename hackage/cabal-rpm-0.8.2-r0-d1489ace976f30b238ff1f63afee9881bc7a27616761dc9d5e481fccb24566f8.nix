@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM packages from Haskell Cabal packages.\n\nRecent changes:\n\n* 0.8.2: wrap sentences at end of line, handle pkg-ver arg, sort deps\n\n* 0.8.1: word wrapping of descriptions\n\n* 0.8.0: new simpler revised Fedora packaging; check external commands available\n\n* 0.7.1: various bugfixes and minor improvments\n\n* 0.7.0: command arg for spec, srpm, or build; installs existing packaged depends with sudo yum\n\nSee <https://github.com/juhp/cabal-rpm/blob/master/NEWS> for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cblrpm" = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

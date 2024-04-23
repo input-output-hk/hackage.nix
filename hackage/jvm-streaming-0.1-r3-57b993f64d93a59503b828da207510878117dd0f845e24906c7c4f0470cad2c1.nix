@@ -21,7 +21,7 @@
       synopsis = "Expose Java iterators as streams from the streaming package.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."inline-java" or (errorHandler.buildDepError "inline-java"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."jvm" or (errorHandler.buildDepError "jvm"))
             (hsPkgs."jvm-streaming" or (errorHandler.buildDepError "jvm-streaming"))
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-            ];
+          ];
           libs = [ (pkgs."pthread" or (errorHandler.sysDepError "pthread")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Haskell bindings for the gl3w library.";
       description = "Haskell bindings for the [gl3w](https://github.com/skaslev/gl3w) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

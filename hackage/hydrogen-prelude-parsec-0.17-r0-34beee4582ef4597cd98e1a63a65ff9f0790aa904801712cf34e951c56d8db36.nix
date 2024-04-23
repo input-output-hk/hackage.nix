@@ -21,15 +21,15 @@
       synopsis = "Hydrogen Prelude /w Parsec";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hydrogen-prelude" or (errorHandler.buildDepError "hydrogen-prelude"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

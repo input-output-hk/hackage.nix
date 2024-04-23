@@ -21,7 +21,7 @@
       synopsis = "A web interface to the notmuch email indexer";
       description = "An email client for the notmuch email indexer (<http://notmuchmail.org>),\nbuilt using Yesod.  This project implements a web server and uses bootstrap\nand jquery for the UI.  The client is fully functional, with searching, viewing,\nand composing email messages.  See\n<https://bitbucket.org/wuzzeb/notmuch-web/src/tip/ChangeLog> for recent changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.no-icu
@@ -70,7 +70,7 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -117,9 +117,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "notmuch-web" = {
           depends = [
@@ -128,10 +128,10 @@
             (hsPkgs."pwstore-fast" or (errorHandler.buildDepError "pwstore-fast"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

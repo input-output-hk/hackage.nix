@@ -21,7 +21,7 @@
       synopsis = "Parsing and evaluating typst syntax.";
       description = "A library for parsing and evaluating typst syntax.\nTypst (<https://typst.app>) is a document layout and\nformatting language. This library targets typst 0.10\nand currently offers only partial support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,12 +46,12 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "typst-hs" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typst" or (errorHandler.buildDepError "typst"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -64,10 +64,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."ordered-containers" or (errorHandler.buildDepError "ordered-containers"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "typst-test" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

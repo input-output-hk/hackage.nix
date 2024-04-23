@@ -21,7 +21,7 @@
       synopsis = "Predicative tries";
       description = "Please see the README on Github at <https://github.com/athanclark/pred-trie#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pred-trie-test" = {
           depends = [
@@ -64,10 +64,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "pred-trie-bench" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tries" or (errorHandler.buildDepError "tries"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

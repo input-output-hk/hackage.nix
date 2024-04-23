@@ -21,7 +21,7 @@
       synopsis = "Telegram bot for playing Halma";
       description = "Play Halma (aka Chinese Checkers) in Telegram against your friends or an AI";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "halma-telegram-bot" = {
@@ -50,9 +50,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

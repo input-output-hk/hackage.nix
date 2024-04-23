@@ -6,8 +6,8 @@
         nix = import ../hackage/hssourceinfo-0.0.2-r0-4b438364c061025bc3b4a75689a1056c429fcabb07569703a2c20aa591c948ff.nix;
         revNum = 0;
         sha256 = "4b438364c061025bc3b4a75689a1056c429fcabb07569703a2c20aa591c948ff";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "pomodoro timer";
       description = "A simple pomodoro timer. Features: task bar, popup and\nsound notifications, tracking to file, command\nline interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pomodoro" = {
@@ -39,9 +39,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

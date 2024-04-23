@@ -21,7 +21,7 @@
       synopsis = "Exact real numbers via Cauchy sequences and MPFR";
       description = "Exact real numbers as Cauchy sequences of MPFR approximations.\n\nSee module \"AERN2.Real\" for further documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
           (hsPkgs."aern2-mp" or (errorHandler.buildDepError "aern2-mp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aern2-real-benchOp" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."aern2-real" or (errorHandler.buildDepError "aern2-real"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."aern2-real" or (errorHandler.buildDepError "aern2-real"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

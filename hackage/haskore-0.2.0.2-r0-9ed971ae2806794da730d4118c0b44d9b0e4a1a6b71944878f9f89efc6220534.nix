@@ -21,7 +21,7 @@
       synopsis = "The Haskore Computer Music System";
       description = "Compose music using programming features.\nOutput in MIDI, CSound, SuperCollider or as an audio signal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,29 +35,29 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
-        "autotrack" = { buildable = true; };
         };
+        "autotrack" = { buildable = true; };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/HasGP-0.1-r0-275497bb13be0c2a40f9a86101ef49991a14de399723b6e7a4fe553ee12bbc1e.nix;
         revNum = 0;
         sha256 = "275497bb13be0c2a40f9a86101ef49991a14de399723b6e7a4fe553ee12bbc1e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Add-ons to Yi, the Haskell-Scriptable Editor";
       description = "3rd-party add-ons to Yi. The goal of this package is to simplify the core Yi\npackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

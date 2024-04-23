@@ -21,16 +21,16 @@
       synopsis = "Binding to libxslt";
       description = "Uses libxlst.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."libxml" or (errorHandler.buildDepError "libxml"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."xslt" or (errorHandler.sysDepError "xslt")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

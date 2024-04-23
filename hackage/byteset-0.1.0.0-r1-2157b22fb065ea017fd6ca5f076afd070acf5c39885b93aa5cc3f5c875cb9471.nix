@@ -21,14 +21,14 @@
       synopsis = "Set of bytes.";
       description = "Data structure for sets of bytes, where bytes are @Word8@ values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

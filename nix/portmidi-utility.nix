@@ -6,8 +6,8 @@
         nix = import ../hackage/portmidi-utility-0.0-r0-ae946106a2f5e6daca36f24b33dc0c77ee3b69258a3af06be65dea9d7afa5277.nix;
         revNum = 0;
         sha256 = "ae946106a2f5e6daca36f24b33dc0c77ee3b69258a3af06be65dea9d7afa5277";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Break from a loop";
       description = "This library provides a simple and general API for exiting from\nloops\n\nRead the tutorial in \"Control.Break\" to learn more";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Build server rendered, interactive websites";
       description = "A framework for building server rendered, interactive websites.\n\nThe main points:\n\n* It's server side rendered and uses websockets to communicate HTML updates and to receive events.\n\n* State can be broken up into small components.\n\n* The approach is to provide useful atoms, with the user building up a kind of AST.\n\n* Attributes flow down to concrete HTML, events bubble up to state handlers.\n\nIt's inspired by Phoenix LiveView, React, Redux, and Redux-Sagas.\n\nFor the full readme, please see https://github.com/purview-framework/purview/blob/main/README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "purview-test" = {
           depends = [
@@ -59,13 +59,13 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "purview-perf-test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

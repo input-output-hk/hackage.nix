@@ -21,7 +21,7 @@
       synopsis = "Get notifications when your sitting posture is inappropriate.";
       description = "A program that notifies when you sit in a straining position.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "keera-posture" = {
@@ -62,7 +62,7 @@
               (hsPkgs."keera-hails-mvc-controller" or (errorHandler.buildDepError "keera-hails-mvc-controller"))
               (hsPkgs."keera-hails-mvc-solutions-config" or (errorHandler.buildDepError "keera-hails-mvc-solutions-config"))
               (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -98,12 +98,12 @@
               (hsPkgs."keera-hails-mvc-controller" or (errorHandler.buildDepError "keera-hails-mvc-controller"))
               (hsPkgs."keera-hails-mvc-solutions-config" or (errorHandler.buildDepError "keera-hails-mvc-solutions-config"))
               (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-              ];
+            ];
           libs = [
             (pkgs."SDL_mixer" or (errorHandler.sysDepError "SDL_mixer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

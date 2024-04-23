@@ -6,8 +6,8 @@
         nix = import ../hackage/bodhi-0.1.0-r0-eff947a62860452fe0a4be203bea538ffec7cd70f69f49e865950d19de30f5e5.nix;
         revNum = 0;
         sha256 = "eff947a62860452fe0a4be203bea538ffec7cd70f69f49e865950d19de30f5e5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

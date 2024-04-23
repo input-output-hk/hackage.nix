@@ -6,8 +6,8 @@
         nix = import ../hackage/semigroupoids-syntax-0.0.1-r0-9da546369d12a835cfcc5e4af0a1828999069851af4795b0bcf95008f41af129.nix;
         revNum = 0;
         sha256 = "9da546369d12a835cfcc5e4af0a1828999069851af4795b0bcf95008f41af129";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

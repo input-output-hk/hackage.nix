@@ -21,7 +21,7 @@
       synopsis = "music notation";
       description = "Library for expressing musical ideas. Includes composable score representation, microsound tunings, flexible pitch and volume control.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."temporal-media" or (errorHandler.buildDepError "temporal-media"))
           (hsPkgs."type-level-natural-number" or (errorHandler.buildDepError "type-level-natural-number"))
           (hsPkgs."type-level-natural-number-operations" or (errorHandler.buildDepError "type-level-natural-number-operations"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

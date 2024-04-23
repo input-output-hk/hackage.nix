@@ -21,7 +21,7 @@
       synopsis = "Decompression support for machines";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

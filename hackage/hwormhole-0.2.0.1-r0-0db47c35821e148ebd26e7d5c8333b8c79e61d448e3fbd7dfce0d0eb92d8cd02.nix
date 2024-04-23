@@ -21,7 +21,7 @@
       synopsis = "magic-wormhole client";
       description = "A secure way to send files over the Internet using the magic-wormhole protocol";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hwormhole-exe" = {
           depends = [
@@ -68,10 +68,10 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hwormhole-tests" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."hwormhole" or (errorHandler.buildDepError "hwormhole"))
             (hsPkgs."magic-wormhole" or (errorHandler.buildDepError "magic-wormhole"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "reflex-frp interface for running shell commands";
       description = "Run shell commands from within reflex applications and interact with them over a functional-reactive interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readme" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."reflex-vty" or (errorHandler.buildDepError "reflex-vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Library to enable 3D game development for Haskell - Data";
       description = "Library, to enable 3D game development for Haskell,\nbased on bindings to 3D Graphics, Audio and GUI libraries.\nThis module provides the basic data types.\nPlatform: Windows only\nLicense: Apache License, Version 2.0\nInstall: see http://www.althainz.de/HGamer3D/Download-and-Installation.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

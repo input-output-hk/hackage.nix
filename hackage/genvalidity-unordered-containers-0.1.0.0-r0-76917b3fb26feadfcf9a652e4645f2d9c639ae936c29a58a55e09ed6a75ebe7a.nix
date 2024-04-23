@@ -14,7 +14,7 @@
       identifier = {
         name = "genvalidity-unordered-containers";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Copyright: (c) 2017 Tom Sydney Kerckhove";
       maintainer = "syd.kerckhove@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "GenValidity support for unordered-containers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-unordered-containers" or (errorHandler.buildDepError "validity-unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-unordered-containers-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
             (hsPkgs."genvalidity-unordered-containers" or (errorHandler.buildDepError "genvalidity-unordered-containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

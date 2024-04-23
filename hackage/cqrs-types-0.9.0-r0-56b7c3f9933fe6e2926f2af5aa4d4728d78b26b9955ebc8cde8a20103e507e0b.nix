@@ -21,7 +21,7 @@
       synopsis = "Command-Query Responsibility Segregation. Modules for the basic types.";
       description = "Haskell implementation of the CQRS architectural pattern.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

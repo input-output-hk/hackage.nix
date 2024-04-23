@@ -21,18 +21,18 @@
       synopsis = "Binding to TagLib C library.";
       description = "TagLib is a library for reading and editing the meta-data of several popular audio formats.\nCurrently it supports both ID3v1 and ID3v2 for MP3 files, Ogg Vorbis comments and ID3 tags\nand Vorbis comments in FLAC, MPC, Speex, WavPack and TrueAudio files.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
-          ];
+        ];
         libs = [ (pkgs."tag_c" or (errorHandler.sysDepError "tag_c")) ];
         pkgconfig = [
           (pkgconfPkgs."taglib_c" or (errorHandler.pkgConfDepError "taglib_c"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

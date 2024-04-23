@@ -21,14 +21,14 @@
       synopsis = "control-monad-loop port for effin";
       description = "control-monad-loop like loop structure for effin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."effin" or (errorHandler.buildDepError "effin"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

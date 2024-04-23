@@ -21,7 +21,7 @@
       synopsis = "Regexp-like engine to scrap web data";
       description = "A web scrapping utility mixing CSS selector syntax and regular expressions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "webrexp" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

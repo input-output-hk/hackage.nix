@@ -21,7 +21,7 @@
       synopsis = "Swagger generation for Solga";
       description = "Swagger generation for Solga";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

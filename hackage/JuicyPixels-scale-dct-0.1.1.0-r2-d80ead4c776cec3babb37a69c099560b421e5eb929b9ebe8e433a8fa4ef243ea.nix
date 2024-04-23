@@ -21,7 +21,7 @@
       synopsis = "Scale JuicyPixels images with DCT";
       description = "Scale JuicyPixels Images with DCT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."JuicyPixels-scale-dct" or (errorHandler.buildDepError "JuicyPixels-scale-dct"))
             (hsPkgs."JuicyPixels-util" or (errorHandler.buildDepError "JuicyPixels-util"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

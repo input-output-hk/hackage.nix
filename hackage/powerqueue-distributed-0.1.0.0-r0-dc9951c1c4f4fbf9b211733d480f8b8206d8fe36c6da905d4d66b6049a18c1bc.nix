@@ -21,7 +21,7 @@
       synopsis = "A distributed worker backend for powerqueu";
       description = "A distributed worker backend for powerqueu";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."cereal-conduit" or (errorHandler.buildDepError "cereal-conduit"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "powerqueue-distributed-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

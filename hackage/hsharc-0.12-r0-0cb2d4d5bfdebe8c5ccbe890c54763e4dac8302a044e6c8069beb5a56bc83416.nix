@@ -21,14 +21,14 @@
       synopsis = "Haskell SHARC bindings";
       description = "Parser for SHARC data (the Sandell Harmonic Archive)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

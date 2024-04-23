@@ -21,15 +21,15 @@
       synopsis = "STM wrapper around Control.Concurrent.Supply.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."concurrent-supply" or (errorHandler.buildDepError "concurrent-supply"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stm-supply-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Unique" or (errorHandler.buildDepError "Unique"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

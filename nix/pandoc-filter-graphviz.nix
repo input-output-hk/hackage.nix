@@ -6,8 +6,8 @@
         nix = import ../hackage/pandoc-filter-graphviz-0.1.0.0-r0-b5a40d4f64a05b69290fff5b4c9ea500ee0309c4808871b0ab8a767489a44471.nix;
         revNum = 0;
         sha256 = "b5a40d4f64a05b69290fff5b4c9ea500ee0309c4808871b0ab8a767489a44471";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

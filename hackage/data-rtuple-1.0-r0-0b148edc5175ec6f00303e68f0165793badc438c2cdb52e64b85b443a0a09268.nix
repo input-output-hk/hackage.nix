@@ -21,15 +21,15 @@
       synopsis = "Recursive tuple data structure. It is very usefull when implementing some lo-level operations, allowing to traverse different elements using Haskell's type classes.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."typelevel" or (errorHandler.buildDepError "typelevel"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/deunicode-0.1-r0-e523264eea0f1b6f73fde48ff4a1868ccd4c530f314cd3b245d946ea98e7afb1.nix;
         revNum = 0;
         sha256 = "e523264eea0f1b6f73fde48ff4a1868ccd4c530f314cd3b245d946ea98e7afb1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

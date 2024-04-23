@@ -21,7 +21,7 @@
       synopsis = "Fast imperative-style loops";
       description = "@loops@ is a library for fast, imperative-style loops in Haskell. Performance\nis robust because there is no reliance on fusion. @do@-notation nests loops,\nproviding syntax cleaner than manual recursion. A class @ForEach@ is provided\nenabling iteration over common container types.\n\nFor best performance, please compile your code with @-O2@. You should also\nuse GHC's LLVM backend if possible; it generally produces faster executables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."loops" or (errorHandler.buildDepError "loops"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchs" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."loops" or (errorHandler.buildDepError "loops"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

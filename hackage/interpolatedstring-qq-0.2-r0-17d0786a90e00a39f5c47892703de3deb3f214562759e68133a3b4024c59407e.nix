@@ -21,15 +21,15 @@
       synopsis = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
       description = "QuasiQuoter for Ruby-style multi-line interpolated strings.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta-mwotton" or (errorHandler.buildDepError "haskell-src-meta-mwotton"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

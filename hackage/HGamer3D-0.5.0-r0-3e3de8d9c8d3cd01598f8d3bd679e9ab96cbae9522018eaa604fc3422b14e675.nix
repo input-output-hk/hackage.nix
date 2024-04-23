@@ -21,7 +21,7 @@
       synopsis = "A Toolset for the Haskell Game Programmer";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. The game engine uses available libraries for 3D graphics,\nsound, input device handling, gui programming and other areas and make\nthose functions available for the Haskell programmer by providing\na Haskell API on top of that. HGamer3D is available on Windows and Linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."HGamer3D-Audio" or (errorHandler.buildDepError "HGamer3D-Audio"))
           (hsPkgs."HGamer3D-Network" or (errorHandler.buildDepError "HGamer3D-Network"))
           (hsPkgs."HGamer3D-InputSystem" or (errorHandler.buildDepError "HGamer3D-InputSystem"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

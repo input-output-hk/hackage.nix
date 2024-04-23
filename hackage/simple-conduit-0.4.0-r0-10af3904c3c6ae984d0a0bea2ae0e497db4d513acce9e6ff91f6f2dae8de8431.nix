@@ -21,7 +21,7 @@
       synopsis = "A simple streaming library based on composing monadic folds.";
       description = "@simple-conduit@ follows a similar UI to the more capable @conduit@ library, but reduces the scope of what it can solve donw to what can be expressed by chaining monadic folds that allow for early termination.  This allows for more predictable resource management behavior, at the cost of not allowing scenarios that @conduit@ is better designed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."conduit-combinators" or (errorHandler.buildDepError "conduit-combinators"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

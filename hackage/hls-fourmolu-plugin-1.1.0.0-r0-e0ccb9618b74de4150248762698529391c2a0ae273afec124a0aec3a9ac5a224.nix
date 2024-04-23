@@ -21,7 +21,7 @@
       synopsis = "Integration with the Fourmolu code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.3"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,14 +52,14 @@
             (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.fourmolu.components.exes.fourmolu or (pkgs.buildPackages.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.3"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

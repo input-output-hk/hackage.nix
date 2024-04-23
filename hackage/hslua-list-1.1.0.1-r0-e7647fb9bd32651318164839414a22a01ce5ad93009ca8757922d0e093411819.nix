@@ -21,16 +21,16 @@
       synopsis = "Opinionated, but extensible Lua list type.";
       description = "List type for Lua, with a Haskell interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hslua-core" or (errorHandler.buildDepError "hslua-core"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hslua-list-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hslua-list" or (errorHandler.buildDepError "hslua-list"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

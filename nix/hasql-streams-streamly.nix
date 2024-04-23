@@ -6,8 +6,8 @@
         nix = import ../hackage/hasql-streams-streamly-0.1.0.0-r0-67c05c6bc58135814f377263ad15b896fed3b8f99081c020daab6dc901124030.nix;
         revNum = 0;
         sha256 = "67c05c6bc58135814f377263ad15b896fed3b8f99081c020daab6dc901124030";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

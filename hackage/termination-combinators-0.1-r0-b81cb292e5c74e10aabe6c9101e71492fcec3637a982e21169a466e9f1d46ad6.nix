@@ -21,15 +21,15 @@
       synopsis = "Termination combinators for forcing non-terminating algorithms to terminate";
       description = "For more information see the paper at http://www.cl.cam.ac.uk/~mb566/papers/termination-combinators-hs11.pdf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "Generate pretty graphs of darcs repository activity";
       description = "Generate pretty graphs of darcs repository activity";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "darcs-graph" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

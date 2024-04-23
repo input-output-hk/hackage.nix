@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = (([
@@ -43,9 +43,9 @@
           (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
           (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"))) ++ (pkgs.lib).optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2.2") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"))) ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2.2") (hsPkgs."unsupported-ghc-version" or (errorHandler.buildDepError "unsupported-ghc-version"));
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-test" = {
           depends = [
@@ -66,13 +66,13 @@
             (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
             (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"));
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "polysemy-bench" = {
           depends = [
@@ -93,9 +93,9 @@
             (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
             (hsPkgs."type-errors-pretty" or (errorHandler.buildDepError "type-errors-pretty"))
             (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.7") (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

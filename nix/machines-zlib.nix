@@ -6,8 +6,8 @@
         nix = import ../hackage/machines-zlib-0.1.0-r0-1afd2afd4d89c666188cb4e2628f3521463a662197a4da3218910399fcb784e3.nix;
         revNum = 0;
         sha256 = "1afd2afd4d89c666188cb4e2628f3521463a662197a4da3218910399fcb784e3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

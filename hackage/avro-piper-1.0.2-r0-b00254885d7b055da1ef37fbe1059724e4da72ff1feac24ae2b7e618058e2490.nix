@@ -21,7 +21,7 @@
       synopsis = "Tool for decoding avro";
       description = "Please see the README on Github at <https://github.com/haskell-works/avro-piper#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "avro-decode" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "avro-piper-test" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

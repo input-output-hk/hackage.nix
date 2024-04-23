@@ -21,7 +21,7 @@
       synopsis = "Explore continuations with trepidation";
       description = "Please see the README on GitHub at <https://github.com/isovector/prospect#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "prospect-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             (hsPkgs."kan-extensions" or (errorHandler.buildDepError "kan-extensions"))
             (hsPkgs."prospect" or (errorHandler.buildDepError "prospect"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

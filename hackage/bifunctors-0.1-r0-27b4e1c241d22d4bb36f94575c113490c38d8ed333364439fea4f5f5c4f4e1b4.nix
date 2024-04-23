@@ -21,11 +21,11 @@
       synopsis = "Haskell 98 bifunctors";
       description = "Haskell 98 bifunctors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

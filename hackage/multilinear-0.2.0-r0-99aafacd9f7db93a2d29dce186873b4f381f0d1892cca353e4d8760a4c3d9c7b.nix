@@ -21,7 +21,7 @@
       synopsis = "Efficient (multi)linear algebra implementation";
       description = "Please see the README on GitHub at <https://github.com/ArturB/multilinear#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multilinear-test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "multilinear-bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

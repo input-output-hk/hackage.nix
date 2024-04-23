@@ -21,7 +21,7 @@
       synopsis = "Robert Fischer's Common library";
       description = "An enhanced Prelude and various utilities for Aeson, Servant, PSQL, and Redis that Robert Fischer uses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -49,10 +49,10 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optionals (flags.browser) [
+        ] ++ pkgs.lib.optionals (flags.browser) [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ]) ++ (pkgs.lib).optionals (!flags.browser) [
+        ]) ++ pkgs.lib.optionals (!flags.browser) [
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -70,8 +70,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "An EDSL for teaching Haskell with diagrams - data types";
       description = "This package contains the Diagram data type\nand the user API to construct diagrams.\n\nSee also the dia-functions package.\n\nFor exaples see <http://pnyf.inf.elte.hu/fp/Diagrams_en.xml>\n\nChanges since 0.1: more documentation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

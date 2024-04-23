@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the zone-detect C library; plus tz-aware utils.";
       description = "Please see the README on GitHub at <https://github.com/lfborjas/timezone-detect#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "timezone-detect-test" = {
           depends = [
@@ -43,12 +43,12 @@
             (hsPkgs."timezone-detect" or (errorHandler.buildDepError "timezone-detect"))
             (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
             (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/libarchive-conduit-0.1.0.0-r0-0eac24b0c4b43d393209b5c6dfd1d6062c572bba1b4a4f97dd9babef10d34bd3.nix;
         revNum = 0;
         sha256 = "0eac24b0c4b43d393209b5c6dfd1d6062c572bba1b4a4f97dd9babef10d34bd3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "CORS for WAI";
       description = "This package provides an implemenation of\nCross-Origin resource sharing (CORS) for\n<http://hackage.haskell.org/package/wai Wai>\nthat aims to be compliant with <http://www.w3.org/TR/cors>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -31,23 +31,23 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ] ++ (pkgs.lib).optionals (flags.wai-1 && !flags.wai-2) [
+        ] ++ pkgs.lib.optionals (flags.wai-1 && !flags.wai-2) [
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optional (flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ (pkgs.lib).optional (!flags.wai-1 && !flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ (if flags.transformers-3
+        ]) ++ pkgs.lib.optional (flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ pkgs.lib.optional (!flags.wai-1 && !flags.wai-2) (hsPkgs."wai" or (errorHandler.buildDepError "wai"))) ++ (if flags.transformers-3
           then [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "phantomjs" = {
           depends = [
@@ -60,14 +60,14 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
-            ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
+          ] ++ pkgs.lib.optionals (!(flags.wai-1 || flags.wai-2)) [
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = if flags.wai-1 || flags.wai-2 then false else true;
-          };
+        };
         "unit-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,15 +76,15 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
-            ] ++ (pkgs.lib).optionals (!(flags.wai-1 || flags.wai-2)) [
+          ] ++ pkgs.lib.optionals (!(flags.wai-1 || flags.wai-2)) [
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = if flags.wai-1 || flags.wai-2 then false else true;
-          };
         };
       };
-    }
+    };
+  }

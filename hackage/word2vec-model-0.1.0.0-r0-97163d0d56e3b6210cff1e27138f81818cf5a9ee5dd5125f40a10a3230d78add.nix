@@ -21,7 +21,7 @@
       synopsis = "Reading word2vec binary models";
       description = "Please see the README on Github at <https://gonito.net/gitlist/word2vec-model.git/blob/master/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "word2vec-model-similarity" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word2vec-model" or (errorHandler.buildDepError "word2vec-model"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "word2vec-model-word-analogy" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -68,10 +68,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word2vec-model" or (errorHandler.buildDepError "word2vec-model"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "word2vec-model-test" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."word2vec-model" or (errorHandler.buildDepError "word2vec-model"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

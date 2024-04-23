@@ -21,11 +21,11 @@
       synopsis = "Fast, easy to use CPS-based monads";
       description = "This library implements fast and easy to use CPS-based monad\ntransformers.  Most of the usual monads are implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

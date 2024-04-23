@@ -21,15 +21,15 @@
       synopsis = "Build tool for Lambdabot";
       description = "This is a build tool for the Lambdabot IRC bot, which processes\nsimple directives to write a bunch of boilerplate Haskell code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "BotPP" = { buildable = true; }; };
       };
-    }
+      exes = { "BotPP" = { buildable = true; }; };
+    };
+  }

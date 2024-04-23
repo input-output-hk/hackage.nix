@@ -21,11 +21,11 @@
       synopsis = "Perform character set conversion";
       description = "Provides an interface to the unix iconv functions for character\nset conversion.\n\nIt makes use of some knowledge of glibc's iconv that isn't\nguaranteed by the standard.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

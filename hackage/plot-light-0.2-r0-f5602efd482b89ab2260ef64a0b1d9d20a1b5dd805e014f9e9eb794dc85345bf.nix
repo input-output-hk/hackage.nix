@@ -21,7 +21,7 @@
       synopsis = "A lightweight plotting library, exporting to SVG";
       description = "A lightweight plotting library, exporting to SVG";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."palette" or (errorHandler.buildDepError "palette"))
           (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "plot-light" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."plot-light" or (errorHandler.buildDepError "plot-light"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

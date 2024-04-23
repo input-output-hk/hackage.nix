@@ -21,7 +21,7 @@
       synopsis = "Remote Management Framework";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/managed-functions#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "managed-functions-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."managed-functions" or (errorHandler.buildDepError "managed-functions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

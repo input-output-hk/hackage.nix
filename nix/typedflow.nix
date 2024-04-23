@@ -6,8 +6,8 @@
         nix = import ../hackage/typedflow-0.9-r0-0bb55d8dcd94597620c7fcf531742edb360ac2fb05fe77134c0ddb0e6bd26db9.nix;
         revNum = 0;
         sha256 = "0bb55d8dcd94597620c7fcf531742edb360ac2fb05fe77134c0ddb0e6bd26db9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

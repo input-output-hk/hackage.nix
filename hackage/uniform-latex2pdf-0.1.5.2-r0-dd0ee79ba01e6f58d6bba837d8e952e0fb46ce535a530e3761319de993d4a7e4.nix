@@ -21,7 +21,7 @@
       synopsis = "convert a latex `tex` file to a pdf";
       description = "convert a latex file to pdf\ncalling lualatex with the flags etc. necessary to include bibliography and footnotes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."uniform-json" or (errorHandler.buildDepError "uniform-json"))
           (hsPkgs."uniform-pandoc" or (errorHandler.buildDepError "uniform-pandoc"))
           (hsPkgs."uniformBase" or (errorHandler.buildDepError "uniformBase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Client-side web EDSL for transient nodes running in the web browser";
       description = "Client-side Haskell framework that compiles to javascript with the GHCJS compiler and run over Transient.  See homepage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."transient-universe" or (errorHandler.buildDepError "transient-universe"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ghcjs-perch" or (errorHandler.buildDepError "ghcjs-perch"))
-          ] ++ (pkgs.lib).optional (compiler.isGhcjs && (compiler.version).ge "0.1") (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
+        ] ++ pkgs.lib.optional (compiler.isGhcjs && compiler.version.ge "0.1") (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

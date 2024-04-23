@@ -21,7 +21,7 @@
       synopsis = "Creates a header for a haskell source file.";
       description = "The headergen package provides a small utility for\ncreating documentation headers for source files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "headergen" = {
@@ -34,9 +34,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

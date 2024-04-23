@@ -21,15 +21,15 @@
       synopsis = "Extends Text.JSON to handle literal JS objects.";
       description = "This module extends Text.JSON to enable the decoding of strings containing literal JS objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-json-litobj" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."json-litobj" or (errorHandler.buildDepError "json-litobj"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

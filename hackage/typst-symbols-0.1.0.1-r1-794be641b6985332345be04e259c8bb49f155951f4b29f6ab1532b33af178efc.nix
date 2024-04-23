@@ -21,14 +21,14 @@
       synopsis = "Symbol and emoji lookup for typst language";
       description = "This package defines symbol and emoji codes for the\ntypst language (<https://typst.app>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

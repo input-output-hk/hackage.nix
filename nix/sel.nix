@@ -6,8 +6,8 @@
         nix = import ../hackage/sel-0.0.1.0-r0-3fa0188a2cdfceb35ec4f5f01199adc9f0eb20144aac4ea1d8462bab4e20d9aa.nix;
         revNum = 0;
         sha256 = "3fa0188a2cdfceb35ec4f5f01199adc9f0eb20144aac4ea1d8462bab4e20d9aa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

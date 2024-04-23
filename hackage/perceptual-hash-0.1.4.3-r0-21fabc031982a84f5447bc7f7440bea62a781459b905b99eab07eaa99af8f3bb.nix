@@ -21,7 +21,7 @@
       synopsis = "Find duplicate images";
       description = "Find similar images using perceptual hashes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,22 +32,22 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ] ++ (pkgs.lib).optional (!flags.disable-webp) (hsPkgs."webp" or (errorHandler.buildDepError "webp"));
-        pkgconfig = (pkgs.lib).optional (flags.with-phash) (pkgconfPkgs."pHash" or (errorHandler.pkgConfDepError "pHash"));
+        ] ++ pkgs.lib.optional (!flags.disable-webp) (hsPkgs."webp" or (errorHandler.buildDepError "webp"));
+        pkgconfig = pkgs.lib.optional (flags.with-phash) (pkgconfPkgs."pHash" or (errorHandler.pkgConfDepError "pHash"));
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       foreignlibs = {
         "hsphash" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."perceptual-hash" or (errorHandler.buildDepError "perceptual-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "phash" = {
           depends = [
@@ -58,26 +58,26 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."par-traverse" or (errorHandler.buildDepError "par-traverse"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "perceptual-hash-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."perceptual-hash" or (errorHandler.buildDepError "perceptual-hash"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "phash-bench" = {
           depends = [
@@ -86,12 +86,12 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

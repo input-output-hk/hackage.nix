@@ -21,7 +21,7 @@
       synopsis = "Xlsx table decode utility";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xlsx-tabular-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xlsx-tabular" or (errorHandler.buildDepError "xlsx-tabular"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

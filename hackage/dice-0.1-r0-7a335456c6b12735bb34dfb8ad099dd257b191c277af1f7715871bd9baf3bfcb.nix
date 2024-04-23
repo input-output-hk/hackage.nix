@@ -21,7 +21,7 @@
       synopsis = "Simplistic D&D style dice-rolling system.";
       description = "Simplistic D&D style dice-rolling system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "dice" = { buildable = true; }; };
       };
-    }
+      exes = { "dice" = { buildable = true; }; };
+    };
+  }

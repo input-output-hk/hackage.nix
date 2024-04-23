@@ -6,8 +6,8 @@
         nix = import ../hackage/wxSimpleCanvas-0.0.0.0-r0-e1ac05f863f83da79617038776b83194c5cc39c74a361f55f0e941f22473e0ae.nix;
         revNum = 0;
         sha256 = "e1ac05f863f83da79617038776b83194c5cc39c74a361f55f0e941f22473e0ae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

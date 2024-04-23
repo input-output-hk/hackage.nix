@@ -21,7 +21,7 @@
       synopsis = "Process (system) utilities for the machines library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."machines" or (errorHandler.buildDepError "machines"))
           (hsPkgs."machines-io" or (errorHandler.buildDepError "machines-io"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

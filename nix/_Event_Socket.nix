@@ -6,8 +6,8 @@
         nix = import ../hackage/EventSocket-0.1-r0-3b5091367f2b17c775acfb6df114cd841969eaee5d17ceaa4bae866afd33e183.nix;
         revNum = 0;
         sha256 = "3b5091367f2b17c775acfb6df114cd841969eaee5d17ceaa4bae866afd33e183";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

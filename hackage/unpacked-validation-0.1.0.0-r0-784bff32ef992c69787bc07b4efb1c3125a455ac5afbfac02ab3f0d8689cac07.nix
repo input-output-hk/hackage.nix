@@ -21,7 +21,7 @@
       synopsis = "An unpacked validation data type";
       description = "The 'Validation' type and associated operations.\n\nThis library is intended to be a drop-in replacement for /Data.Valiation/. To shave off pointer chasing, it uses -XUnboxedSums to represent the 'Validation' type as two machine words that are contiguous in memory, without loss of expressiveness that 'Validation' provides.\n\nThis library provides pattern synonyms Failure and Success, which allow users to pattern match on an Unpacked Validation in a familiar way.\n\nFunctions are also provided for converting an Unpacked Validation to the validation library's These, and vice versa.\n\nThis library is in alpha, and the internals are likely to change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."unpacked-either" or (errorHandler.buildDepError "unpacked-either"))
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unpacked-validation-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."unpacked-validation" or (errorHandler.buildDepError "unpacked-validation"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

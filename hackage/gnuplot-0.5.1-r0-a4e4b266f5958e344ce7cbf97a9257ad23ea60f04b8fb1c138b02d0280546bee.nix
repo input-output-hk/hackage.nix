@@ -14,7 +14,7 @@
       buildexamples = false;
       executepipe = false;
       executeshell = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "gnuplot"; version = "0.5.1"; };
@@ -27,7 +27,7 @@
       synopsis = "2D and 3D plots using gnuplot";
       description = "This is a wrapper to gnuplot\nwhich lets you create 2D and 3D plots.\n\nStart a simple session with @make ghci@.\nThis loads the module \"Graphics.Gnuplot.Simple\"\nwhich is ready for use in GHCi.\nIt does not address all fancy gnuplot features\nin order to stay simple.\nFor more sophisticated plots,\nespecially batch generated graphics,\nI recommend \"Graphics.Gnuplot.Advanced\".\nThis module contains also an overview\nof the hierarchy of objects.\n\nExamples for using this interface can be found in the \"Demo\" module.\nIn order to compile this and install an example data file,\nuse the Cabal flag @buildExamples@:\n\n> $ cabal install -fbuildExamples gnuplot\n\nWith the Cabal flags executePipe and executeShell\nyou can switch to more convenient\nbut probably less portable ways\nof feeding gnuplot with a script.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,21 +35,21 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."monoid-transformer" or (errorHandler.buildDepError "monoid-transformer"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "gnuplot-demo" = {
-          depends = (pkgs.lib).optional (flags.buildexamples) (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"));
+          depends = pkgs.lib.optional (flags.buildexamples) (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"));
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

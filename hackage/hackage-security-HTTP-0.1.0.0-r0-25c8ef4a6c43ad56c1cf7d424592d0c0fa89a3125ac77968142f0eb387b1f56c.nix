@@ -21,7 +21,7 @@
       synopsis = "Hackage security bindings against the HTTP library";
       description = "The hackage security library provides a 'HttpLib'\nabstraction to allow to bind against different HTTP\nlibraries. This library implements this abstraction using\nthe @HTTP@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."hackage-security" or (errorHandler.buildDepError "hackage-security"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

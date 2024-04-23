@@ -21,7 +21,7 @@
       synopsis = "Object orientation tools for HsLua";
       description = "Expose Haskell objects to Lua with an object oriented\ninterface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."hslua-typing" or (errorHandler.buildDepError "hslua-typing"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hslua-objectorientation" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hslua" or (errorHandler.buildDepError "tasty-hslua"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

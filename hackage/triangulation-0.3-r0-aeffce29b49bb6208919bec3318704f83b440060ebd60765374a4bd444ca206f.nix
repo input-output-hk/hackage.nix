@@ -21,7 +21,7 @@
       synopsis = "triangulation of polygons";
       description = "An implementation of a simple triangulation algorithm for polygons without crossings (holes are possible). The code is explained her: <www.dinkla.net/download/GeomAlgHaskell.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

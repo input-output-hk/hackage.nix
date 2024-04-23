@@ -21,16 +21,16 @@
       synopsis = "Straightforward bindings to the posix API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."zenhack-prelude" or (errorHandler.buildDepError "zenhack-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."zenhack-prelude" or (errorHandler.buildDepError "zenhack-prelude"))
             (hsPkgs."unix-simple" or (errorHandler.buildDepError "unix-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

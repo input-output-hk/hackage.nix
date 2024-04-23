@@ -21,11 +21,11 @@
       synopsis = "Functions for probing and unwrapping values inside of Either.";
       description = "Functions for probing and unwrapping values inside of Either.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

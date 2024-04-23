@@ -21,7 +21,7 @@
       synopsis = "Keep your home dir clean by finding old conf files";
       description = "clean-home searches for config files in your $HOME\nthat no installed package/program will need.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clean-home" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."IfElse" or (errorHandler.buildDepError "IfElse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

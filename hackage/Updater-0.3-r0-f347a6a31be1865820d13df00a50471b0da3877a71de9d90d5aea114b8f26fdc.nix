@@ -21,11 +21,11 @@
       synopsis = "Monadic FRP library based on stm";
       description = "Read the homepage for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

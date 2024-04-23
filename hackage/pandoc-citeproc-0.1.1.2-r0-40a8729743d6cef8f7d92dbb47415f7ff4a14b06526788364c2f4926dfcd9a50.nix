@@ -15,7 +15,7 @@
       hexpat = true;
       embed_data_files = false;
       unicode_collation = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "pandoc-citeproc"; version = "0.1.1.2"; };
@@ -28,7 +28,7 @@
       synopsis = "Supports using pandoc with citeproc";
       description = "The pandoc-citeproc library exports functions for\nusing the citeproc system with pandoc.  It relies on\nciteproc-hs, a library for rendering\nbibliographic reference citations into a variety\nof styles using a macro language called Citation\nStyle Language (CSL). More details on CSL can be\nfound here: <http://citationstyles.org/>.\n\nCurrently this package includes a copy of the citeproc-hs\ncode. When citeproc-hs is updated to be compatible,\nthis package will simply depend on citeproc-hs.\n\nThis package also contains two executables: pandoc-citeproc,\nwhich works as a pandoc filter (pandoc >= 1.12), and\nbiblio2yaml, which converts bibliographic databases to\na yaml format suitable for inclusion in pandoc YAML\nmetadata.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -45,31 +45,31 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
-          ] ++ (pkgs.lib).optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ (pkgs.lib).optionals (flags.network) [
+        ] ++ pkgs.lib.optional (flags.bibutils) (hsPkgs."hs-bibutils" or (errorHandler.buildDepError "hs-bibutils"))) ++ pkgs.lib.optionals (flags.network) [
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ]) ++ (if flags.hexpat
+        ]) ++ (if flags.hexpat
           then [ (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat")) ]
           else [
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ])) ++ (if flags.unicode_collation
+          ])) ++ (if flags.unicode_collation
           then [
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ]
+          ]
           else [
             (hsPkgs."rfc5051" or (errorHandler.buildDepError "rfc5051"))
-            ])) ++ (if compiler.isGhc && (compiler.version).ge "6.10"
+          ])) ++ (if compiler.isGhc && compiler.version.ge "6.10"
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-citeproc" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."pandoc-citeproc" or (errorHandler.buildDepError "pandoc-citeproc"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "biblio2yaml" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -89,10 +89,10 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-pandoc-citeproc" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."pandoc-citeproc" or (errorHandler.buildDepError "pandoc-citeproc"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

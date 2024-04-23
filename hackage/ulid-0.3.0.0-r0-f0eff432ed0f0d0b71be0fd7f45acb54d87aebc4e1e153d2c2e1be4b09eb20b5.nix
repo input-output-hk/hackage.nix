@@ -21,7 +21,7 @@
       synopsis = "Implementation of ULID - Universally Unique\nLexicographically Sortable Identifier";
       description = "Implementation of Alizain Feerasta's ULID specification.\nA 26 character string identifier,\nas opposed to the 36 character UUID string.\nUses Douglas Crockford's base 32 encoding\nfor better efficiency and readability\n(5 bits per character).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ulid-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ulid" or (errorHandler.buildDepError "ulid"))
             (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ulid-test" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "ulid-bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."format-numbers" or (errorHandler.buildDepError "format-numbers"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

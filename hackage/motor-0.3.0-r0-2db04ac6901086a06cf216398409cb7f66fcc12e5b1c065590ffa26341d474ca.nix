@@ -21,7 +21,7 @@
       synopsis = "Type-safe effectful state machines in Haskell";
       description = "/Motor/ is an experimental Haskell library for building finite-state\nmachines with type-safe transitions and effects. It draws inspiration\nfrom the Idris [ST\n](http://docs.idris-lang.org/en/latest/st/state.html) library. See the\n\"Motor.FSM\" module for documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-door" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."indexed-extras" or (errorHandler.buildDepError "indexed-extras"))
             (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
             (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."indexed-extras" or (errorHandler.buildDepError "indexed-extras"))
             (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
             (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

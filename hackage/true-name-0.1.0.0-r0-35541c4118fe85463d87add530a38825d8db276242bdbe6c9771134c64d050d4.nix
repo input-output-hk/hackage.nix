@@ -21,15 +21,15 @@
       synopsis = "Template Haskell hack to violate another module's abstractions";
       description = "<http://tvtropes.org/pmwiki/pmwiki.php/Main/IKnowYourTrueName Knowing a true name gives one power over its owner>.\n\nA Template Haskell hack to get unexported @Name@s―be they data\nconstructors, record fields or class methods―a slightly less unsafe way\nto violate another module's abstractions than @unsafeCoerce@.\n\nA few <https://github.com/liyang/true-name/blob/master/sanity.hs quick examples>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."true-name" or (errorHandler.buildDepError "true-name"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parse ABNF and generate parsers for the specified document";
       description = "You can use this library to parse an ABNF document and\ngenerate a parser from that ABNF to read a document\ndescribed by the ABNF.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."abnf" or (errorHandler.buildDepError "abnf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

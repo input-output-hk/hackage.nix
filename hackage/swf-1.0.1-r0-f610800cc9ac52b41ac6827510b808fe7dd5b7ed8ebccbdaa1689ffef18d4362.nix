@@ -21,15 +21,15 @@
       synopsis = "A library for creating Shockwave Flash (SWF) files";
       description = "Provides Haskell datatypes which closely reflect the\ninternal specification of SWF, and routines to convert the data\nvalues into a valid .swf file. Currently the assembly language\nportion is best supported, with many other features missing, such as\nimages, sounds, and much more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

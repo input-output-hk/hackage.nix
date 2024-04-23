@@ -21,7 +21,7 @@
       synopsis = "Provides consistent low-level types used commonly among Bitcoin implementations";
       description = "Instead of having each Bitcoin library re-define the low level types it is using,\nthis library provides a ready-to-use collection of low-level types and aliases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
           (hsPkgs."base58string" or (errorHandler.buildDepError "base58string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."base58string" or (errorHandler.buildDepError "base58string"))
             (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
             (hsPkgs."bitcoin-types" or (errorHandler.buildDepError "bitcoin-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

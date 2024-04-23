@@ -15,7 +15,7 @@
       bench = false;
       prof = false;
       threadscope = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "hermes"; version = "1.3.4.3"; };
@@ -28,7 +28,7 @@
       synopsis = "";
       description = "IRIS Connect Transcoding Server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -90,9 +90,9 @@
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hermes" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hermes" or (errorHandler.buildDepError "hermes"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "hermes-docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -121,9 +121,9 @@
             (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
             (hsPkgs."hermes" or (errorHandler.buildDepError "hermes"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "hermes-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -168,9 +168,9 @@
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."hermes" or (errorHandler.buildDepError "hermes"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "hermes-progress" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -182,9 +182,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "hermes-tests" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -224,9 +224,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hermes" or (errorHandler.buildDepError "hermes"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
+        };
         "hermes-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -237,9 +237,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."hermes" or (errorHandler.buildDepError "hermes"))
-            ];
+          ];
           buildable = if flags.bench then true else false;
-          };
         };
       };
-    }
+    };
+  }

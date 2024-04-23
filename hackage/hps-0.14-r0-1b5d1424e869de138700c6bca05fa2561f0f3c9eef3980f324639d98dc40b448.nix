@@ -21,15 +21,15 @@
       synopsis = "Haskell Postscript";
       description = "Haskell library partially implementing the\npostscript drawing model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hcg-minus" or (errorHandler.buildDepError "hcg-minus"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hps-fractals" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hcg-minus" or (errorHandler.buildDepError "hcg-minus"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if !flags.build-exec then false else true;
-          };
         };
       };
-    }
+    };
+  }

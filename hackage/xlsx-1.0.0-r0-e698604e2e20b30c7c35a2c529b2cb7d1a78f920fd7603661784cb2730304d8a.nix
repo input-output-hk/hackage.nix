@@ -21,7 +21,7 @@
       synopsis = "Simple and incomplete Excel file parser/writer";
       description = "This library can help you to get some data read and written in Office\nOpen XML xlsx format. Small subset of xlsx format is supported.\n\nFor examples look into \"Codec.Xlsx\".\n\nFormat is covered by ECMA-376 standard:\n<http://www.ecma-international.org/publications/standards/Ecma-376.htm>\n\n4th edition of the standard with the transitional schema is used for this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -57,7 +57,7 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
-          ] ++ (if flags.microlens
+        ] ++ (if flags.microlens
           then [
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
@@ -66,10 +66,10 @@
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
             (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
             (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-            ]
+          ]
           else [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "data-test" = {
           depends = [
@@ -93,17 +93,17 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (if flags.microlens
+          ] ++ (if flags.microlens
             then [
               (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
               (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
               (hsPkgs."microlens-platform" or (errorHandler.buildDepError "microlens-platform"))
               (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-              ]
+            ]
             else [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]);
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -114,9 +114,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the HDBC MySQL driver.";
       description = "haskelldb-hdbc-mysql allows the HDBC-mysql package to be used from HaskellDB. This means HaskellDB can be used with MySQL, without going through ODBC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."haskelldb-hdbc" or (errorHandler.buildDepError "haskelldb-hdbc"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."HDBC-mysql" or (errorHandler.buildDepError "HDBC-mysql"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "DBDirect-hdbc-mysql" = { buildable = true; }; };
       };
-    }
+      exes = { "DBDirect-hdbc-mysql" = { buildable = true; }; };
+    };
+  }

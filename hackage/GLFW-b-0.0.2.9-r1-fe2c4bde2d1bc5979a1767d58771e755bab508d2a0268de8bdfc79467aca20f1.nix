@@ -21,7 +21,7 @@
       synopsis = "GLFW bindings";
       description = "Bindings to GLFW, a free, open source, multi-platform library for\ncreating OpenGL contexts and managing input, including keyboard,\nmouse, joystick and time.\n\nGLFW-b works on Windows, Mac OS X, and many Unix-like operating\nsystems.\n\nPlease see README.md\n(<http://github.com/bsl/GLFW-b/blob/master/README.md>) for\ninformation about how these bindings differ from the ones in the\nGLFW package (<http://hackage.haskell.org/package/GLFW>).\n\nFor more information about the library on which these bindings\nare based, please see <http://glfw.sourceforge.net>.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -31,11 +31,11 @@
             (pkgs."GLU" or (errorHandler.sysDepError "GLU"))
             (pkgs."X11" or (errorHandler.sysDepError "X11"))
             (pkgs."Xrandr" or (errorHandler.sysDepError "Xrandr"))
-            ]
+          ]
           else if system.isOsx
             then [ (pkgs."glfw" or (errorHandler.sysDepError "glfw")) ]
-            else (pkgs.lib).optional (system.isWindows) (pkgs."opengl32" or (errorHandler.sysDepError "opengl32"));
+            else pkgs.lib.optional (system.isWindows) (pkgs."opengl32" or (errorHandler.sysDepError "opengl32"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

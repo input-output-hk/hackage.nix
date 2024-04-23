@@ -21,16 +21,16 @@
       synopsis = "The user interface for building and installing Cabal packages";
       description = "cabal-setup is a user interface to Cabal.  It provides the\nbasic commands for configuring, building, and installing\nCabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-setup" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

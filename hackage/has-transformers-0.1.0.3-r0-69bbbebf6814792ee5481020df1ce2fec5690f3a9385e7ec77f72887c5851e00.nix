@@ -21,15 +21,15 @@
       synopsis = "This library 'Has' transformers";
       description = "A very slim library for first-order effects based on monad transformers\n(and nearly nothing else).\n\nGiven a transformer stack @t1 (t2 (t3 (... m))) a@,\nyou can automatically lift any function @thing :: tN m a@ into the stack with a single function, 'liftH'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -37,12 +37,12 @@
             (hsPkgs."has-transformers" or (errorHandler.buildDepError "has-transformers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."operational" or (errorHandler.buildDepError "operational"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Unified interface for primitive arrays";
       description = "This package provides a typeclass `Contiguous` that offers a\nunified interface to working with `Array`, `PrimArray`, and\n`UnliftedArray`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

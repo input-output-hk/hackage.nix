@@ -21,7 +21,7 @@
       synopsis = "A universal pastebin tool, written in Haskell.";
       description = "hpaste is a simple command line utility for piping text to online pastebin sites such as hpaste.org, paste2.org, pastebin.com and others. Text can be passed via STDIN, or by giving a file argument; text is pasted online, and the URL of the paste is printed to STDOUT. Use --help for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haste" = {
@@ -30,9 +30,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

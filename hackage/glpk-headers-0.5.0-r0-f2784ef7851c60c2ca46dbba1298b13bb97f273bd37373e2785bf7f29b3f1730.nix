@@ -21,25 +21,25 @@
       synopsis = "Low-level Haskell bindings to the GLPK library";
       description = "Please see the README on GitHub at <https://github.com/prsteele/math-programming/blob/main/glpk-headers/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         libs = [ (pkgs."glpk" or (errorHandler.sysDepError "glpk")) ];
         buildable = true;
-        };
+      };
       tests = {
         "glpk-headers-haskell-test-suite" = {
           depends = [
             (hsPkgs."glpk-headers" or (errorHandler.buildDepError "glpk-headers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

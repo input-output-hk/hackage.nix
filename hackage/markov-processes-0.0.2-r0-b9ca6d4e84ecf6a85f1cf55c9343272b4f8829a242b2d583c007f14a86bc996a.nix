@@ -21,7 +21,7 @@
       synopsis = "Hidden Markov processes.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."memoize" or (errorHandler.buildDepError "memoize"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "markov-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."markov-processes" or (errorHandler.buildDepError "markov-processes"))
             (hsPkgs."memoize" or (errorHandler.buildDepError "memoize"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

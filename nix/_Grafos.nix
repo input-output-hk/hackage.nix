@@ -6,8 +6,8 @@
         nix = import ../hackage/Grafos-0.1.0.0-r0-100da3d777b5b86ba57cab35396998ed08e003a129fa70304aaa60609424689b.nix;
         revNum = 0;
         sha256 = "100da3d777b5b86ba57cab35396998ed08e003a129fa70304aaa60609424689b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/mi-0.0.1-r0-29ad0bea85cb207149ad7ff58b7c54eff74af1f6660803236acc875f0b175595.nix;
         revNum = 0;
         sha256 = "29ad0bea85cb207149ad7ff58b7c54eff74af1f6660803236acc875f0b175595";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

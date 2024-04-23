@@ -6,8 +6,8 @@
         nix = import ../hackage/constable-0.1.0.0-r0-ec4bdf5b1f02e795cdc5cd5b01d9c72dda5d21f1254dd22c1b6f98eebad68594.nix;
         revNum = 0;
         sha256 = "ec4bdf5b1f02e795cdc5cd5b01d9c72dda5d21f1254dd22c1b6f98eebad68594";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

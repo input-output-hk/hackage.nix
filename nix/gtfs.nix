@@ -6,8 +6,8 @@
         nix = import ../hackage/gtfs-0.1-r0-9a52c052adf62f2848973144c9556052e01ff7b68c7782188d5dd866df1fc081.nix;
         revNum = 0;
         sha256 = "9a52c052adf62f2848973144c9556052e01ff7b68c7782188d5dd866df1fc081";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

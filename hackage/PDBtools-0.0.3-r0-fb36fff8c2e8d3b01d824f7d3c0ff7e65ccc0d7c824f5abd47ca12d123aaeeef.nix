@@ -21,16 +21,16 @@
       synopsis = "A library for analysis of 3-D protein coordinates";
       description = "This is a collection of modules for the analysis of protein\ncoordinates. The suite allows efficient computation on a large\ndata set of RCSB protein data bank files. Parsing returns both\nprotein and ligand coordinates. All of the information in ATOM\nand HETATM records of a PDB file is preserved.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Test" = { buildable = if flags.tests then true else false; }; };
       };
-    }
+      exes = { "Test" = { buildable = if flags.tests then true else false; }; };
+    };
+  }

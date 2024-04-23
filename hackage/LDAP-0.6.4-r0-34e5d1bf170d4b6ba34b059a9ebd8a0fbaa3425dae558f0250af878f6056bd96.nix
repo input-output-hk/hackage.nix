@@ -21,12 +21,12 @@
       synopsis = "Haskell binding for C LDAP API";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."ldap" or (errorHandler.sysDepError "ldap")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

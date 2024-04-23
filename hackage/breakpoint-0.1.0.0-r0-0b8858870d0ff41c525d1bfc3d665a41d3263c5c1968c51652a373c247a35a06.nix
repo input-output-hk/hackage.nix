@@ -21,7 +21,7 @@
       synopsis = "Set breakpoints using a GHC plugin";
       description = "A plugin that allows you to set breakpoints for debugging purposes.\n\nSee the [README](https://github.com/aaronallen8455/breakpoint#breakpoint) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."breakpoint" or (errorHandler.buildDepError "breakpoint"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

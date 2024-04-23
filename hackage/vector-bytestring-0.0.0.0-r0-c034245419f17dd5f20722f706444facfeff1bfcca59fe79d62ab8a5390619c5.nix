@@ -21,7 +21,7 @@
       synopsis = "ByteStrings as type synonyms of Storable Vectors of Word8s";
       description = "ByteStrings as type synonyms of Storable Vectors of Word8s";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bench" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = if !flags.benchmark then false else true;
-          };
         };
+      };
       tests = {
         "prop-compiled" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

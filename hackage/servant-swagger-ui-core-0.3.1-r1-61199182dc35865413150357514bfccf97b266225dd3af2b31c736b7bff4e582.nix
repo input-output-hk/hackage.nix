@@ -21,7 +21,7 @@
       synopsis = "Servant swagger ui core components";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nSee servant-swagger-ui, servant-swagger-ui-jensoleg or\nservant-swagger-ui-redoc for \"concrete\" implementations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
-          ] ++ (if flags.servant-0-5
+        ] ++ (if flags.servant-0-5
           then [
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

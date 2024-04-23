@@ -21,7 +21,7 @@
       synopsis = "Hakyll wrapper for the Elm compiler.";
       description = "A wrapper for compiling\nElm (<http://elm-lang.org>) programs to\nhtml/javascript in a Hakyll project.\n\nCurrently supports single-module programs that\nonly import from an Elm runtime that's manually\nincluded.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

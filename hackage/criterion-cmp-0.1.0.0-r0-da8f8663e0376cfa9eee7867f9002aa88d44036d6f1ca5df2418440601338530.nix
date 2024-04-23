@@ -21,7 +21,7 @@
       synopsis = "A simple tool for comparing in Criterion benchmark results";
       description = "Output a table containing a comparison of results for the input files\nBased on https://github.com/bgamari/criterion-compare";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "criterion-cmp" = {
@@ -35,9 +35,9 @@
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

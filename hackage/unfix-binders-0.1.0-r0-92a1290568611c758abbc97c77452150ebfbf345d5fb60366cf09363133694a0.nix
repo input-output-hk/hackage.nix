@@ -21,11 +21,11 @@
       synopsis = "Unfixing and recursion schemes for data types with binders";
       description = "Use fixed-point of endofunctors of endofunctors (that is initial algebras in the category of endofunctors) to define recursion schemes for data types with binders";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

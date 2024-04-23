@@ -21,7 +21,7 @@
       synopsis = "A simple, static HaLVM web server";
       description = "A simple, static HaLVM web server";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "halvm-web" = {
@@ -39,9 +39,9 @@
             (hsPkgs."simple-tar" or (errorHandler.buildDepError "simple-tar"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

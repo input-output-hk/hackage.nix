@@ -21,7 +21,7 @@
       synopsis = "A build tool for ATS";
       description = "A collection of scripts to simplify building ATS projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
           (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "quaalude" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       exes = {
         "atspkg" = {
           depends = [
@@ -95,9 +95,9 @@
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
             (hsPkgs."cli-setup" or (errorHandler.buildDepError "cli-setup"))
             (hsPkgs."ats-pkg".components.sublibs.quaalude or (errorHandler.buildDepError "ats-pkg:quaalude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/exchangerates-0.0.0.0-r0-faeabd5c24baed007950da459e15283f6681a85507026490209f74ce20f2953a.nix;
         revNum = 0;
         sha256 = "faeabd5c24baed007950da459e15283f6681a85507026490209f74ce20f2953a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

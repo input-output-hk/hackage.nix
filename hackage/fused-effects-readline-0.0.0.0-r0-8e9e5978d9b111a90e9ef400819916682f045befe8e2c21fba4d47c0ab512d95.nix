@@ -21,7 +21,7 @@
       synopsis = "A readline-like effect and carrier for fused-effects";
       description = "A readline-like effect and carrier for fused-effects, using haskeline under the hood";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fused-effects-readline" or (errorHandler.buildDepError "fused-effects-readline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

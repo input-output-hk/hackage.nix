@@ -21,7 +21,7 @@
       synopsis = "Extract the interesting bits from shell history";
       description = "Extract interesting commands and add them to a text file.\n\\\"Interesting\\\" means not matching any regular expression in the\nfile. This allows one to keep a textual database of commands.\nNever again say \\\"I wish I remembered what arguments to give\nwibble to make it flibber the gibbet\\\" three months after you\nlooked it up.\nWARNING: historian truncates ~/.bash_history.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "historian" = {
@@ -33,9 +33,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

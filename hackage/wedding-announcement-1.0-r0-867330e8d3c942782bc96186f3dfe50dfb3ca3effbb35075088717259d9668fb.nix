@@ -21,13 +21,13 @@
       synopsis = "a wedding announcement";
       description = "Feel free to update this package with your own announcement.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wedding-announcement" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

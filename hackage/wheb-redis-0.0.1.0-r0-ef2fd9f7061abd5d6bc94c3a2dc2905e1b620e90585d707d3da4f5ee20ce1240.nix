@@ -21,7 +21,7 @@
       synopsis = "Redis connection for Wheb";
       description = "Implements basic functionality for:\n\n* <http://hackage.haskell.org/package/hedis Hedis>\n\n* <http://hackage.haskell.org/package/Wheb Wheb>\n\nGives instances of Auth, Session and Cache backends for Wheb.\n\n/In action:/\n\nUse with language extensions /OverloadedStrings/\n\n>  import Web.Wheb\n>  import Web.Wheb.Plugins.Redis\n>\n>  data MyCtx = MyCtx RedisContainer\n>\n>  instance RedisApp MyCtx where\n>    getRedisContainer (MyCtx rc) = rc\n>\n>  main :: IO ()\n>  main = do\n>    opts <- generateOptions $ do\n>        r <- initRedis defaultConnectInfo\n>        addGET \"home\" rootPat ((runRedis $ get \"hello\") >>= (text . spack))\n>        return (MyCtx r, ())\n>\n>    runRawHandler opts $ do\n>        runRedis $ set \"hello\" \"world\"\n>\n>    runWhebServer opts";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

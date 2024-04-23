@@ -6,8 +6,8 @@
         nix = import ../hackage/bytestring-rematch-0.1.0.0-r0-5ec160c746cc0997fe9ef60c05be7c02a5c7f2f67d18e4b284f2d4103351fc7f.nix;
         revNum = 0;
         sha256 = "5ec160c746cc0997fe9ef60c05be7c02a5c7f2f67d18e4b284f2d4103351fc7f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

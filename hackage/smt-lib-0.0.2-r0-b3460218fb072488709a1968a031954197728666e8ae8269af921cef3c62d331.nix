@@ -21,7 +21,7 @@
       synopsis = "Parsing and printing SMT-LIB.";
       description = "SMT-LIB is a common language used by many SMT solvers.\nThis library provides an SMT-LIB AST with parsing and printing utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

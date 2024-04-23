@@ -21,7 +21,7 @@
       synopsis = "Bash generation library.";
       description = "A library for generation of Bash scripts, handling escaping, statement\ngrouping and expression formation at a high level.\n\nThe top-level module, Language.Bash, is all you need to import to access the\npackage's functionality. The module Language.Bash.Lib contains some\nexamples, as does the test script, tests.bash, included with the source\ndistribution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hxt-regex-xmlschema" or (errorHandler.buildDepError "hxt-regex-xmlschema"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

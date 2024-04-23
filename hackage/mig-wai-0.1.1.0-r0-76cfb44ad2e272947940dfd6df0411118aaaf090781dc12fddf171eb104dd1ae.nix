@@ -21,7 +21,7 @@
       synopsis = "Render mig-servers as wai-applications";
       description = "Library to render mig-servers as WAI-applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mig" or (errorHandler.buildDepError "mig"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

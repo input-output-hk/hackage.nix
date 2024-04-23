@@ -21,7 +21,7 @@
       synopsis = "Enumerator interface for zlib compression";
       description = "zlib-enum is a stop-gap package to provide enumeratees for\nzlib compression/decompression.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

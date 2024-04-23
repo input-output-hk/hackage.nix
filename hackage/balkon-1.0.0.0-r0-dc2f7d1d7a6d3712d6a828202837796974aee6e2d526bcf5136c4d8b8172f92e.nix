@@ -21,15 +21,15 @@
       synopsis = "Text layout engine built on top of HarfBuzz.";
       description = "\nGiven an input text and formatting options, Balkón produces an inline\nlayout with defined glyph positions and box coordinates, all within a\ncontaining unit called a paragraph. See \"Data.Text.ParagraphLayout.Rich\".\n\nInternally, HarfBuzz is used to shape individual runs of text, each of\nwhich fits within one line and has a constant script, direction, language,\nand formatting. Balkón abstracts this so that you can provide text with any\nmix of these attributes and a desired line width for line breaking.\n\nAdditionally, Balkón can be used for breaking an inline layout into pages.\nSee \"Data.Text.ParagraphLayout\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."balkon".components.sublibs.balkon-internal or (errorHandler.buildDepError "balkon:balkon-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "balkon-internal" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."unicode-data-scripts" or (errorHandler.buildDepError "unicode-data-scripts"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "balkon-test" = {
           depends = [
@@ -56,12 +56,12 @@
             (hsPkgs."hspec-golden" or (errorHandler.buildDepError "hspec-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

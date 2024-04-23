@@ -6,8 +6,8 @@
         nix = import ../hackage/instance-map-0.1.0.0-r0-72f9326df051efb60ced8d3e4fcf62293db587a293d94c8cd1f2c069e8761616.nix;
         revNum = 0;
         sha256 = "72f9326df051efb60ced8d3e4fcf62293db587a293d94c8cd1f2c069e8761616";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

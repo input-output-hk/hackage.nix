@@ -21,7 +21,7 @@
       synopsis = "Core functionality for an SMTP client";
       description = "A library for constructing SMTP clients, which provides the\ncore functionality for\n<https://hackage.haskell.org/package/assumpta assumpta>. It\nprovides a monad transformer and an mtl-style class for sending\nSMTP commands (including `STARTTLS`) to a server and checking\nfor expected responses, over some abstract connection type.\n\nIt does not provide a concrete implementation\nwhich can actually be used to communicate over\na network - for that, see the\n<https://hackage.haskell.org/package/assumpta assumpta>\npackage.\n\nFor further details, please see the README on GitHub at\n<https://github.com/phlummox/assumpta-core#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,21 +36,21 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest-tests" = {
-          depends = (pkgs.lib).optionals (!(!flags.stack-based-tests)) [
+          depends = pkgs.lib.optionals (!!flags.stack-based-tests) [
             (hsPkgs."assumpta-core" or (errorHandler.buildDepError "assumpta-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.stack-based-tests then false else true;
-          };
+        };
         "hspec-tests" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -60,19 +60,19 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "compile-examples" = {
-          depends = (pkgs.lib).optionals (!(!flags.stack-based-tests)) [
+          depends = pkgs.lib.optionals (!!flags.stack-based-tests) [
             (hsPkgs."assumpta-core" or (errorHandler.buildDepError "assumpta-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.stack-based-tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

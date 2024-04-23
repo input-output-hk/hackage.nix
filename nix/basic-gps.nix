@@ -6,8 +6,8 @@
         nix = import ../hackage/basic-gps-0.1.0.0-r0-b233b8368e11977991fbebf29d16944c3da01cd96bb1e36eda00655d7c6aee19.nix;
         revNum = 0;
         sha256 = "b233b8368e11977991fbebf29d16944c3da01cd96bb1e36eda00655d7c6aee19";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

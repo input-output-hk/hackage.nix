@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to Google's Compact Language Detector 2";
       description = "This package provides simple Haskell bindings for Compact Language\nDetector 2, a language-detection library used by Google Chrome.\nSee <https://code.google.com/p/cld2/> for more information on CLD2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

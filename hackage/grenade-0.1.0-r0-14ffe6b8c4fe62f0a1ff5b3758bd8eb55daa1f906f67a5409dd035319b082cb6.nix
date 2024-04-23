@@ -21,7 +21,7 @@
       synopsis = "Practical Deep Learning in Haskell";
       description = "Grenade is a composable, dependently typed, practical, and fast\nrecurrent neural network library for precise specifications and\ncomplex deep neural networks in Haskell.\n\nGrenade provides an API for composing layers of a neural network\ninto a sequence parallel graph in a type safe manner; running\nnetworks with reverse automatic differentiation to calculate their\ngradients; and applying gradient decent for learning.\n\nDocumentation and examples are available on github\n<https://github.com/HuwCampbell/grenade>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."ad" or (errorHandler.buildDepError "ad"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."grenade" or (errorHandler.buildDepError "grenade"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-lstm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -81,9 +81,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."grenade" or (errorHandler.buildDepError "grenade"))
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

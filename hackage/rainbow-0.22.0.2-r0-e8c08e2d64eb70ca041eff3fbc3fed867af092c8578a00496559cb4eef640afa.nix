@@ -21,7 +21,7 @@
       synopsis = "Print text to terminal with colors and effects";
       description = "rainbow helps you print Text chunks to a terminal with colors and effects\nsuch as bold, underlining, etc. You pair each Text with a description\nof how it should appear. Rainbow works with both 8-color and 256-color\nterminals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,38 +29,38 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test8color" = {
-          depends = (pkgs.lib).optionals (flags.visual) [
+          depends = pkgs.lib.optionals (flags.visual) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if flags.visual then true else false;
-          };
-        "test256color" = {
-          depends = (pkgs.lib).optionals (flags.visual) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
-          buildable = if flags.visual then true else false;
-          };
-        "colorTest" = {
-          depends = (pkgs.lib).optionals (flags.visual) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
-          buildable = if flags.visual then true else false;
-          };
         };
+        "test256color" = {
+          depends = pkgs.lib.optionals (flags.visual) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          ];
+          buildable = if flags.visual then true else false;
+        };
+        "colorTest" = {
+          depends = pkgs.lib.optionals (flags.visual) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          ];
+          buildable = if flags.visual then true else false;
+        };
+      };
       tests = {
         "rainbow-instances" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

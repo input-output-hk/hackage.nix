@@ -21,7 +21,7 @@
       synopsis = "Hack2 contrib extra";
       description = "Extra middlewares and utilities for Hack2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."air-extra" or (errorHandler.buildDepError "air-extra"))
           (hsPkgs."hack2" or (errorHandler.buildDepError "hack2"))
           (hsPkgs."hack2-contrib" or (errorHandler.buildDepError "hack2-contrib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Deploy Nix-built software to a NixOS machine";
       description = "Deploy a NixOS system configuration with @nix-deploy system ...@ to\na remote machine and switch the machine to that system\nconfiguration. You can also deploy a nix store path with @nix-deploy\npath ...@ to a remote machine or from a remote machine.\n\nThis tool is often used in conjunction with <https://github.com/awakesecurity/nix-delegate nix-delegate>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nix-deploy" = {
@@ -33,9 +33,9 @@
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

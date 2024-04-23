@@ -21,7 +21,7 @@
       synopsis = "Core Modules of Haskell Admin";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/haskell-admin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
           (hsPkgs."wai-middleware-bearer" or (errorHandler.buildDepError "wai-middleware-bearer"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-admin-core-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-bearer" or (errorHandler.buildDepError "wai-middleware-bearer"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

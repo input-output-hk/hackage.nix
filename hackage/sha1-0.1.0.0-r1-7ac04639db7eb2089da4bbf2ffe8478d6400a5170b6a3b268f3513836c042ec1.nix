@@ -21,7 +21,7 @@
       synopsis = "SHA-1 Hash";
       description = "This library is a copy of cryptohash-sha1 that works on GC-managed\nbyte arrays instead of ByteString. The C code is a copied from\nthat library. If you find an issue with the C code, you should\nopen an issue on cryptohash-sha1.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytebuild" or (errorHandler.buildDepError "bytebuild"))
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."small-bytearray-builder" or (errorHandler.buildDepError "small-bytearray-builder"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

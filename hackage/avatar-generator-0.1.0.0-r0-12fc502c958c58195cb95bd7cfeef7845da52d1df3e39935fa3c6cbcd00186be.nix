@@ -21,7 +21,7 @@
       synopsis = "A simple 5x5 random avatar icon generator";
       description = "A straightforward avatar image generator that produces 512x512\nrandom images.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "avatar-generator" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

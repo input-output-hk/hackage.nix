@@ -21,7 +21,7 @@
       synopsis = "Future-proof system for plain-text notes.";
       description = "neuron is a future-proof system for managing your plain-text Zettelkasten notes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."reflex-dom-pandoc" or (errorHandler.buildDepError "reflex-dom-pandoc"))
           (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "neuron-app-lib" = {
           depends = [
@@ -109,10 +109,10 @@
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-            ] ++ (pkgs.lib).optional (!flags.ghcid) (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"));
+          ] ++ pkgs.lib.optional (!flags.ghcid) (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"));
           buildable = true;
-          };
         };
+      };
       exes = {
         "neuron" = {
           depends = [
@@ -165,13 +165,13 @@
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-            ] ++ (pkgs.lib).optionals (!flags.ghcid) [
+          ] ++ pkgs.lib.optionals (!flags.ghcid) [
             (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"))
             (hsPkgs."neuron".components.sublibs.neuron-app-lib or (errorHandler.buildDepError "neuron:neuron-app-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "neuron-test" = {
           depends = [
@@ -226,12 +226,12 @@
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ] ++ (pkgs.lib).optionals (!flags.ghcid) [
+          ] ++ pkgs.lib.optionals (!flags.ghcid) [
             (hsPkgs."neuron" or (errorHandler.buildDepError "neuron"))
             (hsPkgs."neuron".components.sublibs.neuron-app-lib or (errorHandler.buildDepError "neuron:neuron-app-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

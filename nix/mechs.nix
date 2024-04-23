@@ -6,8 +6,8 @@
         nix = import ../hackage/mechs-0.0.0.0-r0-3dafc657cde1166d31594e8d283026e87077eb43f357d42aaca3a8b770baa0d1.nix;
         revNum = 0;
         sha256 = "3dafc657cde1166d31594e8d283026e87077eb43f357d42aaca3a8b770baa0d1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

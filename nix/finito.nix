@@ -6,8 +6,8 @@
         nix = import ../hackage/finito-0.1.0.0-r0-7b3e0ee5657cdc9a1229045ae28b8baef969df89bc148c56971c936a1cdb9e21.nix;
         revNum = 0;
         sha256 = "7b3e0ee5657cdc9a1229045ae28b8baef969df89bc148c56971c936a1cdb9e21";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

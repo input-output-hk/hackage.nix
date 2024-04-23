@@ -21,7 +21,7 @@
       synopsis = "An implementation of an adictive two-player card game";
       description = "Based on the card game designed by Reiner Knizia.\nIn this implementation you play against the computer.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lostcities" = {
@@ -33,9 +33,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

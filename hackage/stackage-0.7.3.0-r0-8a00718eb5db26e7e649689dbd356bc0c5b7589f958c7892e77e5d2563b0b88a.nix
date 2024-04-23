@@ -21,7 +21,7 @@
       synopsis = "Dummy package forcing installation of other Stackage packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."stackage-cabal" or (errorHandler.buildDepError "stackage-cabal"))
           (hsPkgs."stackage-sandbox" or (errorHandler.buildDepError "stackage-sandbox"))
           (hsPkgs."stackage-setup" or (errorHandler.buildDepError "stackage-setup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

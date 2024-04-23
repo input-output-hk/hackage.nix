@@ -21,7 +21,7 @@
       synopsis = "A small library that lets you generate YouTube-looking IDs from numbers.";
       description = "Sqids (pronounced \"squids\") is an open-source library that lets you generate YouTube-looking IDs from numbers. These IDs are short, can be generated from a custom alphabet and are guaranteed to be collision-free. For more info, see <https://github.com/sqids/sqids-haskell#readme> and the official Sqids home page <https://sqids.org>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqids-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."sqids" or (errorHandler.buildDepError "sqids"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

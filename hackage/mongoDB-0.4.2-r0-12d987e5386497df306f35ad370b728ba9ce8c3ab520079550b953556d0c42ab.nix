@@ -21,7 +21,7 @@
       synopsis = "A driver for MongoDB";
       description = "This module lets you connect to MongoDB, do inserts,\nqueries, updates, etc. Also has many convience functions\ninspired by HDBC such as more easily converting between\nthe BsonValue types and native Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."nano-md5" or (errorHandler.buildDepError "nano-md5"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

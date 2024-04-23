@@ -21,7 +21,7 @@
       synopsis = "Authentication for Yesod.";
       description = "API docs and the README are available at <http://www.stackage.org/package/yesod-auth>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,8 +64,8 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ] ++ (pkgs.lib).optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
+        ] ++ pkgs.lib.optional (flags.network-uri) (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for the Apache Thrift RPC system";
       description = "Haskell bindings for the Apache Thrift RPC system. Requires the use of the thrift code generator.\nIncludes backported Framed Transport implementation, which Cassandra now uses by default[1].\n\nNOTE: this package will be eventually deprecated, replaced by Christian Lavoie's thrift package[2],\nonce Framed Transport support that is in Thrift's svn trunk (and backported here) is included there.\n\n\n[1] <https://issues.apache.org/jira/browse/THRIFT-538>\n\n[2] <http://hackage.haskell.org/package/thrift>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

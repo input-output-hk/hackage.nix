@@ -21,7 +21,7 @@
       synopsis = "Vinyl-based reader-like monad composition";
       description = "Packs together a stack of reader-like monads as one single ReaderT of a\ncomposite state (represented as an array). This permits to represent the\nentire monad stack of an application as one record (in the vinyl sense) of the\nparameters used to run this monad stack, and to add capabilities to that stack\nby just adding a new field to that record. reader-soup is part of the\nporcupine ecosystem. See the README at\n<https://github.com/tweag/porcupine#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

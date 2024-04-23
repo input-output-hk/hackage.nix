@@ -21,7 +21,7 @@
       synopsis = "Some utility functions for JYU projects";
       description = "List, function and monad utility functions.\nIncludes an old variant of MonadRandom that is used in\nCV-package.\nPretty much the only reason to ever use this\nis to compile CV-package, and that is also just\ndue legacy reasons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

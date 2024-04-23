@@ -21,7 +21,7 @@
       synopsis = "Automatic package handling for Haskell";
       description = "apt-get like tool for Haskell. The \\'cabal\\' command-line program\nsimplifies the process of managing Haskell software by automating the\nfetching, configuration, compilation and installation of Haskell\nlibraries and programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -31,21 +31,21 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ] ++ (if flags.old-base
+          ] ++ (if flags.old-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-              ])) ++ (if flags.bytestring-in-base
+            ])) ++ (if flags.bytestring-in-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

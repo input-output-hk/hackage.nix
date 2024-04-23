@@ -21,11 +21,11 @@
       synopsis = "Boomshine clone";
       description = "A clone of Boomshine (see <http://www.k2xl.com/games/boomshine/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "boomslang" = {
-          depends = if compiler.isGhc && (compiler.version).ge "6.12"
+          depends = if compiler.isGhc && compiler.version.ge "6.12"
             then [
               (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
               (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
@@ -36,7 +36,7 @@
               (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
               (hsPkgs."font-opengl-basic4x6" or (errorHandler.buildDepError "font-opengl-basic4x6"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-              ]
+            ]
             else [
               (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
               (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
@@ -48,9 +48,9 @@
               (hsPkgs."font-opengl-basic4x6" or (errorHandler.buildDepError "font-opengl-basic4x6"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

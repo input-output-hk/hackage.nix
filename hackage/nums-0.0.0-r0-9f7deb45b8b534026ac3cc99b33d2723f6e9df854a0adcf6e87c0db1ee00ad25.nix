@@ -21,11 +21,11 @@
       synopsis = "Handy common number functions";
       description = "Handy common number functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

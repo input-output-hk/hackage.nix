@@ -21,7 +21,7 @@
       synopsis = "Find relative time displacement of two recordings of the same music";
       description = "Say, you have a video with some background music\nand a clean recording of the background music.\nYou want to know exact displacement of the background music.\nThis program should find it.\n\n> align-audio orig.wav video.wav\n\nThe program actually performs a simple correlation.\n\nThe program can handle sources of different sample rates\nif the sample rates are integers.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "align-audio" = {
@@ -39,9 +39,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optional (flags.blas) (hsPkgs."lapack" or (errorHandler.buildDepError "lapack"));
+          ] ++ pkgs.lib.optional (flags.blas) (hsPkgs."lapack" or (errorHandler.buildDepError "lapack"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

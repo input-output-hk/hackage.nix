@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to libzip.";
       description = "This package provides low-level bindings to libzip library.\nFor higher-level interface please use LibZip package:\n<http://hackage.haskell.org/package/LibZip>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libzip" or (errorHandler.pkgConfDepError "libzip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

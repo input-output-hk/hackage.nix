@@ -21,7 +21,7 @@
       synopsis = "Parse BgMax-files";
       description = "A low-level parser for\n<http://www.bgc.se/upload/Gemensamt/Trycksaker/Manualer/BG6040.pdf BgMax>\n-files from <http://www.bgc.se Bankgirocentralen> (BGC).\nIt is able to parse all of the\n<http://www.bgc.se/templates/Iframe____3125.aspx example files> from BGC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

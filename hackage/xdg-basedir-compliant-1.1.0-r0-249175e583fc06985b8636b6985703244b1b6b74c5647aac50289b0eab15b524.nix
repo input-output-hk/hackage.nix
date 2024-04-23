@@ -21,7 +21,7 @@
       synopsis = "XDG Basedir";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
           (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "xdg-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."polysemy-zoo" or (errorHandler.buildDepError "polysemy-zoo"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."xdg-basedir-compliant" or (errorHandler.buildDepError "xdg-basedir-compliant"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

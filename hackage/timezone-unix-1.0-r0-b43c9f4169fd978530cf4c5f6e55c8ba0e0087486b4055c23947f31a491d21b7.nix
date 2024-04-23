@@ -21,7 +21,7 @@
       synopsis = "";
       description = "UNIX-specific handling of time data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."leapseconds" or (errorHandler.buildDepError "leapseconds"))
           (hsPkgs."timezone-series" or (errorHandler.buildDepError "timezone-series"))
           (hsPkgs."timezone-olson" or (errorHandler.buildDepError "timezone-olson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."timezone-unix" or (errorHandler.buildDepError "timezone-unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

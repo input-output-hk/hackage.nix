@@ -6,8 +6,8 @@
         nix = import ../hackage/STM32F103xx-SVD-0.1-r0-a1708632608532bfb56511a53cd9f1839ec2867c77f7cc14c4498261c93156c4.nix;
         revNum = 0;
         sha256 = "a1708632608532bfb56511a53cd9f1839ec2867c77f7cc14c4498261c93156c4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

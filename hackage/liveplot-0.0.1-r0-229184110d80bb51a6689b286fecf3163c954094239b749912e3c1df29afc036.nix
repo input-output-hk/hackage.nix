@@ -21,7 +21,7 @@
       synopsis = "Liveplotting";
       description = "Live plotting with OpenGL. This Haskell library allows feeding live data via Pipes to OpenGL plots.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,17 +47,17 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."vinyl-gl" or (errorHandler.buildDepError "vinyl-gl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liveplot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."liveplot" or (errorHandler.buildDepError "liveplot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

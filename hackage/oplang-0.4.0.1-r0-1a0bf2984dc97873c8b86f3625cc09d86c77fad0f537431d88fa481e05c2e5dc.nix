@@ -21,7 +21,7 @@
       synopsis = "Stack-based esoteric programming language";
       description = "Please see the README on GitHub at <https://github.com/aionescu/oplang#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "oplang" = {
@@ -37,9 +37,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder-linear" or (errorHandler.buildDepError "text-builder-linear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

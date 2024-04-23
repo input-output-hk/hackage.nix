@@ -21,7 +21,7 @@
       synopsis = "Fast, Haskell RPC";
       description = "Haskell-to-Haskell RPC using Winery serialization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SimpleKeyValueServer" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SimpleKeyValueClient" = {
           depends = [
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
@@ -62,10 +62,10 @@
             (hsPkgs."curryer-rpc" or (errorHandler.buildDepError "curryer-rpc"))
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "perf" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."winery" or (errorHandler.buildDepError "winery"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

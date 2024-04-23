@@ -6,8 +6,8 @@
         nix = import ../hackage/circlehs-0.0.3-r0-e8fdda0bd0eb10db0867402d985bb0c0262deb200b32269f08c36a95c8f84256.nix;
         revNum = 0;
         sha256 = "e8fdda0bd0eb10db0867402d985bb0c0262deb200b32269f08c36a95c8f84256";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

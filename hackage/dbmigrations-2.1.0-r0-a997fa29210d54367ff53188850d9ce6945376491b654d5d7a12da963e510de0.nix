@@ -21,7 +21,7 @@
       synopsis = "An implementation of relational database \"migrations\"";
       description = "A library and program for the creation,\nmanagement, and installation of schema updates\n(called /migrations/) for a relational database. In\nparticular, this package lets the migration author\nexpress explicit dependencies between migrations\nand the management tool automatically installs or\nreverts migrations accordingly, using transactions\nfor safety.\nThis package is written to support a number of\ndifferent databases. For packages that support\nspecific databases using this library, see packages\nnamed \"dbmigrations-BACKEND\". Each package\nprovides an executable \"moo-BACKEND\" for managing\nmigrations. Usage information for the \"moo-\"\nexecutables can be found in \"MOO.TXT\" in this\npackage.\nThis package also includes a conformance test suite\nto ensure that backend implementations respect the\nlibrary's required semantics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,19 +44,19 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "moo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."dbmigrations" or (errorHandler.buildDepError "dbmigrations"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dbmigrations-tests" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

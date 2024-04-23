@@ -21,15 +21,15 @@
       synopsis = "Universe instances for types from the base package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."universe-base" or (errorHandler.buildDepError "universe-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

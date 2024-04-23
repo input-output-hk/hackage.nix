@@ -21,7 +21,7 @@
       synopsis = "Some kind of game library or set of utilities.";
       description = "Some kind of game library or set of utilities, which are mostly/certainly only usable for my own toy projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,11 +44,11 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."ListZipper" or (errorHandler.buildDepError "ListZipper"))
           (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

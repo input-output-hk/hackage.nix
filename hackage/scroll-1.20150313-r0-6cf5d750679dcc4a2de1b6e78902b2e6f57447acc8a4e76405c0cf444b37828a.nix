@@ -21,7 +21,7 @@
       synopsis = "scroll(6), a roguelike game";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scroll" = {
@@ -40,9 +40,9 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

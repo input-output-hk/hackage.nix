@@ -21,7 +21,7 @@
       synopsis = "Darkplaces rcon client library";
       description = "Rcon client library for Darkplaces game engine. It fully\nimplemnts both non-secure and \"secure\" rcon protocols.\nSupports such games as Xonotic, Nexuiz.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rcon-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."darkplaces-rcon" or (errorHandler.buildDepError "darkplaces-rcon"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bindings for the Slack web API";
       description = "Haskell bindings for the Slack web API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "slack-web-cli" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-            ];
+          ];
           buildable = if flags.cli then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

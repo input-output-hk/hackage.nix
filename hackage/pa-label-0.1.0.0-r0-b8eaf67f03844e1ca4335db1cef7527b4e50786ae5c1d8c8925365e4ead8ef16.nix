@@ -21,11 +21,11 @@
       synopsis = "Labels, and labelled tuples and enums (GHC >9.2)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

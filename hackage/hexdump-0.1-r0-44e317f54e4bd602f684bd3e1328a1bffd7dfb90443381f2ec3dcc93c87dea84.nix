@@ -21,11 +21,11 @@
       synopsis = "A library for forming hexdumps.";
       description = "A library for forming hexdumps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

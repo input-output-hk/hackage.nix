@@ -21,15 +21,15 @@
       synopsis = "Explicit floating point rounding mode wrappers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."numeric-extras" or (errorHandler.buildDepError "numeric-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

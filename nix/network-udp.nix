@@ -6,8 +6,8 @@
         nix = import ../hackage/network-udp-0.0.0-r0-408d2d4fa1a25e49e95752ee124cca641993404bb133ae10fb81daef22d876ae.nix;
         revNum = 0;
         sha256 = "408d2d4fa1a25e49e95752ee124cca641993404bb133ae10fb81daef22d876ae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

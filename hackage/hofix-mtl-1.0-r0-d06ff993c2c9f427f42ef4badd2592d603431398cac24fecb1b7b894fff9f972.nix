@@ -21,7 +21,7 @@
       synopsis = "defining @mtl@-ready monads as * -> * fixed-points";
       description = "Declares the * -> * isomorphism class and uses it to declare instances for the @mtl@ interface classes for monads defined using 'star-to-star:Data.StarToStar.Fix'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."star-to-star" or (errorHandler.buildDepError "star-to-star"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

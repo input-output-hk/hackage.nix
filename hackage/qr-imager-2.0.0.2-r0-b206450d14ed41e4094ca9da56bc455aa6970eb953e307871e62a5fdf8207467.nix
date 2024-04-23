@@ -21,7 +21,7 @@
       synopsis = "Library to generate images.";
       description = "Library for generating images containing QR codes, from bytestrings and objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,21 +37,21 @@
           (hsPkgs."haskell-qrencode" or (errorHandler.buildDepError "haskell-qrencode"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libqrencode" or (errorHandler.pkgConfDepError "libqrencode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lib" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."qr-imager" or (errorHandler.buildDepError "qr-imager"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

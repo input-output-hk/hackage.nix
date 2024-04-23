@@ -21,7 +21,7 @@
       synopsis = "write image files onto 256(or 24bit) color terminals.";
       description = "Camh is a program to display image files onto text terminals.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "camh" = {
@@ -30,9 +30,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             (hsPkgs."Imlib" or (errorHandler.buildDepError "Imlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "parser and printer for radius protocol packet";
       description = "This package provides\nparser and printer for radius protocol packet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

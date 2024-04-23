@@ -21,7 +21,7 @@
       synopsis = "Textual Type Classes";
       description = "This library provides type classes for conversion between data types and\ntextual data types (strings).  Please see the README on GitHub at\n<https://github.com/ExtremaIS/ttc-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ttc-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."ttc" or (errorHandler.buildDepError "ttc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

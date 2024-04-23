@@ -6,8 +6,8 @@
         nix = import ../hackage/core-warn-0.1.0.0-r0-9d035ee6bedfb7e285b3b8869b614272e4f416a7ec0b245029b613f645487ef9.nix;
         revNum = 0;
         sha256 = "9d035ee6bedfb7e285b3b8869b614272e4f416a7ec0b245029b613f645487ef9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

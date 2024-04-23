@@ -21,7 +21,7 @@
       synopsis = "A transactional, ACID compliant, embeddable key-value store.";
       description = "Haskey is a transactional, ACID compliant, embeddable, scalable key-value\nstore written entirely in Haskell.\n\nFor more information on how to use this package, visit\n<https://github.com/haskell-haskey/haskey>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."xxhash-ffi" or (errorHandler.buildDepError "xxhash-ffi"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskey-properties" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."haskey" or (errorHandler.buildDepError "haskey"))
             (hsPkgs."haskey-btree" or (errorHandler.buildDepError "haskey-btree"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haskey-integration" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."haskey" or (errorHandler.buildDepError "haskey"))
             (hsPkgs."haskey-btree" or (errorHandler.buildDepError "haskey-btree"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haskey-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

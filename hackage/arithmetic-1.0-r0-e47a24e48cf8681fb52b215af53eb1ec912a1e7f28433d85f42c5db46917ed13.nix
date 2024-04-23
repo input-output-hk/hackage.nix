@@ -21,7 +21,7 @@
       synopsis = "Natural number arithmetic";
       description = "This package implements a library of natural number arithmetic functions,\nincluding Montgomery multiplication.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arithmetic" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "arithmetic-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

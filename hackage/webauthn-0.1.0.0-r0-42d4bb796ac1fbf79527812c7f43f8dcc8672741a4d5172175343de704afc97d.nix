@@ -21,7 +21,7 @@
       synopsis = "Relying party (server) implementation of the WebAuthn 2 specification";
       description = "Implements the [Relying Party conformance class](https://www.w3.org/TR/webauthn-2/#sctn-conforming-relying-parties)\nof the [Web Authentication Level 2](https://www.w3.org/TR/webauthn-2/) specification.\nThis allows web applications to create strong, attested, scoped, public key-based\ncredentials for the purpose of strongly authenticating users.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."webauthn" or (errorHandler.buildDepError "webauthn"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

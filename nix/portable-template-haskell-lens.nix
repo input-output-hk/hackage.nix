@@ -6,8 +6,8 @@
         nix = import ../hackage/portable-template-haskell-lens-0.1.0.0-r0-08b5768d2771a03209ab5988de296ccec342395b3b3599d5297b5f54f4f985ce.nix;
         revNum = 0;
         sha256 = "08b5768d2771a03209ab5988de296ccec342395b3b3599d5297b5f54f4f985ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "HMatrix operations for Repa.";
       description = "HMatrix Vector and Matrix conversions to and from REPA Array F DIM1/2 (Complex) Double, together with a port of linear algebraic functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

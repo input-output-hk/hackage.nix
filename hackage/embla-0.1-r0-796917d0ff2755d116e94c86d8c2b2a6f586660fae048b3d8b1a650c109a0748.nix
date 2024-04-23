@@ -21,14 +21,14 @@
       synopsis = "execute actions periodically while avoiding drift";
       description = "This package is intended for use cases when 'cron'\nis overkill, but the importance of avoiding drift\nis still there. No care is taken w.r.t. GC times.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Basic lens type and functions";
       description = "Necessary type and functions for basic lens work.\n\nHandy to depend on for libraries and general\nlight-weight use, including PITA environments,\nold GHCs and non-GHC implementations with Rank-N\ntype support. Depends on only on base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

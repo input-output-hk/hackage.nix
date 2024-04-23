@@ -21,7 +21,7 @@
       synopsis = "A pen notetaking program written in haskell ";
       description = "notetaking program written in haskell and gtk2hs";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.poppler
@@ -51,7 +51,7 @@
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
@@ -77,18 +77,18 @@
             (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       exes = {
         "hxournal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."hxournal" or (errorHandler.buildDepError "hxournal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

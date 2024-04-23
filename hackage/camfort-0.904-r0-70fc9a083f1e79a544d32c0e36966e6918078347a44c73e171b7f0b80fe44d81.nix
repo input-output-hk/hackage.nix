@@ -21,7 +21,7 @@
       synopsis = "CamFort - Cambridge Fortran infrastructure";
       description = "CamFort is a tool for the analysis, transformation, verification of Fortran code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,23 +48,23 @@
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
           (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
           (hsPkgs."partial-order" or (errorHandler.buildDepError "partial-order"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "camfort" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."camfort" or (errorHandler.buildDepError "camfort"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."sbv" or (errorHandler.buildDepError "sbv"))
             (hsPkgs."partial-order" or (errorHandler.buildDepError "partial-order"))
             (hsPkgs."camfort" or (errorHandler.buildDepError "camfort"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

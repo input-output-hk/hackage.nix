@@ -21,7 +21,7 @@
       synopsis = "Parser for Commonmark (markdown)";
       description = "See <https://github.com/zudov/haskell-comark#readme README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."control-bool" or (errorHandler.buildDepError "control-bool"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."comark-parser" or (errorHandler.buildDepError "comark-parser"))
             (hsPkgs."comark-testutils" or (errorHandler.buildDepError "comark-testutils"))
             (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."comark-parser" or (errorHandler.buildDepError "comark-parser"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

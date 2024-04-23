@@ -21,7 +21,7 @@
       synopsis = "Github Standard Labeler";
       description = "Please see the README on Github at <https://github.com/vincenthz/gh-labeler#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gh-labeler" = {
@@ -32,9 +32,9 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

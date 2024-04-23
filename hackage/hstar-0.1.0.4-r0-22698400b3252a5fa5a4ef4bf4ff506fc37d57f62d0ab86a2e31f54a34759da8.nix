@@ -14,7 +14,7 @@
       tar-bytestring = false;
       with-brotli = true;
       with-snappy = false;
-      };
+    };
     package = {
       specVersion = "2.0";
       identifier = { name = "hstar"; version = "0.1.0.4"; };
@@ -27,7 +27,7 @@
       synopsis = "Haskell version of tar CLI utility";
       description = "Haskell implementation of the tar utility, demonstrating backpack";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hstar" = {
@@ -43,12 +43,12 @@
             (hsPkgs."lz4-hs" or (errorHandler.buildDepError "lz4-hs"))
             (hsPkgs."lzlib" or (errorHandler.buildDepError "lzlib"))
             (hsPkgs."lzo" or (errorHandler.buildDepError "lzo"))
-            ] ++ (pkgs.lib).optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ (pkgs.lib).optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"))) ++ (pkgs.lib).optional (flags.pure) (hsPkgs."archive-tar" or (errorHandler.buildDepError "archive-tar"))) ++ (pkgs.lib).optional (flags.tar-bytestring) (hsPkgs."archive-tar-bytestring" or (errorHandler.buildDepError "archive-tar-bytestring"))) ++ (pkgs.lib).optional (!flags.pure && !flags.tar-bytestring) (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"));
+          ] ++ pkgs.lib.optional (flags.with-snappy) (hsPkgs."snappy-lazy" or (errorHandler.buildDepError "snappy-lazy"))) ++ pkgs.lib.optional (flags.with-brotli) (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"))) ++ pkgs.lib.optional (flags.pure) (hsPkgs."archive-tar" or (errorHandler.buildDepError "archive-tar"))) ++ pkgs.lib.optional (flags.tar-bytestring) (hsPkgs."archive-tar-bytestring" or (errorHandler.buildDepError "archive-tar-bytestring"))) ++ pkgs.lib.optional (!flags.pure && !flags.tar-bytestring) (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

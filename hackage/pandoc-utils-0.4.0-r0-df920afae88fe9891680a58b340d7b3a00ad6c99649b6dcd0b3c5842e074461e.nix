@@ -21,16 +21,16 @@
       synopsis = "Utility functions to work with Pandoc in Haskell applications.";
       description = "This package contains some useful functions for writing [Pandoc](https://pandoc.org/)\nfilters and integrating Pandoc into Haskell applications such\nas [Hakyll](https://jaspervdj.be/hakyll/). It provides a\ncomposable wrapper for filters acting on nodes of the [Pandoc\nAST](https://hackage.haskell.org/package/pandoc-types/docs/Text-Pandoc-Definition.html).\n\nFor more examples, please see the [README](https://github.com/Krasjet/pandoc-utils) on GitHub.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pandoc-utils-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "An extensible effects library";
       description = "See examples directory for some example effect definitions and handlers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "free-er-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free-er" or (errorHandler.buildDepError "free-er"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

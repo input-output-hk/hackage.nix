@@ -6,8 +6,8 @@
         nix = import ../hackage/buffer-pipe-0.0-r0-2b682ac7b16c79b794585bbece8e57dae304c82b2c5f6f508b682c4ec404df5d.nix;
         revNum = 0;
         sha256 = "2b682ac7b16c79b794585bbece8e57dae304c82b2c5f6f508b682c4ec404df5d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

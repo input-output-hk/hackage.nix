@@ -6,8 +6,8 @@
         nix = import ../hackage/graphicsFormats-0.1-r0-970d7cc13624c8c878bd5eddb5a5345b0625b26776f0e9f4f733145d2321612f.nix;
         revNum = 0;
         sha256 = "970d7cc13624c8c878bd5eddb5a5345b0625b26776f0e9f4f733145d2321612f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

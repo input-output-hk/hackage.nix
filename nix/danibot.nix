@@ -6,8 +6,8 @@
         nix = import ../hackage/danibot-0.2.0.0-r0-da9b4cfa3bdd8fa75abfff4a5e45eca41c7ddbde6a3066dbea31322c5af09332.nix;
         revNum = 0;
         sha256 = "da9b4cfa3bdd8fa75abfff4a5e45eca41c7ddbde6a3066dbea31322c5af09332";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Type safe interface for programming in subcategories of Hask";
       description = "SubHask is a radical rewrite of the Haskell [Prelude](https://www.haskell.org/onlinereport/standard-prelude.html).\nThe goal is to make numerical computing in Haskell *fun* and *fast*.\nThe main idea is to use a type safe interface for programming in arbitrary subcategories of [Hask](https://wiki.haskell.org/Hask).\nFor example, the category [Vect](http://ncatlab.org/nlab/show/Vect) of linear functions is a subcategory of Hask, and SubHask exploits this fact to give a nice interface for linear algebra.\nTo achieve this goal, almost every class hierarchy is redefined to be more general.\nI recommend reading the <http://github.com/mikeizbicki/subhask/blob/master/README.md README> file and the <http://github.com/mikeizbicki/subhask/blob/master/examples> before looking at the documetation here.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,40 +49,40 @@
           (hsPkgs."bytes" or (errorHandler.buildDepError "bytes"))
           (hsPkgs."approximate" or (errorHandler.buildDepError "approximate"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSuite-Unoptimized" = {
           depends = [
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example0001" = {
           depends = [
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example0002" = {
           depends = [
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Example0003" = {
           depends = [
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "Vector" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."subhask" or (errorHandler.buildDepError "subhask"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

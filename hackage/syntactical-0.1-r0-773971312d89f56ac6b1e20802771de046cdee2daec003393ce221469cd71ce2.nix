@@ -21,11 +21,11 @@
       synopsis = "Distfix expression parsing library";
       description = "Syntactical is an expression parsing library. It supports\ndistfix operators and function application written as\njuxtaposition of symbols.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

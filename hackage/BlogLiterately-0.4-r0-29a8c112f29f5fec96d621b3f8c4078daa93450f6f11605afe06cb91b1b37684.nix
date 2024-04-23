@@ -21,7 +21,7 @@
       synopsis = "A tool for posting Haskelly articles to blogs";
       description = "Write blog posts in Markdown format, then use BlogLiterately\nto do syntax highlighting, format ghci sessions, and upload\nto any blog supporting the metaWeblog API (such as Wordpress).\n\nSee <http://byorgey.wordpress.com/blogliterately/> for complete\ndocumentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "BlogLiterately" = {
@@ -37,9 +37,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."haxr" or (errorHandler.buildDepError "haxr"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

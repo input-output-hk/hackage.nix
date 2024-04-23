@@ -21,7 +21,7 @@
       synopsis = "Generate flow charts from your code base.";
       description = "See \"Development.Flo\" for syntax and examples. Example commandline usage:\n@\nfind . | grep '\\.js$' | xargs flo '-js=\\/\\/\\/ ' | dot -Tpng > flow.png\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."mtl-compat" or (errorHandler.buildDepError "mtl-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flo" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

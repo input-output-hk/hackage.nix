@@ -21,7 +21,7 @@
       synopsis = "inline self-recursive definitions";
       description = "Please see the README file on Github for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "loopbreaker-test" = {
           depends = [
@@ -42,12 +42,12 @@
             (hsPkgs."inspection-testing" or (errorHandler.buildDepError "inspection-testing"))
             (hsPkgs."loopbreaker" or (errorHandler.buildDepError "loopbreaker"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

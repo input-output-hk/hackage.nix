@@ -21,12 +21,12 @@
       synopsis = "Binding for the PAPI library";
       description = "This package contains bindings for the\nPerformance Application Programming Interface\n(<http://icl.cs.utk.edu/papi/index.html>).\nIt provides a basic interface to the PAPI library\nfor reading and controlling CPU counters\n(e.g. L1 cache miss count).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."papi" or (errorHandler.sysDepError "papi")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

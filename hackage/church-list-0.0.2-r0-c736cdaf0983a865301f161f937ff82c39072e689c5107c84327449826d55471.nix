@@ -21,11 +21,11 @@
       synopsis = "Removed; please see fmlist.";
       description = "Removed; please see fmlist.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

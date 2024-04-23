@@ -21,11 +21,11 @@
       synopsis = "Library for using euro currency, italian language";
       description = "..";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

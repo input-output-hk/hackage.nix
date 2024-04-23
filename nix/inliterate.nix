@@ -6,8 +6,8 @@
         nix = import ../hackage/inliterate-0.1.0-r0-61b17ab3cef803512c264e27e463390b47af59d7d2b3a2a89bea2eac0cf84266.nix;
         revNum = 0;
         sha256 = "61b17ab3cef803512c264e27e463390b47af59d7d2b3a2a89bea2eac0cf84266";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

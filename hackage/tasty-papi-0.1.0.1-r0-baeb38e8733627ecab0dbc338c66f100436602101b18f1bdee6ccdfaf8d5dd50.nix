@@ -21,7 +21,7 @@
       synopsis = "Bencmarking using instruction counting";
       description = "Benchmarking framework which uses instruction counters intead of\ntime measurements. Instruction count is only proxy for code\nperformance but unlike time could be measured deterministically.\nPAPI is used in order to access hardware counters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         libs = [ (pkgs."papi" or (errorHandler.sysDepError "papi")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty-papi-run" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-papi" or (errorHandler.buildDepError "tasty-papi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

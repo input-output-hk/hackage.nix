@@ -21,7 +21,7 @@
       synopsis = "A tool that returns to a landmark parent directory";
       description = "A tool that outputs a parent directory with a landmark";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ret" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

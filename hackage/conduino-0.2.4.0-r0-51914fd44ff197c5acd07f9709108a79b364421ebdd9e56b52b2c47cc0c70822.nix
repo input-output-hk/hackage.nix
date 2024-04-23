@@ -21,7 +21,7 @@
       synopsis = "Lightweight composable continuation-based stream processors";
       description = "A lightweight continuation-based stream processing library.\n\nIt is similar in nature to pipes and conduit, but useful if you just want\nsomething quick to manage composable stream processing without focus on IO.\n\nSee README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

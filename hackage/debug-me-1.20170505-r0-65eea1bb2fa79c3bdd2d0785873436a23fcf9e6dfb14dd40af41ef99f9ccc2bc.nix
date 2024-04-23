@@ -21,7 +21,7 @@
       synopsis = "secure remote debugging";
       description = "Debugging a problem over email is slow, tedious, and hard. The developer\nneeds to see your problem to understand it. Debug-me aims to make debugging\nfast, fun, and easy, by letting the developer access your computer remotely,\nso they can immediately see and interact with the problem. Making your\nproblem their problem gets it fixed fast.\n\nA debug-me session is logged and signed with the developer's GnuPG\nkey, producing a chain of evidence of what they saw and what they did.\nSo the developer's good reputation is leveraged to make debug-me secure.\n\nWhen you start debug-me without any options, it will connect to a debug-me\nserver, and print out an url that you can give to the developer to get\nthem connected to you. Then debug-me will show you their GnuPG key and who\nhas signed it. If the developer has a good reputation, you can proceed\nto let them type into your console in a debug-me session. Once the\nsession is done, the debug-me server will email you the signed\nevidence of what the developer did in the session.\n\nIf the developer did do something bad, you'd have proof that they cannot\nbe trusted, which you can share with the world. Knowing that is the case\nwill keep most developers honest.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "debug-me" = {
@@ -62,9 +62,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Cross platform serial port library.  ";
       description = "This library provides a way to interface the serial port from haskell in a cross platform way.\n\nTested on the following platforms:\n\n* Linux (Arch)\n\n* Windows XP 32-bit";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if !system.isWindows
+        ] ++ (if !system.isWindows
           then [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]
           else [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

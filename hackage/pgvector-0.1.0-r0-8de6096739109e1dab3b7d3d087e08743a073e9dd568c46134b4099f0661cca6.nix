@@ -21,25 +21,25 @@
       synopsis = "pgvector support for Haskell";
       description = "Adds the vector data type to postgresql-simple";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pgvector-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pgvector" or (errorHandler.buildDepError "pgvector"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tunnel a socket over a single datastream (stdin/stdout)";
       description = "This is an initial implementation of a socket multiplexer\\/demultiplexer to tunnel Unix domain sockets over pipes\\/streams.\n\nThe primary envisioned use is to tunnel Unix domain sockets over SSH like so:\n\n> mkfifo /tmp/sockin\n> ssh user@host socket2stream -l /path/to/remotesocket < /tmp/sockin | socket2stream -r /path/to/localsocket > /tmp/sockin";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sock2stream" = {
@@ -34,9 +34,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."chp" or (errorHandler.buildDepError "chp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "a simple PID controller";
       description = "a simple PID controller";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pid" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

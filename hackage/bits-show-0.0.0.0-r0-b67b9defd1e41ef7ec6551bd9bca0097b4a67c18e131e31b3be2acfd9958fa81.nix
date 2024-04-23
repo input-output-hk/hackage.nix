@@ -21,21 +21,21 @@
       synopsis = "Showing data as strings of 0 and 1";
       description = "The @showFiniteBits@ function, for a type belonging to\nthe @FiniteBits@ class, displays the bits as a string.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bits-show" or (errorHandler.buildDepError "bits-show"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

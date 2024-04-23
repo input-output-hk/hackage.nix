@@ -21,14 +21,14 @@
       synopsis = "Integration of lenses with OverloadedLabels.";
       description = "Provides a framework to integrate lenses with GHC's\nOverloadedLabels extension.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

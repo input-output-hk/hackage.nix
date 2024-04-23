@@ -21,7 +21,7 @@
       synopsis = "Haskell source code formatter";
       description = "See <https://github.com/lspitzner/brittany/blob/master/README.md the README>\nIf you are interested in the implementation, have a look at <https://github.com/lspitzner/brittany/blob/master/doc/implementation/theory.md this document>;\nThe implementation is documented in more detail <https://github.com/lspitzner/brittany/blob/master/doc/implementation/index.md here>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brittany" = {
           depends = [
@@ -94,10 +94,10 @@
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if flags.brittany-dev-lib then false else true;
-          };
         };
+      };
       tests = {
         "unittests" = {
           depends = [
@@ -133,9 +133,9 @@
             (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = if flags.brittany-dev-lib then false else true;
-          };
+        };
         "littests" = {
           depends = [
             (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
@@ -171,9 +171,9 @@
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = if flags.brittany-dev-lib then false else true;
-          };
+        };
         "libinterfacetests" = {
           depends = [
             (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
@@ -181,9 +181,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = if flags.brittany-dev-lib then false else true;
-          };
         };
       };
-    }
+    };
+  }

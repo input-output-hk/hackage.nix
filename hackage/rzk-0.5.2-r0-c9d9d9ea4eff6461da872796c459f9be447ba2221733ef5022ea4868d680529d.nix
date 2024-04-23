@@ -21,7 +21,7 @@
       synopsis = "An experimental proof assistant for synthetic ∞-categories";
       description = "Please see the README on GitHub at <https://github.com/rzk-lang/rzk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rzk" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."rzk" or (errorHandler.buildDepError "rzk"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rzk-test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."rzk" or (errorHandler.buildDepError "rzk"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

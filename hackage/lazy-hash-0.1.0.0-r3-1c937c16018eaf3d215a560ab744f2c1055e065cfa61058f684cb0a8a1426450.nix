@@ -21,7 +21,7 @@
       synopsis = "Identifiers for not-yet-computed values";
       description = "This package gives a way to assign values with largely\nunique keys, without ever actually spending the time needed to\ncompute the value. The basic idea is to hash the source code of some\nexpression (in other words, its unnormalised AST), rather than\nthe value (its normal form).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

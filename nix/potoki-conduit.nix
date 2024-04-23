@@ -6,8 +6,8 @@
         nix = import ../hackage/potoki-conduit-0.1-r0-31d5f0a04afe0b73550d78bc34f914e5f02d282155e45d880d4cae1a1def71b1.nix;
         revNum = 0;
         sha256 = "31d5f0a04afe0b73550d78bc34f914e5f02d282155e45d880d4cae1a1def71b1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

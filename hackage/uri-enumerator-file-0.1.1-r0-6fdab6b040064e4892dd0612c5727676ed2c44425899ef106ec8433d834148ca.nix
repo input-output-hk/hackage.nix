@@ -21,7 +21,7 @@
       synopsis = "uri-enumerator backend for the file scheme";
       description = "uri-enumerator backend for the file scheme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."uri-enumerator" or (errorHandler.buildDepError "uri-enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

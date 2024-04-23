@@ -21,7 +21,7 @@
       synopsis = "Guided derivation for Hasql statements";
       description = "See https://hackage.haskell.org/package/sqel/docs/Sqel.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqel-unit" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "eventsource-geteventstore-store";
         version = "1.0.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "yo.eight@gmail.comm";
@@ -24,7 +24,7 @@
       synopsis = "GetEventStore store implementation.";
       description = "GetEventStore store implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."eventsource-api" or (errorHandler.buildDepError "eventsource-api"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "geteventstore-store-test-suite" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Iteratee enumerators for the usb package";
       description = "This packages provides iteratee enumerators for the @usb@ package.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
           (hsPkgs."MonadCatchIO-transformers-foreign" or (errorHandler.buildDepError "MonadCatchIO-transformers-foreign"))
           (hsPkgs."usb" or (errorHandler.buildDepError "usb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

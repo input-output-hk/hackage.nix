@@ -21,15 +21,15 @@
       synopsis = "Bindings to the dywapitchtrack pitch tracking library";
       description = "Bindings to the\n<http://www.schmittmachine.com/dywapitchtrack.html dywapitchtrack>\npitch tracking library by Antoine Schmitt.\n\nThe algorithm is described in a paper by Eric Larson and Ross Maddox:\n<http://courses.physics.illinois.edu/phys406/NSF_REU_Reports/2005_reu/Real-Time_Time-Domain_Pitch_Tracking_Using_Wavelets.pdf Real-Time Time-Domain Pitch Tracking Using Wavelets>.\n\nFor a higher-level interface, use the 'pitchtrack' package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

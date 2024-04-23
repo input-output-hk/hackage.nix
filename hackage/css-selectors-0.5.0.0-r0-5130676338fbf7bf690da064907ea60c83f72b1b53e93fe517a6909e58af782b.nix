@@ -21,7 +21,7 @@
       synopsis = "Parsing, rendering and manipulating css selectors in Haskell.";
       description = "A library for parsing, manipulating, and rendering css selectors (not css files,\njust the selectors).\n\nIt has a /quasiquoter/ to enable Haskell to validate the css selector at compile\ntime.\n\nCurrently the css grammar is implemented /without/ the pseudo-classes,\npseudo-elements and negations. One can furthermore calculate the specificity of\na css-selector, and thus perform an analysis over what css-selector will take\nprecedence.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,13 +40,13 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "css-selectors-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

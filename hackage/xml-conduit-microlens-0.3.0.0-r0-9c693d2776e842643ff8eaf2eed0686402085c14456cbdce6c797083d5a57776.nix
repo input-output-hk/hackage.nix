@@ -21,7 +21,7 @@
       synopsis = "Lenses and traversals for xml-conduit based on microlens";
       description = "XML (and HTML) DOM selectors for `xml-conduit` based on `microlens`.\n\nThis library provides combinators for traversing and folding over XML trees.\nIt could be useful for editing trees, adding attributes selectively (e.g. refactoring CSS,\nadding HTMX attributes etc.)\n\nSome definitions are taken from 'xml-lens' but we import 'microlens' to achieve\na smaller dependency footprint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A small program for swapping out dot files.";
       description = "Manage multiple configuration profiles for the same program.  Swap out dot files quickly.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "config-select" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."vty-menu" or (errorHandler.buildDepError "vty-menu"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

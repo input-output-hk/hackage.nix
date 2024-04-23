@@ -21,7 +21,7 @@
       synopsis = "fortune-mod clone";
       description = "fortune-mod clone, in library and executable form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,19 +36,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "misfortune" = {
           depends = [
             (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ];
+          ];
           buildable = true;
-          };
-        "misfortune-strfile" = { buildable = true; };
         };
+        "misfortune-strfile" = { buildable = true; };
       };
-    }
+    };
+  }

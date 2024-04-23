@@ -21,14 +21,14 @@
       synopsis = "Generic zipper implementation for Data.Tree";
       description = "A Haskell datastructure for working with locations in\ntrees or forests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

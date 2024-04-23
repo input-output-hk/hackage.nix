@@ -21,7 +21,7 @@
       synopsis = "safe PostgreSQL queries using Quasiquoters";
       description = "Before you Post(gres)QL, preql.\n\n@preql@ provides a low-level interface to PostgreSQL and a quasiquoter that converts\ninline variable names to SQL parameters.  Higher-level interfaces, checking SQL syntax &\nschema, are planned.\n\nthe [quickstart](https://github.com/bergey/preql#quickstart)\nor the [vision](https://github.com/bergey/preql#vision-parsing-sql-in-haskell-quasiquotes)\n\nMost applications will want to import the top-level module @Preql@.  When writing @SQL@\ninstances or your own higher-level abstractions, you may want the lower-level,\nIO-specific functions in @Preql.Wire@, not all of which are re-exported from @Preql@.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,13 +44,13 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,13 +76,13 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

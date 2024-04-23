@@ -21,7 +21,7 @@
       synopsis = "Directed acyclic word graphs";
       description = "The library implements /directed acyclic word graphs/ (DAWGs), which can\nbe also interpreted as /minimal acyclic finite-state automata/.\n\nIn most cases you can use the \"Data.DAWG\" module which provides the basic\nimplementation of DAWGs.  If values have substantial memory footprint\nconsider using the \"Data.DAWG.Wrapper\" module instead.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector-binary" or (errorHandler.buildDepError "vector-binary"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."monad-codec" or (errorHandler.buildDepError "monad-codec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/pkcs1-1.0.2-r0-6755443276c4b25e561d95b773f98f6e3dc48588eb2eaef95745eb82e5b60aba.nix;
         revNum = 0;
         sha256 = "6755443276c4b25e561d95b773f98f6e3dc48588eb2eaef95745eb82e5b60aba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

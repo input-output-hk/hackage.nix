@@ -21,7 +21,7 @@
       synopsis = "Support for reading and writing ipe7 files (http://ipe7.sourceforge.net)";
       description = "A package to support reading and writing ipe7 files. It has support for converting from and to several geometry types like Points, (Poly)Lines, Polygons etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

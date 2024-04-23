@@ -21,7 +21,7 @@
       synopsis = "Bidirectional mapping between two key types";
       description = "A data structure representing a bidirectional mapping between two\nkey types. Each value in the bimap is associated with exactly one\nvalue of the opposite type.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.small-base
@@ -29,12 +29,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

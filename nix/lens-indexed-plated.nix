@@ -6,8 +6,8 @@
         nix = import ../hackage/lens-indexed-plated-0.1.0-r0-75b0aeb20258175ed68a1ecc7842596e0b34800df0a092af00da7a6dd0a6c8a8.nix;
         revNum = 0;
         sha256 = "75b0aeb20258175ed68a1ecc7842596e0b34800df0a092af00da7a6dd0a6c8a8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

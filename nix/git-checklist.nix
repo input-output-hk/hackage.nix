@@ -6,8 +6,8 @@
         nix = import ../hackage/git-checklist-1.0.0.0-r0-a887217a875a01c2a0ea1c5b3fe8287b179b66d27a793f7b2919f455a3881641.nix;
         revNum = 0;
         sha256 = "a887217a875a01c2a0ea1c5b3fe8287b179b66d27a793f7b2919f455a3881641";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

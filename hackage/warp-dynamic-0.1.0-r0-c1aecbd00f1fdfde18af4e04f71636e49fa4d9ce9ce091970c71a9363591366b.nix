@@ -21,7 +21,7 @@
       synopsis = "Dynamic configurable warp HTTP server";
       description = "Dynamic configurable warp HTTP server";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "warpd" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."warp-dynamic" or (errorHandler.buildDepError "warp-dynamic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

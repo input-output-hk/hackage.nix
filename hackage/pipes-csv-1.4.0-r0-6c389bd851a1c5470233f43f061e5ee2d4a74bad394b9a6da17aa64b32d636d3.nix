@@ -21,7 +21,7 @@
       synopsis = "Fast, streaming csv parser";
       description = "`pipes-csv` is a streaming csv parser built on top of `cassava` and `pipes`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hunit)) [
+          depends = pkgs.lib.optionals (!!flags.test-hunit) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
@@ -48,9 +48,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = if !flags.test-hunit then false else true;
-          };
         };
       };
-    }
+    };
+  }

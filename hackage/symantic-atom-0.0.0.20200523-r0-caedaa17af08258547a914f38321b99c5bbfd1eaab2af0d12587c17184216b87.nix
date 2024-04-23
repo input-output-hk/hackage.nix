@@ -21,7 +21,7 @@
       synopsis = "Library for reading and writing Atom.";
       description = "Symantics for Atom.\n\nThis is an application of <symantic-xml https://hackage.haskell.org/package/symantic-xml>\nto read or write <Atom https://tools.ietf.org/html/rfc4287>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symantic-atom-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."treeseq" or (errorHandler.buildDepError "treeseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

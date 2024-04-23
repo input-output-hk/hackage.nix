@@ -21,13 +21,13 @@
       synopsis = "Websockets FFI library for Fay";
       description = "Websockets FFI library for Fay";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

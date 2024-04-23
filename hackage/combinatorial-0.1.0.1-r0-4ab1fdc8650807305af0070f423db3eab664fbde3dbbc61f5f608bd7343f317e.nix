@@ -21,7 +21,7 @@
       synopsis = "Count, enumerate, rank and unrank combinatorial objects";
       description = "Counting, enumerating, ranking and unranking of combinatorial objects.\nWell-known and less well-known basic combinatoric problems and examples.\n\nThe functions are not implemented in obviously stupid ways,\nbut they are also not optimized to the maximum extent.\nThe package is plain Haskell 98.\n\nSee also:\n\n* @exact-combinatorics@:\nEfficient computations of large combinatoric numbers.\n\n* @combinat@:\nLibrary for a similar purpose\nwith a different structure and selection of problems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "combinatorial-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

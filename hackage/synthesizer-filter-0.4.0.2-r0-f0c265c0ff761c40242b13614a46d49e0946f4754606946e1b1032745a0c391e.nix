@@ -21,7 +21,7 @@
       synopsis = "Audio signal processing coded in Haskell: Filter networks";
       description = "In this package we experiment with various ways\nof representing filter networks.\nHowever, none of them is mature so far.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

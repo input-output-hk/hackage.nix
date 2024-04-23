@@ -21,7 +21,7 @@
       synopsis = "Shake-based markdown/latex webbook.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."text-time" or (errorHandler.buildDepError "text-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "shakebook-test" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."text-time" or (errorHandler.buildDepError "text-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

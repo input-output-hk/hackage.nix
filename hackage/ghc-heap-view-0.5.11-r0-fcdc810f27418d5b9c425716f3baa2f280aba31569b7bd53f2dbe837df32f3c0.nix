@@ -13,7 +13,7 @@
       ghc_8_0 = true;
       ghc_8_2 = true;
       ghc_8_4 = true;
-      };
+    };
     package = {
       specVersion = "1.24";
       identifier = { name = "ghc-heap-view"; version = "0.5.11"; };
@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -41,18 +41,18 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ] ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
+        ] ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc-heap-view" or (errorHandler.buildDepError "ghc-heap-view"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

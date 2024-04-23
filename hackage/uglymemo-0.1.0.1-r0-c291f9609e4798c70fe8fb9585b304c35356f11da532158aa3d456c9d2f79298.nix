@@ -21,14 +21,14 @@
       synopsis = "A simple (but internally ugly) memoization function.";
       description = "A simple (but internally ugly) memoization function.\n\n* New in 0.1.0.1: Make it exception safe.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

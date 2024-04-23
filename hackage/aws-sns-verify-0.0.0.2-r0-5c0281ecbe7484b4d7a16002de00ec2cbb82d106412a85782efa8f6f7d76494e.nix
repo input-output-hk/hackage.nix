@@ -21,7 +21,7 @@
       synopsis = "Parse and verify AWS SNS messages";
       description = "Please see the README on GitHub at <https://github.com/freckle/aws-sns-verify#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aws-sns-verify-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Text-based interactive GHC .prof viewer";
       description = "Text-based interactive GHC .prof viewer";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "viewprof" = {
@@ -36,9 +36,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

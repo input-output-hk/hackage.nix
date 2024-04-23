@@ -21,7 +21,7 @@
       synopsis = "Serialize instance for Message Pack Object";
       description = "Serialize instance for Message Pack Object";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "messagepack-tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."messagepack" or (errorHandler.buildDepError "messagepack"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

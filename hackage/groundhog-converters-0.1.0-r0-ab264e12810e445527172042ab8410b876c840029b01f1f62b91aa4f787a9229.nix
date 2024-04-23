@@ -21,7 +21,7 @@
       synopsis = "Extended Converter Library for groundhog embedded types";
       description = "Groundhog allows a programmer to represent a haskell datatype by an equivalent type that is more suited for Database work.\ngroundhog-converters provides a selection of common converters that have proved useful.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."bimap" or (errorHandler.buildDepError "bimap"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

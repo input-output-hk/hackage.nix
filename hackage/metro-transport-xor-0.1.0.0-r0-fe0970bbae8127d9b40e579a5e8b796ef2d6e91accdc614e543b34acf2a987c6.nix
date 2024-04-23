@@ -21,7 +21,7 @@
       synopsis = "XOR transport for metro";
       description = "Please see the README on GitHub at <https://github.com/Lupino/metro/tree/master/metro-transport-xor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."metro" or (errorHandler.buildDepError "metro"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

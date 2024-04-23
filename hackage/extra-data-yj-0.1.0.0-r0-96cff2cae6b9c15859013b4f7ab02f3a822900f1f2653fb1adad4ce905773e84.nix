@@ -21,20 +21,20 @@
       synopsis = "Additional data types";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/extra-data-yj#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "extra-data-yj-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."extra-data-yj" or (errorHandler.buildDepError "extra-data-yj"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

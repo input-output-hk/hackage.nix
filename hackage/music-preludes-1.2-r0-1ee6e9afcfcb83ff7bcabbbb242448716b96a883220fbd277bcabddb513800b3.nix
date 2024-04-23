@@ -21,7 +21,7 @@
       synopsis = "Some useful preludes for the Music Suite.";
       description = "Some useful preludes for the Haskell Music Suite.\nThis library is part of the Haskell Music Suite, see <http://musicsuite.github.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."music-pitch-literal" or (errorHandler.buildDepError "music-pitch-literal"))
           (hsPkgs."music-dynamics" or (errorHandler.buildDepError "music-dynamics"))
           (hsPkgs."music-dynamics-literal" or (errorHandler.buildDepError "music-dynamics-literal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

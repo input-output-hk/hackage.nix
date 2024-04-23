@@ -21,15 +21,15 @@
       synopsis = "Generator of \"valid\" and \"invalid\" data in a type class";
       description = "Generator of \"valid\" and \"invalid\" data in a type class";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "variant" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."QuickCheckVariant" or (errorHandler.buildDepError "QuickCheckVariant"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

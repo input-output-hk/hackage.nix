@@ -6,8 +6,8 @@
         nix = import ../hackage/process-qq-0.2.0-r0-bc3ff017d89feb9cef3b2bf893ef579ac99de953d5d19c86fb98fde422799d4d.nix;
         revNum = 0;
         sha256 = "bc3ff017d89feb9cef3b2bf893ef579ac99de953d5d19c86fb98fde422799d4d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

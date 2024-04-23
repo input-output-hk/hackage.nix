@@ -6,8 +6,8 @@
         nix = import ../hackage/tds-0.1.0.0-r0-adc9362ce498d98cf4ada908762683a1e68cfc62a1480ec019418bb70f2d1056.nix;
         revNum = 0;
         sha256 = "adc9362ce498d98cf4ada908762683a1e68cfc62a1480ec019418bb70f2d1056";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

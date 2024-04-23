@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper around the GIZA++ toolkit.";
       description = "This provides a simple wrapper around the GIZA++ toolkit,\nwhich is used for Statistical Machine Translation for\ntraining IBM Models 1-5 and an HMM word alignment model.\nSee <http://code.google.com/p/giza-pp/> for more details on\nGIZA++\n\nThis work was made possible by EPSRC grant (EP\\/E029116\\/1)\n\ndarcs get <http://code.haskell.org/~kowey/hs-gizapp>\n\nNote that while this wrapper is BSD3 licensed, GIZA++\nitself is released under GPLv2.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

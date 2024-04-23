@@ -21,7 +21,7 @@
       synopsis = "Simple type-level combinators for augmenting QuickCheck instances.";
       description = "Please see the README on GitHub at <https://github.com/athanclark/quickcheck-combinators#README>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unfoldable-restricted" or (errorHandler.buildDepError "unfoldable-restricted"))
           (hsPkgs."unit-constraint" or (errorHandler.buildDepError "unit-constraint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

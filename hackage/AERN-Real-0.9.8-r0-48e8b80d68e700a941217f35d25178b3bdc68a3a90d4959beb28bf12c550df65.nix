@@ -21,7 +21,7 @@
       synopsis = "arbitrary precision interval arithmetic for approximating exact real numbers";
       description = "Datatypes and abstractions for approximating exact real numbers\nand a basic arithmetic over such approximations.\nThe main datatype is interval with arbitrary precision endpoints\nsupported by safely rounding field and elementary operations\nwhose precision can be increased arbitrarily, so that they\nall converge to the exact operations.\n\nThe design of the library is inspired to some degree\nby Mueller's iRRAM and Lambov's RealLib\n(both are C++ libraries for exact real arithmetic).\n\nFor an architectural overview, see module \"Data.Number.ER.Real\".\n\nSimple examples of usage can be found in module @Demo.hs@ in folder @tests@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.containers-in-base
@@ -33,14 +33,14 @@
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
               (hsPkgs."hmpfr" or (errorHandler.buildDepError "hmpfr"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
               (hsPkgs."html" or (errorHandler.buildDepError "html"))
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-              ]
+            ]
           else if flags.use-hmpfr
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,7 +50,7 @@
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
               (hsPkgs."hmpfr" or (errorHandler.buildDepError "hmpfr"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -58,8 +58,8 @@
               (hsPkgs."html" or (errorHandler.buildDepError "html"))
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-              ];
+            ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

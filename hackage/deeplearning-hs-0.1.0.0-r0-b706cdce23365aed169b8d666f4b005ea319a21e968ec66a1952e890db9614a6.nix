@@ -21,7 +21,7 @@
       synopsis = "Deep Learning in Haskell";
       description = "Implements type-safe deep neural networks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "deeplearning_demonstration" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
             (hsPkgs."repa-algorithms" or (errorHandler.buildDepError "repa-algorithms"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "deeplearning_test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Representing MIDI a simple score.";
       description = "Representing MIDI data as a simple score using the zmidi-core library.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

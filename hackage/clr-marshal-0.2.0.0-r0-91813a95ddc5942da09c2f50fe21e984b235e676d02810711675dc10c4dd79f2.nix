@@ -21,14 +21,14 @@
       synopsis = "Marshaling for the clr";
       description = "A common dependency for other clr packages, marshalling between Haskell & CLR data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

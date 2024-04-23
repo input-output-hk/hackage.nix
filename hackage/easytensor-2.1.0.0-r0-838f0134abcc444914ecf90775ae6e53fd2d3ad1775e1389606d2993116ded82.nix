@@ -24,17 +24,17 @@
       setup-depends = [
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
           (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "et-test" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "et-bench-misc" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "et-bench-spfolds" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

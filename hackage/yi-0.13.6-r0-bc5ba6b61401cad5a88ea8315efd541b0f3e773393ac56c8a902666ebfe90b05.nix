@@ -21,7 +21,7 @@
       synopsis = "Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yi" = {
@@ -35,9 +35,9 @@
             (hsPkgs."yi-mode-haskell" or (errorHandler.buildDepError "yi-mode-haskell"))
             (hsPkgs."yi-mode-javascript" or (errorHandler.buildDepError "yi-mode-javascript"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-            ] ++ (pkgs.lib).optional (flags.vty) (hsPkgs."yi-frontend-vty" or (errorHandler.buildDepError "yi-frontend-vty"))) ++ (pkgs.lib).optional (flags.pango) (hsPkgs."yi-frontend-pango" or (errorHandler.buildDepError "yi-frontend-pango"))) ++ (pkgs.lib).optional (flags.vim) (hsPkgs."yi-keymap-vim" or (errorHandler.buildDepError "yi-keymap-vim"))) ++ (pkgs.lib).optional (flags.emacs) (hsPkgs."yi-keymap-emacs" or (errorHandler.buildDepError "yi-keymap-emacs"));
+          ] ++ pkgs.lib.optional (flags.vty) (hsPkgs."yi-frontend-vty" or (errorHandler.buildDepError "yi-frontend-vty"))) ++ pkgs.lib.optional (flags.pango) (hsPkgs."yi-frontend-pango" or (errorHandler.buildDepError "yi-frontend-pango"))) ++ pkgs.lib.optional (flags.vim) (hsPkgs."yi-keymap-vim" or (errorHandler.buildDepError "yi-keymap-vim"))) ++ pkgs.lib.optional (flags.emacs) (hsPkgs."yi-keymap-emacs" or (errorHandler.buildDepError "yi-keymap-emacs"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

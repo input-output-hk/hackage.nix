@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Fractional amounts represented by rational numbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,13 +36,13 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."mpfr" or (errorHandler.sysDepError "mpfr"))
           (pkgs."gmp" or (errorHandler.sysDepError "gmp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-amount-tests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

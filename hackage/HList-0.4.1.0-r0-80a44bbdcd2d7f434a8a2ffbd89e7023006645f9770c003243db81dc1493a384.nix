@@ -21,7 +21,7 @@
       synopsis = "Heterogeneous lists";
       description = "HList provides many operations to create and manipulate\nheterogenous lists (HLists) whose length and element\ntypes are known at compile-time. HLists are used to implement\n\n* records\n* variants\n* type-indexed products (TIP)\n* type-indexed co-products (TIC)\n* keyword arguments\n\nUser code should import \"Data.HList\" or\n\"Data.HList.CommonMain\" for a slightly more limited scope";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (flags.new_type_eq) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -48,19 +48,19 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).le "7.9"
+          ];
+          buildable = if compiler.isGhc && compiler.version.le "7.9"
             then false
             else true;
-          };
+        };
         "properties" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

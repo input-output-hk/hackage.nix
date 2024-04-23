@@ -21,24 +21,24 @@
       synopsis = "LTS: Labelled Transition System";
       description = "This is an implementation of labelled transition system and\nfollow the README for information on importing and getting started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "LTS" = {
           depends = [
             (hsPkgs."LTS" or (errorHandler.buildDepError "LTS"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lts-tests" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "lts-bench" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a lightweight DNS proxy server";
       description = "Please see the README on GitHub at <https://github.com/bjin/dprox#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dprox" = {
@@ -40,10 +40,10 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dprox-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

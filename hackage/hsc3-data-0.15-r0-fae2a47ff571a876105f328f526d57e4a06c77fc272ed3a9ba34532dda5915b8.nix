@@ -21,7 +21,7 @@
       synopsis = "haskell supercollider data";
       description = "Data related functions useful when working with SC3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."SVGPath" or (errorHandler.buildDepError "SVGPath"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

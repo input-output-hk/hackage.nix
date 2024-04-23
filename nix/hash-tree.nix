@@ -6,8 +6,8 @@
         nix = import ../hackage/hash-tree-0.0.0-r0-51d907a3f630bb30fbe4c7a067f84e07872d14aab9ee1242219eb0f51dd1ab6e.nix;
         revNum = 0;
         sha256 = "51d907a3f630bb30fbe4c7a067f84e07872d14aab9ee1242219eb0f51dd1ab6e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

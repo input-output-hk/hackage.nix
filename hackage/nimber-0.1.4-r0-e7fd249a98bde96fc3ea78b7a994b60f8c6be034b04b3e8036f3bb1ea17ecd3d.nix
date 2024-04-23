@@ -21,14 +21,14 @@
       synopsis = "Finite nimber arithmetic";
       description = "The finite nimbers, 'Nimber', are a quadratically closed field of\ncharacteristic 2 introduced in combinatorial game theory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."integer-logarithms" or (errorHandler.buildDepError "integer-logarithms"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

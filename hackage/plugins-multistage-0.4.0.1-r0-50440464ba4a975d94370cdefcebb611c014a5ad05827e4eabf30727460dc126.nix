@@ -21,7 +21,7 @@
       synopsis = "Dynamic linking for embedded DSLs with staged compilation";
       description = "Dynamic compilation, linking and loading of functions in\nstaged languages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."th-expand-syns" or (errorHandler.buildDepError "th-expand-syns"))
           (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
           (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

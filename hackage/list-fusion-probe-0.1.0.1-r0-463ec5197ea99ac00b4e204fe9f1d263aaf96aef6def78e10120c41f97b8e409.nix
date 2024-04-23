@@ -21,12 +21,12 @@
       synopsis = "testing list fusion for success";
       description = "This package provides a function @fuseThis@ that can be\nwrapped around a flist. If that list is fused away, all is\nwell. If not, a runtime error will occur.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."list-fusion-probe" or (errorHandler.buildDepError "list-fusion-probe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

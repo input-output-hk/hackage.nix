@@ -21,7 +21,7 @@
       synopsis = "Conduit interface for cryptographic operations (from crypto-api).";
       description = "This package contains everything that you need to use a\ncryptographic package that supports the @crypto-api@ package\nusing conduits from the @conduit@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -31,11 +31,11 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))) ++ [
+        ] ++ pkgs.lib.optional (flags.conduit11) (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))) ++ [
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."skein" or (errorHandler.buildDepError "skein"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."crypto-conduit" or (errorHandler.buildDepError "crypto-conduit"))
-            ] ++ (pkgs.lib).optional (flags.conduit11) (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"));
+          ] ++ pkgs.lib.optional (flags.conduit11) (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Additional functions for random values.";
       description = "Additional functions for random values, based on random-fu. Inspired by random-shuffle.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

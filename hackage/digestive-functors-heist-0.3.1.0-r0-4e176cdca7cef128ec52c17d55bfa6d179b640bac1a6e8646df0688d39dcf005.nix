@@ -21,7 +21,7 @@
       synopsis = "Heist frontend for the digestive-functors library";
       description = "Heist frontend for the digestive-functors library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

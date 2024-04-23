@@ -21,7 +21,7 @@
       synopsis = "Recursive Arbitrary instances without headaches";
       description = "safe-gen allows you to write and derive Arbitrary instances for recursive data without having to worry about termination.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "safe-gen-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."safe-gen" or (errorHandler.buildDepError "safe-gen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

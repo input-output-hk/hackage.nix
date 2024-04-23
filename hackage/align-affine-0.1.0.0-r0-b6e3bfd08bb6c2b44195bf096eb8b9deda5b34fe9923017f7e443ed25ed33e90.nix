@@ -21,7 +21,7 @@
       synopsis = "Sequence alignment with an affine gap penalty model";
       description = "Global & multi-sequence alignment using the Needleman-Wunsch & Center Star algorithms, with an affine gap penalty model.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

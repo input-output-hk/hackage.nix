@@ -21,7 +21,7 @@
       synopsis = "Translate syndication feeds";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "feed-translator" = {
@@ -44,9 +44,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

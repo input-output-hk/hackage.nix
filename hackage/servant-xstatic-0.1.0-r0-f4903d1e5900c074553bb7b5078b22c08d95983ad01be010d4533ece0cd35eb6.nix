@@ -21,7 +21,7 @@
       synopsis = "XStatic adapter for servant";
       description = "Use this library to serve XStatic through servant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."xstatic" or (errorHandler.buildDepError "xstatic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A record system for Functional Reactive Programming";
       description = "Grapefruit is a library for Functional Reactive Programming (FRP) with a focus on\nuser interfaces. FRP makes it possible to implement reactive and interactive systems\nin a declarative style. To learn more about FRP, have a look at\n<http://haskell.org/haskellwiki/Functional_Reactive_Programming>.\n\nThis package provides a record system for use with FRP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."grapefruit-frp" or (errorHandler.buildDepError "grapefruit-frp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

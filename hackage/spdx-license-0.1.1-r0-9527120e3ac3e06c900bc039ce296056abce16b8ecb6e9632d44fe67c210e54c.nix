@@ -21,7 +21,7 @@
       synopsis = "SPDX license templates";
       description = "Parsing, pretty-printing and rendering of SPDX license templates";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spdx-license-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."spdx-license" or (errorHandler.buildDepError "spdx-license"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

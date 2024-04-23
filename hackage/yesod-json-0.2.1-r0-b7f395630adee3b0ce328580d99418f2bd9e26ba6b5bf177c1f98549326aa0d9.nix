@@ -21,7 +21,7 @@
       synopsis = "Generate content for Yesod using the aeson package.";
       description = "Generate content for Yesod using the aeson package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

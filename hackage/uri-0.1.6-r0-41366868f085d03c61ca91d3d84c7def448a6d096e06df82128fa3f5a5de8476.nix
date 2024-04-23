@@ -21,7 +21,7 @@
       synopsis = "Library for working with URIs";
       description = "Library for working with URIs, including parsing, rendering, merging, escaping";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

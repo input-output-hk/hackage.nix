@@ -21,7 +21,7 @@
       synopsis = "a distributed storage system";
       description = "This package contains a library for building distributed storage systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."Holumbus-Distribution" or (errorHandler.buildDepError "Holumbus-Distribution"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

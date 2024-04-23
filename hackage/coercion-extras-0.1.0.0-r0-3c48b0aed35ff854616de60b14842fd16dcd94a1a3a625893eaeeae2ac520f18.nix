@@ -21,21 +21,21 @@
       synopsis = "Extra utilities for manipulating nominal and representational coercions";
       description = "Extra utilities for manipulating nominal (@(~)@) and representational (@Coercible@) coercions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."coercion-extras" or (errorHandler.buildDepError "coercion-extras"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

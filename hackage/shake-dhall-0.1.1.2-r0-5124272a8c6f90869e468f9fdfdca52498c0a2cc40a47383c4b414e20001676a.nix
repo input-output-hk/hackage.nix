@@ -21,7 +21,7 @@
       synopsis = "Dhall dependencies";
       description = "Dependency tracking in Dhall";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "shake-dhall-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."shake-dhall" or (errorHandler.buildDepError "shake-dhall"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

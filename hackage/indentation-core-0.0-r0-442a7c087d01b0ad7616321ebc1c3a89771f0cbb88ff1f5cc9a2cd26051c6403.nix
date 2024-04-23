@@ -21,14 +21,14 @@
       synopsis = "Indentation sensitive parsing combinators core library";
       description = "Indentation sensitive parsing combinators core library\n\nThis is the core for the indentation package.\nFor common use, consider one of the front-ends:\nindentation-parsec or indentation-trifecta.  For\nboth, or for backward compatability, install\nindentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

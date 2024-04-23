@@ -21,7 +21,7 @@
       synopsis = "Scrap Your Reprinter";
       description = "A datatype generic algorithm for layout-preserving refactoring";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

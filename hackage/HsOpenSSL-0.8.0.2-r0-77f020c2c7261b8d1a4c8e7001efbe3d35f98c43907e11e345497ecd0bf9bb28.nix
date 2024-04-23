@@ -21,7 +21,7 @@
       synopsis = "(Incomplete) OpenSSL binding for Haskell";
       description = "HsOpenSSL is an (incomplete) OpenSSL binding for Haskell. It\ncan generate RSA and DSA keys, read and write PEM files,\ngenerate message digests, sign and verify messages, encrypt\nand decrypt messages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,23 +31,23 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.11"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.11"
           then [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]
+          ]
           else [
             (hsPkgs."integer" or (errorHandler.buildDepError "integer"))
-            ]);
+          ]);
         libs = if system.isWindows
           then [
             (pkgs."eay32" or (errorHandler.sysDepError "eay32"))
             (pkgs."ssl32" or (errorHandler.sysDepError "ssl32"))
-            ]
+          ]
           else [
             (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
             (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

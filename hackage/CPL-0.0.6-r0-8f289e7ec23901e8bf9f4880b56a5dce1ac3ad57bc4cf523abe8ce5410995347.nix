@@ -21,7 +21,7 @@
       synopsis = "An interpreter of Hagino's Categorical Programming Language (CPL).";
       description = "An interpreter of Hagino's Categorical Programming Language (CPL).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cpl" = {
@@ -31,13 +31,13 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ] ++ (if flags.readline
+          ] ++ (if flags.readline
             then [
               (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
-              ]
-            else (pkgs.lib).optional (flags.haskeline) (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline")));
+            ]
+            else pkgs.lib.optional (flags.haskeline) (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

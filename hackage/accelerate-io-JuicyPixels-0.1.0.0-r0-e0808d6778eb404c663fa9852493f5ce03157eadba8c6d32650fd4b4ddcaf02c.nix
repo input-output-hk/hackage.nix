@@ -21,7 +21,7 @@
       synopsis = "Convert between Accelerate arrays and JuicyPixels images";
       description = "This package provides efficient conversion routines between Accelerate arrays\nand image types supported by JuicyPixels.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."accelerate-io-vector" or (errorHandler.buildDepError "accelerate-io-vector"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

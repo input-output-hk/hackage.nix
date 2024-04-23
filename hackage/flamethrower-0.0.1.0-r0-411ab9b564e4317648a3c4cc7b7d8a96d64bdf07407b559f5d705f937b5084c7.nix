@@ -21,15 +21,15 @@
       synopsis = "A template engine for HTML";
       description = "Flamethrower is a simpler indentation-based template language for HTML.\n\nIt’s intended to be a port of <https://github.com/charmander/razorleaf Razor Leaf>,\nbut it has quite a ways to go before reaching that status.\n\n>(-# LANGUAGE QuasiQuotes #-) -- Parentheses here should be curly braces\n>\n>import Flamethrower\n>\n>render name = [flamethrower|\n>p id: \"greeting\"\n>    \"Hello, \"\n>    em \"#(name)\" # Parentheses here should be curly braces\n>    \"!\"\n>|]\n>\n>main = putStrLn (render \"world\")\n>\n>-- <p id=\"greeting\">Hello, <em>world</em>!</p>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

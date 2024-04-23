@@ -21,7 +21,7 @@
       synopsis = "A clock and timer that tell the time in a more human way";
       description = "A clock and timer that tell the time in a more human way";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fuzzytime" = {
@@ -30,9 +30,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

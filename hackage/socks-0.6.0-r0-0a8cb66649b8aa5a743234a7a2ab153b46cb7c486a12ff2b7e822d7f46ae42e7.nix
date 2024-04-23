@@ -21,7 +21,7 @@
       synopsis = "Socks proxy (ver 5)";
       description = "Socks proxy (version 5) implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Dealing with Strict Text in NFC normalization.";
       description = "Handle Text in NFC normalization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

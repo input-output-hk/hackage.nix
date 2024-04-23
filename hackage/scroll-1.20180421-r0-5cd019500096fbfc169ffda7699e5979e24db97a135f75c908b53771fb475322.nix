@@ -21,7 +21,7 @@
       synopsis = "scroll(6), a roguelike game";
       description = "You're a bookworm that's stuck on a scroll. You have to\ndodge between words and use spells to make your way down the page as th\nscroll is read. Go too slow and you'll get wound up in the scroll and\ncrushed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scroll" = {
@@ -40,9 +40,9 @@
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

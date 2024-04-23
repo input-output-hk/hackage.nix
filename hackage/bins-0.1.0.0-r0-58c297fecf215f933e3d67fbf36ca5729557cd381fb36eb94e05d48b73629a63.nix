@@ -21,7 +21,7 @@
       synopsis = "Aggregate continuous values into discrete bins";
       description = "Please see the README on GitHub at <https://github.com/mstksg/bins#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

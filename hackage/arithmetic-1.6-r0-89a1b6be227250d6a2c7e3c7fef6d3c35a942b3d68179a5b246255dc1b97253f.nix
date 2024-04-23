@@ -21,7 +21,7 @@
       synopsis = "Natural number arithmetic";
       description = "This package implements a library of natural number arithmetic,\nincluding Montgomery multiplication, the Miller-Rabin primality\ntest, Lucas sequences, the Williams p+1 factorization method,\ncontinued fraction representations of natural number square roots,\nthe Jacobi symbol, the Tonelli-Shanks algorithm for finding square\nroots modulo a prime, and the Chakravala method for solving the Pell\nequation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arithmetic" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "arithmetic-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
             (hsPkgs."opentheory-prime" or (errorHandler.buildDepError "opentheory-prime"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

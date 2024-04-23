@@ -6,8 +6,8 @@
         nix = import ../hackage/bazel-coverage-report-renderer-0.1.0-r0-23edc269d8f50255342eeb2ce20a3d5a8e21ef6852dc27d533933216bc055fc0.nix;
         revNum = 0;
         sha256 = "23edc269d8f50255342eeb2ce20a3d5a8e21ef6852dc27d533933216bc055fc0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

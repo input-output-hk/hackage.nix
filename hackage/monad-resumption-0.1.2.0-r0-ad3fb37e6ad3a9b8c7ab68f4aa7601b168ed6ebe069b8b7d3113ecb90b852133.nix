@@ -21,7 +21,7 @@
       synopsis = "Resumption and reactive resumption monads for Haskell.";
       description = "This package contains the definitions of Resumption and Reactive Resumption Monads.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

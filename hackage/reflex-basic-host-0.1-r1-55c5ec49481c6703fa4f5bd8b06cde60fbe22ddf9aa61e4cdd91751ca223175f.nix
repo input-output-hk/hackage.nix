@@ -21,7 +21,7 @@
       synopsis = "A basic `reflex` host for backend work";
       description = "A basic `reflex` host for backend work.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -43,18 +43,18 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (errorHandler.buildDepError "reflex-basic-host"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "counter" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-basic-host" or (errorHandler.buildDepError "reflex-basic-host"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

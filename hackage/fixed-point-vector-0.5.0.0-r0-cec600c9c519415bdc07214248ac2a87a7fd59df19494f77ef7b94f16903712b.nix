@@ -21,15 +21,15 @@
       synopsis = "Unbox instances for the fixed-point package";
       description = "This package allows you to construct unboxed\nvectors of binary fixed-point numerals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fixed-point" or (errorHandler.buildDepError "fixed-point"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

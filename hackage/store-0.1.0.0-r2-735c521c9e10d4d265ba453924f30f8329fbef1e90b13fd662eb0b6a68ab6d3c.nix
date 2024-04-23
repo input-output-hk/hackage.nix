@@ -21,7 +21,7 @@
       synopsis = "Fast binary serialization";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -60,9 +60,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "store-test" = {
           depends = [
@@ -102,10 +102,10 @@
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -146,14 +146,14 @@
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ] ++ (pkgs.lib).optionals (flags.comparison-bench) [
+          ] ++ pkgs.lib.optionals (flags.comparison-bench) [
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "MCFGs for Genus-1 RNA Pseudoknots";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nGenus-1 RNA pseudoknot grammars implemented with a multiple\ncontext-free language. Compared to the usual implementations\nthat are based on explicit recursions, an implementation based\non a formal grammar is much more pleasing to write.\n\nConsult the README for details.\n\n* @BioInf.GenussFold.PKN@: Recursive pseudoknots with a simple\nbasepair maximization scoring scheme.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "GenussFold" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."FormalGrammars" or (errorHandler.buildDepError "FormalGrammars"))
             (hsPkgs."GenussFold" or (errorHandler.buildDepError "GenussFold"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties-fast" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

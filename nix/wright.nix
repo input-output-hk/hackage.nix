@@ -6,8 +6,8 @@
         nix = import ../hackage/wright-0.1.0.2-r0-b77dae9c426169c062cf11eaa74a154f457e1d12d67f40f5b546e35d2406365f.nix;
         revNum = 0;
         sha256 = "b77dae9c426169c062cf11eaa74a154f457e1d12d67f40f5b546e35d2406365f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

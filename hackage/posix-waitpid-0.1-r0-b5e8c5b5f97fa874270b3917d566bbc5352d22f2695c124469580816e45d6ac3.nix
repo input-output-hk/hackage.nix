@@ -21,14 +21,14 @@
       synopsis = "Low-level wrapping of POSIX waitpid(2).";
       description = "A low-level wrapping of POSIX waitpid(2).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

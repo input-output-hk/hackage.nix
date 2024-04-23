@@ -21,16 +21,16 @@
       synopsis = "Untyped Lambda calculus to JavaScript compiler";
       description = "Simple though savage untyped Lambda calculus to JavaScript compiler.\nI hope you will have same fun playing with it as I had writing it.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambda2js" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

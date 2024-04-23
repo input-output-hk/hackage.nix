@@ -21,15 +21,15 @@
       synopsis = "Uniform pairs with class instances";
       description = "Uniform pairs with class instances";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

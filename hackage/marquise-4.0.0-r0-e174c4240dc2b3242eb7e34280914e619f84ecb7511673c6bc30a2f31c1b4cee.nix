@@ -21,7 +21,7 @@
       synopsis = "Client library for Vaultaire";
       description = "Marquise is a collection of a library and two executables for use with Vaultaire.\n\n1. A client and server library for reading/writing to the vault and spool files.\nThis provides streaming reads and writes to the vault using\n[pipes](https://hackage.haskell.org/package/pipes) as well as writing to spool\nfiles with automatic caching and rotation.\n\n2. An executable `marquised`, a daemon which writes data to the vault from spool\nfiles generated from users of the marquise library.\n\n3. An executable `data`, used for easily inspecting data in the vault as well as\nmarquise cache files.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,9 +59,9 @@
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "marquised" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
             (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "data" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -94,10 +94,10 @@
             (hsPkgs."packer" or (errorHandler.buildDepError "packer"))
             (hsPkgs."vaultaire-common" or (errorHandler.buildDepError "vaultaire-common"))
             (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spool-test" = {
           depends = [
@@ -105,9 +105,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."marquise" or (errorHandler.buildDepError "marquise"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

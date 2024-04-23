@@ -21,7 +21,7 @@
       synopsis = "A MessagePack-RPC Implementation";
       description = "A MessagePack-RPC Implementation <http://msgpack.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."msgpack" or (errorHandler.buildDepError "msgpack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

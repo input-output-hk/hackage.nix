@@ -21,11 +21,11 @@
       synopsis = "@zenhack's personal custom prelude";
       description = "This is my own custom prelude. It is not intended to be suitable\nfor all projects, but is designed to be an acceptable dependency\nfor any library project, so that I can use it unconditionally. Its\nonly dependency is base, and it just re-exports things from various\nmodules scattered about the base package that I don't want to have\nto import.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

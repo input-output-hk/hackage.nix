@@ -21,7 +21,7 @@
       synopsis = "scalpel scrapers for search engines";
       description = "[scalpel](https://hackage.haskell.org/package/scalpel)\nscrapers for DuckDuckGo and Google search engines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uri" or (errorHandler.buildDepError "uri"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."uri" or (errorHandler.buildDepError "uri"))
             (hsPkgs."scalpel" or (errorHandler.buildDepError "scalpel"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

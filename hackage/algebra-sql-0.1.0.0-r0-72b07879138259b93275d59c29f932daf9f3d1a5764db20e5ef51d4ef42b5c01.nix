@@ -21,7 +21,7 @@
       synopsis = "Relational Algebra and SQL Code Generation";
       description = "This library contains data types for relational table algebra operators. DAG plans\n(<http://hackage.haskell.org/package/algebra-dag algebra-dag>) over these operators\ncan be compiled into compact SQL:2003 queries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."algebra-dag" or (errorHandler.buildDepError "algebra-dag"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tadot" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."algebra-dag" or (errorHandler.buildDepError "algebra-dag"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sqlgen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -82,9 +82,9 @@
             (hsPkgs."multiset" or (errorHandler.buildDepError "multiset"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."algebra-dag" or (errorHandler.buildDepError "algebra-dag"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

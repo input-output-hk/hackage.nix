@@ -21,14 +21,14 @@
       synopsis = "Generate content for Yesod using the aeson package. (deprecated)";
       description = "Since version 1.2 of Yesod, the functionality provided by this module is provided by yesod-core itself. You no longer need to use this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

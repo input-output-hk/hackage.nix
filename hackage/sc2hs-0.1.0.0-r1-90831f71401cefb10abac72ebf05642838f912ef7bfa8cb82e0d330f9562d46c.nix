@@ -21,7 +21,7 @@
       synopsis = "An interface to the Starcraft II bot API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."sc2-proto" or (errorHandler.buildDepError "sc2-proto"))
           (hsPkgs."sc2-support" or (errorHandler.buildDepError "sc2-support"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sc2hs-demo" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."sc2-support" or (errorHandler.buildDepError "sc2-support"))
             (hsPkgs."sc2hs" or (errorHandler.buildDepError "sc2hs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Laws for mtl classes as QuickCheck properties.";
       description = "See README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-higherorder" or (errorHandler.buildDepError "quickcheck-higherorder"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-monad-laws-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "prism-error-test" = {
           depends = [
             (hsPkgs."test-monad-laws" or (errorHandler.buildDepError "test-monad-laws"))
@@ -55,11 +55,11 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.2"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

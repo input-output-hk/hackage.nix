@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-macie-2.0-r0-2aa67bb69a6827c69a88b3543a1e7db2cd5cb2a5fed16bf44b6946333e36103a.nix;
         revNum = 0;
         sha256 = "2aa67bb69a6827c69a88b3543a1e7db2cd5cb2a5fed16bf44b6946333e36103a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

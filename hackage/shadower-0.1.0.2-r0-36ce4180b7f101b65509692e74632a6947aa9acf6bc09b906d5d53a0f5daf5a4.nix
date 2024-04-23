@@ -21,7 +21,7 @@
       synopsis = "An automated way to run doctests in files that are changing";
       description = "Shadower watches folders with Haskell sources, and runs doctests in files that are modified";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "shadower" = {
@@ -34,9 +34,9 @@
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

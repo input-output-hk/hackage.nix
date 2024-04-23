@@ -21,7 +21,7 @@
       synopsis = "Heterogenous Zipper in Instant Generics";
       description = "This package contains a heterogenous Zipper and 2\nexamples of how to use it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

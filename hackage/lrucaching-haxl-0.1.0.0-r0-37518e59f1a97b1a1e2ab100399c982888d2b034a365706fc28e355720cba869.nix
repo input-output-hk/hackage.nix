@@ -21,7 +21,7 @@
       synopsis = "Combine lrucaching and haxl.";
       description = "Combine lrucaching and haxl. easy use on haxl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."lrucaching" or (errorHandler.buildDepError "lrucaching"))
           (hsPkgs."psqueues" or (errorHandler.buildDepError "psqueues"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

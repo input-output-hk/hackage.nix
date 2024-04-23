@@ -21,16 +21,16 @@
       synopsis = "The core of Yu.";
       description = "The core module for Yu.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yu-utils" or (errorHandler.buildDepError "yu-utils"))
           (hsPkgs."yu-auth" or (errorHandler.buildDepError "yu-auth"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-mvc" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."yu-utils" or (errorHandler.buildDepError "yu-utils"))
             (hsPkgs."yu-core" or (errorHandler.buildDepError "yu-core"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

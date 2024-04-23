@@ -21,7 +21,7 @@
       synopsis = "A library of combinators for generating and executing SQL statements.";
       description = "This library allows you to build SQL SELECT, INSERT, UPDATE, and DELETE\nstatements using operations based on the relational algebra.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

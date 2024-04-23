@@ -6,8 +6,8 @@
         nix = import ../hackage/gi-gtksheet-4.0.1-r0-c3ebf1f577d4d1a19bc28899193c3ce181bcbcf2466f587ff7fcb51f741e2376.nix;
         revNum = 0;
         sha256 = "c3ebf1f577d4d1a19bc28899193c3ce181bcbcf2466f587ff7fcb51f741e2376";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "Catch errors thrown from pure computations.";
       description = "Takes an error-throwing expression and puts it back in the Maybe it belongs in.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

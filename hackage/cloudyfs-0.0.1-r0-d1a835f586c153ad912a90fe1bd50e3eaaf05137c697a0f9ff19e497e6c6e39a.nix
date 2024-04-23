@@ -21,7 +21,7 @@
       synopsis = "A cloud in the file system.";
       description = "A cloud in the file system.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cloudyfs" = {
@@ -39,9 +39,9 @@
             (hsPkgs."timerep" or (errorHandler.buildDepError "timerep"))
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
             (hsPkgs."datetime" or (errorHandler.buildDepError "datetime"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

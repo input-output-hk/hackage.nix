@@ -21,7 +21,7 @@
       synopsis = "Solve type equalities using custom type-level rewrite rules";
       description = "A typechecker plugin which allows the user to specify a set of domain-specific rewrite rules. These get applied whenever the compiler is unable to solve a type equality constraint, in the hope that the rewritten equality constraint will be easier to solve.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."ghc-tcplugins-extra" or (errorHandler.buildDepError "ghc-tcplugins-extra"))
           (hsPkgs."term-rewriting" or (errorHandler.buildDepError "term-rewriting"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "should-compile" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."typelevel-rewrite-rules" or (errorHandler.buildDepError "typelevel-rewrite-rules"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

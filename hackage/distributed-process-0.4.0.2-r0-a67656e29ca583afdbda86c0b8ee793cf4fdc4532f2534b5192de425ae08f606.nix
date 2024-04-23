@@ -21,7 +21,7 @@
       synopsis = "Cloud Haskell: Erlang-style concurrency in Haskell ";
       description = "This is an implementation of Cloud Haskell, as described in\n/Towards Haskell in the Cloud/ by Jeff Epstein, Andrew Black,\nand Simon Peyton Jones\n(<http://research.microsoft.com/en-us/um/people/simonpj/papers/parallel/>),\nalthough some of the details are different. The precise message\npassing semantics are based on /A unified semantics for future Erlang/\nby\tHans Svensson, Lars-Åke Fredlund and Clara Benac Earle.\nYou will probably also want to install a Cloud Haskell backend such\nas distributed-process-simplelocalnet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,51 +41,51 @@
           (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
           (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (pkgs.lib).optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ] ++ pkgs.lib.optional (flags.th) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       exes = {
         "distributed-process-throughput" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
+          depends = pkgs.lib.optionals (flags.benchmarks) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = if flags.benchmarks then true else false;
-          };
-        "distributed-process-latency" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
-          buildable = if flags.benchmarks then true else false;
-          };
-        "distributed-process-channels" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
-          buildable = if flags.benchmarks then true else false;
-          };
-        "distributed-process-spawns" = {
-          depends = (pkgs.lib).optionals (flags.benchmarks) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
-            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
-          buildable = if flags.benchmarks then true else false;
-          };
         };
+        "distributed-process-latency" = {
+          depends = pkgs.lib.optionals (flags.benchmarks) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          ];
+          buildable = if flags.benchmarks then true else false;
+        };
+        "distributed-process-channels" = {
+          depends = pkgs.lib.optionals (flags.benchmarks) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          ];
+          buildable = if flags.benchmarks then true else false;
+        };
+        "distributed-process-spawns" = {
+          depends = pkgs.lib.optionals (flags.benchmarks) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
+            (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
+          ];
+          buildable = if flags.benchmarks then true else false;
+        };
+      };
       tests = {
         "TestCH" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestClosure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,9 +111,9 @@
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

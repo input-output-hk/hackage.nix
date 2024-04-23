@@ -21,14 +21,14 @@
       synopsis = "A multimap.";
       description = "This is a simple implementation of a multimap, based on \"Data.Map\".\n\n[@v1.1@]\n@!@ had its arguments flipped. Fixed.\nAlso added @fromMap@.\n\n[@v1.2@]\nAdded \"Data.SetMap\", renamed @Multimap@ to \"Data.MultiMap\".\nFixed the type of @delete@. Derive instances for @Data@\nand @Typeable@.\n\n[@v1.2.1@]\nFixed typos in the documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Linear Algebra on Typed Spaces";
       description = "Please see README.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

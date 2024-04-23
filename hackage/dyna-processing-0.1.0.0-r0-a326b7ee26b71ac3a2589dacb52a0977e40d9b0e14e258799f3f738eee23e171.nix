@@ -21,7 +21,7 @@
       synopsis = "FRP library for processing-for-haskell package";
       description = "Defines FRP library for processing-for-haskell package (see examples in the repo's source)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dyna-processing-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dyna-processing" or (errorHandler.buildDepError "dyna-processing"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

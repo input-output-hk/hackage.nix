@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-amplifybackend-2.0-r0-760b549c67fcfceaa844ade4ef4989ec7ed0befb60893065dca1625579a5a119.nix;
         revNum = 0;
         sha256 = "760b549c67fcfceaa844ade4ef4989ec7ed0befb60893065dca1625579a5a119";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Specify axioms for type classes and quickCheck all available instances";
       description = "Provides a way to specify axioms for type classes\nand to quickCheck all available instances against\nthem";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."quickcheck-report" or (errorHandler.buildDepError "quickcheck-report"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

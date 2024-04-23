@@ -21,7 +21,7 @@
       synopsis = "Multi-dimensional array interface for numhask.";
       description = "This package provides an interface into the [numhask](https://hackage.haskell.org/package/numhask) API, and both type- and value-level shape manipulation routines.\n\n== Usage\n\n>>> {-# LANGUAGE NegativeLiterals #-}\n>>> {-# LANGUAGE RebindableSyntax #-}\n>>> import NumHask.Prelude\n>>> import NumHask.Array\n\nIn situations where shape is only known at runtime, a clear module configuration is:\n\n>>> import NumHask.Array.Shape\n>>> import qualified NumHask.Array.Fixed as F\n>>> import qualified NumHask.Array.Dynamic as D";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."numhask-array" or (errorHandler.buildDepError "numhask-array"))
             (hsPkgs."numhask" or (errorHandler.buildDepError "numhask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,19 +21,19 @@
       synopsis = "KdTree, for efficient search in K-dimensional point clouds.";
       description = "This is a simple library for k-d trees in Haskell. It enables efficient\nsearching through collections of points in O(log N) time on average,\nusing the nearestNeighbor function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "KdTreeTest" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

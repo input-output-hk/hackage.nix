@@ -6,8 +6,8 @@
         nix = import ../hackage/pandoc-throw-0.1.0.0-r0-9cfa3dd0d8a3673d1c568dc6c710c70aad408e129bd83c40828e8b44fe87ffa7.nix;
         revNum = 0;
         sha256 = "9cfa3dd0d8a3673d1c568dc6c710c70aad408e129bd83c40828e8b44fe87ffa7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Generic encoder and decode for JSON-RPC";
       description = "This package contains generic encoder and decode for JSON-RPC";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-main" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."json-rpc-generic" or (errorHandler.buildDepError "json-rpc-generic"))
             (hsPkgs."quickcheck-simple" or (errorHandler.buildDepError "quickcheck-simple"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

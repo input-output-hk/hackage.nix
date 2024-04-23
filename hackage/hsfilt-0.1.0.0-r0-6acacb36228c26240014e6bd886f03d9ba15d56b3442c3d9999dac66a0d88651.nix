@@ -21,16 +21,16 @@
       synopsis = "Z-decoder.";
       description = "Inspired by c++filt from GNU binutils. Reads mangled(z-encoded) names from stdin,\nprints demangled(z-decoded) names to stdout.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hsfilt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

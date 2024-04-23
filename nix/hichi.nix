@@ -6,8 +6,8 @@
         nix = import ../hackage/hichi-0.0.1-r0-b2f60c1a84f81a208e40ff0d736937eca26ef2189ee84221bb18c67fca0b9f63.nix;
         revNum = 0;
         sha256 = "b2f60c1a84f81a208e40ff0d736937eca26ef2189ee84221bb18c67fca0b9f63";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

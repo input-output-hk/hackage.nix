@@ -21,17 +21,17 @@
       synopsis = "A continuation-based parser library";
       description = "A parser library using continuations with a possibility for failure to build parsers in a clear and concise manner.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lparse" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

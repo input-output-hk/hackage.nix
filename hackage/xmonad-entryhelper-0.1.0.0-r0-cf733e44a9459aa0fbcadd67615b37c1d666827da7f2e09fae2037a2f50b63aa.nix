@@ -21,7 +21,7 @@
       synopsis = "XMonad config entry point wrapper";
       description = "xmonad-entryhelper makes your compiled XMonad config a standalone binary.\n\nIt simulates the XMonad's argument handling and supports customized compliation.\n\nPlease check\n<https://github.com/Javran/xmonad-entryhelper/blob/master/README.md README>\nfor details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

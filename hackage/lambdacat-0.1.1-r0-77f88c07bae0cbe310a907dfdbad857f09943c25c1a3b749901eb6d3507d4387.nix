@@ -21,7 +21,7 @@
       synopsis = "Webkit Browser";
       description = "A Browser based on WebKit, concepted to be easy to use and\nextendable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "lambdacat" = { buildable = true; }; };
       };
-    }
+      exes = { "lambdacat" = { buildable = true; }; };
+    };
+  }

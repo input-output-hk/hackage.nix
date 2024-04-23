@@ -21,7 +21,7 @@
       synopsis = "Evaluate and display trees of predicates";
       description = "Build and evaluate trees of predicates. For example, you might build\na predicate of the type Int -> Bool. You do this by assembling\nseveral predicates into a tree. You can then verbosely evaluate\nthis tree, showing why a particular result is reached.\n\nprednote also provides modules to test several subjects against a\ngiven predicate, and to parse infix or RPN expressions into a tree of\npredicates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prednote-visual-tests" = {
-          depends = (pkgs.lib).optionals (flags.visual-tests) [
+          depends = pkgs.lib.optionals (flags.visual-tests) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickpull" or (errorHandler.buildDepError "quickpull"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,10 +47,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.visual-tests then true else false;
-          };
         };
+      };
       tests = {
         "prednote-tests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/prettify-1.0-r0-7105b5783f3d899311f6e392cfe8a230eabc7db98b77e7557b7d1335d91a5bc0.nix;
         revNum = 0;
         sha256 = "7105b5783f3d899311f6e392cfe8a230eabc7db98b77e7557b7d1335d91a5bc0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

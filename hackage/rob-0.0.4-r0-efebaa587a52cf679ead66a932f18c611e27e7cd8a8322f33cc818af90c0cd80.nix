@@ -21,7 +21,7 @@
       synopsis = "Simple projects generator";
       description = "See README at <https://github.com/GianlucaGuarini/rob/blob/develop/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,28 +40,28 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rob" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."rob" or (errorHandler.buildDepError "rob"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rob-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."rob" or (errorHandler.buildDepError "rob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

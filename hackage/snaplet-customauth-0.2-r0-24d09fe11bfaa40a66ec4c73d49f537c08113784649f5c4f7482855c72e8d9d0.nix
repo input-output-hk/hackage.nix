@@ -21,7 +21,7 @@
       synopsis = "Alternate authentication snaplet";
       description = "More customizable authentication snaplet with OAuth2 support";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A chat interface for playing werewolf in Slack";
       description = "A chat interface for playing werewolf in Slack.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "werewolf-slack" = {
@@ -40,9 +40,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."werewolf" or (errorHandler.buildDepError "werewolf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

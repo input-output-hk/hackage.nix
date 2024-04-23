@@ -21,7 +21,7 @@
       synopsis = "SARIF implementation for Haskell";
       description = "Provides types and JSON instances for the Static Analysis Results Interchange Format (SARIF).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

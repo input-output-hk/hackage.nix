@@ -21,7 +21,7 @@
       synopsis = "Class/instance management plugin for Haskell Language Server";
       description = "Class/instance management plugin for Haskell Language Server.\nFor usage, please see README of HLS on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,25 +36,25 @@
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
+        ] ++ (if compiler.isGhc && compiler.version.lt "8.10.5"
           then [
             (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-            ]
-          else if compiler.isGhc && (compiler.version).eq "8.10.5"
+          ]
+          else if compiler.isGhc && compiler.version.eq "8.10.5"
             then [
               (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-              ]
-            else if compiler.isGhc && (compiler.version).eq "8.10.6"
+            ]
+            else if compiler.isGhc && compiler.version.eq "8.10.6"
               then [
                 (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                ]
-              else if compiler.isGhc && (compiler.version).eq "8.10.7"
+              ]
+              else if compiler.isGhc && compiler.version.eq "8.10.7"
                 then [
                   (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                  ]
-                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
+                ]
+                else pkgs.lib.optional (compiler.isGhc && compiler.version.eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

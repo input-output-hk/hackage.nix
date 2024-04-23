@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-chime-sdk-voice-2.0-r0-01f8c304cd3c27f4e9e564f3598dddb17e0bfa10c2a387156783dbb5b3cfe5b8.nix;
         revNum = 0;
         sha256 = "01f8c304cd3c27f4e9e564f3598dddb17e0bfa10c2a387156783dbb5b3cfe5b8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

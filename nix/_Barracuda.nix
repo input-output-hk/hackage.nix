@@ -6,8 +6,8 @@
         nix = import ../hackage/Barracuda-1.0.2-r0-af7f9f425a9afc0e6ed70cfd99a3de8513dc73af3372404faab834a0ceebb774.nix;
         revNum = 0;
         sha256 = "af7f9f425a9afc0e6ed70cfd99a3de8513dc73af3372404faab834a0ceebb774";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

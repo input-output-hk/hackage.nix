@@ -21,7 +21,7 @@
       synopsis = "A sensible set of defaults for writing lifted custom Preludes.";
       description = "A sensible set of defaults for writing custom Preludes, using 'lifted-base', 'exceptions', and 'lifted-async'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
           (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generate JSON-RPC servant clients";
       description = "Use this package to generate servant client functions that interact with a\nremote server via JSON-RPC over HTTP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."servant-jsonrpc" or (errorHandler.buildDepError "servant-jsonrpc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "simple static linked SHA3 using private symbols and the ref impl";
       description = "a self contained and linker friendly one stop shop for SHA3 kit based on the keccak reference impls";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

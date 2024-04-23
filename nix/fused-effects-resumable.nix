@@ -6,8 +6,8 @@
         nix = import ../hackage/fused-effects-resumable-0.1.0.0-r0-2914142d453d7c9c8cf9a349ab6abaf0297700827d71829ee69585b2ddedd170.nix;
         revNum = 0;
         sha256 = "2914142d453d7c9c8cf9a349ab6abaf0297700827d71829ee69585b2ddedd170";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

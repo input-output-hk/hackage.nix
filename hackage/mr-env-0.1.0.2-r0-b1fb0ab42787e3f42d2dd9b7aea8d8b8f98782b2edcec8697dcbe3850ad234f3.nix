@@ -21,21 +21,21 @@
       synopsis = "A simple way to read environment variables in Haskell";
       description = "A simple way to read environment variables with fallback values in\nHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-general" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mr-env" or (errorHandler.buildDepError "mr-env"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Morph between tuples with the same \"flattened\" representation.";
       description = "Morph between tuples with the same \"flattened\" representation. Convert\ntuples from and to heterogenous lists.\n\nSee \"Data.Tuple.Morph\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

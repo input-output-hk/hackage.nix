@@ -21,7 +21,7 @@
       synopsis = "Giphy HTTP API wrapper and CLI search tool.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,23 +36,23 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "giphy-search" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ] ++ (pkgs.lib).optionals (flags.buildsample) [
+          ] ++ pkgs.lib.optionals (flags.buildsample) [
             (hsPkgs."giphy-api" or (errorHandler.buildDepError "giphy-api"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = if flags.buildsample then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

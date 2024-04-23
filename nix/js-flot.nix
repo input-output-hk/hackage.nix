@@ -6,8 +6,8 @@
         nix = import ../hackage/js-flot-0.8.3-r0-4c1c447a9a2fba0adba6d30678302a30c32b9dfde9e7aa9e9156483e1545096d.nix;
         revNum = 0;
         sha256 = "4c1c447a9a2fba0adba6d30678302a30c32b9dfde9e7aa9e9156483e1545096d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

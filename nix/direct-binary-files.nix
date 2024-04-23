@@ -6,8 +6,8 @@
         nix = import ../hackage/direct-binary-files-1.0-r0-8e6b7889dc4055c00f50bc7bed4a26568df8eb0b81e1209dd1ee8bdc50985ad2.nix;
         revNum = 0;
         sha256 = "8e6b7889dc4055c00f50bc7bed4a26568df8eb0b81e1209dd1ee8bdc50985ad2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

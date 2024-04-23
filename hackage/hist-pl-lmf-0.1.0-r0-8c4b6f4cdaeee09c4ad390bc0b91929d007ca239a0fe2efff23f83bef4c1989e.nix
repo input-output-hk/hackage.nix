@@ -21,7 +21,7 @@
       synopsis = "LMF parsing for the historical dictionary of Polish";
       description = "The library provides a Lexical Markup Framework (LMF) parsing\nutilities which allow to translate the original LMF representation\nof the historical dictionary of Polish to data structures defined\nin the hist-pl-types library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."polysoup" or (errorHandler.buildDepError "polysoup"))
           (hsPkgs."hist-pl-types" or (errorHandler.buildDepError "hist-pl-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

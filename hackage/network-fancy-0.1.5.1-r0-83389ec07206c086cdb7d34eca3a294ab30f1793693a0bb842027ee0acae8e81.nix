@@ -21,17 +21,17 @@
       synopsis = "Networking support with a cleaner API";
       description = "Networking support with a cleaner API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."ws2_32" or (errorHandler.sysDepError "ws2_32")) ]
-          else (pkgs.lib).optional (system.isSolaris) (pkgs."socket" or (errorHandler.sysDepError "socket"));
+          else pkgs.lib.optional (system.isSolaris) (pkgs."socket" or (errorHandler.sysDepError "socket"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

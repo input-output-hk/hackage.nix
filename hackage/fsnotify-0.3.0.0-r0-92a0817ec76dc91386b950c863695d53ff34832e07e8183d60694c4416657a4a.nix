@@ -21,7 +21,7 @@
       synopsis = "Cross platform library for file change notification.";
       description = "Cross platform library for file creation, modification,\nand deletion notification. This library builds upon\nexisting libraries for platform-specific Windows, Mac,\nand Linux filesystem event notification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-          ] ++ (if system.isLinux
+        ] ++ (if system.isLinux
           then [
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ]
+          ]
           else if system.isWindows
             then [
               (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))
-              ]
-            else (pkgs.lib).optional (system.isOsx) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents")));
+            ]
+            else pkgs.lib.optional (system.isOsx) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents")));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = if system.isWindows
@@ -62,7 +62,7 @@
               (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
@@ -74,9 +74,9 @@
               (hsPkgs."async" or (errorHandler.buildDepError "async"))
               (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/verdict-json-0.0.0.0-r0-3b6dd4be8063212e55fbd8b0f17e46e8a81f99dfe9194ac41c35f20f50abc407.nix;
         revNum = 0;
         sha256 = "3b6dd4be8063212e55fbd8b0f17e46e8a81f99dfe9194ac41c35f20f50abc407";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

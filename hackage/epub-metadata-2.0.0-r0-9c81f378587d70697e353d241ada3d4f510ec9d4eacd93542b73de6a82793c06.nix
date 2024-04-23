@@ -21,7 +21,7 @@
       synopsis = "Library and utility for parsing and manipulating ePub OPF package data";
       description = "Library and utility for parsing and manipulating ePub\nOPF package data. An attempt has been made here to\nvery thoroughly implement the OPF Package Document\nspecification. Also included is a command-line\nutility to dump OPF package data to stdout in a\nhuman-readable form.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,14 +30,14 @@
           (hsPkgs."HSH" or (errorHandler.buildDepError "HSH"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "epub-meta" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

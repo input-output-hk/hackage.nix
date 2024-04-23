@@ -21,14 +21,14 @@
       synopsis = "Memoize IO actions";
       description = "Transform an IO action into a similar IO action\nthat performs the original action only once.\n\nYou can choose to perform the original action\nin one of two ways:\n\n(1) lazily (might never be performed)\n\n(2) eagerly (concurrent)\n\nSpecial thanks to shachaf and headprogrammingczar from #haskell irc\nfor helping me reason about the behavior of this library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

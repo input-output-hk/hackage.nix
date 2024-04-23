@@ -21,7 +21,7 @@
       synopsis = "Library for functional reactive programming (FRP).";
       description = "Reactive-banana is a library for Functional Reactive Programming (FRP).\n\nFRP offers an elegant and concise way to express interactive programs such as graphical user interfaces, animations, computer music or robot controllers. It promises to avoid the spaghetti code that is all too common in traditional approaches to GUI programming.\n\nSee the project homepage <http://wiki.haskell.org/Reactive-banana>\nfor more detailed documentation and examples.\n\n/Stability forecast./\nThis is a stable library, though minor API changes are still likely.\nIt features an efficient, push-driven implementation\nand has seen some optimization work.\n\n/API guide./\nStart with the \"Reactive.Banana\" module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."pqueue" or (errorHandler.buildDepError "pqueue"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "space" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,9 +80,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

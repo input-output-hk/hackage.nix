@@ -21,7 +21,7 @@
       synopsis = "A fast-foward-based planner";
       description = "An implementation of the fast-forward planner, as a quasi-quoter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,20 +34,20 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blocksWorld" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."huff" or (errorHandler.buildDepError "huff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

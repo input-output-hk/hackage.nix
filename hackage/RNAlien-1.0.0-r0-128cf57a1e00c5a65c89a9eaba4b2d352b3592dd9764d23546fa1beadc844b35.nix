@@ -21,7 +21,7 @@
       synopsis = "Unsupervized construction of RNA family models";
       description = "RNAlien is a tool for automatic construction of RNAfamily models from a single sequence.\n\nIt is available as a commandline tool, for testing or construction of few sequences the webservice can be used.\n\nThe source code of RNAlien, as well as the webserver is open source and available via GitHub (License GPL-3):\n\n* <https://github.com/eggzilla/RNAlien RNAlien>\n\n* <https://github.com/eggzilla/AlienServer AlienServer>\n\nTaxonomyTools which can be used to visualise the organisms included in a RNAlien result can be found here (License GPL-3):\n\n* <https://github.com/eggzilla/TaxonomyTools TaxonomyTools-Github>\n\n* <https://hackage.haskell.org/package/Taxonomy TaxonomyTools-Hackage>\n\nFor instruction how to use RNAlien please see the <http://rna.tbi.univie.ac.at/rnalien/help Help page>.\n\nDependencies:\n\n* <http://infernal.janelia.org/ Infernal>\n\n* <http://www.clustal.org/omega/#Download clustal-omega>\n\n* <http://www.bioinf.uni-freiburg.de/Software/LocARNA/#download Locarna>\n\n* <https://www.tbi.univie.ac.at/~wash/RNAz/ RNAz>\n\n* <http://www.tbi.univie.ac.at/RNA/index.html#download ViennaRNA package>\n\nInstallation via cabal-install:\n\n> cabal install RNAlien";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "RNAlien" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RNAlienStatistics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,18 +86,18 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ViennaRNAParser" or (errorHandler.buildDepError "ViennaRNAParser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "SelectSequences" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."RNAlien" or (errorHandler.buildDepError "RNAlien"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

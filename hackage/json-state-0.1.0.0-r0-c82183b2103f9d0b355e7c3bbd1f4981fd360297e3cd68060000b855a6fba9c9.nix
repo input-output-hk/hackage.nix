@@ -21,7 +21,7 @@
       synopsis = "Keep program state in JSON files.";
       description = "If your program manages simple state data not shared with other programs,\nthis package provide a lightweight alternative to full ACID databases. It\nallows you to load state from JSON files and update those files\nasynchronously and periodically. Version control (using Git) is supported.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."libgit" or (errorHandler.buildDepError "libgit"))
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

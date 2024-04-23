@@ -6,8 +6,8 @@
         nix = import ../hackage/hsluv-haskell-0.1.0.0-r0-b702020bbaf0a17467ac3416542e0bbc91587378340db9119ed4f9193e8cb1dd.nix;
         revNum = 0;
         sha256 = "b702020bbaf0a17467ac3416542e0bbc91587378340db9119ed4f9193e8cb1dd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

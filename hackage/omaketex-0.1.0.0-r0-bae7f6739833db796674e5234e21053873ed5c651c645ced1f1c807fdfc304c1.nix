@@ -21,7 +21,7 @@
       synopsis = "A simple tool to generate OMakefile for latex files.";
       description = "A simple toot to generate OMakefile for latex files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "omaketex" = {
@@ -31,9 +31,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

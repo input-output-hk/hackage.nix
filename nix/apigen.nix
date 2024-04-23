@@ -6,8 +6,8 @@
         nix = import ../hackage/apigen-0.0.1-r0-26762809e5e83804a4f3a6fb7e1265389ed57cfe3a1d0da4259f261c471c86d7.nix;
         revNum = 0;
         sha256 = "26762809e5e83804a4f3a6fb7e1265389ed57cfe3a1d0da4259f261c471c86d7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

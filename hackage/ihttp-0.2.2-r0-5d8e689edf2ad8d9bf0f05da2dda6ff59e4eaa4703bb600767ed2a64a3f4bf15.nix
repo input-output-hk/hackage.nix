@@ -21,7 +21,7 @@
       synopsis = "Incremental HTTP iteratee";
       description = "Incremental iteratee-based HTTP library using the 'enumerator'\npackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."contstuff" or (errorHandler.buildDepError "contstuff"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."netlines" or (errorHandler.buildDepError "netlines"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

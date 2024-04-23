@@ -21,7 +21,7 @@
       synopsis = "Prototypical type checker for Type Theory with Sized Natural Numbers";
       description = "Sit = Size-irrelevant types\n\nSit is a prototypical language with an Agda-compatible syntax.\nIt has dependent function types, universes, sized natural numbers,\nand case and recursion over natural numbers.\nThere is a relevant and an irrelevant quantifier over sizes.\nFor an example, see file test/Test.agda.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Sit.bin" = {
@@ -31,9 +31,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."data-lens-light" or (errorHandler.buildDepError "data-lens-light"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

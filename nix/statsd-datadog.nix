@@ -6,8 +6,8 @@
         nix = import ../hackage/statsd-datadog-0.2.0.0-r0-dbb4673beca570f9c22efd45ea5f8ae44c1a8b339ef104cdec45de2186a65cac.nix;
         revNum = 0;
         sha256 = "dbb4673beca570f9c22efd45ea5f8ae44c1a8b339ef104cdec45de2186a65cac";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

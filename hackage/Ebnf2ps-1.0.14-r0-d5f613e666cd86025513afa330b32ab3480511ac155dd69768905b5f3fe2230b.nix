@@ -21,7 +21,7 @@
       synopsis = "Peter's Syntax Diagram Drawing Tool";
       description = "Ebnf2ps generates nice looking syntax diagrams in EPS\nand FIG format from EBNF specifications and from yacc,\nbison, and Happy input grammars. The diagrams can be\nimmediatedly included in TeX/LaTeX documents and in\ntexts created with other popular document preparation\nsystems.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ebnf2ps" = {
@@ -32,12 +32,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

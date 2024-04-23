@@ -6,8 +6,8 @@
         nix = import ../hackage/snappy-iteratee-0.1-r0-cb5076587f649d5220c176c37603b23f67aaf07031ba66052a26ee24eb16a636.nix;
         revNum = 0;
         sha256 = "cb5076587f649d5220c176c37603b23f67aaf07031ba66052a26ee24eb16a636";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Create Vega-Lite visualizations in Haskell.";
       description = "This is an almost-direct port of elm-vega\n(<http://package.elm-lang.org/packages/gicentre/elm-vega/2.2.1>)\nto Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Partial orders, Galois connections, ordered semirings, & residuated lattices.";
       description = "partial orders";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."rings" or (errorHandler.buildDepError "rings"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."property" or (errorHandler.buildDepError "property"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."orders" or (errorHandler.buildDepError "orders"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."property" or (errorHandler.buildDepError "property"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

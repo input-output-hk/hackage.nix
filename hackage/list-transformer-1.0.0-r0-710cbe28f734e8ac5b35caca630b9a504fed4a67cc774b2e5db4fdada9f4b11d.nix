@@ -21,14 +21,14 @@
       synopsis = "List monad transformer";
       description = "This library provides a list monad transformer that\nenriches lists with effects and streams efficiently in\nconstant space.\n\nThis library also has an extensive tutorial in the\n\"List.Transformer\" module which explains the motivation\nbehind this type and how to use the type fluently.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

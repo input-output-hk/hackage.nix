@@ -21,7 +21,7 @@
       synopsis = "Haskell on Gtk rails - Gtk-based View for MVC applications";
       description = "Keera Hails is a rapid application development system.\n\nThe idea behind Hails is that you should be able to build cross platform\napplications with minimal effort, very quickly, and the result should be easy\nto maintain.\n\nLarge Hails applications are structured following an optimized MVC\narchitecture. Values are updated either from the view to the model, or from\nthe model to the view. Internally, rules use a notion of direction in the\nupdate to determine how different components must be updated.\n\nThis library instantiates the view interface of Keera Hails specifically to\nwork with Gtk.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,27 +29,27 @@
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."gtk-helpers" or (errorHandler.buildDepError "gtk-helpers"))
           (hsPkgs."keera-hails-mvc-view" or (errorHandler.buildDepError "keera-hails-mvc-view"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "haddock-coverage" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!!flags.test-doc-coverage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.test-doc-coverage then false else true;
-          };
         };
       };
-    }
+    };
+  }

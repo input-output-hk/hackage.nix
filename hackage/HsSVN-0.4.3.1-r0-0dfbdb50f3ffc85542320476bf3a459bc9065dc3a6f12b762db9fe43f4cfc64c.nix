@@ -21,7 +21,7 @@
       synopsis = "Partial Subversion (SVN) binding for Haskell";
       description = "HsSVN is a partial Subversion (SVN) binding for Haskell. Currently it\ncan do most things related to the Subversion FS but others are\nleft uncovered.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

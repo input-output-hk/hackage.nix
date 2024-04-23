@@ -21,7 +21,7 @@
       synopsis = "SIMD data types and functions";
       description = "This package provides a lifted version of the SIMD data types\nand instructions from ghc-prim.\n\nThe implementation is based on type families to provide a\nuniform interface to all different vector types. Instances\nfor numeric operations, 'Prim', 'Storable' and unboxed vector\ninstances are provided.\n\nAlthough not all processors support 256 or 512-bit vectors\nthis package provides a uniform interface. Vectors which\nare bigger than supported are modeled by combining smaller\nvectors. If the same code is compiled on a computer supporting\nlarger vectors the smaller vectors are replaced by larger\nvectors.\n\nNote: This package needs to be compiled with LLVM as the NCG\ndoes not know how to deal with SIMD-instructions. If LLVM is\nnot available, use -f no-vec to disable the use of SIMD instructions.\nWhile this will give you no speedup, it will work with plain\nHaskell (and should even work with GHCJS).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

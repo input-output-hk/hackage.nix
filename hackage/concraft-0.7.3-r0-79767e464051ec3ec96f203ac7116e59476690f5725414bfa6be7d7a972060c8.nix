@@ -21,7 +21,7 @@
       synopsis = "Morphological disambiguation based on constrained CRFs";
       description = "A morphological disambiguation library based on\nconstrained conditional random fields.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,20 +47,20 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."lazy-io" or (errorHandler.buildDepError "lazy-io"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "concraft-analyse-model" = {
-          depends = (pkgs.lib).optionals (flags.buildanatool) [
+          depends = pkgs.lib.optionals (flags.buildanatool) [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = if flags.buildanatool then true else false;
-          };
         };
       };
-    }
+    };
+  }

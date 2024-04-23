@@ -21,7 +21,7 @@
       synopsis = "sanitize untrusted HTML to prevent XSS attacks";
       description = "sanitize untrusted HTML to prevent XSS attacks with Text.HTML.SanitizeXSS.sanitizeXSS. see README.md for more details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

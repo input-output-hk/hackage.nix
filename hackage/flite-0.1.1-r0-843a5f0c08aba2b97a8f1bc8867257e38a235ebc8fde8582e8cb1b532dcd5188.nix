@@ -21,7 +21,7 @@
       synopsis = "f-lite compiler, interpreter and libraries";
       description = "The f-lite language is a subset of Haskell 98 and Clean consisting of function\ndefinitions, pattern matching, limited let expressions, function applications and\nconstructor applications expressed in the explicit 'braces' layout-insensitive format.\nSee README for more information. Example flite programs included in source distribution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,29 +30,29 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flite-pure" = {
-          depends = (pkgs.lib).optionals (flags.pure) [
+          depends = pkgs.lib.optionals (flags.pure) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = if flags.pure then true else false;
-          };
+        };
         "flite" = {
-          depends = (pkgs.lib).optionals (!flags.pure) [
+          depends = pkgs.lib.optionals (!flags.pure) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = if flags.pure then false else true;
-          };
         };
       };
-    }
+    };
+  }

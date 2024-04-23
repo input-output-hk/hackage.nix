@@ -21,7 +21,7 @@
       synopsis = "Some curated and opinionated packages for building Haskell services.";
       description = "A library of curated and opinionated packages for building Haskell serivces, with some preferred pattern. Services expose metrics using prometheus and log events via contravariant logging.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

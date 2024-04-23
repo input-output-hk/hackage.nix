@@ -21,7 +21,7 @@
       synopsis = "Command-line frontend for Haskell-tools Refact";
       description = "Command-line frontend for Haskell-tools Refact. Not meant as a final product, only for demonstration purposes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ht-refact" = {
@@ -37,9 +37,9 @@
             (hsPkgs."haskell-tools-ast" or (errorHandler.buildDepError "haskell-tools-ast"))
             (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
             (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

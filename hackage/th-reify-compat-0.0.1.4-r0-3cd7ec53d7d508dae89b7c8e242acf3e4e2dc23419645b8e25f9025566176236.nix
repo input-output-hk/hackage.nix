@@ -21,15 +21,15 @@
       synopsis = "Compatibility for the result type of TH reify";
       description = "This package contains compatible interfaces against\nthe result type of TH reify function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

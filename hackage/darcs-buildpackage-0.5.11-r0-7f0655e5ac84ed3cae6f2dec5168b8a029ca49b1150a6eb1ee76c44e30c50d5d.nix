@@ -21,7 +21,7 @@
       synopsis = "Tools to help manage Debian packages with Darcs";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "darcs-buildpackage" = {
@@ -34,9 +34,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dbp-importorig" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dbp-importdsc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dbp-markdeb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dbp-get" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,9 +86,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

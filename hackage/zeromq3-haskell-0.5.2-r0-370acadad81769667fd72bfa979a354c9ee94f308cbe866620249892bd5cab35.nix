@@ -21,7 +21,7 @@
       synopsis = "Bindings to ZeroMQ 3.x";
       description = "The 0MQ lightweight messaging kernel is a library which extends\nthe standard socket interfaces with features traditionally provided\nby specialised messaging middleware products. 0MQ sockets provide\nan abstraction of asynchronous message queues, multiple messaging\npatterns, message filtering (subscriptions), seamless access to\nmultiple transport protocols and more.\nThis library provides the Haskell language binding to 0MQ >= 3.2.2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,13 +32,13 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."MonadCatchIO-transformers" or (errorHandler.buildDepError "MonadCatchIO-transformers"))
-          ];
-        libs = (pkgs.lib).optional (system.isFreebsd) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+        ];
+        libs = pkgs.lib.optional (system.isFreebsd) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
         pkgconfig = [
           (pkgconfPkgs."libzmq" or (errorHandler.pkgConfDepError "libzmq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zeromq-haskell-tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."checkers" or (errorHandler.buildDepError "checkers"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

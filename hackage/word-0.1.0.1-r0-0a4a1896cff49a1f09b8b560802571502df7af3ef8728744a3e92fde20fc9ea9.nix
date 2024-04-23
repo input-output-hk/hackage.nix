@@ -21,7 +21,7 @@
       synopsis = "Words of arbitrary size";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."natural-induction" or (errorHandler.buildDepError "natural-induction"))
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."word" or (errorHandler.buildDepError "word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

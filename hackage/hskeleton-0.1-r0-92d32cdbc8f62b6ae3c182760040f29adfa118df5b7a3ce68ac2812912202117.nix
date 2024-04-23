@@ -21,14 +21,14 @@
       synopsis = "Skeleton for new Haskell programs";
       description = "Currently, this just handles --help and --version arguments for you.\nIn future, it may do more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

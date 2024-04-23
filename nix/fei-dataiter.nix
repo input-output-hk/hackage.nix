@@ -6,8 +6,8 @@
         nix = import ../hackage/fei-dataiter-0.2.0.0-r0-233076757b604432dd80dd37bafe5a1826074bcca7efe9f47787a8de766f9011.nix;
         revNum = 0;
         sha256 = "233076757b604432dd80dd37bafe5a1826074bcca7efe9f47787a8de766f9011";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

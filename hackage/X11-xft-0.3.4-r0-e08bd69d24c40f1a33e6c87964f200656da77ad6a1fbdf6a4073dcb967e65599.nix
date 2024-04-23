@@ -21,18 +21,18 @@
       synopsis = "Bindings to the Xft and some Xrender parts";
       description = "A Haskell bindings to the X Font library. With it, Haskell X11\napplications can access high quality font renderings and provide\nfonts with anti-aliasing and subpixel rendering. The bindings\nalso provide minimal bindings to Xrender parts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."xft" or (errorHandler.pkgConfDepError "xft"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

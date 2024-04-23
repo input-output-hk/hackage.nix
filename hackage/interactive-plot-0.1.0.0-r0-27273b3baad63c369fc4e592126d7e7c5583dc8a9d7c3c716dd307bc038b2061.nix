@@ -21,7 +21,7 @@
       synopsis = "Interactive quick time series plotting";
       description = "Quick time series terminal plotting for data exploration/in ghci. See\ndocumentation for \"Interactive.Plot\" and README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "interactive-plot-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."interactive-plot" or (errorHandler.buildDepError "interactive-plot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

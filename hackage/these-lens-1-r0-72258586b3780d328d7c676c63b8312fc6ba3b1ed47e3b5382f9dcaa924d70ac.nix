@@ -21,7 +21,7 @@
       synopsis = "Lenses for These";
       description = "This package provides Prism and Traversals for @These@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

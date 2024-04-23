@@ -21,13 +21,13 @@
       synopsis = "Arrow and contravariant tracers";
       description = "A simple interface for logging, tracing and monitoring";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.5") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.5") (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

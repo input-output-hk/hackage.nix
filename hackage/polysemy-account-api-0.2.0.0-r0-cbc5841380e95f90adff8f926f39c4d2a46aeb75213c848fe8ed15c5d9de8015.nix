@@ -21,7 +21,7 @@
       synopsis = "Account management with Servant and Polysemy";
       description = "See https://hackage.haskell.org/package/polysemy-account-api/docs/Polysemy-Account-Api.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-account-api-integration" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."sqel" or (errorHandler.buildDepError "sqel"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "polysemy-account-api-unit" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -90,9 +90,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."zeugma" or (errorHandler.buildDepError "zeugma"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

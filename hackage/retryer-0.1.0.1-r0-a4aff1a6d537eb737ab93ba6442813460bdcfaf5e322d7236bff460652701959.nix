@@ -21,7 +21,7 @@
       synopsis = "Retry failed commands";
       description = "Takes a command and keeps rerunning it until it returns\nsuccessfully. Has flags to limit number of retries and\nsleep between retires.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "retryer" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

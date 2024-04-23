@@ -21,7 +21,7 @@
       synopsis = "A simple client for the TheoremQuest theorem proving game.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tq" = {
@@ -30,9 +30,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."theoremquest" or (errorHandler.buildDepError "theoremquest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

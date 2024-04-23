@@ -21,7 +21,7 @@
       synopsis = "A simplistic HTTP server handler for Hack.";
       description = "This should not be used in a production environment.\nHowever, it's useful for testing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

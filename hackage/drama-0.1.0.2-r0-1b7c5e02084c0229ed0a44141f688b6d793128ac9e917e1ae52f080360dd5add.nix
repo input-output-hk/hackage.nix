@@ -21,7 +21,7 @@
       synopsis = "Simple actor library for Haskell";
       description = "Simple actor library for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."ki" or (errorHandler.buildDepError "ki"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."drama" or (errorHandler.buildDepError "drama"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

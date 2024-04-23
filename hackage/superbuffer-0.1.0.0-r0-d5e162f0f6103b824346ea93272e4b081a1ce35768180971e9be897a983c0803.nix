@@ -21,15 +21,15 @@
       synopsis = "Efficiently build a bytestring from smaller chunks";
       description = "Efficiently (both fast and memory efficient) build a bytestring from smaller chunks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."superbuffer" or (errorHandler.buildDepError "superbuffer"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "sbuf-bench" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."superbuffer" or (errorHandler.buildDepError "superbuffer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

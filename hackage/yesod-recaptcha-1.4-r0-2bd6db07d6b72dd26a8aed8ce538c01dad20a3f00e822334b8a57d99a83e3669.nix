@@ -21,7 +21,7 @@
       synopsis = "Dead simple support for reCAPTCHA on Yesod applications.";
       description = "This package provides support for reCAPTCHA\n(<http://www.google.com/recaptcha>) on Yesod applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

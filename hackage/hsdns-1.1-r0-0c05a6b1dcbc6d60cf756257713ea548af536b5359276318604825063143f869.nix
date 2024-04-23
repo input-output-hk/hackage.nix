@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Asynchronous DNS Resolver; requires the GNU ADNS library to be installed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         libs = [ (pkgs."adns" or (errorHandler.sysDepError "adns")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

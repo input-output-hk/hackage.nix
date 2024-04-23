@@ -13,7 +13,7 @@
       pretty = true;
       generic = true;
       mapdict = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "json5hs"; version = "0.1.3.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Serialising to and from JSON5";
       description = "The JSON5 Data Interchange Format (JSON5) is a superset of JSON\nthat aims to alleviate some of the limitations of JSON by expanding\nits syntax to include some productions from ECMAScript 5.1.\n\nThis library provides a parser and pretty printer for converting\nbetween Haskell values and JSON5.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.split-base
@@ -36,16 +36,16 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.generic
+          ] ++ (if flags.generic
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
-              ])) ++ (pkgs.lib).optional (flags.pretty) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+            ])) ++ pkgs.lib.optional (flags.pretty) (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Algebraic structures on oriented entities and limits as a tool kit to solve algebraic problems.";
       description = "Basic definition of algebraic structures on oriented entities.\n\nFirst of all we define __entities__ (\"OAlg.Entity.Definition\"). Based on them and since we look at algebra through the lens of categories, we define __oriented__ (\"OAlg.Structure.Oriented.Definition\") structures on which, by means of a suitable partially defined multiplication, __multiplicative__ (\"OAlg.Structure.Multiplicative.Definition\") structures are defined. If one provides such a multiplicative structure with a matching __additive__ (\"OAlg.Structure.Additive.Definition\") structure, one obtains __distributive__ (\"OAlg.Structure.Distributive.Definition\") structures on which __matrices__ (\"OAlg.Entity.Matrix.Definition\") are build. If an additive structure is provided with a matching scalar multiplication, __vectorial__ (\"OAlg.Structure.Vectorial.Definition\") structures are obtained, which then form - together with the distributive structures - the basis for __algebraic__ (\"OAlg.Structure.Algebraic.Definition\") structures\n\n__Limits__ (\"OAlg.Limes.Limits\") - in context of categories - serve as a backbone for solving algebraic problems, e. g. finding all solutions of the equation @a * x == 0@ is given by the __kernel__ (\"OAlg.Limes.KernelsAndCokernels\") of @a@.\n\nParticular attention is paid to the __duality__ (\"OAlg.Data.Dualisable\") of concepts - viewed through the lens of categories - so that the implementation of the dual concept could be traced back to the original one to avoid duplicate or redundant implementation efforts.\n\nA central feature in this package is that all functions defined here - unless otherwise stated - are total and means /if the input values are __valid__ (\"OAlg.Data.Validable\") then the resulting value is also valid/. Most functions do not check their preconditions. Therefore, all data structures defined here are provided with a property section that is translated into a corresponding __statement__ (\"OAlg.Data.Statement.Definition\") so that they can be __validated__ (\"OAlg.Control.Validate\") as needed. If there is an exception to this rule - such as for partially defined algebraic operators - the rule is extended by /if the input values are valid and fulfill the additional required properties, then the resulting value is also valid/. Most of the algebraic operators do check there additional required preconditions.\n\nSince the algebraic operators - such as @(*)@, @(+)@, @(.)@... - have been redefined here, one should exclude the standard Prelude when using this package, to avoid ambiguity, and use the __Prelude__ (\"OAlg.Prelude\") provided here.\n\nThroughout the descripitions in this package we denote type variables in __bold__ lower case letters to distinguishing them from variables for values of a type.\n\nSince we take the view that a value of a data structure or an instance of a class must strictly fulfill the required properties to be valid, Double, for example, has not been implemented as a numerical type.\n\nPlease see also the README on GitHub at <https://github.com/zErichGut/oalg-main/blob/main/oalg-base/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "oalg-base-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."oalg-base" or (errorHandler.buildDepError "oalg-base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

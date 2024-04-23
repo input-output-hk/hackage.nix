@@ -14,7 +14,7 @@
       identifier = {
         name = "optparse-applicative-cmdline-util";
         version = "0.2.0";
-        };
+      };
       license = "AGPL-3.0-only";
       copyright = "2020–2022  Tony Zorman";
       maintainer = "soliditsallgood@mailbox.org";
@@ -24,7 +24,7 @@
       synopsis = "Utility functions for working with optparse-applicative";
       description = "See README.md <https://gitlab.com/slotThe/optparse-applicative-util/-/blob/master/README.md here>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

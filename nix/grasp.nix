@@ -6,8 +6,8 @@
         nix = import ../hackage/grasp-0.1.0.0-r0-3b0e76a803790c93fdaea5a0c1055d22fb854af823f07aa2629a1f92eb4433bc.nix;
         revNum = 0;
         sha256 = "3b0e76a803790c93fdaea5a0c1055d22fb854af823f07aa2629a1f92eb4433bc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

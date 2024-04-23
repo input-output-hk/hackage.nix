@@ -21,7 +21,7 @@
       synopsis = "Prints a series of dates";
       description = "dapi prints a series of dates to the console. You can filter the\ndates based on multiple criteria, such as day of the week, day,\nmonth, and more. Slightly more information is at the homepage link\ngiven below.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dapi" = {
@@ -37,9 +37,9 @@
             (hsPkgs."multiarg" or (errorHandler.buildDepError "multiarg"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

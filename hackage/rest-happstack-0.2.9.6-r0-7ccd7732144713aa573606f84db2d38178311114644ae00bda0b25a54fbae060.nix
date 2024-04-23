@@ -21,7 +21,7 @@
       synopsis = "Rest driver for Happstack.";
       description = "Rest driver for Happstack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."rest-core" or (errorHandler.buildDepError "rest-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

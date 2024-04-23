@@ -21,7 +21,7 @@
       synopsis = "A GLPK backend to the MIP library.";
       description = "Please see the README on GitHub at <https://github.com/msakai/haskell-MIP/tree/master/MIP-glpk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,10 +35,10 @@
           (hsPkgs."intern" or (errorHandler.buildDepError "intern"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         libs = [ (pkgs."glpk" or (errorHandler.sysDepError "glpk")) ];
         buildable = true;
-        };
+      };
       tests = {
         "MIP-glpk-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

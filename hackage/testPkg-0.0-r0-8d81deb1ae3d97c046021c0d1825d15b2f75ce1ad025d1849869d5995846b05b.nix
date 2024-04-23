@@ -21,13 +21,13 @@
       synopsis = "Small test package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "testPkg" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

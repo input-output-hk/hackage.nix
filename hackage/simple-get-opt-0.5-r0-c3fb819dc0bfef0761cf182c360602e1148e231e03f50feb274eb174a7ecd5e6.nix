@@ -21,11 +21,11 @@
       synopsis = "A simple library for processing command-line options.";
       description = "A simple library for processing command-line options.\nThe library captures a common usage pattern of the GetOpt module\nform the standard libraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

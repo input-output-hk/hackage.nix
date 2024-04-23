@@ -21,7 +21,7 @@
       synopsis = "K_M,N quadratic programming";
       description = "Integer K_m,n quadratic programming problem solving with x86-64 SIMD instructions. See README.md for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kmn-programming" = {
@@ -32,9 +32,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

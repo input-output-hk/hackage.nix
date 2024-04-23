@@ -21,7 +21,7 @@
       synopsis = "A representation of latitude and longitude";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA representation of latitude and longitude";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."papa" or (errorHandler.buildDepError "papa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hunit" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."coordinate" or (errorHandler.buildDepError "coordinate"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

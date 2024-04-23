@@ -23,7 +23,7 @@
       nfdatan_only = false;
       show_type = true;
       use_cpphs = false;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "seqaid"; version = "0.2.1.1"; };
@@ -36,7 +36,7 @@
       synopsis = "Dynamic strictness control, including space leak repair";
       description = "Seqaid is a GHC plugin providing non-invasive auto-instrumentation of Haskell projects, for dynamic strictness (and parallelism) control. This will soon include optimisation for automated space leak relief using minimal strictification. [The optimiser is still in development however.]\n\nRefer to the seqaid <http://www.fremissant.net/seqaid homepage> for more information.\n\nPlease share your comments on this <http://www.reddit.com/r/haskell/comments/2pscxh/ann_deepseqbounded_seqaid_leaky/ reddit> discussion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -47,21 +47,21 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ]) ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))) ++ [
+        ]) ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))) ++ [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ]) ++ (pkgs.lib).optional (flags.seqable_only) (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))) ++ (pkgs.lib).optionals (!flags.demo_mode) [
+        ]) ++ pkgs.lib.optional (flags.seqable_only) (hsPkgs."generics-sop" or (errorHandler.buildDepError "generics-sop"))) ++ pkgs.lib.optionals (!flags.demo_mode) [
           (hsPkgs."hashtables" or (errorHandler.buildDepError "hashtables"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "seqaid" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"));
+          ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"));
           buildable = true;
-          };
+        };
         "seqaidpp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,9 +80,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ (pkgs.lib).optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"));
+          ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

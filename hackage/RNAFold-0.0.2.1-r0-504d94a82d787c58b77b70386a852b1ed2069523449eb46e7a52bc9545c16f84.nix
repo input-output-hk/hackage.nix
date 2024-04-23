@@ -21,7 +21,7 @@
       synopsis = "RNA secondary structure prediction";
       description = "Provides the folding functions as used in the ViennaRNA\npackage. Here, they are in Haskell form to be used by Haskell\nprograms.\n\n- This is a release aimed at testing Data.Vector\n- Expect major performance issues with GHC < 6.13!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
           (hsPkgs."HsTools" or (errorHandler.buildDepError "HsTools"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

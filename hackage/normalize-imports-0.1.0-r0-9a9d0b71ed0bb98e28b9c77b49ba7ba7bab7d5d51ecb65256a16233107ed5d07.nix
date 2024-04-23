@@ -21,22 +21,22 @@
       synopsis = "Sort and align Haskell import statements";
       description = "See README at <http://github.com/qoelet/normalize-imports#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "normalize-imports" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

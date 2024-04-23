@@ -21,7 +21,7 @@
       synopsis = "Wrapper to Lastfm API";
       description = "Wrapper to Lastfm API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."urlencoded" or (errorHandler.buildDepError "urlencoded"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

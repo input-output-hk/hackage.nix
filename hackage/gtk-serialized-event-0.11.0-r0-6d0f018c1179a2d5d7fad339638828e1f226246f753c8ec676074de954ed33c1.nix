@@ -21,7 +21,7 @@
       synopsis = "GTK+ Serialized event.";
       description = "For communicate GTK+ event in multi-processes GTK+ program,\nwe can use \"serializeEvent\" serialized event at *server* process,\nthen pass serialized event over the network, when *client* process receive\nserialized event from the network, we can use \"deserializeEvent serializedEvent mainDoEvent\"\nre-emit same event at *client* side.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gdk-2.0" or (errorHandler.pkgConfDepError "gdk-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

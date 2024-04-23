@@ -21,7 +21,7 @@
       synopsis = "thrift bindings to the cassandra database ";
       description = "The Cassandra (v.0.5.1) database bindings, generated using the Thrift (v.0.2) compliler, Released under the Apache 2.0 license. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Thrift" or (errorHandler.buildDepError "Thrift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

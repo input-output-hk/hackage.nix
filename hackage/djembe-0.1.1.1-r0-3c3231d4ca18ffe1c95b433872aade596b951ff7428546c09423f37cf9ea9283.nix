@@ -21,7 +21,7 @@
       synopsis = "Hit drums with haskell           ";
       description = "A simple DSL for composing drum beats in haskell.\nDjembe uses the system MIDI device to play these beats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "djembe-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."djembe" or (errorHandler.buildDepError "djembe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Numerical integration.";
       description = "One-dimensional numerical integration using the 'NumericalIntegration' C++ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

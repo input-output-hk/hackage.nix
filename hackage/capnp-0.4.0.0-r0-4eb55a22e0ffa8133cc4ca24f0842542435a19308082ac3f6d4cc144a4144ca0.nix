@@ -21,7 +21,7 @@
       synopsis = "Cap'n Proto for Haskell";
       description = "A native Haskell implementation of the Cap'N Proto cerialization format and\nRPC protocol.\n\nThe library implements serialization and level 1 RPC.\n\nThe \"Capnp.Tutorial\" module is the best place to start reading; the\nreference documentation can seem bewildering without that context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."supervisors" or (errorHandler.buildDepError "supervisors"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "capnpc-haskell" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."supervisors" or (errorHandler.buildDepError "supervisors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

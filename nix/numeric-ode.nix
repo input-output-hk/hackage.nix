@@ -6,8 +6,8 @@
         nix = import ../hackage/numeric-ode-0.0.0.0-r0-c898880f83774ca80653afbc39f8d3a5dbd82dfefaf743622af1cc6cba5091ce.nix;
         revNum = 0;
         sha256 = "c898880f83774ca80653afbc39f8d3a5dbd82dfefaf743622af1cc6cba5091ce";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

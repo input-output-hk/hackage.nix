@@ -21,11 +21,11 @@
       synopsis = "Purely functional data structure";
       description = "Purely functional data structure including\nred-black trees,\nleft-leaning red-black trees,\nweight balanced trees,\nsplay trees,\nskew heaps,\nleftist heaps,\nsplay heaps,\nand binominal heaps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

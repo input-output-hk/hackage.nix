@@ -21,15 +21,15 @@
       synopsis = "Wrapper to Random.org API";
       description = "Simple but complete wrapper to Random.org API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

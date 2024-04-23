@@ -21,7 +21,7 @@
       synopsis = "Control screen and keyboard backlights on MACs under Linux";
       description = "Maclight is both a library and a command line program for\ncontrolling the backlight on Macbooks under linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "maclight" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."maclight" or (errorHandler.buildDepError "maclight"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "MaclightTest.hs" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

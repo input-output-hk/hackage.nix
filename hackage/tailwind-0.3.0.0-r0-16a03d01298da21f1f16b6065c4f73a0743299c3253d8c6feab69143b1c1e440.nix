@@ -21,7 +21,7 @@
       synopsis = "Tailwind wrapped in Haskell";
       description = "Run Tailwind from Haskell without touching JavaScript";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."which" or (errorHandler.buildDepError "which"))
           (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tailwind-run" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
             (hsPkgs."tailwind" or (errorHandler.buildDepError "tailwind"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

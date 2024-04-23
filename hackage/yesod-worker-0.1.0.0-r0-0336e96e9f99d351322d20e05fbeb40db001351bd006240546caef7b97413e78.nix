@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."keenser" or (errorHandler.buildDepError "keenser"))
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-worker-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-worker" or (errorHandler.buildDepError "yesod-worker"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

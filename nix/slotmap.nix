@@ -6,8 +6,8 @@
         nix = import ../hackage/slotmap-0.1.0.0-r0-f3d3da78c830388b9b35f9729d1ed0f7b73f41f474e53b2acb8b84f017e2fafb.nix;
         revNum = 0;
         sha256 = "f3d3da78c830388b9b35f9729d1ed0f7b73f41f474e53b2acb8b84f017e2fafb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

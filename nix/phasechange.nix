@@ -6,8 +6,8 @@
         nix = import ../hackage/phasechange-0.1-r0-8cad7905d24e3c20cb05ccebea2713164606f93103882d6ac1b3b35a197a1a3f.nix;
         revNum = 0;
         sha256 = "8cad7905d24e3c20cb05ccebea2713164606f93103882d6ac1b3b35a197a1a3f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

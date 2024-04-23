@@ -21,16 +21,16 @@
       synopsis = "Diff algorithm in pure Haskell";
       description = "Implementation of the standard diff algorithm, and utilities for pretty printing.  Time complexity is proportional to N (input length) & D (number of differences).  Space complexity is D^2.  Includes utilities for pretty printing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "diff-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

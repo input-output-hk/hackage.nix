@@ -6,8 +6,8 @@
         nix = import ../hackage/ghci-lib-0.1.0.0-r0-17d4f57a9f6e660bbac8105aa159cbb66b338db4c93b2380b26f5b32baf3c9be.nix;
         revNum = 0;
         sha256 = "17d4f57a9f6e660bbac8105aa159cbb66b338db4c93b2380b26f5b32baf3c9be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

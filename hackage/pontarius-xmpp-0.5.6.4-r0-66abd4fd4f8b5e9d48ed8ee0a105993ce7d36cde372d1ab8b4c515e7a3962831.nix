@@ -21,7 +21,7 @@
       synopsis = "An XMPP client library";
       description = "Pontarius XMPP is a work in progress implementation of RFC 6120\n(\"XMPP CORE\"), RFC 6121 (\"XMPP IM\"), and RFC 6122 (\"XMPP ADDR\").\nWhile in alpha, Pontarius XMPP works quite well and fulfills most\nrequirements of the RFCs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -61,11 +61,11 @@
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-picklers" or (errorHandler.buildDepError "xml-picklers"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+        ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = ([
@@ -132,11 +132,11 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."xml-picklers" or (errorHandler.buildDepError "xml-picklers"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
           buildable = true;
-          };
+        };
         "runtests" = {
           depends = ([
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -193,12 +193,12 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
           buildable = false;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = ([
@@ -241,11 +241,11 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."pontarius-xmpp" or (errorHandler.buildDepError "pontarius-xmpp"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]) ++ (pkgs.lib).optional (flags.with-th && (compiler.isGhc && (compiler.version).ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
+          ]) ++ pkgs.lib.optional (flags.with-th && (compiler.isGhc && compiler.version.ge "7.6.1")) (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

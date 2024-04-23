@@ -21,7 +21,7 @@
       synopsis = "A fractal viewer.";
       description = "A fractal viewer with some cool features like changing colorscheme, screenshot, buddhabrot, and so on.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "phraskell" = {
@@ -30,9 +30,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

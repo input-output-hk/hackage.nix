@@ -21,7 +21,7 @@
       synopsis = "Test tools for Ribosome";
       description = "See https://hackage.haskell.org/package/ribosome-host-test/docs/Ribosome-Host-Test.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

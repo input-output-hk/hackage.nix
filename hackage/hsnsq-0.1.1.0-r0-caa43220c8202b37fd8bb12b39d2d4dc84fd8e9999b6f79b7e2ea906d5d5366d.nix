@@ -21,7 +21,7 @@
       synopsis = "Haskell NSQ client.";
       description = "Currently a primitive NSQ client, it implements the very basics of an NSQ client for communicating with single NSQ servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nsq-example" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."hostname" or (errorHandler.buildDepError "hostname"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

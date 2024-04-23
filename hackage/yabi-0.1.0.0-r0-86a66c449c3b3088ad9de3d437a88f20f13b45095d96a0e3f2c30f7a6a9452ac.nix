@@ -21,16 +21,16 @@
       synopsis = "Yet Another Brainfuck Interpreter";
       description = "Yet Another Brainfuck Interpreter";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yabi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

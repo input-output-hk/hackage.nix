@@ -21,14 +21,14 @@
       synopsis = "An Options type representing options for postgres connections";
       description = "This package exports an Options type representing options for postgres connections";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

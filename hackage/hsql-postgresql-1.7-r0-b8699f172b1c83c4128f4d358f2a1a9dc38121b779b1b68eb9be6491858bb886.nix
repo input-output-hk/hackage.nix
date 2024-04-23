@@ -21,15 +21,15 @@
       synopsis = "";
       description = "PostgreSQL driver for HSQL.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
-          ];
+        ];
         libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

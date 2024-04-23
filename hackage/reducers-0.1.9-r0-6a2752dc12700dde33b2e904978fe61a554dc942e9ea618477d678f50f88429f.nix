@@ -21,7 +21,7 @@
       synopsis = "Semigroups, specialized containers and a general map/reduce framework";
       description = "Semigroups, specialized containers and a general map/reduce framework";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

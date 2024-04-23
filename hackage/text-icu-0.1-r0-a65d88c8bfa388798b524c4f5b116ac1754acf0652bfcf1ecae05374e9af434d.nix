@@ -21,20 +21,20 @@
       synopsis = "Bindings to the ICU library";
       description = "Haskell bindings to the International Components for\nUnicode (ICU) libraries.  These libraries provide\nrobust and full-featured Unicode services on a wide\nvariety of platforms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         libs = [
           (pkgs."icui18n" or (errorHandler.sysDepError "icui18n"))
           (pkgs."icuuc" or (errorHandler.sysDepError "icuuc"))
           (pkgs."icudata" or (errorHandler.sysDepError "icudata"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

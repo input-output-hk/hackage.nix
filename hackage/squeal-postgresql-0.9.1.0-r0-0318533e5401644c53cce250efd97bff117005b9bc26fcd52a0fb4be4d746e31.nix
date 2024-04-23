@@ -21,7 +21,7 @@
       synopsis = "Squeal PostgreSQL Library";
       description = "Squeal is a type-safe embedding of PostgreSQL in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -67,20 +67,20 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.0.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.0.0"
             then false
             else true;
-          };
+        };
         "properties" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."squeal-postgresql" or (errorHandler.buildDepError "squeal-postgresql"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -106,10 +106,10 @@
             (hsPkgs."squeal-postgresql" or (errorHandler.buildDepError "squeal-postgresql"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "gauge" = {
           depends = [
@@ -127,9 +127,9 @@
             (hsPkgs."squeal-postgresql" or (errorHandler.buildDepError "squeal-postgresql"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

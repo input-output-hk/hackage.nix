@@ -6,8 +6,8 @@
         nix = import ../hackage/halma-telegram-bot-0.1.0.0-r0-04d3b03f74327a67a846520c2ed0b3fd9f8c40f9d4c2f028e395a59341d37e08.nix;
         revNum = 0;
         sha256 = "04d3b03f74327a67a846520c2ed0b3fd9f8c40f9d4c2f028e395a59341d37e08";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

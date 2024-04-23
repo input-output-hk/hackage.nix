@@ -21,7 +21,7 @@
       synopsis = "Kempe compiler";
       description = "Kempe is a stack-based language";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "kempe-modules" = {
@@ -41,14 +41,14 @@
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
-          build-tools = (pkgs.lib).optionals (!flags.cross) [
+          ];
+          build-tools = pkgs.lib.optionals (!flags.cross) [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "kc" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."kempe".components.sublibs.kempe-modules or (errorHandler.buildDepError "kempe:kempe-modules"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "kempe-test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "kempe-golden" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,10 +88,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "kempe-bench" = {
           depends = [
@@ -102,9 +102,9 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

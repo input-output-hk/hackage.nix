@@ -12,7 +12,7 @@
       usepkgconfig = false;
       threadedtestsuite = true;
       forceghcilib = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "hsqml"; version = "0.3.0.0"; };
@@ -25,7 +25,7 @@
       synopsis = "Haskell binding for Qt Quick";
       description = "A Haskell binding for Qt Quick.\nGeneral documentation is present in the 'Graphics.QML' module.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,7 +35,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = if system.isWindows && !flags.usepkgconfig
           then [
             (pkgs."Qt5Core" or (errorHandler.sysDepError "Qt5Core"))
@@ -44,27 +44,27 @@
             (pkgs."Qt5Qml" or (errorHandler.sysDepError "Qt5Qml"))
             (pkgs."Qt5Quick" or (errorHandler.sysDepError "Qt5Quick"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ]
+          ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
-        frameworks = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (system.isOsx && !flags.usepkgconfig) [
+        frameworks = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (system.isOsx && !flags.usepkgconfig) [
           (pkgs."QtCore" or (errorHandler.sysDepError "QtCore"))
           (pkgs."QtGui" or (errorHandler.sysDepError "QtGui"))
           (pkgs."QtWidgets" or (errorHandler.sysDepError "QtWidgets"))
           (pkgs."QtQml" or (errorHandler.sysDepError "QtQml"))
           (pkgs."QtQuick" or (errorHandler.sysDepError "QtQuick"))
-          ]);
-        pkgconfig = (pkgs.lib).optionals (!(system.isWindows && !flags.usepkgconfig)) ((pkgs.lib).optionals (!(system.isOsx && !flags.usepkgconfig)) [
+        ]);
+        pkgconfig = pkgs.lib.optionals (!(system.isWindows && !flags.usepkgconfig)) (pkgs.lib.optionals (!(system.isOsx && !flags.usepkgconfig)) [
           (pkgconfPkgs."Qt5Core" or (errorHandler.pkgConfDepError "Qt5Core"))
           (pkgconfPkgs."Qt5Gui" or (errorHandler.pkgConfDepError "Qt5Gui"))
           (pkgconfPkgs."Qt5Widgets" or (errorHandler.pkgConfDepError "Qt5Widgets"))
           (pkgconfPkgs."Qt5Qml" or (errorHandler.pkgConfDepError "Qt5Qml"))
           (pkgconfPkgs."Qt5Quick" or (errorHandler.pkgConfDepError "Qt5Quick"))
-          ]);
+        ]);
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hsqml-test1" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hsqml" or (errorHandler.buildDepError "hsqml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

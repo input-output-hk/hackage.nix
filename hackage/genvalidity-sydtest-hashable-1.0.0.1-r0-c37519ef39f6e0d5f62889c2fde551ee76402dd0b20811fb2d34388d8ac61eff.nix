@@ -14,7 +14,7 @@
       identifier = {
         name = "genvalidity-sydtest-hashable";
         version = "1.0.0.1";
-        };
+      };
       license = "MIT";
       copyright = "Copyright: (c) 2016-2021 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "Standard spec's for Hashable instances for sydtest";
       description = "Standard spec's for Hashable instances for sydtest";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-sydtest-hashable-test" = {
           depends = [
@@ -49,12 +49,12 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

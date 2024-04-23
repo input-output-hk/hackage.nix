@@ -21,16 +21,16 @@
       synopsis = "A simple parser for OpenSCAD";
       description = "A simple parser for OpenSCAD";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."language-openscad" or (errorHandler.buildDepError "language-openscad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

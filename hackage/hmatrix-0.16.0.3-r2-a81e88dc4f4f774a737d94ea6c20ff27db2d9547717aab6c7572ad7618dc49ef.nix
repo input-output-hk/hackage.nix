@@ -21,7 +21,7 @@
       synopsis = "Numeric Linear Algebra";
       description = "Linear algebra based on BLAS and LAPACK.\n\nThe package is organized as follows:\n\n[\"Numeric.LinearAlgebra.HMatrix\"] Starting point and recommended import module for most applications.\n\n[\"Numeric.LinearAlgebra.Static\"] Experimental alternative interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."storable-complex" or (errorHandler.buildDepError "storable-complex"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = ([
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ] ++ (pkgs.lib).optionals (system.isFreebsd) [
+        ] ++ pkgs.lib.optionals (system.isFreebsd) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ]) ++ (pkgs.lib).optionals (system.isWindows) [
+        ]) ++ pkgs.lib.optionals (system.isWindows) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

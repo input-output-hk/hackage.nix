@@ -21,7 +21,7 @@
       synopsis = "A program to extract various information from BAM alignmnet files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -30,9 +30,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."samtools" or (errorHandler.buildDepError "samtools"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

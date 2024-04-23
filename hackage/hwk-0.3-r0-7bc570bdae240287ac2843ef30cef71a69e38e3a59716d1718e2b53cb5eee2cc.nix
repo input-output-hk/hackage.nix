@@ -21,7 +21,7 @@
       synopsis = "Simple Haskell-based awk-like tool";
       description = "A simple Haskell-based alternative to awk/sed.\nIt uses Hint to apply the function given on the commandline\nto standard input and outputs the result.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hwk" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Quasi-quoter for use with mysql-simple.";
       description = "See the \"Database.MySQL.Simple.Quasi\" module documentation for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-qq" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."mysql-simple" or (errorHandler.buildDepError "mysql-simple"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

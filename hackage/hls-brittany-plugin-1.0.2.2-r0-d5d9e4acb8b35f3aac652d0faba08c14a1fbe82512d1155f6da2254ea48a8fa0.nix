@@ -21,7 +21,7 @@
       synopsis = "Integration with the Brittany code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,11 +38,11 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.2"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.2"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,11 +50,11 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hls-brittany-plugin" or (errorHandler.buildDepError "hls-brittany-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.2"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

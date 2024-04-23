@@ -21,7 +21,7 @@
       synopsis = "Avro serialization support for Mu microservices";
       description = "You can use @mu-avro@ to read AVRO Schema Declarations for mu-haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-avro" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mu-avro" or (errorHandler.buildDepError "mu-avro"))
             (hsPkgs."mu-schema" or (errorHandler.buildDepError "mu-schema"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

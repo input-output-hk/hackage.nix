@@ -21,7 +21,7 @@
       synopsis = "Webmachine inspired toolkit for building http applications and services.";
       description = "Webmachine inspired toolkit for building http applications and services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."webcrank" or (errorHandler.buildDepError "webcrank"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

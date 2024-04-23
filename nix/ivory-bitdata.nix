@@ -6,8 +6,8 @@
         nix = import ../hackage/ivory-bitdata-0.2.0.0-r0-2d64cb4e7c969e4d5229022b3a41624f0261795fef0ac708cfc8d1b75d90a373.nix;
         revNum = 0;
         sha256 = "2d64cb4e7c969e4d5229022b3a41624f0261795fef0ac708cfc8d1b75d90a373";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

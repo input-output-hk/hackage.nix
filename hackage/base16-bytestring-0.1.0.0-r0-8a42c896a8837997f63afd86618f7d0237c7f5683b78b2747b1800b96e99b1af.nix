@@ -21,14 +21,14 @@
       synopsis = "Fast base16 (hex) encoding and deconding for ByteStrings";
       description = "Fast base16 (hex) encoding and deconding for ByteStrings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

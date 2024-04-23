@@ -21,7 +21,7 @@
       synopsis = "Static file server based on Warp and wai-app-static";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "warp" = {
@@ -31,9 +31,9 @@
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

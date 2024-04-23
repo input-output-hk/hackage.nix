@@ -21,7 +21,7 @@
       synopsis = "Convert numbers to number words";
       description = "This package contains machinery to construct functions that convert\nnumbers to number words. It allows you to write a function which\nconverts a number like 142 to the string \\\"one hundred and\nforty-two\\\".\n\nThe documentation for the \"Text.Numeral\" module contains an high\nlevel overview of the package.\n\nIf you just want to convert numbers to number words in a specific\nlanguage you should probably use the @numerals@ package. That\npackage also contains numerous examples on how to use the functions\nin this package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."containers-unicode-symbols" or (errorHandler.buildDepError "containers-unicode-symbols"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-numerals" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

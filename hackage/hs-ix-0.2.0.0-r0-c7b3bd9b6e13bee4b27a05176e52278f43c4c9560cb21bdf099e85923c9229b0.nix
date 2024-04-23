@@ -21,14 +21,14 @@
       synopsis = "Indexed applicative functors and monads";
       description = "Indexed applicative functors and monads: see \"Data.Functor.Indexed\" to begin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hs-functors" or (errorHandler.buildDepError "hs-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

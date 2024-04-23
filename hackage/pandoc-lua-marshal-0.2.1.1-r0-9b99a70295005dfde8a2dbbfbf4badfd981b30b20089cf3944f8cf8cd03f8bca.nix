@@ -21,7 +21,7 @@
       synopsis = "Use pandoc types in Lua";
       description = "This package provides functions to marshal and unmarshal\npandoc document types to and from Lua.\n\nThe values of most types are pushed to pandoc as \"userdata\"\nobjects that wrap a stable pointer to the Haskell value;\nthese objects come with methods to access and modify their\nproperties.\n\nSequences are pushed as normal Lua tables, but are\naugmented with convenience functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pandoc-lua-marshal-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

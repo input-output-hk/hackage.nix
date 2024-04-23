@@ -21,29 +21,29 @@
       synopsis = "Json Token datatype";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "data-json-token-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-json-token" or (errorHandler.buildDepError "data-json-token"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "data-json-token-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-json-token" or (errorHandler.buildDepError "data-json-token"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

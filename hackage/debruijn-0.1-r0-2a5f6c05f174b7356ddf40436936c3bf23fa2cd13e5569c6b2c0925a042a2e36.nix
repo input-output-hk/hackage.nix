@@ -21,7 +21,7 @@
       synopsis = "de Bruijn indices and levels";
       description = "de Bruijn indices and levels for well-scoped terms.\n\nThis is \"unsafe\" (as it uses 'unsafeCoerce') implementation, but it's fast.\nThe API is the same as in @debruin-safe@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."skew-list" or (errorHandler.buildDepError "skew-list"))
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

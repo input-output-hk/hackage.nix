@@ -21,15 +21,15 @@
       synopsis = "Generic NFData instances through instant-generics";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."instant-generics" or (errorHandler.buildDepError "instant-generics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

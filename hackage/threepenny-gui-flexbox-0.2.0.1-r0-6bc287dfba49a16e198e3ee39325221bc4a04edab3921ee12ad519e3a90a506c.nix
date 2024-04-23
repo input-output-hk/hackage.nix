@@ -21,7 +21,7 @@
       synopsis = "Flexbox layouts for Threepenny-gui.";
       description = "See the README at https://github.com/barischj/threepenny-gui-flexbox";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "threepenny-flexbox-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
             (hsPkgs."threepenny-gui-flexbox" or (errorHandler.buildDepError "threepenny-gui-flexbox"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

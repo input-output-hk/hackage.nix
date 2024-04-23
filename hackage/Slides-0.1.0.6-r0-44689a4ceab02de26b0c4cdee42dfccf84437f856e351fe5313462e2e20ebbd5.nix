@@ -21,7 +21,7 @@
       synopsis = "Generate slides from Haskell code";
       description = "Make presentations in Haskell with diagrams";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

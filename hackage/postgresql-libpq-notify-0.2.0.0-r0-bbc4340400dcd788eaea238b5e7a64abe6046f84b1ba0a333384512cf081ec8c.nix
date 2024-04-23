@@ -21,16 +21,16 @@
       synopsis = "Minimal dependency PostgreSQL notifications library";
       description = "Minimal dependency PostgreSQL notifications library. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."postgres-options" or (errorHandler.buildDepError "postgres-options"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

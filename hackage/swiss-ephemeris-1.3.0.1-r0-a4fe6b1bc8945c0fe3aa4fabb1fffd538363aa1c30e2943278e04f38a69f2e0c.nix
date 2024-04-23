@@ -21,12 +21,12 @@
       synopsis = "Haskell bindings for the Swiss Ephemeris C library";
       description = "Please see the README on GitHub at <https://github.com/lfborjas/swiss-ephemeris#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "swiss-ephemeris-test" = {
           depends = [
@@ -35,12 +35,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."swiss-ephemeris" or (errorHandler.buildDepError "swiss-ephemeris"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

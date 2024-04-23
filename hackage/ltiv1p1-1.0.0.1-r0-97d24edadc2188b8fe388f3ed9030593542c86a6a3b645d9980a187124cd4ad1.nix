@@ -21,7 +21,7 @@
       synopsis = "Partial implementation of a service provider for LTI 1.1.";
       description = "Service provider implementation for IMS Global Learning Tools Interoperability™ 1.1.\nMean to be used for LTI components at edX.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.gi-cairo or (pkgs.buildPackages.gi-cairo or (errorHandler.setupDepError "gi-cairo")))
         (hsPkgs.buildPackages.gi-gdkpixbuf or (pkgs.buildPackages.gi-gdkpixbuf or (errorHandler.setupDepError "gi-gdkpixbuf")))
         (hsPkgs.buildPackages.gi-gio or (pkgs.buildPackages.gi-gio or (errorHandler.setupDepError "gi-gio")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -48,11 +48,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."librsvg-2.0" or (errorHandler.pkgConfDepError "librsvg-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

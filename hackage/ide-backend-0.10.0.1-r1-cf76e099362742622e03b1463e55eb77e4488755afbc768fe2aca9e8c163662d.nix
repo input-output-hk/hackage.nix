@@ -21,7 +21,7 @@
       synopsis = "An IDE backend library";
       description = "See README.md for more details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,13 +50,13 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ]
+          ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "ide-backend-exe-cabal" = {
           depends = [
@@ -94,10 +94,10 @@
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "TestSuite" = {
           depends = [
@@ -122,13 +122,13 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
+        };
         "rpc-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -151,13 +151,13 @@
             (hsPkgs."ide-backend-common" or (errorHandler.buildDepError "ide-backend-common"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
-              ]
+            ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

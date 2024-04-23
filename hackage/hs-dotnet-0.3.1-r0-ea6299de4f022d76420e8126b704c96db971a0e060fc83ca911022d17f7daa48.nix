@@ -21,17 +21,17 @@
       synopsis = "Pragmatic .NET interop for Haskell";
       description = "This package provides a way for Haskell code (via GHC) to interact with .NET\ncode and libraries. Full access to the .NET object model is provided,\nletting you create and manipulate .NET objects.\n\nSupport for calling back into to Haskell from .NET code is also supported,\nexposing Haskell code as delegates.\n\nWork on broadening the interop even further between the two worlds is underway.\n\nMore info on package and its features at <http://haskell.forkIO.com/dotnet>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
           (pkgs."oleaut32" or (errorHandler.sysDepError "oleaut32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

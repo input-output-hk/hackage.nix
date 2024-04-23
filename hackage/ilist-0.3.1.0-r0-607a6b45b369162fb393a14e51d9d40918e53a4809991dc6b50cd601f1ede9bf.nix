@@ -21,12 +21,12 @@
       synopsis = "Optimised list functions for doing index-related things";
       description = "Optimised list functions for doing index-related things. They're faster than common idioms in all cases, they avoid <https://ghc.haskell.org/trac/ghc/ticket/12620 space leaks>, and sometimes they fuse better as well.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -34,10 +34,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ilist" or (errorHandler.buildDepError "ilist"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

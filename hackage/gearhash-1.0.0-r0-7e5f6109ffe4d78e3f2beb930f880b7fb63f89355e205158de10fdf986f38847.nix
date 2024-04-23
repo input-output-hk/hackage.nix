@@ -21,7 +21,7 @@
       synopsis = "An implementation of Gear hash, a fast rolling hash algorithm";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "count" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gearhash" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -64,9 +64,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gearhash-conduit" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -79,9 +79,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

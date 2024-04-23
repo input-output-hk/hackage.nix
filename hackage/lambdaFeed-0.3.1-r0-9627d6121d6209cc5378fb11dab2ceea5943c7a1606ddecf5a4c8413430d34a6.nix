@@ -21,7 +21,7 @@
       synopsis = "RSS 2.0 feed generator";
       description = "LambdaFeed generates RSS 2.0 XML feeds and matching HTML files.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lambdaFeed" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."html" or (errorHandler.buildDepError "html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

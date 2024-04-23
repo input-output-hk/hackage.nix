@@ -6,8 +6,8 @@
         nix = import ../hackage/algolia-0.1.0.0-r0-54bdecaee2baac133ed5df08a799ab6949ccb6471ce713847b2916212fe2f582.nix;
         revNum = 0;
         sha256 = "54bdecaee2baac133ed5df08a799ab6949ccb6471ce713847b2916212fe2f582";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

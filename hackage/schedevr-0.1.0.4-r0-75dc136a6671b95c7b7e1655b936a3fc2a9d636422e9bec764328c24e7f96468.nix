@@ -21,7 +21,7 @@
       synopsis = "Marge schedules and show EVR";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "marge-schedule" = {
@@ -31,9 +31,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "show-progress" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -42,9 +42,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

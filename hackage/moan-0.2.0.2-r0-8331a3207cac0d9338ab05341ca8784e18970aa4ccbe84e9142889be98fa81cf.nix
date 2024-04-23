@@ -21,7 +21,7 @@
       synopsis = "Language-agnostic analyzer for positional morphosyntactic tags";
       description = "Implementation of a space-efficient morphosyntactic analyzer.\nIt solves a problem of providing a set of possible tags for a given word.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."tagset-positional" or (errorHandler.buildDepError "tagset-positional"))
           (hsPkgs."regex-tdfa-text" or (errorHandler.buildDepError "regex-tdfa-text"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

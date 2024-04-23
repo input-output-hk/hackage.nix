@@ -21,7 +21,7 @@
       synopsis = "Ungarble output from several threads";
       description = "Provides a simple interface for writing concurrent programs that\nneed to output a lot of status messages to the console, or display\nmultiple progress bars for different activities at the same time,\nor concurrently run external commands that output to the console.\n\nBuilt on top of that is a way of defining multiple output regions,\nwhich are automatically laid out on the screen and can be individually\nupdated. Can be used for progress displays etc.\n\n<<https://joeyh.name/code/concurrent-output/demo2.gif>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

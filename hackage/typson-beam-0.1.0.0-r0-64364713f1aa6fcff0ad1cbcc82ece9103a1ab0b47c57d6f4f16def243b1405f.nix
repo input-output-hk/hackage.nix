@@ -21,7 +21,7 @@
       synopsis = "Typson Beam Integration";
       description = "Please see the README on GitHub at <https://github.com/aaronallen8455/typson#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."beam-postgres" or (errorHandler.buildDepError "beam-postgres"))
           (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
           (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."test-fixture" or (errorHandler.buildDepError "test-fixture"))
             (hsPkgs."typson-beam" or (errorHandler.buildDepError "typson-beam"))
             (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

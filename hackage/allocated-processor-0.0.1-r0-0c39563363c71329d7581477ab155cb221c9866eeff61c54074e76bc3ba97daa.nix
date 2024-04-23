@@ -21,11 +21,11 @@
       synopsis = "Functional combinators for monadic actions that require allocation and de-allocation";
       description = "See module docs for more information, and \"cv-combinators\" package for example usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

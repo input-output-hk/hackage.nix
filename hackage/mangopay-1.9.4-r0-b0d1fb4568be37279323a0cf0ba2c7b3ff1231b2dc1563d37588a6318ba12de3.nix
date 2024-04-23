@@ -21,7 +21,7 @@
       synopsis = "Bindings to the MangoPay API";
       description = "This package provides Haskell bindings to the\n<http://www.mangopay.com/ MangoPay> payment provider.\n\nSee also the @yesod-mangopay@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,17 +52,17 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ] ++ (if flags.conduit11
+        ] ++ (if flags.conduit11
           then [
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-            ]
+          ]
           else [
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "mangopay-passphrase" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mangopay" or (errorHandler.buildDepError "mangopay"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mangopay-tests" = {
           depends = [
@@ -110,15 +110,15 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."country-codes" or (errorHandler.buildDepError "country-codes"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
-            ] ++ (if flags.conduit11
+          ] ++ (if flags.conduit11
             then [
               (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-              ]
+            ]
             else [
               (hsPkgs."attoparsec-conduit" or (errorHandler.buildDepError "attoparsec-conduit"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Client library for Tempgres.";
       description = "Client library for <https://github.com/ClockworkConsulting/tempgres-server Tempgres> for conveniently creating temporary PostgreSQL databases for use in tests.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

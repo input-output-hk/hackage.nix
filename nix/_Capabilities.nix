@@ -6,8 +6,8 @@
         nix = import ../hackage/Capabilities-0.1.0.0-r0-6af0b8dc09572519edd3f961dd434c4a922c0fcce639c8ffeff514db14bb4cbd.nix;
         revNum = 0;
         sha256 = "6af0b8dc09572519edd3f961dd434c4a922c0fcce639c8ffeff514db14bb4cbd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

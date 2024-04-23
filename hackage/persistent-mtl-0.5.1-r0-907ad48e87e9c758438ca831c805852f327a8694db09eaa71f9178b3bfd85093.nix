@@ -21,7 +21,7 @@
       synopsis = "Monad transformer for the persistent API";
       description = "A monad transformer and mtl-style type class for using the\npersistent API directly in your monad transformer stack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,11 +39,11 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unliftio-pool" or (errorHandler.buildDepError "unliftio-pool"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.4.0" && (compiler.isGhc && (compiler.version).lt "9.4.3")
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.4.0" && (compiler.isGhc && compiler.version.lt "9.4.3")
           then false
           else true;
-        };
+      };
       tests = {
         "persistent-mtl-test" = {
           depends = [
@@ -66,12 +66,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.buildPackages.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Mock records of functions easily";
       description = "Please see the README on GitHub at <https://github.com/theam/mockazo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mockazo-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

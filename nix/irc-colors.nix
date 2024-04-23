@@ -6,8 +6,8 @@
         nix = import ../hackage/irc-colors-0.1-r0-0260d552a5910f1b5964384bfa31270a52e2f23e517102893c5a1c1b1ade0e60.nix;
         revNum = 0;
         sha256 = "0260d552a5910f1b5964384bfa31270a52e2f23e517102893c5a1c1b1ade0e60";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/global-lock-0.1-r0-b7affe140763f53f17fd9c937dfe9b8023c7d209216fb3793933957e49a7446f.nix;
         revNum = 0;
         sha256 = "b7affe140763f53f17fd9c937dfe9b8023c7d209216fb3793933957e49a7446f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

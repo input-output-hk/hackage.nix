@@ -21,7 +21,7 @@
       synopsis = "Like `optparse-generic`, but with `TemplateHaskell` for faster builds";
       description = "Please see the README on GitHub at <https://github.com/MercuryTechnologies/optparse-th#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "optparse-th-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."optparse-th" or (errorHandler.buildDepError "optparse-th"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

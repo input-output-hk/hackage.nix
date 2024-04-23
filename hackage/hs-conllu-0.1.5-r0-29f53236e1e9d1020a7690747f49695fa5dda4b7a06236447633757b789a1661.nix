@@ -21,7 +21,7 @@
       synopsis = "Conllu validating parser and utils.";
       description = "utilities to parse, print, diff, and analyse data in CoNLL-U format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-conllu" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."hs-conllu" or (errorHandler.buildDepError "hs-conllu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

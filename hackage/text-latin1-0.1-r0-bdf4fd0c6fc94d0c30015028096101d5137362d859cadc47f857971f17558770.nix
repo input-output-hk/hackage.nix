@@ -21,7 +21,7 @@
       synopsis = "Latin-1 (including ASCII) utility functions";
       description = "This package provides various functions over the ASCII ang Latin-1\nportions of the 'Char' and 'Word8' data types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."data-checked" or (errorHandler.buildDepError "data-checked"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

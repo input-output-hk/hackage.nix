@@ -14,7 +14,7 @@
       identifier = {
         name = "hls-explicit-record-fields-plugin";
         version = "2.0.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "berk.ozkutuk@tweag.io";
@@ -24,7 +24,7 @@
       synopsis = "Explicit record fields plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."hls-explicit-record-fields-plugin" or (errorHandler.buildDepError "hls-explicit-record-fields-plugin"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

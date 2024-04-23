@@ -21,7 +21,7 @@
       synopsis = "GHC core plugin supporting the generic-storable package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -20,7 +20,7 @@
       ios = true;
       macos = true;
       safe-foreign-calls = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "vulkan"; version = "2.1.0.0"; };
@@ -33,18 +33,18 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "Please see readme.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector-sized" or (errorHandler.buildDepError "vector-sized"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ]
           else [ (pkgs."vulkan" or (errorHandler.sysDepError "vulkan")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

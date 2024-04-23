@@ -21,11 +21,11 @@
       synopsis = "A container that always has no values.";
       description = "Like arithmetics is incomplete without zero, set theory is impossible without\na notion of an empty set, algorithm theory must take into account totally\nundefined functions -- so the domain of data types needs its absolute zero.\n'Void' type from the @void@ package <https://hackage.haskell.org/package/void>\nprovides a zero element for the kind @*@ of unparametrized types. This package\ndoes the same for the kind @*->*@ of types with one parameter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

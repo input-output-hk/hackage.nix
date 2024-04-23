@@ -21,7 +21,7 @@
       synopsis = "Provides conduits to upload data to S3 using the Multipart API";
       description = "Provides a conduit based streaming interface and a concurrent interface to\nuploading data to S3 using the Multipart API. Also provides method to upload\nfiles or bytestrings of known size in parallel. Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -41,12 +41,12 @@
           (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "7.11") [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "7.11") [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "7.8" && (compiler.version).lt "7.9")) (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "7.8" && compiler.version.lt "7.9")) (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"));
         buildable = true;
-        };
+      };
       exes = {
         "s3upload" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = false;
-          };
         };
       };
-    }
+    };
+  }

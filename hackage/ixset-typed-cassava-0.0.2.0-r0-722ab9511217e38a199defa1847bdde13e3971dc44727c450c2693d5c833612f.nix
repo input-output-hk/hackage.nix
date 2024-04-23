@@ -21,7 +21,7 @@
       synopsis = "cassava encoding and decoding via ixset-typed";
       description = "cassava encoding and decoding via ixset-typed";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
           (hsPkgs."ixset-typed" or (errorHandler.buildDepError "ixset-typed"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

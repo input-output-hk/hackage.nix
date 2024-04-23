@@ -21,7 +21,7 @@
       synopsis = "Bindings to libevdev";
       description = "Provides access to the Linux event device interface, with an optional high-level Streamly-based API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,12 +39,12 @@
           (hsPkgs."rawfilepath" or (errorHandler.buildDepError "rawfilepath"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         libs = [ (pkgs."evdev" or (errorHandler.sysDepError "evdev")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

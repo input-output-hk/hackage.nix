@@ -21,7 +21,7 @@
       synopsis = "Generates TypeScript definitions that match Generic Aeson encodings";
       description = "This project uses GHC.Generics to generate TypeScript type definitions that match the Generic Aseon encoding for the same type.\nIncluded here are tests that round trip by compling the TypeScript with tsc, and checking that generated values type check.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

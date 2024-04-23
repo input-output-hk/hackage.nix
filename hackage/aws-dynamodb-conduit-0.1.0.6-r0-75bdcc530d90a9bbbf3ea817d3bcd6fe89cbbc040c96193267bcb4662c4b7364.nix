@@ -21,7 +21,7 @@
       synopsis = "Conduit-based interface for AWS DynamoDB";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."json-togo" or (errorHandler.buildDepError "json-togo"))
           (hsPkgs."attoparsec-trans" or (errorHandler.buildDepError "attoparsec-trans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

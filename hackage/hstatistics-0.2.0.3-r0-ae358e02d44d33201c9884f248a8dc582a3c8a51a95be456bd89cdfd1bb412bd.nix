@@ -21,15 +21,15 @@
       synopsis = "Statistics";
       description = "Purely functional interface for statistics based on hmatrix and hmatrix-gsl-stats";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."hmatrix-gsl-stats" or (errorHandler.buildDepError "hmatrix-gsl-stats"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell interface to SUMP-compatible logic analyzers";
       description = "A Haskell interface to SUMP-compatible logic analyzers including\na utilities for visualization of logic traces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."serialport" or (errorHandler.buildDepError "serialport"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

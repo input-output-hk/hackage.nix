@@ -21,11 +21,11 @@
       synopsis = "Express your disapproval";
       description = "The Acme.LookOfDisapproval module provides one function &#xca0;_&#xca0;,\nwhich lets you to express your profound disapproval.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

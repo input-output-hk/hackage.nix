@@ -6,8 +6,8 @@
         nix = import ../hackage/manatee-all-0.2.2-r0-bcbddad2493135812f4d3e2135ba0eba544267bbe502ac45e5f8522f61aacd37.nix;
         revNum = 0;
         sha256 = "bcbddad2493135812f4d3e2135ba0eba544267bbe502ac45e5f8522f61aacd37";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A logging framework built around implicit parameters.";
       description = "This package provides a simple framework for adding logging to a program.\nIt supports customizable line formatting and user-provided log contexts.\nLog configuration information is passed around via implicit parameters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

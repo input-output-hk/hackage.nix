@@ -21,7 +21,7 @@
       synopsis = "Design-by-contract for JavaScript";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."WebBits-Html" or (errorHandler.buildDepError "WebBits-Html"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jscc" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."WebBits" or (errorHandler.buildDepError "WebBits"))
             (hsPkgs."WebBits-Html" or (errorHandler.buildDepError "WebBits-Html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

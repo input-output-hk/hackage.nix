@@ -21,16 +21,16 @@
       synopsis = "Unboxed vectors of bits / dense IntSets";
       description = "Another bit-array library for Haskell.  This one defines a `Bit`\ntype (which is an instance of all the \"expected\" classes, including\nnumeric ones) and makes that type an instance of `Data.Vector.Unboxed.\nUnbox`, so we get a lot of nice APIs for free.  `Bool` is already an\nunboxable type, but the current unboxed `Vector` implementation packs\neach bit as a byte.  This one packs 8 bits per byte, as expected\n(`UArray` from the `array` package also uses one bit per `Bool`).\n\nIn addition to the `Vector` interface, there are several high-level\noperations and some low-level ones suitable for building new bulk\noperations by viewing the bit-vector as a word vector.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "bitvec-tests" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

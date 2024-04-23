@@ -21,14 +21,14 @@
       synopsis = "higher order versions of the Scrap Your Boilerplate classes";
       description = "higher order versions of Scrap Your Boilerplate classes to ease programming with polymorphic recursion and reduce UndecidableInstances";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

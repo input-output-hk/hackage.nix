@@ -21,7 +21,7 @@
       synopsis = "Bindings to the nix command-line interface";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."logging-effect" or (errorHandler.buildDepError "logging-effect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

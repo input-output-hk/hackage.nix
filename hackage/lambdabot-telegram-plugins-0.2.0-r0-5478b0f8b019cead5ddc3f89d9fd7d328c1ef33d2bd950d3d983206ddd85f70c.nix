@@ -21,7 +21,7 @@
       synopsis = "Lambdabot for Telegram";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nIt operates as a command line tool, embedded in an editor,\nembedded in GHCi, via internet relay chat and on the web.\n\nTelegram bot provided via telegram-bot-simple package.\n\nThis package is a combination of both Lambdabot and Telegram bot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "telegram-lambdabot" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."lambdabot-haskell-plugins" or (errorHandler.buildDepError "lambdabot-haskell-plugins"))
             (hsPkgs."lambdabot-telegram-plugins" or (errorHandler.buildDepError "lambdabot-telegram-plugins"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

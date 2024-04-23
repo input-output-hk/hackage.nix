@@ -6,8 +6,8 @@
         nix = import ../hackage/trim-0.1.0.0-r0-9001aa29449a4da9c1a7f95e917d13f585a358eaac661becbb8c79db7c877ce9.nix;
         revNum = 0;
         sha256 = "9001aa29449a4da9c1a7f95e917d13f585a358eaac661becbb8c79db7c877ce9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

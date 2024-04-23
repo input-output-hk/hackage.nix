@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -44,29 +44,29 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."unicode-collation" or (errorHandler.buildDepError "unicode-collation"))
-          ] ++ (if flags.integer-simple
+        ] ++ (if flags.integer-simple
           then [
             (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         libs = if system.isWindows
           then [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]
           else if system.isOsx
             then [
               (pkgs."c++" or (errorHandler.sysDepError "c++"))
               (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-              ]
+            ]
             else [
               (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
               (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-              ];
+            ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Z-Data-Test" = {
           depends = [
@@ -82,19 +82,19 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."Z-Data" or (errorHandler.buildDepError "Z-Data"))
-            ] ++ (if flags.integer-simple
+          ] ++ (if flags.integer-simple
             then [
               (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"))
-              ]
+            ]
             else [
               (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-              ]);
+            ]);
           build-tools = [
             (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

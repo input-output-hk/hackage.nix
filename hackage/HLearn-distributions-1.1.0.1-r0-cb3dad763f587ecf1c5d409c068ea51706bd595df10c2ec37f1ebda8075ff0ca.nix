@@ -21,7 +21,7 @@
       synopsis = "Distributions for use with the HLearn library";
       description = "This module is used to estimate statistical distributions from data.  It is based on the algebraic properties of the \"HomTrainer\" type class from the HLearn-algebra package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

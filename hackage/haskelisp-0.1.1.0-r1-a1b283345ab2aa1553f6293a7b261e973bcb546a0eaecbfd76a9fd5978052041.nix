@@ -21,7 +21,7 @@
       synopsis = "Write Emacs module in Haskell, using Emacs 25's Dynamic Module feature";
       description = "Write Emacs module in Haskell, using Emacs 25's Dynamic Module feature.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

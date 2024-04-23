@@ -21,7 +21,7 @@
       synopsis = "Abstract data type for canonical paths with pretty operations";
       description = "This library provides abstract data type named 'CanonicalPath' and some useful functions for working with it. See every module's description to find out more.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

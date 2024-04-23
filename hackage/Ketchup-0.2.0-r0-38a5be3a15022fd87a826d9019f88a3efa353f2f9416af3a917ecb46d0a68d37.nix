@@ -21,7 +21,7 @@
       synopsis = "A super small web framework for those who don't like big and fancy codebases";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

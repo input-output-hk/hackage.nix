@@ -21,7 +21,7 @@
       synopsis = "A haskell wrap for Ubigraph";
       description = "Hubigraph is a Haskell wrapper for Ubigraph, which is a tool for visualizing dynamic graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."haxr" or (errorHandler.buildDepError "haxr"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

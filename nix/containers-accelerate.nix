@@ -6,8 +6,8 @@
         nix = import ../hackage/containers-accelerate-0.1.0.0-r0-529614e579efe5255f310ea2186af0dcc9373644d4ce6f22c72e9c6903f8a6d9.nix;
         revNum = 0;
         sha256 = "529614e579efe5255f310ea2186af0dcc9373644d4ce6f22c72e9c6903f8a6d9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

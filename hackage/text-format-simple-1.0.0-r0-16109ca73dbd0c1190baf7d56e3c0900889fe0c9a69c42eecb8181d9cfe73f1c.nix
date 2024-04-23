@@ -21,11 +21,11 @@
       synopsis = "Simple text formatting library.";
       description = "Tiny library dedicated for text formating in C# style.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

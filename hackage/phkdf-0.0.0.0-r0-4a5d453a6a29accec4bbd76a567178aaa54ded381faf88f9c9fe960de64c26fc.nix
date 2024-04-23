@@ -21,7 +21,7 @@
       synopsis = "Toolkit for self-documenting password hash and key derivation functions.";
       description = "Inspired by PBKDF2, HKDF, and TupleHash. Uses HMAC-SHA256 as a primitive.\nThis is primarily intended to be a highly reliable reference implementation\nfor the underlying PHKDF primitives. It also aspires to be production\nready-ish. The main limitation is that it implemented without mutation,\nmeaning that potentially sensitive secrets persist in memory longer than\nnecessary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
           (hsPkgs."tuplehash-utils" or (errorHandler.buildDepError "tuplehash-utils"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

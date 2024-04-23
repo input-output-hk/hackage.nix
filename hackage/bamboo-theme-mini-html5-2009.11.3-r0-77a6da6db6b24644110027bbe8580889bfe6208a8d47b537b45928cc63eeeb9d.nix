@@ -21,7 +21,7 @@
       synopsis = "bamboo mini html5 theme";
       description = "bamboo mini html5 theme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,8 +54,8 @@
           (hsPkgs."hack-contrib" or (errorHandler.buildDepError "hack-contrib"))
           (hsPkgs."bamboo" or (errorHandler.buildDepError "bamboo"))
           (hsPkgs."moe" or (errorHandler.buildDepError "moe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

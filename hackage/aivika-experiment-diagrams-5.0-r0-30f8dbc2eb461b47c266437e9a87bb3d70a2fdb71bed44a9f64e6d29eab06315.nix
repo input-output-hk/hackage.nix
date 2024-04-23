@@ -21,7 +21,7 @@
       synopsis = "Diagrams-based charting backend for the Aivika simulation library";
       description = "This is one of the charting backends for the aivika-experiment-chart [1] package.\nIt allows rendering charts using the Chart-diagrams [2] package.\n\n\\[1] <http://hackage.haskell.org/package/aivika-experiment-chart>\n\n\\[2] <http://hackage.haskell.org/package/Chart-diagrams>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
           (hsPkgs."aivika-experiment" or (errorHandler.buildDepError "aivika-experiment"))
           (hsPkgs."aivika-experiment-chart" or (errorHandler.buildDepError "aivika-experiment-chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

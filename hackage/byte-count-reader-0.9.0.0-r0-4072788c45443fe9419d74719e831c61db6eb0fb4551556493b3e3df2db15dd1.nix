@@ -21,7 +21,7 @@
       synopsis = "Read strings describing a number of bytes like 2Kb and 0.5 MiB";
       description = "Please see the README on GitHub at <https://github.com/danielrolls/byte-count-reader#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."parsec3-numbers" or (errorHandler.buildDepError "parsec3-numbers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskelltest-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."parsec3-numbers" or (errorHandler.buildDepError "parsec3-numbers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

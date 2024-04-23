@@ -21,7 +21,7 @@
       synopsis = "Simple part of speech tagger";
       description = "This is almost a Brill tagger implementation.\nAmong other things, it needs to be generalised\nto look back beyond one tag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ListZipper" or (errorHandler.buildDepError "ListZipper"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brillig" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

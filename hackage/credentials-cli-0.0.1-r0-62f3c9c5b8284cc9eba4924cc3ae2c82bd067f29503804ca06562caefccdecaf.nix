@@ -21,7 +21,7 @@
       synopsis = "Secure Credentials Administration";
       description = "@credentials@ is a console application used to administer secure credentials\nvia the <http://hackage.haskell.org/package/credentials credentials> library of the same name.\n\nYou can read more about use-cases and prerequisites <https://github.com/brendanhay/credentials here>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "credentials" = {
@@ -48,9 +48,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

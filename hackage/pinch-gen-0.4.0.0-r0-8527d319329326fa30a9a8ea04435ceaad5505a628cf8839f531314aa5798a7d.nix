@@ -21,7 +21,7 @@
       synopsis = "A code generator for the pinch Thrift library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pinch-gen" = {
@@ -37,9 +37,9 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

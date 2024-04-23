@@ -6,8 +6,8 @@
         nix = import ../hackage/blindpass-0.1.0-r0-31c2dfafe963eb2926ee736e9b36b075380edd6e8639ec076197988de4fb5252.nix;
         revNum = 0;
         sha256 = "31c2dfafe963eb2926ee736e9b36b075380edd6e8639ec076197988de4fb5252";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Find the Haddock documentation for a symbol.";
       description = "Given a Haskell module and symbol, determine the URL to the Haddock documentation\nfor that symbol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,17 +42,17 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+        ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
         buildable = true;
-        };
+      };
       exes = {
         "fake-ghc-for-ghc-imported-from" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghc-imported-from" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -74,10 +74,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-            ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -99,9 +99,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
-            ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

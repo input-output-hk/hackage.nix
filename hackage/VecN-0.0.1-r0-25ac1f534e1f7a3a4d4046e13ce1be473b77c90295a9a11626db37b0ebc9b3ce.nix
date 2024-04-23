@@ -21,14 +21,14 @@
       synopsis = "a simple peano-indexed vector type";
       description = "a simple peano-indexed vector type, some instances and functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Orphan instances for TH datatypes";
       description = "In particular, instances for Ord and Lift.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

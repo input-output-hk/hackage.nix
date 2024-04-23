@@ -21,7 +21,7 @@
       synopsis = "Shows how to test a simple service using tmp-proc";
       description = "Provides working examples that use tmp-proc to test a simple postgresql/redis servant-based API service";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,25 +53,25 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec-integration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tmp-proc-example" or (errorHandler.buildDepError "tmp-proc-example"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tasty-integration-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tmp-proc-example" or (errorHandler.buildDepError "tmp-proc-example"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

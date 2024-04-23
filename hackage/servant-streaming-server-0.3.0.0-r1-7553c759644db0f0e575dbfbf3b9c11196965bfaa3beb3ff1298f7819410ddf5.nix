@@ -21,7 +21,7 @@
       synopsis = "Server instances for the 'servant-streaming' package.";
       description = "This package defines instances that allow using the 'StreamBody' and 'StreamResponse' combinators in 'servant' servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."streaming-wai" or (errorHandler.buildDepError "streaming-wai"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."streaming-wai" or (errorHandler.buildDepError "streaming-wai"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

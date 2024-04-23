@@ -21,7 +21,7 @@
       synopsis = "Haskell twirp foundations";
       description = "Please see the README on GitHub at <https://github.com/tclem/twirp-haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "twirp-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."twirp" or (errorHandler.buildDepError "twirp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

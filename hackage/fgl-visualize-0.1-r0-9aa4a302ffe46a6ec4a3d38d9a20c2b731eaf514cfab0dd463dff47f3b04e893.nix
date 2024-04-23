@@ -21,15 +21,15 @@
       synopsis = "Convert FGL graphs to dot (graphviz) files";
       description = "Convert FGL graphs to dot files for easy visualization\nusing the 'dot' tool.  Other visualizations might follow\nbut there are no immediate plans (patches welcome).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

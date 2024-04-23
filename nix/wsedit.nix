@@ -6,8 +6,8 @@
         nix = import ../hackage/wsedit-0.1.0.0-r0-54e4ac3bdbb36cdf0a20c4110d1bd457a32f7ef3b959b5969f13d15e492f0adc.nix;
         revNum = 0;
         sha256 = "54e4ac3bdbb36cdf0a20c4110d1bd457a32f7ef3b959b5969f13d15e492f0adc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

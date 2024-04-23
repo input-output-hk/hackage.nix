@@ -21,7 +21,7 @@
       synopsis = "Gloss backend for Rhine";
       description = "This package provides a simple wrapper for the `gloss` library,\nor rather the function `Graphics.Gloss.play`,\nenabling you to write `gloss` applications as signal functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."rhine" or (errorHandler.buildDepError "rhine"))
           (hsPkgs."dunai" or (errorHandler.buildDepError "dunai"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rhine-gloss-gears" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rhine-gloss" or (errorHandler.buildDepError "rhine-gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

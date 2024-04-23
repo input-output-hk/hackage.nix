@@ -21,7 +21,7 @@
       synopsis = "ODBC driver for HDBC";
       description = "This package provides an ODBC database backend for HDBC.\nIt is cross-platform and supports unixODBC on Unix/Linux/POSIX platforms\nand Microsoft ODBC on Windows.  It is also the preferred way to access\nMySQL databases from Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,11 +29,11 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."odbc32" or (errorHandler.sysDepError "odbc32")) ]
           else [ (pkgs."odbc" or (errorHandler.sysDepError "odbc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

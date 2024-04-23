@@ -6,8 +6,8 @@
         nix = import ../hackage/cas-hashable-s3-1.0.0-r0-5597515a4b0a204644d90d66475d26290ccc31291e90f4827e0f74fda581b291.nix;
         revNum = 0;
         sha256 = "5597515a4b0a204644d90d66475d26290ccc31291e90f4827e0f74fda581b291";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/raz-0.1.0.0-r0-39dcf870f7ea2c68dc0a960b3c480690d4ba50a44d62cdfac5e76f0654cfabcb.nix;
         revNum = 0;
         sha256 = "39dcf870f7ea2c68dc0a960b3c480690d4ba50a44d62cdfac5e76f0654cfabcb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Provides the SHA1 hash of the program executable";
       description = "See README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,40 +31,40 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "inject-executable-hash" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-compute" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-inject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-no-inject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "File/CGI/Rev Proxy App of WAI";
       description = "This WAI application library handles static files,\nexecutes CGI scripts, and serves as a reverse proxy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."test-framework-doctest" or (errorHandler.buildDepError "test-framework-doctest"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th-prime" or (errorHandler.buildDepError "test-framework-th-prime"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Snap Framework utility funtions.";
       description = "Utilities for Snap Framework apps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

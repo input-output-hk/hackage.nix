@@ -21,7 +21,7 @@
       synopsis = "Library for lockstep-style testing with 'quickcheck-dynamic'";
       description = "Lockstep-style testing is a particular approach for blackbox\ntesting of stateful APIs: we generate a random sequence of\nAPIs calls, then execute them both against the system under\ntest and against a model, and compare responses up to some\nnotion of observability.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."quickcheck-dynamic" or (errorHandler.buildDepError "quickcheck-dynamic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-quickcheck-lockstep" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Indexable, serializable  form of Data.Dynamic";
       description = "A variant of Data.Dynamic that can be indexed, stored, transmitted trough communications etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

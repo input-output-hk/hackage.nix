@@ -21,7 +21,7 @@
       synopsis = "Generate and verify HMAC-based authentication tokens.";
       description = "Originally designed for use within OpenStack clusters,\n/Fernet/ is intended to be fast and light-weight, with\nnon-persistent tokens. Fernet tokens are signed with a\nSHA256 HMAC and their contents encrypted with AES128\nin CBC mode.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fernet" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = if flags.cli then true else false;
-          };
         };
+      };
       tests = {
         "fernet-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

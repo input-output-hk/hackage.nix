@@ -21,20 +21,20 @@
       synopsis = "FFI binding to libNVVM, a compiler SDK component from NVIDIA";
       description = "FFI binding to libNVVM, a compiler SDK component from NVIDIA";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cuda" or (errorHandler.buildDepError "cuda"))
-          ];
+        ];
         libs = [ (pkgs."nvvm" or (errorHandler.sysDepError "nvvm")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-simple" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

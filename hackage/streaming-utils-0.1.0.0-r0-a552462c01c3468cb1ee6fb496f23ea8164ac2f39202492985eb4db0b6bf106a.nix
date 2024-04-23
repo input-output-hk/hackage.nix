@@ -21,7 +21,7 @@
       synopsis = "utilities for http-client, attoparsec, pipes etc with streaming and streaming-bytestring";
       description = "Experimental http-client, attoparsec and pipes utilities streaming and streaming-bytestring";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

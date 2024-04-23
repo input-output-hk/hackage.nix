@@ -21,7 +21,7 @@
       synopsis = "Near-future roguelike game in early development";
       description = "This is an alpha pre-release of Allure of the Stars,\na near-future Sci-Fi roguelike and tactical squad game.\nLong term goals are high replayability and auto-balancing\nthrough procedural content generation and persistent content\nmodification based on player behaviour.\n\nThe game is based (for the time being, as a fork)\non the LambdaHack roguelike game engine available\nat <http://hackage.haskell.org/package/Allure>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Allure" = {
@@ -40,23 +40,23 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if flags.curses
+          ] ++ (if flags.curses
             then [
               (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"))
-              ]
+            ]
             else if flags.vty
               then [ (hsPkgs."vty" or (errorHandler.buildDepError "vty")) ]
-              else (pkgs.lib).optional (!flags.std) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")));
-          libs = (pkgs.lib).optional (flags.curses) (pkgs."curses" or (errorHandler.sysDepError "curses"));
+              else pkgs.lib.optional (!flags.std) (hsPkgs."gtk" or (errorHandler.buildDepError "gtk")));
+          libs = pkgs.lib.optional (flags.curses) (pkgs."curses" or (errorHandler.sysDepError "curses"));
           buildable = true;
-          };
+        };
         "BotAllure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

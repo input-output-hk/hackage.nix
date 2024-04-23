@@ -21,7 +21,7 @@
       synopsis = "Tries from representations of polynomial functors";
       description = "Tries from representations of polynomial functors";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Profunctor optics";
       description = "A profunctor optics library compatible with the typeclasses in 'profunctors'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."rings" or (errorHandler.buildDepError "rings"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This package contains commonly used data structures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

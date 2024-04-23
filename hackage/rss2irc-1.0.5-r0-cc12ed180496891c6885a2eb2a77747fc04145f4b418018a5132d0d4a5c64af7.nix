@@ -21,7 +21,7 @@
       synopsis = "watches an RSS/Atom feed and writes it to an IRC channel";
       description = "rss2irc is an IRC bot that polls an RSS or Atom feed and announces updates to an IRC channel, with options for customizing output and behavior.\nIt aims to be an easy-to-use, reliable, well-behaved bot.\n\nUsage: @rss2irc FEEDURL [BOTNAME\\@IRCSERVER/#CHANNEL] [OPTS]@\n\nFor example, to announce Hackage uploads (like hackagebot):\n\n> $ rss2irc http://hackage.haskell.org/packages/archive/recent.rss mybot@irc.freenode.org/#haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rss2irc" = {
@@ -48,9 +48,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

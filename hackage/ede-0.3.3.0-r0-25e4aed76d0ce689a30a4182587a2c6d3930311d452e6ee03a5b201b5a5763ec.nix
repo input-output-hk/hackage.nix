@@ -21,7 +21,7 @@
       synopsis = "Templating language with similar syntax and features to Liquid or Jinja2.";
       description = "ED-E is a templating language written in Haskell with a specific set of features:\n\n* Logicless within reason. A small set of consistent predicates\nand expressions for formatting and presentational logic are provided.\n\n* Secure. No arbitrary code evaluation, with input data required to be fully specified\nat render time.\n\n* Stateless. Parsing and rendering are separate steps so that loading, parsing,\ninclude resolution, and embedding of the compiled template can optionally be\ndone ahead of time, amortising cost.\n\n* Markup agnostic. ED-E is used to write out everything from configuration files for\nsystem services, to HTML and formatted emails.\n\n* Control over purity. Users can choose pure or IO-based resolution of\n@include@ expressions.\n\n* No surprises. All parsing, type assurances, and rendering steps report helpful\nerror messages with line/column metadata. Variable shadowing, unprintable expressions,\nimplicit type coercion, and unbound variable access are all treated as errors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ede" = {
           depends = [
@@ -59,10 +59,10 @@
             (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

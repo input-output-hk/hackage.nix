@@ -21,7 +21,7 @@
       synopsis = "A monad transformer for vault-tool";
       description = "Monad transformer for interfacing with vault.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vault-tool" or (errorHandler.buildDepError "vault-tool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

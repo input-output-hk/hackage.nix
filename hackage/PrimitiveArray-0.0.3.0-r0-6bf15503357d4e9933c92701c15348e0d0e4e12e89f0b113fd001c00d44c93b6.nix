@@ -21,14 +21,14 @@
       synopsis = "Unboxed, multidimensional arrays based on the primitive\npackage.";
       description = "Provides unboxed multidimensional tables with a small\ninterface. Comes with an instance for Ix keys. Read and Show\ninstances are provides for serialization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

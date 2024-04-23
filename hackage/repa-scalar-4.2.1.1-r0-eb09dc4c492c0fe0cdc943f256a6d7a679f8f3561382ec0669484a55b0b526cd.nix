@@ -21,7 +21,7 @@
       synopsis = "Scalar data types and conversions.";
       description = "Scalar data types and conversions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

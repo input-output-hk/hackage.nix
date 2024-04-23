@@ -21,15 +21,15 @@
       synopsis = "Event handling for the uniform workbench";
       description = "uni events";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."uni-util" or (errorHandler.buildDepError "uni-util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

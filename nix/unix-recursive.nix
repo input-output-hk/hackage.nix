@@ -6,8 +6,8 @@
         nix = import ../hackage/unix-recursive-0.1.0.0-r0-bc36fa20f9b79603e409253f1513439b94eea0d45f1cb82e3985585cdc9b67ea.nix;
         revNum = 0;
         sha256 = "bc36fa20f9b79603e409253f1513439b94eea0d45f1cb82e3985585cdc9b67ea";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

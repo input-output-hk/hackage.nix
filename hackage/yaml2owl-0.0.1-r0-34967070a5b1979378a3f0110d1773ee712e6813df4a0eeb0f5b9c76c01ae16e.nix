@@ -21,7 +21,7 @@
       synopsis = "Generate OWL schema from YAML syntax, and an RDFa template.";
       description = "A command-line tool for reading a simplified rough draft of an\nRDFS/OWL schema in YAML format (example in \"examples\"),\nand converting it to an OWL schema serialized as Turtle.\nAlso, makes some RDFa \"templates\".  This is intended for quick\nscaffolding of a site that uses RDFa templates to present instance\ndata of RDF.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yaml2owl" = {
@@ -35,9 +35,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

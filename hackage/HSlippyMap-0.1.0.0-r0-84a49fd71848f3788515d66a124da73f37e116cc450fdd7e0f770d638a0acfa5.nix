@@ -21,11 +21,11 @@
       synopsis = "OpenStreetMap Slippy Map";
       description = "Use OpenStreetMap Slippy Map with Haskell : http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

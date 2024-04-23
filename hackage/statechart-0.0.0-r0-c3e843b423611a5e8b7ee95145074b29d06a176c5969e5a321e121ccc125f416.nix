@@ -21,16 +21,16 @@
       synopsis = "Compiles Rhapsody statecharts to C.";
       description = "TODO";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "statechart" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A generator for different kinds of data.";
       description = "A Haskell library for generating fake\ndata.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."quantification" or (errorHandler.buildDepError "quantification"))
           (hsPkgs."savage" or (errorHandler.buildDepError "savage"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."savage" or (errorHandler.buildDepError "savage"))
             (hsPkgs."silvi" or (errorHandler.buildDepError "silvi"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

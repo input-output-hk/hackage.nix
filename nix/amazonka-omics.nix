@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-omics-2.0-r0-bac9cd2ef56f2ddf0b493ddb6892e3fff7cbcdd81be5c8cbd419b4c8bcf670cb.nix;
         revNum = 0;
         sha256 = "bac9cd2ef56f2ddf0b493ddb6892e3fff7cbcdd81be5c8cbd419b4c8bcf670cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

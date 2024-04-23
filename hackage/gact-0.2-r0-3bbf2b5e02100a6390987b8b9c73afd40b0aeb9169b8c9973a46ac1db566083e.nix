@@ -21,7 +21,7 @@
       synopsis = "General Alignment Clustering Tool";
       description = "Cluster sequences from PSL alignments.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gact" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

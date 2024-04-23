@@ -21,7 +21,7 @@
       synopsis = "uniq-deep";
       description = "alternative of unix uniq command. 'uniq-deep' detect repeated lines unless they are adjacent.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "uniq-deep" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

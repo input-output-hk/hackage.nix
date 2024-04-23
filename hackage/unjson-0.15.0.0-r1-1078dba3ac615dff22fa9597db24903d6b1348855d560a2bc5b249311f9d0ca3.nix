@@ -21,7 +21,7 @@
       synopsis = "Bidirectional JSON parsing and generation.";
       description = "Bidirectional JSON parsing and generation\nwith automatic documentation support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

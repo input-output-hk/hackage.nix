@@ -21,7 +21,7 @@
       synopsis = "wai-session bindings for serversession.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession-frontend-wai>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
           (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

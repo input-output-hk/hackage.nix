@@ -21,12 +21,12 @@
       synopsis = "A haskell binding to cracklib";
       description = "A haskell binding to cracklib";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."crack" or (errorHandler.sysDepError "crack")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

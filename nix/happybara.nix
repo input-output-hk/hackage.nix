@@ -6,8 +6,8 @@
         nix = import ../hackage/happybara-0.0.1-r0-65cf446d6883da928051c05a035d5544eefa63c3c78b193e04c84d26279b9506.nix;
         revNum = 0;
         sha256 = "65cf446d6883da928051c05a035d5544eefa63c3c78b193e04c84d26279b9506";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

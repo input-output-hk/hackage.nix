@@ -21,7 +21,7 @@
       synopsis = "The library to read, write and manipulate MIDI, WAV, and SoundFont2 files.";
       description = "The library provides functions to read write and manipulate Midi, Wav and SoundFont2 multimedia file formats.\nIt is written entirly in Haskell (without any FFI).\nIt uses efficient parsing and building combinators for binary data stored in ByteStrings (based on the one in 'binary' package).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

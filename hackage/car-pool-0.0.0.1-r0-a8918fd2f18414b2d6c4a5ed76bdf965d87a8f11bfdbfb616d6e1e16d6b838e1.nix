@@ -21,7 +21,7 @@
       synopsis = "Simple web-server for organizing car-pooling for an event";
       description = "Simple web-server for organizing car-pooling for an event";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "car-pool" = {
@@ -39,9 +39,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

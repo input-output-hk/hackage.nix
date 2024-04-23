@@ -21,21 +21,21 @@
       synopsis = "MusicXML format encoded as Haskell type and functions of reading\nand writting.";
       description = "This package presents MusicXML format typed at Haskell language\nto be interface between MusicXML format and MusicXML\napplications developed using Haskell. This package allows read\nand write MusicXML documents at least 2.0 version as partwise or\ntimewise format besides opus and container specification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

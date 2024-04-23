@@ -21,16 +21,16 @@
       synopsis = "Command-line tool to run a command on each of the items.";
       description = "Usage: mdo COMMAND [BEFORE... --] ITEMS... [--- AFTER...]\nRun COMMAND on each of the ITEMS.\nArguments in BEFORE are used as initial arguments to each invocation.\nArguments in AFTER are used as trailing arguments to each invocation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mdo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

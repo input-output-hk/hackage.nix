@@ -21,7 +21,7 @@
       synopsis = "Additive monoids generalising vector spaces";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."manifolds-core" or (errorHandler.buildDepError "manifolds-core"))
           (hsPkgs."equational-reasoning" or (errorHandler.buildDepError "equational-reasoning"))
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

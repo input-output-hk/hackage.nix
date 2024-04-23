@@ -21,7 +21,7 @@
       synopsis = "TLS-secured network connections support for pipes.";
       description = "Use TLS-secured network connections together with the @pipes@ ecosystem.\n\nThis package is organized using the following namespaces:\n\n* \"Control.Proxy.TCP.TLS\" exports 'Control.Proxy.Proxy's and functions for\nestablishing and using TLS-secured TCP connections.\n\n* \"Control.Proxy.TCP.TLS.Safe\" is similar to \"Control.Proxy.TCP.TLS\", except\nthe exported 'Control.Proxy.Proxy's themselves can obtain new TLS resources\nsafely by using the facilities providied by the @pipes-safe@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

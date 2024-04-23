@@ -21,7 +21,7 @@
       synopsis = "Move a git branch";
       description = "Move a git branch to a specified refspec (or to the upstream position)\nAlong with any uncommited changes.\nForegoing any committed changes.  Meant to be a\nsafer replacement for `reset --hard` to jump\nbranch tips.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "git-jump" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

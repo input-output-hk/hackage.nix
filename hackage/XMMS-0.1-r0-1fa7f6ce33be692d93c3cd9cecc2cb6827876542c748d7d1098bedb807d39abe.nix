@@ -21,18 +21,18 @@
       synopsis = "XMMS2 client library.";
       description = "Provides the haskell client lib for XMMS2";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         libs = [
           (pkgs."xmmsclient" or (errorHandler.sysDepError "xmmsclient"))
           (pkgs."xmmsclient-glib" or (errorHandler.sysDepError "xmmsclient-glib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

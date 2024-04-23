@@ -21,25 +21,25 @@
       synopsis = "An insertion-order-preserving set";
       description = "This package provides @OSet@, an insertion-order-preserving set, with type class instances for @Foldable@, @Semigroup@, @Monoid@ and @Data@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "oset-app" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."oset" or (errorHandler.buildDepError "oset"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "oset-spec" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."oset" or (errorHandler.buildDepError "oset"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

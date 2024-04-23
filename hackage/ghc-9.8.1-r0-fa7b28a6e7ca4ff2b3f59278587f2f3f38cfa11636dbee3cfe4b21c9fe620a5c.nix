@@ -15,7 +15,7 @@
       with-libzstd = false;
       static-libzstd = false;
       hadrian-stage0 = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "ghc"; version = "9.8.1"; };
@@ -35,8 +35,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -59,23 +59,23 @@
           (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
           (hsPkgs."ghc-heap" or (errorHandler.buildDepError "ghc-heap"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
-        libs = (pkgs.lib).optionals (flags.with-libzstd) (if flags.static-libzstd
-          then (pkgs.lib).optional (!system.isOsx) (pkgs.":libzstd.a" or (errorHandler.sysDepError ":libzstd.a"))
+        libs = pkgs.lib.optionals (flags.with-libzstd) (if flags.static-libzstd
+          then pkgs.lib.optional (!system.isOsx) (pkgs.":libzstd.a" or (errorHandler.sysDepError ":libzstd.a"))
           else [ (pkgs."zstd" or (errorHandler.sysDepError "zstd")) ]);
-        build-tools = (pkgs.lib).optionals (flags.build-tool-depends) [
+        build-tools = pkgs.lib.optionals (flags.build-tool-depends) [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
           (hsPkgs.buildPackages.genprimopcode.components.exes.genprimopcode or (pkgs.buildPackages.genprimopcode or (errorHandler.buildToolDepError "genprimopcode:genprimopcode")))
           (hsPkgs.buildPackages.deriveConstants.components.exes.deriveConstants or (pkgs.buildPackages.deriveConstants or (errorHandler.buildToolDepError "deriveConstants:deriveConstants")))
-          ];
+        ];
         buildable = if flags.with-libzstd
           then if flags.static-libzstd
             then if system.isOsx then false else true
             else true
           else true;
-        };
       };
-    }
+    };
+  }

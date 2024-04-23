@@ -6,8 +6,8 @@
         nix = import ../hackage/tsuntsun-0.2.0.0-r0-f15d63b27149e2575ac51529f7e04c258b15d852a9a1593c481c9f6adb407cd5.nix;
         revNum = 0;
         sha256 = "f15d63b27149e2575ac51529f7e04c258b15d852a9a1593c481c9f6adb407cd5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Timelike interface for the clock library";
       description = "This library provides a\n<http://hackage.haskell.org/package/timelike timelike> interface to\nthe <http://hackage.haskell.org/package/clock clock library>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."timelike" or (errorHandler.buildDepError "timelike"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Functions to atomically write to files";
       description = "See module \"System.IO.AtomicFileOps\" for an overview and documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."io-string-like" or (errorHandler.buildDepError "io-string-like"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

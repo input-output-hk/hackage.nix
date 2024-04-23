@@ -21,7 +21,7 @@
       synopsis = "Unpacker tool with DWIM";
       description = "hunp is an unpacker tool which does what you mean.  By matching on regular expressions, it automagically calls the right unpacking program for you, e.g. \"unrar\" for files ending in \".rar\", etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hunp" = {
@@ -35,9 +35,9 @@
             (hsPkgs."monads-fd" or (errorHandler.buildDepError "monads-fd"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

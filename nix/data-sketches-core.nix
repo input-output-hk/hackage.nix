@@ -6,8 +6,8 @@
         nix = import ../hackage/data-sketches-core-0.1.0.0-r0-6ff50a5a1c4b5d69a02fe947800deec56cb8c18b72aa750074f16cd591422c7d.nix;
         revNum = 0;
         sha256 = "6ff50a5a1c4b5d69a02fe947800deec56cb8c18b72aa750074f16cd591422c7d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

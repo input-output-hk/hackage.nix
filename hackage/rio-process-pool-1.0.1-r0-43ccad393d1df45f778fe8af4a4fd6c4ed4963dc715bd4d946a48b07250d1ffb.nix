@@ -21,7 +21,7 @@
       synopsis = "A library for process pools coupled with asynchronous message queues";
       description = "Please see the README on GitHub at <https://github.com/sheyll/rio-process-pool#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rio-process-pool-memleak-test" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
             (hsPkgs."rio-process-pool" or (errorHandler.buildDepError "rio-process-pool"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rio-process-pool-test" = {
           depends = [
@@ -80,10 +80,10 @@
             (hsPkgs."rio-process-pool" or (errorHandler.buildDepError "rio-process-pool"))
             (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "rio-process-pool-bench" = {
           depends = [
@@ -100,9 +100,9 @@
             (hsPkgs."unliftio-messagebox" or (errorHandler.buildDepError "unliftio-messagebox"))
             (hsPkgs."rio-process-pool" or (errorHandler.buildDepError "rio-process-pool"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

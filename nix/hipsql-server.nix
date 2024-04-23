@@ -6,8 +6,8 @@
         nix = import ../hackage/hipsql-server-0.0.0.0-r0-4e736e4a4577f43a01844d091de51023d43f891f42ab82423c2974c385b47e71.nix;
         revNum = 0;
         sha256 = "4e736e4a4577f43a01844d091de51023d43f891f42ab82423c2974c385b47e71";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

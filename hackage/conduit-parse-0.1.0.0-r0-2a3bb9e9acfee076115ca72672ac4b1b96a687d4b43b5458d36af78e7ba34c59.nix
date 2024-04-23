@@ -21,7 +21,7 @@
       synopsis = "Parsing framework based on conduit.";
       description = "The @conduit-extra@ package provides utilities to turn a 'Parser' into a 'Consumer', but only for streams of 'ByteString's of 'Text's (cf @Data.Conduit.Attoparsec@ module).\n\nThis library makes it possible to work with any kind of input by providing a general-purpose parsing framework based on 'conduit'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

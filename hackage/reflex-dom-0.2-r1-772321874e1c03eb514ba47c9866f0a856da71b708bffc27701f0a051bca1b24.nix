@@ -21,7 +21,7 @@
       synopsis = "Functional Reactive Web Apps with Reflex";
       description = "Reflex-DOM is a Functional Reactive web framework based on the Reflex FRP engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,17 +47,17 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
             (hsPkgs."webkitgtk3-javascriptcore" or (errorHandler.buildDepError "webkitgtk3-javascriptcore"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

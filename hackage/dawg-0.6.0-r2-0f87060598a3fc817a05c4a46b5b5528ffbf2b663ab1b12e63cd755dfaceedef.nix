@@ -21,7 +21,7 @@
       synopsis = "Directed acyclic word graphs";
       description = "The library implements /directed acyclic word graphs/ (DAWGs) internaly\nrepresented as /minimal acyclic deterministic finite-state automata/.\n\nThe \"Data.DAWG\" module provides fast insert and delete operations which\ncan be used to build the automaton on-the-fly.\nAutomaton from the \"Data.DAWG.Frozen\" module is ,,immutable'', but it\nhas lower memory footprint and provides perfect hashing functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary" or (errorHandler.buildDepError "vector-binary"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

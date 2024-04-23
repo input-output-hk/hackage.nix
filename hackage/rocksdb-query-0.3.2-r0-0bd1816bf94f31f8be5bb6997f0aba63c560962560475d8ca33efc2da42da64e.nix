@@ -21,7 +21,7 @@
       synopsis = "RocksDB database querying library for Haskell";
       description = "Please see the README on GitHub at <https://github.com/jprupp/rocksdb-query#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."rocksdb-haskell" or (errorHandler.buildDepError "rocksdb-haskell"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rocksdb-query-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."rocksdb-haskell" or (errorHandler.buildDepError "rocksdb-haskell"))
             (hsPkgs."rocksdb-query" or (errorHandler.buildDepError "rocksdb-query"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

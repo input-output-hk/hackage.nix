@@ -6,8 +6,8 @@
         nix = import ../hackage/om-actor-0.1.0.0-r0-211cb8240e5fb61fe34444e9c7702c23813ec8bcaa9a2f5883cb63381c7a01a6.nix;
         revNum = 0;
         sha256 = "211cb8240e5fb61fe34444e9c7702c23813ec8bcaa9a2f5883cb63381c7a01a6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

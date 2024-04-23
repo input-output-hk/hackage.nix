@@ -21,7 +21,7 @@
       synopsis = "Fully-featured JSON-RPC 2.0 library";
       description = "This JSON-RPC library is fully-compatible with JSON-RPC 2.0 and\npartially-compatible with JSON-RPC 1.0. It provides an interface that combines\na JSON-RPC client and server. It can set and keep track of request ids to\nparse responses. There is support for sending and receiving notifications.\nYou may use any underlying transport. Basic TCP client and server provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-json-rpc" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

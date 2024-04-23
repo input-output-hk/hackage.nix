@@ -6,8 +6,8 @@
         nix = import ../hackage/craftwerk-cairo-0.1-r0-0f1f17ce1c38c8523e9a74e6706a170783ef54160882fa5a772dd1ff45da420a.nix;
         revNum = 0;
         sha256 = "0f1f17ce1c38c8523e9a74e6706a170783ef54160882fa5a772dd1ff45da420a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

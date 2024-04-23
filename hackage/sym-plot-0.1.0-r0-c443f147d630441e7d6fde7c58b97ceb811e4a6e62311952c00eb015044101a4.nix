@@ -21,7 +21,7 @@
       synopsis = "Plot permutations; an addition to the sym package";
       description = "This packade adds plots to the sym package. It has been factored out\nof that package because diagrams is a heavy dependency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
           (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
           (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

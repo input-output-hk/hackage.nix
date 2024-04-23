@@ -21,7 +21,7 @@
       synopsis = "Alternative install procedure to avoid the diamond dependency issue.";
       description = "Please see the README.md file on Github for more information: <https://github.com/yesodweb/cabal-src/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-src-install" = {
@@ -31,9 +31,9 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

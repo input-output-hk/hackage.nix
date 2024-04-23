@@ -21,15 +21,15 @@
       synopsis = "Utility library providing miscellaneous meta-programming utilities.";
       description = "Utility library providing miscellaneous meta-programming utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."loch-th" or (errorHandler.buildDepError "loch-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Functor, Monad, MonadPlus, etc for free";
       description = "Plus, OpT, Yoneda, CoYoneda, Free, Cofree, Density, Codensity, CoT, CodensityAsk, Initialize, Finalize, Decompose, Recompose";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

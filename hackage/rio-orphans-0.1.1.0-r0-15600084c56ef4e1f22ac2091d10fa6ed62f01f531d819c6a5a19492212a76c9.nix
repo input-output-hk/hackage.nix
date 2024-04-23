@@ -21,7 +21,7 @@
       synopsis = "Orphan instances for the RIO type in the rio package";
       description = "See README and Haddocks at <https://www.stackage.org/package/rio-orphans>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rio-orphans-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."rio-orphans" or (errorHandler.buildDepError "rio-orphans"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

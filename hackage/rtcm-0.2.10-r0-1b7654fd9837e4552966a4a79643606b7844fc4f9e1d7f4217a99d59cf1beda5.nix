@@ -21,7 +21,7 @@
       synopsis = "RTCM Library.";
       description = "Haskell bindings for Radio Technical Commission For Maritime\nServices (RTCM) standard, supporting GPS, GLONASS, Galileo and other\nsatellite-based position systems operation with one reference\nstation or a network.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."word24" or (errorHandler.buildDepError "word24"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rtcm32json" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."rtcm" or (errorHandler.buildDepError "rtcm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "json2rtcm3" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -64,10 +64,10 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             (hsPkgs."rtcm" or (errorHandler.buildDepError "rtcm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."word24" or (errorHandler.buildDepError "word24"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

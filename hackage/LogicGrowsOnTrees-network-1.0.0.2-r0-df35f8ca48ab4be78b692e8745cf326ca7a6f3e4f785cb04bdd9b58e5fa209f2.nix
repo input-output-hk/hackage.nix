@@ -21,7 +21,7 @@
       synopsis = "an adapter for LogicGrowsOnTrees that uses multiple processes running in a network";
       description = "This package provides a adapter for the LogicGrowsOnTrees package that uses\nmultiple processes running in a network for parallelism; see the module\ndocumentation for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "count-all-nqueens-solutions" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."LogicGrowsOnTrees" or (errorHandler.buildDepError "LogicGrowsOnTrees"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "count-all-trivial-tree-leaves" = {
           depends = [
             (hsPkgs."LogicGrowsOnTrees-network" or (errorHandler.buildDepError "LogicGrowsOnTrees-network"))
@@ -59,10 +59,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cmdtheline" or (errorHandler.buildDepError "cmdtheline"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

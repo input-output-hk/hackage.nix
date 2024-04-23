@@ -21,7 +21,7 @@
       synopsis = "Converter from GraphViz .dot format to yEd GraphML";
       description = "This package contains a converter from DOT format used by\nGraphViz (http://graphviz.org) to variant of GraphML\n(http://graphml.graphdrawing.org/) used by yEd\n(http://www.yworks.com/en/products_yed_about.html).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dot2graphml" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

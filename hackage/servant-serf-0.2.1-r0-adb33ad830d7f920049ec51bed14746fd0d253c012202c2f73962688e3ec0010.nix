@@ -21,7 +21,7 @@
       synopsis = "Generates a servant API module";
       description = "A preprocessor which will parse a psuedo-haskell module with imports and generate a module with exports a Route type and a handler function";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -35,9 +35,9 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

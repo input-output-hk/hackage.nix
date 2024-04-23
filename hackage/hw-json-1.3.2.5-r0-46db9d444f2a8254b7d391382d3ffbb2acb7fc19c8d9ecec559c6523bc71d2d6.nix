@@ -21,7 +21,7 @@
       synopsis = "Memory efficient JSON parser";
       description = "Memory efficient JSON parser. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "examples" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."hw-json-standard-cursor" or (errorHandler.buildDepError "hw-json-standard-cursor"))
             (hsPkgs."hw-mquery" or (errorHandler.buildDepError "hw-mquery"))
             (hsPkgs."hw-prim" or (errorHandler.buildDepError "hw-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hw-json" = {
           depends = [
@@ -89,10 +89,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hw-json-test" = {
           depends = [
@@ -118,25 +118,25 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -147,9 +147,9 @@
             (hsPkgs."hw-json" or (errorHandler.buildDepError "hw-json"))
             (hsPkgs."hw-json-standard-cursor" or (errorHandler.buildDepError "hw-json-standard-cursor"))
             (hsPkgs."mmap" or (errorHandler.buildDepError "mmap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

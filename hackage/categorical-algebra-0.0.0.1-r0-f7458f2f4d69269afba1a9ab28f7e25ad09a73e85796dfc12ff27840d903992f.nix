@@ -21,7 +21,7 @@
       synopsis = "Categorical Monoids and Semirings";
       description = "This my attempt at synthesizing a few ideas about invertible programming with Arrow like type classes. Here is a link to pdf produced from the source <https://takeittothelimit.files.wordpress.com/2012/03/semiring.pdf> And here is a blog post that says basically the same thing. <http://takeittothelimit.wordpress.com/2012/03/26/categorical-semirings-2/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."newtype" or (errorHandler.buildDepError "newtype"))
           (hsPkgs."pointless-haskell" or (errorHandler.buildDepError "pointless-haskell"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

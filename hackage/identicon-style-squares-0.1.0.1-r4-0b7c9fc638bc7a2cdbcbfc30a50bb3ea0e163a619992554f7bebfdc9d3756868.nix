@@ -21,7 +21,7 @@
       synopsis = "Squares style for the identicon package";
       description = "An identicon style with colored squares, similar to the\ngithub default avatars. The number of square in a single\nidenticon can be configured.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."identicon" or (errorHandler.buildDepError "identicon"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."polyvariadic" or (errorHandler.buildDepError "polyvariadic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "squares" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."identicon-style-squares" or (errorHandler.buildDepError "identicon-style-squares"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

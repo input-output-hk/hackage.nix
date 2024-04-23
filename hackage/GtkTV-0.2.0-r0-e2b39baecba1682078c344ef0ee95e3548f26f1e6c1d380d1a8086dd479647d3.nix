@@ -21,7 +21,7 @@
       synopsis = "Gtk-based GUIs for Tangible Values";
       description = "GtkTV is a very small library that extends the TV (tangible value)\nframework with graphical user interfaces, using gtk2hs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."TypeCompose" or (errorHandler.buildDepError "TypeCompose"))
           (hsPkgs."TV" or (errorHandler.buildDepError "TV"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

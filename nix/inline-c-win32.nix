@@ -6,8 +6,8 @@
         nix = import ../hackage/inline-c-win32-0.1-r0-07322e583be26d893ace19a926de9aed1e27403c6b4a05c1710d9a21a2ccdcc9.nix;
         revNum = 0;
         sha256 = "07322e583be26d893ace19a926de9aed1e27403c6b4a05c1710d9a21a2ccdcc9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A MUD client library";
       description = "A MUD client library for Haskell. Features prioritized, regex-based hooks, variables and timers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

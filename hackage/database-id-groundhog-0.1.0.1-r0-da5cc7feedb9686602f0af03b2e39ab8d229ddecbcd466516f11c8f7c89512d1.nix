@@ -21,7 +21,7 @@
       synopsis = "HasId/Groundhog interop";
       description = "A class and some instances for HasId/Groundhog interoperation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."database-id-class" or (errorHandler.buildDepError "database-id-class"))
           (hsPkgs."groundhog" or (errorHandler.buildDepError "groundhog"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

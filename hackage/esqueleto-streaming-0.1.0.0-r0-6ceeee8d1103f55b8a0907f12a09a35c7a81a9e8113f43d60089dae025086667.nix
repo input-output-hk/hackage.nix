@@ -21,7 +21,7 @@
       synopsis = "Memory-constant streaming of Esqueleto results from PostgreSQL";
       description = "This library provides a set of APIs for performing queries in Esqueleto\nin constant memory, streaming the results using @conduit@.\n\nThe library relies on PostgreSQL-specific features to avoid loading all the\nresults of a query into memory at once. This allows for accessing results of\nmillions of rows from Haskell without a memory blow-up.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

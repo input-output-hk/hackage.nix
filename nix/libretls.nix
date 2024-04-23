@@ -6,8 +6,8 @@
         nix = import ../hackage/libretls-0.0.0.0-r0-3df91a54a00401db1e5ee10cbf35ce53465aa92f37f63be4b917d68220cc283b.nix;
         revNum = 0;
         sha256 = "3df91a54a00401db1e5ee10cbf35ce53465aa92f37f63be4b917d68220cc283b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

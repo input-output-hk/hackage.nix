@@ -21,7 +21,7 @@
       synopsis = "An opinionated app prelude and framework in the UnliftIO style";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/heart-app#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."ekg-statsd" or (errorHandler.buildDepError "ekg-statsd"))
           (hsPkgs."heart-core" or (errorHandler.buildDepError "heart-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "General functor products for various Foldable instances";
       description = "Generalizes the Rec type in vinyl to work over various different Foldable\ninstances, instead of just lists.  Provides a unifying abstraction for all\nof them, as well as data types to index into them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

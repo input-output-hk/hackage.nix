@@ -21,7 +21,7 @@
       synopsis = "A pool of connections for Hasql based on resource-pool.";
       description = "This package is originally derived from hasql-pool v0.5.2.2 and continues using `resource-pool` for its pool implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."hasql-resource-pool" or (errorHandler.buildDepError "hasql-resource-pool"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Modern and extensible testing framework";
       description = "Tasty is a modern testing framework for Haskell.\nIt lets you combine your unit tests, golden\ntests, QuickCheck/SmallCheck properties, and any\nother types of tests into a single test suite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -34,17 +34,17 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "7.6")) [
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "7.6")) [
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ]) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.2")) (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))) ++ (if flags.clock
+        ]) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.2")) (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))) ++ (if flags.clock
           then [ (hsPkgs."clock" or (errorHandler.buildDepError "clock")) ]
           else [
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ])) ++ (pkgs.lib).optionals (!system.isWindows && !(compiler.isGhcjs && true)) ([
+          ])) ++ pkgs.lib.optionals (!system.isWindows && !(compiler.isGhcjs && true)) ([
           (hsPkgs."wcwidth" or (errorHandler.buildDepError "wcwidth"))
-          ] ++ (pkgs.lib).optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix")));
+        ] ++ pkgs.lib.optional (flags.unix) (hsPkgs."unix" or (errorHandler.buildDepError "unix")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

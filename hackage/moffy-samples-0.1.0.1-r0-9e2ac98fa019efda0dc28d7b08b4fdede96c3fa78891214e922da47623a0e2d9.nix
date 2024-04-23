@@ -21,7 +21,7 @@
       synopsis = "Samples of moffy";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/moffy-samples#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
           (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "moffy-samples-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."type-flip" or (errorHandler.buildDepError "type-flip"))
             (hsPkgs."type-set" or (errorHandler.buildDepError "type-set"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

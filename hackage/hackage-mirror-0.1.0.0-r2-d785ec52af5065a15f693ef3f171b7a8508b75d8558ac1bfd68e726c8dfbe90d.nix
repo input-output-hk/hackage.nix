@@ -21,7 +21,7 @@
       synopsis = "Simple mirroring utility for Hackage";
       description = "Package allows you to mirror all of hackage to your own s3 bucket.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,9 +55,9 @@
           (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hackage-mirror" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."hackage-mirror" or (errorHandler.buildDepError "hackage-mirror"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

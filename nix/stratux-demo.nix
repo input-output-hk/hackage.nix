@@ -6,8 +6,8 @@
         nix = import ../hackage/stratux-demo-0.0.12-r0-89df25b0d0b20b38a49e66efbf680d17bfb6f7fb6c18074dc41da9dd21c30954.nix;
         revNum = 0;
         sha256 = "89df25b0d0b20b38a49e66efbf680d17bfb6f7fb6c18074dc41da9dd21c30954";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

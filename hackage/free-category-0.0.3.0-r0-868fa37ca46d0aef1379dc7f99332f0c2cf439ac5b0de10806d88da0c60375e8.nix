@@ -21,14 +21,14 @@
       synopsis = "Free category";
       description = "Free categories";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free-algebras" or (errorHandler.buildDepError "free-algebras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

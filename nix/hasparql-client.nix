@@ -6,8 +6,8 @@
         nix = import ../hackage/hasparql-client-0.1-r0-b56d36b8a7fd861dd5533887e3d533ac8a7ba699a79599dce630aed87a107f98.nix;
         revNum = 0;
         sha256 = "b56d36b8a7fd861dd5533887e3d533ac8a7ba699a79599dce630aed87a107f98";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

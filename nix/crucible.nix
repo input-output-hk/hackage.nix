@@ -6,8 +6,8 @@
         nix = import ../hackage/crucible-0.7-r0-bfe4e2f0bbe32f76fdefba29cd6aaaaa892e8b2c2975f6eed63bb52d1db763ef.nix;
         revNum = 0;
         sha256 = "bfe4e2f0bbe32f76fdefba29cd6aaaaa892e8b2c2975f6eed63bb52d1db763ef";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

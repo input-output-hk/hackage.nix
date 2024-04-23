@@ -21,15 +21,15 @@
       synopsis = "FromDhall and ToDhall instances for flag.";
       description = "FromDhall and ToDhall instances for flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
           (hsPkgs."flag" or (errorHandler.buildDepError "flag"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

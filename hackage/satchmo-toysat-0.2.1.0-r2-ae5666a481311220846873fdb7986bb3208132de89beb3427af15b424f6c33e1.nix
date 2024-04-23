@@ -21,7 +21,7 @@
       synopsis = "toysat driver as backend for satchmo";
       description = "toysat driver as backend for satchmo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
           (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

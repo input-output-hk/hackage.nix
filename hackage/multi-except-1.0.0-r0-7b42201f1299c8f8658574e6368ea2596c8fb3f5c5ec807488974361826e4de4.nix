@@ -21,22 +21,22 @@
       synopsis = "Multiple Exceptions";
       description = "Report multiple errors, or a single correct value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       sublibs = {
         "semigroupoid-instances" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."multi-except" or (errorHandler.buildDepError "multi-except"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."multi-except".components.sublibs.semigroupoid-instances or (errorHandler.buildDepError "multi-except:semigroupoid-instances"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

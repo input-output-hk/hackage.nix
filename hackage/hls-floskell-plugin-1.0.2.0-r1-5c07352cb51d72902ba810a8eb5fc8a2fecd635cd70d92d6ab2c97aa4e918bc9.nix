@@ -21,7 +21,7 @@
       synopsis = "Integration with the Floskell code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,11 +32,11 @@
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.3"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -44,11 +44,11 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hls-floskell-plugin" or (errorHandler.buildDepError "hls-floskell-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.3"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.3"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/sydtest-hedis-0.0.0.0-r0-3511711542bdc7d83955f3d0faba1a952db3c1d09a7ae32d9f9de23e33e78425.nix;
         revNum = 0;
         sha256 = "3511711542bdc7d83955f3d0faba1a952db3c1d09a7ae32d9f9de23e33e78425";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

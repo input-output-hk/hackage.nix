@@ -21,7 +21,7 @@
       synopsis = "Hot-swappable FRP";
       description = "An FRP for livecoding, where you can hot-swap pieces or the whole of an\nFRP graph while the graph is running.\n\nSmall examples are in \"Midair.Examples\"\n\nThe API may change a lot in the future.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

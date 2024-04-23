@@ -21,7 +21,7 @@
       synopsis = "Umbrella package for the historical dictionary of Polish";
       description = "The package provides a tool for creating and searching the\nhistorical dictionary of Polish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hist-pl-lexicon" or (errorHandler.buildDepError "hist-pl-lexicon"))
           (hsPkgs."morfeusz" or (errorHandler.buildDepError "morfeusz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hist-pl" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."polimorf" or (errorHandler.buildDepError "polimorf"))
             (hsPkgs."hist-pl-lexicon" or (errorHandler.buildDepError "hist-pl-lexicon"))
             (hsPkgs."hist-pl-fusion" or (errorHandler.buildDepError "hist-pl-fusion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

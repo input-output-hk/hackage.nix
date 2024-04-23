@@ -21,7 +21,7 @@
       synopsis = "Graphical user interfaces that are renderable,\nchange over time and eventually produce a value.";
       description = "Gooey provides a monadic interface on top of automaton\nbased FRP. It is targeted towards controlling renderable\ninterfaces that eventually produce values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."renderable" or (errorHandler.buildDepError "renderable"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

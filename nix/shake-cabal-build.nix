@@ -6,8 +6,8 @@
         nix = import ../hackage/shake-cabal-build-0.1.0-r0-3d53a344f3ce403a0108f76ccbc8f5349153492bffea8db46aeff75555e7b1bc.nix;
         revNum = 0;
         sha256 = "3d53a344f3ce403a0108f76ccbc8f5349153492bffea8db46aeff75555e7b1bc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

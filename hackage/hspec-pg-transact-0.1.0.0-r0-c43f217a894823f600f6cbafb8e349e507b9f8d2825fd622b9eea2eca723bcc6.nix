@@ -21,7 +21,7 @@
       synopsis = "Helpers for creating database tests with hspec and pg-transact";
       description = "Helpers for creating database tests with hspec and pg-transact";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

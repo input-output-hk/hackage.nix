@@ -21,14 +21,14 @@
       synopsis = "Create pure futures using lazy IO.";
       description = "An experimental library for creating promises that can be\nevaluated in pure code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."threads" or (errorHandler.buildDepError "threads"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Middleware to map LISTEN/NOTIFY messages to Websockets";
       description = "WAI middleware that adds websockets capabilites on top of PostgreSQL's asynchronous notifications using LISTEN and NOTIFY commands. Fully functioning server included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,19 +55,19 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "postgres-websockets" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."postgres-websockets" or (errorHandler.buildDepError "postgres-websockets"))
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "postgres-websockets-test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

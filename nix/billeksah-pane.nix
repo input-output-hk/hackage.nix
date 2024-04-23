@@ -6,8 +6,8 @@
         nix = import ../hackage/billeksah-pane-1.0.0-r0-74249c232ef8c88f0f1def629dc4305395addff7705815540697780b6b0896a2.nix;
         revNum = 0;
         sha256 = "74249c232ef8c88f0f1def629dc4305395addff7705815540697780b6b0896a2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

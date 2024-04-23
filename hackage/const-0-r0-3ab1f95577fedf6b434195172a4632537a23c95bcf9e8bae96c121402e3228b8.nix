@@ -21,7 +21,7 @@
       synopsis = "Read-only mutable primitives";
       description = "Read-only mutable primitives.\n\nThis can be used for more accurate FFI bindings\nor simply to indicate more cleanly in your code\nwhat you are and aren't allowed to modify.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."ptrdiff" or (errorHandler.buildDepError "ptrdiff"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

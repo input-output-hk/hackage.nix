@@ -21,7 +21,7 @@
       synopsis = "A few pipes to control the timing of yields";
       description = "Use this library to yield values downstream according to different timing rules.  For example, use the relTimeCat pipe, and your data will be yielded according to their timestamps.  Or use poissonCat to yield values with poisson timing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "PipesRealTimeExample" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-rt" or (errorHandler.buildDepError "pipes-rt"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

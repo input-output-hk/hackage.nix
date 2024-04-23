@@ -21,7 +21,7 @@
       synopsis = "dependently typed core language";
       description = "dependently typed core language";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "pisigma" = { buildable = true; }; };
       };
-    }
+      exes = { "pisigma" = { buildable = true; }; };
+    };
+  }

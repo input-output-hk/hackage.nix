@@ -21,6 +21,6 @@
       synopsis = "TBA";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

@@ -21,7 +21,7 @@
       synopsis = "Some useful combinators for the prettyprinter package";
       description = "Various utilities that make writing Pretty instances easier.\n\nNotable utilites include automatic deriving of Pretty instance via\nGeneric, Data, or Show instance.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

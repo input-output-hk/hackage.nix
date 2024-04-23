@@ -21,7 +21,7 @@
       synopsis = "An opinionated formatter for Nix";
       description = "A formatter for Nix that ensures consistent and clear formatting by forgetting\nall existing formatting during parsing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nixfmt" = {
           depends = [
@@ -43,17 +43,17 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "js-interface" = {
-          depends = (pkgs.lib).optionals (compiler.isGhcjs && true) [
+          depends = pkgs.lib.optionals (compiler.isGhcjs && true) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."nixfmt" or (errorHandler.buildDepError "nixfmt"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then true else false;
-          };
         };
       };
-    }
+    };
+  }

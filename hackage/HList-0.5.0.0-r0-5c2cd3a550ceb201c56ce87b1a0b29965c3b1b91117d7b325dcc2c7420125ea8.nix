@@ -21,7 +21,7 @@
       synopsis = "Heterogeneous lists";
       description = "HList provides many operations to create and manipulate\nheterogenous lists (HLists) whose length and element\ntypes are known at compile-time. HLists are used to implement\n\n* records\n\n* variants\n\n* type-indexed products (TIP)\n\n* type-indexed co-products (TIC)\n\n* keyword arguments\n\nUser code should import \"Data.HList\" or\n\"Data.HList.CommonMain\" for a slightly more limited scope";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ (pkgs.lib).optional (flags.new_type_eq) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (flags.new_type_eq) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -55,17 +55,17 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
-          depends = (pkgs.lib).optionals (compiler.isGhc && (compiler.version).le "7.9" && (compiler.isGhc && (compiler.version).le "7.11")) [
+          depends = pkgs.lib.optionals (compiler.isGhc && compiler.version.le "7.9" && (compiler.isGhc && compiler.version.le "7.11")) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = false;
-          };
+        };
         "properties" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).le "7.11") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.le "7.11") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

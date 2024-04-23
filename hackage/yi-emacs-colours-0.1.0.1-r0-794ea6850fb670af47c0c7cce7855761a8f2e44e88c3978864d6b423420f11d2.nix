@@ -21,7 +21,7 @@
       synopsis = "Simple mapping from colour names used in emacs to Color";
       description = "Simple mapping from colour names used in emacs to Color";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

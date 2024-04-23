@@ -6,8 +6,8 @@
         nix = import ../hackage/android-lint-summary-0.2.1-r0-9a1275e29e7f235bd257abecaaf013eda6d65499c167f6bfd08fff63efdf161a.nix;
         revNum = 0;
         sha256 = "9a1275e29e7f235bd257abecaaf013eda6d65499c167f6bfd08fff63efdf161a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

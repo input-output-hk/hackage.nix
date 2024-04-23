@@ -21,7 +21,7 @@
       synopsis = "Un-/parse JSON with roundtrip invertible syntax definitions.";
       description = "Un-/parse JSON with roundtrip invertible syntax definitions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."roundtrip-aeson" or (errorHandler.buildDepError "roundtrip-aeson"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

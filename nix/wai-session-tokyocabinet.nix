@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-session-tokyocabinet-0.1-r0-27c60f2c469a9a4f713bb630e530cdfcb6d6b1a5425893b46d74664396edabca.nix;
         revNum = 0;
         sha256 = "27c60f2c469a9a4f713bb630e530cdfcb6d6b1a5425893b46d74664396edabca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

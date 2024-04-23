@@ -21,15 +21,15 @@
       synopsis = "Haskus utility modules";
       description = "Variant (extensible sum type) and EADT (extensible recursive sum type)\ndatatypes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskus-utils-types" or (errorHandler.buildDepError "haskus-utils-types"))
           (hsPkgs."haskus-utils-data" or (errorHandler.buildDepError "haskus-utils-data"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTTP to XMPP omegle chats gate.";
       description = "HTTP to XMPP omegle chats gate. Simple example of\nNetwork.XMPP library usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Ranka" = {
@@ -32,9 +32,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

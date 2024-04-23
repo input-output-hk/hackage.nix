@@ -21,16 +21,16 @@
       synopsis = "A type class for sequences and various sequence data structures.";
       description = "A type class for finite sequences along with several data structures\nthat implement it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sequence-test" = {
           depends = [
@@ -39,17 +39,17 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "7.10"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "7.10"
             then false
             else true;
-          };
+        };
         "do-nothing" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-          buildable = if compiler.isGhc && (compiler.version).ge "7.10"
+          buildable = if compiler.isGhc && compiler.version.ge "7.10"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

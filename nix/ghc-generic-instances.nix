@@ -6,8 +6,8 @@
         nix = import ../hackage/ghc-generic-instances-0.1.0.0-r0-968474add557697e85db6bbab0660c23c94f35159d6cd98bc007e8211b034963.nix;
         revNum = 0;
         sha256 = "968474add557697e85db6bbab0660c23c94f35159d6cd98bc007e8211b034963";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

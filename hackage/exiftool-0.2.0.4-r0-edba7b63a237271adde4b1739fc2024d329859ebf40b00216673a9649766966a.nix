@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to ExifTool";
       description = "Haskell bindings to the [ExifTool](https://exiftool.org)\ncommand-line application that enable reading, writing and\ndeleting metadata in various file formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

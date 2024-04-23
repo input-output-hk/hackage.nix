@@ -21,7 +21,7 @@
       synopsis = "A simple text parser with decent errors";
       description = "Please see the README on GitHub at <https://github.com/ejconlon/looksee#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."looksee" or (errorHandler.buildDepError "looksee"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

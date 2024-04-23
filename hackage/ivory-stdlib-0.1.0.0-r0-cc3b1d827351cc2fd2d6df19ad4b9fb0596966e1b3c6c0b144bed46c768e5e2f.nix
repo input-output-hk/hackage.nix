@@ -21,15 +21,15 @@
       synopsis = "Ivory standard library.";
       description = "A standard library for Ivory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

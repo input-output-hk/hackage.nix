@@ -21,7 +21,7 @@
       synopsis = "A two player abstract strategy game.";
       description = "HsTZAAR is an implementation of TZAAR ((c) 2007 Kris Brum),\na two player abstract strategy game played on a hexagonal board.\nTZAAR is the the last game in the GIPF game series.\nThis program is based on the (retired) htzaar implementation\nby Tom Hawkins <tomahawkins@gmail.com>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hstzaar" = {
@@ -32,9 +32,9 @@
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

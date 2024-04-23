@@ -21,7 +21,7 @@
       synopsis = "Morpheus GraphQL CLI";
       description = "code generator for Morpheus GraphQL";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "morpheus" = {
@@ -31,10 +31,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."morpheus-graphql" or (errorHandler.buildDepError "morpheus-graphql"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "morpheus-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."morpheus-graphql" or (errorHandler.buildDepError "morpheus-graphql"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.";
       description = "This combines regex-tdfa with utf8-string to allow searching over UTF8 encoded lazy bytestrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

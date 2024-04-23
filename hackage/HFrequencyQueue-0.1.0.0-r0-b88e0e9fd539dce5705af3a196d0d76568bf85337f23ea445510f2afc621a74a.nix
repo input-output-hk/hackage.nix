@@ -21,15 +21,15 @@
       synopsis = "A Queue with a random (weighted) pick function";
       description = "This package provide a queue that use an internal random generator\nto return a random element. The probability that a certain element\ncome out is controlled by an Int that is the relative probability\nof that element. IT USE GCC WITH C++11!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."c-storable-deriving" or (errorHandler.buildDepError "c-storable-deriving"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

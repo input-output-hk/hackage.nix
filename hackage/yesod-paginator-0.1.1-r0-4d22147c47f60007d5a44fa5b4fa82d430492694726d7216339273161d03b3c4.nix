@@ -21,7 +21,7 @@
       synopsis = "A pagination approach for yesod";
       description = "Paginate a list showing a per-item widget and links to other pages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

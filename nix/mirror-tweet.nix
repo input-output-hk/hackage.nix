@@ -6,8 +6,8 @@
         nix = import ../hackage/mirror-tweet-0.1.0.0-r0-cf5a2d57674fffe341eba5375cb2db9333f51c68f5a60414c8fd691395987365.nix;
         revNum = 0;
         sha256 = "cf5a2d57674fffe341eba5375cb2db9333f51c68f5a60414c8fd691395987365";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

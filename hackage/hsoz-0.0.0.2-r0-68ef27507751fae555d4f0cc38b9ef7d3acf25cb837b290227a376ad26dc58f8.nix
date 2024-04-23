@@ -21,7 +21,7 @@
       synopsis = "Iron, Hawk, Oz: Web auth protocols";
       description = "<<images/iron.png>> &#x20;__&#x20;\n<<images/hawk.png>> &#x20;__&#x20;\n<<images/oz.png>>\n\n__hsoz__ is a Haskell implementation of the Iron, Hawk, and Oz web\nauthentication protocols. These protocols originate from the OAuth2\nstandardisation process, but are designed to be simpler to implement\nfor the common case of web applications.\n\nThis module is based on the Javascript code and documentation by\nEran Hammer and others. A fair amount of Hammer's descriptive text\nhas been incorporated into this documentation, as well as the cool\nlogos.\n\n== Introduction\n\nIn the words of their principal designer:\n\n__Iron__ is a cryptographic utility for sealing a JSON object using\nsymmetric key encryption with message integrity verification. Or in\nother words, it lets you encrypt an object, send it around (in\ncookies, authentication credentials, etc.), then receive it back and\ndecrypt it. The algorithm ensures that the message was not tampered\nwith, and also provides a simple mechanism for password rotation.\n\n__Hawk__ is an HTTP authentication scheme using a message\nauthentication code (MAC) algorithm to provide partial HTTP request\ncryptographic verification.\n\n__Oz__ is a web authorization protocol based on industry best\npractices. Oz combines the Hawk authentication protocol with the\nIron encryption protocol to provide a simple to use and secure\nsolution for granting and authenticating third-party access to an\nAPI on behalf of a user or an application.\n\n== Usage\n\nThe top-level \"Network.Iron\", \"Network.Hawk\", \"Network.Oz\" modules\ncontain further instructions on their usage. There are also some\nexample server and client programs within the\n<https://github.com/rvl/hsoz project git repository>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hsoz-example" = {
           depends = [
@@ -80,10 +80,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
+      };
       tests = {
         "hsoz-test" = {
           depends = [
@@ -103,9 +103,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

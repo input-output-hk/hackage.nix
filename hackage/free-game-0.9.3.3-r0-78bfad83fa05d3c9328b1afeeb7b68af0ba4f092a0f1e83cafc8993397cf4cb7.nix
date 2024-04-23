@@ -21,7 +21,7 @@
       synopsis = "Create graphical applications for free";
       description = "Cross-platform GUI library based on free monads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."JuicyPixels-repa" or (errorHandler.buildDepError "JuicyPixels-repa"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."colors" or (errorHandler.buildDepError "colors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

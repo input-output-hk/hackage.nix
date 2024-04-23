@@ -21,7 +21,7 @@
       synopsis = "Examples using pipes-p2p";
       description = "For now this package includes a dummy P2P network where nodes just exchange\ntheir network addresses. This can be used as boilerplate code for other P2P\nnetworks. Future releases may contain more examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "address-exchanger" = {
@@ -37,9 +37,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-network" or (errorHandler.buildDepError "pipes-network"))
             (hsPkgs."pipes-p2p" or (errorHandler.buildDepError "pipes-p2p"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

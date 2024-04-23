@@ -13,7 +13,7 @@
       stack = true;
       test-cabal-plan = true;
       test-graphmod = true;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "guardian"; version = "0.5.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "The border guardian for your package dependencies";
       description = "Guardian secures your Haskell monorepo package dependency boundary. Please read [README.md](https://github.com/deepflowinc/guardian#readme) for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -58,25 +58,25 @@
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (pkgs.lib).optionals (flags.cabal) [
+        ] ++ pkgs.lib.optionals (flags.cabal) [
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."Cabal-syntax" or (errorHandler.buildDepError "Cabal-syntax"))
           (hsPkgs."cabal-install" or (errorHandler.buildDepError "cabal-install"))
-          ]) ++ (pkgs.lib).optionals (flags.stack) [
+        ]) ++ pkgs.lib.optionals (flags.stack) [
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."stack" or (errorHandler.buildDepError "stack"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "guardian" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."guardian" or (errorHandler.buildDepError "guardian"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "guardian-test" = {
           depends = [
@@ -94,12 +94,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

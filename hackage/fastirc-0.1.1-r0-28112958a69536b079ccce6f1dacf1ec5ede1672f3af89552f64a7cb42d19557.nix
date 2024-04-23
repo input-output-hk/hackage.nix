@@ -21,7 +21,7 @@
       synopsis = "Fast Internet Relay Chat (IRC) library";
       description = "Fast Internet Relay Chat (IRC) library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,14 +30,14 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = if flags.debug then true else false;
-          };
         };
       };
-    }
+    };
+  }

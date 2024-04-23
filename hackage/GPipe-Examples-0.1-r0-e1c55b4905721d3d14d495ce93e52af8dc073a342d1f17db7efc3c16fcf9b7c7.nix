@@ -21,7 +21,7 @@
       synopsis = "Examples for the GPipes package";
       description = "A set of examples with increasing complexity";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "01_green_triangle" = {
@@ -33,9 +33,9 @@
             (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
             (hsPkgs."GPipe-TextureLoad" or (errorHandler.buildDepError "GPipe-TextureLoad"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "02_triangle_texture" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
             (hsPkgs."GPipe-TextureLoad" or (errorHandler.buildDepError "GPipe-TextureLoad"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "03_green_sphere" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -57,9 +57,9 @@
             (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
             (hsPkgs."GPipe-TextureLoad" or (errorHandler.buildDepError "GPipe-TextureLoad"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "04_brass_sphere" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."GPipe" or (errorHandler.buildDepError "GPipe"))
             (hsPkgs."GPipe-TextureLoad" or (errorHandler.buildDepError "GPipe-TextureLoad"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

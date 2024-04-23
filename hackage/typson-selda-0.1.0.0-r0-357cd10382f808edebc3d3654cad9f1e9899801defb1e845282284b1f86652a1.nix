@@ -21,7 +21,7 @@
       synopsis = "Typson Selda Integration";
       description = "Please see the README on GitHub at <https://github.com/aaronallen8455/typson#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."selda-postgresql" or (errorHandler.buildDepError "selda-postgresql"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typson-selda-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typson-core" or (errorHandler.buildDepError "typson-core"))
             (hsPkgs."typson-selda" or (errorHandler.buildDepError "typson-selda"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

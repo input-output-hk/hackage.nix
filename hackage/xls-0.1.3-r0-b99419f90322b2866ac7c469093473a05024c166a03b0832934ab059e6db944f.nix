@@ -21,7 +21,7 @@
       synopsis = "Parse Microsoft Excel xls files (BIFF/Excel 97-2004)";
       description = "Parse Microsoft Excel spreadsheet files in @.xls@ file format\n(extension '.xls') more specifically known as 'BIFF/Excel 97-2004'.\n\nThe library is based on the C library\n'https://github.com/libxls/libxls'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xls2csv" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."getopt-generics" or (errorHandler.buildDepError "getopt-generics"))
             (hsPkgs."xls" or (errorHandler.buildDepError "xls"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xls" or (errorHandler.buildDepError "xls"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

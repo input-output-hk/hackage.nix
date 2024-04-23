@@ -21,7 +21,7 @@
       synopsis = "Source constraints GHC plugin";
       description = "Please visit the README at <https://github.com/mbj/source-constraints#readme>\nfor usage information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."source-constraints" or (errorHandler.buildDepError "source-constraints"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

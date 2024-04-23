@@ -21,7 +21,7 @@
       synopsis = "Apply CSS styles to a document tree.";
       description = "Reusable CSS engine allowing you to parse CSS stylesheets and to query the style properties for a given element.\nIt covers CSS parsing, selection, cascade, and inheritance, whilst allowing you to declaratively define supported properties and at-rules.\nThe hope is that this would be useful for implementing new browser engines, web development tools, and UI frameworks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-stylist" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Chase & Lev work-stealing lock-free double-ended queues (deques).";
       description = "A queue that is push/pop on one end and pop-only on the other.  These are commonly\nused for work-stealing.\nThis implementation derives directly from the pseudocode in the 2005 SPAA paper:\n\nhttp://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.170.1097&rep=rep1&type=pdf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."atomic-primops" or (errorHandler.buildDepError "atomic-primops"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-chaselev-deque" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

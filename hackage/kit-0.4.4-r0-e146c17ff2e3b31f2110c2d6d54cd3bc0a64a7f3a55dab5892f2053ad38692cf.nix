@@ -21,7 +21,7 @@
       synopsis = "A dependency manager for XCode (Objective-C) projects";
       description = "A dependency manager for XCode (Objective-C) projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kit" = {
@@ -40,9 +40,9 @@
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

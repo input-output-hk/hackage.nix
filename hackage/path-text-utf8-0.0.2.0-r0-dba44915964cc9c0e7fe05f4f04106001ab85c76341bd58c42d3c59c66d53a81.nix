@@ -21,7 +21,7 @@
       synopsis = "Read and write UTF-8 text files";
       description = "This is a trivial integration of the @path@ and @text@\npackages, providing convenient functions to read and\nwrite UTF-8 text files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

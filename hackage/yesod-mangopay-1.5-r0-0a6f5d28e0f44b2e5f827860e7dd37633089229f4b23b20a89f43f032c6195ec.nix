@@ -21,7 +21,7 @@
       synopsis = "Yesod library for MangoPay API access";
       description = "This package provides convenience functions when using both\n@yesod@ and @mangopay@ packages.  It also includes a test\napplication that is built when the library-only flag is set to\n@False@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-mangopay" = {
           depends = [
@@ -79,16 +79,16 @@
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
             (hsPkgs."country-codes" or (errorHandler.buildDepError "country-codes"))
-            ] ++ (if flags.conduit11
+          ] ++ (if flags.conduit11
             then [
               (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
               (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
-              ]
+            ]
             else [
               (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-              ]);
+            ]);
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

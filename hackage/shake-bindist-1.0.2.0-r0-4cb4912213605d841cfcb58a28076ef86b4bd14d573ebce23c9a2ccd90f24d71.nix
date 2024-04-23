@@ -21,7 +21,7 @@
       synopsis = "Rules for binary distributions";
       description = "Pack files into a binary distribution";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."lzma" or (errorHandler.buildDepError "lzma"))
           (hsPkgs."brotli" or (errorHandler.buildDepError "brotli"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

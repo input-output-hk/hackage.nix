@@ -21,7 +21,7 @@
       synopsis = "Forward build system, with caching and speculation";
       description = "A forward build system like Fabrciate but with speculation and remote caching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,17 +46,17 @@
           (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
           (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "pipeline" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rattle-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -68,9 +68,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "buildScript" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -94,10 +94,10 @@
             (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
             (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = false;
-          };
         };
+      };
       tests = {
         "rattle-test" = {
           depends = [
@@ -123,9 +123,9 @@
             (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
             (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

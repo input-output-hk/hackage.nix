@@ -12,7 +12,7 @@
       generic-instances = false;
       safe-foreign-calls = false;
       trace-calls = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "vulkan"; version = "3.8.3"; };
@@ -25,7 +25,7 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ]
           else [ (pkgs."vulkan" or (errorHandler.sysDepError "vulkan")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

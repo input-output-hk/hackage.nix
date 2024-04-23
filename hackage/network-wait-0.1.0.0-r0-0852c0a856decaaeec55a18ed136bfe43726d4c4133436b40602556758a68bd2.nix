@@ -21,7 +21,7 @@
       synopsis = "Lightweight library for waiting on networked services to become available.";
       description = "Please see the README on GitHub at <https://github.com/mbg/network-wait#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "network-wait-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

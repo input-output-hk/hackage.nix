@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Simple SQL/CLI application that transfers data between 2 databases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "transfer-db" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
             (hsPkgs."sqlcli-odbc" or (errorHandler.buildDepError "sqlcli-odbc"))
             (hsPkgs."transfer-db" or (errorHandler.buildDepError "transfer-db"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hspec-tests" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."transfer-db" or (errorHandler.buildDepError "transfer-db"))
             (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

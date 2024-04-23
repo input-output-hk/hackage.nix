@@ -21,15 +21,15 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."flow" or (errorHandler.buildDepError "flow"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."flow" or (errorHandler.buildDepError "flow"))
             (hsPkgs."flow-er" or (errorHandler.buildDepError "flow-er"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

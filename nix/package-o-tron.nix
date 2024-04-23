@@ -6,8 +6,8 @@
         nix = import ../hackage/package-o-tron-0.1.0.0-r0-1393b3ceb7adf39b99535cc09450cbdaa4fa2bd80a66668f757bc9d242952241.nix;
         revNum = 0;
         sha256 = "1393b3ceb7adf39b99535cc09450cbdaa4fa2bd80a66668f757bc9d242952241";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

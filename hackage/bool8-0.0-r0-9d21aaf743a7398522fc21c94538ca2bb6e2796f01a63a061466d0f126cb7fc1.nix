@@ -21,11 +21,11 @@
       synopsis = "Alternative Bool type stored as byte";
       description = "The standard 'Bool' type has a 'Storable' instance\nthat requires the size of @HTYPE_INT@,\ni.e. usually four bytes or even more.\nThis package provides 'Bool8',\na boolean type with an 8 bit representation in memory.\nIt is not a drop-in replacement for 'Bool' though.\nYou have to convert from or to 'Bool' occasionally.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

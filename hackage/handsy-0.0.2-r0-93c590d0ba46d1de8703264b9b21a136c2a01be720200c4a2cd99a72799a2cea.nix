@@ -21,7 +21,7 @@
       synopsis = "A DSL to describe common shell operations and interpeters for running them locally and remotely.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/multipart-names-0.0.1-r0-0a81c3b7e9ed63ae6d77a8ebd0bd3f3922c3924565b884fc0a4bf055652e92ae.nix;
         revNum = 0;
         sha256 = "0a81c3b7e9ed63ae6d77a8ebd0bd3f3922c3924565b884fc0a4bf055652e92ae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

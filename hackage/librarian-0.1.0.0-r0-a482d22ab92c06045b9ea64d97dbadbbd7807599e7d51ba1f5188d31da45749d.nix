@@ -21,7 +21,7 @@
       synopsis = "Move/rename according a set of rules";
       description = "Move/rename according a set of rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "librarian" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."librarian" or (errorHandler.buildDepError "librarian"))
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "librarian-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

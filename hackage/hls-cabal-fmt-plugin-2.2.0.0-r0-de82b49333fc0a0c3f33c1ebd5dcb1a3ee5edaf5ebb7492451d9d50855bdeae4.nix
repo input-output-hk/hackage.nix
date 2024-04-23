@@ -21,7 +21,7 @@
       synopsis = "Integration with the cabal-fmt code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hls-cabal-fmt-plugin" or (errorHandler.buildDepError "hls-cabal-fmt-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
-          build-tools = (pkgs.lib).optional (flags.isolatetests) (hsPkgs.buildPackages.cabal-fmt.components.exes.cabal-fmt or (pkgs.buildPackages.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
+          ];
+          build-tools = pkgs.lib.optional (flags.isolatetests) (hsPkgs.buildPackages.cabal-fmt.components.exes.cabal-fmt or (pkgs.buildPackages.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

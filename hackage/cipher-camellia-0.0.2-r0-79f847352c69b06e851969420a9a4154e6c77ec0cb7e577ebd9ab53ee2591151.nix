@@ -21,7 +21,7 @@
       synopsis = "Camellia block cipher primitives";
       description = "Camellia block cipher primitives";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."byteable" or (errorHandler.buildDepError "byteable"))
           (hsPkgs."securemem" or (errorHandler.buildDepError "securemem"))
           (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cipher-camellia" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."cipher-camellia" or (errorHandler.buildDepError "cipher-camellia"))
             (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-tests" or (errorHandler.buildDepError "crypto-cipher-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cipher-camellia" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."cipher-camellia" or (errorHandler.buildDepError "cipher-camellia"))
             (hsPkgs."crypto-cipher-types" or (errorHandler.buildDepError "crypto-cipher-types"))
             (hsPkgs."crypto-cipher-benchmarks" or (errorHandler.buildDepError "crypto-cipher-benchmarks"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

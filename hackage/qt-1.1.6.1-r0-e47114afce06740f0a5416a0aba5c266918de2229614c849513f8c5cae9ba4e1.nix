@@ -21,13 +21,13 @@
       synopsis = "Qt bindings";
       description = "Qt bindings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         libs = [
           (pkgs."qtc_core" or (errorHandler.sysDepError "qtc_core"))
           (pkgs."qtc_gui" or (errorHandler.sysDepError "qtc_gui"))
@@ -35,8 +35,8 @@
           (pkgs."qtc_opengl" or (errorHandler.sysDepError "qtc_opengl"))
           (pkgs."qtc_tools" or (errorHandler.sysDepError "qtc_tools"))
           (pkgs."qtc_script" or (errorHandler.sysDepError "qtc_script"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

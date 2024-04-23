@@ -6,8 +6,8 @@
         nix = import ../hackage/hsclock-1.0-r0-b4acdd6decd04b9cd64684e94cea1a632e391fca83fa33e7a3e3f8b7d075198d.nix;
         revNum = 0;
         sha256 = "b4acdd6decd04b9cd64684e94cea1a632e391fca83fa33e7a3e3f8b7d075198d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

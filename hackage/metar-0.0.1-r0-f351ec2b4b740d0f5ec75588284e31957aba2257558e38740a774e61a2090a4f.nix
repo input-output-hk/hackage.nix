@@ -21,7 +21,7 @@
       synopsis = "Australian METAR";
       description = "Obtain Australian METAR from Bureau of Meteorology (BOM).\n\nIf that fails, get the METAR from NOAA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."tagsoup-selection" or (errorHandler.buildDepError "tagsoup-selection"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."deriving-compat" or (errorHandler.buildDepError "deriving-compat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "metar" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."metar" or (errorHandler.buildDepError "metar"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

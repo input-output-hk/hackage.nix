@@ -21,7 +21,7 @@
       synopsis = "Post to 0bin services";
       description = "Post encrypted content to 0bin sites\nlike http://0bin.net or https://paste.ec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,30 +32,30 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zerobin" = {
-          depends = (pkgs.lib).optionals (flags.cli) [
+          depends = pkgs.lib.optionals (flags.cli) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
             (hsPkgs."zerobin" or (errorHandler.buildDepError "zerobin"))
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
-            ];
+          ];
           buildable = if flags.cli then true else false;
-          };
+        };
         "zerobin-nodejs" = {
-          depends = (pkgs.lib).optionals (flags.nodejs) [
+          depends = pkgs.lib.optionals (flags.nodejs) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."zerobin" or (errorHandler.buildDepError "zerobin"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if flags.nodejs then true else false;
-          };
         };
       };
-    }
+    };
+  }

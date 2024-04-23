@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler intermediate language.";
       description = "Disciplined Disciple Compiler intermediate language\nwith internalized effect judgement.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
           (hsPkgs."ddc-core-salt" or (errorHandler.buildDepError "ddc-core-salt"))
           (hsPkgs."ddc-core-simpl" or (errorHandler.buildDepError "ddc-core-simpl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

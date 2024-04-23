@@ -21,7 +21,7 @@
       synopsis = "Provide a classy prelude including common Yesod functionality.";
       description = "See docs and README at <http://www.stackage.org/package/classy-prelude-yesod>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-newsfeed" or (errorHandler.buildDepError "yesod-newsfeed"))
           (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

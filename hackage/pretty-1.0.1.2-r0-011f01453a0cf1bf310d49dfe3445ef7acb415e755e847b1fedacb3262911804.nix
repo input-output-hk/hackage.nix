@@ -21,11 +21,11 @@
       synopsis = "Pretty-printing library";
       description = "This package contains John Hughes's pretty-printing library,\nheavily modified by Simon Peyton Jones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

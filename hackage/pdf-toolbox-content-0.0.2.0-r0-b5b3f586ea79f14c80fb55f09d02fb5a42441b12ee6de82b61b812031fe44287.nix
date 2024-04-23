@@ -21,7 +21,7 @@
       synopsis = "A collection of tools for processing PDF files";
       description = "Tools for processing PDF content streams";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."encoding" or (errorHandler.buildDepError "encoding"))
           (hsPkgs."pdf-toolbox-core" or (errorHandler.buildDepError "pdf-toolbox-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

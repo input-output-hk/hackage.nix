@@ -21,7 +21,7 @@
       synopsis = "A license compatibility helper";
       description = "A license compatibility helper.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "licensor" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

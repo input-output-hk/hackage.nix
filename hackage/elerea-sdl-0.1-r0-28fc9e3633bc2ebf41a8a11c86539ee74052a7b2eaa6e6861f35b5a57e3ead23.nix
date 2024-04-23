@@ -21,15 +21,15 @@
       synopsis = "Elerea FRP wrapper for SDL";
       description = "This is an FRP wrapper for SDL using Elerea.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

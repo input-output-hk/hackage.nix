@@ -21,7 +21,7 @@
       synopsis = "A tiling window manager";
       description = "xmonad is a tiling window manager for X. Windows are arranged\nautomatically to tile the screen without gaps or overlap, maximising\nscreen use. All features of the window manager are accessible from the\nkeyboard: a mouse is strictly optional. xmonad is written and\nextensible in Haskell. Custom layout algorithms, and other extensions,\nmay be written by the user in config files. Layouts are applied\ndynamically, and different layouts may be used on each workspace.\nXinerama is fully supported, allowing windows to be tiled on several\nscreens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,18 +37,18 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "xmonad" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ] ++ (pkgs.lib).optional (flags.quickcheck-classes && (compiler.isGhc && (compiler.version).gt "8.5")) (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"));
+          ] ++ pkgs.lib.optional (flags.quickcheck-classes && (compiler.isGhc && compiler.version.gt "8.5")) (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

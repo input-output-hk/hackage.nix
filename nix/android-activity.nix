@@ -6,8 +6,8 @@
         nix = import ../hackage/android-activity-0.1-r0-efa857654c5d30747b7befc9b299e2f42be77127ac54dc1c630b7b74326f0e85.nix;
         revNum = 0;
         sha256 = "efa857654c5d30747b7befc9b299e2f42be77127ac54dc1c630b7b74326f0e85";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

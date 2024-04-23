@@ -21,7 +21,7 @@
       synopsis = "Libraries for processing GHC Core";
       description = "Libraries for processing GHC Core";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).gt "6.8.2") (hsPkgs."syb" or (errorHandler.buildDepError "syb"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.gt "6.8.2") (hsPkgs."syb" or (errorHandler.buildDepError "syb"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

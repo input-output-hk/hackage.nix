@@ -21,7 +21,7 @@
       synopsis = "A softer alternative to Haddock";
       description = "Please see the website <https://theam.github.io/tintin>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tintin" = {
           depends = [
@@ -49,19 +49,19 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."tintin" or (errorHandler.buildDepError "tintin"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tintin-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."tintin" or (errorHandler.buildDepError "tintin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

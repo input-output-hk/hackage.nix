@@ -21,7 +21,7 @@
       synopsis = "Dockerfile Linter JavaScript API";
       description = "A smarter Dockerfile linter that helps you build best practice Docker images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."language-docker" or (errorHandler.buildDepError "language-docker"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hadolint" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."language-docker" or (errorHandler.buildDepError "language-docker"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hadolint-unit-tests" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."language-docker" or (errorHandler.buildDepError "language-docker"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

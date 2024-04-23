@@ -21,14 +21,14 @@
       synopsis = "A coherent 3d noise library.";
       description = "A coherent 3d noise library loosely based on libnoise.  Currently has an\nimplementation of perlin noise.  Will eventually support other noise\ntypes as well as noise function combinations.\n\nCode examples included in package.\n\nExample of Perlin noise output image: <http://i.imgur.com/cPOZ2.png>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

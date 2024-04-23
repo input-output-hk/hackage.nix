@@ -21,16 +21,16 @@
       synopsis = "Affine arithmetic library for Haskell";
       description = "Hafar is an affine arithmetic library for Haskell. It is an efficient way to work with ranges of values or imprecise values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hafar-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hafar" or (errorHandler.buildDepError "hafar"))
             (hsPkgs."intervals" or (errorHandler.buildDepError "intervals"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

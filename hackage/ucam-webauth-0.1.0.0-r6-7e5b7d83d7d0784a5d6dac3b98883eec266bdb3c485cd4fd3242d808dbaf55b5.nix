@@ -21,7 +21,7 @@
       synopsis = "The Ucam-Webauth protocol, used by Raven";
       description = "An implementation of the Ucam-Webauth protocol, as used by the University of Cambridge’s\nRaven authentication service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."ucam-webauth-types" or (errorHandler.buildDepError "ucam-webauth-types"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -73,12 +73,12 @@
             (hsPkgs."time-qq" or (errorHandler.buildDepError "time-qq"))
             (hsPkgs."ucam-webauth-types" or (errorHandler.buildDepError "ucam-webauth-types"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

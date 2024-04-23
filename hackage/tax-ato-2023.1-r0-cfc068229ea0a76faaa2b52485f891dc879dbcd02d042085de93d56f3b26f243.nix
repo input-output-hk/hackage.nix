@@ -21,7 +21,7 @@
       synopsis = "Tax types and computations for Australia";
       description = "This library provides types and tax computations for tax\nin Australia (ATO = /Australian Taxation Office/).  It is\nbased on the <https://hackage.haskell.org/package/tax tax>\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tax" or (errorHandler.buildDepError "tax"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

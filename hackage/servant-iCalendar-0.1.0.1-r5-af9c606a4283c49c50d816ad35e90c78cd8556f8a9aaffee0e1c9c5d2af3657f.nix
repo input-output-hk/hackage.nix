@@ -21,7 +21,7 @@
       synopsis = "Servant support for iCalendar";
       description = "Servant support for iCalendar";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."iCalendar" or (errorHandler.buildDepError "iCalendar"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

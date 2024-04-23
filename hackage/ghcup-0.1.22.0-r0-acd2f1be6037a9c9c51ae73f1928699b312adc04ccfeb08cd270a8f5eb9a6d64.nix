@@ -13,7 +13,7 @@
       internal-downloader = false;
       no-exe = false;
       tar = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "ghcup"; version = "0.1.22.0"; };
@@ -26,7 +26,7 @@
       synopsis = "ghc toolchain installer";
       description = "A rewrite of the shell script ghcup, for providing\na more stable user experience and exposing an API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -78,30 +78,30 @@
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if flags.tar
+        ] ++ (if flags.tar
           then [
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-            ]
+          ]
           else [
             (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
-            ])) ++ (pkgs.lib).optionals (flags.internal-downloader && !system.isWindows) [
+          ])) ++ pkgs.lib.optionals (flags.internal-downloader && !system.isWindows) [
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-io-streams" or (errorHandler.buildDepError "http-io-streams"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-          ]) ++ (if system.isWindows
+        ]) ++ (if system.isWindows
           then [
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-            ]
+          ]
           else [
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
-            ])) ++ (pkgs.lib).optional (flags.tui) (hsPkgs."vty" or (errorHandler.buildDepError "vty"));
+          ])) ++ pkgs.lib.optional (flags.tui) (hsPkgs."vty" or (errorHandler.buildDepError "vty"));
         buildable = true;
-        };
+      };
       sublibs = {
         "ghcup-optparse" = {
           depends = ([
@@ -139,17 +139,17 @@
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
             (hsPkgs."ghcup" or (errorHandler.buildDepError "ghcup"))
-            ] ++ (if flags.tar
+          ] ++ (if flags.tar
             then [
               (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
               (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-              ]
+            ]
             else [
               (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
-              ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+            ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = true;
-          };
         };
+      };
       exes = {
         "ghcup" = {
           depends = (([
@@ -188,22 +188,22 @@
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
             (hsPkgs."ghcup" or (errorHandler.buildDepError "ghcup"))
             (hsPkgs."ghcup".components.sublibs.ghcup-optparse or (errorHandler.buildDepError "ghcup:ghcup-optparse"))
-            ] ++ (if flags.tar
+          ] ++ (if flags.tar
             then [
               (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
               (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-              ]
+            ]
             else [
               (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
-              ])) ++ (pkgs.lib).optionals (flags.tui) [
+            ])) ++ pkgs.lib.optionals (flags.tui) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."optics" or (errorHandler.buildDepError "optics"))
-            ]) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ]) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           buildable = if flags.no-exe then false else true;
-          };
         };
+      };
       tests = {
         "ghcup-test" = {
           depends = [
@@ -223,12 +223,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ghcup-optparse-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -241,9 +241,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

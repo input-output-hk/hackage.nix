@@ -21,7 +21,7 @@
       synopsis = "An API for managing renderable resources.";
       description = "The `renderable` package provides a method for managing resources\nof a rendering system. Resources are allocated according to a strategy and\nreleased automatically when your renderable data changes. These changes are\ndetected during each draw call based on the hash of your renderable\ndatatype.\nThis package is meant to be pulled in as a portion of your rendering system.\nIt aims to ease the task of managing allocation of resources over time as\nthe value of your renderable datatype changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

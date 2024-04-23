@@ -21,7 +21,7 @@
       synopsis = "An interface to the Silicon Labs Si5351 clock chip";
       description = "An experimental interface to the Silicon Labs\nI2C-programmable any-frequency CMOS clock generator and VCXO.\n(tested with the Si5351 cip).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."hsI2C" or (errorHandler.buildDepError "hsI2C"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

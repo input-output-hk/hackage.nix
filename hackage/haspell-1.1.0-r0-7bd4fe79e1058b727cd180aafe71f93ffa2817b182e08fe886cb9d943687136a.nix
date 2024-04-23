@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings to aspell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."aspell" or (errorHandler.sysDepError "aspell")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

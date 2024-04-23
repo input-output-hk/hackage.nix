@@ -21,7 +21,7 @@
       synopsis = "A fast C++ backend for <https://hackage.haskell.org/package/lol Λ ∘ λ>.";
       description = "Λ ∘ λ (Lol) is a general-purpose library for ring-based lattice cryptography.\nThis package provides a C++ implementation of Lol's Tensor interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,19 +50,19 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lol-cpp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
             (hsPkgs."lol-tests" or (errorHandler.buildDepError "lol-tests"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-lol-cpp" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."lol-benches" or (errorHandler.buildDepError "lol-benches"))
             (hsPkgs."lol-cpp" or (errorHandler.buildDepError "lol-cpp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

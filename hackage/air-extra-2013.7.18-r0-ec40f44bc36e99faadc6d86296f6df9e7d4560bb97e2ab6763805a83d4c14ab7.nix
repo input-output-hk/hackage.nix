@@ -21,7 +21,7 @@
       synopsis = "air-extra";
       description = "An alternative Haskell Prelude library, extra helpers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."air" or (errorHandler.buildDepError "air"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

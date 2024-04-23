@@ -21,7 +21,7 @@
       synopsis = "\"Ties the knot\" on a given set of structures that reference each other by\nkeys.";
       description = "\"Ties the knot\" on a given set of structures that reference each other by\nkeys - replaces the keys with their respective values. Takes @Map k (v k)@\nand converts into @Map k v'@ where @v'@ is the fixed point of @v@. See the\nhomepage for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

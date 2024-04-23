@@ -21,18 +21,18 @@
       synopsis = "mmap support for strict ByteStrings";
       description = "\nThis library provides a wrapper to mmap(2), allowing files or\ndevices to be lazily loaded into memory as a strict ByteString,\nusing the virtual memory subsystem to do on-demand loading.\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ] ++ (if flags.split-base
+        ] ++ (if flags.split-base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

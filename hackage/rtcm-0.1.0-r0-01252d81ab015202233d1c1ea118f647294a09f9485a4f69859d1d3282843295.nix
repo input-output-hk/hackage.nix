@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings for RTCM.";
       description = "Haskell bindings for RTCM.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."rtcm" or (errorHandler.buildDepError "rtcm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rtcm" or (errorHandler.buildDepError "rtcm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

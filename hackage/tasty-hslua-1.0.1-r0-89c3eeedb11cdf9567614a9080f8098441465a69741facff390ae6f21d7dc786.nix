@@ -21,7 +21,7 @@
       synopsis = "Tasty helpers to test HsLua.";
       description = "Various tasty helpers and utilities to test HsLua\noparations. Built on top of tasty-hunit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

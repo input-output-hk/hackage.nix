@@ -14,7 +14,7 @@
       hlint = false;
       lens = false;
       show-internal = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "thyme"; version = "0.3.6"; };
@@ -27,7 +27,7 @@
       synopsis = "A faster time library";
       description = "@thyme@ is a performance-optimized rewrite of the excellent\n@<http://hackage.haskell.org/package/time time>@ library.\n\nSee @<http://hackage.haskell.org/package/thyme/docs/Data-Thyme-Docs.html Data.Thyme.Docs>@\nfor a full description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -48,17 +48,17 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-th-unbox" or (errorHandler.buildDepError "vector-th-unbox"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ] ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if flags.lens || flags.docs
+        ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ (if flags.lens || flags.docs
           then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
           else [
             (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-            ])) ++ (pkgs.lib).optionals (flags.docs) [
+          ])) ++ pkgs.lib.optionals (flags.docs) [
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
-        build-tools = (pkgs.lib).optional (system.isOsx || system.isFreebsd) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        ];
+        build-tools = pkgs.lib.optional (system.isOsx || system.isFreebsd) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
+      };
       tests = {
         "sanity" = {
           depends = [
@@ -71,31 +71,31 @@
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ] ++ (if flags.lens
+          ] ++ (if flags.lens
             then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
             else [
               (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "rewrite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."thyme" or (errorHandler.buildDepError "thyme"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
-          depends = (pkgs.lib).optionals (flags.hlint) [
+          depends = pkgs.lib.optionals (flags.hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if flags.hlint then true else false;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -109,13 +109,13 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-            ] ++ (if flags.lens
+          ] ++ (if flags.lens
             then [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]
             else [
               (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

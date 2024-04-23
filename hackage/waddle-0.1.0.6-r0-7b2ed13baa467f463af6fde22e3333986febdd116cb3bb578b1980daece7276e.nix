@@ -21,7 +21,7 @@
       synopsis = "DOOM WAD file utilities.";
       description = "Library for reading WAD files as used by the DOOM engine into Haskell types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "export-to-js" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."waddle" or (errorHandler.buildDepError "waddle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "export-to-png" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."waddle" or (errorHandler.buildDepError "waddle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "wad-info" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."waddle" or (errorHandler.buildDepError "waddle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

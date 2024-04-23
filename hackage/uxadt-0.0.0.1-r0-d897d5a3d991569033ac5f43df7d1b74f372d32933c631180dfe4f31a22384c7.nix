@@ -21,14 +21,14 @@
       synopsis = "Cross-language extensible representation for algebraic data types.";
       description = "Universal (cross-language) extensible representation for algebraic data type instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

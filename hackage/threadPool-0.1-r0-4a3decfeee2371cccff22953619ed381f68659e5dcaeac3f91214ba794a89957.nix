@@ -21,16 +21,16 @@
       synopsis = "Runs other programs in the manner of a thread pool";
       description = "Takes a single, optional argument which is the number\nof threads (the default is three).  Give it the commands to run, one\nper line, through standard input.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "threadpool" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

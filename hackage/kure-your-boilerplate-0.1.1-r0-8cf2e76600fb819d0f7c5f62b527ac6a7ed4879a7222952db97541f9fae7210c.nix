@@ -21,15 +21,15 @@
       synopsis = "Generator for Boilerplate KURE Combinators";
       description = "KURE-your-boilerplate is a Template Haskell powered library for generating shallow tree walking combinators,\nfor use with the KURE DSL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kure" or (errorHandler.buildDepError "kure"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

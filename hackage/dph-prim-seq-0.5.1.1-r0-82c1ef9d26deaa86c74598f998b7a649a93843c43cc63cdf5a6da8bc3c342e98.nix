@@ -21,7 +21,7 @@
       synopsis = "Sequential Primitives for Data-Parallel Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-interface" or (errorHandler.buildDepError "dph-prim-interface"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

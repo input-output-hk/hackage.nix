@@ -6,8 +6,8 @@
         nix = import ../hackage/pulse-0.1.0.0-r0-af9fa1080ea3250c4c687782e77e8802397beaefec74afaeb9befd13ecabb2da.nix;
         revNum = 0;
         sha256 = "af9fa1080ea3250c4c687782e77e8802397beaefec74afaeb9befd13ecabb2da";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,18 +21,18 @@
       synopsis = "systemd bindings";
       description = "Bindings to various systemd functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."posix-api" or (errorHandler.buildDepError "posix-api"))
-          ];
+        ];
         libs = [ (pkgs."systemd" or (errorHandler.sysDepError "systemd")) ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

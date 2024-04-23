@@ -21,17 +21,17 @@
       synopsis = "An API for generating TIMBER style reactive objects.";
       description = "An API for generating reactive objects, as used in the TIMBER programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "io-reactive-test" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

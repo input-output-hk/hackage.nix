@@ -21,11 +21,11 @@
       synopsis = "Access to the BSD sysctl(3) interface";
       description = "This module provides efficient access to the BSD sysctl(3)\ninterface via the Haskell FFI.\n\nIt allows to read and write both basic sysctl types, as well as complex\nopaque types (typically C structures) described via Storable instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

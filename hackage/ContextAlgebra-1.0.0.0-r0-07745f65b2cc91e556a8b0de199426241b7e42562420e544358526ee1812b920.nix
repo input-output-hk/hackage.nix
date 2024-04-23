@@ -21,7 +21,7 @@
       synopsis = "Implementation of the context algebra.";
       description = "Implementation of the context algebra published in dissertation: Context Algebra applied to Spatial Concepts";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ContextAlgebra" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

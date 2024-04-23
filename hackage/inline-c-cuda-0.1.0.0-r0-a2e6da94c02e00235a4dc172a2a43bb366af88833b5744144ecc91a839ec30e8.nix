@@ -21,7 +21,7 @@
       synopsis = "Lets you embed CUDA code into Haskell.";
       description = "Utilities to inline CUDA code into Haskell using inline-c.  See\ntests for example on how to build.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,10 +34,10 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
-        libs = (pkgs.lib).optional (!flags.test-without-cuda) (pkgs."cudart" or (errorHandler.sysDepError "cudart"));
+        ];
+        libs = pkgs.lib.optional (!flags.test-without-cuda) (pkgs."cudart" or (errorHandler.sysDepError "cudart"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

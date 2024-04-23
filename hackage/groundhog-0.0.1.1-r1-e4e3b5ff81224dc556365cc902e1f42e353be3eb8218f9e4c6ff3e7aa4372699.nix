@@ -21,7 +21,7 @@
       synopsis = "Type-safe ADT-database mapping library.";
       description = "This library provides just the general interface and helper functions. You must use a specific backend in order to make this useful.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."pool" or (errorHandler.buildDepError "pool"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

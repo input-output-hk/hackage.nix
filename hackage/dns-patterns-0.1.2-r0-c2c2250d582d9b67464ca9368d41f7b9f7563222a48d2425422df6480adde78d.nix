@@ -21,7 +21,7 @@
       synopsis = "DNS name parsing and pattern matching utilities";
       description = "See the main module \"Network.DNS.Pattern\" for full documentation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."dns-patterns" or (errorHandler.buildDepError "dns-patterns"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

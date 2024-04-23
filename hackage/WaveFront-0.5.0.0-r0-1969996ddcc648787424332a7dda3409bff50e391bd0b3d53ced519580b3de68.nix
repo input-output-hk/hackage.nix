@@ -21,7 +21,7 @@
       synopsis = "Parsers and utilities for the OBJ WaveFront 3D model format";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."Cartesian" or (errorHandler.buildDepError "Cartesian"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

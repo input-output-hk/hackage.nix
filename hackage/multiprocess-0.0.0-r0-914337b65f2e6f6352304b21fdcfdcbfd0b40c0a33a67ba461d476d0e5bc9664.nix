@@ -21,11 +21,11 @@
       synopsis = "Multiprocess architecture library";
       description = "Multiprocess architecture library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

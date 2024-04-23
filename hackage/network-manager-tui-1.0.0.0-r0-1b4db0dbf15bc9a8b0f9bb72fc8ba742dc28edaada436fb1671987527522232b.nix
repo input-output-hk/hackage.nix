@@ -21,7 +21,7 @@
       synopsis = "network-manager tui";
       description = "Please see the README on GitHub at <https://github.com/andys8/network-manager-tui#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "network-manager-tui-lib" = {
@@ -33,10 +33,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "nmt" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "nmt-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

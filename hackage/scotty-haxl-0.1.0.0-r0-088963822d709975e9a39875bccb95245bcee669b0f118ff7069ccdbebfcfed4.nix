@@ -21,7 +21,7 @@
       synopsis = "Combine scotty and haxl";
       description = "Combine scotty and haxl. ActionH, ScottyH";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haxl" or (errorHandler.buildDepError "haxl"))
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

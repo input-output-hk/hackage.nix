@@ -6,8 +6,8 @@
         nix = import ../hackage/ghcjs-dom-javascript-0.9.9.0-r0-76abc20fb9ae1f53a586f69efa238b310b34adf3940f95ff2088099da6efb200.nix;
         revNum = 0;
         sha256 = "76abc20fb9ae1f53a586f69efa238b310b34adf3940f95ff2088099da6efb200";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

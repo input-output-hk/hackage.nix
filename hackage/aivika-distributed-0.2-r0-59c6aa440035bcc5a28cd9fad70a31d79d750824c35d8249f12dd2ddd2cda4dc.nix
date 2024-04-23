@@ -21,7 +21,7 @@
       synopsis = "Parallel distributed discrete event simulation module for the Aivika library";
       description = "This package extends the aivika-transformers [1] package with facilities for running parallel distributed simulations.\nIt uses an optimistic strategy known as the Time Warp method.\n\n\\[1] <http://hackage.haskell.org/package/aivika-transformers>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
           (hsPkgs."aivika" or (errorHandler.buildDepError "aivika"))
           (hsPkgs."aivika-transformers" or (errorHandler.buildDepError "aivika-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

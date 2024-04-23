@@ -21,16 +21,16 @@
       synopsis = "KMP algorithm implementation, based on Deterministic Finite State Automata ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."kmp-dfa" or (errorHandler.buildDepError "kmp-dfa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

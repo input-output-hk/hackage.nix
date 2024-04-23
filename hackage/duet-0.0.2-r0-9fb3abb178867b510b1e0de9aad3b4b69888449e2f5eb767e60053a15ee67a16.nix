@@ -21,7 +21,7 @@
       synopsis = "A tiny language, a subset of Haskell (with type classes) aimed at aiding teachers to teach Haskell";
       description = "A tiny language, a subset of Haskell (with type classes) aimed at aiding teachers to teach Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "duet" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "duet-test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

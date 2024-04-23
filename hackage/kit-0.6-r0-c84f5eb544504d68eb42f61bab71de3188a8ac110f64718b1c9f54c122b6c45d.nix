@@ -21,7 +21,7 @@
       synopsis = "A dependency manager for Xcode (Objective-C) projects";
       description = "A dependency manager for Xcode (Objective-C) projects";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "kit" = {
@@ -40,9 +40,9 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
             (hsPkgs."data-object-yaml" or (errorHandler.buildDepError "data-object-yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

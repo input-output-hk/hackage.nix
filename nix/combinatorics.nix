@@ -6,8 +6,8 @@
         nix = import ../hackage/combinatorics-0.1.0-r0-2fdb2d676b366e586d19fbc0cccc9d48ebd1e735509ebc94b9da54e0b3e735af.nix;
         revNum = 0;
         sha256 = "2fdb2d676b366e586d19fbc0cccc9d48ebd1e735509ebc94b9da54e0b3e735af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

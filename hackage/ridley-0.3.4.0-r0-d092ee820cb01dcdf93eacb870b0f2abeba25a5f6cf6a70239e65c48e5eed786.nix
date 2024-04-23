@@ -21,7 +21,7 @@
       synopsis = "Quick metrics to grow your app strong.";
       description = "A collection of Prometheus metrics to monitor your app. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,12 +51,12 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ridley-example" = {
-          depends = (pkgs.lib).optionals (!flags.library-only) [
+          depends = pkgs.lib.optionals (!flags.library-only) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."ridley" or (errorHandler.buildDepError "ridley"))
@@ -69,10 +69,10 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."prometheus" or (errorHandler.buildDepError "prometheus"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
+      };
       tests = {
         "ridley-test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."string-conv" or (errorHandler.buildDepError "string-conv"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

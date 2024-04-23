@@ -21,13 +21,13 @@
       synopsis = "The intersection of OpenGL 2.1 and OpenGL 3.1 Core";
       description = "This package simply reexports a subset of the\nparts of OpenGLRaw which are compatible with\nOpenGL 2.1. The idea is that you can have greater\ncertainty about compatibility with less capable\ngraphics cards by only importing\nGraphics.Rendering.OpenGL.Raw.Core21 and the exact\nmodules for whatever additional extensions you\nneed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

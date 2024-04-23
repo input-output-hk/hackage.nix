@@ -21,16 +21,16 @@
       synopsis = "Convert distfix precedence grammars to unambiguous context-free grammars.";
       description = "This project is a fully-extended implementation of the algorithm ℳ from Annika Aasa's \"Precedences in specifications and implementations of programming languages\". It provides an interface for converting distfix (mixfix) precedence grammars into unambiguous context-free grammars.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aasam-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."aasam" or (errorHandler.buildDepError "aasam"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

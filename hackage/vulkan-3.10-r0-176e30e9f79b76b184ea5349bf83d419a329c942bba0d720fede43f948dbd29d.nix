@@ -12,7 +12,7 @@
       generic-instances = false;
       safe-foreign-calls = false;
       trace-calls = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "vulkan"; version = "3.10"; };
@@ -25,7 +25,7 @@
       synopsis = "Bindings to the Vulkan graphics API.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,10 +33,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ++ (pkgs.lib).optional (system.isOsx) (pkgs."vulkan" or (errorHandler.sysDepError "vulkan"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows && !system.isOsx) (pkgconfPkgs."vulkan" or (errorHandler.pkgConfDepError "vulkan"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ++ pkgs.lib.optional (system.isOsx) (pkgs."vulkan" or (errorHandler.sysDepError "vulkan"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows && !system.isOsx) (pkgconfPkgs."vulkan" or (errorHandler.pkgConfDepError "vulkan"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

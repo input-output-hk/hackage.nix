@@ -21,7 +21,7 @@
       synopsis = "Example programs for Qtah Qt bindings";
       description = "Qtah is a set of Qt bindings for Haskell.  This package contains example\nprograms to demonstrate use of the bindings.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "qtah-examples" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hoppy-runtime" or (errorHandler.buildDepError "hoppy-runtime"))
             (hsPkgs."qtah-qt5" or (errorHandler.buildDepError "qtah-qt5"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of gRPC layered on shared C library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,16 +33,16 @@
           (hsPkgs."managed" or (errorHandler.buildDepError "managed"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
-          ];
+        ];
         libs = [
           (pkgs."grpc" or (errorHandler.sysDepError "grpc"))
           (pkgs."gpr" or (errorHandler.sysDepError "gpr"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

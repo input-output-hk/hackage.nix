@@ -21,7 +21,7 @@
       synopsis = "Wreq response process";
       description = "Wreq response process.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson-result" or (errorHandler.buildDepError "aeson-result"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

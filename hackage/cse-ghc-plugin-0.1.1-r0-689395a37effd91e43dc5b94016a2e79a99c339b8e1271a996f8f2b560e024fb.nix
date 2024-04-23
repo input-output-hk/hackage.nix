@@ -21,14 +21,14 @@
       synopsis = "Compiler plugin for common subexpression elimination";
       description = "This library is a conversion of GHC's internal Common Subexpression\nElimination pass for Core to a compiler plugin. See the included test\nfor an example of how to enable it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

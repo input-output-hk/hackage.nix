@@ -21,7 +21,7 @@
       synopsis = "SIMD-oriented Fast Mersenne Twister(SFMT) binding.";
       description = "this library has mwc-random<http://hackage.haskell.org/package/mwc-random> like api.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

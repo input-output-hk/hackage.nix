@@ -21,7 +21,7 @@
       synopsis = "Dead simple storage interface to PostgreSQL";
       description = "Dead simple storage interface to PostgreSQL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A unioning file-system using HFuse ";
       description = "A unioning file-system using HFuse";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "funion" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

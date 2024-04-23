@@ -21,7 +21,7 @@
       synopsis = "Hardware Description Language embedded in Haskell.";
       description = "Hardware Description Language embedded in Haskell.\nMain distinction from Lava or similar packages is\nthat HHDL supports algebraic types with pattern matching.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Kan extensions, the Yoneda lemma, and (co)density (co)monads";
       description = "Kan extensions, the Yoneda lemma, and (co)density (co)monads";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."representable-functors" or (errorHandler.buildDepError "representable-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Websocket streaming to Amazon Transcribe service";
       description = "Please see the README on GitHub at <https://github.com/githubuser/am-test#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "am-test-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

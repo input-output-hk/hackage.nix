@@ -21,7 +21,7 @@
       synopsis = "Debugging tools for Shpadoinkle applications.";
       description = "Shpadoinkle tooling is a work in progress. But some useful functions have already emerged. This repo centeralizes these functions, and will house future work on more robust tooling, such as time travel debugging.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

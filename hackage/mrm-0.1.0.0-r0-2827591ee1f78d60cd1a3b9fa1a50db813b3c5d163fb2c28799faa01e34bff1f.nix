@@ -21,11 +21,11 @@
       synopsis = "Modular Refiable Matching, first-class matches";
       description = "This package contains an implementation of\nModular Reifiable Matching (MRM), a new approach to two level\ntypes using a fixpoint of list-of-functors representation. MRM\nallows the modular definition of datatypes and functions by\npattern matching, using a style similar to the widely popular\nDatatypes a la Carte (DTC) approach. However, unlike DTC, MRM\nuses a fixpoint of list-of-functors approach to two-level types.\nThis approach has advantages that help with various aspects of\nextensibility, modularity and reuse.\nFor more information, please refer to\n<http://www.iis.sinica.edu.tw/~scm/2015/mrm/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

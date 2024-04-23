@@ -21,11 +21,11 @@
       synopsis = "A library to process command line arguments in some more convenient way.";
       description = "Uses three types of the command line arguments and order of their parsing. All groups usually are not nested one into the others (but using the sequence of parsing functions, you can parse also nested structures as well).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

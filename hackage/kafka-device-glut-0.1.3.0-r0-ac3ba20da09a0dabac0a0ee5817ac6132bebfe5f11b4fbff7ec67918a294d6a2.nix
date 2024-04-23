@@ -21,7 +21,7 @@
       synopsis = "GLUT events via a Kafka message broker";
       description = "This package contains functions for passing GLUT events to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
           (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kafka-device-glut" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
             (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

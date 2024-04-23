@@ -21,7 +21,7 @@
       synopsis = "Automation of Haskell package release process";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."pretty-terminal" or (errorHandler.buildDepError "pretty-terminal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "releaser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."releaser" or (errorHandler.buildDepError "releaser"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

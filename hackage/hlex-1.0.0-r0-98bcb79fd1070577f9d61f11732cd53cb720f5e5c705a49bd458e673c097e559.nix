@@ -21,15 +21,15 @@
       synopsis = "Simple Lexer Creation";
       description = "This package provides the tools to create a simple lexer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Hlex-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."hlex" or (errorHandler.buildDepError "hlex"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

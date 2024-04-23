@@ -21,7 +21,7 @@
       synopsis = "Utility and parser for DarkPlaces demo files";
       description = "Curently this package supports only reading some sorts of\ninfo from darkplaces demo file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demoinfo" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."darkplaces-demo" or (errorHandler.buildDepError "darkplaces-demo"))
             (hsPkgs."darkplaces-text" or (errorHandler.buildDepError "darkplaces-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-darkplaces-demo" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."darkplaces-demo" or (errorHandler.buildDepError "darkplaces-demo"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Framework for inferring generative probabilistic models\nwith Gibbs sampling";
       description = "bayes-stack is a framework for inference on generative\nprobabilistic models. The framework uses Gibbs sampling,\nalthough is suitable for other iterative update methods.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."digamma" or (errorHandler.buildDepError "digamma"))
           (hsPkgs."gamma" or (errorHandler.buildDepError "gamma"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

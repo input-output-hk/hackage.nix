@@ -21,7 +21,7 @@
       synopsis = "blank-canvas frontend for Yampa";
       description = "@blank-canvas@ frontend for @Yampa@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yampa-canvas-bouncing-balls" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
             (hsPkgs."yampa-canvas" or (errorHandler.buildDepError "yampa-canvas"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
         };
       };
-    }
+    };
+  }

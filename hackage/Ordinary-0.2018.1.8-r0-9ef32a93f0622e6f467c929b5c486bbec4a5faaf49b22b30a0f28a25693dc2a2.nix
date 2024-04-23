@@ -21,16 +21,16 @@
       synopsis = "A Programming Language in Construction";
       description = "Please see the README on Github at <https://github.com/MarisaKirisame/Ordinary#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Ordinary-exe" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Ordinary-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."threepenny-gui" or (errorHandler.buildDepError "threepenny-gui"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

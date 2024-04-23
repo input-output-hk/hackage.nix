@@ -21,7 +21,7 @@
       synopsis = "Ascii bars representing battery status";
       description = "Ascii bars representing battery status for zsh.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zsh-battery" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

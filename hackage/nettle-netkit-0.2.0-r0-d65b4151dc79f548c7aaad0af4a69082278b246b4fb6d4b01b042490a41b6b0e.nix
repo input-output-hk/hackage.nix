@@ -21,7 +21,7 @@
       synopsis = "DSL for describing OpenFlow networks, and a compiler generating NetKit labs. ";
       description = "DSL for describing OpenFlow networks, and a compiler generating NetKit labs. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."nettle-openflow" or (errorHandler.buildDepError "nettle-openflow"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

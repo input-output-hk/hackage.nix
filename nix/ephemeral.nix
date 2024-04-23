@@ -6,8 +6,8 @@
         nix = import ../hackage/ephemeral-0.0.1-r0-5614bfe64a66e74415c0d89cd0348abb820bb6429243097ff76a9e073c8cbcd5.nix;
         revNum = 0;
         sha256 = "5614bfe64a66e74415c0d89cd0348abb820bb6429243097ff76a9e073c8cbcd5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

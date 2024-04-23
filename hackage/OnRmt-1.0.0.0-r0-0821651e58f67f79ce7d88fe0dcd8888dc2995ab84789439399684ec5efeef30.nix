@@ -21,7 +21,7 @@
       synopsis = "Text UI library for performing parallel remote SSH operations";
       description = "This library provides the ability to coordinate the remote ssh\nexecution of commands on target nodes and display the results in a\nconsole interface.  The console interface can either be a cmdline\n(CLI) or a text interface (TUI), based on brick and vty; support is\nprovided for extension to other UI components as well.\n\nAlmost all of the functionality is provided in the library itself;\nit just needs an executable that will invoke it with the set of\nremote nodes.  See the 'GetRemotes.hs' file for an example: remotes\ncan be of any type that is an instance of @WorkEntry@ with an\nassociated @WorkGroup@ grouping.\n\nThere is an onrmttest executable built that showcases the\nfunctionality using ssh operations to localhost, and a\ncorresponding onrmttestline executable that provides a simple CLI.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."control-monad-loop" or (errorHandler.buildDepError "control-monad-loop"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "onrmtssh" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."ssh-known-hosts" or (errorHandler.buildDepError "ssh-known-hosts"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "onrmtsample" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,9 +105,9 @@
             (hsPkgs."control-monad-loop" or (errorHandler.buildDepError "control-monad-loop"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "onrmtsamplecli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -132,10 +132,10 @@
             (hsPkgs."control-monad-loop" or (errorHandler.buildDepError "control-monad-loop"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test_ops" = {
           depends = [
@@ -157,9 +157,9 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

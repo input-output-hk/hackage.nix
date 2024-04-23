@@ -21,7 +21,7 @@
       synopsis = "various dynamic containers for Reflex";
       description = "Please see the README on GitHub at <https://github.com/pdlla/reflex-dynamic-containers#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."reflex-test-host" or (errorHandler.buildDepError "reflex-test-host"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reflex-dynamic-containers-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."reflex-test-host" or (errorHandler.buildDepError "reflex-test-host"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

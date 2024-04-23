@@ -21,7 +21,7 @@
       synopsis = "Manipulating numbers with inherent experimental/measurement uncertainty";
       description = "See <https://github.com/mstksg/uncertain/blob/master/README.md README.md>.\n\nDocumentation maintained at <https://mstksg.github.io/uncertain>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -18,7 +18,7 @@
       time15 = true;
       transformers051 = true;
       usehaskeline = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "toysolver"; version = "0.4.0"; };
@@ -31,7 +31,7 @@
       synopsis = "Assorted decision procedures for SAT, Max-SAT, PB, MIP, etc";
       description = "Toy-level implementation of some decision procedures";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -72,14 +72,14 @@
           (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
           (hsPkgs."sign" or (errorHandler.buildDepError "sign"))
           (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.7") (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))) ++ [
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.7") (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))) ++ [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
+      };
       exes = {
         "toysolver" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "toysat" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,14 +112,14 @@
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ] ++ (if flags.time15
+          ] ++ (if flags.time15
             then [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]
             else [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ])) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+            ])) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "toysmt" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -130,18 +130,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ] ++ (pkgs.lib).optional (flags.usehaskeline) (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ (pkgs.lib).optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          ] ++ pkgs.lib.optional (flags.usehaskeline) (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))) ++ pkgs.lib.optional (flags.forcechar8 && (compiler.isGhc && true)) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
+        };
         "toyfmf" = {
-          depends = (pkgs.lib).optionals (flags.buildtoyfmf) ([
+          depends = pkgs.lib.optionals (flags.buildtoyfmf) ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             (hsPkgs."logic-TPTP" or (errorHandler.buildDepError "logic-TPTP"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.9" && flags.transformers051) (hsPkgs."logic-TPTP" or (errorHandler.buildDepError "logic-TPTP")));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.9" && flags.transformers051) (hsPkgs."logic-TPTP" or (errorHandler.buildDepError "logic-TPTP")));
           buildable = if !flags.buildtoyfmf then false else true;
-          };
+        };
         "lpconvert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -150,9 +150,9 @@
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pbconvert" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -161,49 +161,49 @@
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sudoku" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "nonogram" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "nqueens" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "knapsack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "htc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "svm2lp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -211,36 +211,36 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildsampleprograms then false else true;
-          };
+        };
         "pigeonhole" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildmiscprograms then false else true;
-          };
+        };
         "maxsatverify" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildmiscprograms then false else true;
-          };
+        };
         "pbverify" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pseudo-boolean" or (errorHandler.buildDepError "pseudo-boolean"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
-            ];
+          ];
           buildable = if !flags.buildmiscprograms then false else true;
-          };
         };
+      };
       tests = {
         "TestPolynomial" = {
           depends = [
@@ -254,9 +254,9 @@
             (hsPkgs."data-interval" or (errorHandler.buildDepError "data-interval"))
             (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestSuite" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -279,10 +279,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkSATLIB" = {
           depends = [
@@ -292,26 +292,26 @@
             (hsPkgs."parse-dimacs" or (errorHandler.buildDepError "parse-dimacs"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "BenchmarkKnapsack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "BenchmarkSubsetSum" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."toysolver" or (errorHandler.buildDepError "toysolver"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Minimalistic file rotation utility";
       description = "minirotate is minimalistic file rotation utility designed for calling from cron or similar tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "minirotate" = {
@@ -37,9 +37,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

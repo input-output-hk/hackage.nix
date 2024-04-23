@@ -21,7 +21,7 @@
       synopsis = "Library to generate QR codes from bytestrings and objects";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,21 +39,21 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libqrencode" or (errorHandler.pkgConfDepError "libqrencode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lib" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."qr-imager" or (errorHandler.buildDepError "qr-imager"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

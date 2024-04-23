@@ -21,7 +21,7 @@
       synopsis = "#plaimi's all-encompassing bot";
       description = "IRC bot used in #plaimi on irc.freenode.net.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yolobot" = {
@@ -37,9 +37,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

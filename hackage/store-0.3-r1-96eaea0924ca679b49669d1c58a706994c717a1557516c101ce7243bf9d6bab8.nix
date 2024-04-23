@@ -21,7 +21,7 @@
       synopsis = "Fast binary serialization";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -67,9 +67,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "store-test" = {
           depends = [
@@ -116,9 +116,9 @@
             (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "store-weigh" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -169,10 +169,10 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -220,14 +220,14 @@
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
-            ] ++ (pkgs.lib).optionals (flags.comparison-bench) [
+          ] ++ pkgs.lib.optionals (flags.comparison-bench) [
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
             (hsPkgs."cereal-vector" or (errorHandler.buildDepError "cereal-vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

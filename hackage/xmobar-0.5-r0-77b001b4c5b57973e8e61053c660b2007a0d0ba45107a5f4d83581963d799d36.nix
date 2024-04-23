@@ -21,7 +21,7 @@
       synopsis = "A Statusbar for the XMonad Window Manager";
       description = "Xmobar is a minimal status bar for the XMonad Window Manager.\n\nIt was inspired by the Ion3 status bar, and supports similar features.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "xmobar" = {
@@ -32,9 +32,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

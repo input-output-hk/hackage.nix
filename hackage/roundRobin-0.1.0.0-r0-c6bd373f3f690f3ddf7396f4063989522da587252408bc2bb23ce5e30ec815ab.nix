@@ -21,11 +21,11 @@
       synopsis = "A simple round-robin data type";
       description = "This package provide a simple data type wrap a round-robin table. so you can select resources(host, connection...) using round-robin fashion. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities to write Emacs dynamic modules";
       description = "This package provides a full set of bindings to emacs-module.h that\nallows to develop Emacs modules in Haskell. Bindings are based on\nEmacs 28 version of the interface and thus should work in all\nsubsequent versions of Emacs, but will now work with earlier versions.\n\nFor pointers on how to write minimal Emacs module, please refer to\ntutorial https://github.com/sergv/emacs-module/blob/master/Tutorial.md.\n\nEntry point: Emacs.Module module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,11 +42,11 @@
           (hsPkgs."tuples-homogenous-h98" or (errorHandler.buildDepError "tuples-homogenous-h98"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

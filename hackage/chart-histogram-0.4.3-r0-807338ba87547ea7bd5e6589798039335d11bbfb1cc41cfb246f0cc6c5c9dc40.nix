@@ -21,7 +21,7 @@
       synopsis = "Easily render histograms with Chart";
       description = "A library for rendering histograms with the Chart library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
           (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

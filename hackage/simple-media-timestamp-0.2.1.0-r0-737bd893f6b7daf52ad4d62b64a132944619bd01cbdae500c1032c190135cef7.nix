@@ -21,11 +21,11 @@
       synopsis = "A very simple timestamp type.";
       description = "A very simple timestamp type, could be used for subtitles or video playback.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

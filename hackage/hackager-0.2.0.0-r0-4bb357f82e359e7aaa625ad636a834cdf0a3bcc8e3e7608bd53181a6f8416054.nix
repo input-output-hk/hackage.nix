@@ -21,7 +21,7 @@
       synopsis = "Hackage testing tool";
       description = "Hackager is a program for compiling the entirety of Hackage as a way of\ntesting a Haskell compiler.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackager" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

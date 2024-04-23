@@ -21,16 +21,16 @@
       synopsis = "Tensors whose ranks and dimensions type-inferred and type-checked.";
       description = "A tensor class for Haskell that can type-infer and type-check over tensor ranks and dimensions.\nSee https://github.com/nushio3/typelevel-tensor/tree/master/example for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."control-monad-failure" or (errorHandler.buildDepError "control-monad-failure"))
           (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

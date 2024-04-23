@@ -21,14 +21,14 @@
       synopsis = "";
       description = "Extensible Effects: An Alternative to Monad Transformers (http://okmij.org/ftp/Haskell/extensible/exteff.pdf)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

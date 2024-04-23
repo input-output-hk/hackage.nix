@@ -21,14 +21,14 @@
       synopsis = "(deprecated in favor of 'threads') Simple thread management";
       description = "This package is useful, but deprecated. In new code, please use\n<http://hackage.haskell.org/package/threads threads> instead.\n\nA simple thread management API inspired by the one in\n<http://book.realworldhaskell.org/read/concurrent-and-multicore-programming.html chapter 24 of Real World Haskell>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

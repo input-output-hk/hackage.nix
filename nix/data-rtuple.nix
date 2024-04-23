@@ -6,8 +6,8 @@
         nix = import ../hackage/data-rtuple-1.0-r0-0b148edc5175ec6f00303e68f0165793badc438c2cdb52e64b85b443a0a09268.nix;
         revNum = 0;
         sha256 = "0b148edc5175ec6f00303e68f0165793badc438c2cdb52e64b85b443a0a09268";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

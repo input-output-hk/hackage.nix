@@ -21,15 +21,15 @@
       synopsis = "Better records for State monad states";
       description = "This package provides a Template Haskell function which transforms\na normal record declaration into one which supports many useful operations\nwhen used as the state in a State monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Speechmatics api client";
       description = "Upload audio files to speechmatics to get a transcription";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "speechmatics" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
             (hsPkgs."speechmatics" or (errorHandler.buildDepError "speechmatics"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "speechmatics-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
             (hsPkgs."speechmatics" or (errorHandler.buildDepError "speechmatics"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/lambdaFeed-0.3.1-r0-9627d6121d6209cc5378fb11dab2ceea5943c7a1606ddecf5a4c8413430d34a6.nix;
         revNum = 0;
         sha256 = "9627d6121d6209cc5378fb11dab2ceea5943c7a1606ddecf5a4c8413430d34a6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

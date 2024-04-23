@@ -21,7 +21,7 @@
       synopsis = "Shake rules for building Kansas Lava projects";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."hastache" or (errorHandler.buildDepError "hastache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

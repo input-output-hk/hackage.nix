@@ -21,7 +21,7 @@
       synopsis = "create slide for presentation.";
       description = "library for create slide for your presentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."reasonable-operational" or (errorHandler.buildDepError "reasonable-operational"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reasonable-lens" or (errorHandler.buildDepError "reasonable-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

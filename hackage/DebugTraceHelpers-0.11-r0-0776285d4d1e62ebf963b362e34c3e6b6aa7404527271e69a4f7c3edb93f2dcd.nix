@@ -21,14 +21,14 @@
       synopsis = "Convenience functions and instances for Debug.Trace";
       description = "Convenience functions and instances for tracing, based on Debug.Trace. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

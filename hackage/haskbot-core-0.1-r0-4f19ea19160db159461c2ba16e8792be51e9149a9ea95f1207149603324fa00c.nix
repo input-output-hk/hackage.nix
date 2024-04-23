@@ -21,7 +21,7 @@
       synopsis = "Easily-extensible chatbot for Slack messaging service";
       description = "Haskbot melds together the Slack /slash command/ and /incoming/ API\nintegrations to create an easily-extensible platform for adding your own\ncustom /slash commands/ with arbitrary responses to your team's Slack\nservice.\n\nSure, Hubot exists, but when I desire custom chatbot functionality, I'd rather\nwrite nice, clean Haskell than clunky Javascript any day of the week.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

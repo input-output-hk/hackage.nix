@@ -21,13 +21,13 @@
       synopsis = "DEPRECATED hslogger handlers for log4j's XMLLayout";
       description = "The hslogger4j code has been contributed to hslogger (included in\nversion 1.0.6) and this package has been DEPRECATED.\nThis version contains no code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

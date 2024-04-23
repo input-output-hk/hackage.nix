@@ -6,8 +6,8 @@
         nix = import ../hackage/permute-1.0-r0-4466443b0b4b8f5a889c92377918c1f79de6bc3e9a7655a3dd6d9ad783820abb.nix;
         revNum = 0;
         sha256 = "4466443b0b4b8f5a889c92377918c1f79de6bc3e9a7655a3dd6d9ad783820abb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/ccast-0.1.0.0-r0-074a7d6f390d4044bab99e550e18394b75a5572e82a4819a1aa5e9282e1018bb.nix;
         revNum = 0;
         sha256 = "074a7d6f390d4044bab99e550e18394b75a5572e82a4819a1aa5e9282e1018bb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

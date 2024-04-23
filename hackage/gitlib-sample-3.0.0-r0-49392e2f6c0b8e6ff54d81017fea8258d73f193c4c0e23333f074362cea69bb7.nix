@@ -21,7 +21,7 @@
       synopsis = "Sample backend for gitlib showing the basic structure for any backend.";
       description = "Sample backend for @gitlib@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."gitlib" or (errorHandler.buildDepError "gitlib"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

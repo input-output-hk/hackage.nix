@@ -21,7 +21,7 @@
       synopsis = "Functional 2D Game Framework";
       description = "Please see the README on GitHub at <https://github.com/grinshpon/pine#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pine-exe" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pine-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

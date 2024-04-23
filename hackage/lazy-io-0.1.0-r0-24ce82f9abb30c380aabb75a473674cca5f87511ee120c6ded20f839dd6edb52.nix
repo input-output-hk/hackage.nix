@@ -21,11 +21,11 @@
       synopsis = "Lazy IO";
       description = "The library provides some basic but useful lazy IO functions.\nKeep in mind that lazy IO is generally discouraged.\nPerhaps a coroutine library (e.g. pipes) will better suit your needs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

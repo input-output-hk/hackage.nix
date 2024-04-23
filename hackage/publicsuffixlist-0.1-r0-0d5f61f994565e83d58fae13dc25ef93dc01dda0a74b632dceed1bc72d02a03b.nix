@@ -21,7 +21,7 @@
       synopsis = "Is a given string a domain suffix?";
       description = "Is a given string a domain suffix?";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ] ++ (pkgs.lib).optionals (flags.create) [
+        ] ++ pkgs.lib.optionals (flags.create) [
           (hsPkgs."idna" or (errorHandler.buildDepError "idna"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-public-suffix-list" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DOM library that supports both GHCJS and GHC";
       description = "Documentent Object Model (DOM) functions that work with\nGHCJS, but can also be used with GHC and a Browser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if compiler.isGhcjs && true && flags.jsffi
+        ] ++ (if compiler.isGhcjs && true && flags.jsffi
           then [
             (hsPkgs."ghcjs-dom-jsffi" or (errorHandler.buildDepError "ghcjs-dom-jsffi"))
-            ]
+          ]
           else [
             (hsPkgs."ghcjs-dom-jsaddle" or (errorHandler.buildDepError "ghcjs-dom-jsaddle"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

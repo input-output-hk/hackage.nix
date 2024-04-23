@@ -21,7 +21,7 @@
       synopsis = "Interpreter for the FRP language Tempus";
       description = "This package provides an interactive console application for loading of modules,\ndefinition of types and values, as well as type checking and evaluation of\nexpressions in the functional reactive language Tempus.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tempus" = {
@@ -34,12 +34,12 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

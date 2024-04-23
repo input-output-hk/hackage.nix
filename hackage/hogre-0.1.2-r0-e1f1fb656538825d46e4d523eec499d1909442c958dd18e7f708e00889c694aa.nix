@@ -21,17 +21,17 @@
       synopsis = "Haskell binding to a subset of OGRE";
       description = "This package contains Haskell bindings to a subset of\nOGRE (Object-Oriented Graphics Rendering Engine)\n(<http://www.ogre3d.org/>).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."cgen" or (errorHandler.buildDepError "cgen"))
-          ];
+        ];
         libs = [ (pkgs."OgreMain" or (errorHandler.sysDepError "OgreMain")) ];
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."OGRE" or (errorHandler.pkgConfDepError "OGRE"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."OGRE" or (errorHandler.pkgConfDepError "OGRE"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for testing <https://hackage.haskell.org/package/lol Λ ∘ λ>.";
       description = "This library contains code to test <https://hackage.haskell.org/package/lol Λ ∘ λ (Lol)>.\nIt is designed so that third-party tensors can be easily tested using the same framework.\nFor examples of how to use this library, see the tests for\n<https://hackage.haskell.org/package/lol-cpp lol-cpp>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lol" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."lol" or (errorHandler.buildDepError "lol"))
             (hsPkgs."lol-tests" or (errorHandler.buildDepError "lol-tests"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

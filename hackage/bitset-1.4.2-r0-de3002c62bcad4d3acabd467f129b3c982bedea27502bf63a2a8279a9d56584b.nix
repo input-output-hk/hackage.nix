@@ -21,7 +21,7 @@
       synopsis = "A space-efficient set data structure.";
       description = "A /bit set/ is a compact data structure, which maintains a set of members\nfrom a type that can be enumerated (i. e. has an `Enum' instance).";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,10 +29,10 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         libs = [ (pkgs."gmp" or (errorHandler.sysDepError "gmp")) ];
         buildable = true;
-        };
+      };
       tests = {
         "bitset-tests" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."bitset" or (errorHandler.buildDepError "bitset"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bitset-benchmarks" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
-            ];
+          ];
           libs = [ (pkgs."gmp" or (errorHandler.sysDepError "gmp")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

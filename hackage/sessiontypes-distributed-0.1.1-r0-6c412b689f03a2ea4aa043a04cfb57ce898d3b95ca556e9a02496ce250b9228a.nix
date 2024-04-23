@@ -21,7 +21,7 @@
       synopsis = "Session types distributed";
       description = "This package serves as a wrapper over both the Cloud Haskell library (distributed-process) and the sessiontypes library.\nIt provides an interpreter for evaluating session typed programs to Cloud Haskell programs and exposes several combinators for spawning sessions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."distributed-static" or (errorHandler.buildDepError "distributed-static"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."rank1dynamic" or (errorHandler.buildDepError "rank1dynamic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sessiontypes-distributed-spawn" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sessiontypes-distributed-lifted" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
             (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

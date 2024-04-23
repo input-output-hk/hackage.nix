@@ -21,7 +21,7 @@
       synopsis = "Hardware accelerated AES encryption and RNG.";
       description = "AES encryption with optional hardware acceleration.  Plus,\nstatistically sound, splittable random number generation based on AES.\nThis package is nothing more than a wrapper around the Intel-provided\nAESNI sample library which also includes a portable software\nimplementation of AES by Brian Gladman.  It contains C,\nassembly, and Haskell sources.  And it includes prebuilt dynamic\nlibraries to make the build process less fragile.\n(Rebuilding requires the @yasm@ assembler.)  But prebuilt shared\nlibraries are not included for all platforms yet.  (Volunteers\nneeded!)\nFinally, note that this package is currently triggering some haddock\nproblems. A manually built copy of the documentation can be found\nat:\n<http://people.csail.mit.edu/newton/intel-aes-doc/>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,10 +37,10 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."largeword" or (errorHandler.buildDepError "largeword"))
-          ];
+        ];
         libs = [ (pkgs."intel_aes" or (errorHandler.sysDepError "intel_aes")) ];
         buildable = true;
-        };
+      };
       exes = {
         "benchmark-intel-aes-rng" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."largeword" or (errorHandler.buildDepError "largeword"))
             (hsPkgs."intel-aes" or (errorHandler.buildDepError "intel-aes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,34 +21,34 @@
       synopsis = "like mtl's ReaderT/WriterT/StateT, but more than one contained\nvalue/type.";
       description = "When using multiple Read/Write/State transformers in the same monad stack,\nit becomes necessary to lift the operations in order to affect a specific\ntransformer.\nUsing heterogenous lists (and all kinds of GHC extensions magic),\nthis package provides transformers that remove that necessity:\nMultiReaderT/MultiWriterT/MultiStateT can contain a heterogenous list of\nvalues.\n\nSee the <https://github.com/lspitzner/multistate README> for\na longer description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "multistate-test" = {
-          depends = (pkgs.lib).optionals (flags.build-test) [
+          depends = pkgs.lib.optionals (flags.build-test) [
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.build-test then true else false;
-          };
+        };
         "multistate-example" = {
-          depends = (pkgs.lib).optionals (flags.build-example) [
+          depends = pkgs.lib.optionals (flags.build-example) [
             (hsPkgs."multistate" or (errorHandler.buildDepError "multistate"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.build-example then true else false;
-          };
         };
       };
-    }
+    };
+  }

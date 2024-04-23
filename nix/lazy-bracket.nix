@@ -6,8 +6,8 @@
         nix = import ../hackage/lazy-bracket-0.1.0.0-r0-be72b2b13fc906180ba12f78d0a2e5fe3a55a702fb4e545be84a3233a908b44a.nix;
         revNum = 0;
         sha256 = "be72b2b13fc906180ba12f78d0a2e5fe3a55a702fb4e545be84a3233a908b44a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

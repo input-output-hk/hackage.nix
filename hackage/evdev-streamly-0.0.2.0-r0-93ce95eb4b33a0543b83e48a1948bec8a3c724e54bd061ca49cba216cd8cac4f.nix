@@ -21,7 +21,7 @@
       synopsis = "Bridge for working with evdev and streamly";
       description = "Functions for working with streams of input events.\nOften much more pleasant than working in a more imperative style.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."streamly-fsnotify" or (errorHandler.buildDepError "streamly-fsnotify"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/collapse-duplication-0.4.0.1-r0-f792d9ed717e10ba4d66ecf47f1e7c042a55989394d9a8058730971a25765393.nix;
         revNum = 0;
         sha256 = "f792d9ed717e10ba4d66ecf47f1e7c042a55989394d9a8058730971a25765393";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

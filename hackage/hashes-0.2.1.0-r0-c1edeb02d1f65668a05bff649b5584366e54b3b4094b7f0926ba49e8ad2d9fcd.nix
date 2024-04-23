@@ -13,7 +13,7 @@
       benchmark-cryptonite = false;
       test-cryptonite = false;
       openssl-use-pkg-config = false;
-      };
+    };
     package = {
       specVersion = "2.4";
       identifier = { name = "hashes"; version = "0.2.1.0"; };
@@ -26,17 +26,17 @@
       synopsis = "Hash functions";
       description = "Efficient implementations of hash functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
-        libs = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
-        pkgconfig = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
+        ];
+        libs = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
+        pkgconfig = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,15 +45,15 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-            ] ++ (pkgs.lib).optionals (flags.test-cryptonite) [
+          ] ++ pkgs.lib.optionals (flags.test-cryptonite) [
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
-          libs = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
-          pkgconfig = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
+          ];
+          libs = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
+          pkgconfig = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -61,14 +61,14 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ] ++ (pkgs.lib).optionals (flags.benchmark-cryptonite) [
+          ] ++ pkgs.lib.optionals (flags.benchmark-cryptonite) [
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-            ];
-          libs = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
-          pkgconfig = (pkgs.lib).optionals (flags.with-openssl) ((pkgs.lib).optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
+          ];
+          libs = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (!flags.openssl-use-pkg-config) (pkgs."crypto" or (errorHandler.sysDepError "crypto")));
+          pkgconfig = pkgs.lib.optionals (flags.with-openssl) (pkgs.lib.optional (flags.openssl-use-pkg-config) (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

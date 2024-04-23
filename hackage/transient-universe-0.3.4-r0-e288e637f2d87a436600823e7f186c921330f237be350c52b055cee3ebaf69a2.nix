@@ -21,7 +21,7 @@
       synopsis = "Remote execution and map-reduce: distributed computing for Transient";
       description = "See <http://github.com/agocorona/transient>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,11 +36,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
-          ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
+        ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-            ]
+          ]
           else [
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
@@ -54,21 +54,21 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "monitorService" = {
-          depends = if !(compiler.isGhcjs && (compiler.version).ge "0.1")
+          depends = if !(compiler.isGhcjs && compiler.version.ge "0.1")
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
               (hsPkgs."transient-universe" or (errorHandler.buildDepError "transient-universe"))
               (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

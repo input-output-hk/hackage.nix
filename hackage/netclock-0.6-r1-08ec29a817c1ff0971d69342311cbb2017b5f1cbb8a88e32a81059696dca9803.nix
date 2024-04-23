@@ -21,7 +21,7 @@
       synopsis = "Netclock protocol";
       description = "Implementation of the Netclock protocol for sharing clocks in music performance     ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

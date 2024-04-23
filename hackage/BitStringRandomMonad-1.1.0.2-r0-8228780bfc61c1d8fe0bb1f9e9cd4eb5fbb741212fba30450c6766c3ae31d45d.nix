@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A library which turns a bytestring into a random monad.\nInput could be any PRNG which can output a lazy\nbytestring.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "random-monad-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."BitStringRandomMonad" or (errorHandler.buildDepError "BitStringRandomMonad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

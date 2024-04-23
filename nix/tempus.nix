@@ -6,8 +6,8 @@
         nix = import ../hackage/tempus-0.1.0-r0-47f235e8ee098524550e21341d909d491546301b33036462caa12231e4df1bb7.nix;
         revNum = 0;
         sha256 = "47f235e8ee098524550e21341d909d491546301b33036462caa12231e4df1bb7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

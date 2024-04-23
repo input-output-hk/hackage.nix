@@ -21,7 +21,7 @@
       synopsis = "Haskell representation of messages exchanged on the sakura.io platform.";
       description = "Please see the README on GitHub at <https://github.com/mitsuji/sakuraio-platform#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sakuraio-platform-demo-http-client-exe" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
+        };
         "sakuraio-platform-demo-wai-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -59,9 +59,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
+        };
         "sakuraio-platform-demo-websockets-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,10 +75,10 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.demo then false else true;
-          };
         };
+      };
       tests = {
         "sakuraio-platform-test" = {
           depends = [
@@ -90,9 +90,9 @@
             (hsPkgs."sakuraio-platform" or (errorHandler.buildDepError "sakuraio-platform"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

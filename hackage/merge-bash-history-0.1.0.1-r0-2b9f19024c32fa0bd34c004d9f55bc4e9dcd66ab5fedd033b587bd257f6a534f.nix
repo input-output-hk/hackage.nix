@@ -21,7 +21,7 @@
       synopsis = "command line utility to merge bash_history";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "merge-bash-history" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."merge-bash-history" or (errorHandler.buildDepError "merge-bash-history"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "MergeBashHistory-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."merge-bash-history" or (errorHandler.buildDepError "merge-bash-history"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "JSON reporter for the tasty testing framework";
       description = "Write [tasty](https://hackage.haskell.org/package/tasty) test results to\na file in JSON format.\n\n@\ndefaultMainWithIngredients (consoleAndJsonReporter : defaultIngredients) tests\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

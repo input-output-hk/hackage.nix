@@ -21,7 +21,7 @@
       synopsis = "Compiler for a supercombinator language";
       description = "Epic is a simple functional language which compiles to\nreasonably efficient C code, using the Boehm-Demers-Weiser\ngarbage collector. It is currently used as a back end for\nthe Idris dependently typed programming language. It is invoked\nas a library, as it is intended as a compiler back end.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

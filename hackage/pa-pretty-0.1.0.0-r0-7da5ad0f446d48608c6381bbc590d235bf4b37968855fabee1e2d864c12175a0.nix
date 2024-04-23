@@ -21,7 +21,7 @@
       synopsis = "Some pretty-printing helpers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."nicify-lib" or (errorHandler.buildDepError "nicify-lib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

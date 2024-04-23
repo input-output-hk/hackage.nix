@@ -21,7 +21,7 @@
       synopsis = "X.509 Certificate and CRL validation";
       description = "X.509 Certificate and CRL validation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."crypto-pubkey" or (errorHandler.buildDepError "crypto-pubkey"))
           (hsPkgs."crypto-pubkey-types" or (errorHandler.buildDepError "crypto-pubkey-types"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

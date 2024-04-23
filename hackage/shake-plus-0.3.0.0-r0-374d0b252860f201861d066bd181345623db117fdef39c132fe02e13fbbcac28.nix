@@ -21,7 +21,7 @@
       synopsis = "Re-export of Shake using well-typed paths and ReaderT.";
       description = "Re-export of Shake using well-typed paths and ReaderT. You can thread logging through your Shake Actions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

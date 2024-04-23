@@ -21,15 +21,15 @@
       synopsis = "A spoof on gloss for terminal animation        ";
       description = "An easy way to make terminal interfaces";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ncurses" or (errorHandler.buildDepError "ncurses"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

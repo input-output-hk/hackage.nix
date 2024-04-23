@@ -21,7 +21,7 @@
       synopsis = "A container wrapper";
       description = "Podenv provides a declarative interface to manage containerized applications.\n.\nUsing rootless containers, podenv let you run applications seamlessly.\n.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,18 +42,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-env" or (errorHandler.buildDepError "th-env"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "podenv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."podenv" or (errorHandler.buildDepError "podenv"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."podenv" or (errorHandler.buildDepError "podenv"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

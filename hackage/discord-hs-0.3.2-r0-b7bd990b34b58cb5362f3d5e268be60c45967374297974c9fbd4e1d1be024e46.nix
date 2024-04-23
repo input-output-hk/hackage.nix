@@ -21,7 +21,7 @@
       synopsis = "An API wrapper for Discord in Haskell";
       description = "Provides an api wrapper and framework for writing\nbots against the Discord <https://discordapp.com/> API.\nIf for some reason hackage/stackage is failing to build\ndocumentation, a backup set is hosted at <https://jano017.github.io/Discord.hs/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,18 +49,18 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."req" or (errorHandler.buildDepError "req"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "docs" = {
-          depends = (pkgs.lib).optionals (!flags.disable-docs) [
+          depends = pkgs.lib.optionals (!flags.disable-docs) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = if !flags.disable-docs then true else false;
-          };
         };
       };
-    }
+    };
+  }

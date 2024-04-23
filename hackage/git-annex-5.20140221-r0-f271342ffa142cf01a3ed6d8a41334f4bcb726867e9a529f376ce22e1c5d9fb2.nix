@@ -28,7 +28,7 @@
       tahoe = true;
       cryptohash = true;
       ekg = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "git-annex"; version = "5.20140221"; };
@@ -41,7 +41,7 @@
       synopsis = "manage files with git, without checking their contents into git";
       description = "git-annex allows managing files with git, without checking the file\ncontents into git. While that may seem paradoxical, it is useful when\ndealing with files larger than git can currently easily handle, whether due\nto limitations in memory, time, or disk space.\n\nEven without file content tracking, being able to manage files with git,\nmove files around and delete files with versioned directory trees, and use\nbranches and distributed clones, are all very handy reasons to use git. And\nannexed files can co-exist in the same git repository with regularly\nversioned files, which is convenient for maintaining documents, Makefiles,\netc that are associated with annexed files but that benefit from full\nrevision control.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "git-annex" = {
@@ -79,37 +79,37 @@
             (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [
               (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
               (hsPkgs."Win32-extras" or (errorHandler.buildDepError "Win32-extras"))
-              ]
+            ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optionals (flags.testsuite) [
+            ])) ++ pkgs.lib.optionals (flags.testsuite) [
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ]) ++ (pkgs.lib).optional (flags.tdfa) (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))) ++ (pkgs.lib).optional (flags.cryptohash) (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))) ++ (pkgs.lib).optional (flags.s3) (hsPkgs."hS3" or (errorHandler.buildDepError "hS3"))) ++ (pkgs.lib).optionals (flags.webdav) [
+          ]) ++ pkgs.lib.optional (flags.tdfa) (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))) ++ pkgs.lib.optional (flags.cryptohash) (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))) ++ pkgs.lib.optional (flags.s3) (hsPkgs."hS3" or (errorHandler.buildDepError "hS3"))) ++ pkgs.lib.optionals (flags.webdav) [
             (hsPkgs."DAV" or (errorHandler.buildDepError "DAV"))
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ]) ++ (pkgs.lib).optionals (flags.assistant) (if system.isLinux && flags.inotify
+          ]) ++ pkgs.lib.optionals (flags.assistant) (if system.isLinux && flags.inotify
             then [
               (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
-              ]
+            ]
             else if system.isOsx
               then [
                 (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"))
-                ]
+              ]
               else if system.isWindows
                 then [
                   (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))
-                  ]
-                else (pkgs.lib).optionals (!system.isSolaris && !system.isLinux) ((pkgs.lib).optional (flags.android) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))))) ++ (pkgs.lib).optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ (pkgs.lib).optional (flags.android) (hsPkgs."data-endian" or (errorHandler.buildDepError "data-endian"))) ++ (pkgs.lib).optionals (flags.webapp) [
+                ]
+                else pkgs.lib.optionals (!system.isSolaris && !system.isLinux) (pkgs.lib.optional (flags.android) (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))))) ++ pkgs.lib.optional (system.isLinux && flags.dbus) (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))) ++ pkgs.lib.optional (flags.android) (hsPkgs."data-endian" or (errorHandler.buildDepError "data-endian"))) ++ pkgs.lib.optionals (flags.webapp) [
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
             (hsPkgs."yesod-static" or (errorHandler.buildDepError "yesod-static"))
@@ -129,16 +129,16 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."network-conduit" or (errorHandler.buildDepError "network-conduit"))
-            ]) ++ (pkgs.lib).optionals (flags.pairing) [
+          ]) ++ pkgs.lib.optionals (flags.pairing) [
             (hsPkgs."network-multicast" or (errorHandler.buildDepError "network-multicast"))
             (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
-            ]) ++ (pkgs.lib).optionals (flags.xmpp && !system.isWindows) [
+          ]) ++ pkgs.lib.optionals (flags.xmpp && !system.isWindows) [
             (hsPkgs."network-protocol-xmpp" or (errorHandler.buildDepError "network-protocol-xmpp"))
             (hsPkgs."gnutls" or (errorHandler.buildDepError "gnutls"))
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-            ]) ++ (pkgs.lib).optional (flags.dns) (hsPkgs."dns" or (errorHandler.buildDepError "dns"))) ++ (pkgs.lib).optional (flags.feed) (hsPkgs."feed" or (errorHandler.buildDepError "feed"))) ++ (pkgs.lib).optional (flags.quvi) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.tahoe) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ (pkgs.lib).optional (flags.ekg) (hsPkgs."ekg" or (errorHandler.buildDepError "ekg"));
+          ]) ++ pkgs.lib.optional (flags.dns) (hsPkgs."dns" or (errorHandler.buildDepError "dns"))) ++ pkgs.lib.optional (flags.feed) (hsPkgs."feed" or (errorHandler.buildDepError "feed"))) ++ pkgs.lib.optional (flags.quvi) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (flags.tahoe) (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))) ++ pkgs.lib.optional (flags.ekg) (hsPkgs."ekg" or (errorHandler.buildDepError "ekg"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

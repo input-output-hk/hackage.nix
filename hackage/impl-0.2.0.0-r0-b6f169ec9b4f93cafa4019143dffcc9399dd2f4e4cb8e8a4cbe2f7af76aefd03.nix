@@ -21,7 +21,7 @@
       synopsis = "Framework for defaulting superclasses";
       description = "This small but extensible framework facilitates defining complex defaulting rules that are not handled by DefaultSignatures, and reducing the overhead of giving instances to new datatypes by generating superclasses. One reason we might want this is when a superclass wants to be given a default by two different subclasses (ex: Bifunctor and Profunctor both could generate Functor instances). See the example internal library for how to implement instances of Impl. Impl is most valuable when instantiating deep (or even undecidably recursive) typeclass hierarchies for multiple new datatypes, which is most common in client code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."named" or (errorHandler.buildDepError "named"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."impl" or (errorHandler.buildDepError "impl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Remote execution and map-reduce: distributed computing for Transient";
       description = "See <http://github.com/transient-haskell/transient>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
-          ] ++ (if compiler.isGhcjs && (compiler.version).ge "0.1"
+        ] ++ (if compiler.isGhcjs && compiler.version.ge "0.1"
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-            ]
+          ]
           else [
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."TCache" or (errorHandler.buildDepError "TCache"))
@@ -54,26 +54,26 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "monitorService" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
             (hsPkgs."transient-universe" or (errorHandler.buildDepError "transient-universe"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-transient1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
@@ -96,15 +96,15 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-transient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (!(compiler.isGhcjs && (compiler.version).ge "0.1")) [
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && compiler.version.ge "0.1")) [
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transient" or (errorHandler.buildDepError "transient"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
@@ -127,9 +127,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

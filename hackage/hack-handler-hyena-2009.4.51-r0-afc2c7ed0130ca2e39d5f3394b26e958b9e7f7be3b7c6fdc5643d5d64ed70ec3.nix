@@ -21,7 +21,7 @@
       synopsis = "Hyena hack handler";
       description = "Hyena hack handler";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
           (hsPkgs."hyena" or (errorHandler.buildDepError "hyena"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A \"PostgreSQL\" backend for the \"hasql\" library";
       description = "This library provides a \\\"PostgreSQL\\\" driver for\n<http://hackage.haskell.org/package/hasql the \\\"hasql\\\" library>.\n\nThe included benchmarks prove it to be performing up to 1.5 times faster then\nthe \\\"postgresql-simple\\\" library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "library-tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."hasql-postgres" or (errorHandler.buildDepError "hasql-postgres"))
@@ -102,10 +102,10 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "competition" = {
           depends = [
@@ -124,9 +124,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "profiling" = {
           depends = [
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
@@ -143,9 +143,9 @@
             (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

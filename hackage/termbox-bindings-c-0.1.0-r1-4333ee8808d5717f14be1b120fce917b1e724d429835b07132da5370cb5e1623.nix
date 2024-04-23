@@ -21,11 +21,11 @@
       synopsis = "termbox bindings";
       description = "This package provides bindings to @termbox v1.1.4@, a simple C library for writing text-based user interfaces:\n<https://github.com/termbox/termbox>\n\nThe full source of @termbox v1.1.4@ is bundled; you do not need to install any system packages to use this library.\n\nSee also:\n\n* @<https://hackage.haskell.org/package/termbox-bindings-hs termbox-bindings-hs>@ for higher-level bindings.\n* @<https://hackage.haskell.org/package/termbox termbox>@ for even higher-level bindings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

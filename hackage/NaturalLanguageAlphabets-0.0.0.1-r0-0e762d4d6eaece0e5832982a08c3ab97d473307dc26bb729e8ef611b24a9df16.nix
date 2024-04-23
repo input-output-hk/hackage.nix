@@ -21,7 +21,7 @@
       synopsis = "Alphabet and word representations";
       description = "Provides different encoding for characters and words in natural\nlanguage processing. A character will often be encoded as a\nbytestring as we deal with multi-symbol characters.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."intern" or (errorHandler.buildDepError "intern"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

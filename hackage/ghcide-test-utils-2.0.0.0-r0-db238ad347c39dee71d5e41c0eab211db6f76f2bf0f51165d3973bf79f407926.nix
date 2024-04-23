@@ -21,7 +21,7 @@
       synopsis = "Test utils for ghcide";
       description = "Test utils for ghcide";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."row-types" or (errorHandler.buildDepError "row-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tools for working with Hadoop.";
       description = "Tools for working with Hadoop.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hh" = {
@@ -49,9 +49,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

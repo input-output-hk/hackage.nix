@@ -12,7 +12,7 @@
       network-uri = true;
       lens-aeson = true;
       run-integrated-test = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "twitter-conduit"; version = "0.2.3"; };
@@ -29,8 +29,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -55,29 +55,29 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."twitter-types" or (errorHandler.buildDepError "twitter-types"))
           (hsPkgs."twitter-types-lens" or (errorHandler.buildDepError "twitter-types-lens"))
-          ] ++ (if flags.lens-aeson
+        ] ++ (if flags.lens-aeson
           then [
             (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ]
+          ]
           else [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec_main" = {
           depends = ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,18 +102,18 @@
             (hsPkgs."twitter-types" or (errorHandler.buildDepError "twitter-types"))
             (hsPkgs."twitter-types-lens" or (errorHandler.buildDepError "twitter-types-lens"))
             (hsPkgs."twitter-conduit" or (errorHandler.buildDepError "twitter-conduit"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ])) ++ (pkgs.lib).optional (flags.lens-aeson) (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"));
+            ])) ++ pkgs.lib.optional (flags.lens-aeson) (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"));
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parser for Java .class files";
       description = "Parses compiled Java .class files into the syntax tree\nof the language-java package";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."LibZip" or (errorHandler.buildDepError "LibZip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

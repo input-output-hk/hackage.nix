@@ -21,11 +21,11 @@
       synopsis = "Binary serialization using lazy ByteStrings";
       description = "Efficient, pure binary serialisation using lazy ByteStrings";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

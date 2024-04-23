@@ -21,7 +21,7 @@
       synopsis = "Tests of the Charts library.";
       description = "Tests of the Charts library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "chart-harness" = {
@@ -50,18 +50,18 @@
             (hsPkgs."diagrams-postscript" or (errorHandler.buildDepError "diagrams-postscript"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
             (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Example uses of the JSON-Combinator library.";
       description = "Example uses of the JSON-Combinator library.\n\n/The example JSON files use a specific JSON format because of a bug in json (Text.JSON)./";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."JSONb" or (errorHandler.buildDepError "JSONb"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."JSON-Combinator" or (errorHandler.buildDepError "JSON-Combinator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

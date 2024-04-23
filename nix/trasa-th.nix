@@ -6,8 +6,8 @@
         nix = import ../hackage/trasa-th-0.4-r0-5084d1f1c8db0eb1920cf1bfe95e687de5d2bdcf0a9053091af7c1bbd2d49735.nix;
         revNum = 0;
         sha256 = "5084d1f1c8db0eb1920cf1bfe95e687de5d2bdcf0a9053091af7c1bbd2d49735";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

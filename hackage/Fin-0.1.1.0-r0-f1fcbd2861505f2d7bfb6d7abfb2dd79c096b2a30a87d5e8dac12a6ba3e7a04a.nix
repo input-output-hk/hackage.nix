@@ -21,7 +21,7 @@
       synopsis = "Finite totally-ordered sets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."clist" or (errorHandler.buildDepError "clist"))
           (hsPkgs."natural-induction" or (errorHandler.buildDepError "natural-induction"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

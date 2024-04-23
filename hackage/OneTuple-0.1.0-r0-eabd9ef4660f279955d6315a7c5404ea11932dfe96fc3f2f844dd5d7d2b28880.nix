@@ -21,11 +21,11 @@
       synopsis = "OneTuple, the Singleton Tuple";
       description = "OneTuple, the Singleton Tuple";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

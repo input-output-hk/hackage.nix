@@ -21,7 +21,7 @@
       synopsis = "Animation for sprites";
       description = "Prototypical sprite animation with type-safety.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "animate-example" = {
@@ -35,9 +35,9 @@
             (hsPkgs."sdl2-image" or (errorHandler.buildDepError "sdl2-image"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "General purpose utility library";
       description = "A miscellaneous collection of re-usable functions and data\nstructures. Many of Rosso's modules are direct extensions of the\nHaskell base libraries; for example, Data.Map.Rosso1 extends\nData.Map, Control.Monad.Rosso1 extends Control.Monad, etc.\n\nRosso is designed to remain backward-compatible with any client code\nthat works with an older version of itself. To this end, all module\nnames include explicit version numbers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

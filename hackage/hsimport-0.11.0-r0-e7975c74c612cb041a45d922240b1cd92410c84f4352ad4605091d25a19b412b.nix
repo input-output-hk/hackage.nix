@@ -21,7 +21,7 @@
       synopsis = "Extend the import list of a Haskell source file";
       description = "A command line program for extending the import list of a Haskell source file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "library-internal" = {
           depends = [
@@ -53,19 +53,19 @@
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hsimport" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hsimport" or (errorHandler.buildDepError "hsimport"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."hsimport".components.sublibs.library-internal or (errorHandler.buildDepError "hsimport:library-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/KSP-0.1-r0-6079b0399d67a306deceeb22b3256a7380d78d2ae6946a075f45d60c530b6d9b.nix;
         revNum = 0;
         sha256 = "6079b0399d67a306deceeb22b3256a7380d78d2ae6946a075f45d60c530b6d9b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

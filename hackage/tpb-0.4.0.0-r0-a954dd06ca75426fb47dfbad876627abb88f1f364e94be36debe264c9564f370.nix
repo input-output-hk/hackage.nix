@@ -21,7 +21,7 @@
       synopsis = "Applications for interacting with the Pushbullet API";
       description = "This package provides two programs, tpb and pb-notify, for interacting with\nthe Pushbullet API. The former is primarily used for sending SMS whereas the\nlatter is used for showing desktop notifications when SMS are received.\ntpb additionally supports a number of additional management commands for\ncreating and deleting resources inside PushBullet.\npb-notify is responsible for integration with PushBullet's Universal\nCopy/Paste feature. It maintains an internal buffer that is kept in sync with\nPushBullet's clipboard. This buffer can be accessed via pb-notify's built-in\nHTTP server. A POST request to the /clip endpoint of the server will in turn\nsend the necessary request to PushBullet to set the clipboard of all\nconnected devices.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tpb" = {
@@ -45,9 +45,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pb-notify" = {
           depends = [
             (hsPkgs."pushbullet-types" or (errorHandler.buildDepError "pushbullet-types"))
@@ -68,9 +68,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

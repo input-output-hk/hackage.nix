@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-network-ws-0.1-r0-dc73fedcc7f5c72076bc6b137fc4e40c71fa7df68ad71cc34349c1f80f85fb1f.nix;
         revNum = 0;
         sha256 = "dc73fedcc7f5c72076bc6b137fc4e40c71fa7df68ad71cc34349c1f80f85fb1f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

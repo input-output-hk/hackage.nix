@@ -21,7 +21,7 @@
       synopsis = "This is an IRC bot for Mafia and Resistance.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
           (hsPkgs."ctpl" or (errorHandler.buildDepError "ctpl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "anticiv" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."ctpl" or (errorHandler.buildDepError "ctpl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

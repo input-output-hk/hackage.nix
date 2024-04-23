@@ -21,14 +21,14 @@
       synopsis = "A minimal Haskell Neural Network Library";
       description = "hnn provides minimal types and functions to create, train and use feed forward neural networks <http://www.haskell.org/haskellwiki/HNN>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."uvector" or (errorHandler.buildDepError "uvector"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

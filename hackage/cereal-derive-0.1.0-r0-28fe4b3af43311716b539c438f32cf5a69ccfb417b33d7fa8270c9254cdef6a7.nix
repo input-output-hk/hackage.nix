@@ -21,15 +21,15 @@
       synopsis = "Automatic deriving of Binary using GHC.Generics";
       description = "This package provides deriveGet and derivePut which\ncan be used to quickly create an instance of Serialize for any type which\nimplements Generic. Naturally, this can be used with -XDeriveGeneric to not     have to write any boilerplate code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

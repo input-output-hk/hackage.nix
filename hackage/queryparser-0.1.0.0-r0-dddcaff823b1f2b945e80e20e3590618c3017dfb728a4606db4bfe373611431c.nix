@@ -21,7 +21,7 @@
       synopsis = "Analysis and parsing library for SQL queries.";
       description = "A library for parsing SQL queries into well-typed data structures,\nand producing easily quantifiable analyses from said data\nstructures.\n\nCurrently this includes support for Hive, Vertica, and Presto\ndialects of SQL. Parsing for each dialect is provided in their own\npackage, as queryparser-{dialect}";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."fixed-list" or (errorHandler.buildDepError "fixed-list"))
           (hsPkgs."predicate-class" or (errorHandler.buildDepError "predicate-class"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "queryparser-bench" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."queryparser" or (errorHandler.buildDepError "queryparser"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A command line utility for practicing typing";
       description = "A command line utility for practicing typing and measuring your WPM and accuracy. See the project <https://github.com/callum-oakley/gotta-go-fast/blob/master/README.md README> for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gotta-go-fast" = {
@@ -37,9 +37,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

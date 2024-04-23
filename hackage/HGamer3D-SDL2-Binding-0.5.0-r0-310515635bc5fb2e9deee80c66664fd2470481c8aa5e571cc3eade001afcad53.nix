@@ -21,7 +21,7 @@
       synopsis = "SDL2 Binding for HGamer3D";
       description = "HGamer3D is a toolset for developing 3D games in the programming\nlanguage Haskell. This package provides the SDL2 binding.\nHGamer3D-SDL2-Binding is available on Windows and Linux.\nThis binding does not claim to have full coverage of SDL2\nfunctionality, but only to support what is needed for the\nHGamer3D-WinEvent package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."HGamer3D-Data" or (errorHandler.buildDepError "HGamer3D-Data"))
-          ];
+        ];
         libs = if system.isWindows
           then [
             (pkgs."hg3dsdl2050" or (errorHandler.sysDepError "hg3dsdl2050"))
-            ]
+          ]
           else [
             (pkgs."hg3dsdl2050" or (errorHandler.sysDepError "hg3dsdl2050"))
             (pkgs."SDL2-2.0" or (errorHandler.sysDepError "SDL2-2.0"))
             (pkgs."X11" or (errorHandler.sysDepError "X11"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,37 +21,37 @@
       synopsis = "FFI bindings for the primesieve library.";
       description = "FFI bindings for the primesieve library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ];
+        ];
         libs = [
           (pkgs."primesieve" or (errorHandler.sysDepError "primesieve"))
           (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prime-count" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."primesieve" or (errorHandler.buildDepError "primesieve"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "prime-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
             (hsPkgs."primesieve" or (errorHandler.buildDepError "primesieve"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

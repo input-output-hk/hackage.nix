@@ -21,7 +21,7 @@
       synopsis = "Generates ctags for Haskell, incorporating import lists and qualified imports";
       description = "Generation of ctags files for Haskell, with knowledge of import lists and qualified imports";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hothasktags" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/open-adt-tutorial-1.0-r0-8e3a9cc486542ed5caa10c7c38b27a1a6e2b1ddf65735bbabee6db59f6e962ee.nix;
         revNum = 0;
         sha256 = "8e3a9cc486542ed5caa10c7c38b27a1a6e2b1ddf65735bbabee6db59f6e962ee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

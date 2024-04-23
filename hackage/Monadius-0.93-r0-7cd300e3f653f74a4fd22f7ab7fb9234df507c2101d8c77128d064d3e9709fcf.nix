@@ -21,7 +21,7 @@
       synopsis = "2-D arcade scroller";
       description = "A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius;\nit is dedicated to the 20th anniversary of Gradius series.\n\nThe Darcs repo is available at <http://code.haskell.org/monadius/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "monadius" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

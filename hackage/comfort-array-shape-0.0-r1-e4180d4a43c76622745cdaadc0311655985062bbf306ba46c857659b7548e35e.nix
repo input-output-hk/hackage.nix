@@ -21,7 +21,7 @@
       synopsis = "Additional shape types for the comfort-array package";
       description = "Some extra array shape types\nadditional to the ones in the @comfort-array@ package.\nThese require some more package dependencies\nand use type-encoded natural numbers.\n\n* @Static.ZeroBased@:\nLike @Shape.ZeroBased@ but with type-encoded number as size.\n\n* @Simplex@:\nSimplices of any dimension, where the dimension is encoded in the type.\nOnly a private module for demonstration.\nProduction-ready implementation in @comfort-array@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."fixed-length" or (errorHandler.buildDepError "fixed-length"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "experimental" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "comfort-array-shape-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

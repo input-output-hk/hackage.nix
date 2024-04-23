@@ -21,7 +21,7 @@
       synopsis = "SAT encoding monad";
       description = "Encoding for boolean and integral constraints into CNF-SAT.\nThe encoder is provided as a State monad\n(hence the \"mo\" in \"satchmo\").";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."minisat" or (errorHandler.buildDepError "minisat"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Ramsey" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."satchmo" or (errorHandler.buildDepError "satchmo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

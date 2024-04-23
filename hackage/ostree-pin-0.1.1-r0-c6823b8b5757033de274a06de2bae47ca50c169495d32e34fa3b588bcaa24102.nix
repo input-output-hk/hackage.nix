@@ -21,7 +21,7 @@
       synopsis = "Tool to update ostree deployment pin";
       description = "CLI tool to easily pin the current ostree deployment";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ostree-pin" = {
@@ -31,9 +31,9 @@
             (hsPkgs."gi-ostree" or (errorHandler.buildDepError "gi-ostree"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/overhang-1.0.0-r0-2d2babde9b7610fba1ab5770b0f7d072b5aa42f1742330eb0da5d20070aa9ad7.nix;
         revNum = 0;
         sha256 = "2d2babde9b7610fba1ab5770b0f7d072b5aa42f1742330eb0da5d20070aa9ad7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

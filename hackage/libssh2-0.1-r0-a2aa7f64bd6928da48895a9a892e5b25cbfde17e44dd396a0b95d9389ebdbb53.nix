@@ -21,7 +21,7 @@
       synopsis = "FFI bindings to libssh2 SSH2 client library (http://libssh2.org/)";
       description = "This package provides FFI bindings for SSH2 client library named libssh2.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         libs = [ (pkgs."ssh2" or (errorHandler.sysDepError "ssh2")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

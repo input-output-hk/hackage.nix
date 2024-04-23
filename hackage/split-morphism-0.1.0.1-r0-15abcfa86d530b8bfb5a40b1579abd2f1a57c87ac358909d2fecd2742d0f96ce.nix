@@ -21,16 +21,16 @@
       synopsis = "Split Epimorphisms and Monomorphisms";
       description = "Please see the README on GitHub at <https://github.com/gvolpe/split-morphism#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "split-morphism-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."split-morphism" or (errorHandler.buildDepError "split-morphism"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

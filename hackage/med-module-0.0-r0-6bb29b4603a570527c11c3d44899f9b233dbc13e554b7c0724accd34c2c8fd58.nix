@@ -21,26 +21,26 @@
       synopsis = "Parse song module files from Amiga MED and OctaMED";
       description = "MED (Music EDitor) and its successor OctaMED\nwere popular music trackers on the Amiga:\n<https://en.wikipedia.org/wiki/OctaMED>.\nThis is a library for parsing the binary module data.\n\nWith the Cabal flag @-fbuildExamples@ you can build two example programs:\n\n* @unmed2@:\nLoads song module files and show their content on standard output.\n\n* @animed@:\nCreate a PostScript document showing how a song is played.\nAlso creates an FFmpeg cue file for the @concat@ input type.\nThis way you can create videos with MED music\nplus precisely timed animations of the played tracks.\nSee the included @Makefile@ for the command calls\nfor creation of complete music videos from MMD files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "unmed2" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."med-module" or (errorHandler.buildDepError "med-module"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "animed" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."med-module" or (errorHandler.buildDepError "med-module"))
             (hsPkgs."hps" or (errorHandler.buildDepError "hps"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
@@ -50,9 +50,9 @@
             (hsPkgs."non-empty" or (errorHandler.buildDepError "non-empty"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Integration of `HUnit` with `tasty`.";
       description = "Implements the proper integration between existing `HUnit` package and `tasty` framework.\nThe existing solution in `tasty` defines its own primitives that are not compatible with `HUnit`.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A library for tropical mathematics.";
       description = "Tropical numbers are the same as real numbers, except the operations are\ndifferent. See the documentation for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semiring-simple" or (errorHandler.buildDepError "semiring-simple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

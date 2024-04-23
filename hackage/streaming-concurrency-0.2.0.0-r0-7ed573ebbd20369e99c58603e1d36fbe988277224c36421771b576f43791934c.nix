@@ -21,7 +21,7 @@
       synopsis = "Concurrency support for the streaming ecosystem";
       description = "The primary purpose for this library is to be able to merge multiple\n@Stream@s together.  However, it is possible to build higher\nabstractions on top of this to be able to also feed multiple\nstreams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."streaming-with" or (errorHandler.buildDepError "streaming-with"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "merging" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

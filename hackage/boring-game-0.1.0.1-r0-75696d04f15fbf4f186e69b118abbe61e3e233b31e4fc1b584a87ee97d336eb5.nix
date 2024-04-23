@@ -21,33 +21,33 @@
       synopsis = "An educational game";
       description = "Using Gloss to build game in Haskell ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "boring-game-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boring-game" or (errorHandler.buildDepError "boring-game"))
             (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "boring-game-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boring-game" or (errorHandler.buildDepError "boring-game"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

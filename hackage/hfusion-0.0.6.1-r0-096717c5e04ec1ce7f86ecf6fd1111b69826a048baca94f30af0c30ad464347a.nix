@@ -21,7 +21,7 @@
       synopsis = "A library for fusing a subset of Haskell programs.";
       description = "This package implements algorithms for fusing pure functions which can\nbe written as primitive recursive functions or as hylomorphisms. The\nfunctions can be mutually recursive and make recursion over multiple\narguments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

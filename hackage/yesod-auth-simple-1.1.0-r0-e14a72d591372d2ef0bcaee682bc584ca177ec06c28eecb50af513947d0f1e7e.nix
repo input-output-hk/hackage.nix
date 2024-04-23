@@ -21,7 +21,7 @@
       synopsis = "Traditional email/pass auth for Yesod.";
       description = "This is an authentication plugin for the Yesod web framework. It provides the\nuser with a traditional email and password interface to authenticate themselves\nwith your web application.\n\nThis is originally adapted from prasmussen/glot-www";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-auth-simple-test" = {
           depends = [
@@ -83,13 +83,13 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -122,12 +122,12 @@
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

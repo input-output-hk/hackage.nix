@@ -21,11 +21,11 @@
       synopsis = "Bounded quantity semaphores.";
       description = "Bounded quantity semaphores, meaning quantity semaphores that have an\nupper-bound in the number of units that can be available.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTML to Hamlet converter";
       description = "HTML to Hamlet converter";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "html2hamlet" = {
@@ -38,9 +38,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

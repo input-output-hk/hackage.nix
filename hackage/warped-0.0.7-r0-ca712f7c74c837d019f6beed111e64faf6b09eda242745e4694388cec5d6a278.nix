@@ -21,7 +21,7 @@
       synopsis = "Warp and Wai Library.";
       description = "Library support around WAI and warp server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."wai-conduit" or (errorHandler.buildDepError "wai-conduit"))
           (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

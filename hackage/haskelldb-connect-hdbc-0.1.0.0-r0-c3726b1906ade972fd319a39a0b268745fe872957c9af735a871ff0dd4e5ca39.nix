@@ -21,7 +21,7 @@
       synopsis = "Bracketed HDBC session for HaskellDB";
       description = "This package includes module used from\nconcrete HDBC session impelemntation\nwith individual bracket implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

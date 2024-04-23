@@ -21,7 +21,7 @@
       synopsis = "The PostgreSQL extensions from the Robert Fischer Commons.";
       description = "Provides best-of-breed support for PostgreSQL, currently based on @postgresql-typed@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."rfc-env" or (errorHandler.buildDepError "rfc-env"))
           (hsPkgs."rfc-prelude" or (errorHandler.buildDepError "rfc-prelude"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "QuickCheck2 support for the test-framework package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
-          ] ++ (if flags.base3
+        ] ++ (if flags.base3
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ]
-          else (pkgs.lib).optionals (flags.base4) [
+          ]
+          else pkgs.lib.optionals (flags.base4) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A DSL for embedded hard realtime applications.";
       description = "Atom is a Haskell DSL for designing hard realtime embedded software.\nBased on guarded atomic actions (similar to STM), Atom enables\nhighly concurrent programming without the need for mutex locking.\nIn addition, Atom performs compile-time task scheduling and generates code\nwith deterministic execution time and constant memory use, simplifying the\nprocess of timing verification and memory consumption in hard realtime applications.\nWithout mutex locking and run-time task scheduling, Atom eliminates\nthe need and overhead of RTOSs for many embedded applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

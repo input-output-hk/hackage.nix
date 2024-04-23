@@ -6,8 +6,8 @@
         nix = import ../hackage/par-dual-0.1.0.0-r0-6b93ffba83931b5af608dc2711b997c558f532db707524c30d6353cfe48aec3e.nix;
         revNum = 0;
         sha256 = "6b93ffba83931b5af608dc2711b997c558f532db707524c30d6353cfe48aec3e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

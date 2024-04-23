@@ -21,7 +21,7 @@
       synopsis = "TokTok C code style checker";
       description = "TokTok C code style checker";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "check-cimple" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."cimple" or (errorHandler.buildDepError "cimple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tokstyle" or (errorHandler.buildDepError "tokstyle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "webservice" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,10 +61,10 @@
             (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -73,12 +73,12 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tokstyle" or (errorHandler.buildDepError "tokstyle"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

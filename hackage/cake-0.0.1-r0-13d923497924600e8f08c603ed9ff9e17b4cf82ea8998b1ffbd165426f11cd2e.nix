@@ -21,7 +21,7 @@
       synopsis = "A build-system library";
       description = "Soon to appear.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."Encode" or (errorHandler.buildDepError "Encode"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

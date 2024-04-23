@@ -21,7 +21,7 @@
       synopsis = "Forward error correction of ByteStrings";
       description = "This code, based on zfec by Zooko, based on code by Luigi\nRizzo implements an erasure code, or forward error\ncorrection code. The most widely known example of an erasure\ncode is the RAID-5 algorithm which makes it so that in the\nevent of the loss of any one hard drive, the stored data can\nbe completely recovered.  The algorithm in the zfec package\nhas a similar effect, but instead of recovering from the loss\nof only a single element, it can be parameterized to choose in\nadvance the number of elements whose loss it can tolerate.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "benchmark-zfec" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."fec" or (errorHandler.buildDepError "fec"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

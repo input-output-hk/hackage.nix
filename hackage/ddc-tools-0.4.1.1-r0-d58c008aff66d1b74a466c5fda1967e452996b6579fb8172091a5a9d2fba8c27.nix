@@ -21,16 +21,16 @@
       synopsis = "Disciplined Disciple Compiler command line tools.";
       description = "Disciplined Disciple Compiler command line tools.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ddc-check" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ddc-core" or (errorHandler.buildDepError "ddc-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ddc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."ddc-build" or (errorHandler.buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (errorHandler.buildDepError "ddc-driver"))
             (hsPkgs."ddc-interface" or (errorHandler.buildDepError "ddc-interface"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ddci-core" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."ddc-build" or (errorHandler.buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (errorHandler.buildDepError "ddc-driver"))
             (hsPkgs."ddc-interface" or (errorHandler.buildDepError "ddc-interface"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ddci-tetra" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -101,9 +101,9 @@
             (hsPkgs."ddc-build" or (errorHandler.buildDepError "ddc-build"))
             (hsPkgs."ddc-driver" or (errorHandler.buildDepError "ddc-driver"))
             (hsPkgs."ddc-interface" or (errorHandler.buildDepError "ddc-interface"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

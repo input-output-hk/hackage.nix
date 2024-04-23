@@ -6,8 +6,8 @@
         nix = import ../hackage/quickcheck-report-0.1.0.0-r0-af0787a05ec69bcf11afb8f271577efed4007ba79f6f343dbdca3934a5143ba0.nix;
         revNum = 0;
         sha256 = "af0787a05ec69bcf11afb8f271577efed4007ba79f6f343dbdca3934a5143ba0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

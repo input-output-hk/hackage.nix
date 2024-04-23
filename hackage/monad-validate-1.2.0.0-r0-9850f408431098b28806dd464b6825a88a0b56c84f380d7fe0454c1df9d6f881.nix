@@ -21,7 +21,7 @@
       synopsis = "A monad transformer for data validation.";
       description = "Provides the 'ValidateT' monad transformer, designed for writing data validations that provide\nhigh-quality error reporting without much effort. 'ValidateT' automatically exploits the data\ndependencies of your program—as encoded implicitly in uses of 'fmap', '<*>', and '>>='—to report\nas many errors as possible upon failure instead of completely aborting at the first one. See\n\"Control.Monad.Validate\" for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "monad-validate-test-suite" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

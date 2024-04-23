@@ -21,7 +21,7 @@
       synopsis = "RDBMSs' schema templates for relational-query";
       description = "This package contains some RDBMSs' schema structure definitions.\nSupported RDBMS schemas are below:\n- IBM DB2\n- PostgreSQL\n- Microsoft SQLServer\n- SQLite3\n- Oracle\n- MySQL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."relational-query" or (errorHandler.buildDepError "relational-query"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

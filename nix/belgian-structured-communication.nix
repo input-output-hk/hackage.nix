@@ -6,8 +6,8 @@
         nix = import ../hackage/belgian-structured-communication-0.1.0.0-r0-4872fd7a347ad90acad208ecff7ade147bf568da217c0a79f92f57f9106060ed.nix;
         revNum = 0;
         sha256 = "4872fd7a347ad90acad208ecff7ade147bf568da217c0a79f92f57f9106060ed";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Testing in monads and transformers without explicit specs";
       description = "A small unit test system oriented with an emphasis on examining intermediate results of computations in monad transformers.  The Test.TLT Haddock page is the main piece of documentation; or see also the GitHub repository <https://github.com/jphmrst/TLT/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TLT-exe" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "TLT-test-fail" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."symbol" or (errorHandler.buildDepError "symbol"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

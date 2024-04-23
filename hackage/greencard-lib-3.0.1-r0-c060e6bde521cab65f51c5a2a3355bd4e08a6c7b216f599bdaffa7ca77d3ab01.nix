@@ -21,7 +21,7 @@
       synopsis = "A foreign function interface pre-processor library for Haskell";
       description = "Green Card is a foreign function interface preprocessor for Haskell,\nsimplifying the task of interfacing Haskell programs to external libraries\n(which are normally exposed via C interfaces).\n\nThis package provides the Foreign.GreenCard library; the greencard binary is\npackaged separately.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."greencard" or (errorHandler.buildDepError "greencard"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

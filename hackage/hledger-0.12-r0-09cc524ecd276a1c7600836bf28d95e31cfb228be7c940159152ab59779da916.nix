@@ -21,7 +21,7 @@
       synopsis = "A command-line (or curses or web-based) double-entry accounting tool.";
       description = "hledger reads a plain text general journal or time log\ndescribing your transactions and displays precise\nbalance and register reports via command-line, curses\nor web interface.  It is a remix, in haskell, of John\nWiegley's excellent c++ ledger.  hledger aims to be a\npractical, accessible tool for end users and a useful\nlibrary for finance-minded haskell programmers.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger" = {
           depends = (([
@@ -65,20 +65,20 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optionals (flags.chart) [
+          ] ++ pkgs.lib.optionals (flags.chart) [
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."gtk2hs-buildtools" or (errorHandler.buildDepError "gtk2hs-buildtools"))
-            ]) ++ (pkgs.lib).optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ (pkgs.lib).optionals (flags.web) [
+          ]) ++ pkgs.lib.optional (flags.vty) (hsPkgs."vty" or (errorHandler.buildDepError "vty"))) ++ pkgs.lib.optionals (flags.web) [
             (hsPkgs."io-storage" or (errorHandler.buildDepError "io-storage"))
             (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
             (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
             (hsPkgs."convertible-text" or (errorHandler.buildDepError "convertible-text"))
             (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
             (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

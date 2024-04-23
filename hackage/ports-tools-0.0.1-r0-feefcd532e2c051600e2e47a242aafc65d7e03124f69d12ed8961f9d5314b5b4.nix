@@ -21,15 +21,15 @@
       synopsis = "Library to interact with port tools on FreeBSD";
       description = "A set of wrappers for command line utilities used to manage port and\npackages on FreeBSD.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

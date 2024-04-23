@@ -21,7 +21,7 @@
       synopsis = "Uniform file handling operations";
       description = "Uniform operations for handling files and file path names\nindependent from the representation.\n\nAdditionally, functions to read and write files for specific\ntyped content (marked by extension).\n\nPlease see the README on GitHub at <https://github.com/andrewufrank/uniform-fileiio/readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."uniform-time" or (errorHandler.buildDepError "uniform-time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

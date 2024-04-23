@@ -21,7 +21,7 @@
       synopsis = "Parser combinators & EBNF, BFFs!";
       description = "A library & program that builds parsers from ISO EBNF using Parsec";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ebnf-parse" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."cond" or (errorHandler.buildDepError "cond"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

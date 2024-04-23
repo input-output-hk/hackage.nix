@@ -21,7 +21,7 @@
       synopsis = "Simple utility to fix BROKEN package dependencies";
       description = "The cabal-install sometimes reinstall existing library and break some package dependencies. This utility fixes such situations by replacing old package id in \"broken\" package with new id.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-pkg-autofix" = {
@@ -32,9 +32,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

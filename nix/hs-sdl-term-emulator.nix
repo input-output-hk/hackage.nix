@@ -6,8 +6,8 @@
         nix = import ../hackage/hs-sdl-term-emulator-0.1.0.4-r0-496ea51761af8d4ba71a8ed036959c18f7899ffc603bb236002be2e91ee49553.nix;
         revNum = 0;
         sha256 = "496ea51761af8d4ba71a8ed036959c18f7899ffc603bb236002be2e91ee49553";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

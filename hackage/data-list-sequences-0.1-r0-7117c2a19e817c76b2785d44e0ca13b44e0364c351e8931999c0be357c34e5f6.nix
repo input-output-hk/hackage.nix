@@ -21,11 +21,11 @@
       synopsis = "Utilities for working with sequences within lists.";
       description = "Find sequences within lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

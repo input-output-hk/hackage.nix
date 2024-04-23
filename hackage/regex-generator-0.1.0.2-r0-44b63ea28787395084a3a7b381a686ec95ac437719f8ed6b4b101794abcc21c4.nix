@@ -21,7 +21,7 @@
       synopsis = "Generate a random string from a PCRE";
       description = "The regex-generator library allows generating bytestrings\nfrom PCREs. See github.com/protoben/regex-generator-hs for\ndocumentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "generate" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
             (hsPkgs."regex-generator" or (errorHandler.buildDepError "regex-generator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A HAppS Tutorial that is is own demo";
       description = "A nice way to learn how to build web sites with HAppS";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "happs-tutorial" = {
@@ -35,9 +35,9 @@
             (hsPkgs."HAppS-State" or (errorHandler.buildDepError "HAppS-State"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

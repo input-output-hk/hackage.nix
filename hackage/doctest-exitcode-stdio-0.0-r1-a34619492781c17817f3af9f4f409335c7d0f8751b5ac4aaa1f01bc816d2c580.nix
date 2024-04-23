@@ -21,7 +21,7 @@
       synopsis = "Run doctest's in a Cabal.Test.exitcode-stdio environment";
       description = "Run doctest's in a Cabal.Test.exitcode-stdio environment.\nFor use with the @doctest-extract@ utility.\nNormally, you should not need to import a module from this package,\nonly generated code will do this.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

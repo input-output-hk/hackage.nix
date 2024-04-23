@@ -21,13 +21,13 @@
       synopsis = "Functors, theirs compositions and transformations";
       description = "Attempt to define categorical abstractions in more robust and useful way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."morphisms" or (errorHandler.buildDepError "morphisms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

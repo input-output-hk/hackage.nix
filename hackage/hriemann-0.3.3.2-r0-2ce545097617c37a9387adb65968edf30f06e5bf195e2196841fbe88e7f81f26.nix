@@ -21,7 +21,7 @@
       synopsis = "A Riemann Client for Haskell";
       description = "A Riemann Client for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,18 +42,18 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hriemann-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hriemann" or (errorHandler.buildDepError "hriemann"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hriemann-test" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."kazura-queue" or (errorHandler.buildDepError "kazura-queue"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

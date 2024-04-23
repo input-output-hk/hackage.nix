@@ -21,7 +21,7 @@
       synopsis = "Variant and EADT";
       description = "Variant (extensible sum type) and EADT (extensible recursive sum type)\ndatatypes. Documentation can be found at https://docs.haskus.org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskus-utils-types" or (errorHandler.buildDepError "haskus-utils-types"))
           (hsPkgs."haskus-utils-data" or (errorHandler.buildDepError "haskus-utils-data"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."haskus-utils-variant" or (errorHandler.buildDepError "haskus-utils-variant"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

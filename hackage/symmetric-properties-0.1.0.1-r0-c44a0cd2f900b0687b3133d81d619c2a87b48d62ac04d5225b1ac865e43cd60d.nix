@@ -21,15 +21,15 @@
       synopsis = "Monoids for sameness and uniqueness.";
       description = "Test whether every element of a 'Foldable' is the 'Same' or 'Unique'.\n\n> > allSame (replicate 1000 1)\n> True\n> > allSame [1..]\n> False\n> > allUnique [1..1000]\n> True\n> > allUnique (cycle [1..100])\n> False";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "symmetric-properties-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."symmetric-properties" or (errorHandler.buildDepError "symmetric-properties"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/webshow-0.0.0-r0-1feb5eb1550bd8fb88bbf51071cce2d1237f2462ca9d016a66ea7f2150439c23.nix;
         revNum = 0;
         sha256 = "1feb5eb1550bd8fb88bbf51071cce2d1237f2462ca9d016a66ea7f2150439c23";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

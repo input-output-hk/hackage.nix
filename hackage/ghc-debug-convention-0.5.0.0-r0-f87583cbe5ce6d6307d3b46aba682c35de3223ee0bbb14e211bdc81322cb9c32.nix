@@ -21,15 +21,15 @@
       synopsis = "Definitions needed by ghc-debug-stub and ghc-debug-common";
       description = "Definitions needed by ghc-debug-stub and ghc-debug-common";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

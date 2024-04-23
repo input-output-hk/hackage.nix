@@ -21,14 +21,14 @@
       synopsis = "Extract the stem of a German inflected word form.";
       description = "This package implements a stemmer for German, using the CISTEM algorithm. For a description of the algorithm and a comparison with other stemmers see:\n\nLeonie Weißweiler, Alexander Fraser (2017). Developing a Stemmer for German Based on a Comparative Analysis of Publicly Available Stemmers. In Proceedings of the German Society for Computational Linguistics and Language Technology (GSCL)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

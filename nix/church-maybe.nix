@@ -6,8 +6,8 @@
         nix = import ../hackage/church-maybe-0.1.0.0-r0-fc0e5d74bc16144d09cc5eabce2b871b8b10e30d8fcdc3cf19feeac02c8ef322.nix;
         revNum = 0;
         sha256 = "fc0e5d74bc16144d09cc5eabce2b871b8b10e30d8fcdc3cf19feeac02c8ef322";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

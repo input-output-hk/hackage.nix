@@ -21,15 +21,15 @@
       synopsis = "Simple applicative validation for product types, batteries included!";
       description = "This package provides an applicative validator with support for contravariance. This makes building validators for product types idiomatic and simple. Many common utilities for building validators are also included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "valida-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."valida" or (errorHandler.buildDepError "valida"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

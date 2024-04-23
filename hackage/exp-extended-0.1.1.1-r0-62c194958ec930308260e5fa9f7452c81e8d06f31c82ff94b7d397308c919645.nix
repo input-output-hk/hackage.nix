@@ -21,15 +21,15 @@
       synopsis = "floating point with extended exponent range";
       description = "A small library to extend floating point types with a larger\nexponent, so that you can represent really huge or really tiny\nnumbers without overflow to infinity or underflow to zero.\n\n> > unExpExtended . log . exp .          expExtended' $ 1000\n> 1000.0\n> >                 log . exp                         $ 1000\n> Infinity\n> > unExpExtended . log . exp . negate . expExtended' $ 1000\n> -1000.0\n> >                 log . exp . negate                $ 1000\n> -Infinity\n\nVersion 0.1.1 is a bugfix release, correctly handling\nexactly-zero values in additions and comparisons.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."compensated" or (errorHandler.buildDepError "compensated"))
           (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

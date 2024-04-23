@@ -6,8 +6,8 @@
         nix = import ../hackage/AlgoRhythm-0.1.0.0-r0-9a8ca1278d238f452347a02599dc2abaa0d200f52c51aa1a586410fb9056a24c.nix;
         revNum = 0;
         sha256 = "9a8ca1278d238f452347a02599dc2abaa0d200f52c51aa1a586410fb9056a24c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

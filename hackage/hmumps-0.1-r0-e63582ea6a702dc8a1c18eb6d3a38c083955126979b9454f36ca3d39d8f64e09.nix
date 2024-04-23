@@ -21,7 +21,7 @@
       synopsis = "Interpreter for the MUMPS langugae";
       description = "Partial interpreter for the MUMPS language.\nAs this isn't nearly complete, it is mostly useful\nfor educational purposes and exploring how the interpreter\nis constructed.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hmumps" = {
@@ -36,9 +36,9 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

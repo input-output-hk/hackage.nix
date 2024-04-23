@@ -21,7 +21,7 @@
       synopsis = "Conversion between net-spider and pangraph";
       description = "Conversion between <https://hackage.haskell.org/package/net-spider net-spider> and <https://hackage.haskell.org/package/pangraph pangraph>. See README.md for detail.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."pangraph" or (errorHandler.buildDepError "pangraph"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."greskell" or (errorHandler.buildDepError "greskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -44,17 +44,17 @@
             (hsPkgs."pangraph" or (errorHandler.buildDepError "pangraph"))
             (hsPkgs."net-spider" or (errorHandler.buildDepError "net-spider"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

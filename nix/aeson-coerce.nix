@@ -6,8 +6,8 @@
         nix = import ../hackage/aeson-coerce-0.1.0.0-r0-c5b21849c655e4f722f8cc8c82f46825ba1bc159021d126226c4dc34a8ece4af.nix;
         revNum = 0;
         sha256 = "c5b21849c655e4f722f8cc8c82f46825ba1bc159021d126226c4dc34a8ece4af";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

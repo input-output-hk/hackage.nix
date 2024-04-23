@@ -6,8 +6,8 @@
         nix = import ../hackage/RMP-0.0.2-r0-865a9cbe8194a4f5f249663650b2fa960a4474a5844c950fc6af52b0d10344bd.nix;
         revNum = 0;
         sha256 = "865a9cbe8194a4f5f249663650b2fa960a4474a5844c950fc6af52b0d10344bd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

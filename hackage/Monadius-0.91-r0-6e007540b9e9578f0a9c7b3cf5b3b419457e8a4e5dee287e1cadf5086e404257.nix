@@ -21,7 +21,7 @@
       synopsis = "2-D arcade scroller";
       description = "A fast-paced 2-D scrolling vector graphics clone of the arcade game Gradius.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "monadius" = {
@@ -32,9 +32,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

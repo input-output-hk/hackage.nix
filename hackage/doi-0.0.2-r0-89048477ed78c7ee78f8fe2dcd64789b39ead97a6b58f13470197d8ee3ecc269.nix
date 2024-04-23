@@ -21,7 +21,7 @@
       synopsis = "Automatic Bibtex and fulltext of scientific articles";
       description = "Extract Bibtex entries and download fulltext of scientific articles automatically for a given DOI or URL\n\nSee <https://github.com/johannesgerer/doi Readme> on Github.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."urlencoded" or (errorHandler.buildDepError "urlencoded"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "doi" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."urlencoded" or (errorHandler.buildDepError "urlencoded"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

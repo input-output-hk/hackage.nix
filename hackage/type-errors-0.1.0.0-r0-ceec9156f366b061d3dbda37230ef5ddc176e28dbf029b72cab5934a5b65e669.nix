@@ -21,15 +21,15 @@
       synopsis = "Tools for writing better type errors";
       description = "Please see the README on GitHub at <https://github.com/isovector/type-errors#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
             (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

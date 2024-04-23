@@ -21,7 +21,7 @@
       synopsis = "Easy, repeatable testing of CLI programs/commands";
       description = "shelltestrunner (executable: shelltest) is a portable\ncommand-line tool for testing command-line programs, or general shell\ncommands, released under GPLv3+.  It reads simple test specifications\ndefining a command to run, some input, and the expected output,\nstderr, and exit status.  It can run tests in parallel, selectively,\nwith a timeout, in color, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "shelltest" = {
@@ -41,9 +41,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

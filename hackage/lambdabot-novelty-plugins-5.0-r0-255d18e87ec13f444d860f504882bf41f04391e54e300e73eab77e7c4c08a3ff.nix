@@ -21,7 +21,7 @@
       synopsis = "Novelty plugins for Lambdabot";
       description = "Lambdabot is an IRC bot written over several years by\nthose on the #haskell IRC channel.\n\nProvided plugins:\n\n[bf] Run Brainf*ck code.\n[dice] Roll some dice.\n[elite] zPEak Gib8erI$|-|.\n[filter] More gibberish.\n[numberwang] Sorry, that's not Numberwang.\n[quote] Parrot profound wisdom.\n[slap] Delegate punishment.\n[unlambda] Run Unlambda code.\n[vixen] Let's chat, honey.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."brainfuck" or (errorHandler.buildDepError "brainfuck"))
           (hsPkgs."unlambda" or (errorHandler.buildDepError "unlambda"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

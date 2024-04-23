@@ -21,7 +21,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,34 +45,34 @@
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+        ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
         buildable = true;
-        };
+      };
       exes = {
         "fakechanges" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "debian-report" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-debian" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
+          ] ++ [ (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal")) ];
           buildable = true;
-          };
+        };
         "apt-get-build-depends" = {
           depends = [
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

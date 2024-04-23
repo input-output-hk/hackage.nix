@@ -21,16 +21,16 @@
       synopsis = "Portable CRC-32C";
       description = "Portable implementation of CRC-32C.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."castagnoli" or (errorHandler.buildDepError "castagnoli"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

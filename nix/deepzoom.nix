@@ -6,8 +6,8 @@
         nix = import ../hackage/deepzoom-0.1-r0-4c42e31f48ef990e2fb67ebbc47947464fbde09a36c9aa4f7aadb2bef64f22c0.nix;
         revNum = 0;
         sha256 = "4c42e31f48ef990e2fb67ebbc47947464fbde09a36c9aa4f7aadb2bef64f22c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "haskell supercollider graph drawing";
       description = "dot format (see <http://graphviz.org>) graph generator\nfor SuperCollider (see <http://audiosynth.com>) unit\ngenerator graphs constructed using hsc3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

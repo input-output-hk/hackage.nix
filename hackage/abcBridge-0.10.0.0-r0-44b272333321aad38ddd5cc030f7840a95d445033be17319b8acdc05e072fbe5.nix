@@ -21,7 +21,7 @@
       synopsis = "Bindings for ABC, A System for Sequential\nSynthesis and Verification";
       description = "Bindings for ABC focused on creating And-Inverter\nGraphs (AIG) and then performing synthesis and\nequivalence checking.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,24 +29,24 @@
           (hsPkgs."aig" or (errorHandler.buildDepError "aig"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."abc" or (errorHandler.sysDepError "abc"))
-          ] ++ (pkgs.lib).optional (flags.enable-pthreads) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
+        ] ++ pkgs.lib.optional (flags.enable-pthreads) (pkgs."pthread" or (errorHandler.sysDepError "pthread"));
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "long-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."abcBridge" or (errorHandler.buildDepError "abcBridge"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "abc-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

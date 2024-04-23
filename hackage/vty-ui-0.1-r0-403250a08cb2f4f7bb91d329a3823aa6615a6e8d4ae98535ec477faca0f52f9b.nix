@@ -21,20 +21,20 @@
       synopsis = "A user interface composition library for Vty";
       description = "An extensible library of user interface widgets\nfor composing and laying out Vty user interfaces.\nThis library provides a collection of widgets and\na type class for rendering widgets to Vty Images.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "vty-ui-demo" = {
           depends = [ (hsPkgs."mtl" or (errorHandler.buildDepError "mtl")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

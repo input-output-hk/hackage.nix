@@ -21,7 +21,7 @@
       synopsis = "EWMH utilities for XHB";
       description = "EWMH utilities for XHB";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xhb" or (errorHandler.buildDepError "xhb"))
           (hsPkgs."xhb-atom-cache" or (errorHandler.buildDepError "xhb-atom-cache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

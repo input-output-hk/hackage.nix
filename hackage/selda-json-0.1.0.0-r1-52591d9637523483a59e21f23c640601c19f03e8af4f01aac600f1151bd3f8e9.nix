@@ -21,7 +21,7 @@
       synopsis = "JSON support for the Selda database library.";
       description = "Types and classes to support storing and querying\nJSON values using Selda via Aeson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."selda" or (errorHandler.buildDepError "selda"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

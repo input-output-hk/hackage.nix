@@ -21,7 +21,7 @@
       synopsis = "Shake rules for building Clash programs";
       description = "Shake rules for building Clash programs and synthesizing FPGA\nconfiguration. Contains build rules for Xilinx ISE, Xilinx Vivado,\nIntel Quartus and the open-source SymbiFlow toolchains.  See\n<https://github.com/gergoerdi/clash-pong/> for an example project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."stache" or (errorHandler.buildDepError "stache"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

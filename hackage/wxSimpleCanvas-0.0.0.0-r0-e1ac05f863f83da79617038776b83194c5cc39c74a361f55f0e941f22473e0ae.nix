@@ -21,7 +21,7 @@
       synopsis = "Simple zoomable canvas for wxHaskell";
       description = "A simple zoomable canvas for wxHaskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

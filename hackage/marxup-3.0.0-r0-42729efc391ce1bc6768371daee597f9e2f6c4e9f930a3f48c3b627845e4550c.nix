@@ -21,7 +21,7 @@
       synopsis = "Markup language preprocessor for Haskell";
       description = "Markup syntax preprocessor for Haskell. Steals ideas from the Scribble project (in Scheme).\nThe package also provides a DSL to output Latex seamlessly from MarXup output.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."graphviz" or (errorHandler.buildDepError "graphviz"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "marxup3" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."parsek" or (errorHandler.buildDepError "parsek"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

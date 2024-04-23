@@ -21,7 +21,7 @@
       synopsis = "Find the ideal lesson layout";
       description = "Executable program for calculating layouts for fixed grid schedules as\nare used in many universities and schools.\nThe primary data format for in- and output is json. A deployable server\ninstance of this software is also available.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "schedule-planner" = {
@@ -41,7 +41,7 @@
               (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
               (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
               (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -56,9 +56,9 @@
               (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
               (hsPkgs."composition" or (errorHandler.buildDepError "composition"))
               (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

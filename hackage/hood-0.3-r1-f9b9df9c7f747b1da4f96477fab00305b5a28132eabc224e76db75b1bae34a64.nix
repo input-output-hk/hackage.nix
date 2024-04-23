@@ -21,7 +21,7 @@
       synopsis = "Debugging by observing in place";
       description = "Hood debugger, based on the idea of observing functions and structures as they are evaluated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."FPretty" or (errorHandler.buildDepError "FPretty"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

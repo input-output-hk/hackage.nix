@@ -21,16 +21,16 @@
       synopsis = "Statically generate lookup tables using Template\nHaskell.";
       description = "This package provides a single Template Haskell\nfunction for memoizing a given function by\nstatically generating a lookup table.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lookup-tables-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."lookup-tables" or (errorHandler.buildDepError "lookup-tables"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

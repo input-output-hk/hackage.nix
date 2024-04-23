@@ -21,7 +21,7 @@
       synopsis = "A program and a library to create experimental music from a mono audio and a Ukrainian text";
       description = "It can also create a timbre for the notes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mmsyn7s" or (errorHandler.buildDepError "mmsyn7s"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mmsyn7ukr" or (errorHandler.buildDepError "mmsyn7ukr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dobutokO2" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."mmsyn7s" or (errorHandler.buildDepError "mmsyn7s"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mmsyn7ukr" or (errorHandler.buildDepError "mmsyn7ukr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

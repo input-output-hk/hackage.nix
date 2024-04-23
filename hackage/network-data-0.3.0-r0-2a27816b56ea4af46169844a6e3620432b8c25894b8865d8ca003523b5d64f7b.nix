@@ -21,7 +21,7 @@
       synopsis = "Library for network data structures (ex: ethernet/ip/udp/tcp headers and helper functions)";
       description = "This library includes definitions for common headers such as\nEthernet, IPv4, IPv6, UDP, TCP, etc. This code is untested for any serious\nwork - use at your own risk.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

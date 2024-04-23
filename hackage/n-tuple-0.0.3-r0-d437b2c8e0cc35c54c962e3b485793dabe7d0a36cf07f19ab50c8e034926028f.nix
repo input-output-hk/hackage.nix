@@ -21,15 +21,15 @@
       synopsis = "Homogeneous tuples of arbitrary length.";
       description = "Please see the README on Github at <https://github.com/athanclark/n-tuple#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

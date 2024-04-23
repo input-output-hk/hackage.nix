@@ -21,15 +21,15 @@
       synopsis = "bots for functional reactive programming";
       description = "/Bot/ is an experimental, arrow-friendly foundation for functional\nreactive programming.\n\nPlease see the project wiki page: <http://haskell.org/haskellwiki/Bot>\n\nThe module documentation pages have links to colorized source code and\nto wiki pages where you can read and contribute user comments.  Enjoy!\n\n&#169; 2008 by Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
           (hsPkgs."Stream" or (errorHandler.buildDepError "Stream"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

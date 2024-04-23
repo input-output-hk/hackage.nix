@@ -21,7 +21,7 @@
       synopsis = "Funge-98 interpreter written in Haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fungi" = {
@@ -39,9 +39,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

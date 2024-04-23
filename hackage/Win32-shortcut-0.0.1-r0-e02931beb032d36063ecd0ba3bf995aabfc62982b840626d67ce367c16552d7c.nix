@@ -21,7 +21,7 @@
       synopsis = "Support for manipulating shortcuts (.lnk files) on Windows";
       description = "This package provides mechanism for reading and\nwriting Windows shortcuts a.k.a. shell links.\nIt uses COM library under the hood.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."th-utilities" or (errorHandler.buildDepError "th-utilities"))
-          ];
+        ];
         libs = [
           (pkgs."ole32" or (errorHandler.sysDepError "ole32"))
           (pkgs."uuid" or (errorHandler.sysDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

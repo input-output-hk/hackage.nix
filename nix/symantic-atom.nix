@@ -6,8 +6,8 @@
         nix = import ../hackage/symantic-atom-0.0.0.20200523-r0-caedaa17af08258547a914f38321b99c5bbfd1eaab2af0d12587c17184216b87.nix;
         revNum = 0;
         sha256 = "caedaa17af08258547a914f38321b99c5bbfd1eaab2af0d12587c17184216b87";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

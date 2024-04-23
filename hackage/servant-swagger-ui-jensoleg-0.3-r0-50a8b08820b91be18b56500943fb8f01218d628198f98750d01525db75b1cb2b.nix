@@ -21,7 +21,7 @@
       synopsis = "Servant swagger ui: Jens-Ole Graulund theme";
       description = "Provide embedded swagger UI for servant and swagger (i.e. servant-swagger)\n\nJsn-Ole Graulund theme https://github.com/jensoleg/swagger-org";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/safepath-0.1.0.0-r0-c730de6194c52ee762892f7580a3af886172b7eeb8753f6dc4c9465a9f7086d2.nix;
         revNum = 0;
         sha256 = "c730de6194c52ee762892f7580a3af886172b7eeb8753f6dc4c9465a9f7086d2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

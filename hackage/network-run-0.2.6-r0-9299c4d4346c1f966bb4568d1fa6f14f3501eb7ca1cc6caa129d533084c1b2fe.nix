@@ -21,7 +21,7 @@
       synopsis = "Simple network runner library";
       description = "Simple functions to run network clients and servers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time-manager" or (errorHandler.buildDepError "time-manager"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

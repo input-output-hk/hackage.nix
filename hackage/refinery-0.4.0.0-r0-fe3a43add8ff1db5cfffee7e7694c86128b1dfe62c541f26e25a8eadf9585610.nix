@@ -21,7 +21,7 @@
       synopsis = "Toolkit for building proof automation systems";
       description = "Please see the README on GitHub at <https://github.com/githubuser/refinery#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "refinery-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."refinery" or (errorHandler.buildDepError "refinery"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

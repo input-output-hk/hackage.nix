@@ -21,12 +21,12 @@
       synopsis = "Traverse data types via generics, acting on multiple types simultaneously.";
       description = "This library provides functionality for traversing data types recursively,\nacting on multiple types during the same traversal. In spirit, it is similar to\nthe Walk type class from Pandoc.Walk, but generalizes it by allowing\nmultiple types to be targeted by the traversal. In general, it only\nrequires an Applicative constraint on the action, making it suitable for\nsituations where you don't have a Monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "multiwalk-test" = {
           depends = [
@@ -34,10 +34,10 @@
             (hsPkgs."multiwalk" or (errorHandler.buildDepError "multiwalk"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

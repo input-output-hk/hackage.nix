@@ -21,7 +21,7 @@
       synopsis = "Vinyl-based records with hierarchical field names, default values and documentation";
       description = "Implements the DocRec type, which is a record (in the vinyl sense) where each\nfield has an optional value and a docstring. The names of the fields are\ntype-level lists of Symbols, acting as paths. This makes docrecords\nhierarchical. Addionally, we provide the code to read docrecords from JSON\nfiles and derive CLI parsers to override the records read from\nfiles. docrecords is part of the porcupine ecosystem. See the README at\n<https://github.com/tweag/porcupine#README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Graphs binding";
       description = "Binding to uDrawGraph (formerly daVinci)\n<http://www.informatik.uni-bremen.de/uDrawGraph/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."uni-posixutil" or (errorHandler.buildDepError "uni-posixutil"))
           (hsPkgs."uni-reactor" or (errorHandler.buildDepError "uni-reactor"))
           (hsPkgs."uni-graphs" or (errorHandler.buildDepError "uni-graphs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

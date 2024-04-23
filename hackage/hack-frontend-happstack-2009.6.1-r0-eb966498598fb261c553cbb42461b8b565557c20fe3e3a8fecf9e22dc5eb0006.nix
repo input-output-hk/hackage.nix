@@ -21,7 +21,7 @@
       synopsis = "hack-frontend-happstack";
       description = "Allows programs written against happstack-server to run with any hack handler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hack-frontend-monadcgi" or (errorHandler.buildDepError "hack-frontend-monadcgi"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."hack" or (errorHandler.buildDepError "hack"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

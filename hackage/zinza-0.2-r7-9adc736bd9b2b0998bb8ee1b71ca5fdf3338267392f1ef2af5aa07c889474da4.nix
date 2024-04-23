@@ -21,7 +21,7 @@
       synopsis = "Typed templates with jinja like syntax";
       description = "Typed templates with jinja like syntax. Well-typed templates don't go wrong.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "zinza-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."zinza" or (errorHandler.buildDepError "zinza"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

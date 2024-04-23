@@ -13,7 +13,7 @@
       use-reflex-optimizer = false;
       expose-all-unfoldings = false;
       profile-reflex = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "reflex-dom-core"; version = "0.5"; };
@@ -26,7 +26,7 @@
       synopsis = "Functional Reactive Web Apps with Reflex";
       description = "Reflex-DOM is a Functional Reactive web framework based on the Reflex FRP engine";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -62,30 +62,30 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."zenc" or (errorHandler.buildDepError "zenc"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]
-          else (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix")))) ++ (if flags.use-template-haskell
+          ]
+          else pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix")))) ++ (if flags.use-template-haskell
           then [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."dependent-sum-template" or (errorHandler.buildDepError "dependent-sum-template"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ]
+          ]
           else [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hydration" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -124,11 +124,11 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ];
+          ];
           buildable = if !system.isLinux || !system.isX86_64 || flags.profile-reflex
             then false
             else true;
-          };
+        };
         "gc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -139,11 +139,11 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !system.isLinux || !system.isX86_64
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A wrapper for gi-gtk, adding a few more idiomatic API parts on top";
       description = "A wrapper for gi-gtk, adding a few more idiomatic API parts on top";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."gi-gdk" or (errorHandler.buildDepError "gi-gdk"))
           (hsPkgs."gi-gtk" or (errorHandler.buildDepError "gi-gtk"))
           (hsPkgs."gi-gdkpixbuf" or (errorHandler.buildDepError "gi-gdkpixbuf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

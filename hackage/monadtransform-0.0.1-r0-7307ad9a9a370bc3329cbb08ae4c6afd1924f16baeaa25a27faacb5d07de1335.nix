@@ -21,14 +21,14 @@
       synopsis = "A type-class for transforming monads (homomorphism) in a transformer";
       description = "A type-class for transforming monads (homomorphism) in a transformer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

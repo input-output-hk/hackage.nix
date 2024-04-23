@@ -6,8 +6,8 @@
         nix = import ../hackage/coltrane-0.1.0.0-r0-8555d8cb24300dddffbeb987eed62040648d9559ecacb5c30bedecbebccb21b6.nix;
         revNum = 0;
         sha256 = "8555d8cb24300dddffbeb987eed62040648d9559ecacb5c30bedecbebccb21b6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

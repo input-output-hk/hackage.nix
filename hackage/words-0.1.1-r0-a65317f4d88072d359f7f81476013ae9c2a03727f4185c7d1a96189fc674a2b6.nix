@@ -21,15 +21,15 @@
       synopsis = "Cross-platform access to a list of words";
       description = "This is a simple wrapper around getting a list of words,\nthat works in a common across multiple platforms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

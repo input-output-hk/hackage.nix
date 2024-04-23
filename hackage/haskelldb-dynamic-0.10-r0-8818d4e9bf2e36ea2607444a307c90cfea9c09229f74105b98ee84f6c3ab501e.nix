@@ -21,7 +21,7 @@
       synopsis = "HaskellDB support for the dynamically loaded drivers.";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "DBDirect" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."haskelldb" or (errorHandler.buildDepError "haskelldb"))
             (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

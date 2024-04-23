@@ -16,7 +16,7 @@
       testlpsolve = false;
       testscip = false;
       withzlib = true;
-      };
+    };
     package = {
       specVersion = "1.18";
       identifier = { name = "MIP"; version = "0.1.0.0"; };
@@ -29,7 +29,7 @@
       synopsis = "Library for using Mixed Integer Programming (MIP)";
       description = "Please see the README on GitHub at <https://github.com/msakai/haskell-MIP/tree/master/MIP#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,14 +49,14 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ] ++ (pkgs.lib).optionals (flags.withzlib) [
+        ] ++ pkgs.lib.optionals (flags.withzlib) [
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."bytestring-encoding" or (errorHandler.buildDepError "bytestring-encoding"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "MIP-test" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

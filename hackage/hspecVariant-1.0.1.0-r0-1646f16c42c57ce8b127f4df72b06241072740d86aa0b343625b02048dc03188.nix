@@ -21,16 +21,16 @@
       synopsis = "Spec for testing properties";
       description = "Spec for testing properties for variant types. Uses QuickCheckVariant\npackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheckVariant" or (errorHandler.buildDepError "QuickCheckVariant"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "variant" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspecVariant" or (errorHandler.buildDepError "hspecVariant"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

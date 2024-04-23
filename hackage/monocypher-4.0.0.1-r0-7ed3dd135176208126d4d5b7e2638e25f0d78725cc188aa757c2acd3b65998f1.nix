@@ -21,35 +21,35 @@
       synopsis = "Low level bindings to the monocypher C library.";
       description = "Low level bindings to the monocypher C library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "c-main" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monocypher" or (errorHandler.buildDepError "monocypher"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "c-tis-ci" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monocypher" or (errorHandler.buildDepError "monocypher"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monocypher" or (errorHandler.buildDepError "monocypher"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

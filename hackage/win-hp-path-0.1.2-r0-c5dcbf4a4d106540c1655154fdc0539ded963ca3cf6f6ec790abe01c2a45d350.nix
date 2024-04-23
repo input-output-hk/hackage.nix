@@ -21,15 +21,15 @@
       synopsis = "Work with multiple Haskell Platform versions on Windows";
       description = "This package provides a program needed by the\nwin-hp-path project to make it easy to work with\nmultiple versions of the Haskell Platform on\nWindows. See the home page on GitHub for more\ninfomation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "use-hppath" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."win-hp-path" or (errorHandler.buildDepError "win-hp-path"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Make Linux or MacOS do things like \"rename *.mp3 *.mp4\"";
       description = "Do you remember the convenient command `ren' in MSDOS?\nWhen you want to change all your .mp3 files to .mp4.\nSimply type \\\"ren *.mp3 *.mp4.\\\".\nI really like this.\nBut in linux\\/Mac world, people keep asking how.(http:\\/\\/bit.ly\\/2cIskUu)\nSo maybe this little tool can help you a lot.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "batch_rename" = {
@@ -30,9 +30,9 @@
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "ODBC driver for HDBC";
       description = "This package provides an ODBC database backend for HDBC.\nIt is cross-platform and supports unixODBC on Unix/Linux/POSIX platforms\nand Microsoft ODBC on Windows.  It is also the preferred way to access\nMySQL databases from Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,15 +30,15 @@
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         libs = if system.isWindows || system.isWindows
           then [ (pkgs."odbc32" or (errorHandler.sysDepError "odbc32")) ]
           else [ (pkgs."odbc" or (errorHandler.sysDepError "odbc")) ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."testpack" or (errorHandler.buildDepError "testpack"))
@@ -47,12 +47,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-            ];
+          ];
           libs = if system.isWindows || system.isWindows
             then [ (pkgs."odbc32" or (errorHandler.sysDepError "odbc32")) ]
             else [ (pkgs."odbc" or (errorHandler.sysDepError "odbc")) ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

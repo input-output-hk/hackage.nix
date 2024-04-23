@@ -21,7 +21,7 @@
       synopsis = "Classes for types where we know all the values";
       description = "Munge finite and recursively enumerable types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."universe-instances-extended" or (errorHandler.buildDepError "universe-instances-extended"))
           (hsPkgs."universe-reverse-instances" or (errorHandler.buildDepError "universe-reverse-instances"))
           (hsPkgs."universe-instances-trans" or (errorHandler.buildDepError "universe-instances-trans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

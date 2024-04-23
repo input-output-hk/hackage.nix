@@ -21,7 +21,7 @@
       synopsis = "Heterogeneous, type-safe automatic backpropagation in Haskell";
       description = "See <https://github.com/mstksg/backprop#readme README.md>\n\nAt the moment, this project is in pre-alpha, and is\npublished and put up on Hackage with 100% documentation\ncoverage as a call for comments and thoughts.  See\n<https://github.com/mstksg/backprop#todo TODO.md> section\nin the README for more information on what's missing and\npotential avenues for contribution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "backprop-mnist-bench" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Comonadic interface for random values";
       description = "Comonadic interface for random values";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."category-extras" or (errorHandler.buildDepError "category-extras"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

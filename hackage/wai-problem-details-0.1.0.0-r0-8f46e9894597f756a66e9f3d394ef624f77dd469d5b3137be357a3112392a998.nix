@@ -21,7 +21,7 @@
       synopsis = "Problem details middleware for WAI";
       description = "Problem details middleware for WAI.\n\nIt exposes a functions to throw exceptions of type\nProblemDetailsException that implements the problem details\nRFC as specified in https://www.rfc-editor.org/rfc/rfc7807.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-problem-details-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."hspec-wai" or (errorHandler.buildDepError "hspec-wai"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."hspec-wai-json" or (errorHandler.buildDepError "hspec-wai-json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

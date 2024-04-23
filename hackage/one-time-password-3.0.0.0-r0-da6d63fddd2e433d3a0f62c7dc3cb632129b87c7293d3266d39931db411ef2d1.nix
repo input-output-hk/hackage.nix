@@ -21,7 +21,7 @@
       synopsis = "HMAC-Based and Time-Based One-Time Passwords";
       description = "Implements HMAC-Based One-Time Password Algorithm as\ndefined in RFC 4226 and Time-Based One-Time Password\nAlgorithm as defined in RFC 6238.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."sel" or (errorHandler.buildDepError "sel"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "one-time-password" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
             (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
             (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

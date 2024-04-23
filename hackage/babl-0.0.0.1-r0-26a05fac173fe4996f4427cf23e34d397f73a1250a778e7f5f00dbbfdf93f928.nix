@@ -21,15 +21,15 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."babl-0.1" or (errorHandler.sysDepError "babl-0.1")) ];
         pkgconfig = [
           (pkgconfPkgs."babl" or (errorHandler.pkgConfDepError "babl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

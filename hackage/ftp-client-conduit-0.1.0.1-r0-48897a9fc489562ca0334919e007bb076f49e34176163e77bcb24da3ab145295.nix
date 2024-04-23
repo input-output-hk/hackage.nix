@@ -21,7 +21,7 @@
       synopsis = "Transfer file with FTP and FTPS with Conduit";
       description = "ftp-client is a library for communicating with an FTP server. It works over both a clear channel or TLS. ftp-client-conduit uses conduit to stream files and data in constant space.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ftp-conduit-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ftp-clientconduit" or (errorHandler.buildDepError "ftp-clientconduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

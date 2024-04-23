@@ -6,8 +6,8 @@
         nix = import ../hackage/indentparser-0.1-r0-038219aa47c404d62994db118aaa40cbc44762f0af776b66f21190001e296edc.nix;
         revNum = 0;
         sha256 = "038219aa47c404d62994db118aaa40cbc44762f0af776b66f21190001e296edc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

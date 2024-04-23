@@ -21,7 +21,7 @@
       synopsis = "Haskell Git Helper Tool";
       description = "Haskell Git Helper Tool";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cuk" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."git-cuk" or (errorHandler.buildDepError "git-cuk"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

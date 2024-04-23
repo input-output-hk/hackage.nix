@@ -21,11 +21,11 @@
       synopsis = "Haskell bindings to the Snowball stemming library.";
       description = "Haskell bindings to the Snowball stemming library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

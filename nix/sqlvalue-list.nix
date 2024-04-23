@@ -6,8 +6,8 @@
         nix = import ../hackage/sqlvalue-list-0.2-r0-bcb8e11ec600a1c108e7c8aab5991031593cbbed5aa90fc9a482a4155ff422a3.nix;
         revNum = 0;
         sha256 = "bcb8e11ec600a1c108e7c8aab5991031593cbbed5aa90fc9a482a4155ff422a3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

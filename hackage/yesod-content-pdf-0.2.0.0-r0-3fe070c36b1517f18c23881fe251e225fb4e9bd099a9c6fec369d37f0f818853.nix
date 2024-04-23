@@ -21,7 +21,7 @@
       synopsis = "PDF Content Type for Yesod";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,17 +37,17 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yesod-content-pdf-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yesod-content-pdf" or (errorHandler.buildDepError "yesod-content-pdf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

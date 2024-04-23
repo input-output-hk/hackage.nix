@@ -21,7 +21,7 @@
       synopsis = "Extensible Pandoc            ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."uu-parsinglib" or (errorHandler.buildDepError "uu-parsinglib"))
           (hsPkgs."AspectAG" or (errorHandler.buildDepError "AspectAG"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

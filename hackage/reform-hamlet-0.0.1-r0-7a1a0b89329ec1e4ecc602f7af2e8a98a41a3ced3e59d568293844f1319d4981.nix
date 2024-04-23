@@ -21,7 +21,7 @@
       synopsis = "Add support for using Hamlet with Reform";
       description = "Reform is a library for building and validating forms using applicative functors. This package add support for using reform with Hamlet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hamlet" or (errorHandler.buildDepError "hamlet"))
           (hsPkgs."reform" or (errorHandler.buildDepError "reform"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

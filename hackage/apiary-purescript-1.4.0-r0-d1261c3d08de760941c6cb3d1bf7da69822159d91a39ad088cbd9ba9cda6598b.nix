@@ -21,7 +21,7 @@
       synopsis = "purescript compiler for apiary web framework.";
       description = "example: <https://github.com/philopon/apiary/blob/master/examples/pureScript.hs>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."types-compat" or (errorHandler.buildDepError "types-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Microformats 2 parser.";
       description = "A parser for Microformats 2 (http://microformats.org/wiki/microformats2), a simple way to describe structured information in HTML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."xss-sanitize" or (errorHandler.buildDepError "xss-sanitize"))
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "microformats2-parser" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
             (hsPkgs."microformats2-parser" or (errorHandler.buildDepError "microformats2-parser"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "microformats2-parser-lambda" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -97,10 +97,10 @@
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
             (hsPkgs."microformats2-parser" or (errorHandler.buildDepError "microformats2-parser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."html-conduit" or (errorHandler.buildDepError "html-conduit"))
             (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

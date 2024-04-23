@@ -21,7 +21,7 @@
       synopsis = "The type of finite sets with elements identified by the ordinals.";
       description = "This provides a newtype Fin containing an Int with an invariant that its\nvalue is less than its type-level Nat bound.  It aims to have low overhead\ncompared to Ints, and is suitable for use as the index type of\nlength-indexed vectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."portray" or (errorHandler.buildDepError "portray"))
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

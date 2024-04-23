@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-say-1.0.0.0-r0-654ed7ff571d62fb03dfda576aa0a89410fe403b0d84695b5151e3d026f33099.nix;
         revNum = 0;
         sha256 = "654ed7ff571d62fb03dfda576aa0a89410fe403b0d84695b5151e3d026f33099";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "A flexible record system";
       description = "This package provides a flexible record system which has some novel features:\n\n* Using record type families, the type system can be used to describe relationships\nbetween field types.\n\n* Record scheme induction permits the implementation of polymorphic record\ncombinators that work on whole records instead of only a fixed set of fields.\n\n* Subkind polymorphism for sorts makes it possible to impose varying restrictions on\nthe structure of field types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kinds" or (errorHandler.buildDepError "kinds"))
           (hsPkgs."type-functions" or (errorHandler.buildDepError "type-functions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

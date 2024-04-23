@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to SDL2_gfx";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,14 +31,14 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."SDL2_gfx" or (errorHandler.sysDepError "SDL2_gfx")) ];
         pkgconfig = [
           (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
           (pkgconfPkgs."SDL2_gfx" or (errorHandler.pkgConfDepError "SDL2_gfx"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sdl2-gfx-example" = {
           depends = [
@@ -46,14 +46,14 @@
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."sdl2-gfx" or (errorHandler.buildDepError "sdl2-gfx"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           libs = [ (pkgs."SDL2_gfx" or (errorHandler.sysDepError "SDL2_gfx")) ];
           pkgconfig = [
             (pkgconfPkgs."sdl2" or (errorHandler.pkgConfDepError "sdl2"))
             (pkgconfPkgs."SDL2_gfx" or (errorHandler.pkgConfDepError "SDL2_gfx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

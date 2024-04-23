@@ -21,7 +21,7 @@
       synopsis = "Simple gloss renderer for apecs";
       description = "Simple 2D gloss-based rendering for apecs.\nIntended for prototyping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."apecs-physics" or (errorHandler.buildDepError "apecs-physics"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

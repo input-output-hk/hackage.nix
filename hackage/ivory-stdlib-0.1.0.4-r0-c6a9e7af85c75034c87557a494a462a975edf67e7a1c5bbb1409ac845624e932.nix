@@ -21,7 +21,7 @@
       synopsis = "Ivory standard library.";
       description = "A standard library for Ivory.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
           (hsPkgs."ivory-artifact" or (errorHandler.buildDepError "ivory-artifact"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

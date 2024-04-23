@@ -21,7 +21,7 @@
       synopsis = "Data model, parser, serialiser and transformations for Content MathML 3";
       description = "Data model, parser, serialiser and basic transformations for working with Content MathML 3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mathtest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

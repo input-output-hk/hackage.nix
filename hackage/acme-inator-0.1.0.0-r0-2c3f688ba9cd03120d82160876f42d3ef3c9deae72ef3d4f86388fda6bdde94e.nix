@@ -21,17 +21,17 @@
       synopsis = "Evil inventions in the Tri-State area";
       description = "Construction and operation of evil inventions in the Tri-State area.\nBased on the pioneering work of Dr. Heinz Doofenshmirtz.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "evilplan" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

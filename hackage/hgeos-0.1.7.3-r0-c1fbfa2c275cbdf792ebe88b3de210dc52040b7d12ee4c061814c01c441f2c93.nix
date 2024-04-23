@@ -21,16 +21,16 @@
       synopsis = "Simple Haskell bindings to GEOS C API";
       description = "Simple Haskell bindings to the <https://trac.osgeo.org/geos/ GEOS>\n<http://geos.osgeo.org/doxygen/geos__c_8h_source.html C API> heavily inspired\nby <https://github.com/django/django/tree/master/django/contrib/gis/geos Django GEOS bindings>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [ (pkgs."geos_c" or (errorHandler.sysDepError "geos_c")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hgeos-app" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hgeos" or (errorHandler.buildDepError "hgeos"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

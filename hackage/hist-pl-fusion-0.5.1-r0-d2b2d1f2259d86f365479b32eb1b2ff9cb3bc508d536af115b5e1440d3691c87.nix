@@ -21,7 +21,7 @@
       synopsis = "Merging historical dictionary with PoliMorf";
       description = "The library provides functions for merging historical dictionary\nwith PoliMorf morphological dictionary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."polimorf" or (errorHandler.buildDepError "polimorf"))
           (hsPkgs."hist-pl-dawg" or (errorHandler.buildDepError "hist-pl-dawg"))
           (hsPkgs."hist-pl-lexicon" or (errorHandler.buildDepError "hist-pl-lexicon"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

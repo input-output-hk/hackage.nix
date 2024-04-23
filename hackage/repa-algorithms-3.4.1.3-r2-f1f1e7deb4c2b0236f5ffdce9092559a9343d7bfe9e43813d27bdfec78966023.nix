@@ -21,15 +21,15 @@
       synopsis = "Algorithms using the Repa array library.";
       description = "Reusable algorithms using the Repa array library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An implementation of the OpenID-2.0 spec.";
       description = "An implementation of the OpenID-2.0 spec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,20 +36,20 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "openid-test" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."openid" or (errorHandler.buildDepError "openid"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

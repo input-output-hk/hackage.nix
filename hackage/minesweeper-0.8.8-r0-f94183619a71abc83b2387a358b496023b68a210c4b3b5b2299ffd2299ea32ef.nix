@@ -21,7 +21,7 @@
       synopsis = "Minesweeper game which is always solvable without guessing";
       description = "Minesweeper game which is always solvable without guessing. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "minesweeper" = {
@@ -39,12 +39,12 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
-            ] ++ (pkgs.lib).optionals (flags.tests) [
+          ] ++ pkgs.lib.optionals (flags.tests) [
             (hsPkgs."numeric-prelude" or (errorHandler.buildDepError "numeric-prelude"))
             (hsPkgs."lazysmallcheck" or (errorHandler.buildDepError "lazysmallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

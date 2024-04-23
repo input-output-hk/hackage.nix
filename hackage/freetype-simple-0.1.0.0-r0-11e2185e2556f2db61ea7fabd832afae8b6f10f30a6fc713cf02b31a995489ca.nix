@@ -21,7 +21,7 @@
       synopsis = "Single line text rendering for OpenGL ES";
       description = "Single line text rendering utility. See README.md for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."freetype2" or (errorHandler.buildDepError "freetype2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

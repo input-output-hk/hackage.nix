@@ -6,8 +6,8 @@
         nix = import ../hackage/marching-cubes2-0.1.0.0-r0-c65080df1a5b493b49d14ca38a76816f90c68c6a0a2ee58821217ab51596f352.nix;
         revNum = 0;
         sha256 = "c65080df1a5b493b49d14ca38a76816f90c68c6a0a2ee58821217ab51596f352";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

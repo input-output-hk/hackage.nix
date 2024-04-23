@@ -6,8 +6,8 @@
         nix = import ../hackage/intensional-datatys-0.2.0.0-r0-fb6fb61799d1ce8327599bebb6476a8edeffe6da0b575b9650cb963b8ebfb922.nix;
         revNum = 0;
         sha256 = "fb6fb61799d1ce8327599bebb6476a8edeffe6da0b575b9650cb963b8ebfb922";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

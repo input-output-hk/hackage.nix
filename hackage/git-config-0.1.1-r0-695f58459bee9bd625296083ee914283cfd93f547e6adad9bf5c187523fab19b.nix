@@ -21,7 +21,7 @@
       synopsis = "A simple parser for Git configuration files";
       description = "git-config is a simple 'megaparsec' parser for Git configuration files.\n\nIt aims to provide the simplest API possible for parsing Git configuration\nfiles so that you can get to whatever it was you were doing.\n\nA sample of this library in use:\n\n> import qualified Data.Text.IO as TIO\n> import Text.GitConfig.Parser (parseConfig)\n>\n> main :: IO ()\n> main = do\n>   file <- TIO.readFile \".git/config\"\n>   case parseConfig file of\n>     Right conf ->\n>       print conf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "git-config-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."tasty-travis" or (errorHandler.buildDepError "tasty-travis"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "The OpenCL Standard for heterogenous data-parallel computing";
       description = "Light opencl wrappers, a fork of the OpenCLRaw package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

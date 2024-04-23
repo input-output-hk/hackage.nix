@@ -21,7 +21,7 @@
       synopsis = "Automatic compliance with the classy-effects protocols";
       description = "This package provides Template Haskell functions that enable automatic compliance with CEPs\n(classy-effects protocols), offering a unified framework for defining effects in Haskell.\nCEPs aim to standardize and unify the definition of effects in Haskell in a\nbackend-library-agnostic manner. Please refer\nto [CEPs](https://github.com/sayo-hs/classy-effects/blob/master/CEPs/README.md) for details.\nPlease also refer to the [classy-effects](https://hackage.haskell.org/package/classy-effects)\npackage, which offers standard effect definitions compliant with CEPs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Example" = {
           depends = [
@@ -43,12 +43,12 @@
             (hsPkgs."classy-effects-base" or (errorHandler.buildDepError "classy-effects-base"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

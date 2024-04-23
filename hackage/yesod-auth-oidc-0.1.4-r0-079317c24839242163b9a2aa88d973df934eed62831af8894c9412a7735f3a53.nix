@@ -21,7 +21,7 @@
       synopsis = "A yesod-auth plugin for multi-tenant SSO via OpenID Connect";
       description = "A yesod-auth plugin for multi-tenant SSO via OpenID Connect, using\nAuthorization Code flow (AKA server flow).\nPlease see the README.md file for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

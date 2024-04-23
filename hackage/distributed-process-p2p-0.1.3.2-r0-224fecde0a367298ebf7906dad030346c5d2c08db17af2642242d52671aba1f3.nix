@@ -21,7 +21,7 @@
       synopsis = "Peer-to-peer node discovery for Cloud Haskell";
       description = "Bootstraps a peer-to-peer connection network from a set of known hosts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
           (hsPkgs."network-transport" or (errorHandler.buildDepError "network-transport"))
           (hsPkgs."network-transport-tcp" or (errorHandler.buildDepError "network-transport-tcp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jollycloud" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."distributed-process" or (errorHandler.buildDepError "distributed-process"))
             (hsPkgs."distributed-process-p2p" or (errorHandler.buildDepError "distributed-process-p2p"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
       };
-    }
+    };
+  }

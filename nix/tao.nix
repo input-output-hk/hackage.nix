@@ -6,8 +6,8 @@
         nix = import ../hackage/tao-1.0.0-r0-22289ff9da10b3f1d3b6542fb259c105804d266df78873ffe360774b3089a6fb.nix;
         revNum = 0;
         sha256 = "22289ff9da10b3f1d3b6542fb259c105804d266df78873ffe360774b3089a6fb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

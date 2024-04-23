@@ -21,7 +21,7 @@
       synopsis = "Haskell port of the Tensor Algebra COmpiler";
       description = "This library provides types and a compiler for tensor expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."taco" or (errorHandler.buildDepError "taco"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

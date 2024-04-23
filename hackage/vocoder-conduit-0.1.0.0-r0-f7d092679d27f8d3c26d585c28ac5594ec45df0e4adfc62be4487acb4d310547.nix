@@ -21,7 +21,7 @@
       synopsis = "Phase vocoder for Conduit";
       description = "This package wraps the algorithms provided by the vocoder package\nfor use with Conduit. This allows convenient off-line and on-line frequency\ndomain signal processing, including time transformations (e.g.\nspeeding up or slowing down sounds without changing pitch).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."vocoder" or (errorHandler.buildDepError "vocoder"))
           (hsPkgs."mono-traversable" or (errorHandler.buildDepError "mono-traversable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-vocoder-conduit" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."vocoder-conduit" or (errorHandler.buildDepError "vocoder-conduit"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-vocoder-conduit" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."vocoder" or (errorHandler.buildDepError "vocoder"))
             (hsPkgs."vocoder-conduit" or (errorHandler.buildDepError "vocoder-conduit"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Creating graphics for pencil puzzles.";
       description = "puzzle-draw is a library and tool for drawing pencil\npuzzles using Diagrams. It aims to provide a utility\nlayer on top of Diagrams to help with drawing arbitrary\npuzzles, and to support several specific puzzles types\nIn addition, it includes functionality for parsing\npuzzle data from a YAML file format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,15 +39,15 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ] ++ (if flags.cairo
+        ] ++ (if flags.cairo
           then [
             (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-            ]
+          ]
           else [
             (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "drawpuzzle" = {
           depends = [
@@ -58,16 +58,16 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ] ++ (if flags.cairo
+          ] ++ (if flags.cairo
             then [
               (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
-              ]
+            ]
             else [
               (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."diagrams-svg" or (errorHandler.buildDepError "diagrams-svg"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."puzzle-draw" or (errorHandler.buildDepError "puzzle-draw"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

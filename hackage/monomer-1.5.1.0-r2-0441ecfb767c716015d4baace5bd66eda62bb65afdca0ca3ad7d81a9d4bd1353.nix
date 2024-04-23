@@ -21,7 +21,7 @@
       synopsis = "A GUI library for writing native Haskell applications.";
       description = "Monomer is an easy to use, cross platform, GUI library for writing native\nHaskell applications.\n\nIt provides a framework similar to the Elm Architecture, allowing the creation\nof GUIs using an extensible set of widgets with pure Haskell.\n\nPlease see the README on Github at <https://github.com/fjvallarino/monomer#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,18 +50,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         libs = if system.isWindows
           then [ (pkgs."glew32" or (errorHandler.sysDepError "glew32")) ]
           else [ (pkgs."GLEW" or (errorHandler.sysDepError "GLEW")) ];
         pkgconfig = [
           (pkgconfPkgs."glew" or (errorHandler.pkgConfDepError "glew"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "books" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "dev-test-app" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -123,9 +123,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "generative" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -155,9 +155,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "opengl" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -187,9 +187,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "ticker" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -221,9 +221,9 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "todo" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -252,9 +252,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "tutorial" = {
           depends = [
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
@@ -284,10 +284,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "monomer-test" = {
           depends = [
@@ -318,9 +318,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

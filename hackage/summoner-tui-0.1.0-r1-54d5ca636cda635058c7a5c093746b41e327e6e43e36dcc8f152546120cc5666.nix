@@ -21,7 +21,7 @@
       synopsis = "Tool for scaffolding fully configured batteries-included production-level Haskell projects using TUI.";
       description = "Tool for scaffolding fully configured batteries-included production-level Haskell projects using TUI.\nSee [README.md](https://github.com/kowainik/summoner#-summoner) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = if system.isWindows then false else true;
-        };
+      };
       exes = {
         "summon-tui" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."summoner-tui" or (errorHandler.buildDepError "summoner-tui"))
-            ];
+          ];
           buildable = if system.isWindows then false else true;
-          };
         };
       };
-    }
+    };
+  }

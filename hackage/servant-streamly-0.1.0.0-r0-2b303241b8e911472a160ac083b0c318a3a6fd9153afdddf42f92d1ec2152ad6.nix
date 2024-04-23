@@ -21,7 +21,7 @@
       synopsis = "Servant Stream support for streamly.";
       description = "Servant Stream support for streamly. Provides 'ToSourceIO' and 'FromSourceIO' instances for all 'IsStream' instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-streamly-example" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-streamly-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."servant-streamly" or (errorHandler.buildDepError "servant-streamly"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

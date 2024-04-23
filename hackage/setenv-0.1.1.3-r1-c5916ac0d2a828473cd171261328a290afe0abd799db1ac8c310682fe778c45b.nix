@@ -21,13 +21,13 @@
       synopsis = "A cross-platform library for setting environment variables";
       description = "A cross-platform library for setting environment variables\n\nNote: Since @base-4.7.0.0@ the functions @setEnv@ and\n@unsetEnv@ are provided by @System.Environment@.\n@System.SetEnv@ merily re-exports those functions when built\nwith @base >= 4.7@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

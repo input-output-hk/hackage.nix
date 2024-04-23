@@ -21,7 +21,7 @@
       synopsis = "A project management tool for Haskell applications.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rivet" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rivet-core" or (errorHandler.buildDepError "rivet-core"))
             (hsPkgs."rivet-simple-deploy" or (errorHandler.buildDepError "rivet-simple-deploy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

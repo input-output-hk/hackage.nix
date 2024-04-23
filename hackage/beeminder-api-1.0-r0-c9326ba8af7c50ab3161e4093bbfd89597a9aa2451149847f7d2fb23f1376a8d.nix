@@ -21,7 +21,7 @@
       synopsis = "Bindings to the beeminder.com JSON API";
       description = "<<https://www.beeminder.com/images/logo_hi.png>>\n\n<http://beeminder.com> is a tool for incentivizing yourself to\naccomplish your quantifiable goals.  This package\nprovides Haskell bindings to beeminder's JSON API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

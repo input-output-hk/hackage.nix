@@ -21,7 +21,7 @@
       synopsis = "Opininated use of Google Authentication for ease";
       description = "Easy Google Authentication integration using the Authorization Code Grant and Refresh Token";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "google-oauth2-easy-test-suite" = {
           depends = [
@@ -45,19 +45,19 @@
             (hsPkgs."google-oauth2-easy" or (errorHandler.buildDepError "google-oauth2-easy"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "google-oauth2-easy-benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."google-oauth2-easy" or (errorHandler.buildDepError "google-oauth2-easy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

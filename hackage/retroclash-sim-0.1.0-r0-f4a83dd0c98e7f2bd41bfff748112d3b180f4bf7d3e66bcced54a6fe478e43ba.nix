@@ -21,7 +21,7 @@
       synopsis = "High-level simulators from the book \"Retrocomputing with Clash\"";
       description = "A library of functionality useful when simulating retro-computers:\n\n* Interactive Clash simulation in IO\n\n* SDL-based framework for graphics simulation\n\n* VGA signal interpreter\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

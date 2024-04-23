@@ -21,7 +21,7 @@
       synopsis = "dynamic core for csound-expression library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."data-fix" or (errorHandler.buildDepError "data-fix"))
           (hsPkgs."data-fix-cse" or (errorHandler.buildDepError "data-fix-cse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

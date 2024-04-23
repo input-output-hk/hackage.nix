@@ -21,7 +21,7 @@
       synopsis = "a library for displaying musical time in a terminal-based clock";
       description = "This library is for generating strings containing clock time, sending them across OSC, and displaying them in a terminal. In addition to the library functions, it contains a sample executable for displaying musical time in a terminal-based clock.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."parseargs" or (errorHandler.buildDepError "parseargs"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

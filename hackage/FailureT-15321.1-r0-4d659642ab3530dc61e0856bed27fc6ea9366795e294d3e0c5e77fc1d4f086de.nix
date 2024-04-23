@@ -21,14 +21,14 @@
       synopsis = "Failure Monad Transformer";
       description = "Failure Monad Transformer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mmtl" or (errorHandler.buildDepError "mmtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

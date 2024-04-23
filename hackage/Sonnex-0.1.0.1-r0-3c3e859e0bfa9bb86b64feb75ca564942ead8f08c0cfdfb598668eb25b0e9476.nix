@@ -21,11 +21,11 @@
       synopsis = "Sonnex is an alternative to Soundex for french language";
       description = "This package implements an alternative to the Soundex algorithms\nfor french language. It does so by approximating what the word\nshould sound in french. Since it is very basic, it has no other\ndependencies than base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

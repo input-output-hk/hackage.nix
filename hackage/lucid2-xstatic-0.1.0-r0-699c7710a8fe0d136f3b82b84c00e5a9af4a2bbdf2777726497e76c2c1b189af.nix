@@ -21,7 +21,7 @@
       synopsis = "Lucid2 helper for XStatic";
       description = "Use this library to add XStaticFile to your Html.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lucid2" or (errorHandler.buildDepError "lucid2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xstatic" or (errorHandler.buildDepError "xstatic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

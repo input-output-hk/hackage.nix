@@ -21,7 +21,7 @@
       synopsis = "Optics for http-client";
       description = "Optics for <http://hackage.haskell.org/package/http-client http-client>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

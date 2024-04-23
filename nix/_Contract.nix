@@ -6,8 +6,8 @@
         nix = import ../hackage/Contract-0.1-r0-963bc83ba19569a5274985afb59d72be1174fee84b3877b357b94aa567f430ea.nix;
         revNum = 0;
         sha256 = "963bc83ba19569a5274985afb59d72be1174fee84b3877b357b94aa567f430ea";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,11 +21,11 @@
       synopsis = "Allows to split lists into sublists with some patterns by quantity.";
       description = "This patterns can be a list of numbers or obtained from the monadic function. Leads to somewhat cycling or regularized structures from the length perspective (this can be transformed into other variativity types).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

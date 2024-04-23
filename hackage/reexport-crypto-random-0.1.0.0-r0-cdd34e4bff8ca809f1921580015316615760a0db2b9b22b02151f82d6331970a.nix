@@ -21,14 +21,14 @@
       synopsis = "";
       description = "Names conflict between crypto-api and crypto-random, therefore I export the former in a separate package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

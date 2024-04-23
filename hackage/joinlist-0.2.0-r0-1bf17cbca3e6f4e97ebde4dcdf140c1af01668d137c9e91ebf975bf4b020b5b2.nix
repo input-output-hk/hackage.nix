@@ -21,14 +21,14 @@
       synopsis = "Join list - symmetric list type ";
       description = "A JoinList - a list type with with cheap catenation.\nCurrently somewhat /minimal/.\n\nChangelog\n\n0.2.0 - more operations and some bugfixes (toList...), @wrap@\nrenamed to @singleton@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

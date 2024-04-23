@@ -21,7 +21,7 @@
       synopsis = "See README for synopsis";
       description = "See README for description";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."tinylog" or (errorHandler.buildDepError "tinylog"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ldap-scim-bridge" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."ldap-scim-bridge" or (errorHandler.buildDepError "ldap-scim-bridge"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ldap-scim-bridge-test" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Image loading and writing microlibrary";
       description = "See <https://github.com/SASinestro/stb-image-redux/blob/master/README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stb-image-redux-tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."stb-image-redux" or (errorHandler.buildDepError "stb-image-redux"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

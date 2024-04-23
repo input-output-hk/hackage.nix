@@ -6,8 +6,8 @@
         nix = import ../hackage/ideas-statistics-1.0-r0-6d5265e6e4a398e16685557b5bbeeb91d5eccd716a02ff5ebf7f9d33a07bf802.nix;
         revNum = 0;
         sha256 = "6d5265e6e4a398e16685557b5bbeeb91d5eccd716a02ff5ebf7f9d33a07bf802";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

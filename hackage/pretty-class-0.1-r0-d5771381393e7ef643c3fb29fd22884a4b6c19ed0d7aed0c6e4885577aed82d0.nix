@@ -21,14 +21,14 @@
       synopsis = "Extremely simple Pretty class";
       description = "I was unclear how to create instances of Language.Haskell.Pretty.Pretty because\nthe pretty method is not exported.  So here is a copy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

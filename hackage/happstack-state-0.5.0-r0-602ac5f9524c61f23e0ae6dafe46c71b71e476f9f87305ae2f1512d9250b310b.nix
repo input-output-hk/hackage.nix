@@ -21,7 +21,7 @@
       synopsis = "Event-based distributed state.";
       description = "Unplug your machine and restart and have your app recover to exactly where it left off. Happstack-State spares you the need to deal with all the marshalling, consistency, and configuration headache that you would have if you used an external DBMS for this purpose. Its component model makes it easy to compose big applications from smaller reliable parts. Use event subscription to trigger IO actions and support comet-style or irc-bot applications. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -39,32 +39,32 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optionals (flags.tests) [
+        ] ++ pkgs.lib.optionals (flags.tests) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ]) ++ (pkgs.lib).optionals (flags.replication) [
+        ]) ++ pkgs.lib.optionals (flags.replication) [
           (hsPkgs."hS3" or (errorHandler.buildDepError "hS3"))
           (hsPkgs."bencode" or (errorHandler.buildDepError "bencode"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."SHA" or (errorHandler.buildDepError "SHA"))
-          ]) ++ (if flags.base4
+        ]) ++ (if flags.base4
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+          ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "happstack-state-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

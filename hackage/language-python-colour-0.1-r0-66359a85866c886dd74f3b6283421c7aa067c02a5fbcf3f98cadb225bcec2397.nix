@@ -21,7 +21,7 @@
       synopsis = "Generate coloured XHTML for Python code. ";
       description = "Generate coloured XHTML for Python code. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pycol" = {
@@ -30,9 +30,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."language-python" or (errorHandler.buildDepError "language-python"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

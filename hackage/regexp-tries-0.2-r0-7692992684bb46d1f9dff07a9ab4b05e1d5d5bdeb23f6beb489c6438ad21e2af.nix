@@ -21,7 +21,7 @@
       synopsis = "Regular Expressions on Tries.";
       description = "Regular Expressions on Tries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."derive-trie" or (errorHandler.buildDepError "derive-trie"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."weighted-regexp" or (errorHandler.buildDepError "weighted-regexp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

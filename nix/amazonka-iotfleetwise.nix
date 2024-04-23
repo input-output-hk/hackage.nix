@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-iotfleetwise-2.0-r0-c77f448ed5b224a990dee4be7daa679514015accc6ed14f0ee4201048ae030ac.nix;
         revNum = 0;
         sha256 = "c77f448ed5b224a990dee4be7daa679514015accc6ed14f0ee4201048ae030ac";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

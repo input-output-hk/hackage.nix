@@ -21,15 +21,15 @@
       synopsis = "reactive-banana + termbox";
       description = "A @reactive-banana@-based interface to writing @termbox@ programs.\n\nSee also the <https://hackage.haskell.org/termbox termbox> package for a\nlower-level, imperative interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."termbox" or (errorHandler.buildDepError "termbox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Tree type and show functions for lab assignment of University of Twente. Contains RoseTree and ParseTree      ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."eventloop" or (errorHandler.buildDepError "eventloop"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

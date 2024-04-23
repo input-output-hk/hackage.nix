@@ -21,7 +21,7 @@
       synopsis = "Conduit bindings for zeromq3-haskell";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."zeromq3-haskell" or (errorHandler.buildDepError "zeromq3-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

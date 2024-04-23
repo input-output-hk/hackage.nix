@@ -21,7 +21,7 @@
       synopsis = "Heapsort of MArrays as a demo of imperative programming";
       description = "Heapsort of MArrays";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
@@ -29,17 +29,17 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "heapsort-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

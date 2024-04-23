@@ -21,7 +21,7 @@
       synopsis = "Types in the historical dictionary of Polish";
       description = "The library provides a data type hierarchy which mirrors the hierarchy\nof elements present in the original, LMF representation of the\nhistorical dictionary of Polish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

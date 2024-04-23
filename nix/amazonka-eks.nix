@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-eks-2.0-r0-a009288ab7bfe6fb6cd1cb924bf4f31d36e2df3807e43a280f9434957c5935b9.nix;
         revNum = 0;
         sha256 = "a009288ab7bfe6fb6cd1cb924bf4f31d36e2df3807e43a280f9434957c5935b9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

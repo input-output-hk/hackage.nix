@@ -21,15 +21,15 @@
       synopsis = "Algorithms using the Repa array library.";
       description = "NOTE: You must use the GHC head branch > 6.13.20100309 to get decent performance.\nReusable algorithms using the Repa array library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

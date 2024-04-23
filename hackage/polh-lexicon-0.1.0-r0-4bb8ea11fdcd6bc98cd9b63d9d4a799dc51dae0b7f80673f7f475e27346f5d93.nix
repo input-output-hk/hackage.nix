@@ -21,7 +21,7 @@
       synopsis = "Interface to a historical dictionary of Polish ";
       description = "Interface to a historical dictionary of Polish.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,12 +35,12 @@
           (hsPkgs."polysoup" or (errorHandler.buildDepError "polysoup"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "polh-binarize" = { buildable = true; };
         "polh-show" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Lightweight CSV parser/emitter based on ReadP";
       description = "Parses and emits tables of strings formatted according to RFC 4180,\n/\"The common Format and MIME Type for Comma-Separated Values (CSV) Files\"/.\nHas no dependencies on parsec or any libraries other than base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

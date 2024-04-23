@@ -21,7 +21,7 @@
       synopsis = "Pseudo terminal interaction with subprocesses.";
       description = "This package simplifies the creation of subprocesses that interact with\ntheir parent via a pseudo terminal (see @man pty@).\n\nIncluded @ptywrap@ utility spawns a process with a @pty@, forwards its\noutput to stdout as plain text without buffering and forwards the exit code.\nNote that it __does not__ handle standard input.\n\n> ptywrap: usage: ptywrap [command to run]";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ptywrap" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vk-posix-pty" or (errorHandler.buildDepError "vk-posix-pty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

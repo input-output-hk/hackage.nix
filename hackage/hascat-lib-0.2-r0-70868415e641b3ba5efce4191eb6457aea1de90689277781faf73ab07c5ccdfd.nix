@@ -21,7 +21,7 @@
       synopsis = "Hascat Package";
       description = "Library for programming Hascat applications";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."plugins" or (errorHandler.buildDepError "plugins"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

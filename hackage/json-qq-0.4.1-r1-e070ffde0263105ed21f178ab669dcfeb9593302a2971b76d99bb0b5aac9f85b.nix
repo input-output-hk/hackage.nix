@@ -21,7 +21,7 @@
       synopsis = "Json Quasiquatation library for Haskell.";
       description = "JSON quasiquatation library for Haskell.\n\nThis package only expose functionality so quasiquoters for different JSON-libraries can\nmore easily be constructed.\n\nSee @text-json-qq@ and @aeson-qq@ for libraries that are based on json-qq.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

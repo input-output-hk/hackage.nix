@@ -21,15 +21,15 @@
       synopsis = "A small-step semantics for Core";
       description = "This module contains an executable, type ignoring\nsmall-step semantics for Haskell Core with lazyness.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."ghc-core-smallstep" or (errorHandler.buildDepError "ghc-core-smallstep"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Better, more general Prelude exporting common utilities.";
       description = "Replacement for the Haskell's Prelude, exposing more commonly used functions and patching old GHC ones to behave in the newest GHC's way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
           (hsPkgs."functor-utils" or (errorHandler.buildDepError "functor-utils"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

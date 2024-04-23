@@ -21,7 +21,7 @@
       synopsis = "hscurses swimming fish example";
       description = "Simple curses aquarium written to learn about\nthe hscurses library.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hscurses-fish-ex" = {
@@ -31,9 +31,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

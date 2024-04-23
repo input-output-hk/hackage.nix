@@ -6,8 +6,8 @@
         nix = import ../hackage/unix-fcntl-0.0.0-r0-f2137774b163902e8938b5c5bcb2f5163a5dbb5d2afc88e968ff542c5b0fffd5.nix;
         revNum = 0;
         sha256 = "f2137774b163902e8938b5c5bcb2f5163a5dbb5d2afc88e968ff542c5b0fffd5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

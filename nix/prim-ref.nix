@@ -6,8 +6,8 @@
         nix = import ../hackage/prim-ref-0.1-r0-7ea95e3a9835f7f739ed0901af5f273a1a4eed175eaf7704e36576547cf2ef0d.nix;
         revNum = 0;
         sha256 = "7ea95e3a9835f7f739ed0901af5f273a1a4eed175eaf7704e36576547cf2ef0d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

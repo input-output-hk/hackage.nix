@@ -21,11 +21,11 @@
       synopsis = "A type class for sequences and various sequence data structures.";
       description = "A type class for sequences and various sequence data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

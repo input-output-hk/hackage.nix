@@ -21,7 +21,7 @@
       synopsis = "A utility for multiplexing multiple GHC installations";
       description = "This package provides a utility for multiplexing multiple\nGHC and Haskell Platform installations, the installation\nbeing selected by configuraton file or environment\nvariable.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hub" = {
@@ -36,9 +36,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

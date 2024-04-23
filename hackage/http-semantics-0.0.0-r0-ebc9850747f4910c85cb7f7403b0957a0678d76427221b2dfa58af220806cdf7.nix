@@ -21,7 +21,7 @@
       synopsis = "HTTP senmatics libarry";
       description = "Version-independent common parts of HTTP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."network-byte-order" or (errorHandler.buildDepError "network-byte-order"))
           (hsPkgs."time-manager" or (errorHandler.buildDepError "time-manager"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

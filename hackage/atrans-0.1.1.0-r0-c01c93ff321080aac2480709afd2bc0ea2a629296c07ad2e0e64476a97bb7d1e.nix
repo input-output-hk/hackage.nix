@@ -21,14 +21,14 @@
       synopsis = "A small collection of monad (transformer) instances.";
       description = "Defines monad transformers and gives instances based on the mtl transformer library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

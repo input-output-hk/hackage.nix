@@ -21,15 +21,15 @@
       synopsis = "A graphical viewer for Hood";
       description = "GHood is a graphical back-end for Hood, the front-end (the Haskell interface) is precisely that of Hood. If you have been using Hood already you won't have to change your programs to switch to GHood. If you haven't used Hood before, you can employ all the nice definitions in Hood's Observe library, just as explained in the Hood documentation (see the Hood homepage at <http://www.haskell.org/hood/>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

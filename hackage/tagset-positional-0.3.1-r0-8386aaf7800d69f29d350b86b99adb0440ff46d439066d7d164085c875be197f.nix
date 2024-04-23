@@ -21,7 +21,7 @@
       synopsis = "Positional tags and tagsets";
       description = "The library provides printing and parsing functions for positional\ntags and tagsets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

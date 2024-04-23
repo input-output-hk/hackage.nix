@@ -21,7 +21,7 @@
       synopsis = "Extended yes command to reproduce phrases in Yes! Precure 5";
       description = "Provides extended yes command to reproduce phrases in Yes! Precure 5.\n\nSee <https://github.com/igrep/yes-precure5-command/blob/master/README.mkd> for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yes" = {
           depends = [
@@ -42,19 +42,19 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."yes-precure5-command" or (errorHandler.buildDepError "yes-precure5-command"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "calculate varieties of mean/average using semigroup.";
       description = "calculate varieties of mean/average using semigroup.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

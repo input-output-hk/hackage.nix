@@ -14,7 +14,7 @@
       identifier = {
         name = "aws-xray-client-persistent";
         version = "0.1.0.5";
-        };
+      };
       license = "MIT";
       copyright = "2021 Renaissance Learning Inc";
       maintainer = "engineering@freckle.com";
@@ -24,7 +24,7 @@
       synopsis = "A client for AWS X-Ray integration with Persistent.";
       description = "Works with `aws-xray-client` to enable X-Ray tracing with Persistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

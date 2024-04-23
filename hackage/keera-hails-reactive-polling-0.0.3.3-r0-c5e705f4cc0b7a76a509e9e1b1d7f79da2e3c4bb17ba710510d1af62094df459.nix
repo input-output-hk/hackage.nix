@@ -14,7 +14,7 @@
       identifier = {
         name = "keera-hails-reactive-polling";
         version = "0.0.3.3";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "ivan.perez@keera.co.uk";
@@ -24,15 +24,15 @@
       synopsis = "Haskell on Rails - Polling based Readable RVs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
           (hsPkgs."keera-callbacks" or (errorHandler.buildDepError "keera-callbacks"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

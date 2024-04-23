@@ -21,7 +21,7 @@
       synopsis = "64-bit timeouts of nanosecond precision";
       description = "This package provides data types and functions for working with 64-bit\ntimeouts of nanosecond precision.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

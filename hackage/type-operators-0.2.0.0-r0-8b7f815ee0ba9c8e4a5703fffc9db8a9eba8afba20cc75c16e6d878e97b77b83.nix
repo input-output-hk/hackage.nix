@@ -21,14 +21,14 @@
       synopsis = "Various type-level operators";
       description = "A set of type-level operators meant to be helpful, e.g. ($), a\ntightly binding (->), and the multi-constraint operator (Show <+> [a, b]).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

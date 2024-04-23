@@ -21,7 +21,7 @@
       synopsis = "A program that is used in mmsyn7ukr and is similar to mmsyn6ukr executable.";
       description = "A program that is used in mmsyn7ukr and is similar to mmsyn6ukr executable. It uses the data files in the current directory instead of ones in the system defined directories. It reads Ukrainian text with the given by data files sounds.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mmsyn7h" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

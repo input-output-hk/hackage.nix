@@ -6,8 +6,8 @@
         nix = import ../hackage/blockhash-0.1.0.0-r0-72a1b500453fbf933b12362e4077f8be87095848cc7696de9543ecc16bb69836.nix;
         revNum = 0;
         sha256 = "72a1b500453fbf933b12362e4077f8be87095848cc7696de9543ecc16bb69836";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

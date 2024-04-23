@@ -14,7 +14,7 @@
       identifier = {
         name = "morphisms-functors-inventory";
         version = "0.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Copyright (c) 2018 Murat Kasimov";
       maintainer = "Murat Kasimov <iokasimov.m@gmail.com>";
@@ -24,14 +24,14 @@
       synopsis = "Inventory is state and store";
       description = "Primitives for working with immutable data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."morphisms" or (errorHandler.buildDepError "morphisms"))
           (hsPkgs."morphisms-functors" or (errorHandler.buildDepError "morphisms-functors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

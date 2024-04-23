@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This package provides an @engine-io@ @ServerAPI@ that is compatible with\n<http://snapframework.com Snap>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."websockets-snap" or (errorHandler.buildDepError "websockets-snap"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

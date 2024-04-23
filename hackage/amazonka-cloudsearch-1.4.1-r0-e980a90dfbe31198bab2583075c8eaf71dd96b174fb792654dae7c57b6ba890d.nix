@@ -21,15 +21,15 @@
       synopsis = "Amazon CloudSearch SDK.";
       description = "Amazon CloudSearch Configuration Service\nYou use the Amazon CloudSearch configuration service to create,\nconfigure, and manage search domains. Configuration service requests are\nsubmitted using the AWS Query protocol. AWS Query requests are HTTP or\nHTTPS requests submitted via HTTP GET or POST with a query parameter\nnamed Action.\nThe endpoint for configuration service requests is region-specific:\ncloudsearch./region/.amazonaws.com. For example,\ncloudsearch.us-east-1.amazonaws.com. For a current list of supported\nregions and endpoints, see\n<http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region Regions and Endpoints>.\n\nThe types from this library are intended to be used with\n<http://hackage.haskell.org/package/amazonka amazonka>, which provides\nmechanisms for specifying AuthN/AuthZ information and sending requests.\n\nUse of lenses is required for constructing and manipulating types.\nThis is due to the amount of nesting of AWS types and transparency regarding\nde/serialisation into more palatable Haskell values.\nThe provided lenses should be compatible with any of the major lens libraries\nsuch as <http://hackage.haskell.org/package/lens lens> or\n<http://hackage.haskell.org/package/lens-family-core lens-family-core>.\n\nSee \"Network.AWS.CloudSearch\" or <https://aws.amazon.com/documentation/ the AWS Documentation>\nto get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "amazonka-cloudsearch-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

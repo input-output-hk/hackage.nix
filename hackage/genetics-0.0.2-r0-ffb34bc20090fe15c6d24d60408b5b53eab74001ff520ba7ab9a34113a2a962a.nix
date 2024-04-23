@@ -21,16 +21,16 @@
       synopsis = "A Genetic Algorithm library";
       description = "A Gene typeclass for genetic algorithms";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hellogenetics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

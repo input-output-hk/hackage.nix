@@ -21,16 +21,16 @@
       synopsis = "Numerical integration.";
       description = "One-dimensional numerical integration using the 'NumericalIntegration' C++ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-        libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isOsx || system.isFreebsd
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isOsx || system.isFreebsd
           then [ (pkgs."c++11" or (errorHandler.sysDepError "c++11")) ]
           else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

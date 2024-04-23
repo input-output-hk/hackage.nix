@@ -21,7 +21,7 @@
       synopsis = "Convert between Dhall and YAML";
       description = "Use this package if you want to convert between Dhall expressions and YAML.\nYou can use this package as a library or an executable:\n\n* See the \"Dhall.Yaml\" module if you want to use this package as a library\n\n* Use the @dhall-to-yaml-ng@ program from this package if you want an executable";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dhall-to-yaml-ng" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dhall-json" or (errorHandler.buildDepError "dhall-json"))
             (hsPkgs."dhall-yaml" or (errorHandler.buildDepError "dhall-yaml"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yaml-to-dhall" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -61,10 +61,10 @@
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -77,9 +77,9 @@
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

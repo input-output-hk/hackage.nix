@@ -21,15 +21,15 @@
       synopsis = "Simple general structured validation library";
       description = "Please see the README on GitHub at <https://github.com/reygoch/valor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "valor-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."valor" or (errorHandler.buildDepError "valor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

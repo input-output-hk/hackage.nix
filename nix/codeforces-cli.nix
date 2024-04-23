@@ -6,8 +6,8 @@
         nix = import ../hackage/codeforces-cli-0.1.0-r0-f4264cfcf91f0f0d473ad2dac7955537cd8eac58ba573afd0cb14b6913549d7f.nix;
         revNum = 0;
         sha256 = "f4264cfcf91f0f0d473ad2dac7955537cd8eac58ba573afd0cb14b6913549d7f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Data.Vec.NearZero instances for Numeric.QD types";
       description = "This package provides instances of Vec's NearZero for qd's types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."qd" or (errorHandler.buildDepError "qd"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

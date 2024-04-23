@@ -21,11 +21,11 @@
       synopsis = "Non IEEE-754 compliant compile-time floating-point optimisations";
       description = "The \"Numeric.FastMath\" module brings into scope many unsafe @RULES@ for\n'Float's and 'Double's that can greatly improve run time performance.\nIt is roughly equivalent to gcc\\'s @-ffast-math@ compiler flag.\nOptimisation (at least @-O1@) must be enabled for any @RULES@ to take effect.\n\nThese rules are unsafe because they don't strictly adhere to the\nIEEE-754 regulations and may subtly change the results of your numeric computations.\nSee the <http://github.com/liyang/fast-math/ README> on github for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "mysql-simple snaplet for the Snap Framework";
       description = "This snaplet contains support for using the MariaDB and MySQL\ndatabase with a Snap Framework application via the mysql-simple\npackage. It also includes an untested authentication backend.\nHeavily based on snaplet-postgresql-simple by Doug Beardsley.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

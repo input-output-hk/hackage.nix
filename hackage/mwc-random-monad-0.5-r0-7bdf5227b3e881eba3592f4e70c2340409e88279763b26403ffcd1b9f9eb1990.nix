@@ -21,7 +21,7 @@
       synopsis = "Monadic interface for mwc-random";
       description = "Simple monadic interface for mwc-random.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

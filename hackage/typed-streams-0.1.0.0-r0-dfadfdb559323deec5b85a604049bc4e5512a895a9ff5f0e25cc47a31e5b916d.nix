@@ -21,7 +21,7 @@
       synopsis = "A stream based replacement for lists";
       description = "This is an (incomplete) stream based replacement for lists, but already includes significant\nfunctionality and can be faster than using lists in certain cases.\n\nSee \"Data.Stream.Typed\" for the most detailed documentation,\nand \"Data.Stream\" for a simpler interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."generic-enum" or (errorHandler.buildDepError "generic-enum"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

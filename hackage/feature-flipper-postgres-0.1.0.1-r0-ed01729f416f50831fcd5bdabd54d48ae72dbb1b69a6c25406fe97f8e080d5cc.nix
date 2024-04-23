@@ -21,7 +21,7 @@
       synopsis = "A minimally obtrusive feature flag library";
       description = "A minimally obtrusive feature flag library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "feature-flipper-postgres-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
             (hsPkgs."feature-flipper" or (errorHandler.buildDepError "feature-flipper"))
             (hsPkgs."feature-flipper-postgres" or (errorHandler.buildDepError "feature-flipper-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

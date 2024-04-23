@@ -13,7 +13,7 @@
       edeuseprettyprinter = true;
       pcre = true;
       snapaggregateserver = true;
-      };
+    };
     package = {
       specVersion = "1.20";
       identifier = { name = "ngx-export-tools-extra"; version = "1.2.8.1"; };
@@ -26,7 +26,7 @@
       synopsis = "More extra tools for Nginx Haskell module";
       description = "More extra tools for\n<https://github.com/lyokha/nginx-haskell-module Nginx Haskell module>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -53,26 +53,26 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ] ++ (pkgs.lib).optionals (flags.snapaggregateserver) [
+        ] ++ pkgs.lib.optionals (flags.snapaggregateserver) [
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
           (hsPkgs."enclosed-exceptions" or (errorHandler.buildDepError "enclosed-exceptions"))
-          ]) ++ (pkgs.lib).optionals (flags.ede) (if flags.edeuseprettyprinter
+        ]) ++ pkgs.lib.optionals (flags.ede) (if flags.edeuseprettyprinter
           then [
             (hsPkgs."ede" or (errorHandler.buildDepError "ede"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ]
+          ]
           else [
             (hsPkgs."ede" or (errorHandler.buildDepError "ede"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ])) ++ (pkgs.lib).optionals (flags.pcre) [
+          ])) ++ pkgs.lib.optionals (flags.pcre) [
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
           (hsPkgs."pcre-heavy" or (errorHandler.buildDepError "pcre-heavy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

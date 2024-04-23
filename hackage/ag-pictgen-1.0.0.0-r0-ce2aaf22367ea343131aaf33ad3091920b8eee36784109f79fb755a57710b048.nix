@@ -21,7 +21,7 @@
       synopsis = "Attribute Grammar picture generation";
       description = "Attribute Grammar picture generation";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "ag-pictgen" = {
@@ -30,9 +30,9 @@
             (hsPkgs."uulib" or (errorHandler.buildDepError "uulib"))
             (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

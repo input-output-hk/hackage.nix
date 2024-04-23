@@ -21,12 +21,12 @@
       synopsis = "Group and delete duplicates from a list";
       description = "Please see the README on GitHub at <https://github.com/pgujjula/list-utilities/tree/master/list-duplicate#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."list-duplicate" or (errorHandler.buildDepError "list-duplicate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

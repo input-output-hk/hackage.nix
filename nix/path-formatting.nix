@@ -6,8 +6,8 @@
         nix = import ../hackage/path-formatting-0.1.0.0-r0-81fe2745230e1d9687ecdf6baecd83379e3f363e872c0a7ee763ad909f63c59d.nix;
         revNum = 0;
         sha256 = "81fe2745230e1d9687ecdf6baecd83379e3f363e872c0a7ee763ad909f63c59d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

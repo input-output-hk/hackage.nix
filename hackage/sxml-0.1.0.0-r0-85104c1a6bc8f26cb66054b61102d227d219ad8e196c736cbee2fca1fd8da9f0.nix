@@ -21,7 +21,7 @@
       synopsis = "A SXML-parser";
       description = "This library parses and write <http://okmij.org/ftp/Scheme/SXML.html SXML> files, using datatypes from the <https://hackage.haskell.org/package/xml-types xml-types> package to represent their structure. It currently only features a DOM-style parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "TMVar that can be listened to";
       description = "LVar wraps a TMVar to allow multiple threads to listen to the underlying changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

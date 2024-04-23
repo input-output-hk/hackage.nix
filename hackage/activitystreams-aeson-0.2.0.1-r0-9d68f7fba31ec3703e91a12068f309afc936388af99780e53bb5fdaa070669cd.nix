@@ -21,7 +21,7 @@
       synopsis = "An interface to the ActivityStreams specification";
       description = "An interface to the\n<http://activitystrea.ms/ Activity Streams>\nspecifications, using an @aeson@-based representation\nof the underlying ActivityStream structures.\nAn ActivityStream is a representation of social\nactivities in JSON format, using a standard set of\nstructures. The specification is very flexible in\nallowing most fields to be omitted, while also\nallowing arbitrary new fields to be created when\nnecessary. This library attempts to maximize\ntype safety while retaining the flexibility present\nin the specification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

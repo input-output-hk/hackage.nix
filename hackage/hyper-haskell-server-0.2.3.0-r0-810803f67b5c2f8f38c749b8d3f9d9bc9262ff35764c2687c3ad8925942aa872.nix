@@ -21,7 +21,7 @@
       synopsis = "Server back-end for the HyperHaskell graphical Haskell interpreter";
       description = "This package is part of the /HyperHaskell/ project and provides\nthe server back-end.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hyper-haskell-server" = {
@@ -38,9 +38,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

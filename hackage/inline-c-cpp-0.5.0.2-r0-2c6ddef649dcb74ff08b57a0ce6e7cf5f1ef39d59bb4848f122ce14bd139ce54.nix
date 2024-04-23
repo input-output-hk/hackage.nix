@@ -21,7 +21,7 @@
       synopsis = "Lets you embed C++ code into Haskell.";
       description = "Utilities to inline C++ code into Haskell using inline-c.  See\ntests for example on how to build.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-        libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isLinux
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isLinux
           then [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]
-          else (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++")));
+          else pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++")));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -50,12 +50,12 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-          libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isLinux
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+          libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isLinux
             then [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]
-            else (pkgs.lib).optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++")));
+            else pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++")));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

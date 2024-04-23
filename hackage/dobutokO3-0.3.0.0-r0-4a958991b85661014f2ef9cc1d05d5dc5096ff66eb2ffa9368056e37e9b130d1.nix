@@ -21,7 +21,7 @@
       synopsis = "Helps to create more complex experimental music from a file (especially timbre).";
       description = "Uses SoX inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."mmsyn7l" or (errorHandler.buildDepError "mmsyn7l"))
           (hsPkgs."dobutokO2" or (errorHandler.buildDepError "dobutokO2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

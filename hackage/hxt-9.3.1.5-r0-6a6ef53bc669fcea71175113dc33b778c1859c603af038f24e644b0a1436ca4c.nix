@@ -21,7 +21,7 @@
       synopsis = "A collection of tools for processing XML with Haskell.";
       description = "The Haskell XML Toolbox bases on the ideas of HaXml and HXML,\nbut introduces a more general approach for processing XML with Haskell.\nThe Haskell XML Toolbox uses a generic data model for representing XML documents,\nincluding the DTD subset and the document subset, in Haskell.\nIt contains a validating XML parser, a HTML parser, namespace support,\nan XPath expression evaluator, an XSLT library, a RelaxNG schema validator\nand funtions for serialization and deserialization of user defined data.\nThe library makes extensive use of the arrow approach for processing XML.\nSince version 9 the toolbox is partitioned into various (sub-)packages.\nThis package contains the core functionality,\nhxt-curl, hxt-tagsoup, hxt-relaxng, hxt-xpath, hxt-xslt,\nhxt-regex-xmlschema contain the extensions.\nhxt-unicode contains encoding and decoding functions,\nhxt-charproperties char properties for unicode and XML.\n\nChanges from 9.3.1.4: dependency from networt changed to network-uri\n\nChanges from 9.3.1.3: warnings from ghc-7.8.1 removed\n\nChanges from 9.3.1.2: https as protocol added\n\nChanges from 9.3.1.1: new parser xreadDoc\n\nChanges from 9.3.1.0: in readString all input decoding switched off\n\nChanges from 9.3.0.1: lower bound for network set to be >= 2.4\n\nChanges from 9.3.0: upper bound for network set to be < 2.4\n(URI signatures changed in 2.4)\n\nChanges from 9.2.2: XMLSchema validation integrated\n\nChanges from 9.2.1: user defined mime type handlers added\n\nChanges from 9.2.0: New warnings from ghc-7.4 removed";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,14 +38,14 @@
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
           (hsPkgs."hxt-unicode" or (errorHandler.buildDepError "hxt-unicode"))
           (hsPkgs."hxt-regex-xmlschema" or (errorHandler.buildDepError "hxt-regex-xmlschema"))
-          ] ++ (if flags.network-uri
+        ] ++ (if flags.network-uri
           then [
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

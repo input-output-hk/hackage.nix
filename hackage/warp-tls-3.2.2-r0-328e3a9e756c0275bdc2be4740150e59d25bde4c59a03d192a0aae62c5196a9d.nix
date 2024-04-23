@@ -21,7 +21,7 @@
       synopsis = "HTTP over TLS support for Warp via the TLS package";
       description = "Support for SSL is now obsoleted.\nHTTP/2 can be negotiated by ALPN.\nAPI docs and the README are available at\n<http://www.stackage.org/package/warp-tls>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

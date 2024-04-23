@@ -21,7 +21,7 @@
       synopsis = "Object-oriented programming realization using coroutine ";
       description = "Object-oriented programming realization using coroutine ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

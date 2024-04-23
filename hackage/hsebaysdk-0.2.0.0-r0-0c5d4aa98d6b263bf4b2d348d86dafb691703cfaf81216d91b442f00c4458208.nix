@@ -21,7 +21,7 @@
       synopsis = "Haskell eBay SDK";
       description = "eBay API wrapper in Haskell.\nSee the git repository for example usages.\nWARNING:\nThe api of this package is still undergoing changes and\nimprovements and is subject to change. I am planning to remove the\nunsafe (partial) functions in 0.3 release with a more stablized\napi.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

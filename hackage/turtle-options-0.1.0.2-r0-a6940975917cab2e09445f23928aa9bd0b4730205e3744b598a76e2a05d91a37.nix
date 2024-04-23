@@ -21,7 +21,7 @@
       synopsis = "Collection of command line options and parsers for these options";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,27 +30,27 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."optional-args" or (errorHandler.buildDepError "optional-args"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."turtle-options" or (errorHandler.buildDepError "turtle-options"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "turtle-options-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."turtle-options" or (errorHandler.buildDepError "turtle-options"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

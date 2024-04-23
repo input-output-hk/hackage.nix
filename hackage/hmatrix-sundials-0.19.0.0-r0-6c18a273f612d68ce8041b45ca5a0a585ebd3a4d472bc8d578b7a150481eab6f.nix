@@ -21,7 +21,7 @@
       synopsis = "hmatrix interface to sundials";
       description = "An interface to the solving suite SUNDIALS. Currently, it\nmimics the solving interface in hmstrix-gsl but\nprovides more diagnostic information and the\nButcher Tableaux (for Runge-Kutta methods).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
-          ];
+        ];
         libs = [
           (pkgs."sundials_arkode" or (errorHandler.sysDepError "sundials_arkode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hmatrix-sundials-testsuite" = {
           depends = [
@@ -51,12 +51,12 @@
             (hsPkgs."diagrams-rasterific" or (errorHandler.buildDepError "diagrams-rasterific"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           libs = [
             (pkgs."sundials_arkode" or (errorHandler.sysDepError "sundials_arkode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library for Google/SixApart pubsub hub interaction";
       description = "A package for setting up, sending and receiving PubSub requests to pubsub hubs,\n<http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.1.html>\n\nGit repository available at <git://coming.soon/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "pubsub.fcgi" = {
           depends = [
             (hsPkgs."fastcgi" or (errorHandler.buildDepError "fastcgi"))
-            ];
+          ];
           buildable = true;
-          };
-        "feeder" = { buildable = true; };
         };
+        "feeder" = { buildable = true; };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Export metrics from /proc for the current process";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."unix-memory" or (errorHandler.buildDepError "unix-memory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

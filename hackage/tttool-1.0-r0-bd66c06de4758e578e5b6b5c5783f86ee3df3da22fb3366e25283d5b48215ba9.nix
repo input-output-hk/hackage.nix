@@ -21,7 +21,7 @@
       synopsis = "Working with files for the Tiptoi® pen";
       description = "The Ravensburger Tiptoi® pen is programmed via special\nfiles. Their file format has been reverse engineered; this\nis a tool to analyse and create such files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tttool" = {
@@ -44,14 +44,14 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (if flags.old-locale
+          ] ++ (if flags.old-locale
             then [
               (hsPkgs."time" or (errorHandler.buildDepError "time"))
               (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-              ]
+            ]
             else [ (hsPkgs."time" or (errorHandler.buildDepError "time")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

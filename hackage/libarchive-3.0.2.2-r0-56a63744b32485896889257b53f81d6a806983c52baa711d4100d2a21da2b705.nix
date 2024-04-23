@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.chs-cabal or (pkgs.buildPackages.chs-cabal or (errorHandler.setupDepError "chs-cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = ([
@@ -38,15 +38,15 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "8.0")) [
+        ] ++ pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "8.0")) [
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ]) ++ (pkgs.lib).optionals (!flags.system-libarchive) ((pkgs.lib).optionals (!system.isOsx) ((pkgs.lib).optionals (!system.isLinux) ((pkgs.lib).optionals (!system.isFreebsd) ((pkgs.lib).optional (!system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))))));
-        pkgconfig = (pkgs.lib).optional (!(!flags.system-libarchive)) (pkgconfPkgs."libarchive" or (errorHandler.pkgConfDepError "libarchive"));
-        build-tools = (pkgs.lib).optionals (!flags.cross) [
+        ]) ++ pkgs.lib.optionals (!flags.system-libarchive) (pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optionals (!system.isLinux) (pkgs.lib.optionals (!system.isFreebsd) (pkgs.lib.optional (!system.isWindows) (hsPkgs."unbuildable" or (errorHandler.buildDepError "unbuildable"))))));
+        pkgconfig = pkgs.lib.optional (!!flags.system-libarchive) (pkgconfPkgs."libarchive" or (errorHandler.pkgConfDepError "libarchive"));
+        build-tools = pkgs.lib.optionals (!flags.cross) [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = if !flags.system-libarchive
           then if system.isOsx
             then true
@@ -56,7 +56,7 @@
                 then true
                 else if system.isWindows then true else false
           else true;
-        };
+      };
       tests = {
         "libarchive-test" = {
           depends = [
@@ -72,13 +72,13 @@
             (hsPkgs."dir-traverse" or (errorHandler.buildDepError "dir-traverse"))
             (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
             (hsPkgs."pathological-bytestrings" or (errorHandler.buildDepError "pathological-bytestrings"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"));
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "libarchive-bench" = {
           depends = [
@@ -89,17 +89,17 @@
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."tar-conduit" or (errorHandler.buildDepError "tar-conduit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."libarchive" or (errorHandler.buildDepError "libarchive"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

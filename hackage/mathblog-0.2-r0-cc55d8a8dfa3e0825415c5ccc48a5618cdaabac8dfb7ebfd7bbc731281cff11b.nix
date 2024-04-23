@@ -21,7 +21,7 @@
       synopsis = "A program for creating and managing a\nstatic, mathematically-inclined weblog";
       description = "This package provides a program for creating and\nmanaging a statically-generated, VCS-friendly,\nmathematically-inclined weblog.  If you're\ninterested in managing a blog with few moving\nparts and support for embedded LaTeX math and the\nUNIX editor of your choice, then this is the\nblogging platform for you!  For detailed\ninformation and a full feature list, please see\nthe README.\nTo see a live example of this software, you might\nconsider taking a look at my math-oriented blog\nat <http://dw.codevine.org/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mb" = {
@@ -38,9 +38,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
             (hsPkgs."ConfigFile" or (errorHandler.buildDepError "ConfigFile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

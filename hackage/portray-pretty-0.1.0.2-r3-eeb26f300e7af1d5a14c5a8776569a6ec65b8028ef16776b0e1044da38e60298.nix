@@ -21,7 +21,7 @@
       synopsis = "Portray backend for pretty";
       description = "This provides a <https://hackage.haskell.org/package/pretty pretty> backend\nfor <https://hackage.haskell.org/package/portray portray>, along with\nderivable 'Text.PrettyPrint.HughesPJClass.Pretty' instances for types with\n'Data.Portray.Portray' instances.\n\nSee also\n<https://hackage.haskell.org/package/portray-prettyprinter portray-prettyprinter>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PortrayPretty-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

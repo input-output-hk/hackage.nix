@@ -21,7 +21,7 @@
       synopsis = "Automate keyboard/mouse/clipboard/application interaction.";
       description = "see http://github.com/sboosali/workflow-windows#readme for\ndocumentation and examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,36 +31,36 @@
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."c-storable-deriving" or (errorHandler.buildDepError "c-storable-deriving"))
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
-          ];
+        ];
         buildable = if !system.isWindows then false else true;
-        };
+      };
       exes = {
         "workflow-windows-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-windows" or (errorHandler.buildDepError "workflow-windows"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-windows" or (errorHandler.buildDepError "workflow-windows"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "unittest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."workflow-windows" or (errorHandler.buildDepError "workflow-windows"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

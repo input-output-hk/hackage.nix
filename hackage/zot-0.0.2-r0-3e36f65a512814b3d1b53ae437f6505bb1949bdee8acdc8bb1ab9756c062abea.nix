@@ -21,16 +21,16 @@
       synopsis = "Zot language";
       description = "Zot language ( http://semarch.linguistics.fas.nyu.edu/barker/Iota/zot.html )\n\n> echo \"10100\" | cat examples/reverse.zot - | zot -\n> 00101\n\n> cat examples/reverse.lambda | zot lambdaToSki | zot skiToZot | zot arg \"10100\" | zot -\n> 00101\n\nAnd try\n\n> cat examples/reverse.zot | zot zotToSki | zot skiToLambda\n\nand\n\n> cat examples/reverse.zot | zot zotToSki | zot skiToLambda -h";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "*-semirings";
       description = "*-semirings of types in base";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

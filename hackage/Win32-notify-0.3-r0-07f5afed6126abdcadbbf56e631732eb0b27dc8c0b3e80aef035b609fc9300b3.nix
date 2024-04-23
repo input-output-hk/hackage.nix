@@ -21,7 +21,7 @@
       synopsis = "A binding to part of the Win32 library for file notification";
       description = "A binding to part of the Win32 library for file notification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "simple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Win32-notify" or (errorHandler.buildDepError "Win32-notify"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

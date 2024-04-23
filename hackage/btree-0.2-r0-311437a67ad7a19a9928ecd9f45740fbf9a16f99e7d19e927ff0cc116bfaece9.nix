@@ -21,7 +21,7 @@
       synopsis = "B-Tree on the compact heap";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."prim-array" or (errorHandler.buildDepError "prim-array"))
           (hsPkgs."compact-mutable" or (errorHandler.buildDepError "compact-mutable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."compact-mutable" or (errorHandler.buildDepError "compact-mutable"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."compact-mutable" or (errorHandler.buildDepError "compact-mutable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

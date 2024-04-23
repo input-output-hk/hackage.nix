@@ -21,7 +21,7 @@
       synopsis = "Shake Minify Rules";
       description = "Shake rules to minify CSS and JS files. @shake-minify@\ndoesn't require any external tools to be on the @$PATH@ and uses\nnative Haskell CSS and JS minifiers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

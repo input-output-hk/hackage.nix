@@ -14,7 +14,7 @@
       identifier = {
         name = "quickcheck-arbitrary-template";
         version = "0.2.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2016-2018 Plow Technologies";
       maintainer = "Scott Murphy <scottmurphy09@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Generate QuickCheck Gen for Sum Types";
       description = "Building Sum Type arbitrary instance is kind of a pain. This tool helps automate the process.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

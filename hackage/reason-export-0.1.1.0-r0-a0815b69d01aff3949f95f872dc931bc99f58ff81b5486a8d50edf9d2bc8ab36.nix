@@ -21,7 +21,7 @@
       synopsis = "Generate Reason types from Haskell";
       description = "Please see the README on GitHub at <https://github.com/abarbu/reason-export#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reason-export-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."reason-export" or (errorHandler.buildDepError "reason-export"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

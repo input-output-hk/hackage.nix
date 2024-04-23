@@ -6,8 +6,8 @@
         nix = import ../hackage/EnumContainers-0.1-r0-5fd616148c5c14b9e86614a420f5b1833df5d9ac88d22f08867a1def1ac9da9b.nix;
         revNum = 0;
         sha256 = "5fd616148c5c14b9e86614a420f5b1833df5d9ac88d22f08867a1def1ac9da9b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

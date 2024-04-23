@@ -21,7 +21,7 @@
       synopsis = "An ekg backend for Amazon Cloudwatch";
       description = "Push ekg metrics to Amazon Cloudwatch";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ekg-cloudwatch-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ekg-cloudwatch" or (errorHandler.buildDepError "ekg-cloudwatch"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

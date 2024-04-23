@@ -21,7 +21,7 @@
       synopsis = "Drive Aho-Corasick machines in Conduit pipelines";
       description = "Drive Aho-Corasick machines in Conduit pipelines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."ac-machine" or (errorHandler.buildDepError "ac-machine"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

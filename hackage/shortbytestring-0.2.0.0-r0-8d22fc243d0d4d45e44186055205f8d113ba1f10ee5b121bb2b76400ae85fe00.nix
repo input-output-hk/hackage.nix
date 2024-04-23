@@ -21,7 +21,7 @@
       synopsis = "Additional ShortByteString API";
       description = "Additional ShortByteString API, as well as a Word16 based UTF-16LE module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."word16" or (errorHandler.buildDepError "word16"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "prop-compiled" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."word16" or (errorHandler.buildDepError "word16"))
             (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."shortbytestring" or (errorHandler.buildDepError "shortbytestring"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

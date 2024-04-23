@@ -21,11 +21,11 @@
       synopsis = "A basics of the phonetic-languages functionality.";
       description = "The  common for different realizations functionality. Just the necessary one.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

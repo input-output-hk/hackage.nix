@@ -21,7 +21,7 @@
       synopsis = "Fast, effectful byte streams.";
       description = "This library enables fast and safe streaming of byte data, in either @Word8@ or\n@Char@ form. It is a core addition to the <https://github.com/haskell-streaming streaming ecosystem>\nand avoids the usual pitfalls of combinbing lazy @ByteString@s with lazy @IO@.\n\nWe follow the philosophy shared by @streaming@ that \"the best API is the one\nyou already know\". Thus this library mirrors the API of the @bytestring@\nlibrary as closely as possible.\n\nSee the module documentation and the README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

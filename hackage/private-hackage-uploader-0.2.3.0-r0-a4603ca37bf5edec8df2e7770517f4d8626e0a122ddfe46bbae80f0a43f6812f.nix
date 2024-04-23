@@ -21,7 +21,7 @@
       synopsis = "Upload a package to the public or private hackage, building its docs";
       description = "An opinionated utility that uploads a package to a private or public hackage, building its docs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,20 +30,20 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "private-hackage-uploader" = {
-          depends = (pkgs.lib).optionals (!flags.library-only) [
+          depends = pkgs.lib.optionals (!flags.library-only) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."private-hackage-uploader" or (errorHandler.buildDepError "private-hackage-uploader"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

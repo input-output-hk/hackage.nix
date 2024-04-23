@@ -21,7 +21,7 @@
       synopsis = "A preprocessor for generating monadic call traces";
       description = "The package @monadloc@ defines a class for monads which can keep a monadic call trace.\n\n* See the blog post <http://pepeiborra.wordpress.com/2009/11/01/monadic-stack-traces-that-make-a-lot-of-sense/> for more information.\n\nThis package provides a preprocessor that inserts calls\nto \"Control.Monad.Loc.withLoc\" before every monadic statement in a module.\nTo invoke the preprocessor, add the pragma @OPTIONS_GHC -F -pgmF MonadLoc@  at the top of your Haskell files  together with an import for the \"Control.Monad.Loc\" module\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "MonadLoc" = {
@@ -32,9 +32,9 @@
             (hsPkgs."monadloc" or (errorHandler.buildDepError "monadloc"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

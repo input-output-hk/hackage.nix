@@ -21,7 +21,7 @@
       synopsis = "Van Laarhoven lens templates";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lenz" or (errorHandler.buildDepError "lenz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

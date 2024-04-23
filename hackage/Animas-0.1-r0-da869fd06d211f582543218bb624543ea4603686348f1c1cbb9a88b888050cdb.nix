@@ -21,14 +21,14 @@
       synopsis = "Updated version of Yampa: a library for programming hybrid systems.";
       description = "A library for declarative programming of reactive systems. (Currently a fork of Yampa 0.9.2.3)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Yesod integration for Bugsnag error reporting for Haskell";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-yesod" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."bugsnag-yesod" or (errorHandler.buildDepError "bugsnag-yesod"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = if !flags.examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

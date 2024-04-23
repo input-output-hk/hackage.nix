@@ -6,8 +6,8 @@
         nix = import ../hackage/cmph-0.0.1-r0-9189cc535e3801670e356d61fc32c6e0a9fe61bafe928a99abe7a3b0be269aa6.nix;
         revNum = 0;
         sha256 = "9189cc535e3801670e356d61fc32c6e0a9fe61bafe928a99abe7a3b0be269aa6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

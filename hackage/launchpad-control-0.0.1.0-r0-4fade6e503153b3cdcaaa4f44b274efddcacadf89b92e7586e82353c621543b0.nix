@@ -21,7 +21,7 @@
       synopsis = "High and low-level interface to the Novation Launchpad midi controller.";
       description = "High and low-level interface to the Novation Launchpad midi controller.\nAllows to make \"Launchpad apps\" easily, or to access the controller\nin a more low-level way. Some example apps are included.\nPresently only Mac OSX and Windows is supported (because we rely on hmidi).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."hmidi" or (errorHandler.buildDepError "hmidi"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "launchpad-control-examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."launchpad-control" or (errorHandler.buildDepError "launchpad-control"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

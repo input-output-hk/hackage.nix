@@ -6,8 +6,8 @@
         nix = import ../hackage/sixfiguregroup-0.0.1-r0-945115e9cf97a0a9e249d6f07cfc4156c8969cf194f0cb16e6b8da66083b87d3.nix;
         revNum = 0;
         sha256 = "945115e9cf97a0a9e249d6f07cfc4156c8969cf194f0cb16e6b8da66083b87d3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

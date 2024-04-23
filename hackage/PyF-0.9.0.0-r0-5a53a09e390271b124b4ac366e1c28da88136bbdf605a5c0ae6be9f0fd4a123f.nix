@@ -21,7 +21,7 @@
       synopsis = "Quasiquotations for a python like interpolated string formater";
       description = "Quasiquotations for a python like interpolated string formater.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pyf-test" = {
           depends = [
@@ -45,12 +45,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.python3.components.exes.python3 or (pkgs.buildPackages.python3 or (errorHandler.buildToolDepError "python3:python3")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pyf-overloaded" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,9 +58,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pyf-failure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,12 +75,12 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.python3.components.exes.python3 or (pkgs.buildPackages.python3 or (errorHandler.buildToolDepError "python3:python3")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

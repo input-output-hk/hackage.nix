@@ -21,7 +21,7 @@
       synopsis = "Attoparsec parsers of ping utility";
       description = "Attoparsec parsers of the output of ping utility. Currently there is only\none implementation for the Win32 version of ping and only support IPv4.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,19 +30,19 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ping-parser-attoparsec-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ping-parser-attoparsec" or (errorHandler.buildDepError "ping-parser-attoparsec"))
             (hsPkgs."placeholders" or (errorHandler.buildDepError "placeholders"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ping-parser-attoparsec-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-text" or (errorHandler.buildDepError "quickcheck-text"))
             (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

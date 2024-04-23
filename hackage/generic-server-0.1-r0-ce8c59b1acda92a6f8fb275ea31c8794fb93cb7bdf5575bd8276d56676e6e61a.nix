@@ -21,15 +21,15 @@
       synopsis = "Simple generic TCP/IP server";
       description = "This package implements simple generic multithread TCP/IP\nserver. It can be used in two ways. First, one can simply\ncall genericServer function. Or one can declare an instance\nof Server class and then run 'server' function.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

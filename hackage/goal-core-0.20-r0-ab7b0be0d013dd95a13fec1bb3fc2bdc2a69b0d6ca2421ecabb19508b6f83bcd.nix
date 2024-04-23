@@ -21,7 +21,7 @@
       synopsis = "Common, non-geometric tools for use with Goal";
       description = "goal-core re-exports a number of other libraries, and provides a set of additional utility functions useful for scientific computing. In particular, implementations of Mealy Automata (Circuits), tools for working with CSV files and gnuplot, and a module which combines vector-sized vectors with hmatrix.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "outer-products" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."mwc-probability" or (errorHandler.buildDepError "mwc-probability"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."goal-core" or (errorHandler.buildDepError "goal-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "convolutions" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,9 +67,9 @@
             (hsPkgs."mwc-probability" or (errorHandler.buildDepError "mwc-probability"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."goal-core" or (errorHandler.buildDepError "goal-core"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "multiplications" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."mwc-probability" or (errorHandler.buildDepError "mwc-probability"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."goal-core" or (errorHandler.buildDepError "goal-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

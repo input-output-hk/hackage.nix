@@ -21,7 +21,7 @@
       synopsis = "Assembles many Dockerfiles in one.";
       description = "See https://github.com/evolutics/buffet";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "buffet-internal" = {
@@ -45,19 +45,19 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "buffet" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."buffet".components.sublibs.buffet-internal or (errorHandler.buildDepError "buffet:buffet-internal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "buffet-test" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Coercible but only in one direction";
       description = "Newtype wrapper 'Data.Type.Coercion.Sub.Sub'\naround 'Data.Type.Coercion.Coercion'\nto represent unidirectional coercion,\nand combinators for it, like 'Data.Type.Coercion.Sub.mapR'\nwhich extends coercion over covariant @Functor@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

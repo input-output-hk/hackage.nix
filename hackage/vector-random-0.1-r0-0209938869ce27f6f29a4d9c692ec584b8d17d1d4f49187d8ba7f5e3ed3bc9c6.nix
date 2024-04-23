@@ -21,15 +21,15 @@
       synopsis = "Generate vectors filled with high quality pseudorandom numbers";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mersenne-random" or (errorHandler.buildDepError "mersenne-random"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

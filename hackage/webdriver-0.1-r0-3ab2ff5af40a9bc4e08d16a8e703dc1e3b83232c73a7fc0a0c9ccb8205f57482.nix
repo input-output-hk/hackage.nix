@@ -21,7 +21,7 @@
       synopsis = "a Haskell client for the Selenium WebDriver protocol";
       description = "A Selenium WebDriver client for the Haskell\nprogramming language. You can use it to automate browser\nsessions for testing, system administration, etc.\nFor more information about Selenium itself, see\n<http://seleniumhq.org/>\nTo find out what's been changed in this version and others,\nsee the changelog at\n<https://github.com/kallisti-dev/hs-webdriver/blob/master/CHANGELOG.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

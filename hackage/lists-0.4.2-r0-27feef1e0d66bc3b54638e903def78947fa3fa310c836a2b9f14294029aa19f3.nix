@@ -21,15 +21,15 @@
       synopsis = "Functions for dealing with lists";
       description = "Functions for dealing with lists";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."list-extras" or (errorHandler.buildDepError "list-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

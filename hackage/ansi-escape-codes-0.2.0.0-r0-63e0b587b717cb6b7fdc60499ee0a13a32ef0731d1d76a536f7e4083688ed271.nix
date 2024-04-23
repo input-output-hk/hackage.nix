@@ -21,11 +21,11 @@
       synopsis = "Haskell package to generate ANSI escape codes for styling strings in the terminal.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

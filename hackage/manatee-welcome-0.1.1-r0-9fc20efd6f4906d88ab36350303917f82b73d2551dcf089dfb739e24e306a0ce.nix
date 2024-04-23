@@ -21,7 +21,7 @@
       synopsis = "Welcome module to help user play Manatee quickly.";
       description = "manatee-welcome is welcome package to help you play Manatee sub-module quickly.\n\nDetails look <http://haskell.org/haskellwiki/Manatee#How_to_write_Manatee_extension>\n\nVideo (Select 720p HD) at : <http://www.youtube.com/watch?v=weS6zys3U8k> <http://www.youtube.com/watch?v=A3DgKDVkyeM> <http://v.youku.com/v_show/id_XMjI2MDMzODI4.html>\n\nScreenshots at : <http://goo.gl/MkVw>\n\nManual at : <http://haskell.org/haskellwiki/Manatee>\n\nIRC channel: irc.freenode.net 6667 <##manatee>\n\nMailing-List: manatee-user\\@googlegroups.com manatee-develop\\@googlegroups.com\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."dbus-core" or (errorHandler.buildDepError "dbus-core"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-welcome" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-welcome" = { buildable = true; }; };
+    };
+  }

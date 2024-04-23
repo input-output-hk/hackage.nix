@@ -21,7 +21,7 @@
       synopsis = "Efficient signal processing using runtime compilation";
       description = "Efficient signal processing\nusing runtime compilation and vector instructions.\nIt uses LLVM library, thus it is not bound to a specific CPU.\nIf you compile with Cabal flag @buildExamples@\nyou get the executable @synthi-llvm-server@,\nthat is a realtime software synthesizer\nthat receives MIDI events via ALSA\nand in response plays some tones via ALSA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,20 +49,20 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "synthi-llvm-example" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "synthi-llvm-server" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "synthi-llvm-test" = {
-          depends = (pkgs.lib).optional (flags.buildtests) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
+          depends = pkgs.lib.optional (flags.buildtests) (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"));
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

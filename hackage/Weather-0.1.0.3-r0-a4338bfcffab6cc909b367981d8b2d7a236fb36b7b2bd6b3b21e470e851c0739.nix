@@ -21,7 +21,7 @@
       synopsis = "Library for interacting with the Weather Underground JSON API.";
       description = "Weather is a simple library for interacting with the Weather Underground JSON API. It is not complete, but it may be useful still.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

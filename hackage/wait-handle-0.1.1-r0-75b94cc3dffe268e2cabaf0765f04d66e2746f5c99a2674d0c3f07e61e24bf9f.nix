@@ -21,11 +21,11 @@
       synopsis = "Wait handles are MVars which can only be written to once, and from which values can never be removed.";
       description = "Packaging of 'WaitHandle', extracted from Max Bolingbroke's OpenShake. Wait\nhandles are MVars which can only be written to once, and from which values\ncan never be removed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/no-buffering-workaround-0.1.0.0-r0-199f1a89c0b1c64f46006fb82322b7c5071c4ccb31dc575de04725af189625c5.nix;
         revNum = 0;
         sha256 = "199f1a89c0b1c64f46006fb82322b7c5071c4ccb31dc575de04725af189625c5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

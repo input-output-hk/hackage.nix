@@ -21,14 +21,14 @@
       synopsis = "placeholder for Cabal package, you want the upper case Cabal";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."youProbablyWantCapitalCabal" or (errorHandler.buildDepError "youProbablyWantCapitalCabal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

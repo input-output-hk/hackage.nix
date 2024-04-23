@@ -6,8 +6,8 @@
         nix = import ../hackage/brians-brain-0.0.1-r0-a50d09da5a37bed8ec3967942f3d22143a2b55fb1d4fdc9b86a9651a14753480.nix;
         revNum = 0;
         sha256 = "a50d09da5a37bed8ec3967942f3d22143a2b55fb1d4fdc9b86a9651a14753480";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

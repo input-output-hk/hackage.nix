@@ -6,8 +6,8 @@
         nix = import ../hackage/cabal-constraints-0.0.0.1-r0-cf717eb4c9e7773259064327805320919b837292041fea82c61edefdbd9b26cb.nix;
         revNum = 0;
         sha256 = "cf717eb4c9e7773259064327805320919b837292041fea82c61edefdbd9b26cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

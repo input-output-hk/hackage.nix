@@ -21,7 +21,7 @@
       synopsis = "View MySQL processes";
       description = "View queries on multiple MySQL servers. Designed to work behind Sproxy.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mywatch" = {
@@ -49,9 +49,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

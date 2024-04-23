@@ -21,7 +21,7 @@
       synopsis = "elm-export persistent entities";
       description = "Ent is a newtype that wraps Persistent Entity's, allowing you to export them\nto Elm types. Specifically, it adds a To/From JSON instance which adds an id\nfield, as well as an ElmType instance that adds an id field constructor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

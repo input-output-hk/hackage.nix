@@ -21,14 +21,14 @@
       synopsis = "Labeled graph structure";
       description = "Labeled tree structure, on the model of the standard Data.Graph";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."labeled-tree" or (errorHandler.buildDepError "labeled-tree"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parser for the GEDCOM genealogy file format.";
       description = "A parser for the legacy GEDCOM 5.5 file format. GEDCOM is\nwidely used by genealogy software, despite the limitations\nof the format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text-all" or (errorHandler.buildDepError "text-all"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gedcom-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gedcom" or (errorHandler.buildDepError "gedcom"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

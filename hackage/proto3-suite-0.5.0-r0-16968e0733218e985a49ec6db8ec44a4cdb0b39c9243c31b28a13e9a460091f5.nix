@@ -21,7 +21,7 @@
       synopsis = "A higher-level API to the proto3-wire library";
       description = "This library provides a higher-level API to <https://github.com/awakesecurity/proto3-wire the `proto3-wire` library>\nthat supports:\n\n- Type classes for encoding and decoding messages, and instances for all wire\nformats identified in the specification\n- A higher-level approach to encoding and decoding, based on `GHC.Generics`\n- A way of creating `.proto` files from Haskell types.\n\nSee <https://hackage.haskell.org/package/proto3-suite/docs/Proto3-Suite-Tutorial.html the `Proto3.Suite.Tutorial` module>\nfor more details.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -58,9 +58,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ (pkgs.lib).optional (flags.swagger) (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        ] ++ pkgs.lib.optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ pkgs.lib.optional (flags.swagger) (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
         buildable = true;
-        };
+      };
       exes = {
         "compile-proto-file" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "canonicalize-proto-file" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,10 +84,10 @@
             (hsPkgs."range-set-list" or (errorHandler.buildDepError "range-set-list"))
             (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = (([
@@ -115,9 +115,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ (pkgs.lib).optional (flags.swagger) (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (flags.dhall) (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))) ++ pkgs.lib.optional (flags.swagger) (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "8.0")) (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

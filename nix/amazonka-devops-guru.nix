@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-devops-guru-2.0-r0-9772bcd13c8e035d79aea3641521e1c6f1d3064c0b6aaee70f7cc6d59458cbd6.nix;
         revNum = 0;
         sha256 = "9772bcd13c8e035d79aea3641521e1c6f1d3064c0b6aaee70f7cc6d59458cbd6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

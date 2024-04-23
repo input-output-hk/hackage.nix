@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-connect-contact-lens-2.0-r0-9d81aa0de9d71b4cf6972f86fb611302e7e5858e1777f1d1a7a8d8a82a60e561.nix;
         revNum = 0;
         sha256 = "9d81aa0de9d71b4cf6972f86fb611302e7e5858e1777f1d1a7a8d8a82a60e561";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

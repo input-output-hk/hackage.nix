@@ -6,8 +6,8 @@
         nix = import ../hackage/sakuraio-platform-0.1.0.0-r0-188ea3af65dd33464237973dbad05ed4e3f94ee7082b82735846a3829aa7f019.nix;
         revNum = 0;
         sha256 = "188ea3af65dd33464237973dbad05ed4e3f94ee7082b82735846a3829aa7f019";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

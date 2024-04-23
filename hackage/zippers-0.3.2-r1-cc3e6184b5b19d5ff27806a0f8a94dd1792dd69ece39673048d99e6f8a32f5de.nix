@@ -21,7 +21,7 @@
       synopsis = "Traversal based zippers";
       description = "Traversal based zippers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "zipper" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."zippers" or (errorHandler.buildDepError "zippers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

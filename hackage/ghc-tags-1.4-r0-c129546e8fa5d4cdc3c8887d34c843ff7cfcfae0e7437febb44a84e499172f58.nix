@@ -21,7 +21,7 @@
       synopsis = "Utility for generating ctags and etags with GHC API.";
       description = "Utility for generating etags (Emacs) and ctags (Vim and other\neditors) with GHC API for efficient project navigation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-tags" = {
@@ -44,16 +44,16 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ] ++ (if !flags.ghc-lib && (compiler.isGhc && ((compiler.version).ge "9.2" && (compiler.version).lt "9.3"))
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version.ge "9.2" && compiler.version.lt "9.3"))
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-              ]
+            ]
             else [
               (hsPkgs."ghc-lib" or (errorHandler.buildDepError "ghc-lib"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Hedgehog Generators for clash-prelude";
       description = "Hedgehog Generators for clash-prelude";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A todo application.";
       description = "A todo application.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "htodo" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HDBC-sqlite3" or (errorHandler.buildDepError "HDBC-sqlite3"))
             (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

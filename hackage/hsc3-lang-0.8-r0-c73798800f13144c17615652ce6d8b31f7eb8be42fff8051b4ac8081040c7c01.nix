@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider Language";
       description = "Haskell library defining operations from the\nSuperCollider language class library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

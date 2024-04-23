@@ -6,8 +6,8 @@
         nix = import ../hackage/composable-associations-0.1.0.0-r0-c5ff119aca292b089c14298942c1f38131bf36be417fdcce9943085df171f79c.nix;
         revNum = 0;
         sha256 = "c5ff119aca292b089c14298942c1f38131bf36be417fdcce9943085df171f79c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/expiring-mvar-0.1-r0-4094b189f36320520041d9f5a76ade3ffcb3b98d453bbbaf59536d2bf80cfebc.nix;
         revNum = 0;
         sha256 = "4094b189f36320520041d9f5a76ade3ffcb3b98d453bbbaf59536d2bf80cfebc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

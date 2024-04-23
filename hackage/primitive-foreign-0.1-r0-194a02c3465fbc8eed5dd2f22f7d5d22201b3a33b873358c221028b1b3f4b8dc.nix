@@ -21,15 +21,15 @@
       synopsis = "using the `Prim` interface for the FFI";
       description = "This library provides an alternative to the `Storable` interface,\nusing the `Prim` typeclass. The goal is to make it possible to avoid\nthe duplicated code between `Storable` and `Prim` APIs when one is\nworking mostly with the `primitive` or `contiguous` APIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "props" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."primitive-foreign" or (errorHandler.buildDepError "primitive-foreign"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

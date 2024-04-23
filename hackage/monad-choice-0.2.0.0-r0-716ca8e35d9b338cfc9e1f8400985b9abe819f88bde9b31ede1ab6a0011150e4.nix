@@ -21,7 +21,7 @@
       synopsis = "Monad, monad transformer, and typeclass representing choices.";
       description = "The Monad Choice library contains monads, monad transformers, and a typeclass representing a sequence of choices of objects of arbitrary types where future choices can depend on previous ones.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

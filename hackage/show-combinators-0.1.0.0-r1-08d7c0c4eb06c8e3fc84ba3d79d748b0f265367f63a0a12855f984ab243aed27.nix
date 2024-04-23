@@ -21,20 +21,20 @@
       synopsis = "Combinators to write Show instances";
       description = "A minimal pretty-printing library for Show instances in Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."show-combinators" or (errorHandler.buildDepError "show-combinators"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

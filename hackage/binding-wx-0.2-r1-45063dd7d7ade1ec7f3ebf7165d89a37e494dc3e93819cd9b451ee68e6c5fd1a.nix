@@ -21,7 +21,7 @@
       synopsis = "binding-core wrapper for WxHaskell";
       description = "Bind mutable data and lists to WxHaskell widgets.\nExamples are provided by the included demo programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."binding-core" or (errorHandler.buildDepError "binding-core"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

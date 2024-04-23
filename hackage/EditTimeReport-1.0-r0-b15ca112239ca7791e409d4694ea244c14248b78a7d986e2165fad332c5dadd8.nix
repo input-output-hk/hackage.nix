@@ -21,7 +21,7 @@
       synopsis = "Query language and report generator for edit logs.";
       description = "This program can be used to see exactly how much time\nyou spent working on file X, project Y or language Z.\nIt can also be used to see for instance what your most\nproductive time of the year, month or week is.\nIn the long-run, this might help you make better time\nestimates, while also providing you with an overview\nof what you have worked on (which can also be nice for CV's).\nIn short; this program allows you to query your logs\nand generate reports in plain text, html, xhtml and CSV.\nSupport for more output formats is planned for the future.\nSee the github page for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "report" = {
@@ -37,9 +37,9 @@
             (hsPkgs."editline" or (errorHandler.buildDepError "editline"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Toolkit for building http client libraries over Network.Http.Conduit";
       description = "Toolkit for building http client libraries over Network.Http.Conduit.\n\n/Note/: This library is under heavy development, currently\nthe library is functional but undocumented. Examples of use\ncan be found in the pin and postmark client libraries.\nBasically expect improvements and change.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "ODBC specific definitions to be used by SQL CLI clients.";
       description = "Access databases through ODBC using SQLCLI compatible functions.\nThe package adds ODBC specific definition to the sqlcli package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."logging" or (errorHandler.buildDepError "logging"))
           (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

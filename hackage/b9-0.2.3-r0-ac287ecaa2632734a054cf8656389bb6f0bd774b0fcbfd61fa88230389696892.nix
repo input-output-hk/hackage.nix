@@ -21,7 +21,7 @@
       synopsis = "A build tool and library for virtual machine images.";
       description = "Create, modify, use and share virtual machine images;\nassemble and generate all associated files from templates.\nAll assembled files can be accessed by vm-build scripts as\nshared directory in the build container, and/or\ncan be written to directories, ISO- or VFAT-images.\nISO/VFAT images are created so 'cloud-init' can recognize them.\nVM-Build are executed in LXC containers managed through libvirt.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "b9c" = {
           depends = [
@@ -63,10 +63,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

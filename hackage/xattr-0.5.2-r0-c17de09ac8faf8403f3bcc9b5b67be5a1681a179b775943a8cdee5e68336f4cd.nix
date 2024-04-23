@@ -21,15 +21,15 @@
       synopsis = "Haskell bindings to libattr";
       description = "Relatively low-level interface to work with extended attributes on Unix\nsystems. This is a fairly straightforward port of the API exposed by SGI's\nlibattr.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

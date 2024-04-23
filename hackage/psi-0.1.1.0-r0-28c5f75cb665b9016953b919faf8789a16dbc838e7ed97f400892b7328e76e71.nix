@@ -21,7 +21,7 @@
       synopsis = "Yet another custom Prelude.";
       description = "`psi`/`ψ` is just another custom Haskell\nprelude. It is inspired by Ambiata's p and has\nthe same focus on promoting use of safe\nconstructs and avoidance of partial functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

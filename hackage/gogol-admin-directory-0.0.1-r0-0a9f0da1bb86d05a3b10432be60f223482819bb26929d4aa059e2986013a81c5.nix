@@ -21,14 +21,14 @@
       synopsis = "Google Admin Directory SDK.";
       description = "The Admin SDK Directory API lets you view and manage enterprise\nresources such as users and groups, administrative notifications,\nsecurity features, and more.\n\n/Warning:/ This is an experimental prototype/preview release which is still\nunder exploratory development and not intended for public use, caveat emptor!\n\nThis library is compatible with version @directory_v1@\nof the API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gogol-core" or (errorHandler.buildDepError "gogol-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

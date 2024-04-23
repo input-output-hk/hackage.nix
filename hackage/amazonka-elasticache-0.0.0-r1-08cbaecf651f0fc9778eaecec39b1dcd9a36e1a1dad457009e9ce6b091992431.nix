@@ -21,14 +21,14 @@
       synopsis = "Amazon ElastiCache SDK.";
       description = "ElastiCache is a web service that makes it easy to deploy, operate, and\nscale an in-memory cache in the cloud. The service improves the\nperformance of web applications by allowing you to retrieve information\nfrom fast, managed, in-memory caches, instead of relying entirely on\nslower disk-based databases. Amazon ElastiCache automatically detects\nand replaces failed nodes, reducing the overhead associated with\nself-managed infrastructures and provides a resilient system that\nmitigates the risk of overloaded databases, which slow website and\napplication load times. Through integration with Amazon CloudWatch,\nAmazon ElastiCache provides enhanced visibility into key performance\nmetrics associated with your Memcached or Redis nodes.\n\n/See:/ <http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

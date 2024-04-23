@@ -21,7 +21,7 @@
       synopsis = "Use htmx in your lucid templates";
       description = "Please see the README on GitHub at <https://github.com/WaviLabs/lucid-htmx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lucid-htmx-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."lucid-htmx" or (errorHandler.buildDepError "lucid-htmx"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "ImageBoard on Happstack and HSP";
       description = "Simple ImageBoard like wakaba on Happstack and HSP.\nMessages on board sended via jabber-bot\n(primula-bot package). Settings stored in\n~/.primularc file.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "primula-board" = {
@@ -43,9 +43,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."happstack-state" or (errorHandler.buildDepError "happstack-state"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bulk array representations and operators.";
       description = "NOTE: This is an ALPHA version of Repa 4. The API is not yet complete with\nrespect to Repa 3. Some important functions are still missing, and the docs\nmay not be up-to-date.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."repa-scalar" or (errorHandler.buildDepError "repa-scalar"))
           (hsPkgs."repa-convert" or (errorHandler.buildDepError "repa-convert"))
           (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

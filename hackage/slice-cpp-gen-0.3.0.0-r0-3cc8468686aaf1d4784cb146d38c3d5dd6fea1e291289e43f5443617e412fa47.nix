@@ -21,7 +21,7 @@
       synopsis = "Generate C++ skeletons from slice files";
       description = "Generate C++ skeletons from slice files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "slice-cpp-gen" = {
@@ -34,9 +34,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."language-slice" or (errorHandler.buildDepError "language-slice"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

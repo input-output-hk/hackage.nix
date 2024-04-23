@@ -21,7 +21,7 @@
       synopsis = "Leksah library";
       description = "General library used by leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."billeksah-services" or (errorHandler.buildDepError "billeksah-services"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

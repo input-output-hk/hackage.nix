@@ -21,7 +21,7 @@
       synopsis = "A GTK-based abstract syntax tree viewer for custom\nlanguages and parsers";
       description = "Astview is a graphical viewer for abstract\nsyntax trees. It is implemented on the basis\nof scrap-your-boilerplate (i.e. data2tree)\nand works with all parsers that generate trees\nthat are instances of the Data.Data class.\nCustom parsers can be dynamically loaded\n(via package hint) at startup.\n\nFor installation you need gtk2hs and hscolour before.\nThe latter will not be automatically installed by\ncabal since it is used by Setup.hs.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "astview" = {
@@ -41,9 +41,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

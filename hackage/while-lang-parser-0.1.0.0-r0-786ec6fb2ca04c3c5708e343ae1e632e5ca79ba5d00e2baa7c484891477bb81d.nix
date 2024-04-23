@@ -21,15 +21,15 @@
       synopsis = "Parser for the While language.";
       description = "Parser for the While language described in /Semantics with Applications/ by Nielson and Nielson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."indents" or (errorHandler.buildDepError "indents"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

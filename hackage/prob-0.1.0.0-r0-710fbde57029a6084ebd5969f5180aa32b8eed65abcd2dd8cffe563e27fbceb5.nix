@@ -21,25 +21,25 @@
       synopsis = "Discrete probability monad";
       description = "Provides the `Distribution` monad, which describes discrete\nprobability distributions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."prob" or (errorHandler.buildDepError "prob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Explicit closures in Haskell distributed parallel Haskell";
       description = "Explicit closures are serialisable representations of thunks.\nThis package exports the fully polymorphic explicit closures\nof HdpH (Haskell distributed parallel Haskell), for use\nby HdpH or other packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

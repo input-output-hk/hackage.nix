@@ -17,7 +17,7 @@
       with_hlist = true;
       with_template_haskell = true;
       testing = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "xmonad-extras"; version = "0.9.2"; };
@@ -30,7 +30,7 @@
       synopsis = "Third party extensions for xmonad with wacky dependencies";
       description = "Various modules for xmonad that cannot be added to xmonad-contrib\nbecause of additional dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -39,7 +39,7 @@
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."xmonad-contrib" or (errorHandler.buildDepError "xmonad-contrib"))
-          ] ++ (if flags.small_base
+        ] ++ (if flags.small_base
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -48,20 +48,20 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ])) ++ (pkgs.lib).optionals (flags.with_parsec && flags.with_split) [
+          ])) ++ pkgs.lib.optionals (flags.with_parsec && flags.with_split) [
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ]) ++ (pkgs.lib).optionals (flags.with_hint) [
+        ]) ++ pkgs.lib.optionals (flags.with_hint) [
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ]) ++ (pkgs.lib).optional (flags.with_mpd) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "6.12.1" && flags.with_template_haskell && flags.with_hlist) [
+        ]) ++ pkgs.lib.optional (flags.with_mpd) (hsPkgs."libmpd" or (errorHandler.buildDepError "libmpd"))) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "6.12.1" && flags.with_template_haskell && flags.with_hlist) [
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

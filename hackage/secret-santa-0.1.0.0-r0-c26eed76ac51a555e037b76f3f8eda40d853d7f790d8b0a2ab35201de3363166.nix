@@ -21,7 +21,7 @@
       synopsis = "Secret Santa game assigner using QR-Codes";
       description = "Secret Santa game assigner using QR-Codes\nReads a list of friends from the standard input (or a\nfile) and renders to a specified output file (or\n\"output.pdf\" if not specified) all assignments of gift\ngivers and their corresponding receivers encoded in a\nQR-Code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "secret-santa" = {
@@ -32,9 +32,9 @@
             (hsPkgs."diagrams-cairo" or (errorHandler.buildDepError "diagrams-cairo"))
             (hsPkgs."haskell-qrencode" or (errorHandler.buildDepError "haskell-qrencode"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extra utilities and instances for optics-core";
       description = "This package provides extra definitions and instances that extend the\n@optics-core@ package, without incurring too many dependencies.  See the\n@optics@ package for more documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

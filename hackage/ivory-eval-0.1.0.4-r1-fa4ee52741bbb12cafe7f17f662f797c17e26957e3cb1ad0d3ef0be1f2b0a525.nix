@@ -21,7 +21,7 @@
       synopsis = "Simple concrete evaluator for Ivory programs";
       description = "Warning!  This module is experimental and its implementation may change dramatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
             (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
             (hsPkgs."ivory-eval" or (errorHandler.buildDepError "ivory-eval"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

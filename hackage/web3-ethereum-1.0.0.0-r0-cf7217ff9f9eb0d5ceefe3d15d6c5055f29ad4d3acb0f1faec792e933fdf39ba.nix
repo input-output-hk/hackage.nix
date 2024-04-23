@@ -21,7 +21,7 @@
       synopsis = "Ethereum support for Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
           (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
           (hsPkgs."web3-solidity" or (errorHandler.buildDepError "web3-solidity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
             (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
             (hsPkgs."web3-solidity" or (errorHandler.buildDepError "web3-solidity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

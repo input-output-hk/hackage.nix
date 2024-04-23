@@ -21,7 +21,7 @@
       synopsis = "Lightweight parsing library based on partial functions.";
       description = "To be written.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."monadplus" or (errorHandler.buildDepError "monadplus"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

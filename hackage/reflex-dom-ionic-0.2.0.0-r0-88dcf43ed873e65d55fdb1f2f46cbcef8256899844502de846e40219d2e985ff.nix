@@ -21,7 +21,7 @@
       synopsis = "Compatible highlevel Wigdets for some Ionic Input Components";
       description = "Reflex-DOM is a very powerful web framework for functional reactive programming (FRP).\nIt contains some highlevel Widgets for Input.\nThis library provides widgets for ion-input and ion-select.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-dom-core" or (errorHandler.buildDepError "reflex-dom-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

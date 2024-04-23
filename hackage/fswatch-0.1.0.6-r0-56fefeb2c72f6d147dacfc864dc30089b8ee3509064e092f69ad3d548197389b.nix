@@ -21,7 +21,7 @@
       synopsis = "File System watching tool with cli and slave functionalities.";
       description = "File System watching tool with cli and slave lib (with os process) functionalities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hfswatch" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."fswatch" or (errorHandler.buildDepError "fswatch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

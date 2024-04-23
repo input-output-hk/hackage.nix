@@ -6,8 +6,8 @@
         nix = import ../hackage/hcoord-1.0.0.0-r0-8cf3030c7df35900770bfbf5c972880c550cba160497c09315f4084aba64b177.nix;
         revNum = 0;
         sha256 = "8cf3030c7df35900770bfbf5c972880c550cba160497c09315f4084aba64b177";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

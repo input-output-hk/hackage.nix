@@ -21,11 +21,11 @@
       synopsis = "Runtime for fficxx-generated library";
       description = "Runtime for fficxx-generated library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

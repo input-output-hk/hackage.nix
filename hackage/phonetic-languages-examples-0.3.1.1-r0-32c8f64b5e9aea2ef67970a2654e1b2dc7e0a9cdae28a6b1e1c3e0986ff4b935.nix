@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-examples";
         version = "0.3.1.1";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A generalization of the uniqueness-periods-vector-examples functionality.";
       description = "Is intended to use more functionality of the Data.Vector, Data.Foldable, Data.Monoid and Data.SubG modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."phonetic-languages-properties" or (errorHandler.buildDepError "phonetic-languages-properties"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariantsG" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."phonetic-languages-plus" or (errorHandler.buildDepError "phonetic-languages-plus"))
             (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoemG" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
             (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesTextG" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,9 +96,9 @@
             (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
             (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

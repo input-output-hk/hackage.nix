@@ -6,8 +6,8 @@
         nix = import ../hackage/twisty-0.1.0-r0-c9ad52f101166718c57c00d75f3905a306decb169b9ab9df2a0a6fa95b9a7373.nix;
         revNum = 0;
         sha256 = "c9ad52f101166718c57c00d75f3905a306decb169b9ab9df2a0a6fa95b9a7373";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

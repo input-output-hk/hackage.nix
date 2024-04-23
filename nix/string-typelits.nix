@@ -6,8 +6,8 @@
         nix = import ../hackage/string-typelits-0.1.0.0-r0-651567b7ff937fd6dabe992c4db639ca7e6bc6d67feb7edb291911c34ff3047f.nix;
         revNum = 0;
         sha256 = "651567b7ff937fd6dabe992c4db639ca7e6bc6d67feb7edb291911c34ff3047f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

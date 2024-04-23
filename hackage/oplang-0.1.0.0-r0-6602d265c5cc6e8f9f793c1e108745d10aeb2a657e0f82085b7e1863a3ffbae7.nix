@@ -21,7 +21,7 @@
       synopsis = "Compiler for OpLang, an esoteric programming language";
       description = "Please see the README on GitHub at <https://github.com/aionescu/oplang#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "oplang" = {
@@ -35,9 +35,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

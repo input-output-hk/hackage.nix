@@ -21,15 +21,15 @@
       synopsis = "Project bindings-* raw interface to gpgme";
       description = "Low level bindings to gpgme, part\nof the @bindings-*@ project. See:\n\n<https://github.com/rethab/bindings-dsl>\n\n<http://www.gnupg.org/related_software/gpgme>\n\nFor a higher-level library, see:\n<https://github.com/rethab/h-gpgme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."gpgme" or (errorHandler.sysDepError "gpgme")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

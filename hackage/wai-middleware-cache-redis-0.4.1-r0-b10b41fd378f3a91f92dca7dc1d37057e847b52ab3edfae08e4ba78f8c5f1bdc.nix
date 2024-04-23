@@ -21,7 +21,7 @@
       synopsis = "Redis backend for wai-middleware-cache";
       description = "This package provides Redis backend for wai-middleware-cache";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-middleware-cache" or (errorHandler.buildDepError "wai-middleware-cache"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

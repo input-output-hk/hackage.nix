@@ -21,14 +21,14 @@
       synopsis = "Length- and element-indexed lists sitting somewhere between homogeneous and fully heterogeneous.";
       description = "This library implements /counted lists/ linked to type-level naturals indexing length, compatible with the Peano natural numbers found in \"Data.Numeric.Witness.Peano\", as well as so-called /conic lists/, which are linked to a type index listing the type indices of partially-heterogeneous values contained within.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."PeanoWitnesses" or (errorHandler.buildDepError "PeanoWitnesses"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

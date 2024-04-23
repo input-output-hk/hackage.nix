@@ -21,11 +21,11 @@
       synopsis = "🍱 Manage stateful components.";
       description = "Bento manages stateful components.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

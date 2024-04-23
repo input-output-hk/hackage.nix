@@ -6,8 +6,8 @@
         nix = import ../hackage/setoid-0.1.0.0-r0-4a12b0a9a161563a8475d87d8cf21367868a8a5bda62b6af6b9932707f94b4a8.nix;
         revNum = 0;
         sha256 = "4a12b0a9a161563a8475d87d8cf21367868a8a5bda62b6af6b9932707f94b4a8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

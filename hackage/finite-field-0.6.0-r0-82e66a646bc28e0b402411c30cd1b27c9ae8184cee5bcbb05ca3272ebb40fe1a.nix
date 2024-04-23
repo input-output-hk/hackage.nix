@@ -21,7 +21,7 @@
       synopsis = "Finite Fields";
       description = "This is an implementation of finite fields.\nCurrently only prime fields are supported.\n\nChanges in 0.6.0\n\n* add allValues to FiniteField class\n\nChanges in 0.5.0\n\n* introduce FiniteField class";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
           (hsPkgs."algebra" or (errorHandler.buildDepError "algebra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestPrimeField" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
             (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
             (hsPkgs."type-level-numbers" or (errorHandler.buildDepError "type-level-numbers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

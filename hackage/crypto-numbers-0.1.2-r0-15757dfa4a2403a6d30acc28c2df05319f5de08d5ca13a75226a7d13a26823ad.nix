@@ -21,7 +21,7 @@
       synopsis = "Cryptographic numbers: functions and algorithms";
       description = "Cryptographic numbers: functions and algorithms";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."crypto-random-api" or (errorHandler.buildDepError "crypto-random-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-crypto-numbers" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-crypto-numbers" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."crypto-numbers" or (errorHandler.buildDepError "crypto-numbers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTTP client based on io-streams";
       description = "An HTTP client, using the Snap Framework's [io-streams](https://hackage.haskell.org/package/io-streams) library to\nhandle the streaming IO. The @http-io-streams@ API designed for ease of use when querying web services and dealing with the result as streaming I/O.\n\nThe library is exported in a single module; see \"Network.Http.Client\"\nfor full documentation.\n\n__NOTE__: This is a fork of [http-streams](http://hackage.haskell.org/package/http-streams)\nwith a lighter dependency footprint which focuses on core HTTP\nfunctionality and as a consequence doesn't include out-of-the-box\nsupport for handling JSON data. If you need support for handling JSON\nweb-services, you should use the original @http-streams@ package instead of\nthis package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

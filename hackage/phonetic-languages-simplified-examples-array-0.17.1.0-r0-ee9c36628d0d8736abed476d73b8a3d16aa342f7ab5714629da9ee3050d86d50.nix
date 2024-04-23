@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-simplified-examples-array";
         version = "0.17.1.0";
-        };
+      };
       license = "MIT";
       copyright = "(c) 2020-2022 Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Helps to create Ukrainian texts with the given phonetic properties.";
       description = "Uses more functionality of the arrays and lists. The vector-related functionality is removed and this made the executables and libraries much more lightweight. Deal the Ukrainian as one of the phonetic languages. For the brief introduction in English, please, refer to: https://functional-art.org/2020/papers/Poetry-OleksandrZhabenko.pdf. Since the version 0.3.0.0 the package has the multiple variations mode for @lineVariantsG3@ executable that allows to use modifications in the text, e. g. synonyms, paraphrases etc. To present the created text you can use e. g. html-presentation-text package: https://hackage.haskell.org/package/html-presentation-text .";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
           (hsPkgs."mmsyn2-array-ukrainian-data" or (errorHandler.buildDepError "mmsyn2-array-ukrainian-data"))
           (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lineVariantsG3" = {
           depends = [
@@ -74,9 +74,9 @@
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
             (hsPkgs."mmsyn2-array-ukrainian-data" or (errorHandler.buildDepError "mmsyn2-array-ukrainian-data"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rewritePoemG3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
             (hsPkgs."mmsyn2-array-ukrainian-data" or (errorHandler.buildDepError "mmsyn2-array-ukrainian-data"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "propertiesTextG3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -124,9 +124,9 @@
             (hsPkgs."cli-arguments" or (errorHandler.buildDepError "cli-arguments"))
             (hsPkgs."mmsyn2-array-ukrainian-data" or (errorHandler.buildDepError "mmsyn2-array-ukrainian-data"))
             (hsPkgs."lists-flines" or (errorHandler.buildDepError "lists-flines"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

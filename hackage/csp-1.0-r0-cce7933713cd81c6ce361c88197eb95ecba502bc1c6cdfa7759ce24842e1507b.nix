@@ -21,7 +21,7 @@
       synopsis = "Discrete constraint satisfaction problem (CSP) solvers.";
       description = "Constraint satisfaction problem (CSP) solvers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."nondeterminism" or (errorHandler.buildDepError "nondeterminism"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Reading and writing of tga image files";
       description = "TGA is a very simple format (like Bitmap), but in contrast to Bitmap also stores an alpha channel for transparency. Although tga might be outdated it had to be implemented because stb-image only supports reading. This version supports raw RGB24 and RGB32 data without palettes or run length encoding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

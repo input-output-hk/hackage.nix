@@ -21,15 +21,15 @@
       synopsis = "Free Applicative Transformer";
       description = "The free applicative transformer @ApT@, in the same sense @FreeT@ (from the package \"free\")\nis the free monad transformer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "free-applicative-t-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."free-applicative-t" or (errorHandler.buildDepError "free-applicative-t"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

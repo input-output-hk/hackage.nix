@@ -21,7 +21,7 @@
       synopsis = "Shake Minify Actions";
       description = "Shake minify actions for CSS and JS files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

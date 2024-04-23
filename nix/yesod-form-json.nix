@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-form-json-0.0.1-r0-f02a6abf14109e21d632d3044c431db6550425bf2d7ca998985076d8c35adf4a.nix;
         revNum = 0;
         sha256 = "f02a6abf14109e21d632d3044c431db6550425bf2d7ca998985076d8c35adf4a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

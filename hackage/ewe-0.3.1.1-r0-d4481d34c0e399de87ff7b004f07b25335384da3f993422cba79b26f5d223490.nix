@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.uulib or (pkgs.buildPackages.uulib or (errorHandler.setupDepError "uulib")))
         (hsPkgs.buildPackages.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.setupDepError "uuagc")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       exes = {
         "ewe" = {
@@ -40,14 +40,14 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."uuagc-cabal" or (errorHandler.buildDepError "uuagc-cabal"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.uuagc.components.exes.uuagc or (pkgs.buildPackages.uuagc or (errorHandler.buildToolDepError "uuagc:uuagc")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

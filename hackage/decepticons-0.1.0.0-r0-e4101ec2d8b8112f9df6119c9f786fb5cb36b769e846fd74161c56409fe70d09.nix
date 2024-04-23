@@ -21,14 +21,14 @@
       synopsis = "The categorical dual of transformers.";
       description = "The categorical dual of transformers.\n\nNOTE: decepticons is deprecated in favor of cdl.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad-transformers" or (errorHandler.buildDepError "comonad-transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

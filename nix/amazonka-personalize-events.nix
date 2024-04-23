@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-personalize-events-2.0-r0-080f47f3963e14c8104c6ba4473514e585f281ccbf28a83caa44133d128b7db4.nix;
         revNum = 0;
         sha256 = "080f47f3963e14c8104c6ba4473514e585f281ccbf28a83caa44133d128b7db4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

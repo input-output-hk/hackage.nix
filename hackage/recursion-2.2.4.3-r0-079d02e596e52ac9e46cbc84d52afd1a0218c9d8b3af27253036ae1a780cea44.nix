@@ -21,14 +21,14 @@
       synopsis = "A recursion schemes library for Haskell.";
       description = "A performant recursion schemes library for Haskell with minimal dependencies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
-          ];
+        ];
         buildable = if compiler.isEta && true then false else true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-identitystore-2.0-r0-659001cb7acfd41307916dbb29f44c9b7703ba82ce020a6a2be5cc06e9bba03b.nix;
         revNum = 0;
         sha256 = "659001cb7acfd41307916dbb29f44c9b7703ba82ce020a6a2be5cc06e9bba03b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,14 +21,14 @@
       synopsis = "Arrow-like monad composition for monadLib.";
       description = "Arrow-like monad composition for monadLib.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

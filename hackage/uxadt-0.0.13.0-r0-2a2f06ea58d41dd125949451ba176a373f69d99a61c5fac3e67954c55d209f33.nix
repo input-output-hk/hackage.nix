@@ -21,7 +21,7 @@
       synopsis = "Universal (cross-language) extensible representation for algebraic data type instances.";
       description = "A library that supports a universal, cross-platform embedded representation for algebraic data type (ADT) values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

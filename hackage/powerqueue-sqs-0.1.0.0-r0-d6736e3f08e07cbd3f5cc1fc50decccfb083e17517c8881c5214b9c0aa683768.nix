@@ -21,7 +21,7 @@
       synopsis = "A Amazon SQS backend for powerqueue";
       description = "A Amazon SQS backend for powerqueue";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."aws-simple" or (errorHandler.buildDepError "aws-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

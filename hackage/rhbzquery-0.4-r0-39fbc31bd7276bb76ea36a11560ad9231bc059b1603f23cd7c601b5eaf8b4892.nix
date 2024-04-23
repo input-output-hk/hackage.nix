@@ -21,7 +21,7 @@
       synopsis = "Bugzilla query tool";
       description = "A CLI tool for creating bugzilla queries for bugzilla.redhat.com.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rhbzquery" = {
@@ -38,18 +38,18 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

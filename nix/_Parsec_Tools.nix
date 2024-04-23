@@ -6,8 +6,8 @@
         nix = import ../hackage/ParsecTools-0.0.2.0-r0-2d22845e9818c4ed18cb6a791e6963817e31a90fa09034d21df56b68a0010f38.nix;
         revNum = 0;
         sha256 = "2d22845e9818c4ed18cb6a791e6963817e31a90fa09034d21df56b68a0010f38";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

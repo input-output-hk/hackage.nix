@@ -21,7 +21,7 @@
       synopsis = "An Elf parser";
       description = "Parser for ELF object format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,17 +33,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9.0"
+        ] ++ (if compiler.isGhc && compiler.version.ge "9.0"
           then [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"))
             (hsPkgs."singletons-th" or (errorHandler.buildDepError "singletons-th"))
-            ]
+          ]
           else [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "hobjdump" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."melf" or (errorHandler.buildDepError "melf"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hobjlayout" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -64,10 +64,10 @@
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
             (hsPkgs."melf" or (errorHandler.buildDepError "melf"))
             (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "examples" = {
           depends = [
@@ -81,16 +81,16 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "9.0"
+          ] ++ (if compiler.isGhc && compiler.version.ge "9.0"
             then [
               (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
               (hsPkgs."singletons-th" or (errorHandler.buildDepError "singletons-th"))
-              ]
+            ]
             else [
               (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "exceptions" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -98,9 +98,9 @@
             (hsPkgs."melf" or (errorHandler.buildDepError "melf"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "golden" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -115,9 +115,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

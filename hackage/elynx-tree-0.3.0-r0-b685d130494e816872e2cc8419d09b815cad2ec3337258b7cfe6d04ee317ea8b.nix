@@ -21,7 +21,7 @@
       synopsis = "Handle phylogenetic trees";
       description = "Examine, compare, and simulate phylogenetic trees in a reproducible way. Please see the README on GitHub at <https://github.com/dschrempf/elynx>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tree-test" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-megaparsec" or (errorHandler.buildDepError "hspec-megaparsec"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "tree-bench" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."elynx-tools" or (errorHandler.buildDepError "elynx-tools"))
             (hsPkgs."elynx-tree" or (errorHandler.buildDepError "elynx-tree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

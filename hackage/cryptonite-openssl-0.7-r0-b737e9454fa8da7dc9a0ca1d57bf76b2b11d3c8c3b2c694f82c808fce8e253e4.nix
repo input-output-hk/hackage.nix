@@ -21,7 +21,7 @@
       synopsis = "Crypto stuff using OpenSSL cryptographic library";
       description = "Crypto stuff using the OpenSSL cryptographic library as bindings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
-          ];
+        ];
         libs = if system.isWindows || system.isWindows
           then [
             (pkgs."eay32" or (errorHandler.sysDepError "eay32"))
             (pkgs."ssl32" or (errorHandler.sysDepError "ssl32"))
-            ]
+          ]
           else [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ];
-        buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+        buildable = if compiler.isGhc && compiler.version.lt "8.0"
           then false
           else true;
-        };
+      };
       tests = {
         "test-cryptonite-openssl" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."tasty-kat" or (errorHandler.buildDepError "tasty-kat"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."cryptonite-openssl" or (errorHandler.buildDepError "cryptonite-openssl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

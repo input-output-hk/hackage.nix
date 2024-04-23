@@ -21,7 +21,7 @@
       synopsis = "Easy to use library for building Telegram bots. Exports Telegram Bot API.";
       description = "Please see the README on Github at <https://github.com/fizruk/telegram-bot-simple#readme>\n\nFor official Bot API see Telegram Bot API at <https://core.telegram.org/bots/api>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,8 +53,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Google Protocol Buffers via GHC.Generics";
       description = "Google Protocol Buffers via GHC.Generics.\n\nProtocol Buffers are a way of encoding structured data in an efficient yet extensible format.\nGoogle uses Protocol Buffers for almost all of its internal RPC protocols and file formats.\n\nThis library supports a useful subset of Google Protocol Buffers message specifications\nin a Haskell. No preprocessor or additional build steps are required for message encoding and decoding.\n\nRecord specifications are built by defining records with specially defined fields that\ncapture most of the Protocol Buffers specification language.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "protobuf-test" = {
           depends = [
@@ -56,10 +56,10 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

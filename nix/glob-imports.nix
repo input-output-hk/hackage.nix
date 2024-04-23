@@ -6,8 +6,8 @@
         nix = import ../hackage/glob-imports-0.0.1.0-r0-8d1c9d2191df7975daa1cc75a0424622de4dc7ed05c7a46290d32c8160641108.nix;
         revNum = 0;
         sha256 = "8d1c9d2191df7975daa1cc75a0424622de4dc7ed05c7a46290d32c8160641108";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

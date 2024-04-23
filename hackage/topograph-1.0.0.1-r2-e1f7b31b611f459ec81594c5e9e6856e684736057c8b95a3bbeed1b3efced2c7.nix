@@ -21,7 +21,7 @@
       synopsis = "Directed acyclic graphs.";
       description = "Directed acyclic graphs can be sorted topographically.\nExistence of topographic ordering allows writing many graph algorithms efficiently.\nAnd many graphs, e.g. most dependency graphs are acyclic!\n\nThere are some algorithms built-in: dfs, transpose, transitive closure,\ntransitive reduction...\nSome algorithms even become not-so-hard to implement, like a longest path!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

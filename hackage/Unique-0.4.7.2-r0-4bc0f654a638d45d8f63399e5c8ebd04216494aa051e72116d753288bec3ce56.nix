@@ -21,7 +21,7 @@
       synopsis = "It provides the functionality like unix \"uniq\" utility";
       description = "Library provides the functions to find unique and duplicate elements in the list";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "HspecTest" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."Unique" or (errorHandler.buildDepError "Unique"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

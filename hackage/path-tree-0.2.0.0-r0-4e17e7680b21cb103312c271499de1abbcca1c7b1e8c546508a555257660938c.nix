@@ -21,15 +21,15 @@
       synopsis = "`Data.Tree` for file paths";
       description = "`Data.Tree` for file paths";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

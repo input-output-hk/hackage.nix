@@ -21,14 +21,14 @@
       synopsis = "Types for offsets into unboxed arrays";
       description = "Pair a typed or untyped primitive array with an offset.\nThis is useful for providing meaningful type signatures\nwhen working with the foreign function interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

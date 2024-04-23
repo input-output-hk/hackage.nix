@@ -21,13 +21,13 @@
       synopsis = "Implementation of the Porter stemming algorithm";
       description = "Sourced from http://tartarus.org/~martin/PorterStemmer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell2010" or (errorHandler.buildDepError "haskell2010"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

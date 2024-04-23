@@ -21,7 +21,7 @@
       synopsis = "Code for Haskell: the Craft of Functional Programming, 3rd ed.";
       description = "\nUse as follows:\n\n1. Download via: @cabal unpack Craft3e@\n\n2. Go to directory: @cd Craft3e-<version>@\n\n3. Install dependencies: @cabal install --disable-documentation@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,13 +31,13 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "performanceI" = { buildable = true; };
         "performanceIA" = { buildable = true; };
         "performanceIS" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

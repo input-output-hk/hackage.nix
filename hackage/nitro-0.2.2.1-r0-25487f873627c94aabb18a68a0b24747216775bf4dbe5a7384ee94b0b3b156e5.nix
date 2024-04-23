@@ -21,20 +21,20 @@
       synopsis = "Haskell bindings for Nitro";
       description = "Nitro is a secure message-passing network applications library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [
           (pkgs."nitro" or (errorHandler.sysDepError "nitro"))
           (pkgs."nitronacl" or (errorHandler.sysDepError "nitronacl"))
           (pkgs."ev" or (errorHandler.sysDepError "ev"))
           (pkgs."pthread" or (errorHandler.sysDepError "pthread"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

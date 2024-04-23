@@ -21,20 +21,20 @@
       synopsis = "Library for safe functions";
       description = "Partial functions from the base library, such as @head@ and @!!@, modified\nto fail in a @MonadFailure@ monad.\nThese functions can be used to reduce the number of unsafe pattern matches in\nyour code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."control-monad-failure" or (errorHandler.buildDepError "control-monad-failure"))
-          ] ++ (if flags.extensibleexceptions
+        ] ++ (if flags.extensibleexceptions
           then [
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optional (flags.cme) (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception")));
+          ] ++ pkgs.lib.optional (flags.cme) (hsPkgs."control-monad-exception" or (errorHandler.buildDepError "control-monad-exception")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

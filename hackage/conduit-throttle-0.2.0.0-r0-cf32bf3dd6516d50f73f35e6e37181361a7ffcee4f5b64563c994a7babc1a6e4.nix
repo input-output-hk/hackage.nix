@@ -21,7 +21,7 @@
       synopsis = "Throttle Conduit Producers";
       description = "This packages is based on the throttle-io-stream package and provides functionality for throttling Conduit producers according to a provided configuration.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."throttle-io-stream" or (errorHandler.buildDepError "throttle-io-stream"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "conduit-test" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."conduit-throttle" or (errorHandler.buildDepError "conduit-throttle"))
             (hsPkgs."throttle-io-stream" or (errorHandler.buildDepError "throttle-io-stream"))
             (hsPkgs."stm-conduit" or (errorHandler.buildDepError "stm-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

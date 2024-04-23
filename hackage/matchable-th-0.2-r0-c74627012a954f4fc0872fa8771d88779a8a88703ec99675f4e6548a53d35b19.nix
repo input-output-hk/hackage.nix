@@ -21,7 +21,7 @@
       synopsis = "Generates Matchable instances using TemplateHaskell";
       description = "This package provides TemplateHaskell function to generate\ninstances of @Matchable@ and @Bimatchable@ type classes,\nwhich are from \"matchable\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "matchable-th-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."matchable" or (errorHandler.buildDepError "matchable"))
             (hsPkgs."matchable-th" or (errorHandler.buildDepError "matchable-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

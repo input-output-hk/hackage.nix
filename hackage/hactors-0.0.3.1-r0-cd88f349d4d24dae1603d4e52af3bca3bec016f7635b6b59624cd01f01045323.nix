@@ -21,14 +21,14 @@
       synopsis = "Practical actors for Haskell.";
       description = "This library is about to implement the Erlang-like actor model on top of the\nGHC's concurrency.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

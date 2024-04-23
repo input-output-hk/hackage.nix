@@ -21,29 +21,29 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/MurakamiKennzo/simplelru#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "simplelru-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simplelru" or (errorHandler.buildDepError "simplelru"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "simplelru-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simplelru" or (errorHandler.buildDepError "simplelru"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A minimalish prelude.";
       description = "Prelude extracted from observing NoImplicitPrelude using\nprojects by https://github.com/mbj.\n\nIdea is to not design a prelude, but to observe one by\ndeduplicating repeated imports cross a larger project space.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."source-constraints" or (errorHandler.buildDepError "source-constraints"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "devtools" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."source-constraints" or (errorHandler.buildDepError "source-constraints"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

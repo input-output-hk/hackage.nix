@@ -21,7 +21,7 @@
       synopsis = "A boring window switcher.";
       description = "A boring window switcher. See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,27 +29,27 @@
           (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "boring-window-switcher" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boring-window-switcher" or (errorHandler.buildDepError "boring-window-switcher"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "author-spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."boring-window-switcher" or (errorHandler.buildDepError "boring-window-switcher"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = if !flags.author-test then false else true;
-          };
         };
       };
-    }
+    };
+  }

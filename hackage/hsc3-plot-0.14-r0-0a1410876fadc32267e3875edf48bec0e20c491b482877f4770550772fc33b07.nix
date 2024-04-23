@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider Plotting";
       description = "Plotting functions for hsc3";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

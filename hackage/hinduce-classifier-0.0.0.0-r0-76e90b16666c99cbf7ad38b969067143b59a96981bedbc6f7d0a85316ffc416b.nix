@@ -21,7 +21,7 @@
       synopsis = "Interface and utilities for classifiers";
       description = "Provides an interface for classifiers and functions to use and analyze them. Take one or more hinduce-classifier-* packages for actual classifier implementations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."layout" or (errorHandler.buildDepError "layout"))
           (hsPkgs."hinduce-missingh" or (errorHandler.buildDepError "hinduce-missingh"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

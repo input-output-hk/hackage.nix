@@ -6,8 +6,8 @@
         nix = import ../hackage/parco-parsec-0.1-r0-b099cc255a76024eea8c1a1d5fc01bbc74c3f0c839feae697e5d3a83985a971a.nix;
         revNum = 0;
         sha256 = "b099cc255a76024eea8c1a1d5fc01bbc74c3f0c839feae697e5d3a83985a971a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

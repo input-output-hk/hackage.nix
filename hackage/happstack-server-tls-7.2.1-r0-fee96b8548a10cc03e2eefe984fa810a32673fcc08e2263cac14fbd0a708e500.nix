@@ -21,7 +21,7 @@
       synopsis = "extend happstack-server with https:// support (TLS/SSL)";
       description = "Allows you to use https:// without relying on apache, nginx, etc";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."sendfile" or (errorHandler.buildDepError "sendfile"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         libs = [ (pkgs."ssl" or (errorHandler.sysDepError "ssl")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

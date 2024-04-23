@@ -6,8 +6,8 @@
         nix = import ../hackage/orville-postgresql-1.0.0.0-r0-35e9b9f8bc0bc1ee1847bcb5340fa39bed320f1573099ec16ca394726a50593a.nix;
         revNum = 0;
         sha256 = "35e9b9f8bc0bc1ee1847bcb5340fa39bed320f1573099ec16ca394726a50593a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

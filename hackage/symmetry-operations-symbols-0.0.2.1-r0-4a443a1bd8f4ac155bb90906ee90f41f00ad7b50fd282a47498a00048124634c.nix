@@ -14,7 +14,7 @@
       identifier = {
         name = "symmetry-operations-symbols";
         version = "0.0.2.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "Jun Narumi";
       maintainer = "narumij@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Derivation of symbols and coordinate triplets Library";
       description = "Please see the README on GitHub at <https://github.com/narumij/symmetry-operations-symbols#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symmetry-operations-symbols-doctest" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."symmetry-operations-symbols" or (errorHandler.buildDepError "symmetry-operations-symbols"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "symmetry-operations-symbols-test" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -56,9 +56,9 @@
             (hsPkgs."matrix-as-xyz" or (errorHandler.buildDepError "matrix-as-xyz"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."symmetry-operations-symbols" or (errorHandler.buildDepError "symmetry-operations-symbols"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

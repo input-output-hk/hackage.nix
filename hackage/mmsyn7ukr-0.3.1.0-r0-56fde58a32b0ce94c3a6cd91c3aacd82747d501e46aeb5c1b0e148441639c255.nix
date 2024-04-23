@@ -21,7 +21,7 @@
       synopsis = "A simple basic interface to some SoX functionality or to produce a voice that can be used by mmsyn7h";
       description = "A program and a library that can be used as a simple basic interface to some SoX functionality or to produce your voice in Ukrainian (if you pronounce the sounds properly) represented by the separate sounds or something special like soft sign.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn7ukr" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

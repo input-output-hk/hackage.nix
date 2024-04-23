@@ -21,7 +21,7 @@
       synopsis = "Haskell source code analysis program";
       description = "The Haskell analysis program is a prototype Haskell source code analyzer.\nIt offers functionality to convert Haskell source code into an equivalent meta-model.\nIt supports the calculation of three structural metrics, module size (LOC), module cohesion (LCOM)\nand module coupling (CBO).\nSeveral aggregation methods are supported, such as average, median,\nGini coefficient and ideal value deviation.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HaskellAnalysisProgram" = {
@@ -41,10 +41,10 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-metahs" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

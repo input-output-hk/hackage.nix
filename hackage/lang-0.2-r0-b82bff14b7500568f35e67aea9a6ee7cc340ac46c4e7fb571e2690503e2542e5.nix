@@ -21,7 +21,7 @@
       synopsis = "A Lisp";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."Mapping" or (errorHandler.buildDepError "Mapping"))
           (hsPkgs."http-streams" or (errorHandler.buildDepError "http-streams"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "An efficient and versatile range library.";
       description = "The range library alows the use of performant and versatile ranges in your code.\nIt supports bounded and unbounded ranges, ranges in a nested manner (like library\nversions), an efficient algebra of range computation and even a simplified interface\nfor ranges for the common cases. This library is far more efficient than using the\ndefault Data.List functions to approximate range behaviour. Performance is the major\nvalue offering of this library.\nIf this is your first time using this library it is highly recommended that you start\nwith \"Data.Range\"; it contains the basics of this library that meet most use\ncases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "8"
+        ] ++ (if compiler.isGhc && compiler.version.lt "8"
           then [
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-            ]
+          ]
           else [ (hsPkgs."free" or (errorHandler.buildDepError "free")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "test-range" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."range" or (errorHandler.buildDepError "range"))
-            ] ++ [ (hsPkgs."free" or (errorHandler.buildDepError "free")) ];
+          ] ++ [ (hsPkgs."free" or (errorHandler.buildDepError "free")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

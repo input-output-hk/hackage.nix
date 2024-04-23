@@ -21,15 +21,15 @@
       synopsis = "Tools for manipulating the Penn TreeBank";
       description = "\nTools for working with the Penn TreeBank\n\nRight now, this only includes a parser for the Penn TreeBank\nformat.  But additional tools would be more than welcome!\n\nSee <http://code.google.com/p/haskell-ptb>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

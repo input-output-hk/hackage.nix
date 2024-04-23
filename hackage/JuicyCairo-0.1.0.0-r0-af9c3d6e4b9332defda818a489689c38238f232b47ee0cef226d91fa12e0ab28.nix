@@ -21,7 +21,7 @@
       synopsis = "To use images of JuicyPixels from Cairo";
       description = "Please see the README on GitHub at <https://github.com/githubuser/JuicyCairo#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cairo-image" or (errorHandler.buildDepError "cairo-image"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "JuicyCairo-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cairo-image" or (errorHandler.buildDepError "cairo-image"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

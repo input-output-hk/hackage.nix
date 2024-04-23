@@ -21,22 +21,22 @@
       synopsis = "Library to parse musicxml and write musicxml.";
       description = "This library translates DTD specification of MusicXML 2.0 into\nspecific type.\nLibrary's purpose is to be interface between\nMusicXML format and its application, allowing reading and\nwritting of musicxml documents.\nThis library supports MusicXML at 2.0 version, not only partwise\nand timewise specification but also opus and container\nspecification.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
-      exes = { "test-musicxml" = { buildable = true; }; };
       };
-    }
+      exes = { "test-musicxml" = { buildable = true; }; };
+    };
+  }

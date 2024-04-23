@@ -21,7 +21,7 @@
       synopsis = "Fast and safe representation of a hex string";
       description = "Provides an interface for converting any object that has a 'Binary' instance\nto and from a hexadecimal Text representation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-suite" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."hexstring" or (errorHandler.buildDepError "hexstring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

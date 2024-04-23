@@ -21,7 +21,7 @@
       synopsis = "Backend for the persistent library using ODBC";
       description = "This package contains backends for persistent using ODBC.\nIt currently supports the following databases: MSSQL, MySql, Oracle, Sqlite, DB2, Postgres.\nUses HDBC-ODBC for accessing ODBC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,15 +40,15 @@
           (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
           (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optionals (flags.tester) [
+        ] ++ pkgs.lib.optionals (flags.tester) [
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."esqueleto" or (errorHandler.buildDepError "esqueleto"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "TestODBC" = {
-          depends = (pkgs.lib).optionals (flags.tester) [
+          depends = pkgs.lib.optionals (flags.tester) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."persistent-odbc" or (errorHandler.buildDepError "persistent-odbc"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
@@ -68,9 +68,9 @@
             (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"))
             (hsPkgs."persistent" or (errorHandler.buildDepError "persistent"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.tester then true else false;
-          };
         };
       };
-    }
+    };
+  }

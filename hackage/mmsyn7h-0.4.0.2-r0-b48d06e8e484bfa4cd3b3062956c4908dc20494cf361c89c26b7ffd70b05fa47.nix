@@ -21,7 +21,7 @@
       synopsis = "Produces a sound recording specified by the Ukrainian text.";
       description = "A program and a library that are used with mmsyn7ukr (or separately) and are similar to mmsyn6ukr executable. The program uses the data files in the current directory instead of ones in the system defined directories. It reads Ukrainian text with the given by data files sounds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
           (hsPkgs."mmsyn7s" or (errorHandler.buildDepError "mmsyn7s"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn7h" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
             (hsPkgs."mmsyn7s" or (errorHandler.buildDepError "mmsyn7s"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

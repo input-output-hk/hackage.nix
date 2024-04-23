@@ -21,15 +21,15 @@
       synopsis = "Currencies representation, pretty printing and conversion";
       description = "ISO 4217 Currencies representation, pretty printing and conversion:\n\n* Represent monetary amouts of a particular currency in a type-safe manner\n\n* Convert amounts between different currencies\n\n* Print human readable amouts";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "currencies-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."currencies" or (errorHandler.buildDepError "currencies"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

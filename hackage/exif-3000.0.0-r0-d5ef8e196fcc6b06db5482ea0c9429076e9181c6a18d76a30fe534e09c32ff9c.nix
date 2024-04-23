@@ -21,15 +21,15 @@
       synopsis = "A Haskell binding to a subset of libexif";
       description = "This is a Haskell binding to a subset of libexif.\nOnly tag reading is currently supported.\nImage files containing EXIF data can be read from memory or\ndisk.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [
           (pkgs."exif" or (errorHandler.sysDepError "exif"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

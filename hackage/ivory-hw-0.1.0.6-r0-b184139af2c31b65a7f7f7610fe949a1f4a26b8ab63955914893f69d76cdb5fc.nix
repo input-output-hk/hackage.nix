@@ -21,7 +21,7 @@
       synopsis = "Ivory hardware model (STM32F4).";
       description = "Hardware model for Ivory.  Currently, the STM32F4 is supported; others may be added.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
           (hsPkgs."ivory-artifact" or (errorHandler.buildDepError "ivory-artifact"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

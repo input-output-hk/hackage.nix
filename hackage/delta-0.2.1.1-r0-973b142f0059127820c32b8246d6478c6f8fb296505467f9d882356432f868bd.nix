@@ -21,7 +21,7 @@
       synopsis = "A library for detecting file changes";
       description = "Delta is a library for detecting file changes in any given\ndirectory. The package is written using the sodium FRP library\nbut it also provides a callback based API.\nThe project also contains an executable, delta-run, which\nallows you to run arbitrary shell commands when a file in a\ndirectory (recursively) changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."sodium" or (errorHandler.buildDepError "sodium"))
-          ] ++ (pkgs.lib).optional (system.isOsx && flags.build_fs_events) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"));
+        ] ++ pkgs.lib.optional (system.isOsx && flags.build_fs_events) (hsPkgs."hfsevents" or (errorHandler.buildDepError "hfsevents"));
         buildable = true;
-        };
+      };
       exes = {
         "delta-cli" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."delta" or (errorHandler.buildDepError "delta"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "delta-run" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,9 +50,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."sodium" or (errorHandler.buildDepError "sodium"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

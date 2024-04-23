@@ -21,7 +21,7 @@
       synopsis = "Scrabble play generation.";
       description = "A small program for generating plays for Scrabble tables.\nCurrently only the classic Scrabble board layout is supported and the user interface is pretty much nonexistent.\nYou can change the board, the rack and the number of plays displayed by manually editing the Main source file and rebuilding.\nHence, downloading the source distribution is advised.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scrabble-bot" = {
@@ -36,9 +36,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."packed-dawg" or (errorHandler.buildDepError "packed-dawg"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

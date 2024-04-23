@@ -21,7 +21,7 @@
       synopsis = "A set of native haskell charts.";
       description = "See https://tonyday567.github.io/chart-unit/index.html for some description.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chart-unit-examples" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."ListLike" or (errorHandler.buildDepError "ListLike"))
             (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
             (hsPkgs."tdigest" or (errorHandler.buildDepError "tdigest"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."numhask-range" or (errorHandler.buildDepError "numhask-range"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

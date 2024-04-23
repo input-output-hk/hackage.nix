@@ -6,8 +6,8 @@
         nix = import ../hackage/servant-smsc-ru-0.1.0.0-r0-a2b46a95be006a97a8909e90a8c531654db976e00485be9236b079e74ea544ab.nix;
         revNum = 0;
         sha256 = "a2b46a95be006a97a8909e90a8c531654db976e00485be9236b079e74ea544ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

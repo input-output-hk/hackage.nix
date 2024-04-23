@@ -6,8 +6,8 @@
         nix = import ../hackage/gl-capture-0.1.0.0-r0-0fe7a58a8b692e4ac23cc816667d2a47fd8352a3e812c43cdae1240c0117d657.nix;
         revNum = 0;
         sha256 = "0fe7a58a8b692e4ac23cc816667d2a47fd8352a3e812c43cdae1240c0117d657";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

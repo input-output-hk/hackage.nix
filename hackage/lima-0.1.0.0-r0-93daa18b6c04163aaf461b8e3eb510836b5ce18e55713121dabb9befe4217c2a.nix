@@ -21,7 +21,7 @@
       synopsis = "Haskell -> Markdown and Literate Haskell <-> Markdown converter";
       description = "See README here or on [GitHub](https://github.com/deemp/flakes/tree/main/lima#readme)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lima" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."lima" or (errorHandler.buildDepError "lima"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lima-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."lima" or (errorHandler.buildDepError "lima"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

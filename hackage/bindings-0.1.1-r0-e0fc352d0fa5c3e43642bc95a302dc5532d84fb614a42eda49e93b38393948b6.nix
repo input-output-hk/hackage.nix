@@ -21,11 +21,11 @@
       synopsis = "Low level bindings for foreign libraries\nfollowing community driven guidelines";
       description = "This package has been left in favor of a new design. See\n@bindings-common@ and others.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

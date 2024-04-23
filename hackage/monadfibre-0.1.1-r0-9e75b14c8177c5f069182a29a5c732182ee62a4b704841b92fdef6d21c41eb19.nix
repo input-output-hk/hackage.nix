@@ -21,15 +21,15 @@
       synopsis = "This package defines Monadic functions which provide Choice and Parallelism - (<||>) and (<&&>).";
       description = "This package defines Monadic functions which provide Choice and Parallelism - (<||>) and (<&&>)\n- that work on Monads that provide a (MonadBi m ()) instance.\nAlso included is a Class called @MonadBi@ which acts as a superset\nof @MonadTrans@, and provides @raise@ analogous to @lift@ as well\nas @lower@, which goes the other way.\nNatural instances are provided for many Monad Transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

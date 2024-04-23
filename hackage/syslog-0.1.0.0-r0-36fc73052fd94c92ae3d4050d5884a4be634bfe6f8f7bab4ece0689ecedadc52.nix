@@ -21,7 +21,7 @@
       synopsis = "Decode RFC 3164 and RFC 5424 syslog message formats";
       description = "Decode syslog messages that were formatted using RFC 3164 (BSD-syslog) or\nRFC 5424 (IETF-syslog).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."run-st" or (errorHandler.buildDepError "run-st"))
           (hsPkgs."unpacked-maybe-numeric" or (errorHandler.buildDepError "unpacked-maybe-numeric"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."syslog" or (errorHandler.buildDepError "syslog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

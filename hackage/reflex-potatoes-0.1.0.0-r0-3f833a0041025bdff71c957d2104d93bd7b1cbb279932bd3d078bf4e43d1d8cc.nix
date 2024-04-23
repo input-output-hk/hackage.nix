@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/pdlla/reflex-potatoes#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."some" or (errorHandler.buildDepError "some"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reflex-potatoes-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."some" or (errorHandler.buildDepError "some"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

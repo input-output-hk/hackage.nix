@@ -21,12 +21,12 @@
       synopsis = "Additional facilities for Integers";
       description = "Additional faciltiies for Integers. Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "hw-int-test" = {
           depends = [
@@ -36,12 +36,12 @@
             (hsPkgs."hw-hedgehog" or (errorHandler.buildDepError "hw-hedgehog"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
             (hsPkgs."hw-int" or (errorHandler.buildDepError "hw-int"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

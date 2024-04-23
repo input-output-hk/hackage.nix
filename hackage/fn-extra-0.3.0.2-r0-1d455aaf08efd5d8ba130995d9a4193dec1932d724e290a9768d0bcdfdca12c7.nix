@@ -21,7 +21,7 @@
       synopsis = "Extras for Fn, a functional web framework.";
       description = "Please see README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."digestive-functors" or (errorHandler.buildDepError "digestive-functors"))
           (hsPkgs."fn" or (errorHandler.buildDepError "fn"))
           (hsPkgs."map-syntax" or (errorHandler.buildDepError "map-syntax"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

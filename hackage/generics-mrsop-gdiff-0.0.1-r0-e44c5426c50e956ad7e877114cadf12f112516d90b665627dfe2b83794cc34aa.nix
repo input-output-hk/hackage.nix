@@ -21,14 +21,14 @@
       synopsis = "Reimplementation of the `gdiff` algorithm for `generics-mrsop`";
       description = "Here we port the gdiff algorithm and library to work over the generics-mrsop, enabling code that relies on the later library to access the gdiff algorithm. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."generics-mrsop" or (errorHandler.buildDepError "generics-mrsop"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

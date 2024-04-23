@@ -21,7 +21,7 @@
       synopsis = "Koji CLI tool for querying tasks and installing builds";
       description = "koji-tool is a CLI interface to Koji with commands to query\nbuilds, tasks, install rpms, and track buildlog sizes.\n\nKoji is the RPM-based buildsystem of Fedora Linux and CentOS.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "koji-tool" = {
@@ -44,21 +44,21 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."xdg-userdirs" or (errorHandler.buildDepError "xdg-userdirs"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."http-common" or (errorHandler.buildDepError "http-common"));
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.koji-tool.components.exes.koji-tool or (pkgs.buildPackages.koji-tool or (errorHandler.buildToolDepError "koji-tool:koji-tool")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

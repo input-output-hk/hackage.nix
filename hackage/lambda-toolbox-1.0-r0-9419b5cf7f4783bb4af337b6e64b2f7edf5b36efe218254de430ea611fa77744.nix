@@ -21,13 +21,13 @@
       synopsis = "An application to work with the lambda calculus (for learning)";
       description = "lambda-toolbox allows one to reduce lambda expressions step by step,\nperforming alpha-, beta-, and eta-reduction. It's a tool intended\nfor beginners to play with the lambda calculus.\n\n> $ lambda-toolbox -h\n\nwill tell you everything relevant.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "simplex" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

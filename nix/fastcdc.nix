@@ -6,8 +6,8 @@
         nix = import ../hackage/fastcdc-0.0.0-r0-daf48ac304f82b08c9e8698cf9c04d74857475b5c3e3635dcda5b86440752142.nix;
         revNum = 0;
         sha256 = "daf48ac304f82b08c9e8698cf9c04d74857475b5c3e3635dcda5b86440752142";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

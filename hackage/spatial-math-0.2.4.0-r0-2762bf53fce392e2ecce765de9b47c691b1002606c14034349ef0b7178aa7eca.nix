@@ -21,7 +21,7 @@
       synopsis = "3d math including quaternions/euler angles/dcms and utility functions";
       description = "This is a port of my 'mathlib' C library: `https://github.com/ghorn/mathlib`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

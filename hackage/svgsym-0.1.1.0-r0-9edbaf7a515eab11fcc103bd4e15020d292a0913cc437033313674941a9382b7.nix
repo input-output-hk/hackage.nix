@@ -21,7 +21,7 @@
       synopsis = "A tool to prune unused symbols from icon SVG files.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "svgsym" = {
@@ -37,9 +37,9 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

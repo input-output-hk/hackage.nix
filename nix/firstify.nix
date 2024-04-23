@@ -6,8 +6,8 @@
         nix = import ../hackage/firstify-0.1-r0-556905277924b70355429832d5d1c81cb0adf6e85e408185fb3cc155fe738691.nix;
         revNum = 0;
         sha256 = "556905277924b70355429832d5d1c81cb0adf6e85e408185fb3cc155fe738691";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

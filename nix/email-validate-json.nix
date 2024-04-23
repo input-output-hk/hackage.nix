@@ -6,8 +6,8 @@
         nix = import ../hackage/email-validate-json-0.1.0.0-r0-aaee3cf0f345fb92192a7d02fdfdb22602c65228642521393b4a6d3579509691.nix;
         revNum = 0;
         sha256 = "aaee3cf0f345fb92192a7d02fdfdb22602c65228642521393b4a6d3579509691";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

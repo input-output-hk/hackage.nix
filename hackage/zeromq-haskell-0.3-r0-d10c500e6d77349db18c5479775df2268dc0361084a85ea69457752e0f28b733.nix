@@ -21,7 +21,7 @@
       synopsis = "bindings to zeromq ";
       description = "Bindings to zeromq (http://zeromq.org)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."zmq" or (errorHandler.sysDepError "zmq")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

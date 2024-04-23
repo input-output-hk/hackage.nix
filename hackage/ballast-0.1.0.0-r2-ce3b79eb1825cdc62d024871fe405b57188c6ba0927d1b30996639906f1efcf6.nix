@@ -21,7 +21,7 @@
       synopsis = "Shipwire API client";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

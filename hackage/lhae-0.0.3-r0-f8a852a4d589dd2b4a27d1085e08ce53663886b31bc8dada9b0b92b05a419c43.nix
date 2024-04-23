@@ -21,7 +21,7 @@
       synopsis = "Simple spreadsheet program";
       description = "lhae is a spreadsheet program. It features a simple formula language and some basic statistical methods.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "lhae" = {
@@ -39,9 +39,9 @@
             (hsPkgs."hgettext" or (errorHandler.buildDepError "hgettext"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

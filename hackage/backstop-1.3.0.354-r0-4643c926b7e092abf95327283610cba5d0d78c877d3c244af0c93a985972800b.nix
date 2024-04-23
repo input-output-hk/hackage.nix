@@ -21,7 +21,7 @@
       synopsis = "Backstop a target directory by source directories";
       description = "The backstop command is a UNIX, Linux, and *BSD tool. Intuitively,\nbackstop fills in the missing objects or holes that exist in the\ntarget directory relative to the source directories thereby\ncreating a merged view of the target and source directories.\nDe-backstop undoes this. See \"backstop -m\" for a manual page\nor the [homepage](https://github.com/mdgabriel/backstop.git)\nfor more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "backstop" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "run-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

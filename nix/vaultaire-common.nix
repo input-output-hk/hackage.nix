@@ -6,8 +6,8 @@
         nix = import ../hackage/vaultaire-common-2.9.1-r0-34cb72301ffd8dacf98a58553c15601b5bf76ba9ef2c950de9636113cd9219cb.nix;
         revNum = 0;
         sha256 = "34cb72301ffd8dacf98a58553c15601b5bf76ba9ef2c950de9636113cd9219cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

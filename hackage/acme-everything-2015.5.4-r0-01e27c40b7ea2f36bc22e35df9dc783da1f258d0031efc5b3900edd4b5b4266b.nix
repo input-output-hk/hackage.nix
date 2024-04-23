@@ -21,7 +21,7 @@
       synopsis = "Install everything.";
       description = "Install everything.\n\nDon't be fooled by the small dependency footprint: the\nentirety of Hackage needs to be installed for this, and\nmost of it is done via transitive dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -106,8 +106,8 @@
           (hsPkgs."wai-request-spec" or (errorHandler.buildDepError "wai-request-spec"))
           (hsPkgs."yesod-gitrev" or (errorHandler.buildDepError "yesod-gitrev"))
           (hsPkgs."yesod-transloadit" or (errorHandler.buildDepError "yesod-transloadit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

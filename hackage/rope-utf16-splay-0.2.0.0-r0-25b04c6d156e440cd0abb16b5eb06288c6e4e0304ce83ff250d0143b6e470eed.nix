@@ -21,15 +21,15 @@
       synopsis = "Ropes optimised for updating using UTF-16 code units and\nrow/column pairs.";
       description = "Ropes optimised for updating using UTF-16 code units and\nrow/column pairs.  This implementation uses splay trees\ninstead of the usual finger trees. According to my\nbenchmarks, splay trees are faster in most situations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

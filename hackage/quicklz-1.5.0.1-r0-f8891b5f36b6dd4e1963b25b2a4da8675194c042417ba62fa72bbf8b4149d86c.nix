@@ -21,15 +21,15 @@
       synopsis = "binding to QuickLZ compression library";
       description = "This package provides a high level binding to the QuickLZ (http://quicklz.com) library\nfor ByteStrings, under the GPLv2. QuickLZ is fast and compresses very well.\n\nThis package includes the QuickLZ source code, with compression level 1 and streaming\ncurrently disabled.\n\nThe versioning scheme for this package is unusual. QuickLZ trys to be as fast as possible,\nand will break backwards compatibility to achieve it in new versions. This versioning scheme\nreflects the QuickLZ versioning scheme: the first three digits of version w.x.y.z digits are\nthe quicklz version, with the 'z' component (and any further needed ones) being updates to this package,\nnot the underlying version.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."quicklz" or (errorHandler.buildDepError "quicklz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

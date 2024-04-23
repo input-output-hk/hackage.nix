@@ -21,14 +21,14 @@
       synopsis = "Commutative semigroups";
       description = "A commutative semigroup is a semigroup where the order of arguments to mappend does not matter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

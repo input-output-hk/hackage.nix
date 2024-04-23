@@ -21,11 +21,11 @@
       synopsis = "(?) and (?>) conditional operator";
       description = "(?) and (?>) conditional operator, it can be used with any existed version of base.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

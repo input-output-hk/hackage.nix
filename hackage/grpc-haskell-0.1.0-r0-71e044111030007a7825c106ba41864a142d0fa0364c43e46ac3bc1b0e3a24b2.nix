@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of gRPC layered on shared C library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,12 +32,12 @@
           (hsPkgs."grpc-haskell-core" or (errorHandler.buildDepError "grpc-haskell-core"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."managed" or (errorHandler.buildDepError "managed"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hellos-server" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -48,11 +48,11 @@
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
+        };
         "hellos-client" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -63,11 +63,11 @@
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
+        };
         "echo-server" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -80,11 +80,11 @@
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
+        };
         "arithmetic-server" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -97,11 +97,11 @@
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
+        };
         "arithmetic-client" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -114,11 +114,11 @@
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
+        };
         "echo-client" = {
-          depends = (pkgs.lib).optionals (flags.with-examples) [
+          depends = pkgs.lib.optionals (flags.with-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -132,10 +132,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.with-examples then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -158,10 +158,10 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -172,9 +172,9 @@
             (hsPkgs."proto3-suite" or (errorHandler.buildDepError "proto3-suite"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Reshape multi-dimensional arrays.";
       description = "Reshape multi-dimensional arrays.\n\nProvides the 'Shapable' class, respresenting those\ninstances of 'Ix' that provide to arrays indexing\nthat is isomorphic to that of C-style\nmulti-dimensional arrays.\n\nFactored out of the 'carray' library with the kind\npermission of its author.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

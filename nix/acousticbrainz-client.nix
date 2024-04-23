@@ -6,8 +6,8 @@
         nix = import ../hackage/acousticbrainz-client-0.1.0.0-r0-741b67057325e67cdbf17e1132f6772094800ea160421b5134ad9a5f10abca54.nix;
         revNum = 0;
         sha256 = "741b67057325e67cdbf17e1132f6772094800ea160421b5134ad9a5f10abca54";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

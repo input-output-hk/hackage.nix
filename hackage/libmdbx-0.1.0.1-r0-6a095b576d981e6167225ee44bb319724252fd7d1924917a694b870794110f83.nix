@@ -21,19 +21,19 @@
       synopsis = "Bindings for libmdbx, an embedded key/value store";
       description = "Haskell bindings for [libmdbx](https://github.com/erthink/libmdbx).\n\nSee documentation in the main module or check the README on GitHub at\n<https://github.com/fjvallarino/libmdbx-hs#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "libmdbx-exe" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."store" or (errorHandler.buildDepError "store"))
             (hsPkgs."string-interpolate" or (errorHandler.buildDepError "string-interpolate"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "libmdbx-hs-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."libmdbx" or (errorHandler.buildDepError "libmdbx"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Upload packages to Marmalade";
       description = "Upload Emacs packages to the <http://marmalade-repo.org/ Marmalade> ELPA\narchive.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "marmalade-upload" = {
           depends = [
@@ -51,10 +51,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."keyring" or (errorHandler.buildDepError "keyring"))
             (hsPkgs."marmalade-upload" or (errorHandler.buildDepError "marmalade-upload"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "marmalade" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."marmalade-upload" or (errorHandler.buildDepError "marmalade-upload"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

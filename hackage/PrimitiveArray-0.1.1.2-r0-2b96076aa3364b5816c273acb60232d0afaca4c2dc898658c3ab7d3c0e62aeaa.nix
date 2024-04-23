@@ -21,7 +21,7 @@
       synopsis = "Efficient multidimensional arrays";
       description = "This library provides efficient multidimensional arrays. All\narrays are 0-based and indexed using repa-shapes.\n\nPlease note that this version only has the name (and author) in\ncommon with the previous 0.0.4.0 version. The basic idea of the\nlibrary remains the same: provide efficient access to immutable\narrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Dynamic programming for Set data structures.";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nExtensions of ADPfusion for set-(like) data structures.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
           (hsPkgs."OrderedBits" or (errorHandler.buildDepError "OrderedBits"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."ADPfusionSet" or (errorHandler.buildDepError "ADPfusionSet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

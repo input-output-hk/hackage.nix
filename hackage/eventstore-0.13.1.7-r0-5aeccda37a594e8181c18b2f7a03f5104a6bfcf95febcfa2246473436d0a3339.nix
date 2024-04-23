@@ -21,7 +21,7 @@
       synopsis = "EventStore TCP Client";
       description = "EventStore TCP Client <http://geteventstore.com>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."dotnet-timespan" or (errorHandler.buildDepError "dotnet-timespan"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-tests" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
             (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

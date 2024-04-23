@@ -21,7 +21,7 @@
       synopsis = "Random number generation";
       description = "Random number generation based on modeling random\nvariables in two complementary ways: first, by the\nparameters of standard mathematical distributions and,\nsecond, by an abstract type ('RVar') which can be\ncomposed and manipulated monadically and sampled in\neither monadic or \\\"pure\\\" styles.\n\nThe primary purpose of this library is to support\ndefining and sampling a wide variety of high quality\nrandom variables.  Quality is prioritized over speed,\nbut performance is an important goal too.\n\nIn my testing, I have found it capable of speed\ncomparable to other Haskell libraries, but still\na fair bit slower than straight C implementations of\nthe same algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -35,12 +35,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).eq "7.2.1"
+        ];
+        buildable = if compiler.isGhc && compiler.version.eq "7.2.1"
           then false
           else true;
-        };
       };
-    }
+    };
+  }

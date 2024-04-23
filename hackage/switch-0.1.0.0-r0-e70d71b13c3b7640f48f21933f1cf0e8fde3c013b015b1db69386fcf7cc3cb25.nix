@@ -21,7 +21,7 @@
       synopsis = "Nintendo Switch Controller Library";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/switch#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hidapi" or (errorHandler.buildDepError "hidapi"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cube" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."hidapi" or (errorHandler.buildDepError "hidapi"))
             (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
             (hsPkgs."switch" or (errorHandler.buildDepError "switch"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "leftJoyCon" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -53,9 +53,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hidapi" or (errorHandler.buildDepError "hidapi"))
             (hsPkgs."switch" or (errorHandler.buildDepError "switch"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "proController" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -63,9 +63,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hidapi" or (errorHandler.buildDepError "hidapi"))
             (hsPkgs."switch" or (errorHandler.buildDepError "switch"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rightJoyCon" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -73,9 +73,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hidapi" or (errorHandler.buildDepError "hidapi"))
             (hsPkgs."switch" or (errorHandler.buildDepError "switch"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

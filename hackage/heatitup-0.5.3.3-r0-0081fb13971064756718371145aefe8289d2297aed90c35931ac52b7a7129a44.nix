@@ -21,7 +21,7 @@
       synopsis = "Find and annotate ITDs.";
       description = "Find and annotate ITDs using suffix trees and characterize the exogenous segments within the spacer using heat diffusion.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
           (hsPkgs."suffixtree" or (errorHandler.buildDepError "suffixtree"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "heatitup" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."pipes-csv" or (errorHandler.buildDepError "pipes-csv"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

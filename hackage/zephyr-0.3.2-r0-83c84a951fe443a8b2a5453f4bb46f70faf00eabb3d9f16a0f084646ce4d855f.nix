@@ -21,7 +21,7 @@
       synopsis = "Zephyr, tree-shaking for the PureScript language";
       description = "Tree shaking tool and partial evaluator for PureScript\nCoreFn AST.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."purescript" or (errorHandler.buildDepError "purescript"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zephyr" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."zephyr" or (errorHandler.buildDepError "zephyr"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "zephyr-test" = {
           depends = [
@@ -87,12 +87,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."zephyr" or (errorHandler.buildDepError "zephyr"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.purescript.components.exes.purs or (pkgs.buildPackages.purs or (errorHandler.buildToolDepError "purescript:purs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

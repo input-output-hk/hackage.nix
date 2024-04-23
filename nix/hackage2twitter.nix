@@ -6,8 +6,8 @@
         nix = import ../hackage/hackage2twitter-0.2.1-r0-e3eb89c9a1469b3ce586112819fc08a72fa8802ba369b308620bcfe6ba1f9a30.nix;
         revNum = 0;
         sha256 = "e3eb89c9a1469b3ce586112819fc08a72fa8802ba369b308620bcfe6ba1f9a30";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

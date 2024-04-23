@@ -6,8 +6,8 @@
         nix = import ../hackage/composite-xml-0.1.0.0-r0-b2882049ef98f8e9e4daa20b682ddfa61183dc17d11ecc7f3a85068166cd4f96.nix;
         revNum = 0;
         sha256 = "b2882049ef98f8e9e4daa20b682ddfa61183dc17d11ecc7f3a85068166cd4f96";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -14,7 +14,7 @@
       identifier = {
         name = "algorithmic-composition-complex";
         version = "0.1.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "Helps to create more complex experimental music from a file (especially timbre).";
       description = "Uses SoX inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."phonetic-languages-simplified-base" or (errorHandler.buildDepError "phonetic-languages-simplified-base"))
           (hsPkgs."foldable-ix" or (errorHandler.buildDepError "foldable-ix"))
           (hsPkgs."algorithmic-composition-basic" or (errorHandler.buildDepError "algorithmic-composition-basic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Trees and monadic trees expressed as monadic lists where the underlying monad is a list";
       description = "Directory tree structure expressed as a monadic tree.\nSearching, pruning, iterating, and processing trees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."List" or (errorHandler.buildDepError "List"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Efficient, purely functional generation of prime numbers";
       description = "This Haskell library provides an efficient lazy wheel sieve for\nprime generation ispired by \"Lazy wheel sieves and spirals of\nprimes\" by Colin Runciman and \"The Genuine Sieve of Eratosthenes\" by\nMelissa O'Neil.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

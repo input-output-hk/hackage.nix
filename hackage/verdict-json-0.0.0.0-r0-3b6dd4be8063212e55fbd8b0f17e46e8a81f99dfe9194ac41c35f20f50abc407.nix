@@ -21,7 +21,7 @@
       synopsis = "JSON instances and JSON Schema for verdict";
       description = "DO NOT USE! Unstable, not thoroughly tested.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Example" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."verdict-json" or (errorHandler.buildDepError "verdict-json"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."verdict" or (errorHandler.buildDepError "verdict"))
             (hsPkgs."verdict-json" or (errorHandler.buildDepError "verdict-json"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

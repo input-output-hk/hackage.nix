@@ -21,7 +21,7 @@
       synopsis = "back up a secret key securely to the cloud";
       description = "Keysafe backs up a secret key to several cloud servers, split up\nso that no one server can access the whole secret by itself.\n\nA password is used to encrypt the data, and it is made expensive\nto decrypt, so password cracking is infeasibly expensive.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "keysafe" = {
@@ -49,10 +49,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."finite-field" or (errorHandler.buildDepError "finite-field"))
             (hsPkgs."polynomial" or (errorHandler.buildDepError "polynomial"))
-            ];
+          ];
           libs = [ (pkgs."argon2" or (errorHandler.sysDepError "argon2")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/xml-conduit-decode-1.0.0.0-r0-52e272a0f0ffadc1cdf7c30a4c0841dc09bf69402be3c567e882c58daebff393.nix;
         revNum = 0;
         sha256 = "52e272a0f0ffadc1cdf7c30a4c0841dc09bf69402be3c567e882c58daebff393";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

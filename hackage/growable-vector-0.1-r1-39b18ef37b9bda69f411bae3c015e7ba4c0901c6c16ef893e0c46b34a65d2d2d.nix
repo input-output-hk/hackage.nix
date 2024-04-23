@@ -21,7 +21,7 @@
       synopsis = "A contiguous growable array type.";
       description = "A contiguous growable array type. See the haddocks for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."primitive-unlifted" or (errorHandler.buildDepError "primitive-unlifted"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."growable-vector" or (errorHandler.buildDepError "growable-vector"))
             (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

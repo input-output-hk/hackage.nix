@@ -21,7 +21,7 @@
       synopsis = "Extracts text of main article from HTML document";
       description = "Give @readability@ an HTML document and it will detect and extract text of the article while removing everything unnecessary like menus, advertisements or sidebars. It is more or less reimplementation of [python-readability](https://github.com/buriy/python-readability).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."html-conduit" or (errorHandler.buildDepError "html-conduit"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "readability" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."readability" or (errorHandler.buildDepError "readability"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A package for parsing shell scripts";
       description = "Language.Sh is a collection of modules for parsing and\nmanipulating expressions in shell grammar.\nThis is part of a larger project, shsh.\nPlease note that the API is somewhat unstable until we\nreach version 1.0.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pcre-light" or (errorHandler.buildDepError "pcre-light"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

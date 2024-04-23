@@ -6,8 +6,8 @@
         nix = import ../hackage/SVG2Q-0.3-r0-bc1e658979dd501d0af27c28ee00a6dda43f96ab02c48e456ba7679d01db86c7.nix;
         revNum = 0;
         sha256 = "bc1e658979dd501d0af27c28ee00a6dda43f96ab02c48e456ba7679d01db86c7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

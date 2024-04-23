@@ -21,7 +21,7 @@
       synopsis = "A GHC Core plugin for intensional datatype refinement checking";
       description = "Please see the README on GitHub at <https://github.com/bristolpl/intensional-datatys#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "benchmark" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."intensional-datatys" or (errorHandler.buildDepError "intensional-datatys"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = if flags.bbenchmarks then true else false;
-          };
         };
+      };
       exes = {
         "profile" = {
           depends = [
@@ -60,18 +60,18 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."intensional-datatys" or (errorHandler.buildDepError "intensional-datatys"))
-            ];
+          ];
           buildable = false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."intensional-datatys" or (errorHandler.buildDepError "intensional-datatys"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

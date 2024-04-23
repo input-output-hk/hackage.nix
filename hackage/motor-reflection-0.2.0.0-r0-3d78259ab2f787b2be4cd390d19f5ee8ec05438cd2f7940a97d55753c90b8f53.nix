@@ -21,7 +21,7 @@
       synopsis = "Reflect on Motor FSM typeclasses to obtain runtime representations";
       description = "Reflect on Motor FSM typeclasses to obtain runtime representations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."motor" or (errorHandler.buildDepError "motor"))
             (hsPkgs."motor-reflection" or (errorHandler.buildDepError "motor-reflection"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

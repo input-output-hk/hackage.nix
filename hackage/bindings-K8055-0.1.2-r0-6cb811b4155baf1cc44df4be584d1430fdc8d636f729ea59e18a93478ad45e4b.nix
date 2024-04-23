@@ -21,12 +21,12 @@
       synopsis = "Bindings to Velleman K8055 dll";
       description = "Bindings to Velleman K8055 dll for interfacing USB I/O board.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."K8055D" or (errorHandler.sysDepError "K8055D")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

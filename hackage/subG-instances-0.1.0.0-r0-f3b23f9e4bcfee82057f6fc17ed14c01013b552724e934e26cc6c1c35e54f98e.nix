@@ -21,15 +21,15 @@
       synopsis = "Additional instances for the InsertLeft class from subG package.";
       description = "Additional instances for the InsertLeft class from subG package. Use additional dependencies comparing to the package subG.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."subG" or (errorHandler.buildDepError "subG"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

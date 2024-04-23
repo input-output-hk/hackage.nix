@@ -21,7 +21,7 @@
       synopsis = "Extract all JavaScript from an HTML page and consolidate it in one script.";
       description = "Allows extraction and consolidation of JavaScript code in an HTML page so that it behaves like the original. Consolidation is a process of transforming an HTML page into an equivalent, but containing JavaScript code only in one inlined script tag. Note that the package versions follow Semantic Versioning model (semver.org).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."data-default-instances-base" or (errorHandler.buildDepError "data-default-instances-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "jespresso" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unittest" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."arrows" or (errorHandler.buildDepError "arrows"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/wreq-patchable-1.0.0.0-r0-83fbdcc7c6bf30454fb71816dbc20442268b762f53899be5afb96c0c82ece45b.nix;
         revNum = 0;
         sha256 = "83fbdcc7c6bf30454fb71816dbc20442268b762f53899be5afb96c0c82ece45b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

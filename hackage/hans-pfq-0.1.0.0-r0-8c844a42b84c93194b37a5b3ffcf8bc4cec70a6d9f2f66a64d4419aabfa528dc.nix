@@ -21,7 +21,7 @@
       synopsis = "Driver for real ethernet devices for HaNS";
       description = "Network ethernet device for HaNS(Currently requires hans-2.4 from the github), which can tap into a real ethernet interface, all using pfq library and preform raw packet reads & writes.\nThis is a very simple. But requires: root - to be able to use PFQ, not really tested...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
           (hsPkgs."pfq" or (errorHandler.buildDepError "pfq"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,13 +21,13 @@
       synopsis = "Double-ended queue";
       description = "An implementation of double-ended queue (aka Dequeue or Deque)\nbased on the head-tail linked list.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

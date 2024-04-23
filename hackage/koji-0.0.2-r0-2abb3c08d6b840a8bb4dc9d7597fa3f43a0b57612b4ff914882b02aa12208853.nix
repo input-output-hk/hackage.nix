@@ -21,15 +21,15 @@
       synopsis = "Koji buildsystem XML-RPC API bindings";
       description = "This library provides Haskell bindings to the Koji XML RPC API.\nKoji is a distributed rpm buildsystem used by Fedora, Centos,\nRed Hat, and other projects. See <https://pagure.io/koji/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."haxr" or (errorHandler.buildDepError "haxr"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

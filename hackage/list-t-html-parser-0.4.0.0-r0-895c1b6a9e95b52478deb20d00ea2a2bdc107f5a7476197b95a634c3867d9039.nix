@@ -21,7 +21,7 @@
       synopsis = "Streaming HTML parser";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."mtl-prelude" or (errorHandler.buildDepError "mtl-prelude"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."conversion-text" or (errorHandler.buildDepError "conversion-text"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Streaming interface for ghc-tags-core";
       description = "Interface to stream tags using `pipes` library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-tags-core" or (errorHandler.buildDepError "ghc-tags-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

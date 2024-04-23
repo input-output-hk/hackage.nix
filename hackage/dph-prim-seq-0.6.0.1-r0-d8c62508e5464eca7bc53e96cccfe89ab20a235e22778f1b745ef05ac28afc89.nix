@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell segmented arrays. (sequential implementation)";
       description = "Sequential array data type and stream fuctions, along with a\nsequential reference implementation of the segmented array\nAPI defined in @dph-prim-interface@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."dph-prim-interface" or (errorHandler.buildDepError "dph-prim-interface"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A full-featured PostgreSQL-backed job queue (with an admin UI)";
       description = "- Background jobs library for Haskell.\n- Extracted from production code at [Vacation Labs](https://www.vacationlabs.com).\n- Inspired by the Delayed Jobs library in Rails.\n- Queue backend is a Postgres table.\n- Queue is monitored using, both, LISTEN/NOTIFY and polling the DB.\n- Comes with an in-built admin UI (WIP).\n- Comes with utilities to help you built a CLI for your job-queue.\n- Highly configurable and monitorable";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "devel" = {
           depends = [
@@ -95,10 +95,10 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "jobrunner" = {
           depends = [
@@ -144,9 +144,9 @@
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/maybe-justify-0.1.0.0-r0-9fbb639e3924a5c72bf813caece89c1529039fab3431fa28731dae96b52aaa07.nix;
         revNum = 0;
         sha256 = "9fbb639e3924a5c72bf813caece89c1529039fab3431fa28731dae96b52aaa07";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

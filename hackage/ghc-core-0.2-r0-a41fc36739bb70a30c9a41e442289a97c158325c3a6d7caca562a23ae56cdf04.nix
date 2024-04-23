@@ -21,7 +21,7 @@
       synopsis = "Display GHC's core and assembly output in a pager";
       description = "A convenient command line wrapper for GHC that displays\nGHC's optimised core and assembly output in a human\nreadable, colourised manner, in a pager.\n\nUsage:\n\n> ghc-core A.hs\n\n> ghc-core -fvia-C -optc-O3 A.hs\n\nScreenshot: <http://galois.com/~dons/images/ghc-core.png>\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-core" = {
@@ -32,9 +32,9 @@
             (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Example usage of the tao package.";
       description = "Example usage of type-level assertions using tao.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."tao" or (errorHandler.buildDepError "tao"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

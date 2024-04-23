@@ -21,7 +21,7 @@
       synopsis = "Wrapper program for duplicity, adding config files";
       description = "Multiplicity is a configuration file driven wrapper\naround duplicity. It allows you to easily define\nbackup sets as config files and avoid long,\nrepetitive command lines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "multiplicity" = {
@@ -31,9 +31,9 @@
             (hsPkgs."fez-conf" or (errorHandler.buildDepError "fez-conf"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

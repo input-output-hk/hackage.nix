@@ -21,16 +21,16 @@
       synopsis = "Binding to libdiscid by MusicBrainz";
       description = "Binding to libdiscid by MusicBrainz.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."winmm" or (errorHandler.sysDepError "winmm"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."winmm" or (errorHandler.sysDepError "winmm"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,23 +21,23 @@
       synopsis = "Serialize data";
       description = "This is a library for reifying Haskell data structures in GHC.\nHaskell values are mapped into representations that we call\ngraphs (for want of a better name). The representations are\nencoded in the Haskell type Graph, which is just an ordinary\nalgebraic data type. This will not reify functions.\n\nBitrotten.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reify" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

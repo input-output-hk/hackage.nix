@@ -21,7 +21,7 @@
       synopsis = "A small library for performing buffered request logging rather than in-line logging";
       description = "see Readme.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-logger-buffered" or (errorHandler.buildDepError "wai-logger-buffered"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wai-logger-buffered" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-logger-buffered" or (errorHandler.buildDepError "wai-logger-buffered"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

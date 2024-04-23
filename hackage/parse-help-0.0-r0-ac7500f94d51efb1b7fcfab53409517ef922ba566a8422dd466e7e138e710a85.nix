@@ -21,7 +21,7 @@
       synopsis = "generate command line arguments from a --help output";
       description = "see http://github.com/gregwebs/cmdargs-help";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,16 +33,16 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."file-location" or (errorHandler.buildDepError "file-location"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

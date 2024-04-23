@@ -21,7 +21,7 @@
       synopsis = "IRC friendly REPL library.";
       description = "Similar to mueval, but using a server with the GHC API instead of a command-line tool.\nAs a result, it is much faster than mueval.\nAdditionally, repl supports declarations/bindings (and deleting them), type and kind pretty printing, in addition to expression evaluation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

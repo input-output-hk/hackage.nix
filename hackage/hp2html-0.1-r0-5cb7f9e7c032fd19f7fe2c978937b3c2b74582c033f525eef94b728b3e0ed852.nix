@@ -21,7 +21,7 @@
       synopsis = "A tool for converting GHC heap-profiles to HTML.";
       description = "A tool for converting GHC heap-profiles to HTML.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hp2html" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

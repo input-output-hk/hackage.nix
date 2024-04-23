@@ -21,15 +21,15 @@
       synopsis = "Arbitrary instances for Lua types.";
       description = "Provides instances for QuickCheck's \\\"Arbitrary\\\"\ntypeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lua" or (errorHandler.buildDepError "lua"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

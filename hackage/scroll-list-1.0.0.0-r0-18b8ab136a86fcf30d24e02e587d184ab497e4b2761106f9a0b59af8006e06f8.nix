@@ -21,21 +21,21 @@
       synopsis = "This package provides functions for relocate an item within a list.";
       description = "Please see the README on GitHub at <https://github.com/fesanmar/scroll-list#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "scroll-list-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."scroll-list" or (errorHandler.buildDepError "scroll-list"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

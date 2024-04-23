@@ -21,15 +21,15 @@
       synopsis = "A binding to part of the Win32 library for file notification";
       description = "A binding to part of the Win32 library for file notification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Some monad transformers and typeclasses for text in- and output abstraction.";
       description = "Some monad transformers and typeclasses abstracting global dependencies, like Text in- and output (incl. here-strings, pipes, recorders and file-redirections on a per-function scope).\nNote that a lot of modules have been removed since version 0.7, as they were encouraging antipatterns and had nothing to do with the core idea of chatty. Also, there will be more removals in the future! Version 1.0 will only contain core features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
           (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

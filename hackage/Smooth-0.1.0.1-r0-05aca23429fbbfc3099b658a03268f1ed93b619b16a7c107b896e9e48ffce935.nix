@@ -21,7 +21,7 @@
       synopsis = "A tiny, lazy SMT solver";
       description = "A tiny, lazy SMT solver. This solver is based on algorithms\ndescribed in 'Decision Procedures: An Algorithmic Point of View'";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."Proper" or (errorHandler.buildDepError "Proper"))
           (hsPkgs."DifferenceLogic" or (errorHandler.buildDepError "DifferenceLogic"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

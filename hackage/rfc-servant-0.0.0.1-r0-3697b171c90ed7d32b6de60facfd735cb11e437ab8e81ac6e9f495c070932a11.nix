@@ -21,7 +21,7 @@
       synopsis = "The Servant extensions from the Robert Fischer Commons.";
       description = "Various capabilities supporting @Servant@ development, including creating the concept of a  \"Resource\" (which simplifies REST boilerplate).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

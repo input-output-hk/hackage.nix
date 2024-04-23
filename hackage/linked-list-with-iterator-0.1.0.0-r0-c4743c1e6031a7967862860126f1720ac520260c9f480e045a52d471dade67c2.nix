@@ -21,23 +21,23 @@
       synopsis = "A pure linked list which is mutable through iterators.";
       description = "It's iternally implemented by 'Data.IntMap.Strict.IntMap' or 'Data.Map.Strict.Map' 'Integer',\nusing 'Int' or 'Integer' as the iterator type respectly.\nMost of the operations cost @O(lg N)@.\n\nEach newly inserted element will consume a unique number and never reuse old numbers.\nChoose 'Int' one if you're sure that there're no more than 'Int' space times of insertions,\nor choose 'Integer' one otherwise.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "linked-list-with-iterator-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."linked-list-with-iterator" or (errorHandler.buildDepError "linked-list-with-iterator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/language-python-colour-0.1-r0-66359a85866c886dd74f3b6283421c7aa067c02a5fbcf3f98cadb225bcec2397.nix;
         revNum = 0;
         sha256 = "66359a85866c886dd74f3b6283421c7aa067c02a5fbcf3f98cadb225bcec2397";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

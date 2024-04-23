@@ -21,7 +21,7 @@
       synopsis = "An interactive renderer for plotting time-series data";
       description = "scope is a framework for plotting time-series data, using zoom-cache\nfiles. This package contains the core Scope library; to use it for\ninteractive plotting, you need a rendering backend such as scope-cairo:\n\n<http://hackage.haskell.org/package/scope-cairo>\n\nFor more information about zoom-cache files, see the zoom-cache package:\n\n<http://hackage.haskell.org/package/zoom-cache>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."zoom-cache" or (errorHandler.buildDepError "zoom-cache"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

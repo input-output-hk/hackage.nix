@@ -21,11 +21,11 @@
       synopsis = "A Cached variable for IO functions.";
       description = "This package allows for caching IO functions, either on a\ntimeout or designed to only fetch once.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

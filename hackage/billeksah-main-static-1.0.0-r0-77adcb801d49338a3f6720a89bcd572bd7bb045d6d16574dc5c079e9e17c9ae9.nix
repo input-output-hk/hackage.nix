@@ -21,7 +21,7 @@
       synopsis = "Leksah plugin base";
       description = "Plugin framework used by leksah (static version)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "billeksah-main-static" = {
@@ -40,9 +40,9 @@
             (hsPkgs."leksah-main" or (errorHandler.buildDepError "leksah-main"))
             (hsPkgs."leksah-plugin-pane" or (errorHandler.buildDepError "leksah-plugin-pane"))
             (hsPkgs."leksah-dummy" or (errorHandler.buildDepError "leksah-dummy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Convenience wrapper and utilities for hspec";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."test-shouldbe" or (errorHandler.buildDepError "test-shouldbe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

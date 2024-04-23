@@ -21,7 +21,7 @@
       synopsis = "A ledger-compatible text-based accounting tool.";
       description = "This is a minimal haskell clone of John Wiegley's ledger\n<http://newartisans.com/software/ledger.html>.  hledger does basic\nregister & balance reporting from a plain text ledger file, and\ndemonstrates a functional implementation of ledger.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger" = {
@@ -36,9 +36,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

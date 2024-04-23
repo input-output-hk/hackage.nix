@@ -6,8 +6,8 @@
         nix = import ../hackage/time-cache-0.1-r0-51c3a3ef53a39a245e7a284ace9f0888a9a57e15c925971862ddeec0f8760ee9.nix;
         revNum = 0;
         sha256 = "51c3a3ef53a39a245e7a284ace9f0888a9a57e15c925971862ddeec0f8760ee9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

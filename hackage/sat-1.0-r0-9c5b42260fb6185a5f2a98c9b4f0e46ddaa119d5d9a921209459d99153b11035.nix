@@ -21,17 +21,17 @@
       synopsis = "CNF SATisfier";
       description = "CNF(Clausal Normal Form) SATisfiability Solver and Generator";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "SATSolve" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
+        };
         "CNFGenerate" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

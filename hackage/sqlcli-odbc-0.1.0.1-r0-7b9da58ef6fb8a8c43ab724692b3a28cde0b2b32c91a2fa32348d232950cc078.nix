@@ -21,14 +21,14 @@
       synopsis = "Specific ODBC definitions to be used by SQL CLI clients.";
       description = "You should use this package if you intend to use sqlcli package\nto connect to ODBC datasources.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sqlcli" or (errorHandler.buildDepError "sqlcli"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

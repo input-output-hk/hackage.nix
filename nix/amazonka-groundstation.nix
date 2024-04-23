@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-groundstation-2.0-r0-3f71eae5446600171bb226a9777b23cd49c2932c504ae0fb5887cb55c6dbc199.nix;
         revNum = 0;
         sha256 = "3f71eae5446600171bb226a9777b23cd49c2932c504ae0fb5887cb55c6dbc199";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

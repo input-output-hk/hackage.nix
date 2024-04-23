@@ -21,7 +21,7 @@
       synopsis = "Parser combinators with slicing and diagnostic support";
       description = "Parser combinators with slicing and diagnostic support";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,8 +45,8 @@
           (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
           (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
           (hsPkgs."wl-pprint-terminfo" or (errorHandler.buildDepError "wl-pprint-terminfo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

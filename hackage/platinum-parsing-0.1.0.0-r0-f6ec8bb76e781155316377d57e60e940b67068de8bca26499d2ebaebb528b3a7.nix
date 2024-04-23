@@ -21,7 +21,7 @@
       synopsis = "General Framework for compiler development.";
       description = "Platinum Parsing provides many tools for the development of compiler (including transpiler or interpreter), based on the well-known Dragon Book (2nd edition). This package is in progress, please take a look at the github repository for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pp" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."data-hash" or (errorHandler.buildDepError "data-hash"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pp-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

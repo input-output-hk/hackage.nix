@@ -21,7 +21,7 @@
       synopsis = "A simple blog engine powered by Yesod.";
       description = "A simple blog engine powered by Yesod.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = if flags.library-only then true else false; };
       exes = {
@@ -61,9 +61,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."xml-hamlet" or (errorHandler.buildDepError "xml-hamlet"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = if flags.library-only then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Self optimizing container types";
       description = "Self optimizing polymorphic container types.\nWe use type families to specialize polymorphic container types to\nspecific representations via class-associated data types.\nA self-optimizing pair, for example, will unpack the constructors,\nyielding a representation for (Int,Char) requiring 8 bytes, instead\nof 24.\nCurrently supported adaptive types: pairs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

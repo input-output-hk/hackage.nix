@@ -21,7 +21,7 @@
       synopsis = "Base libraries for haste-compiler.";
       description = "Base libraries for haste-compiler. Only useful for web development, with Haste or vanilla GHC + haste-app.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,19 +34,19 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haste-prim" or (errorHandler.buildDepError "haste-prim"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (if flags.haste
+        ] ++ (if flags.haste
           then [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-            ]
+          ]
           else [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

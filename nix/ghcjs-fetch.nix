@@ -6,13 +6,13 @@
         nix = import ../hackage/ghcjs-fetch-0.1.0.0-r0-dcebeb1932d2971b4ec30d1bd585f54bab53e9404f860580f6fc78a4a2161b3a.nix;
         revNum = 0;
         sha256 = "dcebeb1932d2971b4ec30d1bd585f54bab53e9404f860580f6fc78a4a2161b3a";
-        };
+      };
       r1 = {
         nix = import ../hackage/ghcjs-fetch-0.1.0.0-r1-5310cea7caef69c183f2b8e54f0f64b604360f4627d060f47888105b629306ba.nix;
         revNum = 1;
         sha256 = "5310cea7caef69c183f2b8e54f0f64b604360f4627d060f47888105b629306ba";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "ZIP archive streaming using conduits";
       description = "Process (extract and create) zip files as streams (e.g., over the network), accessing contained files without having to write the zip file to disk (unlike zip-conduit).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "unzip-stream" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zip-stream" or (errorHandler.buildDepError "zip-stream"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "zip-stream" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zip-stream" or (errorHandler.buildDepError "zip-stream"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Macros and modules to facilitate writing library bindings.";
       description = "This package contains @hsc2hs@ macros and Haskell\nmodules that can be used to write C library\nbindings according to a well defined standard. See\n\"Bindings\" module documentation for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

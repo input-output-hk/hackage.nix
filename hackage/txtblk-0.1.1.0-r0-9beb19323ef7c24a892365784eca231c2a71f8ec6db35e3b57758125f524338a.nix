@@ -21,13 +21,13 @@
       synopsis = "A text blocker.";
       description = "This is a text blocker - it blocks sexual texts. It is intended for\nuse in other contexts, such as an Andorid app or irssi extension.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "txtblk" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

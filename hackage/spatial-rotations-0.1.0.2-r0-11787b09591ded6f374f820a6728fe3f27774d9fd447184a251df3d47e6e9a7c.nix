@@ -21,7 +21,7 @@
       synopsis = "Rotate about any suitable axis";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."manifolds-core" or (errorHandler.buildDepError "manifolds-core"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
             (hsPkgs."spatial-rotations" or (errorHandler.buildDepError "spatial-rotations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

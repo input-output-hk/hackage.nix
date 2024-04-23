@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."witherable-class" or (errorHandler.buildDepError "witherable-class"))
           (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "arithmetic" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
             (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
             (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "boolean-transformations" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,10 +62,10 @@
             (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
             (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
             (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "quicktests" = {
           depends = [
@@ -81,22 +81,22 @@
             (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
             (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

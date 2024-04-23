@@ -21,15 +21,15 @@
       synopsis = "Binding to libSDL_image";
       description = "SDL_image is an image file loading library.\nIt loads images as SDL surfaces, and supports the\nfollowing formats: BMP, GIF, JPEG, LBM, PCX, PNG,\nPNM, TGA, TIFF, XCF, XPM, XV.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         libs = [ (pkgs."SDL_image" or (errorHandler.sysDepError "SDL_image")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

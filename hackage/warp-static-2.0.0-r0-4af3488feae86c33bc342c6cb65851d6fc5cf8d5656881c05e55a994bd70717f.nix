@@ -21,7 +21,7 @@
       synopsis = "Static file server based on Warp and wai-app-static";
       description = "Serve up static files by running the warp executable. Based on Warp and wai-app-static. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "warp" = {
@@ -36,9 +36,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

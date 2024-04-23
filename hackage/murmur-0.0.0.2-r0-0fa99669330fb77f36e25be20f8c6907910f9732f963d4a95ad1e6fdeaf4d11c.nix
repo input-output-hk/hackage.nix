@@ -21,7 +21,7 @@
       synopsis = "Simple CUI Twitter Client.";
       description = "This package privides simple CUI Twitter client. and very easy API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mur" = {
           depends = [
@@ -50,18 +50,18 @@
             (hsPkgs."optparse-declarative" or (errorHandler.buildDepError "optparse-declarative"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "murmur-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."murmur" or (errorHandler.buildDepError "murmur"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

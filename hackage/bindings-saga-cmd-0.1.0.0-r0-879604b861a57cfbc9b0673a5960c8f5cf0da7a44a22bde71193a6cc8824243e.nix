@@ -21,7 +21,7 @@
       synopsis = "Wrapping saga_cmd";
       description = "A simple wrapper around the command-line version of the GIS-program saga";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sagaPipe" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."bindings-saga-cmd" or (errorHandler.buildDepError "bindings-saga-cmd"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sagaTopo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,16 +60,16 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."bindings-saga-cmd" or (errorHandler.buildDepError "bindings-saga-cmd"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sagaLut" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bindings-saga-cmd" or (errorHandler.buildDepError "bindings-saga-cmd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/extractelf-0.1.0.0-r0-a74b655851f6285c1c3622d5786149dabb14237156e44ff663fd72cffdc19fbb.nix;
         revNum = 0;
         sha256 = "a74b655851f6285c1c3622d5786149dabb14237156e44ff663fd72cffdc19fbb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

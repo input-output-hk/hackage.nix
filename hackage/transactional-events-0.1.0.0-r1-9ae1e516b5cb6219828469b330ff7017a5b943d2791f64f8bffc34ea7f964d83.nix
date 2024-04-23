@@ -21,7 +21,7 @@
       synopsis = "Transactional events, based on Concurrent ML semantics";
       description = "A quick-and-dirty implementation of transactional events.\nMatthew Fluet's version\n(\"http://ttic.uchicago.edu/~fluet/research/tx-events/\")\nis probably a better implmentation, but this is an\ninteresting start for a technique to experiment with.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."MonadPrompt" or (errorHandler.buildDepError "MonadPrompt"))
           (hsPkgs."ListZipper" or (errorHandler.buildDepError "ListZipper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

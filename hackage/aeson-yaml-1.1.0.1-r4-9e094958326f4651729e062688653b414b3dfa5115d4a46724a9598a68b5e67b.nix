@@ -21,7 +21,7 @@
       synopsis = "Output any Aeson value as YAML (pure Haskell library)";
       description = "This library exposes functions for encoding any Aeson value as YAML. There\nis also support for encoding multiple values into YAML \"documents\".\n\nThis library is pure Haskell, and does not depend on C FFI with libyaml. It\nis also licensed under the BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "json-to-yaml" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."aeson-yaml" or (errorHandler.buildDepError "aeson-yaml"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if !flags.build-binaries then false else true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -57,12 +57,12 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

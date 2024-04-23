@@ -21,11 +21,11 @@
       synopsis = "Abstraction to manage user defined Type Errors";
       description = "requirements is a framework to build user-defined type errors.\nUsers condense the arguments of functions that can raise a\ndomain-specific error into a curried data type, the operator.\nThe Require constraint predicates over operators. Ill-formed\noperators require the Error operator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

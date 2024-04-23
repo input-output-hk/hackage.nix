@@ -21,15 +21,15 @@
       synopsis = "epoll bindings";
       description = "Bindings to epoll, a Linux specific I/O\nevent notication facility (cf. man epoll(7)).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

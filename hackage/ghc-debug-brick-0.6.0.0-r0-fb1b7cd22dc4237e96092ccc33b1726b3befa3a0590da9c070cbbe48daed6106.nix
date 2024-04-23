@@ -21,7 +21,7 @@
       synopsis = "A simple TUI using ghc-debug";
       description = "A simple TUI using ghc-debug";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ghc-debug-brick" = {
@@ -47,9 +47,9 @@
             (hsPkgs."contra-tracer" or (errorHandler.buildDepError "contra-tracer"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."byteunits" or (errorHandler.buildDepError "byteunits"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

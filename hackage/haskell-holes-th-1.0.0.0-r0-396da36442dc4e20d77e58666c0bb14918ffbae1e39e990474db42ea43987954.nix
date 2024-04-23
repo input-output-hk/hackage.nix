@@ -21,14 +21,14 @@
       synopsis = "Infer haskell code by given type.";
       description = "TIP solver for simply typed lambda calculus to automatically infer the code from type definitions using TemplateHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

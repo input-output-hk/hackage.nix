@@ -21,7 +21,7 @@
       synopsis = "Convert HTML to miso View syntax";
       description = "HTML parser that pretty prints to a Miso View";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "miso-from-html" = {
@@ -32,9 +32,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

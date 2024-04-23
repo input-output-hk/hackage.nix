@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-sms-voice-2.0-r0-8c52189979bc161d5f024f3c5beca66f0f9a8cca8d67213d493a97081c7d101b.nix;
         revNum = 0;
         sha256 = "8c52189979bc161d5f024f3c5beca66f0f9a8cca8d67213d493a97081c7d101b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

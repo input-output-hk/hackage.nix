@@ -21,7 +21,7 @@
       synopsis = "online streaming fft";
       description = "online (in input and output) streaming fft algorithm\nthat uses a dense-stream optimisation to reduce work\nfrom /O(n log n)/ to /O(n)/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."prim-instances" or (errorHandler.buildDepError "prim-instances"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

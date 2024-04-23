@@ -21,7 +21,7 @@
       synopsis = "Polysemy Effect for Time";
       description = "Please see the readme on Github at <https://github.com/tek/polysemy-time>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."torsor" or (errorHandler.buildDepError "torsor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-time-unit" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

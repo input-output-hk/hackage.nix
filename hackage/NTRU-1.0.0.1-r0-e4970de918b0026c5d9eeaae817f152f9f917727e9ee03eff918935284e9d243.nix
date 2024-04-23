@@ -21,7 +21,7 @@
       synopsis = "NTRU Cryptography         ";
       description = "A Haskell implementation of the NTRU cryptographic system, following the IEEE Standard Specification for Public Key Crpytographic Techniques Based on Hard Problems over Lattices (IEEE Std 1363.1-2008)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."polynomial" or (errorHandler.buildDepError "polynomial"))
           (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

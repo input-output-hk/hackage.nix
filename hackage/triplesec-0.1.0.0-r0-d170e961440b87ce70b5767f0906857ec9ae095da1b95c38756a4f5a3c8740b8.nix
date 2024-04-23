@@ -21,7 +21,7 @@
       synopsis = "TripleSec is a simple, triple-paranoid, symmetric encryption library";
       description = "Additional details about this protocol can be found at the official website. https://keybase.io/triplesec/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-triplesec" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."triplesec" or (errorHandler.buildDepError "triplesec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

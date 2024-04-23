@@ -6,8 +6,8 @@
         nix = import ../hackage/parco-attoparsec-0.1-r0-272f9b228885974ad212583c76e16bb7b3b06a5d46f994749eb6f593679877c9.nix;
         revNum = 0;
         sha256 = "272f9b228885974ad212583c76e16bb7b3b06a5d46f994749eb6f593679877c9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

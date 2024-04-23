@@ -21,7 +21,7 @@
       synopsis = "Interface HMatrix with the NLOPT minimizer";
       description = "A high-level interface to\n<http://ab-initio.mit.edu/wiki/index.php/NLopt the NLOPT solvers>\nusing @hmatrix@ vectors and matrices.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."nlopt-haskell" or (errorHandler.buildDepError "nlopt-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

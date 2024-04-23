@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for ByteString";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-bytestring" or (errorHandler.buildDepError "validity-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-bytestring-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."genvalidity-bytestring" or (errorHandler.buildDepError "genvalidity-bytestring"))
             (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

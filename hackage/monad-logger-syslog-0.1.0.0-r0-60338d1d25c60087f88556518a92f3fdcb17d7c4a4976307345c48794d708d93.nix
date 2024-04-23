@@ -21,7 +21,7 @@
       synopsis = "rsyslog output for monad-logger";
       description = "rsyslog output for monad-logger";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "smoke" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."monad-logger-syslog" or (errorHandler.buildDepError "monad-logger-syslog"))
             (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

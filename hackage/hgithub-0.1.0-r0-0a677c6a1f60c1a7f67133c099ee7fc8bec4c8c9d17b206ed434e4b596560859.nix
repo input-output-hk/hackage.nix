@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the GitHub API";
       description = "Haskell bindings to the GitHub API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."http-enumerator" or (errorHandler.buildDepError "http-enumerator"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hgithub" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hgithub" or (errorHandler.buildDepError "hgithub"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/syslog-0.1.0.0-r0-36fc73052fd94c92ae3d4050d5884a4be634bfe6f8f7bab4ece0689ecedadc52.nix;
         revNum = 0;
         sha256 = "36fc73052fd94c92ae3d4050d5884a4be634bfe6f8f7bab4ece0689ecedadc52";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

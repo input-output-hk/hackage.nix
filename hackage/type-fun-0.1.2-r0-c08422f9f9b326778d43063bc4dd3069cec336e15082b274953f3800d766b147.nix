@@ -21,20 +21,20 @@
       synopsis = "Collection of widely reimplemented type families";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."type-fun" or (errorHandler.buildDepError "type-fun"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

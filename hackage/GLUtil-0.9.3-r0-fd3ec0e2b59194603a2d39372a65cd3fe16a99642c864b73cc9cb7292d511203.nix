@@ -21,7 +21,7 @@
       synopsis = "Miscellaneous OpenGL utilities.";
       description = "Helpers for working with shaders, buffer objects, and\ntextures in OpenGL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.10.1" && !system.isWindows) (hsPkgs."hpp" or (errorHandler.buildDepError "hpp"));
-        build-tools = (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.10.1" && !system.isWindows)) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows) (hsPkgs."hpp" or (errorHandler.buildDepError "hpp"));
+        build-tools = pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows)) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
-        };
       };
-    }
+    };
+  }

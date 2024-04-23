@@ -6,8 +6,8 @@
         nix = import ../hackage/jsonextfilter-0.1.0.0-r0-937bc4a821e434d99388cf66ebfe382593089835cfe96b507f4ea5a217d13eae.nix;
         revNum = 0;
         sha256 = "937bc4a821e434d99388cf66ebfe382593089835cfe96b507f4ea5a217d13eae";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

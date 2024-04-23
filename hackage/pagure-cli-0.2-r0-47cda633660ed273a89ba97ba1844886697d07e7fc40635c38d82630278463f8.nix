@@ -21,7 +21,7 @@
       synopsis = "Pagure client";
       description = "A commandline Pagure client for querying projects and users.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pagure" = {
@@ -34,17 +34,17 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.microlens
+          ] ++ (if flags.microlens
             then [
               (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
               (hsPkgs."microlens-aeson" or (errorHandler.buildDepError "microlens-aeson"))
-              ]
+            ]
             else [
               (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
               (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
-              ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+            ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A nice implementation of the k-Means algorithm.";
       description = "An implementation of the k-Means algorithm in Haskell that aims to be simple, readable, extendable and efficient enough to be used as a building block. More finger-typed documentation can be found in <http://stathacking.com/hps-kmeans>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

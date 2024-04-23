@@ -6,8 +6,8 @@
         nix = import ../hackage/craftwerk-0.1-r0-7423f19f812dc4b8fe62adc8dc820793d207c8d728337d96327143e02f144963.nix;
         revNum = 0;
         sha256 = "7423f19f812dc4b8fe62adc8dc820793d207c8d728337d96327143e02f144963";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

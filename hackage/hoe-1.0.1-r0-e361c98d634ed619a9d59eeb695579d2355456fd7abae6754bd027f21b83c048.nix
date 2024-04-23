@@ -21,7 +21,7 @@
       synopsis = "hoe: Haskell One-liner Evaluator";
       description = "@hoe@ is AWK like text processor.\nThis can evaluate scripts in various ways depending on types.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoe" = {
@@ -34,9 +34,9 @@
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

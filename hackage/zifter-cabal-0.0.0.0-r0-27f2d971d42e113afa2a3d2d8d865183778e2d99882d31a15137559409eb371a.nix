@@ -21,7 +21,7 @@
       synopsis = "zifter-cabal";
       description = "zifter-cabal";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."zifter" or (errorHandler.buildDepError "zifter"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Console program used to fix Stack build errors automatically";
       description = "Stack fix works by running `stack build` and by parsing and interpreting the build errors/suggestions it applies any build fixes required to the stack.yaml, .cabal, etc. These fixes usually involve specifying build dependencies versions or adding new build dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stack-fix" = {
@@ -30,9 +30,9 @@
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

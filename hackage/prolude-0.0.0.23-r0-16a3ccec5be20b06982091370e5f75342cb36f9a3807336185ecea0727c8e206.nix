@@ -21,7 +21,7 @@
       synopsis = "ITProTV's custom prelude";
       description = "Prolude is ITProTV's custom prelude.\n<https://www.itpro.tv>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,8 +51,8 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."witch" or (errorHandler.buildDepError "witch"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

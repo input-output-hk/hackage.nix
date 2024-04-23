@@ -21,7 +21,7 @@
       synopsis = "Grid-based multimedia engine";
       description = "Learn Haskell by drawing sprites and playing music and sound effects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,17 +40,17 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "demo" = {
-          depends = (pkgs.lib).optionals (flags.demo) [
+          depends = pkgs.lib.optionals (flags.demo) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gridland" or (errorHandler.buildDepError "gridland"))
-            ];
+          ];
           buildable = if flags.demo then true else false;
-          };
         };
       };
-    }
+    };
+  }

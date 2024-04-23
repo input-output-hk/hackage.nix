@@ -21,7 +21,7 @@
       synopsis = "Function table specifications in latex";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-printf" or (errorHandler.buildDepError "th-printf"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -44,18 +44,18 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."latex-function-tables" or (errorHandler.buildDepError "latex-function-tables"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."latex-function-tables" or (errorHandler.buildDepError "latex-function-tables"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

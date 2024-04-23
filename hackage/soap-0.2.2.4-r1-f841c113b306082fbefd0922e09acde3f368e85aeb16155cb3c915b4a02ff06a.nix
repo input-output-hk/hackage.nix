@@ -21,7 +21,7 @@
       synopsis = "SOAP client tools";
       description = "Tools to build SOAP clients using xml-conduit.\n\nA mildly-complicated example:\n\n> import Network.SOAP\n> import Network.SOAP.Transport.HTTP\n>\n> import Text.XML.Writer\n> import Text.XML.Stream.Parse as Parse\n> import           Data.Text (Text)\n> import qualified Data.Text as T\n>\n> main :: IO ()\n> main = do\n>     -- Initial one-time preparations.\n>     transport <- initTransport \"http://example.com/soap/endpoint\" id (iconv \"cp-1251\")\n>\n>     -- Making queries\n>     activeStaff <- listStaff transport True\n>     print activeStaff\n>\n> data Person = Person Text Int deriving Show\n>\n> listStaff :: Transport -> Bool -> IO [Person]\n> listStaff t active = invokeWS t \"urn:dummy:listStaff\" () body parser\n>     where\n>         body = element \"request\" $ element \"listStaff\" $ do\n>                    element \"active\" active\n>                    element \"order\" $ T.pack \"age\"\n>                    element \"limit\" (10 :: Int)\n>\n>         parser = StreamParser $ force \"no people\" $ tagNoAttr \"people\" $ Parse.many parsePerson\n>\n>         parsePerson = tagName \"person\" (requireAttr \"age\") $ \\age -> do\n>                           name <- Parse.content\n>                           return $ Person name (read . T.unpack $ age)\n\nNotice: to invoke HTTPS services you need to initialize a transport from soap-tls or soap-openssl.\n\nFull examples available at source repo: https://bitbucket.org/dpwiz/haskell-soap/src/tip/soap/examples/";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

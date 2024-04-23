@@ -21,7 +21,7 @@
       synopsis = "Yi editor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yi" = {
@@ -34,9 +34,9 @@
             (hsPkgs."yi-mode-haskell" or (errorHandler.buildDepError "yi-mode-haskell"))
             (hsPkgs."yi-mode-javascript" or (errorHandler.buildDepError "yi-mode-javascript"))
             (hsPkgs."yi-misc-modes" or (errorHandler.buildDepError "yi-misc-modes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

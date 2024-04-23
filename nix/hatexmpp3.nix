@@ -6,8 +6,8 @@
         nix = import ../hackage/hatexmpp3-0-r0-5fea8227029ef01cf3093b30e33e92de5561174a856c3724ed8e594c27237daa.nix;
         revNum = 0;
         sha256 = "5fea8227029ef01cf3093b30e33e92de5561174a856c3724ed8e594c27237daa";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

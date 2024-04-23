@@ -21,7 +21,7 @@
       synopsis = "Library supporting simulation of a number of games";
       description = "Library providing framework for simulating outcomes of a variety\nof games, including Poker.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."permutation" or (errorHandler.buildDepError "permutation"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "general-games-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."general-games" or (errorHandler.buildDepError "general-games"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

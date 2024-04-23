@@ -6,8 +6,8 @@
         nix = import ../hackage/tcp-0.0.2-r0-731f1f9cf58f84a0cda758ea2c81dfa0270bd73f96d90cef442780bea627d2d1.nix;
         revNum = 0;
         sha256 = "731f1f9cf58f84a0cda758ea2c81dfa0270bd73f96d90cef442780bea627d2d1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

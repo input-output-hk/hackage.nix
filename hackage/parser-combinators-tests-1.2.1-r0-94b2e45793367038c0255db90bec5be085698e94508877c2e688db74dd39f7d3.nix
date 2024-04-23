@@ -21,7 +21,7 @@
       synopsis = "Test suite of parser-combinators";
       description = "Test suite of parser-combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       tests = {
         "tests" = {
@@ -34,12 +34,12 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."megaparsec-tests" or (errorHandler.buildDepError "megaparsec-tests"))
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Generically derive traversals, lenses and prisms.";
       description = "This library uses GHC.Generics to derive efficient optics (traversals, lenses and prisms) for algebraic data types in a type-directed way, with a focus on good type inference and error messages when possible.\n\nThis package is the shared internal logic of the\n@<https://hackage.haskell.org/package/generic-lens generic-lens>@\nand\n@<https://hackage.haskell.org/package/generic-optics generic-optics>@\nlibraries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."indexed-profunctors" or (errorHandler.buildDepError "indexed-profunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

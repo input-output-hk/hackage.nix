@@ -21,7 +21,7 @@
       synopsis = "Libary for Stockholm aligmnent format";
       description = "Libary containing parsing and visualisation functions and datastructures for Stockholm aligmnent format";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
           (hsPkgs."SVGFonts" or (errorHandler.buildDepError "SVGFonts"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

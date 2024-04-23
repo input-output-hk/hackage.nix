@@ -21,33 +21,33 @@
       synopsis = "playing draw poker";
       description = "for blog entry";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "draw-poker" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."draw-poker" or (errorHandler.buildDepError "draw-poker"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "draw-poker-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."draw-poker" or (errorHandler.buildDepError "draw-poker"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

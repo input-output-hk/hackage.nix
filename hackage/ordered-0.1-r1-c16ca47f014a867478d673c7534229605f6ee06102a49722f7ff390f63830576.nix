@@ -21,11 +21,11 @@
       synopsis = "A definition of Posets.";
       description = "A library defining the notion of Poset.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

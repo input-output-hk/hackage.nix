@@ -6,8 +6,8 @@
         nix = import ../hackage/diagrams-reflex-0.1-r0-2808b79cfc7094527300922b2946171d0f55ac3ce1b05a483f1ea293de9fe1e3.nix;
         revNum = 0;
         sha256 = "2808b79cfc7094527300922b2946171d0f55ac3ce1b05a483f1ea293de9fe1e3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

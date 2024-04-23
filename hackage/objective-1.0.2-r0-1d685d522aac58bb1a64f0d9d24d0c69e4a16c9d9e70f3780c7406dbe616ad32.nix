@@ -21,7 +21,7 @@
       synopsis = "Extensible objects";
       description = "Stateful effect transducer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."monad-stm" or (errorHandler.buildDepError "monad-stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

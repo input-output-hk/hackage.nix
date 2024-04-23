@@ -6,8 +6,8 @@
         nix = import ../hackage/launchpad-control-0.0.1.0-r0-4fade6e503153b3cdcaaa4f44b274efddcacadf89b92e7586e82353c621543b0.nix;
         revNum = 0;
         sha256 = "4fade6e503153b3cdcaaa4f44b274efddcacadf89b92e7586e82353c621543b0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

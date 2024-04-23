@@ -21,7 +21,7 @@
       synopsis = "A compiler from Curry to Haskell";
       description = "This package builds the Curry to Haskell compiler \"kics\".\nThis package also includes many Curry libraries.\nHave a look at the list of modules \"Curry.Module.*\"";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kics" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
             (hsPkgs."curry-frontend" or (errorHandler.buildDepError "curry-frontend"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

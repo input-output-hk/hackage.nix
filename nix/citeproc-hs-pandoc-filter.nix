@@ -6,8 +6,8 @@
         nix = import ../hackage/citeproc-hs-pandoc-filter-0.1-r0-742615b1b4db5ae180e43bdada59a35b51730eb56582f63bf170e434d2583d03.nix;
         revNum = 0;
         sha256 = "742615b1b4db5ae180e43bdada59a35b51730eb56582f63bf170e434d2583d03";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

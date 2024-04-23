@@ -21,7 +21,7 @@
       synopsis = "A DSL for Risk-oriented Object Detection Requirements";
       description = "Please see the README on GitHub at <https://github.com/jst-qaml/risk-weaver#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,26 +40,26 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "risk-weaver-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."risk-weaver" or (errorHandler.buildDepError "risk-weaver"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "risk-weaver-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."risk-weaver" or (errorHandler.buildDepError "risk-weaver"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell shell script template";
       description = "A template for writing shell scripts in Haskell. Contains some useful functions and examples of things commonly done in bash.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hscrtmpl" = {
@@ -32,9 +32,9 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

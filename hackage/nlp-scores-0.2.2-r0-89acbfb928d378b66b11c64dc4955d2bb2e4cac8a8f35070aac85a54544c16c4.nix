@@ -21,14 +21,14 @@
       synopsis = "Scoring functions commonly used for evaluation in NLP and IR";
       description = "Scoring functions commonly used for evaluation in NLP and IR      ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

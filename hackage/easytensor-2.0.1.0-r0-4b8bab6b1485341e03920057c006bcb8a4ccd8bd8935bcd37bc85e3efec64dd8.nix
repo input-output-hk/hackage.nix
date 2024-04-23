@@ -21,16 +21,16 @@
       synopsis = "Pure, type-indexed haskell vector, matrix, and tensor library.";
       description = "Pure, type-indexed haskell vector, matrix, and tensor library. Features dimensionality type-checking for all operations. Generic n-dimensional versions are implemented using low-level prim ops. Allows ad-hoc replacement with fixed low-dimensionality vectors and matrices without changing user interface. Please see the README on GitHub at <https://github.com/achirkin/easytensor#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
           (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "et-test" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "et-bench-misc" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "et-bench-spfolds" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
             (hsPkgs."easytensor" or (errorHandler.buildDepError "easytensor"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

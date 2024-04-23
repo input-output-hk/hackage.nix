@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/mitsuji/ms-tds#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tds-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
             (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

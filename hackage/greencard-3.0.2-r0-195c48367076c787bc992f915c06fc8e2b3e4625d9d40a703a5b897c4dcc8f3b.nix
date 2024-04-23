@@ -21,12 +21,12 @@
       synopsis = "GreenCard, a foreign function pre-processor for Haskell.";
       description = "GreenCard, a foreign function pre-processor for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "greencard" = {
           depends = if flags.old-base
@@ -37,9 +37,9 @@
               (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

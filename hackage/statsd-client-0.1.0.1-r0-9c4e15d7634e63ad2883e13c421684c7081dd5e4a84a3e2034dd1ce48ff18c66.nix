@@ -21,7 +21,7 @@
       synopsis = "Statsd UDP client";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."DRBG" or (errorHandler.buildDepError "DRBG"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

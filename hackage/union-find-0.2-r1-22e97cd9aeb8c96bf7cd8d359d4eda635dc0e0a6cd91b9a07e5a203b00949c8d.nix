@@ -21,15 +21,15 @@
       synopsis = "Efficient union and equivalence testing of sets.";
       description = "The Union\\/Find algorithm implements these operations in\n(effectively) constant-time:\n\n1. Check whether two elements are in the same equivalence class.\n\n2. Create a union of two equivalence classes.\n\n3. Look up the descriptor of the equivalence class.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

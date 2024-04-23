@@ -21,15 +21,15 @@
       synopsis = "Optics for the `strict-tuple` library";
       description = "This package provides optics for the `strict-tuple` library, using the `lens` library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."strict-tuple" or (errorHandler.buildDepError "strict-tuple"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

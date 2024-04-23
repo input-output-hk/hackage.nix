@@ -21,7 +21,7 @@
       synopsis = "helics support for apiary web framework.";
       description = "helics support for apiary web framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."types-compat" or (errorHandler.buildDepError "types-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

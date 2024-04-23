@@ -21,7 +21,7 @@
       synopsis = "Optimise SVGs";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."reanimate-svg" or (errorHandler.buildDepError "reanimate-svg"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "svgone" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."svgone" or (errorHandler.buildDepError "svgone"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

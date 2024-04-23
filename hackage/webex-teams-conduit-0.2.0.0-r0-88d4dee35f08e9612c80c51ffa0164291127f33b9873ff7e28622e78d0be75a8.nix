@@ -21,16 +21,16 @@
       synopsis = "Conduit wrapper of Webex Teams List API";
       description = "Please see the README on Github at <https://github.com/nshimaza/webex-teams-api#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."webex-teams-api" or (errorHandler.buildDepError "webex-teams-api"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "webex-teams-conduit-exe" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."webex-teams-api" or (errorHandler.buildDepError "webex-teams-api"))
             (hsPkgs."webex-teams-conduit" or (errorHandler.buildDepError "webex-teams-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "webex-teams-conduit-test" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."webex-teams-api" or (errorHandler.buildDepError "webex-teams-api"))
             (hsPkgs."webex-teams-conduit" or (errorHandler.buildDepError "webex-teams-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

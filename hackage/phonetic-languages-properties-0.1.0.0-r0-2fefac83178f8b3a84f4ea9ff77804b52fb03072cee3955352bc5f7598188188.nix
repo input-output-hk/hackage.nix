@@ -14,7 +14,7 @@
       identifier = {
         name = "phonetic-languages-properties";
         version = "0.1.0.0";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "olexandr543@yahoo.com";
@@ -24,7 +24,7 @@
       synopsis = "A generalization of the uniqueness-periods-vector-properties package.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."phonetic-languages-rhythmicity" or (errorHandler.buildDepError "phonetic-languages-rhythmicity"))
           (hsPkgs."phonetic-languages-common" or (errorHandler.buildDepError "phonetic-languages-common"))
           (hsPkgs."ukrainian-phonetics-basic" or (errorHandler.buildDepError "ukrainian-phonetics-basic"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

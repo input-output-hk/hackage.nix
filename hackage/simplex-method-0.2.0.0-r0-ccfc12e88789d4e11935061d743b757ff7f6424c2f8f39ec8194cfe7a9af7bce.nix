@@ -21,7 +21,7 @@
       synopsis = "Implementation of the two-phase simplex method in exact rational arithmetic";
       description = "Please see the README on GitHub at <https://github.com/rasheedja/simplex-method#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simplex-haskell-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."simplex-method" or (errorHandler.buildDepError "simplex-method"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

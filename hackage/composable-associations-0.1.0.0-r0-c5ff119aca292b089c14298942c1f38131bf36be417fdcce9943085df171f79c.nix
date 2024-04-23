@@ -21,12 +21,12 @@
       synopsis = "Types and helpers for composing types into a single larger key-value type.";
       description = "A library providing generic types and helpers for composing types together into a a single key-value type.\n\nThis is useful when a normalized data model has a denormalized serialization format. Using this libraries types and\nfunctions you build compose your data into the denormalized key-value format needed for serialization. Other\nlibraries provide concrete implementations for a given serialization format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

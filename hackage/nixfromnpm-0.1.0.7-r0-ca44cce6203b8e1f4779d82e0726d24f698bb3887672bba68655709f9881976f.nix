@@ -21,7 +21,7 @@
       synopsis = "Generate nix expressions from npm packages.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."hnix" or (errorHandler.buildDepError "hnix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nixfromnpm" = {
           depends = [
@@ -70,10 +70,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hnix" or (errorHandler.buildDepError "hnix"))
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."hnix" or (errorHandler.buildDepError "hnix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

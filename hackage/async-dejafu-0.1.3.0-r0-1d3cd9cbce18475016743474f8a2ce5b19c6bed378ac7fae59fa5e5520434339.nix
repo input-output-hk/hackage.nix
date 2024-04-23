@@ -21,16 +21,16 @@
       synopsis = "Run MonadConc operations asynchronously and wait for their results.";
       description = "The <https://hackage.haskell.org/package/async async> library\nprovides a higher-level interface over threads, allowing users to\nconveniently run IO operations asynchronously and wait for their\nresults. This package is a reimplementation of async using the\n@MonadConc@ abstraction from\n<https://hackage.haskell.org/package/concurrency concurrency>, providing\neasy-to-use asynchronous operaitons within an easily-testable\nframework.\n\nThis library itself is tested with\n<https://hackage.haskell.org/package/dejafu dejafu>.\n\nWhen these functions are used in an IO context, the behaviour should\nappear identical to the original async package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."concurrency" or (errorHandler.buildDepError "concurrency"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."dejafu" or (errorHandler.buildDepError "dejafu"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."hunit-dejafu" or (errorHandler.buildDepError "hunit-dejafu"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

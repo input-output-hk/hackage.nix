@@ -21,7 +21,7 @@
       synopsis = "Terminal client for the MatterMost chat system";
       description = "This is a terminal client for the MatterMost chat\nsystem. Please see the README for a list of\nfeatures and information on getting started.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "matterhorn" = {
@@ -55,10 +55,10 @@
             (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
             (hsPkgs."Hclip" or (errorHandler.buildDepError "Hclip"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test_messages" = {
           depends = [
@@ -96,9 +96,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

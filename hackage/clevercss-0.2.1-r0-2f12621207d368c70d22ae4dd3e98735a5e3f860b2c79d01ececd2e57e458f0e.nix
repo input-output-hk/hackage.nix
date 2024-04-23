@@ -21,7 +21,7 @@
       synopsis = "A CSS preprocessor";
       description = "CleverCSS is a CSS preprocessing library that allows defining variables and nesting selectors so that you don't need to Repeat Yourself.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (if flags.splitbase
@@ -29,22 +29,20 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]) ++ [
-          (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+          ]) ++ [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ];
         buildable = true;
-        };
+      };
       exes = {
         "clevercss" = {
           depends = [
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

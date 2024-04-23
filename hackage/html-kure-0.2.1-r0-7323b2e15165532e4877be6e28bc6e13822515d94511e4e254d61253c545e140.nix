@@ -21,15 +21,15 @@
       synopsis = "HTML rewrite engine, using KURE.";
       description = "This package provides a uniform KURE-based API\nfor walking over, and generating, HTML structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kure" or (errorHandler.buildDepError "kure"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

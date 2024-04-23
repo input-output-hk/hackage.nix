@@ -21,11 +21,11 @@
       synopsis = "A data type for non-exclusive disjunction.";
       description = "A data type for non-exclusive disjunction.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

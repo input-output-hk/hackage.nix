@@ -21,7 +21,7 @@
       synopsis = "tutorial for hoauth2-providers module";
       description = "A tutorial that demostrates how to use hoauth2-providers package\nfor OAuth2 Authorization Code flow.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,17 +39,17 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hoauth2-providers-tutorial" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hoauth2-providers-tutorial" or (errorHandler.buildDepError "hoauth2-providers-tutorial"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

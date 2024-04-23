@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with the Qux language";
       description = "Qux is an experimental language developed from the ground up with the aim of static\ncompile time verification. This package provides tools for working with it (parsing,\ncompiling, pretty printing and type checking).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

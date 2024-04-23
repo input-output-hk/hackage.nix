@@ -21,15 +21,15 @@
       synopsis = "Simplified lightweight interpolation";
       description = "This is a variation of 'nyan-interpolation' library that has no `haskell-src-exts` dependency, at the cost of not being able to interpolate arbitrary exressions, only variables.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."nyan-interpolation-core" or (errorHandler.buildDepError "nyan-interpolation-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

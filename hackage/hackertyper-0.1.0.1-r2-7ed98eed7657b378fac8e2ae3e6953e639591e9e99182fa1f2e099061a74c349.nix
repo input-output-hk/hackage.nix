@@ -21,13 +21,13 @@
       synopsis = "\"Hack\" like a programmer in movies and games!";
       description = "Simply randomly mash your keyboard and code will display on your screen.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hackertyper" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

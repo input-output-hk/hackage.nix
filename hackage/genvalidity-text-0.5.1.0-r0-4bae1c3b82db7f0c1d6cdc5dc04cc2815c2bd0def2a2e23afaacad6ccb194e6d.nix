@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for Text";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-text" or (errorHandler.buildDepError "validity-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-text-test" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Haskell SuperCollider Record Variants";
       description = "hsc3-rsc provides record variants of the\nunit generator constructors at hsc3.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

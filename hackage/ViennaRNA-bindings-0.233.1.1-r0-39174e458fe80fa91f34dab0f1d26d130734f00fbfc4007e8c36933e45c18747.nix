@@ -21,18 +21,18 @@
       synopsis = "ViennaRNA v2 bindings";
       description = "Bindings to the ViennaRNA package, version 2.3.3.\n\nOnly a partial set of bindings is provided. If you need\nadditional functions, please open an issue on github.\n\nThe ViennaRNA bindings package now directly provide all\nnecessary functionality. Please note that this package uses the\nsame license as the ViennaRNA package.\n\nIf you use this software, please cite:\n\n@\nR. Lorenz, S.H. Bernhart, C. Hoener zu Siederdissen, H. Tafer, C. Flamm, P.F. Stadler and I.L. Hofacker (2011)\nViennaRNA Package 2.0\nAlgorithms for Molecular Biology: 6:26\n@\n\n<http://www.almob.org/content/6/1/26>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."tasty-silver" or (errorHandler.buildDepError "tasty-silver"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
             (hsPkgs."ViennaRNA-bindings" or (errorHandler.buildDepError "ViennaRNA-bindings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

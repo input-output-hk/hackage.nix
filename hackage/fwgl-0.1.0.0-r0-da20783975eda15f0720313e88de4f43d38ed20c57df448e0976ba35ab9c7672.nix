@@ -21,7 +21,7 @@
       synopsis = "FRP 2D/3D game engine";
       description = "FRP 2D/3D game engine (work in progress)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

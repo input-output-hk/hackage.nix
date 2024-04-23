@@ -21,7 +21,7 @@
       synopsis = "base library for GHCJS";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,11 +44,11 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
-          ];
+        ];
         buildable = if !(compiler.isGhcjs && true) && !system.isGhcjs
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -69,11 +69,11 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) && !system.isGhcjs
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

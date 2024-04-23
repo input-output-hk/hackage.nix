@@ -21,7 +21,7 @@
       synopsis = "A mtl-style monad transformer for general purpose & compositional logging";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "benchmark-logging-effect" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
             (hsPkgs."lifted-async" or (errorHandler.buildDepError "lifted-async"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

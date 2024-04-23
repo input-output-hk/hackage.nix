@@ -21,7 +21,7 @@
       synopsis = "WiFi connection script generator";
       description = "A CLI tool generating scripts for connecting to WiFi, circumventing big WiFi management tools.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,26 +33,26 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hifi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hifi" or (errorHandler.buildDepError "hifi"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hifi-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hifi" or (errorHandler.buildDepError "hifi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

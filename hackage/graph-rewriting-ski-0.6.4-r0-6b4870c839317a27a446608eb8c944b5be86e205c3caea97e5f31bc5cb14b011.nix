@@ -21,7 +21,7 @@
       synopsis = "Two evalutors of the SKI combinator calculus as interactive graph rewrite systems";
       description = "This package serves as an example for how to use the graph-rewriting, graph-rewriting-layout, and graph-rewriting-gl packages to create a graph rewriting system with an interactive, graphical front-end. The SKI combinator calculus is implemented once as an interaction net with combinators that accumulate their arguments, and once with rules that consume all the arguments at once. The sources (of the interaction net implementation) are well documented and serve as a tutorial for implementing your own rewrite system. Start reading in INet/Graph.hs. To run the program run either the \"ski-inet\" or the \"ski-direct\" with one of the files from the \"examples\" directory as an argument. For usage of the GUI see \"GraphRewriting.GL.UI\".";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ski-inet" = {
@@ -34,9 +34,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ski-direct" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utility functions for testing JSON web services written in Yesod";
       description = "yesod-test-json provides combinators for using the hspec and wai-test libraries together.\nIt is meant to be used like yesod-test, but for web services as opposed to web applications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."yesod-default" or (errorHandler.buildDepError "yesod-default"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

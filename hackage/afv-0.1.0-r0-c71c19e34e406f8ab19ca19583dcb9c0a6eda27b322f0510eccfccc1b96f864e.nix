@@ -21,7 +21,7 @@
       synopsis = "Infinite state model checking of iterative C programs.";
       description = "AFV is an infinite state model checker that\nverifies iterative C programs by k-induction.\nAFV uses Yices as the backend SMT solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "afv" = {
@@ -33,9 +33,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."language-c" or (errorHandler.buildDepError "language-c"))
             (hsPkgs."yices" or (errorHandler.buildDepError "yices"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

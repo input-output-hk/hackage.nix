@@ -21,7 +21,7 @@
       synopsis = "Concurrent, order-preserving mapping Conduit";
       description = "Provides a @Conduit@ that maps a function concurrently over incoming elements, maintaining input order.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."say" or (errorHandler.buildDepError "say"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

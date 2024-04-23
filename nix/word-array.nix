@@ -6,8 +6,8 @@
         nix = import ../hackage/word-array-0.1.0.0-r0-f05f5ddad6660290247611b98de12c940b1fabbde2da10b6fc46521c8f9a2250.nix;
         revNum = 0;
         sha256 = "f05f5ddad6660290247611b98de12c940b1fabbde2da10b6fc46521c8f9a2250";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

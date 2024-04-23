@@ -21,12 +21,12 @@
       synopsis = "Safe type-level dimensionality for multidimensional data.";
       description = "Safe type-level dimensionality for multidimensional data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "dimensions-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Diffing and patching module";
       description = "`filediff` is a Haskell library for creating diffs, and applying diffs to files and directories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."threads" or (errorHandler.buildDepError "threads"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-filediff" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."filediff" or (errorHandler.buildDepError "filediff"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

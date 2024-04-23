@@ -21,7 +21,7 @@
       synopsis = "Pointless Haskell library";
       description = "Pointless Haskell is library for point-free programming with recursion patterns defined as hylomorphisms, inspired in ideas from the PolyP library.\nGeneric recursion patterns can be expressed for recursive types and no support for mutually recursive types or nested data types is provided.\nThe library also features the visualization of the intermediate data structure of hylomorphisms with GHood (<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/GHood>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,14 +29,14 @@
           (hsPkgs."GHood" or (errorHandler.buildDepError "GHood"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

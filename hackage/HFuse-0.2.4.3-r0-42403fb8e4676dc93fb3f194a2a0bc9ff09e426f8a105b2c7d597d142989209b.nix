@@ -21,27 +21,27 @@
       synopsis = "HFuse is a binding for the Linux FUSE library.";
       description = "Bindings for the FUSE library, compatible with Linux, OSXFUSE and FreeBSD.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."fuse" or (errorHandler.sysDepError "fuse")) ];
         buildable = true;
-        };
+      };
       exes = {
         "HelloFS" = {
-          depends = (pkgs.lib).optionals (flags.developer) [
+          depends = pkgs.lib.optionals (flags.developer) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HFuse" or (errorHandler.buildDepError "HFuse"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = if flags.developer then true else false;
-          };
         };
       };
-    }
+    };
+  }

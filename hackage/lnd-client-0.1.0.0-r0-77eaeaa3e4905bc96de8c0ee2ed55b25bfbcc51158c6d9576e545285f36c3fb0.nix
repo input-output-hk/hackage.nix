@@ -21,7 +21,7 @@
       synopsis = "Lightning Network Daemon (LND) client library for Haskell";
       description = "You can find documentation at <https://hackage.haskell.org/package/lnd-client>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -64,9 +64,9 @@
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lnd-client-test" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

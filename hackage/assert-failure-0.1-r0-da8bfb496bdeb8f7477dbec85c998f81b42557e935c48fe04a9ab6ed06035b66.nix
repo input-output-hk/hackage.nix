@@ -21,15 +21,15 @@
       synopsis = "Syntactic sugar improving 'assert' and 'error'";
       description = "This library contains syntactic sugar that improves\nthe usability of 'assert' and 'error'.\nThis is actually a bunch of hacks wrapping the original\n'assert' function, see inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

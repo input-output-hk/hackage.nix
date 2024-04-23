@@ -21,7 +21,7 @@
       synopsis = "Utilities for working with MIDI data";
       description = "Utilities for working with MIDI data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

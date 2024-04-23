@@ -21,15 +21,15 @@
       synopsis = "Fay Text type represented as JavaScript strings";
       description = "Text type represented as JavaScript strings for Fay and Data.Text for GHC. Use with OverloadedStrings and RebindableSyntax to have Fay treat string literals as Text.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."fay" or (errorHandler.buildDepError "fay"))
           (hsPkgs."fay-base" or (errorHandler.buildDepError "fay-base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

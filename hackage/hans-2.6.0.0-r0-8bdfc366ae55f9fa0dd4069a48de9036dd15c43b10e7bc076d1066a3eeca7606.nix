@@ -14,7 +14,7 @@
       example = false;
       web-server = true;
       word32-in-random = false;
-      };
+    };
     package = {
       specVersion = "1.8";
       identifier = { name = "hans"; version = "2.6.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "IPv4 Network Stack";
       description = "HaNS is a lightweight, pure Haskell network stack that can be used for Haskell\nnetworking in the context of the HaLVM, or with a Linux tap device. Currently,\nHaNS supports 802.3, IPv4, ARP, DHCP (partially), ICMP, UDP, and TCP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -39,18 +39,18 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ] ++ (if system.isHalvm
+        ] ++ (if system.isHalvm
           then [
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
-            ]
+          ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))) ++ [
+          ])) ++ pkgs.lib.optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))) ++ [
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test" = {
           depends = ([
@@ -62,14 +62,14 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ] ++ (pkgs.lib).optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))) ++ (pkgs.lib).optionals (system.isHalvm) [
+          ] ++ pkgs.lib.optional (flags.bounded-channels) (hsPkgs."BoundedChan" or (errorHandler.buildDepError "BoundedChan"))) ++ pkgs.lib.optionals (system.isHalvm) [
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "web-server" = {
-          depends = (pkgs.lib).optionals (!system.isHalvm) ((pkgs.lib).optionals (flags.web-server) [
+          depends = pkgs.lib.optionals (!system.isHalvm) (pkgs.lib.optionals (flags.web-server) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -81,11 +81,11 @@
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ]);
+          ]);
           buildable = if system.isHalvm
             then false
             else if flags.web-server then true else false;
-          };
+        };
         "tcp-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -96,12 +96,12 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ] ++ (pkgs.lib).optionals (system.isHalvm) [
+          ] ++ pkgs.lib.optionals (system.isHalvm) [
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "echo-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,22 +112,22 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ] ++ (pkgs.lib).optionals (system.isHalvm) [
+          ] ++ pkgs.lib.optionals (system.isHalvm) [
             (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
             (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tcp-test-client" = {
-          depends = (pkgs.lib).optionals (!system.isHalvm) [
+          depends = pkgs.lib.optionals (!system.isHalvm) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = if system.isHalvm then false else true;
-          };
+        };
         "test-suite" = {
-          depends = (pkgs.lib).optionals (flags.enable-tests) [
+          depends = pkgs.lib.optionals (flags.enable-tests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -138,9 +138,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ];
+          ];
           buildable = if flags.enable-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

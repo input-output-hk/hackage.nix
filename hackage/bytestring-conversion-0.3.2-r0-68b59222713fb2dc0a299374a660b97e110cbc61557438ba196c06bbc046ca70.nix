@@ -21,7 +21,7 @@
       synopsis = "Type-classes to convert values to and from ByteString.";
       description = "Defines the type-classes 'ToByteString' and 'FromByteString'\nto convert values to and from textual 'ByteString' encodings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,15 +30,15 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [
             (hsPkgs."blaze-textual" or (errorHandler.buildDepError "blaze-textual"))
-            ]
+          ]
           else [
             (hsPkgs."double-conversion" or (errorHandler.buildDepError "double-conversion"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "bytestring-conversion-tests" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bytestring-conversion-bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

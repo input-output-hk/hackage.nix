@@ -21,7 +21,7 @@
       synopsis = "General tools for Neil";
       description = "General tools for Neil.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,21 +31,21 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "neil" = {
           depends = [
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ] ++ (pkgs.lib).optionals (!flags.small) [
+          ] ++ pkgs.lib.optionals (!flags.small) [
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."GoogleChart" or (errorHandler.buildDepError "GoogleChart"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

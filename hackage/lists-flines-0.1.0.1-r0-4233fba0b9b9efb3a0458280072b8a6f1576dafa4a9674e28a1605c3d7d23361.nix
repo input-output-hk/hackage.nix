@@ -21,11 +21,11 @@
       synopsis = "Additional data and structures to some 'String'-related lists.";
       description = "Is primarily used to transform some Strings read from a file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

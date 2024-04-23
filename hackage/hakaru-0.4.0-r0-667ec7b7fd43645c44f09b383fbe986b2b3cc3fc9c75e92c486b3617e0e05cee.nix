@@ -21,7 +21,7 @@
       synopsis = "A probabilistic programming language";
       description = "Hakaru is a simply-typed probabilistic programming language, designed\nfor easy specification of probabilistic models, and inference algorithms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakaru" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "compile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,9 +75,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "summary" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hk-maple" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -99,9 +99,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "density" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "disintegrate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -120,26 +120,26 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pretty" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "momiji" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "normalize" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -148,9 +148,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hkc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -162,9 +162,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mh" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -173,10 +173,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."hakaru" or (errorHandler.buildDepError "hakaru"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "system-testsuite" = {
           depends = [
@@ -204,9 +204,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

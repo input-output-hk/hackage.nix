@@ -21,16 +21,16 @@
       synopsis = "Lenses for the xml package.";
       description = "Lenses for the xml package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "lens-xml-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."lens-xml" or (errorHandler.buildDepError "lens-xml"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

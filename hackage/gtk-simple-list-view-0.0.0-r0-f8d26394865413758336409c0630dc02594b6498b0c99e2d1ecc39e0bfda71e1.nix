@@ -21,14 +21,14 @@
       synopsis = "A simple custom form widget for gtk which allows single LOC creation/updating of list views.";
       description = "A simple custom form widget for gtk which allows single LOC creation/updating of list views.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

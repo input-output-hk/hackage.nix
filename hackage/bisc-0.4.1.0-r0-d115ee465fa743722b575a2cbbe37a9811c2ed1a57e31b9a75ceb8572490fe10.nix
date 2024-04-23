@@ -21,7 +21,7 @@
       synopsis = "A small tool that clears cookies (and more).";
       description = "Websites can store unwanted data using all sorts of methods: besides\nthe usual cookies, there are also the local and session storage, the\nIndexedDB API and more caches as well.\nBisc will try to go through each of them and remove all information from\nwebsites that are not explicitly allowed (ie. a whitelist of domains).\nIt was created for qutebrowser, but it actually supports the storage\nformat used by Chromium-based browsers, which (sadly) means almost\nevery one nowadays.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bisc" = {
@@ -41,13 +41,13 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
-          libs = (pkgs.lib).optionals (flags.static) [
+          ];
+          libs = pkgs.lib.optionals (flags.static) [
             (pkgs."snappy" or (errorHandler.sysDepError "snappy"))
             (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A simplistic actor model based on STM";
       description = "A simplistic actor model based on STM.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."stm-queue" or (errorHandler.buildDepError "stm-queue"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "stm-actor-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."stm-actor" or (errorHandler.buildDepError "stm-actor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

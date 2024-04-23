@@ -6,8 +6,8 @@
         nix = import ../hackage/align-affine-0.1.0.0-r0-b6e3bfd08bb6c2b44195bf096eb8b9deda5b34fe9923017f7e443ed25ed33e90.nix;
         revNum = 0;
         sha256 = "b6e3bfd08bb6c2b44195bf096eb8b9deda5b34fe9923017f7e443ed25ed33e90";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

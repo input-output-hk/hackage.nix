@@ -21,7 +21,7 @@
       synopsis = "XMPP library";
       description = "XMPP library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."hsdns" or (errorHandler.buildDepError "hsdns"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

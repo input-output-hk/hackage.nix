@@ -21,7 +21,7 @@
       synopsis = "A package for updatable discrete distributions";
       description = "This package implements /urns/, which are a simple tree-based data structure\nthat supports sampling from and updating discrete probability distributions in\nlogarithmic time.  The details are presented in the paper “Ode on a Random Urn\n(Functional Pearl)”, by Leonidas Lampropoulos, Antal Spector-Zabusky, and\nKenneth Foner, published in Haskell Symposium ’17.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

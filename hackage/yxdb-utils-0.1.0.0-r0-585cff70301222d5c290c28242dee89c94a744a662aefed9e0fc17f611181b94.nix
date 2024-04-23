@@ -21,7 +21,7 @@
       synopsis = "Utilities for reading and writing Alteryx .yxdb files";
       description = "Two command-line utilities (csv2yxdb and yxdb2csv) that are used to convert csv files with a specific header line into Alteryx .yxdb files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,25 +58,25 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "csv2yxdb" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yxdb-utils" or (errorHandler.buildDepError "yxdb-utils"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "yxdb2csv" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."yxdb-utils" or (errorHandler.buildDepError "yxdb-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "yxdb-tests" = {
           depends = [
@@ -118,9 +118,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

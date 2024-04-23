@@ -21,15 +21,15 @@
       synopsis = "higher kinded record operations";
       description = "make higher kinded records great again";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hkd" or (errorHandler.buildDepError "hkd"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

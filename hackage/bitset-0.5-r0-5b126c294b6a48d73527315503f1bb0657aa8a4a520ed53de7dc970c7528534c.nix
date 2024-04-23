@@ -21,14 +21,14 @@
       synopsis = "A functional data structure for efficient membership testing.";
       description = "A bit set is a data structure for keeping membership information efficiently.  This implementation uses Data.Bits on Integers, and thus should achieve reasonable speed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

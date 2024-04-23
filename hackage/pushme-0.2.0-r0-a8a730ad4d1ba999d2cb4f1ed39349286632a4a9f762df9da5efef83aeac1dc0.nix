@@ -21,7 +21,7 @@
       synopsis = "Script I use for synchronizing my data among machines";
       description = "Script I use for synchronizing my data among machines.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pushme" = {
@@ -50,9 +50,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

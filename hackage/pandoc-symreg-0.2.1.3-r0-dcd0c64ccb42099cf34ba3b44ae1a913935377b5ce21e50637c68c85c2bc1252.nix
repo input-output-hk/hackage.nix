@@ -21,7 +21,7 @@
       synopsis = "A tool to convert symbolic regression expressions into different formats.";
       description = "A pandoc-like cli tool and library to convert symbolic regression expressions to convenient formats";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."srtree" or (errorHandler.buildDepError "srtree"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-symreg" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pandoc-symreg" or (errorHandler.buildDepError "pandoc-symreg"))
             (hsPkgs."srtree" or (errorHandler.buildDepError "srtree"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "pandoc-symreg-test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."pandoc-symreg" or (errorHandler.buildDepError "pandoc-symreg"))
             (hsPkgs."srtree" or (errorHandler.buildDepError "srtree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

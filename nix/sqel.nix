@@ -6,8 +6,8 @@
         nix = import ../hackage/sqel-0.0.1.0-r0-9898c3f32a25286626e07e6014d2a967c09554a5109b1cd27822d40d42f726d0.nix;
         revNum = 0;
         sha256 = "9898c3f32a25286626e07e6014d2a967c09554a5109b1cd27822d40d42f726d0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

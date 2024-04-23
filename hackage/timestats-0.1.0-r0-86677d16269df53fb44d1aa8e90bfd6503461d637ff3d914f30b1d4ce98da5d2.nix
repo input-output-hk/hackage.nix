@@ -21,25 +21,25 @@
       synopsis = "A library for profiling time in Haskell applications";
       description = "A simple library for profiling time that can help when more\nsophisticated tools aren't available or needed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."timestats" or (errorHandler.buildDepError "timestats"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

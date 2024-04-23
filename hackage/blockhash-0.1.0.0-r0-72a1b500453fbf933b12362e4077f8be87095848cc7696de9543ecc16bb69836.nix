@@ -21,7 +21,7 @@
       synopsis = "Blockhash perceptual image hash algorithm";
       description = "This is a perceptual image hash calculation tool based on algorithm descibed\nin Block Mean Value Based Image Perceptual Hashing by Bian Yang, Fan Gu and\nXiamu Niu.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "blockhash" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "blockhash-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blockhash" or (errorHandler.buildDepError "blockhash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

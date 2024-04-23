@@ -21,7 +21,7 @@
       synopsis = "Modular Haskell Web Server";
       description = "A web server with a module system and support for CGI.\nBased on Simon Marlow's original Haskell Web Server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hws" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hws-dyn" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -88,9 +88,9 @@
             (hsPkgs."explicit-exception" or (errorHandler.buildDepError "explicit-exception"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

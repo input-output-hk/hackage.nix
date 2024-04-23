@@ -21,7 +21,7 @@
       synopsis = "A servant client for frontend JavaScript";
       description = "An experimental servant client using JSaddle and the Fetch API to support HTTP streaming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,11 +42,11 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhcjs && true) [
+        ] ++ pkgs.lib.optionals (compiler.isGhcjs && true) [
           (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
           (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

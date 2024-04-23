@@ -21,7 +21,7 @@
       synopsis = "A basic lambda calculator with beta reduction and a REPL";
       description = "A basic lambda calculator with beta reduction and a REPL";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "LambdaCalculator" = {
@@ -33,9 +33,9 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "European option implied vol calculation";
       description = "Haskell binding for Jaekel's \"Let's be Rational\" implied volatility calculation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

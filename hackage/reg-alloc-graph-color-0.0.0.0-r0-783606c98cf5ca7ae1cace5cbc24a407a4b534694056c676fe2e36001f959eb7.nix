@@ -21,14 +21,14 @@
       synopsis = "Register allocation by graph colorization";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."reg-alloc-graph-color".components.sublibs.private or (errorHandler.buildDepError "reg-alloc-graph-color:private"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "private" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."util" or (errorHandler.buildDepError "util"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,19 +61,19 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."util" or (errorHandler.buildDepError "util"))
             (hsPkgs."reg-alloc-graph-color".components.sublibs.private or (errorHandler.buildDepError "reg-alloc-graph-color:private"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."reg-alloc-graph-color" or (errorHandler.buildDepError "reg-alloc-graph-color"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

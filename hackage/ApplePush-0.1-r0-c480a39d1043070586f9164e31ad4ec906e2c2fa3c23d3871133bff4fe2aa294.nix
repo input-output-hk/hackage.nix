@@ -21,7 +21,7 @@
       synopsis = "Library for Apple Push Notification Service";
       description = "This library provides an interface to send notifications with the Apple Push Notification Service.\n\nNote: Your connection to Apple's Push Notification service must be secured with SSL. Currently, Haskell's support\nfor SSL is incomplete, therefore you should use an SSL tunnel to connect your application to the push service, such as                       stunnel.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,14 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "applepushtest" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

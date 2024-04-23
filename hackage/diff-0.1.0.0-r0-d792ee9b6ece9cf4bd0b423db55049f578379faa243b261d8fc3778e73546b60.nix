@@ -21,15 +21,15 @@
       synopsis = "Diff and patch";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."Enum" or (errorHandler.buildDepError "Enum"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."util" or (errorHandler.buildDepError "util"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

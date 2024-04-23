@@ -21,7 +21,7 @@
       synopsis = "Applications for interacting with the Pushbullet API";
       description = "This package provides two programs, tpb and pb-notify, for interacting with\nthe Pushbullet API. The former is primarily used for sending SMS whereas the\nlatter is used for showing desktop notifications when SMS are received.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tpb" = {
@@ -45,9 +45,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."servant-pushbullet-client" or (errorHandler.buildDepError "servant-pushbullet-client"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pb-notify" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -59,9 +59,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

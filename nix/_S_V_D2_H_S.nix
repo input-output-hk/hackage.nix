@@ -6,8 +6,8 @@
         nix = import ../hackage/SVD2HS-0.1-r0-7fc55059c21d6ce817a89d6bbbdd1d50da7c76de345dd5539029693c400cd896.nix;
         revNum = 0;
         sha256 = "7fc55059c21d6ce817a89d6bbbdd1d50da7c76de345dd5539029693c400cd896";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

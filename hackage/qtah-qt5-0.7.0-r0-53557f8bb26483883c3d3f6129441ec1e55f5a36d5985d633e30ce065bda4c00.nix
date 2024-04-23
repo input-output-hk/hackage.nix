@@ -26,8 +26,8 @@
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."hoppy-runtime" or (errorHandler.buildDepError "hoppy-runtime"))
           (hsPkgs."qtah-cpp-qt5" or (errorHandler.buildDepError "qtah-cpp-qt5"))
           (hsPkgs."qtah-generator" or (errorHandler.buildDepError "qtah-generator"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-qtah" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hoppy-runtime" or (errorHandler.buildDepError "hoppy-runtime"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."qtah-qt5" or (errorHandler.buildDepError "qtah-qt5"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

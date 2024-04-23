@@ -21,14 +21,14 @@
       synopsis = "An abstract data type designed for the exchange of tree-like data structures";
       description = "Library for dealing with ATerms (annotated terms) in Haskell. See <https://github.com/cwi-swat/aterms> for more information on ATerms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

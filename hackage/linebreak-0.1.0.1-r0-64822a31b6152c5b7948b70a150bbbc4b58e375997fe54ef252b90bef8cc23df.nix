@@ -21,14 +21,14 @@
       synopsis = "breaks strings to fit width";
       description = "Simple functions to break a String to fit a maximum text\nwidth, using Knuth-Lian hyphenation algorhitm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hyphenation" or (errorHandler.buildDepError "hyphenation"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

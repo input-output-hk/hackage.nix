@@ -21,11 +21,11 @@
       synopsis = "Binary serialization with deferred loading";
       description = "Binary serialization, but with delays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

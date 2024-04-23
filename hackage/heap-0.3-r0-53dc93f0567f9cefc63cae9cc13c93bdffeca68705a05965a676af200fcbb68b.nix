@@ -21,11 +21,11 @@
       synopsis = "Heaps in Haskell";
       description = "A flexible Haskell heap implementation";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

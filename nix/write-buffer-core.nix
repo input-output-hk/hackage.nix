@@ -6,8 +6,8 @@
         nix = import ../hackage/write-buffer-core-0.1.0.0-r0-3fabaf30874df1ec6d322e58a94420cd504479ffa9c9c1a9ef4708b51935d107.nix;
         revNum = 0;
         sha256 = "3fabaf30874df1ec6d322e58a94420cd504479ffa9c9c1a9ef4708b51935d107";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

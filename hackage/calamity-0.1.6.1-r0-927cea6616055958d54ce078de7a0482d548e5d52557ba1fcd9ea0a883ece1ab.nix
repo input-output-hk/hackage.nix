@@ -21,7 +21,7 @@
       synopsis = "A library for writing discord bots";
       description = "Please see the README on GitHub at <https://github.com/nitros12/calamity#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -66,8 +66,8 @@
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wreq-patchable" or (errorHandler.buildDepError "wreq-patchable"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

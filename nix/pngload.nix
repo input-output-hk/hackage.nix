@@ -6,8 +6,8 @@
         nix = import ../hackage/pngload-0.1-r0-17bcdca180cb7a21dea1494fef866f3836701f51f7067936b4c47728e937acab.nix;
         revNum = 0;
         sha256 = "17bcdca180cb7a21dea1494fef866f3836701f51f7067936b4c47728e937acab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

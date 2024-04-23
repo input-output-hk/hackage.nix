@@ -14,7 +14,7 @@
       mkl = false;
       veclib = false;
       custom = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "gsl-random"; version = "0.1.1"; };
@@ -27,20 +27,20 @@
       synopsis = "Bindings the the GSL random number generation facilities.";
       description = "Bindings to the GNU Scientific Library random number generators and random\ndistributions.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-        libs = ((((pkgs.lib).optionals (flags.atlas) [
+        libs = (((pkgs.lib.optionals (flags.atlas) [
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
           (pkgs."cblas" or (errorHandler.sysDepError "cblas"))
           (pkgs."atlas" or (errorHandler.sysDepError "atlas"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ] ++ (pkgs.lib).optionals (flags.gsl) [
+        ] ++ pkgs.lib.optionals (flags.gsl) [
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
           (pkgs."gslcblas" or (errorHandler.sysDepError "gslcblas"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ]) ++ (pkgs.lib).optionals (flags.mkl) (if system.isX86_64
+        ]) ++ pkgs.lib.optionals (flags.mkl) (if system.isX86_64
           then [
             (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
             (pkgs."mkl_lapack" or (errorHandler.sysDepError "mkl_lapack"))
@@ -48,7 +48,7 @@
             (pkgs."mkl_sequential" or (errorHandler.sysDepError "mkl_sequential"))
             (pkgs."mkl_core" or (errorHandler.sysDepError "mkl_core"))
             (pkgs."m" or (errorHandler.sysDepError "m"))
-            ]
+          ]
           else [
             (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
             (pkgs."mkl_lapack" or (errorHandler.sysDepError "mkl_lapack"))
@@ -56,16 +56,16 @@
             (pkgs."mkl_sequential" or (errorHandler.sysDepError "mkl_sequential"))
             (pkgs."mkl_core" or (errorHandler.sysDepError "mkl_core"))
             (pkgs."m" or (errorHandler.sysDepError "m"))
-            ])) ++ (pkgs.lib).optionals (flags.veclib) [
+          ])) ++ pkgs.lib.optionals (flags.veclib) [
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
           (pkgs."cblas" or (errorHandler.sysDepError "cblas"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ]) ++ (pkgs.lib).optionals (!flags.atlas && !flags.gsl && !flags.mkl && !flags.veclib && !flags.custom) [
+        ]) ++ pkgs.lib.optionals (!flags.atlas && !flags.gsl && !flags.mkl && !flags.veclib && !flags.custom) [
           (pkgs."gsl" or (errorHandler.sysDepError "gsl"))
           (pkgs."gslcblas" or (errorHandler.sysDepError "gslcblas"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

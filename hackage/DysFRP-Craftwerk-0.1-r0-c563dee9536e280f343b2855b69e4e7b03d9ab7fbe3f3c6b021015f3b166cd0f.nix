@@ -21,7 +21,7 @@
       synopsis = "dysFunctional Reactive Programming on Craftwerk";
       description = "Simple Craftwerk bindings for DysFRP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."craftwerk-gtk" or (errorHandler.buildDepError "craftwerk-gtk"))
           (hsPkgs."DysFRP" or (errorHandler.buildDepError "DysFRP"))
           (hsPkgs."DysFRP-Cairo" or (errorHandler.buildDepError "DysFRP-Cairo"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

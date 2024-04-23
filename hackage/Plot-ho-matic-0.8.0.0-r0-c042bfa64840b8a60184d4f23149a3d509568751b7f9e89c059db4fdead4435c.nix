@@ -21,7 +21,7 @@
       synopsis = "Real-time line plotter for generic data";
       description = "Plot-ho-matic provides real-time plotting of time-series data with a simple interface ('addHistoryChannel').\nThere is also a more general interface to plot arbitrary data ('addChannel').\n\nSee the example on <http://www.github.com/ghorn/Plot-ho-matic> to help get started.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,26 +38,26 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."generic-accessors" or (errorHandler.buildDepError "generic-accessors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "plot-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Plot-ho-matic" or (errorHandler.buildDepError "Plot-ho-matic"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "set-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Plot-ho-matic" or (errorHandler.buildDepError "Plot-ho-matic"))
             (hsPkgs."generic-accessors" or (errorHandler.buildDepError "generic-accessors"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

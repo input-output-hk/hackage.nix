@@ -21,7 +21,7 @@
       synopsis = "Public API definitions of BattlePlace.io service";
       description = "Public API definitions of BattlePlace.io service";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."battleplace" or (errorHandler.buildDepError "battleplace"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

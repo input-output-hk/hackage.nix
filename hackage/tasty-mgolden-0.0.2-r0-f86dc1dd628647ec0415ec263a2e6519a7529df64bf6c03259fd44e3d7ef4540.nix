@@ -21,7 +21,7 @@
       synopsis = "Golden testing provider for tasty with muti-line diff output";
       description = "Please visit the README at <https://github.com/mbj/tasty-mgolden#readme>\nfor usage information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tasty-mgolden-example" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-mgolden" or (errorHandler.buildDepError "tasty-mgolden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "golden" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tasty-mgolden" or (errorHandler.buildDepError "tasty-mgolden"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
@@ -75,9 +75,9 @@
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

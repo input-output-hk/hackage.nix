@@ -21,7 +21,7 @@
       synopsis = "A search and indexing engine server.";
       description = "Standalone search server based on the Hunt searchengine.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hunt-server" = {
@@ -50,9 +50,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."ekg-core" or (errorHandler.buildDepError "ekg-core"))
-            ] ++ (pkgs.lib).optional (flags.statsd) (hsPkgs."ekg-statsd" or (errorHandler.buildDepError "ekg-statsd"));
+          ] ++ pkgs.lib.optional (flags.statsd) (hsPkgs."ekg-statsd" or (errorHandler.buildDepError "ekg-statsd"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

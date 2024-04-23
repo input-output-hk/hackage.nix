@@ -6,8 +6,8 @@
         nix = import ../hackage/fay-ref-0.1.0.0-r0-6871c06c366467f3a20abbfcdb109812dabffe4fc4aeafdc9f83608524874182.nix;
         revNum = 0;
         sha256 = "6871c06c366467f3a20abbfcdb109812dabffe4fc4aeafdc9f83608524874182";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

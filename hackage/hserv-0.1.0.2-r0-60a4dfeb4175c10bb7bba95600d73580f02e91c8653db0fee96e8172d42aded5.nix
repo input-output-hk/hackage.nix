@@ -21,7 +21,7 @@
       synopsis = "Simple http server in haskell.";
       description = "Simple http server in haskell, similar to as provided by `python -m SimpleHTTPServer`.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hserv" = {
@@ -30,9 +30,9 @@
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Memory reinterpretation casts for Float/Double and Word32/Word64";
       description = "Memory reinterpretation casts for Float\\/Double and Word32\\/Word64.\n\nThe implementations in the @.Internal@ package are different ways to tackle\nthe problem; the @array@ method (current default) is about 5 times faster\nthan the @FFI@ method.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
             (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."reinterpret-cast" or (errorHandler.buildDepError "reinterpret-cast"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

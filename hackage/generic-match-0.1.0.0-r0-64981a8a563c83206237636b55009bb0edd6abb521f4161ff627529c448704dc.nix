@@ -21,11 +21,11 @@
       synopsis = "For when first class pattern matches are needed";
       description = "For when first class pattern matches are needed.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

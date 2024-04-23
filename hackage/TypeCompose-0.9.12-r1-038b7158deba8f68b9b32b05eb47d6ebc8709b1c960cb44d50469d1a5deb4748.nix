@@ -21,15 +21,15 @@
       synopsis = "Type composition classes & instances";
       description = "TypeCompose provides some classes & instances for forms of type\ncomposition, as well as some modules who haven't yet found a home.\n\nPlease see the project wiki page: <http://haskell.org/haskellwiki/TypeCompose>\n\nCopyright 2007-2012 by Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

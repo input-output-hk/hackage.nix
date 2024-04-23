@@ -21,13 +21,13 @@
       synopsis = "Simple mancala game.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mancala" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

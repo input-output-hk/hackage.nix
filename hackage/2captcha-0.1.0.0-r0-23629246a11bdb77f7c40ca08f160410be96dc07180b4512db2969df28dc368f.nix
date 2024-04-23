@@ -21,7 +21,7 @@
       synopsis = "Haskell package for easy integration with the 2captcha API.";
       description = "Haskell package for easy integration with the 2captcha API.\n\nFeature list:\n\n* Lens-based API\n* Uses Wreq for http calls";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

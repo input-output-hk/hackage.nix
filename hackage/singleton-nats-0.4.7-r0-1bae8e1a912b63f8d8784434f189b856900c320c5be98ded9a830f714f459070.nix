@@ -21,20 +21,20 @@
       synopsis = "Unary natural numbers relying on the singletons infrastructure.";
       description = "Unary natural number relying on the <https://hackage.haskell.org/package/singletons singletons> infrastructure. More information about the general usage of singletons can be found on the <https://github.com/goldfirere/singletons singletons github> page.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (if flags.singletons-3-0
+        ] ++ (if flags.singletons-3-0
           then [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"))
-            ]
+          ]
           else [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

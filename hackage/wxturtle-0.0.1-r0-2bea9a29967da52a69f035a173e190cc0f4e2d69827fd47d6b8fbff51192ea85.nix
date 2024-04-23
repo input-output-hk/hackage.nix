@@ -21,7 +21,7 @@
       synopsis = "turtle like LOGO with wxHaskell";
       description = "turtle like LOGO with wxHaskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."yjsvg" or (errorHandler.buildDepError "yjsvg"))
           (hsPkgs."Imlib" or (errorHandler.buildDepError "Imlib"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "testTurtle" = { buildable = true; }; };
       };
-    }
+      exes = { "testTurtle" = { buildable = true; }; };
+    };
+  }

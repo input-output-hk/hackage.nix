@@ -21,7 +21,7 @@
       synopsis = "GenValidity support for UUID";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
           (hsPkgs."validity-uuid" or (errorHandler.buildDepError "validity-uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "genvalidity-uuid-test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."genvalidity-uuid" or (errorHandler.buildDepError "genvalidity-uuid"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

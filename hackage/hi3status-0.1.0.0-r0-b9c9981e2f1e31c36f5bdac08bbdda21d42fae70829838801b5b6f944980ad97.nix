@@ -21,7 +21,7 @@
       synopsis = "Status line for i3bar.";
       description = "Hi3status is a compact, lightweight, responsive and highly configurable status line for i3bar.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,25 +39,25 @@
           (hsPkgs."prefix-units" or (errorHandler.buildDepError "prefix-units"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hi3status" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hi3status" or (errorHandler.buildDepError "hi3status"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hi3status-ctl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dbus" or (errorHandler.buildDepError "dbus"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

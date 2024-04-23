@@ -21,11 +21,11 @@
       synopsis = "Types for lawful-classes";
       description = "Type definitions (aliases) and basic utility functions used in the\n@lawful-classes@ ecosystem.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

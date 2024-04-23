@@ -21,7 +21,7 @@
       synopsis = "permutation Applicative and Monad with many mtl instances";
       description = "Based on \\\"Parsing Permutation Phrases\\\", by Arthur Baars, Andres Loeh and S.\nDoaitse Swierstra, /Haskell Workshop 2001/.  The implementation given here\ndoes not include explicit optional actions, and instead implements\n'Alternative' and 'MonadPlus'.  @m '<*>' ('lift' n '<|>' 'pure' a)@ should\nbe used where @'addOpt' m a n@ would be used.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."catch-fd" or (errorHandler.buildDepError "catch-fd"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "reddit-tests" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."perm" or (errorHandler.buildDepError "perm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

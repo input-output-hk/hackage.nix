@@ -21,14 +21,14 @@
       synopsis = "Control.Applicative, Data.Foldable, Data.Traversable (compatibility package)";
       description = "This package contains Control.Applicative, Data.Foldable, Data.Traversable\nfrom 6.8's base for use in earlier GHC versions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

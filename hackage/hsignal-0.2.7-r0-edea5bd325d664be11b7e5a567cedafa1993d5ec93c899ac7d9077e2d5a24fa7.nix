@@ -21,7 +21,7 @@
       synopsis = "Signal processing and EEG data analysis";
       description = "Purely functional interface to signal processing based on hmatrix\n\nProvides data types for manipulating EEG data, including reading from BDF data format files\n\nThe vector type is Data.Vector.Storable from the 'vector' package.\n\nFeature requests, suggestions, and bug fixes welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,22 +35,22 @@
           (hsPkgs."hmatrix-gsl" or (errorHandler.buildDepError "hmatrix-gsl"))
           (hsPkgs."hmatrix-gsl-stats" or (errorHandler.buildDepError "hmatrix-gsl-stats"))
           (hsPkgs."hstatistics" or (errorHandler.buildDepError "hstatistics"))
-          ];
+        ];
         libs = ((if flags.openblas
           then [ (pkgs."openblas" or (errorHandler.sysDepError "openblas")) ]
           else [
             (pkgs."blas" or (errorHandler.sysDepError "blas"))
             (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-            ]) ++ (pkgs.lib).optionals (system.isFreebsd) [
+          ]) ++ pkgs.lib.optionals (system.isFreebsd) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
           (pkgs."gfortran" or (errorHandler.sysDepError "gfortran"))
-          ]) ++ (pkgs.lib).optionals (system.isWindows) [
+        ]) ++ pkgs.lib.optionals (system.isWindows) [
           (pkgs."blas" or (errorHandler.sysDepError "blas"))
           (pkgs."lapack" or (errorHandler.sysDepError "lapack"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."Accelerate" or (errorHandler.sysDepError "Accelerate"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

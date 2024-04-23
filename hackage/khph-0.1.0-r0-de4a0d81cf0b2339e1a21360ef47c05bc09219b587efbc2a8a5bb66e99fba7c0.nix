@@ -21,7 +21,7 @@
       synopsis = "Command-line file tagging and organization tool";
       description = "Khph is a tool for managing collections of files from the command line.  It\nallows you to tag files via symlinks, and query your collection with a simple\nquery language.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "khph" = {
@@ -40,9 +40,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

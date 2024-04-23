@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."spool" or (errorHandler.buildDepError "spool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dcpu16-exe" = {
           depends = [
@@ -42,18 +42,18 @@
             (hsPkgs."dcpu16" or (errorHandler.buildDepError "dcpu16"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "dcpu16-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dcpu16" or (errorHandler.buildDepError "dcpu16"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

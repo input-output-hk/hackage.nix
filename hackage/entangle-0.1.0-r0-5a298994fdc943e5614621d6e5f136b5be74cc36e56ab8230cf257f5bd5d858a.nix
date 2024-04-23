@@ -21,7 +21,7 @@
       synopsis = "An application (and library) to convert quipper circuits into Qpmc models.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "entangle" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."entangle" or (errorHandler.buildDepError "entangle"))
             (hsPkgs."quipper-core" or (errorHandler.buildDepError "quipper-core"))
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

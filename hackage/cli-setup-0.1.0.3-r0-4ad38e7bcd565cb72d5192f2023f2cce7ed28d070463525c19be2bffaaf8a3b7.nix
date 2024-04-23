@@ -21,7 +21,7 @@
       synopsis = "Helper setup scripts for packaging command-line tools.";
       description = "Provides functions to set up manpages and shell completions. Intended to be used in the @Setup.hs@ module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

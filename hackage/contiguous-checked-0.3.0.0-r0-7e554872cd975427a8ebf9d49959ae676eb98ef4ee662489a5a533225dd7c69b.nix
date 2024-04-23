@@ -21,15 +21,15 @@
       synopsis = "";
       description = "Please see the README on GitHub";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

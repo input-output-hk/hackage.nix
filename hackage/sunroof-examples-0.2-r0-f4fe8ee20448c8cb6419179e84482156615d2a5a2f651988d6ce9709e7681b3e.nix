@@ -21,7 +21,7 @@
       synopsis = "Tests for Sunroof";
       description = "Example applications of the sunroof-compiler and sunroof-server package.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sunroof-browser-info" = {
@@ -32,9 +32,9 @@
             (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sunroof-canvas" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -42,9 +42,9 @@
             (hsPkgs."sunroof-server" or (errorHandler.buildDepError "sunroof-server"))
             (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sunroof-clock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -52,9 +52,9 @@
             (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sunroof-fib" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,9 +63,9 @@
             (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sunroof-unit" = {
           depends = [
             (hsPkgs."sunroof-compiler" or (errorHandler.buildDepError "sunroof-compiler"))
@@ -79,18 +79,18 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sunroof-inplace-shaker" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

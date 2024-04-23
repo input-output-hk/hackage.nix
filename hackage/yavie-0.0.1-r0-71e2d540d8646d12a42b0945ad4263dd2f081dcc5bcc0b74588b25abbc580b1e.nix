@@ -21,7 +21,7 @@
       synopsis = "yet another visual editor";
       description = "yet another visual editor\n\nCustomizable vi like editor.\nYou can customize by edit ~\\/.yavie\\/vty\\/yavie-vty.hs.\nIt's very buggy now.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yavie" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

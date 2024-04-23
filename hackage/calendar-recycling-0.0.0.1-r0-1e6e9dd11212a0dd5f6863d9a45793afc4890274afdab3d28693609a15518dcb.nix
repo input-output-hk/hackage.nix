@@ -21,7 +21,7 @@
       synopsis = "List years with the same calendars";
       description = "Generate a partial HTML document grouping years\nby the pattern of the calender.\nThe program respects the starting weekday of a year\nand the existence of a leap day,\nbut it ignores the date of the Easter festival.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "calendar-recycling" = {
@@ -31,9 +31,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

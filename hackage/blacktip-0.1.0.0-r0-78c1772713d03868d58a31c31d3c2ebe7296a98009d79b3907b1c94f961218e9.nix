@@ -21,7 +21,7 @@
       synopsis = "Decentralized, k-ordered unique ID generator.";
       description = "Clone of Boundary's Flake unique id service for Haskell, itself based on Snowflake.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,19 +37,19 @@
           (hsPkgs."deepseq-generics" or (errorHandler.buildDepError "deepseq-generics"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."blacktip" or (errorHandler.buildDepError "blacktip"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benches" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."network-info" or (errorHandler.buildDepError "network-info"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

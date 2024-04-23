@@ -21,7 +21,7 @@
       synopsis = "Adding support for asynchronous updates (\"AJAX\") with heist";
       description = "This package provides six splices and some accompanying javascript to allow declarative ajax programming that involves no javascript programming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."heist" or (errorHandler.buildDepError "heist"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

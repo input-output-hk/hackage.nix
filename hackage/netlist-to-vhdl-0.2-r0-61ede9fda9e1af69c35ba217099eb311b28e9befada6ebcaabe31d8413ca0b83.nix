@@ -21,14 +21,14 @@
       synopsis = "Convert a Netlist AST to VHDL";
       description = "Convert a Netlist AST to VHDL";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."netlist" or (errorHandler.buildDepError "netlist"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+        ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

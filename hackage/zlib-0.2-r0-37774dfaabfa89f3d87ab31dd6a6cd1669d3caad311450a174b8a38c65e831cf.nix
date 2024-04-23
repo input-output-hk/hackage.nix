@@ -21,15 +21,15 @@
       synopsis = "Compression and decompression in the gzip and zlib formats";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fps" or (errorHandler.buildDepError "fps"))
-          ];
+        ];
         libs = [ (pkgs."z" or (errorHandler.sysDepError "z")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

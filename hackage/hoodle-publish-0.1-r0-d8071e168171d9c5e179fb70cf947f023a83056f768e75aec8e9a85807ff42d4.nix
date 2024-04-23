@@ -21,7 +21,7 @@
       synopsis = "publish hoodle files as a static web site";
       description = "This package provieds a simple tool hoodle-publish which make a static web site from a directory containing hoodle files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoodle-publish" = {
@@ -51,9 +51,9 @@
             (hsPkgs."hoodle-types" or (errorHandler.buildDepError "hoodle-types"))
             (hsPkgs."hoodle-parser" or (errorHandler.buildDepError "hoodle-parser"))
             (hsPkgs."hoodle-render" or (errorHandler.buildDepError "hoodle-render"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

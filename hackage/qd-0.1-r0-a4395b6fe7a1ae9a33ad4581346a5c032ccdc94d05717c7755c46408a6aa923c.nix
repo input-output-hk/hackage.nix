@@ -21,12 +21,12 @@
       synopsis = "double-double and quad-double type via libqd";
       description = "This package supports both a double-double datatype (approx. 32 decimal digits)\nand a quad-double datatype (approx. 64 decimal digits), using libqd (which is\nimplemented in C++ with C and Fortran wrappers).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."qd" or (errorHandler.sysDepError "qd")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

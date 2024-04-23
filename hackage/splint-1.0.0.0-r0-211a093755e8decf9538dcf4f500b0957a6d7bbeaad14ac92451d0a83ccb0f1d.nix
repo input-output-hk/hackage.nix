@@ -21,15 +21,15 @@
       synopsis = "HLint as a GHC source plugin.";
       description = "Splint is HLint as a GHC source plugin.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

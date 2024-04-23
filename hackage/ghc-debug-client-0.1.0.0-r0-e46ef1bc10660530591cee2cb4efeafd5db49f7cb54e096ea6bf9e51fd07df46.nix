@@ -21,7 +21,7 @@
       synopsis = "Useful functions for writing heap analysis tools which use\nghc-debug.";
       description = "Useful functions for writing heap analysis tools which use\nghc-debug.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."language-dot" or (errorHandler.buildDepError "language-dot"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

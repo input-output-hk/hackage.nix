@@ -21,7 +21,7 @@
       synopsis = "Display instances for the HyperHaskell graphical Haskell interpreter";
       description = "This package is part of the /HyperHaskell/ project and provides\nvisual representations for various data types, in particular\ndiagrams from the @diagrams@ package.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."svg-builder" or (errorHandler.buildDepError "svg-builder"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."hyper" or (errorHandler.buildDepError "hyper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

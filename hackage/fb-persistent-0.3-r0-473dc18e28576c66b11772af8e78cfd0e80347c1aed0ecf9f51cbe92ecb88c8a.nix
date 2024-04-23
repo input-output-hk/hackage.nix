@@ -21,7 +21,7 @@
       synopsis = "Provides Persistent instances to Facebook types.";
       description = "This package provides orphan Persistent instances to Facebook\ntypes.  It is needed because @fb@ package should not depend on\n@persistent@, and neither should @persistent@ depend on @fb@.\nUse this @fb-persistent@ package instead of providing your own\norphan instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

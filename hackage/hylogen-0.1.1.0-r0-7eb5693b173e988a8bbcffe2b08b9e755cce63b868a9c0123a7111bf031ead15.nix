@@ -21,16 +21,16 @@
       synopsis = "an EDSL for live-coding fragment shaders";
       description = "an EDSL for live-coding fragment shaders";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."data-reify" or (errorHandler.buildDepError "data-reify"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hyde" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

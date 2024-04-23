@@ -21,11 +21,11 @@
       synopsis = "A combinator library for simultaneously defining parsers and pretty printers.";
       description = "Combinator library for defining both type safe parsers and pretty printers simultaneously.\nThis library performs well in practice because parsers and printers are implemented in CPS\nand because arguments are always curried, rather than packed into nested tuples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

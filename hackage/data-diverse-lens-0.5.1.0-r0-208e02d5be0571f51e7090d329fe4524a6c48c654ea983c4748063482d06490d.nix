@@ -21,7 +21,7 @@
       synopsis = "Isos & Lens for Data.Diverse.Many and Prisms for Data.Diverse.Which";
       description = "Isos & Lens for Data.Diverse.Many and Prisms for Data.Diverse.Which\nRefer to [ManySpec.hs](https://github.com/louispan/data-diverse-lens/blob/master/test/Data/Diverse/Lens/ManySpec.hs) and [WhichSpec.hs](https://github.com/louispan/data-diverse-lens/blob/master/test/Data/Diverse/Lens/WhichSpec.hs) for example usages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."data-diverse" or (errorHandler.buildDepError "data-diverse"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ] ++ [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ];
+        ] ++ [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ];
         buildable = true;
-        };
+      };
       tests = {
         "data-diverse-lens-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."data-diverse-lens" or (errorHandler.buildDepError "data-diverse-lens"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ] ++ [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ];
+          ] ++ [ (hsPkgs."lens" or (errorHandler.buildDepError "lens")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A Cricket scoring application.";
       description = "An application to help with scoring Cricket dart games.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hricket" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

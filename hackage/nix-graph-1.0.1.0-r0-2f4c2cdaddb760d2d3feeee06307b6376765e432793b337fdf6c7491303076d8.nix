@@ -21,7 +21,7 @@
       synopsis = "Reify the Nix build graph into a Haskell graph data structure";
       description = "Reify the Nix build graph into a Haskell graph data structure";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ttrie" or (errorHandler.buildDepError "ttrie"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nix-graph" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."algebraic-graphs" or (errorHandler.buildDepError "algebraic-graphs"))
             (hsPkgs."nix-graph" or (errorHandler.buildDepError "nix-graph"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

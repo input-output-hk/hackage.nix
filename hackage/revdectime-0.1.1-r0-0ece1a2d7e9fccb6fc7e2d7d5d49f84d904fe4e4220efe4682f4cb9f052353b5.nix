@@ -21,16 +21,16 @@
       synopsis = "A French revolutionary decimal time (metric) clock";
       description = "A French revolutionary decimal time (metric) clock";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "revdectime" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

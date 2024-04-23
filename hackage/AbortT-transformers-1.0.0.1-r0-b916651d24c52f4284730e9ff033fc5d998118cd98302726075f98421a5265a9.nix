@@ -21,14 +21,14 @@
       synopsis = "A monad and monadic transformer providing \"abort\" functionality";
       description = "This module provides a monad and a monad transformer that allow the user to abort a monadic computation and immediately return a result.\n\nNew in version 1.0.1: Bumped the transformers dependencies and updated the maintainer's e-mail address.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

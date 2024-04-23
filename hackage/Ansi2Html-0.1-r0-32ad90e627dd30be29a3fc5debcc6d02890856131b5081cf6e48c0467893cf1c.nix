@@ -21,7 +21,7 @@
       synopsis = "Convert ANSI Terminal Sequences to nice HTML markup";
       description = "Particularly with xterm in mind, this software enables integration of terminal screen state in html pages. See project homepage for hints on how to setup xterm for it.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ansi2html" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

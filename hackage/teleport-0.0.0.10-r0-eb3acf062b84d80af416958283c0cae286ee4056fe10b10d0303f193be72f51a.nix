@@ -21,12 +21,12 @@
       synopsis = "A tool to quickly switch between directories";
       description = "A tool to quickly switch between directories\nPlease see README.md for more details";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "teleport-exe" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "teleport-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."teleport" or (errorHandler.buildDepError "teleport"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

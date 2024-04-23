@@ -6,8 +6,8 @@
         nix = import ../hackage/kudzu-0.1.0.0-r0-74e0de29fb795f046e9054cf50cca62247f0230c71432ce37098a57d2adaa705.nix;
         revNum = 0;
         sha256 = "74e0de29fb795f046e9054cf50cca62247f0230c71432ce37098a57d2adaa705";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

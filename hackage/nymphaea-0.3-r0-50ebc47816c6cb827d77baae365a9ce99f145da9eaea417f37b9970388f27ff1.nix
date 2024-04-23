@@ -21,7 +21,7 @@
       synopsis = "An interactive GUI for manipulating L-systems";
       description = "An L-system is a small grammar specifying fractal functions, famous\nfor their uncanny resemblance to plants and other lifeforms.\nnymphaea displays these L-systems in an attractive visual manner, and\nallows you to manipulate them.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "nymphaea" = {
@@ -35,9 +35,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

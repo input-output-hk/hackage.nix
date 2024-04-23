@@ -6,8 +6,8 @@
         nix = import ../hackage/smt-0.0.0.0-r0-a096b7093b7398c29df80d8ae6f83ba4e4e41c24eee3cb5b8e1f01be31a6060e.nix;
         revNum = 0;
         sha256 = "a096b7093b7398c29df80d8ae6f83ba4e4e41c24eee3cb5b8e1f01be31a6060e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

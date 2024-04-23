@@ -21,7 +21,7 @@
       synopsis = "Twitter JSON types (lens powered)";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."twitter-types" or (errorHandler.buildDepError "twitter-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

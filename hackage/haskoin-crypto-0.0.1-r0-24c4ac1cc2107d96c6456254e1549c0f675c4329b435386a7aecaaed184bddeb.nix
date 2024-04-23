@@ -21,7 +21,7 @@
       synopsis = "Implementation of Bitcoin cryptographic primitives.";
       description = "This package provides the elliptic curve cryptography required for creating\nand validating bitcoin transactions. It also provides SHA-256 and RIPEMD-160\nhashing functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
           (hsPkgs."haskoin-util" or (errorHandler.buildDepError "haskoin-util"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskoin-crypto" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-haskoin-crypto" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."haskoin-util" or (errorHandler.buildDepError "haskoin-util"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

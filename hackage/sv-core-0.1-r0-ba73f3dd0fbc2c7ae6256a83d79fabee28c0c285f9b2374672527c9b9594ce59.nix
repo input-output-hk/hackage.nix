@@ -21,7 +21,7 @@
       synopsis = "Encode and decode separated values (CSV, PSV, ...)";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nsv-core is the decoding and encoding for the\n<https://hackage.haskell.org/package/sv sv> CSV library. This is split\noff into its own package so that one swap out sv's parser without incurring\na dependency on the default parser\n(<https://hackage.haskell.org/package/hw-dsv hw-dsv>)\n\nFor an example, see <https://hackage.haskell.org/package/sv-cassava sv-cassava>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."validation" or (errorHandler.buildDepError "validation"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

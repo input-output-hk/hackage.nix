@@ -21,7 +21,7 @@
       synopsis = "generate forms using lucid, ditto and trasa";
       description = "Formlets library for trasa using ditto as its backend.\nAlthough trasa already has machinery for creating\ntypesafe forms, this library with ditto allow a more\ncomposable approach to form generation/validation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."trasa-server" or (errorHandler.buildDepError "trasa-server"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

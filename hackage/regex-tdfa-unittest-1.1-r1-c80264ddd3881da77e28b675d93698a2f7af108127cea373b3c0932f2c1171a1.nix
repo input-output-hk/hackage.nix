@@ -21,7 +21,7 @@
       synopsis = "Unit tests for the regex-tdfa";
       description = "Apply regex-posix-unittest tests to regex-tdfa";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "regex-tdfa-unittest" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

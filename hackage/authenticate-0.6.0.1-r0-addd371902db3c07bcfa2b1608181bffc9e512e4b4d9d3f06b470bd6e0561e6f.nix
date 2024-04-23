@@ -21,7 +21,7 @@
       synopsis = "Authentication methods for Haskell web applications.";
       description = "Focus is on remote authentication methods, such as OpenID,\nrpxnow and Google.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."safe-failure" or (errorHandler.buildDepError "safe-failure"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

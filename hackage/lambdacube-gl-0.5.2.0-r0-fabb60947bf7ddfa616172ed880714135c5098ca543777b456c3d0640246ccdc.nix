@@ -21,7 +21,7 @@
       synopsis = "OpenGL 3.3 Core Profile backend for LambdaCube 3D";
       description = "OpenGL 3.3 Core Profile backend for LambdaCube 3D";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
           (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lambdacube-gl-hello" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "lambdacube-gl-hello-obj" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."wavefront" or (errorHandler.buildDepError "wavefront"))
             (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "lambdacube-gl-test-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -87,9 +87,9 @@
             (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
             (hsPkgs."lambdacube-gl" or (errorHandler.buildDepError "lambdacube-gl"))
             (hsPkgs."lambdacube-ir" or (errorHandler.buildDepError "lambdacube-ir"))
-            ];
+          ];
           buildable = if flags.testclient then true else false;
-          };
         };
       };
-    }
+    };
+  }

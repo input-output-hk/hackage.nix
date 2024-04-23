@@ -21,7 +21,7 @@
       synopsis = "Print text to terminal with colors and effects";
       description = "rainbow helps you print Text chunks to a terminal with colors and effects\nsuch as bold, underlining, etc. You pair each Text with a description\nof how it should appear. Rainbow works with both 8-color and 256-color\nterminals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "rainbow-instances" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test8color" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test256color" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -66,9 +66,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "colorTest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

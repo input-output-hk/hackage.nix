@@ -21,11 +21,11 @@
       synopsis = "Angles in degrees and radians.";
       description = "A simple little library for dealing with geometric angles.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

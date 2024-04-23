@@ -21,11 +21,11 @@
       synopsis = "Show for * -> *";
       description = "Provides a Show-like class for * -> *";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

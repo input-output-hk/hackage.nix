@@ -21,11 +21,11 @@
       synopsis = "LazyIO applicative for asymptotic performance ";
       description = "Producing data structures lazily is builtin pure haskell, but the IO monad is strict meaning Functor and Applicative have wildy different asymptotics (for IO). Using lazy IO allows effectful mappings WITH lazy streaming. LazyIO actions are expected to be commutative up to correctness.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Higher-order Functional Reactive Programming";
       description = "Reflex is a high-performance, deterministic, higher-order Functional Reactive Programming system";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cross-impl" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
             (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "spider-bench" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

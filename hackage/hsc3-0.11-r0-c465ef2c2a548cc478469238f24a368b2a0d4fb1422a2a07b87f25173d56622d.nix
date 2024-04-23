@@ -21,7 +21,7 @@
       synopsis = "Haskell SuperCollider";
       description = "hsc3 facilitates using haskell as a client to the\nSuperCollider synthesis server.\nFor detailed installation and configuration\ninformation please consult the /Tutorial/ and\n/Introduction/ documents at\n<http://slavepianos.org/rd/ut/hsc3-texts/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

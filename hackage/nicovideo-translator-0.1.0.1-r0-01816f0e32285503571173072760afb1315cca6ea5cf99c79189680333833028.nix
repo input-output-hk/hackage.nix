@@ -21,7 +21,7 @@
       synopsis = "Nico Nico Douga (ニコニコ動画) Comment Translator";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,17 +43,17 @@
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nicovideo-translator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nicovideo-translator" or (errorHandler.buildDepError "nicovideo-translator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

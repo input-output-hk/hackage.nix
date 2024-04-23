@@ -21,7 +21,7 @@
       synopsis = "A Haskell FFI wrapper for the Augeas API";
       description = "A Haskell FFI wrapper for the Augeas API";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-haskell-augeas" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           libs = [ (pkgs."augeas" or (errorHandler.sysDepError "augeas")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

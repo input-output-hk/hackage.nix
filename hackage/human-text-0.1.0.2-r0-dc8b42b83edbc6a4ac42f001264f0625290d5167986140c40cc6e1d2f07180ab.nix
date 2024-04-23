@@ -21,14 +21,14 @@
       synopsis = "A lawless typeclass for converting values to human-friendly text.";
       description = "It's embarrassing when details of a programming language leak into a user interface; use the 'humanText' function instead of 'show' to display text to people.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

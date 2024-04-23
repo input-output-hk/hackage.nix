@@ -21,15 +21,15 @@
       synopsis = "Block thread until a file stops being modified";
       description = "See module for docs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

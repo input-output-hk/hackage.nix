@@ -21,7 +21,7 @@
       synopsis = "Ethereum virtual machine evaluator";
       description = "Hevm implements the Ethereum virtual machine semantics.\n.\nIt can be used as a library, and it also comes with an executable\nthat can run unit test suites, optionally with a visual TTY debugger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -77,13 +77,13 @@
           (hsPkgs."spool" or (errorHandler.buildDepError "spool"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
-          ];
+        ];
         libs = [
           (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
           (pkgs."ff" or (errorHandler.sysDepError "ff"))
-          ] ++ (pkgs.lib).optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
+        ] ++ pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         buildable = true;
-        };
+      };
       sublibs = {
         "test-utils" = {
           depends = [
@@ -121,13 +121,13 @@
             (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."smt2-parser" or (errorHandler.buildDepError "smt2-parser"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "hevm" = {
           depends = [
@@ -164,13 +164,13 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."spawn" or (errorHandler.buildDepError "spawn"))
-            ];
+          ];
           libs = if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -209,14 +209,14 @@
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."smt2-parser" or (errorHandler.buildDepError "smt2-parser"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = true;
-          };
+        };
         "rpc-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -254,14 +254,14 @@
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."smt2-parser" or (errorHandler.buildDepError "smt2-parser"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = true;
-          };
+        };
         "ethereum-tests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
@@ -299,15 +299,15 @@
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."smt2-parser" or (errorHandler.buildDepError "smt2-parser"))
             (hsPkgs."hevm".components.sublibs.test-utils or (errorHandler.buildDepError "hevm:test-utils"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ] ++ (if system.isOsx
+          ] ++ (if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -318,12 +318,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hevm" or (errorHandler.buildDepError "hevm"))
             (hsPkgs."here" or (errorHandler.buildDepError "here"))
-            ];
+          ];
           libs = if system.isOsx
             then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Testing utilities for the partial-semigroup package";
       description = "Testing utilities for the partial-semigroup package,\nnotably property testing to check the PartialSemigroup\naxioms.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
           (hsPkgs."partial-semigroup" or (errorHandler.buildDepError "partial-semigroup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

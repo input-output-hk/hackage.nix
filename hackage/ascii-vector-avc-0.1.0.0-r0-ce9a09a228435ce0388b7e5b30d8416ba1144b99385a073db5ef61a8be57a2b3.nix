@@ -21,7 +21,7 @@
       synopsis = "Process Ascii Vectors for Advantest 93k";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "SelectSigs" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."ascii-vector-avc" or (errorHandler.buildDepError "ascii-vector-avc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

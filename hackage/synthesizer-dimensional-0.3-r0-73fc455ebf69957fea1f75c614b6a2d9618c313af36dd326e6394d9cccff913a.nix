@@ -12,7 +12,7 @@
       splitbase = true;
       optimizeadvanced = true;
       buildexamples = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "synthesizer-dimensional"; version = "0.3"; };
@@ -25,7 +25,7 @@
       synopsis = "Audio signal processing with static physical dimensions";
       description = "High-level functions which use physical units and\nabstract from the sample rate in statically type safe way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,27 +40,27 @@
           (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."special-functors" or (errorHandler.buildDepError "special-functors"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "rain" = { buildable = if !flags.buildexamples then false else true; };
         "demonstration" = {
           buildable = if !flags.buildexamples then false else true;
-          };
+        };
         "traumzauberbaum" = {
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

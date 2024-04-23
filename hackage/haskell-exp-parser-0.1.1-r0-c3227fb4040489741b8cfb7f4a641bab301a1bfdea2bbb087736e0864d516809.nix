@@ -21,24 +21,24 @@
       synopsis = "Simple parser parser from Haskell to TemplateHaskell expressions";
       description = "This package defines a simple parser for a subset of Haskell expressions and patterns to the TemplateHaskell AST.\n\nIt provides a very lightweight alternative to the functions @parseExp@ and @parsePat@ from <http://hackage.haskell.org/package/haskell-src-meta>.\n\nThe following expressions are currently supported:\n\n* Variables\n\n* Integer and string literals\n\n* Prefix function application\n\n* Lists and tuples\n\nThe following patterns are currently supported:\n\n* Variables";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-exp-parser" or (errorHandler.buildDepError "haskell-exp-parser"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

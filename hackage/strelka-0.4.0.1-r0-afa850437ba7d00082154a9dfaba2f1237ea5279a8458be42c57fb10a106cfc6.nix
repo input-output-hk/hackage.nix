@@ -21,7 +21,7 @@
       synopsis = "A flexible and composable HTTP-router";
       description = "An HTTP server can be defined as a request parser, which produces a response.\nAs simple as that.\nThis library exploits that fact to produce a very simple API,\nwhich can then be used on top of any server implementation.\n\n[Warning]\nThis library is currently in active development.\nThe API can change rapidly.\n\n[Demo]\n<https://github.com/nikita-volkov/strelka-demo>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

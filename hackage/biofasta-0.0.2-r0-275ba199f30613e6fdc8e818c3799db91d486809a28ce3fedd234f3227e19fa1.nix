@@ -21,15 +21,15 @@
       synopsis = "Library for reading fasta sequence files";
       description = "Library for reading fasta sequence files";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."biocore" or (errorHandler.buildDepError "biocore"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "One stop solution for tcp client and server with tls support.";
       description = "One stop solution for tcp client and server with tls support.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,18 +35,18 @@
           (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
           (hsPkgs."x509-store" or (errorHandler.buildDepError "x509-store"))
           (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
-          ] ++ (pkgs.lib).optionals (flags.openssl) [
+        ] ++ pkgs.lib.optionals (flags.openssl) [
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."HsOpenSSL-x509-system" or (errorHandler.buildDepError "HsOpenSSL-x509-system"))
-          ];
-        libs = (pkgs.lib).optionals (flags.openssl) (if system.isWindows || system.isWindows
+        ];
+        libs = pkgs.lib.optionals (flags.openssl) (if system.isWindows || system.isWindows
           then [
             (pkgs."eay32" or (errorHandler.sysDepError "eay32"))
             (pkgs."ssl32" or (errorHandler.sysDepError "ssl32"))
-            ]
+          ]
           else [ (pkgs."crypto" or (errorHandler.sysDepError "crypto")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "testsuite" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

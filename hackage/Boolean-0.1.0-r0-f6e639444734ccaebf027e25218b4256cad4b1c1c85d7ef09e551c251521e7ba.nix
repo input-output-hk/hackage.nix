@@ -21,11 +21,11 @@
       synopsis = "Generalized booleans";
       description = "Some classes for generalized boolean operations.\nStarting with 0.1.0, this package uses type families.\nUp to version 0.0.2, it used MPTCs with functional dependencies.\nMy thanks to Andy Gill for suggesting & helping with the change.\n\nCopyright 2009-2012 Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

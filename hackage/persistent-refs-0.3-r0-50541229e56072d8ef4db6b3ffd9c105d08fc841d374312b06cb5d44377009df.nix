@@ -21,7 +21,7 @@
       synopsis = "Haskell references backed by an IntMap for persistence and reversibility.";
       description = "This library provides support for a persistent version of the\n'Control.Monad.ST.ST' monad. Internally, references are backed by a\n'Data.IntMap.IntMap', rather than being mutable variables on the\nheap. This decreases performance, but can be useful in certain\nsettings, particularly those involving backtracking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ref-fd" or (errorHandler.buildDepError "ref-fd"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

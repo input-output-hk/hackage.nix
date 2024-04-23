@@ -21,7 +21,7 @@
       synopsis = "Haskell macro preprocessor";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hampp" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
             (hsPkgs."preprocessor-tools" or (errorHandler.buildDepError "preprocessor-tools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

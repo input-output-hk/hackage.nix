@@ -21,7 +21,7 @@
       synopsis = "A Prelude for Polysemy";
       description = "See <https://hackage.haskell.org/package/incipit/docs/Prelude.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."polysemy-log" or (errorHandler.buildDepError "polysemy-log"))
           (hsPkgs."polysemy-resume" or (errorHandler.buildDepError "polysemy-resume"))
           (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

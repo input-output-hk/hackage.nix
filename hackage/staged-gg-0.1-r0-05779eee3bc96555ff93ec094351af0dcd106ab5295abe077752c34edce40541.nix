@@ -21,7 +21,7 @@
       synopsis = "GHC.Generics style staged generics";
       description = "GHC.Generics style staged generics.\n\nSee https://www.andres-loeh.de/StagedSOP/ paper for description of\n@staged-sop@, which is staged version of @generics-sop@.\nThe non @generics-sop@ specific parts\nlike sections on Typed Template Haskell, and Type Template Haskell and Constraints,\nare applicable to @staged-gg@ as well.\n\nThis package is an /EXPERIMENTAL/ proof-of-concept.\nIt works if you do not do anything fancy.\nBecause of current GHC Typed Template Haskell limitations,\nquite simple things are \"fancy\".\nSee https://github.com/phadej/staged-gg/tree/master/staged-gg-examples\nfor examples what you can do regardless.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

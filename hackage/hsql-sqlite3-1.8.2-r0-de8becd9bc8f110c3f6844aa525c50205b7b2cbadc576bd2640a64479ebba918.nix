@@ -21,15 +21,15 @@
       synopsis = "SQLite3 driver for HSQL.";
       description = "A Haskell Interface to SQLite 3 via libsqlite3\nin the standard library path.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
-          ];
+        ];
         libs = [ (pkgs."sqlite3" or (errorHandler.sysDepError "sqlite3")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

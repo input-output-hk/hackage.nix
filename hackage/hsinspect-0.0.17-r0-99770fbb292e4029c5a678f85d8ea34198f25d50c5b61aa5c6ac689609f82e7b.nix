@@ -21,7 +21,7 @@
       synopsis = "Inspect Haskell source files.";
       description = "Inspect @.hs@ files using the ghc api.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
+        ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
         buildable = true;
-        };
+      };
       exes = {
         "hsinspect" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."hsinspect" or (errorHandler.buildDepError "hsinspect"))
-            ] ++ (pkgs.lib).optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
+          ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

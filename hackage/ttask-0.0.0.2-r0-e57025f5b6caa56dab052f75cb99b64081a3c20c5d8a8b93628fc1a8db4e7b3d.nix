@@ -21,7 +21,7 @@
       synopsis = "This is task management tool for yourself, that inspired by scrum.";
       description = "Please see README.md (ja)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ttask" = {
           depends = [
@@ -41,18 +41,18 @@
             (hsPkgs."ttask" or (errorHandler.buildDepError "ttask"))
             (hsPkgs."optparse-declarative" or (errorHandler.buildDepError "optparse-declarative"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ttask-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ttask" or (errorHandler.buildDepError "ttask"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

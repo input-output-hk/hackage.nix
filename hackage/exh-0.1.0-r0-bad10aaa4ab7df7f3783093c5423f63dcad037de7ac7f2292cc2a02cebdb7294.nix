@@ -21,7 +21,7 @@
       synopsis = "A library for crawling exhentai";
       description = "A library for crawling exhentai, with the support of streaming";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "exh-test" = {
           depends = [
@@ -79,9 +79,9 @@
             (hsPkgs."xml-lens" or (errorHandler.buildDepError "xml-lens"))
             (hsPkgs."exh" or (errorHandler.buildDepError "exh"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

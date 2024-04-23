@@ -6,8 +6,8 @@
         nix = import ../hackage/gelatin-shaders-0.1.0.0-r0-170ff8cd05c014076f831ca17d1d63bd6d0f4508bd90c4e886bf1dfa6eeed815.nix;
         revNum = 0;
         sha256 = "170ff8cd05c014076f831ca17d1d63bd6d0f4508bd90c4e886bf1dfa6eeed815";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

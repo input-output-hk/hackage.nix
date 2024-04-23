@@ -21,7 +21,7 @@
       synopsis = "A purely functional programming language and a proof system";
       description = "Omega is a purely functional programming language (like Haskell)\nand it also enables built-in proofs about program correctness\nemploying the Curry-Howard correspondence. Powerful metaprogramming\nfacilities and extensible syntax for data make programming a less\nverbose experience.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "omega" = {
@@ -34,9 +34,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

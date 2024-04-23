@@ -21,7 +21,7 @@
       synopsis = "Top (typed oriented protocol) API";
       description = "See the <http://github.com/tittoassini/top online tutorial>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -40,19 +40,19 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."flat" or (errorHandler.buildDepError "flat"))
           (hsPkgs."zm" or (errorHandler.buildDepError "zm"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8") (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))) ++ (if compiler.isGhcjs && true
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8") (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))) ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."acid-state" or (errorHandler.buildDepError "acid-state"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "top-test-repo" = {
           depends = [
@@ -62,17 +62,17 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."top" or (errorHandler.buildDepError "top"))
             (hsPkgs."zm" or (errorHandler.buildDepError "zm"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "top-doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

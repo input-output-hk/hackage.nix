@@ -21,13 +21,13 @@
       synopsis = "Wrapper for libpafe";
       description = "Wrapper for Pasori library libpafe";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."pafe" or (errorHandler.sysDepError "pafe")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-read" = {
           depends = [
@@ -35,18 +35,18 @@
             (hsPkgs."libpafe" or (errorHandler.buildDepError "libpafe"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-read-fcf" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."libpafe" or (errorHandler.buildDepError "libpafe"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."iconv" or (errorHandler.buildDepError "iconv"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

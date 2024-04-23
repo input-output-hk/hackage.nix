@@ -21,7 +21,7 @@
       synopsis = "Validity instances for Path";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "validity-path-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."validity" or (errorHandler.buildDepError "validity"))
             (hsPkgs."validity-path" or (errorHandler.buildDepError "validity-path"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

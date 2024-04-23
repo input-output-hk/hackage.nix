@@ -21,7 +21,7 @@
       synopsis = "Bindings to Yandex translate API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "yandex-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."yandex-translate" or (errorHandler.buildDepError "yandex-translate"))
-            ];
+          ];
           buildable = if flags.integration-tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

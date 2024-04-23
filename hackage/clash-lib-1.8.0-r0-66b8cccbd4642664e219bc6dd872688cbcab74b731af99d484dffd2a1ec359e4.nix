@@ -13,7 +13,7 @@
       unittests = true;
       doctests = true;
       workaround-ghc-mmap-crash = false;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "clash-lib"; version = "1.8.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Clash: a functional hardware description language - As a library";
       description = "Clash is a functional hardware description language that borrows both its\nsyntax and semantics from the functional programming language Haskell. The\nClash compiler transforms these high-level descriptions to low-level\nsynthesizable VHDL, Verilog, or SystemVerilog.\n\nFeatures of Clash:\n\n* Strongly typed, but with a very high degree of type inference, enabling both\nsafe and fast prototyping using concise descriptions.\n\n* Interactive REPL: load your designs in an interpreter and easily test all\nyour component without needing to setup a test bench.\n\n* Higher-order functions, with type inference, result in designs that are\nfully parametric by default.\n\n* Synchronous sequential circuit design based on streams of values, called\n@Signal@s, lead to natural descriptions of feedback loops.\n\n* Support for multiple clock domains, with type safe clock domain crossing.\n\n\nThis package provides:\n\n* The CoreHW internal language: SystemF + Letrec + Case-decomposition\n\n* The normalisation process that brings CoreHW in a normal form that can be\nconverted to a netlist\n\n* Blackbox/Primitive Handling\n\n\nFront-ends (for: parsing, typecheck, etc.) are provided by separate packages:\n\n* <https://hackage.haskell.org/package/clash-ghc GHC/Haskell Frontend>\n\n* <https://github.com/christiaanb/Idris-dev Idris Frontend>\n\n\nPrelude library: <https://hackage.haskell.org/package/clash-prelude>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -78,15 +78,15 @@
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "9.0.0"
+        ] ++ (if compiler.isGhc && compiler.version.ge "9.0.0"
           then [
             (hsPkgs."ghc-bignum" or (errorHandler.buildDepError "ghc-bignum"))
-            ]
+          ]
           else [
             (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "v16-upgrade-primitives" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
             (hsPkgs."Glob" or (errorHandler.buildDepError "Glob"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "static-files" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,24 +112,24 @@
             (hsPkgs."docopt" or (errorHandler.buildDepError "docopt"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.2.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.2.0"
             then false
             else true;
-          };
         };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!!flags.doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clash-lib" or (errorHandler.buildDepError "clash-lib"))
             (hsPkgs."doctest-parallel" or (errorHandler.buildDepError "doctest-parallel"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = if !flags.doctests then false else true;
-          };
+        };
         "unittests" = {
-          depends = (pkgs.lib).optionals (!(!flags.unittests)) [
+          depends = pkgs.lib.optionals (!!flags.unittests) [
             (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
             (hsPkgs."clash-lib" or (errorHandler.buildDepError "clash-lib"))
             (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
@@ -156,9 +156,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if !flags.unittests then false else true;
-          };
         };
       };
-    }
+    };
+  }

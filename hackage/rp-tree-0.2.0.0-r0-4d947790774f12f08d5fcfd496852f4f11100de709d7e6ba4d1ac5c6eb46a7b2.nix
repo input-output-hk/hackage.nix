@@ -21,7 +21,7 @@
       synopsis = "Random projection trees";
       description = "Random projection trees for approximate nearest neighbor search in high-dimensional vector spaces";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,9 +44,9 @@
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           (hsPkgs."mnist-idx-conduit" or (errorHandler.buildDepError "mnist-idx-conduit"))
           (hsPkgs."splitmix" or (errorHandler.buildDepError "splitmix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "rp-tree" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."splitmix-distributions" or (errorHandler.buildDepError "splitmix-distributions"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -72,10 +72,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."splitmix-distributions" or (errorHandler.buildDepError "splitmix-distributions"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-time" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."splitmix-distributions" or (errorHandler.buildDepError "splitmix-distributions"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

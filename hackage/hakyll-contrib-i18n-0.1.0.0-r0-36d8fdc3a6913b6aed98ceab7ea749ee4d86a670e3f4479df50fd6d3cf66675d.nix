@@ -21,7 +21,7 @@
       synopsis = "A Hakyll library for internationalization.";
       description = "A companion library for Hakyll that helps with internationalization.\nThis library defines a custom compiler for translations stored in Yaml files.\nOnce loaded, one can implicitly use them to translate strings in the template files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."time-locale-compat" or (errorHandler.buildDepError "time-locale-compat"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haki18nll" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-include-code" or (errorHandler.buildDepError "pandoc-include-code"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

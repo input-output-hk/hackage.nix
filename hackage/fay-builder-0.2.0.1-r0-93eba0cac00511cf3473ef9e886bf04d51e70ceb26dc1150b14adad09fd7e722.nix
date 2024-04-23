@@ -21,7 +21,7 @@
       synopsis = "Compile Fay code on cabal install, and ad-hoc recompile during development";
       description = "Compile Fay code on cabal install, and ad-hoc recompile during development";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

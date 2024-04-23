@@ -12,7 +12,7 @@
       arrowsubclassescategory = true;
       typefamilies = true;
       optimize = false;
-      };
+    };
     package = {
       specVersion = "1.2";
       identifier = { name = "category-extras"; version = "0.50.3"; };
@@ -25,15 +25,15 @@
       synopsis = "Various modules and constructs inspired by category theory";
       description = "A vastly expanded collection of modules implementing various\nideas from category theory. Notable bits include: comonads,\nadjunctions, functor fixedpoints and various recursion\noperaters ala /Functional Programming with Bananas, Lenses,\nEnvelopes and Barbed Wire/.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
+        ] ++ [ (hsPkgs."ghc" or (errorHandler.buildDepError "ghc")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

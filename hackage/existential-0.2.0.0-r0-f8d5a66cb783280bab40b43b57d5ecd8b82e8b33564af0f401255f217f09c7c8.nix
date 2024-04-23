@@ -21,7 +21,7 @@
       synopsis = "Existential types with lens-like accessors.";
       description = "Existential types encapsulated in Cell type together with some lens-like accessors. A template-haskell-based factory generator is also provided to use TypeRep to reconstruct Cell objects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."quickcheck-report" or (errorHandler.buildDepError "quickcheck-report"))
           (hsPkgs."portable-template-haskell-lens" or (errorHandler.buildDepError "portable-template-haskell-lens"))
           (hsPkgs."control-invariants" or (errorHandler.buildDepError "control-invariants"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

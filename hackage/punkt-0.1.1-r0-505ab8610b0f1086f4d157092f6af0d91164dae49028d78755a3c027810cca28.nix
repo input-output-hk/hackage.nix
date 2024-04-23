@@ -21,7 +21,7 @@
       synopsis = "Multilingual unsupervised sentence tokenization with Punkt.";
       description = "Multilingual unsupervised sentence tokenization with Punkt.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."regex-tdfa-text" or (errorHandler.buildDepError "regex-tdfa-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "punkt-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

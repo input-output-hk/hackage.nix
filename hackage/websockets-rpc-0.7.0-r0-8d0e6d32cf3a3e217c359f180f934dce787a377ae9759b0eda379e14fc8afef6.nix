@@ -21,7 +21,7 @@
       synopsis = "Simple streaming RPC mechanism using WebSockets";
       description = "Please see the README on Github at <https://github.com/athanclark/sparrow-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sparrow-server-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."websockets-rpc" or (errorHandler.buildDepError "websockets-rpc"))
             (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

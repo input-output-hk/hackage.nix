@@ -21,7 +21,7 @@
       synopsis = "A discrete space map.";
       description = "A discrete space map implemented as a zipper on an infinite perfect binary tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."distributive" or (errorHandler.buildDepError "distributive"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

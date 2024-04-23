@@ -21,7 +21,7 @@
       synopsis = "Javascript Object Signing and Encryption";
       description = "\nAn implementation of the Javascript Object Signing and Encryption\n(jose) formats.\n\nCurrently, only JSON Web Key (JWK) and JSON Web Signature (JWS)\nare implemented, and only the RSA algorithms.\n\nThe version number tracks the IETF jose working group draft\nrevisions.  For now, expect breaking API changes on any version\nchange except for the final part being incremented.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Resolves links to Haskell identifiers.";
       description = "A simple utility program that resolves links to Haskell identifiers in Markdown-style text.\nThis is useful if you want to maintain documentation of a Haskell program or library outside\nthe source code but still have links the Haddock-generated API documentation.\n\nFor usage, see <https://github.com/hanshoglund/hslinks>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hslinks" = {
@@ -32,9 +32,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

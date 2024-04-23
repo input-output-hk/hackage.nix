@@ -21,7 +21,7 @@
       synopsis = "Compile Dhall to Bash";
       description = "Use this package if you want to compile Dhall expressions to Bash.\nYou can use this package as a library or an executable:\n\n* See the \"Dhall.Bash\" module if you want to use this package as a library\n\n* Use the @dhall-to-bash@ if you want an executable\n\nThe \"Dhall.Bash\" module also contains instructions for how to use this\npackage";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."neat-interpolation" or (errorHandler.buildDepError "neat-interpolation"))
           (hsPkgs."shell-escape" or (errorHandler.buildDepError "shell-escape"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dhall-to-bash" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."dhall-bash" or (errorHandler.buildDepError "dhall-bash"))
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

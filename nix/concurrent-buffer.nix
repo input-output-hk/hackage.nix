@@ -6,8 +6,8 @@
         nix = import ../hackage/concurrent-buffer-0.1-r0-d47956acda90b1a2329539e9e9f94d280a050c8f749628fe6118c6c79947ac6d.nix;
         revNum = 0;
         sha256 = "d47956acda90b1a2329539e9e9f94d280a050c8f749628fe6118c6c79947ac6d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

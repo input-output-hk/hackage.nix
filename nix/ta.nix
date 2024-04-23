@@ -6,8 +6,8 @@
         nix = import ../hackage/ta-0.1-r0-077b59e203dcc67aabc1c907aa2e69838003659c458afcae259731e1dd5dc597.nix;
         revNum = 0;
         sha256 = "077b59e203dcc67aabc1c907aa2e69838003659c458afcae259731e1dd5dc597";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

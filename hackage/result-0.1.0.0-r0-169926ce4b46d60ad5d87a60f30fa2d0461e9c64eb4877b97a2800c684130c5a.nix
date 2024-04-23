@@ -21,24 +21,24 @@
       synopsis = "Encode success or at least one error";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."keys" or (errorHandler.buildDepError "keys"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."result" or (errorHandler.buildDepError "result"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell OAuth2 authentication client";
       description = "This is Haskell binding of OAuth2 Authorization framework and Bearer Token Usage framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."uri-bytestring-aeson" or (errorHandler.buildDepError "uri-bytestring-aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hoauth-tests" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."hoauth2" or (errorHandler.buildDepError "hoauth2"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

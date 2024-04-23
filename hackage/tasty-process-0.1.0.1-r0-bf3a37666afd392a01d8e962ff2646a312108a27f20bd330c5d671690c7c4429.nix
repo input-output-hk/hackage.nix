@@ -21,7 +21,7 @@
       synopsis = "Test execution of external processes with Tasty";
       description = "Please see the README on GitHub at <https://github.com/HEIGE-PCloud/tasty-process#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-executable-echo" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-executable-exitcode" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -53,9 +53,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-executable-simple" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -64,9 +64,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-executable-sleep" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -75,10 +75,10 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tasty-process-test" = {
           depends = [
@@ -89,15 +89,15 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-expected-failure" or (errorHandler.buildDepError "tasty-expected-failure"))
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.test-executable-echo.components.exes.test-executable-echo or (pkgs.buildPackages.test-executable-echo or (errorHandler.buildToolDepError "test-executable-echo:test-executable-echo")))
             (hsPkgs.buildPackages.test-executable-exitcode.components.exes.test-executable-exitcode or (pkgs.buildPackages.test-executable-exitcode or (errorHandler.buildToolDepError "test-executable-exitcode:test-executable-exitcode")))
             (hsPkgs.buildPackages.test-executable-simple.components.exes.test-executable-simple or (pkgs.buildPackages.test-executable-simple or (errorHandler.buildToolDepError "test-executable-simple:test-executable-simple")))
             (hsPkgs.buildPackages.test-executable-sleep.components.exes.test-executable-sleep or (pkgs.buildPackages.test-executable-sleep or (errorHandler.buildToolDepError "test-executable-sleep:test-executable-sleep")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

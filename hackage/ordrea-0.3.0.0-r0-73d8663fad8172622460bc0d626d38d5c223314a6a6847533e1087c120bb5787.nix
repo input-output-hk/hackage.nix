@@ -21,7 +21,7 @@
       synopsis = "Push-pull implementation of discrete-time FRP";
       description = "This is an FRP library with the following characteristics:\n\n* classical: it has first-class signals\n\n* synchronous: it has a clear notion of simultaneous events\n\n* higher-order: signals inside signals can be flattened\nto get a switching behavior\n\n* push-based: inactive events has zero runtime costs\n\nThis package is in the alpha stage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

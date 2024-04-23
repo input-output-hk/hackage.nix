@@ -21,11 +21,11 @@
       synopsis = "Hypergeometric functions";
       description = "Haskell implementation of hypergeometric functions and associated statistical functions, viz. erf, normal cdf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple tool to display text files with line numbers and paging";
       description = "Simple tool to display text files with line numbers and paging";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "catnplus" = {
@@ -35,9 +35,9 @@
             (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vcs-revision" or (errorHandler.buildDepError "vcs-revision"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

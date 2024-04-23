@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-support-app-2.0-r0-41320991e44416282d0b9453ef11473513bebaf1fc805f67c5e09d3838b3e98f.nix;
         revNum = 0;
         sha256 = "41320991e44416282d0b9453ef11473513bebaf1fc805f67c5e09d3838b3e98f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

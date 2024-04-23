@@ -21,7 +21,7 @@
       synopsis = "Examples for LambdaCube";
       description = "Examples for LambdaCube";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "lambdacube-basic" = {
@@ -33,9 +33,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "lambdacube-cameratrack" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

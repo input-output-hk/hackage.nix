@@ -21,7 +21,7 @@
       synopsis = "Action Script Instrumentation Compiler";
       description = "A compiler for the instrumentation of ActionScript programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "asic" = {
@@ -31,9 +31,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."asil" or (errorHandler.buildDepError "asil"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-websockets-extra-0.1.0.0-r0-4b19d0485cdc23c29ffbad2bc1755537d7af7f4dec33da9ad9c393dcc15ed53a.nix;
         revNum = 0;
         sha256 = "4b19d0485cdc23c29ffbad2bc1755537d7af7f4dec33da9ad9c393dcc15ed53a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

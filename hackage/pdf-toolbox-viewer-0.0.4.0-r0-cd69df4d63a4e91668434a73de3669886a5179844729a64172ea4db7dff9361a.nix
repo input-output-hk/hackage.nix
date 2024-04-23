@@ -21,7 +21,7 @@
       synopsis = "Simple pdf viewer";
       description = "Proof of concept, only for debuging";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pdf-toolbox-viewer" = {
@@ -40,9 +40,9 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."pdf-toolbox-document" or (errorHandler.buildDepError "pdf-toolbox-document"))
             (hsPkgs."pdf-toolbox-content" or (errorHandler.buildDepError "pdf-toolbox-content"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

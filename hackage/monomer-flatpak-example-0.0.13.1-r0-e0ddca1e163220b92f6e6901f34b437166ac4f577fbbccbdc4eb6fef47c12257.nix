@@ -21,7 +21,7 @@
       synopsis = "Monomer Flatpak Example Application.";
       description = "An example of how to package Monomer apps with Flatpak.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "monomer-flatpak-example" = {
@@ -39,16 +39,16 @@
             (hsPkgs."monomer-hagrid" or (errorHandler.buildDepError "monomer-hagrid"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           pkgconfig = [
             (pkgconfPkgs."libspa-0.2" or (errorHandler.pkgConfDepError "libspa-0.2"))
             (pkgconfPkgs."libpipewire-0.3" or (errorHandler.pkgConfDepError "libpipewire-0.3"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

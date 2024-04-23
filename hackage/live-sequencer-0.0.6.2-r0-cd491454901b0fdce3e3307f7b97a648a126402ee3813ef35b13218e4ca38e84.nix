@@ -21,16 +21,16 @@
       synopsis = "Live coding of MIDI music";
       description = "An editor shows a textual description of music (like Haskore),\nan interpreter computes and emits a stream of MIDI events,\nand (that's the main point) the user can change the program on the fly.\nAdditionally the state of the interpreter is shown\nin the form of the current reduced term\nfor educational and debugging purposes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
           (hsPkgs."event-list" or (errorHandler.buildDepError "event-list"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "live-sequencer" = {
           depends = [
@@ -55,11 +55,11 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."pathtype" or (errorHandler.buildDepError "pathtype"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "live-sequencer-gui" = {
-          depends = (pkgs.lib).optionals (flags.gui) [
+          depends = pkgs.lib.optionals (flags.gui) [
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
@@ -83,17 +83,17 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."pathtype" or (errorHandler.buildDepError "pathtype"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (pkgs.lib).optionals (flags.httpserver) [
+          ] ++ pkgs.lib.optionals (flags.httpserver) [
             (hsPkgs."httpd-shed" or (errorHandler.buildDepError "httpd-shed"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
             (hsPkgs."html" or (errorHandler.buildDepError "html"))
-            ];
+          ];
           buildable = if flags.gui then true else false;
-          };
+        };
         "live-mplayer-control" = {
-          depends = (pkgs.lib).optionals (flags.mplayer) [
+          depends = pkgs.lib.optionals (flags.mplayer) [
             (hsPkgs."midi-alsa" or (errorHandler.buildDepError "midi-alsa"))
             (hsPkgs."midi" or (errorHandler.buildDepError "midi"))
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
@@ -101,9 +101,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.mplayer then true else false;
-          };
         };
       };
-    }
+    };
+  }

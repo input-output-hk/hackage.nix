@@ -21,7 +21,7 @@
       synopsis = "GIS Vector Tiles, as defined by Mapbox.";
       description = "GIS Vector Tiles, as defined by Mapbox.\nThis library implements version 2.1 of the official Mapbox spec, as defined\nhere: <https://github.com/mapbox/vector-tile-spec/tree/master/2.1>\n\nNote that currently this library ignores top-level protobuf extensions,\n/Value/ extensions, and /UNKNOWN/ geometries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "vectortiles-test" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vectortiles" or (errorHandler.buildDepError "vectortiles"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "vectortiles-bench" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vectortiles" or (errorHandler.buildDepError "vectortiles"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Modules for working with the Debian package system";
       description = "This library includes modules covering some basic data types defined by\nthe Debian policy manual - version numbers, control file syntax, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,15 +47,15 @@
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (if flags.listlike
+        ] ++ (if flags.listlike
           then [
             (hsPkgs."process-listlike" or (errorHandler.buildDepError "process-listlike"))
-            ]
+          ]
           else [
             (hsPkgs."process-extras" or (errorHandler.buildDepError "process-extras"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "fakechanges" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "debian-report" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,17 +73,17 @@
             (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "apt-get-build-depends" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

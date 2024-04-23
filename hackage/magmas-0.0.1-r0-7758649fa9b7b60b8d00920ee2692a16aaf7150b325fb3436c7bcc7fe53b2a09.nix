@@ -21,11 +21,11 @@
       synopsis = "Magma-like objects.";
       description = "Magmas, quasigroups, loops and groups.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

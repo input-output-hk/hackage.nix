@@ -21,11 +21,11 @@
       synopsis = "car, cdr and more";
       description = "Powerful and compositional tuple processing, informed by classic functional programming principles.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Simple idea SQL keywords data constructor into OverloadedString";
       description = "This package contiains SQL keywords constructors defined as\nOverloadedString literals and helper functions to concate these.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "monoids" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."quickcheck-simple" or (errorHandler.buildDepError "quickcheck-simple"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."sql-words" or (errorHandler.buildDepError "sql-words"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

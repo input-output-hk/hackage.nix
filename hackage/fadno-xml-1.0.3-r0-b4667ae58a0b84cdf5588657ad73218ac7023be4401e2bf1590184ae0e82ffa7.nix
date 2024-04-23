@@ -21,7 +21,7 @@
       synopsis = "XML/XSD combinators/schemas/codegen";
       description = "Library for generating code from XML schema files, with\nMusicXml 2.0 schema library included. Includes\nXML \"combinator library\" XParser for consuming xml,\na type model for XSD productions, a type model for\ncodegen, and the code generator.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

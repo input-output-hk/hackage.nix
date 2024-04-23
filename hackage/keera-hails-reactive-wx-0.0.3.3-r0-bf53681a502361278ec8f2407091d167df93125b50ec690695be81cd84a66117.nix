@@ -21,7 +21,7 @@
       synopsis = "Haskell on Rails - Reactive Fields for WX widgets";
       description = "This package contains (incomplete) bindings to WX widget properties,\nturning them into Reactive Values that can be combined with and\nconnected to others with Reactive Rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
           (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
           (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

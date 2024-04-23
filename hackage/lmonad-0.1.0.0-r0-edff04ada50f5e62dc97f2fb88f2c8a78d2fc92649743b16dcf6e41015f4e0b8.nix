@@ -21,7 +21,7 @@
       synopsis = "LMonad is an Information Flow Control (IFC) framework for Haskell applications.";
       description = "LMonad is an Information Flow Control (IFC) framework for Haskell applications. It can be used to enforce security properties like confidentiality and integrity. It is derived from [LIO](http://hackage.haskell.org/package/lio), but is more general in that it tracks information flow for any monad by using monad transformers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-lmonad" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

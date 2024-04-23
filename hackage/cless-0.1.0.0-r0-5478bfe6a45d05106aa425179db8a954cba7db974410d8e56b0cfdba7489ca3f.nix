@@ -21,7 +21,7 @@
       synopsis = "Colorized LESS";
       description = "Print file contents with syntax highlighting";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cless" = {
@@ -32,9 +32,9 @@
             (hsPkgs."wl-pprint-extras" or (errorHandler.buildDepError "wl-pprint-extras"))
             (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Combinatorial operations on multisets";
       description = "Efficiently generate all permutations and partitions of multisets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

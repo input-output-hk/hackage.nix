@@ -6,8 +6,8 @@
         nix = import ../hackage/lzip-0.0.0.0-r0-afd501a661f6a6cdd4f326072ab95b64a7178c567539b2b8e0b8ec81d29ddb5b.nix;
         revNum = 0;
         sha256 = "afd501a661f6a6cdd4f326072ab95b64a7178c567539b2b8e0b8ec81d29ddb5b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

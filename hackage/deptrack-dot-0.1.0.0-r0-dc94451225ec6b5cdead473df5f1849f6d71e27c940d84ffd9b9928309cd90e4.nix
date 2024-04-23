@@ -21,7 +21,7 @@
       synopsis = "Facilitate Graphviz representations of DepTrack dependencies.";
       description = "Please see the README on GitHub at <https://github.com/lucasdicioccio/deptrack-project#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deptrack-core" or (errorHandler.buildDepError "deptrack-core"))
           (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "deptrack-dot-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."deptrack-core" or (errorHandler.buildDepError "deptrack-core"))
             (hsPkgs."deptrack-dot" or (errorHandler.buildDepError "deptrack-dot"))
             (hsPkgs."dotgen" or (errorHandler.buildDepError "dotgen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

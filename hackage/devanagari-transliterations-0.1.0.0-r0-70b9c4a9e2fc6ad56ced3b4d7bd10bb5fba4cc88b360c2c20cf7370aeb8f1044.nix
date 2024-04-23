@@ -14,7 +14,7 @@
       identifier = {
         name = "devanagari-transliterations";
         version = "0.1.0.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2023 Thomas Mahler";
       maintainer = "thma@apache.org";
@@ -24,7 +24,7 @@
       synopsis = "Conversion between Devanagari Unicode, Harvard-Kyoto, IAST and ISO15919.";
       description = "Please see the README on GitHub at <https://github.com/thma/devanagari-transliterations#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "devanagari-transliterations-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-hedgehog" or (errorHandler.buildDepError "hspec-hedgehog"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

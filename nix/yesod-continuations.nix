@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-continuations-0.1-r0-574a737af03191a4a97966099fde68a562af60bcd727b69c42e9489ef79f1fc2.nix;
         revNum = 0;
         sha256 = "574a737af03191a4a97966099fde68a562af60bcd727b69c42e9489ef79f1fc2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

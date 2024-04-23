@@ -21,14 +21,14 @@
       synopsis = "Raw binding to OpenVG (ShivaVG-0.2.1 implementation).";
       description = "A raw Haskell binding to OpenVG vector graphics API version\n1.0.1, specifically the ShivaVG-0.2.1 implementation.\n\nFollowing Sven Panne\\'s OpenGL model this is essentially a 1:1\nmapping between the OpenVG C API and Haskell.\n\n\nChangelog\n0.1.0 to 0.2.0\n\n* Changed type of vgGetMatrix\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGLRaw" or (errorHandler.buildDepError "OpenGLRaw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

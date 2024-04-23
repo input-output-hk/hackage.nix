@@ -21,11 +21,11 @@
       synopsis = "Type-level integers, using TypeNats, Data\nKinds, and Closed Type Families.";
       description = "This package provides type level representations of the\n(positive and negative) integers and basic operations (addition,\nsubtraction, multiplication, division, exponentiation) on these.\nThe numtype-dk package differs from the numtype package in that\nthe NumTypes are implemented using Data Kinds, TypeNats, and\nClosed Type Families rather than Functional Dependencies.\nRequires GHC 7.8 or later.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

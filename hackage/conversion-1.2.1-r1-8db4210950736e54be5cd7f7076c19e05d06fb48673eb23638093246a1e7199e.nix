@@ -21,13 +21,13 @@
       synopsis = "Universal converter between values of different types";
       description = "This library provides a typeclass with instances for types\ndefined in \\\"base\\\".\nInstances for other types are expected to be defined in other libraries.\nSuch libraries should be listed under\n<http://hackage.haskell.org/packages/#cat:Conversion the Conversion category>.\nSo far the following are known:\n\n* <http://hackage.haskell.org/package/conversion-bytestring \"conversion-bytestring\">\n\n* <http://hackage.haskell.org/package/conversion-text \"conversion-text\">\n\n* <http://hackage.haskell.org/package/conversion-case-insensitive \"conversion-case-insensitive\">";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pandoc filter for cross-references";
       description = "pandoc-crossref is a pandoc filter for numbering figures, equations, tables and cross-references to them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."pandoc-crossref".components.sublibs.pandoc-crossref-internal or (errorHandler.buildDepError "pandoc-crossref:pandoc-crossref-internal"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "pandoc-crossref-internal" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "pandoc-crossref" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-integrative" = {
           depends = [
@@ -86,12 +86,12 @@
             (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.pandoc-cli.components.exes.pandoc or (pkgs.buildPackages.pandoc or (errorHandler.buildToolDepError "pandoc-cli:pandoc")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-pandoc-crossref" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -105,10 +105,10 @@
             (hsPkgs."pandoc-crossref".components.sublibs.pandoc-crossref-internal or (errorHandler.buildDepError "pandoc-crossref:pandoc-crossref-internal"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "simple" = {
           depends = [
@@ -118,9 +118,9 @@
             (hsPkgs."pandoc-crossref" or (errorHandler.buildDepError "pandoc-crossref"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

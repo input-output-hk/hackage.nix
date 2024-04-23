@@ -21,7 +21,7 @@
       synopsis = "WriteOnly indicators for composite-aeson.";
       description = "WriteOnly indicators for composite-aeson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."aeson-better-errors" or (errorHandler.buildDepError "aeson-better-errors"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-aeson" or (errorHandler.buildDepError "composite-aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

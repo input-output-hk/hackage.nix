@@ -21,7 +21,7 @@
       synopsis = "simple bootstrap based template for clckwrks";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

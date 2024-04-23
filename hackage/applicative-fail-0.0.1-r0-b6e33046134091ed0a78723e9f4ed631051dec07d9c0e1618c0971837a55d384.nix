@@ -21,11 +21,11 @@
       synopsis = "Applicative functor which collects all your fails";
       description = "Applicative functor to perform parse-like actions and\ncollect wanrings/failures while";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

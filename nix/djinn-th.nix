@@ -6,8 +6,8 @@
         nix = import ../hackage/djinn-th-0.0.1-r0-f14e1a25966bc4e344c05e068237d6c71958859ba26397832b53f2c42615ee29.nix;
         revNum = 0;
         sha256 = "f14e1a25966bc4e344c05e068237d6c71958859ba26397832b53f2c42615ee29";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

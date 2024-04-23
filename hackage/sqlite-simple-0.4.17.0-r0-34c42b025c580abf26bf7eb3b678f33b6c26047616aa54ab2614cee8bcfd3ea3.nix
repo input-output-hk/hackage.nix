@@ -21,7 +21,7 @@
       synopsis = "Mid-Level SQLite client library";
       description = "Mid-level SQLite client library, based on postgresql-simple.\n\nMain documentation (with examples): <sqlite-simple/docs/Database-SQLite-Simple.html Database.SQLite.Simple>\n\nYou can view the project page at <http://github.com/nurpax/sqlite-simple>\nfor more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."Only" or (errorHandler.buildDepError "Only"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."direct-sqlite" or (errorHandler.buildDepError "direct-sqlite"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

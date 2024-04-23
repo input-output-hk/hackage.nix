@@ -21,15 +21,15 @@
       synopsis = "Determine the size of data structures in GHC's memory";
       description = "ghc-datasize is a tool to determine the size of data\nstructures in GHC's memory. Determining the size of\nrecursive data structures is supported. All sizes are in\nBytes.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."ghc-heap-view" or (errorHandler.buildDepError "ghc-heap-view"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

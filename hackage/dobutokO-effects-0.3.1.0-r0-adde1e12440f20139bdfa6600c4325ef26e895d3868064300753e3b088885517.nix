@@ -21,14 +21,14 @@
       synopsis = "A library to deal with SoX effects and possibilities";
       description = "Can be used to get access to different SoX possibilities";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dobutokO-frequency" or (errorHandler.buildDepError "dobutokO-frequency"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

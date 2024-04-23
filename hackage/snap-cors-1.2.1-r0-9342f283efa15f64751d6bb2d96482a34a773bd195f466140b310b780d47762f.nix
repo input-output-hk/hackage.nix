@@ -21,7 +21,7 @@
       synopsis = "Add CORS headers to Snap applications";
       description = "Add CORS (cross-origin resource sharing) headers to Snap applications. This\nenables web applications running on other domains to make requests against\nanother application.\n\nCurrently this package provides support for setting the\n@Access-Control-Allow-Origin@ and @Access-Control-Allow-Credentials@ headers,\nit does not yet do pre-flighting. If you need this, please open an issue on\nGithub and I'll fix it ASAP (otherwise I will add this feature as time permits).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
             (hsPkgs."snap-server" or (errorHandler.buildDepError "snap-server"))
             (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

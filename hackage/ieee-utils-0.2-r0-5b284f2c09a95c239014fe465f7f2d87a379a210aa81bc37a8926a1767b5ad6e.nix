@@ -21,11 +21,11 @@
       synopsis = "ieee-utils";
       description = "IEEE 754 (Standard for Binary Floating-Point Arithmetic) Utilities.\nHaddock docs are at <http://code.haskell.org/~morrow/code/haskell/ieee-utils/haddock/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

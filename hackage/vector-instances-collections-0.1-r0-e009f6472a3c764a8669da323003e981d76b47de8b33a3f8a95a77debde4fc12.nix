@@ -21,7 +21,7 @@
       synopsis = "Instances of the Data.Collections classes for Data.Vector.*";
       description = "This package defines instances of the Foldable, Unfoldable,\nCollection, Sequence and Indexed classes from Data.Collections for\nall pure Vector types (those found in Data.Vector, Data.Vector.Unboxed,\nData.Vector.Primitive, Data.Vector.Storable).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."collections-api" or (errorHandler.buildDepError "collections-api"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

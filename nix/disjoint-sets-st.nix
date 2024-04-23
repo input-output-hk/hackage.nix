@@ -6,8 +6,8 @@
         nix = import ../hackage/disjoint-sets-st-0.1-r0-feeb3ddaa51324c82c8bf41855c0bbcca670fcc560ba39a4ed38b1d9b788f6b0.nix;
         revNum = 0;
         sha256 = "feeb3ddaa51324c82c8bf41855c0bbcca670fcc560ba39a4ed38b1d9b788f6b0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/homeomorphic-0.1-r0-cdca97b538be6eddd649e3e646538a6cb357226a86bfaa915ec31f2055c0b446.nix;
         revNum = 0;
         sha256 = "cdca97b538be6eddd649e3e646538a6cb357226a86bfaa915ec31f2055c0b446";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

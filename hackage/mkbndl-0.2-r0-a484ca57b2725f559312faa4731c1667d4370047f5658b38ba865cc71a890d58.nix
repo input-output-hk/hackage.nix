@@ -21,7 +21,7 @@
       synopsis = "Makes an OS X .app bundle from a binary.";
       description = "Allows you to easily construct a .app bundle from a binary\ncomplete with icon files and finder version info.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mkbndl" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

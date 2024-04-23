@@ -21,7 +21,7 @@
       synopsis = "LISTEN/NOTIFY support for Hasql";
       description = "Use PostgreSQL Asynchronous notification support with your Hasql Types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
           (hsPkgs."contravariant" or (errorHandler.buildDepError "contravariant"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasql-notifications" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hasql" or (errorHandler.buildDepError "hasql"))
             (hsPkgs."hasql-notifications" or (errorHandler.buildDepError "hasql-notifications"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hasql-notifications-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

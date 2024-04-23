@@ -21,7 +21,7 @@
       synopsis = "Lua module to work with file paths.";
       description = "Lua module to work with file paths in a platform\nindependent way.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."hslua-marshalling" or (errorHandler.buildDepError "hslua-marshalling"))
           (hsPkgs."hslua-packaging" or (errorHandler.buildDepError "hslua-packaging"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hslua-module-path-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-lua" or (errorHandler.buildDepError "tasty-lua"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

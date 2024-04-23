@@ -21,11 +21,11 @@
       synopsis = "Extra utilities for working on Data.* types.";
       description = "Extra utilities for working on Data.* types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

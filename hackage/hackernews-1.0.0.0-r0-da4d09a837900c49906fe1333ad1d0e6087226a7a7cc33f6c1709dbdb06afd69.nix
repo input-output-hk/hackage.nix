@@ -21,12 +21,12 @@
       synopsis = "API for Hacker News";
       description = "API for news.ycombinator.com";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -35,7 +35,7 @@
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]
+          ]
           else [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -45,9 +45,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = if compiler.isGhcjs && true
@@ -55,17 +55,17 @@
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."hackernews" or (errorHandler.buildDepError "hackernews"))
               (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."hackernews" or (errorHandler.buildDepError "hackernews"))
               (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
               (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-              ];
+            ];
           buildable = true;
-          };
+        };
         "ghcjs-tests" = {
-          depends = (pkgs.lib).optionals (compiler.isGhcjs && true) [
+          depends = pkgs.lib.optionals (compiler.isGhcjs && true) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hackernews" or (errorHandler.buildDepError "hackernews"))
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
@@ -76,10 +76,10 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then true else false;
-          };
         };
+      };
       tests = {
         "ghc-tests" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

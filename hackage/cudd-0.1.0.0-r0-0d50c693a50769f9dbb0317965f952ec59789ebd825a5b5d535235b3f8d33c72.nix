@@ -21,7 +21,7 @@
       synopsis = "Bindings to the CUDD binary decision diagrams library";
       description = "Bindings to the CUDD binary decision diagrams library.\n\n<http://vlsi.colorado.edu/~fabio/CUDD/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,7 +29,7 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [
           (pkgs."cudd" or (errorHandler.sysDepError "cudd"))
           (pkgs."mtr" or (errorHandler.sysDepError "mtr"))
@@ -38,12 +38,12 @@
           (pkgs."epd" or (errorHandler.sysDepError "epd"))
           (pkgs."dddmp" or (errorHandler.sysDepError "dddmp"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

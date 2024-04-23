@@ -21,18 +21,18 @@
       synopsis = "Low level bindings to GObject.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
           (hsPkgs."bindings-glib" or (errorHandler.buildDepError "bindings-glib"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gobject-2.0" or (errorHandler.pkgConfDepError "gobject-2.0"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

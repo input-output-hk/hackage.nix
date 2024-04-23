@@ -6,8 +6,8 @@
         nix = import ../hackage/free-er-0.1.0.0-r0-34ef7accb556c4e9338bddd50cfd0da81fb8742b806628ad473d10a4e883da8b.nix;
         revNum = 0;
         sha256 = "34ef7accb556c4e9338bddd50cfd0da81fb8742b806628ad473d10a4e883da8b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

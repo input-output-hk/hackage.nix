@@ -21,11 +21,11 @@
       synopsis = "Gray code encoder/decoder.";
       description = "Gray code is a binary numeral system where two successive numbers\ndiffer in only one bit. This package allows to convert Haskell\nnumbers to one of the possible Gray codes and back.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

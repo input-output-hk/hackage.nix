@@ -21,17 +21,17 @@
       synopsis = "Fast, accurate CommonMark (Markdown) parser and renderer";
       description = "This package provides Haskell bindings for\n<https://github.com/jgm/cmark libcmark>, the reference\nparser for <http://commonmark.org CommonMark>, a fully\nspecified variant of Markdown. It includes sources for\nlibcmark (0.26.0) and does not require prior installation of the\nC library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
-        pkgconfig = (pkgs.lib).optional (flags.pkgconfig) (pkgconfPkgs."libcmark" or (errorHandler.pkgConfDepError "libcmark"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        pkgconfig = pkgs.lib.optional (flags.pkgconfig) (pkgconfPkgs."libcmark" or (errorHandler.pkgConfDepError "libcmark"));
         buildable = true;
-        };
+      };
       tests = {
         "test-cmark" = {
           depends = [
@@ -39,10 +39,10 @@
             (hsPkgs."cmark" or (errorHandler.buildDepError "cmark"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-cmark" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."markdown" or (errorHandler.buildDepError "markdown"))
             (hsPkgs."discount" or (errorHandler.buildDepError "discount"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

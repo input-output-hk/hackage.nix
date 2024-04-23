@@ -21,7 +21,7 @@
       synopsis = "Insert a preamble before pandoc-citeproc's bibliography";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pandoc-citeproc-preamble" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

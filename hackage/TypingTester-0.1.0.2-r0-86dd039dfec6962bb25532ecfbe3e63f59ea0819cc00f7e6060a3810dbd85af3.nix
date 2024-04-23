@@ -21,7 +21,7 @@
       synopsis = "Command Line Typing speed tester";
       description = "Prompts the user to type anything they wish. Notifies them of how long it took.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "typingtester" = {
@@ -30,9 +30,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

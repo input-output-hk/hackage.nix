@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Generators for types in safe-coloured-text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."genvalidity-bytestring" or (errorHandler.buildDepError "genvalidity-bytestring"))
           (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
           (hsPkgs."safe-coloured-text" or (errorHandler.buildDepError "safe-coloured-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "safe-coloured-text-test" = {
           depends = [
@@ -42,12 +42,12 @@
             (hsPkgs."safe-coloured-text-gen" or (errorHandler.buildDepError "safe-coloured-text-gen"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

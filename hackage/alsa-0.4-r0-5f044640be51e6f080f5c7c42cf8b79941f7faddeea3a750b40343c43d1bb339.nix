@@ -21,7 +21,7 @@
       synopsis = "Binding to the ALSA Library API.";
       description = "This package provides access to\n\n* ALSA sequencer (MIDI support)\n\n* ALSA realtime audio signal input and output";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         libs = [ (pkgs."asound" or (errorHandler.sysDepError "asound")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

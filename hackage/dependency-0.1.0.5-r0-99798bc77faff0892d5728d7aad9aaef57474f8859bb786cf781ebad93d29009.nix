@@ -21,7 +21,7 @@
       synopsis = "Dependency resolution for package management";
       description = "A library for resolving dependencies; uses a topological sort to construct a build plan and then allows choice between all compatible plans.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."composition-prelude" or (errorHandler.buildDepError "composition-prelude"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dependency-test" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "dependency-bench" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

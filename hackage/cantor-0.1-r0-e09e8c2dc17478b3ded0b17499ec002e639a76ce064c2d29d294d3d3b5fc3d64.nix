@@ -21,7 +21,7 @@
       synopsis = "Analiza Java source code";
       description = "Application for analyzing Java source code";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cantor" = {
@@ -33,10 +33,10 @@
             (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

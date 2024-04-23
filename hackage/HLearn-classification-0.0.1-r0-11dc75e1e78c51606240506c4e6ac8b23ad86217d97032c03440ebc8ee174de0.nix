@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This module is for unsupervised, supervised, and semi-supervised classification tasks.  It is in desperate need of documentation and refactoring.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,9 +45,9 @@
           (hsPkgs."logfloat" or (errorHandler.buildDepError "logfloat"))
           (hsPkgs."math-functions" or (errorHandler.buildDepError "math-functions"))
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HLearn-Classification-Demo" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."HLearn-classification" or (errorHandler.buildDepError "HLearn-classification"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to Xen hypervisor interface";
       description = "Haskell bindings to Xen hypervisor interface";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."bitset" or (errorHandler.buildDepError "bitset"))
-          ];
+        ];
         libs = [ (pkgs."xenctrl" or (errorHandler.sysDepError "xenctrl")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

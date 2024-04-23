@@ -21,7 +21,7 @@
       synopsis = "Haskell / Erlang interoperability library";
       description = "A library for building nodes of a distributed Erlang system in Haskell.\nNodes can be created and registered to an epmd, Erlang terms can be\nmarshalled to/from Erlangs binary term representation and message can\nbe sent to or received from processes running on a different node.\nIn it's preliminary state hinterface supports of Erlangs binary terms\nand a subset of the distribution protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hinterface-test" = {
           depends = [
@@ -66,12 +66,12 @@
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

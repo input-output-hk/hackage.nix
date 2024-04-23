@@ -21,7 +21,7 @@
       synopsis = "Some simple interactive programs for sending MIDI control messages via ALSA";
       description = "Some simple interactive programs for sending MIDI control messages via ALSA.\nThe GUI uses wxHaskell.\nCurrently we provide these programs:\n\n* Send @All Notes Off@ and @All Sounds Off@ events.\n\n* Show several sliders, that trigger sending MIDI controller messages.\n\n* Show a list widget, that triggers MIDI program changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "alsa-midi-mode" = {
@@ -33,9 +33,9 @@
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "alsa-midi-program" = {
           depends = [
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
@@ -43,9 +43,9 @@
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "alsa-midi-controller" = {
           depends = [
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
@@ -53,9 +53,9 @@
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Berkeley DB and Berkeley DB XML binding";
       description = "Berkeley DB and Berkeley DB XML binding";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
@@ -32,8 +32,8 @@
           (pkgs."xqilla" or (errorHandler.sysDepError "xqilla"))
           (pkgs."xerces-c" or (errorHandler.sysDepError "xerces-c"))
           (pkgs."xml2" or (errorHandler.sysDepError "xml2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Datatypes required for chr library";
       description = "Datatypes required for chr library, in particular searching on treestructures, lookup abstraction, substitutions, etc. These are also used (via uhc-util) in UHC.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."chr-pretty" or (errorHandler.buildDepError "chr-pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

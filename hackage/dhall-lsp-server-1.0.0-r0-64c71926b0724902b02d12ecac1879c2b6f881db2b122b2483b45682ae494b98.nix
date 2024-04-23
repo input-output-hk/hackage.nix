@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Please see the README on GitHub at <https://github.com/githubuser/dhall-lsp-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -52,9 +52,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-          ];
+        ];
         buildable = if compiler.isEta && true then false else true;
-        };
+      };
       exes = {
         "dhall-lsp-server" = {
           depends = [
@@ -79,10 +79,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
-            ];
+          ];
           buildable = if compiler.isEta && true then false else true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
@@ -90,11 +90,11 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.0"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

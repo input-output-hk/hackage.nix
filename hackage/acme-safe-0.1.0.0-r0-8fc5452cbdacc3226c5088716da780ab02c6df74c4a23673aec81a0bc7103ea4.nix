@@ -21,14 +21,14 @@
       synopsis = "Safe versions of some infamous haskell functions such as fromJust";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."acme-dont" or (errorHandler.buildDepError "acme-dont"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

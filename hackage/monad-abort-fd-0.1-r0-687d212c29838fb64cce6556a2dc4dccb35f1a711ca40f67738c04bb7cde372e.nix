@@ -21,15 +21,15 @@
       synopsis = "A better error monad transformer";
       description = "This package provides automated lifting of operations via functional\ndependencies for the @transformers-abort@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers-abort" or (errorHandler.buildDepError "transformers-abort"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

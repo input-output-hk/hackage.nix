@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.haskell-src-exts or (pkgs.buildPackages.haskell-src-exts or (errorHandler.setupDepError "haskell-src-exts")))
         (hsPkgs.buildPackages.parsec or (pkgs.buildPackages.parsec or (errorHandler.setupDepError "parsec")))
         (hsPkgs.buildPackages.vector or (pkgs.buildPackages.vector or (errorHandler.setupDepError "vector")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -48,18 +48,18 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "hsrpcgen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ONC-RPC" or (errorHandler.buildDepError "ONC-RPC"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

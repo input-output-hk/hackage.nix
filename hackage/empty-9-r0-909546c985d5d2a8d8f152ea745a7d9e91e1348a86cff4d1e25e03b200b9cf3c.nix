@@ -21,6 +21,6 @@
       synopsis = "Ceci n'est pas une package";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

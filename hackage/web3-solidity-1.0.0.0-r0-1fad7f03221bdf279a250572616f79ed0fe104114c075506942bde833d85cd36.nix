@@ -21,7 +21,7 @@
       synopsis = "Solidity language for Haskell Web3 library.";
       description = "This package contains Solidity parsec-based parser and primitive types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."web3-crypto" or (errorHandler.buildDepError "web3-crypto"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

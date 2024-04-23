@@ -21,7 +21,7 @@
       synopsis = "Transform objects of the package FiniteCategories into graphs using GraphViz.";
       description = "A way to visualize finite categories of the package FiniteCategories thanks to GraphViz. See FiniteCategories for examples of categories.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."WeakSets" or (errorHandler.buildDepError "WeakSets"))
           (hsPkgs."FiniteCategories" or (errorHandler.buildDepError "FiniteCategories"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "FiniteCategories-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."WeakSets" or (errorHandler.buildDepError "WeakSets"))
             (hsPkgs."FiniteCategories" or (errorHandler.buildDepError "FiniteCategories"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

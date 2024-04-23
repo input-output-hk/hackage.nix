@@ -21,14 +21,14 @@
       synopsis = "The parser and render to parsec and render the string.";
       description = "A frame work wih parser and render to reformat the key infors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

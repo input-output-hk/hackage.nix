@@ -21,14 +21,14 @@
       synopsis = "Simple Data.Map-based histogram";
       description = "A histogram counts occurrences of things, i.e. @Histogram k@ represents a mapping @k -> Int@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

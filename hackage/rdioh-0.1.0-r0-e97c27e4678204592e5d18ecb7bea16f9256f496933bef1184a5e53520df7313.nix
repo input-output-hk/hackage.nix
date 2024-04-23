@@ -21,7 +21,7 @@
       synopsis = "A Haskell wrapper for Rdio's API.";
       description = "This library implements methods for Rdio's API.\nIt supports 2-legged and 3-legged OAuth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."hoauth" or (errorHandler.buildDepError "hoauth"))
           (hsPkgs."urlencoded" or (errorHandler.buildDepError "urlencoded"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

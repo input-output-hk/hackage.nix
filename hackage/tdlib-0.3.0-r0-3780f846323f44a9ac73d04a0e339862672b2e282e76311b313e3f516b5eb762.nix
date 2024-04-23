@@ -21,7 +21,7 @@
       synopsis = "complete binding to the Telegram Database Library";
       description = "Please see the README on GitHub at <https://github.com/poscat0x04/tdlib#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,10 +36,10 @@
           (hsPkgs."tdlib-types" or (errorHandler.buildDepError "tdlib-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         libs = [ (pkgs."tdjson" or (errorHandler.sysDepError "tdjson")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tdlib-test" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."tdlib-types" or (errorHandler.buildDepError "tdlib-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           libs = [ (pkgs."tdjson" or (errorHandler.sysDepError "tdjson")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

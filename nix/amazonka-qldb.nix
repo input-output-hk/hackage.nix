@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-qldb-2.0-r0-3b2840f1f98cd6b3e99eeca2697e3298301c4c968d84276cc4c071e858277411.nix;
         revNum = 0;
         sha256 = "3b2840f1f98cd6b3e99eeca2697e3298301c4c968d84276cc4c071e858277411";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "GHC Source Plugin that helps to minimise imports and generate explicit exports";
       description = "== Usage\nAdd @smuggler2@ to the build dependencies of your project.\n.\nThen add the following to ghc-options: @-fplugin=Smuggler2.Plugin@. See the\nREADME <https://hackage.haskell.org/package/smuggler2> for more details\nand options.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (pkgs.lib).optional (flags.debug) (hsPkgs."text" or (errorHandler.buildDepError "text"));
+        ] ++ pkgs.lib.optional (flags.debug) (hsPkgs."text" or (errorHandler.buildDepError "text"));
         buildable = true;
-        };
+      };
       exes = {
         "play-smuggler2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."smuggler2" or (errorHandler.buildDepError "smuggler2"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "smuggler2-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

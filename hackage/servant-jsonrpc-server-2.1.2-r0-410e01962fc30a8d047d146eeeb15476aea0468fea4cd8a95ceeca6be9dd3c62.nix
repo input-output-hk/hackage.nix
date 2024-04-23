@@ -21,7 +21,7 @@
       synopsis = "JSON-RPC servant servers";
       description = "Use this package to define a servant server which exposes JSON-RPC over HTTP endpoints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-jsonrpc" or (errorHandler.buildDepError "servant-jsonrpc"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

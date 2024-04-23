@@ -21,7 +21,7 @@
       synopsis = "";
       description = "a tiny, pluggable irc bot";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "infinity" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."irc" or (errorHandler.buildDepError "irc"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

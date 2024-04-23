@@ -21,7 +21,7 @@
       synopsis = "Generic Haskell AMQP Consumer";
       description = "AMQP consumer which can\n- create a temporary queue and attach it to an exchange, or\n- attach to an existing queue;\n- display header and body info;\n- save message bodies to files;\n- call a callback script";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "konsum" = {
@@ -37,9 +37,9 @@
             (hsPkgs."x509-system" or (errorHandler.buildDepError "x509-system"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."amqp" or (errorHandler.buildDepError "amqp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "agitprop" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
             (hsPkgs."magic" or (errorHandler.buildDepError "magic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

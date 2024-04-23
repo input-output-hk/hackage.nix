@@ -21,12 +21,12 @@
       synopsis = "A compile-time balanced AVL tree.";
       description = "A compile-time balanced AVL tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "avl-test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."avl-static" or (errorHandler.buildDepError "avl-static"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

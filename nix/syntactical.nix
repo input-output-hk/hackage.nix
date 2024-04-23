@@ -6,8 +6,8 @@
         nix = import ../hackage/syntactical-0.1-r0-773971312d89f56ac6b1e20802771de046cdee2daec003393ce221469cd71ce2.nix;
         revNum = 0;
         sha256 = "773971312d89f56ac6b1e20802771de046cdee2daec003393ce221469cd71ce2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

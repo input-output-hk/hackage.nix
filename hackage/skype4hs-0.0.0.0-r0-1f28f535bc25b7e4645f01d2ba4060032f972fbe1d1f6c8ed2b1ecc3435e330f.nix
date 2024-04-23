@@ -21,7 +21,7 @@
       synopsis = "Skype Desktop API binding for Haskell";
       description = "Skype Desktop API binding for Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ] ++ (pkgs.lib).optional (system.isLinux || system.isFreebsd || flags.x11) (hsPkgs."X11" or (errorHandler.buildDepError "X11"));
-        frameworks = (pkgs.lib).optional (system.isOsx || flags.carbon) (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"));
+        ] ++ pkgs.lib.optional (system.isLinux || system.isFreebsd || flags.x11) (hsPkgs."X11" or (errorHandler.buildDepError "X11"));
+        frameworks = pkgs.lib.optional (system.isOsx || flags.carbon) (pkgs."Carbon" or (errorHandler.sysDepError "Carbon"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

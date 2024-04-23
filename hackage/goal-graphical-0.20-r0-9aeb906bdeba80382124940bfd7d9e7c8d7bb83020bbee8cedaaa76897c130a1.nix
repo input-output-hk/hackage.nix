@@ -21,7 +21,7 @@
       synopsis = "Optimization of latent variable and dynamical models with Goal";
       description = "goal-graphical provides tools for with dynamical and graphical models. Various graphical models are defined here, e.g. mixture models and restricted Boltzmann machines, dynamical models such as HMMs and Kalman filters, and in both cases algorithms for fitting them e.g. expectation maximization and contrastive divergence minimization.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."goal-geometry" or (errorHandler.buildDepError "goal-geometry"))
           (hsPkgs."goal-probability" or (errorHandler.buildDepError "goal-probability"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "com-poisson" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Geolite CSV Parser";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."ip" or (errorHandler.buildDepError "ip"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "geolite-csv-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

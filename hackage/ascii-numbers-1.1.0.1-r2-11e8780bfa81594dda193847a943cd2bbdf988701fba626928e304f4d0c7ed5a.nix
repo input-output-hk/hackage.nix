@@ -21,7 +21,7 @@
       synopsis = "ASCII representations of numbers";
       description = "This package provides functions for converting back and\nforth between numbers and their ASCII representations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ascii-numbers" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."ascii-numbers" or (errorHandler.buildDepError "ascii-numbers"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."invert" or (errorHandler.buildDepError "invert"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

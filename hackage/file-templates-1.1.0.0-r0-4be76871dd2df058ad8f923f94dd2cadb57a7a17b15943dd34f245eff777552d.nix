@@ -21,7 +21,7 @@
       synopsis = "Use templates for files and directories";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "new" = {
@@ -34,9 +34,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

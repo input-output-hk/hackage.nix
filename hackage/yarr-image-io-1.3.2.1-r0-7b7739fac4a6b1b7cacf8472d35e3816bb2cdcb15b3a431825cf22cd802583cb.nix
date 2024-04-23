@@ -21,15 +21,15 @@
       synopsis = "Image IO for Yarr library";
       description = "@repa-devil@ package, adapted to @yarr@ library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."yarr" or (errorHandler.buildDepError "yarr"))
-          ];
+        ];
         libs = [ (pkgs."IL" or (errorHandler.sysDepError "IL")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

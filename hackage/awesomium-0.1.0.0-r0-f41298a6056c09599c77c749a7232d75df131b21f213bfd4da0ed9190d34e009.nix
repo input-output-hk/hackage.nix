@@ -21,7 +21,7 @@
       synopsis = "High-level Awesomium bindings.";
       description = "Awesomium (<http://awesomium.com>) is a windowless\nport of Chromium/Webkit.\n\nYou can integrate it with your program, and write\nall of your UI with HTML\\/CSS\\/JS.\n\nIf you plan to integrate Awesomium with GLUT you\ncan also check out this package\n(<http://hackage.haskell.org/package/awesomium-glut>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

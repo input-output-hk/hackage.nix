@@ -14,7 +14,7 @@
       identifier = {
         name = "nonempty-wrapper-quickcheck";
         version = "0.1.0.0";
-        };
+      };
       license = "ISC";
       copyright = "";
       maintainer = "gautier.difolco@gmail.com";
@@ -24,15 +24,15 @@
       synopsis = "QuickCheck instance for 'NonEmpty'";
       description = "QuickCheck instance for 'NonEmpty'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."nonempty-wrapper" or (errorHandler.buildDepError "nonempty-wrapper"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

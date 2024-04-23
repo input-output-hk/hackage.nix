@@ -21,7 +21,7 @@
       synopsis = "Simple IP-over-UDP tunnel using TUNTAP";
       description = "Futun is a simple IP-over-UDP tunnel for\nminimal-setup tunneling. It uses the TUN/TAP\n<http://en.wikipedia.org/wiki/TUN/TAP> device and\nworks on GNU/Linux and Mac OS X.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "futun" = {
@@ -30,9 +30,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Add an hspec test-suite in one command";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hspec-setup" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."projectroot" or (errorHandler.buildDepError "projectroot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

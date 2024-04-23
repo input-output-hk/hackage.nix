@@ -21,34 +21,34 @@
       synopsis = "A Haskell implementation of the SECD abstract machine";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "secdi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."secd" or (errorHandler.buildDepError "secd"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "secd-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."secd" or (errorHandler.buildDepError "secd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A tasty Haskell front-end framework";
       description = "Miso is a small \"isomorphic\" Haskell front-end framework featuring a virtual-dom, diffing / patching algorithm, event delegation, event batching, SVG, Server-sent events, Websockets, type-safe servant-style routing and an extensible Subscription-based subsystem. Inspired by Elm, Redux and Bobril. Miso is pure by default, but side effects (like XHR) can be introduced into the system via the Effect data type. Miso makes heavy use of the GHCJS FFI and therefore has minimal dependencies.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,7 +32,7 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
@@ -43,82 +43,82 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ]
+          ]
           else [
             (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "todo-mvc" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
             else true;
-          };
+        };
         "router" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
             else true;
-          };
+        };
         "websocket" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
             else true;
-          };
+        };
         "mario" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
             else true;
-          };
+        };
         "simple" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.examples)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.examples
             then false
             else true;
-          };
+        };
         "tests" = {
-          depends = (pkgs.lib).optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
+          depends = pkgs.lib.optionals (!(!(compiler.isGhcjs && true) || !flags.tests)) [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ];
+          ];
           buildable = if !(compiler.isGhcjs && true) || !flags.tests
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "POP3 Client Library";
       description = "pop3-client provides a Haskell library to implement a POP3 client.\n\n* Simple and safe API: connection is guaranteed to be closed, no need to know the POP3 protocol to use the API\n\n* Standards compliant\n\n* No dependencies (besides Network and the base library)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

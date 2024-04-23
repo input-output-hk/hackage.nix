@@ -21,14 +21,14 @@
       synopsis = "A Library for Chess Game Logic";
       description = "Please see the README on GitHub at <https://github.com/typedbyte/chessica#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

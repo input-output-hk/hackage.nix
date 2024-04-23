@@ -21,24 +21,24 @@
       synopsis = "Bindings to the termbox library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."termbox" or (errorHandler.sysDepError "termbox")) ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."termbox-bindings" or (errorHandler.buildDepError "termbox-bindings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

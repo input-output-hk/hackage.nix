@@ -21,7 +21,7 @@
       synopsis = "database schema for exigo marking/assessment tools";
       description = "Please see the README on GitHub at <https://github.com/phlummox/exigo-schema#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

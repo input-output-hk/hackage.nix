@@ -21,21 +21,21 @@
       synopsis = "Much safer replacement for QSemN and QSem";
       description = "This provides a much safer semaphore than the QSem in base.  Performance has not been compared.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSafeSemaphore" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Source-to-source plugin for enhancing EDSLs with static annotations";
       description = "Please see the README on GitHub at <https://github.com/OctopiChalmers/BinderAnn#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-plugin" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

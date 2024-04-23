@@ -21,7 +21,7 @@
       synopsis = "hack handler implementation using epoll";
       description = "Hack handler implemented using System.Linux.Epoll";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

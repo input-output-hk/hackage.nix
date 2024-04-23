@@ -21,15 +21,15 @@
       synopsis = "Binary instances for text types";
       description = "OBSOLETE: text version 1.2.1 and higher provide Binary instances for text types out of the box.\n\nThe library provides binary instances for strict and lazy text types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

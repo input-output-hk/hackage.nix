@@ -6,8 +6,8 @@
         nix = import ../hackage/sonic-visualiser-0.1.1-r0-0b310ba769927bb4f14d0daf076626e68c51122552f272955026ca4a26c0ce73.nix;
         revNum = 0;
         sha256 = "0b310ba769927bb4f14d0daf076626e68c51122552f272955026ca4a26c0ce73";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

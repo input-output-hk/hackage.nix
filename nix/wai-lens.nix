@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-lens-0.1-r0-62cb9d5a3ca40e3346ffe6e9356837f3ecb7d9d7834e8a0c5963a3cd08a2aadf.nix;
         revNum = 0;
         sha256 = "62cb9d5a3ca40e3346ffe6e9356837f3ecb7d9d7834e8a0c5963a3cd08a2aadf";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Return the diversity at each position by default for all sequences in a fasta file";
       description = "Find the diversity of a collection of entities, mainly for use with fasta sequences.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."random-shuffle" or (errorHandler.buildDepError "random-shuffle"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."data-ordlist" or (errorHandler.buildDepError "data-ordlist"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "diversity" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."fasta" or (errorHandler.buildDepError "fasta"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/bencodex-1.0.0-r0-0c57d2fabd572a53379c601e85844fe1d1a7f3f3caa6fb55a0bce3094298d50e.nix;
         revNum = 0;
         sha256 = "0c57d2fabd572a53379c601e85844fe1d1a7f3f3caa6fb55a0bce3094298d50e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

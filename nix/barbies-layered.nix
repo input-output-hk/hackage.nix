@@ -6,8 +6,8 @@
         nix = import ../hackage/barbies-layered-0.1.0.0-r0-1cc029978ee7360649b2538f3880bc14830f9c22be8804b683571b671699c3d4.nix;
         revNum = 0;
         sha256 = "1cc029978ee7360649b2538f3880bc14830f9c22be8804b683571b671699c3d4";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

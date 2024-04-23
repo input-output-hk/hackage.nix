@@ -6,8 +6,8 @@
         nix = import ../hackage/heavy-logger-amazon-0.1.0.0-r0-e92873f427bbfa8aff79ed1368f7306b416681b97c527d09353465b15f7ff55e.nix;
         revNum = 0;
         sha256 = "e92873f427bbfa8aff79ed1368f7306b416681b97c527d09353465b15f7ff55e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A simplistic HTTP server handler for Hack.";
       description = "This should not be used in a production environment.\nHowever, it's useful for testing.\n0.2.0.2 is equal to 0.2.0.1 but with extended ranges for\nnetwork and web-encodings packages";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."web-encodings" or (errorHandler.buildDepError "web-encodings"))
           (hsPkgs."failure" or (errorHandler.buildDepError "failure"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

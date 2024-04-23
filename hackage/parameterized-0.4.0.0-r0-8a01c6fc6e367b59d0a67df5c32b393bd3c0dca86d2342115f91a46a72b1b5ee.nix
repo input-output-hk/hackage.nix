@@ -21,16 +21,16 @@
       synopsis = "Parameterized/indexed monoids and monads using only a single parameter type variable.";
       description = "Parameterized/indexed monoids and monads using only a single parameter type variable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-diverse" or (errorHandler.buildDepError "data-diverse"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "parameterized-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."data-diverse" or (errorHandler.buildDepError "data-diverse"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

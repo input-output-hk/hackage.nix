@@ -21,7 +21,7 @@
       synopsis = "Present the module dependencies of a program as a \"dot\" graph.";
       description = "This package contains a program that computes \"dot\" graphs\nfrom the dependencies of a number of Haskell modules.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "graphmod" = {
@@ -33,9 +33,9 @@
             (hsPkgs."haskell-lexer" or (errorHandler.buildDepError "haskell-lexer"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

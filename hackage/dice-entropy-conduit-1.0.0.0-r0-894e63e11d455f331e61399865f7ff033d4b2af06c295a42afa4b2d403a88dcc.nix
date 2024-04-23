@@ -21,7 +21,7 @@
       synopsis = "Cryptographically secure n-sided dice via rejection sampling. ";
       description = "This library uses rejection sampling to provide cryptographically secure\n@n@-sided dice rolls and random sampling (within a given range).\nThe number of used random bits is close to the information-theoretic optimal\nbound.\n\nThe API provides a conduit interface.\nSee module \"System.Random.Dice\" for a more detailed description.\n\nFeedback is welcome!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."entropy" or (errorHandler.buildDepError "entropy"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Main" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

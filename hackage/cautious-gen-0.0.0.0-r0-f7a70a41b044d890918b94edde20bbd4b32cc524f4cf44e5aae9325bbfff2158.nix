@@ -21,16 +21,16 @@
       synopsis = "";
       description = "GenValid instances for Cautious and CautiousT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cautious" or (errorHandler.buildDepError "cautious"))
           (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "cautious-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
             (hsPkgs."genvalidity-hspec-aeson" or (errorHandler.buildDepError "genvalidity-hspec-aeson"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

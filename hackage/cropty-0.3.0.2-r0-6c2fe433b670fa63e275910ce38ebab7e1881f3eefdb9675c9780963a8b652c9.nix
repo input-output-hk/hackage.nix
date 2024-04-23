@@ -21,7 +21,7 @@
       synopsis = "Encryption and decryption";
       description = "Encryption and decryption.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cropty" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."cropty" or (errorHandler.buildDepError "cropty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

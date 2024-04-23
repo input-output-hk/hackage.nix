@@ -14,7 +14,7 @@
       identifier = {
         name = "mmsyn2-array-ukrainian-data";
         version = "0.2.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2022-2023 Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,11 +24,11 @@
       synopsis = "Data that is taken from the ukrainian-phonetics-basic-array for optimization.";
       description = "Is intended to be used in the phonetic-languages-simplified-examples-array functionality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

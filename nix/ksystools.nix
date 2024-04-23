@@ -6,8 +6,8 @@
         nix = import ../hackage/ksystools-0.1.0.0-r0-13954f3b0857549b21fc65d41ed09827515a5e916728b65cecee56b6a7126bfb.nix;
         revNum = 0;
         sha256 = "13954f3b0857549b21fc65d41ed09827515a5e916728b65cecee56b6a7126bfb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

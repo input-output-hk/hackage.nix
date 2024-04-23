@@ -21,7 +21,7 @@
       synopsis = "Embedded programming in haskell using the Copilot stream DSL and Zephyr";
       description = "zephyr-copilot contains allows using Haskell to program many boards\nsupported by the Zephyr project.\n\nzephyr-copilot uses the Copilot stream DSL (domain-specific language)\nand Functional Reactive Programming (FRP) to generate a program which\ncan be compiled in Zephyr and flashed to the board.\n\nAll the messy details are abstracted away, letting you focus on the\ndesired behavior of the board.\n\nCopilot is a stream (i.e., infinite lists) domain-specific language\n(DSL) in Haskell that compiles into embedded C. Copilot contains an\ninterpreter, multiple back-end compilers, and other verification tools.\n<https://copilot-language.github.io/>\n\nZephyr is a real time embedded operating system (RTOS) supporting\nhundreds of boards. <https://zephyrproject.org/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

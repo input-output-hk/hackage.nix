@@ -21,7 +21,7 @@
       synopsis = "Ordered Reduced Binary Decision Diagrams";
       description = "Construct, combine and query OBDDs;\nan efficient representation for formulas in propositional logic";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,42 +31,42 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "obdd-placement" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."obdd" or (errorHandler.buildDepError "obdd"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "obdd-queens" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."obdd" or (errorHandler.buildDepError "obdd"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "obdd-queens2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."obdd" or (errorHandler.buildDepError "obdd"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "obdd-sort" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."obdd" or (errorHandler.buildDepError "obdd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

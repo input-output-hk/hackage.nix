@@ -21,16 +21,16 @@
       synopsis = "A lightweight markup language for story writers";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ogmadown-test" = {
           depends = [
@@ -41,21 +41,21 @@
             (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "ogmarkup-bench" = {
-          depends = (pkgs.lib).optionals (flags.bench) [
+          depends = pkgs.lib.optionals (flags.bench) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."ogmarkup" or (errorHandler.buildDepError "ogmarkup"))
             (hsPkgs."file-embed-poly" or (errorHandler.buildDepError "file-embed-poly"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.bench then true else false;
-          };
         };
       };
-    }
+    };
+  }

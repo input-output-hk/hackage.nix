@@ -21,7 +21,7 @@
       synopsis = "Control structure similar to Control.Monad.State, allowing multiple nested states, distinguishable by provided phantom types.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."prologue" or (errorHandler.buildDepError "prologue"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typelevel" or (errorHandler.buildDepError "typelevel"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "layered-state-benchmark" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."layered-state" or (errorHandler.buildDepError "layered-state"))
             (hsPkgs."mtl-c" or (errorHandler.buildDepError "mtl-c"))
             (hsPkgs."timeit" or (errorHandler.buildDepError "timeit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Useful tools from the C standard library";
       description = "Useful tools from the C standard library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

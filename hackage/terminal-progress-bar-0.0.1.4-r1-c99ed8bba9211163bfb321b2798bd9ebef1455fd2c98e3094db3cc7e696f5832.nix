@@ -21,7 +21,7 @@
       synopsis = "A simple progress bar in the terminal";
       description = "A progress bar is used to convey the progress of a task. This\npackage implements a very simple textual progress bar.\n\nSee the module 'System.ProgressBar' on how to use the progress bar\nor build the package with the -fexample flag for a small example\nprogram.\n\nThe animated progress bar depends entirely on the interpretation of\nthe carriage return character (\\'\\\\r\\'). If your terminal interprets\nit as something else then \\\"move cursor to beginning of line\\\", the\nanimation won't work.\n\nNote: Due to a bug in \\\"cabal haddock\\\" you will have to manually\nuncomment the example section in the cabal file. But uncommenting\nthat section will result in \\\"cabal haddock\\\" failing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."stm-chans" or (errorHandler.buildDepError "stm-chans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-terminal-progress-bar" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -16,7 +16,7 @@
       debug-propagation = false;
       debug-cycles = false;
       split-these = true;
-      };
+    };
     package = {
       specVersion = "1.22";
       identifier = { name = "reflex"; version = "0.8.2.2"; };
@@ -29,7 +29,7 @@
       synopsis = "Higher-order Functional Reactive Programming";
       description = "Interactive programs without callbacks or side-effects.\nFunctional Reactive Programming (FRP) uses composable events and time-varying\nvalues to describe interactive systems as pure functions.\nJust like other pure functional code, functional reactive code is easier\nto get right on the first try, maintain, and reuse.\n\nReflex is a fully-deterministic, higher-order Functional Reactive Programming\ninterface and an engine that efficiently implements that interface.\n\n<https://reflex-frp.org>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((([
@@ -62,27 +62,27 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unbounded-delays" or (errorHandler.buildDepError "unbounded-delays"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ] ++ (if flags.split-these
+        ] ++ (if flags.split-these
           then [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ]
+          ]
           else [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ])) ++ (pkgs.lib).optional (flags.debug-trace-events) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ (pkgs.lib).optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (if flags.use-template-haskell
+          ])) ++ pkgs.lib.optional (flags.debug-trace-events) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ pkgs.lib.optional (flags.use-reflex-optimizer) (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))) ++ (if flags.use-template-haskell
           then [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ]
+          ]
           else [
             (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
+          ])) ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"));
         buildable = true;
-        };
+      };
       tests = {
         "semantics" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CrossImpl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -111,18 +111,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
-            ] ++ [ (hsPkgs."hlint" or (errorHandler.buildDepError "hlint")) ];
+          ] ++ [ (hsPkgs."hlint" or (errorHandler.buildDepError "hlint")) ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
+        };
         "EventWriterT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -136,9 +136,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
-            ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"));
+          ] ++ pkgs.lib.optional (flags.split-these) (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"));
           buildable = true;
-          };
+        };
         "DebugCycles" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -155,12 +155,12 @@
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
             (hsPkgs."proctest" or (errorHandler.buildDepError "proctest"))
-            ] ++ (pkgs.lib).optionals (flags.split-these) [
+          ] ++ pkgs.lib.optionals (flags.split-these) [
             (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "RequesterT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -177,16 +177,16 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"));
+          ] ++ pkgs.lib.optional (flags.split-these) (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"));
           buildable = true;
-          };
+        };
         "Headless" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Adjustable" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -195,9 +195,9 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "QueryT" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -214,12 +214,12 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ] ++ (pkgs.lib).optionals (flags.split-these) [
+          ] ++ pkgs.lib.optionals (flags.split-these) [
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."these-lens" or (errorHandler.buildDepError "these-lens"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "GC-Semantics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -233,9 +233,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
-            ] ++ (pkgs.lib).optional (flags.split-these) (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"));
+          ] ++ pkgs.lib.optional (flags.split-these) (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"));
           buildable = true;
-          };
+        };
         "rootCleanup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -246,10 +246,10 @@
             (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
             (hsPkgs."ref-tf" or (errorHandler.buildDepError "ref-tf"))
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "spider-bench" = {
           depends = [
@@ -266,9 +266,9 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "saulzar-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -287,9 +287,9 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

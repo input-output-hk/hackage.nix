@@ -21,7 +21,7 @@
       synopsis = "A simple command line pasting utility";
       description = "pasty is simple command line utility for extracting\na collection of columns from any number of input\nfiles and pasting them in a specified order to\nstdout.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pasty" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

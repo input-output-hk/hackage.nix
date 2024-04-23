@@ -21,7 +21,7 @@
       synopsis = "Approximate randomization test";
       description = "\nFunctions and utilities to perform paired and unpaired approximate\nrandomization tests (Noreen, 1989).\n\nThe utilities can also draw histograms of the applications of the test\nstatistic to the randomized samples. For support for more file formats,\ninstall the package with the @-withCairo@ flag.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "approx_rand_test" = {
           depends = [
@@ -55,15 +55,15 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ] ++ (if flags.withcairo
+          ] ++ (if flags.withcairo
             then [
               (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-              ]
+            ]
             else [
               (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "approx_rand_test_paired" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,16 +83,16 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-            ] ++ (if flags.withcairo
+          ] ++ (if flags.withcairo
             then [
               (hsPkgs."Chart-cairo" or (errorHandler.buildDepError "Chart-cairo"))
-              ]
+            ]
             else [
               (hsPkgs."Chart-diagrams" or (errorHandler.buildDepError "Chart-diagrams"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -106,9 +106,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

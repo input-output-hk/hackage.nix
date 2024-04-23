@@ -21,7 +21,7 @@
       synopsis = "Checks Haddock comments for pitfalls and version changes.";
       description = "This tool aims to detect any common pitfalls that is often seen in documentation generated with Haddock,\ncommonly caused by lack of familiarity with the markup or time to review the generated documentation.\nExtending this tool is rather simple (add parsers) and can be easily used to judge the impact of\nchanging Haddock's parsing rules.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "doccheck" = {
@@ -34,9 +34,9 @@
             (hsPkgs."directory-tree" or (errorHandler.buildDepError "directory-tree"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

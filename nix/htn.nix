@@ -6,8 +6,8 @@
         nix = import ../hackage/htn-0.1.0.0-r0-e8c956345b13949fb64f7e3874fd68cd9e2af2466d87daab10c6fe955f933f21.nix;
         revNum = 0;
         sha256 = "e8c956345b13949fb64f7e3874fd68cd9e2af2466d87daab10c6fe955f933f21";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "NF data type to statically enforce normal form ";
       description = "This package provides a data type NF representing\ndata which has been evaluated to normal form.  This\nis a useful type discipline for many situations when\nnormal form data is necessary, e.g. when transmitting\ndata to other threads over channels.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

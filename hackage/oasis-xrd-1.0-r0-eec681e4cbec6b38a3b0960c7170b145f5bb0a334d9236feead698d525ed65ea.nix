@@ -21,7 +21,7 @@
       synopsis = "Extensible Resource Descriptor";
       description = "Types and encodings for \"XRD, a simple generic format for describing resources\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example-json" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-xml" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -66,9 +66,9 @@
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
             (hsPkgs."xml-conduit-writer" or (errorHandler.buildDepError "xml-conduit-writer"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

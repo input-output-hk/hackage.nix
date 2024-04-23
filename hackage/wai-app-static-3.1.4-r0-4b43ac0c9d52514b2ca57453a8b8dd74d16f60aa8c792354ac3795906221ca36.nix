@@ -21,7 +21,7 @@
       synopsis = "WAI application for static serving";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-app-static>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,9 +53,9 @@
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."cryptohash-conduit" or (errorHandler.buildDepError "cryptohash-conduit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "warp" = {
           depends = [
@@ -66,10 +66,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "runtests" = {
           depends = [
@@ -91,9 +91,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

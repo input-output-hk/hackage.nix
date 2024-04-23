@@ -21,7 +21,7 @@
       synopsis = "An executable for downloading a Haskell setup";
       description = "An executable for downloading a Haskell setup";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stackage-setup" = {
@@ -44,9 +44,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

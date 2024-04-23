@@ -21,14 +21,14 @@
       synopsis = "HandleLike class";
       description = "A tiny package. It's contain the following class.\n\n> class HandleLike h where\n>     hlPut :: h -> ByteString -> IO ()\n>     hlGet :: h -> Int -> IO ByteString\n>     hlGetByte :: h -> IO Word8\n>     hlGetLine :: h -> IO ByteString\n>     hlGetContent :: h -> IO ByteString\n>     hlClose :: h -> IO ()";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

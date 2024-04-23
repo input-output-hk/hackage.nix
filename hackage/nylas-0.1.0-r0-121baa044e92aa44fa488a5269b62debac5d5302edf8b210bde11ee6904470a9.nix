@@ -21,7 +21,7 @@
       synopsis = "Client for the Nylas API";
       description = "A client for the Nylas HTTP API, powered by lens and pipes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."pipes-http" or (errorHandler.buildDepError "pipes-http"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

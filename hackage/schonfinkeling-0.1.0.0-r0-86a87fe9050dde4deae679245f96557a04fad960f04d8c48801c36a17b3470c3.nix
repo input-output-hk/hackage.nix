@@ -21,11 +21,11 @@
       synopsis = "Transformation of n-ary functions to unary functions";
       description = "Transformation of n-ary functions to unary functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

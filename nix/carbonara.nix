@@ -6,8 +6,8 @@
         nix = import ../hackage/carbonara-0.0.1-r0-dd9ff006eeb6b5e3ccb4694aa971daaec1886c296fbdbcf4d85dd8f133176c9e.nix;
         revNum = 0;
         sha256 = "dd9ff006eeb6b5e3ccb4694aa971daaec1886c296fbdbcf4d85dd8f133176c9e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "`parsers` instances for Megaparsec";
       description = "A newtype around ParsecT with instances for Parsing,\nCharParsing, LookAheadParsing, and TokenParsing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

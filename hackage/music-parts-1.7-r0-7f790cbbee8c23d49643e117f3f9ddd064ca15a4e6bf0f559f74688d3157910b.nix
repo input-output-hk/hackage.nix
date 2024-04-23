@@ -21,7 +21,7 @@
       synopsis = "To be written.";
       description = "Abstract representation of musical parts and instruments.\n\nThis library is part of the Music Suite, see <http://music-suite.github.io>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."adjunctions" or (errorHandler.buildDepError "adjunctions"))
           (hsPkgs."roman-numerals" or (errorHandler.buildDepError "roman-numerals"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

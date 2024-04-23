@@ -6,8 +6,8 @@
         nix = import ../hackage/llvm-analysis-0.3.0-r0-3d940fbe5dc897fde4c1a8c6edfbf633b76d01aba04c5351cb3c1ff4ebffda48.nix;
         revNum = 0;
         sha256 = "3d940fbe5dc897fde4c1a8c6edfbf633b76d01aba04c5351cb3c1ff4ebffda48";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

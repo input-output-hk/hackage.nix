@@ -21,7 +21,7 @@
       synopsis = "Keep your AWS credentials file up to date with MFA-carrying credentials";
       description = "As described in http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html,\nsome IAM policies may require API calls to be authenticated with MFA for additional security. This service\ntracks the lifetime of the temporary credentials used to authenticate with MFA, prompting the user for a new\nMFA code as the old credentials are about to expire and updating the AWS credentials file with the new credentials.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "aws-mfa-credentials" = {
@@ -42,9 +42,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."filelock" or (errorHandler.buildDepError "filelock"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

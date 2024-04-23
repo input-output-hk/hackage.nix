@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-neptune-2.0-r0-6e546b9293fd274cf86606319264db17840745534dc4b5343ad22018e82bc4b1.nix;
         revNum = 0;
         sha256 = "6e546b9293fd274cf86606319264db17840745534dc4b5343ad22018e82bc4b1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

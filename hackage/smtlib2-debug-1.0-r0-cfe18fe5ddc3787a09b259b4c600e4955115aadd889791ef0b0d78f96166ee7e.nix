@@ -21,7 +21,7 @@
       synopsis = "Dump the communication with an SMT solver for debugging purposes.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."dependent-map" or (errorHandler.buildDepError "dependent-map"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

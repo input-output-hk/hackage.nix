@@ -21,7 +21,7 @@
       synopsis = "Fedora Product Definition Center service";
       description = "A http query library for Fedora's PDC service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."http-query" or (errorHandler.buildDepError "http-query"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

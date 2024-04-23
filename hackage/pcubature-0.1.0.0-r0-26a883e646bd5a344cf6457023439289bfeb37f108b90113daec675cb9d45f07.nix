@@ -21,7 +21,7 @@
       synopsis = "Integration over convex polytopes";
       description = "Multiple integration over convex polytopes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."scubature" or (errorHandler.buildDepError "scubature"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vertexenum" or (errorHandler.buildDepError "vertexenum"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

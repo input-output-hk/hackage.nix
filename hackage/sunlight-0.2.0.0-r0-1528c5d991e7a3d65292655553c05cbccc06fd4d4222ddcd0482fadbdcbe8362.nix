@@ -21,7 +21,7 @@
       synopsis = "Test Cabalized package against multiple dependency versions";
       description = "sunlight checks your Cabalized package and ensures that it actually\nbuilds and passes its tests, even against mulitple dependency\nversions specified in your Cabal file.  For example, your Cabal file\nmight say that your package builds against base-4.5.1.0\nand base-4.6.0.1.  With\nsunlight you can automatically verify that this is actually the case.\n\nFor more information, please see\n\n<http://www.github.com/massysett/sunlight>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

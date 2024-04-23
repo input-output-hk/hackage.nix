@@ -21,7 +21,7 @@
       synopsis = "Secure, modular server-side sessions.";
       description = "API docs and the README are available at <http://www.stackage.org/package/serversession>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."serversession" or (errorHandler.buildDepError "serversession"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

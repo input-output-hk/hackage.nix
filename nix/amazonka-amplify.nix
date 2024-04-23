@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-amplify-2.0-r0-85865da6c1ff6e2d840500b7344f4c03f7c590093eb08914ca21c354fe53cfd3.nix;
         revNum = 0;
         sha256 = "85865da6c1ff6e2d840500b7344f4c03f7c590093eb08914ca21c354fe53cfd3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

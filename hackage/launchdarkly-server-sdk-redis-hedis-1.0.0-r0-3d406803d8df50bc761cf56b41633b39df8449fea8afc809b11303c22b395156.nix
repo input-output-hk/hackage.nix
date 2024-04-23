@@ -14,7 +14,7 @@
       identifier = {
         name = "launchdarkly-server-sdk-redis-hedis";
         version = "1.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "2023 Catamorphic, Co";
       maintainer = "dev@launchdarkly.com";
@@ -24,7 +24,7 @@
       synopsis = "LaunchDarkly Server-Side SDK - Redis Integration";
       description = "Redis integration for the LaunchDarkly SDK using hedis";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
           (hsPkgs."launchdarkly-server-sdk" or (errorHandler.buildDepError "launchdarkly-server-sdk"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-server-sdk-redis-hedis-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
             (hsPkgs."launchdarkly-server-sdk" or (errorHandler.buildDepError "launchdarkly-server-sdk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

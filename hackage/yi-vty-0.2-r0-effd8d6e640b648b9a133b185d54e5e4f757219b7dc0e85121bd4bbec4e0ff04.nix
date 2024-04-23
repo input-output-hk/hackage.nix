@@ -21,7 +21,7 @@
       synopsis = "Vty backend for Yi";
       description = "Core functions for the Vty backend of Yi.\nNote that you will need the yi package to use this.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Handling of MIDI messages and files";
       description = "MIDI is the Musical Instrument Digital Interface.\nThe package contains definition of realtime and file MIDI messages,\nreading and writing MIDI files.\nIt contains no sending and receiving of MIDI messages.\nCf. alsa-midi, jack-midi and hmidi packages.\nFor music composition with MIDI output, see Haskore.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,16 +33,16 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."monoid-transformer" or (errorHandler.buildDepError "monoid-transformer"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "test" = { buildable = if !flags.buildtests then false else true; };
-        };
       };
-    }
+    };
+  }

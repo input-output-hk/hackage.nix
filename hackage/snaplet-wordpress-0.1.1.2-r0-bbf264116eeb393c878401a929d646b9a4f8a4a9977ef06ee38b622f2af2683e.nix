@@ -21,7 +21,7 @@
       synopsis = "A snaplet that communicates with wordpress over its api.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,9 +51,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-snaplet-wordpress" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hedis" or (errorHandler.buildDepError "hedis"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

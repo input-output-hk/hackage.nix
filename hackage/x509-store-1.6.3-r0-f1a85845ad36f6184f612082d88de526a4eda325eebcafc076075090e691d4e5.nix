@@ -21,7 +21,7 @@
       synopsis = "X.509 collection accessing and storing methods";
       description = "X.509 collection accessing and storing methods for certificate, crl, exception list";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

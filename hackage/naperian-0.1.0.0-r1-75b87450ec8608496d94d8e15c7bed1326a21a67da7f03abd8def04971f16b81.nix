@@ -21,7 +21,7 @@
       synopsis = "Efficient representable functors";
       description = "See the readme at <https://github.com/aaronvargo/naperian#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."streams" or (errorHandler.buildDepError "streams"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

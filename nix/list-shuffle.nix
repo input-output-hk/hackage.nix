@@ -6,8 +6,8 @@
         nix = import ../hackage/list-shuffle-1.0.0-r0-a367d4da51bd27165f35fc849ce829fab85f4f2f05665753ed1e71209a124421.nix;
         revNum = 0;
         sha256 = "a367d4da51bd27165f35fc849ce829fab85f4f2f05665753ed1e71209a124421";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Villefort is a task manager and time tracker written in haskell.";
       description = "It is based off of a sqlite database and has the ability to add new tasks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."FindBin" or (errorHandler.buildDepError "FindBin"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Villefort" = {
           depends = [
@@ -46,18 +46,18 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "Villefort-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Villefort" or (errorHandler.buildDepError "Villefort"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

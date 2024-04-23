@@ -21,7 +21,7 @@
       synopsis = "Our JSON parsers/encoders";
       description = "The interface of `aeson` is unfortunately extremely … suboptimal. Here’s some wrappers trying to improve the situation, which we use internally.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

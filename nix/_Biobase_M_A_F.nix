@@ -6,8 +6,8 @@
         nix = import ../hackage/BiobaseMAF-0.5.0.0-r0-cd323c2e8f57e45c3249ce1448ca8949240a735643c119873384eddd70994262.nix;
         revNum = 0;
         sha256 = "cd323c2e8f57e45c3249ce1448ca8949240a735643c119873384eddd70994262";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

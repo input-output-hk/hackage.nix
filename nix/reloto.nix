@@ -6,8 +6,8 @@
         nix = import ../hackage/reloto-2.1.0.20180829-r0-7fd3e638ac384e5ecc2b719e133b940bb4b4fe5532676cf2bb5672ba5c4bd0f6.nix;
         revNum = 0;
         sha256 = "7fd3e638ac384e5ecc2b719e133b940bb4b4fe5532676cf2bb5672ba5c4bd0f6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

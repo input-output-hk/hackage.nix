@@ -21,7 +21,7 @@
       synopsis = "Convert MediaWiki text to LaTeX";
       description = "Wb2pdf converts MediaWiki markup to LaTeX and PDF.\nSo it provides and export from MediaWiki to LaTeX.\nIt works with any project running MediaWiki, especially Wikipedia and Wikibooks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mediawiki2latex" = {
@@ -53,9 +53,9 @@
             (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Music player for linux.";
       description = "Music player for linux.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mp" = {
@@ -47,9 +47,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

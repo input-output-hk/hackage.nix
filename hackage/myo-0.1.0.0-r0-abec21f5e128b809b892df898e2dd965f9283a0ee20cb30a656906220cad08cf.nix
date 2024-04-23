@@ -21,7 +21,7 @@
       synopsis = "Haskell binding to the Myo armband";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,10 +36,10 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         buildable = true;
-        };
+      };
       exes = {
         "myo-ws-example" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."lens-family" or (errorHandler.buildDepError "lens-family"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "myo-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."myo" or (errorHandler.buildDepError "myo"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

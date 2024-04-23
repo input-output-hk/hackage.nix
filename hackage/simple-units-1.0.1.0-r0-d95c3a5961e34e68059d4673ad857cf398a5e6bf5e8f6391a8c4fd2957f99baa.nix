@@ -21,14 +21,14 @@
       synopsis = "Simple arithmetic with SI units using type-checked dimensional analysis.";
       description = "Please see the README on GitHub at <https://github.com/groscoe/simple-units#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

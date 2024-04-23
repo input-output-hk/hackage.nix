@@ -21,7 +21,7 @@
       synopsis = "Bindings to the LLVM compiler toolkit.";
       description = "Bindings to the LLVM compiler toolkit.\n\n* New in 0.9.1.1: Builds against LLVM 2.9.\n\n* New in 0.9.1.0: Util.Memory for memory related intrinsics\n\n* New in 0.9.0.0: Adapted to LLVM 2.8 (removed support for Union types);\n\n* New in 0.8.2.0: Support for GHC calling convention.\n\n* New in 0.8.1.0: Numerous small changes.\n\n* New in 0.8.0.0: Adapted to LLVM 2.7;\n\n* New in 0.7.1.0: More attributes\n\n* New in 0.7.0.1: MacOS fixes.\n\n* New in 0.7.0.0: Adapted to LLVM 2.6;";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

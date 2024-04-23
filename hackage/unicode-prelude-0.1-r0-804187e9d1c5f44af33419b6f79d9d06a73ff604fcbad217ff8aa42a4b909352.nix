@@ -21,11 +21,11 @@
       synopsis = "Unicode notation for some definitions in Prelude";
       description = "This package adds unicode notation for some definitions in Prelude.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

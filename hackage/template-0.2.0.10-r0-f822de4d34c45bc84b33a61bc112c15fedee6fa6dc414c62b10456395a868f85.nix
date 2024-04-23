@@ -21,15 +21,15 @@
       synopsis = "Simple string substitution";
       description = "Simple string substitution library that supports \\\"$\\\"-based\nsubstitution.  Meant to be used when Text.Printf or string\nconcatenation would lead to code that is hard to read but when a\nfull blown templating system is overkill.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

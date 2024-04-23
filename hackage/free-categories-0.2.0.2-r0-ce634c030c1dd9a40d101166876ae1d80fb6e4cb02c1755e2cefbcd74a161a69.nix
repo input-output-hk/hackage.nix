@@ -21,11 +21,11 @@
       synopsis = "free categories";
       description = "free categories, paths, and categorical folds";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

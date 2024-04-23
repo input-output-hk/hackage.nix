@@ -28,31 +28,31 @@
         (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
         (hsPkgs.buildPackages.regex-applicative or (pkgs.buildPackages.regex-applicative or (errorHandler.setupDepError "regex-applicative")))
         (hsPkgs.buildPackages.util or (pkgs.buildPackages.util or (errorHandler.setupDepError "util")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ucd" or (errorHandler.buildDepError "ucd"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."ucd" or (errorHandler.buildDepError "ucd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

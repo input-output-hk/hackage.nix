@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Futhark data format.";
       description = "The Futhark compiler and its tools uses a simple external\ndata representation to encode arrays and scalars.  This\npackage implements both a Haskell-level representation of\nthese values, as well as utility functions for reading\nand writing values in both the textual and binary format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "futhark-data-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

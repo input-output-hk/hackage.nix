@@ -21,7 +21,7 @@
       synopsis = "Standalone implementation of servant’s dispatching mechanism";
       description = "This package provides a standalone implementation of dispatching a\nfunction by matching it against a Servant API. A common usecase for\nthis is to convert an `URI` to an ADT that provides a more structured\nrepresentation of the URL.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."servant-match" or (errorHandler.buildDepError "servant-match"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

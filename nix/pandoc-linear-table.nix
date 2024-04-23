@@ -6,8 +6,8 @@
         nix = import ../hackage/pandoc-linear-table-0.2.0.5-r0-636346aeae1d1e4f36dbcc1ef5e6a3754672ec7c42c53b7b21ccccefa7d020b7.nix;
         revNum = 0;
         sha256 = "636346aeae1d1e4f36dbcc1ef5e6a3754672ec7c42c53b7b21ccccefa7d020b7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

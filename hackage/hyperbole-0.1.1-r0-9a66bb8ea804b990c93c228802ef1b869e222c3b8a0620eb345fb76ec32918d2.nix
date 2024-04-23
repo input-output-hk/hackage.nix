@@ -21,7 +21,7 @@
       synopsis = "Web Framework inspired by HTMX";
       description = "Web Framework inspired by HTMX.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."web-view" or (errorHandler.buildDepError "web-view"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."web-view" or (errorHandler.buildDepError "web-view"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Comprehensive and efficient (multi)linear algebra implementation.";
       description = "Comprehensive and efficient (multi)linear algebra implementation, based on generic tensor formalism and concise Ricci-Curbastro index syntax. More information available on GitHub: <https://github.com/ArturB/multilinear#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multicore" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sequential" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -55,59 +55,59 @@
             (hsPkgs."generic-random" or (errorHandler.buildDepError "generic-random"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "multicore-memory" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "multicore-profile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "multicore-time" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sequential-memory" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
             (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sequential-profile" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sequential-time" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "MULTEXT-East morphosyntactic descriptors";
       description = "Implementation of the MULTEXT-East morphosyntactic descriptors.\nMULTEXT-East encodes values of morphosyntatic attributes in a single string,\nusing positional encoding. For details, refer to <http://nl.ijs.si/ME>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

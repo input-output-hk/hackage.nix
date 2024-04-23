@@ -21,13 +21,13 @@
       synopsis = "Binding to libSDL";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."SDL" or (errorHandler.sysDepError "SDL")) ];
         frameworks = [ (pkgs."AppKit" or (errorHandler.sysDepError "AppKit")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

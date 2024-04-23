@@ -21,7 +21,7 @@
       synopsis = "simple executable for templating";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tmpl" = {
@@ -31,9 +31,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

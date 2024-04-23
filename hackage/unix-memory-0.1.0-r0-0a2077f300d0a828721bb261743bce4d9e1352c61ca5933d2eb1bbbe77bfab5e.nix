@@ -21,15 +21,15 @@
       synopsis = "Unix memory syscalls";
       description = "unix memory syscalls (mmap, munmap, madvise, msync, mlock)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-memorymap" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-memory" or (errorHandler.buildDepError "unix-memory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

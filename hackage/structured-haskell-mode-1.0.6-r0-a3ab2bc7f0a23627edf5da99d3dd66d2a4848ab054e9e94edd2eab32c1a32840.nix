@@ -21,7 +21,7 @@
       synopsis = "Structured editing Emacs mode for Haskell";
       description = "Structured editing Emacs mode for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "structured-haskell-mode" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."descriptive" or (errorHandler.buildDepError "descriptive"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Various categorizations of ASCII characters";
       description = "This package provides a variety of predicates\non the ASCII character set.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."ascii-char" or (errorHandler.buildDepError "ascii-char"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-ascii-predicates" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ascii-predicates" or (errorHandler.buildDepError "ascii-predicates"))
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Action Script Instrumentation Library";
       description = "A library for the analysis and instrumentation of ActionScript programs in Flash files.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,8 +41,8 @@
           (hsPkgs."uuagc" or (errorHandler.buildDepError "uuagc"))
           (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
           (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

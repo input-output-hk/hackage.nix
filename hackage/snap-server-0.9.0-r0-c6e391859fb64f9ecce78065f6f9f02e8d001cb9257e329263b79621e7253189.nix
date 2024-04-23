@@ -21,7 +21,7 @@
       synopsis = "A fast, iteratee-based, epoll-enabled web server for the Snap Framework";
       description = "Snap is a simple and fast web development framework and server written in\nHaskell. For more information or to download the latest version, you can\nvisit the Snap project website at <http://snapframework.com/>.\n\nThe Snap HTTP server is a high performance, epoll-enabled, iteratee-based web\nserver library written in Haskell. Together with the @snap-core@ library upon\nwhich it depends, it provides a clean and efficient Haskell programming\ninterface to the HTTP protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -52,8 +52,8 @@
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ] ++ (pkgs.lib).optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ (pkgs.lib).optional (flags.openssl) (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"));
+        ] ++ pkgs.lib.optional (!(flags.portable || system.isWindows)) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (flags.openssl) (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

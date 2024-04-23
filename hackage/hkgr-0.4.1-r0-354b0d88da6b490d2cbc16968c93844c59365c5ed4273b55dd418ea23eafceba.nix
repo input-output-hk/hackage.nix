@@ -21,7 +21,7 @@
       synopsis = "Simple Hackage release workflow for package maintainers";
       description = "Hkgr (Hackager) is a tool to help make new releases of\nHaskell packages, with commands for git tagging, pristine sdist,\nand uploading to Hackage.\nThere is also a command for creating a new local project.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hkgr" = {
@@ -35,9 +35,9 @@
             (hsPkgs."simple-cmd-args" or (errorHandler.buildDepError "simple-cmd-args"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

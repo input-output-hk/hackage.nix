@@ -21,16 +21,16 @@
       synopsis = "Neville Theta Functions and Jacobi Elliptic Functions";
       description = "Evaluation of the Neville theta functions and the Jacobi elliptic functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."jacobi-theta" or (errorHandler.buildDepError "jacobi-theta"))
           (hsPkgs."elliptic-integrals" or (errorHandler.buildDepError "elliptic-integrals"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."jacobi-elliptic" or (errorHandler.buildDepError "jacobi-elliptic"))
             (hsPkgs."elliptic-integrals" or (errorHandler.buildDepError "elliptic-integrals"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

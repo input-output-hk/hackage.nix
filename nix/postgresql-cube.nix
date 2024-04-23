@@ -6,8 +6,8 @@
         nix = import ../hackage/postgresql-cube-0.1.0.0-r0-9440b52462a76eafda790f48fcc50d212ceffbcf0c7e268b565738adea807fe3.nix;
         revNum = 0;
         sha256 = "9440b52462a76eafda790f48fcc50d212ceffbcf0c7e268b565738adea807fe3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

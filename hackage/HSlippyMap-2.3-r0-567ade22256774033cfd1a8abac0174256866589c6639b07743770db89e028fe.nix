@@ -21,11 +21,11 @@
       synopsis = "OpenStreetMap Slippy Map";
       description = "OpenStreetMap Slippy Map algorithm";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

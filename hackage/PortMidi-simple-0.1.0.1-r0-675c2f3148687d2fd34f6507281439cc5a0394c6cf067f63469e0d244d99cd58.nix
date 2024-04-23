@@ -21,24 +21,24 @@
       synopsis = "Simplified PortMidi wrapper";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."PortMidi" or (errorHandler.buildDepError "PortMidi"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "channel-reader" = {
           depends = [
             (hsPkgs."PortMidi" or (errorHandler.buildDepError "PortMidi"))
             (hsPkgs."PortMidi-simple" or (errorHandler.buildDepError "PortMidi-simple"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.executables then false else true;
-          };
         };
       };
-    }
+    };
+  }

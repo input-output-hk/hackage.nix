@@ -21,15 +21,15 @@
       synopsis = "A simple websever with an interact style API";
       description = "This web server promotes a Request to IO Response function\ninto a local web server. The user can decide how to interpret\nthe requests, and the library is intended for implementing Ajax APIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "test" = { buildable = false; }; };
       };
-    }
+      exes = { "test" = { buildable = false; }; };
+    };
+  }

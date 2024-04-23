@@ -21,7 +21,7 @@
       synopsis = "Find the repository from where a given repo was forked";
       description = "Find the repository from where a given repo was forked";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "infer-upstream" = {
@@ -33,9 +33,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

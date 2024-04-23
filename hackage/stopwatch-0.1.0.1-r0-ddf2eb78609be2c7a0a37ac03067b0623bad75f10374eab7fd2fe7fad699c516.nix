@@ -21,16 +21,16 @@
       synopsis = "A simple stopwatch utility";
       description = "A simple stopwatch utility";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."stopwatch" or (errorHandler.buildDepError "stopwatch"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

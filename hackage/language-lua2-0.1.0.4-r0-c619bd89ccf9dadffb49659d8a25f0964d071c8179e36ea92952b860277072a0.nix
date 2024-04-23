@@ -21,7 +21,7 @@
       synopsis = "Lua parser and pretty printer";
       description = "Lua parser and pretty printer";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "parse" = {
           depends = [
@@ -49,19 +49,19 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
             (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
-            ];
+          ];
           buildable = if !flags.exes then false else true;
-          };
+        };
         "lex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lexer-applicative" or (errorHandler.buildDepError "lexer-applicative"))
             (hsPkgs."language-lua2" or (errorHandler.buildDepError "language-lua2"))
             (hsPkgs."srcloc" or (errorHandler.buildDepError "srcloc"))
-            ];
+          ];
           buildable = if !flags.exes then false else true;
-          };
         };
+      };
       tests = {
         "language-lua2-test" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

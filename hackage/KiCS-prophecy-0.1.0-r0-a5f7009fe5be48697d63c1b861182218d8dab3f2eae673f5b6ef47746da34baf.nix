@@ -21,24 +21,24 @@
       synopsis = "a transformation used by the kics debugger ";
       description = "This package contains a transformation of the debugger\nfor the Curry to Haskell compiler \"kics\".";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."KiCS" or (errorHandler.buildDepError "KiCS"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prophecy" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."KiCS" or (errorHandler.buildDepError "KiCS"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/synthesizer-inference-0.2-r0-0584aa8f90fb7ab9fcdba2c29cc3e700296fb02e757bd340b4295c55cfd74c7c.nix;
         revNum = 0;
         sha256 = "0584aa8f90fb7ab9fcdba2c29cc3e700296fb02e757bd340b4295c55cfd74c7c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

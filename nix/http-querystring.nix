@@ -6,8 +6,8 @@
         nix = import ../hackage/http-querystring-1.0-r0-df139fc8c8fd022f141128ccda0b9b7c76b23cdcb0eedeff578c449dec8eb6ba.nix;
         revNum = 0;
         sha256 = "df139fc8c8fd022f141128ccda0b9b7c76b23cdcb0eedeff578c449dec8eb6ba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

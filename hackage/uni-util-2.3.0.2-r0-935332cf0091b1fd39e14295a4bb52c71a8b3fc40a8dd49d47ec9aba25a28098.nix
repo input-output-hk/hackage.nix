@@ -21,7 +21,7 @@
       synopsis = "Utilities for the uniform workbench";
       description = "This package contains various miscellaneous utilities used for the\nold HTk- und uDrawGraph bindings as well as for the MMiSS Workbench.\nThey are kept for compatibility reason and put on hackage to ease\ninstallation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -33,10 +33,10 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ] ++ (pkgs.lib).optional (flags.base4) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if flags.parsec1
+        ] ++ pkgs.lib.optional (flags.base4) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (if flags.parsec1
           then [ (hsPkgs."parsec1" or (errorHandler.buildDepError "parsec1")) ]
           else [ (hsPkgs."parsec" or (errorHandler.buildDepError "parsec")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

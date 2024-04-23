@@ -21,7 +21,7 @@
       synopsis = "Polysemy-time Interpreters for Chronos";
       description = "Please see the readme on Github at <https://github.com/tek/polysemy-time>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."chronos" or (errorHandler.buildDepError "chronos"))
           (hsPkgs."incipit-core" or (errorHandler.buildDepError "incipit-core"))
           (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "polysemy-chronos-unit" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."polysemy-test" or (errorHandler.buildDepError "polysemy-test"))
             (hsPkgs."polysemy-time" or (errorHandler.buildDepError "polysemy-time"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

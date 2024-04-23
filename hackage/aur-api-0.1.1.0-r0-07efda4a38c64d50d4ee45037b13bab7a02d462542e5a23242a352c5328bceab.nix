@@ -21,7 +21,7 @@
       synopsis = "ArchLinux AUR json v5 API";
       description = "Implements ArchLinux AUR json v5 API defined at:\n\nhttps://wiki.archlinux.org/index.php/AurJson\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

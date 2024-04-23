@@ -21,15 +21,15 @@
       synopsis = "Counted list";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."peano" or (errorHandler.buildDepError "peano"))
           (hsPkgs."natural-induction" or (errorHandler.buildDepError "natural-induction"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

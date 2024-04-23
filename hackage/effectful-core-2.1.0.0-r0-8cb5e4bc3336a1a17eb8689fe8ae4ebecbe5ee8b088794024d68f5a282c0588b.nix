@@ -21,7 +21,7 @@
       synopsis = "An easy to use, performant extensible effects library.";
       description = "An easy to use, performant extensible effects library with seamless\nintegration with the existing Haskell ecosystem.\n\nThis library provides core definitions with a minimal dependency\nfootprint. See the @<https://hackage.haskell.org/package/effectful effectful>@\npackage for the \"batteries-included\" variant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,14 +33,14 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "effectful-internal-utils" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

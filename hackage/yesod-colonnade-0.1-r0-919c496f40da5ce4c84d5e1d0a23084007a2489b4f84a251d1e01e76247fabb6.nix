@@ -21,7 +21,7 @@
       synopsis = "Helper functions for using yesod with colonnade";
       description = "Yesod and colonnade";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."colonnade" or (errorHandler.buildDepError "colonnade"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

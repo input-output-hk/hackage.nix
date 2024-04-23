@@ -21,7 +21,7 @@
       synopsis = "Haskell XMPP (Jabber Client) Command Line Interface (CLI)";
       description = "A simple command line interface to send and receive\nmessages via XMPP";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hxmppc" = {
@@ -33,9 +33,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-protocol-xmpp" or (errorHandler.buildDepError "network-protocol-xmpp"))
             (hsPkgs."fclabels" or (errorHandler.buildDepError "fclabels"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

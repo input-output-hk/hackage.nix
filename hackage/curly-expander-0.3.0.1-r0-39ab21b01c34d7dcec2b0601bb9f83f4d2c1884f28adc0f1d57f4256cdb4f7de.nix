@@ -21,16 +21,16 @@
       synopsis = "Curly braces (brackets) expanding";
       description = "A library for curly braces (brackets) expanding - similar to bash curly expanding. It also contain an extended version of it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "base-case-test" = {
           depends = [
@@ -38,36 +38,36 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."curly-expander" or (errorHandler.buildDepError "curly-expander"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "range-case-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."curly-expander" or (errorHandler.buildDepError "curly-expander"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "nested-case-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."curly-expander" or (errorHandler.buildDepError "curly-expander"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "custom-case-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."curly-expander" or (errorHandler.buildDepError "curly-expander"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

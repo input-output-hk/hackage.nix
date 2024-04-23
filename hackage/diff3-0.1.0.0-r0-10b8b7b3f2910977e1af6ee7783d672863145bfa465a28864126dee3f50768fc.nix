@@ -21,14 +21,14 @@
       synopsis = "Perform a 3-way difference of documents";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

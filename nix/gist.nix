@@ -6,8 +6,8 @@
         nix = import ../hackage/gist-0.1-r0-5e1d1d30bb802f99b8fea3b9de29a974ae479a5268b60f0eb99590905f101717.nix;
         revNum = 0;
         sha256 = "5e1d1d30bb802f99b8fea3b9de29a974ae479a5268b60f0eb99590905f101717";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

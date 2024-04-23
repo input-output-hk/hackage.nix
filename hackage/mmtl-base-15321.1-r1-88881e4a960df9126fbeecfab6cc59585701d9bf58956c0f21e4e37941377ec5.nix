@@ -21,14 +21,14 @@
       synopsis = "MonadBase type-class for mmtl";
       description = "Adaptation of Mikhail Vorozhtsov's and Bas van Dijk's transformers-base package to mmtl";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mmtl" or (errorHandler.buildDepError "mmtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

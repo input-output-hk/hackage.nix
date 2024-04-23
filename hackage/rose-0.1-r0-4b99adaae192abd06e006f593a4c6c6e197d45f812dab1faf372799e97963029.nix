@@ -21,7 +21,7 @@
       synopsis = "rose trees";
       description = "<https://en.wikipedia.org/wiki/Rose_tree Rose Trees> are trees with\nan unbounded number of branches per node. Each node contains a value\nand zero or more subtrees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
           (hsPkgs."indexed-traversable" or (errorHandler.buildDepError "indexed-traversable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "laws" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."rose" or (errorHandler.buildDepError "rose"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/columnar-1.0.0.0-r0-dda98c13822076cea9555a17f65b4f6780026c97e73d9d018792a84a56d32fe5.nix;
         revNum = 0;
         sha256 = "dda98c13822076cea9555a17f65b4f6780026c97e73d9d018792a84a56d32fe5";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

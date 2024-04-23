@@ -21,7 +21,7 @@
       synopsis = "Rudimentary JSON-RPC 2.0 client over raw TCP. ";
       description = "Rudimentary JSON-RPC 2.0 client over raw TCP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."conceit" or (errorHandler.buildDepError "conceit"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "JSaddle Hello World, an example package";
       description = "This is an implementation of the classic \"Hello World\" program using JSaddle,\nas an example of how to create a minimal JSaddle application.\nPlease submit any suggestions and improvements.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "jsaddle-hello" = {
@@ -30,9 +30,9 @@
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

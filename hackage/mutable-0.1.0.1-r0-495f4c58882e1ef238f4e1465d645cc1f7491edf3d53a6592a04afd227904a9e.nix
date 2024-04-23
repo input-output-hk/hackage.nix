@@ -21,7 +21,7 @@
       synopsis = "Automatic piecewise-mutable references for your types";
       description = "Associate and generate \"piecewise-mutable\" versions for your composite data\ntypes.  Think of it like a \"generalized MVector for all ADTs\".\n\nUseful for a situation where you have a record with many fields (or many nested\nrecords) that you want to use for efficient mutable in-place algorithms.  This\nlibrary lets you do efficient \"piecewise\" mutations (operations that only edit\none field), and also efficient entire-datatype copies/updates, as well, in many\ncases.\n\nSee <https://mutable.jle.im> for official introduction and documentation,\nor jump right in by importing \"Data.Mutable\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "mutable-bench" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

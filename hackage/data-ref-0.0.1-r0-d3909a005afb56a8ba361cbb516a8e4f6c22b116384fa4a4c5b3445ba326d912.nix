@@ -21,15 +21,15 @@
       synopsis = "Unify STRef and IORef in plain Haskell 98";
       description = "This package provides a unique interface to both STRef and IORef.\nThe advantage is that it is plain Haskell 98,\nthe disadvantage is that we cannot use STRef and IORef as they are.\n\nOur approach works with Haskell 98 single parameter type classes\nbecause we use an explicit dictionary,\nand we do not pass the references around but their accessors.\n\nSimilar packages: @reference@, @ref-mtl@, @ref-fd@, @ref-tf@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

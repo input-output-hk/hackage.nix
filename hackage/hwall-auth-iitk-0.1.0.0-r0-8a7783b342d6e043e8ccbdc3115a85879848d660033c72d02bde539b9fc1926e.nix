@@ -21,7 +21,7 @@
       synopsis = "Initial version of firewall Authentication for IITK network.";
       description = "Firewall Authentication script for IITK network in haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "firewall-auth" = {
@@ -34,9 +34,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

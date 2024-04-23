@@ -21,7 +21,7 @@
       synopsis = "A small, general-purpose programming language.";
       description = "An implementation of a small, weak and dynamically typed,\ninterpreted, functional programming language.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "angle" = {
           depends = [
@@ -48,13 +48,13 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "properties" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-properties)) [
+          depends = pkgs.lib.optionals (!!flags.test-properties) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."angle" or (errorHandler.buildDepError "angle"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
@@ -64,35 +64,35 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = if !flags.test-properties then false else true;
-          };
         };
+      };
       benchmarks = {
         "parsing" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."angle" or (errorHandler.buildDepError "angle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "scanning" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."angle" or (errorHandler.buildDepError "angle"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "operations" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."angle" or (errorHandler.buildDepError "angle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

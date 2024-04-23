@@ -21,7 +21,7 @@
       synopsis = "Working with Google's SyntaxNet output files - CoNLL, Tree";
       description = "Allows to parse SyntaxNet output files in CoNLL or Syntax Tree formats. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."haskell-conll" or (errorHandler.buildDepError "haskell-conll"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."haskell-conll" or (errorHandler.buildDepError "haskell-conll"))
             (hsPkgs."cassava" or (errorHandler.buildDepError "cassava"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

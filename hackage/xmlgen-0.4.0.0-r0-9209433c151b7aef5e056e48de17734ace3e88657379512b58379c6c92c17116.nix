@@ -21,7 +21,7 @@
       synopsis = "Fast XML generation library";
       description = "Library for high-performance XML generation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,25 +32,25 @@
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tests" = {
-          depends = (pkgs.lib).optionals (flags.tests) [
+          depends = pkgs.lib.optionals (flags.tests) [
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = if flags.tests then true else false;
-          };
+        };
         "benchmarks" = {
-          depends = (pkgs.lib).optional (flags.benchmarks) (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"));
+          depends = pkgs.lib.optional (flags.benchmarks) (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"));
           buildable = if flags.benchmarks then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hinze-streams-1.0-r0-d0c560224d20e3546a9ee4ee035be03ba3764ea4489c08533b677f40495c77a9.nix;
         revNum = 0;
         sha256 = "d0c560224d20e3546a9ee4ee035be03ba3764ea4489c08533b677f40495c77a9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

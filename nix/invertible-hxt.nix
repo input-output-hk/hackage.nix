@@ -6,8 +6,8 @@
         nix = import ../hackage/invertible-hxt-0.1-r0-8495092e94f6a7eebbdf980a8ccd3684f2078b02b2faf4b4822b1202ee42dae9.nix;
         revNum = 0;
         sha256 = "8495092e94f6a7eebbdf980a8ccd3684f2078b02b2faf4b4822b1202ee42dae9";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

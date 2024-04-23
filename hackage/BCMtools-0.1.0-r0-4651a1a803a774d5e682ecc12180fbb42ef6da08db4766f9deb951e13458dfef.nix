@@ -21,7 +21,7 @@
       synopsis = "Big Contact Map Tools";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."matrices" or (errorHandler.buildDepError "matrices"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bcmtools" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

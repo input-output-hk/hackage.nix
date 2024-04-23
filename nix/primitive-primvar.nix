@@ -6,8 +6,8 @@
         nix = import ../hackage/primitive-primvar-0.0.0.0-r0-e4d78774d90f404e9e99e1e10271106fbf17ca10ddcc57e3c1dc50941b8552fd.nix;
         revNum = 0;
         sha256 = "e4d78774d90f404e9e99e1e10271106fbf17ca10ddcc57e3c1dc50941b8552fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

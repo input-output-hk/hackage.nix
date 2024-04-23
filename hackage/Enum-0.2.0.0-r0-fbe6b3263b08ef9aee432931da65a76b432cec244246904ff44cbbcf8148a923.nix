@@ -21,12 +21,12 @@
       synopsis = "Non-crashing `Enum` operations";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -35,9 +35,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."Enum" or (errorHandler.buildDepError "Enum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

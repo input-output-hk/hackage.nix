@@ -21,7 +21,7 @@
       synopsis = "Generates a version of a module using InterleavableIO";
       description = "This program generates a version of a module that uses IO a functions, with\nMonadIO m => m a when the function returns IO, or InterleavableIO m => m a\nwhen an IO a function is passed as a callback.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "interleavableGen" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."haskell-src" or (errorHandler.buildDepError "haskell-src"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

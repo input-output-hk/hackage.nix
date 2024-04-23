@@ -21,7 +21,7 @@
       synopsis = "Configurable text rendering of trees.";
       description = "Configurable text rendering of trees.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

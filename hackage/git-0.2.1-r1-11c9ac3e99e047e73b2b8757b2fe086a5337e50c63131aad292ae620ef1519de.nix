@@ -21,7 +21,7 @@
       synopsis = "Git operations in haskell";
       description = "\nA Haskell implementation of git storage operations, allowing users\nto manipulate git repositories (read and write).\n\nThis implementation is fully interoperable with the main C implementation.\n\nThis is strictly only manipulating the git store (what's inside the .git directory),\nand doesn't do anything with the index or your working directory files.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."patience" or (errorHandler.buildDepError "patience"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."system-fileio" or (errorHandler.buildDepError "system-fileio"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-unit" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."git" or (errorHandler.buildDepError "git"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-repository" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
             (hsPkgs."bytedump" or (errorHandler.buildDepError "bytedump"))
             (hsPkgs."git" or (errorHandler.buildDepError "git"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

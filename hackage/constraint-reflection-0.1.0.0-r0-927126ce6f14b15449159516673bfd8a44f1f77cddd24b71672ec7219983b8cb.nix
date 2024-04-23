@@ -21,7 +21,7 @@
       synopsis = "Constraint reflection";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."category" or (errorHandler.buildDepError "category"))
           (hsPkgs."constraint" or (errorHandler.buildDepError "constraint"))
           (hsPkgs."reflection" or (errorHandler.buildDepError "reflection"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "An image loading and rendering library for sdl2 / sdl2-cairo";
       description = "An image loading and rendering library for sdl2 / sdl2-cairo";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."sdl2-cairo" or (errorHandler.buildDepError "sdl2-cairo"))
           (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "main" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."sdl2-cairo" or (errorHandler.buildDepError "sdl2-cairo"))
             (hsPkgs."cairo" or (errorHandler.buildDepError "cairo"))
             (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

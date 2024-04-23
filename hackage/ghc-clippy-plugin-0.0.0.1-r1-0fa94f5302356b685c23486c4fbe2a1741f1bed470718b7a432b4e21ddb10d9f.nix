@@ -21,7 +21,7 @@
       synopsis = "Override GHC error messages to the user's liking";
       description = "Please see the README on GitHub at <https://github.com/ArturGajowy/ghc-clippy-plugin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
           (hsPkgs."text-regex-replace" or (errorHandler.buildDepError "text-regex-replace"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

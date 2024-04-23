@@ -21,16 +21,16 @@
       synopsis = "A typeclass for user-facing output";
       description = "The 'Display' typeclass provides a solution for user-facing output that does not have to abide by the rules of the Show typeclass.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "book" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."literatex" or (errorHandler.buildDepError "literatex"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
-            ];
+          ];
           buildable = if !flags.book then false else true;
-          };
         };
+      };
       tests = {
         "text-display-test" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-display" or (errorHandler.buildDepError "text-display"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

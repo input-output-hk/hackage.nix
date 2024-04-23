@@ -21,7 +21,7 @@
       synopsis = "Remote Management Platform for Haskell Applications";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/haskell-admin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."haskell-admin-health" or (errorHandler.buildDepError "haskell-admin-health"))
           (hsPkgs."haskell-admin-managed-functions" or (errorHandler.buildDepError "haskell-admin-managed-functions"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

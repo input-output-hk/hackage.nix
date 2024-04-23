@@ -21,15 +21,15 @@
       synopsis = "Syntactic sugar improving 'assert' and 'error'";
       description = "This library contains syntactic sugar that makes it easier\nto write simple contracts with 'assert' and 'error'\nand report the values that violate contracts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

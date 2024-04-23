@@ -14,7 +14,7 @@
       bounds-checks = true;
       unsafe-checks = false;
       internal-checks = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "accelerate-llvm-ptx"; version = "1.0.0.0"; };
@@ -27,7 +27,7 @@
       synopsis = "Accelerate backend generating LLVM";
       description = "This library implements a backend for the /Accelerate/ language which\ngenerates LLVM-IR targeting CUDA capable GPUs. For further information,\nrefer to the main /Accelerate/ package:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optional (flags.nvvm) (hsPkgs."nvvm" or (errorHandler.buildDepError "nvvm"));
+        ] ++ pkgs.lib.optional (flags.nvvm) (hsPkgs."nvvm" or (errorHandler.buildDepError "nvvm"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

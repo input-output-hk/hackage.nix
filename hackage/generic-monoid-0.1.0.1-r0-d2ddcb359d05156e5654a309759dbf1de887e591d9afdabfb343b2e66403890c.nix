@@ -21,11 +21,11 @@
       synopsis = "Derive monoid instances for product types.";
       description = "Using GHC's generics, allow for deriving `Monoid` and `Semigroup` instances for your product types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

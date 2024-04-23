@@ -6,8 +6,8 @@
         nix = import ../hackage/twhs-0.1.0.3-r0-63578e5a6c5d8e9712617c45f85cbd65acdc0f632253acf6a715faa813622cbe.nix;
         revNum = 0;
         sha256 = "63578e5a6c5d8e9712617c45f85cbd65acdc0f632253acf6a715faa813622cbe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

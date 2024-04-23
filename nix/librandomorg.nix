@@ -6,8 +6,8 @@
         nix = import ../hackage/librandomorg-0.0.1.0-r0-bf6e38b774349df3df8fbd33d118d649aa9b3a1463f3072e3d4134420f32076d.nix;
         revNum = 0;
         sha256 = "bf6e38b774349df3df8fbd33d118d649aa9b3a1463f3072e3d4134420f32076d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "A command-line client for hpaste.org";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpasteit" = {
@@ -32,9 +32,9 @@
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

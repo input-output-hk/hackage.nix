@@ -21,30 +21,30 @@
       synopsis = "Utility functions for Coercible types";
       description = "Utility functions for Coercible types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "coercible-utils-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."coercible-utils" or (errorHandler.buildDepError "coercible-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "coercible-utils-benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."coercible-utils" or (errorHandler.buildDepError "coercible-utils"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

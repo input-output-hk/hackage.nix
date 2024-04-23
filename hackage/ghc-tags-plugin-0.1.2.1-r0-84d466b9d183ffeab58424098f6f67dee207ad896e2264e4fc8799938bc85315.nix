@@ -21,7 +21,7 @@
       synopsis = "A compiler plugin which generates tags file from GHC syntax tree.";
       description = "A compiler source plugin which takes parsed Haskell syntax tree and saves\ntags file to disk, leaving the parsed tree untouched.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "ghc-tags-library" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ghc-tags-tests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."ghc-tags-plugin".components.sublibs.ghc-tags-library or (errorHandler.buildDepError "ghc-tags-plugin:ghc-tags-library"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

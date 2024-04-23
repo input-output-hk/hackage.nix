@@ -21,7 +21,7 @@
       synopsis = "Resource-Aware Feldspar";
       description = "An implementation of the Feldspar EDSL with focus on\nresource-awareness.\n\nExamples can be found in the @examples/@ directory. The\nfiles named \"TutN_...\" can be studied as a tutorial (to be\nread in ascending order).\n\nFor more information, see the README:\n<https://github.com/Feldspar/raw-feldspar/blob/master/README.md>\n\nTo see which GHC versions RAW-Feldspar can be built with,\nconsult the Travis status page:\n<https://travis-ci.org/Feldspar/raw-feldspar>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."prelude-edsl" or (errorHandler.buildDepError "prelude-edsl"))
           (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.0" && (compiler.version).lt "8.1")) (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.0" && compiler.version.lt "8.1")) (hsPkgs."language-c-quote" or (errorHandler.buildDepError "language-c-quote"));
         buildable = true;
-        };
+      };
       tests = {
         "NumSimpl" = {
           depends = [
@@ -50,17 +50,17 @@
             (hsPkgs."syntactic" or (errorHandler.buildDepError "syntactic"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Compilation" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."raw-feldspar" or (errorHandler.buildDepError "raw-feldspar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Semantics" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -69,9 +69,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Examples" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -80,9 +80,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,25 +6,25 @@
         nix = import ../hackage/effectful-plugin-1.0.0.0-r0-0d1935dec73c17e1480f5656f369e55eb5dd63f6368c4909f473ef02270bf5d6.nix;
         revNum = 0;
         sha256 = "0d1935dec73c17e1480f5656f369e55eb5dd63f6368c4909f473ef02270bf5d6";
-        };
+      };
       r1 = {
         nix = import ../hackage/effectful-plugin-1.0.0.0-r1-a89bd449c417f139a1e92f9d96d22a5c042f8350ec668acf7356a3203165e820.nix;
         revNum = 1;
         sha256 = "a89bd449c417f139a1e92f9d96d22a5c042f8350ec668acf7356a3203165e820";
-        };
+      };
       r2 = {
         nix = import ../hackage/effectful-plugin-1.0.0.0-r2-7d1904a6b17f381cf086fc3527f49928734b3ac675e7c782f8aef908ab5682b5.nix;
         revNum = 2;
         sha256 = "7d1904a6b17f381cf086fc3527f49928734b3ac675e7c782f8aef908ab5682b5";
-        };
+      };
       r3 = {
         nix = import ../hackage/effectful-plugin-1.0.0.0-r3-c8144044d4533da578ecacb0678625a978c615876398aa323509df01b786f788.nix;
         revNum = 3;
         sha256 = "c8144044d4533da578ecacb0678625a978c615876398aa323509df01b786f788";
-        };
-      default = "r3";
       };
+      default = "r3";
     };
+  };
   "1.1.0.0" = {
     sha256 = "4a7571809487857f5ff9faabe16d2d109198b90d0079e0c465c87ed5221da68e";
     revisions = {
@@ -32,10 +32,10 @@
         nix = import ../hackage/effectful-plugin-1.1.0.0-r0-90e6eaacb083a65db297b5d30ff7f6a2ad391068dadad41aa37ff4d09f3540b6.nix;
         revNum = 0;
         sha256 = "90e6eaacb083a65db297b5d30ff7f6a2ad391068dadad41aa37ff4d09f3540b6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "1.1.0.1" = {
     sha256 = "c6ed425377a6988dfb373276d7853322e105d9a7bac433d98a3c39d8410a95b2";
     revisions = {
@@ -43,10 +43,10 @@
         nix = import ../hackage/effectful-plugin-1.1.0.1-r0-efbf31de4f6b35463488c96a55b7674b953a3126e1f073eea5697863b85a3273.nix;
         revNum = 0;
         sha256 = "efbf31de4f6b35463488c96a55b7674b953a3126e1f073eea5697863b85a3273";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "1.1.0.2" = {
     sha256 = "10ad56b53208d2c9be552f0ded06c815eba87fc1ecea2e85615a34a5066091bc";
     revisions = {
@@ -54,8 +54,8 @@
         nix = import ../hackage/effectful-plugin-1.1.0.2-r0-8b5d8b983dddb2b4968e1b2ba4b4c61da44d7d9bb3a92364fce4279c5724d864.nix;
         revNum = 0;
         sha256 = "8b5d8b983dddb2b4968e1b2ba4b4c61da44d7d9bb3a92364fce4279c5724d864";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

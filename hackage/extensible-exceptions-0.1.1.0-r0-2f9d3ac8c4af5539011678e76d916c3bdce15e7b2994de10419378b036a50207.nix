@@ -21,11 +21,11 @@
       synopsis = "Extensible exceptions";
       description = "This package provides extensible exceptions for both new and\nold versions of GHC (i.e., < 6.10).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

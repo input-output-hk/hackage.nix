@@ -14,7 +14,7 @@
       identifier = {
         name = "hls-haddock-comments-plugin";
         version = "1.1.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "berberman@yandex.com";
@@ -24,7 +24,7 @@
       synopsis = "Haddock comments plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,11 +38,11 @@
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).ge "9.2"
+        ];
+        buildable = if compiler.isGhc && compiler.version.ge "9.2"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,11 +51,11 @@
             (hsPkgs."hls-haddock-comments-plugin" or (errorHandler.buildDepError "hls-haddock-comments-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).ge "9.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.ge "9.2"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

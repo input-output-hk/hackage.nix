@@ -25,8 +25,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cli-setup or (pkgs.buildPackages.cli-setup or (errorHandler.setupDepError "cli-setup")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -56,17 +56,17 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."dependency" or (errorHandler.buildDepError "dependency"))
           (hsPkgs."ats-setup" or (errorHandler.buildDepError "ats-setup"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "atspkg" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ats-pkg" or (errorHandler.buildDepError "ats-pkg"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

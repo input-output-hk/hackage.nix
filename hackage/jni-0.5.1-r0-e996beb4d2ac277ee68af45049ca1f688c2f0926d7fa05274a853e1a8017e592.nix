@@ -21,7 +21,7 @@
       synopsis = "Complete JNI raw bindings.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,14 +32,12 @@
           (hsPkgs."constraints" or (errorHandler.buildDepError "constraints"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ] ++ [
-          (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c"))
-          ];
+        ] ++ [ (hsPkgs."inline-c" or (errorHandler.buildDepError "inline-c")) ];
         libs = [ (pkgs."jvm" or (errorHandler.sysDepError "jvm")) ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

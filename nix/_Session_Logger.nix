@@ -6,8 +6,8 @@
         nix = import ../hackage/SessionLogger-0.3.0.0-r0-ff4568c72ebcbd0dd25f1ed656c49817c79f36fba8f9c20cbca523f79b13801f.nix;
         revNum = 0;
         sha256 = "ff4568c72ebcbd0dd25f1ed656c49817c79f36fba8f9c20cbca523f79b13801f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

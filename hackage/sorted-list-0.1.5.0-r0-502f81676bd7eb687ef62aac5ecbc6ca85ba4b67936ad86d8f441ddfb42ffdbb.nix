@@ -21,24 +21,24 @@
       synopsis = "Type-enforced sorted lists and related functions.";
       description = "Type-enforced sorted lists and related functions.\n\nFeel free to try this library, but take in account\nthat it's still in development, so it might lack\nsome features. If you need them, do not hesitate\nto ask by opening an issue at the bug-tracker.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       benchmarks = {
         "sorted-list-map-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sorted-list" or (errorHandler.buildDepError "sorted-list"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Read standard input and prepend each line with a timestamp";
       description = "Read standard input and prepend each line with a timestamp";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "timestamper" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "path alternatives to shake functions";
       description = "path alternatives to shake functions";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "A list but with a balanced enumeration of Cartesian product.";
       description = "A list but with a balanced enumeration of Cartesian product.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

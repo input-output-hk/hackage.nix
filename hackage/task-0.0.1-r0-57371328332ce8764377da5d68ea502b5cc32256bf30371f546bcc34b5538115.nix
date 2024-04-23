@@ -21,7 +21,7 @@
       synopsis = "A command line tool for keeping track of tasks you worked on";
       description = "'task' is a simple command line tool for keeping track of\ntasks you are working on. Tasks are kept in a simple\npersistent store. Each task can be tagged with arbitrary\nkey/value pairs and the results can be exported to CSV files\nfiltered on said key/value pairs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "task" = {
@@ -39,9 +39,9 @@
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."csv-enumerator" or (errorHandler.buildDepError "csv-enumerator"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

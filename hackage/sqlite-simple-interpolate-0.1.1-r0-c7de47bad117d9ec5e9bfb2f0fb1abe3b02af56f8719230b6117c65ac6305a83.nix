@@ -21,7 +21,7 @@
       synopsis = "Interpolated SQLite queries via quasiquotation";
       description = "This package provides Quasiquoters for writing SQLite queries with inline interpolation of values.\nThe values are interpolated using toField from sqlite-simple.\nSee the README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sqlite-simple-interpolate-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."sqlite-simple-interpolate" or (errorHandler.buildDepError "sqlite-simple-interpolate"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

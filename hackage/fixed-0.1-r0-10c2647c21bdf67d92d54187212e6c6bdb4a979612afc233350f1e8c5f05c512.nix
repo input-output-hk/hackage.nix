@@ -21,11 +21,11 @@
       synopsis = "Signed 15.16 precision fixed point arithmetic";
       description = "Signed 15.16 precision fixed point arithmetic";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

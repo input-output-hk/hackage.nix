@@ -21,7 +21,7 @@
       synopsis = "Plivo API wrapper for Haskell";
       description = "This package provides types representing requests to Plivo API endpoints\nand a function that calls the endpoints correctly, given the request.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
           (hsPkgs."unexceptionalio" or (errorHandler.buildDepError "unexceptionalio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

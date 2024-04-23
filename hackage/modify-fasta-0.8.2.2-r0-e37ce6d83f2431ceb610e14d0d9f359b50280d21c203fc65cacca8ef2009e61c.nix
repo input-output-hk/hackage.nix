@@ -21,7 +21,7 @@
       synopsis = "Modify fasta (and CLIP) files in several optional ways";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."regex-tdfa-text" or (errorHandler.buildDepError "regex-tdfa-text"))
           (hsPkgs."fasta" or (errorHandler.buildDepError "fasta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "modify-fasta" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

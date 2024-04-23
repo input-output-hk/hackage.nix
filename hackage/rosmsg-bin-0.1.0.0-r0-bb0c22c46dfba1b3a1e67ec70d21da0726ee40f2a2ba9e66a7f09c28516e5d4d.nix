@@ -21,7 +21,7 @@
       synopsis = "ROS message management tools";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rosmsg" = {
@@ -30,9 +30,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."rospkg" or (errorHandler.buildDepError "rospkg"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "genhs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -43,9 +43,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

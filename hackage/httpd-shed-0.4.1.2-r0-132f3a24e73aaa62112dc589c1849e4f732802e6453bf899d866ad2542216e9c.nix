@@ -21,26 +21,26 @@
       synopsis = "A simple web-server with an interact style API";
       description = "This web server promotes a Request to IO Response function\ninto a local web server. The user can decide how to interpret\nthe requests, and the library is intended for implementing Ajax APIs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ]) ++ (if flags.network-bsd
+        ]) ++ (if flags.network-bsd
           then [
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]
+          ]
           else [
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       exes = {
         "httpd-shed-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."network-bsd" or (errorHandler.buildDepError "network-bsd"))
-            ];
+          ];
           buildable = if !flags.buildexamples then false else true;
-          };
         };
       };
-    }
+    };
+  }

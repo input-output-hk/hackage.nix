@@ -21,7 +21,7 @@
       synopsis = "Utilities to split reflex app to authorized and not authorized contexts";
       description = "See README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reflex" or (errorHandler.buildDepError "reflex"))
           (hsPkgs."reflex-external-ref" or (errorHandler.buildDepError "reflex-external-ref"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reflex-monad-auth-example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."reflex-dom" or (errorHandler.buildDepError "reflex-dom"))
             (hsPkgs."reflex-monad-auth" or (errorHandler.buildDepError "reflex-monad-auth"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

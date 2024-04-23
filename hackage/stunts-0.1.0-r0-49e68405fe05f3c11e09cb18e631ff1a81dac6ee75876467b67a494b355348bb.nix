@@ -21,7 +21,7 @@
       synopsis = "A revival of the classic game Stunts (LambdaCube tech demo)";
       description = "A revival of the classic racing game Stunts to serve as a\nnon-toy-sized example for LambdaCube. In order to make it work, you\nneed to download the original game as per the instructions given by\nthe program.\n\nThe program contains screenshotting functionality that allows you to\ncapture frames as separate PNG files to produce movies with a smooth\nframe rate. To enable, install with the @capture@ flag:\n\n@cabal install --flags=capture@\n\nIt is also possible to compile a version of the program that looks\nfor the resource files in the current directory by enabling the\n@portable@ flag.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "stunts" = {
@@ -39,9 +39,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ] ++ (pkgs.lib).optional (flags.capture) (hsPkgs."Codec-Image-DevIL" or (errorHandler.buildDepError "Codec-Image-DevIL"));
+          ] ++ pkgs.lib.optional (flags.capture) (hsPkgs."Codec-Image-DevIL" or (errorHandler.buildDepError "Codec-Image-DevIL"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

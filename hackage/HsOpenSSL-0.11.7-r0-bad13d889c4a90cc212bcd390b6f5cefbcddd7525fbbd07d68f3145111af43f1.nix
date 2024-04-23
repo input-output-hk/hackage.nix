@@ -13,7 +13,7 @@
       homebrew-openssl = false;
       macports-openssl = false;
       use-pkg-config = false;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "HsOpenSSL"; version = "0.11.7"; };
@@ -29,8 +29,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -38,52 +38,52 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (pkgs.lib).optional (flags.fast-bignum && (compiler.isGhc && (compiler.version).ge "7.10.1")) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
-        libs = (pkgs.lib).optionals (!flags.use-pkg-config) [
+        ] ++ pkgs.lib.optional (flags.fast-bignum && (compiler.isGhc && compiler.version.ge "7.10.1")) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
+        libs = pkgs.lib.optionals (!flags.use-pkg-config) [
           (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
           (pkgs."crypto" or (errorHandler.sysDepError "crypto"))
-          ];
-        pkgconfig = (pkgs.lib).optionals (flags.use-pkg-config) [
+        ];
+        pkgconfig = pkgs.lib.optionals (flags.use-pkg-config) [
           (pkgconfPkgs."libssl" or (errorHandler.pkgConfDepError "libssl"))
           (pkgconfPkgs."libcrypto" or (errorHandler.pkgConfDepError "libcrypto"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-dsa" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-der" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-evp-base64" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-evp-digest" = {
           depends = [
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

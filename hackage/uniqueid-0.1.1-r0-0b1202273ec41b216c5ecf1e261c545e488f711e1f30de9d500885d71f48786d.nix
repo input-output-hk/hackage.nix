@@ -21,11 +21,11 @@
       synopsis = "Splittable Unique Identifier Supply";
       description = "This package provides splittable supplies of unique\nidentifiers. The implementation mimics (only) essential\nparts of the code that is used internally in GHC for\nthe same purpose. After improvements of the value-supply\npackage it is now deprecated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/openal-ffi-0.0.1-r0-b8af0f6baf4c1fddec6ce84d0dd90f011a6a0999697a0890ad3412a3eb986658.nix;
         revNum = 0;
         sha256 = "b8af0f6baf4c1fddec6ce84d0dd90f011a6a0999697a0890ad3412a3eb986658";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

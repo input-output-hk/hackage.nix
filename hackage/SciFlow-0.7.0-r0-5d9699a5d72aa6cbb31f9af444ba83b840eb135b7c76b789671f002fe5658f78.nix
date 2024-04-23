@@ -21,7 +21,7 @@
       synopsis = "Scientific workflow management system";
       description = "SciFlow is a DSL for building type-safe computational workflows.\nSciFlow supports distributed computing through Cloud Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,8 +48,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."th-lift-instances" or (errorHandler.buildDepError "th-lift-instances"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

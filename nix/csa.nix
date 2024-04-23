@@ -6,8 +6,8 @@
         nix = import ../hackage/csa-0.1.0-r0-8fbf86a4ad584847ba4eb9efd93b6a4e4eb6f5a6c3cdda238182ca1a336d6344.nix;
         revNum = 0;
         sha256 = "8fbf86a4ad584847ba4eb9efd93b6a4e4eb6f5a6c3cdda238182ca1a336d6344";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

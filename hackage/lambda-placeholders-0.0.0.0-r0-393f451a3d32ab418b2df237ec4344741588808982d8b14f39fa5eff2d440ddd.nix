@@ -21,11 +21,11 @@
       synopsis = "A library to emulate laceholders similar to Scala.";
       description = "A description of the workings of placeholders in Scala can be found here: <http://www.artima.com/pins1ed/functions-and-closures.html#8.5>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

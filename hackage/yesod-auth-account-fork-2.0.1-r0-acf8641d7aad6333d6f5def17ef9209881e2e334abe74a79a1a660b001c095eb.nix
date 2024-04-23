@@ -21,7 +21,7 @@
       synopsis = "An account authentication plugin for Yesod";
       description = "An auth plugin for accounts. Each account consists of a\nusername, email, and password.  The plugin provides new\naccount, email verification, and password reset pages that can\nbe customized to enhance the user experience.\n\nThis is a fork of the @yesod-auth-account@ package with the\nfollowing additions:\n\n* Login using either username or e-mail.\n\n* JSON support for single page applications.\n\nWe'd like to merge these changes back upstream but its\nmaintainer has been unresponsive.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
           (hsPkgs."yesod-form" or (errorHandler.buildDepError "yesod-form"))
           (hsPkgs."yesod-persistent" or (errorHandler.buildDepError "yesod-persistent"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-account" or (errorHandler.buildDepError "yesod-auth-account"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

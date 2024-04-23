@@ -21,11 +21,11 @@
       synopsis = "convert types into string values in haskell";
       description = "Convert types into string values in Haskell.\n\nMore information can be found in the <http://hackage.haskell.org/package/show-type hackage's haddock> or the <http://kinokkory.github.io/show-type/ updated haddock>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

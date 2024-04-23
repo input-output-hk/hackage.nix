@@ -21,11 +21,11 @@
       synopsis = "Simple idea SQL keywords data constructor into OverloadedString";
       description = "This package contiains SQL keywords constructors defined as\nOverloadedString literals and helper functions to concate these.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

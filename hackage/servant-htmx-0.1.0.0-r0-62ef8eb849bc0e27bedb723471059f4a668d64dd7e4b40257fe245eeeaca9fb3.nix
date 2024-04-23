@@ -21,7 +21,7 @@
       synopsis = "A library for using htmx with servant";
       description = "Please see the README on GitHub at <https://github.com/githubuser/servant-htmx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "servant-htmx-exe" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."servant-htmx" or (errorHandler.buildDepError "servant-htmx"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "servant-htmx-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."servant-htmx" or (errorHandler.buildDepError "servant-htmx"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

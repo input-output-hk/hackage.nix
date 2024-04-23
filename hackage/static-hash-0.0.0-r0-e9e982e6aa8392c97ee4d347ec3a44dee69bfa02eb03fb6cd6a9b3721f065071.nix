@@ -21,7 +21,7 @@
       synopsis = "Immutable hash";
       description = "Pure immutable hash whose lookup is O(1)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."primes" or (errorHandler.buildDepError "primes"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

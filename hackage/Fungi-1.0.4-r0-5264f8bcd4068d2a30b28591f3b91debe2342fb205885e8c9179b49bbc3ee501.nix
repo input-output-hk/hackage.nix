@@ -21,7 +21,7 @@
       synopsis = "An interpreter for Funge-98 programming languages, including Befunge.";
       description = "Fungi is a standards compliant Funge-98 interpreter equipped with an integrated debugger.\nSupports funges of arbitrary dimensions, including Unefunge, Befunge, and Trefunge.\nAllows limited control of funge cell size.\nSeveral fingerprints are implemented.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fungi" = {
@@ -39,9 +39,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."tuple" or (errorHandler.buildDepError "tuple"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

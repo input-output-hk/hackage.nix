@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.file-embed or (pkgs.buildPackages.file-embed or (errorHandler.setupDepError "file-embed")))
         (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
         (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.setupDepError "template-haskell")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -42,40 +42,40 @@
           (hsPkgs."executable-path" or (errorHandler.buildDepError "executable-path"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "inject-executable-hash" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-compute" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-inject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test-no-inject" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."executable-hash" or (errorHandler.buildDepError "executable-hash"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

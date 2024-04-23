@@ -21,7 +21,7 @@
       synopsis = "Type-safe bindings to EsounD (ESD; Enlightened Sound Daemon)";
       description = "Type-safe bindings to EsounD: <http://www.tux.org/~ricdude/EsounD.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,13 +35,13 @@
           (hsPkgs."storablevector" or (errorHandler.buildDepError "storablevector"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hs-esd-player-example" = {
           buildable = if flags.build-examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

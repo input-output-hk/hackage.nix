@@ -6,8 +6,8 @@
         nix = import ../hackage/yices-easy-0.1-r0-84e81aea4cebd243de3d60d655d5236abc1fa85e4d3d92ddb2ba581da268e665.nix;
         revNum = 0;
         sha256 = "84e81aea4cebd243de3d60d655d5236abc1fa85e4d3d92ddb2ba581da268e665";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

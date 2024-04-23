@@ -6,8 +6,8 @@
         nix = import ../hackage/iexcloud-0.0.0.1-r0-e45e04528be3801d458058a11b039e9cc8359451afe0f092c5784f707d1f1df8.nix;
         revNum = 0;
         sha256 = "e45e04528be3801d458058a11b039e9cc8359451afe0f092c5784f707d1f1df8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

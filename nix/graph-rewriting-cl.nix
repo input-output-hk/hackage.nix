@@ -6,8 +6,8 @@
         nix = import ../hackage/graph-rewriting-cl-0.2.2-r0-f4d98299ed3a32c5a4147c7fff78c45cc1f2e68f9d027ed3c05bc4ff2c5da47e.nix;
         revNum = 0;
         sha256 = "f4d98299ed3a32c5a4147c7fff78c45cc1f2e68f9d027ed3c05bc4ff2c5da47e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

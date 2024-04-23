@@ -21,7 +21,7 @@
       synopsis = "ASN.1 types";
       description = "ASN.1 standard types";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

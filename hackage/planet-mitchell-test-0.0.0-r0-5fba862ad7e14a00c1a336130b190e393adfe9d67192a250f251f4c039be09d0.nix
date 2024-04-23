@@ -21,7 +21,7 @@
       synopsis = "Planet Mitchell";
       description = "Companion package of <https://hackage.haskell.org/package/planet-mitchell planet-mitchell>,\nfor testing and benchmarking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
           (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
           (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Types for geodetic operations";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nGeodetic types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."dimensional" or (errorHandler.buildDepError "dimensional"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

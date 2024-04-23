@@ -21,7 +21,7 @@
       synopsis = "API for creating grafana dashboards represented as json";
       description = "'grafana' provides datatypes that correspond to components of\ngrafana dashboards, and combinators for constructing dashboards.\nIt should be suitable for a UI that allows users to construct\ngrafana dashboards.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unit" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."grafana" or (errorHandler.buildDepError "grafana"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "RNA folding training data";
       description = "Parameter training for RNA secondary structure prediction tools\nrequires data to train on. Since there are a number of\ndifferent available formats, and handling them all in the\ntraining tools is a pain, we have this library and programs.\n\"MkTrainingData\" transforms different formats and they all\nproduce a common \"training data\" format. This format is\nHaskell-readable (and only partially human-readable)\nline-by-line. Generating additional training data is therefor\neasy as one can just \"cat\" together different training files.\n\nNote that several features are designed around /extended/ RNA\nsecondary structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,16 +31,16 @@
           (hsPkgs."BiobaseDotP" or (errorHandler.buildDepError "BiobaseDotP"))
           (hsPkgs."BiobaseFR3D" or (errorHandler.buildDepError "BiobaseFR3D"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "MkTrainingData" = {
           depends = [
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

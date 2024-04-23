@@ -21,7 +21,7 @@
       synopsis = "Haskell 98 comonad transformers";
       description = "Haskell 98 comonad transformers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && true) (hsPkgs."syb-extras" or (errorHandler.buildDepError "syb-extras"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs."syb-extras" or (errorHandler.buildDepError "syb-extras"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

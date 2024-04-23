@@ -21,14 +21,14 @@
       synopsis = "Control flow data type and monad transformer.";
       description = "Control flow abstraction for short-circuiting on success and failure\nas well as continuing with a value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

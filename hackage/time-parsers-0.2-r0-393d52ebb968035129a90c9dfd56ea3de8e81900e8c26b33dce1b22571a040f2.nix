@@ -21,7 +21,7 @@
       synopsis = "Parsers for types in `time`.";
       description = "Parsers for types in `time` using 'parser' library.\n\nOriginally forked from aeson parsers.\n\nSee also <http://hackage.haskell.org/package/attoparsec-iso8601 attoparsec-iso-8601> package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "date-parsers-tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."time-parsers" or (errorHandler.buildDepError "time-parsers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

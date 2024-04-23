@@ -6,8 +6,8 @@
         nix = import ../hackage/yesod-routes-typescript-0.3.0.0-r0-6930c4aa755f9a0a3f02009915e1a767baeaab7e5b87e073943f3b0a5f429de1.nix;
         revNum = 0;
         sha256 = "6930c4aa755f9a0a3f02009915e1a767baeaab7e5b87e073943f3b0a5f429de1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Reading and Writing ipe7 files.";
       description = "Reading and Writing ipe7 files and converting them to and from HGeometry types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,16 +55,16 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (if compiler.isGhc && ((compiler.version).ge "9" && (compiler.version).lt "10")
+        ] ++ (if compiler.isGhc && (compiler.version.ge "9" && compiler.version.lt "10")
           then [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
             (hsPkgs."singletons-th" or (errorHandler.buildDepError "singletons-th"))
-            ]
+          ]
           else [
             (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -90,19 +90,19 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
-            ] ++ (if compiler.isGhc && ((compiler.version).ge "9" && (compiler.version).lt "10")
+          ] ++ (if compiler.isGhc && (compiler.version.ge "9" && compiler.version.lt "10")
             then [
               (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
               (hsPkgs."singletons-th" or (errorHandler.buildDepError "singletons-th"))
-              ]
+            ]
             else [
               (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-              ]);
+            ]);
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

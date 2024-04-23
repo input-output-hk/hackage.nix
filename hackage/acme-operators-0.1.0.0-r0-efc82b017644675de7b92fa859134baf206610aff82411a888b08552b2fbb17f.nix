@@ -21,11 +21,11 @@
       synopsis = "Operators of base, all in one place!";
       description = "Have you ever been wondering about some magic lookin operator. Here are all operators in base package. Not so many.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Combine Elm with Haskell for data based applications";
       description = "Generate your basic elm types based on Haskell data";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,17 +31,17 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "elm-hybrid-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elm-hybrid" or (errorHandler.buildDepError "elm-hybrid"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

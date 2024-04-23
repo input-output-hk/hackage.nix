@@ -21,7 +21,7 @@
       synopsis = "Medium level, simplified, bindings to libsvm";
       description = "This is a set of simplified bindings to libsvm <http://www.csie.ntu.edu.tw/~cjlin/libsvm/> suite\nof support vector machines. This package provides tools for classification, one-class classification\nand support vector regression.\n\n\nChanges in version 0.2.5\n\n* Crossvalidation for the high level interface\n\nChanges in version 0.2.2\n\n* Rather ugly binary instances\n* Exporting SVM types\n\nChanges in version 0.2.1\n\n* Added operations for saving and loading SVMs to the 'Simple'-interface.\n\nChanges in version 0.2.0\n\n* Moved the low level stuff into AI.SVM.Base\n\nChanges in version 0.1\n\n* Initial version\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

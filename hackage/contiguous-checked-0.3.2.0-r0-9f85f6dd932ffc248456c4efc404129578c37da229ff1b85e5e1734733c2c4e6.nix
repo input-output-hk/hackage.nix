@@ -21,15 +21,15 @@
       synopsis = "contiguous with bounds checks";
       description = "A drop-in replacement for `contiguous` where all the functions\nchecks bounds at runtime. This is less efficient but gives\nhelpful error messages instead of segfaulting. It is intended\nto be used when testing software.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

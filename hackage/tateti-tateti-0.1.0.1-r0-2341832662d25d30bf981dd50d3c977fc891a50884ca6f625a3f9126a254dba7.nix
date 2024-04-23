@@ -21,7 +21,7 @@
       synopsis = "Meta tic-tac-toe ncurses game.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tateti-tateti" = {
@@ -32,9 +32,9 @@
             (hsPkgs."lens-simple" or (errorHandler.buildDepError "lens-simple"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

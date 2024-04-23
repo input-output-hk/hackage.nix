@@ -21,15 +21,15 @@
       synopsis = "Memoized random number generation";
       description = "A library for generating random numbers in a memoized manner. Implemented as\na lazy table indexed by serialized 'StdGen'. Monomorphism is used to\nfacilitate memoization, users should adapt their design to work with random\n'Int' values only.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       identifier = {
         name = "hls-change-type-signature-plugin";
         version = "1.1.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "nicksuchecki@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Change a declarations type signature with a Code Action";
       description = "Please see the README on GitHub at <https://github.com/haskell/plugins/hls-change-type-signature-plugin/README.md>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

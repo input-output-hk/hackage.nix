@@ -21,7 +21,7 @@
       synopsis = "Interface for Online Encyclopedia of Integer Sequences (OEIS).";
       description = "Release notes are here https://github.com/23prime/oeis2/releases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "oeis2-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."oeis2" or (errorHandler.buildDepError "oeis2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

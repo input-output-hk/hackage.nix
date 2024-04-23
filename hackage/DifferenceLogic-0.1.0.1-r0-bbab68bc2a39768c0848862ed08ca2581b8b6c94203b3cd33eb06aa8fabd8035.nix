@@ -21,7 +21,7 @@
       synopsis = "A theory solver for conjunctions of literals in difference logic";
       description = "This package contains a theory solver for conjunctions of literals\nin difference logic. The logic supports predicates:\n>\n<\n>=\n<=\n=\nIt does not currently support disequality";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Password strength estimation based on zxcvbn.";
       description = "Please see the README below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zxcvbn-tools" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
             (hsPkgs."pipes-text" or (errorHandler.buildDepError "pipes-text"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = if !flags.tools then false else true;
-          };
+        };
         "zxcvbn-example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -86,10 +86,10 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -112,10 +112,10 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -135,9 +135,9 @@
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

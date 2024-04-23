@@ -6,8 +6,8 @@
         nix = import ../hackage/javascript-bridge-0.2.0-r0-851bf3abef5b7ee66dc2019d818288d9ea4dbeb8bc90de92eca75d08a5db6eec.nix;
         revNum = 0;
         sha256 = "851bf3abef5b7ee66dc2019d818288d9ea4dbeb8bc90de92eca75d08a5db6eec";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

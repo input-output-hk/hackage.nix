@@ -21,14 +21,14 @@
       synopsis = "Friendly helpers for your recursion schemes.";
       description = "A library to assist with manipulating and modifying\ntypes defined by fixpoints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

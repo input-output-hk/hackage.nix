@@ -21,7 +21,7 @@
       synopsis = "Streaming compression/decompression via pipes.";
       description = "Streaming compression/decompression via pipes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,10 +32,10 @@
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
+        ];
+        libs = pkgs.lib.optional (!system.isWindows) (pkgs."bz2" or (errorHandler.sysDepError "bz2"));
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -51,18 +51,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pipes-bzip" or (errorHandler.buildDepError "pipes-bzip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

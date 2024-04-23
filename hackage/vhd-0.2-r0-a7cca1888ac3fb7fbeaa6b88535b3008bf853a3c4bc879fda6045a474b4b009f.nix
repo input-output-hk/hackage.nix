@@ -21,7 +21,7 @@
       synopsis = "Provides functions to inspect and manipulate virtual hard disk (VHD) files.";
       description = "Provides functions to inspect and manipulate virtual hard disk (VHD) files, according to the VHD specification (version 1.0).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,24 +34,24 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."storable-endian" or (errorHandler.buildDepError "storable-endian"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "Tests" = {
-          depends = (pkgs.lib).optionals (flags.test) [
+          depends = pkgs.lib.optionals (flags.test) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = if flags.test then true else false;
-          };
+        };
         "vhd" = {
-          depends = (pkgs.lib).optional (flags.executable) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          depends = pkgs.lib.optional (flags.executable) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = if flags.executable then true else false;
-          };
         };
       };
-    }
+    };
+  }

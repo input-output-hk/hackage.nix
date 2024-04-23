@@ -21,24 +21,24 @@
       synopsis = "Bindings against the wlc library";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."wlc" or (errorHandler.sysDepError "wlc")) ];
         buildable = true;
-        };
+      };
       tests = {
         "bindings-wlc-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bindings-wlc" or (errorHandler.buildDepError "bindings-wlc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

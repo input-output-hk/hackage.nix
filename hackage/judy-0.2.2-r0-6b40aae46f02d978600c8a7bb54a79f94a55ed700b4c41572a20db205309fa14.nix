@@ -21,16 +21,16 @@
       synopsis = "Fast, scalable, mutable dynamic arrays, maps and hashes";
       description = "Fast, scalable, mutable dynamic arrays, maps and hashes";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."Judy" or (errorHandler.sysDepError "Judy")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

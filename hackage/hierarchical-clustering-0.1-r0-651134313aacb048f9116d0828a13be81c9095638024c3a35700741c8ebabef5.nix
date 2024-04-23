@@ -21,15 +21,15 @@
       synopsis = "Algorithms for single, average/UPGMA and complete linkage clustering.";
       description = "This package provides a function to create a dendrogram from a\nlist of items and a distance function between them.  Initially\na singleton cluster is created for each item, and then new,\nbigger clusters are created by merging the two clusters with\nleast distance between them.  The distance between two clusters\nis calculated according to the linkage type.  The dendrogram\nrepresents not only the clusters but also the order on which\nthey were created.\n\nThis function uses a naïve algorithm that represents distances\nin a rectangular distance matrix.  There could be space\nimprovements (e.g. using a triangular matrix structure) and\ntime improvements (e.g. using a finger tree to avoid traversing\nthe whole matrix on every iteration just to see what the\nminimum is).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

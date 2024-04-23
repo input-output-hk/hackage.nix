@@ -21,11 +21,11 @@
       synopsis = "A don't construct";
       description = "The Acme.Dont module provides a don't command, which is the\nopposite of Haskell's built-in do.  It is used exactly like the do\nmonadic construct except that, instead of executing the block it\ncontrols, it... well... doesn't.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

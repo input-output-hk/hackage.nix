@@ -21,14 +21,14 @@
       synopsis = "Sequential index numbers between 0.0 and 1.0 that allow arbitrarily inserting new numbers in between (for special containers).";
       description = "Sequential index numbers between 0.0 and 1.0 that allow arbitrarily inserting new numbers in between. They can possibly used for disk-based and other special containers, where adding a new element without changing the indexes of the other elements is important.\nConceptually, SequentialIndex denotes a path to an element in an imaginary binary tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

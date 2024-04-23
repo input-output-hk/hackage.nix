@@ -21,7 +21,7 @@
       synopsis = "Instances of classes from [openapi3](https://hackage.haskell.org/package/openapi3) for [servant-queryparam-server](https://hackage.haskell.org/package/servant-queryparam-server).";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

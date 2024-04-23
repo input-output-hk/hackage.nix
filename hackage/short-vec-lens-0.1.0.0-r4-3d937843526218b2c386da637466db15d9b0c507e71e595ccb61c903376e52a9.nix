@@ -21,7 +21,7 @@
       synopsis = "Lenses and related functionality for the `short-vec` package.";
       description = "This provides various 'Lens'es, 'Iso's, etc. for 'Vec's, including slicing,\nreshaping, transposition, concatenation, and more.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."short-vec" or (errorHandler.buildDepError "short-vec"))
           (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

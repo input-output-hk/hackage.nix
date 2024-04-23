@@ -21,7 +21,7 @@
       synopsis = "Rose trees with cached and accumulating monoidal annotations";
       description = "Rose (n-ary) trees with both upwards- (/i.e./\ncached) and downwards-traveling (/i.e./\naccumulating) monoidal annotations.  This is used\nas the core data structure underlying\nthe @diagrams@ framework\n(<http://projects.haskell.org/diagrams>), but\npotentially has other applications as well.\n\nAbstractly, a DUALTree is a rose (n-ary) tree\nwith data (of type @l@) at leaves, data (of type\n@a@) at internal nodes, and two types of monoidal\nannotations, one (of type @u@) travelling \\\"up\\\"\nthe tree and one (of type @d@) traveling\n\\\"down\\\".\n\nSee \"Data.Tree.DUAL\" for full documentation.\n\"Data.Tree.DUAL\" provides a public API which\nshould suffice for most purposes.\n\"Data.Tree.DUAL.Internal\" exports more of the\ninternal implementation---use it at your own\nrisk.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."newtype-generics" or (errorHandler.buildDepError "newtype-generics"))
           (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."monoid-extras" or (errorHandler.buildDepError "monoid-extras"))
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."dual-tree" or (errorHandler.buildDepError "dual-tree"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

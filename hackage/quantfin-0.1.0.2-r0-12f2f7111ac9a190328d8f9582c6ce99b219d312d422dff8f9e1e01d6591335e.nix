@@ -21,7 +21,7 @@
       synopsis = "Quant finance library in pure Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,17 +35,17 @@
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
           (hsPkgs."random-source" or (errorHandler.buildDepError "random-source"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quantfin" or (errorHandler.buildDepError "quantfin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

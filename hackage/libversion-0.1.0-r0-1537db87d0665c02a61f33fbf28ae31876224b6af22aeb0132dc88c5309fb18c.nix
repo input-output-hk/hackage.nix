@@ -21,17 +21,17 @@
       synopsis = "Haskell binding to libversion";
       description = "Haskell binding to libversion, an advanced version string comparison library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libversion" or (errorHandler.pkgConfDepError "libversion"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

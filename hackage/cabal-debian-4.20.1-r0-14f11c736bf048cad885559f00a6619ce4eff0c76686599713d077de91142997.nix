@@ -21,7 +21,7 @@
       synopsis = "Create a Debianization for a Cabal package";
       description = "This package supports the generation of a package Debianization (i.e.\nthe files in the @debian@ subdirectory) for a cabal package,\neither through a library API or using the cabal-debian executable.\nFor documentation of the executable, run\n@cabal-debian --help@, for documentation of the library API follow\nthe link to the @Debian.Debianize@ module below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,7 +51,7 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ] ++ (if flags.local-debian
+        ] ++ (if flags.local-debian
           then [
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
@@ -63,10 +63,10 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [ (hsPkgs."debian" or (errorHandler.buildDepError "debian")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "cabal-debian" = {
           depends = [
@@ -75,7 +75,7 @@
             (hsPkgs."data-lens" or (errorHandler.buildDepError "data-lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ] ++ (if flags.local-debian
+          ] ++ (if flags.local-debian
             then [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -106,13 +106,13 @@
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
               (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-              ]
+            ]
             else [
               (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
               (hsPkgs."cabal-debian" or (errorHandler.buildDepError "cabal-debian"))
-              ]);
+            ]);
           buildable = true;
-          };
+        };
         "cabal-debian-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -125,7 +125,7 @@
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (if flags.local-debian
+          ] ++ (if flags.local-debian
             then [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -158,13 +158,13 @@
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
               (hsPkgs."Unixutils" or (errorHandler.buildDepError "Unixutils"))
               (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-              ]
+            ]
             else [
               (hsPkgs."debian" or (errorHandler.buildDepError "debian"))
               (hsPkgs."cabal-debian" or (errorHandler.buildDepError "cabal-debian"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

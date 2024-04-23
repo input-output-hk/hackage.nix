@@ -21,7 +21,7 @@
       synopsis = "Some contributions to add handy things to blaze html.";
       description = "Some contributions to add handy things to blaze html. Please\nsend your contributions as pull requests. See homepage for basic usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

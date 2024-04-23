@@ -21,14 +21,14 @@
       synopsis = "Same as compact-string except with a small fix so it builds on ghc-6.12";
       description = "Fast, packed, strict strings with a list interface.\nBased on \"Data.ByteString\".\nMultiple encodings are supported.\nThis is the same package as compact-string-0.3.1 except for a small fix to work with the new Exception library. Once Twan updates that package, this package will be deprecated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

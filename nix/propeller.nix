@@ -6,8 +6,8 @@
         nix = import ../hackage/propeller-0.1.0.0-r0-7eaa7ec832028a314012c8a881c4697546dbf5d77de6bf8575e78d5f76a20c1e.nix;
         revNum = 0;
         sha256 = "7eaa7ec832028a314012c8a881c4697546dbf5d77de6bf8575e78d5f76a20c1e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

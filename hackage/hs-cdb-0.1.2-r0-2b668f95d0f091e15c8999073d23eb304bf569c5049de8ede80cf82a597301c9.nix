@@ -21,7 +21,7 @@
       synopsis = "A library for reading CDB (Constant Database) files.";
       description = "A library for reading CDB (Constant Database) files.\n\nCDB files are immutable key-value stores, designed for extremely fast and\nmemory-efficient construction and lookup. They can be as large as 4GB, and\nat no point in their construction or use must all data be loaded into\nmemory. CDB files can contain multiple values for a given key.\n\nFor more information on the CDB file format, please see:\n<http://cr.yp.to/cdb.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

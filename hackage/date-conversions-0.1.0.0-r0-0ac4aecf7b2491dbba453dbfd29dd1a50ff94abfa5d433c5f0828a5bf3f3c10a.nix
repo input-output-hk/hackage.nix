@@ -21,16 +21,16 @@
       synopsis = "Date conversions";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."dates" or (errorHandler.buildDepError "dates"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "date-conversions-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."dates" or (errorHandler.buildDepError "dates"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

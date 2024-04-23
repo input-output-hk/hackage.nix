@@ -21,15 +21,15 @@
       synopsis = "Online XML parsing with polyparse and tagsoup";
       description = "Please see the README on GitHub at <https://github.com/kawu/polysoup#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."polyparse" or (errorHandler.buildDepError "polyparse"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

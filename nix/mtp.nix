@@ -6,8 +6,8 @@
         nix = import ../hackage/mtp-0.1.1.1-r0-e97a2b342cff83759bc3ea7f26c4456cde2c80c45596a5edefc8a48eff9fb7b3.nix;
         revNum = 0;
         sha256 = "e97a2b342cff83759bc3ea7f26c4456cde2c80c45596a5edefc8a48eff9fb7b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

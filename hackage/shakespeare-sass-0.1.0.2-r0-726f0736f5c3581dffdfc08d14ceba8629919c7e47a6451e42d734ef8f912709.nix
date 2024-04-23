@@ -21,7 +21,7 @@
       synopsis = "SASS support for Shakespeare and Yesod";
       description = "SASS support for Shakespeare and Yesod";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."shakespeare" or (errorHandler.buildDepError "shakespeare"))
           (hsPkgs."hsass" or (errorHandler.buildDepError "hsass"))
           (hsPkgs."hlibsass" or (errorHandler.buildDepError "hlibsass"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

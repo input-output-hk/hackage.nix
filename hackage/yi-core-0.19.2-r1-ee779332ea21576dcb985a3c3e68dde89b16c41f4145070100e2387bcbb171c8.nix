@@ -21,7 +21,7 @@
       synopsis = "Yi editor core library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -56,11 +56,11 @@
           (hsPkgs."yi-language" or (errorHandler.buildDepError "yi-language"))
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ] ++ (pkgs.lib).optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ (if system.isWindows
+        ] ++ pkgs.lib.optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -74,10 +74,10 @@
             (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "all" = {
           depends = [
@@ -86,9 +86,9 @@
             (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

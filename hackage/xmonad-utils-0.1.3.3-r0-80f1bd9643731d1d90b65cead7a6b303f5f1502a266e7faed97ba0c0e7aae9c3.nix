@@ -21,7 +21,7 @@
       synopsis = "A small collection of X utilities";
       description = "A small collection of X utilities useful when\nrunning XMonad. It includes:\n\n* hxsel: which returns the text currently in the X selection;\n\n* hxput: sets the value of the X paste buffer;\n\n* hslock: a simple X screen lock;\n\n* hmanage: an utility to toggle the override-redirect property of any\nwindow;\n\n* and hhp: a simple utility to hide the pointer, similar\nto unclutter.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hxsel" = {
@@ -31,9 +31,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hxput" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -41,9 +41,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hslock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -51,10 +51,10 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           libs = [ (pkgs."crypt" or (errorHandler.sysDepError "crypt")) ];
           buildable = true;
-          };
+        };
         "hmanage" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,9 +62,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hhp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -72,9 +72,9 @@
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

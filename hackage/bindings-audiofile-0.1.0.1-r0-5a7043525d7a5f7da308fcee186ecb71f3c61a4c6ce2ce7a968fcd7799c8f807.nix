@@ -21,17 +21,17 @@
       synopsis = "Low level bindings to audiofile";
       description = "Bindings to audiofile: <http://www.68k.org/~michael/audiofile/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."audiofile" or (errorHandler.pkgConfDepError "audiofile"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/apecs-physics-gloss-0.1.0.0-r0-2c7170d0d5f2477795af1eabd7506c75959b0533f0ddba1dba26f125d00ac4f2.nix;
         revNum = 0;
         sha256 = "2c7170d0d5f2477795af1eabd7506c75959b0533f0ddba1dba26f125d00ac4f2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

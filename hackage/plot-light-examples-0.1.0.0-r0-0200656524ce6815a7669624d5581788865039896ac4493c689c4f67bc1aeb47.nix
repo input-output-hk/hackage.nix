@@ -21,7 +21,7 @@
       synopsis = "Example binaries for plot-light";
       description = "Example binaries for plot-light";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scatter" = {
@@ -33,9 +33,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "timeseries" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -47,9 +47,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "heatmap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
             (hsPkgs."blaze-svg" or (errorHandler.buildDepError "blaze-svg"))
             (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

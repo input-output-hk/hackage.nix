@@ -21,7 +21,7 @@
       synopsis = "hoauth2 demo application";
       description = "Demo application to test oauth2 flow with many providers using hoauth2";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoauth2-demo" = {
@@ -48,9 +48,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

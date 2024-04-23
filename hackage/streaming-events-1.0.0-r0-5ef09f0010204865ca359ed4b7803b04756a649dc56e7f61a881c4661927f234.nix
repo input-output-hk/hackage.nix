@@ -21,7 +21,7 @@
       synopsis = "Client-side consumption of a ServerEvent.";
       description = "Client-side consumption of a ServerEvent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."streaming-attoparsec" or (errorHandler.buildDepError "streaming-attoparsec"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "a library with examples of using Conductive with hsc3";
       description = "This library contains examples of using Conductive with hsc3. Sythndefs and convenience functions exist for a sampler and an FM synth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hsc3" or (errorHandler.buildDepError "hsc3"))
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

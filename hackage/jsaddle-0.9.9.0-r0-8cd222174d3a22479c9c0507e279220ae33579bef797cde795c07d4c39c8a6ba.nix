@@ -21,7 +21,7 @@
       synopsis = "Interface for JavaScript that works with GHCJS and GHC";
       description = "This package provides an EDSL for calling JavaScript that\ncan be used both from GHCJS and GHC.  When using GHC\nthe application is run using Warp and WebSockets to\ndrive a small JavaScript helper.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,10 +35,10 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (if compiler.isGhcjs && true || system.isJavaScript
+        ] ++ (if compiler.isGhcjs && true || system.isJavaScript
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ] ++ (pkgs.lib).optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
+          ] ++ pkgs.lib.optional (compiler.isGhcjs && true) (hsPkgs."ghcjs-prim" or (errorHandler.buildDepError "ghcjs-prim"))
           else [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -55,8 +55,8 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

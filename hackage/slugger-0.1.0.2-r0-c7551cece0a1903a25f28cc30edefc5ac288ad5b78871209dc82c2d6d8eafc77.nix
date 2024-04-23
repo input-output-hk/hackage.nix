@@ -21,16 +21,16 @@
       synopsis = "Clean URI slugs for Haskell";
       description = "Convert multi-language text to a US-ASCII, lowercase, hyphenated, URI-friendly \"slug\"";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "slugger" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."slugger" or (errorHandler.buildDepError "slugger"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "slugger-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
             (hsPkgs."slugger" or (errorHandler.buildDepError "slugger"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

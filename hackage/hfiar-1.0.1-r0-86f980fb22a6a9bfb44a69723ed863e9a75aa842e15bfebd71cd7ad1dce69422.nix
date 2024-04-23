@@ -21,7 +21,7 @@
       synopsis = "Four in a Row in Haskell!!";
       description = "The classical game, implemented with wxHaskell";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."eprocess" or (errorHandler.buildDepError "eprocess"))
           (hsPkgs."eprocess" or (errorHandler.buildDepError "eprocess"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hfiar" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

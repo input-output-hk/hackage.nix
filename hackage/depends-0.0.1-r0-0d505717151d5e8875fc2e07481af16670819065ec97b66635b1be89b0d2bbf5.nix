@@ -21,7 +21,7 @@
       synopsis = "A simple configuration management tool for Haskell";
       description = "A simple configuration management tool for Haskell that uses\nconvention over configuration.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "depends" = {
@@ -33,10 +33,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."yaml-config" or (errorHandler.buildDepError "yaml-config"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."yaml-config" or (errorHandler.buildDepError "yaml-config"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Haskell Web3 library.";
       description = "Client library for Third Generation of Web.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."web3-ethereum" or (errorHandler.buildDepError "web3-ethereum"))
           (hsPkgs."web3-polkadot" or (errorHandler.buildDepError "web3-polkadot"))
           (hsPkgs."web3-provider" or (errorHandler.buildDepError "web3-provider"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

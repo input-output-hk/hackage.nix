@@ -21,7 +21,7 @@
       synopsis = "A playground for testing Hipmunk.";
       description = "This is a simple OpenGL program that allows you to see\nsome of Hipmunk's functions in action.\n\nNew in version 5.0.0:\n\n* Updated for Hipmunk 5.0.0. Yay!\n\n* Add a small car using @SimpleMotor@ (not the best way\nof creating a car, but it works a demo).\n\nLicensed under the MIT license (like Hipmunk itself).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HipmunkPlayground" = {
@@ -32,15 +32,15 @@
               (hsPkgs."Hipmunk" or (errorHandler.buildDepError "Hipmunk"))
               (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
               (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."Hipmunk" or (errorHandler.buildDepError "Hipmunk"))
               (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
               (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

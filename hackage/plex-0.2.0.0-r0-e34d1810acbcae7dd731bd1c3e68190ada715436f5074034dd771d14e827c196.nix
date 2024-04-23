@@ -21,7 +21,7 @@
       synopsis = "run a subprocess, combining stdout and stderr";
       description = "Execute a command, redirect stderr into stdout, and return\nthe combined result (optionally, with a timeout).\nIrritatingly difficult to do using the \"process\" library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "try-plex" = {
           depends = [
@@ -41,16 +41,16 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ] ++ (pkgs.lib).optionals (flags.buildexe) [
+          ] ++ pkgs.lib.optionals (flags.buildexe) [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."plex" or (errorHandler.buildDepError "plex"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = if flags.buildexe then true else false;
-          };
         };
+      };
       tests = {
         "plex-test" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."plex" or (errorHandler.buildDepError "plex"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Postmaster ESMTP Server";
       description = "Postmaster implements an ESMTP server. Given a configuration, it starts up\nand listens for incoming SMTP connections, handles them, and pipes the\naccepted e-mail messages into an arbitrary local mailer of your choice. A\ngood local mailer is Procmail. Beyond that, you can configure and modify\nevery little step of the SMTP transaction. All the real work is done\nthrough call-back functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "postmaster" = {
@@ -39,9 +39,9 @@
             (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

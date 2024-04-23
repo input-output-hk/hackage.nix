@@ -21,7 +21,7 @@
       synopsis = "Interface for Microsoft Translator";
       description = "A simple library to use Microsoft Translator\n(<https://www.microsoft.com/en-us/translator/default.aspx>) in Haskell.\nIt provides an easy to use interface to the free translation service from\nMicrosoft so one can easily add language translation to a Haskell program\nas long as there is internet connection available.\nThe easiest way to use the program is via the toplevel translate function:\n> translate :: ClientId -> ClientSecret -> Text -> BingLanguage -> BingLanguage -> IO (Either BingError Text)\nTo use this library one must have an account for Microsoft Translator in the\nAzure Data Market. More information about this package available at: (<https://github.com/netogallo/Microsoft-Translator-Haskell>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

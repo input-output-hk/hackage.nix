@@ -21,7 +21,7 @@
       synopsis = "Pretty error messages for runtime invariants";
       description = "Sometimes you need to assume something at runtime that you can't prove in the\ntype system. When you do that, you should make sure you get a good error\nmessage if ever your assumption turns out to be wrong. That's what this library\nis for.\n\nUse the functions in here to get high quality error messages for when your\ninvariants don't hold at runtime. The functions all pretty print any Haskell\nvalues given to them, which makes it easier to understand what's going on when\nyour code breaks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."basic-prelude" or (errorHandler.buildDepError "basic-prelude"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

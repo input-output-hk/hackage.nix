@@ -13,7 +13,7 @@
       template-haskell-2-11 = true;
       new-functor-classes = true;
       integer-gmp = true;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "text-show"; version = "3.10.5"; };
@@ -26,7 +26,7 @@
       synopsis = "Efficient conversion of values into Text";
       description = "@text-show@ offers a replacement for the @Show@ typeclass intended\nfor use with @Text@ instead of @String@s. This package was created\nin the spirit of\n@<http://hackage.haskell.org/package/bytestring-show bytestring-show>@.\n\nFor most uses, simply importing \"TextShow\"\nwill suffice:\n\n@\nmodule Main where\n\nimport TextShow\n\nmain :: IO ()\nmain = printT (Just \\\"Hello, World!\\\")\n@\n\nSee also the\n<https://github.com/RyanGlScott/text-show/wiki/Naming-conventions naming conventions>\npage.\n\nSupport for automatically deriving @TextShow@ instances can be found\nin the \"TextShow.TH\" and \"TextShow.Generic\" modules.\n\n@text-show@ only provides instances for data types in the\nfollowing packages:\n\n* @<http://hackage.haskell.org/package/array array>@\n\n* @<http://hackage.haskell.org/package/base base>@\n\n* @<http://hackage.haskell.org/package/bytestring bytestring>@\n\n* @<http://hackage.haskell.org/package/text text>@\n\nThis policy is in place to keep @text-show@'s dependencies\nreasonably light. If you need a @TextShow@ instance for a\nlibrary that is not in this list, it may be covered by the\n@<http://hackage.haskell.org/package/text-show-instances text-show-instances>@\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ((([
@@ -41,25 +41,25 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
           (hsPkgs."th-lift" or (errorHandler.buildDepError "th-lift"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (if flags.template-haskell-2-11
+        ]) ++ (if flags.template-haskell-2-11
           then [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-            ]
+          ]
           else [
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ])) ++ (if flags.new-functor-classes
+          ])) ++ (if flags.new-functor-classes
           then [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ]
+          ]
           else [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "9.0") && flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
+          ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "9.0") && flags.integer-gmp) (hsPkgs."integer-gmp" or (errorHandler.buildDepError "integer-gmp"));
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -78,17 +78,15 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."transformers-compat" or (errorHandler.buildDepError "transformers-compat"))
-            ] ++ [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ [
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]) ++ [
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -98,9 +96,9 @@
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

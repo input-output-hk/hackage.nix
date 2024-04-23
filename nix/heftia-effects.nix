@@ -6,8 +6,8 @@
         nix = import ../hackage/heftia-effects-0.1.0.0-r0-c8fd2af72c8dae6d75409499e1bc99ecd48a8d24b46ea0ec11e740b11b7487b3.nix;
         revNum = 0;
         sha256 = "c8fd2af72c8dae6d75409499e1bc99ecd48a8d24b46ea0ec11e740b11b7487b3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

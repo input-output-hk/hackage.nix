@@ -21,7 +21,7 @@
       synopsis = "Network Stack";
       description = "HaNS is a lightweight, pure Haskell network stack that can be used for Haskell\nnetworking in the context of the HaLVM, or with a Linux tap device.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -40,22 +40,22 @@
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ] ++ (pkgs.lib).optionals (system.isHalvm) [
+        ] ++ pkgs.lib.optionals (system.isHalvm) [
           (hsPkgs."XenDevice" or (errorHandler.buildDepError "XenDevice"))
           (hsPkgs."HALVMCore" or (errorHandler.buildDepError "HALVMCore"))
-          ]) ++ (pkgs.lib).optional (system.isOsx || system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
+        ]) ++ pkgs.lib.optional (system.isOsx || system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         buildable = true;
-        };
+      };
       exes = {
         "echo-server" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
+      };
       tests = {
         "hans-tests" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."hans" or (errorHandler.buildDepError "hans"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

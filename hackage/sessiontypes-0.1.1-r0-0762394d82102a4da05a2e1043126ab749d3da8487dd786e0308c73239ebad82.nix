@@ -21,7 +21,7 @@
       synopsis = "Session types library";
       description = "This packages provides a deep embedded domain-specific language for writing session typed program.\nA session typed program is a program annotated with session types. A session type describes a communication protocol at the type-level.\nThe motivation for doing so is that it gives you a static guarantee that a program correctly implements a protocol.\nIt may even guarantee that no deadlocking can occur.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,18 +32,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-visualizer" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sessiontypes" or (errorHandler.buildDepError "sessiontypes"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sessiontypes-debug" = {
           depends = [
@@ -51,18 +51,18 @@
             (hsPkgs."sessiontypes" or (errorHandler.buildDepError "sessiontypes"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sessiontypes-normalize" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."sessiontypes" or (errorHandler.buildDepError "sessiontypes"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "sessiontypes-interactive" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -70,9 +70,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

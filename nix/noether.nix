@@ -6,8 +6,8 @@
         nix = import ../hackage/noether-0.0.1-r0-378164763a2434792d957ea6d7986ba2d066e613805922bda26b8fa684d86f44.nix;
         revNum = 0;
         sha256 = "378164763a2434792d957ea6d7986ba2d066e613805922bda26b8fa684d86f44";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

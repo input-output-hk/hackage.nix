@@ -21,16 +21,16 @@
       synopsis = "Typed sockets";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "linear-socket-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."linear-socket" or (errorHandler.buildDepError "linear-socket"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

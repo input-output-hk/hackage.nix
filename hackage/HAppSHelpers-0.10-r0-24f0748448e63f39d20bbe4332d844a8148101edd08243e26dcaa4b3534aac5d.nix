@@ -21,7 +21,7 @@
       synopsis = "Convenience functions for HAppS. ";
       description = "Functions I found I was using repeatedly when programming HAppS based web-apps.\nI'll deprecate whatever bits of this make their way into the HAppS core on hackage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."pureMD5" or (errorHandler.buildDepError "pureMD5"))
           (hsPkgs."PBKDF2" or (errorHandler.buildDepError "PBKDF2"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

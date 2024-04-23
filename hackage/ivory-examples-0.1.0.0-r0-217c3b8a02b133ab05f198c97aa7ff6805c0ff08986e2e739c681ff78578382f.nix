@@ -21,7 +21,7 @@
       synopsis = "Ivory examples.";
       description = "Various examples demonstrating the use of Ivory.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ivory-fibtutorial" = {
@@ -38,9 +38,9 @@
             (hsPkgs."ivory-quickcheck" or (errorHandler.buildDepError "ivory-quickcheck"))
             (hsPkgs."ivory-stdlib" or (errorHandler.buildDepError "ivory-stdlib"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ivory-c-clang-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -55,9 +55,9 @@
             (hsPkgs."ivory-backend-c" or (errorHandler.buildDepError "ivory-backend-c"))
             (hsPkgs."ivory-stdlib" or (errorHandler.buildDepError "ivory-stdlib"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

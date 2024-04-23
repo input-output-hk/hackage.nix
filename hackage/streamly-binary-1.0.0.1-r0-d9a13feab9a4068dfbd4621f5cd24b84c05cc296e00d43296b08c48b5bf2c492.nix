@@ -21,7 +21,7 @@
       synopsis = "Integration of streamly and binary";
       description = "Support for encoding/decoding using @binary@ in @streamly@ streams.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "streamly-binary-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
             (hsPkgs."streamly-binary" or (errorHandler.buildDepError "streamly-binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

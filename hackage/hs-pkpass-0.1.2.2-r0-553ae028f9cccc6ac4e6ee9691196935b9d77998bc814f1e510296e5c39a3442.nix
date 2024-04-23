@@ -21,7 +21,7 @@
       synopsis = "A library for Passbook pass creation & signing";
       description = "A Haskell library for type-safe creation of Passbook passes and signing through Apple's signpass tool.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."shakespeare-text" or (errorHandler.buildDepError "shakespeare-text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

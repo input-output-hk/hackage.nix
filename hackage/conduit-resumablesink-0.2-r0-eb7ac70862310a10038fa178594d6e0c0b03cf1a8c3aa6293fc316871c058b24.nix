@@ -21,16 +21,16 @@
       synopsis = "Allows conduit to resume sinks to feed multiple sources into it.";
       description = "@conduit-resumablesink@ is a solution to the problem where you have a @conduit@\nsink and you want to feed multiple sources into it as each source is exhausted.\nThis is essentially the opposite of the ResumableSource functionality supplied\nwith conduit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."void" or (errorHandler.buildDepError "void"))
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

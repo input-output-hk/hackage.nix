@@ -21,7 +21,7 @@
       synopsis = "Haskell Tutorials by Evgeny Ukhanov";
       description = "Step-by-Step tutorials at learning process";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Haskell.Tutorials" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Tests and QuickCheck generators to accompany rainbow.";
       description = "These are packaged separately so other packages may depend\non them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

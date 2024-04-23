@@ -21,7 +21,7 @@
       synopsis = "Easy way to run doctests via cabal";
       description = "doctest-discover makes it easy to run doctests via cabal";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "doctest-discover" = {
@@ -31,18 +31,18 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

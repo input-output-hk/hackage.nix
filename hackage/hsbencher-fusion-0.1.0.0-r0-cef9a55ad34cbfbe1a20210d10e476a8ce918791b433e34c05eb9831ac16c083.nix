@@ -21,7 +21,7 @@
       synopsis = "Backend for uploading benchmark data to Google Fusion Tables.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."handa-gdata" or (errorHandler.buildDepError "handa-gdata"))
           (hsPkgs."hsbencher" or (errorHandler.buildDepError "hsbencher"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

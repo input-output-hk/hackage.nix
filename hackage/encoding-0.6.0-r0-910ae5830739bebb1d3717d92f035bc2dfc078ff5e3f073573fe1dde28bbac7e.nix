@@ -21,7 +21,7 @@
       synopsis = "A library for various character encodings";
       description = "Haskell has excellect handling of unicode, the Char type covers all unicode chars. Unfortunatly, there's no possibility to read or write something to the outer world in an encoding other than ascii due to the lack of support for encodings. This library should help with that.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -38,7 +38,7 @@
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-              ]
+            ]
             else [
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,14 +50,14 @@
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-              ]
+            ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

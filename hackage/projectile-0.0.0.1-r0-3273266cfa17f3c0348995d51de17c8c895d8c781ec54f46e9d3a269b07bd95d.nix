@@ -21,7 +21,7 @@
       synopsis = "Go to README.md";
       description = "Utility functions to gather information about project directories";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
           (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "projectile-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."projectile" or (errorHandler.buildDepError "projectile"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

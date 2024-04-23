@@ -21,7 +21,7 @@
       synopsis = "Embed data files via C and FFI.";
       description = "Compiles data files into C code and generates some FFI wrapper code to integrate them into Haskell projects.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "resource-embed" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

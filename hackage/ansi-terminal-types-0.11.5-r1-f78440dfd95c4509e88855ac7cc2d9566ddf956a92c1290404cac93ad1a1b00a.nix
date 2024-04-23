@@ -21,14 +21,14 @@
       synopsis = "Types and functions used to represent SGR aspects";
       description = "The \\'ANSI\\' standards refer to the visual style of\ndisplaying characters as their \\'graphic rendition\\'. The\n\\'ANSI\\' codes to establish the graphic rendition for\nsubsequent text are referred to as SELECT GRAPHIC RENDITION\n(SGR). This package exposes modules that export types and\nfunctions used to represent SGR aspects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

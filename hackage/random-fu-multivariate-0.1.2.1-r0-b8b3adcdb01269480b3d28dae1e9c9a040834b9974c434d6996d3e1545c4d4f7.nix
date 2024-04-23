@@ -21,7 +21,7 @@
       synopsis = "Multivariate distributions for random-fu";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."random-fu" or (errorHandler.buildDepError "random-fu"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "random-fu-multivariate-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random-fu-multivariate" or (errorHandler.buildDepError "random-fu-multivariate"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

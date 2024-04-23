@@ -21,7 +21,7 @@
       synopsis = "Monadic Abstracting Abstract Machines (MAAM) built on Galois Transformers";
       description = "Monadic Abstracting Abstract Machines (MAAM) built on\nGalois Transformers. See \"Galois Transformers and Modular\nAbstract Interpreters\" by Darais, Might and Van Horn.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,14 +30,14 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "maam_examples" = {
           depends = [ (hsPkgs."maam" or (errorHandler.buildDepError "maam")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

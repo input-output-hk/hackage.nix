@@ -14,7 +14,7 @@
       identifier = {
         name = "essence-of-live-coding-quickcheck";
         version = "0.2.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "programming@manuelbaerenz.de";
@@ -24,7 +24,7 @@
       synopsis = "General purpose live coding framework - QuickCheck integration";
       description = "essence-of-live-coding is a general purpose and type safe live coding framework.\n\nYou can run programs in it, and edit, recompile and reload them while they're running.\nInternally, the state of the live program is automatically migrated when performing hot code swap.\n\nThe library also offers an easy to use FRP interface.\nIt is parametrized by its side effects,\nseparates data flow cleanly from control flow,\nand allows to develop live programs from reusable, modular components.\n\nThis package contains useful utilities for quickchecking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."boltzmann-samplers" or (errorHandler.buildDepError "boltzmann-samplers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

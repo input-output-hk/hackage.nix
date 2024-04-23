@@ -21,7 +21,7 @@
       synopsis = "A utility for X11 that moves the mouse cursor using the keyboard";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "place-cursor-at" = {
@@ -29,10 +29,10 @@
             (hsPkgs."X11" or (errorHandler.buildDepError "X11"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
-            ];
+          ];
           libs = [ (pkgs."Xinerama" or (errorHandler.sysDepError "Xinerama")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

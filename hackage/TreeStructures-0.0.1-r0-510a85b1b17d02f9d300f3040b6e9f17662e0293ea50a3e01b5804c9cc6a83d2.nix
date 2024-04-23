@@ -21,11 +21,11 @@
       synopsis = "Tree structures";
       description = "A collection of heaps and search trees";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

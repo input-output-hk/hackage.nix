@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the RNCryptor file format";
       description = "Pure Haskell implementation of the RNCrytor spec.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
-          ] ++ (pkgs.lib).optional (flags.fastpbkdf2) (hsPkgs."fastpbkdf2" or (errorHandler.buildDepError "fastpbkdf2"));
+        ] ++ pkgs.lib.optional (flags.fastpbkdf2) (hsPkgs."fastpbkdf2" or (errorHandler.buildDepError "fastpbkdf2"));
         buildable = true;
-        };
+      };
       exes = {
         "rncryptor-decrypt" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."rncryptor" or (errorHandler.buildDepError "rncryptor"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rncryptor-encrypt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,10 +54,10 @@
             (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."rncryptor" or (errorHandler.buildDepError "rncryptor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "rncryptor-tests" = {
           depends = [
@@ -73,10 +73,10 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring-arbitrary" or (errorHandler.buildDepError "bytestring-arbitrary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "store-bench" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."rncryptor" or (errorHandler.buildDepError "rncryptor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

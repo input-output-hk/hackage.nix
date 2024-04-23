@@ -21,15 +21,15 @@
       synopsis = "floating point with extended exponent range";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."compensated" or (errorHandler.buildDepError "compensated"))
           (hsPkgs."log-domain" or (errorHandler.buildDepError "log-domain"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

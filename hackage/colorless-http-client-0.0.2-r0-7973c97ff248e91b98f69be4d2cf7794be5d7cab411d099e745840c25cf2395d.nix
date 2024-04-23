@@ -21,7 +21,7 @@
       synopsis = "Http Client addon for Colorless";
       description = "Http Client addon for Colorless";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text-conversions" or (errorHandler.buildDepError "text-conversions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

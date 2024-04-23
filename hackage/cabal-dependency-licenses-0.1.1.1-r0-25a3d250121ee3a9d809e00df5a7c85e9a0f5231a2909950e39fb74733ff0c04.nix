@@ -21,7 +21,7 @@
       synopsis = "Compose a list of a project's transitive dependencies with their licenses";
       description = "Compose a list of a project's transitive dependencies with their licenses";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-dependency-licenses" = {
@@ -31,9 +31,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

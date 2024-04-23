@@ -21,14 +21,14 @@
       synopsis = "Boolean expressions with various representations and search queries.";
       description = "Boolean expressions with various representations and search queries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

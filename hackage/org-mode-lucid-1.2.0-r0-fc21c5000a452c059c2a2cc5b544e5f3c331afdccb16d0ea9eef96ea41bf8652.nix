@@ -21,7 +21,7 @@
       synopsis = "Lucid integration for org-mode.";
       description = "Lucid integration for org-mode.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."org-mode" or (errorHandler.buildDepError "org-mode"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

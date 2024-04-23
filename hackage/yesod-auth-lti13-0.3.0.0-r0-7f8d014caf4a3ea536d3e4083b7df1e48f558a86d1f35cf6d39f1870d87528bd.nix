@@ -21,7 +21,7 @@
       synopsis = "A yesod-auth plugin for LTI 1.3";
       description = "A plugin using <https://hackage.haskell.org/package/lti13> to implement IMS Global LTI 1.3 authentication for yesod-auth.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."yesod" or (errorHandler.buildDepError "yesod"))
           (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-lti13-example" = {
           depends = [
@@ -76,10 +76,10 @@
             (hsPkgs."yesod-auth" or (errorHandler.buildDepError "yesod-auth"))
             (hsPkgs."yesod-auth-lti13" or (errorHandler.buildDepError "yesod-auth-lti13"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-            ];
+          ];
           buildable = if !flags.example then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -116,12 +116,12 @@
             (hsPkgs."yesod-auth-lti13" or (errorHandler.buildDepError "yesod-auth-lti13"))
             (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
             (hsPkgs."yesod-test" or (errorHandler.buildDepError "yesod-test"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

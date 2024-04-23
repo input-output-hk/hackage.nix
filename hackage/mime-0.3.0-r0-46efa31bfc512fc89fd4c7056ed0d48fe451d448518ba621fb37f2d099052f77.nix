@@ -21,11 +21,11 @@
       synopsis = "Working with MIME types.";
       description = "Working with MIME types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

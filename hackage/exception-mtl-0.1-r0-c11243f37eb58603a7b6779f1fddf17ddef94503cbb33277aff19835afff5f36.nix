@@ -21,14 +21,14 @@
       synopsis = "An mtl-compatible monad transformer for unchecked extensible\nexceptions.";
       description = "This package provides a monad transformer that allows unchecked\nextensible exceptions to be thrown and caught.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hascat-setup-0.2-r0-cc03b0a325f1043e893a5ce7a466c5cddc3051b5821de0d6c0c5aa1f157ccf37.nix;
         revNum = 0;
         sha256 = "cc03b0a325f1043e893a5ce7a466c5cddc3051b5821de0d6c0c5aa1f157ccf37";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

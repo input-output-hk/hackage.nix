@@ -14,7 +14,7 @@
       identifier = {
         name = "digestive-functors-happstack";
         version = "0.1.1.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "jaspervdj@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Happstack backend for the digestive-functors library";
       description = "This is a happstack backend for the digestive-functors\nlibrary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

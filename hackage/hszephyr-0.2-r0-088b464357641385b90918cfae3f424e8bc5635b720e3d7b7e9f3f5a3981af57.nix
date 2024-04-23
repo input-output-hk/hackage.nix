@@ -21,7 +21,7 @@
       synopsis = "Simple libzephyr bindings";
       description = "Network.Zephyr provides haskell bindings to MIT's \"Zephyr\" instant\nmessaging / notification service.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,12 +29,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         libs = [
           (pkgs."zephyr" or (errorHandler.sysDepError "zephyr"))
           (pkgs."com_err" or (errorHandler.sysDepError "com_err"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

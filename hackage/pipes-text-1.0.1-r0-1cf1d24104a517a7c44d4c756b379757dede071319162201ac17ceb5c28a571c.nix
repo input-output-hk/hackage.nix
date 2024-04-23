@@ -21,7 +21,7 @@
       synopsis = "properly streaming text";
       description = "The organization of this package follows the rule:\n\n* @pipes-text : pipes-bytestring :: text : bytestring@\n\nFamiliarity with the other three packages should give one an idea\nwhat to expect here. The package has three principal modules,\n@Pipes.Text@ , @Pipes.Text.Encoding@ and @Pipes.Text.IO@; the\ndivision has more or less the significance it has in the @text@\nlibrary.\n\nThe module @Pipes.Text.IO@ is present as a convenience.  Official\npipes IO uses @Pipes.ByteString@ together with the bytestring\ndecoding functions in @Pipes.Text.Encoding@.  In particular, the\n@Pipes.Text.IO@ functions use Text exceptions, while @Pipes.Text@\nuses the standard pipes practice of breaking with a failed\nparse. Thus, for example, the type of @decodeUtf8@ is\n\n* @decodeUtf8 :: Monad m => Producer ByteString m r -> Producer Text m (Producer ByteString m r)@\n\nwhere any unparsed bytes are returned.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

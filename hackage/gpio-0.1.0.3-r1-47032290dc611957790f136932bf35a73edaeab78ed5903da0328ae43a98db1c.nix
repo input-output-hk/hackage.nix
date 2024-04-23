@@ -21,7 +21,7 @@
       synopsis = "Haskell GPIO interface, designed specifically for the RaspberryPi.";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."monad-control" or (errorHandler.buildDepError "monad-control"))
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gpio" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."gpio" or (errorHandler.buildDepError "gpio"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

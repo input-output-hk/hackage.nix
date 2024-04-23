@@ -6,8 +6,8 @@
         nix = import ../hackage/crypton-x509-store-1.6.9-r0-422b9b9f87a7382c66385d047615b16fc86a68c08ea22b1e0117c143a2d44050.nix;
         revNum = 0;
         sha256 = "422b9b9f87a7382c66385d047615b16fc86a68c08ea22b1e0117c143a2d44050";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

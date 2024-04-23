@@ -21,7 +21,7 @@
       synopsis = "Colada implements incremental word class class induction\nusing online LDA";
       description = "Colada implements incremental word class class induction using\nLatent Dirichlet Allocation (LDA) with an Online Gibbs sampler.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."swift-lda" or (errorHandler.buildDepError "swift-lda"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "colada" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."swift-lda" or (errorHandler.buildDepError "swift-lda"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

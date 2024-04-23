@@ -6,8 +6,8 @@
         nix = import ../hackage/chevalier-common-0.6.0-r0-0fb129c107e6f06435b49b727dc95ec931cde49129357b6e77aefcf4fc0a5544.nix;
         revNum = 0;
         sha256 = "0fb129c107e6f06435b49b727dc95ec931cde49129357b6e77aefcf4fc0a5544";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

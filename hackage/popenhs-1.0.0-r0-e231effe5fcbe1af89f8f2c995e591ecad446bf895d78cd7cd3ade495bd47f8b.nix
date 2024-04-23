@@ -21,7 +21,7 @@
       synopsis = "popenhs is a popen-like library for Haskell.";
       description = "It provides a convenient way of sending string input to\na subprocess and reading output from it lazily. It requires\nthe Posix module and has been tested under ghc5 so far.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

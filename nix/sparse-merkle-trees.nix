@@ -6,8 +6,8 @@
         nix = import ../hackage/sparse-merkle-trees-0.2.0.0-r0-bada611077ecf69a87dc28db156823bd4152020fe07ef6be13378a4d5d0501be.nix;
         revNum = 0;
         sha256 = "bada611077ecf69a87dc28db156823bd4152020fe07ef6be13378a4d5d0501be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

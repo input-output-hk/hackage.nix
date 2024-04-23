@@ -21,7 +21,7 @@
       synopsis = "Additional utilities to work with Yhc Core.";
       description = "Additional utilities for Yhc Core developed as by-products\nof front- and back-ends, also for possible inclusion\nto the Yhc Core package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,17 +29,17 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."yhccore" or (errorHandler.buildDepError "yhccore"))
           (hsPkgs."csv" or (errorHandler.buildDepError "csv"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

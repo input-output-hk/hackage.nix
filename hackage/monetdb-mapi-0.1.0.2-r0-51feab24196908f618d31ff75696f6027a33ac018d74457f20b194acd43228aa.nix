@@ -21,14 +21,14 @@
       synopsis = "Mid-level bindings for the MonetDB API (mapi)";
       description = "This library provides a convenient API to work with MonetDB.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-monetdb-mapi" or (errorHandler.buildDepError "bindings-monetdb-mapi"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

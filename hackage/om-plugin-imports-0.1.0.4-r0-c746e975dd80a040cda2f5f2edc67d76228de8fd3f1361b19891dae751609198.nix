@@ -21,7 +21,7 @@
       synopsis = "Plugin-based import warnings";
       description = "This is a plutin that acts similar to\n`-ddump-minimal-imports`, but the style\nof imports dumped to the dump directory\nis better. Where \"better\" means it will\nsatisfy `-Wmissing-import-lists` (which\n`-ddump-minimal-imports does not always), and it\nwill omit the explicit import list for imports\nthat are already qualified. The files are dumped\nto <dump-dir>/<module-name>.full-imports. No files\nwill be dumped unless `-dumpdir` is explicitly\npassed by the user.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

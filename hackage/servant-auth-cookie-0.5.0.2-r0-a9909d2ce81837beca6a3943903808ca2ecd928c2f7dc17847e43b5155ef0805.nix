@@ -13,7 +13,7 @@
       servant9 = true;
       servant91 = true;
       build-examples = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "servant-auth-cookie"; version = "0.5.0.2"; };
@@ -26,7 +26,7 @@
       synopsis = "Authentication via encrypted cookies";
       description = "Authentication via encrypted client-side cookies,\ninspired by client-session library by Michael Snoyman and based on\nideas of the paper \"A Secure Cookie Protocol\" by Alex Liu et al.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,25 +48,25 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ] ++ (if flags.servant9
+        ] ++ (if flags.servant9
           then [
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
             (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-            ]
+          ]
           else if flags.servant91
             then [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-              ]
+            ]
             else [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
-              ]);
+            ]);
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) ([
+          depends = pkgs.lib.optionals (flags.build-examples) ([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
@@ -91,18 +91,18 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ] ++ (if flags.servant9
+          ] ++ (if flags.servant9
             then [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-              ]
+            ]
             else [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
-              ]));
+            ]));
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -118,11 +118,11 @@
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
+          ] ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"));
           buildable = true;
-          };
+        };
         "example-tests" = {
-          depends = (pkgs.lib).optionals (flags.build-examples) (([
+          depends = pkgs.lib.optionals (flags.build-examples) (([
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
@@ -150,23 +150,23 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ] ++ (if flags.servant9
+          ] ++ (if flags.servant9
             then [
               (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
               (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-              ]
+            ]
             else if flags.servant91
               then [
                 (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
                 (hsPkgs."http-api-data" or (errorHandler.buildDepError "http-api-data"))
-                ]
+              ]
               else [
                 (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
                 (hsPkgs."bytestring-conversion" or (errorHandler.buildDepError "bytestring-conversion"))
-                ])) ++ (pkgs.lib).optional (!(compiler.isGhc && (compiler.version).ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged")));
+              ])) ++ pkgs.lib.optional (!(compiler.isGhc && compiler.version.ge "7.8")) (hsPkgs."tagged" or (errorHandler.buildDepError "tagged")));
           buildable = if flags.build-examples then true else false;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -176,9 +176,9 @@
             (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
             (hsPkgs."servant-auth-cookie" or (errorHandler.buildDepError "servant-auth-cookie"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

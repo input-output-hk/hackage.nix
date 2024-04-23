@@ -21,7 +21,7 @@
       synopsis = "Provides generation and verification services for time-based one-time keys.";
       description = "Please see http://tools.ietf.org/html/rfc6238";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."cryptohash" or (errorHandler.buildDepError "cryptohash"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Derive swagger instances from highjson specs";
       description = "Derive swagger instances from highjson specs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."insert-ordered-containers" or (errorHandler.buildDepError "insert-ordered-containers"))
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "highjson-swagger-tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

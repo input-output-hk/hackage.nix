@@ -6,8 +6,8 @@
         nix = import ../hackage/DAG-Tournament-0.1-r0-d5c370b248b725b284e1fa5e59643cb354242a48fa1485a55552a71f79b203f7.nix;
         revNum = 0;
         sha256 = "d5c370b248b725b284e1fa5e59643cb354242a48fa1485a55552a71f79b203f7";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

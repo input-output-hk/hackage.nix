@@ -21,7 +21,7 @@
       synopsis = "/etc/os-release helpers";
       description = "\\/etc\\/os-release helpers as per the freedesktop spec: https://www.freedesktop.org/software/systemd/man/os-release.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."os-release" or (errorHandler.buildDepError "os-release"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

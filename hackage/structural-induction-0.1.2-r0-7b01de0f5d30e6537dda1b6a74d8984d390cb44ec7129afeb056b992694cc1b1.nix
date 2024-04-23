@@ -21,7 +21,7 @@
       synopsis = "Instantiate structural induction schemas for algebraic data types";
       description = "See documentation for Induction.Structural";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "walk" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."testing-feat" or (errorHandler.buildDepError "testing-feat"))
             (hsPkgs."geniplate" or (errorHandler.buildDepError "geniplate"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

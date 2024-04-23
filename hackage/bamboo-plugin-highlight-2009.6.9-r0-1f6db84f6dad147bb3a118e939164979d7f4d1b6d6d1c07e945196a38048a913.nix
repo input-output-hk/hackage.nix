@@ -21,7 +21,7 @@
       synopsis = "bamboo-plugin-highlight";
       description = "A standard hack middleware that highlights source code automaticaly";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
           (hsPkgs."mps" or (errorHandler.buildDepError "mps"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

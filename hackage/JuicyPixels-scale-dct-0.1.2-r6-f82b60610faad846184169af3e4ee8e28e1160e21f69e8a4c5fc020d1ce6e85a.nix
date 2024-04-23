@@ -21,7 +21,7 @@
       synopsis = "Scale JuicyPixels images with DCT";
       description = "Scale JuicyPixels Images with DCT\n\nThere is also a @friday@ version: <http://hackage.haskell.org/package/friday-scale-dct friday-scale-dct>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."carray" or (errorHandler.buildDepError "carray"))
           (hsPkgs."fft" or (errorHandler.buildDepError "fft"))
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."JuicyPixels-scale-dct" or (errorHandler.buildDepError "JuicyPixels-scale-dct"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

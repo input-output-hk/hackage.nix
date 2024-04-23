@@ -6,8 +6,8 @@
         nix = import ../hackage/fckeditor-0.1-r0-97d51e96a03fc28aebe052fbb013b984862566de621ab147704348a0d82e1ae3.nix;
         revNum = 0;
         sha256 = "97d51e96a03fc28aebe052fbb013b984862566de621ab147704348a0d82e1ae3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

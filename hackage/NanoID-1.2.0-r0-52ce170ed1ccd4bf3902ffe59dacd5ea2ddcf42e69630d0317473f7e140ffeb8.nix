@@ -21,7 +21,7 @@
       synopsis = "NanoID generator";
       description = "Library and CLI tool for NanoID generation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nanoid" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."NanoID" or (errorHandler.buildDepError "NanoID"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

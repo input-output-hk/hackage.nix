@@ -21,7 +21,7 @@
       synopsis = "Treemap related commands for producing foldable TreeMap HTML.";
       description = "Contains various commands for TreeMap generation,\nfor example dirmap produces the foldable treemap for\ngiven directory tree structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "dirmap" = { buildable = true; }; };
       };
-    }
+      exes = { "dirmap" = { buildable = true; }; };
+    };
+  }

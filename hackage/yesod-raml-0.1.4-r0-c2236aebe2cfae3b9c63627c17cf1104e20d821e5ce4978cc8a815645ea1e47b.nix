@@ -21,7 +21,7 @@
       synopsis = "RAML style route definitions for Yesod";
       description = "RAML style route definitions for Yesod";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "raml-utils" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."yesod-raml" or (errorHandler.buildDepError "yesod-raml"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if flags.utils then true else false;
-          };
         };
+      };
       tests = {
         "test-routes" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."yesod-raml" or (errorHandler.buildDepError "yesod-raml"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

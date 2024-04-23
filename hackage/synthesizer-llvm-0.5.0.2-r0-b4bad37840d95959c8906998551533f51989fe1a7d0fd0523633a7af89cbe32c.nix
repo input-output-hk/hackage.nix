@@ -13,7 +13,7 @@
       buildtests = false;
       alsa = true;
       jack = true;
-      };
+    };
     package = {
       specVersion = "1.12";
       identifier = { name = "synthesizer-llvm"; version = "0.5.0.2"; };
@@ -26,7 +26,7 @@
       synopsis = "Efficient signal processing using runtime compilation";
       description = "Efficient signal processing\nusing runtime compilation and vector instructions.\nIt uses LLVM library, thus it is not bound to a specific CPU.\nThere are some example executables that you can build\nwith Cabal flag @buildExamples@:\n\n* @synthi-llvm-render@:\nRender a MIDI file into an audio file\nusing some arbitrary instruments.\n\n* @synthi-llvm-alsa@:\nA realtime software synthesizer\nthat receives MIDI events via ALSA\nand in response plays tones via ALSA.\nIf you have no ALSA (or Linux at all),\nthen you can disable this example with @-f-alsa@.\n\n* @synthi-llvm-jack@:\nThe same realtime software synthesizer using JACK.\nIf you have no JACK,\nthen you can disable this example with @-f-jack@.\n\n* @synthi-llvm-example@:\nNot very useful as an executable.\nYou should better load the according module into GHCi\nand play around with it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -53,12 +53,12 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "synthi-llvm-example" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
@@ -82,11 +82,11 @@
             (hsPkgs."synthesizer-alsa" or (errorHandler.buildDepError "synthesizer-alsa"))
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples && flags.alsa then true else false;
-          };
+        };
         "synthi-llvm-alsa" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples && flags.alsa) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.alsa) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
@@ -111,11 +111,11 @@
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-pcm" or (errorHandler.buildDepError "alsa-pcm"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples && flags.alsa then true else false;
-          };
+        };
         "synthi-llvm-jack" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples && flags.jack) [
+          depends = pkgs.lib.optionals (flags.buildexamples && flags.jack) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."jack" or (errorHandler.buildDepError "jack"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
@@ -138,11 +138,11 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples && flags.jack then true else false;
-          };
+        };
         "synthi-llvm-render" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
@@ -165,11 +165,11 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "synthi-llvm-test" = {
-          depends = (pkgs.lib).optionals (flags.buildtests) [
+          depends = pkgs.lib.optionals (flags.buildtests) [
             (hsPkgs."synthesizer-llvm" or (errorHandler.buildDepError "synthesizer-llvm"))
             (hsPkgs."llvm-extra" or (errorHandler.buildDepError "llvm-extra"))
             (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
@@ -181,9 +181,9 @@
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

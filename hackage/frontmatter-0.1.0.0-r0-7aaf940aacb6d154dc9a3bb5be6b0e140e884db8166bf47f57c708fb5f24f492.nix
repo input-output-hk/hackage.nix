@@ -21,7 +21,7 @@
       synopsis = "Parses frontmatter as used in Jekyll markdown files.";
       description = "Provides a parser that'll parse the frontmatter only and\n. one that'll execute a YAML parser on it, so that it's a\n. YAML frontmatter parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hspec" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."frontmatter" or (errorHandler.buildDepError "frontmatter"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

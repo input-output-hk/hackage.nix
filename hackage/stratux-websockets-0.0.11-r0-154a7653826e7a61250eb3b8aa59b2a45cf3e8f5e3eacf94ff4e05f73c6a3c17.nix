@@ -21,7 +21,7 @@
       synopsis = "A library for using websockets with stratux";
       description = "A library for using websockets with stratux <http://stratux.me/>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

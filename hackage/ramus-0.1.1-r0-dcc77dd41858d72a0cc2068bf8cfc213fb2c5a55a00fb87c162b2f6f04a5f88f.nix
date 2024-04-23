@@ -21,12 +21,12 @@
       synopsis = "Elm signal system for Haskell";
       description = "Ramus is a direct port of purescript-signal into Haskell, offering the Elm signal system for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "ramus-test-suite" = {
           depends = [
@@ -35,19 +35,19 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-io" or (errorHandler.buildDepError "quickcheck-io"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "ramus-benchmarks" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ramus" or (errorHandler.buildDepError "ramus"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

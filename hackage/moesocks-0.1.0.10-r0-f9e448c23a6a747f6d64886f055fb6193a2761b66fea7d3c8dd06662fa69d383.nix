@@ -21,7 +21,7 @@
       synopsis = "moe for all";
       description = "A socks5 proxy using the client / server architecture.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "moesocks" = {
@@ -47,9 +47,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

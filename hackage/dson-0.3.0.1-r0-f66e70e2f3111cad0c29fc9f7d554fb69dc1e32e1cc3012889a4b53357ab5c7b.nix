@@ -21,14 +21,14 @@
       synopsis = "Haskell Doge Serialized Object Notation Parser";
       description = "A simple parser for Doge Serialized Object Notation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

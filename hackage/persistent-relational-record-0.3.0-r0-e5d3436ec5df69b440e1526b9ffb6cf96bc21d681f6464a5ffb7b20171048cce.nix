@@ -14,7 +14,7 @@
       identifier = {
         name = "persistent-relational-record";
         version = "0.3.0";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2015 Takahiro Himura";
       maintainer = "taka@himura.jp";
@@ -24,7 +24,7 @@
       synopsis = "relational-record on persisten backends.";
       description = "Please see the README on Github at <https://github.com/himura/persistent-relational-record#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unittest" = {
           depends = [
@@ -56,18 +56,18 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."persistent-relational-record" or (errorHandler.buildDepError "persistent-relational-record"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "examples" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-examples)) [
+          depends = pkgs.lib.optionals (!!flags.test-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
@@ -83,9 +83,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."persistent-relational-record" or (errorHandler.buildDepError "persistent-relational-record"))
-            ];
+          ];
           buildable = if !flags.test-examples then false else true;
-          };
         };
       };
-    }
+    };
+  }

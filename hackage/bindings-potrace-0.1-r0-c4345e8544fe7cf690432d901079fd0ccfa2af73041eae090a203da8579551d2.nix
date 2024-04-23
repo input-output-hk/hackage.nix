@@ -21,18 +21,18 @@
       synopsis = "Low-level bindings to the potrace bitmap tracing library";
       description = "This package contains low-level bindings to potrace, a library for\ntracing bitmap images. Potrace is available at\n<http://potrace.sourceforge.net/>.\n\nThese bindings are automatically generated using bindings-DSL.\nFor a higher-level, friendlier set of potrace bindings, see\n<http://hackage.haskell.org/package/potrace>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [
           (pkgs."potrace" or (errorHandler.sysDepError "potrace"))
           (pkgs."m" or (errorHandler.sysDepError "m"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

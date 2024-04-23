@@ -6,8 +6,8 @@
         nix = import ../hackage/cerberus-0.1.0.0-r0-c0e3ca15460ca2311f9bf2034a868ee80b2296a301c4c732a8961a732135c655.nix;
         revNum = 0;
         sha256 = "c0e3ca15460ca2311f9bf2034a868ee80b2296a301c4c732a8961a732135c655";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

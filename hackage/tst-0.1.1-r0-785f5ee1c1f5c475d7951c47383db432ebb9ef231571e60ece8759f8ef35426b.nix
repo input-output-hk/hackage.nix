@@ -21,11 +21,11 @@
       synopsis = "BK-tree implementation";
       description = "Ternary Search Tree implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

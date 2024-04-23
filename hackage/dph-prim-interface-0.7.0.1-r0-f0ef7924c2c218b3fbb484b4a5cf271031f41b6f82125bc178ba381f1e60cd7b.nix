@@ -21,7 +21,7 @@
       synopsis = "Data Parallel Haskell segmented arrays. (abstract interface)";
       description = "Empty implementation of flat parallel arrays.\nThis package exists only so that dph-prim-par and dph-prim-seq\ncan provide the same interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."dph-base" or (errorHandler.buildDepError "dph-base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

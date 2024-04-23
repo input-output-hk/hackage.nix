@@ -21,15 +21,15 @@
       synopsis = "invertible functions and instances for HList";
       description = "Provides invertible functions and instances for HList. This was formerly part of invertible itself and has been split off.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."invertible" or (errorHandler.buildDepError "invertible"))
           (hsPkgs."HList" or (errorHandler.buildDepError "HList"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

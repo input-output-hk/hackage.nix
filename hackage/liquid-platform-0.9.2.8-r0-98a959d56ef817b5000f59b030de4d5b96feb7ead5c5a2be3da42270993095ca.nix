@@ -21,11 +21,11 @@
       synopsis = "A battery-included platform for LiquidHaskell";
       description = "A battery-included platform for LiquidHaskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "liquidhaskell" = {
-          depends = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).lt "8.10.1")) [
+          depends = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.lt "8.10.1")) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."liquid-prelude" or (errorHandler.buildDepError "liquid-prelude"))
@@ -34,11 +34,11 @@
             (hsPkgs."liquidhaskell-boot" or (errorHandler.buildDepError "liquidhaskell-boot"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.10.1"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.10.1"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

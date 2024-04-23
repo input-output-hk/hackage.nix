@@ -21,11 +21,11 @@
       synopsis = "A fully compliant Haskell 98 lexer.";
       description = "A fully compliant Haskell 98 lexer.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

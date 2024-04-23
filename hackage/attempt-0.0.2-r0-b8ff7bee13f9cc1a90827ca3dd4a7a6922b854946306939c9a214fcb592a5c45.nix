@@ -21,7 +21,7 @@
       synopsis = "Error handling using extensible exceptions outside the IO monad.";
       description = "Defines a data type, Attempt, which has a Success and Failure constructor. Failure contains an extensible exception.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."control-monad-failure" or (errorHandler.buildDepError "control-monad-failure"))
           (hsPkgs."monadloc" or (errorHandler.buildDepError "monadloc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

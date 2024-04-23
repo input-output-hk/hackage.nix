@@ -21,16 +21,16 @@
       synopsis = "Mutable variable with primitive values";
       description = "Mutable variable `PVar` that is backed by a single value `MutableByteArray`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."genvalidity" or (errorHandler.buildDepError "genvalidity"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

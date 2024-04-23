@@ -21,15 +21,15 @@
       synopsis = "Low level bindings to gpgme.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
+        ];
         libs = [ (pkgs."gpgme" or (errorHandler.sysDepError "gpgme")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

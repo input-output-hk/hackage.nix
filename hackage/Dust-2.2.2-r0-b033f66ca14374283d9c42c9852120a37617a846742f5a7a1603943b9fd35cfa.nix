@@ -21,7 +21,7 @@
       synopsis = "Polymorphic protocol engine";
       description = "Dust is a polymorphic protocol engine designed to circumvent Internet filtering based on protocol identification";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,10 +41,10 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
           (hsPkgs."threefish" or (errorHandler.buildDepError "threefish"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux || system.isOsx) (pkgs."crypto" or (errorHandler.sysDepError "crypto"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux || system.isOsx) (pkgs."crypto" or (errorHandler.sysDepError "crypto"));
         buildable = true;
-        };
+      };
       tests = {
         "crypto" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "core" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -76,9 +76,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

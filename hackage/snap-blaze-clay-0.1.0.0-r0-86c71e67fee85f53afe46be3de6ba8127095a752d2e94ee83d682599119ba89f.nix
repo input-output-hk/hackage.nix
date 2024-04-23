@@ -21,7 +21,7 @@
       synopsis = "blaze-html-clay integration for Snap";
       description = "blaze-html-clay integration for Snap";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."snap-core" or (errorHandler.buildDepError "snap-core"))
           (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

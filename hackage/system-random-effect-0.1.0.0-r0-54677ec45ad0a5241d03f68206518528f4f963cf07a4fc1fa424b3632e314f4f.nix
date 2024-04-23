@@ -21,15 +21,15 @@
       synopsis = "Random number generation for extensible effects.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."extensible-effects" or (errorHandler.buildDepError "extensible-effects"))
           (hsPkgs."mersenne-random-pure64" or (errorHandler.buildDepError "mersenne-random-pure64"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

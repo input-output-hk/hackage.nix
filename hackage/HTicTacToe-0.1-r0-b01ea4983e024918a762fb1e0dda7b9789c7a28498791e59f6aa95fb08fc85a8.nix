@@ -21,7 +21,7 @@
       synopsis = "A tic-tac-toe game.";
       description = "Another tic-tac-toe game in Haskell using the SDL bindings.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "HTicTacToe" = {
@@ -33,9 +33,9 @@
             (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
             (hsPkgs."SDL-image" or (errorHandler.buildDepError "SDL-image"))
             (hsPkgs."SDL-ttf" or (errorHandler.buildDepError "SDL-ttf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/Interpolation-maxs-0.3.0-r0-321e35316e1a8df8835c2021cef58dbbd9d292780436823d5ca54e69258600e0.nix;
         revNum = 0;
         sha256 = "321e35316e1a8df8835c2021cef58dbbd9d292780436823d5ca54e69258600e0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

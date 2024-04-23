@@ -21,7 +21,7 @@
       synopsis = "A command line argument/option parser library built around a monadic metaphor";
       description = "A command line argument/option parser library built around a monadic metaphor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "task-manager" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."commander-cli" or (errorHandler.buildDepError "commander-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-commander" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."commander-cli" or (errorHandler.buildDepError "commander-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

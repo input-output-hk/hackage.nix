@@ -21,7 +21,7 @@
       synopsis = "lens-based API for Gtk";
       description = "The main interface module of LGtk is \"LGtk\".\n\nSee also <http://people.inf.elte.hu/divip/LGtk/index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lgtkdemo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lgtk" or (errorHandler.buildDepError "lgtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Support for using HStringTemplate in Happstack";
       description = "Happstack is a web application framework. HStringTemplate is a templating solution.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."HStringTemplate" or (errorHandler.buildDepError "HStringTemplate"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

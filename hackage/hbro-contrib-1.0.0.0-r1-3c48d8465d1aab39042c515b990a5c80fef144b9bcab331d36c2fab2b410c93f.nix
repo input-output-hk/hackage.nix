@@ -21,7 +21,7 @@
       synopsis = "Third-party extensions to hbro.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,8 +42,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."webkit" or (errorHandler.buildDepError "webkit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

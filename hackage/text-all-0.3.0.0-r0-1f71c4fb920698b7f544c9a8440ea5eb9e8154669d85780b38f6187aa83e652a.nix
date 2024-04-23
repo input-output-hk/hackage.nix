@@ -21,7 +21,7 @@
       synopsis = "Everything Data.Text related in one package";
       description = "Everything @Data.Text@-related in one package.\n\nNote: this package does follow PVP.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-show" or (errorHandler.buildDepError "text-show"))
           (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

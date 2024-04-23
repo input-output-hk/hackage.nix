@@ -21,7 +21,7 @@
       synopsis = "library for takahashi method.";
       description = "create slide as takahashi method.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."free-operational" or (errorHandler.buildDepError "free-operational"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."reasonable-lens" or (errorHandler.buildDepError "reasonable-lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

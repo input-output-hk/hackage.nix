@@ -21,24 +21,24 @@
       synopsis = "Template Haskell splice that expands to an environment variable";
       description = "TH splice that expands to an environment variable value. Can be used to embed build-time parameters in your application.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "readme" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."markdown-unlit" or (errorHandler.buildDepError "markdown-unlit"))
             (hsPkgs."th-env" or (errorHandler.buildDepError "th-env"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

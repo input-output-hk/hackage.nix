@@ -21,7 +21,7 @@
       synopsis = "Linear algebra and interpolation using LLVM JIT";
       description = "Linear algebra and interpolation using LLVM JIT via the @knead@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."llvm-tf" or (errorHandler.buildDepError "llvm-tf"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

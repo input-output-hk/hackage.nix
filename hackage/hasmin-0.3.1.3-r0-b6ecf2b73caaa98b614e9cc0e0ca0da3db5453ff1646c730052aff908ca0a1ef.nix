@@ -21,7 +21,7 @@
       synopsis = "\"A CSS Minifier\"";
       description = "A CSS minifier which not only aims at reducing the amount of bytes of the\noutput, but also at improving gzip compression. By default, the output is the\nminified CSS file, but hasmin allows also its compression into gzip using\nGoogle's Zopfli library.\n\nTo use it: ./hasmin input.css > output.css\n\nBy default, most minification techniques are enabled. For a list of\navailable flags, do: ./hasmin --help";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hasmin" = {
           depends = [
@@ -53,10 +53,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."numbers" or (errorHandler.buildDepError "numbers"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."hasmin" or (errorHandler.buildDepError "hasmin"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

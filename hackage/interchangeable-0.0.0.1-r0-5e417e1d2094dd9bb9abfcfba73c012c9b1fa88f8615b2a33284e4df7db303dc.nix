@@ -21,14 +21,14 @@
       synopsis = "A type class for interchangeable data.";
       description = "Library to use class 'Interchangeable' for interchangeable data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Selecting subtrees from TagSoup's TagTrees using CSS selectors";
       description = "This package provides functions for parsing CSS3 selectors, a zipper for\nTagSoup's TagTree type, and functions for easily selecting subtrees from\ntag trees, e.g. by using CSS selectors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

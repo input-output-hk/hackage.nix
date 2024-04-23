@@ -21,12 +21,12 @@
       synopsis = "Dynamic typing with retained constraints";
       description = "Like Data.Dynamic, but extended to allow the specification\nof arbitrary constraints using ConstraintKinds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "constrained-dynamic-tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."constrained-dynamic" or (errorHandler.buildDepError "constrained-dynamic"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

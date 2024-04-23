@@ -21,7 +21,7 @@
       synopsis = "Inbox for asychronous messages";
       description = "Facilitates testing of asynchronous behavior";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."error-or" or (errorHandler.buildDepError "error-or"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

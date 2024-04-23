@@ -21,7 +21,7 @@
       synopsis = "Quenya verb conjugator";
       description = "Web app that conjugates Quenya verbs. Uses Scotty to provide a\nRESTful API (but really it's just a single URL you POST to),\nand React.js for a sleek, web scale, flat, synergistic front end.\n\nInstall and run `quenya-verb-server --help` for some more\ninformation on running the program.\n\nSee <http://github.com/kaashif/quenya-verb> for more\ninformation on building the latest version from source, using\nthe API and so on.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,17 +43,17 @@
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "quenya-verb-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."quenya-verb" or (errorHandler.buildDepError "quenya-verb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Formatting data for the path library.";
       description = "JsonFormat for Path.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-aeson" or (errorHandler.buildDepError "composite-aeson"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Convert between Accelerate arrays and BMP images";
       description = "This package provides efficient conversion routines between Accelerate arrays\nand BMP images.\n\nRefer to the main /Accelerate/ package for more information:\n<http://hackage.haskell.org/package/accelerate>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."accelerate-io-bytestring" or (errorHandler.buildDepError "accelerate-io-bytestring"))
           (hsPkgs."bmp" or (errorHandler.buildDepError "bmp"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

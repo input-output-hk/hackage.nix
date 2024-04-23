@@ -21,11 +21,11 @@
       synopsis = "The Neither datatype";
       description = "A datatype that discards its two arguments";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

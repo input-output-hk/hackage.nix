@@ -21,7 +21,7 @@
       synopsis = "";
       description = "This library is useful for running a large amount of parallel tasks\nthat run on top of the IO monad, executing them in batches from a work queue.\n\nIt has several features aimed at monitoring the progress of the tasks\nand tries to be reasonably efficient (in space and time) for large\nnumbers (millions) of tasks.  There is also caching support available so that the results of\nrunning the task can be preserved between runs of the same program, which\nis useful for doing scientific analysis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

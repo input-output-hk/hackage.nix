@@ -21,7 +21,7 @@
       synopsis = "Pretty Print containers in a tabular format";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."generic-deriving" or (errorHandler.buildDepError "generic-deriving"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "pptable-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."boxes" or (errorHandler.buildDepError "boxes"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Bidings to the tdlib json interface";
       description = "Please see the README on GitHub at <https://github.com/poscat0x04/tdlib#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,10 +38,10 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         libs = [ (pkgs."tdjson" or (errorHandler.sysDepError "tdjson")) ];
         buildable = true;
-        };
+      };
       tests = {
         "tdlib-test" = {
           depends = [
@@ -62,10 +62,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           libs = [ (pkgs."tdjson" or (errorHandler.sysDepError "tdjson")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

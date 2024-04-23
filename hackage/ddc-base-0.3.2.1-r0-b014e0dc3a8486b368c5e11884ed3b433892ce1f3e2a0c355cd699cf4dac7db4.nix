@@ -21,7 +21,7 @@
       synopsis = "Disciplined Disciple Compiler common utilities.    ";
       description = "This package re-exports the main external dependencies of\nthe Disciplined Disciple Compiler project, and provides some\ncommon utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."wl-pprint" or (errorHandler.buildDepError "wl-pprint"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

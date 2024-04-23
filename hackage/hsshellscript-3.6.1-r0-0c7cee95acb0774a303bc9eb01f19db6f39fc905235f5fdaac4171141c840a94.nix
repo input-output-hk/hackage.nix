@@ -21,7 +21,7 @@
       synopsis = "Using Haskell for Unix shell scripting tasks";
       description = "A Haskell-library for tasks which are usually done in\nshell scripts. This includes parsing command line\narguments, dealing with paths, some commands for dealing\nwith files, calling external programs and subroutines as\nseparate processes, pipes and redirection of input and\noutput and error handling.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

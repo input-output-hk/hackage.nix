@@ -21,7 +21,7 @@
       synopsis = "A standalone StatusNotifierItem/AppIndicator tray";
       description = "Please see the README on Github at <https://github.com/IvanMalison/gtk-sni-tray#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,12 +45,12 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."gtk+-3.0" or (errorHandler.pkgConfDepError "gtk+-3.0"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "gtk-sni-tray-standalone" = {
           depends = [
@@ -65,9 +65,9 @@
             (hsPkgs."status-notifier-item" or (errorHandler.buildDepError "status-notifier-item"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Git hook which sends events to FunBot.";
       description = "This is program to use as a Git post-receive hook, which collects new commits\nand tags made in the Git push, and reports them to a running instance of\n<https://notabug.org/fr33domlover/funbot FunBot>, so that the bot can\nannounce the event to IRC.\n\nSee the /README.md/ for instructions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "funbot-client-post-receive" = {
@@ -36,15 +36,15 @@
             (hsPkgs."template" or (errorHandler.buildDepError "template"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (if flags.network-uri
+          ] ++ (if flags.network-uri
             then [
               (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-              ]
+            ]
             else [
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

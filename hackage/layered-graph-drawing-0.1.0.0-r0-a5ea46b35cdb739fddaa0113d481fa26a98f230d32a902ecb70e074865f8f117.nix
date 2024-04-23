@@ -21,7 +21,7 @@
       synopsis = "Layered Graph Drawing after Sugiyama";
       description = "Calculates the positions of graph nodes in a table with layered graph drawing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "graph-drawing-exe" = {
           depends = [
@@ -44,9 +44,9 @@
             (hsPkgs."layered-graph-drawing" or (errorHandler.buildDepError "layered-graph-drawing"))
             (hsPkgs."intmap-graph" or (errorHandler.buildDepError "intmap-graph"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

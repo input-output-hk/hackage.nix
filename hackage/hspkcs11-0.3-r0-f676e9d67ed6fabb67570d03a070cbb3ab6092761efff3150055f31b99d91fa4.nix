@@ -21,7 +21,7 @@
       synopsis = "Wrapper for PKCS #11 interface";
       description = "This package allows to call PKCS#11 provider libraries.  PKCS#11 is a C interface specification for cryptography providers, such as crypto tokens and HSMs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."RSA" or (errorHandler.buildDepError "RSA"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pkcs11-tests" = {
           depends = [
@@ -49,12 +49,12 @@
             (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
             (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
             (hsPkgs."cipher-aes" or (errorHandler.buildDepError "cipher-aes"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

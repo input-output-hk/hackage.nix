@@ -21,14 +21,14 @@
       synopsis = "A trivial lock based on MVar";
       description = "Using an MVar as a lock is a common pattern.\nThis module just wraps that up into some functions\nwith nice names that make the pattern explicit.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

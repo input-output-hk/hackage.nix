@@ -21,11 +21,11 @@
       synopsis = "Improved library to deal with rhythmicity of short sequences";
       description = "The improved library that deals with the model similar to the one given at the work https://oleksandrzhabenko.github.io/uk/rhythmicity/PhLADiPreLiO.Eng.21.pdf and https://hackage.haskell.org/package/phonetic-languages-simplified-examples-array";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A DSL to describe common shell operations and interpeters for running them locally and remotely.";
       description = "@handsy@ is a small library mainly for applications which should make some\noperations on remote machines by SSH. It currently provides you:\n\n* A DSL describing basic system operations('command', 'readFile', 'writeFile' etc.)\n\n* Two interpreters for running this DSL locally or via SSH('run' and 'runRemote')\n\n* Some utility functions for common commands('os', 'mkTemp' etc.)\n\nIf you're looking for a shell scripting alternative, look at @turtle@, @shelly@ or\n@shellmate@ packages. @handsy@ is mostly relevant for the ability to apply simple\ncommands remotely.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."retry" or (errorHandler.buildDepError "retry"))
           (hsPkgs."data-default-class" or (errorHandler.buildDepError "data-default-class"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-th" or (errorHandler.buildDepError "tasty-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

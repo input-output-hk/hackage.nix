@@ -21,13 +21,13 @@
       synopsis = "Tests";
       description = "Tests for the Blunk sequencer library.  ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "test1" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

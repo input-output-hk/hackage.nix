@@ -21,7 +21,7 @@
       synopsis = "From a regex, generate all possible strings it can match";
       description = "From a regex, generate all possible strings it can match";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."control-monad-omega" or (errorHandler.buildDepError "control-monad-omega"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "genex" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."control-monad-omega" or (errorHandler.buildDepError "control-monad-omega"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

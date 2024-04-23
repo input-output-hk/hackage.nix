@@ -21,7 +21,7 @@
       synopsis = "Encoding and decoding for the Bottom spec.";
       description = "Encoding and decoding for the [Bottom spec](https://github.com/bottom-software-foundation/spec).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "bottom" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bottom" or (errorHandler.buildDepError "bottom"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."bottom" or (errorHandler.buildDepError "bottom"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."bottom" or (errorHandler.buildDepError "bottom"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

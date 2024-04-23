@@ -21,7 +21,7 @@
       synopsis = "Utility for building Shake build systems using Cabal sandboxes";
       description = "This utility allows to build <http://hackage.haskell.org/package/shake Shake> build systems using <http://hackage.haskell.org/package/Cabal Cabal> sandboxes. It automatically installs and updates a build system's dependencies, either from Hackage or from a local source directory. See the <https://github.com/samplecount/shake-cabal-build homepage> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "shake-cabal-build" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

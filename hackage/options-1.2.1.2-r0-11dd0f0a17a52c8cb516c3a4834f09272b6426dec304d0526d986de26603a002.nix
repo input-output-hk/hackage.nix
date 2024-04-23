@@ -21,7 +21,7 @@
       synopsis = "Powerful and easy command-line option parser";
       description = "Lets library and application developers easily work with command-line options.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,19 +29,19 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
           (hsPkgs."options".components.sublibs.options-internal or (errorHandler.buildDepError "options:options-internal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "options-internal" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "options_tests" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."options" or (errorHandler.buildDepError "options"))
             (hsPkgs."options".components.sublibs.options-internal or (errorHandler.buildDepError "options:options-internal"))
             (hsPkgs."patience" or (errorHandler.buildDepError "patience"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A singleton type for `Nat` represented as `Int`.";
       description = "This package implements a type `SInt` that links a runtime `Int` with a\ntype-level `Nat`, along with some arithmetic and reflection capabilities.\n\nThis is useful when mixing type-level `Nat`s with GHC array primitives that\nexpect `Int`s as sizes and indices.\n\nSee the module intro of `Data.SInt` for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."portray" or (errorHandler.buildDepError "portray"))
           (hsPkgs."portray-diff" or (errorHandler.buildDepError "portray-diff"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "SInt-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."sint" or (errorHandler.buildDepError "sint"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

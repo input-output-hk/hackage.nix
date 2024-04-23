@@ -6,8 +6,8 @@
         nix = import ../hackage/hkt-0.0.1-r0-5b2f1465c13ffd511dd81068d76cebcc4ef820a6a7d30c24164d651d07ee4edb.nix;
         revNum = 0;
         sha256 = "5b2f1465c13ffd511dd81068d76cebcc4ef820a6a7d30c24164d651d07ee4edb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

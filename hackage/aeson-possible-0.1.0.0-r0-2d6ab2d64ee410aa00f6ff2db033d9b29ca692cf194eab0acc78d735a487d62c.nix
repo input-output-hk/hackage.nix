@@ -21,15 +21,15 @@
       synopsis = "Possible values for aeson";
       description = "Three-valued possible types for use with aeson.\nUseful for use in PATCH endpoints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "aeson-possible-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-quickcheck-laws" or (errorHandler.buildDepError "tasty-quickcheck-laws"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

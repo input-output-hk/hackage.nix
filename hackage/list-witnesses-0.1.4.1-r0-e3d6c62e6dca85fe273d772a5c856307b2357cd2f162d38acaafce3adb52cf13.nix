@@ -21,7 +21,7 @@
       synopsis = "Witnesses for working with type-level lists";
       description = "Collection of assorted inductive witnesses and functions for working with\ntype-level lists.\n\n*   *Data.Type.List.Edit* contains single-item edits of lists, including\ninsertion, deletion, and substitution.\n*   *Data.Type.List.Sublist* contains witnesses for prefixes, suffixes, and\ntwo-way splits of type-level lists.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."singletons-base" or (errorHandler.buildDepError "singletons-base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

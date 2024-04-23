@@ -6,8 +6,8 @@
         nix = import ../hackage/postgresql-ltree-0.0.0.0-r0-b126daefbe6aeff874f9700466380e2b56f8b43923dc190016c8bd92ceadac87.nix;
         revNum = 0;
         sha256 = "b126daefbe6aeff874f9700466380e2b56f8b43923dc190016c8bd92ceadac87";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

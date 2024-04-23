@@ -21,7 +21,7 @@
       synopsis = "CLI for Ribosome";
       description = "See https://hackage.haskell.org/package/ribosome-app/docs/Ribosome.App.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
           (hsPkgs."rainbow" or (errorHandler.buildDepError "rainbow"))
           (hsPkgs."ribosome-host" or (errorHandler.buildDepError "ribosome-host"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ribosome" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."ribosome-app" or (errorHandler.buildDepError "ribosome-app"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ribosome-app-unit" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."ribosome-app" or (errorHandler.buildDepError "ribosome-app"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

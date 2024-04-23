@@ -21,7 +21,7 @@
       synopsis = "Tests and QuickCheck generators to accompany prednote.";
       description = "These are packaged separately so other packages may depend\non them.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."quickpull" or (errorHandler.buildDepError "quickpull"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "prednote-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."quickpull" or (errorHandler.buildDepError "quickpull"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "prednote-visual-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."quickpull" or (errorHandler.buildDepError "quickpull"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

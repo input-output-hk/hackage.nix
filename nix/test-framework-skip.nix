@@ -6,8 +6,8 @@
         nix = import ../hackage/test-framework-skip-1.0-r0-b235880d8c842a93eaacb67b8f9c80f8f0fc147978aa6d8c39575e86dfe9cd0b.nix;
         revNum = 0;
         sha256 = "b235880d8c842a93eaacb67b8f9c80f8f0fc147978aa6d8c39575e86dfe9cd0b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

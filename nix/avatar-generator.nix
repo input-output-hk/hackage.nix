@@ -6,10 +6,10 @@
         nix = import ../hackage/avatar-generator-0.1.0.0-r0-12fc502c958c58195cb95bd7cfeef7845da52d1df3e39935fa3c6cbcd00186be.nix;
         revNum = 0;
         sha256 = "12fc502c958c58195cb95bd7cfeef7845da52d1df3e39935fa3c6cbcd00186be";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.1.0.1" = {
     sha256 = "ff87c2530ce71ae090c4f29d41c0765652746a93b91f99a53d5125a3dd37369c";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/avatar-generator-0.1.0.1-r0-765f6b24e602dba81da2f067f8d457ca62d95055dac3496a2994f9b4fa9c9d41.nix;
         revNum = 0;
         sha256 = "765f6b24e602dba81da2f067f8d457ca62d95055dac3496a2994f9b4fa9c9d41";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

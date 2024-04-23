@@ -21,7 +21,7 @@
       synopsis = "Prelude replacement using generalized type classes where possible";
       description = "This Prelude prefers more general and performance-oriented types,\nsuch as Category, Foldable, Traversable, Data.Text and Control.Lens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pointless-fun" or (errorHandler.buildDepError "pointless-fun"))
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

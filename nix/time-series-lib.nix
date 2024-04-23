@@ -6,8 +6,8 @@
         nix = import ../hackage/time-series-lib-0.1.0-r0-0728498a4436ab85cfdd1a33cb9dbe104305775246af86f1b49c12de47991e84.nix;
         revNum = 0;
         sha256 = "0728498a4436ab85cfdd1a33cb9dbe104305775246af86f1b49c12de47991e84";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "heredocument";
       description = "heredocument";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,18 +29,18 @@
           (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."heredocs" or (errorHandler.buildDepError "heredocs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

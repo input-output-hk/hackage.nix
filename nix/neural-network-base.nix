@@ -6,8 +6,8 @@
         nix = import ../hackage/neural-network-base-0.1.0.0-r0-40c3fb95cdf637ad788e981ee5379673d4a65b800c795583c1992e5aa0efc71a.nix;
         revNum = 0;
         sha256 = "40c3fb95cdf637ad788e981ee5379673d4a65b800c795583c1992e5aa0efc71a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

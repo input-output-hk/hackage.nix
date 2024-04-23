@@ -21,11 +21,11 @@
       synopsis = "A transfinite cardinal arithmetic library including all known large cardinals";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

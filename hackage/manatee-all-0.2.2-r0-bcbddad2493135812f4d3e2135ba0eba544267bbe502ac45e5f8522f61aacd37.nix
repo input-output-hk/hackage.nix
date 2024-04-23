@@ -21,7 +21,7 @@
       synopsis = "Virtual package to install all Manatee packages.";
       description = "Virtual package to install all Manatee packages, please type command `manatee` to play it. :)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."manatee-terminal" or (errorHandler.buildDepError "manatee-terminal"))
           (hsPkgs."manatee-welcome" or (errorHandler.buildDepError "manatee-welcome"))
           (hsPkgs."manatee" or (errorHandler.buildDepError "manatee"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "manatee-all" = { buildable = true; }; };
       };
-    }
+      exes = { "manatee-all" = { buildable = true; }; };
+    };
+  }

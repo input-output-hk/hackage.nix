@@ -21,7 +21,7 @@
       synopsis = "Command-line TAR utility.";
       description = "Command-line TAR utility which uses the tar package.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "htar" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
             (hsPkgs."compression" or (errorHandler.buildDepError "compression"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

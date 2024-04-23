@@ -21,7 +21,7 @@
       synopsis = "Lens Families";
       description = "This package provides first class functional references.\nIn addition to the usual operations of getting, setting and composition, plus integration with monad state, lens families provide some unique features:\n\n* Polymorphic updating\n\n* Traversals\n\n* Cast projection functions to read-only lenses\n\n* Cast \\\"toList\\\" functions to read-only traversals\n\n* Cast semantic editor combinators to modify-only traversals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

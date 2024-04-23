@@ -21,14 +21,14 @@
       synopsis = "QuasiQuoter for non-interpolated strings, texts and bytestrings.";
       description = "QuasiQuoter for non-interpolated strings, texts and bytestrings.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

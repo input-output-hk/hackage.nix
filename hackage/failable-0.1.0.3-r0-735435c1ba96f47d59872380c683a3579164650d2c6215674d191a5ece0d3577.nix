@@ -21,15 +21,15 @@
       synopsis = "A 'Failable' error monad class to unify failure across monads that can fail";
       description = "Please see the README on Gitlab at <https://gitlab.com/codemonkeylabs/failable#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/selfrestart-0.1.0-r0-5e5358bbae624f5548645ef55a808d16d43a77d907b4109eec2d8b590283a47f.nix;
         revNum = 0;
         sha256 = "5e5358bbae624f5548645ef55a808d16d43a77d907b4109eec2d8b590283a47f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,15 +21,15 @@
       synopsis = "Shorter, more generic functions for Multiplate.";
       description = "This module provides wrappers around some Multiplate functions to spare\nthe Projector argument. This makes it simpler to use them, and\nthey will work for any data type, but a simple instance definition\nhas to be supplied for each one.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."multiplate" or (errorHandler.buildDepError "multiplate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

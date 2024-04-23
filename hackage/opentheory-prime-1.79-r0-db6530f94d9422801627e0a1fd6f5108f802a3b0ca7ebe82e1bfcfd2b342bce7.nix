@@ -21,7 +21,7 @@
       synopsis = "Prime natural numbers";
       description = "Prime natural numbers - this package was automatically generated from the\nOpenTheory package natural-prime-1.79";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
           (hsPkgs."opentheory-stream" or (errorHandler.buildDepError "opentheory-stream"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "opentheory-prime-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
             (hsPkgs."opentheory-divides" or (errorHandler.buildDepError "opentheory-divides"))
             (hsPkgs."opentheory-stream" or (errorHandler.buildDepError "opentheory-stream"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

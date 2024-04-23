@@ -21,12 +21,12 @@
       synopsis = "More intuitive, left-to-right function composition.";
       description = "More intuitive, left-to-right function composition.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."compose-ltr" or (errorHandler.buildDepError "compose-ltr"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

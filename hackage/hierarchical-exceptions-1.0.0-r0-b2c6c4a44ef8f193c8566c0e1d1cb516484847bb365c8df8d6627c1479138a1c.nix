@@ -21,14 +21,14 @@
       synopsis = "Template Haskell functions to easily create exception\nhierarchies";
       description = "Haskell supports exception hierarchies, but they require quite a bit of\nboilerplate to declare.  This package leverages Template Haskell to automate\ndeclaration of large exception hierarchies.\n\nThis package requires GHC 7.6, as a bug in GHC 7.4 prevents expansion of\nTemplate Haskell splices using 'deriving Typeable'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

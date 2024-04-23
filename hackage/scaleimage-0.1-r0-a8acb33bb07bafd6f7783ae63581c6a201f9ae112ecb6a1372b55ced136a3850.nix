@@ -21,7 +21,7 @@
       synopsis = "Scale an image to a new geometry";
       description = "Scale image is a small command line tool to scale\nan image file to a specified geometry. File types\nsupported: png, jpg, gif. Input and output formats\ncan differ. Example:\n\n> scaleimage 128 128 photo.gif photo.png\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "scaleimage" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gd" or (errorHandler.buildDepError "gd"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

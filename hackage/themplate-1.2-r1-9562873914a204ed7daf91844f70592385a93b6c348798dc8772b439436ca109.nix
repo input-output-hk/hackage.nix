@@ -21,7 +21,7 @@
       synopsis = "Project templating tool";
       description = "Themplate is a tool to generate projects from templates. The templating language is described at <https://github.com/bennofs/themplate>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "themplate" = {
@@ -36,9 +36,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

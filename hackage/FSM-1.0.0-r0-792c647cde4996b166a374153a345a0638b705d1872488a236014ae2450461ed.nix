@@ -21,7 +21,7 @@
       synopsis = "Basic concepts of finite state machines.";
       description = "Please see the README on GitHub at <https://github.com/Pablo-Dominguez/my-stack-fsm-package#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

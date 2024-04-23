@@ -6,8 +6,8 @@
         nix = import ../hackage/typson-selda-0.1.0.0-r0-357cd10382f808edebc3d3654cad9f1e9899801defb1e845282284b1f86652a1.nix;
         revNum = 0;
         sha256 = "357cd10382f808edebc3d3654cad9f1e9899801defb1e845282284b1f86652a1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

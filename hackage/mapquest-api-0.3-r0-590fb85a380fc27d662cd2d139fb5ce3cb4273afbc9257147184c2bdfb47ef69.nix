@@ -21,7 +21,7 @@
       synopsis = "Bindings to the MapQuest API";
       description = "This library provides a high-level interface to the MapQuest API. Currently only the \"geocoding\" API (street address to coordinates) is provided, but the functionality is straightforward to extend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

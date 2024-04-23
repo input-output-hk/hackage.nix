@@ -21,14 +21,14 @@
       synopsis = "Compiler plugin for loop unrolling";
       description = "This plugin gives an example of defining a compiler plugin for\nGHC. It unrolls/peels loops loops that are properly annoted. See the\nincluded tests for examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

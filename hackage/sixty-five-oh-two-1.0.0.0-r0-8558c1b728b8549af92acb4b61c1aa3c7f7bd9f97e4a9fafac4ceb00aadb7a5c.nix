@@ -21,7 +21,7 @@
       synopsis = "An eDSL for writing 65(C)02 bytecode.";
       description = "An eDSL for writing 65(C)02 bytecode. Please see the README on GitHub at <https://github.com/aearnus/sixty-five-oh-two#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "sixty-five-oh-two-exe" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."sixty-five-oh-two" or (errorHandler.buildDepError "sixty-five-oh-two"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "sixty-five-oh-two-test" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."sixty-five-oh-two" or (errorHandler.buildDepError "sixty-five-oh-two"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

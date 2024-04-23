@@ -21,7 +21,7 @@
       synopsis = "Happy Haskell Programming";
       description = "The hhp command is a backend command to enrich\nHaskell programming on editors.\nThe hhpc/hhpi commands are based on HHP library\nwhich is a wrapper of GHC API and Cabal API.\nThis package includes the hhpc command,\nthe hhpi command,\nthe HHP library, and Emacs front-end.\nFor more information, please see its home page.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."io-choice" or (errorHandler.buildDepError "io-choice"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
         buildable = true;
-        };
+      };
       exes = {
         "hhpc" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."hhp" or (errorHandler.buildDepError "hhp"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hhpi" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -58,18 +58,18 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."hhp" or (errorHandler.buildDepError "hhp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,9 +84,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

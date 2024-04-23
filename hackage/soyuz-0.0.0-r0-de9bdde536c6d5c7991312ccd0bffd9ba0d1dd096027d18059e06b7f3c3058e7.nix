@@ -21,7 +21,7 @@
       synopsis = "DCPU-16 architecture utilities for Notch's 0x10c game.";
       description = "Utilities for the DCPU-16 architecture, for Notch's upcoming space game, 0x10c.\n\nMeant to be a library for implementing powerful tools. As demonstrations, contains\na command-line optimizing assembler\\/disassembler\\/pretty printer.\n\nCore of the library is \"DCPU16.Instructions\". Everything else is built around it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "soyuz" = { buildable = true; }; };
       };
-    }
+      exes = { "soyuz" = { buildable = true; }; };
+    };
+  }

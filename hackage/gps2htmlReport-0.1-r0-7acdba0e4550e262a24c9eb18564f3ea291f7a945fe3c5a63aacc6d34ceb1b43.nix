@@ -21,7 +21,7 @@
       synopsis = "GPS to HTML Summary Report";
       description = "Generate a HTML summary report of GPS tracks";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."gd" or (errorHandler.buildDepError "gd"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "gps2htmlReport" = { buildable = true; }; };
       };
-    }
+      exes = { "gps2htmlReport" = { buildable = true; }; };
+    };
+  }

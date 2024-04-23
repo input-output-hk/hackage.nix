@@ -21,11 +21,11 @@
       synopsis = "proxy helpers";
       description = "This module contains a bunch of pre-defined proxies\nso that users don't /always/ have to write @(Proxy :: Proxy Word8)@,\netc. It is recommended that you import this module qualified to avoid\nnaming conflicts.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

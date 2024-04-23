@@ -14,7 +14,7 @@
       identifier = {
         name = "amazon-emailer-client-snap";
         version = "0.1.1.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "dbp@dbpmail.net";
@@ -24,7 +24,7 @@
       synopsis = "Client library for amazon-emailer daemon";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."snaplet-postgresql-simple" or (errorHandler.buildDepError "snaplet-postgresql-simple"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

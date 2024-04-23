@@ -21,7 +21,7 @@
       synopsis = "k-induction for Copilot.";
       description = "Some tools to prove properties on Copilot programs with k-induction model\nchecking.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."smtlib2" or (errorHandler.buildDepError "smtlib2"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

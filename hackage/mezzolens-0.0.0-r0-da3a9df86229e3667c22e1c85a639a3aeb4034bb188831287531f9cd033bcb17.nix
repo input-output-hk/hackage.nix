@@ -21,7 +21,7 @@
       synopsis = "Pure Profunctor Functional Lenses";
       description = "If you are looking for a modify operator, like @(%~)@, there isn't one.\nProfunctor lenses can be directly used to modify values.\nIf @l@ is an optic, then you can write @l (+1)@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

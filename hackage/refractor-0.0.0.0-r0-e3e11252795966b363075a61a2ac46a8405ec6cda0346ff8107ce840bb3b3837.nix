@@ -21,30 +21,30 @@
       synopsis = "See README for more info";
       description = "See README for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."refractor" or (errorHandler.buildDepError "refractor"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."refractor" or (errorHandler.buildDepError "refractor"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

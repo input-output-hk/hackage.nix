@@ -21,11 +21,11 @@
       synopsis = "magma is an algebraic structure consisting a set together with an binary operation.";
       description = "magma is an algebraic structure consisting a set together with an binary operation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Conversions from ixset-typed to other containers.";
       description = "Conversions from ixset-typed to other containers; HashMaps, zippers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."ixset-typed" or (errorHandler.buildDepError "ixset-typed"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."zipper-extra" or (errorHandler.buildDepError "zipper-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

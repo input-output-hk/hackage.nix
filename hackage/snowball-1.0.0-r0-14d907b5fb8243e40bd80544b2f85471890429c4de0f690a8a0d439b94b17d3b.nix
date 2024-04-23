@@ -21,7 +21,7 @@
       synopsis = "Bindings to the Snowball library.";
       description = "The Snowball library is used to compute the stems of words\nin natural languages.\n\nCompared to the older <stemmer> package, this one:\n\n* Correctly handles unicode without relying on the system\nlocale\n\n* Takes greater care to avoid memory leaks and to be thread\nsafe\n\n* Uses Text rather than String\n\n* Gets rid of the need for @stemWords@ by using rewrite\nrules to make @map stem@ efficient\n\n* Includes a more recent release of Snowball\n\n* Attempts to comply with the Snowball licensing terms\n\n* Supports @SafeHaskell@ when available and is otherwise\n@Haskell2010@\n\n* Comes with a test suite\n\nHowever, although this code is written from scratch, it is\nheavily modeled after the code of the \\\"stemmer\\\" package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-snowball" = {
           depends = [
@@ -44,10 +44,10 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-snowball" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."language-haskell-extract" or (errorHandler.buildDepError "language-haskell-extract"))
             (hsPkgs."snowball" or (errorHandler.buildDepError "snowball"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

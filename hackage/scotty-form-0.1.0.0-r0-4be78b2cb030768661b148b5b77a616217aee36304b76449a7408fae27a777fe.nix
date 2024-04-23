@@ -21,7 +21,7 @@
       synopsis = "Html form validation using `ditto`";
       description = "Formlet library for `scotty` using `lucid` and `ditto`";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."ditto" or (errorHandler.buildDepError "ditto"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."ditto-lucid" or (errorHandler.buildDepError "ditto-lucid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

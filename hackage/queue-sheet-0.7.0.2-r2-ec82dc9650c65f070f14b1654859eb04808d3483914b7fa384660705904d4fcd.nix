@@ -21,7 +21,7 @@
       synopsis = "queue sheet utility";
       description = "This package provides a utility for creating queue sheets.  Please see the\nREADME on GitHub at\n<https://github.com/ExtremaIS/queue-sheet-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."ttc" or (errorHandler.buildDepError "ttc"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "queue-sheet" = {
           depends = [
@@ -48,10 +48,10 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."queue-sheet" or (errorHandler.buildDepError "queue-sheet"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "queue-sheet-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."queue-sheet" or (errorHandler.buildDepError "queue-sheet"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

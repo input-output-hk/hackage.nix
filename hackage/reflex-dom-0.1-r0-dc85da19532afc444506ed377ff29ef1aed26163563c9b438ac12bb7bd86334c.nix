@@ -21,7 +21,7 @@
       synopsis = "Glitch-free Functional Reactive Programming";
       description = "Reflex is a Functional Reactive Programming implementation that provides strong guarantees of deterministic execution and scalable runtime performance";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,17 +43,17 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ] ++ (if compiler.isGhcjs && true
+        ] ++ (if compiler.isGhcjs && true
           then [
             (hsPkgs."ghcjs-base" or (errorHandler.buildDepError "ghcjs-base"))
-            ]
+          ]
           else [
             (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
             (hsPkgs."gtk3" or (errorHandler.buildDepError "gtk3"))
             (hsPkgs."webkitgtk3" or (errorHandler.buildDepError "webkitgtk3"))
             (hsPkgs."webkitgtk3-javascriptcore" or (errorHandler.buildDepError "webkitgtk3-javascriptcore"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

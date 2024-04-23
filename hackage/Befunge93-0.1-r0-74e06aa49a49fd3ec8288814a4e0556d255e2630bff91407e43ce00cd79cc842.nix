@@ -21,7 +21,7 @@
       synopsis = "An interpreter for the Befunge-93 Programming Language";
       description = "An interpreter for the '93 spec of the esoteric programming language Befunge";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Befunge93" = {
@@ -30,9 +30,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "High-performance JSON parser and encoder";
       description = "This library parses JSON into a @Value@ type that is consistent with the\nABNF described in [RFC 7159](https://tools.ietf.org/html/rfc7159). The\nparser is about six times faster than the parser that `aeson` provides.\nThis parser is however, non-resumable, so if resumable parsing is\nimportant, `aeson` should be preferred.\n\nThis library does not include any functions or typeclasses to help users\nmarshal `Value` to their application-specific data types. Such functions\nand typeclasses are outside the scope of this library. If anyone writes a\nlibrary that offers users these conveniences open a issue so that the\n@json-syntax@ documentation can point users to it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."scientific-notation" or (errorHandler.buildDepError "scientific-notation"))
           (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -58,10 +58,10 @@
             (hsPkgs."text-short" or (errorHandler.buildDepError "text-short"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."scientific-notation" or (errorHandler.buildDepError "scientific-notation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

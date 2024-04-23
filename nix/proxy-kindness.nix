@@ -6,8 +6,8 @@
         nix = import ../hackage/proxy-kindness-0.1-r0-919c9966097bb5aa94e2802276bc69183ad0412861b159d6a038a3dc0cdbce7d.nix;
         revNum = 0;
         sha256 = "919c9966097bb5aa94e2802276bc69183ad0412861b159d6a038a3dc0cdbce7d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

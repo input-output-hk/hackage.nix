@@ -21,7 +21,7 @@
       synopsis = "A pie chart generator for the hledger accounting tool.";
       description = "hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.\nThis package generates simple pie chart graphics showing relative account balances.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hledger-chart" = {
@@ -32,9 +32,9 @@
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."Chart" or (errorHandler.buildDepError "Chart"))
             (hsPkgs."colour" or (errorHandler.buildDepError "colour"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

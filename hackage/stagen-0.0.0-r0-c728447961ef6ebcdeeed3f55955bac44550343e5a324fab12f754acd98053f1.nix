@@ -21,7 +21,7 @@
       synopsis = "Static site generator";
       description = "Low dependency static site generator using markdown";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,17 +39,17 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stagen" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."stagen" or (errorHandler.buildDepError "stagen"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Haskell-based CLI Twitter client";
       description = "A really basic twitter client. ";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "twitter" = {
@@ -36,9 +36,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

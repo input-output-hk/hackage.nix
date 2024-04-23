@@ -21,15 +21,15 @@
       synopsis = "Haskell FRP binding to the Irrlicht game engine.";
       description = "A wrapper for the Irrlicht game engine allowing games to be written with functional reactive programming.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

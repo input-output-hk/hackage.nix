@@ -21,7 +21,7 @@
       synopsis = "Well-kinded computational algebra library, currently supporting Groebner basis.";
       description = "Dependently-typed computational algebra libray for Groebner basis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."peggy" or (errorHandler.buildDepError "peggy"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
           (hsPkgs."heaps" or (errorHandler.buildDepError "heaps"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "7.6.1") (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.6.1") (hsPkgs."monomorphic" or (errorHandler.buildDepError "monomorphic"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

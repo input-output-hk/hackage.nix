@@ -21,7 +21,7 @@
       synopsis = "Domain Name System data structures";
       description = "This package provides Domain Name System data structures and\n(de)serialization routines.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."data-textual" or (errorHandler.buildDepError "data-textual"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."network-ip" or (errorHandler.buildDepError "network-ip"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

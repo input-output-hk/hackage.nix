@@ -31,8 +31,8 @@
         (hsPkgs.buildPackages.gi-gdk or (pkgs.buildPackages.gi-gdk or (errorHandler.setupDepError "gi-gdk")))
         (hsPkgs.buildPackages.gi-gtk or (pkgs.buildPackages.gi-gtk or (errorHandler.setupDepError "gi-gtk")))
         (hsPkgs.buildPackages.gi-pango or (pkgs.buildPackages.gi-pango or (errorHandler.setupDepError "gi-pango")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -50,11 +50,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."libadwaita-1" or (errorHandler.pkgConfDepError "libadwaita-1"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

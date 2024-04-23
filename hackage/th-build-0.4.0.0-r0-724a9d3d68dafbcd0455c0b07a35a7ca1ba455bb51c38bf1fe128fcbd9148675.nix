@@ -21,14 +21,14 @@
       synopsis = "More convenient construction of TH ASTs";
       description = "The main feature here is implicit conversion of arguments to AST constructors: Tired of writing things like\n\n@\nvalD (varP (mkName \\\"foo\\\")) (normalB (appE (varE 'not) (conT 'True))) []\n@\n\n? With th-build:\n\n@\nvalD' \\\"foo\\\" (appE' 'not 'True) ()\n@\n\nHint: Use @()@ for an empty list argument to an autoconverting function, since @[]@ will yield an type ambiguity error.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Combinators for manipulating dependently-typed predicates.";
       description = "Please see the README on GitHub at <https://github.com/mstksg/decidable#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

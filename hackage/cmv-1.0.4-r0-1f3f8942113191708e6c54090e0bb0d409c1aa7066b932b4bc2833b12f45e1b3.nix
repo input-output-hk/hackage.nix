@@ -21,7 +21,7 @@
       synopsis = "Detailed visualization of CMs, HMMs and their comparisions";
       description = "cmv is a collection of tools for the visualisation of Hidden Markov Models (HMMV) and RNA-family models (CMV). Moreover it can visualise comparisons of these models (HMMCV,CMCV), and annotate linked regions in the structural alignments they were constructed from and via, 3rd party tools, in their consensus secondary structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."BiobaseTypes" or (errorHandler.buildDepError "BiobaseTypes"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."diagrams-core" or (errorHandler.buildDepError "diagrams-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "CMCV" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."StockholmAlignment" or (errorHandler.buildDepError "StockholmAlignment"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CMV" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -91,9 +91,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."StockholmAlignment" or (errorHandler.buildDepError "StockholmAlignment"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CMCWStoCMCV" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -112,9 +112,9 @@
             (hsPkgs."cmv" or (errorHandler.buildDepError "cmv"))
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CMCtoHMMC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -134,9 +134,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."BioHMM" or (errorHandler.buildDepError "BioHMM"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "HMMCtoCMC" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -156,9 +156,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."BioHMM" or (errorHandler.buildDepError "BioHMM"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "CMVJson" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -175,9 +175,9 @@
             (hsPkgs."either-unwrap" or (errorHandler.buildDepError "either-unwrap"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "HMMCV" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -195,9 +195,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."BioHMM" or (errorHandler.buildDepError "BioHMM"))
             (hsPkgs."StockholmAlignment" or (errorHandler.buildDepError "StockholmAlignment"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "HMMV" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -215,9 +215,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."BioHMM" or (errorHandler.buildDepError "BioHMM"))
             (hsPkgs."StockholmAlignment" or (errorHandler.buildDepError "StockholmAlignment"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

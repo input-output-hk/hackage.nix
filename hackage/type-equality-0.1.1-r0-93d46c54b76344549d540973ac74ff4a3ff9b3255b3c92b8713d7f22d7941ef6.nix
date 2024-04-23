@@ -21,11 +21,11 @@
       synopsis = "Type equality, coercion/cast and other operations.";
       description = "In the presence of GADTs, sometimes a proof is\nneeded that two types are equal. This package\ncontains an equality type for this purpose, plus its\nproperties (reflexive, symmetric, transitive) and\nsome useful operations (substitution, congruence,\ncoercion/cast). It also contains a type class for\nproducing equality proofs, providing some form of\ndecidable equality on types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/rand-vars-0.1-r0-20ef5450f05387c7e3ec9b02fa51900bc7c9196eb7d6d217324ecaaddbcec319.nix;
         revNum = 0;
         sha256 = "20ef5450f05387c7e3ec9b02fa51900bc7c9196eb7d6d217324ecaaddbcec319";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

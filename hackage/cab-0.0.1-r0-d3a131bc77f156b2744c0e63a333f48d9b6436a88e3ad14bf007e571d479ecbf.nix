@@ -21,7 +21,7 @@
       synopsis = "A maintenance command of Haskell cabal packages";
       description = "This is a MacPorts-like maintenance command of\nHaskell cabal packages. Some part of this program is a wrapper to\n\"ghc-pkg\" and \"cabal\".\nIf you are always confused due to inconsistency of two commands,\nor if you want a way to check all outdated packages,\nor if you want a way to remove outdated packages recursively,\nthis command helps you.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cab" = {
@@ -36,9 +36,9 @@
             (hsPkgs."attoparsec-enumerator" or (errorHandler.buildDepError "attoparsec-enumerator"))
             (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

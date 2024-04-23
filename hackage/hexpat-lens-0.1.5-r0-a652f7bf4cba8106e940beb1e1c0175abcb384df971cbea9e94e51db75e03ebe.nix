@@ -21,7 +21,7 @@
       synopsis = "Lenses for Hexpat.";
       description = "A set of lenses for inspecting and manipulating Hexpat data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."hexpat-tagsoup" or (errorHandler.buildDepError "hexpat-tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

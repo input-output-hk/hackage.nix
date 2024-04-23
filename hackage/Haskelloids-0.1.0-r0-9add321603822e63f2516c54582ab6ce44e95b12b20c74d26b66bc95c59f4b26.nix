@@ -21,7 +21,7 @@
       synopsis = "A reproduction of the Atari 1979 classic \"Asteroids\"";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Haskelloids" = {
@@ -34,9 +34,9 @@
             (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
             (hsPkgs."HGL" or (errorHandler.buildDepError "HGL"))
             (hsPkgs."Yampa" or (errorHandler.buildDepError "Yampa"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A set of modules for working with Debian control files and packages";
       description = "This version is very out of date and no longer\nsupported. Get latest version from darcs for now.\nModules for parsing Debian control files, resolving\ndependencies, comparing version numbers, and other\nuseful stuff.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

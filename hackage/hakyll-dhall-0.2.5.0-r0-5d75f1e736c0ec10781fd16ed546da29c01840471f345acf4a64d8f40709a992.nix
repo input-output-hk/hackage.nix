@@ -21,7 +21,7 @@
       synopsis = "Dhall compiler for Hakyll";
       description = "Hakyll compiler and loader for Dhall files.  Functions are intended to track\nall local dependencies within the project directory, so rebuilds are\nproperly triggered on up-stream imports.  Provides options for customizing\nrebuilding behavior for network, environment variable, and non-project local\nfiles.\n\nSee README.md for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-dhall-test-app" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."dhall" or (errorHandler.buildDepError "dhall"))
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
             (hsPkgs."hakyll-dhall" or (errorHandler.buildDepError "hakyll-dhall"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

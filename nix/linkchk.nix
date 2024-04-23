@@ -6,8 +6,8 @@
         nix = import ../hackage/linkchk-0.0.2-r0-c3072ce72a247b5900908b1278d711c68e927b81040d8fc4333c6dd77f7d41c0.nix;
         revNum = 0;
         sha256 = "c3072ce72a247b5900908b1278d711c68e927b81040d8fc4333c6dd77f7d41c0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

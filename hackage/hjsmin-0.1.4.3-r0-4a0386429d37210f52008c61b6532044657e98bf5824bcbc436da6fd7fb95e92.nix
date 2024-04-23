@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of a javascript minifier";
       description = "Reduces size of javascript files by stripping out extraneous whitespace and\nother syntactic elements, without changing the semantics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hjsmin" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."language-javascript" or (errorHandler.buildDepError "language-javascript"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

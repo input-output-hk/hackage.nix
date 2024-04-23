@@ -21,7 +21,7 @@
       synopsis = "A library which provides the UserId type and useful instances for web development";
       description = "Includes instances for SafeCopy, Lens, Boomerang, PathInfo and more";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

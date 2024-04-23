@@ -21,14 +21,14 @@
       synopsis = "HQuantLib Time is a business calendar functions extracted from HQuantLib";
       description = "HQuantLib is intended to be a functional style port of QuantLib (http://quantlib.org)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

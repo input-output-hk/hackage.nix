@@ -21,7 +21,7 @@
       synopsis = "An implementation of the Jonathan's Card API.";
       description = "This implements the Jonathan's Card API, as detailed at\n<http://jonathanstark.com/card/#api>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."json" or (errorHandler.buildDepError "json"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

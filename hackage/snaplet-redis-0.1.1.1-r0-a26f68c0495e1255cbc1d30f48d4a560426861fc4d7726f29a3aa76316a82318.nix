@@ -21,7 +21,7 @@
       synopsis = "Redis support for Snap Framework";
       description = "This package provides a snaplet which exposes\ninterface to Redis in-memory key-value storage as\nimplemented by Hedis library. Inline\ndocumentation contains usage examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."snap" or (errorHandler.buildDepError "snap"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

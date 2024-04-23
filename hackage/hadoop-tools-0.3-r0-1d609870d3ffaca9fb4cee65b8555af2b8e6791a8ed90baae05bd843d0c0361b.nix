@@ -21,7 +21,7 @@
       synopsis = "Fast command line tools for working with Hadoop.";
       description = "Fast command line tools for working with Hadoop.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hh" = {
@@ -42,9 +42,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

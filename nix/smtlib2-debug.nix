@@ -6,8 +6,8 @@
         nix = import ../hackage/smtlib2-debug-1.0-r0-cfe18fe5ddc3787a09b259b4c600e4955115aadd889791ef0b0d78f96166ee7e.nix;
         revNum = 0;
         sha256 = "cfe18fe5ddc3787a09b259b4c600e4955115aadd889791ef0b0d78f96166ee7e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

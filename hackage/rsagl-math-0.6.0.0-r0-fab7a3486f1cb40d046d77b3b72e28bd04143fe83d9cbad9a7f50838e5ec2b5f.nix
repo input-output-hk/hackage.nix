@@ -21,7 +21,7 @@
       synopsis = "The RogueStar Animation and Graphics Library: Mathematics";
       description = "RSAGL, the RogueStar Animation and Graphics Library,\nwas specifically designed for a computer game called\nroguestar, but effort has been made to make it accessable\nto other projects that might benefit from it.  This\npackage includes mathematical algorithms to support\nthe project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."Vec" or (errorHandler.buildDepError "Vec"))
           (hsPkgs."Vec-OpenGLRaw" or (errorHandler.buildDepError "Vec-OpenGLRaw"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "Synchronous Kafka Client";
       description = "A synchronous API on top of librdkafka using hw-kafka-client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."hw-kafka-client" or (errorHandler.buildDepError "hw-kafka-client"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kafka-client-sync-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hw-kafka-client" or (errorHandler.buildDepError "hw-kafka-client"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

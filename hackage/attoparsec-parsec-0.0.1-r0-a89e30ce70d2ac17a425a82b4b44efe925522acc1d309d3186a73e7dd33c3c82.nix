@@ -21,7 +21,7 @@
       synopsis = "An Attoparsec compatibility layer for Parsec";
       description = "This package provides an implementation of\n\"Data.Attoparsec.Text\" in terms of Parsec.\nIt can be used to write parsers that can be compiled against\nboth Attoparsec and Parsec.\n\nAttoparsec is an awesome and very fast library, but it still\nhas a weak point: It does not generate very useful error\nmessages on parse errors.  Compiling an Attoparsec parser\nagainst Parsec can be useful for at least two scenarios.\n\n- Parsec can be used while developing Attoparsec parsers, so\nthat you get better error messages on failing test cases.\n\n- You can use Attoparsec for parsing, so that you benefit\nfrom it's speed.  And on parse errors you can re-parse the\ninput with Parsec, so that you can display a useful error\nmessage to the user.\n\nA simple usage example is here:\n<https://github.com/sol/attoparsec-parsec#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -41,25 +41,25 @@
             (hsPkgs."hspec-shouldbe" or (errorHandler.buildDepError "hspec-shouldbe"))
             (hsPkgs."hspec-discover" or (errorHandler.buildDepError "hspec-discover"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme-parsec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec-parsec" or (errorHandler.buildDepError "attoparsec-parsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "readme-attoparsec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

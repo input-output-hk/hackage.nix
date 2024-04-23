@@ -21,7 +21,7 @@
       synopsis = "Core Rollbar data types and APIs.";
       description = "Provides a type-safe encoding of the Rollbar API.\nAlso provides functions to communicate with the Rollbar API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doc-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."rollbar-hs" or (errorHandler.buildDepError "rollbar-hs"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

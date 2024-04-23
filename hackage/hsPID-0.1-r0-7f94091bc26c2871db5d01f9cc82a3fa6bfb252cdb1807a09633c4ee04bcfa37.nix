@@ -21,15 +21,15 @@
       synopsis = "PID control loop";
       description = "Please see the README on GitHub at <https://github.com/jlamothe/hsPID#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hsPID-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hsPID" or (errorHandler.buildDepError "hsPID"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

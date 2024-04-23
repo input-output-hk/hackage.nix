@@ -21,7 +21,7 @@
       synopsis = "Law-abiding lenses for Aeson, using microlens.";
       description = "Law-abiding lenses for Aeson, using microlens.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "microlens-aeson-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."microlens-aeson" or (errorHandler.buildDepError "microlens-aeson"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

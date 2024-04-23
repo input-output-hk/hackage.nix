@@ -6,10 +6,10 @@
         nix = import ../hackage/genvalidity-sydtest-0.0.0.0-r0-0ae24e8fd23b3cce29a5d7e118fba519afc1e1e1d9fad2f4e18bc66ce9a68aa3.nix;
         revNum = 0;
         sha256 = "0ae24e8fd23b3cce29a5d7e118fba519afc1e1e1d9fad2f4e18bc66ce9a68aa3";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "1.0.0.0" = {
     sha256 = "8550737541526c8f51b29b70aa5b45ef33eb41b5e7ef29c97ad1b1ac91366687";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/genvalidity-sydtest-1.0.0.0-r0-f8556671cb8067f9e847dd4bd3405a1a11a20b0cbc2c84132d5cbb3db048a2c8.nix;
         revNum = 0;
         sha256 = "f8556671cb8067f9e847dd4bd3405a1a11a20b0cbc2c84132d5cbb3db048a2c8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

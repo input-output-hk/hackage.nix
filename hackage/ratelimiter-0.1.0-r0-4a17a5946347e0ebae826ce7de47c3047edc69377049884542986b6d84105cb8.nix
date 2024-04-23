@@ -21,7 +21,7 @@
       synopsis = "In-memory rate limiter";
       description = "An in-memory rate limiter implementation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ratelimiter-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."timespan" or (errorHandler.buildDepError "timespan"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,21 +21,21 @@
       synopsis = "A simple multi-way tree data structure.";
       description = "In some contexts, forests (collections of zero\nor more trees) are more important than trees.\nThe /data-forest/ library provides a @Tree@\ntype much like the one from the popular\n/containers/ library, but it also provides a\n@Forest@ type with its own @Functor@ and\n@Foldable@ instances.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."data-forest" or (errorHandler.buildDepError "data-forest"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

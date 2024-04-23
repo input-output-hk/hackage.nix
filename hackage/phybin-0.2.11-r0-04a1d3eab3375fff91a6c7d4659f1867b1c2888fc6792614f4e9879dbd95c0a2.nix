@@ -21,7 +21,7 @@
       synopsis = "Utility for clustering phylogenetic trees in Newick format based on Robinson-Foulds distance.";
       description = "This package provides a libary and executable for dealing with Newick tree files.\n\nIt can do simple binning of identical trees or more complex clustering based on\nan all-to-all Robinson-Foulds distance matrix.\n\nphybin produces output files that characterize the size and contents of each bin or cluster (including\ngenerating GraphViz-based visual representations of the tree topologies).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ] ++ (pkgs.lib).optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"));
+        ] ++ pkgs.lib.optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"));
         buildable = true;
-        };
+      };
       exes = {
         "phybin" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."hierarchical-clustering" or (errorHandler.buildDepError "hierarchical-clustering"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ] ++ (pkgs.lib).optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"));
+          ] ++ pkgs.lib.optional (flags.bitvec) (hsPkgs."bitvec" or (errorHandler.buildDepError "bitvec"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

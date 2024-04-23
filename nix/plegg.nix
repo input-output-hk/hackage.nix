@@ -6,8 +6,8 @@
         nix = import ../hackage/plegg-0.2.1.1-r0-07eaca5ebf551fff3e106362482108be385c364f12bc3b1e9e77df98988e9c9b.nix;
         revNum = 0;
         sha256 = "07eaca5ebf551fff3e106362482108be385c364f12bc3b1e9e77df98988e9c9b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

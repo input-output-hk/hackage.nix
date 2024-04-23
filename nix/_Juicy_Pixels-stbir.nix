@@ -6,8 +6,8 @@
         nix = import ../hackage/JuicyPixels-stbir-0.1.0.0-r0-7906b110635ea5e194966147bfd8fd0c11482bf9cbfe0d756d0ba0e3cbcf6445.nix;
         revNum = 0;
         sha256 = "7906b110635ea5e194966147bfd8fd0c11482bf9cbfe0d756d0ba0e3cbcf6445";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

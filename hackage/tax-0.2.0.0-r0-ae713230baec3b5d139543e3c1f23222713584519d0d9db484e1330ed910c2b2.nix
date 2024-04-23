@@ -21,7 +21,7 @@
       synopsis = "Types and combinators for taxes";
       description = "This library provides combinators for constructing taxes.  It is based on\nthe <https://hackage.haskell.org/package/dollaridoos dollaridoos> library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."dollaridoos" or (errorHandler.buildDepError "dollaridoos"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

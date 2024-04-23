@@ -21,14 +21,14 @@
       synopsis = "Library for a multi-way tree (rose tree), using Seq (finger tree) for forests";
       description = "Like 'Data.Tree' of @containers@,\nbut use 'Data.Sequence' instead of 'Data.List' for forests ('Trees').";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

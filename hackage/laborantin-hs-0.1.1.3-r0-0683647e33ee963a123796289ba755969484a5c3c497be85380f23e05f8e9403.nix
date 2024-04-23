@@ -21,7 +21,7 @@
       synopsis = "an experiment management framework";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "labor-example" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."cmdlib" or (errorHandler.buildDepError "cmdlib"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."laborantin-hs" or (errorHandler.buildDepError "laborantin-hs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

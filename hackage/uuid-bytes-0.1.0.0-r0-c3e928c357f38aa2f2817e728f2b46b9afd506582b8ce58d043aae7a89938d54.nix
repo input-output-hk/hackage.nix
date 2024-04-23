@@ -21,7 +21,7 @@
       synopsis = "UUID parsing using byteverse packages";
       description = "This packages provides `bytesmith` parsers and `byteslice` encoders for 128bit UUIDs in hexadecimal format.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."small-bytearray-builder" or (errorHandler.buildDepError "small-bytearray-builder"))
           (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."byteslice" or (errorHandler.buildDepError "byteslice"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."natural-arithmetic" or (errorHandler.buildDepError "natural-arithmetic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "High performance, minimal statistics package using stream fusion";
       description = "High performance, minimal statistics package using stream fusion";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uvector" or (errorHandler.buildDepError "uvector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

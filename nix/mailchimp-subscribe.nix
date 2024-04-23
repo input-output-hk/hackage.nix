@@ -6,8 +6,8 @@
         nix = import ../hackage/mailchimp-subscribe-1.0-r0-1b11a3bc40e2eafa8d3472ba3cc442a0fab7ecb0640aaea8209b09be5c54b17c.nix;
         revNum = 0;
         sha256 = "1b11a3bc40e2eafa8d3472ba3cc442a0fab7ecb0640aaea8209b09be5c54b17c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

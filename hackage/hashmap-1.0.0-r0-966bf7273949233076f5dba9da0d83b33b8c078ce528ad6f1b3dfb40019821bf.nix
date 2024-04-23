@@ -21,15 +21,15 @@
       synopsis = "Persistent containers HashMap and HashSet.";
       description = "An implementation of persistent 'HashMap' and 'HashSet' on\ntop of 'Data.IntMap.IntMap' and 'Data.IntSet.IntSet',\nwith very similar API.\n\nThe class 'Hashable' is providing the 'Hashable.hash'\nmethod.\n\nThe @'HashMap' key value@ is an 'Data.IntMap.IntMap'\nindexed by the hash value, containing @'Data.Map.Map' key value@\nfor all keys with the same hash value.\n\nThe @'HashSet' elem@ is an 'Data.IntMap.IntMap' indexed by\nthe hash value, containing @'Data.Set.Set' key value@ for\nall elements with the same hash value.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

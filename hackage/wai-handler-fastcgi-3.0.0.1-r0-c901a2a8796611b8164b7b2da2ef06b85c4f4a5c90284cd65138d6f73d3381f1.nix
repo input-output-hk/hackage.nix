@@ -21,7 +21,7 @@
       synopsis = "Wai handler to fastcgi";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-handler-fastcgi>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         libs = [ (pkgs."fcgi" or (errorHandler.sysDepError "fcgi")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

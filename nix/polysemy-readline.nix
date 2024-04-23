@@ -6,10 +6,10 @@
         nix = import ../hackage/polysemy-readline-0.1.0.0-r0-bd049f9e5252973b8584be2bdae95e7facb3356f834b4f7b613c33a171168944.nix;
         revNum = 0;
         sha256 = "bd049f9e5252973b8584be2bdae95e7facb3356f834b4f7b613c33a171168944";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.2.0.0" = {
     sha256 = "564780c788fb20d2ea7430b54478a5e90ca574d275c0da858f7df6c578a67f7e";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/polysemy-readline-0.2.0.0-r0-30633eaee828f967b9f653f5406e55671684ae1ec6c513e3f2de184a301dadd1.nix;
         revNum = 0;
         sha256 = "30633eaee828f967b9f653f5406e55671684ae1ec6c513e3f2de184a301dadd1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

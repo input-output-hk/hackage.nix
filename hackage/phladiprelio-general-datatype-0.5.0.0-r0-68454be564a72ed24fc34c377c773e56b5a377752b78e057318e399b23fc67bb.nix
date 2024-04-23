@@ -14,7 +14,7 @@
       identifier = {
         name = "phladiprelio-general-datatype";
         version = "0.5.0.0";
-        };
+      };
       license = "MIT";
       copyright = "Oleksandr Zhabenko";
       maintainer = "oleksandr.zhabenko@yahoo.com";
@@ -24,11 +24,11 @@
       synopsis = "Extended functionality of PhLADiPreLiO";
       description = "Can be used not only for language, but also for simpler music and lyrics composing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Helpers for creating database tests with hspec and pg-transact";
       description = "Helpers for creating database tests with hspec and pg-transact\n\n@hspec-pg-transact@ utilizes @tmp-postgres@ to automatically and connect to a temporary instance of @postgres@ on a random port.\n\n>\n> describeDB migrate \"Query” $\n>   itDB \"work\" $ do\n>     execute_ [sql|\n>       INSERT INTO things\n>       VALUES (‘me’) |]\n>     query_ [sql|\n>       SELECT name\n>        FROM things |]\n>       `shouldReturn` [Only \"me\"]\n\nIn the example above @describeDB@ wraps @describe@ with a @beforeAll@ hook for creating a db and a @afterAll@ hook for stopping a db.\n\nTests can be written with @itDB@ which is wrapper around @it@ that uses the passed in @Connection@ to run a db transaction automatically for the test.\n\nThe libary also provides a few other functions for more fine grained control over running transactions in tests.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."resource-pool" or (errorHandler.buildDepError "resource-pool"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
             (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

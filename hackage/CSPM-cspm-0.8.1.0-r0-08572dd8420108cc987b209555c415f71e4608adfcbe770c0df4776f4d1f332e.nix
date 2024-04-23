@@ -21,7 +21,7 @@
       synopsis = "cspm command line tool for analyzing CSPM specifications.";
       description = "cspm is a small command line tool for analyzing CSPM specifications.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
           (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cspm" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."prettyclass" or (errorHandler.buildDepError "prettyclass"))
             (hsPkgs."hslua" or (errorHandler.buildDepError "hslua"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

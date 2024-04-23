@@ -21,15 +21,15 @@
       synopsis = "Simple, concurrent, extendable and easy-to-use logging\nlibrary";
       description = "This is a work in progress for a logging framework that\naims to be simple, concurrent, extendable and easy-to-use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

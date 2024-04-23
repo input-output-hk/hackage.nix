@@ -21,12 +21,12 @@
       synopsis = "Library for manipulating FilePaths in a cross platform way.";
       description = "A library for 'FilePath' manipulations, using Posix or Windows filepaths\ndepending on the platform.\n\nBoth \"System.FilePath.Posix\" and \"System.FilePath.Windows\" provide\nthe same interface. See either for examples and a list of the\navailable functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "filepath-tests" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

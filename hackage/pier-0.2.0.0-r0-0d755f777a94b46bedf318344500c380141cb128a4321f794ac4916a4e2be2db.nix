@@ -21,7 +21,7 @@
       synopsis = "Yet another Haskell build system.";
       description = "A build system for Haskell projects, built on top of [shake](http://shakebuild.com).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pier" = {
@@ -42,9 +42,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

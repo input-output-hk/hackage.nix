@@ -21,7 +21,7 @@
       synopsis = "Language to express rules for Nomic";
       description = "Provide a DSL to express rules for a Nomic game, with evaluation engine. See package Nomyx for a full game implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."data-lens-fd" or (errorHandler.buildDepError "data-lens-fd"))
           (hsPkgs."Boolean" or (errorHandler.buildDepError "Boolean"))
           (hsPkgs."safecopy" or (errorHandler.buildDepError "safecopy"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

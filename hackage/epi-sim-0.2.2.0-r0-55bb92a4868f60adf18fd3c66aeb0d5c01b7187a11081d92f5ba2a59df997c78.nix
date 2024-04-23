@@ -21,7 +21,7 @@
       synopsis = "A library for simulating epidemics as birth-death processes.";
       description = "A library for simulating epidemics, with a focus on phylodynamics and\nobservation models.\n\n/Available models/\n\n* Birth-Death (see `Epidemic.BirthDeath`)\n\n* Birth-Death-Sampling (see `Epidemic.BirthDeathSampling`)\n\n* Birth-Death-Sampling-Occurrence (see `Epidemic.BirthDeathSamplingOccurrence`)\n\n* Birth-Death-Sampling-Catastrophe-Occurrence (see `Epidemic.BirthDeathSamplingCatastropheOccurrence`)\n\n* Birth-Death-Sampling-Catastrophe-Occurrence-Disaster (see `Epidemic.BDSCOD`)\n\n* Inhomogeneous Birth-Death (see `Epidemic.InhomogeneousBD`)\n\n* Inhomogeneous Birth-Death-Sampling (see `Epidemic.InhomogeneousBDS`)\n\n/Output format/\n\nThe output is a CSV with a header encoding which events occurred when and to\nwhom: @event,time,primaryPerson,secondaryPerson@. The @primary person@ is either\nthe infecting person or the person who has been removed in some manner, the\n@secondary person@ is the person who was infected, or this is a missing value.\nThere are functions to assist in extracting observations from a full simulation:\n@birthDeathSamplingOccurrenceObservedEvents@. In the case of a catastrophe event\nwhere multiple individuals may be removed, they are represented as a colon\nseparated list of identifiers in the @primaryPerson@ field.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "epi-sim-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."mwc-random" or (errorHandler.buildDepError "mwc-random"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

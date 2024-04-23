@@ -21,12 +21,12 @@
       synopsis = "Simple applicative validation for product types, batteries included!";
       description = "Please see the README on GitHub at <https://github.com/TotallyNotChase/valida#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "valida-test" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."valida" or (errorHandler.buildDepError "valida"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

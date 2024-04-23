@@ -21,22 +21,22 @@
       synopsis = "Haskell binding for C LDAP API";
       description = "This package provides LDAP interface code for Haskell programs,\nbinding to the C LDAP API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         libs = [ (pkgs."ldap" or (errorHandler.sysDepError "ldap")) ];
         buildable = true;
-        };
+      };
       exes = {
         "runtests" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           libs = [ (pkgs."ldap" or (errorHandler.sysDepError "ldap")) ];
           buildable = if flags.buildtests then true else false;
-          };
         };
       };
-    }
+    };
+  }

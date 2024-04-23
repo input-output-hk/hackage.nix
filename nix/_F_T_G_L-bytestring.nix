@@ -6,8 +6,8 @@
         nix = import ../hackage/FTGL-bytestring-2.0-r0-f5337ca3dd571d15ea4943bbde739dddc9d0771836b4a04c6eb28fea8da09de1.nix;
         revNum = 0;
         sha256 = "f5337ca3dd571d15ea4943bbde739dddc9d0771836b4a04c6eb28fea8da09de1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

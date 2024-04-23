@@ -21,7 +21,7 @@
       synopsis = "Community-maintained extensions for xmonad";
       description = "Community-maintained tiling algorithms and extension modules for xmonad,\nan X11 tiling window manager.\n\nFor an introduction to building, configuring and using xmonad\nextensions, see \"XMonad.Doc\". In particular:\n\n\"XMonad.Doc.Configuring\", a guide to configuring xmonad\n\n\"XMonad.Doc.Extending\", using the contributed extensions library\n\n\"XMonad.Doc.Developing\", introduction to xmonad internals and writing\nyour own extensions.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ] ++ (pkgs.lib).optional (flags.use_xft) (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"));
+        ] ++ pkgs.lib.optional (flags.use_xft) (hsPkgs."X11-xft" or (errorHandler.buildDepError "X11-xft"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."xmonad" or (errorHandler.buildDepError "xmonad"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

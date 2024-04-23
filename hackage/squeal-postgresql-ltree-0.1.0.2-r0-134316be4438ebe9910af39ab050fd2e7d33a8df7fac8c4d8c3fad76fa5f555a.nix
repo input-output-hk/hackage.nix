@@ -21,7 +21,7 @@
       synopsis = "LTree extension for Squeal";
       description = "LTree extension for Squeal";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."postgresql-libpq" or (errorHandler.buildDepError "postgresql-libpq"))
           (hsPkgs."squeal-postgresql" or (errorHandler.buildDepError "squeal-postgresql"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

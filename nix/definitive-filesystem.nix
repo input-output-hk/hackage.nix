@@ -6,13 +6,13 @@
         nix = import ../hackage/definitive-filesystem-1.2-r0-47eeacf4c85df69a231d61ce1f85ceabb4e69f6a5d3894dd95ce4bba05b8eb96.nix;
         revNum = 0;
         sha256 = "47eeacf4c85df69a231d61ce1f85ceabb4e69f6a5d3894dd95ce4bba05b8eb96";
-        };
+      };
       r1 = {
         nix = import ../hackage/definitive-filesystem-1.2-r1-3a78d4d8aaa291ca95d889b62a979c4132bbe6f91073ab2bd9fdb0d55ed63121.nix;
         revNum = 1;
         sha256 = "3a78d4d8aaa291ca95d889b62a979c4132bbe6f91073ab2bd9fdb0d55ed63121";
-        };
-      default = "r1";
       };
+      default = "r1";
     };
-  }
+  };
+}

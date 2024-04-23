@@ -21,15 +21,15 @@
       synopsis = "A parser for simplified-syntax OFF files";
       description = "A simple datatype and parser for 3D OFF files,\nloosely based on\n<http://people.sc.fsu.edu/~jburkardt/data/off/off.html>,\nbut uses the file header to determine whether the object's\nfaces contain color values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec3" or (errorHandler.buildDepError "parsec3"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

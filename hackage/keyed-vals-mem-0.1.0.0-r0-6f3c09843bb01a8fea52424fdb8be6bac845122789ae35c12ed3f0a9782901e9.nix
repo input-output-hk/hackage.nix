@@ -21,7 +21,7 @@
       synopsis = "Implements a keyed-vals Handle using in-process memory";
       description = "While the goal of [keyed-vals](https://hackage.haskell.org/package/keyed-vals) is\nto provide access to storage services like [Redis](https://redis.io), the\nabstract definition of __Handle__ also enables this in-process implementation.\n\nIt is intended be used as a drop-in replacement for use in testing and rapid\nprototyping.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integration-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."keyed-vals-mem" or (errorHandler.buildDepError "keyed-vals-mem"))
             (hsPkgs."keyed-vals-hspec-tests" or (errorHandler.buildDepError "keyed-vals-hspec-tests"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

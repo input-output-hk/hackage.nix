@@ -6,8 +6,8 @@
         nix = import ../hackage/primitive-stablename-0.1-r0-dc9aeb27861a17726faa3a9eff1cbba64d2b558ab09799524063b4e25607f1dc.nix;
         revNum = 0;
         sha256 = "dc9aeb27861a17726faa3a9eff1cbba64d2b558ab09799524063b4e25607f1dc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

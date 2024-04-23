@@ -21,7 +21,7 @@
       synopsis = "Systemd facilities (Socket activation, Notify)";
       description = "A module for Systemd facilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "daemon-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."systemd" or (errorHandler.buildDepError "systemd"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Generation of PDF documents";
       description = "A PDF library with support for several pages, page transitions, outlines, annotations, compression, colors, shapes, patterns, jpegs, fonts, typesetting ... Have a look at the \"Graphics.PDF.Documentation\" module to see how to use it. Or, download the package and look at the test.hs file in the Test folder. That file is giving an example of each feature.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hyphenation" or (errorHandler.buildDepError "hyphenation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HPDF-Demo" = {
           depends = [
@@ -54,19 +54,19 @@
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "HPDF-Tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
             (hsPkgs."HPDF" or (errorHandler.buildDepError "HPDF"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

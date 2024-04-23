@@ -21,11 +21,11 @@
       synopsis = "Natural Numbers with no overhead";
       description = "Dependent Singleton like natural numbers without the\nSingleton dependency. The implementation uses inductive\nnaturals at the type level but machine integers at the term\nlevel.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

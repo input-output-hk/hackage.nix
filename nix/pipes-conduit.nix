@@ -6,8 +6,8 @@
         nix = import ../hackage/pipes-conduit-0.0.1-r0-af9888887c9cf45bd85dbf4d93e6478a908f8f3122286522d1dbc31af56b415f.nix;
         revNum = 0;
         sha256 = "af9888887c9cf45bd85dbf4d93e6478a908f8f3122286522d1dbc31af56b415f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

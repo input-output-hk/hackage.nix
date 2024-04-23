@@ -21,7 +21,7 @@
       synopsis = "Example for cqrs package";
       description = "Example for cqrs package";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cqrs-example" = {
@@ -46,9 +46,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

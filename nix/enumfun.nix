@@ -6,8 +6,8 @@
         nix = import ../hackage/enumfun-0.5.1.0-r0-6e2c3a7177e5667f18b5e5031f3dbff92a811143a8c5cd5f4e5fe2d7ee6be657.nix;
         revNum = 0;
         sha256 = "6e2c3a7177e5667f18b5e5031f3dbff92a811143a8c5cd5f4e5fe2d7ee6be657";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

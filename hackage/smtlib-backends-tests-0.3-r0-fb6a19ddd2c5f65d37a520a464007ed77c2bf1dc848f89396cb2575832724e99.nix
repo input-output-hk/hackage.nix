@@ -21,7 +21,7 @@
       synopsis = "Testing SMT-LIB backends.";
       description = "This library provides common functions and values used for testing SMT-LIB\nbackends, as provided by the smtlib-backends library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."smtlib-backends" or (errorHandler.buildDepError "smtlib-backends"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

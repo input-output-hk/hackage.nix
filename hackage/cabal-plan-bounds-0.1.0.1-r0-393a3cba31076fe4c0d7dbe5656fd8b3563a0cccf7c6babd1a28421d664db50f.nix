@@ -21,7 +21,7 @@
       synopsis = "Derives cabal bounds from build plans";
       description = "Manually curated dependency version ranges tend to become a lie: They likely\ninclude versions of your the dependencies that are neither longer tested by your CI\nsystem, or implied by compatibility with the tested versions.\n\nSo the conclusion must be to __not write build-depends ranges by hand!__\nWhich is an unpleaseant chore instead.\n\nInstead, __derive the build-depends from your actual CI builds!__\n\nThis tool helps with that. See the README for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal-plan-bounds" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Define embeddings of small bit vectors into larger ones";
       description = "Data structures for defining embeddings of small bit vectors\ninto larger ones. Functions that perform the embedding and\nextracting.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

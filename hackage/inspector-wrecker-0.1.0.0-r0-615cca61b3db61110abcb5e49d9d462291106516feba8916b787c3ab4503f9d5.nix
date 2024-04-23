@@ -21,7 +21,7 @@
       synopsis = "Create benchmarks from the HAR files";
       description = "inspector-wrecker is a library and executable for creating HTTP benchmarks from\na HAR file dump from Chrome's Inspector.\nThe executable exposes the wrecker options and additionally takes in a path to\na HAR file.\nThe library exposes a single function, 'runHar', which produces a function\n'wrecker''s library can use for benchmarks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,26 +38,26 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "inspector-wrecker-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inspector-wrecker" or (errorHandler.buildDepError "inspector-wrecker"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "inspector-wrecker-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."inspector-wrecker" or (errorHandler.buildDepError "inspector-wrecker"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

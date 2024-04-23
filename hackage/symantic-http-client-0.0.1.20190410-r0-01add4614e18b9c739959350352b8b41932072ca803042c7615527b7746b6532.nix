@@ -14,7 +14,7 @@
       identifier = {
         name = "symantic-http-client";
         version = "0.0.1.20190410";
-        };
+      };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Julien Moutinho <julm+symantic-http@autogeree.net>";
@@ -24,7 +24,7 @@
       synopsis = "symantic-http applied to the derivation of HTTP clients";
       description = "This library applies <https://hackage.haskell.org/package/symantic-http symantic-http>\nto the building of an HTTP client (request building and response decoding)\nbased upon <https://hackage.haskell.org/package/http-client http-client>.\n\nFor learning how to use this library,\nyou can read the demo example\nin <git://git.autogeree.net/symantic-http symantic-http.git>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,8 +44,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

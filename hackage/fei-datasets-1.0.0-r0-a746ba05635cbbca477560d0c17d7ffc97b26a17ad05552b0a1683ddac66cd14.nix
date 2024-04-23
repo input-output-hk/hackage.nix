@@ -21,7 +21,7 @@
       synopsis = "Some datasets";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,9 +46,9 @@
           (hsPkgs."fei-base" or (errorHandler.buildDepError "fei-base"))
           (hsPkgs."fei-nn" or (errorHandler.buildDepError "fei-nn"))
           (hsPkgs."fei-cocoapi" or (errorHandler.buildDepError "fei-cocoapi"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "render" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."FontyFruity" or (errorHandler.buildDepError "FontyFruity"))
             (hsPkgs."Rasterific" or (errorHandler.buildDepError "Rasterific"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
             (hsPkgs."JuicyPixels-repa" or (errorHandler.buildDepError "JuicyPixels-repa"))
             (hsPkgs."JuicyPixels-extra" or (errorHandler.buildDepError "JuicyPixels-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

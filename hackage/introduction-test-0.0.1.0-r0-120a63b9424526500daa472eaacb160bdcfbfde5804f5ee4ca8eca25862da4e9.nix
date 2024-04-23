@@ -21,7 +21,7 @@
       synopsis = "A prelude for the tests of safe new projects";
       description = "A prelude for the tests of safe new projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
           (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
           (hsPkgs."genvalidity-hspec" or (errorHandler.buildDepError "genvalidity-hspec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,38 +21,38 @@
       synopsis = "A simple and fast library for working with MIDI messages";
       description = "Please see README.rst";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "midi-dump" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."midi-simple" or (errorHandler.buildDepError "midi-simple"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
             (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
-        "re-encode" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
-            (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            (hsPkgs."midi-simple" or (errorHandler.buildDepError "midi-simple"))
-            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-            (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
-            (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
-            ];
-          buildable = if flags.examples then true else false;
-          };
         };
+        "re-encode" = {
+          depends = pkgs.lib.optionals (flags.examples) [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."midi-simple" or (errorHandler.buildDepError "midi-simple"))
+            (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
+            (hsPkgs."pipes-bytestring" or (errorHandler.buildDepError "pipes-bytestring"))
+            (hsPkgs."pipes-attoparsec" or (errorHandler.buildDepError "pipes-attoparsec"))
+          ];
+          buildable = if flags.examples then true else false;
+        };
+      };
       tests = {
         "midi-tests" = {
           depends = [
@@ -67,10 +67,10 @@
             (hsPkgs."hspec-attoparsec" or (errorHandler.buildDepError "hspec-attoparsec"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "midi-bench" = {
           depends = [
@@ -78,9 +78,9 @@
             (hsPkgs."midi-simple" or (errorHandler.buildDepError "midi-simple"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

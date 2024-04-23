@@ -21,7 +21,7 @@
       synopsis = "Communicate with HTTP service using JSON ";
       description = "A library for communicating with JSON over HTTP\nconnection. Supports rich set of HTTP connectivity\nfeatures provided by libcurl combined to the\nperformance and elegancy of aeson.\n\nAll HTTP methods are supported. Instances of 'ToJSON'\nand 'FromJSON' typeclasses can be transferred via\nthis library. Session cookies and other HTTP options\nmay be passed to libcurl if needed.\n\nThis library is at its best when communicating with\nsimple, non-standardized JSON interfaces. If you are\nimplementing JSON-RPC compliant client or server,\ntake a look at\n<http://hackage.haskell.org/package/jmacro-rpc>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."curl" or (errorHandler.buildDepError "curl"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

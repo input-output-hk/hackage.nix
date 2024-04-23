@@ -21,7 +21,7 @@
       synopsis = "Lays out boxes according to the CSS Box Model.";
       description = "Computes where to place e.g. images, paragraphs, containers, tables, etc onscreen given desired amounts of whitespace.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."balkon" or (errorHandler.buildDepError "balkon"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cattrap" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
             (hsPkgs."gl" or (errorHandler.buildDepError "gl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-cattrap" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."css-syntax" or (errorHandler.buildDepError "css-syntax"))
             (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

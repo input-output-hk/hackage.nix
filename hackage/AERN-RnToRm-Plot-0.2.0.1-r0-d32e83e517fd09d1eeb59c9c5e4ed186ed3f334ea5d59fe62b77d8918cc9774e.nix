@@ -21,7 +21,7 @@
       synopsis = "GL plotting of polynomial function enclosures (PFEs)";
       description = "This library extends AERN-RnToRm with support for plotting unary function enclosures\nin any GL context and a Gtk window for inspecting these enclosures.\n\nSimple examples of usage can be found in module @Demo.hs@ in folder @tests@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,8 +50,8 @@
           (hsPkgs."gtkglext" or (errorHandler.buildDepError "gtkglext"))
           (hsPkgs."glib" or (errorHandler.buildDepError "glib"))
           (hsPkgs."glade" or (errorHandler.buildDepError "glade"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

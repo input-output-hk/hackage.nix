@@ -21,7 +21,7 @@
       synopsis = "A command line utility for practicing typing";
       description = "A command line utility for practicing typing and measuring your WPM and accuracy. See the project <https://github.com/hot-leaf-juice/gotta-go-fast/blob/master/README.md README> for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gotta-go-fast" = {
@@ -35,9 +35,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

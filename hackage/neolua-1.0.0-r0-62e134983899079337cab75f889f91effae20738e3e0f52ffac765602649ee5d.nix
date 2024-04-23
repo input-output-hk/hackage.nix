@@ -21,7 +21,7 @@
       synopsis = "A CLI adapter to map Lua's CLI to Neovim's CLI for lua interpretation.";
       description = "A CLI adapter to map Lua's CLI to Neovim's CLI for lua interpretation. For use with luarocks test.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "neolua" = {
@@ -30,9 +30,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

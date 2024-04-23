@@ -21,7 +21,7 @@
       synopsis = "Statistical data visualization.";
       description = "Statistical data visualization. Provides a high-level\ninterface built on top of\n<https://github.com/timbod7/haskell-chart/wiki Chart>\nto quickly display attractive visualizations within GHCi.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,26 +42,26 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "amby-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."amby" or (errorHandler.buildDepError "amby"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "amby-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."amby" or (errorHandler.buildDepError "amby"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

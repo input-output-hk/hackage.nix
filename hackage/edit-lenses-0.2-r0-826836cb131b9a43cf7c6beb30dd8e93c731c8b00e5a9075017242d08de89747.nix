@@ -21,7 +21,7 @@
       synopsis = "Symmetric, stateful edit lenses";
       description = "An implementation of the ideas of the paper /Edit Lenses/,\navailable at <http://dmwit.com/papers/201107EL.pdf>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

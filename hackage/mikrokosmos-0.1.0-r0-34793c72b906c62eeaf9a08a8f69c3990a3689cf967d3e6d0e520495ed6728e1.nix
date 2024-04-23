@@ -21,7 +21,7 @@
       synopsis = "Lambda calculus interpreter";
       description = "A didactic untyped lambda calculus interpreter.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mikrokosmos" = {
@@ -34,9 +34,9 @@
             (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
             (hsPkgs."multimap" or (errorHandler.buildDepError "multimap"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

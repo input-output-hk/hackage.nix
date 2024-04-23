@@ -21,7 +21,7 @@
       synopsis = "A programming language for text modification.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."chatty-text" or (errorHandler.buildDepError "chatty-text"))
           (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ctpl0debug" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."chatty-text" or (errorHandler.buildDepError "chatty-text"))
             (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ctplc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."chatty-text" or (errorHandler.buildDepError "chatty-text"))
             (hsPkgs."chatty-utils" or (errorHandler.buildDepError "chatty-utils"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

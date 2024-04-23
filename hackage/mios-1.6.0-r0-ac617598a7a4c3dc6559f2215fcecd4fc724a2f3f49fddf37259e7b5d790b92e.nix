@@ -21,7 +21,7 @@
       synopsis = "A Minisat-based CDCL SAT solver in Haskell";
       description = "A modern and very fast SAT solver written in Haskell, using CDCL, watch literals, VSIDS, blocking-literals, phase saving, LBD, Glucose-like restart and so on. 'Mios' is an abbreviation of 'Minisat-based Implementation and Optimization Study on SAT solver'.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "cnf-stat" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."mios" or (errorHandler.buildDepError "mios"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.utils then true else false;
-          };
+        };
         "mios-1.6.0" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -53,9 +53,9 @@
             (hsPkgs."mios" or (errorHandler.buildDepError "mios"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

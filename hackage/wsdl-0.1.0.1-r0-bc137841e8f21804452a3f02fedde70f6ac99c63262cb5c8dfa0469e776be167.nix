@@ -21,7 +21,7 @@
       synopsis = "WSDL parsing in Haskell";
       description = "DO NOT USE, UNSTABLE AND INCOMPLETE.\n\nThis library provides a definition of, parsing and [TODO] generation of WSDL documents.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
           (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
             (hsPkgs."wsdl" or (errorHandler.buildDepError "wsdl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

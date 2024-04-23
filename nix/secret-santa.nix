@@ -6,8 +6,8 @@
         nix = import ../hackage/secret-santa-0.1.0.0-r0-c26eed76ac51a555e037b76f3f8eda40d853d7f790d8b0a2ab35201de3363166.nix;
         revNum = 0;
         sha256 = "c26eed76ac51a555e037b76f3f8eda40d853d7f790d8b0a2ab35201de3363166";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

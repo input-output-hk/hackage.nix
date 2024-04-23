@@ -6,8 +6,8 @@
         nix = import ../hackage/Yogurt-Standalone-0.4-r0-220691e931db891a802e0a6fc80de12c9170334f743a7f11cc4d6973109c61fd.nix;
         revNum = 0;
         sha256 = "220691e931db891a802e0a6fc80de12c9170334f743a7f11cc4d6973109c61fd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-middleware-preprocessor-0.2.0.0-r0-e743e9c1ab887d4d7eaaac2538ea4918bc89159052f1a2f19d8ca666e9d0701e.nix;
         revNum = 0;
         sha256 = "e743e9c1ab887d4d7eaaac2538ea4918bc89159052f1a2f19d8ca666e9d0701e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

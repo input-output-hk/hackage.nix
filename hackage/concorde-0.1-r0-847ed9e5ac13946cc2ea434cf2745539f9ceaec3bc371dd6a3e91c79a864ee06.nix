@@ -21,7 +21,7 @@
       synopsis = "Simple interface to the Concorde solver for the Traveling Salesperson Problem";
       description = "This package provides a simple interface to Concorde, a solver for the\nTraveling Salesperson Problem (TSP).  Concorde is available from\n<http://www.tsp.gatech.edu/concorde/index.html>.\n\nThis library uses the Lin–Kernighan heuristic via Concorde's @linkern@\nprogram.  It quickly produces good tours, which may not be optimal.  You\ncan directly control the tradeoff between run time and solution quality.\n\nAn example program is included.\n\nCurrently, only problems in two-dimensional Euclidean space are supported.\n\nMore features of Concorde can be added on request.  Feature requests and\npatches are always welcome.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Generalization of parsec's expression parser.";
       description = "Generalization of parsec's expression parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

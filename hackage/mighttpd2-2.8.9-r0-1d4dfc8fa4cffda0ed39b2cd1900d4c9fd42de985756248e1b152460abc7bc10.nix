@@ -21,7 +21,7 @@
       synopsis = "High performance web server on WAI/warp";
       description = "High performance web server to handle static\nfiles and CGI on WAI/warp.\nReverse proxy functionality is also provided\nto connect web applications behind.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mighty" = {
@@ -52,12 +52,12 @@
             (hsPkgs."wai-logger" or (errorHandler.buildDepError "wai-logger"))
             (hsPkgs."wai-logger-prefork" or (errorHandler.buildDepError "wai-logger-prefork"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ] ++ (pkgs.lib).optional (flags.rev-proxy) (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))) ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optional (flags.rev-proxy) (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))) ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mighty-mkindex" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -65,9 +65,9 @@
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "mightyctl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -75,10 +75,10 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."process-conduit" or (errorHandler.buildDepError "process-conduit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = ([
@@ -103,12 +103,12 @@
             (hsPkgs."wai-logger-prefork" or (errorHandler.buildDepError "wai-logger-prefork"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ] ++ (pkgs.lib).optional (flags.rev-proxy) (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))) ++ (pkgs.lib).optionals (flags.tls) [
+          ] ++ pkgs.lib.optional (flags.rev-proxy) (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))) ++ pkgs.lib.optionals (flags.tls) [
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."warp-tls" or (errorHandler.buildDepError "warp-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

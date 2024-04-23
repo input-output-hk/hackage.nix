@@ -21,7 +21,7 @@
       synopsis = "handling concurrent output";
       description = "Provides a simple interface for writing concurrent programs that\nneed to output a lot of status messages to the console, and/or run\nconcurrent external commands that output to the console.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

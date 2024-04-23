@@ -21,7 +21,7 @@
       synopsis = "To make a wrapper for struct of C language";
       description = "Please see the README on GitHub at <https://github.com/YoshikuniJujo/c-struct#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "c-struct-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."c-struct" or (errorHandler.buildDepError "c-struct"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

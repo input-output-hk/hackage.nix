@@ -21,16 +21,16 @@
       synopsis = "console mastermind decrypter";
       description = "a 5 guess decrypter for mastermind game";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mastermind" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Read many archive formats with libarchive and conduit";
       description = "@libarchive-conduit@ reads archives with @libarchive@. All of the many\nformats understood by @libarchive@ are supported. Resource use is\nmanaged in Haskell with the @conduit@ library. The interface is very\nsimple; archives are read from disk and their contents are presende as\na stream of pairs @(FilePath, ByteString)@ of the path to each file\nand its contents, respectively.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         libs = [ (pkgs."archive" or (errorHandler.sysDepError "archive")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

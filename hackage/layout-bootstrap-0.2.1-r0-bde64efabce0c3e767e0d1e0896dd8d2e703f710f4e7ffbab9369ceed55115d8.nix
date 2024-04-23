@@ -21,7 +21,7 @@
       synopsis = "Template and widgets Bootstrap2 to use with Text.Blaze.Html5";
       description = "Template and widgets Bootstrap2 to use with Text.Blaze.Html5.\nIt provides some shortcuts to hide classes and structure\nrequired for correct styling of elements and focus on a structure.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A character between a-z";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nA character between a-z";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."alphachar" or (errorHandler.buildDepError "alphachar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Pure Haskell library to repeat an action at a specific frequency.";
       description = "Repeat IO actions at a specific frequency, using\nflicks (1/705600000 of a second) for timekeeping.\nAlso contains a simple implementation of flicks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

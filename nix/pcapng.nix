@@ -6,8 +6,8 @@
         nix = import ../hackage/pcapng-0.1.0.0-r0-a43bf67717bf9a685d83ba2fb3717d0d9b65bff942ea7ccc269e18a36cfd5030.nix;
         revNum = 0;
         sha256 = "a43bf67717bf9a685d83ba2fb3717d0d9b65bff942ea7ccc269e18a36cfd5030";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

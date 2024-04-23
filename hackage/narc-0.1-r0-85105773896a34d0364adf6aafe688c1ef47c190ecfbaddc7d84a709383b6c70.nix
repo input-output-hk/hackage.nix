@@ -21,7 +21,7 @@
       synopsis = "Query SQL databases using Nested Relational Calculus embedded in Haskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."HDBC" or (errorHandler.buildDepError "HDBC"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

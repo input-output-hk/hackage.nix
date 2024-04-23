@@ -21,7 +21,7 @@
       synopsis = "The command-line interface for Cabal and Hackage.";
       description = "The \\'cabal\\' command-line program simplifies the process of managing\nHaskell software by automating the fetching, configuration, compilation\nand installation of Haskell libraries and programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal" = {
@@ -31,7 +31,7 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ] ++ (if flags.old-base
+          ] ++ (if flags.old-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -42,14 +42,14 @@
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."array" or (errorHandler.buildDepError "array"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-              ])) ++ (if flags.bytestring-in-base
+            ])) ++ (if flags.bytestring-in-base
             then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ])) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+            ])) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/network-connection-0.1.1-r0-6a79f921766a8611b2acf526ef876e1d5715f2fa7169eb0b27e7601c5171331d.nix;
         revNum = 0;
         sha256 = "6a79f921766a8611b2acf526ef876e1d5715f2fa7169eb0b27e7601c5171331d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

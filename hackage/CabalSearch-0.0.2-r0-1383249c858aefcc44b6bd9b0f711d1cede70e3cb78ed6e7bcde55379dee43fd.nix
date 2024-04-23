@@ -21,7 +21,7 @@
       synopsis = "Search cabal packages by name";
       description = "CabalSearch builds an index of cabal packages and search through them by\nname. It acts as a 'cabal list' replacement. To get started, install the\npackage and run: @cabalsearch --rebuild@. Now try it out with a query:\n@cabalsearch cabal@.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabalsearch" = {
@@ -34,9 +34,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

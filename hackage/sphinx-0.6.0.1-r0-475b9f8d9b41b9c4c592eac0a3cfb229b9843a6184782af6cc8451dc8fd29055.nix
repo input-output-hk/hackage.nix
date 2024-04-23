@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings to the Sphinx full-text searching daemon.";
       description = "Haskell bindings to the Sphinx full-text searching daemon. Compatible with Sphinx version 2.0";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

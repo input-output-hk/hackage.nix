@@ -6,8 +6,8 @@
         nix = import ../hackage/TigerHash-0.2-r0-e8cd53fd8c615581ebf7d9d95912c4b462cb859409387066cf99f1feb2ec601e.nix;
         revNum = 0;
         sha256 = "e8cd53fd8c615581ebf7d9d95912c4b462cb859409387066cf99f1feb2ec601e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Create specialized types from polymorphic ones using TH";
       description = "Very Alpha. Minimal Testing. Will test more this week.     ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
           (hsPkgs."universe-th" or (errorHandler.buildDepError "universe-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
             (hsPkgs."type-sub-th" or (errorHandler.buildDepError "type-sub-th"))
             (hsPkgs."universe-th" or (errorHandler.buildDepError "universe-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

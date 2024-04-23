@@ -13,7 +13,7 @@
       server = true;
       custom-binary = true;
       c-runtime = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "gf"; version = "3.6"; };
@@ -26,7 +26,7 @@
       synopsis = "Grammatical Framework";
       description = "GF, Grammatical Framework, is a programming language for multilingual grammar applications";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,14 +39,14 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (!flags.custom-binary) (hsPkgs."binary" or (errorHandler.buildDepError "binary"));
-        libs = (pkgs.lib).optionals (flags.c-runtime) [
+        ] ++ pkgs.lib.optional (!flags.custom-binary) (hsPkgs."binary" or (errorHandler.buildDepError "binary"));
+        libs = pkgs.lib.optionals (flags.c-runtime) [
           (pkgs."gu" or (errorHandler.sysDepError "gu"))
           (pkgs."pgf" or (errorHandler.sysDepError "pgf"))
-          ];
-        build-tools = (pkgs.lib).optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        ];
+        build-tools = pkgs.lib.optional (flags.c-runtime) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
-        };
+      };
       exes = {
         "gf" = {
           depends = (([
@@ -68,25 +68,25 @@
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ] ++ (pkgs.lib).optionals (flags.server) [
+          ] ++ pkgs.lib.optionals (flags.server) [
             (hsPkgs."httpd-shed" or (errorHandler.buildDepError "httpd-shed"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
             (hsPkgs."cgi" or (errorHandler.buildDepError "cgi"))
-            ]) ++ (if system.isWindows
+          ]) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optionals (!flags.custom-binary) [
+            ])) ++ pkgs.lib.optionals (!flags.custom-binary) [
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pgf-shell" = {
           depends = [
             (hsPkgs."gf" or (errorHandler.buildDepError "gf"))
@@ -94,10 +94,10 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."lifted-base" or (errorHandler.buildDepError "lifted-base"))
-            ];
+          ];
           buildable = if !flags.c-runtime then false else true;
-          };
         };
+      };
       tests = {
         "rgl-tests" = {
           depends = [
@@ -107,9 +107,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gf-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -117,9 +117,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

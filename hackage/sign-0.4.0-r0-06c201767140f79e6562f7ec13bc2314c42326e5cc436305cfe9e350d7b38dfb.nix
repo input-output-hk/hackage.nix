@@ -21,7 +21,7 @@
       synopsis = "Arithmetic over signs and sets of signs";
       description = "Arithmetic over signs (i.e. -, 0, +) and sets of signs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."lattices" or (errorHandler.buildDepError "lattices"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "TestSign" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "useful `bifunctors` functions reimplemented";
       description = "<<http://i.imgur.com/uZnp9ke.png>>\n\nuseful `bifunctors` functions reimplemented";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

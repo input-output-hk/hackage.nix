@@ -21,7 +21,7 @@
       synopsis = "Bindings for AWS Kinesis Version 2013-12-02";
       description = "Bindings for AWS Kinesis\n\n/API Version: 2013-12-02/\n\n<http://docs.aws.amazon.com/kinesis/2013-12-02/APIReference>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "kinesis-tests" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

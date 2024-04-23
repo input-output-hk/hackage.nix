@@ -6,8 +6,8 @@
         nix = import ../hackage/primitive-convenience-0.1-r0-b67cb4e034c3e1602abf3be33f0de3fa33fc1a7e68298e4eeb25fbaa3b10e32e.nix;
         revNum = 0;
         sha256 = "b67cb4e034c3e1602abf3be33f0de3fa33fc1a7e68298e4eeb25fbaa3b10e32e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

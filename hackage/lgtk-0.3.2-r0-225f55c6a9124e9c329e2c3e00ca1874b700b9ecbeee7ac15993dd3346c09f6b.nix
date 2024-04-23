@@ -21,7 +21,7 @@
       synopsis = "lens-based GUI with Gtk backend";
       description = "The main interface of LGtk is \"GUI.MLens.Gtk\".\n\nSee also <http://people.inf.elte.hu/divip/LGtk/index.html>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,18 +31,18 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."control-monad-free" or (errorHandler.buildDepError "control-monad-free"))
           (hsPkgs."gtk" or (errorHandler.buildDepError "gtk"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lgtkdemo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."lgtk" or (errorHandler.buildDepError "lgtk"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

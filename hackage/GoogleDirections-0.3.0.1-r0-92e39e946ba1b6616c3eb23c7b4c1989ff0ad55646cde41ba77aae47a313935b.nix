@@ -21,7 +21,7 @@
       synopsis = "Haskell Interface to Google Directions API";
       description = "An interface to the Google Directions API";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."AttoJson" or (errorHandler.buildDepError "AttoJson"))
           (hsPkgs."download-curl" or (errorHandler.buildDepError "download-curl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

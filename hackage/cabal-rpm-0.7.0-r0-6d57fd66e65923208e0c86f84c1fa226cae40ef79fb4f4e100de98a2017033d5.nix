@@ -21,7 +21,7 @@
       synopsis = "RPM package creator for Haskell Cabal-based packages";
       description = "This package generates RPM spec files from Haskell Cabal packages.\n\nRecent changes:\n\n* 0.7.0: command arg for spec, srpm, or build; installs existing packaged depends with sudo yum\n\n* 0.6.6: generate depends for extra-libraries, build-tools, and pkgconfig-depends\n\n* 0.6.5: simplify BuildRequires without versions and drop explicit hscolour\n\n* 0.6.4: add manpage and cabal-rpm-diff wrapper\n\n* 0.6.3: accept tarball arg, use temporary working directory, and add manpage\n\n* 0.6.2: fix L/GPL version output\n\n* 0.6.1: fix bugs for 'cabal-rpm pkg' unpacking and extra docs\n\n* 0.6.0: new update and release for Cabal >= 1.10";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cblrpm" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

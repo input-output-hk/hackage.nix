@@ -21,7 +21,7 @@
       synopsis = "simply oo";
       description = "DSL that allows one to write Haskell from left to right";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."monoid-owns" or (errorHandler.buildDepError "monoid-owns"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

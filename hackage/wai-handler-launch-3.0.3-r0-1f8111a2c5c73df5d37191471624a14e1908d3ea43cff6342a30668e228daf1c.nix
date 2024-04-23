@@ -21,7 +21,7 @@
       synopsis = "Launch a web app in the default browser.";
       description = "API docs and the README are available at <http://www.stackage.org/package/wai-handler-launch>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,12 +33,12 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
-          ] ++ (pkgs.lib).optional (!system.isWindows) (hsPkgs."process" or (errorHandler.buildDepError "process"));
-        libs = (pkgs.lib).optionals (system.isWindows) [
+        ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."process" or (errorHandler.buildDepError "process"));
+        libs = pkgs.lib.optionals (system.isWindows) [
           (pkgs."Shell32" or (errorHandler.sysDepError "Shell32"))
           (pkgs."msvcrt" or (errorHandler.sysDepError "msvcrt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

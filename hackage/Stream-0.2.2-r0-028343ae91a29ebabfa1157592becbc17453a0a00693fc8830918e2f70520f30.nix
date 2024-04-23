@@ -21,11 +21,11 @@
       synopsis = "A library for manipulating infinite lists.";
       description = "This package implements functions, analogous\nto those from Data.List, to create and manipulate infinite lists.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

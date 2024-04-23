@@ -21,7 +21,7 @@
       synopsis = "Haskell docs tool";
       description = "Tool and library to get docs for installed packages and source files.\nCan return result in JSON format.\nCan dump docs for all installed modules\n\n@Usage:\nhdocs <module> - get docs for module/file\nhdocs <module> <name> - get docs for name in module/file\nhdocs dump [r] - dump all installed docs, if [r], find docs for reexported declarations\nflags\n-g GHC_OPT  --ghc=GHC_OPT  option to pass to GHC\n@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (((((([
@@ -36,37 +36,37 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.10" && (compiler.version).lt "8.11")) [
+        ] ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "8.10" && compiler.version.lt "8.11")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.8" && (compiler.version).lt "8.9")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "8.8" && compiler.version.lt "8.9")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && ((compiler.version).ge "8.6" && (compiler.version).lt "8.7")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && (compiler.version.ge "8.6" && compiler.version.lt "8.7")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.3" && (compiler.isGhc && (compiler.version).lt "8.6")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.3" && (compiler.isGhc && compiler.version.lt "8.6")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.2" && (compiler.isGhc && (compiler.version).lt "8.3")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.2" && (compiler.isGhc && compiler.version.lt "8.3")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.0" && (compiler.isGhc && (compiler.version).lt "8.2")) [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.ge "8.0" && (compiler.isGhc && compiler.version.lt "8.2")) [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ]) ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).lt "8.0") [
+        ]) ++ pkgs.lib.optionals (compiler.isGhc && compiler.version.lt "8.0") [
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haddock-api" or (errorHandler.buildDepError "haddock-api"))
           (hsPkgs."haddock-library" or (errorHandler.buildDepError "haddock-library"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hdocs" = {
           depends = [
@@ -81,10 +81,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -92,9 +92,9 @@
             (hsPkgs."hdocs" or (errorHandler.buildDepError "hdocs"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

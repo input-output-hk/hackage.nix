@@ -6,8 +6,8 @@
         nix = import ../hackage/genetics-0.0.2-r0-ffb34bc20090fe15c6d24d60408b5b53eab74001ff520ba7ab9a34113a2a962a.nix;
         revNum = 0;
         sha256 = "ffb34bc20090fe15c6d24d60408b5b53eab74001ff520ba7ab9a34113a2a962a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

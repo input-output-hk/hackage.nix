@@ -21,25 +21,25 @@
       synopsis = "Parsing and extracting information from (possibly malformed) HTML documents";
       description = "TagSoup is a library for extracting information out of unstructured HTML code,\nsometimes known as tag-soup. The HTML does not have to be well formed, or render\nproperly within any particular framework. This library is for situations where\nthe author of the HTML is not cooperating with the person trying to extract the\ninformation, but is also not trying to hide the information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tagsoup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

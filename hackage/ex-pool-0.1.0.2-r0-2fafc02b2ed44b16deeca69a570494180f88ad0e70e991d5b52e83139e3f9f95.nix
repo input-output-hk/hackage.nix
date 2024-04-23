@@ -21,7 +21,7 @@
       synopsis = "Another fork of resource-pool, with a MonadIO and MonadCatch constraint";
       description = "A fork of 'resource-pool' using 'MonadIO' and 'exceptions'.\n\nThe library also contains a number of fixes and enhancements which are not yet\nincluded in a Hackage release of the original library. Apart from that, this\nlibrary is a drop-in replacement for 'resource-pool', useful in cases where a\nmore general monadic type is desirable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

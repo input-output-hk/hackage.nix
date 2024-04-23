@@ -21,14 +21,14 @@
       synopsis = "Network.BSD";
       description = "This package reexports the \"Network.BSD\" module split from the <https://hackage.haskell.org/package/network-2.7.0.0 network-2.7.0.0> package.\n\nSee newer versions of <https://hackage.haskell.org/package/network-bsd network-bsd> for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

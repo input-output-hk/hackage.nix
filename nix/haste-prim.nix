@@ -6,8 +6,8 @@
         nix = import ../hackage/haste-prim-0.6.0.0-r0-d0b7cbd39678e89a55e357bc2c6b0235fe1a78a271d7795c71647bc342761f74.nix;
         revNum = 0;
         sha256 = "d0b7cbd39678e89a55e357bc2c6b0235fe1a78a271d7795c71647bc342761f74";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

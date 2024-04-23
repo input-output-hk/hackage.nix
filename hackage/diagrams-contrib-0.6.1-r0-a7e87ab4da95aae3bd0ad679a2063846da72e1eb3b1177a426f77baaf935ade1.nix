@@ -21,7 +21,7 @@
       synopsis = "Collection of user contributions to diagrams EDSL";
       description = "A collection of user contributions for diagrams,\nan embedded domain-specific language for generation\nof vector graphics.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,9 +40,9 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
           (hsPkgs."circle-packing" or (errorHandler.buildDepError "circle-packing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "turtle-tests" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."diagrams-lib" or (errorHandler.buildDepError "diagrams-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

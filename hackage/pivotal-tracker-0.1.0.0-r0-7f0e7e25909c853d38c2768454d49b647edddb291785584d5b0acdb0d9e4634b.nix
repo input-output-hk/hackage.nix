@@ -21,7 +21,7 @@
       synopsis = "A library and a CLI tool for accessing Pivotal Tracker API";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."aeson-casing" or (errorHandler.buildDepError "aeson-casing"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "tracker" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -30,8 +30,8 @@
         (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
         (hsPkgs.buildPackages.template-haskell or (pkgs.buildPackages.template-haskell or (errorHandler.setupDepError "template-haskell")))
         (hsPkgs.buildPackages.text or (pkgs.buildPackages.text or (errorHandler.setupDepError "text")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -45,62 +45,62 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."data-flags" or (errorHandler.buildDepError "data-flags"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [ (pkgs."xkbcommon" or (errorHandler.sysDepError "xkbcommon")) ];
         buildable = true;
-        };
+      };
       tests = {
         "context" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "filecomp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "keyseq" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "keysym" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "rulescomp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "state" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "stringcomp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."xkbcommon" or (errorHandler.buildDepError "xkbcommon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench-key-proc" = {
           depends = [
@@ -109,9 +109,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

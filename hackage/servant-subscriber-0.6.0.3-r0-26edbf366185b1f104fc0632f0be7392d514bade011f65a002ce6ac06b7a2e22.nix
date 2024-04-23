@@ -21,7 +21,7 @@
       synopsis = "When REST is not enough ...";
       description = "WebSocket based extension for your servant REST API which allows users to subscribe to change events.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -51,20 +51,20 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-websockets" or (errorHandler.buildDepError "wai-websockets"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "subscriber-psGenerator" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."servant-subscriber" or (errorHandler.buildDepError "servant-subscriber"))
             (hsPkgs."purescript-bridge" or (errorHandler.buildDepError "purescript-bridge"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

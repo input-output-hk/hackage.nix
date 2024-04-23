@@ -21,7 +21,7 @@
       synopsis = "Derive Reason types to interact with a Haskell backend";
       description = "Please see the README on GitHub at <https://github.com/abarbu/servant-reason#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."servant-foreign" or (errorHandler.buildDepError "servant-foreign"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "servant-reason-compile-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."servant-reason" or (errorHandler.buildDepError "servant-reason"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "servant-reason-test" = {
           depends = [
             (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
@@ -75,9 +75,9 @@
             (hsPkgs."servant-reason" or (errorHandler.buildDepError "servant-reason"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wl-pprint-text" or (errorHandler.buildDepError "wl-pprint-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

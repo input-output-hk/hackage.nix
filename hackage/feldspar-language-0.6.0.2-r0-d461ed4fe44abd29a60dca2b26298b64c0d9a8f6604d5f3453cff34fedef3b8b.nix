@@ -21,7 +21,7 @@
       synopsis = "A functional embedded language for DSP and parallelism";
       description = "Feldspar (Functional Embedded Language for DSP and PARallelism)\nis an embedded DSL for describing digital signal processing\nalgorithms. This package contains the language front-end and an\ninterpreter.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
           (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
           (hsPkgs."QuickAnnotate" or (errorHandler.buildDepError "QuickAnnotate"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "range" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "semantics" = {
           depends = [
             (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
@@ -62,9 +62,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "decoration" = {
           depends = [
             (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
@@ -72,9 +72,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-golden" or (errorHandler.buildDepError "test-framework-golden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

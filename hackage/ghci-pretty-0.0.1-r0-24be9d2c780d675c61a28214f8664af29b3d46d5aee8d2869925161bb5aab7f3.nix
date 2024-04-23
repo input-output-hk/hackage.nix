@@ -21,15 +21,15 @@
       synopsis = "colored pretty-printing within ghci";
       description = "a tiny package that combines the ipprint package and\nthe hscolour package to provide colored pretty-printing\nin ghci";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ipprint" or (errorHandler.buildDepError "ipprint"))
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

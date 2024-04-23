@@ -21,7 +21,7 @@
       synopsis = "Functions that smash Pipes and sqlite-simple together";
       description = "Functions that smash Pipes and sqlite-simple together";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."pipes-safe" or (errorHandler.buildDepError "pipes-safe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

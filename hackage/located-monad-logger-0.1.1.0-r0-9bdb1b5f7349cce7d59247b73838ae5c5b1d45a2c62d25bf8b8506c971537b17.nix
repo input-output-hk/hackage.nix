@@ -21,15 +21,15 @@
       synopsis = "Location-aware logging without Template Haskell";
       description = "This library builds on monad-logger\nto provide logging functions\nwith automatic source locations.\n\nIt does so using the GHC CallStack mechanism,\ninstead of Template Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."monad-logger" or (errorHandler.buildDepError "monad-logger"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

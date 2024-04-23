@@ -21,7 +21,7 @@
       synopsis = "A variant of tokenizer-monad that supports streaming.";
       description = "This monad transformer is a modification of tokenizer-monad\nthat can work on streams of text/string chunks or even on\n(Unicode) bytestring streams. Thus";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

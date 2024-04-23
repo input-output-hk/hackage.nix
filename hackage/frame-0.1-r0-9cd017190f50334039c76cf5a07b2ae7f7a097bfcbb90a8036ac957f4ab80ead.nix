@@ -21,7 +21,7 @@
       synopsis = "A simple web framework.";
       description = "A simple web framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,16 +43,16 @@
           (hsPkgs."happstack-server" or (errorHandler.buildDepError "happstack-server"))
           (hsPkgs."happstack-fastcgi" or (errorHandler.buildDepError "happstack-fastcgi"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "frame-shell" = {
           depends = [
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Measures and compares the performance of streaming libraries";
       description = "This package provides micro-benchmarks to measure and compare the\nperformance of various streaming implementations in Haskell.\n\nThe following packages are supported:\n\n* base (Haskell lists)\n* streamly\n* streaming\n* pipes\n* machines\n* conduit\n* drinkery";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "bench-report" = {
-          depends = (pkgs.lib).optionals (flags.dev) [
+          depends = pkgs.lib.optionals (flags.dev) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bench-show" or (errorHandler.buildDepError "bench-show"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -38,10 +38,10 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."getopt-generics" or (errorHandler.buildDepError "getopt-generics"))
-            ];
+          ];
           buildable = if flags.dev then true else false;
-          };
         };
+      };
       benchmarks = {
         "bmarks" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."drinkery" or (errorHandler.buildDepError "drinkery"))
             (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (pkgs.lib).optional (flags.fusion-plugin) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
+          ] ++ pkgs.lib.optional (flags.fusion-plugin) (hsPkgs."fusion-plugin" or (errorHandler.buildDepError "fusion-plugin"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

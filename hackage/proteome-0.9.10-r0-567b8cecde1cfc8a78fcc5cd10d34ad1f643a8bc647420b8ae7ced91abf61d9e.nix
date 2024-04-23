@@ -21,7 +21,7 @@
       synopsis = "Neovim Project Manager";
       description = "See https://hackage.haskell.org/package/proteome/docs/Proteome.html";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -56,9 +56,9 @@
           (hsPkgs."streamly-process" or (errorHandler.buildDepError "streamly-process"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "proteome" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"))
             (hsPkgs."prelate" or (errorHandler.buildDepError "prelate"))
             (hsPkgs."proteome" or (errorHandler.buildDepError "proteome"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

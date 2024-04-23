@@ -21,7 +21,7 @@
       synopsis = "Diplomacy board game";
       description = "The board game Diplomacy, spoken in Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."TypeNat" or (errorHandler.buildDepError "TypeNat"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

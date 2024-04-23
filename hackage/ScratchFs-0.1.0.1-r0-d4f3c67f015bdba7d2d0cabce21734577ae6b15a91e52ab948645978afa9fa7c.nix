@@ -21,7 +21,7 @@
       synopsis = "Size limited temp filesystem based on fuse";
       description = "ScratchFS is a FUSE-based filesystem which provides a size-limited directory tree.\nWhen the filesystem is mounted, the user provides a maximum size the target directory and all it's\nsubdirectories may get. All IO operations in the mountdirectory are tracked and the oldest files in the watchdirectory get deleted automatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ScratchFs" = {
@@ -36,9 +36,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

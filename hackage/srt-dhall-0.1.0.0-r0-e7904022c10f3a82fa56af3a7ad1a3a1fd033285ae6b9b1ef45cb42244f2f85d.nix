@@ -21,7 +21,7 @@
       synopsis = "Dhall Encoder/Decoder for SRT.";
       description = "Dhall Encoder/Decoder for SRT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."srt-attoparsec" or (errorHandler.buildDepError "srt-attoparsec"))
           (hsPkgs."srt-formatting" or (errorHandler.buildDepError "srt-formatting"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

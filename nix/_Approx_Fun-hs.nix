@@ -6,8 +6,8 @@
         nix = import ../hackage/ApproxFun-hs-0.1.0.0-r0-753dd42180178a1b96c1b039de94bf3f444e4a5a51b24786213eeaa12e596ace.nix;
         revNum = 0;
         sha256 = "753dd42180178a1b96c1b039de94bf3f444e4a5a51b24786213eeaa12e596ace";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

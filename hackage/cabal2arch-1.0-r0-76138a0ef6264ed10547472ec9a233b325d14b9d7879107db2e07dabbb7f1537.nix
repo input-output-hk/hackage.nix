@@ -21,7 +21,7 @@
       synopsis = "Create Arch Linux packages from Cabal packages.";
       description = "Create Arch Linux packages from Cabal packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "cabal2arch" = {
@@ -37,9 +37,9 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."archlinux" or (errorHandler.buildDepError "archlinux"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

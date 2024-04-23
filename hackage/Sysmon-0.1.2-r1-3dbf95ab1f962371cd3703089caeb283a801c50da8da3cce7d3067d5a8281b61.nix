@@ -21,7 +21,7 @@
       synopsis = "Sybase 15 sysmon reports processor";
       description = "A library for processing Sybase 15 sysmon reports.\n\nThe library provides an interface to parse sysmon reports, to query the data,\nto aggregate the multiple sysmon reports, to generate the optimization hints.\nThe hints parameters can be configured.\n\nSee the Database.Sybase.Sysmon.Log package for the exported functions and\nSample.hs for the\nusage example.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

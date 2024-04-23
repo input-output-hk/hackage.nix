@@ -21,7 +21,7 @@
       synopsis = "Integration with the Ormolu code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,12 +55,12 @@
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

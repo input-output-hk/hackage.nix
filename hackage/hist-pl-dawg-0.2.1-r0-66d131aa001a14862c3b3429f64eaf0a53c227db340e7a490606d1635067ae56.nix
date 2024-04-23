@@ -21,7 +21,7 @@
       synopsis = "A generic, DAWG-based dictionary";
       description = "A generic dictionary implementation based on directed acyclic word graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text-binary" or (errorHandler.buildDepError "text-binary"))
           (hsPkgs."dawg" or (errorHandler.buildDepError "dawg"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Easily generate Hoogle indices for installed packages";
       description = "Easily generate Hoogle indices for installed packages";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hoogle-index" = {
@@ -36,9 +36,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

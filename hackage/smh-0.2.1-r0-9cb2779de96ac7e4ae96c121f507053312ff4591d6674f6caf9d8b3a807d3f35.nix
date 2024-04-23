@@ -21,7 +21,7 @@
       synopsis = "String manipulation tool written in haskell";
       description = "String manipulation CLI tool based on optics";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "lib" = {
@@ -34,10 +34,10 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
             (hsPkgs."loop" or (errorHandler.buildDepError "loop"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "smh" = {
           depends = [
@@ -45,10 +45,10 @@
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."smh".components.sublibs.lib or (errorHandler.buildDepError "smh:lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-test" = {
           depends = [
@@ -59,9 +59,9 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."smh".components.sublibs.lib or (errorHandler.buildDepError "smh:lib"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

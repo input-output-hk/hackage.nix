@@ -6,8 +6,8 @@
         nix = import ../hackage/extemp-0.0.1-r0-a858593d6a89378c7b83dd50a1e11341ecb597d67d137a74110941e540fa0f6e.nix;
         revNum = 0;
         sha256 = "a858593d6a89378c7b83dd50a1e11341ecb597d67d137a74110941e540fa0f6e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

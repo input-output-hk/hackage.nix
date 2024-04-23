@@ -14,7 +14,7 @@
       identifier = {
         name = "bamboo-theme-mini-html5";
         version = "2009.11.27";
-        };
+      };
       license = "LicenseRef-GPL";
       copyright = "";
       maintainer = "Wang, Jinjing <nfjinjing@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "bamboo mini html5 theme";
       description = "bamboo mini html5 theme";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,8 +58,8 @@
           (hsPkgs."bamboo" or (errorHandler.buildDepError "bamboo"))
           (hsPkgs."moe" or (errorHandler.buildDepError "moe"))
           (hsPkgs."yuuko" or (errorHandler.buildDepError "yuuko"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

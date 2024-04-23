@@ -21,14 +21,14 @@
       synopsis = "A simple way to interact with an SMT solver process.";
       description = "A simple way to interact with an SMT solver process.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

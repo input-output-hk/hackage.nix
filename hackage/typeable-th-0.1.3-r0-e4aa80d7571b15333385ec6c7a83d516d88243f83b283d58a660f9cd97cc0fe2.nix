@@ -21,24 +21,24 @@
       synopsis = "Automatic deriving of TypeableN instances with Template Haskell";
       description = "This package provides template haskell functions for deriving\nTypeableN instances for types of every kind, selecting the best\nN that is possible.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "compile-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."typeable-th" or (errorHandler.buildDepError "typeable-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

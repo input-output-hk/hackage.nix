@@ -21,12 +21,12 @@
       synopsis = "A constructive solid geometry (CSG) modeling language.";
       description = "Mecha is a constructive solid geometry modeling language\nand compiles to POV-Ray and OpenSCAD.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
-      exes = { "mecha-examples" = { buildable = true; }; };
       };
-    }
+      exes = { "mecha-examples" = { buildable = true; }; };
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utilities for using servant in a polysemy stack ";
       description = "It's possible to use servant and polysemy together without this library, but it's not easy. This library makes it easy.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-server" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."servant-polysemy" or (errorHandler.buildDepError "servant-polysemy"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-server-generic" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."servant-polysemy" or (errorHandler.buildDepError "servant-polysemy"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-server-with-swagger" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -100,9 +100,9 @@
             (hsPkgs."servant-swagger-ui" or (errorHandler.buildDepError "servant-swagger-ui"))
             (hsPkgs."swagger2" or (errorHandler.buildDepError "swagger2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example-client" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -118,9 +118,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."servant-polysemy" or (errorHandler.buildDepError "servant-polysemy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

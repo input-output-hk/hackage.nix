@@ -21,7 +21,7 @@
       synopsis = "Shell interface to the FreeTheorems library.";
       description = "The ftshell is a shell-based user interface to interact with the\nfree-theorems library. It offers all possibilities provided by\nthat library to generate free theorems from Haskell type\nexpressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "ftshell" = {
@@ -33,9 +33,9 @@
             (hsPkgs."free-theorems" or (errorHandler.buildDepError "free-theorems"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

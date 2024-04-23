@@ -21,7 +21,7 @@
       synopsis = "Haskell bindings for libsystemd-daemon.";
       description = "Haskell bindings for libsystemd-daemon.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,13 +29,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         libs = [
           (pkgs."systemd-daemon" or (errorHandler.sysDepError "systemd-daemon"))
-          ];
-        pkgconfig = (pkgs.lib).optional (flags.usepkgconfig) (pkgconfPkgs."libsystemd-daemon" or (errorHandler.pkgConfDepError "libsystemd-daemon"));
+        ];
+        pkgconfig = pkgs.lib.optional (flags.usepkgconfig) (pkgconfPkgs."libsystemd-daemon" or (errorHandler.pkgConfDepError "libsystemd-daemon"));
         buildable = true;
-        };
+      };
       tests = {
         "run-tests" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

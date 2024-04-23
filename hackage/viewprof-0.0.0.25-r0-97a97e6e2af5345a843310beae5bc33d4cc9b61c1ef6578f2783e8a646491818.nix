@@ -21,7 +21,7 @@
       synopsis = "Text-based interactive GHC .prof viewer";
       description = "viewprof is a text-based interactive GHC .prof viewer.\n\nYou can find a screenshot and some explanation in\n<https://github.com/maoe/viewprof#readme the README>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "viewprof" = {
@@ -37,9 +37,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

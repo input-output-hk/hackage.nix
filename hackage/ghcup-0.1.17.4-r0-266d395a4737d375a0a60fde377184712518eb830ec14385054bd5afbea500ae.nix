@@ -21,7 +21,7 @@
       synopsis = "ghc toolchain installer";
       description = "A rewrite of the shell script ghcup, for providing\na more stable user experience and exposing an API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -70,24 +70,24 @@
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
           (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ] ++ (pkgs.lib).optionals (flags.internal-downloader && !system.isWindows) [
+        ] ++ pkgs.lib.optionals (flags.internal-downloader && !system.isWindows) [
           (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
           (hsPkgs."http-io-streams" or (errorHandler.buildDepError "http-io-streams"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
           (hsPkgs."terminal-progress-bar" or (errorHandler.buildDepError "terminal-progress-bar"))
-          ]) ++ (if system.isWindows
+        ]) ++ (if system.isWindows
           then [
             (hsPkgs."bzlib" or (errorHandler.buildDepError "bzlib"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-            ]
+          ]
           else [
             (hsPkgs."bz2" or (errorHandler.buildDepError "bz2"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unix-bytestring" or (errorHandler.buildDepError "unix-bytestring"))
-            ])) ++ (pkgs.lib).optional (flags.tui && !system.isWindows) (hsPkgs."vty" or (errorHandler.buildDepError "vty"));
+          ])) ++ pkgs.lib.optional (flags.tui && !system.isWindows) (hsPkgs."vty" or (errorHandler.buildDepError "vty"));
         buildable = true;
-        };
+      };
       exes = {
         "ghcup" = {
           depends = [
@@ -118,16 +118,16 @@
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ] ++ (pkgs.lib).optionals (flags.tui && !system.isWindows) [
+          ] ++ pkgs.lib.optionals (flags.tui && !system.isWindows) [
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
         };
+      };
       tests = {
         "ghcup-test" = {
           depends = [
@@ -143,12 +143,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uri-bytestring" or (errorHandler.buildDepError "uri-bytestring"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

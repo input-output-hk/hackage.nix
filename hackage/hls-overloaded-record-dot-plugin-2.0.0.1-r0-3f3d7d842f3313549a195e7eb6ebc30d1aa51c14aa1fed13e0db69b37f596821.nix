@@ -14,7 +14,7 @@
       identifier = {
         name = "hls-overloaded-record-dot-plugin";
         version = "2.0.0.1";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "";
       maintainer = "joyfulmantis@gmail.com";
@@ -24,7 +24,7 @@
       synopsis = "Overloaded record dot plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,11 +41,11 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "9.2"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "9.2"
           then false
           else true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -55,11 +55,11 @@
             (hsPkgs."hls-overloaded-record-dot-plugin" or (errorHandler.buildDepError "hls-overloaded-record-dot-plugin"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "9.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "9.2"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

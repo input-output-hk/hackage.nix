@@ -21,7 +21,7 @@
       synopsis = "Time commands by lines of STDOUT       ";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "timeconsole" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

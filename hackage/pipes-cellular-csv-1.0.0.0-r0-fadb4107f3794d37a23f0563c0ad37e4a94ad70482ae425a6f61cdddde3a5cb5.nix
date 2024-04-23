@@ -21,7 +21,7 @@
       synopsis = "Efficient pipes-based cellular CSV codec";
       description = "This library provides an efficient pipes-based implementation\nof a cellular CSV codec designed for fast streaming of data\nwith guaranteed constant memory usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."data-cell" or (errorHandler.buildDepError "data-cell"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."pipes-cellular" or (errorHandler.buildDepError "pipes-cellular"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

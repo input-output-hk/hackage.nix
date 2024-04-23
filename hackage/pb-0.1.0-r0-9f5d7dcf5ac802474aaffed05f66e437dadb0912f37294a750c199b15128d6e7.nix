@@ -21,7 +21,7 @@
       synopsis = "pastebin command line application";
       description = "A simple pastebin command line application. Currently supports gist and pastebin.com.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "pb" = {
@@ -31,9 +31,9 @@
             (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hofix-mtl-1.0-r0-d06ff993c2c9f427f42ef4badd2592d603431398cac24fecb1b7b894fff9f972.nix;
         revNum = 0;
         sha256 = "d06ff993c2c9f427f42ef4badd2592d603431398cac24fecb1b7b894fff9f972";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

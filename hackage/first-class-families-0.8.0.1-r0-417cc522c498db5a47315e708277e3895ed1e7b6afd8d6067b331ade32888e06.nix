@@ -21,20 +21,20 @@
       synopsis = "First-class type families";
       description = "A library for type-level programming.\n\nSee README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "fcf-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,12 +21,12 @@
       synopsis = "Binding to libharp";
       description = "Binding to the library libharp managing configurations for Harp (HTTP reverse proxy).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."harp" or (errorHandler.sysDepError "harp")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

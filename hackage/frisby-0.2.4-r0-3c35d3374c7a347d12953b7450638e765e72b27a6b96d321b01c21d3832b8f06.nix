@@ -21,7 +21,7 @@
       synopsis = "Linear time composable parser for PEG grammars";
       description = "frisby is a parser library that can parse arbitrary PEG\ngrammars in linear time. Unlike other parsers of PEG grammars,\nfrisby need not be supplied with all possible rules up front,\nallowing composition of smaller parsers.\n\nPEG parsers are never ambiguous and allow infinite lookahead\nwith no backtracking penalty. Since PEG parsers can look ahead\narbitrarily, they can easily express rules such as the maximal\nmunch rule used in lexers, meaning no separate lexer is needed.\n\nIn addition to many standard combinators, frisby provides\nroutines to translate standard regex syntax into frisby parsers.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "A functional pearl on encoding and decoding using question-and-answer strategies";
       description = "A functional pearl on encoding and decoding using question-and-answer strategies";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

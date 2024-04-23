@@ -21,23 +21,23 @@
       synopsis = "A data structure over two functions to be linked together at a later time.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elision" or (errorHandler.buildDepError "elision"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

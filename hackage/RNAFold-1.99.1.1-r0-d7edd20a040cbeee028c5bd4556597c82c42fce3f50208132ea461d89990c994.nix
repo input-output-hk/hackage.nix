@@ -21,7 +21,7 @@
       synopsis = "RNA secondary structure prediction";
       description = "RNAfold v2 using the ADPfusion library. The RNAfold algorithm\nis used to determine how fast we can be compared to a highly\noptimized C program.\n\nIf possible, build using the GHC llvm backend, and GHC-7.2.2.\nGHC-7.4.x produces very bad code on my system, please benchmark\nusing 7.2.2.\n\nNOTE I'd like to rename this package to RNAfold, like the C\nimplementation. Do not install \"globally\", especially if you\nnormally use RNAfold from the ViennaRNA package, for obvious\nreasons.\n\nNOTE I am reluctant to call this v2 for now.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."BiobaseVienna" or (errorHandler.buildDepError "BiobaseVienna"))
           (hsPkgs."BiobaseXNA" or (errorHandler.buildDepError "BiobaseXNA"))
           (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "RNAFold" = { buildable = true; }; };
       };
-    }
+      exes = { "RNAFold" = { buildable = true; }; };
+    };
+  }

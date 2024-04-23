@@ -6,8 +6,8 @@
         nix = import ../hackage/git-cuk-0.0.1-r0-95c49bc70501d19e2d7d4cf1011464f21185e474b5b887920f296de6163fa260.nix;
         revNum = 0;
         sha256 = "95c49bc70501d19e2d7d4cf1011464f21185e474b5b887920f296de6163fa260";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

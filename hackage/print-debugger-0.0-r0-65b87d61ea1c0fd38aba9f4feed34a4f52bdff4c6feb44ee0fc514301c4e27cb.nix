@@ -21,14 +21,14 @@
       synopsis = "Print debugging with stack trace for Haskell (formatted for the IDE).";
       description = "Print debugging with stack trace for Haskell (formatted for the IDE). See screenshot http://i.imgur.com/KCXYHNk.png";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

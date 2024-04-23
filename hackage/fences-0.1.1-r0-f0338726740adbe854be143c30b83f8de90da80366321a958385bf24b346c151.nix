@@ -21,11 +21,11 @@
       synopsis = "To be written";
       description = "This will be a version of /transf/ with a more modular design.\n(See <http://hackage.haskell.org/package/transf>).\n\nNo code yet, just uploading it to reserve the name.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

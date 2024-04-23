@@ -6,8 +6,8 @@
         nix = import ../hackage/awesome-prelude-0.1.0.0-r0-8086c119e748c4ec3d50bf8dd55531b26d0324134bf192e5be9951083a90237f.nix;
         revNum = 0;
         sha256 = "8086c119e748c4ec3d50bf8dd55531b26d0324134bf192e5be9951083a90237f";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

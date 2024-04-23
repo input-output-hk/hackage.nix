@@ -21,15 +21,15 @@
       synopsis = "termbox + reactive-banana";
       description = "This package provides a @reactive-banana@ FRP interface to @termbox@ programs.\n\nSee also:\n\n* @<https://hackage.haskell.org/package/termbox-tea termbox-tea>@ for an Elm Architecture interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."reactive-banana" or (errorHandler.buildDepError "reactive-banana"))
           (hsPkgs."termbox" or (errorHandler.buildDepError "termbox"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

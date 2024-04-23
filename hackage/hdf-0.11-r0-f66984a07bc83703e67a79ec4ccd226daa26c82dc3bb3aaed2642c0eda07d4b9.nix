@@ -21,7 +21,7 @@
       synopsis = "Haskell data flow library for audio processing";
       description = "Haskell data flow library for audio processing.\nRequires the @jack-dl@ host from @rju@,\nsee <http://slavepianos.org/rd/?t=rju>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."hosc" or (errorHandler.buildDepError "hosc"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

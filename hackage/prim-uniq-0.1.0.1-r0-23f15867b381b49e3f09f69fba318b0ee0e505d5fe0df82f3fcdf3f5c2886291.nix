@@ -21,15 +21,15 @@
       synopsis = "Opaque unique identifiers in primitive state monads";
       description = "Opaque unique identifiers in primitive state monads\nand a GADT-like type using them as witnesses of type\nequality.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

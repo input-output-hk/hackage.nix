@@ -21,14 +21,14 @@
       synopsis = "A general solver for equations";
       description = "A general solver for type checkers of programming languages\nand real world puzzles with complex constraints.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

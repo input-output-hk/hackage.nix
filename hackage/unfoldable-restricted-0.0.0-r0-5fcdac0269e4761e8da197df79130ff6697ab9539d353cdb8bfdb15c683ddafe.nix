@@ -21,7 +21,7 @@
       synopsis = "An alternative to the Unfoldable typeclass";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."unfoldable" or (errorHandler.buildDepError "unfoldable"))
           (hsPkgs."unit-constraint" or (errorHandler.buildDepError "unit-constraint"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

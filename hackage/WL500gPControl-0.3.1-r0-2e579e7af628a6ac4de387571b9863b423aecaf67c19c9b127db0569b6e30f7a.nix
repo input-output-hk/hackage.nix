@@ -21,25 +21,25 @@
       synopsis = "A simple command line tools to control the\nAsus WL500gP router";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "WL500gPStatus" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."WL500gPLibrary" or (errorHandler.buildDepError "WL500gPLibrary"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "WL500gPControl" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."WL500gPLibrary" or (errorHandler.buildDepError "WL500gPLibrary"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

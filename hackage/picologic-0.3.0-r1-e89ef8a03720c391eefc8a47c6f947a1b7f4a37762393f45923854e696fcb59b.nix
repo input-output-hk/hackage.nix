@@ -21,7 +21,7 @@
       synopsis = "Utilities for symbolic predicate logic expressions";
       description = "`picologic` provides symbolic logic expressions that can be integrated with the `picosat` solver.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,12 +31,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "picologic" = {
-          depends = (pkgs.lib).optionals (flags.shell) [
+          depends = pkgs.lib.optionals (flags.shell) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."picosat" or (errorHandler.buildDepError "picosat"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -45,10 +45,10 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = if flags.shell then true else false;
-          };
         };
+      };
       tests = {
         "picologic-quickcheck" = {
           depends = [
@@ -59,16 +59,16 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."picologic" or (errorHandler.buildDepError "picologic"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "pretty-print-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."picologic" or (errorHandler.buildDepError "picologic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

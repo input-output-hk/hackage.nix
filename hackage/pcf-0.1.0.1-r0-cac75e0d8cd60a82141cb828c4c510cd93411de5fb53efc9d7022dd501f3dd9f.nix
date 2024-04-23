@@ -21,7 +21,7 @@
       synopsis = "A one file compiler for PCF";
       description = "PCF is a small programming language with higher order\nfunctions, natural numbers, and recursion. It is\nstatically tpyed and turing complete (general\nrecursion and all that). This compiler transformers\na PCF expression into a file of C code that when run\noutputs the answer.\nIt is mostly intended as a\ndemonstration of how to write such a compiler. The\ncurious reader should look at the <http://jozefg.bitbucket.org/posts/2015-03-24-pcf.html writeup>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."prelude-extras" or (errorHandler.buildDepError "prelude-extras"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

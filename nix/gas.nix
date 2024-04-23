@@ -6,8 +6,8 @@
         nix = import ../hackage/gas-0.0.0.1-r0-a6ad89a83fc08091aa6a84e25559c936463c3132917d804ca97b9ac81c44f06b.nix;
         revNum = 0;
         sha256 = "a6ad89a83fc08091aa6a84e25559c936463c3132917d804ca97b9ac81c44f06b";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

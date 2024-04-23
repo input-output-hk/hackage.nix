@@ -21,7 +21,7 @@
       synopsis = "Automatic session-aware servant testing";
       description = "Please see the README on GitHub at <https://github.com/mwotton/roboservant#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."servant-flatten" or (errorHandler.buildDepError "servant-flatten"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
           (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "roboservant-test" = {
           depends = [
@@ -64,9 +64,9 @@
             (hsPkgs."servant-flatten" or (errorHandler.buildDepError "servant-flatten"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
             (hsPkgs."string-conversions" or (errorHandler.buildDepError "string-conversions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

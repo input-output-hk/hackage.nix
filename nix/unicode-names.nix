@@ -6,8 +6,8 @@
         nix = import ../hackage/unicode-names-3.2.0.0-r0-fef7241d93170e26265e84553090253a5e8ee207645d47cf271816f5834d07d2.nix;
         revNum = 0;
         sha256 = "fef7241d93170e26265e84553090253a5e8ee207645d47cf271816f5834d07d2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

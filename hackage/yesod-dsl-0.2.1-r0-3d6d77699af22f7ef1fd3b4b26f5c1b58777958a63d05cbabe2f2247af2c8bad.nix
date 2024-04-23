@@ -21,7 +21,7 @@
       synopsis = "DSL for generating Yesod subsite to manage an RDBMS;";
       description = "A domain specific language and a code generator desined to create RESTful services for managing an RDBMS with Yesod web framework and Persistent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,13 +44,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
           (hsPkgs."hscolour" or (errorHandler.buildDepError "hscolour"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "yesod-dsl" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."yesod-dsl" or (errorHandler.buildDepError "yesod-dsl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

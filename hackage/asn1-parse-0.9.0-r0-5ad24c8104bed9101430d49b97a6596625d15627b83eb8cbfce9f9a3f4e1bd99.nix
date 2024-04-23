@@ -21,7 +21,7 @@
       synopsis = "Simple monadic parser for ASN1 stream types.";
       description = "Simple monadic parser for ASN1 stream types, when ASN1 pattern matching is not convenient.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."asn1-types" or (errorHandler.buildDepError "asn1-types"))
           (hsPkgs."asn1-encoding" or (errorHandler.buildDepError "asn1-encoding"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

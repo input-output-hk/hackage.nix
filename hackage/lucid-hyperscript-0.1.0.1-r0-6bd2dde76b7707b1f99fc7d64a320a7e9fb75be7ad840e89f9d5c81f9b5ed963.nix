@@ -21,7 +21,7 @@
       synopsis = "Use _hyperscript with lucid";
       description = "Please see the README on GitHub at <https://github.com/MonadicSystems/lucid-hyperscript#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "lucid-hyperscript-exe" = {
           depends = [
@@ -40,10 +40,10 @@
             (hsPkgs."lucid-hyperscript" or (errorHandler.buildDepError "lucid-hyperscript"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "lucid-hyperscript-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."lucid-hyperscript" or (errorHandler.buildDepError "lucid-hyperscript"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

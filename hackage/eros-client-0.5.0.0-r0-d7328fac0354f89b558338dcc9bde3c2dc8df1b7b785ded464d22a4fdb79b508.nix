@@ -21,7 +21,7 @@
       synopsis = "A command-line interface to the eros library.";
       description = "This is a command-line interface to the\n<https://github.com/pharpend/eros eros library>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "erosc" = {
@@ -33,9 +33,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."eros" or (errorHandler.buildDepError "eros"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

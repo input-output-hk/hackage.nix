@@ -21,7 +21,7 @@
       synopsis = "Quickcheck implementations for some NaCl data";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,10 +31,10 @@
           (hsPkgs."hex" or (errorHandler.buildDepError "hex"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."saltine" or (errorHandler.buildDepError "saltine"))
-          ];
+        ];
         libs = [ (pkgs."sodium" or (errorHandler.sysDepError "sodium")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test-all" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."saltine-quickcheck" or (errorHandler.buildDepError "saltine-quickcheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Automatic generation of XStaticFile";
       description = "Automatic generation of XStaticFile.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."xstatic" or (errorHandler.buildDepError "xstatic"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."xstatic" or (errorHandler.buildDepError "xstatic"))
             (hsPkgs."xstatic-th" or (errorHandler.buildDepError "xstatic-th"))
             (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

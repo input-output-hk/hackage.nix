@@ -21,7 +21,7 @@
       synopsis = "A robust command-line accounting tool with a simple human-editable data format, similar to ledger.";
       description = "hledger is a haskell port and friendly fork of John Wiegley's ledger accounting tool.\nThis package provides the main hledger command-line tool; see the other hledger-* packages for web and curses interfaces and chart generation.\nhledger aims to be a reliable, practical financial reporting tool for day-to-day use, and also a useful library for building financial apps in haskell.\nGiven a plain text file describing transactions, of money or any other commodity, hledger will print the chart of accounts, account balances, or transactions you're interested in.\nIt can also help you add transactions to the journal file, or convert CSV data from your bank.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hledger" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

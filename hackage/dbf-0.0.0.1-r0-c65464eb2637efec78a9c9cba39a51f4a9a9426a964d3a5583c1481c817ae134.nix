@@ -21,7 +21,7 @@
       synopsis = "Read and write XBase \".dbf\" files";
       description = "A simple interface for reading and writing XBase dbf\nfiles.  Provides whole-file parser and serializer as\nwell as a handle-based interface for reading and writing\nrecords from a file.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."rwlock" or (errorHandler.buildDepError "rwlock"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

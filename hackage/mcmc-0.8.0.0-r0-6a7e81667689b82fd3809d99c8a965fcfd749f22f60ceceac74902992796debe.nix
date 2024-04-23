@@ -21,7 +21,7 @@
       synopsis = "Sample from a posterior using Markov chain Monte Carlo";
       description = "Please see the README on GitHub at <https://github.com/dschrempf/mcmc#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,9 +49,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mcmc-test" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."mcmc" or (errorHandler.buildDepError "mcmc"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "mcmc-bench" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."mcmc" or (errorHandler.buildDepError "mcmc"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

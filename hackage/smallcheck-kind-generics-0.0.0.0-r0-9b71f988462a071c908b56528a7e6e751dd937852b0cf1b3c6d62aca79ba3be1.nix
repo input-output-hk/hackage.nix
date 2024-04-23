@@ -21,7 +21,7 @@
       synopsis = "See README for more info";
       description = "See README for more info";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,27 +29,27 @@
           (hsPkgs."kind-generics" or (errorHandler.buildDepError "kind-generics"))
           (hsPkgs."kind-generics-th" or (errorHandler.buildDepError "kind-generics-th"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."smallcheck-kind-generics" or (errorHandler.buildDepError "smallcheck-kind-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."smallcheck-kind-generics" or (errorHandler.buildDepError "smallcheck-kind-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

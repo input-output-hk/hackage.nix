@@ -21,6 +21,6 @@
       synopsis = "TBA";
       description = "wrapper around librdkafka";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

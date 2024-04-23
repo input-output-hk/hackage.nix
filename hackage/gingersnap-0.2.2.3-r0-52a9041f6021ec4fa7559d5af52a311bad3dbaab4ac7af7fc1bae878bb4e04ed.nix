@@ -21,7 +21,7 @@
       synopsis = "Tools for consistent and safe JSON APIs with snap-core and postgresql-simple";
       description = "Straightforward JSON API idioms for snap-core and postgresql-simple, that\nprevent DB connection leaks.\nSee the README for a tutorial and example use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Library for generate LaTeX code.";
       description = "You can write LaTeX files using this package.\nSee Text.LaTeX for a brief introduction.\n\nYou can test the library and report me any bug or suggestion at:\n\nlazy.ddiaz\\@gmail.com\n\nAlso, if you have an example where you use HaTeX, you could send it to my email. Thank you.\n\nChanges from last version:\n\n* Added new documentation.\n\n* Added string combinators for omit some definitions\n\n* Deleted some unnecessary definitions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."to-string-class" or (errorHandler.buildDepError "to-string-class"))
           (hsPkgs."string-combinators" or (errorHandler.buildDepError "string-combinators"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

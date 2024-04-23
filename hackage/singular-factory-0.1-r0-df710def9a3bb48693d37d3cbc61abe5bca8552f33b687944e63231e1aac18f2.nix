@@ -21,7 +21,7 @@
       synopsis = "Multivariate polynomial factorization via bindings to Singular-factory ";
       description = "Bindings to Singular-factory. Factory is the subset of the Singular\ncomputer algebra system which does factorization of multivariate\npolynomials (over integers, rationals, and finite fields)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."hgmp" or (errorHandler.buildDepError "hgmp"))
-          ];
+        ];
         libs = [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ];
         pkgconfig = if flags.pkg-cfg-prefix
           then [
             (pkgconfPkgs."singular-factory" or (errorHandler.pkgConfDepError "singular-factory"))
-            ]
+          ]
           else [
             (pkgconfPkgs."factory" or (errorHandler.pkgConfDepError "factory"))
-            ];
+          ];
         buildable = true;
-        };
+      };
       tests = {
         "singular-factory-tests" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

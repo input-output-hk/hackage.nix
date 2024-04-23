@@ -21,7 +21,7 @@
       synopsis = "Basic examples and functions for generics-sop";
       description = "This library contains various small examples of generic functions\nwritten using the @<https://hackage.haskell.org/generics-sop generics-sop>@\nlibrary.\n\nIt is a good starting point if you want to see how generic functions\ncan be defined in the SOP style.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

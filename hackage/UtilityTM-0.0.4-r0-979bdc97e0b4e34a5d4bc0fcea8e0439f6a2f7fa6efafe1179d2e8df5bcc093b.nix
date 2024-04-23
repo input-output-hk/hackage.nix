@@ -21,11 +21,11 @@
       synopsis = "Utility functions that are missing from the standard library";
       description = "Utility functions that are missing from the standard library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

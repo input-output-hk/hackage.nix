@@ -21,7 +21,7 @@
       synopsis = "Linux SpaceNavigator events via a Kafka message broker";
       description = "This package contains functions for passing Linux device events from a SpaceNavigator \\<<http://www.3dconnexion.com/products/spacemouse/spacenavigator.html>\\> to topics on a Kafka message broker \\<<https://kafka.apache.org/>\\>.  Also see \\<<https://hackage.haskell.org/package/kafka-device/>\\>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
           (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "kafka-device-spacenav" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
             (hsPkgs."kafka-device" or (errorHandler.buildDepError "kafka-device"))
             (hsPkgs."milena" or (errorHandler.buildDepError "milena"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

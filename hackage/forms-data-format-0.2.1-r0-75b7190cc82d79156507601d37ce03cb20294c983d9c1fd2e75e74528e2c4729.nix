@@ -21,7 +21,7 @@
       synopsis = "Parse and serialize FDF, the Forms Data Format";
       description = "This is a hacked-together library to parse and serialize FDF,\nAdobe's [Forms Data\nFormat](https://helpx.adobe.com/acrobat/kb/acrobat-forms-form-data-web.html). It\ndoes not follow the specification, but seems to work for simple\ncases.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."rank2classes" or (errorHandler.buildDepError "rank2classes"))
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."grammatical-parsers" or (errorHandler.buildDepError "grammatical-parsers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

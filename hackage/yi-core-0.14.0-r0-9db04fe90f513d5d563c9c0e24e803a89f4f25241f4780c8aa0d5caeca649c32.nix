@@ -13,7 +13,7 @@
       hint = false;
       profiling = false;
       testing = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "yi-core"; version = "0.14.0"; };
@@ -26,7 +26,7 @@
       synopsis = "Yi editor core library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -63,16 +63,16 @@
           (hsPkgs."yi-rope" or (errorHandler.buildDepError "yi-rope"))
           (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
           (hsPkgs."dyre" or (errorHandler.buildDepError "dyre"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ (pkgs.lib).optionals (flags.testing) [
+          ])) ++ pkgs.lib.optional (flags.hint) (hsPkgs."hint" or (errorHandler.buildDepError "hint"))) ++ pkgs.lib.optionals (flags.testing) [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tasty" = {
           depends = [
@@ -114,12 +114,12 @@
             (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "all" = {
           depends = [
@@ -157,11 +157,11 @@
             (hsPkgs."yi-core" or (errorHandler.buildDepError "yi-core"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ] ++ (if system.isWindows
+          ] ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

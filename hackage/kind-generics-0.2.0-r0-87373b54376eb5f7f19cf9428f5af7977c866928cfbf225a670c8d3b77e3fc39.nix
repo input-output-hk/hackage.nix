@@ -21,14 +21,14 @@
       synopsis = "Generic programming in GHC style for arbitrary kinds and GADTs.";
       description = "This package provides functionality to extend the data type generic programming functionality in GHC to classes of arbitrary kind, and constructors featuring constraints and existentials, as usually gound in GADTs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."kind-apply" or (errorHandler.buildDepError "kind-apply"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

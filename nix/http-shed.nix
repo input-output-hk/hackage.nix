@@ -6,8 +6,8 @@
         nix = import ../hackage/http-shed-0.1-r0-f8388e6c7fa71b6d14041537c652d0cb6e2f556cb25336498267502d8babf086.nix;
         revNum = 0;
         sha256 = "f8388e6c7fa71b6d14041537c652d0cb6e2f556cb25336498267502d8babf086";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Anonymous records";
       description = "This library provides the abstractions behind the anonymous record syntax.\nIt is intended to be used in conjunction with\n<http://hackage.haskell.org/package/record-preprocessor the \"record-preprocessor\">,\nwhich enables a Haskell syntax extension.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."basic-lens" or (errorHandler.buildDepError "basic-lens"))
           (hsPkgs."base-prelude" or (errorHandler.buildDepError "base-prelude"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

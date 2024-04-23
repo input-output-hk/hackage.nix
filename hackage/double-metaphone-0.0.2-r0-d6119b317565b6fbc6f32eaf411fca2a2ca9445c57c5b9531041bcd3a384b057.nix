@@ -21,14 +21,14 @@
       synopsis = "Haskell bindings to a C double-metaphone implementation.";
       description = "Compute two metaphones of a latin1 encoded bytestring, based on Perl's text-DoubleMetaphone";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

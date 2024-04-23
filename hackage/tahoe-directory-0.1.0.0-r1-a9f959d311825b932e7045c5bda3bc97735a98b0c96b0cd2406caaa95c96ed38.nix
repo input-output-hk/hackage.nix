@@ -21,7 +21,7 @@
       synopsis = "Tahoe-LAFS directory-like abstraction for collections of data objects.";
       description = "Tahoe-Directory is an implementation of the Tahoe-LAFS filesystem directory-like abstraction for managing collections of data objects.\nThis includes a parser and serializer for the persisted form of these collections.\nIt also includes Haskell-friendly abstract representations of and operations on the data.\nIt aims for bit-for-bit compatibility with the original Python implementation.\nIt will not include an implementation of any network protocol for transferring directories.\nHowever, its APIs are intended to be easy to integrate with such an implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."tahoe-chk" or (errorHandler.buildDepError "tahoe-chk"))
           (hsPkgs."tahoe-ssk" or (errorHandler.buildDepError "tahoe-ssk"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tahoe-directory-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hedgehog" or (errorHandler.buildDepError "tasty-hedgehog"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Planet Mitchell";
       description = "Planet Mitchell.\n\nThis package provides a curated, highly unstable collection of reorganized\nre-exports. Mostly for personal use at the moment, me but please poke around\nand see README.md for a bit more information ;)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -123,8 +123,8 @@
           (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))
           (hsPkgs."weigh" or (errorHandler.buildDepError "weigh"))
           (hsPkgs."writer-cps-mtl" or (errorHandler.buildDepError "writer-cps-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

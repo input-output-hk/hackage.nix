@@ -21,7 +21,7 @@
       synopsis = "2D game engine written in Haskell";
       description = "See README and examples/ for further information";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,39 +30,39 @@
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example1" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example2" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example3" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example4" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test1" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."HGE2D" or (errorHandler.buildDepError "HGE2D"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Comprehensive and efficient (multi)linear algebra implementation.";
       description = "Comprehensive and efficient (multi)linear algebra implementation, based on generic tensor formalism and concise Ricci-Curbastro index syntax. More information available on GitHub: <https://github.com/ArturB/multilinear#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,28 +32,28 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "multilinear-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "multilinear-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."multilinear" or (errorHandler.buildDepError "multilinear"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

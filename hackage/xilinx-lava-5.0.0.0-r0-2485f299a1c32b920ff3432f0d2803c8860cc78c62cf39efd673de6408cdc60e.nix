@@ -21,7 +21,7 @@
       synopsis = "The Lava system for Xilinx FPGA design with layout combinators.";
       description = "A libray for generating circuits for Xilinx FPGAs with layout.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

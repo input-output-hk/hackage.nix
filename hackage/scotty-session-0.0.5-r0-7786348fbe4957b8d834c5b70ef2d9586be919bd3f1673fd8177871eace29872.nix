@@ -21,7 +21,7 @@
       synopsis = "Adding session functionality to scotty";
       description = "Adding PHP-like session management to Scotty.\n\n[Scotty] <http://hackage.haskell.org/package/scotty>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
           (hsPkgs."crypto-api" or (errorHandler.buildDepError "crypto-api"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

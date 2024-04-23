@@ -21,7 +21,7 @@
       synopsis = "Support for parsing and rendering YAML documents.";
       description = "Rewrite of yaml in streamly";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,9 +43,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "examples" = {
           depends = [
@@ -53,12 +53,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ] ++ (pkgs.lib).optionals (!flags.no-examples) [
+          ] ++ pkgs.lib.optionals (!flags.no-examples) [
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ];
+          ];
           buildable = if flags.no-examples then false else true;
-          };
+        };
         "json2yaml" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -66,9 +66,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
+        };
         "yaml2json" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -76,10 +76,10 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ];
+          ];
           buildable = if flags.no-exe then false else true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -100,13 +100,13 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -124,9 +124,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."versions" or (errorHandler.buildDepError "versions"))
             (hsPkgs."yaml-streamly" or (errorHandler.buildDepError "yaml-streamly"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

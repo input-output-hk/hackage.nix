@@ -21,7 +21,7 @@
       synopsis = "Mutable vector with different GC characteristics";
       description = "Library for avoiding excessive mutable array traversals by the garbage\ncollector when you use compact regions for your elements.\n\nSee Haddock for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."compact" or (errorHandler.buildDepError "compact"))
             (hsPkgs."compact-mutable-vector" or (errorHandler.buildDepError "compact-mutable-vector"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

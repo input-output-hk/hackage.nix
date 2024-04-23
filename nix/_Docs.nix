@@ -6,8 +6,8 @@
         nix = import ../hackage/Docs-1.0.0-r0-eb791c8f840ffdd347ad32250cae7010e3deb35dbcfb074079a213ba442c96fe.nix;
         revNum = 0;
         sha256 = "eb791c8f840ffdd347ad32250cae7010e3deb35dbcfb074079a213ba442c96fe";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

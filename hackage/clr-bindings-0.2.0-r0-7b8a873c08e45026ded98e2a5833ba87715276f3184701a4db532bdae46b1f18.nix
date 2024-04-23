@@ -21,7 +21,7 @@
       synopsis = "Glue between clr-host and clr-typed";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,17 +32,17 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "clr-bindings-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clr-bindings" or (errorHandler.buildDepError "clr-bindings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

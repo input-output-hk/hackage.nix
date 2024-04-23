@@ -21,7 +21,7 @@
       synopsis = "Tweak dependencies in .cabal files";
       description = "@uusi@ is a command-line program to tweak .cabal files.\nIt is used in distribution packaging.\nSee README for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
           (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "uusi" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."uusi" or (errorHandler.buildDepError "uusi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "gen-setup" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -54,10 +54,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "uusi-tests" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."uusi" or (errorHandler.buildDepError "uusi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

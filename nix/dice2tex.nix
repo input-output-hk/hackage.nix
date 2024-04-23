@@ -6,8 +6,8 @@
         nix = import ../hackage/dice2tex-0.1.0.1-r0-5987ff4d417faa6b038cb62f59db73b407b95f74bccde9a32152134584fa4ad1.nix;
         revNum = 0;
         sha256 = "5987ff4d417faa6b038cb62f59db73b407b95f74bccde9a32152134584fa4ad1";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

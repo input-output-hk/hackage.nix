@@ -21,7 +21,7 @@
       synopsis = "Use actual LaTeX to render formulae inside Hakyll pages";
       description = "This library provides functions to render all math formulae inside\nPandoc-processed Hakyll pages using real LaTeX.\n\nhttps://github.com/liamoc/latex-formulae";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."latex-svg-pandoc" or (errorHandler.buildDepError "latex-svg-pandoc"))
           (hsPkgs."lrucache" or (errorHandler.buildDepError "lrucache"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

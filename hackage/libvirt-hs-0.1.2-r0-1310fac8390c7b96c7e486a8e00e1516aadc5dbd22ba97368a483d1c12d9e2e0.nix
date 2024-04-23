@@ -21,20 +21,20 @@
       synopsis = "FFI bindings to libvirt virtualization API (http://libvirt.org)";
       description = "This package provides low-level (at this moment, at least) FFI bindings to libvirt library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."libvirt" or (errorHandler.pkgConfDepError "libvirt"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Rotates backdrops for X11 displays using Imagemagic.";
       description = "Rotates backdrops for X11 displays using Imagemagic.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = { buildable = true; };
       exes = {
         "backdropper_consol" = {
           depends = [
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
-            ] ++ (if flags.small_base
+          ] ++ (if flags.small_base
             then [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
@@ -36,10 +36,10 @@
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."random" or (errorHandler.buildDepError "random"))
               (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-              ]
+            ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

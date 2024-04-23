@@ -21,7 +21,7 @@
       synopsis = "Types which represent functions k -> v";
       description = "Please read README.md on github";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
           (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "view" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."formatting" or (errorHandler.buildDepError "formatting"))
             (hsPkgs."mappings" or (errorHandler.buildDepError "mappings"))
             (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mapping" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."mappings" or (errorHandler.buildDepError "mappings"))
             (hsPkgs."partialord" or (errorHandler.buildDepError "partialord"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

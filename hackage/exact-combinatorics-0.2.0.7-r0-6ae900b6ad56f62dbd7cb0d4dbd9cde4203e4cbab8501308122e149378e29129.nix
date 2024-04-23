@@ -21,11 +21,11 @@
       synopsis = "Efficient exact computation of combinatoric functions.";
       description = "Efficient exact computation of combinatoric functions.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

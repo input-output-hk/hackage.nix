@@ -24,8 +24,8 @@
       setup-depends = [
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -34,13 +34,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         libs = [
           (pkgs."z" or (errorHandler.sysDepError "z"))
           (pkgs."ssl" or (errorHandler.sysDepError "ssl"))
           (pkgs."mysqlclient" or (errorHandler.sysDepError "mysqlclient"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

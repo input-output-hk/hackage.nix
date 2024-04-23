@@ -21,7 +21,7 @@
       synopsis = "A zuul client library";
       description = "Zuul is a client library to interface with https://zuul-ci.org.\n\nUse this library to query and decode zuul-web API.\n\nUse the zuul-cli to compute informations.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zuul-cli" = {
           depends = [
@@ -47,10 +47,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."xdg-basedir" or (errorHandler.buildDepError "xdg-basedir"))
             (hsPkgs."zuul" or (errorHandler.buildDepError "zuul"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "zuul-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."zuul" or (errorHandler.buildDepError "zuul"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "IO operations for the `javelin` package";
       description = "This package implements serialization/deserialization of 'Series', labeled one-dimensional arrays\ncombining properties from maps and arrays.\n\nThe important modules are:\n\n[\"Data.Series.IO\"] Serialization/deserialization of series of arbitrary types.\n\n[\"Data.Series.Unboxed.IO\"] Serialization/deserialization of unboxed series for better performance, at the cost of flexibility.\n\n[\"Data.Series.Generic.IO\"] Serialization/deserialization of generic series to manipulate any type of 'Series'.\n\nIf you don't know where to start, please take a look at the documentation in \"Data.Series.IO\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."javelin" or (errorHandler.buildDepError "javelin"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "javelin-io-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

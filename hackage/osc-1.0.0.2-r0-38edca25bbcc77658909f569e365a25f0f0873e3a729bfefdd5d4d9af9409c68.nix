@@ -21,7 +21,7 @@
       synopsis = "A library to handle messages in the OSC protocol";
       description = "This library allows users to parse and write OSC (Open Sound Control) messages.\nIt uses the parsing library attoparsec to read binary data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."data-binary-ieee754" or (errorHandler.buildDepError "data-binary-ieee754"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

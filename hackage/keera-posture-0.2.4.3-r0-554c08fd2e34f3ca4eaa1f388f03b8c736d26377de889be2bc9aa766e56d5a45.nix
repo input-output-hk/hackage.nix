@@ -21,7 +21,7 @@
       synopsis = "Get notifications when your sitting posture is inappropriate.";
       description = "A program that notifies when you sit in a straining position.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "keera-posture" = {
@@ -62,7 +62,7 @@
               (hsPkgs."keera-hails-mvc-controller" or (errorHandler.buildDepError "keera-hails-mvc-controller"))
               (hsPkgs."keera-hails-mvc-solutions-config" or (errorHandler.buildDepError "keera-hails-mvc-solutions-config"))
               (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
@@ -98,31 +98,31 @@
               (hsPkgs."keera-hails-mvc-controller" or (errorHandler.buildDepError "keera-hails-mvc-controller"))
               (hsPkgs."keera-hails-mvc-solutions-config" or (errorHandler.buildDepError "keera-hails-mvc-solutions-config"))
               (hsPkgs."keera-hails-reactivevalues" or (errorHandler.buildDepError "keera-hails-reactivevalues"))
-              ];
+            ];
           libs = [
             (pkgs."SDL_mixer" or (errorHandler.sysDepError "SDL_mixer"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-hlint)) [
+          depends = pkgs.lib.optionals (!!flags.test-hlint) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if !flags.test-hlint then false else true;
-          };
+        };
         "haddock-coverage" = {
-          depends = (pkgs.lib).optionals (!(!flags.test-doc-coverage)) [
+          depends = pkgs.lib.optionals (!!flags.test-doc-coverage) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
-            ];
+          ];
           buildable = if !flags.test-doc-coverage then false else true;
-          };
         };
       };
-    }
+    };
+  }

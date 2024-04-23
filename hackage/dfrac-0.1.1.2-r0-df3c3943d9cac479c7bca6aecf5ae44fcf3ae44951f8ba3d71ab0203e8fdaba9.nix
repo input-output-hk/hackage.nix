@@ -21,14 +21,14 @@
       synopsis = "A package for precise decimal arithmatic using rationals.";
       description = "A package for precise decimal arithmatic using rationals.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

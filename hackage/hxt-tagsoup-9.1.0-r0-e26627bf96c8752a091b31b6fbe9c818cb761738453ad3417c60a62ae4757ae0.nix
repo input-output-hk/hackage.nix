@@ -21,7 +21,7 @@
       synopsis = "TagSoup parser for HXT";
       description = "The Tagsoup interface for the HXT lazy HTML parser.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."hxt-charproperties" or (errorHandler.buildDepError "hxt-charproperties"))
           (hsPkgs."hxt-unicode" or (errorHandler.buildDepError "hxt-unicode"))
           (hsPkgs."hxt" or (errorHandler.buildDepError "hxt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

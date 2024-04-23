@@ -21,7 +21,7 @@
       synopsis = "test-sandbox support for the test-framework package";
       description = "Interfaces the test-sandbox the test-framework packages to allow writing system tests\nin Haskell in a standard fashion.\nThe environment is preserved between test cases, enabling the user, for instance, to start\na process in one test and stop it in another.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-sandbox" or (errorHandler.buildDepError "test-sandbox"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,6 +21,6 @@
       synopsis = "HaskellDB support for WXHaskell.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

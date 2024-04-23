@@ -21,15 +21,15 @@
       synopsis = "Self-delimiting numeric values encoding library";
       description = "Self-delimiting numeric values decoding/encoding implementation conformant with RFC6256.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -14,7 +14,7 @@
       spectest = false;
       devel = false;
       btstruc = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "ADPfusion"; version = "0.5.2.0"; };
@@ -27,7 +27,7 @@
       synopsis = "Efficient, high-level dynamic programming.";
       description = "<http://www.bioinf.uni-leipzig.de/Software/gADP/ generalized Algebraic Dynamic Programming>\n\nADPfusion combines stream-fusion (using the stream interface\nprovided by the vector library) and type-level programming to\nprovide highly efficient dynamic programming combinators.\n\nADPfusion allows writing dynamic programs for single- and\nmulti-tape problems. Inputs can be sequences, or sets. New\ninput types can be defined, without having to rewrite this\nlibrary thanks to the open-world assumption of ADPfusion.\n\nThe library provides the machinery for Outside and Ensemble\nalgorithms as well. Ensemble algorithms combine Inside and\nOutside calculations.\n\nStarting with version 0.4.1 we support writing multiple\ncontext-free grammars (interleaved syntactic variables). Such\ngrammars have applications in bioinformatics and linguistics.\n\nThe homepage provides a number of tutorial-style examples, with\nlinear and context-free grammars over sequence and set inputs.\n\nThe formal background for generalized algebraic dynamic\nprogrmaming and ADPfusion is described in a number of papers.\nThese can be found on the gADP homepage and in the README.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,31 +47,31 @@
           (hsPkgs."DPutils" or (errorHandler.buildDepError "DPutils"))
           (hsPkgs."OrderedBits" or (errorHandler.buildDepError "OrderedBits"))
           (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "NeedlemanWunsch" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "spectest" = {
-          depends = (pkgs.lib).optionals (flags.spectest) [
+          depends = pkgs.lib.optionals (flags.spectest) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ADPfusion" or (errorHandler.buildDepError "ADPfusion"))
             (hsPkgs."PrimitiveArray" or (errorHandler.buildDepError "PrimitiveArray"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if flags.spectest then true else false;
-          };
         };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -86,21 +86,21 @@
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "TestBacktrackingStructures" = {
-          depends = (pkgs.lib).optionals (flags.btstruc) [
+          depends = pkgs.lib.optionals (flags.btstruc) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."fmlist" or (errorHandler.buildDepError "fmlist"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = if flags.btstruc then true else false;
-          };
         };
       };
-    }
+    };
+  }

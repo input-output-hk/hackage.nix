@@ -21,7 +21,7 @@
       synopsis = "A truncator for blaze-html";
       description = "This package provides a simple function to truncate HTML, preserving tags and preventing cut-off words. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."html-truncate" or (errorHandler.buildDepError "html-truncate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

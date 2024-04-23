@@ -6,8 +6,8 @@
         nix = import ../hackage/ochan-0.1.0-r0-869cf96b166cdfad8275c66158e448b73711b973e73868955c166a4237ee52c8.nix;
         revNum = 0;
         sha256 = "869cf96b166cdfad8275c66158e448b73711b973e73868955c166a4237ee52c8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

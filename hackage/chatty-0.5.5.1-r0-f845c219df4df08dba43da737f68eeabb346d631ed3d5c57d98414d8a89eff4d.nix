@@ -21,7 +21,7 @@
       synopsis = "Some monad transformers and typeclasses to simplify I/O on a transformer stack.";
       description = "Some monad transformers and typeclasses for text in- and output on a function scope, including features like here-strings, file redirection, pipes and string expansion. Works best on a transformer stack.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."ansi-terminal" or (errorHandler.buildDepError "ansi-terminal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

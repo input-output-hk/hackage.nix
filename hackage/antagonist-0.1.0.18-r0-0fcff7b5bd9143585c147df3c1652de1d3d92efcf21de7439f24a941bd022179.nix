@@ -21,7 +21,7 @@
       synopsis = "A web interface to Antisplice dungeons.";
       description = "A web interface to Antisplice dungeons, implemented as a yesod subsite.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."shakespeare-js" or (errorHandler.buildDepError "shakespeare-js"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ironforge-yesod" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."ironforge" or (errorHandler.buildDepError "ironforge"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

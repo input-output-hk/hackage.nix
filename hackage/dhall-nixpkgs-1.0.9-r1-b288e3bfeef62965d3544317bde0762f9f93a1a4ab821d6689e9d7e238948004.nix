@@ -21,7 +21,7 @@
       synopsis = "Convert Dhall projects to Nix packages";
       description = "This package provides a @dhall-to-nixpkgs@ executable that\nconverts a Dhall project to a Nix expression that can be\nsupplied to @pkgs.dhallPackages.callPackage@";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dhall-to-nixpkgs" = {
@@ -45,9 +45,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."turtle" or (errorHandler.buildDepError "turtle"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "";
       description = "SQLite3 driver for HSQL.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hsql" or (errorHandler.buildDepError "hsql"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

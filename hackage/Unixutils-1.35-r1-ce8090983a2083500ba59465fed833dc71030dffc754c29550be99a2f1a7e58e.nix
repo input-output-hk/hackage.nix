@@ -21,7 +21,7 @@
       synopsis = "A crude interface between Haskell and Unix-like operating systems";
       description = "A collection of useful and mildly useful functions that you might\nexpect to find in System.* which a heavy bias towards Unix-type operating systems.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."old-time" or (errorHandler.buildDepError "old-time"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          ];
+        ];
         libs = [ (pkgs."crypt" or (errorHandler.sysDepError "crypt")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

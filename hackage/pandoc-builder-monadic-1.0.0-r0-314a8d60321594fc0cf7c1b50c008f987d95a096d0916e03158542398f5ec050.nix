@@ -21,7 +21,7 @@
       synopsis = "A monadic DSL for building pandoc documents";
       description = "A convenient way to build pandoc documents.\nSupports all of the applicative and monadic utilities, and\nreduces syntactic noise via do notation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

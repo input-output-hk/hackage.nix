@@ -21,15 +21,15 @@
       synopsis = "Binding to libSDL_gfx";
       description = "";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         libs = [ (pkgs."SDL_gfx" or (errorHandler.sysDepError "SDL_gfx")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

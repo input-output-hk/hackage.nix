@@ -21,15 +21,15 @@
       synopsis = "maybes of numeric values with fewer indirections";
       description = "This library provides one `Maybe` type per the usual numeric types:\nFloat, Double, Complex {Float|Double}, Int{|8|16|32|64}, and Word{|8|16|32|64}\n\nAll of the numeric types inside the `Maybe` are unboxed, while the `Maybe` value\nitself is represented as an Unboxed Sum (though for sub-machine-size Int/Word values,\nthe `Maybe` is just a wrapper around the underlying type, with out-of-bounds corresponding\nto the 'Nothing' value. Thus, the usage of these constructors is unsafe, as this is only\nchecked internally).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "laws" = {
           depends = [
@@ -37,9 +37,9 @@
             (hsPkgs."quickcheck-classes" or (errorHandler.buildDepError "quickcheck-classes"))
             (hsPkgs."unpacked-maybe-numeric" or (errorHandler.buildDepError "unpacked-maybe-numeric"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

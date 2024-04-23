@@ -21,16 +21,16 @@
       synopsis = "Implementation of a finite trie over words.";
       description = "Implementation of a finite trie over words.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."word-trie" or (errorHandler.buildDepError "word-trie"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

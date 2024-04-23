@@ -6,8 +6,8 @@
         nix = import ../hackage/acme-default-0.1.0-r0-20624b50828d4c91e6db4337c0ab86e1d2b0c5cbcd003ce2cca8990840bdb487.nix;
         revNum = 0;
         sha256 = "20624b50828d4c91e6db4337c0ab86e1d2b0c5cbcd003ce2cca8990840bdb487";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

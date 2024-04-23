@@ -6,8 +6,8 @@
         nix = import ../hackage/progress-1.0-r0-e750ba1fe662dc0f9a0b40f8ac7f1792a5ff24f69cdf8e3f7680f6d0d02b316d.nix;
         revNum = 0;
         sha256 = "e750ba1fe662dc0f9a0b40f8ac7f1792a5ff24f69cdf8e3f7680f6d0d02b316d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

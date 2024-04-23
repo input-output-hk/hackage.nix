@@ -21,11 +21,11 @@
       synopsis = "Manage sandboxed Haskell build environments";
       description = "cabal-dev is a tool for managing development builds of\nHaskell projects. It supports maintaining sandboxed\ncabal-install repositories, and sandboxed ghc package\ndatabases.\n\nBy default, it uses a cabal-dev directory under\nthe current working directory as the sandbox.\n\nFor most packages, just use @cabal-dev@ instead of\n@cabal@, and you will get a sandboxed build that\nwill not install anything (even automatically installed\ndependencies) into the user or global ghc package\ndatabases.\n\nIf your build depends on patched or unreleased libraries,\nyou can add them to your sandboxed build environment by\ninstalling them to the sandbox directly:so\n\n> cd /path/to/dependency\n> cabal-dev install --sandbox=/path/to/sandbox\n\nThen build your library/application with the specified\nsandbox.\n\n\nAdditional documentation can be found in the README.md on\ngithub:\n\n<http://github.com/creswick/cabal-dev/blob/master/README.md>";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "cabal-dev" = {
-          depends = (pkgs.lib).optionals (!flags.no-cabal-dev) (((([
+          depends = pkgs.lib.optionals (!flags.no-cabal-dev) (((([
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
@@ -40,40 +40,40 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."setenv" or (errorHandler.buildDepError "setenv"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.12") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.10") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "6.8") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.10") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.8") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           build-tools = [
             (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
-            ];
+          ];
           buildable = if flags.no-cabal-dev then false else true;
-          };
+        };
         "ghc-pkg-6_8-compat" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "cabal-dev-test" = {
-          depends = (pkgs.lib).optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
+          depends = pkgs.lib.optionals (!(flags.no-cabal-dev || !flags.build-tests)) ([
             (hsPkgs."MonadRandom" or (errorHandler.buildDepError "MonadRandom"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ] ++ [
+          ] ++ [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ]) ++ (pkgs.lib).optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
+          ]) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           buildable = if flags.no-cabal-dev || !flags.build-tests
             then false
             else true;
-          };
+        };
         "fake-ghc-cabal-dev" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

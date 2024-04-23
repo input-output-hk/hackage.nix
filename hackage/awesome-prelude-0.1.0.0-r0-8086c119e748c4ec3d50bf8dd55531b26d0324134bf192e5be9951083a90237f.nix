@@ -21,11 +21,11 @@
       synopsis = "A prelude which I can be happy with. Based on base-prelude.";
       description = "A prelude designed to be as type-generic as possible in\nevery way. A work in progress.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

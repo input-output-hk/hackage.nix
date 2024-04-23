@@ -21,23 +21,23 @@
       synopsis = "Like singletons, but much smaller.";
       description = "Like singletons, but much smaller.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."singlethongs" or (errorHandler.buildDepError "singlethongs"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

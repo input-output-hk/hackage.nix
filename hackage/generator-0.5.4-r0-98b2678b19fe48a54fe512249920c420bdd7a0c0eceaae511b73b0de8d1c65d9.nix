@@ -21,15 +21,15 @@
       synopsis = "Python-generators notation for creation of monadic lists";
       description = "Generator monad transformer to create\nmonadic lists in a manner similar to\nPython generators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."List" or (errorHandler.buildDepError "List"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

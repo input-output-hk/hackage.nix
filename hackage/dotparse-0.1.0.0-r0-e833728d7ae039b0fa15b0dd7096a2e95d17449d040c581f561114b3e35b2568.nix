@@ -21,7 +21,7 @@
       synopsis = "dot language parsing and printing.";
       description = "This package provides parsing and printing of the dot language.\n\n== Usage\n\n>>> :set -XOverloadedLabels\n>>> :set -XOverloadedStrings\n>>> import DotParse\n>>> import Chart\n>>> import Data.Text (pack)\n>>> import DotParse.Examples (exInt)\n>>> ex <- processGraph exInt\n>>> writeChartOptions \"other/exga.svg\" (graphToChart ex)\n\n![usage example](docs/other/exga.svg)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."these" or (errorHandler.buildDepError "these"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

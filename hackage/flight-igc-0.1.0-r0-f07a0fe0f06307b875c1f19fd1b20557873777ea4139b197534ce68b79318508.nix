@@ -21,15 +21,15 @@
       synopsis = "A parser for IGC files.";
       description = "IGC is a waypoint file format from the International Gliding Commission of FAI. This haskell library can parse B records from these files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "flight-igc" = {
           depends = [
@@ -43,19 +43,19 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."flight-igc" or (errorHandler.buildDepError "flight-igc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hlint" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
             (hsPkgs."flight-igc" or (errorHandler.buildDepError "flight-igc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

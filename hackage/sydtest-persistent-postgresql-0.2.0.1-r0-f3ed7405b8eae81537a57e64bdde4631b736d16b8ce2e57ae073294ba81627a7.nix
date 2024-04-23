@@ -14,7 +14,7 @@
       identifier = {
         name = "sydtest-persistent-postgresql";
         version = "0.2.0.1";
-        };
+      };
       license = "LicenseRef-OtherLicense";
       copyright = "Copyright (c) 2021 Tom Sydney Kerckhove";
       maintainer = "syd@cs-syd.eu";
@@ -24,7 +24,7 @@
       synopsis = "An persistent-postgresql companion library for sydtest";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
           (hsPkgs."sydtest-persistent" or (errorHandler.buildDepError "sydtest-persistent"))
           (hsPkgs."tmp-postgres" or (errorHandler.buildDepError "tmp-postgres"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "sydtest-persistent-postgresql-test" = {
           depends = [
@@ -47,12 +47,12 @@
             (hsPkgs."persistent-postgresql" or (errorHandler.buildDepError "persistent-postgresql"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
             (hsPkgs."sydtest-persistent-postgresql" or (errorHandler.buildDepError "sydtest-persistent-postgresql"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = if flags.sydtest_integration_tests then true else false;
-          };
         };
       };
-    }
+    };
+  }

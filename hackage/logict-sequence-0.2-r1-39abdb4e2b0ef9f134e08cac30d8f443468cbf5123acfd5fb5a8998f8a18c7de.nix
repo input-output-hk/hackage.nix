@@ -21,7 +21,7 @@
       synopsis = "A backtracking logic-programming monad with asymptotic improvements to msplit";
       description = "Adapted from the paper\n<http://okmij.org/ftp/Haskell/zseq.pdf>\nby Atze van der Ploeg and Oleg Kiselyov";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."fail" or (errorHandler.buildDepError "fail"));
         buildable = true;
-        };
+      };
       tests = {
         "logict-test" = {
           depends = ([
@@ -48,16 +48,16 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "8.4.4") (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "8.2.2") (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"));
-          buildable = if compiler.isGhc && (compiler.version).lt "8"
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "8.4.4") (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "8.2.2") (hsPkgs."vector-builder" or (errorHandler.buildDepError "vector-builder"));
+          buildable = if compiler.isGhc && compiler.version.lt "8"
             then false
             else true;
-          };
+        };
         "do-nothing" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "logic-performance" = {
           depends = [
@@ -68,11 +68,11 @@
             (hsPkgs."logict" or (errorHandler.buildDepError "logict"))
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."logict-sequence" or (errorHandler.buildDepError "logict-sequence"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.0.2"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.0.2"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

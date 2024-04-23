@@ -21,11 +21,11 @@
       synopsis = "Combinators for bidirectional URL routing";
       description = "Combinators for bidirectional URL routing";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

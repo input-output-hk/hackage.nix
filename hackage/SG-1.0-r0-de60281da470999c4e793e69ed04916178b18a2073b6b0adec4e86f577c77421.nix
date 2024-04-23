@@ -21,14 +21,14 @@
       synopsis = "Small geometry library for dealing with vectors and collision detection";
       description = "A small geometry library for dealing with\nvectors, points, lines, simple shapes, and their\nvarious intersection tests.  See also the SGdemo project\n(<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SGdemo>)\nfor an example of using the module.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

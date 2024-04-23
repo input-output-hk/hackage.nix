@@ -21,7 +21,7 @@
       synopsis = "Analyze 'phred' output (.phd files)";
       description = "dephd - A simple tool for base calling and quality appraisal.\n\nReads files in phd-format (phred output), either specified individually,\nor in a directory (use the --dir option to read directories).\nThe Darcs repository is at <http://malde.org/~ketil/dephd>.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dephd" = {
@@ -32,9 +32,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

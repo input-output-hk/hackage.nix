@@ -21,7 +21,7 @@
       synopsis = "Initial project template from stack";
       description = "For more information regarding wstunnel, please refer to README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."iproute" or (errorHandler.buildDepError "iproute"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "wstunnel" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
             (hsPkgs."wstunnel" or (errorHandler.buildDepError "wstunnel"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "wstunnel-test" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."wstunnel" or (errorHandler.buildDepError "wstunnel"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

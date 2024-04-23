@@ -21,7 +21,7 @@
       synopsis = "Various set implementations in Haskell";
       description = "This also includes overloaded functions for common set operations. See @Data.Set.Class@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."discrimination" or (errorHandler.buildDepError "discrimination"))
           (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."discrimination" or (errorHandler.buildDepError "discrimination"))
             (hsPkgs."invariant" or (errorHandler.buildDepError "invariant"))
             (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hsfilt-0.1.0.0-r0-6acacb36228c26240014e6bd886f03d9ba15d56b3442c3d9999dac66a0d88651.nix;
         revNum = 0;
         sha256 = "6acacb36228c26240014e6bd886f03d9ba15d56b3442c3d9999dac66a0d88651";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

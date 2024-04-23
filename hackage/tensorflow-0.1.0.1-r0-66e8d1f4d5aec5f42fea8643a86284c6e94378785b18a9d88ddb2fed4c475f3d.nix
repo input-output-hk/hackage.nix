@@ -21,7 +21,7 @@
       synopsis = "TensorFlow bindings.";
       description = "This library provides an interface to the TensorFlow\nbindings.  \"TensorFlow.Core\" contains the base API for\nbuilding and running computational graphs.  Other packages\nsuch as @tensorflow-ops@ contain bindings to the actual\ncomputational kernels.\n\nFor more documentation and examples, see\n<https://github.com/tensorflow/haskell#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -45,15 +45,15 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [
           (pkgs."tensorflow" or (errorHandler.sysDepError "tensorflow"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "FFITest" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."tensorflow-proto" or (errorHandler.buildDepError "tensorflow-proto"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "VarIntTest" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -77,9 +77,9 @@
             (hsPkgs."tensorflow" or (errorHandler.buildDepError "tensorflow"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

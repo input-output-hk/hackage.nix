@@ -21,11 +21,11 @@
       synopsis = "A Haskell sorting toolkit";
       description = "A library of general-purpose sorting utilities.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

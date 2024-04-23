@@ -14,7 +14,7 @@
       identifier = {
         name = "wai-middleware-preprocessor";
         version = "0.2.0.0";
-        };
+      };
       license = "GPL-3.0-only";
       copyright = "";
       maintainer = "Remy Goldschmidt <taktoa@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "WAI middleware for preprocessing static files";
       description = "WAI middleware that preprocesses and caches files (e.g.: for Fay, purescript, etc.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-preprocessor-tests" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-middleware-static" or (errorHandler.buildDepError "wai-middleware-static"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

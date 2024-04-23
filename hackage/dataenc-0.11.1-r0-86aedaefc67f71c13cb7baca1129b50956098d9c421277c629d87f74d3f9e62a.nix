@@ -21,7 +21,7 @@
       synopsis = "Data encoding library";
       description = "Data encoding library currently providing Uuencode, Base64,\nBase64Url, Base32, Base32Hex, Base16, and Base85.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.large_base
@@ -30,8 +30,8 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

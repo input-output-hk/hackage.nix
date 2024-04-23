@@ -21,24 +21,24 @@
       synopsis = "";
       description = "convert infix to prefix expression";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-pcre-builtin" or (errorHandler.buildDepError "regex-pcre-builtin"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "Test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."prefix-expression" or (errorHandler.buildDepError "prefix-expression"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

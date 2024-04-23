@@ -21,7 +21,7 @@
       synopsis = "Library for setting up and running scrapers with webdriver.";
       description = "A set of setup- and helper-functions for using webdriver in Haskell, with auto-downloads of correct binaries.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
           (hsPkgs."zip-stream" or (errorHandler.buildDepError "zip-stream"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mortred" = {
           depends = [
@@ -64,10 +64,10 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."zip-stream" or (errorHandler.buildDepError "zip-stream"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mortred-test" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
             (hsPkgs."webdriver" or (errorHandler.buildDepError "webdriver"))
             (hsPkgs."zip-stream" or (errorHandler.buildDepError "zip-stream"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -12,7 +12,7 @@
       bounds-checks = true;
       unsafe-checks = false;
       internal-checks = false;
-      };
+    };
     package = {
       specVersion = "1.6";
       identifier = { name = "accelerate-io"; version = "0.12.0.0"; };
@@ -25,7 +25,7 @@
       synopsis = "Read and write Accelerate arrays in various formats";
       description = "This package provides efficient conversion routines between a range of array types\nand Accelerate arrays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."repa" or (errorHandler.buildDepError "repa"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

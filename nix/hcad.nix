@@ -6,8 +6,8 @@
         nix = import ../hackage/hcad-0.1-r0-397252771fad0fdfe0df6f6e3ea6f579f7428ace725dc6e1606b20cc3777f223.nix;
         revNum = 0;
         sha256 = "397252771fad0fdfe0df6f6e3ea6f579f7428ace725dc6e1606b20cc3777f223";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

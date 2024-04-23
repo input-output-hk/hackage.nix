@@ -21,7 +21,7 @@
       synopsis = "Methods for composing monads.";
       description = "Methods for composing monads.\n\nThe I/O monad transformer, PlusMonad, and Linear modules are deprecated. Their use is discouraged. This package is now about automatic monad lifting; and includes a rigorous implementation of Luth and Ghani coproducts structured around the Free monad.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."free" or (errorHandler.buildDepError "free"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

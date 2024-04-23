@@ -21,15 +21,15 @@
       synopsis = "Floating point support for the 'cereal' serialization library";
       description = "Provides functions for reading and writing IEEE 754 floating\npoint numbers using the 'cereal' binary serialization library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

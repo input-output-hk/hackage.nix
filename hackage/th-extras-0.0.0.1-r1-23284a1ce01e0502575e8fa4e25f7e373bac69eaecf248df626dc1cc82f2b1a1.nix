@@ -21,17 +21,17 @@
       synopsis = "A grab bag of useful functions for use with Template Haskell";
       description = "A grab bag of useful functions for use with Template Haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ] ++ (pkgs.lib).optionals (flags.base4) [
+        ] ++ pkgs.lib.optionals (flags.base4) [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/FileSystem-1.0.0-r0-e36e44340e3266eae5312cc334648a211cf51a2ed7946395356900ca3ed24d4c.nix;
         revNum = 0;
         sha256 = "e36e44340e3266eae5312cc334648a211cf51a2ed7946395356900ca3ed24d4c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

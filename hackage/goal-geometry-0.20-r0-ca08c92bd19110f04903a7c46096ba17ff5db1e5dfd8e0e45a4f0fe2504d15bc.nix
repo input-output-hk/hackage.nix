@@ -21,7 +21,7 @@
       synopsis = "The basic geometric type system of Goal";
       description = "goal-geometry provides the basic types and classes which drive the manifold/geometry based approach of Goal. Points and manifolds, dual spaces, function spaces and multilayer neural networks, and generic optimization routines are defined here.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."indexed-list-literals" or (errorHandler.buildDepError "indexed-list-literals"))
           (hsPkgs."ghc-typelits-natnormalise" or (errorHandler.buildDepError "ghc-typelits-natnormalise"))
           (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,17 +21,17 @@
       synopsis = "A bridge from Haskell (on a CPU) to VHDL on a FPGA.";
       description = "A bridge from Haskell (on a CPU) to VHDL on a FPGA.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell-test1" = {
-          depends = (pkgs.lib).optional (flags.example) (hsPkgs."base" or (errorHandler.buildDepError "base"));
+          depends = pkgs.lib.optional (flags.example) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

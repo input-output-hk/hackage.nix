@@ -21,11 +21,11 @@
       synopsis = "Lightweight package providing commonly useful parser combinators";
       description = "Lightweight package providing commonly useful parser combinators.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

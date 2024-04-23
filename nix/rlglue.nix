@@ -6,8 +6,8 @@
         nix = import ../hackage/rlglue-0.2.2.0-r0-c0a83195fa3eaea75bfafd63b7a2f2f7f4f17e334999905a383f89e74e8e1aba.nix;
         revNum = 0;
         sha256 = "c0a83195fa3eaea75bfafd63b7a2f2f7f4f17e334999905a383f89e74e8e1aba";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

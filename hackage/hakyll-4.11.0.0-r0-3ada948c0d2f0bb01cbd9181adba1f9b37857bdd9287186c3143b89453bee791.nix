@@ -13,7 +13,7 @@
       watchserver = true;
       checkexternal = true;
       buildwebsite = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "hakyll"; version = "4.11.0.0"; };
@@ -26,7 +26,7 @@
       synopsis = "A static website compiler library";
       description = "Hakyll is a static website compiler library. It provides you with the tools to\ncreate a simple or advanced static website using a Haskell DSL and formats\nsuch as markdown or RST. You can find more information, including a tutorial,\non the website:\n\n* <http://jaspervdj.be/hakyll>\n\nIf you seek assistance, there's:\n\n* A google group: <http://groups.google.com/group/hakyll>\n\n* An IRC channel, @#hakyll@ on freenode\n\nAdditionally, there's the Haddock documentation in the different modules,\nmeant as a reference.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -63,18 +63,18 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
-          ] ++ (pkgs.lib).optionals (flags.previewserver) [
+        ] ++ pkgs.lib.optionals (flags.previewserver) [
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
           (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
-          ]) ++ (pkgs.lib).optional (flags.watchserver) (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))) ++ (pkgs.lib).optionals (flags.checkexternal) [
+        ]) ++ pkgs.lib.optional (flags.watchserver) (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))) ++ pkgs.lib.optionals (flags.checkexternal) [
           (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-init" = {
           depends = [
@@ -82,9 +82,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hakyll-website" = {
           depends = [
             (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
@@ -92,10 +92,10 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
-            ];
+          ];
           buildable = if flags.buildwebsite then true else false;
-          };
         };
+      };
       tests = {
         "hakyll-tests" = {
           depends = (([
@@ -136,18 +136,18 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ] ++ (pkgs.lib).optionals (flags.previewserver) [
+          ] ++ pkgs.lib.optionals (flags.previewserver) [
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))
-            ]) ++ (pkgs.lib).optional (flags.watchserver) (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))) ++ (pkgs.lib).optionals (flags.checkexternal) [
+          ]) ++ pkgs.lib.optional (flags.watchserver) (hsPkgs."fsnotify" or (errorHandler.buildDepError "fsnotify"))) ++ pkgs.lib.optionals (flags.checkexternal) [
             (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Extensive benchmark suite for containers package.";
       description = "This package evaluates performance of a containers package\nfrom multiple perspectives.\n\nIt measures time and memory allocation of methods specialised\nto several types. It can also measure the size and memory\nallocation of GHC compiled with the containers package.\n\nThe containers package used can be both system-installed or\nany darcs repository.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "benchmark" = {
@@ -33,9 +33,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

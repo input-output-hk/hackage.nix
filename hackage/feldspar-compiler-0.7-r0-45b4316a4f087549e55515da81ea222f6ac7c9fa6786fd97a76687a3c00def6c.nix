@@ -21,7 +21,7 @@
       synopsis = "Compiler for the Feldspar language";
       description = "Feldspar (**F**unctional **E**mbedded **L**anguage for **DSP**\nand **PAR**allelism) is an embedded DSL for describing digital\nsignal processing algorithms.\nThis library (FeldsparCompiler) contains a prototype compiler\nthat supports C code generation from programs written in this\nlanguage both according to ANSI C and also targeted to a real\nDSP HW.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,10 +42,10 @@
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."storable-tuple" or (errorHandler.buildDepError "storable-tuple"))
           (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
-          ];
-        libs = (pkgs.lib).optional (system.isLinux) (pkgs."gcc_s" or (errorHandler.sysDepError "gcc_s"));
+        ];
+        libs = pkgs.lib.optional (system.isLinux) (pkgs."gcc_s" or (errorHandler.sysDepError "gcc_s"));
         buildable = true;
-        };
+      };
       tests = {
         "regression" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "callconv" = {
           depends = [
             (hsPkgs."feldspar-language" or (errorHandler.buildDepError "feldspar-language"))
@@ -71,10 +71,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "crc" = {
           depends = [
@@ -84,9 +84,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

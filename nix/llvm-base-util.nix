@@ -6,8 +6,8 @@
         nix = import ../hackage/llvm-base-util-3.0.1.0-r0-d8a130dda8ac6a01615b4151218019689b10dce979e152d9c859ee1e8d34d2cb.nix;
         revNum = 0;
         sha256 = "d8a130dda8ac6a01615b4151218019689b10dce979e152d9c859ee1e8d34d2cb";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

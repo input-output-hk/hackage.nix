@@ -6,8 +6,8 @@
         nix = import ../hackage/hexpat-tagsoup-0.1-r0-0e6dfae74d22b05c8d544d59c8c0a84cffbdfce65bdf410f4e3353c9b8789e36.nix;
         revNum = 0;
         sha256 = "0e6dfae74d22b05c8d544d59c8c0a84cffbdfce65bdf410f4e3353c9b8789e36";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

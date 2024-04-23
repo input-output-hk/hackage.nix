@@ -21,7 +21,7 @@
       synopsis = "Library to handle abstract music";
       description = "This library consists on abstract music manipulation. It also\nsupports interfaces with MusicXML.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."musicxml" or (errorHandler.buildDepError "musicxml"))
           (hsPkgs."haskore" or (errorHandler.buildDepError "haskore"))
           (hsPkgs."non-negative" or (errorHandler.buildDepError "non-negative"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "HaMusic" = {
           depends = [
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MusicTranslate" = { buildable = true; };
         "MusicCount" = { buildable = true; };
         "MusicAnnotate" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

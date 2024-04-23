@@ -21,7 +21,7 @@
       synopsis = "Tools for curating Stackage bundles";
       description = "Please see <http://www.stackage.org/package/stackage-curator> for a description and documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -76,9 +76,9 @@
           (hsPkgs."stackage-metadata" or (errorHandler.buildDepError "stackage-metadata"))
           (hsPkgs."stackage-install" or (errorHandler.buildDepError "stackage-install"))
           (hsPkgs."lucid" or (errorHandler.buildDepError "lucid"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "stackage-curator" = {
           depends = [
@@ -92,10 +92,10 @@
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -110,9 +110,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
             (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

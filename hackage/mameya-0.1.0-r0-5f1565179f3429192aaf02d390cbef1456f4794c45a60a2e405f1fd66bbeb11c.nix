@@ -21,29 +21,29 @@
       synopsis = "static site generator made to learn Haskell";
       description = "Please see the README on GitHub at <https://github.com/bururabit/mameya#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "mameya" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mameya" or (errorHandler.buildDepError "mameya"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "mameya-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mameya" or (errorHandler.buildDepError "mameya"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

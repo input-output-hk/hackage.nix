@@ -21,15 +21,15 @@
       synopsis = "instantly create REPL from any function";
       description = "This module provides functions to create interactive REPLs:\n\n- stateless REPL from a single argument functions\n- REPL with state from plain state function or with State monad\n- REPL-fold from two-arguments functions, with the accumulator in the first argument\n\nEach line you enter is 'read' into the argument type and sent to the function, with the result printed";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "interact-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."main-tester" or (errorHandler.buildDepError "main-tester"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Simple space pirate roguelike";
       description = "Space Privateers is a roguelike game set in space.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "SpacePrivateers" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A command line argument/option parser library";
       description = "A command line argument/option parser library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."commandert" or (errorHandler.buildDepError "commandert"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-commander" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."commandert" or (errorHandler.buildDepError "commandert"))
             (hsPkgs."commander-cli" or (errorHandler.buildDepError "commander-cli"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "International Geomagnetic Reference Field";
       description = "An implemetation of the International Geomagnetic Reference Field, a model of the Earth's magnetic field.\n\nIncludes model coefficients from the 11th Edition of the IGRF.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."semirings" or (errorHandler.buildDepError "semirings"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

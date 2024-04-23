@@ -21,20 +21,20 @@
       synopsis = "Num instance for Applicatives provided via the ANum newtype";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "ANum-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ANum" or (errorHandler.buildDepError "ANum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

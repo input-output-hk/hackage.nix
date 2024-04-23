@@ -21,7 +21,7 @@
       synopsis = "Another Haskell web framework for rapid development";
       description = "GHCJS client side wiring for Spock-api APIs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."Spock-api" or (errorHandler.buildDepError "Spock-api"))
           (hsPkgs."hvect" or (errorHandler.buildDepError "hvect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "data encoding and decoding command line utilities";
       description = "Two simple command line tools built on sandi.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "odec" = {
@@ -30,18 +30,18 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "oenc" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."sandi" or (errorHandler.buildDepError "sandi"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

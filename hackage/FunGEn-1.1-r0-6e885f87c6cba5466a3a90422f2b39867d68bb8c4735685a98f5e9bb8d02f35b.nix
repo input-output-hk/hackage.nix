@@ -21,7 +21,7 @@
       synopsis = "A lightweight, cross-platform, OpenGL/GLUT-based game engine.";
       description = "FunGEn (Functional Game Engine) is a BSD-licensed, cross-platform,\nOpenGL/GLUT-based, non-FRP game engine/framework written in\nHaskell. Created by Andre Furtado in 2002, it's the oldest Haskell\ngame engine, and with very few dependencies and two example games,\nit's one of the easiest ways to get started with Haskell game\ndevelopment.\nThe FunGEn library provides:\n* Initialization, updating, removing, rendering and grouping\nroutines for game objects\n* Definition of a game background (or map), including texture-based\nmaps and tile maps\n* Reading and intepretation of the player's keyboard and mouse input\n* Collision detection\n* Time-based functions and pre-defined game actions\n* Loading and displaying of 24-bit bitmap files\n* Some debugging and game performance evaluation facilities\nThis package receives only basic maintenance (see home page).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fungen-hello" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fungen-pong" = {
           depends = [
             (hsPkgs."FunGEn" or (errorHandler.buildDepError "FunGEn"))
@@ -51,9 +51,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fungen-worms" = {
           depends = [
             (hsPkgs."FunGEn" or (errorHandler.buildDepError "FunGEn"))
@@ -61,9 +61,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

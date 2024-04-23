@@ -21,14 +21,14 @@
       synopsis = "Tiny dotenv library";
       description = "Loading secrets and confidential configuration values is a software architectural practice. This library enables that with a tiny dependency footprint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

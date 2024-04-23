@@ -21,7 +21,7 @@
       synopsis = "Support for serialising Haskell to and from Yaml.";
       description = "Binds to the libyaml library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."data-object" or (errorHandler.buildDepError "data-object"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         libs = [ (pkgs."yaml" or (errorHandler.sysDepError "yaml")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

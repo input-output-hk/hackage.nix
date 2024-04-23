@@ -21,14 +21,14 @@
       synopsis = "A toy module that allows you to temporarily redirect\na program's stdout.";
       description = "Due to the design of POSIX, it is possible to\ntemporarily overload the file descriptors\ncorresponding to stdout and stderr to point to an\narbitrary pipe.  It is, however, tricky to get\nright.  This module gets it right, as far as such\na terrible hack can be made right.  It can be used\nto make misbehaving third-party C libraries stop\nspewing to standard output. Warning: the module\nauthor has concluded that due to lack of\nportability, this module should not be used in any\nserious sytem.  But, for those who like living\ndangerously...";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

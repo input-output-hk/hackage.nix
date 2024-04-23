@@ -21,7 +21,7 @@
       synopsis = "A python logging style log library";
       description = "Please see the http://hackage.haskell.org/package/log4hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
           (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "log4hs-test" = {
           depends = [
@@ -71,10 +71,10 @@
             (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
             (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "log4hs-bench" = {
           depends = [
@@ -98,9 +98,9 @@
             (hsPkgs."vformat-aeson" or (errorHandler.buildDepError "vformat-aeson"))
             (hsPkgs."vformat-time" or (errorHandler.buildDepError "vformat-time"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

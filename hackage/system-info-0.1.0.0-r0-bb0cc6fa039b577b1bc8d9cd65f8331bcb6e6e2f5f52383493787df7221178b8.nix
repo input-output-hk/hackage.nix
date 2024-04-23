@@ -21,20 +21,20 @@
       synopsis = "Get information about CPUs, memory, etc.";
       description = "An OS independent Haskell library for getting information about CPUs, memory, etc.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "system-info-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."system-info" or (errorHandler.buildDepError "system-info"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

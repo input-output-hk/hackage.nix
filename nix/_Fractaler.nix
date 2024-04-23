@@ -6,8 +6,8 @@
         nix = import ../hackage/Fractaler-3-r0-1f12cddadcc4f95501b69d01263ee2ba813927618b41d8c7fc2dd8d11d898143.nix;
         revNum = 0;
         sha256 = "1f12cddadcc4f95501b69d01263ee2ba813927618b41d8c7fc2dd8d11d898143";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

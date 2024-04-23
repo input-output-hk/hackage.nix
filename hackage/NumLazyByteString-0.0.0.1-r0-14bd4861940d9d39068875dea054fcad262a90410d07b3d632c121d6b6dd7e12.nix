@@ -21,15 +21,15 @@
       synopsis = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
       description = "Num, Enum, Eq, Integral, Ord, Real, and Show instances for Lazy ByteStrings";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "debug features for kics ";
       description = "This package contains the debugger for the Curry to Haskell compiler \"kics\".";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."readline" or (errorHandler.buildDepError "readline"))
           (hsPkgs."KiCS" or (errorHandler.buildDepError "KiCS"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mkstrict" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."curry-base" or (errorHandler.buildDepError "curry-base"))
             (hsPkgs."KiCS" or (errorHandler.buildDepError "KiCS"))
             (hsPkgs."KiCS-prophecy" or (errorHandler.buildDepError "KiCS-prophecy"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "General data structure lifting for Template Haskell";
       description = "\nThis package provides a simple type class to use Template Haskell\nto generate code for building data structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."linear-generics" or (errorHandler.buildDepError "linear-generics"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "traverse-code-test" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."traverse-code" or (errorHandler.buildDepError "traverse-code"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."linear-generics" or (errorHandler.buildDepError "linear-generics"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

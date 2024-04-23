@@ -21,7 +21,7 @@
       synopsis = "Serialization of cryptographic data types";
       description = "Haskell implementation of PKCS \\#8, PKCS \\#12 and CMS\n(Cryptographic Message Syntax).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."hourglass" or (errorHandler.buildDepError "hourglass"))
           (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
           (hsPkgs."x509-validation" or (errorHandler.buildDepError "x509-validation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-cryptostore" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."pem" or (errorHandler.buildDepError "pem"))
             (hsPkgs."x509" or (errorHandler.buildDepError "x509"))
             (hsPkgs."cryptostore" or (errorHandler.buildDepError "cryptostore"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

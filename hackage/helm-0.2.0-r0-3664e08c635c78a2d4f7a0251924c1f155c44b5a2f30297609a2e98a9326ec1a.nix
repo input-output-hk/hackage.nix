@@ -21,7 +21,7 @@
       synopsis = "A functionally reactive game engine.";
       description = "A functionally reactive game engine, with headgear to protect you\nfrom the headache of game development provided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."SDL" or (errorHandler.buildDepError "SDL"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

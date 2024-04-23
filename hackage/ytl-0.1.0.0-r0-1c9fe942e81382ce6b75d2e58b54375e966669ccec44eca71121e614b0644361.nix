@@ -21,7 +21,7 @@
       synopsis = "mtl-style transformations for Yesod sites";
       description = "A library of transformers for extending the behaviour of\nYesod sites in an mtl-style API, through transformations\nof the foundation site.\n\nThis package contains:\n\n* An API for declaring and using site transformers,\nwhich modify the behaviour of a Yesod site while still\nallowing it to be used with existing Yesod code, until\nmonad transformers\n\n* Some useful site transformers and their corresponding\nAPIs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pointed" or (errorHandler.buildDepError "pointed"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."yesod-core" or (errorHandler.buildDepError "yesod-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

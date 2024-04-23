@@ -21,7 +21,7 @@
       synopsis = "A simple web application as a online practice website for XDU SE 2017 fall SPM.";
       description = "A simple web application as a online practice website for XDU SE 2017 fall SPM.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fluffy" = {
@@ -38,9 +38,9 @@
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."postgresql-simple" or (errorHandler.buildDepError "postgresql-simple"))
             (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

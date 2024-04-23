@@ -21,13 +21,13 @@
       synopsis = "Draw Newton, Julia and Mandelbrot fractals";
       description = "Functions to generate fractals, with a command-line interface\nto render them as PGM files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "fractal" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "FWGL GLFW backend";
       description = "FWGL GLFW backend.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."GLFW-b" or (errorHandler.buildDepError "GLFW-b"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A parser library for DMARC and SMTP TLS reports";
       description = "This library is meant to parse DMARC and TLSRPT aggregated reports from bytestrings, XML documents or streaming bytestrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

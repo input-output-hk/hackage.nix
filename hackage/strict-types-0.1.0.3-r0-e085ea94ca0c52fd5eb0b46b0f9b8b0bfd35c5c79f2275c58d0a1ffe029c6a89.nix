@@ -21,7 +21,7 @@
       synopsis = "A type level predicate ranging over strict types";
       description = "A type class for types T where forall x :: T . rnf x = ⊥ <=> rwhnf x = ⊥";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."type-level-sets" or (errorHandler.buildDepError "type-level-sets"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "DearImGui elements for Keid engine.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vulkan" or (errorHandler.buildDepError "vulkan"))
           (hsPkgs."vulkan-utils" or (errorHandler.buildDepError "vulkan-utils"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

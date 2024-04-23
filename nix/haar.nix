@@ -6,8 +6,8 @@
         nix = import ../hackage/haar-0.1-r0-ae665777f90eff9bc71b4611f5c2ca987e1f4ab119124fecd16e4977f9e1c035.nix;
         revNum = 0;
         sha256 = "ae665777f90eff9bc71b4611f5c2ca987e1f4ab119124fecd16e4977f9e1c035";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

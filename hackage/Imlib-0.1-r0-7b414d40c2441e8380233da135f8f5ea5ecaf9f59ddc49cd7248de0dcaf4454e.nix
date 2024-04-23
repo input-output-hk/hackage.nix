@@ -21,12 +21,12 @@
       synopsis = "";
       description = "Haskell binding for Imlib 2";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."Imlib2" or (errorHandler.sysDepError "Imlib2")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

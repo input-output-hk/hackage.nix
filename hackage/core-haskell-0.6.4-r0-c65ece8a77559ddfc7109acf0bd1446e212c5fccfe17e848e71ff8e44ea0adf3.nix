@@ -21,7 +21,7 @@
       synopsis = "A subset of Haskell using in UCC for teaching purpose";
       description = "A subset of Haskell using in UCC for teaching purpose.\nIt enables a tiny subset of Haskell default, but the syntax can be customized,\nteacher can enable more syntax along with the teaching progress.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "core-haskell" = {
@@ -30,9 +30,9 @@
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

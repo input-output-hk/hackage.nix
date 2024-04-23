@@ -21,15 +21,15 @@
       synopsis = "Gitit plugin: Turn some Haskell symbols into pretty math symbols.";
       description = "Gitit plugin: Turn some Haskell symbols into pretty math symbols.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."gitit" or (errorHandler.buildDepError "gitit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

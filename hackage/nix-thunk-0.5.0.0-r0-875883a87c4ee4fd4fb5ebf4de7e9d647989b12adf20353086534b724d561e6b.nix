@@ -21,7 +21,7 @@
       synopsis = "Lightweight dependency management with Nix";
       description = "nix-thunk lets you manage source code depencies in a lightweight and reproducible way, using Nix.  Each source repository is represented by a stub directory, which refers to the original Git repository.  nix-thunk can easily update these dependencies.\n\nIf you need to make improvements to the original repositories, nix-thunk can unpack them in-place, so that changes can be tested right away, and then pack them back up when you're done.  This makes it easy to send a pull request to the upstream repo while your project continues on a fork, then switch back to upstream once your pull request has been merged.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -58,9 +58,9 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nix-thunk" = {
           depends = [
@@ -69,9 +69,9 @@
             (hsPkgs."nix-thunk" or (errorHandler.buildDepError "nix-thunk"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

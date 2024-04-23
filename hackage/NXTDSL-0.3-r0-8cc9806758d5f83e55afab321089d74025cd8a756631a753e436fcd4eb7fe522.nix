@@ -21,7 +21,7 @@
       synopsis = "Generate NXC Code from DSL";
       description = "Typesafe code generation for the LEGO-NXT";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,13 +33,13 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ExampleRun" = { buildable = true; };
         "ExampleVM" = { buildable = true; };
         "Compiler" = { buildable = true; };
-        };
       };
-    }
+    };
+  }

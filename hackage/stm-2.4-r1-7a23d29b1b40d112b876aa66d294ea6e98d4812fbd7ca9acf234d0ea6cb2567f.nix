@@ -21,16 +21,16 @@
       synopsis = "Software Transactional Memory";
       description = "A modular composable concurrency abstraction.\n\nChanges in version 2.4\n\n* Added \"Control.Concurrent.STM.TQueue\" (a faster @TChan@)\n\n* Added \"Control.Concurrent.STM.TBQueue\" (a bounded channel based on @TQueue@)\n\n* @TChan@ has an @Eq@ instances\n\n* Added @newBroadcastTChan@ and @newBroadcastTChanIO@\n\n* Some performance improvements for @TChan@\n\n* Added @cloneTChan@";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ] ++ [
+        ] ++ [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ]) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Evaluation using F-Algebras";
       description = "Feval is a statically typed functional programming language that\nuses f-algebras as opposed to classic recursion to solve the problem\nof evaluation and typechecking, which allows the compiler to perform\nbetter optimizations.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "Feval" = {
@@ -30,18 +30,18 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "examples" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

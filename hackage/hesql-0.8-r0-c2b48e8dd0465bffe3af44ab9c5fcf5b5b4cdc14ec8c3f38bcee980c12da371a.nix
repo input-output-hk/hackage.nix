@@ -21,7 +21,7 @@
       synopsis = "Haskell's embedded SQL";
       description = "hesql rewrites SQL-function to Haskell/HDBC-functions";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hesql" = {
@@ -33,9 +33,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."hssqlppp" or (errorHandler.buildDepError "hssqlppp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

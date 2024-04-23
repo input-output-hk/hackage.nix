@@ -21,7 +21,7 @@
       synopsis = "API binding for Mailgun";
       description = "API binding for mailgun in Haskell. Primarily the v3 API.\n\nAs of version 0.2, this package was entirely rewriten. Previous versions were developed by Andrew Rademacher.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,8 +46,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

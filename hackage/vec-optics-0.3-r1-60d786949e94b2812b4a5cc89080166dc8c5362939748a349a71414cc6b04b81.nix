@@ -21,7 +21,7 @@
       synopsis = "Vec: length-indexed (sized) list: optics support";
       description = "This package provides [optics](https://hackage.haskell.org/package/optics) and instances\nfor data types in [vec](https://hackage.haskell.org/package/vec) package.\n\n\"Data.Vec.Optics.Instances\" provides all the instances.\nthe other modules provide some named optics too.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."fin" or (errorHandler.buildDepError "fin"))
           (hsPkgs."vec" or (errorHandler.buildDepError "vec"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

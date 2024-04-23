@@ -21,16 +21,16 @@
       synopsis = "Convert integers in various bases to and from strings";
       description = "Parse or show positive and negative intergers in decimal, hexadecimal, octal, and binary.\nWhen parsing numbers, the base is determined automatically.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."IntFormats" or (errorHandler.buildDepError "IntFormats"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

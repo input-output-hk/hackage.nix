@@ -21,15 +21,15 @@
       synopsis = "fresnel/fused-effects integration";
       description = "A handful of operators bridging `fresnel` optics to `fused-effects` effects.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fresnel" or (errorHandler.buildDepError "fresnel"))
           (hsPkgs."fused-effects" or (errorHandler.buildDepError "fused-effects"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

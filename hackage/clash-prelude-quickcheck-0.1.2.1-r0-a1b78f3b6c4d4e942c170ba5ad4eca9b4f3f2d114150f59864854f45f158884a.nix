@@ -21,15 +21,15 @@
       synopsis = "QuickCheck instances for various types in the CλaSH Prelude";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

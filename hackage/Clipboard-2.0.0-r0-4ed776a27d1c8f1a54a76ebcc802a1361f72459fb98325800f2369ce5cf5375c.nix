@@ -21,14 +21,14 @@
       synopsis = "Access to the (Windows) clipboard.";
       description = "/Clipboard/ is a package that allows you to interact with the system clipboard easily.\n\nCurrently, only in a Windows system.\n\nChanges from last version:\n\n* New definitions of 'setClipboardString' and 'getClipboardString',\naccording to the API specifications on MSDN. So, it's highly recommended update\nto this version.\n\n* Added 'modifyClipboardString'.\n\n* Shorter name of the module @System.Windows.Clipboard@: @System.Clipboard@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

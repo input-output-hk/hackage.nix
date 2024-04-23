@@ -21,7 +21,7 @@
       synopsis = "Automatically inline Haskell snippets into LaTeX documents.";
       description = "Please see the README on GitHub at <https://github.com/isovector/latex-live-snippets#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "latex-live-snippets" = {
@@ -31,9 +31,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

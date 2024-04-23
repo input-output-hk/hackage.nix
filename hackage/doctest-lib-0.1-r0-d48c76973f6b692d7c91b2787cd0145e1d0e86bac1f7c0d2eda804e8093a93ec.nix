@@ -21,11 +21,11 @@
       synopsis = "Parts of doctest exposed as library";
       description = "Parts of doctest exposed as library.\nFor use with the doctest-extract utility.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

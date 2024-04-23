@@ -21,7 +21,7 @@
       synopsis = "Decodes pandoc to dhall.";
       description = "Please see the README on GitHub at <https://github.com/githubuser/pandoc-dhall-decoder#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

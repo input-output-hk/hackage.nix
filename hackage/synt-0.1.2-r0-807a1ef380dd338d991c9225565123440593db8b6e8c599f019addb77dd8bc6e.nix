@@ -21,7 +21,7 @@
       synopsis = "Similar code analysis.";
       description = "Calculate percentage of similarity between two pieces of code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
           (hsPkgs."argparser" or (errorHandler.buildDepError "argparser"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "synt" = {
           depends = [
@@ -41,10 +41,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."regexpr" or (errorHandler.buildDepError "regexpr"))
             (hsPkgs."argparser" or (errorHandler.buildDepError "argparser"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."argparser" or (errorHandler.buildDepError "argparser"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

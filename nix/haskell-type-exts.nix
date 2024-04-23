@@ -6,8 +6,8 @@
         nix = import ../hackage/haskell-type-exts-0.1.0-r0-fc40721edb04135700516df5f72478f665becf7f75f621e6a4979198a1e68543.nix;
         revNum = 0;
         sha256 = "fc40721edb04135700516df5f72478f665becf7f75f621e6a4979198a1e68543";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

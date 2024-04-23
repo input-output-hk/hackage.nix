@@ -21,7 +21,7 @@
       synopsis = "Converts errors from plaintext to json";
       description = "Converts errors from plaintext to json";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "wai-middleware-json-errors-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."wai-middleware-json-errors" or (errorHandler.buildDepError "wai-middleware-json-errors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

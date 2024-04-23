@@ -14,7 +14,7 @@
       identifier = {
         name = "hakyll-contrib-hyphenation";
         version = "0.1.0.2";
-        };
+      };
       license = "MIT";
       copyright = "";
       maintainer = "Pavel Kretov <firegurafiku@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "Automatic hyphenation for Hakyll";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."hyphenation" or (errorHandler.buildDepError "hyphenation"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

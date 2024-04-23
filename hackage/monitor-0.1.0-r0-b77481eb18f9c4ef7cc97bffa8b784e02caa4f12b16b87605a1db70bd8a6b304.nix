@@ -21,7 +21,7 @@
       synopsis = "Do things when files change.";
       description = "monitor waits for files to change, then runs system commands.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "monitor" = {
@@ -30,9 +30,9 @@
             (hsPkgs."hinotify" or (errorHandler.buildDepError "hinotify"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

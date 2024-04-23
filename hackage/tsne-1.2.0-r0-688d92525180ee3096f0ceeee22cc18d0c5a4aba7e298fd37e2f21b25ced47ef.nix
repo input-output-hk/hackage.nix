@@ -21,7 +21,7 @@
       synopsis = "t-SNE";
       description = "Pure Haskell implementation of the t-SNE dimension reduction algorithm.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."normaldistribution" or (errorHandler.buildDepError "normaldistribution"))
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "haskell_tsne_example" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."tsne" or (errorHandler.buildDepError "tsne"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "haskell_tsne_timing" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -50,10 +50,10 @@
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tsne" or (errorHandler.buildDepError "tsne"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "tSNE-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."tsne" or (errorHandler.buildDepError "tsne"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

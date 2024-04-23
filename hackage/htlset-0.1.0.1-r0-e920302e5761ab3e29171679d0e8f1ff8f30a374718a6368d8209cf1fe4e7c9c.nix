@@ -21,14 +21,14 @@
       synopsis = "Heterogenous Set";
       description = "HtsSet is a Heterogenous Set wich can provide storing values with different type.\nThis package is DEPRICATED. see htssets package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

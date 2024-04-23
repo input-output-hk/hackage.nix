@@ -21,14 +21,14 @@
       synopsis = "Find derangements of lists";
       description = "Find a derangement, a permutation with no fixed points, on a list";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."fgl" or (errorHandler.buildDepError "fgl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

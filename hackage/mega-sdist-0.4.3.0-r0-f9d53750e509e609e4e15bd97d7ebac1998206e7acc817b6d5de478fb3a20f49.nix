@@ -21,7 +21,7 @@
       synopsis = "Handles uploading to Hackage from mega repos";
       description = "Please see the description on Github at <https://github.com/snoyberg/mega-sdist#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "mega-sdist" = {
@@ -36,9 +36,9 @@
             (hsPkgs."rio" or (errorHandler.buildDepError "rio"))
             (hsPkgs."rio-orphans" or (errorHandler.buildDepError "rio-orphans"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

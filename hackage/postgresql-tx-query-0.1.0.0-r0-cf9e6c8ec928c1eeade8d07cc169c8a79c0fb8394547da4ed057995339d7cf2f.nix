@@ -21,7 +21,7 @@
       synopsis = "postgresql-tx interfacing for use with postgresql-query.";
       description = "Please see the README on GitHub at <https://github.com/simspace/postgresql-tx#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."postgresql-tx" or (errorHandler.buildDepError "postgresql-tx"))
           (hsPkgs."postgresql-tx-monad-logger" or (errorHandler.buildDepError "postgresql-tx-monad-logger"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

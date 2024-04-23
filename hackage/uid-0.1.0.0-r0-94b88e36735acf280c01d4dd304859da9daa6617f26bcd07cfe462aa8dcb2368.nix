@@ -21,7 +21,7 @@
       synopsis = "Simple unique identifier datatype, serializable and encodable as base32";
       description = "A simple unique identiier, serializable to binary and JSON, and since\nbase32 is a primary encoding, renders in URLs without any further encoding.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."dataenc" or (errorHandler.buildDepError "dataenc"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

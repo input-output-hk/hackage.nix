@@ -21,15 +21,15 @@
       synopsis = "Composable, hierarchical errors.";
       description = "An Applicative Functor with error accumulation. Built in tree like error type meant for gathering and reporting errors to users.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

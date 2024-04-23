@@ -21,7 +21,7 @@
       synopsis = "Simple reverse geocoding using OpenStreeMap";
       description = "Simple reverse geocoding using OpenStreeMap";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."iso3166-country-codes" or (errorHandler.buildDepError "iso3166-country-codes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

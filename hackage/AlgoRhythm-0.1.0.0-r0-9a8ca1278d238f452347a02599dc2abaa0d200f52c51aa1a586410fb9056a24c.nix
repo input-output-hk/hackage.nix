@@ -21,7 +21,7 @@
       synopsis = "Algorithmic music composition";
       description = "A library consisting of several mini-DSLs for representing, manipulating and\nautomatically generating music.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,18 +41,18 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."kmeans" or (errorHandler.buildDepError "kmeans"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "music-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."AlgoRhythm" or (errorHandler.buildDepError "AlgoRhythm"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "music-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."Euterpea" or (errorHandler.buildDepError "Euterpea"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Common things for text";
       description = "Common things for text";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."lists" or (errorHandler.buildDepError "lists"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

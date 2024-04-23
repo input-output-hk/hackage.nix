@@ -21,7 +21,7 @@
       synopsis = "MonadThrow behaviour for composite-aeson.";
       description = "MonadThrow behaviour for composite-aeson.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-aeson" or (errorHandler.buildDepError "composite-aeson"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

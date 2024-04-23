@@ -21,14 +21,14 @@
       synopsis = "Template Haskell to generate lenses for\nlens-family and lens-family-core";
       description = "Due to a cabal/hackage defect, curly braces cannot be\nadequately displayed here. Please see\n<http://github.com/DanBurton/lens-family-th#readme>\nfor a proper description.\n\n(See <https://github.com/haskell/cabal/issues/968>\nfor the ticket I created regarding the defect.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,20 +21,20 @@
       synopsis = "Library for generating filler text";
       description = "This is a library for generating filler text (Lorem ipsum ...).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       exes = {
         "lorem" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."lorem" or (errorHandler.buildDepError "lorem"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

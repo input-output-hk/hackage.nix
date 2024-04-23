@@ -21,7 +21,7 @@
       synopsis = "Mongrel2 Handler Library";
       description = "Mongrel2 Handler Library.\nThis handler library requires that the Mongrel2 server is set up\nto use the 'tnetstring' protocol.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "An FRP library with a GLUT backend";
       description = "An experiemental simple FRP library.\nGLUT backend included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

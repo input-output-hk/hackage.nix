@@ -21,7 +21,7 @@
       synopsis = "a gallery of Csound instruments.";
       description = "A gallery of Csound instruments. ";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."csound-expression" or (errorHandler.buildDepError "csound-expression"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

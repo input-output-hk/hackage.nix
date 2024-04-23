@@ -21,7 +21,7 @@
       synopsis = "Transformer for TCP connection with TLS and SOCKS support";
       description = "This library is a basic monadic wrapper over the @connection@ package. It\nprovides a monad transformer which gives your monad stack the ability to\nmaintain a single TCP connection, possibly over TLS and/or SOCKS.\n\nThis is very convenient for simple client applications which connect to a\nsingle server, but it is /not/ enough for robust applications which want to\nautomatically reconnect on errors. In the latter case, a reconnection and\nerror handling layer can be added on top of the simple transformer provided\nhere.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

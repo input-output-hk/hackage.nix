@@ -21,7 +21,7 @@
       synopsis = "reversed lists/snoc lists";
       description = "The key idea of this library is to leverage the type system to control the performance characteristics of list-manipulation code.\nIt defines the type `RList`, which is a snoc-list rather than a cons-list.\nIt also creates a symmetric module for cons-lists, which focuses on the efficient and safe use of linked lists.\nSee README.md for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

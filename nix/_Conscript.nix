@@ -6,8 +6,8 @@
         nix = import ../hackage/Conscript-0.1.0.0-r0-5a5fff5554ac739e3dfbb7d53c08d09016175a7acd52d060aeefcd0b1e58008a.nix;
         revNum = 0;
         sha256 = "5a5fff5554ac739e3dfbb7d53c08d09016175a7acd52d060aeefcd0b1e58008a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

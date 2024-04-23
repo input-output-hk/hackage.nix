@@ -14,7 +14,7 @@
       warn = false;
       error = false;
       examples = false;
-      };
+    };
     package = {
       specVersion = "1.10";
       identifier = { name = "affection"; version = "0.0.0.9"; };
@@ -27,7 +27,7 @@
       synopsis = "A simple Game Engine using SDL";
       description = "This package contains Affection, a simple game engine\nwritten in Haskell using SDL.\nThis Engine is still work in progress and even minor\nversion bumps may contain breaking api changes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -46,21 +46,21 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example00" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example01" = {
-          depends = (pkgs.lib).optionals (flags.examples) [
+          depends = pkgs.lib.optionals (flags.examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."affection" or (errorHandler.buildDepError "affection"))
             (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
@@ -72,9 +72,9 @@
             (hsPkgs."matrix" or (errorHandler.buildDepError "matrix"))
             (hsPkgs."nanovg" or (errorHandler.buildDepError "nanovg"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

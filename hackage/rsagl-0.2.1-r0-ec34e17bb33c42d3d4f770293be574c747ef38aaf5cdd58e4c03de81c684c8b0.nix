@@ -21,7 +21,7 @@
       synopsis = "The RogueStar Animation and Graphics Library";
       description = "RSAGL, the RogueStar Animation and Graphics Library, includes a\ndomain-specific monad for 3D modelling of arbitrary parametric surfaces,\nas well as an animation monad and arrow, which is more or less like YAMPA\nas a stack of arrow transformers.  RSAGL was specifically designed for\nroguestar, but every effort has been made (including the license) to make\nit accessable to other projects that might benefit from it.\n\nThe Darcs repository is available at <http://www.downstairspeople.org/darcs/rsagl>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

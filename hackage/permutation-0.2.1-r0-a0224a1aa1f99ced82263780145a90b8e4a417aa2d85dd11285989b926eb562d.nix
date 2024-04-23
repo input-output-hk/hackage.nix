@@ -21,13 +21,13 @@
       synopsis = "A library for representing and applying permutations.";
       description = "This library includes data types for storing permutations.  It\nimplements pure and impure types, the latter of which can be modified\nin-place.  The main utility of the library is converting between\nthe linear representation of a permutation and a sequence of swaps.\nThis allows, for instance, applying a permutation or its inverse\nto an array with O(1) memory use.\n\nMuch of the interface for the library is based on the permutation\nfunctions in the GNU Scientific Library (GSL).\n";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.9") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.9") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

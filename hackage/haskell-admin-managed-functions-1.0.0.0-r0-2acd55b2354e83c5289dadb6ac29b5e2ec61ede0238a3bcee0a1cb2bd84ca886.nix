@@ -14,7 +14,7 @@
       identifier = {
         name = "haskell-admin-managed-functions";
         version = "1.0.0.0";
-        };
+      };
       license = "MIT";
       copyright = "2022 Martin Bednar";
       maintainer = "bednam17@fit.cvut.cz";
@@ -24,7 +24,7 @@
       synopsis = "Managed Functions integration for Haskell Admin";
       description = "Please see the README on GitHub at <https://github.com/martin-bednar/haskell-admin#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."managed-functions" or (errorHandler.buildDepError "managed-functions"))
           (hsPkgs."managed-functions-http-connector" or (errorHandler.buildDepError "managed-functions-http-connector"))
           (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "haskell-admin-managed-functions-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."managed-functions" or (errorHandler.buildDepError "managed-functions"))
             (hsPkgs."managed-functions-http-connector" or (errorHandler.buildDepError "managed-functions-http-connector"))
             (hsPkgs."servant-server" or (errorHandler.buildDepError "servant-server"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

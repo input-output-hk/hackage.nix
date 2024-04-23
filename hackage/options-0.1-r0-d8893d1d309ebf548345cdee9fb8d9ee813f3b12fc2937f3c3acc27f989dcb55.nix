@@ -21,7 +21,7 @@
       synopsis = "Parsing command-line options";
       description = "The @options@ package lets library and application developers easily work\nwith command-line options.\n\nThe following example is a full program that can accept two options,\n@--message@ and @--quiet@:\n\n@\n&#x7b;-\\# LANGUAGE TemplateHaskell \\#-&#x7d;\n\nimport Options\n\ndefineOptions \\\"MainOptions\\\" $ do\n&#x20;   stringOption \\\"optMessage\\\" \\\"message\\\" \\\"Hello world!\\\"\n&#x20;       \\\"A message to show the user.\\\"\n&#x20;   boolOption \\\"optQuiet\\\" \\\"quiet\\\" False\n&#x20;       \\\"Whether to be quiet.\\\"\n&#x20;\nmain :: IO ()\nmain = runCommand $ \\\\opts args -> do\n&#x20;   if optQuiet opts\n&#x20;       then return ()\n&#x20;       else putStrLn (optMessage opts)\n@\n\n>$ ./hello\n>Hello world!\n>$ ./hello --message='ciao mondo'\n>ciao mondo\n>$ ./hello --quiet\n>$\n\nIn addition, this library will automatically create documentation options\nsuch as @--help@ and @--help-all@:\n\n>$ ./hello --help\n>Help Options:\n>  -h, --help                  Show option summary.\n>  --help-all                  Show all help options.\n>\n>Application Options:\n>  --message                   A message to show the user.\n>  --quiet                     Whether to be quiet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."system-filepath" or (errorHandler.buildDepError "system-filepath"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

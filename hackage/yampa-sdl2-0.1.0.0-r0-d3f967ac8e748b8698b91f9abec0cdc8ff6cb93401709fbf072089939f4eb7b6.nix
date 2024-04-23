@@ -21,7 +21,7 @@
       synopsis = "Yampa and SDL2 made easy";
       description = "yampa-sdl2 lets you start coding your app right away instead of dealing with SDL2 first.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."sdl2" or (errorHandler.buildDepError "sdl2"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "YampaSDL2-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."yampa-sdl2" or (errorHandler.buildDepError "yampa-sdl2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

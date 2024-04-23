@@ -21,7 +21,7 @@
       synopsis = "composable SQL generation";
       description = "A simple but expressive applicative SQL generation library for mysql\n\nHaskqlator is a simple but expressive SQL generation library.  Instead of\nmatching haskell records, or using complicate type level computations to match\nhaskell types to database schemas, it uses a simple applicative interface to\nconvert between SQL and haskell.  The produced SQL matches exactly the SQL\nwritten by the user.  An addition layer is provided to encode database schemas\nas haskell values, and give more type safety.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."pretty-simple" or (errorHandler.buildDepError "pretty-simple"))
           (hsPkgs."optics-core" or (errorHandler.buildDepError "optics-core"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/crux-0.7-r0-754ce14d45d3bf7b83a067591757b8d612f3f39b658c1e08a7dcc819df78e443.nix;
         revNum = 0;
         sha256 = "754ce14d45d3bf7b83a067591757b8d612f3f39b658c1e08a7dcc819df78e443";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

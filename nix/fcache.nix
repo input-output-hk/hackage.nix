@@ -6,8 +6,8 @@
         nix = import ../hackage/fcache-0.1.0.0-r0-f74d13173494b3dc2e4a25ad6c111cec31712cb9434f32ea4135e12d9ba2ac39.nix;
         revNum = 0;
         sha256 = "f74d13173494b3dc2e4a25ad6c111cec31712cb9434f32ea4135e12d9ba2ac39";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

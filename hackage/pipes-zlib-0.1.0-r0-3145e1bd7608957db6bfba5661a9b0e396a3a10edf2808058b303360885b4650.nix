@@ -21,7 +21,7 @@
       synopsis = "Pipes to deal with zipped data.";
       description = "Pipes to deal with zipped data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pipes-core" or (errorHandler.buildDepError "pipes-core"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."zlib-bindings" or (errorHandler.buildDepError "zlib-bindings"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

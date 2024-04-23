@@ -21,7 +21,7 @@
       synopsis = "Set of programs for TLS testing and debugging";
       description = "A set of program to test and debug various aspect of the TLS package.\n";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tls-stunnel" = {
@@ -34,9 +34,9 @@
             (hsPkgs."cprng-aes" or (errorHandler.buildDepError "cprng-aes"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tls-checkciphers" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -46,9 +46,9 @@
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tls-retrievecertificate" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -60,9 +60,9 @@
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tls-simpleclient" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
             (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
             (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

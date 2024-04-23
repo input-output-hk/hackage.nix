@@ -21,7 +21,7 @@
       synopsis = "Information retrieval library";
       description = "An Information Retrieval (IR) library which consists of the following components:\n\n* Search - for indexing and searching text documents.\nCheck \"Condor.Search.Index\" for API information\n\n* Readers for reading documents from disk. Check \"Condor.Reader.Text\" folder text reader.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."glider-nlp" or (errorHandler.buildDepError "glider-nlp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "condor" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."glider-nlp" or (errorHandler.buildDepError "glider-nlp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."glider-nlp" or (errorHandler.buildDepError "glider-nlp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

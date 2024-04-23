@@ -21,16 +21,16 @@
       synopsis = "Pure Haskell slotmap implementation over ST or IO.";
       description = "Please see the README on GitHub at <https://github.com/harporoeder/slotmap#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "slotmap-test" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
             (hsPkgs."slotmap" or (errorHandler.buildDepError "slotmap"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

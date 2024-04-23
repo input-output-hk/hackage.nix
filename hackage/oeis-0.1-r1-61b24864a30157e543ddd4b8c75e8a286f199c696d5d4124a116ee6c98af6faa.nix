@@ -21,15 +21,15 @@
       synopsis = "Interface to the Online Encyclopedia of Integer Sequences";
       description = "Haskell interface to the Online Encyclopedia of Integer Sequences.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

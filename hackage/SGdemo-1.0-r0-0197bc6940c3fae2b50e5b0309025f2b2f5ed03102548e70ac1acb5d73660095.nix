@@ -21,7 +21,7 @@
       synopsis = "An example of using the SG and OpenGL libraries";
       description = "This program serves as a demonstration of the functions of the SG library\n(to be found on Hackage:\n<http://hackage.haskell.org/cgi-bin/hackage-scripts/package/SG>)) by\nvisualising it with OpenGL.  It also serves as a sort of informal test\nsuite for the SG library.  Documentation is available at\nthe top of the main module's source code.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sgdemo" = {
@@ -30,9 +30,9 @@
             (hsPkgs."SG" or (errorHandler.buildDepError "SG"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

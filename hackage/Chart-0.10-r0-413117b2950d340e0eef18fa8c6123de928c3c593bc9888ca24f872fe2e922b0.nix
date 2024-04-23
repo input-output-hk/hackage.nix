@@ -21,7 +21,7 @@
       synopsis = "A library for generating 2D Charts and Plots";
       description = "A library for generating 2D Charts and Plots, based upon the cairo graphics library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,7 +32,7 @@
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
           (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
-          ] ++ (if flags.splitbase
+        ] ++ (if flags.splitbase
           then [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
@@ -41,9 +41,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."data-accessor" or (errorHandler.buildDepError "data-accessor"))
             (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
-            ]
+          ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

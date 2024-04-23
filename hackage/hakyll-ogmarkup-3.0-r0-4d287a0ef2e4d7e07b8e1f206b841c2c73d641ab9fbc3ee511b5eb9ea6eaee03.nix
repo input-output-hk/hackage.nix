@@ -21,15 +21,15 @@
       synopsis = "Integrate ogmarkup document with Hakyll";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hakyll" or (errorHandler.buildDepError "hakyll"))
           (hsPkgs."ogmarkup" or (errorHandler.buildDepError "ogmarkup"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

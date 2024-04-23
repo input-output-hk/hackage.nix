@@ -21,7 +21,7 @@
       synopsis = "A front-end framework";
       description = "Please see the README on GitHub at <https://github.com/meeshkan/plzwrk#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (pkgs.lib).optional (flags.plzwrk-enable-asterius) (hsPkgs."asterius-prelude" or (errorHandler.buildDepError "asterius-prelude"));
+        ] ++ pkgs.lib.optional (flags.plzwrk-enable-asterius) (hsPkgs."asterius-prelude" or (errorHandler.buildDepError "asterius-prelude"));
         buildable = true;
-        };
+      };
       tests = {
         "plzwrk-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."plzwrk" or (errorHandler.buildDepError "plzwrk"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

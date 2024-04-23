@@ -21,7 +21,7 @@
       synopsis = "Portray backend for prettyprinter";
       description = "This provides a\n<https://hackage.haskell.org/package/prettyprinter prettyprinter> backend for\n<https://hackage.haskell.org/package/portray portray> along with derivable\n'Pretty' instances for types with 'Portray' instances.\n\nThis started out as a fork of\n<https://hackage.haskell.org/package/portray-pretty portray-pretty>, and is\nstill very similar.  However, @prettyprinter@ gives more flexibility to\ndocuments at the cost of requiring more behavior to be specified explicitly.\nAs such, some formats are nicer with the @prettyprinter@ backend,\nconfigurable syntax highlighting is supported, and unicode escaping is\nconfigurable.  However, this backend is less mature and hasn't been used as\nmuch in practice, so there are likely more formatting bugs than in\n@portray-pretty@.  Please do file bugs on the GitHub issue tracker if you\nfind anything that seems obviously wrong!\n\nTry using 'pp' as the print function in GHCi:\n@:set -interactive-print=Data.Portray.Prettyprinter.pp@!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PortrayPrettyprinter-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

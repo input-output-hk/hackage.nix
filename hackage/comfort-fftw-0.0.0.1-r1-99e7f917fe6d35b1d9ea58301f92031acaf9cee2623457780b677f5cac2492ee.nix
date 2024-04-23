@@ -21,7 +21,7 @@
       synopsis = "High-level interface to FFTW (Fast Fourier Transform) based on comfort-array";
       description = "FFTW claims to be the fastest Fourier Transform in the West.\nThis is a high-level interface to @libfftw@.\nWe re-use the type classes from @netlib-ffi@.\n\nFeatures:\n\n* Support of one (audio), two (image), three (video) dimensional data,\nas well as n-dimensional one.\n\n* Support for batched transformations e.g. for block-wise Fourier transform.\n\n* No normalization like in plain @fftw@.\nThis is because I see no universally best place to apply normalization.\n\nThe use of @comfort-array@ enables to use array shapes tailored\nto Fourier transforms:\n\n[@Shape.Cyclic@]: for data where the @n-1@-th element\ncan also be accessed via index @-1@.\n[@Shape.Half@]: for complex data of a real-to-complex Fourier transform.\nIt saves you from case distinction between even and odd data length\nand according mistakes.\n[@Shape.Symmetric@]: for real-to-real Sine and Cosine transforms.\nThey assert that you will always use\nthe appropriate kind for back transformation.\n\nFor rather simple examples\nsee the packages @align-audio@ and @morbus-meniere@.\n\nSee also package @fft@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "fftw-test" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."storable-record" or (errorHandler.buildDepError "storable-record"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

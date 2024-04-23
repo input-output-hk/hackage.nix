@@ -21,7 +21,7 @@
       synopsis = "Reed-Solomon Erasure Coding in Haskell";
       description = "Please see README.md";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,13 +34,13 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
           (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"))
-          ];
-        libs = (pkgs.lib).optional (flags.simd) (pkgs."reedsolomon" or (errorHandler.sysDepError "reedsolomon"));
+        ];
+        libs = pkgs.lib.optional (flags.simd) (pkgs."reedsolomon" or (errorHandler.sysDepError "reedsolomon"));
         buildable = true;
-        };
+      };
       exes = {
         "reedsolomon-simple-encoder" = {
-          depends = (pkgs.lib).optionals (!system.isWindows) [
+          depends = pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -48,11 +48,11 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if !system.isWindows then true else false;
-          };
+        };
         "reedsolomon-simple-decoder" = {
-          depends = (pkgs.lib).optionals (!system.isWindows) [
+          depends = pkgs.lib.optionals (!system.isWindows) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -60,9 +60,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."bytestring-mmap" or (errorHandler.buildDepError "bytestring-mmap"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = if !system.isWindows then true else false;
-          };
+        };
         "reedsolomon-simple-bench" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -71,9 +71,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."statistics" or (errorHandler.buildDepError "statistics"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "reedsolomon-profiling" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -83,10 +83,10 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "reedsolomon-test" = {
           depends = [
@@ -106,10 +106,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "reedsolomon-bench" = {
           depends = [
@@ -120,9 +120,9 @@
             (hsPkgs."cpu" or (errorHandler.buildDepError "cpu"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."reedsolomon" or (errorHandler.buildDepError "reedsolomon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

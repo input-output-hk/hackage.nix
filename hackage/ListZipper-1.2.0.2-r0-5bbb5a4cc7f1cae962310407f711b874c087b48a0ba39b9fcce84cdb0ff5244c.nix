@@ -21,14 +21,14 @@
       synopsis = "Simple zipper for lists";
       description = "List zipper with O(1) get element at cursor, insert at cursor,\ndelete at cursor, move right, and move left operations.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

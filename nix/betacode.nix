@@ -6,8 +6,8 @@
         nix = import ../hackage/betacode-0.1.0.0-r0-1588bbf3f492597df02c6249c0c889dab6b35e0c6daac11532e19e7be724a99c.nix;
         revNum = 0;
         sha256 = "1588bbf3f492597df02c6249c0c889dab6b35e0c6daac11532e19e7be724a99c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "EDSL for the Michelson Language";
       description = "Lorentz is a powerful meta-programming tool which allows one to write Michelson contracts directly in Haskell. It has the same instructions as Michelson, but operates on Haskell values and allows one to use Haskell features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,8 +47,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

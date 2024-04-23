@@ -21,7 +21,7 @@
       synopsis = "An implementation of Buffon machines.";
       description = "An implementation of everything in \"On Buffon Machines and Numbers\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."monad-primitive" or (errorHandler.buildDepError "monad-primitive"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

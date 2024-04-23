@@ -6,8 +6,8 @@
         nix = import ../hackage/Pollutocracy-1.0-r0-fe86a6f67ccdc016a16de2bf21cf2cd592e7caf435707d536344cebf77b713a2.nix;
         revNum = 0;
         sha256 = "fe86a6f67ccdc016a16de2bf21cf2cd592e7caf435707d536344cebf77b713a2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

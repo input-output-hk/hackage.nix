@@ -21,7 +21,7 @@
       synopsis = "More constrained extensions to zeromq4-haskell";
       description = "Please see the README on GitHub at <https://github.com/githubuser/zeromq4-simple#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."zeromq4-haskell" or (errorHandler.buildDepError "zeromq4-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

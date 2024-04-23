@@ -21,12 +21,12 @@
       synopsis = "An alternative to monads in do-notation";
       description = "This \\\"control-dsl\\\" package is a toolkit to create extensible Domain Specific Languages in @do@-notation.\n\nSee \"Control.Dsl\" for more information.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
@@ -36,9 +36,9 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."doctest-discover" or (errorHandler.buildDepError "doctest-discover"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

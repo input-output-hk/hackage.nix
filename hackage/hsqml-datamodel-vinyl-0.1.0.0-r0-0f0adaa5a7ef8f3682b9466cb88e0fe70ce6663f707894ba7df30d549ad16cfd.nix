@@ -21,7 +21,7 @@
       synopsis = "HsQML DataModel instances for Vinyl Rec.";
       description = "HsQML DataModel instances for Vinyl Rec. Requires the field labels to be Typeable.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."type-list" or (errorHandler.buildDepError "type-list"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Utility functions for working with html-parse";
       description = "See README.md <https://gitlab.com/slotThe/html-parse-utils/-/blob/master/README.md here>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."html-parse" or (errorHandler.buildDepError "html-parse"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

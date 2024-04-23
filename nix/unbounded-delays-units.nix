@@ -6,8 +6,8 @@
         nix = import ../hackage/unbounded-delays-units-0.4-r0-7f19700e9b153546d422beaf9f7582dbdd8763cf711bbcaebe9288967199230e.nix;
         revNum = 0;
         sha256 = "7f19700e9b153546d422beaf9f7582dbdd8763cf711bbcaebe9288967199230e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

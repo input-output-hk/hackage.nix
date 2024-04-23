@@ -21,7 +21,7 @@
       synopsis = "Tool to render CSV into tables of various formats";
       description = "Tool to render CSV into tables of various formats, including HTML, tbl, and character art (both ASCII and Unicode)";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tablify" = {
@@ -33,9 +33,9 @@
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
             (hsPkgs."safer-file-handles" or (errorHandler.buildDepError "safer-file-handles"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

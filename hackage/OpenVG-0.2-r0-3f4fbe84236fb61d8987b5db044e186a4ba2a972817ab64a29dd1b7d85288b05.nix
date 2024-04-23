@@ -21,15 +21,15 @@
       synopsis = "OpenVG (shivag-0.2.1) binding";
       description = "A Haskell binding for the OpenVG vector graphics API version 1.0.1\nspecifically the shivavg-0.2.1 implementation.\n*** Windows users - use version 1.0 and ShivaVG-0.2.0. ***";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
           (hsPkgs."GLUT" or (errorHandler.buildDepError "GLUT"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

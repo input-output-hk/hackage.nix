@@ -21,7 +21,7 @@
       synopsis = "Access to the Readability API.";
       description = "This package provides Haskell bindings to the\n<http://www.readability.com/> API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."authenticate-oauth" or (errorHandler.buildDepError "authenticate-oauth"))
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."xsd" or (errorHandler.buildDepError "xsd"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-hsreadability" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

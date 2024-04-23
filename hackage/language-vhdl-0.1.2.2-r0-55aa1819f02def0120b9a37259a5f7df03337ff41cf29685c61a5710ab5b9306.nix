@@ -21,14 +21,14 @@
       synopsis = "VHDL AST and pretty printer in Haskell.";
       description = "VHDL AST and pretty printer according to the VHDL language reference manual (2000 Edition).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,16 +21,16 @@
       synopsis = "A parser for the _hyperscript programming language";
       description = "Please see the README on GitHub at <https://github.com/MonadicSystems/hyperscript#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hyperscript-exe" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."hyperscript" or (errorHandler.buildDepError "hyperscript"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "hyperscript-test" = {
           depends = [
@@ -49,9 +49,9 @@
             (hsPkgs."hyperscript" or (errorHandler.buildDepError "hyperscript"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

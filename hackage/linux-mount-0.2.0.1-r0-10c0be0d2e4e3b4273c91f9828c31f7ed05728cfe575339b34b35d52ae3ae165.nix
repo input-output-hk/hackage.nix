@@ -21,14 +21,14 @@
       synopsis = "Mount and unmount filesystems";
       description = "Bindings to the Linux\n@<http://man7.org/linux/man-pages/man2/mount.2.html mount()>@ and\n@<http://man7.org/linux/man-pages/man2/umount.2.html umount()>@ syscalls.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

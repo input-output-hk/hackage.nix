@@ -21,7 +21,7 @@
       synopsis = "The \"glue\" between electronic tables and GraphViz";
       description = "The program mmsyn4 converts a specially formated .csv file with a colon as a field separator obtained from the electronic table into a visualized by GraphViz graph.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mmsyn4" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."mmsyn2-array" or (errorHandler.buildDepError "mmsyn2-array"))
             (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

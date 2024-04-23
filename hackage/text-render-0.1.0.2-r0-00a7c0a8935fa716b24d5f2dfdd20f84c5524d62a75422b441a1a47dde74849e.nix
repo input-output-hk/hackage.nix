@@ -21,7 +21,7 @@
       synopsis = "A type class for rendering objects as text, pretty-printing, etc.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."classy-prelude" or (errorHandler.buildDepError "classy-prelude"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

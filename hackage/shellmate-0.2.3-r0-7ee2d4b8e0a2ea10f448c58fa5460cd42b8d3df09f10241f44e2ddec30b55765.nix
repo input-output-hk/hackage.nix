@@ -21,7 +21,7 @@
       synopsis = "Simple interface for shell scripting in Haskell.";
       description = "Aims to simplify development of cross-platform shell scripts and similar things.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           (hsPkgs."HTTP" or (errorHandler.buildDepError "HTTP"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-          ] ++ (pkgs.lib).optionals (flags.download-extras) [
+        ] ++ pkgs.lib.optionals (flags.download-extras) [
           (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
           (hsPkgs."tagsoup" or (errorHandler.buildDepError "tagsoup"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

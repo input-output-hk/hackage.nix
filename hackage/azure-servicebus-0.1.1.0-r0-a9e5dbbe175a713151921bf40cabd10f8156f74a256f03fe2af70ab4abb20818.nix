@@ -21,7 +21,7 @@
       synopsis = "Haskell wrapper over Microsoft Azure ServiceBus REST API";
       description = "This library provides haskell wrappers over Microsoft Azure ServiceBus REST API.\nThe current version provides <http://msdn.microsoft.com/en-us/library/hh780762.aspx Runtime API> for queues.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."connection" or (errorHandler.buildDepError "connection"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

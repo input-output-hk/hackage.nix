@@ -21,24 +21,24 @@
       synopsis = "Algorithms on GHC parse trees";
       description = "Please see the README on GitHub at <https://github.com/shayne-fletcher/ghc-lib-parser-ex#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.8.0") && (compiler.isGhc && (compiler.version).lt "8.9.0")
+        ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.8.0") && (compiler.isGhc && compiler.version.lt "8.9.0")
           then [
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."ghc-boot" or (errorHandler.buildDepError "ghc-boot"))
-            ]
+          ]
           else [
             (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "ghc-lib-parser-ex-test" = {
           depends = [
@@ -49,16 +49,16 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."ghc-lib-parser-ex" or (errorHandler.buildDepError "ghc-lib-parser-ex"))
-            ] ++ (if !flags.ghc-lib && (compiler.isGhc && (compiler.version).ge "8.8.0") && (compiler.isGhc && (compiler.version).lt "8.9.0")
+          ] ++ (if !flags.ghc-lib && (compiler.isGhc && compiler.version.ge "8.8.0") && (compiler.isGhc && compiler.version.lt "8.9.0")
             then [
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
-              ]
+            ]
             else [
               (hsPkgs."ghc-lib-parser" or (errorHandler.buildDepError "ghc-lib-parser"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

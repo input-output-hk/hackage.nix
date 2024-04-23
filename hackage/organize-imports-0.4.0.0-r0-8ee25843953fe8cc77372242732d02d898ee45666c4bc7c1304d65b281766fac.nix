@@ -21,7 +21,7 @@
       synopsis = "Organize scala imports";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "organize-imports" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Vinyl-style extensible graphs.";
       description = "Vinyl-style extensible graphs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."fcf-vinyl" or (errorHandler.buildDepError "fcf-vinyl"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

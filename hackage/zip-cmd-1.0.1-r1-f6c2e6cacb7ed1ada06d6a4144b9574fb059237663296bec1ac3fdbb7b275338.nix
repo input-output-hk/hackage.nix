@@ -21,7 +21,7 @@
       synopsis = "Simple CLI tool for the haskell zip library.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "zip-cmd" = {
@@ -34,9 +34,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

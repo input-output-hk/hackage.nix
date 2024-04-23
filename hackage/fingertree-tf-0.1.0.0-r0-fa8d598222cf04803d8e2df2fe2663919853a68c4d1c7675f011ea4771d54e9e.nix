@@ -21,11 +21,11 @@
       synopsis = "Generic finger-tree structure using type families.";
       description = "A general sequence representation with arbitrary\nannotations, for use as a base for implementations of\nvarious collection types. This is an implementation modified\nto use associated types instead of functional dependencies.\n\nSee the original paper\n\n* Ralf Hinze and Ross Paterson,\n\\\"Finger trees: a simple general-purpose data structure\\\",\n/Journal of Functional Programming/ 16:2 (2006) pp 197-217.\n<http://www.soi.city.ac.uk/~ross/papers/FingerTree.html>\n\nFor a tuned sequence type, see @Data.Sequence@ in the\n@containers@ package, which is a specialization of\nthis structure.\n\nExamples are not available in this package. However I am\nworking on an @fingertree-extensible@ package which will use\nan idea based on types a la carte to provide composable annotations\nand that package will include examples :D";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Add support for using lucid with Reform";
       description = "Reform is a library for building and validating forms using applicative functors. This package add support for using reform with blaze-html.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."reform" or (errorHandler.buildDepError "reform"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."path-pieces" or (errorHandler.buildDepError "path-pieces"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

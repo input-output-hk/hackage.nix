@@ -21,7 +21,7 @@
       synopsis = "Daemons in Haskell made fun and easy";
       description = "\"Control.Pipe.C3\" provides simple RPC-like wrappers for pipes.\n\n\"Control.Pipe.Serialize\" provides serialization and\nincremental deserialization pipes.\n\n\"Control.Pipe.Socket\" provides functions to setup pipes around\nsockets.\n\n\"System.Daemon\" provides a high-level interface to starting\ndaemonized programs that are controlled through sockets.\n\n\"System.Posix.Daemon\" provides a low-level interface to\nstarting, and controlling detached jobs.\n\nSee the @README.md@ file and the homepage for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "memo" = {
           depends = [
@@ -49,18 +49,18 @@
             (hsPkgs."daemons" or (errorHandler.buildDepError "daemons"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "addone" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."daemons" or (errorHandler.buildDepError "daemons"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "queue" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -73,9 +73,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "name" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -85,10 +85,10 @@
             (hsPkgs."daemons" or (errorHandler.buildDepError "daemons"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "daemon" = {
           depends = [
@@ -101,9 +101,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

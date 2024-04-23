@@ -21,7 +21,7 @@
       synopsis = "The launcher for Yu.";
       description = "The launcher for Yu.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "yu-launch" = {
@@ -32,9 +32,9 @@
             (hsPkgs."yu-core" or (errorHandler.buildDepError "yu-core"))
             (hsPkgs."cmdargs" or (errorHandler.buildDepError "cmdargs"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

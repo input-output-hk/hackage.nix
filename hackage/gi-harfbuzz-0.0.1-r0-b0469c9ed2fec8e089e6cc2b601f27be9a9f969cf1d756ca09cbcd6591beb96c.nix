@@ -27,8 +27,8 @@
         (hsPkgs.buildPackages.haskell-gi or (pkgs.buildPackages.haskell-gi or (errorHandler.setupDepError "haskell-gi")))
         (hsPkgs.buildPackages.gi-gobject or (pkgs.buildPackages.gi-gobject or (errorHandler.setupDepError "gi-gobject")))
         (hsPkgs.buildPackages.gi-glib or (pkgs.buildPackages.gi-glib or (errorHandler.setupDepError "gi-glib")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -42,11 +42,11 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && ((compiler.version).ge "8.2" && (compiler.version).lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && (compiler.version.ge "8.2" && compiler.version.lt "8.3")) (hsPkgs."haskell-gi-overloading" or (errorHandler.buildDepError "haskell-gi-overloading"));
         pkgconfig = [
           (pkgconfPkgs."harfbuzz" or (errorHandler.pkgConfDepError "harfbuzz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

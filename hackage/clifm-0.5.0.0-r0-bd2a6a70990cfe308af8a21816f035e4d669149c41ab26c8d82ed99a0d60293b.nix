@@ -21,7 +21,7 @@
       synopsis = "Command Line Interface File Manager";
       description = "A terminal-based File Manager with multiple panes/tabs interface, basic file operations and mouse support.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "clifm" = {
@@ -40,9 +40,9 @@
             (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

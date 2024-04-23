@@ -6,8 +6,8 @@
         nix = import ../hackage/hark-0.2-r0-3bcc6ea521298c1c94a5e31615680585272294d57844c51f0a656cd65941b090.nix;
         revNum = 0;
         sha256 = "3bcc6ea521298c1c94a5e31615680585272294d57844c51f0a656cd65941b090";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

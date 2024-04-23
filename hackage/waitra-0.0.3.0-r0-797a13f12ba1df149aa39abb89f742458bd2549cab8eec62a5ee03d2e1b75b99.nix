@@ -21,7 +21,7 @@
       synopsis = "A very simple Wai router";
       description = "Waitra is a very simple router.\nIt's useful for writing simple API web-services,\nwhen you don't want to use the whole Yesod stack.\n\n> echoRoute :: Route\n> echoRoute = routeGet (echoApp <$ string \"/api/echo/\" <*> many anySym)\n>  where echoApp msg _req respond = respond $ responseLBS status200 [] (fromString msg)\n>\n> app :: Application\n> app = waitraMiddleware [echoRoute] $ staticApp $ embeddedSettings $(mkRecursiveEmbedded \"static\")";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."waitra" or (errorHandler.buildDepError "waitra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

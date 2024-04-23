@@ -21,14 +21,14 @@
       synopsis = "A \"System.Console.GetOpt\" wrapper to make simple use case easy.";
       description = "There's no need to invoke full 'getOpt' power in everyday use. So, here it is a most common use case implemented to be as painless as possible while retaining some functionality. It's divided into three layers, each built upon another. You can start at highest and peel of layers to gradually unlock more 'getOpt' features.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

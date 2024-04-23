@@ -21,7 +21,7 @@
       synopsis = "Scotty utils library";
       description = "Scotty utils library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."aeson-result" or (errorHandler.buildDepError "aeson-result"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

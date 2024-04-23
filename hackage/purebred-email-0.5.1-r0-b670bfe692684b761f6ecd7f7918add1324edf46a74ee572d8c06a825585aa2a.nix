@@ -21,7 +21,7 @@
       synopsis = "types and parser for email messages (including MIME)";
       description = "The purebred email library.  RFC 5322, MIME, etc.\nSee \"Data.MIME\" for usage, examples and API documentation.\n\nThis is a general-purpose library for processing and constructing\nemail messages, originally written to meet the needs of\n<https://github.com/purebred-mua/purebred purebred MUA>.\nTransmission and delivery of mail are not part of this library,\nbut /purebred-email/ could be a useful building block for such\nsystems.\n\nFeatures and implemented specifications include:\n\n- <https://tools.ietf.org/html/rfc5322 RFC 5322> message parsing and serialisation\n- MIME multipart messages (<https://tools.ietf.org/html/rfc2046 RFC 2046>)\n- Convenient APIs for replying and forward/bounce\n- Content transfer and charset decoding/encoding\n- MIME message header extensions for non-ASCII text (<https://tools.ietf.org/html/rfc2047 RFC 2047>)\n- MIME parameter value and encoded word extensions (<https://tools.ietf.org/html/rfc2231 RFC 2231>)\n- @Content-Disposition@ header field (<https://tools.ietf.org/html/rfc2183 RFC 2183>)\n- Address syntax in @From@ and @Sender@ fields (<https://tools.ietf.org/html/rfc6854 RFC 6854>)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."stringsearch" or (errorHandler.buildDepError "stringsearch"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "purebred-email-parse" = {
           depends = [
@@ -52,10 +52,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."purebred-email" or (errorHandler.buildDepError "purebred-email"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -76,9 +76,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

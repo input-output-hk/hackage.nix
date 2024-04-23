@@ -21,7 +21,7 @@
       synopsis = "An application that regularly logs system stats for later analysis";
       description = "An application that regularly logs system stats for later analysis";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "systemstats" = {
@@ -33,9 +33,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."text-format" or (errorHandler.buildDepError "text-format"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

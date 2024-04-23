@@ -21,7 +21,7 @@
       synopsis = "Build system creator";
       description = "Write build systems. NOT READY FOR USE YET. DO NOT USE THIS PACKAGE.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,11 +37,11 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."parallel-io" or (errorHandler.buildDepError "parallel-io"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "shake" = { buildable = if flags.testprog then true else false; };
-        };
       };
-    }
+    };
+  }

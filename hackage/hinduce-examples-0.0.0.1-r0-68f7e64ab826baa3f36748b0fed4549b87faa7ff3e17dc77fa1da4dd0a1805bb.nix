@@ -21,7 +21,7 @@
       synopsis = "Example data for hInduce";
       description = "Example data for use with hInduce";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."hinduce-classifier" or (errorHandler.buildDepError "hinduce-classifier"))
           (hsPkgs."hinduce-classifier-decisiontree" or (errorHandler.buildDepError "hinduce-classifier-decisiontree"))
           (hsPkgs."convertible" or (errorHandler.buildDepError "convertible"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

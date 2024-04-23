@@ -21,7 +21,7 @@
       synopsis = "2-D single-player game";
       description = "A simple OpenGL Pong game based on GLFW";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hpong" = {
@@ -31,9 +31,9 @@
             (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

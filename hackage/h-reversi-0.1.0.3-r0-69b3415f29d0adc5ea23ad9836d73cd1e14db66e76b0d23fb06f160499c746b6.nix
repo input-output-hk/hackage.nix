@@ -21,7 +21,7 @@
       synopsis = "Reversi game in haskell/blank-canvas";
       description = "@h-reversi@ uses html5/blank-canvas underneath\n\n<<https://raw.githubusercontent.com/apoorvingle/h-reversi/master/images/screenshot.jpeg>>\n\nPlease visit <https://github.com/apoorvingle/h-reversi h-reversi> for more details\n";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "h-reversi" = {
           depends = [
@@ -43,10 +43,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "h-reversi-properties" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

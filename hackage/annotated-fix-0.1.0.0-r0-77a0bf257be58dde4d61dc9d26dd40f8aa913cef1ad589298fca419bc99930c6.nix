@@ -21,14 +21,14 @@
       synopsis = "A fixpoint of a functor that can be annotated";
       description = "This library exposes a type representing the fixpoint\nof a functor, with an annotation at every node.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."recursion-schemes" or (errorHandler.buildDepError "recursion-schemes"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

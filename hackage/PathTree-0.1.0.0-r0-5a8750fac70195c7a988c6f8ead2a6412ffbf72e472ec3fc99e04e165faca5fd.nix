@@ -21,15 +21,15 @@
       synopsis = "A tree used to merge and maintain paths";
       description = "This package contains two modules: \"Data.LCRSTree\" and \"Data.PathTree\".\nA 'PathTree' is a tree used to build unified paths from some node. This\nmeans being able to merge multiple paths, that may overlap at the root, in\na sensible way. The module comes with a set of functions to add paths.\nA Left-Children-Right-Siblings tree ('LCRSTree') is a tree that represents\na multi-way tree (aka, a Rose Tree) in a binary-tree format. It is the\nunderlying implementation of 'PathTree'.\n<https://en.wikipedia.org/wiki/Left-child_right-sibling_binary_tree>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "PathTree-test" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

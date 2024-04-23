@@ -21,11 +21,11 @@
       synopsis = "Exit codes as defined by BSD";
       description = "Expose the exit codes defined by BSD in sysexits.h to the Haskell world.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/dnssd-0.1.0.0-r0-dcce326cc8565c3347cec4ff9b1205fb3348680ed6205f5a186f6ec0bb468301.nix;
         revNum = 0;
         sha256 = "dcce326cc8565c3347cec4ff9b1205fb3348680ed6205f5a186f6ec0bb468301";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

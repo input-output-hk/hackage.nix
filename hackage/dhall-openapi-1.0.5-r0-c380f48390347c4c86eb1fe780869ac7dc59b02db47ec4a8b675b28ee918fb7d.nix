@@ -21,7 +21,7 @@
       synopsis = "Convert an OpenAPI specification to a Dhall package";
       description = "This package provides an `openapi-to-dhall` program that converts an\nOpenAPI specification to a Dhall package containing types, defaults, and\nschemas for that API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."sort" or (errorHandler.buildDepError "sort"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "openapi-to-dhall" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."sort" or (errorHandler.buildDepError "sort"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

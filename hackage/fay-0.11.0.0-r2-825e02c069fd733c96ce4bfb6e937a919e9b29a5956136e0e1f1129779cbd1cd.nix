@@ -21,7 +21,7 @@
       synopsis = "A compiler for Fay, a Haskell subset that compiles to JavaScript.";
       description = "Fay is a proper subset of Haskell which can be compiled (type-checked)\nwith GHC, and compiled to JavaScript. It is lazy, pure, with a Fay monad,\nan FFI, tail-recursion optimization (experimental). It implements no type\nsystem, for type-checking you should use GHC.\n\n/Documentation/\n\nSee documentation at <http://fay-lang.org/> or build your own documentation with:\n\n> $ cabal unpack fay\n> $ cd fay-*\n> $ cabal install\n> $ dist/build/fay-docs/fay-docs\n\n\n/Examples/\n\nSee <http://fay-lang.org/#examples>.\n\n/Release Notes/\n\n. * Restrict optparse-applicative to < 0.5.\n\n. * Error on case-wheres instead of ignoring them.\n\n. * Fix serialization of parametrized types when the type information is available.\n\n. * Fix recursive definition name resolving (closes #187).\n\n. * Fix as patterns always matching (closes #186)\n\n. * Fix bind error (closes #178).\n\n. * Check GHC version from command line instead of CPP (#174)\n\n. * Move Defined and Nullable to Language.Fay.FFI\n\n. * Add Nullable.\n\n. * Use GHC.Path for running ghc and handle flag change in GHC 7.6 (refs #174).\n\n. * Add HASKELL_PACKAGE_SANDBOX environment variable support (closes #174).\n\n. * Fix Maybe serialization.\n\n. * Fix serializing for doubles (i.e. also parsing ints).\n\n. * Option to warn for Closure-unfriendly FFI bindings.\n\nSee full history at: <https://github.com/faylang/fay/commits>";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,7 +47,7 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
-          ] ++ (pkgs.lib).optionals (!flags.devel) [
+        ] ++ pkgs.lib.optionals (!flags.devel) [
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
@@ -58,9 +58,9 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fay" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "fay-tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -120,9 +120,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."test-framework-th" or (errorHandler.buildDepError "test-framework-th"))
-            ];
+          ];
           buildable = if flags.devel then false else true;
-          };
+        };
         "fay-docs" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -152,9 +152,9 @@
             (hsPkgs."language-ecmascript" or (errorHandler.buildDepError "language-ecmascript"))
             (hsPkgs."groom" or (errorHandler.buildDepError "groom"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = if flags.devel then false else true;
-          };
         };
       };
-    }
+    };
+  }

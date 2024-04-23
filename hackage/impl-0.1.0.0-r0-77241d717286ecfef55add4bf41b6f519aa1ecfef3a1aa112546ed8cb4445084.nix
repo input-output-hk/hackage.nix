@@ -21,24 +21,24 @@
       synopsis = "Framework for defaulting superclasses";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."named" or (errorHandler.buildDepError "named"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       sublibs = {
         "example" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."impl" or (errorHandler.buildDepError "impl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

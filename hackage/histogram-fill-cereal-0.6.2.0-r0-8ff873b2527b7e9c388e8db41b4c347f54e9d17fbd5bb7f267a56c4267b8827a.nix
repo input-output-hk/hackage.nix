@@ -21,7 +21,7 @@
       synopsis = "Library for histograms creation.";
       description = "Cereal instances for histogram-fill package\n\nChanges in 0.6.2.0\n\n* Instance for 'MaybeBin' added";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."cereal" or (errorHandler.buildDepError "cereal"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."histogram-fill" or (errorHandler.buildDepError "histogram-fill"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

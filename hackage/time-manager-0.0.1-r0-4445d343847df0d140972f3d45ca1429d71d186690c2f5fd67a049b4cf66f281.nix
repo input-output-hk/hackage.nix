@@ -21,15 +21,15 @@
       synopsis = "Scalable timer";
       description = "Scalable timer functions provided by a timer manager.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."auto-update" or (errorHandler.buildDepError "auto-update"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

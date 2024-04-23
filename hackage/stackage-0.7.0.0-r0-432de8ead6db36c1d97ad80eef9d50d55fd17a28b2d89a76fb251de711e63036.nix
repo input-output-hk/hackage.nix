@@ -21,15 +21,15 @@
       synopsis = "Dummy package forcing installation of other Stackage packages";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stackage-cli" or (errorHandler.buildDepError "stackage-cli"))
           (hsPkgs."stackage-update" or (errorHandler.buildDepError "stackage-update"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "A DSL for marking student work";
       description = "A DSL for marking student work; see README.md for further details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "remarks" = {
           depends = [
@@ -38,10 +38,10 @@
             (hsPkgs."GenericPretty" or (errorHandler.buildDepError "GenericPretty"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "remarks-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

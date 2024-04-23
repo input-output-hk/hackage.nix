@@ -21,7 +21,7 @@
       synopsis = "Obtain homogeneous values from arbitrary values, tramsforming or culling data";
       description = "This package provides SYB shape support: generic mapping to\nhomogeneous types, and related features.  Complements existing\nUniplate and TH shape libraries.  See <http://www.fremissant.net/shape-syb>\nfor more information.\n\nGiven a value of arbitrary complexity (mutually recursive\nheterogeneous constructor application), you can obtain\na structure-preserving representation (homomorphism) as\na homogeneous type @Homo a@, parameterised by any choice type @a@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."ghc-syb-utils" or (errorHandler.buildDepError "ghc-syb-utils"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (pkgs.lib).optional (flags.use_data_tree) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
+        ] ++ pkgs.lib.optional (flags.use_data_tree) (hsPkgs."containers" or (errorHandler.buildDepError "containers"));
         buildable = true;
-        };
+      };
       tests = {
         "unit-tests" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."sai-shape-syb" or (errorHandler.buildDepError "sai-shape-syb"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

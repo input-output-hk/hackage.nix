@@ -21,7 +21,7 @@
       synopsis = "Strongly typed Attribute Grammars implemented using type-level programming.";
       description = "An EDSL implementing strongly typed -and strongly kinded!- attribute grammars\nusing type-level programming. We make an effort to encode precise EDSL\ntype errors.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."th-strict-compat" or (errorHandler.buildDepError "th-strict-compat"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

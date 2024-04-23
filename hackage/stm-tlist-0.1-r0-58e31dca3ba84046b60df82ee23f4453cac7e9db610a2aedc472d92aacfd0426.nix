@@ -21,14 +21,14 @@
       synopsis = "Mutable, singly-linked list in STM";
       description = "This package provides a mutable, singly-linked list type for use in 'STM'.\nIt is based on the design of @Control.Concurrent.TChan@, and can be used to\nimplement a wide variety of channel types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

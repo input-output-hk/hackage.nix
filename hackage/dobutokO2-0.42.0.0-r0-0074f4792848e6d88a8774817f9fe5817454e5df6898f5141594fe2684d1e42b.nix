@@ -21,7 +21,7 @@
       synopsis = "Helps to create experimental music from a file (or its part) and a Ukrainian text.";
       description = "It can also generate a timbre for the notes. Uses SoX inside.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
           (hsPkgs."mmsyn7l" or (errorHandler.buildDepError "mmsyn7l"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dobutokO2" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."mmsyn2" or (errorHandler.buildDepError "mmsyn2"))
             (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
             (hsPkgs."mmsyn7l" or (errorHandler.buildDepError "mmsyn7l"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

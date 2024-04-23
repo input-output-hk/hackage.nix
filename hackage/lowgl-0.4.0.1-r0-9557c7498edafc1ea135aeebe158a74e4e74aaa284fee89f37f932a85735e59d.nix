@@ -21,7 +21,7 @@
       synopsis = "Basic gl wrapper and reference";
       description = "This library exposes a simplified subset of OpenGL that I hope is complete enough for following tutorials and making simple games or demos.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."linear" or (errorHandler.buildDepError "linear"))
           (hsPkgs."gl" or (errorHandler.buildDepError "gl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "'each' for microlens";
       description = "This package contains @Each@ type class and the @each@ traversal.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

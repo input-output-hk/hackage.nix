@@ -21,7 +21,7 @@
       synopsis = "Save your spot when watching movies with @mplayer@.";
       description = "Please see <https://github.com/cdepillabout/mplayer-spot#readme README.md>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,17 +38,17 @@
           (hsPkgs."streaming-commons" or (errorHandler.buildDepError "streaming-commons"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "mplayer-spot" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."mplayer-spot" or (errorHandler.buildDepError "mplayer-spot"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

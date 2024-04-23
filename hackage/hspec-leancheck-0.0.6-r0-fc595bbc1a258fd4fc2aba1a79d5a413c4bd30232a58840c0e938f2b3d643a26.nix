@@ -21,7 +21,7 @@
       synopsis = "LeanCheck support for the Hspec test framework.";
       description = "LeanCheck support for the Hspec test framework.\n\nThis package can be used to incorporate LeanCheck tests into Hspec test\nsuites.\n\nPlease see the Haddock documentation and README for more details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."hspec-core" or (errorHandler.buildDepError "hspec-core"))
           (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -40,18 +40,18 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."hspec-leancheck" or (errorHandler.buildDepError "hspec-leancheck"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "should" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."leancheck" or (errorHandler.buildDepError "leancheck"))
             (hsPkgs."hspec-leancheck" or (errorHandler.buildDepError "hspec-leancheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

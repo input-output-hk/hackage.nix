@@ -21,15 +21,15 @@
       synopsis = "Gray encoding schemes";
       description = "Gray codes satisfy the property that two successive values\ndiffer in only one digit. Usually the term \\\"Gray code\\\"\nrefers to the Binary Reflected Gray code (BRGC),  but\nnon-binary Gray codes have also been discovered.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "gray-extended-tests" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
             (hsPkgs."gray-extended" or (errorHandler.buildDepError "gray-extended"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

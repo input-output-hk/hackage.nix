@@ -21,7 +21,7 @@
       synopsis = "Data serialization, communication, and operation verification implementation";
       description = "Please see the README on GitHub at <https://github.com/athanclark/symbiote#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."wai-transformers" or (errorHandler.buildDepError "wai-transformers"))
           (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
           (hsPkgs."websockets-simple-extra" or (errorHandler.buildDepError "websockets-simple-extra"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "symbiote-test" = {
           depends = [
@@ -85,9 +85,9 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."websockets-simple" or (errorHandler.buildDepError "websockets-simple"))
             (hsPkgs."websockets-simple-extra" or (errorHandler.buildDepError "websockets-simple-extra"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

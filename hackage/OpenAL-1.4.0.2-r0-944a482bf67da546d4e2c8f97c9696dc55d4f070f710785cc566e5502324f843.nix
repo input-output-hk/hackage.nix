@@ -21,7 +21,7 @@
       synopsis = "A binding to the OpenAL cross-platform 3D audio API";
       description = "A Haskell binding for the OpenAL cross-platform 3D audio API,\nappropriate for use with gaming applications and many other\ntypes of audio applications.  For more information about OpenAL,\nplease see: <http://connect.creativelabs.com/openal/>.";
       buildType = "Configure";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
           (hsPkgs."ObjectName" or (errorHandler.buildDepError "ObjectName"))
           (hsPkgs."Tensor" or (errorHandler.buildDepError "Tensor"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

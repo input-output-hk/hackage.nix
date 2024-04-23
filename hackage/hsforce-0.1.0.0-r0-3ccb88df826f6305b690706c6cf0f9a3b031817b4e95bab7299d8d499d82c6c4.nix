@@ -21,7 +21,7 @@
       synopsis = "Salesforce API Client";
       description = "This package provides bindings to Salesforce API <https://github.com/githubuser/hsforce#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hsforce-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."uri-encode" or (errorHandler.buildDepError "uri-encode"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

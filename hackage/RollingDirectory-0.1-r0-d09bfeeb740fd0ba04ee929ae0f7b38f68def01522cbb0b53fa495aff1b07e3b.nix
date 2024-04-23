@@ -21,7 +21,7 @@
       synopsis = "Limits the size of a directory's contents";
       description = "This is a daemon which monitors a directory and limits it's content's size by deleting old entries";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "RollingDirectory" = {
@@ -33,16 +33,16 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."monad-parallel" or (errorHandler.buildDepError "monad-parallel"))
             (hsPkgs."hsyslog" or (errorHandler.buildDepError "hsyslog"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "7.2"
+          ] ++ (if compiler.isGhc && compiler.version.ge "7.2"
             then [
               (hsPkgs."hdaemonize-buildfix" or (errorHandler.buildDepError "hdaemonize-buildfix"))
-              ]
+            ]
             else [
               (hsPkgs."hdaemonize" or (errorHandler.buildDepError "hdaemonize"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "MainTest" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

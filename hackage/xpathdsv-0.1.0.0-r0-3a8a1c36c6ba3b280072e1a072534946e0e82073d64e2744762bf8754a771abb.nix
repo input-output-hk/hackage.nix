@@ -21,7 +21,7 @@
       synopsis = "Command line tool to extract DSV data from HTML and XML with XPATH expressions";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "xpathdsv" = {
@@ -31,9 +31,9 @@
             (hsPkgs."hxt-xpath" or (errorHandler.buildDepError "hxt-xpath"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

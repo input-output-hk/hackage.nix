@@ -21,7 +21,7 @@
       synopsis = "";
       description = "Continuum Database Client";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."nanomsg-haskell" or (errorHandler.buildDepError "nanomsg-haskell"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "continuum-client" = {
           depends = [
@@ -45,9 +45,9 @@
             (hsPkgs."nanomsg-haskell" or (errorHandler.buildDepError "nanomsg-haskell"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if flags.binaries then true else false;
-          };
+        };
         "continuum-server" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -67,12 +67,12 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
             (hsPkgs."nanomsg-haskell" or (errorHandler.buildDepError "nanomsg-haskell"))
-            ];
+          ];
           libs = [
             (pkgs."hyperleveldb" or (errorHandler.sysDepError "hyperleveldb"))
-            ];
+          ];
           buildable = if flags.binaries then true else false;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/supero-3.0-r0-ac2eba032bf3e0be99d4e9615942f5de4889b89170b7b74c975ef2db06107285.nix;
         revNum = 0;
         sha256 = "ac2eba032bf3e0be99d4e9615942f5de4889b89170b7b74c975ef2db06107285";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

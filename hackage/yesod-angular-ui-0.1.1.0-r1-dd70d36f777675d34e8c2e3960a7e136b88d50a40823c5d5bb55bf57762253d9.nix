@@ -21,7 +21,7 @@
       synopsis = "Angular Helpers";
       description = "Library for developing i18n webapps with yesod and angular.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
           (hsPkgs."hjsmin" or (errorHandler.buildDepError "hjsmin"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

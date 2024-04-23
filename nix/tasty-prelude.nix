@@ -6,8 +6,8 @@
         nix = import ../hackage/tasty-prelude-0.1.0.0-r0-b7b141d15a6e533d2ea38d385e1089ed8e05a9702c48db01559267ea8680f6ca.nix;
         revNum = 0;
         sha256 = "b7b141d15a6e533d2ea38d385e1089ed8e05a9702c48db01559267ea8680f6ca";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

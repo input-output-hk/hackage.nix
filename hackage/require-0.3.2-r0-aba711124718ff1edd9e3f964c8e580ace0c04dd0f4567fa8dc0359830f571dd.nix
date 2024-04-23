@@ -21,7 +21,7 @@
       synopsis = "Scrap your qualified import clutter";
       description = "See <https://theam.github.io/require>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."optparse-generic" or (errorHandler.buildDepError "optparse-generic"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "autorequirepp" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "requirepp" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -62,10 +62,10 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "require-test-suite" = {
           depends = [
@@ -80,10 +80,10 @@
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "require-benchmarks" = {
           depends = [
@@ -97,9 +97,9 @@
             (hsPkgs."require" or (errorHandler.buildDepError "require"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

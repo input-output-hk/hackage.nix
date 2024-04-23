@@ -21,16 +21,16 @@
       synopsis = "Modify SRT subtitle files.";
       description = "Simple program to cut, select prefix/suffix of, reindex and shift SRT subtitle files.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "subtitles" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

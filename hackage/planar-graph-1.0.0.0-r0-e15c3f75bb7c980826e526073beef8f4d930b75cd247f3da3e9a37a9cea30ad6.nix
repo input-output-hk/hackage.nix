@@ -21,7 +21,7 @@
       synopsis = "A representation of planar graphs";
       description = "Planar graphs are graphs that can be embedded onto a surface\n(i.e. they can be drawn on that surface without any edges crossing).\nAs such, it is preferable to use a dedicated data structure for them\nthat has information about how to achieve this embedding rather than a\nstandard graph data structure.\n\n(Please note however that this implementation has only been tested in\nterms of the embedding being on the unit sphere or disc; whether it\nworks or not as-is on any other type of surface is unknown.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

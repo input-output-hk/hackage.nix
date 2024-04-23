@@ -21,7 +21,7 @@
       synopsis = "NMR-STAR file format parser.";
       description = "Parser for NMR-STAR data used by BMRB databank repository\nof biological nuclear magnetic resonance data.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,12 +37,12 @@
           (hsPkgs."derive" or (errorHandler.buildDepError "derive"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "PrintCSTypes" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsestar" or (errorHandler.buildDepError "parsestar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "MergeCoord" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -66,9 +66,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."parsestar" or (errorHandler.buildDepError "parsestar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "TestChemShifts" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -78,9 +78,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."parsestar" or (errorHandler.buildDepError "parsestar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "STAR2Fasta" = {
           depends = [
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -91,9 +91,9 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."parsestar" or (errorHandler.buildDepError "parsestar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

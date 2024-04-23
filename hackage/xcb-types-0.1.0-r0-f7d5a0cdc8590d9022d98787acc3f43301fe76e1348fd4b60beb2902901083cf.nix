@@ -21,7 +21,7 @@
       synopsis = "Parses XML files used by the XCB project";
       description = "This package provides types which mirror the structures\nused in the XCB code generation XML files.\nSee project http://xcb.freedesktop.org/ for more information about the XCB\nproject.\nThe XML files describe the data-types, events and requests used by the\nX Protocol, and are used to auto-generate large parts of the XCB project.\nThis package parses these XML files into Haskell data structures.\nIf you want to do something with these XML descriptions but don't want\nto learn XSLT, this package should help.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

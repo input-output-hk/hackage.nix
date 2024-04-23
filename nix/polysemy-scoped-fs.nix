@@ -6,8 +6,8 @@
         nix = import ../hackage/polysemy-scoped-fs-0.1.0.0-r0-24722159534a3db7bc4472173f0571bbd6ea147cca0dd3b00235564b50510a0d.nix;
         revNum = 0;
         sha256 = "24722159534a3db7bc4472173f0571bbd6ea147cca0dd3b00235564b50510a0d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

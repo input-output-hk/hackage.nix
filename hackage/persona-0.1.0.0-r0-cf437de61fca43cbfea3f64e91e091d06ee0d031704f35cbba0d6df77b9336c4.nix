@@ -21,7 +21,7 @@
       synopsis = "Persona (BrowserID) library";
       description = "Persona (BrowesrID) library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."jose" or (errorHandler.buildDepError "jose"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

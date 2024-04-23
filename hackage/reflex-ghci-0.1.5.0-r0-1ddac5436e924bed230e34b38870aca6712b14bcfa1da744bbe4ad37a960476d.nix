@@ -21,7 +21,7 @@
       synopsis = "A GHCi widget library for use in reflex applications";
       description = "Run GHCi from within a Reflex FRP (<https://reflex-frp.org>) application and interact with it using a functional reactive interface.\n\n<<https://i.imgur.com/5y61Qx7.png>>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "reflex-ghci" = {
           depends = [
@@ -54,10 +54,10 @@
             (hsPkgs."reflex-process" or (errorHandler.buildDepError "reflex-process"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."reflex-ghci" or (errorHandler.buildDepError "reflex-ghci"))
             (hsPkgs."reflex-process" or (errorHandler.buildDepError "reflex-process"))
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

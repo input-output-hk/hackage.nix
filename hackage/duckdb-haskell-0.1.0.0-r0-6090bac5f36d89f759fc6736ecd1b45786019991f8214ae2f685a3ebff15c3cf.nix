@@ -21,38 +21,38 @@
       synopsis = "Haskell bindings for duckdb.";
       description = "Full-featured haskell bindings for the duckdb database.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
-        libs = (pkgs.lib).optionals (!(compiler.isGhc && (compiler.version).ge "9.4")) (if system.isOsx || system.isFreebsd
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4") (hsPkgs."system-cxx-std-lib" or (errorHandler.buildDepError "system-cxx-std-lib"));
+        libs = pkgs.lib.optionals (!(compiler.isGhc && compiler.version.ge "9.4")) (if system.isOsx || system.isFreebsd
           then [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ]
           else if system.isWindows
-            then if system.isX86_64 && (compiler.isGhc && (compiler.version).lt "8.6.5")
+            then if system.isX86_64 && (compiler.isGhc && compiler.version.lt "8.6.5")
               then [
                 (pkgs."stdc++-6" or (errorHandler.sysDepError "stdc++-6"))
                 (pkgs."gcc_s_seh-1" or (errorHandler.sysDepError "gcc_s_seh-1"))
-                ]
+              ]
               else if system.isX86_64
                 then [
                   (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
                   (pkgs."gcc_s_seh-1" or (errorHandler.sysDepError "gcc_s_seh-1"))
-                  ]
-                else if compiler.isGhc && (compiler.version).ge "8.6.5"
+                ]
+                else if compiler.isGhc && compiler.version.ge "8.6.5"
                   then [
                     (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"))
                     (pkgs."gcc_s_dw2-1" or (errorHandler.sysDepError "gcc_s_dw2-1"))
-                    ]
+                  ]
                   else [
                     (pkgs."stdc++-6" or (errorHandler.sysDepError "stdc++-6"))
                     (pkgs."gcc_s_dw2-1" or (errorHandler.sysDepError "gcc_s_dw2-1"))
-                    ]
+                  ]
             else [ (pkgs."stdc++" or (errorHandler.sysDepError "stdc++")) ]);
         buildable = true;
-        };
+      };
       tests = {
         "duckdb-haskell-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

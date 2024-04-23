@@ -6,8 +6,8 @@
         nix = import ../hackage/nullary-0.1.0.0-r0-ceeb8c4d75946f79c896ac86db0d41b5755d7a655505f19d52af36eb0ee8ce7c.nix;
         revNum = 0;
         sha256 = "ceeb8c4d75946f79c896ac86db0d41b5755d7a655505f19d52af36eb0ee8ce7c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

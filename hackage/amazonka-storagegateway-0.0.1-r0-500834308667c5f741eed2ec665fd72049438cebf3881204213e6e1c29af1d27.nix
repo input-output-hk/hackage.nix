@@ -21,14 +21,14 @@
       synopsis = "Amazon Storage Gateway SDK.";
       description = "AWS Storage Gateway is a service that connects an on-premises software\nappliance with cloud-based storage to provide seamless and secure\nintegration between your on-premises IT environment and AWS's storage\ninfrastructure.\n\n/See:/ <http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html AWS API Reference>\n\n/Warning:/ This is an experimental preview release which is still under\nheavy development and not intended for public consumption, caveat emptor!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."amazonka-core" or (errorHandler.buildDepError "amazonka-core"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

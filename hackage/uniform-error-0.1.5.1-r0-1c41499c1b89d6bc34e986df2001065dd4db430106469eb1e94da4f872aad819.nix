@@ -21,7 +21,7 @@
       synopsis = "Handling errors in the uniform framework";
       description = "A minimal package to handle errors and exception\nin a simple but flexible way. Includes functions to adapt the prefered method of calling IO with error handling (ErrIO) to the\napproaches encountered in other packages when writing applications.\n\nPlease see the README on GitHub at <https://github.com/andrewufrank/uniform-error/readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."uniform-strings" or (errorHandler.buildDepError "uniform-strings"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "error-test" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."uniform-error" or (errorHandler.buildDepError "uniform-error"))
             (hsPkgs."uniform-strings" or (errorHandler.buildDepError "uniform-strings"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

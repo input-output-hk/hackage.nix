@@ -21,7 +21,7 @@
       synopsis = "Protocol Buffers serialization and gRPC schema import for Mu microservices";
       description = "You can use @mu-protobuf@ to read Protobuf Schema Declarations and services for mu-haskell";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
           (hsPkgs."http2-grpc-proto3-wire" or (errorHandler.buildDepError "http2-grpc-proto3-wire"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "test-protobuf" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."proto3-wire" or (errorHandler.buildDepError "proto3-wire"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

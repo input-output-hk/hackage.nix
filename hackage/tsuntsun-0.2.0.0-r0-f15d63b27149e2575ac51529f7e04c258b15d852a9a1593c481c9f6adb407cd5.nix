@@ -21,7 +21,7 @@
       synopsis = "Interacts with tesseract to ease reading of RAW Japanese manga.";
       description = "Interacts with tesseract to ease reading of RAW Japanese manga.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tsuntsun" = {
@@ -39,9 +39,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

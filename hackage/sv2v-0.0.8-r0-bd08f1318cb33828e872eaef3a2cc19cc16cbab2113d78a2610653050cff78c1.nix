@@ -21,7 +21,7 @@
       synopsis = "SystemVerilog to Verilog conversion";
       description = "A tool for coverting SystemVerilog to Verilog. Originally forked from the\nVerilog parser found at https://github.com/tomahawkins/verilog";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "sv2v" = {
@@ -36,13 +36,13 @@
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
             (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

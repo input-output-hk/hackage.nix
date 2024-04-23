@@ -6,8 +6,8 @@
         nix = import ../hackage/type-level-bytestrings-0.1.0-r0-00057435bec23b71aa2352798cdb8cd3de55391df9b4965af91eda883d0b61f2.nix;
         revNum = 0;
         sha256 = "00057435bec23b71aa2352798cdb8cd3de55391df9b4965af91eda883d0b61f2";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

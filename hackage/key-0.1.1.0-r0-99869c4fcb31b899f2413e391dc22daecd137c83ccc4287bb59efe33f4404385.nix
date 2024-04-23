@@ -21,14 +21,14 @@
       synopsis = "Type-safe unconstrained dynamic typing";
       description = "A library of monadic typed keys which can be compared for equality, returning an equality proof if equal.\nSee http://dx.doi.org/10.1145/2976002.2976008\nThe authors of the cited document and of this package are disjoint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

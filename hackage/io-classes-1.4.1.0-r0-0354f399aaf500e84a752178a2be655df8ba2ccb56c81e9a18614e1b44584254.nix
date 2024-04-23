@@ -21,7 +21,7 @@
       synopsis = "Type classes for concurrency with STM, ST and timing";
       description = "IO Monad class hierarchy compatible with\n[io-sim](https://hackage.haskell.org/package/io-sim),\n[base](https://hackage.haskell.org/package/base),\n[async](https://hackage.haskell.org/package/async),\n[stm](https://hackage.haskell.org/package/stm),\n[exceptions](https://hackage.haskell.org/package/exceptions) &\n[time](https://hackage.haskell.org/package/time) packages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

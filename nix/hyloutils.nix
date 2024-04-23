@@ -6,8 +6,8 @@
         nix = import ../hackage/hyloutils-1.0-r0-ba1debeb6d40de15942dead570bf08469e0534fcfb725922cd05ea88f63ca834.nix;
         revNum = 0;
         sha256 = "ba1debeb6d40de15942dead570bf08469e0534fcfb725922cd05ea88f63ca834";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Scrap Your Boilerplate With Class";
       description = "Classes, and Template Haskell code to generate instances, for the\nScrap Your Boilerplate With Class system.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

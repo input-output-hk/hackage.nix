@@ -21,7 +21,7 @@
       synopsis = "Facilities for generating new parts of the Haskell-Tools AST";
       description = "Contains utility functions to generate parts of the Haskell-Tools AST. Generates these elements to be compatible with the source annotations that are already present on the AST. The package is divided into modules based on which language elements can the given module generate. This packages should be used during the transformations to generate parts of the new AST.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."haskell-tools-ast" or (errorHandler.buildDepError "haskell-tools-ast"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

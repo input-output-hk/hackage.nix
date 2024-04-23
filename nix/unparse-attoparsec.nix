@@ -6,8 +6,8 @@
         nix = import ../hackage/unparse-attoparsec-0.1.0.0-r0-3ebe1ae6cdc4081307d493d30ace3bdecee1a5bfae6de5a3c57ee261fb766e9d.nix;
         revNum = 0;
         sha256 = "3ebe1ae6cdc4081307d493d30ace3bdecee1a5bfae6de5a3c57ee261fb766e9d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

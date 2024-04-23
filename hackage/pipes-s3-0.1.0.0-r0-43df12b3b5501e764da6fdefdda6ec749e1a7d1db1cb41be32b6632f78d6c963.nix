@@ -21,7 +21,7 @@
       synopsis = "A simple interface for streaming data to and from Amazon S3";
       description = "This package provides a simple interface for streaming data to and from\nAmazon's S3 cloud storage service with the @pipes@ package.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,8 +36,8 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."aws" or (errorHandler.buildDepError "aws"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

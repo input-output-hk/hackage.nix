@@ -21,7 +21,7 @@
       synopsis = "Name resolution library for Haskell";
       description = "For a high-level overview of this package,\nsee <http://documentup.com/haskell-suite/haskell-names>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,9 +42,9 @@
           (hsPkgs."traverse-with-class" or (errorHandler.buildDepError "traverse-with-class"))
           (hsPkgs."type-eq" or (errorHandler.buildDepError "type-eq"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -67,9 +67,9 @@
             (hsPkgs."haskell-names" or (errorHandler.buildDepError "haskell-names"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
             (hsPkgs."traverse-with-class" or (errorHandler.buildDepError "traverse-with-class"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

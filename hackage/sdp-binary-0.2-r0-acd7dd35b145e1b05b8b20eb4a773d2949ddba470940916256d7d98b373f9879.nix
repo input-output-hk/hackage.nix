@@ -21,15 +21,15 @@
       synopsis = "Binary instances for SDP";
       description = "SDP extension for binary serialisation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
           (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

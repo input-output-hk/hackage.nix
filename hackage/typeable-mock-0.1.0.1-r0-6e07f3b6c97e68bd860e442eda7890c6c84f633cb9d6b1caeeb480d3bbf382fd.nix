@@ -21,7 +21,7 @@
       synopsis = "Mock functions and expressions anywhere.";
       description = "Please see the README on GitHub at <https://github.com/lykahb/typeable-mock#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."call-stack" or (errorHandler.buildDepError "call-stack"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."variadic-function" or (errorHandler.buildDepError "variadic-function"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "typeable-mock-test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."typeable-mock" or (errorHandler.buildDepError "typeable-mock"))
             (hsPkgs."variadic-function" or (errorHandler.buildDepError "variadic-function"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

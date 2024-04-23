@@ -21,15 +21,15 @@
       synopsis = "Monads-tf instances for the AbortT monad transformer.";
       description = "This module provides instances for the monads-tf classes for AbortT.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."AbortT-transformers" or (errorHandler.buildDepError "AbortT-transformers"))
           (hsPkgs."monads-tf" or (errorHandler.buildDepError "monads-tf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

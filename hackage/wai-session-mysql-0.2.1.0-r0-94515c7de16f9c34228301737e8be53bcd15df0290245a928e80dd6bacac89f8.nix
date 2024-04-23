@@ -21,7 +21,7 @@
       synopsis = "MySQL backed Wai session store";
       description = "Provides a MySQL backed session store for the Network.Wai.Session interface.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mysql-session-test" = {
           depends = [
@@ -51,9 +51,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai-session" or (errorHandler.buildDepError "wai-session"))
             (hsPkgs."wai-session-mysql" or (errorHandler.buildDepError "wai-session-mysql"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

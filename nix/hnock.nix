@@ -6,8 +6,8 @@
         nix = import ../hackage/hnock-0.4.0-r0-4ebad7c746401c99930044a5ff306b516acf66004895816e125276795e5429ab.nix;
         revNum = 0;
         sha256 = "4ebad7c746401c99930044a5ff306b516acf66004895816e125276795e5429ab";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

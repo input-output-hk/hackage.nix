@@ -21,7 +21,7 @@
       synopsis = "Automatic (re)compilation of purescript projects";
       description = "Automatic (re)compilation of purescript projects";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."configurator" or (errorHandler.buildDepError "configurator"))
           (hsPkgs."shelly" or (errorHandler.buildDepError "shelly"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

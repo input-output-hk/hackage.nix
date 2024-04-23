@@ -21,7 +21,7 @@
       synopsis = "Binding to the ALSA Library API (MIDI sequencer).";
       description = "This package provides access to ALSA sequencer (MIDI support).\nFor audio support see alsa-pcm.\nIncluded are some simple example programs.\nFor more example programs including a GUI, see the alsa-gui programs.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,89 +35,89 @@
           (hsPkgs."poll" or (errorHandler.buildDepError "poll"))
           (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."alsa" or (errorHandler.pkgConfDepError "alsa"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "alsa-seq-dump" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-send-note" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-broadcast" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-list-ports" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."enumset" or (errorHandler.buildDepError "enumset"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-melody" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-list-subscribers" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-beat" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
+        };
         "alsa-seq-sysex" = {
-          depends = (pkgs.lib).optionals (flags.buildexamples) [
+          depends = pkgs.lib.optionals (flags.buildexamples) [
             (hsPkgs."alsa-seq" or (errorHandler.buildDepError "alsa-seq"))
             (hsPkgs."alsa-core" or (errorHandler.buildDepError "alsa-core"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if flags.buildexamples then true else false;
-          };
         };
       };
-    }
+    };
+  }

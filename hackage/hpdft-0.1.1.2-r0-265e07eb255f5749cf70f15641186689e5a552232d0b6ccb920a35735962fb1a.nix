@@ -21,7 +21,7 @@
       synopsis = "A tool for looking through PDF file using Haskell";
       description = "A command line PDF-to-text converter. It may take a much longer than other similar tools but could yield better results.\n\nThis package can also serve as a library for working with text data in PDF files.\nYou could write your own PDF-to-text converter for some particular PDF files, utilizing any meta data or special data structures of those.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hpdft" = {
           depends = [
@@ -55,9 +55,9 @@
             (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

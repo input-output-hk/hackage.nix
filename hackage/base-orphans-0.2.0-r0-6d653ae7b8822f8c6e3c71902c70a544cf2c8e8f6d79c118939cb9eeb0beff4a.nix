@@ -21,24 +21,24 @@
       synopsis = "Backwards-compatible orphan instances for base";
       description = "@base-orphans@ defines orphan instances that mimic instances\navailable in later versions of @base@ to a wider (older)\nrange of compilers. @base-orphans@ does not export\nanything except the orphan instances themselves and\ncomplements\n@<http://hackage.haskell.org/package/base-compat base-compat>@.\n\nSee the README for what instances are covered:\n<https://github.com/haskell-compat/base-orphans#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."base-orphans" or (errorHandler.buildDepError "base-orphans"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

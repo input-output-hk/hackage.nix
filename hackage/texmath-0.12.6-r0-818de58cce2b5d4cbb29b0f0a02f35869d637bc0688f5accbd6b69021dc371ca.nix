@@ -21,7 +21,7 @@
       synopsis = "Conversion between math formats.";
       description = "The texmath library provides functions to read\nand write TeX math, presentation MathML, and OMML (Office\nMath Markup Language, used in Microsoft Office).  Support is also\nincluded for converting math formats to Gnu eqn and to pandoc's\nnative format (allowing conversion, via pandoc, to a variety of\ndifferent markup formats).  The TeX reader supports basic LaTeX\nand AMS extensions, and it can parse and apply LaTeX macros.\n(See <https://johnmacfarlane.net/texmath here> for a live demo of\nbidirectional conversion between LaTeX and MathML.)\n\nThe package also includes several utility modules which may be\nuseful for anyone looking to manipulate either TeX math or\nMathML.  For example, a copy of the MathML operator dictionary is\nincluded.\n\nUse the @executable@ flag to install a standalone\nexecutable, @texmath@, that converts formulas from one\nformat to another. (Use the @--help@ flag for a description of all\nfunctionality).\n\nUse the @server@ flag to install a web server, @texmath-server@,\nthat exposes a JSON API allowing conversion of individual\nformulas and batches of formulas.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,12 +34,12 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "texmath" = {
-          depends = (pkgs.lib).optionals (flags.executable) [
+          depends = pkgs.lib.optionals (flags.executable) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
@@ -49,11 +49,11 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."pretty-show" or (errorHandler.buildDepError "pretty-show"))
             (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
+        };
         "texmath-server" = {
-          depends = (pkgs.lib).optionals (flags.server) [
+          depends = pkgs.lib.optionals (flags.server) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."texmath" or (errorHandler.buildDepError "texmath"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -65,10 +65,10 @@
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
-            ];
+          ];
           buildable = if flags.server then true else false;
-          };
         };
+      };
       tests = {
         "test-texmath" = {
           depends = [
@@ -83,9 +83,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-golden" or (errorHandler.buildDepError "tasty-golden"))
             (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

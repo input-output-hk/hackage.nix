@@ -21,7 +21,7 @@
       synopsis = "Haskell implementation of the Campfire API";
       description = "Implements the Campfire REST API. Campfire is a business group chat system\ntailored specifically for work groups. Find out more at\n<http://www.campfirenow.com>.\nCurrently supports the entire API except for streaming and file uploads.\nStability is listed as provisional because there are currently no formal\ntests in place.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,8 +38,8 @@
           (hsPkgs."url" or (errorHandler.buildDepError "url"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

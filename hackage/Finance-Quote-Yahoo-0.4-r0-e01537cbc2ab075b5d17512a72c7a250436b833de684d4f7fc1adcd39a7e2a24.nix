@@ -21,7 +21,7 @@
       synopsis = "Obtain quote data from finance.yahoo.com";
       description = "Obtain quote data from finance.yahoo.com";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = if flags.splitbase
@@ -33,7 +33,7 @@
             (hsPkgs."HTTP-Simple" or (errorHandler.buildDepError "HTTP-Simple"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ]
+          ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
@@ -41,8 +41,8 @@
             (hsPkgs."HTTP-Simple" or (errorHandler.buildDepError "HTTP-Simple"))
             (hsPkgs."MissingH" or (errorHandler.buildDepError "MissingH"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

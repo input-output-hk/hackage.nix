@@ -21,7 +21,7 @@
       synopsis = "Haskell version of tar CLI utility";
       description = "Haskell implementation of the tar utility, demonstrating backpack";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "hstar" = {
@@ -36,18 +36,18 @@
             (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"))
             (hsPkgs."lz4-hs" or (errorHandler.buildDepError "lz4-hs"))
             (hsPkgs."lzlib" or (errorHandler.buildDepError "lzlib"))
-            ] ++ (if flags.pure
+          ] ++ (if flags.pure
             then [
               (hsPkgs."archive-tar" or (errorHandler.buildDepError "archive-tar"))
-              ]
+            ]
             else [
               (hsPkgs."archive-libarchive" or (errorHandler.buildDepError "archive-libarchive"))
-              ]);
+            ]);
           build-tools = [
             (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

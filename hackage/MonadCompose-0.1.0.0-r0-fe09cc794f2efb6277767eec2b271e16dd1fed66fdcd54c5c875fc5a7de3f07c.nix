@@ -21,7 +21,7 @@
       synopsis = "An IO monad transformer";
       description = "Methods for composing monads. See also Control.Monad.Trans.Adjoint.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."monad-products" or (errorHandler.buildDepError "monad-products"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

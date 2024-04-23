@@ -21,7 +21,7 @@
       synopsis = "Text-only reversi (aka othelo) game";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "reversi" = {
@@ -29,9 +29,9 @@
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

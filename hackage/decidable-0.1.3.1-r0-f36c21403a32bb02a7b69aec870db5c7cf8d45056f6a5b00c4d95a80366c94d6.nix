@@ -21,14 +21,14 @@
       synopsis = "Combinators for manipulating dependently-typed predicates.";
       description = "This library provides combinators and typeclasses for working and manipulating\ntype-level predicates in Haskell, which are represented as matchable type-level\nfunctions @k ~> Type@ from the @singletons@ library.  See \"Data.Type.Predicate\"\nfor a good starting point, and the documentation for 'Predicate' on how to\ndefine predicates.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."singletons" or (errorHandler.buildDepError "singletons"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Like unsafeperformIO, but for the ST monad.";
       description = "Like unsafeperformIO, but for the ST monad.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

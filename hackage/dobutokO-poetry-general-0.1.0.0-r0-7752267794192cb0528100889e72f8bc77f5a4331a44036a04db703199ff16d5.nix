@@ -21,7 +21,7 @@
       synopsis = "Helps to order the 7 or less words (first of all the Ukrainian ones) to obtain somewhat suitable for poetry or music text";
       description = "Helps to order the 7 or less words (or their concatenations) to obtain somewhat suitable for poetry or music text. Can be also used as a research instrument with generalized functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mmsyn3" or (errorHandler.buildDepError "mmsyn3"))
           (hsPkgs."mmsyn7s" or (errorHandler.buildDepError "mmsyn7s"))
           (hsPkgs."mmsyn6ukr" or (errorHandler.buildDepError "mmsyn6ukr"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

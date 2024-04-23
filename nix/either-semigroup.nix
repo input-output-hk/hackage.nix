@@ -6,8 +6,8 @@
         nix = import ../hackage/either-semigroup-0.0.0-r0-cabde4707c913a129a2d8ddba1b0feffd93a4dd400f33b277094e63cbaf6269d.nix;
         revNum = 0;
         sha256 = "cabde4707c913a129a2d8ddba1b0feffd93a4dd400f33b277094e63cbaf6269d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

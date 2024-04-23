@@ -14,7 +14,7 @@
       identifier = {
         name = "clckwrks-plugin-mailinglist";
         version = "0.3.0.2";
-        };
+      };
       license = "BSD-3-Clause";
       copyright = "2012 Jeremy Shaw, SeeReason Partners LLC";
       maintainer = "Jeremy Shaw <jeremy@n-heptane.com>";
@@ -24,7 +24,7 @@
       synopsis = "mailing list plugin for clckwrks";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -59,8 +59,8 @@
           (hsPkgs."web-plugins" or (errorHandler.buildDepError "web-plugins"))
           (hsPkgs."web-routes" or (errorHandler.buildDepError "web-routes"))
           (hsPkgs."web-routes-th" or (errorHandler.buildDepError "web-routes-th"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

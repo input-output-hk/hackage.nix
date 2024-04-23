@@ -21,7 +21,7 @@
       synopsis = "a dependently typed, polymorphic, higher order logic programming language";
       description = "a dependently typed, polymorphic, higher order logic programming language. ie, everything you need to have a conversation with your computer.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "caledon" = {
@@ -31,9 +31,9 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

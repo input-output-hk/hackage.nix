@@ -21,14 +21,14 @@
       synopsis = "Real numbers and intervals with not so inefficient exact arithmetic.";
       description = "This library provides a type IReal of real numbers and intervals with arbitrary precision arithmetic,\ninstance declarations for the standard numeric classes, Eq and Ord (the two latter non-total for\ncomputability reasons). Reasonably efficient in comparison with other Haskell modules for exact\nreal arithmetic. Does not depend on non-Haskell libraries.\nThe package includes a QuickCheck test suite, documentation, and a number of small example\napplications in validated numerics.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

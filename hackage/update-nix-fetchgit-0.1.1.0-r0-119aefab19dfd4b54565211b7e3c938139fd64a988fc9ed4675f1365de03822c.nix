@@ -21,7 +21,7 @@
       synopsis = "A program to update fetchgit values in Nix expressions";
       description = "This command-line utility is meant to be used by people maintaining Nix expressions that fetch files from Git repositories.\nIt automates the process of keeping such expressions up-to-date with the latest upstream sources.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."trifecta" or (errorHandler.buildDepError "trifecta"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "update-nix-fetchgit" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."update-nix-fetchgit" or (errorHandler.buildDepError "update-nix-fetchgit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

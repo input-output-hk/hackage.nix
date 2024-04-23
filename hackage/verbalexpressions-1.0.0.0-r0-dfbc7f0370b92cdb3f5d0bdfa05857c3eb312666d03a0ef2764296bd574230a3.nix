@@ -21,14 +21,14 @@
       synopsis = "Regular expressions made easy";
       description = "VerbalExpressions is a Haskell library that helps to construct\ndifficult regular expressions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Manage users in MariaDB >= 10.1.1";
       description = "HTTP server for managing MariaDB users.  Designed to work behind\nSproxy and assuming users' logins are their email addresses\n(MariaDB allows up to 80 characters).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "juandelacosa" = {
@@ -41,9 +41,9 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Creating and extracting arbitrary archives";
       description = "Creating and extracting arbitrary archives.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."zip" or (errorHandler.buildDepError "zip"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "example" = {
           depends = [
@@ -43,9 +43,9 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."ztar" or (errorHandler.buildDepError "ztar"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "ztar-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -56,9 +56,9 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."ztar" or (errorHandler.buildDepError "ztar"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

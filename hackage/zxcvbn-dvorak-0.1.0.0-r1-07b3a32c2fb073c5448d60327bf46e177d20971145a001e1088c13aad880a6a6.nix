@@ -21,7 +21,7 @@
       synopsis = "Password strength estimation based on zxcvbn.";
       description = "Please see the README below.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."zxcvbn-hs" or (errorHandler.buildDepError "zxcvbn-hs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

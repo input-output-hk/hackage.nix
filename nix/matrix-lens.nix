@@ -6,8 +6,8 @@
         nix = import ../hackage/matrix-lens-0.1.0.0-r0-e0ee6990e24aea663c017c0b0f525dfdec6d6effc0b09a666b58ed72523fceff.nix;
         revNum = 0;
         sha256 = "e0ee6990e24aea663c017c0b0f525dfdec6d6effc0b09a666b58ed72523fceff";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

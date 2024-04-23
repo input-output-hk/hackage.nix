@@ -21,7 +21,7 @@
       synopsis = "A documentation-generation tool for Haskell libraries";
       description = "Haddock is a documentation-generation tool for Haskell\nlibraries";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,14 +35,14 @@
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          ] ++ (pkgs.lib).optional (!flags.in-ghc-tree) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
+        ] ++ pkgs.lib.optional (!flags.in-ghc-tree) (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"));
         buildable = if flags.in-ghc-tree then false else true;
-        };
+      };
       exes = {
         "haddock" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ] ++ (if flags.in-ghc-tree
+          ] ++ (if flags.in-ghc-tree
             then [
               (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
               (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
@@ -53,13 +53,13 @@
               (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
               (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]
+            ]
             else [
               (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "html-test" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "latex-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -78,9 +78,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "spec" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -92,9 +92,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

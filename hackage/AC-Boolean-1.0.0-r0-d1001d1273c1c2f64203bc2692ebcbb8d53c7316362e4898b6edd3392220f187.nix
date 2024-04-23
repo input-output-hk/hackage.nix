@@ -21,11 +21,11 @@
       synopsis = "Handle Boolean values generatically.";
       description = "This package provides various functions and classes for dealing\nwith things which are like Boolean values. It also defines a\nfew useful instances. The main benefit is the ability to use\nthe usual @&&@, etc. operators without having to invent new\noperator names for every kind of Bool-like thing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

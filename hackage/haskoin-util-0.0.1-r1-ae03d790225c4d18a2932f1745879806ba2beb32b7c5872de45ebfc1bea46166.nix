@@ -21,7 +21,7 @@
       synopsis = "Utility functions for the Network.Haskoin project";
       description = "This package contains utility functions used across the Network.Haskoin\nmodules such as ByteString and Data.Binary helpers. It also defines a Build\nmonad describing computations that can be Complete, Partial or Broken.\nAdditionally, this package defines constants tied to specific Bitcoin\nnetworks such as prodnet and testnet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."either" or (errorHandler.buildDepError "either"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-haskoin-util" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-quickcheck2" or (errorHandler.buildDepError "test-framework-quickcheck2"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

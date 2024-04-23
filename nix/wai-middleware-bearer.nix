@@ -6,8 +6,8 @@
         nix = import ../hackage/wai-middleware-bearer-1.0.3-r0-bc3e7edbfe0fe9a2bed5c538a009a1a53cace5eae3871dfc29572ddb54fca502.nix;
         revNum = 0;
         sha256 = "bc3e7edbfe0fe9a2bed5c538a009a1a53cace5eae3871dfc29572ddb54fca502";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

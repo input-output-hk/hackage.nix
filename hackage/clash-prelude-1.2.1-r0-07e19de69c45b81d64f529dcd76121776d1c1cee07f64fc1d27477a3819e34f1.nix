@@ -16,7 +16,7 @@
       doctests = true;
       unittests = true;
       benchmarks = true;
-      };
+    };
     package = {
       specVersion = "2.2";
       identifier = { name = "clash-prelude"; version = "1.2.1"; };
@@ -33,8 +33,8 @@
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
@@ -70,20 +70,20 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."type-errors" or (errorHandler.buildDepError "type-errors"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
-          depends = (pkgs.lib).optionals (!(!flags.doctests)) [
+          depends = pkgs.lib.optionals (!!flags.doctests) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
             (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6") (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6") (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"));
           buildable = if !flags.doctests then false else true;
-          };
+        };
         "unittests" = {
-          depends = (pkgs.lib).optionals (!(!flags.unittests)) [
+          depends = pkgs.lib.optionals (!!flags.unittests) [
             (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
             (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -93,21 +93,21 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = if !flags.unittests then false else true;
-          };
         };
+      };
       benchmarks = {
         "benchmark-clash-prelude" = {
-          depends = (pkgs.lib).optionals (!(!flags.benchmarks)) [
+          depends = pkgs.lib.optionals (!!flags.benchmarks) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."clash-prelude" or (errorHandler.buildDepError "clash-prelude"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-            ];
+          ];
           buildable = if !flags.benchmarks then false else true;
-          };
         };
       };
-    }
+    };
+  }

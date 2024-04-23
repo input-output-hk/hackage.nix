@@ -21,24 +21,24 @@
       synopsis = "Type-level sets";
       description = "Please see the README on GitHub at <https://github.com/isovector/type-sets#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."cmptype" or (errorHandler.buildDepError "cmptype"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "type-sets-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."cmptype" or (errorHandler.buildDepError "cmptype"))
             (hsPkgs."type-sets" or (errorHandler.buildDepError "type-sets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

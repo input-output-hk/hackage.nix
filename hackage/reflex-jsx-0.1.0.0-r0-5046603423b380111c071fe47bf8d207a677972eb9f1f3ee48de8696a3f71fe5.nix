@@ -21,7 +21,7 @@
       synopsis = "Use jsx-like syntax in Reflex";
       description = "`reflex-jsx` is a library for writing jsx-like syntax in\nreflex code. This can be useful for situations where you\nhave a large block of HTML with some styles, and it would\nbe easier to read as actual HTML than various reflex\nfunctions.\nIt's implemented as a \"QuasiQuoter\", so you just import the\n`jsx` function from ReflexJsx and generate the equivalent\nfunctions that would run inside of a \"MonadWidget t m\".\nNot only can you generate a block of static HTML/CSS, but you\ncan also splice in your own nodes that implement\n\"MonadWidget t m\", string attribute values, or even entire\ndynamic attribute maps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

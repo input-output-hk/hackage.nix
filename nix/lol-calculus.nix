@@ -6,8 +6,8 @@
         nix = import ../hackage/lol-calculus-1.20160822-r0-bd358caa01bf0fcbdb00cc350910e604ebb1c70bf3dc6753f785f4b41290e814.nix;
         revNum = 0;
         sha256 = "bd358caa01bf0fcbdb00cc350910e604ebb1c70bf3dc6753f785f4b41290e814";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

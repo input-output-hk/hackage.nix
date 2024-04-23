@@ -21,7 +21,7 @@
       synopsis = "Types used in Telegram bot API";
       description = "Defines various datatypes and their serialization methods useful for writing bindings to Telegram bot API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."servant-multipart" or (errorHandler.buildDepError "servant-multipart"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "telegram-types-test" = {
           depends = [
@@ -58,9 +58,9 @@
             (hsPkgs."telegram-types" or (errorHandler.buildDepError "telegram-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

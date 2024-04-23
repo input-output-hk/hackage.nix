@@ -21,7 +21,7 @@
       synopsis = "Support library for Hubris, the Ruby <=> Haskell bridge";
       description = "Support library for Hubris, the Ruby <=> Haskell bridge";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,10 +37,10 @@
           (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
           (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
           (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-          ];
+        ];
         libs = [ (pkgs."ruby" or (errorHandler.sysDepError "ruby")) ];
         buildable = true;
-        };
+      };
       exes = {
         "Hubrify" = {
           depends = [
@@ -57,10 +57,10 @@
             (hsPkgs."ghc-paths" or (errorHandler.buildDepError "ghc-paths"))
             (hsPkgs."haskell-src-meta" or (errorHandler.buildDepError "haskell-src-meta"))
             (hsPkgs."hint" or (errorHandler.buildDepError "hint"))
-            ];
+          ];
           libs = [ (pkgs."ruby" or (errorHandler.sysDepError "ruby")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

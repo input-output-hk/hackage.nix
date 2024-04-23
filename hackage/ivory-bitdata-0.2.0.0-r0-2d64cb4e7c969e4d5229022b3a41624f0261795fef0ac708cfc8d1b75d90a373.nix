@@ -21,7 +21,7 @@
       synopsis = "Ivory bit-data support.";
       description = "See the paper http://yav.github.io/publications/bitdata.pdf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."monadLib" or (errorHandler.buildDepError "monadLib"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ivory-bitdata-example" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."ivory-bitdata" or (errorHandler.buildDepError "ivory-bitdata"))
             (hsPkgs."ivory" or (errorHandler.buildDepError "ivory"))
             (hsPkgs."ivory-backend-c" or (errorHandler.buildDepError "ivory-backend-c"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

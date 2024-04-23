@@ -21,15 +21,15 @@
       synopsis = "mtl instances for the RegionT monad transformer";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base-unicode-symbols" or (errorHandler.buildDepError "base-unicode-symbols"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."regions" or (errorHandler.buildDepError "regions"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

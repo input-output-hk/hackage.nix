@@ -21,7 +21,7 @@
       synopsis = "Variable binding for abstract syntax tree";
       description = "binder is purely functional implementation of Ocaml's\n<https://github.com/rlepigre/ocaml-bindlib bindlib>.\nIt follows the style of higher-order abstract syntax,\nand offers the representation of abstract syntax tree.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "binder-test" = {
           depends = [
@@ -43,12 +43,12 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."binder" or (errorHandler.buildDepError "binder"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

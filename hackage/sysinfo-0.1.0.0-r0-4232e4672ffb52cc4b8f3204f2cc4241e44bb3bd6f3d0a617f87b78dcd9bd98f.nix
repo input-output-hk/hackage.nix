@@ -21,12 +21,12 @@
       synopsis = "Haskell Interface for getting overall system statistics";
       description = "This package can be used to get system statistics like\nuptime, free memory, system load etc. Note that\nthe package works *only* on Linux system with\nkernel version >= 2.3.23 and uses FFI calls.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "sysinfo-test" = {
           depends = [
@@ -34,9 +34,9 @@
             (hsPkgs."sysinfo" or (errorHandler.buildDepError "sysinfo"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hspec-expectations" or (errorHandler.buildDepError "hspec-expectations"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

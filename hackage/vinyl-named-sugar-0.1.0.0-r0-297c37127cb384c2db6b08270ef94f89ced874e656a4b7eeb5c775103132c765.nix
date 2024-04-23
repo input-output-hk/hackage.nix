@@ -21,14 +21,14 @@
       synopsis = "Syntax sugar for vinyl records using overloaded labels.";
       description = "Provides @rec_ \\#foo fooVal \\#bar barVal@ syntax for constructing @vinyl@ records.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

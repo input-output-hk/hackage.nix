@@ -21,7 +21,7 @@
       synopsis = "Simple IRC Library";
       description = "Simple IRC Library. This IRC Library aims to be simple and lightweight.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."old-locale" or (errorHandler.buildDepError "old-locale"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."knob" or (errorHandler.buildDepError "knob"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

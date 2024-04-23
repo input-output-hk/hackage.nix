@@ -21,19 +21,19 @@
       synopsis = "";
       description = "A library for client-side HTTP";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ] ++ (if flags.old-base
+        ] ++ (if flags.old-base
           then [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."array" or (errorHandler.buildDepError "array"))
-            ]);
+          ]);
         buildable = true;
-        };
       };
-    }
+    };
+  }

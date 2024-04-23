@@ -21,7 +21,7 @@
       synopsis = "Access cabal-install's Hackage database via Data.Map";
       description = "This library provides convenient access to the local copy of the Hackage\ndatabase that \\\"cabal update\\\" creates. Check out\nhttps:\\//github.com/peti/hackage-db/tree/master/example\\/ for a collection\nof simple example programs that demonstrate how to use this code.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,39 +36,39 @@
           (hsPkgs."tar" or (errorHandler.buildDepError "tar"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "list-known-versions" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "show-meta-data" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
+        };
         "show-package-versions" = {
-          depends = (pkgs.lib).optionals (flags.install-examples) [
+          depends = pkgs.lib.optionals (flags.install-examples) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."Cabal" or (errorHandler.buildDepError "Cabal"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."hackage-db" or (errorHandler.buildDepError "hackage-db"))
-            ];
+          ];
           buildable = if flags.install-examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

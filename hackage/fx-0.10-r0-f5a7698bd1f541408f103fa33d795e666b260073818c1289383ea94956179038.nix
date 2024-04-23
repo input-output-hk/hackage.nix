@@ -21,11 +21,11 @@
       synopsis = "Horizontally composable effects";
       description = "This library provides for the horizontal composition of effects,\nserving as an alternative\nto the monad transformers stacking composition.\nIt is expected to be faster, but no comparison has been performed yet.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

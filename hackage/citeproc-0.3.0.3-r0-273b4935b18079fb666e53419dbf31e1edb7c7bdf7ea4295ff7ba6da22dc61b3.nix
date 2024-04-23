@@ -21,7 +21,7 @@
       synopsis = "Generates citations and bibliography from CSL styles.";
       description = "citeproc parses CSL style files and uses them to\ngenerate a list of formatted citations and bibliography\nentries.  For more information about CSL, see\n<https://citationstyles.org/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -42,15 +42,15 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ] ++ (if flags.icu
+        ] ++ (if flags.icu
           then [
             (hsPkgs."text-icu" or (errorHandler.buildDepError "text-icu"))
-            ]
+          ]
           else [
             (hsPkgs."rfc5051" or (errorHandler.buildDepError "rfc5051"))
-            ])) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.8") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
+          ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.8") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
         buildable = true;
-        };
+      };
       exes = {
         "citeproc" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
-            ];
+          ];
           buildable = if flags.executable then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -80,9 +80,9 @@
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

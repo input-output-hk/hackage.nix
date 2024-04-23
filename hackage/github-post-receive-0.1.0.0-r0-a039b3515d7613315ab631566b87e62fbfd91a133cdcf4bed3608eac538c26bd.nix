@@ -21,7 +21,7 @@
       synopsis = "github web hooks server";
       description = "This is a server of github web hooks.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "github-post-receive" = {
@@ -33,9 +33,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."scotty" or (errorHandler.buildDepError "scotty"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

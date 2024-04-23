@@ -21,7 +21,7 @@
       synopsis = "Fast and simple JSON encoding toolkit";
       description = "Minimalistic library for encoding JSON directly to strict bytestring.\n\nThe library focuses on 2 aspects: simplicity and performance.\nThe API consists of just a few functions and\nachieves performance that is 3 times better than that of \\\"aeson\\\"\nin typical use-cases.\nIn cases where we deal with really large documents (60MB) the performance\nof \\\"aeson\\\" becomes more comparable.\n\nFor further details please refer to README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,17 +30,17 @@
           (hsPkgs."ptr-poker" or (errorHandler.buildDepError "ptr-poker"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "demo" = {
           depends = [
             (hsPkgs."jsonifier" or (errorHandler.buildDepError "jsonifier"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "test" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -48,10 +48,10 @@
             (hsPkgs."jsonifier" or (errorHandler.buildDepError "jsonifier"))
             (hsPkgs."numeric-limits" or (errorHandler.buildDepError "numeric-limits"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."jsonifier" or (errorHandler.buildDepError "jsonifier"))
             (hsPkgs."rerebase" or (errorHandler.buildDepError "rerebase"))
             (hsPkgs."text-builder" or (errorHandler.buildDepError "text-builder"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

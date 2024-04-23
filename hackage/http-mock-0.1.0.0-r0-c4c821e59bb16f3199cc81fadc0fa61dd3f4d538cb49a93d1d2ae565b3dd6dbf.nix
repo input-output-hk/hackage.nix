@@ -21,7 +21,7 @@
       synopsis = "HTTP mocking and expectations library for Haskell";
       description = "Please see the README on GitHub at <https://github.com/gojup/http-mock#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "http-mock-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."http-mock" or (errorHandler.buildDepError "http-mock"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

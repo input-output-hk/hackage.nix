@@ -6,8 +6,8 @@
         nix = import ../hackage/ll-picosat-0.1.0.0-r0-bb9e0370f21eb754acdb75b11702b2440a1a92f41613a2c7b03350ed0ae1860a.nix;
         revNum = 0;
         sha256 = "bb9e0370f21eb754acdb75b11702b2440a1a92f41613a2c7b03350ed0ae1860a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

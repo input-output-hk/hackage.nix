@@ -21,7 +21,7 @@
       synopsis = "Literate Agda support using agda-snippets, for Hakyll pages.";
       description = "This library provides basic functions to use in Hakyll web-pages to generate\ncolourised and hyperlinked Agda source code snippets for literate Agda documents.\n\nIt makes use of the @agda-snippets@ library and will (hopefully) be kept up to\ndate with the latest Agda versions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."pandoc" or (errorHandler.buildDepError "pandoc"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

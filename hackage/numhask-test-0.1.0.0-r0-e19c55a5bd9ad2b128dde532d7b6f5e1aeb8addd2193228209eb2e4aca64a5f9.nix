@@ -21,7 +21,7 @@
       synopsis = "Laws and tests for numhask";
       description = "Laws and tests for numhask.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."numhask-prelude" or (errorHandler.buildDepError "numhask-prelude"))
           (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
           (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -41,9 +41,9 @@
             (hsPkgs."numhask-test" or (errorHandler.buildDepError "numhask-test"))
             (hsPkgs."numhask-prelude" or (errorHandler.buildDepError "numhask-prelude"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Two-column database server.";
       description = "A server that stores a database with two columns, where the elements in each column are of the same type.\nOperations are fast, although memory usage increases with the number of rows. The implementation is based\nin bimaps.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

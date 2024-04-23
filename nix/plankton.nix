@@ -6,8 +6,8 @@
         nix = import ../hackage/plankton-0.0.0.1-r0-0ea830bd0c5270fd59a51299a1d8ccc7180d7c816f5f8e8779b59d107a2ef089.nix;
         revNum = 0;
         sha256 = "0ea830bd0c5270fd59a51299a1d8ccc7180d7c816f5f8e8779b59d107a2ef089";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

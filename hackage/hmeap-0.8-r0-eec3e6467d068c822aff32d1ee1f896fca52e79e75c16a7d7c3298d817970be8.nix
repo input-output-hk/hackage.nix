@@ -21,7 +21,7 @@
       synopsis = "Haskell Meapsoft Parser";
       description = "Parser for the anaylsis files produced by the\nMeapsoft feature extractor.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."bytestring-lexing" or (errorHandler.buildDepError "bytestring-lexing"))
           (hsPkgs."delimited-text" or (errorHandler.buildDepError "delimited-text"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

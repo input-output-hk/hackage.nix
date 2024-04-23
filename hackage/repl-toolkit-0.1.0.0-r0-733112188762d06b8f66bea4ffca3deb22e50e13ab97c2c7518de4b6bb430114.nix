@@ -21,7 +21,7 @@
       synopsis = "Toolkit for quickly whipping up command-line interfaces.";
       description = "A simple toolkit for quickly whipping up REPLs, input validation and sets of commands included.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."numericpeano" or (errorHandler.buildDepError "numericpeano"))
           (hsPkgs."listsafe" or (errorHandler.buildDepError "listsafe"))
           (hsPkgs."monad-loops" or (errorHandler.buildDepError "monad-loops"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

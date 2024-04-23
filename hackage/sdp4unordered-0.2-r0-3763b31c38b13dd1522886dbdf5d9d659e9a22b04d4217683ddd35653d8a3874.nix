@@ -21,7 +21,7 @@
       synopsis = "SDP classes for unordered containers";
       description = "Implementation of SDP core classes for unordered containers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
           (hsPkgs."sdp-hashable" or (errorHandler.buildDepError "sdp-hashable"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

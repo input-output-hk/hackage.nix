@@ -6,8 +6,8 @@
         nix = import ../hackage/ProxN-0.0.1-r0-3a8eaaf9285ed3400bc6934c966ee0d6c8f5c1567ca037109035645b2b7a82e6.nix;
         revNum = 0;
         sha256 = "3a8eaaf9285ed3400bc6934c966ee0d6c8f5c1567ca037109035645b2b7a82e6";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

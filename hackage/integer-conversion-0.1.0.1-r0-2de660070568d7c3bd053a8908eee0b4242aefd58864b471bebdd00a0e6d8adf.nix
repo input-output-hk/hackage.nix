@@ -21,7 +21,7 @@
       synopsis = "Conversion from strings to Integer";
       description = "The naive @foldl' (\\acc d -> acc * 10 + d) 0@ is expensive (quadratic!) for large @Integer@s.\nThis package provides sub-quadratic implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "integer-conversion-tests" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "integer-conversion-bench" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."integer-conversion" or (errorHandler.buildDepError "integer-conversion"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."tasty-bench" or (errorHandler.buildDepError "tasty-bench"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

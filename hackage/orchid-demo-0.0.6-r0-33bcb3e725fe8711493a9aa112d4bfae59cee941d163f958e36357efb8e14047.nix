@@ -21,7 +21,7 @@
       synopsis = "Haskell Wiki Demo";
       description = "Haskell Wiki Demo";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "orchid-demo" = {
@@ -35,9 +35,9 @@
             (hsPkgs."extensible-exceptions" or (errorHandler.buildDepError "extensible-exceptions"))
             (hsPkgs."Pipe" or (errorHandler.buildDepError "Pipe"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

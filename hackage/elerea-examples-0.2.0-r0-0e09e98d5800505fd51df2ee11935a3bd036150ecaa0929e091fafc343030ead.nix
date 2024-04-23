@@ -21,7 +21,7 @@
       synopsis = "Example applications for Elerea";
       description = "Example applications for Elerea. They are factored out into their\nown package so as to avoid unnecessary dependencies in the\nlibrary. Check out the @doc@ directory for the colourful literate\nsources.\n\nThe programs included are the following:\n\n* chase: a minimal example that demonstrates reactivity and mutually\nrecursive signals\n\n* breakout: a not too fancy breakout clone";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "elerea-breakout" = {
@@ -30,18 +30,18 @@
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "elerea-chase" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."elerea" or (errorHandler.buildDepError "elerea"))
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

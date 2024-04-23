@@ -21,7 +21,7 @@
       synopsis = "Internal Phonetic Alphabet (IPA)";
       description = "See the README at https://gitlab.com/ngua/ipa-hs";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unicode-transforms" or (errorHandler.buildDepError "unicode-transforms"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ipa-testsuite" = {
           depends = [
@@ -39,9 +39,9 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."ipa" or (errorHandler.buildDepError "ipa"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

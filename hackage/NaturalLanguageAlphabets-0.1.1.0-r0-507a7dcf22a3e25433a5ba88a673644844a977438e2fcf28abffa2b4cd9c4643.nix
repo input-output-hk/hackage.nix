@@ -21,7 +21,7 @@
       synopsis = "Simple scoring schemes for word alignments";
       description = "Provides a simple scoring scheme for word alignments.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,9 +32,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "properties" = {
           depends = [
@@ -50,10 +50,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
             (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "BenchmarkNLA" = {
           depends = [
@@ -68,9 +68,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."LinguisticsTypes" or (errorHandler.buildDepError "LinguisticsTypes"))
             (hsPkgs."NaturalLanguageAlphabets" or (errorHandler.buildDepError "NaturalLanguageAlphabets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

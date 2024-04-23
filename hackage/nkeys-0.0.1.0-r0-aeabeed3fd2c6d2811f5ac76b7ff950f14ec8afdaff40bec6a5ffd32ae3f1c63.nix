@@ -21,7 +21,7 @@
       synopsis = "Nkeys ed25519 encoding for use with NATS";
       description = "This library exposes a custom encoding and decoding mechanism for ed25519 keys. This codec produces keys that are both URL safe and double-clickable ";
       buildType = "Simple";
-      };
+    };
     components = {
       sublibs = {
         "nkeys-lib" = {
@@ -33,19 +33,19 @@
             (hsPkgs."base32" or (errorHandler.buildDepError "base32"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       exes = {
         "nkeys-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."nkeys".components.sublibs.nkeys-lib or (errorHandler.buildDepError "nkeys:nkeys-lib"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "nkeys-test" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."ed25519" or (errorHandler.buildDepError "ed25519"))
             (hsPkgs."nkeys".components.sublibs.nkeys-lib or (errorHandler.buildDepError "nkeys:nkeys-lib"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

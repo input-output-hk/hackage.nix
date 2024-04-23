@@ -21,7 +21,7 @@
       synopsis = "Finite categories and usual categorical constructions on them.";
       description = "This package provides tools to create categories at the value level. This is different from the __Hask__ category where types are objects in a category with infinite objects and arrows, here we construct categories where objects and arrows are arbitrary values so that we can change categories during runtime. Each category implements two functions following the category structure axioms : @ar@ which returns arrows between two objects of the category and @identity@ which returns the identity of an object. A FiniteCategory implements an additional function : @ob@ which returns objects of the category. Thanks to these functions, we can construct automatically all the usual constructions on the categories (limits and colimits, adjunctions, Yoneda embedding, etc.) Functors are different from usual @Functor@ typeclass, we store functors as mapping between objects and morphisms of two categories. This package is also different from the package @data-category@ because we can enumerate objects and arrows in a finite category.  This allows us to construct limit, colimits, adjunctions, etc. automatically for arbitrary finite categories. On the other hand, we loose typecheck at compilation time which ensures that composition is sound in __Hask__, composition in our package might lead to an error raised during runtime. See the Readme file for installation help.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."WeakSets" or (errorHandler.buildDepError "WeakSets"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "FiniteCategories-test" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."WeakSets" or (errorHandler.buildDepError "WeakSets"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

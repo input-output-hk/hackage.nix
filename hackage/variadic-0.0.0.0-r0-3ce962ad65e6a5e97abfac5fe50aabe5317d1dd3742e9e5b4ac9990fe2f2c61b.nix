@@ -21,16 +21,16 @@
       synopsis = "Abstractions for working with variadic functions";
       description = "Please see the README on GitHub at <https://github.com/estatico/variadic#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "variadic-test" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."variadic" or (errorHandler.buildDepError "variadic"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "variadic-benchmark" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."mmorph" or (errorHandler.buildDepError "mmorph"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."variadic" or (errorHandler.buildDepError "variadic"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

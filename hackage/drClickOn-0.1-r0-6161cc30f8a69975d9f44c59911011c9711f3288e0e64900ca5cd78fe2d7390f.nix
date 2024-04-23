@@ -21,14 +21,14 @@
       synopsis = "Monadic FRP";
       description = "FRP style where sequential composition (switching) is more primitive than in other approaches.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

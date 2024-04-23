@@ -21,7 +21,7 @@
       synopsis = "Core libraries for diagrams EDSL";
       description = "The core modules underlying diagrams,\nan embedded domain-specific language\nfor compositional, declarative drawing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."vector-space" or (errorHandler.buildDepError "vector-space"))
           (hsPkgs."MemoTrie" or (errorHandler.buildDepError "MemoTrie"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

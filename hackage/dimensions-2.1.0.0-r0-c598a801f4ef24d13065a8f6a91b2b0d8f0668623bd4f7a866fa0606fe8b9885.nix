@@ -24,16 +24,16 @@
       setup-depends = [
         (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
         (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        ];
-      };
+      ];
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dimensions-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."constraints-deriving" or (errorHandler.buildDepError "constraints-deriving"))
             (hsPkgs."dimensions" or (errorHandler.buildDepError "dimensions"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

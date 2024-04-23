@@ -6,8 +6,8 @@
         nix = import ../hackage/black-jewel-0.0.0.1-r0-7a71c100355ca878157eb140719837ad6dedb7f21faef50feb1b29b0c9680367.nix;
         revNum = 0;
         sha256 = "7a71c100355ca878157eb140719837ad6dedb7f21faef50feb1b29b0c9680367";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

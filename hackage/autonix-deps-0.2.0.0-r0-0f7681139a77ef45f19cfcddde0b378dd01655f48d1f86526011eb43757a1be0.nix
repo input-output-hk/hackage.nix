@@ -21,7 +21,7 @@
       synopsis = "Library for Nix expression dependency generation";
       description = "@autonix-deps@ is a library for building automatic dependency detectors for\nsoftware collections to be built using the Nix package manager.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

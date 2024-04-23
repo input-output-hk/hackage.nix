@@ -21,7 +21,7 @@
       synopsis = "Read environment variables as settings to build 12-factor apps.";
       description = "Please see the README at <https://github.com/NoRedInk/haskell-libraries/tree/trunk/env-parser>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."nri-prelude" or (errorHandler.buildDepError "nri-prelude"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

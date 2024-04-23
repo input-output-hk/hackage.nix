@@ -6,8 +6,8 @@
         nix = import ../hackage/uploadtest-0.0.0-r0-f98b4c000549fe6a0dd04b196bc2f54898eb04226bd5c29e9a4e4bbfdfc53c8e.nix;
         revNum = 0;
         sha256 = "f98b4c000549fe6a0dd04b196bc2f54898eb04226bd5c29e9a4e4bbfdfc53c8e";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

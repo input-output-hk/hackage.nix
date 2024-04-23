@@ -21,7 +21,7 @@
       synopsis = "Game Engine for the Haskell Programmer - Data Definitions and Utilities";
       description = "HGamer3D is a game engine for developing 3D games in the programming\nlanguage Haskell. HGamer3D is available on Windows and Linux. This\npackage provides common data definitions and utility functions for HGamer3D.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."vect" or (errorHandler.buildDepError "vect"))
           (hsPkgs."clock" or (errorHandler.buildDepError "clock"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

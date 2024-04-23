@@ -21,7 +21,7 @@
       synopsis = "Socket functions for compact normal form.";
       description = "A sample implementation of transmitting compact normal forms over sockets.  Needs a custom version of GHC, see https://github.com/gcampax/ghc/releases";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "";
       description = "A prefix-tree parsing library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."parsers" or (errorHandler.buildDepError "parsers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "radixtree-test" = {
           depends = [
@@ -46,10 +46,10 @@
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-smallcheck" or (errorHandler.buildDepError "tasty-smallcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "radixtree-parsing" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuasiText" or (errorHandler.buildDepError "QuasiText"))
             (hsPkgs."ghc-compact" or (errorHandler.buildDepError "ghc-compact"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "radixtree-search" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -75,9 +75,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."QuasiText" or (errorHandler.buildDepError "QuasiText"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Compiler plugin for making Haskell strict";
       description = "This plugin gives an example of defining a compiler plugin for\nGHC. You mark functions with the `Strictify` annotation and GHC\nmakes the function strict (by recursively expanding non-recursive\nlet bindings into case bindings.)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

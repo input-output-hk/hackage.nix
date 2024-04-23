@@ -6,8 +6,8 @@
         nix = import ../hackage/fieldwise-0.1.0.0-r0-8e0020fce825efcc401be4ca785d3dda527ed1cf3d389bc761ca6c6945772531.nix;
         revNum = 0;
         sha256 = "8e0020fce825efcc401be4ca785d3dda527ed1cf3d389bc761ca6c6945772531";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

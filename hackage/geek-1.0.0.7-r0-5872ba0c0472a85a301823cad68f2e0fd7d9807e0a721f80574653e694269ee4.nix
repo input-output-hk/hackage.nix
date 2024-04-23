@@ -21,7 +21,7 @@
       synopsis = "Geek blog engine";
       description = "A dynamic blog engine, customizable with standard web technology, i.e. HTML, CSS and Javascript (JSON)";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -55,8 +55,8 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           (hsPkgs."moe" or (errorHandler.buildDepError "moe"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,14 +21,14 @@
       synopsis = "Binding to upskirt";
       description = "Bindings to the github fork of sundown, a nice C markdown library:\n<https://github.com/tanoku/sundown>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

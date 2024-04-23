@@ -21,7 +21,7 @@
       synopsis = "Sort simplified Chinese by PinYin";
       description = "Sort simplified Chinese by PinYin";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."air-extra" or (errorHandler.buildDepError "air-extra"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

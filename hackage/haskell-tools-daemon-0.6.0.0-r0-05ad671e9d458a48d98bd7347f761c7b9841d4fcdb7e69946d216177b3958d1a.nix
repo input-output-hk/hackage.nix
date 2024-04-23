@@ -21,7 +21,7 @@
       synopsis = "Background process for Haskell-tools refactor that editors can connect to.";
       description = "Background process for Haskell-tools refactor that editors can connect to.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,18 +43,18 @@
           (hsPkgs."haskell-tools-ast" or (errorHandler.buildDepError "haskell-tools-ast"))
           (hsPkgs."haskell-tools-prettyprint" or (errorHandler.buildDepError "haskell-tools-prettyprint"))
           (hsPkgs."haskell-tools-refactor" or (errorHandler.buildDepError "haskell-tools-refactor"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ht-daemon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-tools-daemon" or (errorHandler.buildDepError "haskell-tools-daemon"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "haskell-tools-daemon-tests" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."haskell-tools-daemon" or (errorHandler.buildDepError "haskell-tools-daemon"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

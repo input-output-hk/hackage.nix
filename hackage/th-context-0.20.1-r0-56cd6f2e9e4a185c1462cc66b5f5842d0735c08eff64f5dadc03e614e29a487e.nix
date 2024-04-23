@@ -21,7 +21,7 @@
       synopsis = "Test instance context";
       description = "Use these functions to decide an a not-quite naive fashion\nwhether an instance already exists that satisfies a given\ncontext.  This can be used to decide whether an instance\nneeds to be generated, as in th-reify-many.  Known limitation:\nthe instances inserted into the InstMap are not fully recognized\nwhen computing the context.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."th-desugar" or (errorHandler.buildDepError "th-desugar"))
           (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
           (hsPkgs."th-typegraph" or (errorHandler.buildDepError "th-typegraph"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "th-context-tests" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."th-orphans" or (errorHandler.buildDepError "th-orphans"))
             (hsPkgs."th-reify-many" or (errorHandler.buildDepError "th-reify-many"))
             (hsPkgs."th-typegraph" or (errorHandler.buildDepError "th-typegraph"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

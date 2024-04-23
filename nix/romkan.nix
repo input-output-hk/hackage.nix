@@ -6,8 +6,8 @@
         nix = import ../hackage/romkan-0.1.0.0-r0-6c659e2140b56a36e56f71b7517a9ce9a81052d44e9ab7a34e5493726645ae0a.nix;
         revNum = 0;
         sha256 = "6c659e2140b56a36e56f71b7517a9ce9a81052d44e9ab7a34e5493726645ae0a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

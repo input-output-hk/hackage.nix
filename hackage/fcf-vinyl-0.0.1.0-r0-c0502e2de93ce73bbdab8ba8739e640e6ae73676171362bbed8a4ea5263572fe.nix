@@ -21,15 +21,15 @@
       synopsis = "Vinyl compatibility with first-class-families";
       description = "Vinyl compatibility with first-class-families";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."first-class-families" or (errorHandler.buildDepError "first-class-families"))
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

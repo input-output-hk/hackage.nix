@@ -21,7 +21,7 @@
       synopsis = "grafana datatypes for dashboards";
       description = "'grafana' provides datatypes that correspond to components of\ngrafana dashboards, and combinators for constructing dashboards.\nIt should be suitable for a UI that allows users to construct\ngrafana dashboards.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

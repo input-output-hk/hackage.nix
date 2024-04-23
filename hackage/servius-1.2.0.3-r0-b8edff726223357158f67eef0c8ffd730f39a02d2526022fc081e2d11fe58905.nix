@@ -21,7 +21,7 @@
       synopsis = "Warp web server with template rendering";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "servius" = {
@@ -36,9 +36,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
             (hsPkgs."wai-app-static" or (errorHandler.buildDepError "wai-app-static"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

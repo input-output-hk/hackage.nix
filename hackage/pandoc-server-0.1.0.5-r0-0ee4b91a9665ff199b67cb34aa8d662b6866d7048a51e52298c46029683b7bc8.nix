@@ -21,7 +21,7 @@
       synopsis = "Pandoc document conversion as an HTTP servant-server";
       description = "Pandoc-server provides pandoc's document conversion functions\nin an HTTP server.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,8 +40,8 @@
           (hsPkgs."skylighting" or (errorHandler.buildDepError "skylighting"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."wai-cors" or (errorHandler.buildDepError "wai-cors"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

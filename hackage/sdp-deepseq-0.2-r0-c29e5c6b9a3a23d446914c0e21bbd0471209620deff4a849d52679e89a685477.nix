@@ -21,15 +21,15 @@
       synopsis = "DeepSeq SDP extension.";
       description = "Provides NFData instances for SDP structures.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."sdp" or (errorHandler.buildDepError "sdp"))
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

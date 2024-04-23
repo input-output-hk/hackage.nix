@@ -21,7 +21,7 @@
       synopsis = "Read and write SAM, BAM, and CRAM files.";
       description = "A SAM, BAM, and CRAM file decoder/encoded along with various related functionality associated with these file formats.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."streamly" or (errorHandler.buildDepError "streamly"))
           (hsPkgs."streamly-bytestring" or (errorHandler.buildDepError "streamly-bytestring"))
           (hsPkgs."streamly-core" or (errorHandler.buildDepError "streamly-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "hs-samtools-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hs-samtools" or (errorHandler.buildDepError "hs-samtools"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

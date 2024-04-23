@@ -21,14 +21,14 @@
       synopsis = "A simple EDSL for transliteration rules";
       description = "The library provides a simple embedded domain specific language for\ntransliteration rules and a set of rules prepared for documents\nfrom the IMPACT project.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

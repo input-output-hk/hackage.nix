@@ -21,7 +21,7 @@
       synopsis = "Transducers for foldl folds.";
       description = "Stateful transducers and streaming-preserving grouping operations for foldl folds.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -40,18 +40,18 @@
           (hsPkgs."void" or (errorHandler.buildDepError "void"))
           (hsPkgs."split" or (errorHandler.buildDepError "split"))
           (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "doctests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."free" or (errorHandler.buildDepError "free"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -63,10 +63,10 @@
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."foldl-transduce" or (errorHandler.buildDepError "foldl-transduce"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "benchmarks" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."lens-family-core" or (errorHandler.buildDepError "lens-family-core"))
             (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
             (hsPkgs."foldl-transduce" or (errorHandler.buildDepError "foldl-transduce"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

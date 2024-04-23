@@ -21,7 +21,7 @@
       synopsis = "Amazon Web Services (AWS) for Haskell";
       description = "Bindings for Amazon Web Services (AWS), with the aim of supporting all AWS services.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -49,8 +49,8 @@
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           (hsPkgs."xml-monad" or (errorHandler.buildDepError "xml-monad"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

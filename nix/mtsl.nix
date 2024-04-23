@@ -6,10 +6,10 @@
         nix = import ../hackage/mtsl-0.1.0.0-r0-486d917577b1a7443b51cfed41e01c527168576cd20d08266731a617fd4698ee.nix;
         revNum = 0;
         sha256 = "486d917577b1a7443b51cfed41e01c527168576cd20d08266731a617fd4698ee";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
+  };
   "0.2.0.0" = {
     sha256 = "f0f15340adcd17fefb0aa026190e53bbee7ae652c4bb467950c519aa6ac4ee0b";
     revisions = {
@@ -17,8 +17,8 @@
         nix = import ../hackage/mtsl-0.2.0.0-r0-0a221db2a665e254379d35a770ae478bdfa74519a3172ef18a68ad2f7916bb2d.nix;
         revNum = 0;
         sha256 = "0a221db2a665e254379d35a770ae478bdfa74519a3172ef18a68ad2f7916bb2d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

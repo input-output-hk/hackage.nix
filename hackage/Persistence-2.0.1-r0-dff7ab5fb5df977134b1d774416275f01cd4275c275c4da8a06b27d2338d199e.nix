@@ -21,7 +21,7 @@
       synopsis = "A versatile library for topological data analysis.";
       description = "A topological data analysis library motivated by flexibility when it comes to the type of data being analyzed. If your data comes with a meaningful binary function into an ordered set, you can use Persistence to analyze your data. The library also provides functions for analyzing directed\\/undirected, weighted\\/unweighted graphs. See the README for resources on learning about topological data anlysis.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,9 +30,9 @@
           (hsPkgs."maximal-cliques" or (errorHandler.buildDepError "maximal-cliques"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "persistence-test" = {
           depends = [
@@ -42,9 +42,9 @@
             (hsPkgs."maximal-cliques" or (errorHandler.buildDepError "maximal-cliques"))
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

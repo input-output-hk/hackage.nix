@@ -21,15 +21,15 @@
       synopsis = "Software Transactional Memory lifted to MonadIO";
       description = "A MonadIO version of <http://hackage.haskell.org/package/stm STM> library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

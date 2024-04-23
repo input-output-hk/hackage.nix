@@ -21,11 +21,11 @@
       synopsis = "Symbol manipulation";
       description = "Utilities for manipulating type-level strings natively.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

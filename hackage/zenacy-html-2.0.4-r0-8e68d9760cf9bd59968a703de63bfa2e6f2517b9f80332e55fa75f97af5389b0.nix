@@ -21,7 +21,7 @@
       synopsis = "A standard compliant HTML parsing library";
       description = "Zenacy HTML is an HTML parsing and processing library that implements the\nWHATWG HTML parsing standard.  The standard is described as a state machine\nthat this library implements exactly as spelled out including all the error\nhandling, recovery, and conformance checks that makes it robust in handling\nany HTML pulled from the web.  In addition to parsing, the library provides\nmany processing features to help extract information from web pages or\nrewrite them and render the modified results.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."word8" or (errorHandler.buildDepError "word8"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "zenacy-html-exe" = {
           depends = [
@@ -55,10 +55,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zenacy-html" or (errorHandler.buildDepError "zenacy-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "zenacy-html-test" = {
           depends = [
@@ -77,10 +77,10 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."zenacy-html" or (errorHandler.buildDepError "zenacy-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "zenacy-html-bench" = {
           depends = [
@@ -94,9 +94,9 @@
             (hsPkgs."raw-strings-qq" or (errorHandler.buildDepError "raw-strings-qq"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."zenacy-html" or (errorHandler.buildDepError "zenacy-html"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A client side web UI framework for Haskell. Core framework.";
       description = "A client side web UI framework for Haskell. Core framework.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."natural-transformation" or (errorHandler.buildDepError "natural-transformation"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

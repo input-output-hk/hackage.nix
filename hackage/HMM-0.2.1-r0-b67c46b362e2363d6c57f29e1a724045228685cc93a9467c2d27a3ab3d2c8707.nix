@@ -21,6 +21,6 @@
       synopsis = "A hidden markov model library";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = { "library" = { buildable = true; }; };
-    }
+  }

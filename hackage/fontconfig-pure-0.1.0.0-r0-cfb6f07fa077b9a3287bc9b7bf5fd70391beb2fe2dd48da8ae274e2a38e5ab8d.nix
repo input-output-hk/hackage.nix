@@ -21,7 +21,7 @@
       synopsis = "Pure-functional language bindings to FontConfig";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,21 +34,21 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."stylist-traits" or (errorHandler.buildDepError "stylist-traits"))
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
-          ];
+        ];
         pkgconfig = [
           (pkgconfPkgs."fontconfig" or (errorHandler.pkgConfDepError "fontconfig"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "fontconfig-pure" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."fontconfig-pure" or (errorHandler.buildDepError "fontconfig-pure"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-fontconfig" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."fontconfig-pure" or (errorHandler.buildDepError "fontconfig-pure"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

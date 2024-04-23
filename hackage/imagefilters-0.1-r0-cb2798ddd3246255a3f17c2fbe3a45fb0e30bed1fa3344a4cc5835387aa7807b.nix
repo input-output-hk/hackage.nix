@@ -21,14 +21,14 @@
       synopsis = "Image Filters (contrast, brightness, gaussian blur, etc)";
       description = "This package brings image filters comparable to PHP's imagefilter functions. In the current release,\nthese filters may only be used with the GD Haskell extension library, but in the future it may support\nother image management libraries, such as the new JuicyPixels library.\n\nimagefilters also supplies functionality for creating custom filters by using the 'pixelTransform' function\nfor per-pixel transformations, or the 'convolute' function for the application of convolution matrices";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."gd" or (errorHandler.buildDepError "gd"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

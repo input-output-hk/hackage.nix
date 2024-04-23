@@ -21,7 +21,7 @@
       synopsis = "Watch the practice time for whatever practice you are trying to make, e.g. a piano?";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "practice-room" = {
@@ -32,9 +32,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."json" or (errorHandler.buildDepError "json"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

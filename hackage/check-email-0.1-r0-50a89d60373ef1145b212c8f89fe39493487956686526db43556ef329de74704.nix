@@ -21,13 +21,13 @@
       synopsis = "Confirm whether an email is valid and probably existant.";
       description = "Confirm whether an email is valid and probably existant.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."email-validate" or (errorHandler.buildDepError "email-validate"))
-          ];
+        ];
         libs = [
           (pkgs."gd" or (errorHandler.sysDepError "gd"))
           (pkgs."png" or (errorHandler.sysDepError "png"))
@@ -38,8 +38,8 @@
           (pkgs."freetype" or (errorHandler.sysDepError "freetype"))
           (pkgs."expat" or (errorHandler.sysDepError "expat"))
           (pkgs."resolv" or (errorHandler.sysDepError "resolv"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

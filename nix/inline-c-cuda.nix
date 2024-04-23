@@ -6,8 +6,8 @@
         nix = import ../hackage/inline-c-cuda-0.1.0.0-r0-a2e6da94c02e00235a4dc172a2a43bb366af88833b5744144ecc91a839ec30e8.nix;
         revNum = 0;
         sha256 = "a2e6da94c02e00235a4dc172a2a43bb366af88833b5744144ecc91a839ec30e8";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Gloss rendering for apecs-physics";
       description = "Gloss rendering for apecs-physics";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."apecs-physics" or (errorHandler.buildDepError "apecs-physics"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
           (hsPkgs."apecs" or (errorHandler.buildDepError "apecs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

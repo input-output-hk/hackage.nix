@@ -21,7 +21,7 @@
       synopsis = "PowerDNS API bindings for api/v1";
       description = "PowerDNS API allows programmatic manipulation of zones and other metadata. This\nlibrary is a thin wrapper, exposing most of the idiosyncracies directly.\n\nUsers are advised to refer to the PowerDNS documentation and its source code for\nthe exact semantics.\n\nAll exposed API endpoints are provided.\n\n> import qualified PowerDNS.Client as P\n> import           Network.HTTP.Client (newManager, defaultManagerSettings)\n> import           Servant.Client (runClientM, mkClientEnv, parseBarseUrl)\n>\n> main :: IO\n> main = do\n>   uri <- parseBaseUrl \"http://localhost:8081\"\n>   mgr <- newManager defaultManagerSettings\n>   env <- P.applyXApiKey \"secret\" <$> mkClientEnv\n>\n>   Right r <- runClientM (P.statistics \"localhost\" Nothing Nothing) env)\n>   traverse_ print r";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,9 +37,9 @@
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
           (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "powerdns-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."servant-client" or (errorHandler.buildDepError "servant-client"))
             (hsPkgs."servant-client-core" or (errorHandler.buildDepError "servant-client-core"))
             (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

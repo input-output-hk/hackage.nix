@@ -21,7 +21,7 @@
       synopsis = "A Happstack Tutorial that is its own web 2.0-type demo. ";
       description = "A nice way to learn how to build web sites with Happstack";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "happs-tutorial" = {
@@ -48,12 +48,12 @@
             (hsPkgs."happstack-data" or (errorHandler.buildDepError "happstack-data"))
             (hsPkgs."happstack-ixset" or (errorHandler.buildDepError "happstack-ixset"))
             (hsPkgs."happstack-state" or (errorHandler.buildDepError "happstack-state"))
-            ] ++ (pkgs.lib).optionals (flags.base4) [
+          ] ++ pkgs.lib.optionals (flags.base4) [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Fedora image download tool";
       description = "Tool to download Fedora iso and image files";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "dl-fedora" = {
@@ -40,9 +40,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."xdg-userdirs" or (errorHandler.buildDepError "xdg-userdirs"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

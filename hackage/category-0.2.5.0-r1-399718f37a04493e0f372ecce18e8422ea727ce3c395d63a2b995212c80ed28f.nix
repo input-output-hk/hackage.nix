@@ -21,7 +21,7 @@
       synopsis = "Categorical types and classes";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."alg" or (errorHandler.buildDepError "alg"))
           (hsPkgs."dual" or (errorHandler.buildDepError "dual"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

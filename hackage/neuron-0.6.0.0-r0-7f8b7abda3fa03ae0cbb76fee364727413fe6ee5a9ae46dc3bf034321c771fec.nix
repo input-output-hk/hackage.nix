@@ -21,7 +21,7 @@
       synopsis = "Future-proof system for plain-text notes.";
       description = "neuron is a future-proof system for managing your plain-text Zettelkasten notes.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."reflex-dom-pandoc" or (errorHandler.buildDepError "reflex-dom-pandoc"))
           (hsPkgs."clay" or (errorHandler.buildDepError "clay"))
           (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "neuron" = {
           depends = [
@@ -107,10 +107,10 @@
             (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"))
             (hsPkgs."shower" or (errorHandler.buildDepError "shower"))
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "neuron-test" = {
           depends = [
@@ -163,9 +163,9 @@
             (hsPkgs."either" or (errorHandler.buildDepError "either"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

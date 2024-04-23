@@ -21,7 +21,7 @@
       synopsis = "Toy game (tetris on billiard board). Hipmunk in action.";
       description = "Control red ball with mouse clicks. Avoid blue balls (minus one live) and\ngo for green balls (plus one live) and orange balls (bonus).";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "click-clack" = {
@@ -36,9 +36,9 @@
             (hsPkgs."OpenGL" or (errorHandler.buildDepError "OpenGL"))
             (hsPkgs."StateVar" or (errorHandler.buildDepError "StateVar"))
             (hsPkgs."GLFW" or (errorHandler.buildDepError "GLFW"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

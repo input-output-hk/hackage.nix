@@ -21,7 +21,7 @@
       synopsis = "A library of statistical types, data, and functions";
       description = "This library provides a number of common functions and types useful\nin statistics.  We focus on high performance, numerical robustness,\nand use of good algorithms.  Where possible, we provide\nreferences to the statistical literature.\n\nThe library's facilities can be divided into four broad categories:\n\n* Working with widely used discrete and continuous probability\ndistributions.  (There are dozens of exotic distributions in use;\nwe focus on the most common.)\n\n* Computing with sample data: quantile estimation, kernel density\nestimation, histograms, bootstrap methods, significance testing,\nand autocorrelation analysis.\n\n* Random variate generation under several different distributions.\n\n* Common statistical tests for significant differences between\nsamples.\n\nChanges in 0.10.4.0\n\n* Support for versions of GHC older than 7.2 is discontinued.\n\n* All datatypes now support 'Data.Binary' and 'GHC.Generics'.\n\nChanges in 0.10.3.0\n\n* Bug fixes\n\nChanges in 0.10.2.0\n\n* Bugs in DCT and IDCT are fixed.\n\n* Accesors for uniform distribution are added.\n\n* 'ContGen' instances for all continous distribtuions are added.\n\n* Beta distribution is added.\n\n* Constructor for improper gamma distribtuion is added.\n\n* Binomial distribution allows zero trials.\n\n* Poisson distribution now accept zero parameter.\n\n* Integer overflow in caculation of Wilcoxon-T test is fixed.\n\n* Bug in 'ContGen' instance for normal distribution is fixed.\n\nChanges in 0.10.1.0\n\n* Kolmogorov-Smirnov nonparametric test added.\n\n* Pearson's chi squared test added.\n\n* Type class for generating random variates for given distribution\nis added.\n\n* Modules 'Statistics.Math' and 'Statistics.Constants' are moved to\nthe @math-functions@ package. They are still available but marked\nas deprecated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = ([
@@ -36,9 +36,9 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."vector-binary-instances" or (errorHandler.buildDepError "vector-binary-instances"))
-          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "7.6") (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.10") (hsPkgs."base" or (errorHandler.buildDepError "base"));
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
             (hsPkgs."erf" or (errorHandler.buildDepError "erf"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

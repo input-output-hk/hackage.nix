@@ -21,7 +21,7 @@
       synopsis = "Stream Editor in Haskell";
       description = "Haskell Stream Editor";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -41,9 +41,9 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
-          ];
+        ];
         buildable = true;
-        };
-      exes = { "Hsed" = { buildable = true; }; };
       };
-    }
+      exes = { "Hsed" = { buildable = true; }; };
+    };
+  }

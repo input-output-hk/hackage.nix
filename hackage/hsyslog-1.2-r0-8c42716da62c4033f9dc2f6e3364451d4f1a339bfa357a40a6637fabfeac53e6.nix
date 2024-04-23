@@ -21,11 +21,11 @@
       synopsis = "FFI interface to syslog(3) from POSIX.1-2001.";
       description = "FFI interface to syslog(3) from POSIX.1-2001.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

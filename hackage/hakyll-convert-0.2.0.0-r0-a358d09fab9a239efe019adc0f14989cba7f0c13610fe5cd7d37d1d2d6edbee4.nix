@@ -21,7 +21,7 @@
       synopsis = "Convert from other blog engines to Hakyll.";
       description = "WordPress and Blogger only let one export posts in\na limited number of formats, none of which are supported\nby Hakyll. @hakyll-convert@ is created to bridge this gap,\nproviding a way to turn other platform's datadumps into\na set of files Hakyll understands.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hakyll-convert" = {
           depends = [
@@ -52,9 +52,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

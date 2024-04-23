@@ -21,7 +21,7 @@
       synopsis = "Java interop via inline Java code in Haskell modules.";
       description = "Please see README.md.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."thread-local-storage" or (errorHandler.buildDepError "thread-local-storage"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         libs = [ (pkgs."jvm" or (errorHandler.sysDepError "jvm")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

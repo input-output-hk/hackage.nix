@@ -21,7 +21,7 @@
       synopsis = "Stan integration plugin with Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,11 +38,11 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."stan" or (errorHandler.buildDepError "stan"))
-          ];
-        buildable = if compiler.isGhc && (compiler.version).lt "8.10" || compiler.isGhc && (compiler.version).ge "9.0"
+        ];
+        buildable = if compiler.isGhc && compiler.version.lt "8.10" || compiler.isGhc && compiler.version.ge "9.0"
           then false
           else true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -56,11 +56,11 @@
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
-          buildable = if compiler.isGhc && (compiler.version).lt "8.10" || compiler.isGhc && (compiler.version).ge "9.0"
+          ];
+          buildable = if compiler.isGhc && compiler.version.lt "8.10" || compiler.isGhc && compiler.version.ge "9.0"
             then false
             else true;
-          };
         };
       };
-    }
+    };
+  }

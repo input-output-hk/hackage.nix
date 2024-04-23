@@ -21,7 +21,7 @@
       synopsis = "proxy gopher over http";
       description = "A simple gopher-over-http proxy to http-ify gopher spaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gopher-proxy" = {
@@ -39,9 +39,9 @@
             (hsPkgs."mime-types" or (errorHandler.buildDepError "mime-types"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

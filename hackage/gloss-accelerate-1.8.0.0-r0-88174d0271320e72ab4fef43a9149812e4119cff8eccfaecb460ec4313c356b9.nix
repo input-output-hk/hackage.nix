@@ -21,15 +21,15 @@
       synopsis = "Extras to interface Gloss and Accelerate";
       description = "Extras to interface Gloss and Accelerate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."accelerate" or (errorHandler.buildDepError "accelerate"))
           (hsPkgs."gloss" or (errorHandler.buildDepError "gloss"))
-          ] ++ (pkgs.lib).optional (flags.cuda) (hsPkgs."accelerate-cuda" or (errorHandler.buildDepError "accelerate-cuda"));
+        ] ++ pkgs.lib.optional (flags.cuda) (hsPkgs."accelerate-cuda" or (errorHandler.buildDepError "accelerate-cuda"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

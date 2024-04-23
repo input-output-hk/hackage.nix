@@ -21,7 +21,7 @@
       synopsis = "Distributed systems execution emulation";
       description = "This package allows to write scenarios over distributed\nsystems, which can be launched as either real program or\nfast emulation without need to wait for delays and with\nnetwork nastiness manually controlled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,9 +71,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "ping-pong" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
+        };
         "socket-state" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -109,9 +109,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
+        };
         "net-playground" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -137,9 +137,9 @@
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "bench-sender" = {
           depends = [
             (hsPkgs."async" or (errorHandler.buildDepError "async"))
@@ -166,9 +166,9 @@
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
+        };
         "bench-receiver" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -190,9 +190,9 @@
             (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
+        };
         "bench-log-reader" = {
           depends = [
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
@@ -219,10 +219,10 @@
             (hsPkgs."time-units" or (errorHandler.buildDepError "time-units"))
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = if flags.build-executables then true else false;
-          };
         };
+      };
       tests = {
         "time-warp-test" = {
           depends = [
@@ -244,9 +244,9 @@
             (hsPkgs."time-warp" or (errorHandler.buildDepError "time-warp"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

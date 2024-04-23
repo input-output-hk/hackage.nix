@@ -21,15 +21,15 @@
       synopsis = "Quiver combinators for cellular data processing";
       description = "This library provides combinators for Quiver-based streaming\nof cellular data, i.e., tabular data encoded as a stream of\noptionally-fragmented cell values.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."data-cell" or (errorHandler.buildDepError "data-cell"))
           (hsPkgs."quiver" or (errorHandler.buildDepError "quiver"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

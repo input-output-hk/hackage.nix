@@ -21,7 +21,7 @@
       synopsis = "Parse Rocket League replays.";
       description = "Octane parses Rocket League replays.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,18 +38,18 @@
           (hsPkgs."scientific" or (errorHandler.buildDepError "scientific"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "octane" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."octane" or (errorHandler.buildDepError "octane"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "octane-test-suite" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."octane" or (errorHandler.buildDepError "octane"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "octane-benchmark" = {
           depends = [
@@ -73,9 +73,9 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."octane" or (errorHandler.buildDepError "octane"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "message passing style helpers";
       description = "message passing style helpers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."interpolatedstring-qq" or (errorHandler.buildDepError "interpolatedstring-qq"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

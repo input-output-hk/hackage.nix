@@ -21,7 +21,7 @@
       synopsis = "MongoDB plugin for Wheb";
       description = "Wheb plugin for MongoDB.\n\n* Implements SessionBackend and AuthBackend instances using Mongo.\n\n* Creates simple interface for arbitrary MongoDB actions using <http://hackage.haskell.org/package/mongoDB mongoDB>\n\nFor a complete example, see the examples folder at <https://github.com/hansonkd/Wheb-Framework/tree/master/examples github>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."Wheb" or (errorHandler.buildDepError "Wheb"))
           (hsPkgs."bson" or (errorHandler.buildDepError "bson"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

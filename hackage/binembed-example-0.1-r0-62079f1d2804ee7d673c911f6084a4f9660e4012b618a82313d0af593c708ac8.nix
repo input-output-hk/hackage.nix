@@ -21,7 +21,7 @@
       synopsis = "Example project using binembed to embed data in object files.";
       description = "binembed-example prints out its source code, embedded into it\nat compile time using the \"binembed\" package.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "binembed-example" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."binembed" or (errorHandler.buildDepError "binembed"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

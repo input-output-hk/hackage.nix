@@ -21,7 +21,7 @@
       synopsis = "A message-passing library for simplifying network applications";
       description = "Inspired by Erlang's simple message-passing facilities, courier provides roughly similar\ncapabilities. Applications simply create one or more endpoints,\nbind each to a transport using a given name, then can freely\nsend / receive messages to other endpoints just by referencing the name each endpoint\nbound to its transport.\n\nNote that while the simplicity is inspired by Erlang, the actual semantics of a receive\noperation are not: receive just returns the next message delivered to an endpoint by a\ntransport. There is no attempt to perform pattern-matching on a range of alternatives,\nand thus enabling out-of-order receipt. Consequently, all messages delivered to an endpoint\nwill always be received in the order delivered. In this sense, endpoints are more akin to\nchannels in Go but without the strict typing.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-courier" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
             (hsPkgs."network-simple" or (errorHandler.buildDepError "network-simple"))
             (hsPkgs."courier" or (errorHandler.buildDepError "courier"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

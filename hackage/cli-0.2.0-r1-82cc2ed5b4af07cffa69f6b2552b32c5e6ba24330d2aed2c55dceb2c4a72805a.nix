@@ -21,16 +21,16 @@
       synopsis = "CLI";
       description = "please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
           (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -38,9 +38,9 @@
             (hsPkgs."basement" or (errorHandler.buildDepError "basement"))
             (hsPkgs."cli" or (errorHandler.buildDepError "cli"))
             (hsPkgs."foundation" or (errorHandler.buildDepError "foundation"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

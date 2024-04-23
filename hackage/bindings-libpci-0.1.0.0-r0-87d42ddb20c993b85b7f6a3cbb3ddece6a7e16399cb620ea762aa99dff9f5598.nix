@@ -21,16 +21,16 @@
       synopsis = "Low level bindings to libpci";
       description = "Low level bindings to libpci:\n\n<https://github.com/pciutils/pciutils>\n\nThis package uses @bindings-DSL@\nand conforms to its naming convention.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bindings-DSL" or (errorHandler.buildDepError "bindings-DSL"))
-          ];
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."libpci" or (errorHandler.sysDepError "libpci"));
-        pkgconfig = (pkgs.lib).optional (!system.isWindows) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"));
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."libpci" or (errorHandler.sysDepError "libpci"));
+        pkgconfig = pkgs.lib.optional (!system.isWindows) (pkgconfPkgs."libpci" or (errorHandler.pkgConfDepError "libpci"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Semi-explicit parallel programming skeleton library";
       description = "This package provides a skeleton library for semi-explicit parallel programming with Eden.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."edenmodules" or (errorHandler.buildDepError "edenmodules"))
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

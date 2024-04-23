@@ -21,7 +21,7 @@
       synopsis = "Bytes";
       description = "Bytes - this package was automatically generated from the OpenTheory\npackage byte-1.123";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,8 +31,8 @@
           (hsPkgs."opentheory" or (errorHandler.buildDepError "opentheory"))
           (hsPkgs."opentheory-bits" or (errorHandler.buildDepError "opentheory-bits"))
           (hsPkgs."opentheory-probability" or (errorHandler.buildDepError "opentheory-probability"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "HTTP client with pipes interface";
       description = "@pipes-http@ is a @pipes@ wrapper around the @http-client@ library";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."pipes" or (errorHandler.buildDepError "pipes"))
           (hsPkgs."http-client" or (errorHandler.buildDepError "http-client"))
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

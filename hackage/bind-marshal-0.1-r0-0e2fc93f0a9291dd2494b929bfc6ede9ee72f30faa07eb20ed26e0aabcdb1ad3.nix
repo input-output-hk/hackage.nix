@@ -21,7 +21,7 @@
       synopsis = "Data marshaling library that uses type level equations to optimize buffering.";
       description = "A (in development) high performance data marshaling layer for haskell. Uses a\npair of parameterized monads to represent: Data marshalling actions with\nstatic buffering requirements (EG: Needs no more than 100 bytes available to\nsucceed) ; Data marshalling actions that are a dynamic composition of actions\nwith static buffering requirements.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

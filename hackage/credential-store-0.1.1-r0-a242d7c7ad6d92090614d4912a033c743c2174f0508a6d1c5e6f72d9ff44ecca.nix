@@ -21,7 +21,7 @@
       synopsis = "Library to access secure credential storage providers";
       description = "Cross-platform library for storing secrets.\n\nUses Windows credential store, gnome-keyring or kwallet as backends.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,21 +31,21 @@
           (hsPkgs."cryptonite" or (errorHandler.buildDepError "cryptonite"))
           (hsPkgs."memory" or (errorHandler.buildDepError "memory"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ] ++ (if system.isWindows
+        ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [ (hsPkgs."dbus" or (errorHandler.buildDepError "dbus")) ]);
         buildable = true;
-        };
+      };
       exes = {
         "credential-store-exe" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."credential-store" or (errorHandler.buildDepError "credential-store"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "credential-store-test" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."credential-store" or (errorHandler.buildDepError "credential-store"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

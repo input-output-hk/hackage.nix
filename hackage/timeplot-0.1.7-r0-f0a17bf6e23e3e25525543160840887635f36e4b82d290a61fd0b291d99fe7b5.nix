@@ -21,7 +21,7 @@
       synopsis = "A tool for visualizing time series from log files.";
       description = "A tool for visualizing time series from log files.\nReads an input file with events in different \"tracks\" and draws a diagram for\neach track, where a diagram may be one of 8 types. See --help for help and the\nhomepage for a bigger description, examples and a tutorial.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "tplot" = {
@@ -38,9 +38,9 @@
             (hsPkgs."data-accessor-template" or (errorHandler.buildDepError "data-accessor-template"))
             (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
             (hsPkgs."regex-pcre" or (errorHandler.buildDepError "regex-pcre"))
-            ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
+          ] ++ [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

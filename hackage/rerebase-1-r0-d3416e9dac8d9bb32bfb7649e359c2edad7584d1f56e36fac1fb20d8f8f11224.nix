@@ -21,13 +21,13 @@
       synopsis = "Reexports from \"base\" with a bunch of other standard libraries";
       description = "This package can be used as a drop-in replacement for \\\"base\\\",\nwith all the modules preserving the original APIs and\nbeing located in the original namespaces.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."rebase" or (errorHandler.buildDepError "rebase"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

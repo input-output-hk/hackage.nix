@@ -21,7 +21,7 @@
       synopsis = "Servant support for the XML Content-Type";
       description = "Servant support for the Content-Type of /application\\/xml/. Anything with a 'Xmlbf.ToXml' instance can be automatically marshalled.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
           (hsPkgs."servant" or (errorHandler.buildDepError "servant"))
           (hsPkgs."xmlbf" or (errorHandler.buildDepError "xmlbf"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

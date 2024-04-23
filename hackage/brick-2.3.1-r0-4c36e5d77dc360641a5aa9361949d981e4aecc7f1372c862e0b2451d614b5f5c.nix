@@ -21,7 +21,7 @@
       synopsis = "A declarative terminal user interface library";
       description = "Write terminal user interfaces (TUIs) painlessly with 'brick'! You\nwrite an event handler and a drawing function and the library does the\nrest.\n\n\n> module Main where\n>\n> import Brick\n>\n> ui :: Widget ()\n> ui = str \"Hello, world!\"\n>\n> main :: IO ()\n> main = simpleMain ui\n\n\nTo get started, see:\n\n* <https://github.com/jtdaugherty/brick/blob/master/README.md The README>\n\n* The <https://github.com/jtdaugherty/brick/blob/master/docs/guide.rst Brick user guide>\n\n* The demonstration programs in the 'programs' directory\n\n\nThis package deprecates <http://hackage.haskell.org/package/vty-ui vty-ui>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."unix-compat" or (errorHandler.buildDepError "unix-compat"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
           (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "brick-custom-keybinding-demo" = {
           depends = [
@@ -62,18 +62,18 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-table-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-tail-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -84,17 +84,17 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-readme-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-file-browser-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -102,9 +102,9 @@
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-form-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -114,18 +114,18 @@
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."vty-crossplatform" or (errorHandler.buildDepError "vty-crossplatform"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-text-wrap-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."brick" or (errorHandler.buildDepError "brick"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."word-wrap" or (errorHandler.buildDepError "word-wrap"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-cache-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -135,9 +135,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-visibility-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -147,9 +147,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-viewport-scrollbars-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -160,9 +160,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-viewport-scroll-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -170,9 +170,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-dialog-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -180,9 +180,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-mouse-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -194,9 +194,9 @@
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."text-zipper" or (errorHandler.buildDepError "text-zipper"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-layer-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -206,9 +206,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-suspend-resume-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -217,9 +217,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-cropping-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -227,9 +227,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-padding-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -237,9 +237,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-theme-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -248,9 +248,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-attr-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -258,9 +258,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-tabular-list-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -272,9 +272,9 @@
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-list-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -285,9 +285,9 @@
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-list-vi-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -298,9 +298,9 @@
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-custom-event-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -310,9 +310,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-fill-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -320,9 +320,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-hello-world-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -330,9 +330,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-edit-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -344,9 +344,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-editor-line-numbers-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -358,9 +358,9 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-border-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -368,9 +368,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-dynamic-border-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -378,9 +378,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
+        };
         "brick-progressbar-demo" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -390,10 +390,10 @@
             (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
             (hsPkgs."microlens-mtl" or (errorHandler.buildDepError "microlens-mtl"))
             (hsPkgs."microlens-th" or (errorHandler.buildDepError "microlens-th"))
-            ];
+          ];
           buildable = if !flags.demos then false else true;
-          };
         };
+      };
       tests = {
         "brick-tests" = {
           depends = [
@@ -405,9 +405,9 @@
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
             (hsPkgs."vty-crossplatform" or (errorHandler.buildDepError "vty-crossplatform"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

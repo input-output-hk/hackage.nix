@@ -21,7 +21,7 @@
       synopsis = "Type-level Chars and Strings, with decidable equality.";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."type-combinators" or (errorHandler.buildDepError "type-combinators"))
           (hsPkgs."type-combinators-quote" or (errorHandler.buildDepError "type-combinators-quote"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

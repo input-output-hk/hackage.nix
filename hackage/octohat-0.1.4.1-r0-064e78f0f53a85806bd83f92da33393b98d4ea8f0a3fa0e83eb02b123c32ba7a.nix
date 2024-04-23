@@ -21,7 +21,7 @@
       synopsis = "A tested, minimal wrapper around GitHub's API.";
       description = "A tested, minimal wrapper around GitHub's API.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -47,9 +47,9 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
           (hsPkgs."xmlhtml" or (errorHandler.buildDepError "xmlhtml"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "abc" = {
           depends = [
@@ -60,10 +60,10 @@
             (hsPkgs."octohat" or (errorHandler.buildDepError "octohat"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."dotenv" or (errorHandler.buildDepError "dotenv"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."octohat" or (errorHandler.buildDepError "octohat"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

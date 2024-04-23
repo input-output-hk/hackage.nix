@@ -21,7 +21,7 @@
       synopsis = "Minimalistic SMTP client for Haskell";
       description = "Minimalistic SMTP client that connects to the remote server,\nestablishes secure communication, authenticates and transmits\na MIME-encoded email message to specified recipients.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,8 +33,8 @@
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

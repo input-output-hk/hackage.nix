@@ -21,15 +21,15 @@
       synopsis = "Simple functions for loading config files";
       description = "Simple functions for loading config files. This entire package is DEPRECATED! Use TCE.Data.KVConf in tce-conf";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

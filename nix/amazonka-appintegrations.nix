@@ -6,8 +6,8 @@
         nix = import ../hackage/amazonka-appintegrations-2.0-r0-e6689168021811f9ae7381d42b5705163dd7848b471795668420749f66e51fbc.nix;
         revNum = 0;
         sha256 = "e6689168021811f9ae7381d42b5705163dd7848b471795668420749f66e51fbc";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

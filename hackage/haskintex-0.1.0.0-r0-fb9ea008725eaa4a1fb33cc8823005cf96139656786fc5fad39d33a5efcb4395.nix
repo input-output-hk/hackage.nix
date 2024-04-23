@@ -21,7 +21,7 @@
       synopsis = "Haskell Evaluation inside of LaTeX code.";
       description = "The /haskintex/ program is a tool that reads a LaTeX file and evaluates Haskell expressions contained\nin some specific commands and environments. It allows you to define your own functions, use any GHC Haskell language\nextension and, in brief, anything you can do within Haskell. You can freely add any Haskell code you need, and make\nthis code appear /optionally/ in the LaTeX output. It is a tiny program, and therefore, easy to understand, use and\npredict.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "haskintex" = {
@@ -34,9 +34,9 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."HaTeX" or (errorHandler.buildDepError "HaTeX"))
             (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

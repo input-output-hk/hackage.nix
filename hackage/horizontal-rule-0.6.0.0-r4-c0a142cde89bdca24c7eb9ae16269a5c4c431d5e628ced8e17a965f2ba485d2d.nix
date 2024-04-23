@@ -21,16 +21,16 @@
       synopsis = "horizontal rule for the terminal";
       description = "This package provides a utility for displaying a horizontal rule in a\nterminal.  Please see the README on GitHub at\n<https://github.com/ExtremaIS/hr-haskell#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."terminal-size" or (errorHandler.buildDepError "terminal-size"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "hr" = {
           depends = [
@@ -38,18 +38,18 @@
             (hsPkgs."horizontal-rule" or (errorHandler.buildDepError "horizontal-rule"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ] ++ (if flags.optparse-applicative_ge_0_18
+          ] ++ (if flags.optparse-applicative_ge_0_18
             then [
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
               (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
-              ]
+            ]
             else [
               (hsPkgs."ansi-wl-pprint" or (errorHandler.buildDepError "ansi-wl-pprint"))
               (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
+      };
       tests = {
         "horizontal-rule-test" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."horizontal-rule" or (errorHandler.buildDepError "horizontal-rule"))
             (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).ge "8.6.1") (hsPkgs."HMock" or (errorHandler.buildDepError "HMock"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.6.1") (hsPkgs."HMock" or (errorHandler.buildDepError "HMock"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Parsec API encoded as a deeply-embedded DSL, for debugging and analysis";
       description = "Parsec API encoded as a deeply-embedded DSL, for debugging and analysis";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -37,8 +37,8 @@
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

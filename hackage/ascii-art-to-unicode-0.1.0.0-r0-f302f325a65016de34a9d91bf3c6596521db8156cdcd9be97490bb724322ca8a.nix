@@ -21,34 +21,34 @@
       synopsis = "ASCII Art to Unicode Box Drawing converter";
       description = "@aa2u@ converts ASCII Art box drawings to Unicode.\n\n> > aa2u\n> +-------------+\n> | Hello World |\n> +-------------+\n> ^D\n> ┌─────────────┐\n> │ Hello World │\n> └─────────────┘\n\nFor more examples see the @doctest@ suite in \"Text.AsciiArt\".";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."comonad" or (errorHandler.buildDepError "comonad"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "aa2u" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ascii-art-to-unicode" or (errorHandler.buildDepError "ascii-art-to-unicode"))
             (hsPkgs."strict" or (errorHandler.buildDepError "strict"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "ascii-art-to-unicode-test" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ascii-art-to-unicode" or (errorHandler.buildDepError "ascii-art-to-unicode"))
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

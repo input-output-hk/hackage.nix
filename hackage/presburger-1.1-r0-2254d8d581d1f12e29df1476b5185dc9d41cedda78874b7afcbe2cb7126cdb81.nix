@@ -21,15 +21,15 @@
       synopsis = "A decision procedure for quantifier-free linear arithmetic.";
       description = "The decision procedure is based on the algorithm used in\nCVC4, which is itself based on the Omega test.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

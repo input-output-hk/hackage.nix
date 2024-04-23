@@ -21,7 +21,7 @@
       synopsis = "SQL parser and type checker";
       description = "SQL parser and type checker, targets PostgreSQL SQL and PL/pgSQL.\n\nDocumentation, examples on the homepage:\n<http://jakewheat.github.com/hssqlppp/>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,11 +33,11 @@
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."uniplate" or (errorHandler.buildDepError "uniplate"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         build-tools = [
           (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,11 +21,11 @@
       synopsis = "Generalized boolean ops";
       description = "Some classes for generalized boolean operations.\n\nCopyright 2009 Conal Elliott; BSD3 license.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

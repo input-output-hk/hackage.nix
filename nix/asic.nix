@@ -6,8 +6,8 @@
         nix = import ../hackage/asic-1.2-r0-cf72e030c02a0e1aee3a6070ea2e51e5566006bb92227a9bbfc3c68fab8ce65c.nix;
         revNum = 0;
         sha256 = "cf72e030c02a0e1aee3a6070ea2e51e5566006bb92227a9bbfc3c68fab8ce65c";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

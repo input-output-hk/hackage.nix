@@ -21,7 +21,7 @@
       synopsis = "Metadata collection for leksah";
       description = "The interface to GHC-API for leksah";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = (([
@@ -43,18 +43,18 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ] ++ (if compiler.isGhc && (compiler.version).ge "6.12"
+        ] ++ (if compiler.isGhc && compiler.version.ge "6.12"
           then [ (hsPkgs."haddock" or (errorHandler.buildDepError "haddock")) ]
           else [
             (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
-            ])) ++ (if system.isWindows
+          ])) ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
           else [
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
-        libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+          ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
         buildable = true;
-        };
+      };
       exes = {
         "leksah-server" = {
           depends = (([
@@ -74,21 +74,21 @@
             (hsPkgs."process-leksah" or (errorHandler.buildDepError "process-leksah"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."network" or (errorHandler.buildDepError "network"))
-            ] ++ (if compiler.isGhc && (compiler.version).ge "6.12"
+          ] ++ (if compiler.isGhc && compiler.version.ge "6.12"
             then [
               (hsPkgs."haddock" or (errorHandler.buildDepError "haddock"))
-              ]
+            ]
             else [
               (hsPkgs."haddock-leksah" or (errorHandler.buildDepError "haddock-leksah"))
-              ])) ++ (if system.isWindows
+            ])) ++ (if system.isWindows
             then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-              ])) ++ (pkgs.lib).optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
-          libs = (pkgs.lib).optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
+            ])) ++ pkgs.lib.optional (flags.libcurl) (hsPkgs."curl" or (errorHandler.buildDepError "curl"));
+          libs = pkgs.lib.optional (system.isWindows) (pkgs."kernel32" or (errorHandler.sysDepError "kernel32"));
           buildable = true;
-          };
-        "leksahecho" = { buildable = true; };
         };
+        "leksahecho" = { buildable = true; };
       };
-    }
+    };
+  }

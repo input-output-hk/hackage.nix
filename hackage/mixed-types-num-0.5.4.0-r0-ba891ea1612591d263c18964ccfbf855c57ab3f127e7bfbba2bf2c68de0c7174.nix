@@ -21,7 +21,7 @@
       synopsis = "Alternative Prelude with numeric and logic expressions typed bottom-up";
       description = "Please see the README on GitHub at <https://github.com/michalkonecny/mixed-types-num#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "mixed-types-num-test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."hspec-smallcheck" or (errorHandler.buildDepError "hspec-smallcheck"))
             (hsPkgs."mixed-types-num" or (errorHandler.buildDepError "mixed-types-num"))
             (hsPkgs."smallcheck" or (errorHandler.buildDepError "smallcheck"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

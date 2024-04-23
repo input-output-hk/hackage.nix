@@ -21,7 +21,7 @@
       synopsis = "A library to make a quick test-runner script.";
       description = "This library makes it easy to define an executable,\nwhich can find and run a bunch of tests for a binary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,8 +34,8 @@
           (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
           (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
           (hsPkgs."simple-get-opt" or (errorHandler.buildDepError "simple-get-opt"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

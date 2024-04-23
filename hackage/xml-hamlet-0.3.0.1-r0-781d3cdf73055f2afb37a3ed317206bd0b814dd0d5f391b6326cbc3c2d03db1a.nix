@@ -21,7 +21,7 @@
       synopsis = "Hamlet-style quasiquoter for XML content";
       description = "Hamlet-style quasiquoter for XML content";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -46,9 +46,9 @@
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."xml-hamlet" or (errorHandler.buildDepError "xml-hamlet"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

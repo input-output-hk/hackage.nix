@@ -21,7 +21,7 @@
       synopsis = "Painless general-purpose sampling.";
       description = "Painless general-purpose sampling.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."monad-par" or (errorHandler.buildDepError "monad-par"))
           (hsPkgs."monad-par-extras" or (errorHandler.buildDepError "monad-par-extras"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

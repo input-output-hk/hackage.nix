@@ -21,11 +21,11 @@
       synopsis = "Helper class for passing context along a predicate value";
       description = "Helper class for passing context along a predicate value\nUsed as a helper in queryparser";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

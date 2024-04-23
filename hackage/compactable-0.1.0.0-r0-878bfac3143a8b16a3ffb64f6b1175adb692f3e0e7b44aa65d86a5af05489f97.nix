@@ -21,7 +21,7 @@
       synopsis = "A generalization for containers that can be stripped of Nothings.";
       description = "Sometimes you have a collection of Maybes,\nand you want to extract the values. Actually that happens a whole lot.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,8 +29,8 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

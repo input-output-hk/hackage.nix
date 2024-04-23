@@ -21,7 +21,7 @@
       synopsis = "Free foreign exchange/currency feed from the European Central Bank";
       description = "A Haskell API for the the European Central Bank's free daily currency reference rates.\n\nChangeLog: 0.1.2: Timestamp now has correct hour.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."hexpat" or (errorHandler.buildDepError "hexpat"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Ethereum virtual machine evaluator";
       description = "Hevm implements the Ethereum virtual machine semantics.\n\nIt can be used as a library, and it also comes with an executable\nthat can run unit test suites, optionally with a visual TTY debugger.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -71,10 +71,10 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
           (hsPkgs."wreq" or (errorHandler.buildDepError "wreq"))
-          ];
+        ];
         libs = [ (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1")) ];
         buildable = true;
-        };
+      };
       exes = {
         "hevm" = {
           depends = [
@@ -111,10 +111,10 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."vty" or (errorHandler.buildDepError "vty"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -134,12 +134,12 @@
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
-            ];
+          ];
           libs = [
             (pkgs."secp256k1" or (errorHandler.sysDepError "secp256k1"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

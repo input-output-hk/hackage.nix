@@ -21,14 +21,14 @@
       synopsis = "Convert streams of builders to streams of bytestrings. (deprecated)";
       description = "Convert streams of builders to streams of bytestrings.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."conduit" or (errorHandler.buildDepError "conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

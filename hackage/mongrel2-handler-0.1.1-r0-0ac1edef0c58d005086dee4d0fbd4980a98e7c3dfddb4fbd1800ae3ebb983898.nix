@@ -21,7 +21,7 @@
       synopsis = "Mongrel2 Handler Library";
       description = "Mongrel2 Handler Library.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."zeromq-haskell" or (errorHandler.buildDepError "zeromq-haskell"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

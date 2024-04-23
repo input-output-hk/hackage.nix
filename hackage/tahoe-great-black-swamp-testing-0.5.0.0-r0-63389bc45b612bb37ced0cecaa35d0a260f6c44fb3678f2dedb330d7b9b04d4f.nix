@@ -14,7 +14,7 @@
       identifier = {
         name = "tahoe-great-black-swamp-testing";
         version = "0.5.0.0";
-        };
+      };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "exarkun@twistedmatrix.com";
@@ -24,7 +24,7 @@
       synopsis = "An HSpec for Great Black Swamp storage backends";
       description = "A library for creating test-suites for Tahoe-LAFS Great Black Swamp backend implementations";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."tahoe-great-black-swamp-types" or (errorHandler.buildDepError "tahoe-great-black-swamp-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."utility-ht" or (errorHandler.buildDepError "utility-ht"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

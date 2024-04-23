@@ -21,7 +21,7 @@
       synopsis = "PGF backend for diagrams drawing EDSL.";
       description = "This package provides a modular backend for rendering diagrams created\nwith the diagrams EDSL using the TeX library PGF.\n\nSupport for rendering LaTeX, ConTeXt and plain TeX files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."JuicyPixels" or (errorHandler.buildDepError "JuicyPixels"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

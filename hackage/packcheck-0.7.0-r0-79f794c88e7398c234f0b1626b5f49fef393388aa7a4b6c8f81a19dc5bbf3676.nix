@@ -21,29 +21,29 @@
       synopsis = "Universal build and CI testing for Haskell packages";
       description = "This package contains a universal CI/build script @packcheck.sh@ and config\nfiles designed such that you can just copy over\n@.github\\/workflows/packcheck.yml@, @appveyor.yml@ or @.circleci/config.yml@\nto your package repo and your package is CI ready\nin a jiffy.  You can build and test packages on local machine as well. For\nlocal testing, copy @packcheck.sh@ to your local machine, put it in your\nPATH, and run it from your package directory:\n\n> $ packcheck.sh cabal\n> $ packcheck.sh stack\n\nYou can try the script on this package itself. It builds and comprehensively\nsanity tests a Haskell package across build tools (stack/cabal), uniformly,\nconsistently and across all platforms (Linux\\/MacOS\\/Windows).  You do not\nneed to be familiar with any of the build tools to use it.\n\nThis is also a minimal yet complete model package (with tests, benchmarks, CI\nalready working) that can be used as a starting point to develop a new\npackage. Beginners can use it to learn about haskell package metadata\nstructure, benchmarks, tests, CI configs etc.\n\nSee the README for comprehensive documentation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
             (hsPkgs."packcheck" or (errorHandler.buildDepError "packcheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "bench" = {
           depends = [
             (hsPkgs."packcheck" or (errorHandler.buildDepError "packcheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

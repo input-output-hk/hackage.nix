@@ -21,14 +21,14 @@
       synopsis = "blaze-html instances for xml-conduit types (deprecated)";
       description = "blaze-html instances for xml-conduit types. Note that these instances are now provided by xml-conduit itself, and therefore this package is unnecessary.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."xml-conduit" or (errorHandler.buildDepError "xml-conduit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

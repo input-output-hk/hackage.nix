@@ -21,14 +21,14 @@
       synopsis = "An implementationg of Attribute Grammars using Functional Zippers";
       description = "An implementationg of Attribute Grammars using Functional Zippers";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."syz" or (errorHandler.buildDepError "syz"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

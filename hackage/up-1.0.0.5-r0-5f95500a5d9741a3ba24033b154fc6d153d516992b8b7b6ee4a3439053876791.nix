@@ -21,7 +21,7 @@
       synopsis = "Command-line tool to generate paths for moving upward in a file system";
       description = "Command-line tool to generate paths for moving upward in a file system.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "up" = {
@@ -32,9 +32,9 @@
             (hsPkgs."lambda-options" or (errorHandler.buildDepError "lambda-options"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
             (hsPkgs."split" or (errorHandler.buildDepError "split"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

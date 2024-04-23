@@ -21,7 +21,7 @@
       synopsis = "A powerful, easy-to-use codemodding tool for Haskell.";
       description = "Retrie is a tool for codemodding Haskell. Key goals include:\n\n* Speed: Efficiently rewrite in large (>1 million line) codebases.\n* Safety: Avoids large classes of codemod-related errors.\n* Ease-of-use: Haskell syntax instead of regular expressions. No hand-rolled AST traversals.\n\nThis package provides a command-line tool (@retrie@) and a library\n(\"Retrie\") for making equational edits to Haskell code.\n\nPlease see the [README](#readme) for examples and usage.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -44,27 +44,27 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "retrie" = {
           depends = [
             (hsPkgs."retrie" or (errorHandler.buildDepError "retrie"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = if flags.buildexecutable then true else false;
-          };
+        };
         "demo-retrie" = {
           depends = [
             (hsPkgs."retrie" or (errorHandler.buildDepError "retrie"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
-            ];
+          ];
           buildable = if flags.buildexecutable then true else false;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -88,9 +88,9 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

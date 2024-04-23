@@ -21,24 +21,24 @@
       synopsis = "Limit number of IO actions started per second";
       description = "Limit the number of tasks started per second. The throttle function will\nrun all actions concurrently but only starting a certain number per\nsecond. It will wait for all tasks and return the results in a list.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."threads" or (errorHandler.buildDepError "threads"))
           (hsPkgs."SafeSemaphore" or (errorHandler.buildDepError "SafeSemaphore"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "test-io-threads" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."io-throttle" or (errorHandler.buildDepError "io-throttle"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

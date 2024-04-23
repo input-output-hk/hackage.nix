@@ -21,7 +21,7 @@
       synopsis = "Simple Presentaion Utility";
       description = "If you want to do your presentation by terminal,\nor your slide is too simple to make with Powerpoint,\nor such softwares, It may be useful.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "tkhs" = {
@@ -33,17 +33,17 @@
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
             (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-            ];
+          ];
           buildable = if flags.test then false else true;
-          };
+        };
         "test" = {
           depends = [
             (hsPkgs."test-framework" or (errorHandler.buildDepError "test-framework"))
             (hsPkgs."test-framework-hunit" or (errorHandler.buildDepError "test-framework-hunit"))
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-            ];
+          ];
           buildable = if !flags.test then false else true;
-          };
         };
       };
-    }
+    };
+  }

@@ -6,8 +6,8 @@
         nix = import ../hackage/hls-exactprint-utils-0.5.0.1-r0-276918cefbf45845a986950c43b806704e96cae9e441ff187f2f9cb22e17111d.nix;
         revNum = 0;
         sha256 = "276918cefbf45845a986950c43b806704e96cae9e441ff187f2f9cb22e17111d";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

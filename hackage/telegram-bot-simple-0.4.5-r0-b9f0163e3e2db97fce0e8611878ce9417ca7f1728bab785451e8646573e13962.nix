@@ -21,7 +21,7 @@
       synopsis = "Easy to use library for building Telegram bots.";
       description = "Please see the README on Github at <https://github.com/fizruk/telegram-bot-simple#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example-echo-bot" = {
           depends = [
@@ -81,9 +81,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (flags.examples) (hsPkgs."telegram-bot-simple" or (errorHandler.buildDepError "telegram-bot-simple"));
+          ] ++ pkgs.lib.optional (flags.examples) (hsPkgs."telegram-bot-simple" or (errorHandler.buildDepError "telegram-bot-simple"));
           buildable = if flags.examples then true else false;
-          };
+        };
         "example-game-bot" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -111,7 +111,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optionals (flags.examples) [
+          ] ++ pkgs.lib.optionals (flags.examples) [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."blaze-html" or (errorHandler.buildDepError "blaze-html"))
             (hsPkgs."cookie" or (errorHandler.buildDepError "cookie"))
@@ -126,9 +126,9 @@
             (hsPkgs."telegram-bot-simple" or (errorHandler.buildDepError "telegram-bot-simple"))
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = if flags.examples then true else false;
-          };
+        };
         "example-todo-bot" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -156,9 +156,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optional (flags.examples) (hsPkgs."telegram-bot-simple" or (errorHandler.buildDepError "telegram-bot-simple"));
+          ] ++ pkgs.lib.optional (flags.examples) (hsPkgs."telegram-bot-simple" or (errorHandler.buildDepError "telegram-bot-simple"));
           buildable = if flags.examples then true else false;
-          };
         };
       };
-    }
+    };
+  }

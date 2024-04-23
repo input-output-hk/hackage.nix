@@ -21,31 +21,31 @@
       synopsis = "Securely erase memory contents by writing zeros to it.";
       description = "Securely erase memory contents by writing zeros to it.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "c" = {
           depends = [
             (hsPkgs."memzero" or (errorHandler.buildDepError "memzero"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "hs" = {
           depends = [
             (hsPkgs."memzero" or (errorHandler.buildDepError "memzero"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Support for Posix ACL";
       description = "Support for POSIX.1e /Access Control Lists/ (ACL), defined in\nsection 23 of the draft standard IEEE Std 1003.1e.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
+        ];
         libs = [ (pkgs."acl" or (errorHandler.sysDepError "acl")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,15 +21,15 @@
       synopsis = "Anonymous sum types";
       description = "Anonymous sum types.  Like tuples, but for sum types rather than\nfor product types.  Or, like Either, but for more than two types.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

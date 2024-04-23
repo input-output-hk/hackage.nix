@@ -21,7 +21,7 @@
       synopsis = "Implementation of source maps as proposed by Google and Mozilla.";
       description = "Implementation of source maps, revision 3, proposed by Google and Mozilla here\n<https://wiki.mozilla.org/DevTools/Features/SourceMap> and here\n<https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."attoparsec" or (errorHandler.buildDepError "attoparsec"))
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

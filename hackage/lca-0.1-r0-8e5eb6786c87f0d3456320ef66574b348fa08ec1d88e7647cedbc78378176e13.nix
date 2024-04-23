@@ -21,11 +21,11 @@
       synopsis = "Logarithmic online lowest common ancestor calculation";
       description = "Logarithmic online lowest common ancestor calculation";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A library to access the Dropbox HTTP API.";
       description = "A (very preliminary) library to access the Dropbox HTTP API:\n<https://www.dropbox.com/developers/reference/api>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -43,8 +43,8 @@
           (hsPkgs."tls" or (errorHandler.buildDepError "tls"))
           (hsPkgs."tls-extra" or (errorHandler.buildDepError "tls-extra"))
           (hsPkgs."certificate" or (errorHandler.buildDepError "certificate"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

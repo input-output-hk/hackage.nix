@@ -6,8 +6,8 @@
         nix = import ../hackage/helisp-0.1-r0-fdecf383e0d52d3200782788fca9ee2a0ca6a95190b6f4afdad7e71c794e65cd.nix;
         revNum = 0;
         sha256 = "fdecf383e0d52d3200782788fca9ee2a0ca6a95190b6f4afdad7e71c794e65cd";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

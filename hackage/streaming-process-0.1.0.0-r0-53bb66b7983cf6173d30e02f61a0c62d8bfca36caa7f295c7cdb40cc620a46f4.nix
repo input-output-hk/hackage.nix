@@ -21,7 +21,7 @@
       synopsis = "Streaming support for running system process";
       description = "Stream data in and out of external commands.  Configuration options\nare available to choose which inputs and outputs to use.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."streaming-with" or (errorHandler.buildDepError "streaming-with"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."transformers-base" or (errorHandler.buildDepError "transformers-base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "simple-processes" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
             (hsPkgs."streaming" or (errorHandler.buildDepError "streaming"))
             (hsPkgs."streaming-bytestring" or (errorHandler.buildDepError "streaming-bytestring"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

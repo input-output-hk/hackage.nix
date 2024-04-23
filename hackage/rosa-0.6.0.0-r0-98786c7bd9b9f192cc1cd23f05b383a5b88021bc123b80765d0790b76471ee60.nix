@@ -21,7 +21,7 @@
       synopsis = "Query the namecoin blockchain";
       description = "Rosa is a commmand line tool to query the namecoin blockhain.\nIt gets the JSON value of a name and other infos using namecoind\nlocal server and displays them in a pretty format.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rosa" = {
@@ -35,9 +35,9 @@
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."namecoin-update" or (errorHandler.buildDepError "namecoin-update"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

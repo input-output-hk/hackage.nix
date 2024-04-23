@@ -21,7 +21,7 @@
       synopsis = "WAI middleware for authenticating webhook payloads from Travis CI";
       description = "This package provides a simple WAI middleware for authenticating webhook\npayloads from @travis-ci.com@.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,8 +35,8 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vault" or (errorHandler.buildDepError "vault"))
           (hsPkgs."wai" or (errorHandler.buildDepError "wai"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

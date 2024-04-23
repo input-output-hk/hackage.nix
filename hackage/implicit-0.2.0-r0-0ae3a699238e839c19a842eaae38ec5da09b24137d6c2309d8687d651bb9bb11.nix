@@ -21,7 +21,7 @@
       synopsis = "Math-inspired programmatic 2&3D CAD: CSG, bevels, and shells; gcode export..";
       description = "A math-inspired programmatic CAD library in haskell.\nBuild objects with constructive solid geometry, bevels,\nshells and more in 2D & 3D. Then export to SVGs, STLs,\nor produce gcode directly!";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "extopenscad" = {
           depends = [
@@ -63,9 +63,9 @@
             (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "implicitsnap" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -90,9 +90,9 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "Benchmark" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -114,10 +114,10 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test-implicit" = {
           depends = [
@@ -127,10 +127,10 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "parser-bench" = {
           depends = [
@@ -139,9 +139,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."implicit" or (errorHandler.buildDepError "implicit"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

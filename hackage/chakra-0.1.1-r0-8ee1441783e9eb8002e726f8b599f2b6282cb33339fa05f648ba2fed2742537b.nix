@@ -21,7 +21,7 @@
       synopsis = "A REST Web Api server template for building (micro)services.";
       description = "A REST Web Api server template, that serves as a reference\nand avoids repetive boilerplate when building many (micro)services.\nThis combines best libraries available in Haskell web development, like RIO, warp, servant, etc.,\nand principles around 12-factor app.\n\nCheck @'Chakra'@ module documentation for example.\n\nIdea is to provide Curated & Opinionated set of packages and\npatterns to build well designed web api applications in Haskell.\n\nInspiration from Python Flask, ASP.NET Core\n\nFor more details, please see the README on Github at <https://github.com/cackharot/haskell-web-api-template#readme>";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -50,9 +50,9 @@
           (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
           (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
           (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "chakra-exe" = {
           depends = [
@@ -85,10 +85,10 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "chakra-test" = {
           depends = [
@@ -119,9 +119,9 @@
             (hsPkgs."wai-extra" or (errorHandler.buildDepError "wai-extra"))
             (hsPkgs."wai-middleware-prometheus" or (errorHandler.buildDepError "wai-middleware-prometheus"))
             (hsPkgs."warp" or (errorHandler.buildDepError "warp"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

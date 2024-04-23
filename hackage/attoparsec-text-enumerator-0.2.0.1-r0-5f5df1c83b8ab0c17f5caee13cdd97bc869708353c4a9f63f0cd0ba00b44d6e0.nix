@@ -14,7 +14,7 @@
       identifier = {
         name = "attoparsec-text-enumerator";
         version = "0.2.0.1";
-        };
+      };
       license = "MIT";
       copyright = "Copyright (c) Felipe Lessa 2010, John Millikin 2010";
       maintainer = "Felipe Lessa <felipe.lessa@gmail.com>";
@@ -24,7 +24,7 @@
       synopsis = "(deprecated)";
       description = "This package has been deprecated.  You recommend that you use\neither @attoparsec-enumerator@ or @attoparsec-conduit@\npackages.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."attoparsec-text" or (errorHandler.buildDepError "attoparsec-text"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."enumerator" or (errorHandler.buildDepError "enumerator"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

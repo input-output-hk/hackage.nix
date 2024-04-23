@@ -21,11 +21,11 @@
       synopsis = "Dummy package to disable Hood without having to remove all the calls to observe";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

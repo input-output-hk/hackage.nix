@@ -21,11 +21,11 @@
       synopsis = "A type for integers modulo some constant.";
       description = "This module provides a convenient type for working with\nintegers modulo some constant. It saves you from manually\nwrapping numeric operations all over the place and\nprevents a range of simple mistakes.\nIt also provides some really cute syntax for these types\nlike @ℤ/7@ for integers modulo 7.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

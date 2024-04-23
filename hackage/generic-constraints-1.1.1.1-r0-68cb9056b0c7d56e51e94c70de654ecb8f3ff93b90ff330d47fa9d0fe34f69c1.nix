@@ -21,25 +21,25 @@
       synopsis = "Constraints via Generic";
       description = "Standalone deriving without boiler-plate";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."th-abstraction" or (errorHandler.buildDepError "th-abstraction"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "unittests" = {
           depends = [
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."generic-constraints" or (errorHandler.buildDepError "generic-constraints"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

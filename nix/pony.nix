@@ -6,8 +6,8 @@
         nix = import ../hackage/pony-1.0-r0-a5c7f5f98e24a077e383c51968d2643103b376da5a2ce07d540228edd14a1a28.nix;
         revNum = 0;
         sha256 = "a5c7f5f98e24a077e383c51968d2643103b376da5a2ce07d540228edd14a1a28";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

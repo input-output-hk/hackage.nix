@@ -21,7 +21,7 @@
       synopsis = "Krank checks your code source comments for important markers";
       description = "Comments are part of our code and are not usually tested correctly. Hence their content can become incoherent or obsolete. Krank tries to avoid that by running checkers on the comment themselves.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "krank" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."PyF" or (errorHandler.buildDepError "PyF"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "krank-test" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."PyF" or (errorHandler.buildDepError "PyF"))
             (hsPkgs."krank" or (errorHandler.buildDepError "krank"))
             (hsPkgs."megaparsec" or (errorHandler.buildDepError "megaparsec"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

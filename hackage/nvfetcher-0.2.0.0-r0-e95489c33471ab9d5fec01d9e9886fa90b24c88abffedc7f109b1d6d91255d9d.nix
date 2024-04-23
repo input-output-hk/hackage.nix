@@ -21,7 +21,7 @@
       synopsis = "Generate nix sources expr for the latest version of packages";
       description = "Please see README";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -38,9 +38,9 @@
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "nvfetcher" = {
           depends = [
@@ -61,9 +61,9 @@
             (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "example" = {
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
@@ -80,9 +80,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."nvfetcher" or (errorHandler.buildDepError "nvfetcher"))
-            ];
+          ];
           buildable = if !flags.build-example then false else true;
-          };
         };
       };
-    }
+    };
+  }

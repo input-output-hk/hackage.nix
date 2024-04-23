@@ -6,8 +6,8 @@
         nix = import ../hackage/bindings-libv4l2-0.1-r0-aae2eafa3a603f7d52baad00b79c5e197b8e00678fc9ffebccd80bcf3ee67263.nix;
         revNum = 0;
         sha256 = "aae2eafa3a603f7d52baad00b79c5e197b8e00678fc9ffebccd80bcf3ee67263";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

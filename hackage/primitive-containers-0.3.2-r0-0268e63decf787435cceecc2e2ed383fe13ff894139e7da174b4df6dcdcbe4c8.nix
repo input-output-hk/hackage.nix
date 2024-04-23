@@ -21,7 +21,7 @@
       synopsis = "containers backed by arrays";
       description = "Containers backed by flat arrays. Updates require rebuilding the\nentire structure, but lookups are cache coherent.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,17 +34,17 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ] ++ (if flags.checked
+        ] ++ (if flags.checked
           then [
             (hsPkgs."contiguous-checked" or (errorHandler.buildDepError "contiguous-checked"))
             (hsPkgs."primitive-checked" or (errorHandler.buildDepError "primitive-checked"))
-            ]
+          ]
           else [
             (hsPkgs."contiguous" or (errorHandler.buildDepError "contiguous"))
             (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "test" = {
           depends = [
@@ -61,10 +61,10 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "gauge" = {
           depends = [
@@ -75,9 +75,9 @@
             (hsPkgs."gauge" or (errorHandler.buildDepError "gauge"))
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

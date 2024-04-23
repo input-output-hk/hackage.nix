@@ -21,7 +21,7 @@
       synopsis = "A simple interface for generating persistent data and linking its dependencies";
       description = "Please see README.md";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -48,9 +48,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "readme" = {
           depends = [
@@ -66,9 +66,9 @@
             (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
             (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
-            ] ++ (pkgs.lib).optional (flags.persistent-template) (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"));
+          ] ++ pkgs.lib.optional (flags.persistent-template) (hsPkgs."persistent-template" or (errorHandler.buildDepError "persistent-template"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

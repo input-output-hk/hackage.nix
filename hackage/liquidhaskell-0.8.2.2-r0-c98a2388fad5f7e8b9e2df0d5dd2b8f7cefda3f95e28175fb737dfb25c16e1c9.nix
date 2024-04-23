@@ -21,7 +21,7 @@
       synopsis = "Liquid Types for Haskell";
       description = "Liquid Types for Haskell.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -68,9 +68,9 @@
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
           (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "liquid" = {
           depends = [
@@ -86,10 +86,10 @@
             (hsPkgs."located-base" or (errorHandler.buildDepError "located-base"))
             (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
             (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "test" = {
           depends = [
@@ -111,9 +111,9 @@
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
             (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "liquidhaskell-parser" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -129,7 +129,7 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
             (hsPkgs."liquid-fixpoint" or (errorHandler.buildDepError "liquid-fixpoint"))
             (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-            ] ++ (if flags.devel
+          ] ++ (if flags.devel
             then [
               (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
               (hsPkgs."binary" or (errorHandler.buildDepError "binary"))
@@ -151,7 +151,7 @@
               (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."hpc" or (errorHandler.buildDepError "hpc"))
-              ]
+            ]
             else [
               (hsPkgs."liquidhaskell" or (errorHandler.buildDepError "liquidhaskell"))
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -164,9 +164,9 @@
               (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
               (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
               (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-              ]);
+            ]);
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

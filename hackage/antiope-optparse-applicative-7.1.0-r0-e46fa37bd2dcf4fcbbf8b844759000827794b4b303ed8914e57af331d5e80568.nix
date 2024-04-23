@@ -14,7 +14,7 @@
       identifier = {
         name = "antiope-optparse-applicative";
         version = "7.1.0";
-        };
+      };
       license = "MIT";
       copyright = "Arbor Networks";
       maintainer = "mayhem@arbor.net";
@@ -24,7 +24,7 @@
       synopsis = "Please see the README on Github at <https://github.com/arbor/antiope#readme>";
       description = "Please see the README on Github at <https://github.com/arbor/antiope#readme>.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."amazonka-s3" or (errorHandler.buildDepError "amazonka-s3"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "antiope-optparse-applicative-test" = {
           depends = [
@@ -48,9 +48,9 @@
             (hsPkgs."hedgehog" or (errorHandler.buildDepError "hedgehog"))
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
             (hsPkgs."hw-hspec-hedgehog" or (errorHandler.buildDepError "hw-hspec-hedgehog"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

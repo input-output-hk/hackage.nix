@@ -21,15 +21,15 @@
       synopsis = "Phonetic codes: Soundex and Phonix";
       description = "This package implements the \"phonetic coding\" algorithms\nSoundex and Phonix.  A phonetic coding algorithm\ntransforms a word into a similarity hash based on an\napproximation of its sounds.  Thus, similar-sounding\nwords tend to have the same hash.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

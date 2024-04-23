@@ -21,7 +21,7 @@
       synopsis = "A library of queuelike data structures, both functional and stateful.";
       description = "Contains several implementations of data structures implementing a /single-in, single-out/ paradigm.  Intended to be a better, more useful replacement for pqueue-mtl.\nIn particular, includes an experimental and possibly genuinely new trie-based priority queue on strings.  Feedback is appreciated.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -30,8 +30,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."stateful-mtl" or (errorHandler.buildDepError "stateful-mtl"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

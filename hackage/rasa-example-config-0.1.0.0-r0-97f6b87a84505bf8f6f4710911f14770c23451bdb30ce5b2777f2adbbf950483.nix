@@ -21,7 +21,7 @@
       synopsis = "Example user config for Rasa";
       description = "Example user config for Rasa";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "rasa" = {
@@ -37,9 +37,9 @@
             (hsPkgs."rasa-ext-slate" or (errorHandler.buildDepError "rasa-ext-slate"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

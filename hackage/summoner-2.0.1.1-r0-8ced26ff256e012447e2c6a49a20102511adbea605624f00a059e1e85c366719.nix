@@ -21,7 +21,7 @@
       synopsis = "Tool for scaffolding fully configured batteries-included production-level Haskell projects.";
       description = "Tool for scaffolding fully configured batteries-included production-level Haskell projects.\nSee [README.md](https://github.com/kowainik/summoner#-summoner) for details.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -42,19 +42,19 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tomland" or (errorHandler.buildDepError "tomland"))
           (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "summon" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."relude" or (errorHandler.buildDepError "relude"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "summoner-test" = {
           depends = [
@@ -71,9 +71,9 @@
             (hsPkgs."tree-diff" or (errorHandler.buildDepError "tree-diff"))
             (hsPkgs."summoner" or (errorHandler.buildDepError "summoner"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

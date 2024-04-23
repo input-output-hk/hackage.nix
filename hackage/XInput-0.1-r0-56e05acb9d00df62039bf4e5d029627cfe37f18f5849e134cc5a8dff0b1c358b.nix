@@ -21,15 +21,15 @@
       synopsis = "Bindings for the DirectX XInput library.";
       description = "Bindings for the DirectX XInput library.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
-          ];
+        ];
         libs = [ (pkgs."xinput" or (errorHandler.sysDepError "xinput")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

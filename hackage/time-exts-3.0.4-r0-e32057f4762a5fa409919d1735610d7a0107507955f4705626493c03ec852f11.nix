@@ -21,7 +21,7 @@
       synopsis = "Yet another time library";
       description = "A stand-alone time library implementing Unix and UTC timestamps with varying granularity.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -36,9 +36,9 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "time-exts-unit-tests" = {
           depends = [
@@ -56,9 +56,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

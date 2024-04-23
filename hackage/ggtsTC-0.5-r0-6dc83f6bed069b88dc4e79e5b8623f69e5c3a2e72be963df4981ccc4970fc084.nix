@@ -21,7 +21,7 @@
       synopsis = "A type checker and runtime system of rCOS/g (impl. of ggts-FCS).";
       description = "A type checker and runtime system of rCOS/g\nfollowing the definitions in the /ggts-FCS/ article.\n\n* Title: A graph-based generic type system for object-oriented programs\n\n* Authors: Wei Ke, Zhiming Liu, Shuling Wang and Liang Zhao\n\n* Accepted by: Frontier of Computer Science\n\n* Year: 2012\n\nProgrammed by: Wei Ke\n\n(c) 2012 Wei Ke\n\nLicense:  GPL-3\n\nLicense file: <LICENSE>\n\nSource package download: <ggtsTC-0.5.tar.gz>\n\nrCOS/g grammar: <grammar>";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "TC" = {
@@ -29,9 +29,9 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A Pandoc filter for emphasizing code in fenced blocks";
       description = "A Pandoc filter for emphasizing sections of code in fenced blocks.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,19 +33,19 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "pandoc-emphasize-code" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."pandoc-types" or (errorHandler.buildDepError "pandoc-types"))
             (hsPkgs."pandoc-emphasize-code" or (errorHandler.buildDepError "pandoc-emphasize-code"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "filter-tests" = {
           depends = [
@@ -57,9 +57,9 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-hspec" or (errorHandler.buildDepError "tasty-hspec"))
             (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

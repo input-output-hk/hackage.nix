@@ -21,7 +21,7 @@
       synopsis = "Monadic HTTP request handlers combinators to build a standalone web apps.";
       description = "Monadic HTTP request handlers combinators to build a standalone web apps. Most of them deal with request data.\nSome of them allow mapping part of the URL to public folders in the file system. There is also a combinator for\nsending files efficiently in the response (a fork of the HTTP library was necessary for this, included here).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,8 +39,8 @@
           (hsPkgs."haskell98" or (errorHandler.buildDepError "haskell98"))
           (hsPkgs."xhtml" or (errorHandler.buildDepError "xhtml"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

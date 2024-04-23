@@ -21,7 +21,7 @@
       synopsis = "Bindings to the LLVM compiler toolkit.";
       description = "High-level bindings to the LLVM compiler toolkit.\n\n* New in 3.2.0.0: Builds against LLVM 3.2\n\n* New in 3.0.0.0: The low-level bindings have been split into the\nllvm-base package.\n\n* New in 0.9.1.1: Builds against LLVM 2.9.\n\n* New in 0.9.1.0: Util.Memory for memory related intrinsics.\n\n* New in 0.9.0.0: Adapted to LLVM 2.8 (removed support for Union types).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."type-level" or (errorHandler.buildDepError "type-level"))
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-          ];
-        frameworks = (pkgs.lib).optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
+        ];
+        frameworks = pkgs.lib.optional (system.isOsx) (pkgs."vecLib" or (errorHandler.sysDepError "vecLib"));
         buildable = true;
-        };
       };
-    }
+    };
+  }

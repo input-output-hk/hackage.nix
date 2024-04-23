@@ -6,8 +6,8 @@
         nix = import ../hackage/gogol-factchecktools-0.5.0-r0-96d426aa6147a97d39603d405a870918747a7823cecf960f01daee2ea614407a.nix;
         revNum = 0;
         sha256 = "96d426aa6147a97d39603d405a870918747a7823cecf960f01daee2ea614407a";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

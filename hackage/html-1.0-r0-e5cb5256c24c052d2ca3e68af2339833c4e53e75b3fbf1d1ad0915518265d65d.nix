@@ -21,11 +21,11 @@
       synopsis = "HTML combinator library";
       description = "This package contains a combinator library for constructing\nHTML documents.";
       buildType = "Custom";
-      };
+    };
     components = {
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

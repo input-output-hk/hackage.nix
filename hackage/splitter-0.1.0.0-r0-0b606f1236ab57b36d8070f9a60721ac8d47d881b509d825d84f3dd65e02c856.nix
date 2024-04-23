@@ -21,7 +21,7 @@
       synopsis = "Use numerical ranges to split out certain lines from a file.";
       description = "Splitter lets you specify numerical ranges to split out certain lines\nfrom a file. This means that you can extract exactly what you want from a file and only\nthe sections that you want. Or, if you are only interested in a log file after a certain\npreamble then you can specify that range of files too.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "splitter" = {
@@ -31,9 +31,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."parsec" or (errorHandler.buildDepError "parsec"))
             (hsPkgs."range" or (errorHandler.buildDepError "range"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

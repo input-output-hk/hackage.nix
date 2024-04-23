@@ -21,7 +21,7 @@
       synopsis = "Fixed size big integers for Haskell Web3 library.";
       description = "This package implements codec instances and other helper functions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."memory-hexstring" or (errorHandler.buildDepError "memory-hexstring"))
           (hsPkgs."scale" or (errorHandler.buildDepError "scale"))
           (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -47,9 +47,9 @@
             (hsPkgs."memory-hexstring" or (errorHandler.buildDepError "memory-hexstring"))
             (hsPkgs."scale" or (errorHandler.buildDepError "scale"))
             (hsPkgs."wide-word" or (errorHandler.buildDepError "wide-word"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "A barebones textboard for the Gemini protocol";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "gemini-textboard" = {
@@ -41,9 +41,9 @@
             (hsPkgs."cryptohash-sha256" or (errorHandler.buildDepError "cryptohash-sha256"))
             (hsPkgs."base64" or (errorHandler.buildDepError "base64"))
             (hsPkgs."HsOpenSSL" or (errorHandler.buildDepError "HsOpenSSL"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

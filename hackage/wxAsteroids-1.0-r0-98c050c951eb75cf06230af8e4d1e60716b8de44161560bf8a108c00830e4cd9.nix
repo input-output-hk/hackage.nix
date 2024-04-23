@@ -21,7 +21,7 @@
       synopsis = "Try to avoid the asteroids with your space ship";
       description = "The Asteroids game, using the wxHaskell GUI, as described in\n\"wxHaskell, A Portable and Concise GUI Library for Haskell\"\nhttp://legacy.cs.uu.nl/daan/download/papers/wxhaskell.pdf";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "wxAsteroids" = {
@@ -31,9 +31,9 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."wxcore" or (errorHandler.buildDepError "wxcore"))
             (hsPkgs."wx" or (errorHandler.buildDepError "wx"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

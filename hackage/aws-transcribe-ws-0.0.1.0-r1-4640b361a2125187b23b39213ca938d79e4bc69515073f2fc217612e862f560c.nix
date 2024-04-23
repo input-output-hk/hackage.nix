@@ -21,7 +21,7 @@
       synopsis = "Websocket streaming to Amazon Transcribe service";
       description = "Use the WebSocket protocol to stream audio to the AWS Transcribe service";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -39,9 +39,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "am-test-test" = {
           depends = [
@@ -60,9 +60,9 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."wuss" or (errorHandler.buildDepError "wuss"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

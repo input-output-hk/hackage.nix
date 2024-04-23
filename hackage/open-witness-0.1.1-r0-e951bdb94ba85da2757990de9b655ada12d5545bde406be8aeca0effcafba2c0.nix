@@ -21,15 +21,15 @@
       synopsis = "open witnesses";
       description = "Open witnesses are witnesses that can witness to any type. However, they cannot be constructed, they can only be generated in the IO monad.\nSee the paper /Witnesses and Open Witnesses/ (<http://semantic.org/stuff/Open-Witnesses.pdf>).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."witness" or (errorHandler.buildDepError "witness"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

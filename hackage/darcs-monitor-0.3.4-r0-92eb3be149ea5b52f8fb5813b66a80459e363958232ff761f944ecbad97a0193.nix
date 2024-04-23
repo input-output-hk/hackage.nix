@@ -21,7 +21,7 @@
       synopsis = "Darcs repository monitor (sends email)";
       description = "Darcs-monitor will send email to a specified recipient\nabout new changes added to a specific darcs repository. It can be run\nas an apply posthook (resulting in near-instantaneous \"push\"\nemails), or periodically from Cron, or occasionally by hand, whatever\nseems most convenient.";
       buildType = "Custom";
-      };
+    };
     components = {
       exes = {
         "darcs-monitor" = {
@@ -33,14 +33,14 @@
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
               (hsPkgs."process" or (errorHandler.buildDepError "process"))
               (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-              ]
+            ]
             else [
               (hsPkgs."base" or (errorHandler.buildDepError "base"))
               (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
               (hsPkgs."HaXml" or (errorHandler.buildDepError "HaXml"))
-              ];
+            ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

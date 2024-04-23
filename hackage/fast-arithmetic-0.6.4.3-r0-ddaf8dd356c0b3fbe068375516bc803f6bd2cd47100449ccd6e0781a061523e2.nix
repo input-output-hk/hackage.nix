@@ -21,24 +21,24 @@
       synopsis = "Fast functions on integers.";
       description = "Fast functions for number theory and combinatorics with a high level of safety guaranteed by [ATS](http://www.ats-lang.org/).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hgmp" or (errorHandler.buildDepError "hgmp"))
-          ];
+        ];
         buildable = if system.isWindows then false else true;
-        };
+      };
       sublibs = {
         "pure-haskell" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       tests = {
         "fast-arithmetic-test" = {
           depends = [
@@ -49,10 +49,10 @@
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
             (hsPkgs."fast-arithmetic".components.sublibs.pure-haskell or (errorHandler.buildDepError "fast-arithmetic:pure-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "fast-arithmetic-bench" = {
           depends = [
@@ -62,9 +62,9 @@
             (hsPkgs."arithmoi" or (errorHandler.buildDepError "arithmoi"))
             (hsPkgs."combinat" or (errorHandler.buildDepError "combinat"))
             (hsPkgs."fast-arithmetic".components.sublibs.pure-haskell or (errorHandler.buildDepError "fast-arithmetic:pure-haskell"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

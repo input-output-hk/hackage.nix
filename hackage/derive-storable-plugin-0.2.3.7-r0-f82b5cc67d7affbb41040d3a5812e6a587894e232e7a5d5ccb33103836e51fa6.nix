@@ -21,7 +21,7 @@
       synopsis = "GHC core plugin supporting the derive-storable package.";
       description = "The package helps derive-storable package in forcing compile time evaluation of\nsizes, alignments and offsets.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -29,9 +29,9 @@
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
           (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "c_alignment" = {
           depends = [
@@ -42,10 +42,10 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
             (hsPkgs."ghci" or (errorHandler.buildDepError "ghci"))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "plugin-benchmark" = {
           depends = [
@@ -54,9 +54,9 @@
             (hsPkgs."criterion" or (errorHandler.buildDepError "criterion"))
             (hsPkgs."derive-storable" or (errorHandler.buildDepError "derive-storable"))
             (hsPkgs."derive-storable-plugin" or (errorHandler.buildDepError "derive-storable-plugin"))
-            ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.4") (hsPkgs."text" or (errorHandler.buildDepError "text"));
+          ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."text" or (errorHandler.buildDepError "text"));
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

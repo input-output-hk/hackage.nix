@@ -6,8 +6,8 @@
         nix = import ../hackage/polytypeable-utils-0.1.0.0-r0-cb4dc7a0190d2e3c275f04ba96063391120a19b132f2afe00fedd937097563b0.nix;
         revNum = 0;
         sha256 = "cb4dc7a0190d2e3c275f04ba96063391120a19b132f2afe00fedd937097563b0";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

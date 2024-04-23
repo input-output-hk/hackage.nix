@@ -6,8 +6,8 @@
         nix = import ../hackage/opentelemetry-plugin-1.0.0-r0-0f3c22ada7eccd09e348fd6454c1e4b8b93d45056212094c910bb89f3aa0c927.nix;
         revNum = 0;
         sha256 = "0f3c22ada7eccd09e348fd6454c1e4b8b93d45056212094c910bb89f3aa0c927";
-        };
-      default = "r0";
       };
+      default = "r0";
     };
-  }
+  };
+}

@@ -21,7 +21,7 @@
       synopsis = "Infrastructure for writing patches which act on other types.";
       description = "In this library, a patch is something which can be applied, analogous to a\nfunction, and which distinguishes returning the argument it was provided from\nreturning something else.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,18 +33,18 @@
           (hsPkgs."semigroupoids" or (errorHandler.buildDepError "semigroupoids"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."witherable" or (errorHandler.buildDepError "witherable"))
-          ] ++ (if flags.split-these
+        ] ++ (if flags.split-these
           then [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."semialign" or (errorHandler.buildDepError "semialign"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ]
+          ]
           else [
             (hsPkgs."these" or (errorHandler.buildDepError "these"))
             (hsPkgs."monoidal-containers" or (errorHandler.buildDepError "monoidal-containers"))
-            ]);
+          ]);
         buildable = true;
-        };
+      };
       tests = {
         "hlint" = {
           depends = [
@@ -53,9 +53,9 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."filemanip" or (errorHandler.buildDepError "filemanip"))
             (hsPkgs."hlint" or (errorHandler.buildDepError "hlint"))
-            ];
+          ];
           buildable = if compiler.isGhcjs && true then false else true;
-          };
         };
       };
-    }
+    };
+  }

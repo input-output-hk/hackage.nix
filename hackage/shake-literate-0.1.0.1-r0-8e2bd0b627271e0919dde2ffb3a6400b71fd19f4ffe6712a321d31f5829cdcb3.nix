@@ -21,15 +21,15 @@
       synopsis = "Rules for building literate programs in shake";
       description = "Library for building literate programs in [shake](hackage.haskell.org/package/shake), with support for [illiterate](http://github.com/vmchale/illiterate).";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

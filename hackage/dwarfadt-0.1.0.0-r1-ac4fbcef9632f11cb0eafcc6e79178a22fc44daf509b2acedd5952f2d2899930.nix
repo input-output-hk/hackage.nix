@@ -21,7 +21,7 @@
       synopsis = "High-level wrapper around the dwarf library";
       description = "dwarf is an excellent library to read dwarf files, but the output of\nparsing dwarf is very low-level and difficult to work with.\n\nThis library intends to wrap dwarf and return a simple ADT representing\nthe DWARF information in a high-level way, easy to work with.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -35,9 +35,9 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
           (hsPkgs."TraceUtils" or (errorHandler.buildDepError "TraceUtils"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "dumpdwarf" = {
           depends = [
@@ -45,17 +45,17 @@
             (hsPkgs."dwarfadt" or (errorHandler.buildDepError "dwarfadt"))
             (hsPkgs."dwarf-el" or (errorHandler.buildDepError "dwarf-el"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "dumpadt" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."dwarfadt" or (errorHandler.buildDepError "dwarfadt"))
             (hsPkgs."dwarf-el" or (errorHandler.buildDepError "dwarf-el"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

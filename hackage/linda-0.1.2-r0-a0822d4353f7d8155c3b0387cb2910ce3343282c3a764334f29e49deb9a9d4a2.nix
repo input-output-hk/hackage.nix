@@ -21,15 +21,15 @@
       synopsis = "LINear Discriminant Analysis";
       description = "This package (mainly the module LDA) implements the linear discriminant analysis.\nIt provides both data classification (according to Fisher) and data analysis (by discriminant criteria).\n\nCaused by the usage of the hmatrix package this package needs LAPACK too.\nSee INSTALL file for more introductions.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."hmatrix" or (errorHandler.buildDepError "hmatrix"))
           (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

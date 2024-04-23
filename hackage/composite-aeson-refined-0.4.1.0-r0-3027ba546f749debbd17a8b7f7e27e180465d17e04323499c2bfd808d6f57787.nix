@@ -21,15 +21,15 @@
       synopsis = "composite-aeson support for Refined from the refined package";
       description = "JsonFormat and DefaultJsonFormat for Refined";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."composite-aeson" or (errorHandler.buildDepError "composite-aeson"))
           (hsPkgs."refined" or (errorHandler.buildDepError "refined"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Random number generation";
       description = "Random number generation based on orthogonal typeclasses\nfor entropy sources and random variable distributions, all\nserved up on a monadic platter.  Aspires to be useful\nin an idiomatic way in both \\\"pure\\\" and \\\"impure\\\" styles,\nas well as reasonably fast.  May not yet meet the latter\ngoal, but I think the former is starting to shape up\nnicely.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -32,8 +32,8 @@
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."stateref" or (errorHandler.buildDepError "stateref"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

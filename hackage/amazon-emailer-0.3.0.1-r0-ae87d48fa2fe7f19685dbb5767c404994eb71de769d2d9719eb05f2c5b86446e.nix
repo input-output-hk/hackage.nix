@@ -21,7 +21,7 @@
       synopsis = "A queue daemon for Amazon's SES with a PostgreSQL table as a queue.";
       description = "This application checks every second for messages in a queue table,\nif there exist some that haven't been sent, it grabs\na specified number out (based on what your current send rate is), sends them,\nmarks them as sent, and goes back to sleep.";
       buildType = "Simple";
-      };
+    };
     components = {
       exes = {
         "amazon-emailer" = {
@@ -36,9 +36,9 @@
             (hsPkgs."mime-mail" or (errorHandler.buildDepError "mime-mail"))
             (hsPkgs."mime-mail-ses" or (errorHandler.buildDepError "mime-mail-ses"))
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

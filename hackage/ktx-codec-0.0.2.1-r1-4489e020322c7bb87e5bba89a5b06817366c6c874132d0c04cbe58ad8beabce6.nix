@@ -21,7 +21,7 @@
       synopsis = "Khronos texture format";
       description = "This package implements low-level encoding and decoding for .ktx and .ktx2 files.\n\nA framework-specific wrapper may be needed to work with the decoded data and/or supercompression.\nCheck out test/Spec.hs for usage examples.\n\nKTX 1: https://registry.khronos.org/KTX/specs/1.0/ktxspec.v1.html\n\nKTX 2: https://registry.khronos.org/KTX/specs/2.0/ktxspec.v2.html#_abstract";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -31,9 +31,9 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "ktx-codec-test" = {
           depends = [
@@ -50,9 +50,9 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."zstd" or (errorHandler.buildDepError "zstd"))
-            ];
+          ];
           buildable = if !flags.tests then false else true;
-          };
         };
       };
-    }
+    };
+  }

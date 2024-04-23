@@ -21,16 +21,16 @@
       synopsis = "QuickCheck extension for higher-order properties";
       description = "Enhancements for property-based testing of higher-order properties.\n\n* Associate types to their representations with the\n@Constructible@ class.\n* @Testable'@ class,\nvariant of @Testable@ with an improved instance for @(->)@.\n* Representation of higher-order functions (via test-fun).\n* Testable equality @TestEq@.\n* Explicit testable type of @Equation@.\n\nSee also README.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           (hsPkgs."test-fun" or (errorHandler.buildDepError "test-fun"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "qcho-test" = {
           depends = [
@@ -39,18 +39,18 @@
             (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = true;
-          };
+        };
         "qcho-sample" = {
           depends = [
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-higherorder" or (errorHandler.buildDepError "quickcheck-higherorder"))
             (hsPkgs."test-fun" or (errorHandler.buildDepError "test-fun"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
-            ];
+          ];
           buildable = if !flags.sample then false else true;
-          };
         };
       };
-    }
+    };
+  }

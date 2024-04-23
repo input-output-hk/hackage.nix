@@ -21,15 +21,15 @@
       synopsis = "Unagi Chan IO-Streams";
       description = "IO-Streams implemented underneath with Unagi\nchannels. This library is a straight port of Greg Collins' IO-Streams\nChan implementation.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."unagi-chan" or (errorHandler.buildDepError "unagi-chan"))
           (hsPkgs."io-streams" or (errorHandler.buildDepError "io-streams"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

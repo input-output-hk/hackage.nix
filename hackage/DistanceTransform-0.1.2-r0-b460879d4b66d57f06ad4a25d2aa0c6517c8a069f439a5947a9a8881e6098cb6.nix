@@ -21,16 +21,16 @@
       synopsis = "Distance transform function.";
       description = "An n-D distance transform that computes the Euclidean\ndistance between each element in a discrete field and the nearest cell\ncontaining a zero.\n\nThe algorithm implemented is based off of\nMeijster et al., /\"A general algorithm for computing distance/\n/transforms in linear time.\"/ Parallel versions of both the Euclidean\ndistance transform and squared Euclidean distance transform are also\nprovided.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "tests" = {
           depends = [
@@ -40,9 +40,9 @@
             (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
             (hsPkgs."DistanceTransform" or (errorHandler.buildDepError "DistanceTransform"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,25 +21,25 @@
       synopsis = "Create strippable HKD via TH";
       description = "Please see Data.Barbie.TH";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           (hsPkgs."barbies" or (errorHandler.buildDepError "barbies"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "th" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."barbies" or (errorHandler.buildDepError "barbies"))
             (hsPkgs."barbies-th" or (errorHandler.buildDepError "barbies-th"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

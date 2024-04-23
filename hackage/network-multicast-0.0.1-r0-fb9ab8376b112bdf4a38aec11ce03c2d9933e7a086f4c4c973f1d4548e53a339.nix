@@ -21,14 +21,14 @@
       synopsis = "Simple multicast library";
       description = "The \"Network.Multicast\" module is for sending\nUDP datagrams over multicast (class D) addresses.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."network" or (errorHandler.buildDepError "network"))
-          ];
+        ];
         buildable = true;
-        };
       };
-    }
+    };
+  }

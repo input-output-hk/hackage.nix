@@ -21,7 +21,7 @@
       synopsis = "Opentype loading and writing";
       description = "This library supports loading and writing of opentype files.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -33,9 +33,9 @@
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           (hsPkgs."pretty-hex" or (errorHandler.buildDepError "pretty-hex"))
-          ];
+        ];
         buildable = true;
-        };
-      tests = { "test" = { buildable = true; }; };
       };
-    }
+      tests = { "test" = { buildable = true; }; };
+    };
+  }

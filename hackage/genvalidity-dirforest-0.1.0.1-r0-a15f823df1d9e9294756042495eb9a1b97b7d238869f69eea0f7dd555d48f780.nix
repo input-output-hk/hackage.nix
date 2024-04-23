@@ -21,7 +21,7 @@
       synopsis = "Generators for typed directory forests";
       description = "";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -34,9 +34,9 @@
           (hsPkgs."genvalidity-containers" or (errorHandler.buildDepError "genvalidity-containers"))
           (hsPkgs."genvalidity-path" or (errorHandler.buildDepError "genvalidity-path"))
           (hsPkgs."path" or (errorHandler.buildDepError "path"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       tests = {
         "dirforest-test" = {
           depends = [
@@ -53,13 +53,13 @@
             (hsPkgs."path" or (errorHandler.buildDepError "path"))
             (hsPkgs."path-io" or (errorHandler.buildDepError "path-io"))
             (hsPkgs."sydtest" or (errorHandler.buildDepError "sydtest"))
-            ];
+          ];
           build-tools = [
             (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
-            ];
+          ];
           buildable = true;
-          };
         };
+      };
       benchmarks = {
         "dirforest-bench" = {
           depends = [
@@ -70,9 +70,9 @@
             (hsPkgs."genvalidity-criterion" or (errorHandler.buildDepError "genvalidity-criterion"))
             (hsPkgs."genvalidity-dirforest" or (errorHandler.buildDepError "genvalidity-dirforest"))
             (hsPkgs."genvalidity-text" or (errorHandler.buildDepError "genvalidity-text"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }

@@ -21,7 +21,7 @@
       synopsis = "Declarative, compositional Wai responses";
       description = "A method to writing Wai responses\n\nThis library attempts to make it easier to write nice Wai response handlers\nby giving us a Sinatra/\n<https://hackage.haskell.org/package/scotty Scotty>-like syntax for declaring HTTP-verb oriented\nroutes, in addition to file-extension handling and rose-tree like composition.\nNot only do we have literal route specification, like\n<https://hackage.haskell.org/package/scotty Scotty> &\n<https://hackage.haskell.org/package/spock Spock>, but we\ncan also embed\n<https://hackage.haskell.org/package/attoparsec Attoparsec>\nparsers and <https://hackage.haskell.org/package/regex-compat Regular Expressions>\n/directly/ in our routes, with our handlers\nreflecting their results. You can find more information in the\n<https://www.fpcomplete.com/user/AthanClark/nested-routes demo>.\nand the examples.";
       buildType = "Simple";
-      };
+    };
     components = {
       "library" = {
         depends = [
@@ -54,9 +54,9 @@
           (hsPkgs."poly-arity" or (errorHandler.buildDepError "poly-arity"))
           (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
           (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-          ];
+        ];
         buildable = true;
-        };
+      };
       exes = {
         "example" = {
           depends = [
@@ -89,9 +89,9 @@
             (hsPkgs."poly-arity" or (errorHandler.buildDepError "poly-arity"))
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-            ];
+          ];
           buildable = if flags.example then true else false;
-          };
+        };
         "example-stm" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -136,10 +136,10 @@
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."blaze-builder" or (errorHandler.buildDepError "blaze-builder"))
             (hsPkgs."base64-bytestring" or (errorHandler.buildDepError "base64-bytestring"))
-            ];
+          ];
           buildable = if flags.example-stm then true else false;
-          };
         };
+      };
       tests = {
         "spec" = {
           depends = [
@@ -171,9 +171,9 @@
             (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
             (hsPkgs."sets" or (errorHandler.buildDepError "sets"))
             (hsPkgs."errors" or (errorHandler.buildDepError "errors"))
-            ];
+          ];
           buildable = true;
-          };
         };
       };
-    }
+    };
+  }
