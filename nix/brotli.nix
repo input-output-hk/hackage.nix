@@ -58,7 +58,12 @@
         revNum = 4;
         sha256 = "fdf20e5641093cb7ce70e760b155027bfa38738b8dbf3b779aa6c190bdc8dfdc";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/brotli-0.0.0.1-r5-c5590e94532a0dba622dec9c4c67e18582d7835b7e92ef7695e4f7c0b1764419.nix;
+        revNum = 5;
+        sha256 = "c5590e94532a0dba622dec9c4c67e18582d7835b7e92ef7695e4f7c0b1764419";
+      };
+      default = "r5";
     };
   };
 }

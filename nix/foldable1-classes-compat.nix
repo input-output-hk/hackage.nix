@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "5054fb2451852fa38bbb374a47829c061328b86967232433924db5028a9de903";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/foldable1-classes-compat-0.1-r6-f2f1c40f9e3322ce8d4101cb2925b420e19b993ef543a6b106d91accf08be78d.nix;
+        revNum = 6;
+        sha256 = "f2f1c40f9e3322ce8d4101cb2925b420e19b993ef543a6b106d91accf08be78d";
+      };
+      default = "r6";
     };
   };
 }

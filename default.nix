@@ -1422,6 +1422,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "acme-miscorder" = import ./nix/acme-miscorder.nix;
   "acme-missiles" = import ./nix/acme-missiles.nix;
   "acme-mutable-package" = import ./nix/acme-mutable-package.nix;
+  "acme-not-a-joke" = import ./nix/acme-not-a-joke.nix;
   "acme-now" = import ./nix/acme-now.nix;
   "acme-numbersystem" = import ./nix/acme-numbersystem.nix;
   "acme-omitted" = import ./nix/acme-omitted.nix;
