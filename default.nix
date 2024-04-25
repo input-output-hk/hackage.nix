@@ -17747,6 +17747,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zlib" = import ./nix/zlib.nix;
   "zlib-bindings" = import ./nix/zlib-bindings.nix;
   "zlib-bytes" = import ./nix/zlib-bytes.nix;
+  "zlib-clib" = import ./nix/zlib-clib.nix;
   "zlib-conduit" = import ./nix/zlib-conduit.nix;
   "zlib-enum" = import ./nix/zlib-enum.nix;
   "zlib-lens" = import ./nix/zlib-lens.nix;

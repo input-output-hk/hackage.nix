@@ -486,4 +486,15 @@
       default = "r1";
     };
   };
+  "0.7.1.0" = {
+    sha256 = "6edd38b6b81df8d274952aa85affa6968ae86b2231e1d429ce8bc9083e6a55bc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zlib-0.7.1.0-r0-d6696f2b55ab4a50b8de57947abca308604eb7cf8287c40bf69cfa26133e24d3.nix;
+        revNum = 0;
+        sha256 = "d6696f2b55ab4a50b8de57947abca308604eb7cf8287c40bf69cfa26133e24d3";
+      };
+      default = "r0";
+    };
+  };
 }

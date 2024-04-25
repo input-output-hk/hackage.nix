@@ -255,4 +255,31 @@
       default = "r0";
     };
   };
+  "0.5" = {
+    sha256 = "7a749c0e4c02d4f22f938dba05e5c82c9e5ddc7742028d1f8a75fcbba63eafb1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/call-alloy-0.5-r0-65d352722fc67cbc12d2762aa78400034ad9648b4d56bb882e0d9c69db9b563b.nix;
+        revNum = 0;
+        sha256 = "65d352722fc67cbc12d2762aa78400034ad9648b4d56bb882e0d9c69db9b563b";
+      };
+      r1 = {
+        nix = import ../hackage/call-alloy-0.5-r1-94d58516c25c492f29614cb7005ec392c7f0507f28cfc73e6d5646c32ad30b99.nix;
+        revNum = 1;
+        sha256 = "94d58516c25c492f29614cb7005ec392c7f0507f28cfc73e6d5646c32ad30b99";
+      };
+      default = "r1";
+    };
+  };
+  "0.5.0.1" = {
+    sha256 = "ac7263d20dbfe83b3fb4a77e3b8886186e5e9fd3af5660cec4a018404df36430";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/call-alloy-0.5.0.1-r0-81e931bb5d20cfba363910455ea4a135b24ec760c9d14d28416a948054581e2d.nix;
+        revNum = 0;
+        sha256 = "81e931bb5d20cfba363910455ea4a135b24ec760c9d14d28416a948054581e2d";
+      };
+      default = "r0";
+    };
+  };
 }

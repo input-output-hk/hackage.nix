@@ -752,4 +752,15 @@
       default = "r0";
     };
   };
+  "1.3.3" = {
+    sha256 = "a266117fbba509874dae6ab76bb887574accb1ee44f80b4f008b69386fd34b8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dbus-1.3.3-r0-291e14e2eb6eee58922ca0135e5d49e84720f3b9be4468d91d1471473ccc2a89.nix;
+        revNum = 0;
+        sha256 = "291e14e2eb6eee58922ca0135e5d49e84720f3b9be4468d91d1471473ccc2a89";
+      };
+      default = "r0";
+    };
+  };
 }
