@@ -14909,6 +14909,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sproxy2" = import ./nix/sproxy2.nix;
   "spsa" = import ./nix/spsa.nix;
   "spy" = import ./nix/spy.nix;
+  "sq" = import ./nix/sq.nix;
   "sqel" = import ./nix/sqel.nix;
   "sqids" = import ./nix/sqids.nix;
   "sql-simple" = import ./nix/sql-simple.nix;
