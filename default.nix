@@ -4305,6 +4305,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dahdit-test" = import ./nix/dahdit-test.nix;
   "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
+  "dani-servant-lucid2" = import ./nix/dani-servant-lucid2.nix;
   "danibot" = import ./nix/danibot.nix;
   "dao" = import ./nix/dao.nix;
   "dap" = import ./nix/dap.nix;

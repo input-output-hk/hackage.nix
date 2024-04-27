@@ -252,4 +252,15 @@
       default = "r0";
     };
   };
+  "2.0.1.9" = {
+    sha256 = "eee4b5936e50efa7f79d8568c10e4b9b7cf45dc963136873df1cf2b37d92e96b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/burrito-2.0.1.9-r0-0cf7fd28807bb30fe0c5cdd49596d91c39cbb2740eb37db6fbdbc1b6afc0bd07.nix;
+        revNum = 0;
+        sha256 = "0cf7fd28807bb30fe0c5cdd49596d91c39cbb2740eb37db6fbdbc1b6afc0bd07";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.0.4" = {
+    sha256 = "5a1f510e1650c7c12534134f2ee1309fb7fca2be59f3ddd4eba8f45979aede3b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.4-r0-3217bc87eacd3ac22a7a9d93b6b69043f9b7f4604d2b635fefeafd5f34a140be.nix;
+        revNum = 0;
+        sha256 = "3217bc87eacd3ac22a7a9d93b6b69043f9b7f4604d2b635fefeafd5f34a140be";
+      };
+      default = "r0";
+    };
+  };
 }
