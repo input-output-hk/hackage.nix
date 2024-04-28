@@ -63,4 +63,15 @@
       default = "r0";
     };
   };
+  "1.2.0.1" = {
+    sha256 = "d1420bc115e90a6ba392e1c560b634f6a58e492097b43cbc8b6466001981222b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-toolkit-1.2.0.1-r0-6545b975ee64d649eba248df57e26f6195bc7e31b98eb5acbcfa2426dc8b6c11.nix;
+        revNum = 0;
+        sha256 = "6545b975ee64d649eba248df57e26f6195bc7e31b98eb5acbcfa2426dc8b6c11";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "2.1.6.0" = {
+    sha256 = "77791c2c702383da87616f83a3caff820e12acae45357600261d6003bf5a2e21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/red-black-record-2.1.6.0-r0-7c5958fa5415d6c8fc0cdb27e43024f01d018279581127f7c057c959d812511d.nix;
+        revNum = 0;
+        sha256 = "7c5958fa5415d6c8fc0cdb27e43024f01d018279581127f7c057c959d812511d";
+      };
+      default = "r0";
+    };
+  };
 }

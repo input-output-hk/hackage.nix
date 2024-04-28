@@ -2842,6 +2842,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "blogination" = import ./nix/blogination.nix;
   "bloodhound" = import ./nix/bloodhound.nix;
   "bloodhound-amazonka-auth" = import ./nix/bloodhound-amazonka-auth.nix;
+  "bloohm" = import ./nix/bloohm.nix;
   "bloomfilter" = import ./nix/bloomfilter.nix;
   "bloomfilter-redis" = import ./nix/bloomfilter-redis.nix;
   "blosum" = import ./nix/blosum.nix;
@@ -16945,6 +16946,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-conduit" = import ./nix/wai-conduit.nix;
   "wai-control" = import ./nix/wai-control.nix;
   "wai-cors" = import ./nix/wai-cors.nix;
+  "wai-cryptocookie" = import ./nix/wai-cryptocookie.nix;
   "wai-devel" = import ./nix/wai-devel.nix;
   "wai-digestive-functors" = import ./nix/wai-digestive-functors.nix;
   "wai-dispatch" = import ./nix/wai-dispatch.nix;
