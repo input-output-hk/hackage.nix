@@ -1344,7 +1344,12 @@
         revNum = 4;
         sha256 = "5b85bf8416d7d700fd7d10593b6b10ec1c30c24456b04285af17dfc99fc400aa";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/aeson-0.9.0.1-r5-885c6c5b5cdeacae7bcfaccfd8567ebb2d49cb53c3d7f687ef96343171817a89.nix;
+        revNum = 5;
+        sha256 = "885c6c5b5cdeacae7bcfaccfd8567ebb2d49cb53c3d7f687ef96343171817a89";
+      };
+      default = "r5";
     };
   };
   "1.0.0.0" = {

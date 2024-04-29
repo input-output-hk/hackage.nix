@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.3.3.1" = {
+    sha256 = "db19d1e75a137f8e91a9d2b64fd7b58285213887183bd0b1a566693e4fb68999";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-oberon-0.3.3.1-r0-d3ca7fbf149310993458ec787a325c76ed819cd5bebf3e8213e28b02c241de72.nix;
+        revNum = 0;
+        sha256 = "d3ca7fbf149310993458ec787a325c76ed819cd5bebf3e8213e28b02c241de72";
+      };
+      default = "r0";
+    };
+  };
 }
