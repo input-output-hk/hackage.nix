@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "375abd3083132a137bb877831e0f33508ad78a711513b1cdf35705757cdc50ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-alacarte-1.0.0.2-r0-30690f8c58504e673cc7cf05bbbea4f311bc2c8f5c04b0c4e51d6e45935b0260.nix;
+        revNum = 0;
+        sha256 = "30690f8c58504e673cc7cf05bbbea4f311bc2c8f5c04b0c4e51d6e45935b0260";
+      };
+      default = "r0";
+    };
+  };
 }

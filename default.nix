@@ -13897,6 +13897,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sandi" = import ./nix/sandi.nix;
   "sandlib" = import ./nix/sandlib.nix;
   "sandman" = import ./nix/sandman.nix;
+  "sandwatch" = import ./nix/sandwatch.nix;
   "sandwich" = import ./nix/sandwich.nix;
   "sandwich-hedgehog" = import ./nix/sandwich-hedgehog.nix;
   "sandwich-quickcheck" = import ./nix/sandwich-quickcheck.nix;
