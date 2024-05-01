@@ -120,7 +120,12 @@
         revNum = 2;
         sha256 = "8643ca9fbd988fa8a9c423a2e6d7a3d64b72db35e589eaec1d2b14916eb359aa";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/data-reify-0.6.3-r3-7ca46fb4ef2d76f7debfcbee24418491f61c911e0a494d4df0d14aa28c482157.nix;
+        revNum = 3;
+        sha256 = "7ca46fb4ef2d76f7debfcbee24418491f61c911e0a494d4df0d14aa28c482157";
+      };
+      default = "r3";
     };
   };
 }

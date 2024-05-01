@@ -8935,6 +8935,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "implicit-hie-cradle" = import ./nix/implicit-hie-cradle.nix;
   "implicit-logging" = import ./nix/implicit-logging.nix;
   "implicit-params" = import ./nix/implicit-params.nix;
+  "import-style-plugin" = import ./nix/import-style-plugin.nix;
   "importify" = import ./nix/importify.nix;
   "imports" = import ./nix/imports.nix;
   "impossible" = import ./nix/impossible.nix;
@@ -13572,6 +13573,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "requirements" = import ./nix/requirements.nix;
   "rere" = import ./nix/rere.nix;
   "rerebase" = import ./nix/rerebase.nix;
+  "rerefined" = import ./nix/rerefined.nix;
   "reroute" = import ./nix/reroute.nix;
   "rescue" = import ./nix/rescue.nix;
   "reserve" = import ./nix/reserve.nix;
@@ -16417,6 +16419,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typesafe-precure" = import ./nix/typesafe-precure.nix;
   "typescript-docs" = import ./nix/typescript-docs.nix;
   "typical" = import ./nix/typical.nix;
+  "typist" = import ./nix/typist.nix;
   "typograffiti" = import ./nix/typograffiti.nix;
   "typography-geometry" = import ./nix/typography-geometry.nix;
   "typson-beam" = import ./nix/typson-beam.nix;

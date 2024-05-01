@@ -43,7 +43,12 @@
         revNum = 2;
         sha256 = "24b503bd45439ad304d6106ca9725c95516a6460c5ee131814ffffb602b91995";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/these-skinny-0.7.5-r3-ea7d4a0642d36ec328772eb288a0ebc5c62ca74b2d0c895aaac4a9e2822e734b.nix;
+        revNum = 3;
+        sha256 = "ea7d4a0642d36ec328772eb288a0ebc5c62ca74b2d0c895aaac4a9e2822e734b";
+      };
+      default = "r3";
     };
   };
 }

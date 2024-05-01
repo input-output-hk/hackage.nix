@@ -1,0 +1,35 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.4";
+      identifier = { name = "these-skinny"; version = "0.7.5"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "chessai <chessai1996@gmail.com>";
+      author = "C. McCann";
+      homepage = "https://github.com/chessai/these-skinny";
+      url = "";
+      synopsis = "A fork of the 'these' package without the dependency bloat";
+      description = "This package provides a data type @These a b@ which can hold a value of either\ntype or values of each type. This is usually thought of as an \"inclusive or\"\ntype (contrasting @Either a b@ as \"exclusive or\") or as an \"outer join\" type\n(contrasting @(a, b)@ as \"inner join\").";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = ([
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"))
+        ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.2") (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"));
+        buildable = true;
+      };
+    };
+  }

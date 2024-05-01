@@ -1378,7 +1378,12 @@
         revNum = 0;
         sha256 = "cf27e6c83f91674fb67ef253cae644ad0ce079b7e2cfa6402e13e930f78499ec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/criterion-1.6.3.0-r1-62f9196ded68c39855a3a5dadb35dd43828ca091eeeb2ff38fdd259040d8e694.nix;
+        revNum = 1;
+        sha256 = "62f9196ded68c39855a3a5dadb35dd43828ca091eeeb2ff38fdd259040d8e694";
+      };
+      default = "r1";
     };
   };
 }
