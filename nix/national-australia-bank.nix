@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "0.0.6" = {
+    sha256 = "9f6b2daad696faf61ae6e9929ab4b596b690d2c002dd0deb95b786f0b437b0ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.6-r0-b913952ca867100e9a557a04abc458dba0b3511abc5c36c159d8a9627d48f2fc.nix;
+        revNum = 0;
+        sha256 = "b913952ca867100e9a557a04abc458dba0b3511abc5c36c159d8a9627d48f2fc";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.7" = {
+    sha256 = "7a514cb505ddcf504ebeb0ac58f0867cc0d628041a4fe7bbaba84af52bb0e770";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.7-r0-76b181e8c6465edc6b6bcd7c900ef3c667bde91d0c6ac50b111170456084b6ba.nix;
+        revNum = 0;
+        sha256 = "76b181e8c6465edc6b6bcd7c900ef3c667bde91d0c6ac50b111170456084b6ba";
+      };
+      default = "r0";
+    };
+  };
 }

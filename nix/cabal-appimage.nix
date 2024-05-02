@@ -109,4 +109,26 @@
       default = "r0";
     };
   };
+  "0.4.0.3" = {
+    sha256 = "9140e151791f0956d8c4c320ab372783bf1c31bd0c3de4a21367b941f0628c99";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-appimage-0.4.0.3-r0-d7522d525de692fde94884413c8b4a73d4bfe5ea4a503f6728a3ef641abe025c.nix;
+        revNum = 0;
+        sha256 = "d7522d525de692fde94884413c8b4a73d4bfe5ea4a503f6728a3ef641abe025c";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.4" = {
+    sha256 = "7ae5096d06aed092c50db4e026e53d2a40cd53763d27cf41bf954ccc6063a109";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-appimage-0.4.0.4-r0-b316260ed94c983e09a99cb7191347771b3b1a27560c3d99bb714856900bcf08.nix;
+        revNum = 0;
+        sha256 = "b316260ed94c983e09a99cb7191347771b3b1a27560c3d99bb714856900bcf08";
+      };
+      default = "r0";
+    };
+  };
 }

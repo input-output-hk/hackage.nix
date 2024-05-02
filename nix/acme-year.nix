@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "2024" = {
+    sha256 = "6216a08352cc0ca5b0f2a6a1ba9edfaa3b6ece31a1e76948f92e40a7631e990e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/acme-year-2024-r0-a49188f94a1068b17e31a118f843e49a4df93a510b1773c425bbe0b0c007e180.nix;
+        revNum = 0;
+        sha256 = "a49188f94a1068b17e31a118f843e49a4df93a510b1773c425bbe0b0c007e180";
+      };
+      default = "r0";
+    };
+  };
 }

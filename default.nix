@@ -10788,6 +10788,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monad-gen" = import ./nix/monad-gen.nix;
   "monad-hash" = import ./nix/monad-hash.nix;
   "monad-http" = import ./nix/monad-http.nix;
+  "monad-ideals" = import ./nix/monad-ideals.nix;
   "monad-interleave" = import ./nix/monad-interleave.nix;
   "monad-introspect" = import ./nix/monad-introspect.nix;
   "monad-io-adapter" = import ./nix/monad-io-adapter.nix;

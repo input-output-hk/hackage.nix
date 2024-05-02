@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.3.0.4" = {
+    sha256 = "512b90f77ba27c24174fe09ec279d3c809f89bf9f4e9b13a1be280e2bc0545e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/curly-expander-0.3.0.4-r0-2108224bd403f10149dc0d6d43844f3cf7cd76a31a364919254276bc0400faad.nix;
+        revNum = 0;
+        sha256 = "2108224bd403f10149dc0d6d43844f3cf7cd76a31a364919254276bc0400faad";
+      };
+      default = "r0";
+    };
+  };
 }

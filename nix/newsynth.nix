@@ -130,4 +130,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "9476268de585ef3592ee8896beafa067d880c7330ebbc9ec4e0f10c8ceab172d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/newsynth-0.4.1.0-r0-d27d36876eafc60d1bd313e6fe58a42f00fcf2adcde526cd2906c60669c8d35d.nix;
+        revNum = 0;
+        sha256 = "d27d36876eafc60d1bd313e6fe58a42f00fcf2adcde526cd2906c60669c8d35d";
+      };
+      default = "r0";
+    };
+  };
 }
