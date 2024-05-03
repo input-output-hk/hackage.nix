@@ -1563,6 +1563,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "air-spec" = import ./nix/air-spec.nix;
   "air-th" = import ./nix/air-th.nix;
   "airbrake" = import ./nix/airbrake.nix;
+  "airgql" = import ./nix/airgql.nix;
   "airship" = import ./nix/airship.nix;
   "airtable-api" = import ./nix/airtable-api.nix;
   "aivika" = import ./nix/aivika.nix;

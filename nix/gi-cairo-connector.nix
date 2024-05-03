@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "621d03434a0d6e3d5e68178f5890f2a7142818fcf4c6a5b15079f6b67955407d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gi-cairo-connector-0.1.1-r1-352fc558ed5bf27d48bd88c8ec0e3be5fdbaf1418eaddffcfd1c7283fd895d40.nix;
+        revNum = 1;
+        sha256 = "352fc558ed5bf27d48bd88c8ec0e3be5fdbaf1418eaddffcfd1c7283fd895d40";
+      };
+      default = "r1";
     };
   };
 }
