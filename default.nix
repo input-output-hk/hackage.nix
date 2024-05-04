@@ -6102,6 +6102,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "future-resource" = import ./nix/future-resource.nix;
   "futures" = import ./nix/futures.nix;
   "fuzzcheck" = import ./nix/fuzzcheck.nix;
+  "fuzzily" = import ./nix/fuzzily.nix;
   "fuzzy" = import ./nix/fuzzy.nix;
   "fuzzy-dates" = import ./nix/fuzzy-dates.nix;
   "fuzzy-parse" = import ./nix/fuzzy-parse.nix;
@@ -7552,6 +7553,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-interpolate" = import ./nix/hasql-interpolate.nix;
   "hasql-listen-notify" = import ./nix/hasql-listen-notify.nix;
   "hasql-migration" = import ./nix/hasql-migration.nix;
+  "hasql-mover" = import ./nix/hasql-mover.nix;
   "hasql-notifications" = import ./nix/hasql-notifications.nix;
   "hasql-optparse-applicative" = import ./nix/hasql-optparse-applicative.nix;
   "hasql-pipes" = import ./nix/hasql-pipes.nix;

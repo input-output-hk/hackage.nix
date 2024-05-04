@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2" = {
+    sha256 = "f690f8d279447be8d8fd34c2bb7609291491c12f4c64d86e1bcd937fcb64da7f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/constraint-tuples-0.2-r0-21b5c43b70920afdc2a6cba902a2a86251ede4bcf344598f10d70121448d936c.nix;
+        revNum = 0;
+        sha256 = "21b5c43b70920afdc2a6cba902a2a86251ede4bcf344598f10d70121448d936c";
+      };
+      default = "r0";
+    };
+  };
 }

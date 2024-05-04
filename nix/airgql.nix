@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.7.1.2" = {
+    sha256 = "95cb81b6d4cee60c7a51d184f8f9cc40ef6e37e20d14a5a77fae0f21d8b191b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/airgql-0.7.1.2-r0-43e5f5d98391b4515a71489498a1a60e9e3baef6a7e23e74d3e45ef8ba3c5c92.nix;
+        revNum = 0;
+        sha256 = "43e5f5d98391b4515a71489498a1a60e9e3baef6a7e23e74d3e45ef8ba3c5c92";
+      };
+      default = "r0";
+    };
+  };
 }
