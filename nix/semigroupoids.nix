@@ -1105,4 +1105,15 @@
       default = "r1";
     };
   };
+  "6.0.1" = {
+    sha256 = "1d532030862414f5d4f2f6f001783f77aa14e5f05ee8e3c4a2d2129fca29cc1f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semigroupoids-6.0.1-r0-6b17658b6a0b470bf6f02c199e0210fc4acf843947f82fe5268e91eed0af6269.nix;
+        revNum = 0;
+        sha256 = "6b17658b6a0b470bf6f02c199e0210fc4acf843947f82fe5268e91eed0af6269";
+      };
+      default = "r0";
+    };
+  };
 }

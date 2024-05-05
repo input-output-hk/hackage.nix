@@ -2853,6 +2853,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "blucontrol" = import ./nix/blucontrol.nix;
   "bludigon" = import ./nix/bludigon.nix;
   "bluefin" = import ./nix/bluefin.nix;
+  "bluefin-algae" = import ./nix/bluefin-algae.nix;
   "bluefin-internal" = import ./nix/bluefin-internal.nix;
   "bluemix-sdk" = import ./nix/bluemix-sdk.nix;
   "bluetile" = import ./nix/bluetile.nix;
