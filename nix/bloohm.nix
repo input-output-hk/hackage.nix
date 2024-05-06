@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "cf3f46450722dfc2476d4eb2276c0eb620fa1fe7fd7f9d7e5d3e7f9776aea34b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bloohm-1.0.0.2-r0-345b5b0738ace9b2ccc3a9aa9c8941a1ce938849a40960b2f72715ee867febef.nix;
+        revNum = 0;
+        sha256 = "345b5b0738ace9b2ccc3a9aa9c8941a1ce938849a40960b2f72715ee867febef";
+      };
+      default = "r0";
+    };
+  };
 }

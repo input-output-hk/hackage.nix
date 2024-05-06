@@ -13897,6 +13897,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sample-frame" = import ./nix/sample-frame.nix;
   "sample-frame-np" = import ./nix/sample-frame-np.nix;
   "sampling" = import ./nix/sampling.nix;
+  "samsort" = import ./nix/samsort.nix;
   "samtools" = import ./nix/samtools.nix;
   "samtools-conduit" = import ./nix/samtools-conduit.nix;
   "samtools-enumerator" = import ./nix/samtools-enumerator.nix;
@@ -15561,6 +15562,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "task" = import ./nix/task.nix;
   "task-distribution" = import ./nix/task-distribution.nix;
   "taskell" = import ./nix/taskell.nix;
+  "tasklite" = import ./nix/tasklite.nix;
+  "tasklite-core" = import ./nix/tasklite-core.nix;
   "taskpool" = import ./nix/taskpool.nix;
   "taskwarrior" = import ./nix/taskwarrior.nix;
   "tasty" = import ./nix/tasty.nix;
