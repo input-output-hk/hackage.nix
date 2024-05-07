@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "d4d0077495ea05712a355051a1ef74d9aa3d9ec8f607d3de1cfbdcc06ed81a95";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/blas-hs-0.1.1.0-r1-925470c0c09e13399a018fec91d3088477f3ce9d3398f1dadee9040ef7f43961.nix;
+        revNum = 1;
+        sha256 = "925470c0c09e13399a018fec91d3088477f3ce9d3398f1dadee9040ef7f43961";
+      };
+      default = "r1";
     };
   };
 }

@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "c567657a705b6d6521f9dd2de999bf530d618ec00f3b939df76a41fb0fe94281";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/crypton-x509-1.7.6-r2-19a6f233a73952c408599d082db8d6a3487ab9c1abe0fa350b8d362ab61776ad.nix;
+        revNum = 2;
+        sha256 = "19a6f233a73952c408599d082db8d6a3487ab9c1abe0fa350b8d362ab61776ad";
+      };
+      default = "r2";
     };
   };
 }

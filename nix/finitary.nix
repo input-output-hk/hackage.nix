@@ -114,4 +114,15 @@
       default = "r0";
     };
   };
+  "2.1.2.0" = {
+    sha256 = "aad2a70697311809b7d2b5fe2e8324fea7af328691113dc412305cc6af833270";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finitary-2.1.2.0-r0-d1c0827e7be60f65a47f9204db7373edf9b704f97bfa3cebae5edf6c821102e3.nix;
+        revNum = 0;
+        sha256 = "d1c0827e7be60f65a47f9204db7373edf9b704f97bfa3cebae5edf6c821102e3";
+      };
+      default = "r0";
+    };
+  };
 }

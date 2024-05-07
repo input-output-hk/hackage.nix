@@ -224,4 +224,15 @@
       default = "r1";
     };
   };
+  "0.2.7" = {
+    sha256 = "f688d6fdb0627ff8e2ee74c95d302cf378ecf4c7c4d45e8ed0cc15a7e4ed45d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-lua-marshal-0.2.7-r0-ab0418d94b0275bce45e61d6d10e21809f31429fc1675a3d4b9b7d34b8873a59.nix;
+        revNum = 0;
+        sha256 = "ab0418d94b0275bce45e61d6d10e21809f31429fc1675a3d4b9b7d34b8873a59";
+      };
+      default = "r0";
+    };
+  };
 }

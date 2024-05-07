@@ -49,7 +49,12 @@
         revNum = 0;
         sha256 = "7490df13b4d38005e82133eb7c9c506c335692d223eeed684e67d80b2ef34d95";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cacophony-0.10.1-r1-c702b91ebec24551dd57d9d6195eb4ef22f690f0123ab2539e2f474ca0c4c210.nix;
+        revNum = 1;
+        sha256 = "c702b91ebec24551dd57d9d6195eb4ef22f690f0123ab2539e2f474ca0c4c210";
+      };
+      default = "r1";
     };
   };
   "0.2.0" = {
