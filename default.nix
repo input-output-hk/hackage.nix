@@ -4663,6 +4663,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dewdrop" = import ./nix/dewdrop.nix;
   "df1" = import ./nix/df1.nix;
   "df1-html" = import ./nix/df1-html.nix;
+  "df1-wai" = import ./nix/df1-wai.nix;
   "dfinity-radix-tree" = import ./nix/dfinity-radix-tree.nix;
   "dfrac" = import ./nix/dfrac.nix;
   "dfsbuild" = import ./nix/dfsbuild.nix;
@@ -4695,6 +4696,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "di-handle" = import ./nix/di-handle.nix;
   "di-monad" = import ./nix/di-monad.nix;
   "di-polysemy" = import ./nix/di-polysemy.nix;
+  "di-wai" = import ./nix/di-wai.nix;
   "dia-base" = import ./nix/dia-base.nix;
   "dia-functions" = import ./nix/dia-functions.nix;
   "diagnose" = import ./nix/diagnose.nix;
@@ -16368,6 +16370,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-level-natural-number-operations" = import ./nix/type-level-natural-number-operations.nix;
   "type-level-numbers" = import ./nix/type-level-numbers.nix;
   "type-level-sets" = import ./nix/type-level-sets.nix;
+  "type-level-show" = import ./nix/type-level-show.nix;
   "type-level-tf" = import ./nix/type-level-tf.nix;
   "type-list" = import ./nix/type-list.nix;
   "type-map" = import ./nix/type-map.nix;

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1" = {
+    sha256 = "e8906376b16c45238468e56d525b342b946eb9653fd09823255dea7739952ac0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-cryptocookie-0.1-r0-2c85836179f4ffebb0e83d9468b11fd6eb31b726d9576776182df3ba786c1c98.nix;
+        revNum = 0;
+        sha256 = "2c85836179f4ffebb0e83d9468b11fd6eb31b726d9576776182df3ba786c1c98";
+      };
+      default = "r0";
+    };
+  };
 }
