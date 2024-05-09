@@ -165,4 +165,15 @@
       default = "r0";
     };
   };
+  "3.0.0.0" = {
+    sha256 = "82c4a738355272c3a7d06cbdc13331095e8284e5f969f6220417c29e059e8411";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacinda-3.0.0.0-r0-cbadb6e911a92e6c1ea49abb2e259c3ae2a9e614c06be03e42c2f421fe0823b6.nix;
+        revNum = 0;
+        sha256 = "cbadb6e911a92e6c1ea49abb2e259c3ae2a9e614c06be03e42c2f421fe0823b6";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "a6fa4e557ce17b5e36bbbde1d3bafd07ce643569154e7883c3c796fab19c3d93";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vertexenum-1.0.0.0-r0-0238d856ff1c1458536a6804f42e83c208d3d3f6470f0b46da8e73f7f48f5e50.nix;
+        revNum = 0;
+        sha256 = "0238d856ff1c1458536a6804f42e83c208d3d3f6470f0b46da8e73f7f48f5e50";
+      };
+      default = "r0";
+    };
+  };
 }

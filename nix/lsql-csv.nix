@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.0.6" = {
+    sha256 = "644f66d386cd060ae02103df4c5f484e80c8162a83ee1d7f4de80b26f4e62c67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lsql-csv-0.1.0.6-r0-07a42a86902d67cf85eaf63c9c1ba966ec58400f1b2a8efba92600f1b21cbf04.nix;
+        revNum = 0;
+        sha256 = "07a42a86902d67cf85eaf63c9c1ba966ec58400f1b2a8efba92600f1b21cbf04";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -5442,6 +5442,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ex-pool" = import ./nix/ex-pool.nix;
   "exact-combinatorics" = import ./nix/exact-combinatorics.nix;
   "exact-cover" = import ./nix/exact-cover.nix;
+  "exact-kantorovich" = import ./nix/exact-kantorovich.nix;
   "exact-pi" = import ./nix/exact-pi.nix;
   "exact-real" = import ./nix/exact-real.nix;
   "exact-real-positional" = import ./nix/exact-real-positional.nix;
