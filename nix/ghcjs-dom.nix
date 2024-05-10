@@ -466,4 +466,15 @@
       default = "r0";
     };
   };
+  "0.9.9.1" = {
+    sha256 = "e1c920cf15721a0c3bcf61743f8cf90ab9609976e2b0de6e248256e503054e3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcjs-dom-0.9.9.1-r0-e182ba81d580a1995f8ce7b8088710a2a8bef58a3cdb5c60aad3217662a0beb4.nix;
+        revNum = 0;
+        sha256 = "e182ba81d580a1995f8ce7b8088710a2a8bef58a3cdb5c60aad3217662a0beb4";
+      };
+      default = "r0";
+    };
+  };
 }

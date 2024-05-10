@@ -20,4 +20,26 @@
       default = "r2";
     };
   };
+  "0.7.7.1" = {
+    sha256 = "27dff3dd82da71de40ac40dfb4e0c9054f4a7910e4996e297cd9adc9fc7fa2da";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Vis-0.7.7.1-r0-c6673bccdee73929a0f698e285885d1e38dc1f2edc2ebb3cf7d648acf13c0d5c.nix;
+        revNum = 0;
+        sha256 = "c6673bccdee73929a0f698e285885d1e38dc1f2edc2ebb3cf7d648acf13c0d5c";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0" = {
+    sha256 = "53df79ef260205c19d6f5b30cd1336b7c60d0b04de7ca38df570be1726aa93a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Vis-1.0.0-r0-7d88c75db3844a293d04f5f2d0a71bb9cd5cbeca7449cb742fd511275dc87018.nix;
+        revNum = 0;
+        sha256 = "7d88c75db3844a293d04f5f2d0a71bb9cd5cbeca7449cb742fd511275dc87018";
+      };
+      default = "r0";
+    };
+  };
 }
