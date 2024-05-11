@@ -4631,6 +4631,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "derive-has-field" = import ./nix/derive-has-field.nix;
   "derive-lifted-instances" = import ./nix/derive-lifted-instances.nix;
   "derive-monoid" = import ./nix/derive-monoid.nix;
+  "derive-prim" = import ./nix/derive-prim.nix;
   "derive-storable" = import ./nix/derive-storable.nix;
   "derive-storable-plugin" = import ./nix/derive-storable-plugin.nix;
   "derive-topdown" = import ./nix/derive-topdown.nix;
@@ -8744,6 +8745,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hw-packed-vector" = import ./nix/hw-packed-vector.nix;
   "hw-parser" = import ./nix/hw-parser.nix;
   "hw-playground-linear" = import ./nix/hw-playground-linear.nix;
+  "hw-polysemy" = import ./nix/hw-polysemy.nix;
   "hw-prim" = import ./nix/hw-prim.nix;
   "hw-prim-bits" = import ./nix/hw-prim-bits.nix;
   "hw-rankselect" = import ./nix/hw-rankselect.nix;
