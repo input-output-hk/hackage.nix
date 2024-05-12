@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "f32b61e63777ec801abc05b543dda6a44e45cd13ebdc2957129dd0515ede1cdb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-postgres-0.7.0.0-r0-88cd76d471216ff30708a74817595148fe9f7404da60e6cc44a51c0cb9ddc169.nix;
+        revNum = 0;
+        sha256 = "88cd76d471216ff30708a74817595148fe9f7404da60e6cc44a51c0cb9ddc169";
+      };
+      default = "r0";
+    };
+  };
 }

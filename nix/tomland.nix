@@ -281,7 +281,17 @@
         revNum = 3;
         sha256 = "8a7924fb8ced9d82810f603cf195cd26b89a248b685ec21b99ffb28df3ea7c1a";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/tomland-1.3.3.2-r4-e46add7b12cd67d671d9e47b97036d9c5c0f1edeb61e5febcc2e5ca084ebcf9e.nix;
+        revNum = 4;
+        sha256 = "e46add7b12cd67d671d9e47b97036d9c5c0f1edeb61e5febcc2e5ca084ebcf9e";
+      };
+      r5 = {
+        nix = import ../hackage/tomland-1.3.3.2-r5-a3b5b7b268e5e66b6423d802203646bc26dde50b00cad4a88dd2ca3f39c882f8.nix;
+        revNum = 5;
+        sha256 = "a3b5b7b268e5e66b6423d802203646bc26dde50b00cad4a88dd2ca3f39c882f8";
+      };
+      default = "r5";
     };
   };
 }

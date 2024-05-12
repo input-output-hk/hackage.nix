@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "63fe4c2a30d21463467d1a8c1914c72fc90360c1cadea84a32a0c62f04aadaa1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/biscuit-haskell-0.3.0.1-r0-162fb3a9e55d71a4e1b002261519c0486599f5ab56e7cdfb54a7994f02a84b42.nix;
+        revNum = 0;
+        sha256 = "162fb3a9e55d71a4e1b002261519c0486599f5ab56e7cdfb54a7994f02a84b42";
+      };
+      default = "r0";
+    };
+  };
 }

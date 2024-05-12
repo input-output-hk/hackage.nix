@@ -59,4 +59,15 @@
       default = "r1";
     };
   };
+  "1.0.5" = {
+    sha256 = "434f58a4247f3b700073f0f217373254bb8c3659be22c864607a5a312a905232";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-tutorial-1.0.5-r0-80b6ccfdcf07f0dafbaef232f538c6bda6c977f270173cc2e1b9208f47414607.nix;
+        revNum = 0;
+        sha256 = "80b6ccfdcf07f0dafbaef232f538c6bda6c977f270173cc2e1b9208f47414607";
+      };
+      default = "r0";
+    };
+  };
 }
