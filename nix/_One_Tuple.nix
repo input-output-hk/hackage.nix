@@ -180,4 +180,15 @@
       default = "r1";
     };
   };
+  "0.4.2" = {
+    sha256 = "174da8a0f4004d17b08182cb25b0e045fce5de1fdeae84e9d75fdea2867aab55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/OneTuple-0.4.2-r0-ce39b24139694ee1facfdbf0eed3fbca3444fa3c7bcaa386c65cd4e1b7691a4d.nix;
+        revNum = 0;
+        sha256 = "ce39b24139694ee1facfdbf0eed3fbca3444fa3c7bcaa386c65cd4e1b7691a4d";
+      };
+      default = "r0";
+    };
+  };
 }

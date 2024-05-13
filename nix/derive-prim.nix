@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "cc282163f0ad527f5ba8d1df7287eca9a465207e6fecec2ad337311a27a121ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derive-prim-0.1.0.1-r0-c9877c5e9c9a71fb5c683fc7745abf49e81ddc5ec908bbd82647dfbb0fd1fdfd.nix;
+        revNum = 0;
+        sha256 = "c9877c5e9c9a71fb5c683fc7745abf49e81ddc5ec908bbd82647dfbb0fd1fdfd";
+      };
+      default = "r0";
+    };
+  };
 }

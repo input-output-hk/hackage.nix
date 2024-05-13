@@ -116,6 +116,22 @@
         revNum = 0;
         sha256 = "5b725a01c109472acabe8623159805db502a3248770848373706d311406feb50";
       };
+      r1 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.2-r1-9e115ebd65cfc96da46429feb1ec549b8de04963d88023090971b6606724f2e0.nix;
+        revNum = 1;
+        sha256 = "9e115ebd65cfc96da46429feb1ec549b8de04963d88023090971b6606724f2e0";
+      };
+      default = "r1";
+    };
+  };
+  "0.1.3" = {
+    sha256 = "dd36552ed2ea0a4940873f261ff8764fd5e61d520755dd731fae896a478e3b18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-combinators-0.1.3-r0-d9a783fd2fc939fd4f9ad4cf41b109778a3b75900cfd535282cc97bce6b77765.nix;
+        revNum = 0;
+        sha256 = "d9a783fd2fc939fd4f9ad4cf41b109778a3b75900cfd535282cc97bce6b77765";
+      };
       default = "r0";
     };
   };

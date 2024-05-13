@@ -12500,6 +12500,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polysemy-RandomFu" = import ./nix/polysemy-_Random_Fu.nix;
   "polysemy-account" = import ./nix/polysemy-account.nix;
   "polysemy-account-api" = import ./nix/polysemy-account-api.nix;
+  "polysemy-blockfrost" = import ./nix/polysemy-blockfrost.nix;
   "polysemy-check" = import ./nix/polysemy-check.nix;
   "polysemy-chronos" = import ./nix/polysemy-chronos.nix;
   "polysemy-conc" = import ./nix/polysemy-conc.nix;
@@ -15433,6 +15434,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symmetric-properties" = import ./nix/symmetric-properties.nix;
   "symmetry-operations-symbols" = import ./nix/symmetry-operations-symbols.nix;
   "symon" = import ./nix/symon.nix;
+  "symparsec" = import ./nix/symparsec.nix;
   "sync" = import ./nix/sync.nix;
   "sync-mht" = import ./nix/sync-mht.nix;
   "synchronous-channels" = import ./nix/synchronous-channels.nix;
