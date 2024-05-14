@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f6bb159ad89fb0f8fa196471ca410a6093254a6e8f48e4dae802321fecfd6674";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-robomaker-2.0-r1-cf03bf5b5dee6a5ae3ebf1e0179b2ba0929e87670f91d8fd5ae9ecea436d8660.nix;
+        revNum = 1;
+        sha256 = "cf03bf5b5dee6a5ae3ebf1e0179b2ba0929e87670f91d8fd5ae9ecea436d8660";
+      };
+      default = "r1";
     };
   };
 }

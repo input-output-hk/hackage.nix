@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "d8b627959d203202306b9813d1cec0e1f5ca066f859eb7976be7339b63aca671";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-arc-zonal-shift-2.0-r1-9ced34476736213665ba36b2f8a884d9092d54b8d8313f65b42f5eacf6961ba4.nix;
+        revNum = 1;
+        sha256 = "9ced34476736213665ba36b2f8a884d9092d54b8d8313f65b42f5eacf6961ba4";
+      };
+      default = "r1";
     };
   };
 }

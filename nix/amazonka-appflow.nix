@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "a79f00cb1eb31b994fbe55562f69c46fcdf739a485051a1fb734561c2538a599";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-appflow-2.0-r1-1ea74a554c9b96878a800a97441df1dee2da424827e203eb8f7c4095d1e4dd5e.nix;
+        revNum = 1;
+        sha256 = "1ea74a554c9b96878a800a97441df1dee2da424827e203eb8f7c4095d1e4dd5e";
+      };
+      default = "r1";
     };
   };
 }

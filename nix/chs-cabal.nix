@@ -68,4 +68,15 @@
       default = "r2";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "68a1caa004170efc5c08384f014ab83762fe1ed8541db3ba1d74b4d11b1902e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chs-cabal-0.1.1.2-r0-c364078149e4f9238df2c99e21f9d23f993fa5999b42dfcd16a90065d7f493a4.nix;
+        revNum = 0;
+        sha256 = "c364078149e4f9238df2c99e21f9d23f993fa5999b42dfcd16a90065d7f493a4";
+      };
+      default = "r0";
+    };
+  };
 }

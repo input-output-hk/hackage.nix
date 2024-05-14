@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "ea3fb7a9c3ebddc4486828585197991464edbb3918eb676830ca70fbc64d156a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.3-r1-b043c0fddd0cc7aee44c7fc3399aef4e0b357e2fbb8f11d12d3d80e04ffe80e7.nix;
+        revNum = 1;
+        sha256 = "b043c0fddd0cc7aee44c7fc3399aef4e0b357e2fbb8f11d12d3d80e04ffe80e7";
+      };
+      default = "r1";
     };
   };
   "1.3.3.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "52c8eb6c9f0e0a486164b0ee3e0b3b9c264985b65737c88423e73de104e4291f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.3.1-r1-dc4cb699d9ea30d897fc1340686fe777fd72345b0bcd9fa2db655ffe3e9d75a6.nix;
+        revNum = 1;
+        sha256 = "dc4cb699d9ea30d897fc1340686fe777fd72345b0bcd9fa2db655ffe3e9d75a6";
+      };
+      default = "r1";
     };
   };
   "1.3.4" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "2af1937077649473640cf6811daa91296bd05efc9eb543b145ea244ca0867f8c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.4-r1-8a0fde88c2dbe8ef8a6a734a820ece5cf8b44748dbf0630ae961ec116df4b64e.nix;
+        revNum = 1;
+        sha256 = "8a0fde88c2dbe8ef8a6a734a820ece5cf8b44748dbf0630ae961ec116df4b64e";
+      };
+      default = "r1";
     };
   };
   "1.3.5" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "da625bdbd9ddeb826562f997f751b8299c62129ec0449649ba5c62d5dfaa50e2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.5-r1-abd7d2bd478cb08f18468b8f1f8c4c5aefb56ad3dd91a8674edcf6b2a29d2807.nix;
+        revNum = 1;
+        sha256 = "abd7d2bd478cb08f18468b8f1f8c4c5aefb56ad3dd91a8674edcf6b2a29d2807";
+      };
+      default = "r1";
     };
   };
   "1.3.6" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "b753c3f55a05604cdc4a72f9781bc5de806f5313007cccc923a5bba9bad9e3d5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.6-r1-2fb4a83ab8d76afa1e5d38780359ca6c2d046e45e59b9ca1491a54d3580e96fa.nix;
+        revNum = 1;
+        sha256 = "2fb4a83ab8d76afa1e5d38780359ca6c2d046e45e59b9ca1491a54d3580e96fa";
+      };
+      default = "r1";
     };
   };
   "1.3.7" = {
@@ -62,7 +87,12 @@
         revNum = 0;
         sha256 = "8d9d6cb9c4528dba6b862f28556b37c01c35c993cfbbfde0c43e1467b085bca7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.3.7-r1-368c7c38819d983588c4ab953d58c9774a7b6edf027a11497c8725f495a0900b.nix;
+        revNum = 1;
+        sha256 = "368c7c38819d983588c4ab953d58c9774a7b6edf027a11497c8725f495a0900b";
+      };
+      default = "r1";
     };
   };
   "1.4.0" = {
@@ -73,7 +103,12 @@
         revNum = 0;
         sha256 = "10f0f72528b3514dc916909083b5dc13a903e11ec10f3698bf5c338be0479c9f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.0-r1-dbfe32e3bc34c71ac40709071a21140a911241ac828960fd7e36de75a62d8b59.nix;
+        revNum = 1;
+        sha256 = "dbfe32e3bc34c71ac40709071a21140a911241ac828960fd7e36de75a62d8b59";
+      };
+      default = "r1";
     };
   };
   "1.4.1" = {
@@ -84,7 +119,12 @@
         revNum = 0;
         sha256 = "dacd00f2874e0bd048fec453c95f4b63af699bdfb778a80d8ac88bc7d8540a37";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.1-r1-549a962303aa4d1409275655f4fe8587e1dbc6095cb818662e94206734fa5cf8.nix;
+        revNum = 1;
+        sha256 = "549a962303aa4d1409275655f4fe8587e1dbc6095cb818662e94206734fa5cf8";
+      };
+      default = "r1";
     };
   };
   "1.4.2" = {
@@ -95,7 +135,12 @@
         revNum = 0;
         sha256 = "0be23448e5386f3e80675d7651a5916ef452ad27c4a610a18e9978b57926f3f5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.2-r1-3d3b1d5d252ef89cc6e2c21886124ad83302648bf4cad823e6491e997f45a5e8.nix;
+        revNum = 1;
+        sha256 = "3d3b1d5d252ef89cc6e2c21886124ad83302648bf4cad823e6491e997f45a5e8";
+      };
+      default = "r1";
     };
   };
   "1.4.3" = {
@@ -106,7 +151,12 @@
         revNum = 0;
         sha256 = "90b4839658fa9eb5026824def40b3157a1990064b1c1abd666d5601f646766f1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.3-r1-db90ca18ae0adcede6dfc6bc5e61af15a0077438dd38963cad54fe688c22b7de.nix;
+        revNum = 1;
+        sha256 = "db90ca18ae0adcede6dfc6bc5e61af15a0077438dd38963cad54fe688c22b7de";
+      };
+      default = "r1";
     };
   };
   "1.4.4" = {
@@ -117,7 +167,12 @@
         revNum = 0;
         sha256 = "72b856fddc8c831182a90e39ee091ab2a7cb460a767403fd64a87534fa23f8f8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.4-r1-d62391edc525ac663648f8d17e86a79b083aaacf7d91be3adfbf6589b907414a.nix;
+        revNum = 1;
+        sha256 = "d62391edc525ac663648f8d17e86a79b083aaacf7d91be3adfbf6589b907414a";
+      };
+      default = "r1";
     };
   };
   "1.4.5" = {
@@ -128,7 +183,12 @@
         revNum = 0;
         sha256 = "4aa4d3c9b01d09acd69a478599c4e90ca2429a5bf3c8fcd0839c96e85c7e5f28";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.4.5-r1-e559f77a45a5b6f2b24683861114f2b2c4ab71880af4764b978da4a6851e7915.nix;
+        revNum = 1;
+        sha256 = "e559f77a45a5b6f2b24683861114f2b2c4ab71880af4764b978da4a6851e7915";
+      };
+      default = "r1";
     };
   };
   "1.5.0" = {
@@ -139,7 +199,12 @@
         revNum = 0;
         sha256 = "07b42a1df58879bd63ba898c61c365203d76d5a54fc3bf7ab8ea65d3d8f7e12a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.5.0-r1-8a0d7ca9f61bd3808156079caf3ba993b6be530abfccbb800136a616090d2a94.nix;
+        revNum = 1;
+        sha256 = "8a0d7ca9f61bd3808156079caf3ba993b6be530abfccbb800136a616090d2a94";
+      };
+      default = "r1";
     };
   };
   "1.6.0" = {
@@ -150,7 +215,12 @@
         revNum = 0;
         sha256 = "d2b59d29de21df062b06c2c1197bab57c751ee9b450c00b2983136fd552a09b0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.6.0-r1-a4f199cc75b1472b6f79e8db6386120b71ccd96546a0ac7f7b9507a1b804e358.nix;
+        revNum = 1;
+        sha256 = "a4f199cc75b1472b6f79e8db6386120b71ccd96546a0ac7f7b9507a1b804e358";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -161,7 +231,12 @@
         revNum = 0;
         sha256 = "c05bb6c45f2cb4cfc6c68f7d23630a3a089090bf8c8e0a1b45a5da5102ec3cb4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-1.6.1-r1-114ea96958e9be39f1f83cef395d4acc8defc2bb020e27efd845d10be1f45e3c.nix;
+        revNum = 1;
+        sha256 = "114ea96958e9be39f1f83cef395d4acc8defc2bb020e27efd845d10be1f45e3c";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -172,7 +247,12 @@
         revNum = 0;
         sha256 = "bc0405a15a8c10da75b7d01ec54e0066d21dee0dd5876f679c754ddb3324d343";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-waf-2.0-r1-d0349db5564dbcbb7b482f4d67709bc5d41fbc5ff1e741b414a0c999caa755d1.nix;
+        revNum = 1;
+        sha256 = "d0349db5564dbcbb7b482f4d67709bc5d41fbc5ff1e741b414a0c999caa755d1";
+      };
+      default = "r1";
     };
   };
 }

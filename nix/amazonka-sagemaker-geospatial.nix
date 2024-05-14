@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "7eed1e64d0e38a63d63479ede482fd1a306ad79f57e6000a0a349e40098ce700";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sagemaker-geospatial-2.0-r1-63c7de1eecbc206e6a839042ab1e72141bee14b2e10280a8c6776e04e52bdb20.nix;
+        revNum = 1;
+        sha256 = "63c7de1eecbc206e6a839042ab1e72141bee14b2e10280a8c6776e04e52bdb20";
+      };
+      default = "r1";
     };
   };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5ccb71caf9bbb4284ba18d4af2639b7c0aa298874699bcd4f237bf9a2374cd2b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-worklink-2.0-r1-ef25e7a9d4f21435547eedea6dfa710ef3173b1c16807f5d93676399f20018a8.nix;
+        revNum = 1;
+        sha256 = "ef25e7a9d4f21435547eedea6dfa710ef3173b1c16807f5d93676399f20018a8";
+      };
+      default = "r1";
     };
   };
 }

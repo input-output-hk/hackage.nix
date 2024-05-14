@@ -135,6 +135,17 @@
       default = "r1";
     };
   };
+  "0.11.0.2" = {
+    sha256 = "b564a10e1b6b9ecab45ffbc3d418196a49a5a82411d1f3e5ff75583ba6bcf090";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-lua-0.11.0.2-r0-5eedabf72cad2f286061b81ae2d6d8df1e9c9ed27e8924461aabb742aa9213ba.nix;
+        revNum = 0;
+        sha256 = "5eedabf72cad2f286061b81ae2d6d8df1e9c9ed27e8924461aabb742aa9213ba";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "ff3e21daba04cb3f67ec0175b92572c7e581a6928c52eb5da44a2f2b3ac65f1b";
     revisions = {

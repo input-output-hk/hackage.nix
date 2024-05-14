@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5c907b1d50f010893d761a7eaa3e15f7158854413e78b93e26071417b14bb7cd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-iotevents-2.0-r1-9075182f98172356d1077b3ce5b781157134c7103ff3dd143190c54b7be12402.nix;
+        revNum = 1;
+        sha256 = "9075182f98172356d1077b3ce5b781157134c7103ff3dd143190c54b7be12402";
+      };
+      default = "r1";
     };
   };
 }

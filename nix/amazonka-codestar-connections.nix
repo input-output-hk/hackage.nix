@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e094cb91a91d87570304595ec85bfbbff1c18c16eca11e5a95485383c0a6f60c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-codestar-connections-2.0-r1-eeb3177a9c546fbf715b532179c7b0e09b678cbbc1cbd0b54b1deba0ce41c5cf.nix;
+        revNum = 1;
+        sha256 = "eeb3177a9c546fbf715b532179c7b0e09b678cbbc1cbd0b54b1deba0ce41c5cf";
+      };
+      default = "r1";
     };
   };
 }

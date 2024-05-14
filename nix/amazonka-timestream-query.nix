@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "cf855596bd682d69d9a077ad9476768aded9e6dcf8444acfb6357ec2941c096c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-timestream-query-2.0-r1-5b7b1fe14e56e2b81966eee9004161b1ba088f9fcca48bb633cde89810d4870b.nix;
+        revNum = 1;
+        sha256 = "5b7b1fe14e56e2b81966eee9004161b1ba088f9fcca48bb633cde89810d4870b";
+      };
+      default = "r1";
     };
   };
 }

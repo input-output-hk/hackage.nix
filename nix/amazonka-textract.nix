@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "dfe36c0eb2db7831594a797f7e8c009c6fdb3208eba1f8dbaf05c8724f8be87c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-textract-2.0-r1-200221ba64f5b31736f47926c39d7c606c444d28366fdfbd732b1e0741b559f7.nix;
+        revNum = 1;
+        sha256 = "200221ba64f5b31736f47926c39d7c606c444d28366fdfbd732b1e0741b559f7";
+      };
+      default = "r1";
     };
   };
 }

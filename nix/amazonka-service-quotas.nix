@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "825b9fbcfd608b8ffe42ba5b0a280c17696e5349bf514456ce52624c144e78f8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-service-quotas-2.0-r1-5390ec9ce03724bdb54e5fc142383b4e23de9d9885037461f736260d80e4a7d3.nix;
+        revNum = 1;
+        sha256 = "5390ec9ce03724bdb54e5fc142383b4e23de9d9885037461f736260d80e4a7d3";
+      };
+      default = "r1";
     };
   };
 }

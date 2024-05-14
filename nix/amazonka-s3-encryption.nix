@@ -12,7 +12,17 @@
         revNum = 1;
         sha256 = "1d60f106a35b2d3911c2d238487dfdc13c48379cad921409183bc196255b1d2d";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/amazonka-s3-encryption-2.0-r2-b864b2a130bc7c77d26c8ffb2de07ffc6bcf834a89ee79278e2c653c17b4f53e.nix;
+        revNum = 2;
+        sha256 = "b864b2a130bc7c77d26c8ffb2de07ffc6bcf834a89ee79278e2c653c17b4f53e";
+      };
+      r3 = {
+        nix = import ../hackage/amazonka-s3-encryption-2.0-r3-e265aa55c8fb19cc37a26ab1e9b839201a1e9ec115acd23afc42dbdf22b06255.nix;
+        revNum = 3;
+        sha256 = "e265aa55c8fb19cc37a26ab1e9b839201a1e9ec115acd23afc42dbdf22b06255";
+      };
+      default = "r3";
     };
   };
 }

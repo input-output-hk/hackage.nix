@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f517353be802e11887b2f1f6e79aca0c515df20233232b24b687c8a2b4abb50b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-datasync-2.0-r1-2c017e1d5f8d97b1c30af80b1d2796a91311def1970164c6ed30c524529676c6.nix;
+        revNum = 1;
+        sha256 = "2c017e1d5f8d97b1c30af80b1d2796a91311def1970164c6ed30c524529676c6";
+      };
+      default = "r1";
     };
   };
 }

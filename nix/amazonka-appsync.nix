@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "2b77c0f63c48e00972b5ae5838ee8cf22f141628a6d43675ce27a92bf8d3aaec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-appsync-1.6.0-r1-282f31adbe2e120900d9b3c4ecc040db4d8a622d0efe47c1a944f8749ad92a83.nix;
+        revNum = 1;
+        sha256 = "282f31adbe2e120900d9b3c4ecc040db4d8a622d0efe47c1a944f8749ad92a83";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "89d1ddd1fe82373b6c67b011886ba6a205f1ab2086081f96a5dedff6b1b13bb0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-appsync-1.6.1-r1-98ad27a74064ee9629370c5c4ca47f5bbe7f6dae57dce741ffb2773a5124890f.nix;
+        revNum = 1;
+        sha256 = "98ad27a74064ee9629370c5c4ca47f5bbe7f6dae57dce741ffb2773a5124890f";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "cb3408044f413ebf5b4aceb6f3340d833a709997a0e8186e956e117520d7bd3b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-appsync-2.0-r1-aaa43f9ad4151e456fe9821ac6fae9d0fd7cae09290b4d3826a4e733640eec89.nix;
+        revNum = 1;
+        sha256 = "aaa43f9ad4151e456fe9821ac6fae9d0fd7cae09290b4d3826a4e733640eec89";
+      };
+      default = "r1";
     };
   };
 }

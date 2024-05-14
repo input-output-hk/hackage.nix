@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "861bc9cb9d80bb1e4ebe05d7000af589fbde8e0caa2b0e0dc08a73ac089c2af6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.0-r1-bea36ef6acc8ffe58af6d6c9d035cc7cc2ce8445c48e5c814ee5c7b49cf661ce.nix;
+        revNum = 1;
+        sha256 = "bea36ef6acc8ffe58af6d6c9d035cc7cc2ce8445c48e5c814ee5c7b49cf661ce";
+      };
+      default = "r1";
     };
   };
   "1.4.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "5e2fb1ba6d07b474fcc7eb2de8840ec016c7a2c8417e1345bacc1a4fb79813a1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.1-r1-2a2a4ea9dd742177e99c279fd3469661d4ac90596118c329c240fdf057e954ca.nix;
+        revNum = 1;
+        sha256 = "2a2a4ea9dd742177e99c279fd3469661d4ac90596118c329c240fdf057e954ca";
+      };
+      default = "r1";
     };
   };
   "1.4.2" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "e571aadab4da053e95aa99c026e92085b4c7c88333d822719c5f1db2ca3a8dc7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.2-r1-950cfb4dba82a302ca7fa2e52673a276ff36a1b906af9d041d0e98cb3eb91c0f.nix;
+        revNum = 1;
+        sha256 = "950cfb4dba82a302ca7fa2e52673a276ff36a1b906af9d041d0e98cb3eb91c0f";
+      };
+      default = "r1";
     };
   };
   "1.4.3" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "8ffa2abe1e3164959c50342e083dccce54502b13791aaa25488f671fa6dbfd18";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.3-r1-fb1b6e86a1f176a078fd03109dddb7d98a4f3f49aab358553d60e3fa56147c68.nix;
+        revNum = 1;
+        sha256 = "fb1b6e86a1f176a078fd03109dddb7d98a4f3f49aab358553d60e3fa56147c68";
+      };
+      default = "r1";
     };
   };
   "1.4.4" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "959eeee1c7713d0697b328836cace5c7fe8a780a5880a3c5a17deb29d8ac4592";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.4-r1-ce904b4010898f8dc7ff22b902d752307ea56026a891b2210651d6ecf3efc052.nix;
+        revNum = 1;
+        sha256 = "ce904b4010898f8dc7ff22b902d752307ea56026a891b2210651d6ecf3efc052";
+      };
+      default = "r1";
     };
   };
   "1.4.5" = {
@@ -62,7 +87,12 @@
         revNum = 0;
         sha256 = "1265863edd9852075e02f3841ef8149c38ae0570adba3ab5c6212dbc399292dd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.4.5-r1-ba347c67956e9c0de0bba3752f59e7e0d01a07420d370853c9c901b4e5744c09.nix;
+        revNum = 1;
+        sha256 = "ba347c67956e9c0de0bba3752f59e7e0d01a07420d370853c9c901b4e5744c09";
+      };
+      default = "r1";
     };
   };
   "1.5.0" = {
@@ -73,7 +103,12 @@
         revNum = 0;
         sha256 = "654f46cd6d7b53ea3d63ba3efde374908f379220bd7231d3c98b9c9d380997cf";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.5.0-r1-ed35a13ef827d6f05978538806b2e89ded06e0e752d93a63ade324c6d2995ed1.nix;
+        revNum = 1;
+        sha256 = "ed35a13ef827d6f05978538806b2e89ded06e0e752d93a63ade324c6d2995ed1";
+      };
+      default = "r1";
     };
   };
   "1.6.0" = {
@@ -84,7 +119,12 @@
         revNum = 0;
         sha256 = "a68c5679b5802626436a73f1e86bec15ef4522bbbf89cc6c627354bf61c01080";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.6.0-r1-129389137795692e8208d156d26a9e745c8814099795482eaa422ba7589bda63.nix;
+        revNum = 1;
+        sha256 = "129389137795692e8208d156d26a9e745c8814099795482eaa422ba7589bda63";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -95,7 +135,12 @@
         revNum = 0;
         sha256 = "fef607d6e9191e963ec505da8d567fe4f446ee41a5bce8dc9b0b8d1d11179ef9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-1.6.1-r1-78e9e44fc6dab4e4ae9e5b020043fb83ddf473ab59b90611af64df386273ced6.nix;
+        revNum = 1;
+        sha256 = "78e9e44fc6dab4e4ae9e5b020043fb83ddf473ab59b90611af64df386273ced6";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -106,7 +151,12 @@
         revNum = 0;
         sha256 = "942beaa926e6022786579a398420fcc1b3be557d77dee31e26c69f5c119ca304";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-marketplace-metering-2.0-r1-a9fbfa6549dca5d77883a6f9a91d1e8619a0b5efb87e72229ea04dc482d76028.nix;
+        revNum = 1;
+        sha256 = "a9fbfa6549dca5d77883a6f9a91d1e8619a0b5efb87e72229ea04dc482d76028";
+      };
+      default = "r1";
     };
   };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "95e00d399cbb8d6f150520990ce20089f0c7c9bfe06f8996f09b3685bde8adff";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.0-r1-cc5a70c2afbbfa66030709000704a9025de77cd4fb172ed5ca27fb9217a5cb1e.nix;
+        revNum = 1;
+        sha256 = "cc5a70c2afbbfa66030709000704a9025de77cd4fb172ed5ca27fb9217a5cb1e";
+      };
+      default = "r1";
     };
   };
   "1.4.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "9129b51f095f29b316bf3a20750f75b3f58ceccec40465bd2c2de1f52ba2a59b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.1-r1-d0ba28d63d81dfe7cd7fb9fb9ea469bc8610b4ec377f0f56de97e80118748d17.nix;
+        revNum = 1;
+        sha256 = "d0ba28d63d81dfe7cd7fb9fb9ea469bc8610b4ec377f0f56de97e80118748d17";
+      };
+      default = "r1";
     };
   };
   "1.4.2" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "d59101a3a9579281ef4f3872dbeb7fbc798a56a53c533e806516a3df672997a9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.2-r1-257d9575d648c72058d031d88666438e60b5193e373fb4af9a974fa6ce0f6193.nix;
+        revNum = 1;
+        sha256 = "257d9575d648c72058d031d88666438e60b5193e373fb4af9a974fa6ce0f6193";
+      };
+      default = "r1";
     };
   };
   "1.4.3" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "7119c99a4de9727b54aeb392a7f6a0402da8c7c9d5963526766b51650dd29dcd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.3-r1-c74d8d5016bb4fa709488cb2f7f0c99de8b58de49d10874e359637f82e347ae6.nix;
+        revNum = 1;
+        sha256 = "c74d8d5016bb4fa709488cb2f7f0c99de8b58de49d10874e359637f82e347ae6";
+      };
+      default = "r1";
     };
   };
   "1.4.4" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "6d1383ebfe4099c69ea4d96614380db481e6b6b0535800ce353abbb2b590d973";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.4-r1-58e86406fb51d472664d784f869f5cd3f38a27eba8defc57b9b9ba146d78d3a8.nix;
+        revNum = 1;
+        sha256 = "58e86406fb51d472664d784f869f5cd3f38a27eba8defc57b9b9ba146d78d3a8";
+      };
+      default = "r1";
     };
   };
   "1.4.5" = {
@@ -62,7 +87,12 @@
         revNum = 0;
         sha256 = "afaf07f7629438e6c29408478a99ddc8ccd363f1f178a077b6c9f5a3cef8f368";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.4.5-r1-dde66975f43104ac9454d78420950fbf83039f890c24e1bd0a1edb8d4e7b4fe0.nix;
+        revNum = 1;
+        sha256 = "dde66975f43104ac9454d78420950fbf83039f890c24e1bd0a1edb8d4e7b4fe0";
+      };
+      default = "r1";
     };
   };
   "1.5.0" = {
@@ -73,7 +103,12 @@
         revNum = 0;
         sha256 = "2177009c223505139b1b266d249ccc2887f236698acc049bb936b59beb881275";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.5.0-r1-d1bbe5f5d57fe3be0a2f8ede361689c8d53aeb79c9f57ce4c238f98e0e94e54a.nix;
+        revNum = 1;
+        sha256 = "d1bbe5f5d57fe3be0a2f8ede361689c8d53aeb79c9f57ce4c238f98e0e94e54a";
+      };
+      default = "r1";
     };
   };
   "1.6.0" = {
@@ -84,7 +119,12 @@
         revNum = 0;
         sha256 = "91bf0ea2ea2c0ff253e264547ca9a71b978bef1f9a3f74f44d9c5ba0f2050296";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.6.0-r1-9bef86a4b1d273f4ab348b3fdd5459cc2e6778e97eb541480c7be5fdf0f82781.nix;
+        revNum = 1;
+        sha256 = "9bef86a4b1d273f4ab348b3fdd5459cc2e6778e97eb541480c7be5fdf0f82781";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -95,7 +135,12 @@
         revNum = 0;
         sha256 = "1f285db13be6004222a4516eccec659a15d7427f410b488a222a4d695c9fabe6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-1.6.1-r1-02337942427c68d2d7758392f7647027a673a4a64f45476d31e18b3c6ab46e1d.nix;
+        revNum = 1;
+        sha256 = "02337942427c68d2d7758392f7647027a673a4a64f45476d31e18b3c6ab46e1d";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -106,7 +151,12 @@
         revNum = 0;
         sha256 = "2fa58e57869352f0e3271ace6086aa5700717e6385a4d7227fa3623c181ea36d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-gamelift-2.0-r1-33d10b90a8feb1b7400775ebcfd5783324f344a8fb283041942e3855b711942c.nix;
+        revNum = 1;
+        sha256 = "33d10b90a8feb1b7400775ebcfd5783324f344a8fb283041942e3855b711942c";
+      };
+      default = "r1";
     };
   };
 }

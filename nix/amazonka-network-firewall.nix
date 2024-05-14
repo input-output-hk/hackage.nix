@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "a063bde5a3f00d6e5f04029c18f12d34621c8e6e15bd8fe3cd8f3f80286ece45";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-network-firewall-2.0-r1-b9235ff90507b8589dfb7f9097396c0294172d310d17b2572d2561b1a3e1ce9c.nix;
+        revNum = 1;
+        sha256 = "b9235ff90507b8589dfb7f9097396c0294172d310d17b2572d2561b1a3e1ce9c";
+      };
+      default = "r1";
     };
   };
 }

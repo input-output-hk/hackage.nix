@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "29eca91582273adc25911c7f682c51a9c624182550bbe67a617aa9ecf8ccfdbd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-fsx-2.0-r1-b4c4d8432800fc4a1f5e95bdf1afd24a2f110689cec945d774e568ed3c2e4377.nix;
+        revNum = 1;
+        sha256 = "b4c4d8432800fc4a1f5e95bdf1afd24a2f110689cec945d774e568ed3c2e4377";
+      };
+      default = "r1";
     };
   };
 }

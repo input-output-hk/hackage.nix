@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "4a59245ee9ae67f326b8d66bb906c920910a40fd1c183a193e137b4d6ca80f7d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-codestar-notifications-2.0-r1-7b555e6348b38af24977d2a938f883cd7ebc5d123301b9f33658fed8ca9b6bc2.nix;
+        revNum = 1;
+        sha256 = "7b555e6348b38af24977d2a938f883cd7ebc5d123301b9f33658fed8ca9b6bc2";
+      };
+      default = "r1";
     };
   };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "16b7b114047ee26c00239ca190d71b6d45ad823760aaa0634ea4366f012e148d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-polly-1.4.5-r1-a6a134d6e7dabae8277d2394eebf4e61e337e4f0ad3cbd7efc623ed7556deb87.nix;
+        revNum = 1;
+        sha256 = "a6a134d6e7dabae8277d2394eebf4e61e337e4f0ad3cbd7efc623ed7556deb87";
+      };
+      default = "r1";
     };
   };
   "1.5.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "71a6aaa3c1b9eedfbae22e8d7a1329c689b491115bf92bc72829b76ff442d4c3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-polly-1.5.0-r1-524ad155fccde452ccdacb04b109eb2437660d0c08649b591ec663ee4bc78572.nix;
+        revNum = 1;
+        sha256 = "524ad155fccde452ccdacb04b109eb2437660d0c08649b591ec663ee4bc78572";
+      };
+      default = "r1";
     };
   };
   "1.6.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "c2bc179595ef7df3695922eaf644f0cd740312536ea90fd625395abf8956b900";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-polly-1.6.0-r1-57f17d74927f266fee01575f54d6c33bce03cee3b0629df7790337116a95948b.nix;
+        revNum = 1;
+        sha256 = "57f17d74927f266fee01575f54d6c33bce03cee3b0629df7790337116a95948b";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "12852e691c410a463f242d3769d8c7f114a82630a8881bdbed8079580ea8525d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-polly-1.6.1-r1-687c3961504104e88b3291e5107f3e76d5a7a1a6128daa75c6bc3276ed17932b.nix;
+        revNum = 1;
+        sha256 = "687c3961504104e88b3291e5107f3e76d5a7a1a6128daa75c6bc3276ed17932b";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "001c884c9dfe64c8008218720cc4655bc59af72e202cdcf5c1d787c0e8752815";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-polly-2.0-r1-71b2f27ed333cc72b3c687fb709f15c41308363702104d86d6628c17a6e551d8.nix;
+        revNum = 1;
+        sha256 = "71b2f27ed333cc72b3c687fb709f15c41308363702104d86d6628c17a6e551d8";
+      };
+      default = "r1";
     };
   };
 }

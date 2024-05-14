@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "ed622c6970ca5986e8091cc2796a747e85aeb38f8cd8c70b06d7442a0e4cee1e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-forecastquery-2.0-r1-0af185de57d94a663d822c085072a897700676be1e4c1ddc92b654112917d416.nix;
+        revNum = 1;
+        sha256 = "0af185de57d94a663d822c085072a897700676be1e4c1ddc92b654112917d416";
+      };
+      default = "r1";
     };
   };
 }

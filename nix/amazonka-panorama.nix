@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "00ad7953198c260d5a76e9ebcc3a91a358f417c67394355ad9ed77050587806b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-panorama-2.0-r1-5135c48aecf94faed3fe362b76d74bf121f3e37b8c50833f7298d8d884d09d03.nix;
+        revNum = 1;
+        sha256 = "5135c48aecf94faed3fe362b76d74bf121f3e37b8c50833f7298d8d884d09d03";
+      };
+      default = "r1";
     };
   };
 }

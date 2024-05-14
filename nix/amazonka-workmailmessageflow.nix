@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "46dcad46f0c2c4c739c1d07f28d12aba4be6a5f83ae3d29c7fc67523db37ad3a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-workmailmessageflow-2.0-r1-fba3c415187d49f9ac80b135567727a8c154f6e9cf17d0aa8e411656505b7d82.nix;
+        revNum = 1;
+        sha256 = "fba3c415187d49f9ac80b135567727a8c154f6e9cf17d0aa8e411656505b7d82";
+      };
+      default = "r1";
     };
   };
 }

@@ -2355,6 +2355,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "autoexporter" = import ./nix/autoexporter.nix;
   "autom" = import ./nix/autom.nix;
   "automata" = import ./nix/automata.nix;
+  "automaton" = import ./nix/automaton.nix;
   "automitive-cse" = import ./nix/automitive-cse.nix;
   "automotive-cse" = import ./nix/automotive-cse.nix;
   "autonix-deps" = import ./nix/autonix-deps.nix;
@@ -4119,6 +4120,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cr" = import ./nix/cr.nix;
   "crack" = import ./nix/crack.nix;
   "crackNum" = import ./nix/crack_Num.nix;
+  "cradle" = import ./nix/cradle.nix;
   "craft" = import ./nix/craft.nix;
   "craftwerk" = import ./nix/craftwerk.nix;
   "craftwerk-cairo" = import ./nix/craftwerk-cairo.nix;
@@ -8986,6 +8988,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "indexed-free" = import ./nix/indexed-free.nix;
   "indexed-list-literals" = import ./nix/indexed-list-literals.nix;
   "indexed-profunctors" = import ./nix/indexed-profunctors.nix;
+  "indexed-state" = import ./nix/indexed-state.nix;
   "indexed-transformers" = import ./nix/indexed-transformers.nix;
   "indexed-traversable" = import ./nix/indexed-traversable.nix;
   "indexed-traversable-instances" = import ./nix/indexed-traversable-instances.nix;

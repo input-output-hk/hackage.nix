@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "deb8e353cdeddb7364472ac13df0cb8b1f7bacbf54eec6b8fc9db4594b92b0d0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-secretsmanager-1.6.0-r1-db42b68d74b8c2eec4ddfa47febbf1bb9348f2d96049594bad79f1c7e8a3cb3f.nix;
+        revNum = 1;
+        sha256 = "db42b68d74b8c2eec4ddfa47febbf1bb9348f2d96049594bad79f1c7e8a3cb3f";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "f3e7266e8b19b214c721c49c50d24b7a6cc1ed280a1e481eabf08dc507e38f5d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-secretsmanager-1.6.1-r1-e5d64ae0fe980b06e056d7b5dbabfac0cc8f41a722b7cf052569abc821750d1e.nix;
+        revNum = 1;
+        sha256 = "e5d64ae0fe980b06e056d7b5dbabfac0cc8f41a722b7cf052569abc821750d1e";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "de4b8b2e1d5d0743dda1eb85c8be96897ab6ccf5aa62494d2d6318d869a49d42";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-secretsmanager-2.0-r1-7acae6ff2ba0a4149f0168bf5df0c962e5e289ee24c9405ebeb1e2bb8d80cbb6.nix;
+        revNum = 1;
+        sha256 = "7acae6ff2ba0a4149f0168bf5df0c962e5e289ee24c9405ebeb1e2bb8d80cbb6";
+      };
+      default = "r1";
     };
   };
 }

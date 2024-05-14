@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "8dcd82e8697adbae1641f4fcaeaa85b1cff7b85c49846cf5be654e80e99243ed";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-backupstorage-2.0-r1-7632e8d66cc1ea1e2fa8de507088841bb40b730dcf86e8273042f63b314ce73d.nix;
+        revNum = 1;
+        sha256 = "7632e8d66cc1ea1e2fa8de507088841bb40b730dcf86e8273042f63b314ce73d";
+      };
+      default = "r1";
     };
   };
 }

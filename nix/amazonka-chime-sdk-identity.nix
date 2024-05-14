@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "6225dfe73442ca0591a33dff9ea44328b98aa61ede8ff7316684d627cf970d82";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-chime-sdk-identity-2.0-r1-1d263dff09bdf103a30191f9845e36410eb66758ade473b12805dc8d1a1fcd7a.nix;
+        revNum = 1;
+        sha256 = "1d263dff09bdf103a30191f9845e36410eb66758ade473b12805dc8d1a1fcd7a";
+      };
+      default = "r1";
     };
   };
 }

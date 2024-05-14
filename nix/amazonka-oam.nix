@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e7953908bfceefa366f3e5652f1e8d9420576ec076ff27c85201c35a80bfb9cb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-oam-2.0-r1-a26138c811af8b280147e80e12422bf6928d071edfaa81648d066f5ed01be0f0.nix;
+        revNum = 1;
+        sha256 = "a26138c811af8b280147e80e12422bf6928d071edfaa81648d066f5ed01be0f0";
+      };
+      default = "r1";
     };
   };
 }

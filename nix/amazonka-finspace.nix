@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f2b65a99caafef5180e872abef0121971bd796a5d9288802ac5c1bd3dc4669c7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-finspace-2.0-r1-2c5b47dac3040a0ffa6c30c8478466183e96cb57a4e6346293b8c38d1d16baa6.nix;
+        revNum = 1;
+        sha256 = "2c5b47dac3040a0ffa6c30c8478466183e96cb57a4e6346293b8c38d1d16baa6";
+      };
+      default = "r1";
     };
   };
 }

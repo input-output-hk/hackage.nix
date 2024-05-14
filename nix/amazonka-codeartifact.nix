@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "d7fc1f6f7dee0cddccc2085e84bac621c509c9451fff434d81e503cfbb30ee19";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-codeartifact-2.0-r1-6f3f96de9481c1113db53021ca970c56f203807b49958719fe0ca76533284dde.nix;
+        revNum = 1;
+        sha256 = "6f3f96de9481c1113db53021ca970c56f203807b49958719fe0ca76533284dde";
+      };
+      default = "r1";
     };
   };
 }

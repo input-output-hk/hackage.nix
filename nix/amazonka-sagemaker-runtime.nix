@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5bca5e2dfd681713eae082981f20786c06ef257811e7fedbd8c8e33afe147535";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sagemaker-runtime-1.6.0-r1-024c0532b51660d76bcfd592d8212e28b3aee5748ca1125ecaeeb9a677094aac.nix;
+        revNum = 1;
+        sha256 = "024c0532b51660d76bcfd592d8212e28b3aee5748ca1125ecaeeb9a677094aac";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "19ee20af2551ed5d55038c0416487c76e27fef527d8a50616f8d386c2441c9c7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sagemaker-runtime-1.6.1-r1-fec81a09a1f40b5633aede5286b51a59cc990ae5f67c83083cc4c25bf8e53725.nix;
+        revNum = 1;
+        sha256 = "fec81a09a1f40b5633aede5286b51a59cc990ae5f67c83083cc4c25bf8e53725";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "a7a3cb3a5ae51eb3439b4ffd416e513afbcbb553e3260f02620fec204450a584";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sagemaker-runtime-2.0-r1-4186b21eb5e3af883123f38b6e29f4bd9be6bfbd604681dea1e4055be4cccabb.nix;
+        revNum = 1;
+        sha256 = "4186b21eb5e3af883123f38b6e29f4bd9be6bfbd604681dea1e4055be4cccabb";
+      };
+      default = "r1";
     };
   };
 }

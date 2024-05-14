@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "64c7c40dbedd21d2fdfb271a52e7a86fe9cb407a00c8252c4c965b8629e2b669";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-scheduler-2.0-r1-10db1eef995561c6b0e65abef4fa88cc3e01695d6a7aa3dcf89ec9c9aea0e0ac.nix;
+        revNum = 1;
+        sha256 = "10db1eef995561c6b0e65abef4fa88cc3e01695d6a7aa3dcf89ec9c9aea0e0ac";
+      };
+      default = "r1";
     };
   };
 }

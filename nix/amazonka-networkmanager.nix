@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "199181ed4940f8c2023019e537145ed9ac6bffd6ea66f0878b774612ebfc39ce";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-networkmanager-2.0-r1-7aa4ab4a78155b9314bd3ab06460db3b7e6241f24bf407e136c709277010aeb9.nix;
+        revNum = 1;
+        sha256 = "7aa4ab4a78155b9314bd3ab06460db3b7e6241f24bf407e136c709277010aeb9";
+      };
+      default = "r1";
     };
   };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "701010b4e090203ee99215cebd311e04b22acf64958754e049002d40f014e347";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-ssm-incidents-2.0-r1-f973d728e1a8e83aeb88ae6128c30de1115837121888338d9efcc04491892893.nix;
+        revNum = 1;
+        sha256 = "f973d728e1a8e83aeb88ae6128c30de1115837121888338d9efcc04491892893";
+      };
+      default = "r1";
     };
   };
 }

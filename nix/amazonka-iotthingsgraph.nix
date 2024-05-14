@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "93196ccf0de0fe7bd0fea0645469601b6a351ee5fd2b641511f03d08fd1f958a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-iotthingsgraph-2.0-r1-f0d2427307305ef080c8821eb6d477a98cd655245e5252d4c8334647eae64012.nix;
+        revNum = 1;
+        sha256 = "f0d2427307305ef080c8821eb6d477a98cd655245e5252d4c8334647eae64012";
+      };
+      default = "r1";
     };
   };
 }

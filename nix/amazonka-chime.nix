@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "9db0a5fb35ca85b9e9d49f3c82604f57e4f8eedb428c5f2e5c12b7f31f798cec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-chime-2.0-r1-e6956a5b35e7e5d85681aa8c94eb4a1854f926f4a9f2fe28614cdb9ead162d79.nix;
+        revNum = 1;
+        sha256 = "e6956a5b35e7e5d85681aa8c94eb4a1854f926f4a9f2fe28614cdb9ead162d79";
+      };
+      default = "r1";
     };
   };
 }

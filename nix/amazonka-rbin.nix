@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "c3729098ffc800fead30970f2c58e6530c80aa6a17d2c71eda7a24d613114669";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-rbin-2.0-r1-539d26b82093be45b20b5759e6706b75a24405ff5d81590c14802b2499298a6d.nix;
+        revNum = 1;
+        sha256 = "539d26b82093be45b20b5759e6706b75a24405ff5d81590c14802b2499298a6d";
+      };
+      default = "r1";
     };
   };
 }

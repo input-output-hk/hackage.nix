@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "48029f170659e2e5d693681eee8624aa9f76b5ec1fcd10ca49cca1cbfa72ddde";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-fis-2.0-r1-5a85fd98d7845a796db7ee0e4f399d23b1c90511c6f852a3260620928d18e475.nix;
+        revNum = 1;
+        sha256 = "5a85fd98d7845a796db7ee0e4f399d23b1c90511c6f852a3260620928d18e475";
+      };
+      default = "r1";
     };
   };
 }

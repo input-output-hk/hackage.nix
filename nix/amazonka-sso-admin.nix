@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "fb719d76d5086eebdddad54016f8c2be5afea69a34f63dfbf2b6f30605cd75d0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sso-admin-2.0-r1-ea96af9017013923f4bfdecef176d165ca076cc6624988ec483a82e9a37d2fd2.nix;
+        revNum = 1;
+        sha256 = "ea96af9017013923f4bfdecef176d165ca076cc6624988ec483a82e9a37d2fd2";
+      };
+      default = "r1";
     };
   };
 }

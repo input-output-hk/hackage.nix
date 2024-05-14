@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "2802c82538cb75320711d7399ccd05598d1a5d0df476e0a490160c54d07efb36";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-grafana-2.0-r1-b6e46958fbd9018b59465f50e9a6e5b794b9393516946b7937266f44e059eb37.nix;
+        revNum = 1;
+        sha256 = "b6e46958fbd9018b59465f50e9a6e5b794b9393516946b7937266f44e059eb37";
+      };
+      default = "r1";
     };
   };
 }

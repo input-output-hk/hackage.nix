@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "c6b8089b81dff10a4cfbd68742632773a598c1840e993e4f86ab447d2387ebc0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.4.1-r1-1accebf0dd8bded70e7e91d17773ef3c991668dab0ba7af7dcf410cd43c2a58f.nix;
+        revNum = 1;
+        sha256 = "1accebf0dd8bded70e7e91d17773ef3c991668dab0ba7af7dcf410cd43c2a58f";
+      };
+      default = "r1";
     };
   };
   "1.4.2" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "b331eab7872e2a8db770a07481dcdb31b661f3ae1786f98c0f0663c810b910fd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.4.2-r1-9499a161d15b2398af4e83389402417c35d92cb503df6a446790dd4cd434310d.nix;
+        revNum = 1;
+        sha256 = "9499a161d15b2398af4e83389402417c35d92cb503df6a446790dd4cd434310d";
+      };
+      default = "r1";
     };
   };
   "1.4.3" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "51ce8c27fe7e32f54be6ba05e349f62dbeabbb5b6e5358ac95c6058a39874f20";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.4.3-r1-de30bb349188ce74bb46463ebd7089eacb0f2c772e852658a8d1e8109d097d04.nix;
+        revNum = 1;
+        sha256 = "de30bb349188ce74bb46463ebd7089eacb0f2c772e852658a8d1e8109d097d04";
+      };
+      default = "r1";
     };
   };
   "1.4.4" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "9bf7727f53a50875d7de9d8bdbfed2e010cf9510e537449ee065a09b3acb8d7b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.4.4-r1-2ec4b5435ebca71c862ab6e4aa4e1fe498f348571c3c63178c37eac6daa19c25.nix;
+        revNum = 1;
+        sha256 = "2ec4b5435ebca71c862ab6e4aa4e1fe498f348571c3c63178c37eac6daa19c25";
+      };
+      default = "r1";
     };
   };
   "1.4.5" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "5646ad2cc5f85e97b31c2089392774481d276f9e5d75c8ea2eb7e8f13ccc12bc";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.4.5-r1-bfdf6501feeb70a24b31f3593fa0ae0e029fdd1f11a65a872a7c97c0cf5d7394.nix;
+        revNum = 1;
+        sha256 = "bfdf6501feeb70a24b31f3593fa0ae0e029fdd1f11a65a872a7c97c0cf5d7394";
+      };
+      default = "r1";
     };
   };
   "1.5.0" = {
@@ -62,7 +87,12 @@
         revNum = 0;
         sha256 = "b7fa55f48f030116ebcbc9c99f1a1f763be3c12bfa885ccd1c9e36ab455b9263";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.5.0-r1-bd9889f4acef2be769b3083dd2307ae8ded4a7cae0383ea9575d32560999de91.nix;
+        revNum = 1;
+        sha256 = "bd9889f4acef2be769b3083dd2307ae8ded4a7cae0383ea9575d32560999de91";
+      };
+      default = "r1";
     };
   };
   "1.6.0" = {
@@ -73,7 +103,12 @@
         revNum = 0;
         sha256 = "51e0f0918e54bc6a9baa9bfc53e9867786c7e63ca96e452f5b9de9be33056be9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.6.0-r1-57e05405586e0ae32663fba1617aab727d1e4aca34a939bbe9a8d0c5b7fcd514.nix;
+        revNum = 1;
+        sha256 = "57e05405586e0ae32663fba1617aab727d1e4aca34a939bbe9a8d0c5b7fcd514";
+      };
+      default = "r1";
     };
   };
   "1.6.1" = {
@@ -84,7 +119,12 @@
         revNum = 0;
         sha256 = "3abc51305f47e13730c2d742036123a79a65bf57b4817dfa323b8143e98e2531";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-1.6.1-r1-de25cfaf7302297d18da9cb0ecea1623715d5e9aa4d24b6d23f79f3dcffecee9.nix;
+        revNum = 1;
+        sha256 = "de25cfaf7302297d18da9cb0ecea1623715d5e9aa4d24b6d23f79f3dcffecee9";
+      };
+      default = "r1";
     };
   };
   "2.0" = {
@@ -95,7 +135,12 @@
         revNum = 0;
         sha256 = "fd498f733a6e5bdf32e072fa7cc6737be9a7adf9dd1ae62d3f8a2271b6dca397";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-cognito-idp-2.0-r1-e11b15165a635101b5b1c0bcbf8dbfd398ac73cae9ca6b30b6fdac843464f2b2.nix;
+        revNum = 1;
+        sha256 = "e11b15165a635101b5b1c0bcbf8dbfd398ac73cae9ca6b30b6fdac843464f2b2";
+      };
+      default = "r1";
     };
   };
 }

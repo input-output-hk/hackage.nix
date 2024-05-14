@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "8c52189979bc161d5f024f3c5beca66f0f9a8cca8d67213d493a97081c7d101b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-sms-voice-2.0-r1-7582ed597e8feb4b36f3fc5a67ed30f88c1c965314f5f096239fc0d4c11c6f75.nix;
+        revNum = 1;
+        sha256 = "7582ed597e8feb4b36f3fc5a67ed30f88c1c965314f5f096239fc0d4c11c6f75";
+      };
+      default = "r1";
     };
   };
 }

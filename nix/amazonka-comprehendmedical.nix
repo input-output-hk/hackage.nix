@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "6cde369aa7ab3cd3d690b132a0f30a788a2889b5eac1017b1a90ac7f9fb1e6ca";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-comprehendmedical-2.0-r1-dd99c8b0a760f6f07e671abfe4e771ec167746f903b9860a0c3a88449e22555d.nix;
+        revNum = 1;
+        sha256 = "dd99c8b0a760f6f07e671abfe4e771ec167746f903b9860a0c3a88449e22555d";
+      };
+      default = "r1";
     };
   };
 }

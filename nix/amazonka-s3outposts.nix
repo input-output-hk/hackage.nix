@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e1013d893bf5580b875f67af317b8dc8181b886a4477c04303959af15ed9704b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/amazonka-s3outposts-2.0-r1-8b193f0d433958532fa3d184163242394991ee198e726fa3144e76eafc33e6f4.nix;
+        revNum = 1;
+        sha256 = "8b193f0d433958532fa3d184163242394991ee198e726fa3144e76eafc33e6f4";
+      };
+      default = "r1";
     };
   };
 }
