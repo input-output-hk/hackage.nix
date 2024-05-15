@@ -181,7 +181,12 @@
         revNum = 1;
         sha256 = "507262c3d974f8bd6a38519a2c18d7fe81454bf0500faff58d30f83a710b3127";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ftp-client-0.5.1.5-r2-3184ce05eefa4e54297a52bef7321180f59512e5514527b69929ea5a1a011552.nix;
+        revNum = 2;
+        sha256 = "3184ce05eefa4e54297a52bef7321180f59512e5514527b69929ea5a1a011552";
+      };
+      default = "r2";
     };
   };
 }

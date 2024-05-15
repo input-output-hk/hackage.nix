@@ -5330,6 +5330,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "equivalence" = import ./nix/equivalence.nix;
   "erd" = import ./nix/erd.nix;
   "erebos" = import ./nix/erebos.nix;
+  "erebos-tester" = import ./nix/erebos-tester.nix;
   "erf" = import ./nix/erf.nix;
   "erf-native" = import ./nix/erf-native.nix;
   "erlang" = import ./nix/erlang.nix;
