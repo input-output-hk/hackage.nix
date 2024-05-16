@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.8.7" = {
+    sha256 = "7ffdabebce7ed58c7f7c31858a6a2e53a783dac8d154e1df3e3a85d0aa15ebbf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/list-remote-forwards-1.8.7-r0-d7b1fa12d55f7c7b673365b1f70dcc30105cd01396dc811d76280a8f3242f959.nix;
+        revNum = 0;
+        sha256 = "d7b1fa12d55f7c7b673365b1f70dcc30105cd01396dc811d76280a8f3242f959";
+      };
+      default = "r0";
+    };
+  };
 }

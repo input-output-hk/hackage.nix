@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.8.7" = {
+    sha256 = "b2229cdad3f515be759b74590cca0860dd9bf674c502ffcd8b0d350f2d2c725c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spline3-1.8.7-r0-21e5729eefb0bd33a1248c55bbd985203e49ecceb24f7000f66a4f852a961736.nix;
+        revNum = 0;
+        sha256 = "21e5729eefb0bd33a1248c55bbd985203e49ecceb24f7000f66a4f852a961736";
+      };
+      default = "r0";
+    };
+  };
 }

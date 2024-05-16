@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "1.8.7" = {
+    sha256 = "8d59ece20d69ac1d0266e359c78871c8ef710aa6ef399be2e8a168e4edd741b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hath-1.8.7-r0-53c386786f5227953a67f9c94e0b1000c780991e807301a43d2149404dfce61b.nix;
+        revNum = 0;
+        sha256 = "53c386786f5227953a67f9c94e0b1000c780991e807301a43d2149404dfce61b";
+      };
+      default = "r0";
+    };
+  };
 }

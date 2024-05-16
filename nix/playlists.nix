@@ -81,4 +81,15 @@
       default = "r0";
     };
   };
+  "0.5.2" = {
+    sha256 = "b2b74ccefd9a8e5e04d6a86baf5f5db7ceb4309f8ae2d5e288c3cabe5fc9930f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/playlists-0.5.2-r0-363d785bd78fc893abe3877ec45c74b428c54144a3d967cf7e4f686e2c70f69a.nix;
+        revNum = 0;
+        sha256 = "363d785bd78fc893abe3877ec45c74b428c54144a3d967cf7e4f686e2c70f69a";
+      };
+      default = "r0";
+    };
+  };
 }

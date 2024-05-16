@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f21985070a14dc9cddbc3b5ab573e85dc17297776f19d1a6dc534f584fd36c18";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/RoundingFiasco-0.1.0.0-r1-112d5754bb30d134933ce350c24ff373e1e8f159d14b42cb3d827d1d66cac0bf.nix;
+        revNum = 1;
+        sha256 = "112d5754bb30d134933ce350c24ff373e1e8f159d14b42cb3d827d1d66cac0bf";
+      };
+      default = "r1";
     };
   };
 }

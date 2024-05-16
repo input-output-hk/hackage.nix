@@ -6352,6 +6352,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-events-analyze" = import ./nix/ghc-events-analyze.nix;
   "ghc-events-parallel" = import ./nix/ghc-events-parallel.nix;
   "ghc-exactprint" = import ./nix/ghc-exactprint.nix;
+  "ghc-experimental" = import ./nix/ghc-experimental.nix;
   "ghc-gc-hook" = import ./nix/ghc-gc-hook.nix;
   "ghc-gc-tune" = import ./nix/ghc-gc-tune.nix;
   "ghc-generic-instances" = import ./nix/ghc-generic-instances.nix;
@@ -6361,6 +6362,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-hs-meta" = import ./nix/ghc-hs-meta.nix;
   "ghc-imported-from" = import ./nix/ghc-imported-from.nix;
   "ghc-instances" = import ./nix/ghc-instances.nix;
+  "ghc-internal" = import ./nix/ghc-internal.nix;
   "ghc-justdoit" = import ./nix/ghc-justdoit.nix;
   "ghc-lib" = import ./nix/ghc-lib.nix;
   "ghc-lib-parser" = import ./nix/ghc-lib-parser.nix;
