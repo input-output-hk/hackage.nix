@@ -105,4 +105,15 @@
       default = "r0";
     };
   };
+  "1.1.1.0" = {
+    sha256 = "34cdd1915581f337cdc36eb46f66d795c36837a9bf25958a643ca89f5ba2c97a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/attoparsec-iso8601-1.1.1.0-r0-5eb1c8ed02f3ad2779ea170602c5608ddf11037fa6b70279de087cdbd82fe91a.nix;
+        revNum = 0;
+        sha256 = "5eb1c8ed02f3ad2779ea170602c5608ddf11037fa6b70279de087cdbd82fe91a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5ee802b7c0fc7e92ea9641910b3d7657c71db38ffe64c2f191a57a18073ac7af";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/emacs-module-0.1-r1-b17a9f3296beb4f841952da6ccb60ab7debf9838918063200771803a6c9bc553.nix;
+        revNum = 1;
+        sha256 = "b17a9f3296beb4f841952da6ccb60ab7debf9838918063200771803a6c9bc553";
+      };
+      default = "r1";
     };
   };
   "0.1.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "ef0f970155717bc7cfbccfbaaf9ed38020fcec2085bb2d971a1c79b63fa3a0d7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/emacs-module-0.1.1-r1-48fbcf27c1f0e351efa67d5bfc951f0cbb995fc764767376ad9c008fdf2aa5e3.nix;
+        revNum = 1;
+        sha256 = "48fbcf27c1f0e351efa67d5bfc951f0cbb995fc764767376ad9c008fdf2aa5e3";
+      };
+      default = "r1";
     };
   };
   "0.1.1.1" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "b14f2e4072bb1a5bf183cc6bad5cd031804609d290703317aba9b63b394af90c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/emacs-module-0.1.1.1-r1-2de3cc2690764ccce290da93bed05a9af3279f969a263d339b44ff55474b17a8.nix;
+        revNum = 1;
+        sha256 = "2de3cc2690764ccce290da93bed05a9af3279f969a263d339b44ff55474b17a8";
+      };
+      default = "r1";
     };
   };
   "0.2" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "7b21afa130ea24fd37accd49ffca97dde6d6696e2221ac5a6c7a68941125b712";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/emacs-module-0.2-r1-47762923cfb0bfb324b6d6559afb16885e67f6dc97044732041ea51b2eb812c7.nix;
+        revNum = 1;
+        sha256 = "47762923cfb0bfb324b6d6559afb16885e67f6dc97044732041ea51b2eb812c7";
+      };
+      default = "r1";
     };
   };
   "0.2.1" = {
@@ -50,6 +70,22 @@
         nix = import ../hackage/emacs-module-0.2.1-r0-0694ff4f76654a8d6db100b791ebaf8ddd01da6e375e4a733441179e7b7f955e.nix;
         revNum = 0;
         sha256 = "0694ff4f76654a8d6db100b791ebaf8ddd01da6e375e4a733441179e7b7f955e";
+      };
+      r1 = {
+        nix = import ../hackage/emacs-module-0.2.1-r1-091e6641b42db423702fa7aaab26d68f3313972818978c7d4127445ac935c154.nix;
+        revNum = 1;
+        sha256 = "091e6641b42db423702fa7aaab26d68f3313972818978c7d4127445ac935c154";
+      };
+      default = "r1";
+    };
+  };
+  "0.2.1.1" = {
+    sha256 = "d2bde9af8b7bc213a58a28748734bce8e9a18a00a1cde708b8dd4ddacb4810e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/emacs-module-0.2.1.1-r0-a9af04dcefd468ebf0f635e8974a6e0ad1a3b4975a0ccb784f49879a09f91d33.nix;
+        revNum = 0;
+        sha256 = "a9af04dcefd468ebf0f635e8974a6e0ad1a3b4975a0ccb784f49879a09f91d33";
       };
       default = "r0";
     };

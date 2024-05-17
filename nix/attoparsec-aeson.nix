@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.2.2.0" = {
+    sha256 = "fe9b2c23a16fe1ff8f41c329940cccc80aca7ac6a9ea314f7a77cf142d8f9edd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/attoparsec-aeson-2.2.2.0-r0-02dc3cc4d217a364471da7ce0f47be39e5b1449e7768134e5f2926d87a21448d.nix;
+        revNum = 0;
+        sha256 = "02dc3cc4d217a364471da7ce0f47be39e5b1449e7768134e5f2926d87a21448d";
+      };
+      default = "r0";
+    };
+  };
 }

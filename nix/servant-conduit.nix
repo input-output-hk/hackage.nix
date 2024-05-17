@@ -64,7 +64,12 @@
         revNum = 1;
         sha256 = "977b12b4104a2eca85aa171bffb178b51e11cb5ff2a5f0f9191f7e8ae18656c7";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/servant-conduit-0.16-r2-76cba18825a66966a8373537a45e60d1b9ba2e3e7ee7e0565264c79125a0b16f.nix;
+        revNum = 2;
+        sha256 = "76cba18825a66966a8373537a45e60d1b9ba2e3e7ee7e0565264c79125a0b16f";
+      };
+      default = "r2";
     };
   };
 }

@@ -61,4 +61,15 @@
       default = "r6";
     };
   };
+  "1.2.2" = {
+    sha256 = "ebff1d0586cc20aea31a2da36840aabf5031b0529ff743c24df737612b69d2f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/universe-some-1.2.2-r0-d04ea73f079a642f355901cfa512208fddb7916323544ea1af99e104a725ceda.nix;
+        revNum = 0;
+        sha256 = "d04ea73f079a642f355901cfa512208fddb7916323544ea1af99e104a725ceda";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -101,4 +101,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "ea97be667a7ee3a0b2b97c004470bcd4173ca126af1bc9cd6a8bb82222b0506b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/timer-wheel-1.0.0.1-r0-a1a7cedc0110549e606a5ff3d0b0b473d1d00601a3eeff6cdbfd16090029511a.nix;
+        revNum = 0;
+        sha256 = "a1a7cedc0110549e606a5ff3d0b0b473d1d00601a3eeff6cdbfd16090029511a";
+      };
+      default = "r0";
+    };
+  };
 }

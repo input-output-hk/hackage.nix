@@ -64,7 +64,12 @@
         revNum = 1;
         sha256 = "c993d947bf86e929f543be3a15708b4aebaa2b28f5f82972b3d9f8a493a684bb";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/servant-machines-0.16-r2-28e7f9bd22a1305c73877ee998ff04d5d636c3aced1701604fcfe7350ecc395b.nix;
+        revNum = 2;
+        sha256 = "28e7f9bd22a1305c73877ee998ff04d5d636c3aced1701604fcfe7350ecc395b";
+      };
+      default = "r2";
     };
   };
 }

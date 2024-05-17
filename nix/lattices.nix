@@ -318,4 +318,15 @@
       default = "r1";
     };
   };
+  "2.2.1" = {
+    sha256 = "27063f2343b1547033cd59f61b27f797041ed0c25c921f253ce82dc6fffa7666";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lattices-2.2.1-r0-8ee9945870e90aae17bd42247789ef25485909fe6fc93d109009f672bf7341a1.nix;
+        revNum = 0;
+        sha256 = "8ee9945870e90aae17bd42247789ef25485909fe6fc93d109009f672bf7341a1";
+      };
+      default = "r0";
+    };
+  };
 }

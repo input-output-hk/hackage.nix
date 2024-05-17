@@ -113,4 +113,15 @@
       default = "r0";
     };
   };
+  "0.1.5.4" = {
+    sha256 = "73694f23398cb0dc615017f4550cbd1e30d505d3749c3cbf24f6d1132b2dddfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strict-tuple-0.1.5.4-r0-452f11f8228c35e560163ab7ed34ba0153e84fa089987121c417236e8d7b2d17.nix;
+        revNum = 0;
+        sha256 = "452f11f8228c35e560163ab7ed34ba0153e84fa089987121c417236e8d7b2d17";
+      };
+      default = "r0";
+    };
+  };
 }
