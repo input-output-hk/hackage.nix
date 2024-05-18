@@ -207,4 +207,15 @@
       default = "r3";
     };
   };
+  "1.0.3" = {
+    sha256 = "35f290e57bd40fbaf7695d85efe34a2836441efbbb9deb696c7982b898aa898f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/microstache-1.0.3-r0-f880fd928883c1a460f65038e7faf0d1efba6d9b96808234d76abac4b10a9174.nix;
+        revNum = 0;
+        sha256 = "f880fd928883c1a460f65038e7faf0d1efba6d9b96808234d76abac4b10a9174";
+      };
+      default = "r0";
+    };
+  };
 }

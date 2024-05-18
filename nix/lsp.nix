@@ -222,7 +222,12 @@
         revNum = 0;
         sha256 = "1cf266a004576fc11adf5f2b77595ab1bcb50f11d4360a23592b207503effe17";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lsp-2.6.0.0-r1-356bb47d924cdc208fd3401267a9e26fd826602a76a196d26f32998ac2da34dd.nix;
+        revNum = 1;
+        sha256 = "356bb47d924cdc208fd3401267a9e26fd826602a76a196d26f32998ac2da34dd";
+      };
+      default = "r1";
     };
   };
 }

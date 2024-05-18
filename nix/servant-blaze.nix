@@ -281,7 +281,12 @@
         revNum = 2;
         sha256 = "88f4c23a97ea014909755de651800c12eda66e9f8d0cdfddbbacf1eef61889ad";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/servant-blaze-0.9.1-r3-3dde5bb70a7e555797e485816907b7c9ced0165426d99cab173509f0ca8519b9.nix;
+        revNum = 3;
+        sha256 = "3dde5bb70a7e555797e485816907b7c9ced0165426d99cab173509f0ca8519b9";
+      };
+      default = "r3";
     };
   };
 }

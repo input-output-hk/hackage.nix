@@ -89,7 +89,12 @@
         revNum = 0;
         sha256 = "39417ebbb47e96a40097aaeb8185fbf0b8887f7a93596a7a2c0e06e30e5209e2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/freer-simple-1.2.1.2-r1-4332ee5c6274c50f4f3211078d6d97d37c215a36904ff3632eb3c6a16e79dde1.nix;
+        revNum = 1;
+        sha256 = "4332ee5c6274c50f4f3211078d6d97d37c215a36904ff3632eb3c6a16e79dde1";
+      };
+      default = "r1";
     };
   };
 }

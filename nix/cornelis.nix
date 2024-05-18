@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "ecb6094ae3f5bf2c3dd6adb85b7f619c7e51d75044552af6c3df8c1a3815cd14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cornelis-0.2.0.1-r0-0c191f60c43a006907d255c6bd368255e50c0eb4b227e35fe7a15dcc6aaeb4de.nix;
+        revNum = 0;
+        sha256 = "0c191f60c43a006907d255c6bd368255e50c0eb4b227e35fe7a15dcc6aaeb4de";
+      };
+      default = "r0";
+    };
+  };
 }

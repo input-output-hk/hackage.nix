@@ -334,7 +334,28 @@
         revNum = 0;
         sha256 = "fe9fed28046d78d080c9f7a6dc8fd83895bbca43a1aabe5cce38888344618878";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/equational-reasoning-0.7.0.2-r1-d3f8e22d9331f8897d7d621104b7ef33d1e42bd9d16a0d89377b722ac8e61a63.nix;
+        revNum = 1;
+        sha256 = "d3f8e22d9331f8897d7d621104b7ef33d1e42bd9d16a0d89377b722ac8e61a63";
+      };
+      default = "r1";
+    };
+  };
+  "0.7.0.3" = {
+    sha256 = "52f0e7bf16a7b2382a352acffe752336e9de8f8808cc6bd023d19be594a9275f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/equational-reasoning-0.7.0.3-r0-d68b9340799e9e17ab3768c0939570eea31679641573b85a1b8ed32b183f1db7.nix;
+        revNum = 0;
+        sha256 = "d68b9340799e9e17ab3768c0939570eea31679641573b85a1b8ed32b183f1db7";
+      };
+      r1 = {
+        nix = import ../hackage/equational-reasoning-0.7.0.3-r1-fe66bd6c1a1083ceebedac5f355b41de4a2472072079f17f244a47de87a903ee.nix;
+        revNum = 1;
+        sha256 = "fe66bd6c1a1083ceebedac5f355b41de4a2472072079f17f244a47de87a903ee";
+      };
+      default = "r1";
     };
   };
 }

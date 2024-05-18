@@ -13317,6 +13317,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "readpyc" = import ./nix/readpyc.nix;
   "readshp" = import ./nix/readshp.nix;
   "real-day-end" = import ./nix/real-day-end.nix;
+  "real-dice" = import ./nix/real-dice.nix;
   "really-simple-xml-parser" = import ./nix/really-simple-xml-parser.nix;
   "realworldhaskell" = import ./nix/realworldhaskell.nix;
   "reanimate" = import ./nix/reanimate.nix;

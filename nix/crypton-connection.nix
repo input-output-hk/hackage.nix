@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.4.0" = {
+    sha256 = "c5bd5358e9240492b5f0e4ee8ae453dad6e3d91fb58c0b15283d082f7290b53e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypton-connection-0.4.0-r0-a7e622fe5f691abb0a10ff02374978b6ca7c085e93892b00eb1d3e7d513b41b4.nix;
+        revNum = 0;
+        sha256 = "a7e622fe5f691abb0a10ff02374978b6ca7c085e93892b00eb1d3e7d513b41b4";
+      };
+      default = "r0";
+    };
+  };
 }

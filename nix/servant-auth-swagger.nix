@@ -99,7 +99,12 @@
         revNum = 2;
         sha256 = "eda169d986faf562b6f43ac90d48c4fcf895dc235dd002d523ad582ec9be833f";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/servant-auth-swagger-0.2.10.2-r3-f139bc79a9f081b350acec00818a511ececa029e92df44ac7121af26393e7a33.nix;
+        revNum = 3;
+        sha256 = "f139bc79a9f081b350acec00818a511ececa029e92df44ac7121af26393e7a33";
+      };
+      default = "r3";
     };
   };
   "0.2.6.0" = {

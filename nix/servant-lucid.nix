@@ -337,7 +337,12 @@
         revNum = 1;
         sha256 = "b7de9f07a056037a10cc012136e7cabc2e685403791d2c0cb0a92f16e3ade6ac";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/servant-lucid-0.9.0.6-r2-e1ce830e508256a2c1b09d3de96ae7db08b04bfd1f087d78842f7f22d10b5cd4.nix;
+        revNum = 2;
+        sha256 = "e1ce830e508256a2c1b09d3de96ae7db08b04bfd1f087d78842f7f22d10b5cd4";
+      };
+      default = "r2";
     };
   };
 }

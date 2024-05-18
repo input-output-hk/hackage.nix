@@ -252,4 +252,15 @@
       default = "r0";
     };
   };
+  "1.3.1.1" = {
+    sha256 = "94d14677f80db4e0d043c54dcccf00ddc9bc027ff162693f80674573c9b6f7bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-gild-1.3.1.1-r0-3883cbfcb1a52fd10f3438fbd7b9e94f1a6cfa87c034a35e10bd6457965ad12a.nix;
+        revNum = 0;
+        sha256 = "3883cbfcb1a52fd10f3438fbd7b9e94f1a6cfa87c034a35e10bd6457965ad12a";
+      };
+      default = "r0";
+    };
+  };
 }

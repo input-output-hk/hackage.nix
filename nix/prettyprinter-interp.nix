@@ -33,7 +33,12 @@
         revNum = 3;
         sha256 = "69c339a95b265dab9b3478ca19ec96952b6b472bd0ff6e2127112a9562362c1d";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/prettyprinter-interp-0.2.0.0-r4-324eb1b24535faccb89d3b8e88cd102974c9a15cc7f606280cc681630c376815.nix;
+        revNum = 4;
+        sha256 = "324eb1b24535faccb89d3b8e88cd102974c9a15cc7f606280cc681630c376815";
+      };
+      default = "r4";
     };
   };
 }
