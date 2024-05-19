@@ -48,4 +48,15 @@
       default = "r1";
     };
   };
+  "0.1.2" = {
+    sha256 = "9be130fe7678c2822226d653e2da936a561de66f5f87eb4e72ff6451106922a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/netlib-ffi-0.1.2-r0-444d88f6ef7702df0b2d9252fc9fecc6851bb726a4cd8b874786bac0f8b26771.nix;
+        revNum = 0;
+        sha256 = "444d88f6ef7702df0b2d9252fc9fecc6851bb726a4cd8b874786bac0f8b26771";
+      };
+      default = "r0";
+    };
+  };
 }

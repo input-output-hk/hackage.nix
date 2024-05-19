@@ -196,4 +196,15 @@
       default = "r0";
     };
   };
+  "0.6.0.5" = {
+    sha256 = "b602b027109fa3bf7bb4aca3a1bd2be47932ad1fcd9c1445c818dbec30902c34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mssql-simple-0.6.0.5-r0-bcce4e916491d92e6259e5fd9fd3abfc7da2147e556d1a1bad7968fc9806b87d.nix;
+        revNum = 0;
+        sha256 = "bcce4e916491d92e6259e5fd9fd3abfc7da2147e556d1a1bad7968fc9806b87d";
+      };
+      default = "r0";
+    };
+  };
 }

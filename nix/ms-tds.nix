@@ -125,4 +125,15 @@
       default = "r0";
     };
   };
+  "0.4.0.3" = {
+    sha256 = "28a1691252788e67b669d890b84775eeb2b4675ccc69fbc2e1a3d3d10f9a4797";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ms-tds-0.4.0.3-r0-74d197346be84872f3ab6caab9d439ffeffefa9254e629d41f6edd64c7dba01a.nix;
+        revNum = 0;
+        sha256 = "74d197346be84872f3ab6caab9d439ffeffefa9254e629d41f6edd64c7dba01a";
+      };
+      default = "r0";
+    };
+  };
 }

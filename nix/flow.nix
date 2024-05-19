@@ -311,4 +311,15 @@
       default = "r0";
     };
   };
+  "2.0.0.5" = {
+    sha256 = "530eabb6601b8e7d1bf2bcf0d28b556156ad20ffededd143622202de2a784ebc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flow-2.0.0.5-r0-1c754e1989d8ab7dcc5130d4664b77db4fd559d6a0e2c5ce8830a94cc9c461c1.nix;
+        revNum = 0;
+        sha256 = "1c754e1989d8ab7dcc5130d4664b77db4fd559d6a0e2c5ce8830a94cc9c461c1";
+      };
+      default = "r0";
+    };
+  };
 }
