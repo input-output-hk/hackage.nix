@@ -53,4 +53,15 @@
       default = "r1";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "cd698551f45cd708557370abc2829f3861bdad86c148d845c7d3ce113e389f9b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/functor-products-0.1.2.2-r0-361f4a9fab751c3534468630dc3c7638125ab04aadc1aa0f49916a036fffd08a.nix;
+        revNum = 0;
+        sha256 = "361f4a9fab751c3534468630dc3c7638125ab04aadc1aa0f49916a036fffd08a";
+      };
+      default = "r0";
+    };
+  };
 }

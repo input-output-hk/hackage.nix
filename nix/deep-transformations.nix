@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.3" = {
+    sha256 = "92d445333fcc87c3ea6586884b79aa8db3a5446b79c4c951fe13a71e41dd17aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deep-transformations-0.2.3-r0-b6ef68646c552aa3a21ab77e4b526605d98582729bed4a230194c0c97a0c22a3.nix;
+        revNum = 0;
+        sha256 = "b6ef68646c552aa3a21ab77e4b526605d98582729bed4a230194c0c97a0c22a3";
+      };
+      default = "r0";
+    };
+  };
 }
