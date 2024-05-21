@@ -12612,6 +12612,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "possibly" = import ./nix/possibly.nix;
   "post-mess-age" = import ./nix/post-mess-age.nix;
   "postcodes" = import ./nix/postcodes.nix;
+  "postgis-trivial" = import ./nix/postgis-trivial.nix;
   "postgres-embedded" = import ./nix/postgres-embedded.nix;
   "postgres-options" = import ./nix/postgres-options.nix;
   "postgres-tmp" = import ./nix/postgres-tmp.nix;

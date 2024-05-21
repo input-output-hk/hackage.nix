@@ -173,4 +173,15 @@
       default = "r0";
     };
   };
+  "1.7.1" = {
+    sha256 = "d4a6ab56cf5e97f9f944693c2cbb1cddac4777c615bf0fb097d62ea236d65fa6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/distribution-nixpkgs-1.7.1-r0-c0b98818372e7a1b69a4fd727133df6bd91a7472c43932d08e80eddbf8047f6f.nix;
+        revNum = 0;
+        sha256 = "c0b98818372e7a1b69a4fd727133df6bd91a7472c43932d08e80eddbf8047f6f";
+      };
+      default = "r0";
+    };
+  };
 }
