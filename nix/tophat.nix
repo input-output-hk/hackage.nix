@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "1.0.8.0" = {
+    sha256 = "6996593559cb0b03eaace307d01ffb4e661a6ec6b2babe7adcb024a6792b0a33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tophat-1.0.8.0-r0-511be5569a7228655e98e32e12d9a56140a2864aa57bf5432a7f83c80f01774d.nix;
+        revNum = 0;
+        sha256 = "511be5569a7228655e98e32e12d9a56140a2864aa57bf5432a7f83c80f01774d";
+      };
+      default = "r0";
+    };
+  };
 }

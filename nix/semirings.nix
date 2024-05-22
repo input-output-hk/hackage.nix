@@ -293,7 +293,23 @@
         revNum = 1;
         sha256 = "cc8767bc62b9ff7bbef070ac206b070b173a8612a781eff2d87a14a01cf406b0";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/semirings-0.6-r2-d494169e03bf18649ea08407e78eb008eee04bcfa4a2fb0c0bd59f05a498a8ce.nix;
+        revNum = 2;
+        sha256 = "d494169e03bf18649ea08407e78eb008eee04bcfa4a2fb0c0bd59f05a498a8ce";
+      };
+      default = "r2";
+    };
+  };
+  "0.7" = {
+    sha256 = "8fc80ae222196de2c7426e4be011d1f0ba3ee55ac5d268a705c5beeb83fe5de6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semirings-0.7-r0-ca9194468c1a682ef7ce37c7f0ec381f4ca44939b48211a9a10fa14479481fce.nix;
+        revNum = 0;
+        sha256 = "ca9194468c1a682ef7ce37c7f0ec381f4ca44939b48211a9a10fa14479481fce";
+      };
+      default = "r0";
     };
   };
 }

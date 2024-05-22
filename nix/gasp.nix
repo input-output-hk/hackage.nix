@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.4.0.0" = {
+    sha256 = "9a73a6ea7eb844493deb76c85c50249915e5ca29a6734a0b133a0e136c232f9f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gasp-1.4.0.0-r0-23356dd807eb6aab5c48fb7b0ea4f0a1a659b79da472262baa9a34c97c999ba3.nix;
+        revNum = 0;
+        sha256 = "23356dd807eb6aab5c48fb7b0ea4f0a1a659b79da472262baa9a34c97c999ba3";
+      };
+      default = "r0";
+    };
+  };
 }

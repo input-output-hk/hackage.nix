@@ -14567,6 +14567,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "since" = import ./nix/since.nix;
   "sindre" = import ./nix/sindre.nix;
   "single-tuple" = import ./nix/single-tuple.nix;
+  "singleraeh" = import ./nix/singleraeh.nix;
   "singlethongs" = import ./nix/singlethongs.nix;
   "singleton-bool" = import ./nix/singleton-bool.nix;
   "singleton-dict" = import ./nix/singleton-dict.nix;
