@@ -274,4 +274,15 @@
       default = "r0";
     };
   };
+  "3.0.0.3" = {
+    sha256 = "6acf7b48743032f5dd178a08ab313fb9111cba079770861f986a6b5469fde997";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-handler-fastcgi-3.0.0.3-r0-426b6a5ed66f611c6096bdeaeb3f8fcc32b79a21ca3d4445a45971fa5036e73e.nix;
+        revNum = 0;
+        sha256 = "426b6a5ed66f611c6096bdeaeb3f8fcc32b79a21ca3d4445a45971fa5036e73e";
+      };
+      default = "r0";
+    };
+  };
 }

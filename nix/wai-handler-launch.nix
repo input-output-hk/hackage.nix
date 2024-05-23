@@ -397,7 +397,12 @@
         revNum = 0;
         sha256 = "13243227131df6eef59d1c42383495b2a6f3c1f393ed57470fd10779b99315f6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-handler-launch-3.0.3.1-r1-46af1891467def182be8e4be3566d36a8e04cf2bcc608209dae4659f9fa5e1ca.nix;
+        revNum = 1;
+        sha256 = "46af1891467def182be8e4be3566d36a8e04cf2bcc608209dae4659f9fa5e1ca";
+      };
+      default = "r1";
     };
   };
 }

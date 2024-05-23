@@ -172,7 +172,12 @@
         revNum = 0;
         sha256 = "948730a4c0837cdd28c523e7834805c596d35b5f44aea959dd624f14fe91d4f5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/wai-handler-webkit-3.0.0.3-r1-f915466f83cb643200c5948e7d3fac8d1340d0d8d2e733c30dfb82909545771c.nix;
+        revNum = 1;
+        sha256 = "f915466f83cb643200c5948e7d3fac8d1340d0d8d2e733c30dfb82909545771c";
+      };
+      default = "r1";
     };
   };
 }

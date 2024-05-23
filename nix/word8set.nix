@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "277f310a5cdec86c9ae499a76bcd9ca0259e7b9bc8949258ef1bf09ec3297949";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/word8set-0.1.2-r0-c98aa2102fc19723c70ba59c537b181b3f01591019ca1478e06392bf3549fc68.nix;
+        revNum = 0;
+        sha256 = "c98aa2102fc19723c70ba59c537b181b3f01591019ca1478e06392bf3549fc68";
+      };
+      default = "r0";
+    };
+  };
 }

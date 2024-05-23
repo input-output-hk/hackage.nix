@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "199232bb399137643eceb5ccd4b267c29922dadc2b86726f308f2773f239bb5f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derive-topdown-0.1.0.0-r0-04c7327d06318a88ec676aa2fbac22de5393d442910d3c2f00e02d8d0010263e.nix;
+        revNum = 0;
+        sha256 = "04c7327d06318a88ec676aa2fbac22de5393d442910d3c2f00e02d8d0010263e";
+      };
+      default = "r0";
+    };
+  };
 }
