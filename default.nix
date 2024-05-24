@@ -7667,6 +7667,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hdis86" = import ./nix/hdis86.nix;
   "hdiscount" = import ./nix/hdiscount.nix;
   "hdm" = import ./nix/hdm.nix;
+  "hdmenu" = import ./nix/hdmenu.nix;
   "hdo" = import ./nix/hdo.nix;
   "hdocs" = import ./nix/hdocs.nix;
   "hdph" = import ./nix/hdph.nix;

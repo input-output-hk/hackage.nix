@@ -10,6 +10,28 @@
       default = "r0";
     };
   };
+  "0.0.10" = {
+    sha256 = "636d119cd955c467b1f6ee7d6b27904c2299289699d0e4d4edc361a62b04119d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.10-r0-971d409a5efbce6eab7c042df94de3cc652fbed4b1fe5b32995648e0f80b12f8.nix;
+        revNum = 0;
+        sha256 = "971d409a5efbce6eab7c042df94de3cc652fbed4b1fe5b32995648e0f80b12f8";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.11" = {
+    sha256 = "085af3e82c85f3e57c10d2d3ac2d04c5141533652beea426cbd550d697fe16ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.11-r0-ed0c56f5e52ea3949a46856ff5a28a59d5b0170a7004fcec774254c62c9d22da.nix;
+        revNum = 0;
+        sha256 = "ed0c56f5e52ea3949a46856ff5a28a59d5b0170a7004fcec774254c62c9d22da";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "6a30306b66a5386ce1a20852dc73a92e2aba7499d8335fade0c4aa209ae3fab2";
     revisions = {
@@ -83,6 +105,17 @@
         nix = import ../hackage/national-australia-bank-0.0.8-r0-8887e1f7c8288a9aa9d2f50a51bfaa8771f072dfa2fdd3fadd2c011333a0c6c3.nix;
         revNum = 0;
         sha256 = "8887e1f7c8288a9aa9d2f50a51bfaa8771f072dfa2fdd3fadd2c011333a0c6c3";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.9" = {
+    sha256 = "f1081e4d989f0e18d29dbd0843a9f905e4a50ce7fde64e485ba592d7c56ed4f6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/national-australia-bank-0.0.9-r0-727d905abe740002c6c445440aa75164fcfdb47fb4dbdba171f3bef1c1313746.nix;
+        revNum = 0;
+        sha256 = "727d905abe740002c6c445440aa75164fcfdb47fb4dbdba171f3bef1c1313746";
       };
       default = "r0";
     };

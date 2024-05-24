@@ -748,7 +748,12 @@
         revNum = 2;
         sha256 = "5691769178d8b2d0023ba289b755e03dfdf33e75fd24462e23dd02ecb7585692";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/turtle-1.6.2-r3-75710c60388e572bc17cbb08a81cbb4537f2207f8dcf187e9b1928d1e0b023a6.nix;
+        revNum = 3;
+        sha256 = "75710c60388e572bc17cbb08a81cbb4537f2207f8dcf187e9b1928d1e0b023a6";
+      };
+      default = "r3";
     };
   };
 }
