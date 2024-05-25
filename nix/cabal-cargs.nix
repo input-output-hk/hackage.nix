@@ -318,4 +318,15 @@
       default = "r0";
     };
   };
+  "1.4.0" = {
+    sha256 = "cb48ba5ab5bd051464d2893ae74d6a16c3cc13be1165878ba36a91f21a209f65";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-cargs-1.4.0-r0-c75be789368ff3131eb392313c3ecad9702e364ac35e19367ddfb529db09df44.nix;
+        revNum = 0;
+        sha256 = "c75be789368ff3131eb392313c3ecad9702e364ac35e19367ddfb529db09df44";
+      };
+      default = "r0";
+    };
+  };
 }

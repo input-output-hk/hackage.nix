@@ -2112,6 +2112,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "applicable" = import ./nix/applicable.nix;
   "applicative-extras" = import ./nix/applicative-extras.nix;
   "applicative-fail" = import ./nix/applicative-fail.nix;
+  "applicative-logic" = import ./nix/applicative-logic.nix;
   "applicative-numbers" = import ./nix/applicative-numbers.nix;
   "applicative-parsec" = import ./nix/applicative-parsec.nix;
   "applicative-quoters" = import ./nix/applicative-quoters.nix;
