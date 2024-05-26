@@ -362,4 +362,15 @@
       default = "r0";
     };
   };
+  "1.4.0.0" = {
+    sha256 = "71760d3e6454ec83c5f571b21436b32337a8c6417192a52d36f0366ce8591341";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-updater-1.4.0.0-r0-fe5811f8b11d93a5f4d5248d9e1887314539bd191c8f0ce8cb2bcd1972743f91.nix;
+        revNum = 0;
+        sha256 = "fe5811f8b11d93a5f4d5248d9e1887314539bd191c8f0ce8cb2bcd1972743f91";
+      };
+      default = "r0";
+    };
+  };
 }

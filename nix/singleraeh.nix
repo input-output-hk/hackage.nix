@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "fb990bc3686b39cccbe479d58c8efea106a65109b38166cf4320bc1d73ab1cee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/singleraeh-0.2.0-r0-a0bb235a71dd07da0012c0644a7a328755fde7c6d96eca8a9239d3603eedaead.nix;
+        revNum = 0;
+        sha256 = "a0bb235a71dd07da0012c0644a7a328755fde7c6d96eca8a9239d3603eedaead";
+      };
+      default = "r0";
+    };
+  };
 }

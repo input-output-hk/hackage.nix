@@ -74,4 +74,15 @@
       default = "r1";
     };
   };
+  "0.2.4.0" = {
+    sha256 = "644fbc940e25b841cf5a26b324f196c99c5568db38f0acaceacd9c391caa9438";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/partial-isomorphisms-0.2.4.0-r0-9255a61a6c65796ab7488abc3cb9cc52299907fe518bccf3a7f73feec16943a7.nix;
+        revNum = 0;
+        sha256 = "9255a61a6c65796ab7488abc3cb9cc52299907fe518bccf3a7f73feec16943a7";
+      };
+      default = "r0";
+    };
+  };
 }
