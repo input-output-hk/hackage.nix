@@ -1,0 +1,57 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "network-arbitrary"; version = "1.0.0.1"; };
+      license = "MIT";
+      copyright = "(c) 2018 Alex Brandt";
+      maintainer = "alunduil@gmail.com";
+      author = "Alex Brandt";
+      homepage = "https://github.com/alunduil/network-arbitrary";
+      url = "";
+      synopsis = "Arbitrary Instances for Network Types";
+      description = "You can use network-arbitrary to provide Arbitrary instances for Network\nmodule types.";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
+          (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+          (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+          (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+        ];
+        buildable = true;
+      };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."http-media" or (errorHandler.buildDepError "http-media"))
+            (hsPkgs."http-types" or (errorHandler.buildDepError "http-types"))
+            (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."case-insensitive" or (errorHandler.buildDepError "case-insensitive"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."test-invariant" or (errorHandler.buildDepError "test-invariant"))
+          ];
+          build-tools = [
+            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }

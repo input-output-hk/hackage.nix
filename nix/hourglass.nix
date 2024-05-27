@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "e083f5e030dfebe432e30a9c0fa07a99a54eac992f622442646be561fd7a44e8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hourglass-0.2.12-r1-85c46cb6cd30c84546929926d4402a534f723651198e5945c9e59b9e699a8979.nix;
+        revNum = 1;
+        sha256 = "85c46cb6cd30c84546929926d4402a534f723651198e5945c9e59b9e699a8979";
+      };
+      default = "r1";
     };
   };
   "0.2.2" = {

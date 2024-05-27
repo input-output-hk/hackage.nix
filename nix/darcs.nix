@@ -331,6 +331,17 @@
       default = "r0";
     };
   };
+  "2.18.3" = {
+    sha256 = "14abd862927abe4387d226d013a4e6655317f29f8b0721991a17fdd883f8e69a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/darcs-2.18.3-r0-b4a8e4975778408c03ebcc52dd58321696f4505850a036921d388b17fc1482a5.nix;
+        revNum = 0;
+        sha256 = "b4a8e4975778408c03ebcc52dd58321696f4505850a036921d388b17fc1482a5";
+      };
+      default = "r0";
+    };
+  };
   "2.2.0" = {
     sha256 = "af8f83134f3fe559913d93137d4c6a2b9bf5270dc557bc979f6b247cc7e6d196";
     revisions = {

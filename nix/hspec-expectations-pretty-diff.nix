@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "2727eed6d3faaf5802f83482f497f0855f9a340e8f501fefaa3f2dc147504184";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hspec-expectations-pretty-diff-0.7.2.6-r1-ed0405ff9084508d865bf22eb6273c028adc4ecca498f606d728a7474f103698.nix;
+        revNum = 1;
+        sha256 = "ed0405ff9084508d865bf22eb6273c028adc4ecca498f606d728a7474f103698";
+      };
+      default = "r1";
     };
   };
 }
