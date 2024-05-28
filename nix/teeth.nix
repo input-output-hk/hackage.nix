@@ -23,7 +23,12 @@
         revNum = 0;
         sha256 = "89824971b7638bfc76a23e3f504e229398bbb044dd6af6b75451839f817e48e0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/teeth-0.2.0.2-r1-09a271505b8e1eae75ca6a51a4fb72c04cd74e9e8410154265e69a78af101f3d.nix;
+        revNum = 1;
+        sha256 = "09a271505b8e1eae75ca6a51a4fb72c04cd74e9e8410154265e69a78af101f3d";
+      };
+      default = "r1";
     };
   };
 }

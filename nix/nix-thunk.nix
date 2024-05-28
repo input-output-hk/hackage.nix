@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.7.0.1" = {
+    sha256 = "174488d2cf1101f6e41c88f95acfbb875c191f3347c7627840fa3b378aa0dcac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nix-thunk-0.7.0.1-r0-5defb198e95326e94d1777734d5b90810dc32aa2a8db328413c542bd3d01c756.nix;
+        revNum = 0;
+        sha256 = "5defb198e95326e94d1777734d5b90810dc32aa2a8db328413c542bd3d01c756";
+      };
+      default = "r0";
+    };
+  };
 }

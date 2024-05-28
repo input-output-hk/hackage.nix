@@ -9309,6 +9309,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jml-web-service" = import ./nix/jml-web-service.nix;
   "jmonkey" = import ./nix/jmonkey.nix;
   "jni" = import ./nix/jni.nix;
+  "job" = import ./nix/job.nix;
   "jobqueue" = import ./nix/jobqueue.nix;
   "jobs-ui" = import ./nix/jobs-ui.nix;
   "join" = import ./nix/join.nix;

@@ -63,4 +63,15 @@
       default = "r1";
     };
   };
+  "0.5" = {
+    sha256 = "8db49224c9bdf94c2a64e674cd7fe9a2df37f160ccc8d043a0adf72f60024bcd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flay-0.5-r0-fc4ab115655e745114fb3e328afa0fd812530ca83b69e8839323de366b8f38ae.nix;
+        revNum = 0;
+        sha256 = "fc4ab115655e745114fb3e328afa0fd812530ca83b69e8839323de366b8f38ae";
+      };
+      default = "r0";
+    };
+  };
 }
