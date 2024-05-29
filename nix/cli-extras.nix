@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "13953ffe5bc74eb4abb5f7b6de0276c1bef288a0dcee02548e908be0df9c5ab1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cli-extras-0.2.1.0-r1-4c2bf91e08f55c7a306ecaa29b76f9677e783fbd0588c2dc97ffe38f9c5c9e39.nix;
+        revNum = 1;
+        sha256 = "4c2bf91e08f55c7a306ecaa29b76f9677e783fbd0588c2dc97ffe38f9c5c9e39";
+      };
+      default = "r1";
     };
   };
 }

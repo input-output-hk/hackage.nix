@@ -72,7 +72,12 @@
         revNum = 0;
         sha256 = "a2c88702cabf9c17a1ccecc3554e1f6dda228933decedf916e4b701bd040d30e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dependent-sum-aeson-orphans-0.3.1.1-r1-3040880ecd2b5514b59ca1b34d58e0ff4e1f0d52939d8cd1cef2b97807046e08.nix;
+        revNum = 1;
+        sha256 = "3040880ecd2b5514b59ca1b34d58e0ff4e1f0d52939d8cd1cef2b97807046e08";
+      };
+      default = "r1";
     };
   };
 }

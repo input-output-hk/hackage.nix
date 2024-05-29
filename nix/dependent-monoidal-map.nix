@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "0.1.1.4" = {
+    sha256 = "af1d1c9534fbdd5a3a9e7c1475b5ce8c5c3cd8c46b47d55a9ea794a76803f3b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dependent-monoidal-map-0.1.1.4-r0-b5c214e2ca0172e5a71cb6e38131b181d7dcb64ead42ab29744aa13e18a7b47c.nix;
+        revNum = 0;
+        sha256 = "b5c214e2ca0172e5a71cb6e38131b181d7dcb64ead42ab29744aa13e18a7b47c";
+      };
+      default = "r0";
+    };
+  };
 }

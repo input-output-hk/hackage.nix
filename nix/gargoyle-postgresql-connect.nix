@@ -28,6 +28,22 @@
         revNum = 0;
         sha256 = "7e471da055402b07a2e83f29f981d6737aa8ad5f9ec209bc79beb50b4c915e3f";
       };
+      r1 = {
+        nix = import ../hackage/gargoyle-postgresql-connect-0.1.0.1-r1-d8f8237d529fa502f63cab197194723945e408126a713033aacae3f5fe5631fe.nix;
+        revNum = 1;
+        sha256 = "d8f8237d529fa502f63cab197194723945e408126a713033aacae3f5fe5631fe";
+      };
+      default = "r1";
+    };
+  };
+  "0.1.0.2" = {
+    sha256 = "b89da0f194dca0717517d927ecd3bc2342f743c007d4e9a319831be88afce936";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gargoyle-postgresql-connect-0.1.0.2-r0-664a6a37b9a6cf1a6f935e11b8ce90a069c37ada5cc4a5943edd4c6fd8167dcd.nix;
+        revNum = 0;
+        sha256 = "664a6a37b9a6cf1a6f935e11b8ce90a069c37ada5cc4a5943edd4c6fd8167dcd";
+      };
       default = "r0";
     };
   };

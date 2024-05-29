@@ -94,7 +94,12 @@
         revNum = 0;
         sha256 = "3b2e7e40b5be043b35a19fe1ed8b7e016a9c827f55777a9f9cb5e08860390d5d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tls-session-manager-0.0.4-r1-81225ed5f869cb62bff0f625f06c25a92ee5246a1cf5711c1e5e42d1e90ee1dd.nix;
+        revNum = 1;
+        sha256 = "81225ed5f869cb62bff0f625f06c25a92ee5246a1cf5711c1e5e42d1e90ee1dd";
+      };
+      default = "r1";
     };
   };
   "0.0.5" = {

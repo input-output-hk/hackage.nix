@@ -40,6 +40,22 @@
         revNum = 0;
         sha256 = "377282433c4a0635c1f14e5a948e43309890fb5520ec93994ca0cd7f87b305d0";
       };
+      r1 = {
+        nix = import ../hackage/cli-git-0.2.0.0-r1-39dc7560e7cbc7a25f57af3a2b76b5b552d31f9ad46032a3f8207cedc9e961a4.nix;
+        revNum = 1;
+        sha256 = "39dc7560e7cbc7a25f57af3a2b76b5b552d31f9ad46032a3f8207cedc9e961a4";
+      };
+      default = "r1";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "fbde85ecb6f768932051df04d61fb25ce08a6da7170476f0aeda35d8cfd92326";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cli-git-0.2.0.1-r0-6919ba418211bdbb51d5d73e5ab4aa0281287ea5733a2dc95eb1bd7107b118dd.nix;
+        revNum = 0;
+        sha256 = "6919ba418211bdbb51d5d73e5ab4aa0281287ea5733a2dc95eb1bd7107b118dd";
+      };
       default = "r0";
     };
   };

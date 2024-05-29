@@ -212,4 +212,15 @@
       default = "r0";
     };
   };
+  "0.2.5.2" = {
+    sha256 = "5cdeff4e09abb865e6dfbacfe898179f5263afc963b0af56a1436a2973b99f9a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-gadt-th-0.2.5.2-r0-1274d22b1da129046b882d3c06478c65db1cfa97e41968553a421daf0394eb70.nix;
+        revNum = 0;
+        sha256 = "1274d22b1da129046b882d3c06478c65db1cfa97e41968553a421daf0394eb70";
+      };
+      default = "r0";
+    };
+  };
 }
