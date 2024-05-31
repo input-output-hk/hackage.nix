@@ -172,6 +172,17 @@
       default = "r0";
     };
   };
+  "0.2.0.14" = {
+    sha256 = "a1a0d34f75f3b72250af14a8ce8c0fc9811c109e05c441a251fef1c6fddfd714";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kempe-0.2.0.14-r0-b65db3755e763db20486a447aca0e19fa485f74008266151b3d549e94b328a9c.nix;
+        revNum = 0;
+        sha256 = "b65db3755e763db20486a447aca0e19fa485f74008266151b3d549e94b328a9c";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.2" = {
     sha256 = "9ff2c0f90f4843530d545a6a62f80d50eae1a7633696085fb19ad848e3c3735b";
     revisions = {

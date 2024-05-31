@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "02bd44b7639a7bad6ae2721c409b6918b8b4acc416103a8be45b5da06f1c5f49";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-internal-9.1001.0-r1-dfa39788bc81ede2db08080a93ac8819e57a8d6df955243dcb4af550982fa5e7.nix;
+        revNum = 1;
+        sha256 = "dfa39788bc81ede2db08080a93ac8819e57a8d6df955243dcb4af550982fa5e7";
+      };
+      default = "r1";
     };
   };
 }

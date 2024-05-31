@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.8.0" = {
+    sha256 = "52d96bad0459a55efe8eedd89f445903e3e9403c940ce4273feaea80eea2c487";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hoauth2-providers-0.8.0-r0-78ac02bed781b7b9c28f4876fb62c8bcce62e21dd8313cdc1e0e654b189df420.nix;
+        revNum = 0;
+        sha256 = "78ac02bed781b7b9c28f4876fb62c8bcce62e21dd8313cdc1e0e654b189df420";
+      };
+      default = "r0";
+    };
+  };
 }

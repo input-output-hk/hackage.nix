@@ -398,4 +398,15 @@
       default = "r0";
     };
   };
+  "1.4.3.1" = {
+    sha256 = "55e495d8aebe2a743c6659e2e13789641bcbd5f54df6b8309b67d4985b13d20d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-dickinson-1.4.3.1-r0-c8649d4c67b063bb816f9739af4abfbbf7c8320734b167e501867479ae6da823.nix;
+        revNum = 0;
+        sha256 = "c8649d4c67b063bb816f9739af4abfbbf7c8320734b167e501867479ae6da823";
+      };
+      default = "r0";
+    };
+  };
 }

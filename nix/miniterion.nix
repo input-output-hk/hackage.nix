@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "f45eefa362187271e126dec0731bcb95ed8a8c0e53bacd40abed93dffc04e0bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/miniterion-0.1.1.1-r0-a386f4fc460d104c78a7afac3de056d06384bfe70c0c2ec8c69f15fde21b358e.nix;
+        revNum = 0;
+        sha256 = "a386f4fc460d104c78a7afac3de056d06384bfe70c0c2ec8c69f15fde21b358e";
+      };
+      default = "r0";
+    };
+  };
 }

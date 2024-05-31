@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.1.4" = {
+    sha256 = "fe6f8ade44a1c2159a580adf28061b97e211052659eda71717a7d1ec5435d0d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pdf-toolbox-document-0.1.4-r0-6016daf47765f4a06b23a90e59741f34f7c2c8561091a9db3caa922339037108.nix;
+        revNum = 0;
+        sha256 = "6016daf47765f4a06b23a90e59741f34f7c2c8561091a9db3caa922339037108";
+      };
+      default = "r0";
+    };
+  };
 }

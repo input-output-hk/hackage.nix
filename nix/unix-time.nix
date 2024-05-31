@@ -362,6 +362,17 @@
       default = "r0";
     };
   };
+  "0.4.14" = {
+    sha256 = "695d400d0b66c344fea58970a0db89229147cd13bc154cf84c51d6ce99c647f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unix-time-0.4.14-r0-f2df80b798a519bc31b9121aa092b8282ebfc890332e2097b4f9ef28ae2d6d3b.nix;
+        revNum = 0;
+        sha256 = "f2df80b798a519bc31b9121aa092b8282ebfc890332e2097b4f9ef28ae2d6d3b";
+      };
+      default = "r0";
+    };
+  };
   "0.4.2" = {
     sha256 = "93c0701a5cf2c2c68883942743f6357c2f92f15d8a6a6540d96721b458eb0880";
     revisions = {

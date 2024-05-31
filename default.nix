@@ -4294,6 +4294,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cutter" = import ./nix/cutter.nix;
   "cv-combinators" = import ./nix/cv-combinators.nix;
   "cve" = import ./nix/cve.nix;
+  "cvss" = import ./nix/cvss.nix;
   "cybus" = import ./nix/cybus.nix;
   "cyclotomic" = import ./nix/cyclotomic.nix;
   "cypher" = import ./nix/cypher.nix;
@@ -8387,6 +8388,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsdns-cache" = import ./nix/hsdns-cache.nix;
   "hse-cpp" = import ./nix/hse-cpp.nix;
   "hsebaysdk" = import ./nix/hsebaysdk.nix;
+  "hsec-core" = import ./nix/hsec-core.nix;
+  "hsec-sync" = import ./nix/hsec-sync.nix;
+  "hsec-tools" = import ./nix/hsec-tools.nix;
   "hsemail" = import ./nix/hsemail.nix;
   "hsemail-ns" = import ./nix/hsemail-ns.nix;
   "hsendxmpp" = import ./nix/hsendxmpp.nix;
@@ -11833,6 +11837,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "osm-download" = import ./nix/osm-download.nix;
   "oso2pdf" = import ./nix/oso2pdf.nix;
   "ostree-pin" = import ./nix/ostree-pin.nix;
+  "osv" = import ./nix/osv.nix;
   "osx-ar" = import ./nix/osx-ar.nix;
   "ot" = import ./nix/ot.nix;
   "otp-authenticator" = import ./nix/otp-authenticator.nix;
@@ -15722,6 +15727,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tensorflow-records-conduit" = import ./nix/tensorflow-records-conduit.nix;
   "tensorflow-test" = import ./nix/tensorflow-test.nix;
   "tensors" = import ./nix/tensors.nix;
+  "tensort" = import ./nix/tensort.nix;
   "term-rewriting" = import ./nix/term-rewriting.nix;
   "termbox" = import ./nix/termbox.nix;
   "termbox-banana" = import ./nix/termbox-banana.nix;
