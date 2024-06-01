@@ -21,4 +21,20 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "576d1c4f7b27d0e30cfb45bf5513fabdb287e19916d8f9bbdfd4579f464844ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/safe-wild-cards-1.0.0.2-r0-fef2cbde8e3e2a6b2c4de02cd2e496c0094305589cd290d6ea5506810a2aa92d.nix;
+        revNum = 0;
+        sha256 = "fef2cbde8e3e2a6b2c4de02cd2e496c0094305589cd290d6ea5506810a2aa92d";
+      };
+      r1 = {
+        nix = import ../hackage/safe-wild-cards-1.0.0.2-r1-6c5a20f3649947ff09eccfcb523360d5058b8d882e03d1d4e147b4b39ad5a26c.nix;
+        revNum = 1;
+        sha256 = "6c5a20f3649947ff09eccfcb523360d5058b8d882e03d1d4e147b4b39ad5a26c";
+      };
+      default = "r1";
+    };
+  };
 }

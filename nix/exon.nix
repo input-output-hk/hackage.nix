@@ -246,4 +246,15 @@
       default = "r0";
     };
   };
+  "1.7.0.0" = {
+    sha256 = "7e0fe9bf7f92f29e1281e28f5afec542fd7d5bbf5112d35967243d735ba785c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exon-1.7.0.0-r0-f25b3ccd06bd772e15f4a7f803e4f42ab9f7a6300b9c6908f36f69ef58766aaf.nix;
+        revNum = 0;
+        sha256 = "f25b3ccd06bd772e15f4a7f803e4f42ab9f7a6300b9c6908f36f69ef58766aaf";
+      };
+      default = "r0";
+    };
+  };
 }

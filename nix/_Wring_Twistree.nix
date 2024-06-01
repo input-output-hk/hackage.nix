@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "6314af35ba0f6b97a8fef6efca0628a4e99e323cf20751e9702b71e710fd54ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/WringTwistree-0.1.0.0-r0-cce0c69d39e79eee64d6a9c700a6d2b67dc2d1420a7f175bf214eafefb6a58a6.nix;
+        revNum = 0;
+        sha256 = "cce0c69d39e79eee64d6a9c700a6d2b67dc2d1420a7f175bf214eafefb6a58a6";
+      };
+      default = "r0";
+    };
+  };
 }
