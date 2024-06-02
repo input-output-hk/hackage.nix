@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.0.12.0" = {
+    sha256 = "a99d4592a6487880a8811e504ec20b356699ae70afb7a2cb250abae909c57460";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-syntax-highlighter-0.0.12.0-r0-52c6cb7f990a28d3361db2d878c4e9da895468e52478f6d2461ffa47c127eee2.nix;
+        revNum = 0;
+        sha256 = "52c6cb7f990a28d3361db2d878c4e9da895468e52478f6d2461ffa47c127eee2";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2.0" = {
     sha256 = "cf335c2d5c789dd6dac948edba4cef89b3b8595b5150c21ee735c82b97868dbd";
     revisions = {

@@ -115,4 +115,15 @@
       default = "r8";
     };
   };
+  "0.3.0.5" = {
+    sha256 = "254310d3c50f95acba242984ba77b63c08c5ae6463a8d00095644ae57a03db76";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyll-convert-0.3.0.5-r0-f03284efb020bad83d50d2b9a9cc79192081029933d11fb0cc726aa8bdbd89f8.nix;
+        revNum = 0;
+        sha256 = "f03284efb020bad83d50d2b9a9cc79192081029933d11fb0cc726aa8bdbd89f8";
+      };
+      default = "r0";
+    };
+  };
 }

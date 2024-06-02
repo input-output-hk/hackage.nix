@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "d8dbece0f48b1bd32993257f0fc059e0a74592beecb12ff0ab0adae412ad5596";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/symparsec-1.1.0-r0-4fd779ea40f5539a07c67300befa8495494f6cb3b7e7ecd654e174b4a22dd2a3.nix;
+        revNum = 0;
+        sha256 = "4fd779ea40f5539a07c67300befa8495494f6cb3b7e7ecd654e174b4a22dd2a3";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "284df88b89eee779613782bd0644e2d42656377c9cae49af67cfaeaea9cb3712";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sasha-0.2-r1-16079c6e84727a1b3cbdd4582c3cacf28700b703aa1f54f37ba745a924296c4c.nix;
+        revNum = 1;
+        sha256 = "16079c6e84727a1b3cbdd4582c3cacf28700b703aa1f54f37ba745a924296c4c";
+      };
+      default = "r1";
     };
   };
 }
