@@ -138,4 +138,15 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "aa84bbad18ad1948bcdb78e8216adfe71c54a192c27bf9598df47eec91766f07";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Gamgine-0.7.0-r0-0e943ebd28408ad8d108d663dbcb61fa6473383e05cb2d4f5e1168b85c5a66c8.nix;
+        revNum = 0;
+        sha256 = "0e943ebd28408ad8d108d663dbcb61fa6473383e05cb2d4f5e1168b85c5a66c8";
+      };
+      default = "r0";
+    };
+  };
 }

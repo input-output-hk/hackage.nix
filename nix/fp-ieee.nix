@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "ea12fcbbcf7e3cf18c17ce916e8e412af2159f64b8d18ba5acaf26e718ce589d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fp-ieee-0.1.0.4-r1-0634925b2bc753ac4d62d2282ea8d04fd6d02e718baa339700412508dcc43e2f.nix;
+        revNum = 1;
+        sha256 = "0634925b2bc753ac4d62d2282ea8d04fd6d02e718baa339700412508dcc43e2f";
+      };
+      default = "r1";
     };
   };
 }

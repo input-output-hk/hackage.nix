@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.8.0" = {
+    sha256 = "89797aab3458afa9617ceb460d2f5e58f236aba869164d2b1736f7510567909d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/layers-game-0.8.0-r0-7de0d291b973f12f468f409c3fabd271f988e1117cda5fe6a8cf96046c4cd593.nix;
+        revNum = 0;
+        sha256 = "7de0d291b973f12f468f409c3fabd271f988e1117cda5fe6a8cf96046c4cd593";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "0.14.0" = {
+    sha256 = "95b328869dd460fc1e18b60512e88627f3d8f4272bc4ab03391c32bb35916629";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-lenses-0.14.0-r0-3d83b2d9e45cba9f4d5367b5816ef2afc454cf684f05c8ef31b3904565769bf0.nix;
+        revNum = 0;
+        sha256 = "3d83b2d9e45cba9f4d5367b5816ef2afc454cf684f05c8ef31b3904565769bf0";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "64d327e1f27e7e2c5dc3681ff1e948b3447796babf9e0de2d630a8756026d9f1";
     revisions = {

@@ -306,4 +306,15 @@
       default = "r3";
     };
   };
+  "0.6.5.0" = {
+    sha256 = "2717dfd67222ba60f0c3736e09203076f848c42442181dc098978073f0631101";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoidal-containers-0.6.5.0-r0-ff06e22c520b540dbf3bede0df723810a9d144ecb92e8d97845465fac86b0fc1.nix;
+        revNum = 0;
+        sha256 = "ff06e22c520b540dbf3bede0df723810a9d144ecb92e8d97845465fac86b0fc1";
+      };
+      default = "r0";
+    };
+  };
 }

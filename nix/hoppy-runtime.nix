@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "fdce4e76275dd3916cd235b4caee787a53adf6c65b3f2d6f3f0da5e5cb5faa59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hoppy-runtime-0.9.0-r0-415528655deac4d49f0eee258f5c068113883be8741200705d815a328f4ca327.nix;
+        revNum = 0;
+        sha256 = "415528655deac4d49f0eee258f5c068113883be8741200705d815a328f4ca327";
+      };
+      default = "r0";
+    };
+  };
 }
