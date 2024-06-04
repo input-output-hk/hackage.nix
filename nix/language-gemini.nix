@@ -33,7 +33,12 @@
         revNum = 1;
         sha256 = "4ea081faccea09f043b645f8fd2bc29c4150b9f64829288f6faf294b7c816a28";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/language-gemini-0.1.0.1-r2-11ab1da00a1b7ee6e70b3373fe8be83c93a46734daa14c9482b47ac3474c317c.nix;
+        revNum = 2;
+        sha256 = "11ab1da00a1b7ee6e70b3373fe8be83c93a46734daa14c9482b47ac3474c317c";
+      };
+      default = "r2";
     };
   };
 }

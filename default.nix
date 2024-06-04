@@ -16539,6 +16539,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unicode-collation" = import ./nix/unicode-collation.nix;
   "unicode-data" = import ./nix/unicode-data.nix;
   "unicode-data-names" = import ./nix/unicode-data-names.nix;
+  "unicode-data-parser" = import ./nix/unicode-data-parser.nix;
   "unicode-data-scripts" = import ./nix/unicode-data-scripts.nix;
   "unicode-data-security" = import ./nix/unicode-data-security.nix;
   "unicode-general-category" = import ./nix/unicode-general-category.nix;

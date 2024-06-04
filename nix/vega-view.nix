@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "76fcabec6500a2f394046a2a04c9c527f79bff1f4dc531a3c8a64d6425ea4e9f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vega-view-0.4.0.1-r0-f3597d19440f1b12da7cedbf70cd567233c2f2c614d337d1e4eb6483b37b46ff.nix;
+        revNum = 0;
+        sha256 = "f3597d19440f1b12da7cedbf70cd567233c2f2c614d337d1e4eb6483b37b46ff";
+      };
+      default = "r0";
+    };
+  };
 }

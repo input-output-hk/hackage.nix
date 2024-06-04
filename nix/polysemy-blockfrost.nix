@@ -26,4 +26,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "131b878fa69f0573e9c785c7552ca5ef6da3d2bc7ef87eeebcb1e5258a579e77";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-blockfrost-0.1.2.0-r0-b07386d6d98a240f90d22a0cf6461820b237f64db9cf4e22fff7964253f63e53.nix;
+        revNum = 0;
+        sha256 = "b07386d6d98a240f90d22a0cf6461820b237f64db9cf4e22fff7964253f63e53";
+      };
+      default = "r0";
+    };
+  };
 }

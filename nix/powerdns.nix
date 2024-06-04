@@ -113,4 +113,26 @@
       default = "r0";
     };
   };
+  "0.4.3" = {
+    sha256 = "8505e23a9952f9854680241318c795cdd5885e0f56a4b89233c40b9e163608ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/powerdns-0.4.3-r0-11803adc1d400e2c728f2f37cd79371211d4de9fa528a7dfadf82920ed7f3ddb.nix;
+        revNum = 0;
+        sha256 = "11803adc1d400e2c728f2f37cd79371211d4de9fa528a7dfadf82920ed7f3ddb";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.4" = {
+    sha256 = "5f4c3dae006b56f29e5003e59f2e6fb8d12842b440ebc3332f42caec54d0e26d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/powerdns-0.4.4-r0-85639bf80f03c9ed4bf56e2f6c4f905c60dfca3a39361bcad00b729ca9f47bce.nix;
+        revNum = 0;
+        sha256 = "85639bf80f03c9ed4bf56e2f6c4f905c60dfca3a39361bcad00b729ca9f47bce";
+      };
+      default = "r0";
+    };
+  };
 }

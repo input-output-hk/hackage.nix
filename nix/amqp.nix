@@ -450,6 +450,17 @@
       default = "r0";
     };
   };
+  "0.23.0" = {
+    sha256 = "e85a51670aca41b9cbc49021e489b1f7545173e6ebc163a0fab0e3eac883e032";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amqp-0.23.0-r0-9b073cd116226ae1eb2382647d88a4a73d0bf446670f12248bc174ae92ee6e71.nix;
+        revNum = 0;
+        sha256 = "9b073cd116226ae1eb2382647d88a4a73d0bf446670f12248bc174ae92ee6e71";
+      };
+      default = "r0";
+    };
+  };
   "0.3.0" = {
     sha256 = "1d5d6ae3caa1ede9d85ffeb5b9ff87efe54e6deea9b66b4dfa55bda384a08d03";
     revisions = {
