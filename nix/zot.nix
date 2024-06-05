@@ -39,7 +39,12 @@
         revNum = 1;
         sha256 = "b543a28082a9568e793d33c7ba5364fa3bdadb09323ce3c293f2f2ed8c5efa11";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/zot-0.0.3-r2-7498e9ac0901bb4a89814bae9ba45ce257e67d39c572889a5cdc9c7cb381dced.nix;
+        revNum = 2;
+        sha256 = "7498e9ac0901bb4a89814bae9ba45ce257e67d39c572889a5cdc9c7cb381dced";
+      };
+      default = "r2";
     };
   };
 }

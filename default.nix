@@ -3396,6 +3396,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "change-monger" = import ./nix/change-monger.nix;
   "changelogged" = import ./nix/changelogged.nix;
   "chapelure" = import ./nix/chapelure.nix;
+  "char-boxdrawing" = import ./nix/char-boxdrawing.nix;
   "char-decode" = import ./nix/char-decode.nix;
   "char-qq" = import ./nix/char-qq.nix;
   "character-cases" = import ./nix/character-cases.nix;
@@ -5231,6 +5232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "elm-websocket" = import ./nix/elm-websocket.nix;
   "elm-yesod" = import ./nix/elm-yesod.nix;
   "elm2nix" = import ./nix/elm2nix.nix;
+  "elmental" = import ./nix/elmental.nix;
   "elminator" = import ./nix/elminator.nix;
   "elo" = import ./nix/elo.nix;
   "elocrypt" = import ./nix/elocrypt.nix;
@@ -7311,6 +7313,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasbolt" = import ./nix/hasbolt.nix;
   "hasbolt-extras" = import ./nix/hasbolt-extras.nix;
   "hascal" = import ./nix/hascal.nix;
+  "hascalam" = import ./nix/hascalam.nix;
   "hascar" = import ./nix/hascar.nix;
   "hascard" = import ./nix/hascard.nix;
   "hascas" = import ./nix/hascas.nix;

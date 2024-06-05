@@ -249,4 +249,26 @@
       default = "r2";
     };
   };
+  "3.1.0.0" = {
+    sha256 = "42f3d981fa1d4db00b6b73316e6a3d1da7f70bd27b47d36a26a70a96e90c0913";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacinda-3.1.0.0-r0-354a7cb8e4a58655cd65cce3c80a11bdbaafc90458f5cc18f77a4878009b515e.nix;
+        revNum = 0;
+        sha256 = "354a7cb8e4a58655cd65cce3c80a11bdbaafc90458f5cc18f77a4878009b515e";
+      };
+      default = "r0";
+    };
+  };
+  "3.1.0.1" = {
+    sha256 = "92c6df423d8f09a4a39689ac71f3f31ff240f2345ed13569d4cce2f89a917534";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacinda-3.1.0.1-r0-698c89218b4c156ca23d32bcf40f1e80b999b4678d2e815e70b7ab7534add3b8.nix;
+        revNum = 0;
+        sha256 = "698c89218b4c156ca23d32bcf40f1e80b999b4678d2e815e70b7ab7534add3b8";
+      };
+      default = "r0";
+    };
+  };
 }
