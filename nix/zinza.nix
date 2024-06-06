@@ -56,4 +56,15 @@
       default = "r7";
     };
   };
+  "0.2.1" = {
+    sha256 = "88a12275e2a65b33378de8f48e67dcf1363cec3934dde9c7e51b3c19b71793cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zinza-0.2.1-r0-7780d2604011d92152bcc3548ecc31ad532b6190ca6d75e2af0acee7909df01e.nix;
+        revNum = 0;
+        sha256 = "7780d2604011d92152bcc3548ecc31ad532b6190ca6d75e2af0acee7909df01e";
+      };
+      default = "r0";
+    };
+  };
 }

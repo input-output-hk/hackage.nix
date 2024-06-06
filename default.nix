@@ -10452,6 +10452,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "massiv-test" = import ./nix/massiv-test.nix;
   "master-plan" = import ./nix/master-plan.nix;
   "mastermind" = import ./nix/mastermind.nix;
+  "matcha" = import ./nix/matcha.nix;
   "matchable" = import ./nix/matchable.nix;
   "matchable-th" = import ./nix/matchable-th.nix;
   "matcher" = import ./nix/matcher.nix;

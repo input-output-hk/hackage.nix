@@ -79,4 +79,15 @@
       default = "r5";
     };
   };
+  "0.1.2" = {
+    sha256 = "72d86f8aa625b461f4397f737346f78a1700a7ffbff55cf6375c5e18916e986d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lukko-0.1.2-r0-8a3004c2de2a0b5ef0634d3da6eae62ba8d8a734bab9ed8c6cfd749e7ca08997.nix;
+        revNum = 0;
+        sha256 = "8a3004c2de2a0b5ef0634d3da6eae62ba8d8a734bab9ed8c6cfd749e7ca08997";
+      };
+      default = "r0";
+    };
+  };
 }
