@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "7b30bb98611233474e7ef7377496464176730c2d7c230b2e28c5388c349ea1d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-generics-0.1.0.2-r0-5777a885085766766fba5ceb35d9667c39e0d8910a75e578f81cf3de3e132841.nix;
+        revNum = 0;
+        sha256 = "5777a885085766766fba5ceb35d9667c39e0d8910a75e578f81cf3de3e132841";
+      };
+      default = "r0";
+    };
+  };
 }

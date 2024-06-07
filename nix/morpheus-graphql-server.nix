@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.28.0" = {
+    sha256 = "675161d65e33439ded71db15888b51857648ff16c2da1ebdf99619813e7f2baf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/morpheus-graphql-server-0.28.0-r0-5f5823f9252cf5bfd1f5957b4b5f92dce68f7a75fea1a1d490022fe045513112.nix;
+        revNum = 0;
+        sha256 = "5f5823f9252cf5bfd1f5957b4b5f92dce68f7a75fea1a1d490022fe045513112";
+      };
+      default = "r0";
+    };
+  };
 }

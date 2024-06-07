@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.22.8.2" = {
+    sha256 = "b53f88a7ccc7eb1624c02cf86433cf921ae60658d8fe6422e0867c5c2c4bfa86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-th-0.22.8.2-r0-068347e9417569e5d3d46b8c3da89e03c6e544d5ed2fc44a24e245019ac53e69.nix;
+        revNum = 0;
+        sha256 = "068347e9417569e5d3d46b8c3da89e03c6e544d5ed2fc44a24e245019ac53e69";
+      };
+      default = "r0";
+    };
+  };
 }

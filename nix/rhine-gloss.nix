@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "1.4" = {
+    sha256 = "58e018107aee3fb8fe90758a601be7394f4956509e73a3a40fef689d377d0417";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhine-gloss-1.4-r0-26bf6d839cc8c6648ee90f88d2dbb0420580b542731906c7c1bed48c8e3b9a58.nix;
+        revNum = 0;
+        sha256 = "26bf6d839cc8c6648ee90f88d2dbb0420580b542731906c7c1bed48c8e3b9a58";
+      };
+      default = "r0";
+    };
+  };
 }

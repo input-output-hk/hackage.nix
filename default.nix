@@ -7719,6 +7719,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedgehog-servant" = import ./nix/hedgehog-servant.nix;
   "hedis" = import ./nix/hedis.nix;
   "hedis-config" = import ./nix/hedis-config.nix;
+  "hedis-effectful" = import ./nix/hedis-effectful.nix;
   "hedis-envy" = import ./nix/hedis-envy.nix;
   "hedis-monadic" = import ./nix/hedis-monadic.nix;
   "hedis-namespace" = import ./nix/hedis-namespace.nix;
@@ -8513,6 +8514,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-wai" = import ./nix/hspec-wai.nix;
   "hspec-wai-json" = import ./nix/hspec-wai-json.nix;
   "hspec-webdriver" = import ./nix/hspec-webdriver.nix;
+  "hspec-yesod" = import ./nix/hspec-yesod.nix;
   "hspec2" = import ./nix/hspec2.nix;
   "hspecVariant" = import ./nix/hspec_Variant.nix;
   "hspkcs11" = import ./nix/hspkcs11.nix;
