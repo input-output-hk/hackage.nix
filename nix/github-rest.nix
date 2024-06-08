@@ -149,4 +149,15 @@
       default = "r0";
     };
   };
+  "1.2.1" = {
+    sha256 = "ae177c8bdc281cc4fa8eebde2036b04da25b1952f319dbde013f7c855b8cf2b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/github-rest-1.2.1-r0-66687d80fcd7f7fd7b410ecc9616fa738833daa4920124533c28b5340290e5d6.nix;
+        revNum = 0;
+        sha256 = "66687d80fcd7f7fd7b410ecc9616fa738833daa4920124533c28b5340290e5d6";
+      };
+      default = "r0";
+    };
+  };
 }

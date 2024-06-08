@@ -299,4 +299,15 @@
       default = "r6";
     };
   };
+  "1.3.3.3" = {
+    sha256 = "a0992bea52a636e2aa2597b0ab25c54f0fb389e0052fe5a6436fe53acef956ab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tomland-1.3.3.3-r0-877635f30fc7eeebc7b79283baeec1b7904365973cc3fd98c86f9d147eeef575.nix;
+        revNum = 0;
+        sha256 = "877635f30fc7eeebc7b79283baeec1b7904365973cc3fd98c86f9d147eeef575";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "5ca7c8b8f96aebeb732e0c890ab89cb7624a2e564d914aa2f6baa8720762f544";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/iso-deriving-0.0.8-r1-ea70f8ea211e6520995754f3ad8f9f2290d6e6774eabfddf0c9e6de40d0753df.nix;
+        revNum = 1;
+        sha256 = "ea70f8ea211e6520995754f3ad8f9f2290d6e6774eabfddf0c9e6de40d0753df";
+      };
+      default = "r1";
     };
   };
 }
