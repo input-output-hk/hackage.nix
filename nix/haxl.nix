@@ -189,4 +189,15 @@
       default = "r0";
     };
   };
+  "2.5.1.0" = {
+    sha256 = "0b567f28005e1a0dd5e41340c1b10d47d04368be8c1a506b65500593b5f5fa96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haxl-2.5.1.0-r0-9ffb7701d862d80467ea5c70d13d6d5543143e0ec94e3f3e967730ec9c58285b.nix;
+        revNum = 0;
+        sha256 = "9ffb7701d862d80467ea5c70d13d6d5543143e0ec94e3f3e967730ec9c58285b";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -148,4 +148,15 @@
       default = "r1";
     };
   };
+  "0.5.1" = {
+    sha256 = "60d18755b70b370642766413b0a06c196c24c18740a48510fe1f6be9c2c05c67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vec-0.5.1-r0-f6c78ecd133efb2c9bb3cefce4098a408d73f035fd755df5916b22bdc6be1138.nix;
+        revNum = 0;
+        sha256 = "f6c78ecd133efb2c9bb3cefce4098a408d73f035fd755df5916b22bdc6be1138";
+      };
+      default = "r0";
+    };
+  };
 }

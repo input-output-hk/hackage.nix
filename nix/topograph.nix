@@ -72,4 +72,15 @@
       default = "r2";
     };
   };
+  "1.0.1" = {
+    sha256 = "95aeb0960f2b7441ebb7dd7fbde7fdff60b2f19dc323cccae9148899dce3de0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/topograph-1.0.1-r0-76f72fcb33ce9a57478d9ab7307cd548b760ab974e831074395fe502043e158e.nix;
+        revNum = 0;
+        sha256 = "76f72fcb33ce9a57478d9ab7307cd548b760ab974e831074395fe502043e158e";
+      };
+      default = "r0";
+    };
+  };
 }
