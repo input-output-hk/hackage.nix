@@ -6465,6 +6465,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-clutter" = import ./nix/gi-clutter.nix;
   "gi-cogl" = import ./nix/gi-cogl.nix;
   "gi-coglpango" = import ./nix/gi-coglpango.nix;
+  "gi-dazzle" = import ./nix/gi-dazzle.nix;
   "gi-dbusmenu" = import ./nix/gi-dbusmenu.nix;
   "gi-dbusmenugtk3" = import ./nix/gi-dbusmenugtk3.nix;
   "gi-freetype2" = import ./nix/gi-freetype2.nix;
@@ -6501,6 +6502,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-ibus" = import ./nix/gi-ibus.nix;
   "gi-javascriptcore" = import ./nix/gi-javascriptcore.nix;
   "gi-json" = import ./nix/gi-json.nix;
+  "gi-keybinder" = import ./nix/gi-keybinder.nix;
   "gi-notify" = import ./nix/gi-notify.nix;
   "gi-ostree" = import ./nix/gi-ostree.nix;
   "gi-pango" = import ./nix/gi-pango.nix;
@@ -13400,6 +13402,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "refact" = import ./nix/refact.nix;
   "refcount" = import ./nix/refcount.nix;
   "reference" = import ./nix/reference.nix;
+  "reference-counting" = import ./nix/reference-counting.nix;
   "references" = import ./nix/references.nix;
   "refh" = import ./nix/refh.nix;
   "refined" = import ./nix/refined.nix;
