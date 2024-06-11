@@ -55,7 +55,12 @@
         revNum = 1;
         sha256 = "2864861821267529010ca64a4864d51175ad01f68d6c23cec6a2d6d4b4bb55cd";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/binary-serialise-cbor-0.2.2.0-r2-b742093be1c557ae500572cfc065a05fd553c0a67f15420dfacdc44c2522c9b9.nix;
+        revNum = 2;
+        sha256 = "b742093be1c557ae500572cfc065a05fd553c0a67f15420dfacdc44c2522c9b9";
+      };
+      default = "r2";
     };
   };
 }

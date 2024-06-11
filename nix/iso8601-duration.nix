@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "765044537f63aae36923e129f0589e0e0a2b4c4b18ffee0b25b68d19d863ffc3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/iso8601-duration-0.1.2.0-r0-5ca00af3fde0955b93e484af4b2926d619b25f8ddf8f2b100d2b022874fa14f9.nix;
+        revNum = 0;
+        sha256 = "5ca00af3fde0955b93e484af4b2926d619b25f8ddf8f2b100d2b022874fa14f9";
+      };
+      default = "r0";
+    };
+  };
 }
