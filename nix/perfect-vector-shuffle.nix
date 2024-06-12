@@ -82,4 +82,15 @@
       default = "r5";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "25f30c34cc4f903b7235e90bdca1c3d0ad07ca1528b39d08066cc920dc2d8775";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/perfect-vector-shuffle-0.1.1.2-r0-89218e4a65138fecc56b7d36efc5186278845d087ab12ad69221eb5fc6be12ee.nix;
+        revNum = 0;
+        sha256 = "89218e4a65138fecc56b7d36efc5186278845d087ab12ad69221eb5fc6be12ee";
+      };
+      default = "r0";
+    };
+  };
 }
