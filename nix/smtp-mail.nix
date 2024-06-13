@@ -236,6 +236,22 @@
         revNum = 0;
         sha256 = "cabcf06e2b141c00afb14859ee577a5ffcbb7b32a878ef6c26256798f91dafde";
       };
+      r1 = {
+        nix = import ../hackage/smtp-mail-0.4.0.0-r1-b0177618ac18fef51848c52c99811302448baf12d378a3fbf3437fb8fed7458a.nix;
+        revNum = 1;
+        sha256 = "b0177618ac18fef51848c52c99811302448baf12d378a3fbf3437fb8fed7458a";
+      };
+      default = "r1";
+    };
+  };
+  "0.4.0.1" = {
+    sha256 = "37a958bdf6a8ba68b16be8d5397a4984f5c9f98c06d1de9f80fe42941ccdd17a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smtp-mail-0.4.0.1-r0-51182c85cba81b54e3c3a2918f6df54bbd39c76d803000a67c632d09f8f06cbb.nix;
+        revNum = 0;
+        sha256 = "51182c85cba81b54e3c3a2918f6df54bbd39c76d803000a67c632d09f8f06cbb";
+      };
       default = "r0";
     };
   };
