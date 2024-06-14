@@ -197,4 +197,15 @@
       default = "r0";
     };
   };
+  "0.7.2.0" = {
+    sha256 = "e887dd35927b176b37a2d5068503580e32fd5576ab1fd050bcb73ecd9d36ca98";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lucid-svg-0.7.2.0-r0-ac145997d5d6976d5c77e09992b5b204d7ddb7edba3002801927ed2acc69692b.nix;
+        revNum = 0;
+        sha256 = "ac145997d5d6976d5c77e09992b5b204d7ddb7edba3002801927ed2acc69692b";
+      };
+      default = "r0";
+    };
+  };
 }
