@@ -14411,6 +14411,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shakespeare-js" = import ./nix/shakespeare-js.nix;
   "shakespeare-sass" = import ./nix/shakespeare-sass.nix;
   "shakespeare-text" = import ./nix/shakespeare-text.nix;
+  "shamochu" = import ./nix/shamochu.nix;
   "shana" = import ./nix/shana.nix;
   "shannon-fano" = import ./nix/shannon-fano.nix;
   "shapefile" = import ./nix/shapefile.nix;
