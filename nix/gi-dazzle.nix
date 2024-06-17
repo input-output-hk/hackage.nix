@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.2" = {
+    sha256 = "e6a9d8bf8cad75a48186575833a2264b13623a14168ab1c6c035a04697304060";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-dazzle-1.0.2-r0-e0a2da33e71f05cf93280db04119614d7a4fab0b42f2c3100c600797e8a409ce.nix;
+        revNum = 0;
+        sha256 = "e0a2da33e71f05cf93280db04119614d7a4fab0b42f2c3100c600797e8a409ce";
+      };
+      default = "r0";
+    };
+  };
 }

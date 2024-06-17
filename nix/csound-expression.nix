@@ -680,4 +680,26 @@
       default = "r0";
     };
   };
+  "5.4.4.0" = {
+    sha256 = "48bc110102f726195e848999ba31c75f32728e0ab3906199cc0036ae61d17ad3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-expression-5.4.4.0-r0-10aaddf58fe58b4e0ce89baea81ccd2139d20ba3e1f417b5e239a5ea6e9694be.nix;
+        revNum = 0;
+        sha256 = "10aaddf58fe58b4e0ce89baea81ccd2139d20ba3e1f417b5e239a5ea6e9694be";
+      };
+      default = "r0";
+    };
+  };
+  "5.4.4.1" = {
+    sha256 = "6aed28c69b4bb07aa572c8fc0e6641b464454cbafe2be5289f5c2f81c7d5e38f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-expression-5.4.4.1-r0-78bcd0ca3f7fc067325b0c71b64bdcb9a1b1a53d2a68239fd5ff34d5c635ab6a.nix;
+        revNum = 0;
+        sha256 = "78bcd0ca3f7fc067325b0c71b64bdcb9a1b1a53d2a68239fd5ff34d5c635ab6a";
+      };
+      default = "r0";
+    };
+  };
 }

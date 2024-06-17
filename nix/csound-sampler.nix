@@ -48,6 +48,17 @@
       default = "r0";
     };
   };
+  "0.0.11.0" = {
+    sha256 = "94409695367a155ab3ef5cc5686fd53e353c37247f6a60fd5554495ccb9fd99a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-sampler-0.0.11.0-r0-b5f5a46747c24116b6a3707013f6512f175a0799d4669b1dfd747dc31da8c189.nix;
+        revNum = 0;
+        sha256 = "b5f5a46747c24116b6a3707013f6512f175a0799d4669b1dfd747dc31da8c189";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "bda79b137cbdc52fd24357b23a8d81c6905ceb92f6051d804058d078b0a347ed";
     revisions = {

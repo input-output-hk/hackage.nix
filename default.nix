@@ -14159,6 +14159,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "seqid-streams" = import ./nix/seqid-streams.nix;
   "seqloc" = import ./nix/seqloc.nix;
   "seqloc-datafiles" = import ./nix/seqloc-datafiles.nix;
+  "seqn" = import ./nix/seqn.nix;
   "sequence" = import ./nix/sequence.nix;
   "sequence-formats" = import ./nix/sequence-formats.nix;
   "sequenceTools" = import ./nix/sequence_Tools.nix;

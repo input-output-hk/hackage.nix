@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.6" = {
+    sha256 = "912c0b921075adf4f4e04411c979c9ed6a460103e3f885a04c58ff858f824ec1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-coglpango-1.0.6-r0-52f14a9a2b40443f4170f498c9ac2eadb815e236bf2d6ad29798e2b711eee8e6.nix;
+        revNum = 0;
+        sha256 = "52f14a9a2b40443f4170f498c9ac2eadb815e236bf2d6ad29798e2b711eee8e6";
+      };
+      default = "r0";
+    };
+  };
 }

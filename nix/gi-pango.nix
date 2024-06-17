@@ -340,6 +340,17 @@
       default = "r0";
     };
   };
+  "1.0.30" = {
+    sha256 = "37ed9bcbf3429714e7172b654443fcf81c7bbd42a4c8d155542ccc28ad95e3ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-pango-1.0.30-r0-53119e8b09591716ac9ca6b2a0899f560c7bc7ccd3752802a447d4b2a5174a1f.nix;
+        revNum = 0;
+        sha256 = "53119e8b09591716ac9ca6b2a0899f560c7bc7ccd3752802a447d4b2a5174a1f";
+      };
+      default = "r0";
+    };
+  };
   "1.0.4" = {
     sha256 = "692d8d357d24f76f5d386d66f3f3be877f7cc72968c60d0b3f3309007b27dd22";
     revisions = {

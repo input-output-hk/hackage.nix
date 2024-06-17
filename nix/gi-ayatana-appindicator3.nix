@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "28ad564df5ebeeafa76cf7418f7df71569b306b6fd114c3090d20f435371d4d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-ayatana-appindicator3-0.1.1-r0-e5d0af0fcab52241ce058a01986593cca895dabf91a83e0c365546d0e187a6f1.nix;
+        revNum = 0;
+        sha256 = "e5d0af0fcab52241ce058a01986593cca895dabf91a83e0c365546d0e187a6f1";
+      };
+      default = "r0";
+    };
+  };
 }

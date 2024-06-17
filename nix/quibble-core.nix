@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "66f75076f90fc86e685542dd19dab2591ffd394bccc25023b652cbb1268dd452";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/quibble-core-0.1.0.1-r1-fe4519b0e81016cf02431c7841efb447cadfe3b20042ee630ee96049c219cb4d.nix;
+        revNum = 1;
+        sha256 = "fe4519b0e81016cf02431c7841efb447cadfe3b20042ee630ee96049c219cb4d";
+      };
+      default = "r1";
     };
   };
 }

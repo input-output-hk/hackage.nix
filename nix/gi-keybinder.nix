@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.3.3" = {
+    sha256 = "b7b811b6ec45b018d0b066152e3871d4ff8cf7d8c2b89537281acf72b8918032";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-keybinder-0.3.3-r0-90e8dbe261b54bfd80c90def7f2197933111834fc9e9b5398c5510788a7e00b1.nix;
+        revNum = 0;
+        sha256 = "90e8dbe261b54bfd80c90def7f2197933111834fc9e9b5398c5510788a7e00b1";
+      };
+      default = "r0";
+    };
+  };
 }

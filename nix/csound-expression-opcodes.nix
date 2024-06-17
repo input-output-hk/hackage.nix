@@ -130,4 +130,15 @@
       default = "r0";
     };
   };
+  "0.0.5.4" = {
+    sha256 = "e3bb783592f726aef618be949dbc4907efffacaaeff3bdaa791b9801b085911e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-expression-opcodes-0.0.5.4-r0-863a0db341627548c80528ba1337b93c225f80d291f1466632cf39a6dd748a3e.nix;
+        revNum = 0;
+        sha256 = "863a0db341627548c80528ba1337b93c225f80d291f1466632cf39a6dd748a3e";
+      };
+      default = "r0";
+    };
+  };
 }

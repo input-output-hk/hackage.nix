@@ -351,6 +351,17 @@
       default = "r0";
     };
   };
+  "2.0.31" = {
+    sha256 = "b0c166e9aadd709da94f2562cb337bf78136dffa0187e13613f18d91d95e0dee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gobject-2.0.31-r0-899a331689f1238fdce3829f1148e51bfd13a39ba5cab70710a6bab59e663d90.nix;
+        revNum = 0;
+        sha256 = "899a331689f1238fdce3829f1148e51bfd13a39ba5cab70710a6bab59e663d90";
+      };
+      default = "r0";
+    };
+  };
   "2.0.4" = {
     sha256 = "a177cf48261764f3ae2aaa41a900ef5d08b96eaa8813d112c2b7a64588b3ab0f";
     revisions = {

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.8" = {
+    sha256 = "3359e162a855cc62f26a253d2a57dec98fb89bcabb1cebf9c2678f2aced42ea1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-graphene-1.0.8-r0-b791ff66e4c7a4fc1bcab1c2e1d2cf54dc9fbec18309d3c95cc942d268635067.nix;
+        revNum = 0;
+        sha256 = "b791ff66e4c7a4fc1bcab1c2e1d2cf54dc9fbec18309d3c95cc942d268635067";
+      };
+      default = "r0";
+    };
+  };
 }

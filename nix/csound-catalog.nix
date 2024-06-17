@@ -224,4 +224,15 @@
       default = "r0";
     };
   };
+  "0.7.7.0" = {
+    sha256 = "3016b66de8cdbce85c1fe0945c77b3760598d2bada172b6e98f7ce454a5b3e90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csound-catalog-0.7.7.0-r0-3df6d765c7cf8dd1426e8c27aedee2d8c570ceeb6c23ae68392b44397cf53654.nix;
+        revNum = 0;
+        sha256 = "3df6d765c7cf8dd1426e8c27aedee2d8c570ceeb6c23ae68392b44397cf53654";
+      };
+      default = "r0";
+    };
+  };
 }
