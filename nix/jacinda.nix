@@ -271,4 +271,15 @@
       default = "r0";
     };
   };
+  "3.1.1.0" = {
+    sha256 = "86cb2dec6c382bf019f9412c4e22819c81d11336655a0a32005bab7892c9cc9c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jacinda-3.1.1.0-r0-c6f18e19d463f7e3e09887f324f5969412bb43951b791e70f40794fba4fdb6b5.nix;
+        revNum = 0;
+        sha256 = "c6f18e19d463f7e3e09887f324f5969412bb43951b791e70f40794fba4fdb6b5";
+      };
+      default = "r0";
+    };
+  };
 }

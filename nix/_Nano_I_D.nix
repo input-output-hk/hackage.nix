@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "3.4.0.2" = {
+    sha256 = "524dd7e88c840c4a92e7f138bc3c4988bae6a056485edd663132c3a9d461adb5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/NanoID-3.4.0.2-r0-e1fe430a0bfa3f6f844f4d7eb934064bdfd8b53c2b72acb6ddd07edd3d013187.nix;
+        revNum = 0;
+        sha256 = "e1fe430a0bfa3f6f844f4d7eb934064bdfd8b53c2b72acb6ddd07edd3d013187";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -14646,6 +14646,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "skylighting-modding" = import ./nix/skylighting-modding.nix;
   "skype4hs" = import ./nix/skype4hs.nix;
   "skypelogexport" = import ./nix/skypelogexport.nix;
+  "slab" = import ./nix/slab.nix;
   "slack" = import ./nix/slack.nix;
   "slack-api" = import ./nix/slack-api.nix;
   "slack-notify-haskell" = import ./nix/slack-notify-haskell.nix;

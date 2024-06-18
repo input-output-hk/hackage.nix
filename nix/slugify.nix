@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "764774666688ced299801ff71edbd9580b64fb0feffcf8f088b98029cd590885";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/slugify-0.1.0.2-r0-b16f953401390212faf0450f6044f9c9a44ee07370995ab01dc46d3394e14c7a.nix;
+        revNum = 0;
+        sha256 = "b16f953401390212faf0450f6044f9c9a44ee07370995ab01dc46d3394e14c7a";
+      };
+      default = "r0";
+    };
+  };
 }
