@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.4.1" = {
+    sha256 = "8000d6197b1d43b9b3cd0711c34f120420f358d0425167d2fb7e616d65470ae5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/emojis-0.1.4.1-r0-2e7006c952aa51fe7757ec6f2749f1bcbb65664da91c0404565381ddc909dbf5.nix;
+        revNum = 0;
+        sha256 = "2e7006c952aa51fe7757ec6f2749f1bcbb65664da91c0404565381ddc909dbf5";
+      };
+      default = "r0";
+    };
+  };
 }

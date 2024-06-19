@@ -5971,6 +5971,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "free-category" = import ./nix/free-category.nix;
   "free-concurrent" = import ./nix/free-concurrent.nix;
   "free-er" = import ./nix/free-er.nix;
+  "free-foil" = import ./nix/free-foil.nix;
   "free-functors" = import ./nix/free-functors.nix;
   "free-game" = import ./nix/free-game.nix;
   "free-http" = import ./nix/free-http.nix;
@@ -7554,6 +7555,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haslo" = import ./nix/haslo.nix;
   "hasloGUI" = import ./nix/haslo_G_U_I.nix;
   "hasmin" = import ./nix/hasmin.nix;
+  "hasmtlib" = import ./nix/hasmtlib.nix;
   "haspara" = import ./nix/haspara.nix;
   "hasparql-client" = import ./nix/hasparql-client.nix;
   "haspell" = import ./nix/haspell.nix;
@@ -15516,6 +15518,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "systemd-ntfy" = import ./nix/systemd-ntfy.nix;
   "systemd-socket-activation" = import ./nix/systemd-socket-activation.nix;
   "systemstats" = import ./nix/systemstats.nix;
+  "systranything" = import ./nix/systranything.nix;
   "syz" = import ./nix/syz.nix;
   "t-regex" = import ./nix/t-regex.nix;
   "t3-client" = import ./nix/t3-client.nix;
@@ -16055,6 +16058,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tiny-scheduler" = import ./nix/tiny-scheduler.nix;
   "tinyMesh" = import ./nix/tiny_Mesh.nix;
   "tinyXml" = import ./nix/tiny_Xml.nix;
+  "tinyapp" = import ./nix/tinyapp.nix;
   "tinyfiledialogs" = import ./nix/tinyfiledialogs.nix;
   "tinyid" = import ./nix/tinyid.nix;
   "tinylog" = import ./nix/tinylog.nix;

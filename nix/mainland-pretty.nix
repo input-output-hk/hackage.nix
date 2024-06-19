@@ -433,7 +433,12 @@
         revNum = 3;
         sha256 = "1b6161f258f8e00e979ccc7410c97be3601f07c8f37d86b8672e440e7ce55773";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/mainland-pretty-0.7.1-r4-3c78c3b9c7b9748c26ed10447c80c5e60256f41da3683ed6e8b59e10219131df.nix;
+        revNum = 4;
+        sha256 = "3c78c3b9c7b9748c26ed10447c80c5e60256f41da3683ed6e8b59e10219131df";
+      };
+      default = "r4";
     };
   };
 }

@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.1.3.2" = {
+    sha256 = "b8ddc9333fceca73db637dc2a0e991cec3d310087600972b2d7d5ae5b75213a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsendxmpp-0.1.3.2-r0-19c7de48f9d8f9b30b5f55bb1c72dae0bd43a8723cf15bb855b7541cf3c46522.nix;
+        revNum = 0;
+        sha256 = "19c7de48f9d8f9b30b5f55bb1c72dae0bd43a8723cf15bb855b7541cf3c46522";
+      };
+      default = "r0";
+    };
+  };
 }

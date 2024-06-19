@@ -1245,4 +1245,15 @@
       default = "r0";
     };
   };
+  "5.2.4" = {
+    sha256 = "f8807f418a6dc9e94d35ab44edaec8388d12449aa00b3ed80d1d73dd2720e4eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http2-5.2.4-r0-9f8b9bb3e7d974cbe42fb73a768000507268f34086f3cd2970baf5258fce989d.nix;
+        revNum = 0;
+        sha256 = "9f8b9bb3e7d974cbe42fb73a768000507268f34086f3cd2970baf5258fce989d";
+      };
+      default = "r0";
+    };
+  };
 }
