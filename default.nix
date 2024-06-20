@@ -9958,6 +9958,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libsecp256k1" = import ./nix/libsecp256k1.nix;
   "libsodium" = import ./nix/libsodium.nix;
   "libsodium-bindings" = import ./nix/libsodium-bindings.nix;
+  "libssh" = import ./nix/libssh.nix;
   "libssh2" = import ./nix/libssh2.nix;
   "libssh2-conduit" = import ./nix/libssh2-conduit.nix;
   "libstackexchange" = import ./nix/libstackexchange.nix;
