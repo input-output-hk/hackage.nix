@@ -223,7 +223,12 @@
         revNum = 0;
         sha256 = "fd252a48d10dbe324d502bc666b4672e6a0b64c413f7040305794244d84e06b5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hpc-0.7.0.1-r1-637509832c52b3dcb8013e07cf2f73358df789737e4ba865cbb9baf4481734ca.nix;
+        revNum = 1;
+        sha256 = "637509832c52b3dcb8013e07cf2f73358df789737e4ba865cbb9baf4481734ca";
+      };
+      default = "r1";
     };
   };
   "0.7.0.2" = {

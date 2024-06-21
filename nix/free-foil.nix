@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.3" = {
+    sha256 = "39f4f424dcff62861f15b8318a3f4c2895e7e72f1c141e9dc71ffddf38864e3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-foil-0.0.3-r0-cc4440d3d6ad4234611120fdecb228b621e0cabf57c1e8b8fb35282aa6fe0cfb.nix;
+        revNum = 0;
+        sha256 = "cc4440d3d6ad4234611120fdecb228b621e0cabf57c1e8b8fb35282aa6fe0cfb";
+      };
+      default = "r0";
+    };
+  };
 }

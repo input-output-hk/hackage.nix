@@ -285,4 +285,15 @@
       default = "r0";
     };
   };
+  "0.4.6" = {
+    sha256 = "c996e84c74da02b59b510c689be74613da4c83e01a0dfd411d89ed565d1e12e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hkgr-0.4.6-r0-fee228c56ba641b68995b0372f305dd1ac4bfd6eaf148effd8f9c8f1e1e5abf3.nix;
+        revNum = 0;
+        sha256 = "fee228c56ba641b68995b0372f305dd1ac4bfd6eaf148effd8f9c8f1e1e5abf3";
+      };
+      default = "r0";
+    };
+  };
 }
