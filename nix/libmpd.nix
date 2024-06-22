@@ -42,6 +42,17 @@
       default = "r0";
     };
   };
+  "0.10.0.1" = {
+    sha256 = "a658fc3dded12e67a0cb08e6ad295abfedf7ce9ebebc2f5d225289f4ae8e4331";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libmpd-0.10.0.1-r0-6782337b0b060384820ab2e1831dd4d51444a2c61875240ebe9b38de15ce22a4.nix;
+        revNum = 0;
+        sha256 = "6782337b0b060384820ab2e1831dd4d51444a2c61875240ebe9b38de15ce22a4";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "bb87c9c863e9070d5ac8af0faf914377f7cf4656b4cb616d424ae2c439ad4c10";
     revisions = {
