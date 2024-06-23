@@ -6968,6 +6968,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "greskell" = import ./nix/greskell.nix;
   "greskell-core" = import ./nix/greskell-core.nix;
   "greskell-websocket" = import ./nix/greskell-websocket.nix;
+  "grfn" = import ./nix/grfn.nix;
   "grid" = import ./nix/grid.nix;
   "grid-proto" = import ./nix/grid-proto.nix;
   "gridbounds" = import ./nix/gridbounds.nix;

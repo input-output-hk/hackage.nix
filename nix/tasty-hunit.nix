@@ -75,6 +75,17 @@
       default = "r0";
     };
   };
+  "0.10.2" = {
+    sha256 = "5af01fa7c1ef98b324da062e36f79986a8b1b83ff0cf6fd53f95d976b41e03f6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-hunit-0.10.2-r0-22bc1122e8256664d7cb1e44c6bcace95676c523179947bf2403db71af43dc6d.nix;
+        revNum = 0;
+        sha256 = "22bc1122e8256664d7cb1e44c6bcace95676c523179947bf2403db71af43dc6d";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "7c06b5a4328ca821bd9e87fcf67b02f54f8a7931fad3f75c4e4f299d0753e690";
     revisions = {
