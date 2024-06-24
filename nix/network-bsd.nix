@@ -54,7 +54,12 @@
         revNum = 5;
         sha256 = "e27df73ab03bb3b0d649d229c74deea0204635689422ff684af0571f3eb94802";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/network-bsd-2.8.1.0-r6-cc7867f81c6eb3f1924bbb1029757af6e3b67a3c224c1faa329be3ea70ad729c.nix;
+        revNum = 6;
+        sha256 = "cc7867f81c6eb3f1924bbb1029757af6e3b67a3c224c1faa329be3ea70ad729c";
+      };
+      default = "r6";
     };
   };
 }

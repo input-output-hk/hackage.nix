@@ -1725,7 +1725,12 @@
         revNum = 0;
         sha256 = "0caea52f997cf3f163447ebb49e425102b7cdcba86060e695d41873f6052e436";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/happstack-server-7.7.1-r1-0daef9ec3b70f95fa545500834f99a84015888b5833e794804aa7fd69cd5e3cf.nix;
+        revNum = 1;
+        sha256 = "0daef9ec3b70f95fa545500834f99a84015888b5833e794804aa7fd69cd5e3cf";
+      };
+      default = "r1";
     };
   };
   "7.7.1.1" = {
@@ -1736,7 +1741,12 @@
         revNum = 0;
         sha256 = "0107464b6bef1faebe1d4de665a379fa059a1a1d4faa56c4c13a6203d76a2488";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/happstack-server-7.7.1.1-r1-a106a0f9469e59c65f7824642c6b7d832c21ee1b0441ac8c05c2f6e43dae1b08.nix;
+        revNum = 1;
+        sha256 = "a106a0f9469e59c65f7824642c6b7d832c21ee1b0441ac8c05c2f6e43dae1b08";
+      };
+      default = "r1";
     };
   };
   "7.7.1.2" = {
@@ -1747,7 +1757,12 @@
         revNum = 0;
         sha256 = "c3a240352b94096014cbdce3d5ef48180c0a149e79aa5d5aff40da0ae0fd64c2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/happstack-server-7.7.1.2-r1-6dcb35b6afbc0ecd4fa4cfb9052cc7a9ab112a464f4c12ad10fdb069063f8e54.nix;
+        revNum = 1;
+        sha256 = "6dcb35b6afbc0ecd4fa4cfb9052cc7a9ab112a464f4c12ad10fdb069063f8e54";
+      };
+      default = "r1";
     };
   };
   "7.7.2" = {
@@ -1758,7 +1773,12 @@
         revNum = 0;
         sha256 = "43922dde9659cd3788bfd72acb9287ab567dd9c04be1e701270aea5e105c1469";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/happstack-server-7.7.2-r1-281ac4c7bb5734aaec382fb7fe42b954d297a7142f642bdfd342dbe32ae38226.nix;
+        revNum = 1;
+        sha256 = "281ac4c7bb5734aaec382fb7fe42b954d297a7142f642bdfd342dbe32ae38226";
+      };
+      default = "r1";
     };
   };
   "7.8.0" = {
@@ -1774,7 +1794,12 @@
         revNum = 1;
         sha256 = "c0b794c0103db7cd8c049cca44596b21b98d8a8fb9dbfd252c1475ce3342b478";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/happstack-server-7.8.0-r2-1a4361a315aed67beb67d8997c5ac9c4adff1ec028058d7dc0aff82b7f4c95a8.nix;
+        revNum = 2;
+        sha256 = "1a4361a315aed67beb67d8997c5ac9c4adff1ec028058d7dc0aff82b7f4c95a8";
+      };
+      default = "r2";
     };
   };
   "7.8.0.1" = {
@@ -1790,7 +1815,12 @@
         revNum = 1;
         sha256 = "bf6a2c00f559e671e8dfe0e5d995db4ef0d4e905cf6dc21afe52ed743684a1af";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/happstack-server-7.8.0.1-r2-48c93ca32d76a220c39f170085ddf5d46382d462a001a8c59d8115f7b319bae6.nix;
+        revNum = 2;
+        sha256 = "48c93ca32d76a220c39f170085ddf5d46382d462a001a8c59d8115f7b319bae6";
+      };
+      default = "r2";
     };
   };
   "7.8.0.2" = {
@@ -1806,7 +1836,12 @@
         revNum = 1;
         sha256 = "e241274929d75572a4af4dc0166f7e5108074ce5beda991b32cacb5026321621";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/happstack-server-7.8.0.2-r2-21919d0d1d9e94570b82d20c4a2e2cbfad6ae287e43bc11780b7a06d80e71c3b.nix;
+        revNum = 2;
+        sha256 = "21919d0d1d9e94570b82d20c4a2e2cbfad6ae287e43bc11780b7a06d80e71c3b";
+      };
+      default = "r2";
     };
   };
   "7.9.0" = {
@@ -1817,7 +1852,12 @@
         revNum = 0;
         sha256 = "f9eab05ac1fc4ef0aa9489c291683496fa0c15e700a1b6ae09f8f920110237a7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/happstack-server-7.9.0-r1-0c2340ab92688bb1c6d0cdc3daaef8bca24352756d49f8f3d46de79ce8b4d58d.nix;
+        revNum = 1;
+        sha256 = "0c2340ab92688bb1c6d0cdc3daaef8bca24352756d49f8f3d46de79ce8b4d58d";
+      };
+      default = "r1";
     };
   };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "4b4dba9250f0cf1178741398f01c908d2d6855982ae76bddbace8bb012412e20";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/conduit-aeson-0.1.0.0-r1-9f39bb8f33a4cc4e5b86f19531a99331d7f2cb72940ac30eab9569c7017c8782.nix;
+        revNum = 1;
+        sha256 = "9f39bb8f33a4cc4e5b86f19531a99331d7f2cb72940ac30eab9569c7017c8782";
+      };
+      default = "r1";
     };
   };
   "0.1.0.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "f7654b917de284a2e295da52acdf23307b1d555d81b83ccac9551a80deb9f711";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/conduit-aeson-0.1.0.1-r1-d91c27c197260efa6cc3fe09aff2a86568daf4b4ba080afe4f7e6894726f8c53.nix;
+        revNum = 1;
+        sha256 = "d91c27c197260efa6cc3fe09aff2a86568daf4b4ba080afe4f7e6894726f8c53";
+      };
+      default = "r1";
     };
   };
 }
