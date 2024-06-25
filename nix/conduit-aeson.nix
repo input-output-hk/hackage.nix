@@ -31,4 +31,15 @@
       default = "r1";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "9dc7e316883ae6dc8203e3fc78a12d366cd91fa7e1127dff34e46348583a4317";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-aeson-0.1.1.0-r0-2ce6c3f8f84e7741cf613827cfc114c1d71e139577acf95c7800df8b276aa041.nix;
+        revNum = 0;
+        sha256 = "2ce6c3f8f84e7741cf613827cfc114c1d71e139577acf95c7800df8b276aa041";
+      };
+      default = "r0";
+    };
+  };
 }
