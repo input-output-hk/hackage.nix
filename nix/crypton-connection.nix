@@ -29,6 +29,22 @@
         revNum = 0;
         sha256 = "a7e622fe5f691abb0a10ff02374978b6ca7c085e93892b00eb1d3e7d513b41b4";
       };
+      r1 = {
+        nix = import ../hackage/crypton-connection-0.4.0-r1-07741ccd6a6f7fb4ee699610132055d7a042a3768810a4d95ad8abdbf84eaa13.nix;
+        revNum = 1;
+        sha256 = "07741ccd6a6f7fb4ee699610132055d7a042a3768810a4d95ad8abdbf84eaa13";
+      };
+      default = "r1";
+    };
+  };
+  "0.4.1" = {
+    sha256 = "96783feb8012e0c94a746c81d41f3d9a8d99a4e0da0a927529ac3671710e3668";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypton-connection-0.4.1-r0-a03dabfac16fcc58b4089c2f75ad1e97fc71c4a44f3aeb790db65cebb9ebd1d0.nix;
+        revNum = 0;
+        sha256 = "a03dabfac16fcc58b4089c2f75ad1e97fc71c4a44f3aeb790db65cebb9ebd1d0";
+      };
       default = "r0";
     };
   };

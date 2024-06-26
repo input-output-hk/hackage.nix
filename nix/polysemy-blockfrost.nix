@@ -37,4 +37,26 @@
       default = "r0";
     };
   };
+  "0.1.3.0" = {
+    sha256 = "20d8cf7af40c27623274a03678160234f677d5efad1b8cc013f9eac93739ec0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-blockfrost-0.1.3.0-r0-985df48986a54b192cbca924bab6fc012ef13ec368a403f78732cedcd465129e.nix;
+        revNum = 0;
+        sha256 = "985df48986a54b192cbca924bab6fc012ef13ec368a403f78732cedcd465129e";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.4.0" = {
+    sha256 = "2166baefa54d42b42ffc933f402c1c875f5a2b18977b9560151f6d9784b29850";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-blockfrost-0.1.4.0-r0-f80f69d730a2de1b972701910be375a592acebb7386efbc53b4c52a42ac5cd4e.nix;
+        revNum = 0;
+        sha256 = "f80f69d730a2de1b972701910be375a592acebb7386efbc53b4c52a42ac5cd4e";
+      };
+      default = "r0";
+    };
+  };
 }

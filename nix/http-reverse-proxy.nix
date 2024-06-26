@@ -595,4 +595,15 @@
       default = "r0";
     };
   };
+  "0.6.1.0" = {
+    sha256 = "cc5c3de12d611e439bf5611f405c039b4e2eda351ab32aca21b108705a634d46";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-reverse-proxy-0.6.1.0-r0-5bc151ed0c22e8493a7bb5e6e1a5de51fff0450f47733e9bc5044aaafdf7dac6.nix;
+        revNum = 0;
+        sha256 = "5bc151ed0c22e8493a7bb5e6e1a5de51fff0450f47733e9bc5044aaafdf7dac6";
+      };
+      default = "r0";
+    };
+  };
 }

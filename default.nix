@@ -1558,6 +1558,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agum" = import ./nix/agum.nix;
   "aig" = import ./nix/aig.nix;
   "aip" = import ./nix/aip.nix;
+  "aip-version" = import ./nix/aip-version.nix;
   "air" = import ./nix/air.nix;
   "air-extra" = import ./nix/air-extra.nix;
   "air-spec" = import ./nix/air-spec.nix;
