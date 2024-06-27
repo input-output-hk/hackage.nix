@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "ffb02790cb09c5018edce308c43d63fc685a38d50ebf1b599fb8d4b73bb101fb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ki-unlifted-1.0.0.2-r1-01c21eca550afd3e3b0d660b881167143ba36a25d9cdd89bb2ef845b11f9379b.nix;
+        revNum = 1;
+        sha256 = "01c21eca550afd3e3b0d660b881167143ba36a25d9cdd89bb2ef845b11f9379b";
+      };
+      default = "r1";
     };
   };
 }
