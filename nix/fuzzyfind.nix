@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "3.0.2" = {
+    sha256 = "5d7c7ebce5949e4425389270455650fd9ee49ca6027cbfbc78e1a9ad4fc223a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuzzyfind-3.0.2-r0-0fcd64eb1016fe0d0232abc26b2b80b32d676707ff41d155a28df8a9572603d4.nix;
+        revNum = 0;
+        sha256 = "0fcd64eb1016fe0d0232abc26b2b80b32d676707ff41d155a28df8a9572603d4";
+      };
+      default = "r0";
+    };
+  };
 }
