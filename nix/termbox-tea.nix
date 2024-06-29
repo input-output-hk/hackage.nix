@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "c66b5075a061bace6b5ac8f9fb03bb35aa50da1f57018f5007edbc8128b22158";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/termbox-tea-1.0.0-r1-c1241b406bcd87c7fc2b1fa3dc35bc61a56b18ba4be46022dfe551249ed6b77d.nix;
+        revNum = 1;
+        sha256 = "c1241b406bcd87c7fc2b1fa3dc35bc61a56b18ba4be46022dfe551249ed6b77d";
+      };
+      default = "r1";
     };
   };
 }

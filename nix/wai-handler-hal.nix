@@ -102,7 +102,12 @@
         revNum = 1;
         sha256 = "4080246cd370d244e237ead3206107f144896fb09befc4543e1a932d8c5c8a4e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wai-handler-hal-0.4.0.0-r2-14709ab883b6e7142ac27a9ad7dcfe2f54aebd30eae543b5c9f926e219145e71.nix;
+        revNum = 2;
+        sha256 = "14709ab883b6e7142ac27a9ad7dcfe2f54aebd30eae543b5c9f926e219145e71";
+      };
+      default = "r2";
     };
   };
 }

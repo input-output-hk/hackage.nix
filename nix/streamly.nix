@@ -61,7 +61,12 @@
         revNum = 0;
         sha256 = "f63db612bd97182c3eca4e23f0ddc6bbf45d025db155e113335e7b07ccdef49f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/streamly-0.10.1-r1-3f870146125472f4efad9468b4fac9367ab7cb7b3f6cecce943733c30b017688.nix;
+        revNum = 1;
+        sha256 = "3f870146125472f4efad9468b4fac9367ab7cb7b3f6cecce943733c30b017688";
+      };
+      default = "r1";
     };
   };
   "0.2.0" = {

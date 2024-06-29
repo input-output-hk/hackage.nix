@@ -109,7 +109,12 @@
         revNum = 1;
         sha256 = "0734d9edbd6588c28e94ae76b85b01ce43e3962bc912a07742fb190b899c607a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/termbox-banana-2.0.0-r2-576a50a746944fc97e2c809f071914b5503f37d7ee6b0bfce7c02bf4659fb7a7.nix;
+        revNum = 2;
+        sha256 = "576a50a746944fc97e2c809f071914b5503f37d7ee6b0bfce7c02bf4659fb7a7";
+      };
+      default = "r2";
     };
   };
 }

@@ -924,6 +924,17 @@
       default = "r1";
     };
   };
+  "3.12.1.0" = {
+    sha256 = "6848acfd9c726fdcce544a8b669748d0fd9f2da26d28e841069dc4840276b1b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-install-3.12.1.0-r0-8ea68e5391ade37fca165e25c6e74de9de4bc62db221ce04c3a01e4de9f59564.nix;
+        revNum = 0;
+        sha256 = "8ea68e5391ade37fca165e25c6e74de9de4bc62db221ce04c3a01e4de9f59564";
+      };
+      default = "r0";
+    };
+  };
   "3.2.0.0" = {
     sha256 = "a0555e895aaf17ca08453fde8b19af96725da8398e027aa43a49c1658a600cb0";
     revisions = {

@@ -53,6 +53,17 @@
       default = "r1";
     };
   };
+  "3.12.1.0" = {
+    sha256 = "e5f2d31ec4bf36a7fd5b478f339edde18a6d9a4928a156fe52d37b70082c04b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Cabal-syntax-3.12.1.0-r0-6dbb06fb08ff77520947fb4c1ef281c9cea5b8dc7fd9a41ad62273fa916cf4b2.nix;
+        revNum = 0;
+        sha256 = "6dbb06fb08ff77520947fb4c1ef281c9cea5b8dc7fd9a41ad62273fa916cf4b2";
+      };
+      default = "r0";
+    };
+  };
   "3.6.0.0" = {
     sha256 = "ca25e5fc601397565fa857f1aa477740fac7f43d659e77c4d9b1485dca239251";
     revisions = {
