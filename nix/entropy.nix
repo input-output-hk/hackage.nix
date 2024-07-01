@@ -333,7 +333,12 @@
         revNum = 1;
         sha256 = "82bd7b600fb8df540dd292ed91dc781f4523eecef3bb588b14787b4851722cb1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/entropy-0.4.1.10-r2-51f4bea51aacee1504eeef831ef0ce576a263cbd454e6d742f0b4ccb5295c81d.nix;
+        revNum = 2;
+        sha256 = "51f4bea51aacee1504eeef831ef0ce576a263cbd454e6d742f0b4ccb5295c81d";
+      };
+      default = "r2";
     };
   };
   "0.4.1.2" = {

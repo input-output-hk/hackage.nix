@@ -147,7 +147,12 @@
         revNum = 2;
         sha256 = "d86104bccddc575c5537cd32bc755971a2cb47ad7e24ba4f84d74a3d05eaab77";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/openssl-streams-1.2.3.0-r3-8fb721151e7f2f382de6dbecb59519d2c183794763399b732a6d4da97ca23fee.nix;
+        revNum = 3;
+        sha256 = "8fb721151e7f2f382de6dbecb59519d2c183794763399b732a6d4da97ca23fee";
+      };
+      default = "r3";
     };
   };
 }
