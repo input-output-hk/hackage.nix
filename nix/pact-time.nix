@@ -43,4 +43,26 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "dd381a80a2d7a2cb4fc379268bdf5b92398645f49b6ab4d1fd5a6901eef56435";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pact-time-0.3.0.0-r0-6dc72e0a3ad092bab8d05340f4bff7eafc8c94b54a7bc8eec26727bc8c9fbf9e.nix;
+        revNum = 0;
+        sha256 = "6dc72e0a3ad092bab8d05340f4bff7eafc8c94b54a7bc8eec26727bc8c9fbf9e";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.0.1" = {
+    sha256 = "571fe2156b950deec6825c86f12cea65d758e15f84a395976e47f106380467fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pact-time-0.3.0.1-r0-e26db0404ebdd2990526b091114cdfd44ad3a6d2703652fe73e69ea73f7f474c.nix;
+        revNum = 0;
+        sha256 = "e26db0404ebdd2990526b091114cdfd44ad3a6d2703652fe73e69ea73f7f474c";
+      };
+      default = "r0";
+    };
+  };
 }

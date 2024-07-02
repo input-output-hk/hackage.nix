@@ -279,7 +279,12 @@
         revNum = 1;
         sha256 = "7e99ef093ad53121e3ce2874f3100700b5bf4f279ad4fc2a316d5d1323cc9399";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.10.0-r2-482d8b9e197ed732f5d54a6031f1471231a66d0d05e2e34f2a3aec8fb6b7b95b.nix;
+        revNum = 2;
+        sha256 = "482d8b9e197ed732f5d54a6031f1471231a66d0d05e2e34f2a3aec8fb6b7b95b";
+      };
+      default = "r2";
     };
   };
   "0.13.2.0" = {
@@ -397,7 +402,12 @@
         revNum = 0;
         sha256 = "bba050d5035c6375d0adc04a9000a58689a1b32284753d408a1181697abfcc6b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.5.1-r1-7e9d7c3691e91f3419df85b3d7e757e6de877ead271516dc5c609d317b66b9f9.nix;
+        revNum = 1;
+        sha256 = "7e9d7c3691e91f3419df85b3d7e757e6de877ead271516dc5c609d317b66b9f9";
+      };
+      default = "r1";
     };
   };
   "0.13.5.3" = {
@@ -408,7 +418,12 @@
         revNum = 0;
         sha256 = "0c302dac71c06a1fc9f5c448f2bbead8f22f09c2bbeab049793df7b6b5cfa296";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.5.3-r1-634173b3b9a7cf753d8b8064195f9b442a7a84193fd7b87de67a9cfbd444d2da.nix;
+        revNum = 1;
+        sha256 = "634173b3b9a7cf753d8b8064195f9b442a7a84193fd7b87de67a9cfbd444d2da";
+      };
+      default = "r1";
     };
   };
   "0.13.5.4" = {
@@ -419,7 +434,12 @@
         revNum = 0;
         sha256 = "0f18b0103fa7a3cbc28edc6a97bdaf08e1f9bd273ef26d2ad498630ec6d0ac9c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.5.4-r1-1e12337eae8df56ea63a378b9d1bc77589303ff0d8e57d5e02facfbb771e311c.nix;
+        revNum = 1;
+        sha256 = "1e12337eae8df56ea63a378b9d1bc77589303ff0d8e57d5e02facfbb771e311c";
+      };
+      default = "r1";
     };
   };
   "0.13.8.0" = {
@@ -435,7 +455,12 @@
         revNum = 1;
         sha256 = "517e2c776f2d01446712ee411f68494ca6780c6714877e19e8da2df77a7f1d6e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.8.0-r2-8950d48c933f021fd8bc5453fb1bb089ae7d8831697132e759c6d49488efb86c.nix;
+        revNum = 2;
+        sha256 = "8950d48c933f021fd8bc5453fb1bb089ae7d8831697132e759c6d49488efb86c";
+      };
+      default = "r2";
     };
   };
   "0.13.8.1" = {
@@ -451,7 +476,12 @@
         revNum = 1;
         sha256 = "47351dcc5d64972553b35624778717f49fec2b3875e911bcdc82edfc61c9ae06";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.8.1-r2-c2e2f75f6760ae86f8fb423871e0f1065bd60d00f1206e0980f66017f712f25d.nix;
+        revNum = 2;
+        sha256 = "c2e2f75f6760ae86f8fb423871e0f1065bd60d00f1206e0980f66017f712f25d";
+      };
+      default = "r2";
     };
   };
   "0.13.8.2" = {
@@ -467,7 +497,12 @@
         revNum = 1;
         sha256 = "2588acb3fb5e580b89820f966143208cbe78af6793f7e176083f6ac9c78b65b0";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.8.2-r2-211b17bd284e5a1c240a9f7506598269329e93298eb86f568cddcb46bbf9ed4c.nix;
+        revNum = 2;
+        sha256 = "211b17bd284e5a1c240a9f7506598269329e93298eb86f568cddcb46bbf9ed4c";
+      };
+      default = "r2";
     };
   };
   "0.13.8.3" = {

@@ -7392,6 +7392,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-eigen-util" = import ./nix/haskell-eigen-util.nix;
   "haskell-exp-parser" = import ./nix/haskell-exp-parser.nix;
   "haskell-fake-user-agent" = import ./nix/haskell-fake-user-agent.nix;
+  "haskell-ffprobe" = import ./nix/haskell-ffprobe.nix;
   "haskell-formatter" = import ./nix/haskell-formatter.nix;
   "haskell-ftp" = import ./nix/haskell-ftp.nix;
   "haskell-generate" = import ./nix/haskell-generate.nix;
