@@ -6619,6 +6619,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "global-config" = import ./nix/global-config.nix;
   "global-lock" = import ./nix/global-lock.nix;
   "global-variables" = import ./nix/global-variables.nix;
+  "globus" = import ./nix/globus.nix;
   "glome-hs" = import ./nix/glome-hs.nix;
   "gloss" = import ./nix/gloss.nix;
   "gloss-accelerate" = import ./nix/gloss-accelerate.nix;
