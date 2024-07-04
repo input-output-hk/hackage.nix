@@ -109,4 +109,59 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "0ca065ac80a1473f0d1a4844a70cee6740d312aeb6edad690f5147f43afed134";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.0-r0-fa4d0762eaeadb64e26b6f1044309713034d55ffdf8df1593e30ec663661d64e.nix;
+        revNum = 0;
+        sha256 = "fa4d0762eaeadb64e26b6f1044309713034d55ffdf8df1593e30ec663661d64e";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.0.1" = {
+    sha256 = "ad0f03bfaeb0e7d5b9795c4b7a4eb3db7edb79214814f5e8d62f520e5bab2a72";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.1-r0-17869a115374db6e92a61a610e5efbeca1170b14f6cd52bdaa402ccdaf15b8d5.nix;
+        revNum = 0;
+        sha256 = "17869a115374db6e92a61a610e5efbeca1170b14f6cd52bdaa402ccdaf15b8d5";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.0.2" = {
+    sha256 = "1996c5c76a0f401ab2f1c3a1a1665c028ecf27356179b3e4710ca346340a1dc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.2-r0-ed69b54674276d6ef47ce71ebce65f603b757fb8137953bcad68d69df17572fc.nix;
+        revNum = 0;
+        sha256 = "ed69b54674276d6ef47ce71ebce65f603b757fb8137953bcad68d69df17572fc";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.0.3" = {
+    sha256 = "95b2d742cc278082720197d9ae3c1a56fa1abe87e4ae288b1d71ad5f0d70440d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.3-r0-3dfaf2cf8443c91f5738766efeeb4fc34ff41ca15304b44f38ec3570262df0ad.nix;
+        revNum = 0;
+        sha256 = "3dfaf2cf8443c91f5738766efeeb4fc34ff41ca15304b44f38ec3570262df0ad";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.0.4" = {
+    sha256 = "ea2c3322a4bca890c55ed1d1d5b824fbaf3f4c4ec9ee4d51db96163a892312cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.4-r0-94387171dcee760dee0ece94fe5e05f2fbbdb27308404597355219debc5b7331.nix;
+        revNum = 0;
+        sha256 = "94387171dcee760dee0ece94fe5e05f2fbbdb27308404597355219debc5b7331";
+      };
+      default = "r0";
+    };
+  };
 }

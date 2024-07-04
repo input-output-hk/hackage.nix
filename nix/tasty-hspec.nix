@@ -417,7 +417,12 @@
         revNum = 4;
         sha256 = "72a3b16841bb9a33f71930e7b5244dc29ca191f239bd505e30889a1c59c25cc4";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/tasty-hspec-1.2.0.4-r5-ea022fc67ea58682fec04dca4d829974c207a3f86a585a7192d93531868c7146.nix;
+        revNum = 5;
+        sha256 = "ea022fc67ea58682fec04dca4d829974c207a3f86a585a7192d93531868c7146";
+      };
+      default = "r5";
     };
   };
 }

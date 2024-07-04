@@ -11643,6 +11643,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ogma-language-smv" = import ./nix/ogma-language-smv.nix;
   "ogma-spec" = import ./nix/ogma-spec.nix;
   "ogmarkup" = import ./nix/ogmarkup.nix;
+  "ohhecs" = import ./nix/ohhecs.nix;
   "ohloh-hs" = import ./nix/ohloh-hs.nix;
   "oi" = import ./nix/oi.nix;
   "oidc-client" = import ./nix/oidc-client.nix;

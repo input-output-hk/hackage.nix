@@ -182,4 +182,15 @@
       default = "r6";
     };
   };
+  "0.1.4" = {
+    sha256 = "416e4a9a026342c84a7596e869b2ae451cf7829d72fe154d1de1716322deb3f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/range-set-list-0.1.4-r0-065356e5b4f306abda7c18eaa6f0269603951db0498f88e0fa556fa1a5098a91.nix;
+        revNum = 0;
+        sha256 = "065356e5b4f306abda7c18eaa6f0269603951db0498f88e0fa556fa1a5098a91";
+      };
+      default = "r0";
+    };
+  };
 }

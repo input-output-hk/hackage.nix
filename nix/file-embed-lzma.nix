@@ -71,4 +71,15 @@
       default = "r2";
     };
   };
+  "0.1" = {
+    sha256 = "fe45b24f590e8a0f5d8f2e4f590ffa161debeedf192e6dd10a4ace1504b34151";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/file-embed-lzma-0.1-r0-247a1f094fd896606086fc5f8d8813737def32f39fdf8c56967d4b082b7dbb5e.nix;
+        revNum = 0;
+        sha256 = "247a1f094fd896606086fc5f8d8813737def32f39fdf8c56967d4b082b7dbb5e";
+      };
+      default = "r0";
+    };
+  };
 }
