@@ -304,7 +304,12 @@
         revNum = 0;
         sha256 = "1babc74557df0b8a32d43536cc0a0cb32ff354a6d57de52f5a0e88636a16f3b0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/data-interval-2.1.2-r1-a3bbe77211cb8c0386df87c060d9800e3052c2431d9f8cab23c393289835f4ac.nix;
+        revNum = 1;
+        sha256 = "a3bbe77211cb8c0386df87c060d9800e3052c2431d9f8cab23c393289835f4ac";
+      };
+      default = "r1";
     };
   };
 }

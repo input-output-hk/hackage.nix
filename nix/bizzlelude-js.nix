@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "4.17.2.2" = {
+    sha256 = "2f64de321fbe685c7a0731e28c1c0993c9c3e547e3b468409171faa5d92ba492";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bizzlelude-js-4.17.2.2-r0-343f49926f149b02defaf0e884d3366d9711fa1f7ff443c8f2d826a3c07e5661.nix;
+        revNum = 0;
+        sha256 = "343f49926f149b02defaf0e884d3366d9711fa1f7ff443c8f2d826a3c07e5661";
+      };
+      default = "r0";
+    };
+  };
 }

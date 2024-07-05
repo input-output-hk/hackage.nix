@@ -519,7 +519,12 @@
         revNum = 1;
         sha256 = "a8365ac8b98738065c2867682dbcd9b0baeb7a5cd1eaa8e508279edfd19227b9";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/blaze-markup-0.8.3.0-r2-027f218b81d28a7c0a33b93d456c4e5aa92d145e9dcee14834fbad73a39ad7e4.nix;
+        revNum = 2;
+        sha256 = "027f218b81d28a7c0a33b93d456c4e5aa92d145e9dcee14834fbad73a39ad7e4";
+      };
+      default = "r2";
     };
   };
 }

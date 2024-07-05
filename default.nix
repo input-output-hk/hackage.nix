@@ -7070,6 +7070,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "h-reversi" = import ./nix/h-reversi.nix;
   "h2048" = import ./nix/h2048.nix;
   "h2c" = import ./nix/h2c.nix;
+  "h3-hs" = import ./nix/h3-hs.nix;
   "h3spec" = import ./nix/h3spec.nix;
   "hArduino" = import ./nix/h_Arduino.nix;
   "hBDD" = import ./nix/h_B_D_D.nix;
@@ -16666,6 +16667,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unliftio-messagebox" = import ./nix/unliftio-messagebox.nix;
   "unliftio-path" = import ./nix/unliftio-path.nix;
   "unliftio-pool" = import ./nix/unliftio-pool.nix;
+  "unliftio-servant-server" = import ./nix/unliftio-servant-server.nix;
   "unliftio-streams" = import ./nix/unliftio-streams.nix;
   "unlit" = import ./nix/unlit.nix;
   "unm-hip" = import ./nix/unm-hip.nix;
@@ -17178,6 +17180,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "webdriver-angular" = import ./nix/webdriver-angular.nix;
   "webdriver-snoy" = import ./nix/webdriver-snoy.nix;
   "webdriver-w3c" = import ./nix/webdriver-w3c.nix;
+  "webdriver-wrapper" = import ./nix/webdriver-wrapper.nix;
   "webex-teams-api" = import ./nix/webex-teams-api.nix;
   "webex-teams-conduit" = import ./nix/webex-teams-conduit.nix;
   "webex-teams-pipes" = import ./nix/webex-teams-pipes.nix;
