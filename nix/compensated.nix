@@ -309,7 +309,12 @@
         revNum = 4;
         sha256 = "b97c84a47501c88cc0ea586e8898398bc74567a4938b7edd31aa478c6cf33980";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/compensated-0.8.3-r5-67ad3f6a30b308aece88bf4dfcd7032b35adc9ae540ccc46d22ca8d9c8ed7b3d.nix;
+        revNum = 5;
+        sha256 = "67ad3f6a30b308aece88bf4dfcd7032b35adc9ae540ccc46d22ca8d9c8ed7b3d";
+      };
+      default = "r5";
     };
   };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.1.2" = {
+    sha256 = "76001f3330373a67cd71a41f252f7e81bd5c61629b647f6789f52d5b34c52623";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/protocol-radius-0.0.1.2-r0-a219ac43c3149a50a9fd157c0dba532b78da4d489c50878a4995e6418740118e.nix;
+        revNum = 0;
+        sha256 = "a219ac43c3149a50a9fd157c0dba532b78da4d489c50878a4995e6418740118e";
+      };
+      default = "r0";
+    };
+  };
 }
