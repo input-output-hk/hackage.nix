@@ -657,7 +657,12 @@
         revNum = 3;
         sha256 = "a9ae3de09fd0ce9c2aa47d345c85eda3d1b48951909ebff689bb7b7e6c234639";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/OpenGL-3.0.3.0-r4-bcd8a08d9e2679b28faffffa71e3c7cc101bb72d7518ead85155dd3a194a2988.nix;
+        revNum = 4;
+        sha256 = "bcd8a08d9e2679b28faffffa71e3c7cc101bb72d7518ead85155dd3a194a2988";
+      };
+      default = "r4";
     };
   };
 }
