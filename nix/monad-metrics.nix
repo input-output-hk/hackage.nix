@@ -137,6 +137,22 @@
         revNum = 0;
         sha256 = "1f9f719039c9a7a6e251630d8e2344052431cfce03b2bee0eb774d5c896b814d";
       };
+      r1 = {
+        nix = import ../hackage/monad-metrics-0.2.2.1-r1-519bd8985a4e8dece664b03f4fe899f31e283475d5bf785abc6c9815b797089c.nix;
+        revNum = 1;
+        sha256 = "519bd8985a4e8dece664b03f4fe899f31e283475d5bf785abc6c9815b797089c";
+      };
+      default = "r1";
+    };
+  };
+  "0.2.2.2" = {
+    sha256 = "a60ce6312187b9f1236ab4fc078acd0d8fd6c08b915a35ccd1ca64d2322c06f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-metrics-0.2.2.2-r0-a74b6b628267e716c6433740b2cd3b193a0252d37f24d037975f491f692515d8.nix;
+        revNum = 0;
+        sha256 = "a74b6b628267e716c6433740b2cd3b193a0252d37f24d037975f491f692515d8";
+      };
       default = "r0";
     };
   };

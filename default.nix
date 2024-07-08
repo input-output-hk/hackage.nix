@@ -2241,6 +2241,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "assertions" = import ./nix/assertions.nix;
   "asset-bundle" = import ./nix/asset-bundle.nix;
   "asset-map" = import ./nix/asset-map.nix;
+  "assignment" = import ./nix/assignment.nix;
   "assimp" = import ./nix/assimp.nix;
   "assoc" = import ./nix/assoc.nix;
   "assoc-list" = import ./nix/assoc-list.nix;
@@ -14932,6 +14933,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "spine" = import ./nix/spine.nix;
   "spir-v" = import ./nix/spir-v.nix;
   "spiros" = import ./nix/spiros.nix;
+  "spirv-enum" = import ./nix/spirv-enum.nix;
+  "spirv-headers" = import ./nix/spirv-headers.nix;
   "spirv-reflect-ffi" = import ./nix/spirv-reflect-ffi.nix;
   "spirv-reflect-types" = import ./nix/spirv-reflect-types.nix;
   "spirv-reflect-yaml" = import ./nix/spirv-reflect-yaml.nix;

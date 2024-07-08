@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "dd7bd769f8c7f6f3b1f1481492bd3d577a04d76ca6ebe46af0738fd118adebed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hascalam-0.1.1.2-r0-e78e0b8d7a1b1b37eeb56c898ba80c46bb36e36739322f60fb0e60637217f7f7.nix;
+        revNum = 0;
+        sha256 = "e78e0b8d7a1b1b37eeb56c898ba80c46bb36e36739322f60fb0e60637217f7f7";
+      };
+      default = "r0";
+    };
+  };
 }
