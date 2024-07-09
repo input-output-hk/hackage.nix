@@ -255,4 +255,20 @@
       default = "r0";
     };
   };
+  "0.4.0.2" = {
+    sha256 = "ea49ca9fe10e13e8cfec2cb41f7115cbf3b040aa7fb912d6407df9e2cc018727";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smtp-mail-0.4.0.2-r0-8bfaf1f844f6c2c72dcf5bc40926e43ce8b164a5f19682d6405f1651ac35ad7f.nix;
+        revNum = 0;
+        sha256 = "8bfaf1f844f6c2c72dcf5bc40926e43ce8b164a5f19682d6405f1651ac35ad7f";
+      };
+      r1 = {
+        nix = import ../hackage/smtp-mail-0.4.0.2-r1-5a7f2b55f2faba6031e1acba4642f8e550708682c3f0664383e9131888d0607d.nix;
+        revNum = 1;
+        sha256 = "5a7f2b55f2faba6031e1acba4642f8e550708682c3f0664383e9131888d0607d";
+      };
+      default = "r1";
+    };
+  };
 }

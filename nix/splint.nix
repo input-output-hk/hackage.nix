@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "2.0.0.5" = {
+    sha256 = "421a8474899e550dd2ca6dd6036cac5b328e012326041c63aab59bbfbbc5fe3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/splint-2.0.0.5-r0-e963303cac5635bca1734ce09e713eb6627cf2d9b22f87a8c97d9732c6c8abbe.nix;
+        revNum = 0;
+        sha256 = "e963303cac5635bca1734ce09e713eb6627cf2d9b22f87a8c97d9732c6c8abbe";
+      };
+      default = "r0";
+    };
+  };
 }

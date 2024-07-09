@@ -11781,6 +11781,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "opml" = import ./nix/opml.nix;
   "opml-conduit" = import ./nix/opml-conduit.nix;
   "opn" = import ./nix/opn.nix;
+  "opt-env-conf" = import ./nix/opt-env-conf.nix;
+  "opt-env-conf-test" = import ./nix/opt-env-conf-test.nix;
   "optics" = import ./nix/optics.nix;
   "optics-core" = import ./nix/optics-core.nix;
   "optics-extra" = import ./nix/optics-extra.nix;

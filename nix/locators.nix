@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.3.0.5" = {
+    sha256 = "7404d06b0d925e90a90d159d769e04f38e45ae11bf2b41de66e0fc41f03c4fd6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/locators-0.3.0.5-r0-a4a08ecbea2c26939be26d7b05336b95c2905ace56ef729758a53b21e36662f2.nix;
+        revNum = 0;
+        sha256 = "a4a08ecbea2c26939be26d7b05336b95c2905ace56ef729758a53b21e36662f2";
+      };
+      default = "r0";
+    };
+  };
 }
