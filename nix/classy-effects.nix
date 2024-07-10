@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "f766ec86efc13d79f2b82f34a8e23072b6f1b31f02459df78e5247fe73e824cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/classy-effects-0.1.0.1-r0-a5626b8057a5a27fc1e826689ab296765914802d52955520ff9bbe3b0cb11fe6.nix;
+        revNum = 0;
+        sha256 = "a5626b8057a5a27fc1e826689ab296765914802d52955520ff9bbe3b0cb11fe6";
+      };
+      default = "r0";
+    };
+  };
 }

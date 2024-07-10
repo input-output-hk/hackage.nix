@@ -12217,6 +12217,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "persistent-generic" = import ./nix/persistent-generic.nix;
   "persistent-hssqlppp" = import ./nix/persistent-hssqlppp.nix;
   "persistent-instances-iproute" = import ./nix/persistent-instances-iproute.nix;
+  "persistent-ip" = import ./nix/persistent-ip.nix;
   "persistent-iproute" = import ./nix/persistent-iproute.nix;
   "persistent-lens" = import ./nix/persistent-lens.nix;
   "persistent-map" = import ./nix/persistent-map.nix;

@@ -194,6 +194,22 @@
         revNum = 0;
         sha256 = "2deb7a1e0148b0c762a925ff7478c364c8697ac13d062afdf883ce00ca05443a";
       };
+      r1 = {
+        nix = import ../hackage/network-transport-tcp-0.8.3-r1-99f9f16b233fcf0240c544f1c29df72c2c9f3f4469c429a15982a3425610cec2.nix;
+        revNum = 1;
+        sha256 = "99f9f16b233fcf0240c544f1c29df72c2c9f3f4469c429a15982a3425610cec2";
+      };
+      default = "r1";
+    };
+  };
+  "0.8.4" = {
+    sha256 = "9465836d34afe7668616fc8fb063fc2ba10f4611ee037c35470b403b510c3490";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-transport-tcp-0.8.4-r0-127debf137d87269983d79105827e26b128e8d7b4e9df996fb2bcb2708082d84.nix;
+        revNum = 0;
+        sha256 = "127debf137d87269983d79105827e26b128e8d7b4e9df996fb2bcb2708082d84";
+      };
       default = "r0";
     };
   };

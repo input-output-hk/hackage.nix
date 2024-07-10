@@ -281,7 +281,12 @@
         revNum = 1;
         sha256 = "2db8c4818955f086e85dc823f6b2507f296869e1070bec5897e88e8690a22da5";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/inspection-testing-0.5.0.3-r2-94360793bf6425320dfd34339b79130d2062c933290bd7a6f45bce46b5401a07.nix;
+        revNum = 2;
+        sha256 = "94360793bf6425320dfd34339b79130d2062c933290bd7a6f45bce46b5401a07";
+      };
+      default = "r2";
     };
   };
 }
