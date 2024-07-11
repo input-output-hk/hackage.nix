@@ -9960,6 +9960,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libravatar" = import ./nix/libravatar.nix;
   "librdkafka" = import ./nix/librdkafka.nix;
   "libretls" = import ./nix/libretls.nix;
+  "libriscv" = import ./nix/libriscv.nix;
   "libroman" = import ./nix/libroman.nix;
   "libsecp256k1" = import ./nix/libsecp256k1.nix;
   "libsodium" = import ./nix/libsodium.nix;
