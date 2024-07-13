@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "2d767eb9b560f2c85f96c93fd6b62bd774fc5a1b40fd191c8043e87f3ad76283";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/strict-containers-lens-0.2-r1-73eb0ecef3d5efe3971274886384d45c06d9f8fdb8c121acc479c32be2df22fd.nix;
+        revNum = 1;
+        sha256 = "73eb0ecef3d5efe3971274886384d45c06d9f8fdb8c121acc479c32be2df22fd";
+      };
+      default = "r1";
     };
   };
 }

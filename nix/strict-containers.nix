@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "1bebfdb5ffb2aba15d6f34a8e0ddd7c26eeb99c92917bd5b20630fa671aeb446";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/strict-containers-0.2-r2-f0166e6c2136b00c1878a6ff2ed39e34811c000bba4b69102b9aa2ae1f486bbe.nix;
+        revNum = 2;
+        sha256 = "f0166e6c2136b00c1878a6ff2ed39e34811c000bba4b69102b9aa2ae1f486bbe";
+      };
+      default = "r2";
     };
   };
 }

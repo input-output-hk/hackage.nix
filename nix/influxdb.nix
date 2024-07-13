@@ -1011,4 +1011,15 @@
       default = "r0";
     };
   };
+  "1.9.3.2" = {
+    sha256 = "4a9b8b5470385c4c37a24b0b3339ee337bdf18e70a2216d7296f25dd7e98e858";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/influxdb-1.9.3.2-r0-775456e152fab585cd065156954a69c0ac7029f620ada90a7d604f9a7d6a81ff.nix;
+        revNum = 0;
+        sha256 = "775456e152fab585cd065156954a69c0ac7029f620ada90a7d604f9a7d6a81ff";
+      };
+      default = "r0";
+    };
+  };
 }

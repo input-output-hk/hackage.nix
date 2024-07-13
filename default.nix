@@ -5703,6 +5703,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fibonacci" = import ./nix/fibonacci.nix;
   "ficketed" = import ./nix/ficketed.nix;
   "fields" = import ./nix/fields.nix;
+  "fields-and-cases" = import ./nix/fields-and-cases.nix;
   "fields-json" = import ./nix/fields-json.nix;
   "fieldwise" = import ./nix/fieldwise.nix;
   "fig" = import ./nix/fig.nix;
