@@ -295,6 +295,17 @@
       default = "r2";
     };
   };
+  "0.13.11.0" = {
+    sha256 = "859a2299f902ea113edaf055a139a65955f51d95efd6a79a2c26bb18f724f3f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cairo-0.13.11.0-r0-02aa5c7046d5fd5c8d348bfb9b891a11678a6c7ed110fa14c00ad13d7858b0ca.nix;
+        revNum = 0;
+        sha256 = "02aa5c7046d5fd5c8d348bfb9b891a11678a6c7ed110fa14c00ad13d7858b0ca";
+      };
+      default = "r0";
+    };
+  };
   "0.13.2.0" = {
     sha256 = "4d08ffd7979bac6c39a8143dad353f966d268719817c0230c9138146d977c104";
     revisions = {

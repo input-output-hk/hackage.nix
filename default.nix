@@ -14180,6 +14180,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sequenceTools" = import ./nix/sequence_Tools.nix;
   "sequent-core" = import ./nix/sequent-core.nix;
   "sequential-index" = import ./nix/sequential-index.nix;
+  "sequitur" = import ./nix/sequitur.nix;
   "sequor" = import ./nix/sequor.nix;
   "serdoc-binary" = import ./nix/serdoc-binary.nix;
   "serdoc-core" = import ./nix/serdoc-core.nix;

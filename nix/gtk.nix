@@ -505,4 +505,15 @@
       default = "r0";
     };
   };
+  "0.15.9" = {
+    sha256 = "850ae2349a439babea2e0f1de626e85b35a6cf9d8e7b1ac9e2d1fea92ab76a0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-0.15.9-r0-d51e5f59baf2320c6b56299fccae7f6ebea2084bc0425fd4fa7dad05c88e832b.nix;
+        revNum = 0;
+        sha256 = "d51e5f59baf2320c6b56299fccae7f6ebea2084bc0425fd4fa7dad05c88e832b";
+      };
+      default = "r0";
+    };
+  };
 }
