@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "468a73c916ce17fd3fb4e8f6c2601566166ce9b747d683a633da7a645d975178";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/swarm-0.6.0.0-r0-1075567acc1f80065c11c59ee3925b08ec4889580d218b7819298a45e9a683e9.nix;
+        revNum = 0;
+        sha256 = "1075567acc1f80065c11c59ee3925b08ec4889580d218b7819298a45e9a683e9";
+      };
+      default = "r0";
+    };
+  };
 }

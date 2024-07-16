@@ -1,4 +1,48 @@
 {
+  "0.10.0.0" = {
+    sha256 = "493b6e118afbb5f61cc33cf8458b8338de4cef22447507f1a318245283740485";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-samtools-0.10.0.0-r0-cb4ad9ae93784fbb9bc01eec6803b6726bd01169b171979523695ef908f2a7e1.nix;
+        revNum = 0;
+        sha256 = "cb4ad9ae93784fbb9bc01eec6803b6726bd01169b171979523695ef908f2a7e1";
+      };
+      default = "r0";
+    };
+  };
+  "0.10.0.1" = {
+    sha256 = "3cc8fea90291fe44c7c8d0fb5a242875bc235d66a0f516ff4b68e653d82d8aa1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-samtools-0.10.0.1-r0-5c743e9fcb919e45f4d95fb10aefb628a84f19df8623202d4df39ebf33cbc0f3.nix;
+        revNum = 0;
+        sha256 = "5c743e9fcb919e45f4d95fb10aefb628a84f19df8623202d4df39ebf33cbc0f3";
+      };
+      default = "r0";
+    };
+  };
+  "0.10.0.2" = {
+    sha256 = "9105712c4ed297e7b9c6a7b087f54be0f65a0eb3f84b362d7231b5745a603837";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-samtools-0.10.0.2-r0-3d9f4c70d6b54d1b9c974d60aea3db847774cfbacbf40b03bfe6ae568b6e5ac6.nix;
+        revNum = 0;
+        sha256 = "3d9f4c70d6b54d1b9c974d60aea3db847774cfbacbf40b03bfe6ae568b6e5ac6";
+      };
+      default = "r0";
+    };
+  };
+  "0.10.0.3" = {
+    sha256 = "6bd208e471b566fa505cde8b21ff6f7f0238c81f622e866fe5c23862e683ea50";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-samtools-0.10.0.3-r0-7f64fd49aa0b0769952c2b1235ce13bcb6ab3d6df8c8b08db04ca0de8aeaff3f.nix;
+        revNum = 0;
+        sha256 = "7f64fd49aa0b0769952c2b1235ce13bcb6ab3d6df8c8b08db04ca0de8aeaff3f";
+      };
+      default = "r0";
+    };
+  };
   "0.5.0.2" = {
     sha256 = "3476e549502d94bbe56f50e3a69658c59fbca06738a689f477f5e9bc632e2d54";
     revisions = {
