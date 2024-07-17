@@ -202,4 +202,15 @@
       default = "r0";
     };
   };
+  "0.4.1" = {
+    sha256 = "b91946047a6d06ae4f168a2a70ab9d50280869c0e950e597fb7a91e0e2dadf69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http2-tls-0.4.1-r0-f1e20584f128118453d7c619353b9a1a94a672e2517d73d899f5f0fc7aaef82b.nix;
+        revNum = 0;
+        sha256 = "f1e20584f128118453d7c619353b9a1a94a672e2517d73d899f5f0fc7aaef82b";
+      };
+      default = "r0";
+    };
+  };
 }

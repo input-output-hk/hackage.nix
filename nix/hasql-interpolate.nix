@@ -123,4 +123,15 @@
       default = "r0";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "4e2f51fe8273e0d7853147dc0f30d882f41b0d99f3d8dd6e0e84af13181f62c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-interpolate-1.0.1.0-r0-07980986467ed196e812a54c2762a42ceca56ca899cb4ef3cdb4f4191b07d338.nix;
+        revNum = 0;
+        sha256 = "07980986467ed196e812a54c2762a42ceca56ca899cb4ef3cdb4f4191b07d338";
+      };
+      default = "r0";
+    };
+  };
 }

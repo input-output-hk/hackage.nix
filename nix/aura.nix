@@ -267,6 +267,17 @@
       default = "r0";
     };
   };
+  "3.2.10" = {
+    sha256 = "6a595af4ae55f2799e7d36bd6790f5a0c9ca3103bc1ee13b40c6e68e282074dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aura-3.2.10-r0-5bae5eb661b4db585a87d1bcf5938071b56b1f94796df82f8d777644e7771650.nix;
+        revNum = 0;
+        sha256 = "5bae5eb661b4db585a87d1bcf5938071b56b1f94796df82f8d777644e7771650";
+      };
+      default = "r0";
+    };
+  };
   "3.2.2" = {
     sha256 = "4e4c2f6d49f8346eda2f35421e21ba797ab011a74c36a50802548f293852531f";
     revisions = {
