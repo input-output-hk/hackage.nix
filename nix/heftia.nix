@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "235a0cabb6e1608168c488fd63884dedb820eb4df46a0030bc5b2d6dc87817cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heftia-0.2.0.0-r0-419f1983f508721864b9cd95387822e97ff2c376b6302ebdaa270bc45ed2c33c.nix;
+        revNum = 0;
+        sha256 = "419f1983f508721864b9cd95387822e97ff2c376b6302ebdaa270bc45ed2c33c";
+      };
+      default = "r0";
+    };
+  };
 }

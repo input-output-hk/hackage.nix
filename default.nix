@@ -4383,6 +4383,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-diverse-lens" = import ./nix/data-diverse-lens.nix;
   "data-dword" = import ./nix/data-dword.nix;
   "data-easy" = import ./nix/data-easy.nix;
+  "data-effects" = import ./nix/data-effects.nix;
+  "data-effects-core" = import ./nix/data-effects-core.nix;
+  "data-effects-th" = import ./nix/data-effects-th.nix;
   "data-elevator" = import ./nix/data-elevator.nix;
   "data-elf" = import ./nix/data-elf.nix;
   "data-embed" = import ./nix/data-embed.nix;
@@ -7084,6 +7087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hF2" = import ./nix/h_F2.nix;
   "hGelf" = import ./nix/h_Gelf.nix;
   "hLLVM" = import ./nix/h_L_L_V_M.nix;
+  "hMPC" = import ./nix/h_M_P_C.nix;
   "hMollom" = import ./nix/h_Mollom.nix;
   "hOff-display" = import ./nix/h_Off-display.nix;
   "hOff-parser" = import ./nix/h_Off-parser.nix;

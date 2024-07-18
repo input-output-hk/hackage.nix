@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "bfafee27b63885b19eb58120cc97771d127aa8ba9f141f03044d1ac476699337";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-rope-0.3-r0-49564982ede8efd89f3ccbabe06e2c1d062684f6a45503001e4a038fa3fcd5c4.nix;
+        revNum = 0;
+        sha256 = "49564982ede8efd89f3ccbabe06e2c1d062684f6a45503001e4a038fa3fcd5c4";
+      };
+      default = "r0";
+    };
+  };
 }
