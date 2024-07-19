@@ -152,6 +152,17 @@
       default = "r2";
     };
   };
+  "2.13.0.2" = {
+    sha256 = "57e656f17efd7a1eb95f3cbd6bade44ddac75e2757cf1f19b94836de17645dba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-redis-2.13.0.2-r0-d2e346acb48221dbe0a623d23454f39f712ae12da287b6a6c04bd97c06adcacd.nix;
+        revNum = 0;
+        sha256 = "d2e346acb48221dbe0a623d23454f39f712ae12da287b6a6c04bd97c06adcacd";
+      };
+      default = "r0";
+    };
+  };
   "2.5.0" = {
     sha256 = "f2a780c5f4286aa9a0ce8c2cc71fe5c5102eebb9086e0f20d68c81e1fc536643";
     revisions = {

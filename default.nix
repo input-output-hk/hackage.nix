@@ -16463,6 +16463,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-duration" = import ./nix/typed-duration.nix;
   "typed-encoding" = import ./nix/typed-encoding.nix;
   "typed-encoding-encoding" = import ./nix/typed-encoding-encoding.nix;
+  "typed-fsm" = import ./nix/typed-fsm.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;
@@ -17293,6 +17294,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wizards" = import ./nix/wizards.nix;
   "wkt" = import ./nix/wkt.nix;
   "wkt-geom" = import ./nix/wkt-geom.nix;
+  "wkt-types" = import ./nix/wkt-types.nix;
   "wl-pprint" = import ./nix/wl-pprint.nix;
   "wl-pprint-annotated" = import ./nix/wl-pprint-annotated.nix;
   "wl-pprint-ansiterm" = import ./nix/wl-pprint-ansiterm.nix;

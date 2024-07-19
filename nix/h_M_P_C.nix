@@ -20,4 +20,15 @@
       default = "r2";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "303b682566200b93e41e6f244faa1d1cb040f1960b3786d37c3ef807b1c171aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hMPC-0.1.0.1-r0-230250b5d6d90797ed18438acde210f88a2787edc14c3d352ab022f3bbe9b5d0.nix;
+        revNum = 0;
+        sha256 = "230250b5d6d90797ed18438acde210f88a2787edc14c3d352ab022f3bbe9b5d0";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.7" = {
+    sha256 = "56b46d0f41db6675d76c1235318067e524ce4fbb0a0692d0018dc81baaabf6ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fedora-repoquery-0.7-r0-ba6fba08a21254f8024559fa4a6be9cd3527399faa709cd1c929f66cf7341d01.nix;
+        revNum = 0;
+        sha256 = "ba6fba08a21254f8024559fa4a6be9cd3527399faa709cd1c929f66cf7341d01";
+      };
+      default = "r0";
+    };
+  };
 }
