@@ -606,4 +606,15 @@
       default = "r0";
     };
   };
+  "3.3.2" = {
+    sha256 = "af28067d9fc76f44668659dc932d323766ccb567371d0ea7dda419426d774dfb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-silver-3.3.2-r0-61ea27fac5cb0fd2aa3d3015a09e479e6984d9228c056bf86010f07f5cefbf63.nix;
+        revNum = 0;
+        sha256 = "61ea27fac5cb0fd2aa3d3015a09e479e6984d9228c056bf86010f07f5cefbf63";
+      };
+      default = "r0";
+    };
+  };
 }

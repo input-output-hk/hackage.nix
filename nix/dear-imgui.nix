@@ -217,4 +217,15 @@
       default = "r0";
     };
   };
+  "2.3.0" = {
+    sha256 = "944ce5aec8571aebb722ccd02e70b36ba8e8bf0079d6ae6bde4eac53b6980137";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dear-imgui-2.3.0-r0-5ca5dbe423d884a84927aed51a282cbf1c1e355e35cea22b995055a4d2167a15.nix;
+        revNum = 0;
+        sha256 = "5ca5dbe423d884a84927aed51a282cbf1c1e355e35cea22b995055a4d2167a15";
+      };
+      default = "r0";
+    };
+  };
 }

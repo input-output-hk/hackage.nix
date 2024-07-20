@@ -15704,6 +15704,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "teardown" = import ./nix/teardown.nix;
   "techlab" = import ./nix/techlab.nix;
   "technique" = import ./nix/technique.nix;
+  "tedious-web" = import ./nix/tedious-web.nix;
   "teeth" = import ./nix/teeth.nix;
   "tehepero" = import ./nix/tehepero.nix;
   "telega" = import ./nix/telega.nix;

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "5532711daf121852f771c6429b32eff8fc2c622ab50613c13bb6ef9d5029f0e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jet-stream-1.1.0.0-r0-7e6e66b95a0d40916cf5fdb663a8c4c33d2648bf707883ad7eb7bfdc17ad98c5.nix;
+        revNum = 0;
+        sha256 = "7e6e66b95a0d40916cf5fdb663a8c4c33d2648bf707883ad7eb7bfdc17ad98c5";
+      };
+      default = "r0";
+    };
+  };
 }
