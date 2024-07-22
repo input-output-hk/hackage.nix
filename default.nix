@@ -8619,6 +8619,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "htoml-megaparsec" = import ./nix/htoml-megaparsec.nix;
   "htoml-parse" = import ./nix/htoml-parse.nix;
   "htrace" = import ./nix/htrace.nix;
+  "htree" = import ./nix/htree.nix;
   "hts" = import ./nix/hts.nix;
   "htsn" = import ./nix/htsn.nix;
   "htsn-common" = import ./nix/htsn-common.nix;
@@ -8629,6 +8630,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-api-data-ip" = import ./nix/http-api-data-ip.nix;
   "http-api-data-qq" = import ./nix/http-api-data-qq.nix;
   "http-attoparsec" = import ./nix/http-attoparsec.nix;
+  "http-barf" = import ./nix/http-barf.nix;
   "http-client" = import ./nix/http-client.nix;
   "http-client-auth" = import ./nix/http-client-auth.nix;
   "http-client-brread-timeout" = import ./nix/http-client-brread-timeout.nix;
@@ -8942,6 +8944,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-rlangqq" = import ./nix/ihaskell-rlangqq.nix;
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
+  "ihp-openai" = import ./nix/ihp-openai.nix;
   "ihs" = import ./nix/ihs.nix;
   "ihttp" = import ./nix/ihttp.nix;
   "ilist" = import ./nix/ilist.nix;
