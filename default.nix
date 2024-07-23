@@ -120,6 +120,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "BitSyntax" = import ./nix/_Bit_Syntax.nix;
   "Bitly" = import ./nix/_Bitly.nix;
   "Blammo" = import ./nix/_Blammo.nix;
+  "Blammo-wai" = import ./nix/_Blammo-wai.nix;
   "BlastHTTP" = import ./nix/_Blast_H_T_T_P.nix;
   "Blobs" = import ./nix/_Blobs.nix;
   "BlogLiterately" = import ./nix/_Blog_Literately.nix;

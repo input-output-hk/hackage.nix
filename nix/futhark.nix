@@ -998,7 +998,12 @@
         revNum = 0;
         sha256 = "7314b0f0ce356deac18ff635b71bb02f9354ac123da74844189441cd2f00f223";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/futhark-0.25.18-r1-d7046013aafbbc68acea8f28f5fe6f2f8638add8ac7551e2c8c90baca3605eb3.nix;
+        revNum = 1;
+        sha256 = "d7046013aafbbc68acea8f28f5fe6f2f8638add8ac7551e2c8c90baca3605eb3";
+      };
+      default = "r1";
     };
   };
   "0.25.2" = {
