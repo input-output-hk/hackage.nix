@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "9d9915b00a6f956603cfd12bb0f4757b53a90262e736074c3914cbb3361f6ef3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rollbar-yesod-1.1.0-r0-b3a849e6348b5631caec4f390553d3f3f7599d0b44c1cfe0cf7c3bba2d533891.nix;
+        revNum = 0;
+        sha256 = "b3a849e6348b5631caec4f390553d3f3f7599d0b44c1cfe0cf7c3bba2d533891";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "26f76db7c4b6eda1dca398965a2d6679a6a45a13cb550547b1837d5542745e51";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rollbar-wai-1.1.0-r0-e0573a78bc5ce83fb920c4c418b1bff1f3bfb3c43e604adb96d825e14ad934dc.nix;
+        revNum = 0;
+        sha256 = "e0573a78bc5ce83fb920c4c418b1bff1f3bfb3c43e604adb96d825e14ad934dc";
+      };
+      default = "r0";
+    };
+  };
 }

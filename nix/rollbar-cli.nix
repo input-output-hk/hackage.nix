@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "0c503e1a69a7f13df8c92fe64457a3d722e7e3fe00030cb7a23f80d5f6ca47d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rollbar-cli-1.1.0-r0-759f461d60910430b9de363a2e1cee1bce47b391cc682ebc36d0aea4a945d39e.nix;
+        revNum = 0;
+        sha256 = "759f461d60910430b9de363a2e1cee1bce47b391cc682ebc36d0aea4a945d39e";
+      };
+      default = "r0";
+    };
+  };
 }
