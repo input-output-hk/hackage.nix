@@ -4702,6 +4702,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dhall-yaml" = import ./nix/dhall-yaml.nix;
   "dhcp-lease-parser" = import ./nix/dhcp-lease-parser.nix;
   "dhrun" = import ./nix/dhrun.nix;
+  "dhscanner-ast" = import ./nix/dhscanner-ast.nix;
   "di" = import ./nix/di.nix;
   "di-core" = import ./nix/di-core.nix;
   "di-df1" = import ./nix/di-df1.nix;

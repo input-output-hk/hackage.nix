@@ -531,6 +531,17 @@
       default = "r0";
     };
   };
+  "1.18.2.0" = {
+    sha256 = "cfd26860dbdca2efcbbde8781f99f5f3b23585510389bf70c4eae6731a7721de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-app-1.18.2.0-r0-c82f7f1a23ee7851e7d054950d1f10027fcf8669be51f44317b99cb48e6ad985.nix;
+        revNum = 0;
+        sha256 = "c82f7f1a23ee7851e7d054950d1f10027fcf8669be51f44317b99cb48e6ad985";
+      };
+      default = "r0";
+    };
+  };
   "1.2.0.0" = {
     sha256 = "3baf18719abfba1a7ae0327d917ed9174823d5b6c89397fc7fedf274b1f01b62";
     revisions = {
