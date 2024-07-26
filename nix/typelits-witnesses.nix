@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "dd0d907c8c7c0ca8168dedf33ec9d9ccc9cd76b46f458c8509a21a1723588506";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelits-witnesses-0.4.1.0-r0-ec237703b0a9bee94464c1797c241553f38755fce5cfc9c4cdd61354b15bcac5.nix;
+        revNum = 0;
+        sha256 = "ec237703b0a9bee94464c1797c241553f38755fce5cfc9c4cdd61354b15bcac5";
+      };
+      default = "r0";
+    };
+  };
 }

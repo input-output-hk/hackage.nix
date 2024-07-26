@@ -3929,6 +3929,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "conformance" = import ./nix/conformance.nix;
   "conformance-gen" = import ./nix/conformance-gen.nix;
   "confsolve" = import ./nix/confsolve.nix;
+  "conftrack" = import ./nix/conftrack.nix;
   "congruence-relation" = import ./nix/congruence-relation.nix;
   "conic-graphs" = import ./nix/conic-graphs.nix;
   "conjugateGradient" = import ./nix/conjugate_Gradient.nix;
@@ -5970,6 +5971,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fraxl" = import ./nix/fraxl.nix;
   "frecently" = import ./nix/frecently.nix;
   "freckle-app" = import ./nix/freckle-app.nix;
+  "freckle-env" = import ./nix/freckle-env.nix;
+  "freckle-kafka" = import ./nix/freckle-kafka.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-alacarte" = import ./nix/free-alacarte.nix;
@@ -17765,6 +17768,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yoga" = import ./nix/yoga.nix;
   "yoko" = import ./nix/yoko.nix;
   "york-lava" = import ./nix/york-lava.nix;
+  "yosys-rtl" = import ./nix/yosys-rtl.nix;
   "youtube" = import ./nix/youtube.nix;
   "yql" = import ./nix/yql.nix;
   "yst" = import ./nix/yst.nix;

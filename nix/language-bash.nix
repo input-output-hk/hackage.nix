@@ -1,4 +1,15 @@
 {
+  "0.10.0" = {
+    sha256 = "c0a106127961498a2db0dbcbaffd52435be830b19b75da26961e253d631fbcce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-bash-0.10.0-r0-2bb2b8aebb9a1c39f2ad2ee99947ee590ace6f735539f67f5c639f8bf74ababf.nix;
+        revNum = 0;
+        sha256 = "2bb2b8aebb9a1c39f2ad2ee99947ee590ace6f735539f67f5c639f8bf74ababf";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "8be094db3dae841a7358b306d2c890b636ca8acdc97d22d3fb2b6eac778d50eb";
     revisions = {
