@@ -30,9 +30,9 @@
       description = "Please see the documentation at <https://docs.haskellstack.org>\nfor usage information.\n\nIf building a 'stack' executable for distribution, please download the\nsource code from <https://github.com/commercialhaskell/stack/releases>\nand build it using Stack itself in order to ensure identical behaviour\nto official binaries. This package on Hackage is provided for convenience\nand bootstrapping purposes.\n\nNote that the API for the library is not currently stable, and may\nchange significantly, even between minor releases. It is\ncurrently only intended for use by the executable.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.filepath or (pkgs.pkgsBuildBuild.filepath or (errorHandler.setupDepError "filepath")))
       ];
     };
     components = {
@@ -110,7 +110,7 @@
           (hsPkgs."githash" or (errorHandler.buildDepError "githash"))
           (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
         ];
-        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       exes = {
@@ -186,7 +186,7 @@
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
-          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "stack-integration-test" = {
@@ -262,7 +262,7 @@
             else [
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
-          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = if !flags.integration-tests then false else true;
         };
       };
@@ -343,8 +343,8 @@
               (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && system.isWindows) (hsPkgs."network" or (errorHandler.buildDepError "network"));
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+          ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
       };

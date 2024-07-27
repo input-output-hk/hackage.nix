@@ -91,10 +91,10 @@
             (hsPkgs."tasty-process" or (errorHandler.buildDepError "tasty-process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.test-executable-echo.components.exes.test-executable-echo or (pkgs.buildPackages.test-executable-echo or (errorHandler.buildToolDepError "test-executable-echo:test-executable-echo")))
-            (hsPkgs.buildPackages.test-executable-exitcode.components.exes.test-executable-exitcode or (pkgs.buildPackages.test-executable-exitcode or (errorHandler.buildToolDepError "test-executable-exitcode:test-executable-exitcode")))
-            (hsPkgs.buildPackages.test-executable-simple.components.exes.test-executable-simple or (pkgs.buildPackages.test-executable-simple or (errorHandler.buildToolDepError "test-executable-simple:test-executable-simple")))
-            (hsPkgs.buildPackages.test-executable-sleep.components.exes.test-executable-sleep or (pkgs.buildPackages.test-executable-sleep or (errorHandler.buildToolDepError "test-executable-sleep:test-executable-sleep")))
+            (hsPkgs.pkgsBuildBuild.test-executable-echo.components.exes.test-executable-echo or (pkgs.pkgsBuildBuild.test-executable-echo or (errorHandler.buildToolDepError "test-executable-echo:test-executable-echo")))
+            (hsPkgs.pkgsBuildBuild.test-executable-exitcode.components.exes.test-executable-exitcode or (pkgs.pkgsBuildBuild.test-executable-exitcode or (errorHandler.buildToolDepError "test-executable-exitcode:test-executable-exitcode")))
+            (hsPkgs.pkgsBuildBuild.test-executable-simple.components.exes.test-executable-simple or (pkgs.pkgsBuildBuild.test-executable-simple or (errorHandler.buildToolDepError "test-executable-simple:test-executable-simple")))
+            (hsPkgs.pkgsBuildBuild.test-executable-sleep.components.exes.test-executable-sleep or (pkgs.pkgsBuildBuild.test-executable-sleep or (errorHandler.buildToolDepError "test-executable-sleep:test-executable-sleep")))
           ];
           buildable = true;
         };

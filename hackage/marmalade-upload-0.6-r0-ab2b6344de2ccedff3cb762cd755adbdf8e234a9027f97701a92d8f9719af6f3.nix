@@ -42,7 +42,7 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           ]);
         libs = pkgs.lib.optional (flags.libmagic) (pkgs."magic" or (errorHandler.sysDepError "magic"));
-        build-tools = pkgs.lib.optional (flags.libmagic) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (flags.libmagic) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       exes = {

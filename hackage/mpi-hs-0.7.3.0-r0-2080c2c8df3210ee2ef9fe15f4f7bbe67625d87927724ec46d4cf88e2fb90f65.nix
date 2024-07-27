@@ -32,7 +32,7 @@
         libs = pkgs.lib.optional (!flags.mvapich && !flags.mpich && !flags.openmpi) (pkgs."mpi" or (errorHandler.sysDepError "mpi"));
         pkgconfig = (pkgs.lib.optional (flags.mpich) (pkgconfPkgs."mpich" or (errorHandler.pkgConfDepError "mpich")) ++ pkgs.lib.optional (flags.openmpi) (pkgconfPkgs."ompi" or (errorHandler.pkgConfDepError "ompi"))) ++ pkgs.lib.optional (flags.mvapich) (pkgconfPkgs."mvapich2" or (errorHandler.pkgConfDepError "mvapich2"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
+          (hsPkgs.pkgsBuildBuild.c2hs.components.exes.c2hs or (pkgs.pkgsBuildBuild.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
         ];
         buildable = true;
       };

@@ -54,7 +54,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.git.components.exes.git or (pkgs.buildPackages.git or (errorHandler.buildToolDepError "git:git")))
+            (hsPkgs.pkgsBuildBuild.git.components.exes.git or (pkgs.pkgsBuildBuild.git or (errorHandler.buildToolDepError "git:git")))
           ];
           buildable = true;
         };

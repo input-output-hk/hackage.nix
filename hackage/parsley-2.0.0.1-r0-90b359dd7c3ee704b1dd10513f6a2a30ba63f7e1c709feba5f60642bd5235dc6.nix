@@ -47,7 +47,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };
@@ -64,7 +64,7 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "9")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };

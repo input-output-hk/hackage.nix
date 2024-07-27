@@ -161,10 +161,10 @@
             (hsPkgs."tz" or (errorHandler.buildDepError "tz"))
           ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
           build-tools = [
-            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-stats or (pkgs.buildPackages.arbtt-stats or (errorHandler.buildToolDepError "arbtt:arbtt-stats")))
-            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-dump or (pkgs.buildPackages.arbtt-dump or (errorHandler.buildToolDepError "arbtt:arbtt-dump")))
-            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-import or (pkgs.buildPackages.arbtt-import or (errorHandler.buildToolDepError "arbtt:arbtt-import")))
-            (hsPkgs.buildPackages.arbtt.components.exes.arbtt-recover or (pkgs.buildPackages.arbtt-recover or (errorHandler.buildToolDepError "arbtt:arbtt-recover")))
+            (hsPkgs.pkgsBuildBuild.arbtt.components.exes.arbtt-stats or (pkgs.pkgsBuildBuild.arbtt-stats or (errorHandler.buildToolDepError "arbtt:arbtt-stats")))
+            (hsPkgs.pkgsBuildBuild.arbtt.components.exes.arbtt-dump or (pkgs.pkgsBuildBuild.arbtt-dump or (errorHandler.buildToolDepError "arbtt:arbtt-dump")))
+            (hsPkgs.pkgsBuildBuild.arbtt.components.exes.arbtt-import or (pkgs.pkgsBuildBuild.arbtt-import or (errorHandler.buildToolDepError "arbtt:arbtt-import")))
+            (hsPkgs.pkgsBuildBuild.arbtt.components.exes.arbtt-recover or (pkgs.pkgsBuildBuild.arbtt-recover or (errorHandler.buildToolDepError "arbtt:arbtt-recover")))
           ];
           buildable = true;
         };

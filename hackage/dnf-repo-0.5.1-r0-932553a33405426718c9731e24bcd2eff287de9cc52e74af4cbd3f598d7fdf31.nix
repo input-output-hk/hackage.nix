@@ -45,7 +45,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.dnf-repo.components.exes.dnf-repo or (pkgs.buildPackages.dnf-repo or (errorHandler.buildToolDepError "dnf-repo:dnf-repo")))
+            (hsPkgs.pkgsBuildBuild.dnf-repo.components.exes.dnf-repo or (pkgs.pkgsBuildBuild.dnf-repo or (errorHandler.buildToolDepError "dnf-repo:dnf-repo")))
           ];
           buildable = true;
         };

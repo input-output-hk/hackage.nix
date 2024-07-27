@@ -36,7 +36,7 @@
             ]
             else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         libs = pkgs.lib.optional (system.isWindows) (pkgs."Crypt32" or (errorHandler.sysDepError "Crypt32"));
-        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
     };

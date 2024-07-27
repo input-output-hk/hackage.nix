@@ -49,7 +49,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.rhbzquery.components.exes.rhbzquery or (pkgs.buildPackages.rhbzquery or (errorHandler.buildToolDepError "rhbzquery:rhbzquery")))
+            (hsPkgs.pkgsBuildBuild.rhbzquery.components.exes.rhbzquery or (pkgs.pkgsBuildBuild.rhbzquery or (errorHandler.buildToolDepError "rhbzquery:rhbzquery")))
           ];
           buildable = true;
         };

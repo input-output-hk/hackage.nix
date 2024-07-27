@@ -71,7 +71,7 @@
             (hsPkgs."zip-archive" or (errorHandler.buildDepError "zip-archive"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.zip.components.exes.zip or (pkgs.buildPackages.zip or (errorHandler.buildToolDepError "zip:zip")))
+            (hsPkgs.pkgsBuildBuild.zip.components.exes.zip or (pkgs.pkgsBuildBuild.zip or (errorHandler.buildToolDepError "zip:zip")))
           ];
           buildable = true;
         };

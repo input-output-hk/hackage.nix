@@ -68,7 +68,7 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.buildPackages.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
+            (hsPkgs.pkgsBuildBuild.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.pkgsBuildBuild.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
           ];
           buildable = true;
         };

@@ -22,9 +22,9 @@
       description = "Please see the README on GitHub at <https://github.com/rzk-lang/rzk#readme>";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.process or (pkgs.pkgsBuildBuild.process or (errorHandler.setupDepError "process")))
       ];
     };
     components = {
@@ -52,9 +52,9 @@
           (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.BNFC.components.exes.BNFC or (pkgs.buildPackages.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
-          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+          (hsPkgs.pkgsBuildBuild.BNFC.components.exes.BNFC or (pkgs.pkgsBuildBuild.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
         ];
         buildable = true;
       };
@@ -75,9 +75,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ] ++ pkgs.lib.optional (!(compiler.isGhcjs && true)) (hsPkgs."with-utf8" or (errorHandler.buildDepError "with-utf8"));
           build-tools = [
-            (hsPkgs.buildPackages.BNFC.components.exes.BNFC or (pkgs.buildPackages.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
-            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.BNFC.components.exes.BNFC or (pkgs.pkgsBuildBuild.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
+            (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };
@@ -100,9 +100,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.BNFC.components.exes.BNFC or (pkgs.buildPackages.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
-            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.BNFC.components.exes.BNFC or (pkgs.pkgsBuildBuild.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
+            (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };
@@ -122,9 +122,9 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.BNFC.components.exes.BNFC or (pkgs.buildPackages.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
-            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.BNFC.components.exes.BNFC or (pkgs.pkgsBuildBuild.BNFC or (errorHandler.buildToolDepError "BNFC:BNFC")))
+            (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };

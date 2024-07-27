@@ -32,7 +32,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
         ];
         buildable = true;
       };

@@ -48,7 +48,7 @@
             (hsPkgs."sydtest-hedis" or (errorHandler.buildDepError "sydtest-hedis"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.sydtest-discover.components.exes.sydtest-discover or (pkgs.buildPackages.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
+            (hsPkgs.pkgsBuildBuild.sydtest-discover.components.exes.sydtest-discover or (pkgs.pkgsBuildBuild.sydtest-discover or (errorHandler.buildToolDepError "sydtest-discover:sydtest-discover")))
           ];
           buildable = if flags.sydtest_integration_tests then true else false;
         };

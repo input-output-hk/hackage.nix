@@ -87,7 +87,7 @@
             (hsPkgs."zephyr" or (errorHandler.buildDepError "zephyr"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.purescript.components.exes.purs or (pkgs.buildPackages.purs or (errorHandler.buildToolDepError "purescript:purs")))
+            (hsPkgs.pkgsBuildBuild.purescript.components.exes.purs or (pkgs.pkgsBuildBuild.purs or (errorHandler.buildToolDepError "purescript:purs")))
           ];
           buildable = true;
         };

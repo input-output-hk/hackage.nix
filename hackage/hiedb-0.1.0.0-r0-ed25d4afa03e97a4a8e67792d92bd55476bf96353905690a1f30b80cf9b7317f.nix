@@ -68,7 +68,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hiedb.components.exes.hiedb or (pkgs.buildPackages.hiedb or (errorHandler.buildToolDepError "hiedb:hiedb")))
+            (hsPkgs.pkgsBuildBuild.hiedb.components.exes.hiedb or (pkgs.pkgsBuildBuild.hiedb or (errorHandler.buildToolDepError "hiedb:hiedb")))
           ];
           buildable = true;
         };

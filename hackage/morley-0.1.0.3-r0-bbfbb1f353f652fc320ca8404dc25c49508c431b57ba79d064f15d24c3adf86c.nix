@@ -56,7 +56,7 @@
           (hsPkgs."vinyl" or (errorHandler.buildDepError "vinyl"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.autoexporter.components.exes.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter:autoexporter")))
+          (hsPkgs.pkgsBuildBuild.autoexporter.components.exes.autoexporter or (pkgs.pkgsBuildBuild.autoexporter or (errorHandler.buildToolDepError "autoexporter:autoexporter")))
         ];
         buildable = true;
       };

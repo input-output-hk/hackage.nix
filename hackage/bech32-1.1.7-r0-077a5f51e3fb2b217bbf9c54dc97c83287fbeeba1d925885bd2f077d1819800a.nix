@@ -69,8 +69,8 @@
             (hsPkgs."bech32" or (errorHandler.buildDepError "bech32"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.bech32.components.exes.bech32 or (pkgs.buildPackages.bech32 or (errorHandler.buildToolDepError "bech32:bech32")))
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.bech32.components.exes.bech32 or (pkgs.pkgsBuildBuild.bech32 or (errorHandler.buildToolDepError "bech32:bech32")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
           ];
           buildable = true;
         };

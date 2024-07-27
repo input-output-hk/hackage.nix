@@ -22,8 +22,8 @@
       description = "The zip-archive library provides functions for creating, modifying,\nand extracting files from zip archives.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
       ];
     };
     components = {
@@ -49,7 +49,7 @@
           else [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ])) ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
-        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.unzip.components.exes.unzip or (pkgs.buildPackages.unzip or (errorHandler.buildToolDepError "unzip:unzip")));
+        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.unzip.components.exes.unzip or (pkgs.pkgsBuildBuild.unzip or (errorHandler.buildToolDepError "unzip:unzip")));
         buildable = true;
       };
       exes = {

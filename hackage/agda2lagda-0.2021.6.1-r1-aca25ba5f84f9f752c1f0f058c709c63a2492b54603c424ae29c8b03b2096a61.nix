@@ -41,7 +41,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.goldplate.components.exes.goldplate or (pkgs.buildPackages.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
+            (hsPkgs.pkgsBuildBuild.goldplate.components.exes.goldplate or (pkgs.pkgsBuildBuild.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
           ];
           buildable = true;
         };

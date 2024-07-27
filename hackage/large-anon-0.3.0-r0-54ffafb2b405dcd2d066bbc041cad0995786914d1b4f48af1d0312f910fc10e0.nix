@@ -82,7 +82,7 @@
             (hsPkgs."typelet" or (errorHandler.buildDepError "typelet"))
             (hsPkgs."validation-selective" or (errorHandler.buildDepError "validation-selective"))
           ];
-          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2" && !flags.disablefourmoluexec) (hsPkgs.buildPackages.large-anon.components.exes.large-anon-testsuite-fourmolu-preprocessor or (pkgs.buildPackages.large-anon-testsuite-fourmolu-preprocessor or (errorHandler.buildToolDepError "large-anon:large-anon-testsuite-fourmolu-preprocessor")));
+          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.2" && !flags.disablefourmoluexec) (hsPkgs.pkgsBuildBuild.large-anon.components.exes.large-anon-testsuite-fourmolu-preprocessor or (pkgs.pkgsBuildBuild.large-anon-testsuite-fourmolu-preprocessor or (errorHandler.buildToolDepError "large-anon:large-anon-testsuite-fourmolu-preprocessor")));
           buildable = true;
         };
       };

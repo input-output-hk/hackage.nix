@@ -86,7 +86,7 @@
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.lsp-test.components.exes.dummy-server or (pkgs.buildPackages.dummy-server or (errorHandler.buildToolDepError "lsp-test:dummy-server")))
+            (hsPkgs.pkgsBuildBuild.lsp-test.components.exes.dummy-server or (pkgs.pkgsBuildBuild.dummy-server or (errorHandler.buildToolDepError "lsp-test:dummy-server")))
           ];
           buildable = true;
         };

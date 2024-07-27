@@ -250,8 +250,8 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
-            (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
+            (hsPkgs.pkgsBuildBuild.cabal-install.components.exes.cabal or (pkgs.pkgsBuildBuild.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")))
+            (hsPkgs.pkgsBuildBuild.doctest.components.exes.doctest or (pkgs.pkgsBuildBuild.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
           ];
           buildable = if flags.cabal-v1 then false else true;
         };
@@ -281,7 +281,7 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
           ];
           buildable = true;
         };

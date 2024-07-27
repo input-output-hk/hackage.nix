@@ -82,7 +82,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.dhall-lsp-server.components.exes.dhall-lsp-server or (pkgs.buildPackages.dhall-lsp-server or (errorHandler.buildToolDepError "dhall-lsp-server:dhall-lsp-server")))
+            (hsPkgs.pkgsBuildBuild.dhall-lsp-server.components.exes.dhall-lsp-server or (pkgs.pkgsBuildBuild.dhall-lsp-server or (errorHandler.buildToolDepError "dhall-lsp-server:dhall-lsp-server")))
           ];
           buildable = true;
         };

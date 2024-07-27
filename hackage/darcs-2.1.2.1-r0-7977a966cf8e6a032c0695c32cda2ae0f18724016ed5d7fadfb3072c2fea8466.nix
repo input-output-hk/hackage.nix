@@ -63,7 +63,7 @@
           ]))) ++ pkgs.lib.optional (flags.external-bytestring) (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))) ++ pkgs.lib.optional (flags.external-zlib) (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))) ++ pkgs.lib.optional (flags.terminfo) (hsPkgs."terminfo" or (errorHandler.buildDepError "terminfo"))) ++ pkgs.lib.optional (flags.haskeline) (hsPkgs."haskeline" or (errorHandler.buildDepError "haskeline"));
           libs = (pkgs.lib.optional (flags.curl) (pkgs."curl" or (errorHandler.sysDepError "curl")) ++ pkgs.lib.optional (!flags.external-zlib) (pkgs."z" or (errorHandler.sysDepError "z"))) ++ pkgs.lib.optional (flags.curses) (pkgs."curses" or (errorHandler.sysDepError "curses"));
           pkgconfig = pkgs.lib.optionals (flags.curl) (pkgs.lib.optional (flags.curl-pipelining) (pkgconfPkgs."libcurl" or (errorHandler.pkgConfDepError "libcurl")));
-          build-tools = pkgs.lib.optionals (!flags.curl) (pkgs.lib.optional (flags.libwww) (hsPkgs.buildPackages.libwww-config.components.exes.libwww-config or (pkgs.buildPackages.libwww-config or (errorHandler.buildToolDepError "libwww-config:libwww-config"))));
+          build-tools = pkgs.lib.optionals (!flags.curl) (pkgs.lib.optional (flags.libwww) (hsPkgs.pkgsBuildBuild.libwww-config.components.exes.libwww-config or (pkgs.pkgsBuildBuild.libwww-config or (errorHandler.buildToolDepError "libwww-config:libwww-config"))));
           buildable = true;
         };
       };

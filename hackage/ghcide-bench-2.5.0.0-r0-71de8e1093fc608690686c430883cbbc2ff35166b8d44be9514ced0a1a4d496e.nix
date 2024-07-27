@@ -89,8 +89,8 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
-            (hsPkgs.buildPackages.implicit-hie.components.exes.gen-hie or (pkgs.buildPackages.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide or (pkgs.pkgsBuildBuild.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
+            (hsPkgs.pkgsBuildBuild.implicit-hie.components.exes.gen-hie or (pkgs.pkgsBuildBuild.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
           ];
           buildable = true;
         };

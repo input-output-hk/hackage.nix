@@ -32,7 +32,7 @@
         ];
         libs = pkgs.lib.optionals (system.isWindows) (pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.4.5" && !(compiler.isGhc && compiler.version.ge "9.4.6") || compiler.isGhc && compiler.version.ge "9.6.1" && !(compiler.isGhc && compiler.version.ge "9.6.3")) (pkgs."mingwex" or (errorHandler.sysDepError "mingwex")));
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };
@@ -50,7 +50,7 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
           ];
           buildable = true;
         };

@@ -32,7 +32,7 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
         ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
+          (hsPkgs.pkgsBuildBuild.c2hs.components.exes.c2hs or (pkgs.pkgsBuildBuild.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
         ];
         buildable = true;
       };
@@ -71,7 +71,7 @@
             (hsPkgs."hw-json-simd" or (errorHandler.buildDepError "hw-json-simd"))
           ] ++ pkgs.lib.optional (system.isAarch64 || system.isArm) (hsPkgs."base" or (errorHandler.buildDepError "base"));
           build-tools = [
-            (hsPkgs.buildPackages.doctest-discover.components.exes.doctest-discover or (pkgs.buildPackages.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
+            (hsPkgs.pkgsBuildBuild.doctest-discover.components.exes.doctest-discover or (pkgs.pkgsBuildBuild.doctest-discover or (errorHandler.buildToolDepError "doctest-discover:doctest-discover")))
           ];
           buildable = true;
         };

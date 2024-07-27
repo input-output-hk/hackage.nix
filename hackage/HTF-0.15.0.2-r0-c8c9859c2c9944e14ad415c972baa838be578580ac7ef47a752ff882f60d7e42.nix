@@ -51,7 +51,7 @@
           (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+          (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
         ];
         buildable = true;
       };
@@ -70,7 +70,7 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };
@@ -85,7 +85,7 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };
@@ -107,7 +107,7 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };
@@ -119,7 +119,7 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };

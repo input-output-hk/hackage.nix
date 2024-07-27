@@ -50,7 +50,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."regex-posix" or (errorHandler.buildDepError "regex-posix"))
           ];
-          build-tools = pkgs.lib.optional (!!flags.test-doc-coverage) (hsPkgs.buildPackages.cabal-install.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")));
+          build-tools = pkgs.lib.optional (!!flags.test-doc-coverage) (hsPkgs.pkgsBuildBuild.cabal-install.components.exes.cabal or (pkgs.pkgsBuildBuild.cabal or (errorHandler.buildToolDepError "cabal-install:cabal")));
           buildable = if !flags.test-doc-coverage then false else true;
         };
         "unit-tests" = {

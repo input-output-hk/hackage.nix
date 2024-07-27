@@ -22,9 +22,9 @@
       description = "Command-line tool that retrieves and nicely outputs weather and related data from [Weather API](https://www.weatherapi.com/), in the table form.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.hgettext or (pkgs.buildPackages.hgettext or (errorHandler.setupDepError "hgettext")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.hgettext or (pkgs.pkgsBuildBuild.hgettext or (errorHandler.setupDepError "hgettext")))
       ];
     };
     components = {

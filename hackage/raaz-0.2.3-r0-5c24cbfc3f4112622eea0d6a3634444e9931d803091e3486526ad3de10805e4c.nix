@@ -42,7 +42,7 @@
           (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
           (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
         ];
-        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       exes = {
@@ -69,7 +69,7 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
           ];
           buildable = true;
         };

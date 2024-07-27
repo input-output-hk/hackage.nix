@@ -34,7 +34,7 @@
             (hsPkgs."digest-pure" or (errorHandler.buildDepError "digest-pure"))
           ]
           else [ (hsPkgs."digest" or (errorHandler.buildDepError "digest")) ]);
-        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       tests = {

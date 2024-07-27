@@ -99,8 +99,8 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            (hsPkgs.buildPackages.hls-tactics-plugin.components.exes.test-server or (pkgs.buildPackages.test-server or (errorHandler.buildToolDepError "hls-tactics-plugin:test-server")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.hls-tactics-plugin.components.exes.test-server or (pkgs.pkgsBuildBuild.test-server or (errorHandler.buildToolDepError "hls-tactics-plugin:test-server")))
           ];
           buildable = true;
         };

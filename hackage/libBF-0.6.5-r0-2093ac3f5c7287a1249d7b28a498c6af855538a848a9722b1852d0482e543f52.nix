@@ -37,7 +37,7 @@
             (pkgs."gcc_s_dw2-1" or (errorHandler.sysDepError "gcc_s_dw2-1"))
           ]) ++ pkgs.lib.optional (flags.system-libbf) (pkgs."bf" or (errorHandler.sysDepError "bf"));
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

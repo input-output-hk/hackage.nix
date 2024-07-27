@@ -22,16 +22,16 @@
       description = "Code generated signatures for the Ops in libtensorflow.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.bytestring or (pkgs.buildPackages.bytestring or (errorHandler.setupDepError "bytestring")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        (hsPkgs.buildPackages.proto-lens or (pkgs.buildPackages.proto-lens or (errorHandler.setupDepError "proto-lens")))
-        (hsPkgs.buildPackages.tensorflow-opgen or (pkgs.buildPackages.tensorflow-opgen or (errorHandler.setupDepError "tensorflow-opgen")))
-        (hsPkgs.buildPackages.tensorflow or (pkgs.buildPackages.tensorflow or (errorHandler.setupDepError "tensorflow")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        (hsPkgs.buildPackages.mainland-pretty or (pkgs.buildPackages.mainland-pretty or (errorHandler.setupDepError "mainland-pretty")))
-        (hsPkgs.buildPackages.text or (pkgs.buildPackages.text or (errorHandler.setupDepError "text")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.bytestring or (pkgs.pkgsBuildBuild.bytestring or (errorHandler.setupDepError "bytestring")))
+        (hsPkgs.pkgsBuildBuild.directory or (pkgs.pkgsBuildBuild.directory or (errorHandler.setupDepError "directory")))
+        (hsPkgs.pkgsBuildBuild.proto-lens or (pkgs.pkgsBuildBuild.proto-lens or (errorHandler.setupDepError "proto-lens")))
+        (hsPkgs.pkgsBuildBuild.tensorflow-opgen or (pkgs.pkgsBuildBuild.tensorflow-opgen or (errorHandler.setupDepError "tensorflow-opgen")))
+        (hsPkgs.pkgsBuildBuild.tensorflow or (pkgs.pkgsBuildBuild.tensorflow or (errorHandler.setupDepError "tensorflow")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.filepath or (pkgs.pkgsBuildBuild.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.pkgsBuildBuild.mainland-pretty or (pkgs.pkgsBuildBuild.mainland-pretty or (errorHandler.setupDepError "mainland-pretty")))
+        (hsPkgs.pkgsBuildBuild.text or (pkgs.pkgsBuildBuild.text or (errorHandler.setupDepError "text")))
       ];
     };
     components = {

@@ -64,7 +64,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
-        build-tools = pkgs.lib.optional (flags.embed_data_files) (hsPkgs.buildPackages.hsb2hs.components.exes.hsb2hs or (pkgs.buildPackages.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
+        build-tools = pkgs.lib.optional (flags.embed_data_files) (hsPkgs.pkgsBuildBuild.hsb2hs.components.exes.hsb2hs or (pkgs.pkgsBuildBuild.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
         buildable = true;
       };
       exes = {

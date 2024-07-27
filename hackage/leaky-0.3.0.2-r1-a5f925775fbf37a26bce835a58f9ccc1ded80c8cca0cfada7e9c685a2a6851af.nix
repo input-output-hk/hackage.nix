@@ -50,7 +50,7 @@
             (hsPkgs."seqaid" or (errorHandler.buildDepError "seqaid"))
           ] ++ pkgs.lib.optional (flags.use_cpphs) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))) ++ pkgs.lib.optional (flags.cowboy) (hsPkgs."cpphs" or (errorHandler.buildDepError "cpphs"))) ++ pkgs.lib.optional (flags.omnitypic) (hsPkgs."ghc-prim" or (errorHandler.buildDepError "ghc-prim"));
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };

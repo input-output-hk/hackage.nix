@@ -70,7 +70,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.0") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"));
           build-tools = [
-            (hsPkgs.buildPackages.hiedb.components.exes.hiedb or (pkgs.buildPackages.hiedb or (errorHandler.buildToolDepError "hiedb:hiedb")))
+            (hsPkgs.pkgsBuildBuild.hiedb.components.exes.hiedb or (pkgs.pkgsBuildBuild.hiedb or (errorHandler.buildToolDepError "hiedb:hiedb")))
           ];
           buildable = true;
         };

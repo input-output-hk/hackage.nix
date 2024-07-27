@@ -22,9 +22,9 @@
       description = "A mining client for Kadena Chainweb. It supports\n\n* mining with ASICs through a stratum server,\n* simulated mining for testing,\n* multi threaded CPU mining,\n* external mining workers (e.g. a GPU).\n\nCompetitive mining on the Kadena Mainnet requires special mining hardware\n(ASIC), which connects to a Stratum Server from where it obtains work.\n\nAll other mining modes (GPU, CPU, and simulation) are intended only for testing.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.configuration-tools or (pkgs.buildPackages.configuration-tools or (errorHandler.setupDepError "configuration-tools")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.configuration-tools or (pkgs.pkgsBuildBuild.configuration-tools or (errorHandler.setupDepError "configuration-tools")))
       ];
     };
     components = {

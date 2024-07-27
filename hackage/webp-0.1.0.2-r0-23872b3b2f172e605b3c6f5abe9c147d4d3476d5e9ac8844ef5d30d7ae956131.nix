@@ -33,7 +33,7 @@
         pkgconfig = [
           (pkgconfPkgs."libwebp" or (errorHandler.pkgConfDepError "libwebp"))
         ];
-        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
+        build-tools = pkgs.lib.optional (!flags.cross) (hsPkgs.pkgsBuildBuild.c2hs.components.exes.c2hs or (pkgs.pkgsBuildBuild.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")));
         buildable = true;
       };
       tests = {

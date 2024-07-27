@@ -88,7 +88,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.pandoc-cli.components.exes.pandoc or (pkgs.buildPackages.pandoc or (errorHandler.buildToolDepError "pandoc-cli:pandoc")))
+            (hsPkgs.pkgsBuildBuild.pandoc-cli.components.exes.pandoc or (pkgs.pkgsBuildBuild.pandoc or (errorHandler.buildToolDepError "pandoc-cli:pandoc")))
           ];
           buildable = true;
         };

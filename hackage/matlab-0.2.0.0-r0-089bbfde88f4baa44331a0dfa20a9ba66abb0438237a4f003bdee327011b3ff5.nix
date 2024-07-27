@@ -34,7 +34,7 @@
           (pkgs."mx" or (errorHandler.sysDepError "mx"))
           (pkgs."mat" or (errorHandler.sysDepError "mat"))
         ] ++ pkgs.lib.optional (flags.engine) (pkgs."eng" or (errorHandler.sysDepError "eng"));
-        build-tools = pkgs.lib.optional (flags.runtime) (hsPkgs.buildPackages.mcc.components.exes.mcc or (pkgs.buildPackages.mcc or (errorHandler.buildToolDepError "mcc:mcc")));
+        build-tools = pkgs.lib.optional (flags.runtime) (hsPkgs.pkgsBuildBuild.mcc.components.exes.mcc or (pkgs.pkgsBuildBuild.mcc or (errorHandler.buildToolDepError "mcc:mcc")));
         buildable = true;
       };
     };

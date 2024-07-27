@@ -251,8 +251,8 @@
             (hsPkgs."hackport".components.sublibs.hackport-internal or (errorHandler.buildDepError "hackport:hackport-internal"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
-            (hsPkgs.buildPackages.hackport.components.exes.hackport or (pkgs.buildPackages.hackport or (errorHandler.buildToolDepError "hackport:hackport")))
+            (hsPkgs.pkgsBuildBuild.doctest.components.exes.doctest or (pkgs.pkgsBuildBuild.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
+            (hsPkgs.pkgsBuildBuild.hackport.components.exes.hackport or (pkgs.pkgsBuildBuild.hackport or (errorHandler.buildToolDepError "hackport:hackport")))
           ];
           buildable = if flags.cabal-v1 then false else true;
         };
@@ -282,7 +282,7 @@
             (hsPkgs."xml" or (errorHandler.buildDepError "xml"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
           ];
           buildable = true;
         };

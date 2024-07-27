@@ -59,8 +59,8 @@
             (hsPkgs."silently" or (errorHandler.buildDepError "silently"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.tasty-discover.components.exes.tasty-discover or (pkgs.buildPackages.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
-            (hsPkgs.buildPackages.hoogle.components.exes.hoogle or (pkgs.buildPackages.hoogle or (errorHandler.buildToolDepError "hoogle:hoogle")))
+            (hsPkgs.pkgsBuildBuild.tasty-discover.components.exes.tasty-discover or (pkgs.pkgsBuildBuild.tasty-discover or (errorHandler.buildToolDepError "tasty-discover:tasty-discover")))
+            (hsPkgs.pkgsBuildBuild.hoogle.components.exes.hoogle or (pkgs.pkgsBuildBuild.hoogle or (errorHandler.buildToolDepError "hoogle:hoogle")))
           ];
           buildable = true;
         };

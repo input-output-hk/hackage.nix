@@ -41,7 +41,7 @@
         libs = pkgs.lib.optionals (flags.usenativeffi-1-0 || flags.usenativeffi-1-1) (pkgs.lib.optional (system.isWindows) (pkgs."vulkan-1" or (errorHandler.sysDepError "vulkan-1")) ++ pkgs.lib.optional (!system.isWindows && !system.isOsx) (pkgs."vulkan" or (errorHandler.sysDepError "vulkan")));
         frameworks = pkgs.lib.optionals (flags.usenativeffi-1-0 || flags.usenativeffi-1-1) (pkgs.lib.optional (system.isOsx) (pkgs."MoltenVK" or (errorHandler.sysDepError "MoltenVK")));
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

@@ -46,8 +46,8 @@
             (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))
           ])) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "9.10") (hsPkgs."ghc-internal" or (errorHandler.buildDepError "ghc-internal"));
         build-tools = [
-          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
         ];
         buildable = true;
       };

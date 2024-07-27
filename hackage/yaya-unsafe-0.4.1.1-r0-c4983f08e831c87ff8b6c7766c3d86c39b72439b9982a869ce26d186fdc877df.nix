@@ -22,9 +22,9 @@
       description = "Yaya is designed as a _total_ library. However, it is often\nexpedient to use partial operations in some cases, and this package\nextends Yaya to provide those operations. It’s in a separate\npackage (and modules) in order to make sure its use is very\nintentional and also relatively obvious to those reading your code.\nIt’s recommended that you import these modules qualified and, in\nparticular, all the type class instances here have been pulled into\na separate module to avoid accidentally bringing them into scope.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.cabal-doctest or (pkgs.pkgsBuildBuild.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
       ];
     };
     components = {

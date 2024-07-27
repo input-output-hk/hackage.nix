@@ -46,7 +46,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.skopedate.components.exes.skopedate or (pkgs.buildPackages.skopedate or (errorHandler.buildToolDepError "skopedate:skopedate")))
+            (hsPkgs.pkgsBuildBuild.skopedate.components.exes.skopedate or (pkgs.pkgsBuildBuild.skopedate or (errorHandler.buildToolDepError "skopedate:skopedate")))
           ];
           buildable = true;
         };

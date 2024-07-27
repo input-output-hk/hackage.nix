@@ -46,7 +46,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.parseargs.components.exes.parseargs-example or (pkgs.buildPackages.parseargs-example or (errorHandler.buildToolDepError "parseargs:parseargs-example")))
+            (hsPkgs.pkgsBuildBuild.parseargs.components.exes.parseargs-example or (pkgs.pkgsBuildBuild.parseargs-example or (errorHandler.buildToolDepError "parseargs:parseargs-example")))
           ];
           buildable = true;
         };

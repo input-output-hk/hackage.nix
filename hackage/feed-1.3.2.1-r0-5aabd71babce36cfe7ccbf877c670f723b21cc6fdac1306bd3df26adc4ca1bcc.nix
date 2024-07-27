@@ -68,7 +68,7 @@
             (hsPkgs."xml-types" or (errorHandler.buildDepError "xml-types"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
+            (hsPkgs.pkgsBuildBuild.markdown-unlit.components.exes.markdown-unlit or (pkgs.pkgsBuildBuild.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
           ];
           buildable = true;
         };
@@ -80,8 +80,8 @@
             (hsPkgs."feed" or (errorHandler.buildDepError "feed"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
-            (hsPkgs.buildPackages.doctest-driver-gen.components.exes.doctest-driver-gen or (pkgs.buildPackages.doctest-driver-gen or (errorHandler.buildToolDepError "doctest-driver-gen:doctest-driver-gen")))
+            (hsPkgs.pkgsBuildBuild.markdown-unlit.components.exes.markdown-unlit or (pkgs.pkgsBuildBuild.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
+            (hsPkgs.pkgsBuildBuild.doctest-driver-gen.components.exes.doctest-driver-gen or (pkgs.pkgsBuildBuild.doctest-driver-gen or (errorHandler.buildToolDepError "doctest-driver-gen:doctest-driver-gen")))
           ];
           buildable = if compiler.isGhc && compiler.version.lt "8"
             then false

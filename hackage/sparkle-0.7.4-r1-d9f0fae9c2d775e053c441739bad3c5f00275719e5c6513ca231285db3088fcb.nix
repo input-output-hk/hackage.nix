@@ -22,10 +22,10 @@
       description = "The hackage package has been superseded by the github repository which builds with Bazel. Please see http://github.com/tweag/sparkle#readme.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.inline-java or (pkgs.buildPackages.inline-java or (errorHandler.setupDepError "inline-java")))
-        (hsPkgs.buildPackages.jvm-streaming or (pkgs.buildPackages.jvm-streaming or (errorHandler.setupDepError "jvm-streaming")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.inline-java or (pkgs.pkgsBuildBuild.inline-java or (errorHandler.setupDepError "inline-java")))
+        (hsPkgs.pkgsBuildBuild.jvm-streaming or (pkgs.pkgsBuildBuild.jvm-streaming or (errorHandler.setupDepError "jvm-streaming")))
       ];
     };
     components = {

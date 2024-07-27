@@ -740,7 +740,7 @@
             (hsPkgs."haskell-language-server".components.sublibs.hls-cabal-fmt-plugin or (errorHandler.buildDepError "haskell-language-server:hls-cabal-fmt-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
           ];
-          build-tools = pkgs.lib.optional (flags.isolatecabalfmttests) (hsPkgs.buildPackages.cabal-fmt.components.exes.cabal-fmt or (pkgs.buildPackages.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
+          build-tools = pkgs.lib.optional (flags.isolatecabalfmttests) (hsPkgs.pkgsBuildBuild.cabal-fmt.components.exes.cabal-fmt or (pkgs.pkgsBuildBuild.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
           buildable = if !flags.cabalfmt then false else true;
         };
         "hls-cabal-gild-plugin-tests" = {
@@ -751,7 +751,7 @@
             (hsPkgs."haskell-language-server".components.sublibs.hls-cabal-gild-plugin or (errorHandler.buildDepError "haskell-language-server:hls-cabal-gild-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
           ];
-          build-tools = pkgs.lib.optional (flags.isolatecabalgildtests) (hsPkgs.buildPackages.cabal-gild.components.exes.cabal-gild or (pkgs.buildPackages.cabal-gild or (errorHandler.buildToolDepError "cabal-gild:cabal-gild")));
+          build-tools = pkgs.lib.optional (flags.isolatecabalgildtests) (hsPkgs.pkgsBuildBuild.cabal-gild.components.exes.cabal-gild or (pkgs.pkgsBuildBuild.cabal-gild or (errorHandler.buildToolDepError "cabal-gild:cabal-gild")));
           buildable = if !flags.cabalgild then false else true;
         };
         "hls-cabal-plugin-tests" = {
@@ -1032,7 +1032,7 @@
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.fourmolu.components.exes.fourmolu or (pkgs.buildPackages.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
+            (hsPkgs.pkgsBuildBuild.fourmolu.components.exes.fourmolu or (pkgs.pkgsBuildBuild.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
           ];
           buildable = if !flags.fourmolu then false else true;
         };
@@ -1048,7 +1048,7 @@
             (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")))
+            (hsPkgs.pkgsBuildBuild.ormolu.components.exes.ormolu or (pkgs.pkgsBuildBuild.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")))
           ];
           buildable = if !flags.ormolu then false else true;
         };
@@ -1134,8 +1134,8 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ] ++ pkgs.lib.optional (flags.refactor) (hsPkgs."haskell-language-server".components.sublibs.hls-refactor-plugin or (errorHandler.buildDepError "haskell-language-server:hls-refactor-plugin"));
           build-tools = [
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server or (pkgs.buildPackages.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.haskell-language-server or (pkgs.pkgsBuildBuild.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.pkgsBuildBuild.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
           ];
           buildable = true;
         };
@@ -1147,8 +1147,8 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server-wrapper or (pkgs.buildPackages.haskell-language-server-wrapper or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server-wrapper")))
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server or (pkgs.buildPackages.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.haskell-language-server-wrapper or (pkgs.pkgsBuildBuild.haskell-language-server-wrapper or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server-wrapper")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.haskell-language-server or (pkgs.pkgsBuildBuild.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
           ];
           buildable = true;
         };
@@ -1191,9 +1191,9 @@
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "9.3") (hsPkgs."ghc-typelits-knownnat" or (errorHandler.buildDepError "ghc-typelits-knownnat"));
           build-tools = [
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
-            (hsPkgs.buildPackages.implicit-hie.components.exes.gen-hie or (pkgs.buildPackages.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide or (pkgs.pkgsBuildBuild.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.pkgsBuildBuild.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
+            (hsPkgs.pkgsBuildBuild.implicit-hie.components.exes.gen-hie or (pkgs.pkgsBuildBuild.gen-hie or (errorHandler.buildToolDepError "implicit-hie:gen-hie")))
           ];
           buildable = true;
         };
@@ -1208,7 +1208,7 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide or (pkgs.pkgsBuildBuild.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
           ];
           buildable = true;
         };
@@ -1234,8 +1234,8 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.ghcide-bench or (pkgs.buildPackages.ghcide-bench or (errorHandler.buildToolDepError "haskell-language-server:ghcide-bench")))
-            (hsPkgs.buildPackages.hp2pretty.components.exes.hp2pretty or (pkgs.buildPackages.hp2pretty or (errorHandler.buildToolDepError "hp2pretty:hp2pretty")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.ghcide-bench or (pkgs.pkgsBuildBuild.ghcide-bench or (errorHandler.buildToolDepError "haskell-language-server:ghcide-bench")))
+            (hsPkgs.pkgsBuildBuild.hp2pretty.components.exes.hp2pretty or (pkgs.pkgsBuildBuild.hp2pretty or (errorHandler.buildToolDepError "hp2pretty:hp2pretty")))
           ];
           buildable = true;
         };

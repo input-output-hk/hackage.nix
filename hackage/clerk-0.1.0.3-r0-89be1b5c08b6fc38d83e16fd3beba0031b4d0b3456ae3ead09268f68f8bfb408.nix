@@ -54,7 +54,7 @@
             (hsPkgs."xlsx" or (errorHandler.buildDepError "xlsx"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.lima.components.exes.lima or (pkgs.buildPackages.lima or (errorHandler.buildToolDepError "lima:lima")))
+            (hsPkgs.pkgsBuildBuild.lima.components.exes.lima or (pkgs.pkgsBuildBuild.lima or (errorHandler.buildToolDepError "lima:lima")))
           ];
           buildable = true;
         };

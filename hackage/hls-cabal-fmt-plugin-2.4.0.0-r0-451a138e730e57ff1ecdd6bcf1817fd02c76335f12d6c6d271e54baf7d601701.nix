@@ -48,7 +48,7 @@
             (hsPkgs."hls-cabal-fmt-plugin" or (errorHandler.buildDepError "hls-cabal-fmt-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
           ];
-          build-tools = pkgs.lib.optional (flags.isolatetests) (hsPkgs.buildPackages.cabal-fmt.components.exes.cabal-fmt or (pkgs.buildPackages.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
+          build-tools = pkgs.lib.optional (flags.isolatetests) (hsPkgs.pkgsBuildBuild.cabal-fmt.components.exes.cabal-fmt or (pkgs.pkgsBuildBuild.cabal-fmt or (errorHandler.buildToolDepError "cabal-fmt:cabal-fmt")));
           buildable = true;
         };
       };

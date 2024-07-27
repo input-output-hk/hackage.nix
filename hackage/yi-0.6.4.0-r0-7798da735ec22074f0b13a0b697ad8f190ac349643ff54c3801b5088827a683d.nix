@@ -98,7 +98,7 @@
           (hsPkgs."ghc-syb-utils" or (errorHandler.buildDepError "ghc-syb-utils"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
         ];
         buildable = if flags.hacking then false else true;
       };
@@ -118,7 +118,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ] ++ pkgs.lib.optional (!flags.dochack) (hsPkgs."yi" or (errorHandler.buildDepError "yi"));
           build-tools = [
-            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
           ];
           buildable = if flags.dochack then false else true;
         };

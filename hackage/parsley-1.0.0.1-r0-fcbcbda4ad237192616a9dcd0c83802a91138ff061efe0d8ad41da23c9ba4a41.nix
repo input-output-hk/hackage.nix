@@ -67,7 +67,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "8.8")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };
@@ -89,7 +89,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "8.8")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };
@@ -111,7 +111,7 @@
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           ] ++ pkgs.lib.optional (false && (compiler.isGhc && compiler.version.lt "8.8")) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };

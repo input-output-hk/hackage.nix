@@ -71,7 +71,7 @@
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
           ] ++ pkgs.lib.optional (flags.use-ghc-dump) (hsPkgs."ghc-dump-core" or (errorHandler.buildDepError "ghc-dump-core"));
           build-tools = [
-            (hsPkgs.buildPackages.record-dot-preprocessor.components.exes.record-dot-preprocessor or (pkgs.buildPackages.record-dot-preprocessor or (errorHandler.buildToolDepError "record-dot-preprocessor:record-dot-preprocessor")))
+            (hsPkgs.pkgsBuildBuild.record-dot-preprocessor.components.exes.record-dot-preprocessor or (pkgs.pkgsBuildBuild.record-dot-preprocessor or (errorHandler.buildToolDepError "record-dot-preprocessor:record-dot-preprocessor")))
           ];
           buildable = true;
         };

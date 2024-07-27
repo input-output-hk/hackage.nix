@@ -48,7 +48,7 @@
             (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };

@@ -40,7 +40,7 @@
         ];
         libs = pkgs.lib.optional (system.isLinux) (pkgs."stdc++" or (errorHandler.sysDepError "stdc++"));
         build-tools = [
-          (hsPkgs.buildPackages.souffle.components.exes.souffle or (pkgs.buildPackages.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
+          (hsPkgs.pkgsBuildBuild.souffle.components.exes.souffle or (pkgs.pkgsBuildBuild.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
         ];
         buildable = true;
       };
@@ -64,7 +64,7 @@
           ];
           libs = pkgs.lib.optional (system.isOsx) (pkgs."c++" or (errorHandler.sysDepError "c++"));
           build-tools = [
-            (hsPkgs.buildPackages.souffle.components.exes.souffle or (pkgs.buildPackages.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
+            (hsPkgs.pkgsBuildBuild.souffle.components.exes.souffle or (pkgs.pkgsBuildBuild.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
           ];
           buildable = true;
         };

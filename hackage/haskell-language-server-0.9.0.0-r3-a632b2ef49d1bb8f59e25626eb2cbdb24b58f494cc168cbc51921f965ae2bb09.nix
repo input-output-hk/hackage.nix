@@ -156,8 +156,8 @@
             (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server or (pkgs.buildPackages.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
-            (hsPkgs.buildPackages.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.buildPackages.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.haskell-language-server or (pkgs.pkgsBuildBuild.haskell-language-server or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server")))
+            (hsPkgs.pkgsBuildBuild.ghcide.components.exes.ghcide-test-preprocessor or (pkgs.pkgsBuildBuild.ghcide-test-preprocessor or (errorHandler.buildToolDepError "ghcide:ghcide-test-preprocessor")))
           ];
           buildable = true;
         };
@@ -194,7 +194,7 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.haskell-language-server.components.exes.haskell-language-server-wrapper or (pkgs.buildPackages.haskell-language-server-wrapper or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server-wrapper")))
+            (hsPkgs.pkgsBuildBuild.haskell-language-server.components.exes.haskell-language-server-wrapper or (pkgs.pkgsBuildBuild.haskell-language-server-wrapper or (errorHandler.buildToolDepError "haskell-language-server:haskell-language-server-wrapper")))
           ];
           buildable = true;
         };

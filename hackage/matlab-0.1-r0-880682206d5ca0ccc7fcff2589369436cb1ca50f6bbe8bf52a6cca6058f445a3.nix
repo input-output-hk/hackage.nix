@@ -36,10 +36,10 @@
         ] ++ pkgs.lib.optional (flags.engine) (pkgs."eng" or (errorHandler.sysDepError "eng"));
         build-tools = if flags.mcr
           then [
-            (hsPkgs.buildPackages.mcr.components.exes.mcr or (pkgs.buildPackages.mcr or (errorHandler.buildToolDepError "mcr:mcr")))
+            (hsPkgs.pkgsBuildBuild.mcr.components.exes.mcr or (pkgs.pkgsBuildBuild.mcr or (errorHandler.buildToolDepError "mcr:mcr")))
           ]
           else [
-            (hsPkgs.buildPackages.matlab.components.exes.matlab or (pkgs.buildPackages.matlab or (errorHandler.buildToolDepError "matlab:matlab")))
+            (hsPkgs.pkgsBuildBuild.matlab.components.exes.matlab or (pkgs.pkgsBuildBuild.matlab or (errorHandler.buildToolDepError "matlab:matlab")))
           ];
         buildable = true;
       };

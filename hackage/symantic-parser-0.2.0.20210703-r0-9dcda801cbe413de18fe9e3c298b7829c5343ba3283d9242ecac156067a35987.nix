@@ -91,7 +91,7 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ] ++ pkgs.lib.optional (flags.dump-core) (hsPkgs."dump-core" or (errorHandler.buildDepError "dump-core"));
-          build-tools = pkgs.lib.optional (!flags.disable-ormolu-check) (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")));
+          build-tools = pkgs.lib.optional (!flags.disable-ormolu-check) (hsPkgs.pkgsBuildBuild.ormolu.components.exes.ormolu or (pkgs.pkgsBuildBuild.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")));
           buildable = true;
         };
       };

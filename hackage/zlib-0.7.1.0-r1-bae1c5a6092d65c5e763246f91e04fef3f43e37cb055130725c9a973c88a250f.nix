@@ -35,8 +35,8 @@
         libs = pkgs.lib.optionals (!(flags.bundled-c-zlib || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32 || !flags.pkg-config && system.isWindows)) (pkgs.lib.optional (!flags.pkg-config) (pkgs."z" or (errorHandler.sysDepError "z")));
         pkgconfig = pkgs.lib.optionals (!(flags.bundled-c-zlib || compiler.isGhcjs && true || system.isGhcjs || system.isWasm32 || !flags.pkg-config && system.isWindows)) (pkgs.lib.optional (flags.pkg-config) (pkgconfPkgs."zlib" or (errorHandler.pkgConfDepError "zlib")));
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
-        ] ++ pkgs.lib.optional (system.isWindows && (compiler.isGhc && compiler.version.lt "8.4")) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+        ] ++ pkgs.lib.optional (system.isWindows && (compiler.isGhc && compiler.version.lt "8.4")) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       tests = {

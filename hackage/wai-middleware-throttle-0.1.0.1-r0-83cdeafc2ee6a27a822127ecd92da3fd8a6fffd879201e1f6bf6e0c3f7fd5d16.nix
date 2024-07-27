@@ -62,7 +62,7 @@
             (hsPkgs."regex-compat" or (errorHandler.buildDepError "regex-compat"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.haddock.components.exes.haddock or (pkgs.buildPackages.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
+            (hsPkgs.pkgsBuildBuild.haddock.components.exes.haddock or (pkgs.pkgsBuildBuild.haddock or (errorHandler.buildToolDepError "haddock:haddock")))
           ];
           buildable = true;
         };

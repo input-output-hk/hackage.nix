@@ -34,8 +34,8 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.c2hsc.components.exes.c2hsc or (pkgs.buildPackages.c2hsc or (errorHandler.buildToolDepError "c2hsc:c2hsc")))
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.c2hsc.components.exes.c2hsc or (pkgs.pkgsBuildBuild.c2hsc or (errorHandler.buildToolDepError "c2hsc:c2hsc")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

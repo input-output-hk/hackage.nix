@@ -103,7 +103,7 @@
             (hsPkgs."parser-combinators" or (errorHandler.buildDepError "parser-combinators"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.lsp.components.exes.lsp-demo-reactor-server or (pkgs.buildPackages.lsp-demo-reactor-server or (errorHandler.buildToolDepError "lsp:lsp-demo-reactor-server")))
+            (hsPkgs.pkgsBuildBuild.lsp.components.exes.lsp-demo-reactor-server or (pkgs.pkgsBuildBuild.lsp-demo-reactor-server or (errorHandler.buildToolDepError "lsp:lsp-demo-reactor-server")))
           ];
           buildable = true;
         };

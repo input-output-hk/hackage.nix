@@ -47,7 +47,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.koji-install.components.exes.koji-install or (pkgs.buildPackages.koji-install or (errorHandler.buildToolDepError "koji-install:koji-install")))
+            (hsPkgs.pkgsBuildBuild.koji-install.components.exes.koji-install or (pkgs.pkgsBuildBuild.koji-install or (errorHandler.buildToolDepError "koji-install:koji-install")))
           ];
           buildable = true;
         };

@@ -40,10 +40,10 @@
         ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows) (hsPkgs."hpp" or (errorHandler.buildDepError "hpp"));
         build-tools = if compiler.isGhc && compiler.version.ge "7.10.1" && !system.isWindows
           then [
-            (hsPkgs.buildPackages.hpp.components.exes.hpp or (pkgs.buildPackages.hpp or (errorHandler.buildToolDepError "hpp:hpp")))
+            (hsPkgs.pkgsBuildBuild.hpp.components.exes.hpp or (pkgs.pkgsBuildBuild.hpp or (errorHandler.buildToolDepError "hpp:hpp")))
           ]
           else [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
         buildable = true;
       };

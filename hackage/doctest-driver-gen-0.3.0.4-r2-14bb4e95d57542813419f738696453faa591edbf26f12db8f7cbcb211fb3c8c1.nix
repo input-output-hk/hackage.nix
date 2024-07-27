@@ -43,7 +43,7 @@
             (hsPkgs."doctest" or (errorHandler.buildDepError "doctest"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.doctest-driver-gen.components.exes.doctest-driver-gen or (pkgs.buildPackages.doctest-driver-gen or (errorHandler.buildToolDepError "doctest-driver-gen:doctest-driver-gen")))
+            (hsPkgs.pkgsBuildBuild.doctest-driver-gen.components.exes.doctest-driver-gen or (pkgs.pkgsBuildBuild.doctest-driver-gen or (errorHandler.buildToolDepError "doctest-driver-gen:doctest-driver-gen")))
           ];
           buildable = true;
         };

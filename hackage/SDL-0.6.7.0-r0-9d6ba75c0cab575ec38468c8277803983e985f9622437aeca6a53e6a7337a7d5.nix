@@ -22,8 +22,8 @@
       description = "Simple DirectMedia Layer \\(libSDL\\) is a cross-platform multimedia\nlibrary designed to provide low level access to audio,\nkeyboard, mouse, joystick, 3D hardware via OpenGL, and 2D\nvideo framebuffer. It is used by MPEG playback software,\nemulators, and many popular games, including the award\nwinning Linux port of \\\"Civilization: Call To Power.\\\"";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
       ];
     };
     components = {

@@ -72,7 +72,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cardano-tx.components.exes.cardano-tx or (pkgs.buildPackages.cardano-tx or (errorHandler.buildToolDepError "cardano-tx:cardano-tx")))
+            (hsPkgs.pkgsBuildBuild.cardano-tx.components.exes.cardano-tx or (pkgs.pkgsBuildBuild.cardano-tx or (errorHandler.buildToolDepError "cardano-tx:cardano-tx")))
           ];
           buildable = true;
         };

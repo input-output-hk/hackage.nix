@@ -29,7 +29,7 @@
           (hsPkgs."bifunctors" or (errorHandler.buildDepError "bifunctors"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
         ] ++ pkgs.lib.optional (flags.ghc-flags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
-        build-tools = pkgs.lib.optional (flags.ghc-flags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+        build-tools = pkgs.lib.optional (flags.ghc-flags) (hsPkgs.pkgsBuildBuild.hsinspect.components.exes.hsinspect or (pkgs.pkgsBuildBuild.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
         buildable = true;
       };
       tests = {

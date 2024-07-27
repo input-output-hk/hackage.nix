@@ -36,7 +36,7 @@
             ]
             else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
           build-tools = [
-            (hsPkgs.buildPackages.perl.components.exes.perl or (pkgs.buildPackages.perl or (errorHandler.buildToolDepError "perl:perl")))
+            (hsPkgs.pkgsBuildBuild.perl.components.exes.perl or (pkgs.pkgsBuildBuild.perl or (errorHandler.buildToolDepError "perl:perl")))
           ];
           buildable = true;
         };

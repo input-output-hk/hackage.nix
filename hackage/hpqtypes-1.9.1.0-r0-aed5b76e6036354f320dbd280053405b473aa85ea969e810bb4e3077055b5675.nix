@@ -22,10 +22,10 @@
       description = "Efficient and easy-to-use bindings to (slightly modified)\n@libpqtypes@, a @libpq@ extension that adds support\nfor a binary transport format and composite types.\n\nSince modified @libpqtypes@ is used, its source\ncode is bundled along with the bindings. The\ndifferences between verbatim @libpqtypes@ and the\none used by this package:\n\n* Per-thread global error structures were replaced by\nexplicit passing of these structures around so that\nthere is no need to use bound threads.\n\n* Handlers that take values to be put into the\ndatabase were modified to always expect\npointers to objects, as opposed to previous\nsituation where primitives were being taken by\nvalue (which was convenient if the library was\nused directly from C, but created inconsistency\nproblems while trying to define bindings in a\nsensible way).\n\nExamples can be found in the\n<https://github.com/scrive/hpqtypes/tree/master/examples examples>\ndirectory.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.directory or (pkgs.pkgsBuildBuild.directory or (errorHandler.setupDepError "directory")))
+        (hsPkgs.pkgsBuildBuild.filepath or (pkgs.pkgsBuildBuild.filepath or (errorHandler.setupDepError "filepath")))
       ];
     };
     components = {
@@ -52,7 +52,7 @@
         ];
         libs = [ (pkgs."pq" or (errorHandler.sysDepError "pq")) ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

@@ -59,7 +59,7 @@
             (hsPkgs."specup" or (errorHandler.buildDepError "specup"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.specup.components.exes.specup or (pkgs.buildPackages.specup or (errorHandler.buildToolDepError "specup:specup")))
+            (hsPkgs.pkgsBuildBuild.specup.components.exes.specup or (pkgs.pkgsBuildBuild.specup or (errorHandler.buildToolDepError "specup:specup")))
           ];
           buildable = true;
         };

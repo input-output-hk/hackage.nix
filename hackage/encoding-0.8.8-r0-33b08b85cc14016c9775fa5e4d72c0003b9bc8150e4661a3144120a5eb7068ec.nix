@@ -22,12 +22,12 @@
       description = "Haskell has excellect handling of unicode, the Char type covers all unicode chars. Unfortunately, there's no possibility to read or write something to the outer world in an encoding other than ascii due to the lack of support for encodings. This library should help with that.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
-        (hsPkgs.buildPackages.filepath or (pkgs.buildPackages.filepath or (errorHandler.setupDepError "filepath")))
-        (hsPkgs.buildPackages.ghc-prim or (pkgs.buildPackages.ghc-prim or (errorHandler.setupDepError "ghc-prim")))
-        (hsPkgs.buildPackages.HaXml or (pkgs.buildPackages.HaXml or (errorHandler.setupDepError "HaXml")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.containers or (pkgs.pkgsBuildBuild.containers or (errorHandler.setupDepError "containers")))
+        (hsPkgs.pkgsBuildBuild.filepath or (pkgs.pkgsBuildBuild.filepath or (errorHandler.setupDepError "filepath")))
+        (hsPkgs.pkgsBuildBuild.ghc-prim or (pkgs.pkgsBuildBuild.ghc-prim or (errorHandler.setupDepError "ghc-prim")))
+        (hsPkgs.pkgsBuildBuild.HaXml or (pkgs.pkgsBuildBuild.HaXml or (errorHandler.setupDepError "HaXml")))
       ];
     };
     components = {

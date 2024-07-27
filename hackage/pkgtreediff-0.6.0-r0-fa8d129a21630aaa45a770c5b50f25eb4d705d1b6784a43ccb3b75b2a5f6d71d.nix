@@ -61,7 +61,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.pkgtreediff.components.exes.pkgtreediff or (pkgs.buildPackages.pkgtreediff or (errorHandler.buildToolDepError "pkgtreediff:pkgtreediff")))
+            (hsPkgs.pkgsBuildBuild.pkgtreediff.components.exes.pkgtreediff or (pkgs.pkgsBuildBuild.pkgtreediff or (errorHandler.buildToolDepError "pkgtreediff:pkgtreediff")))
           ];
           buildable = true;
         };

@@ -29,11 +29,11 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
         ];
         build-tools = pkgs.lib.optionals (!flags.allow-relative-paths) [
-          (hsPkgs.buildPackages.nix-instantiate.components.exes.nix-instantiate or (pkgs.buildPackages.nix-instantiate or (errorHandler.buildToolDepError "nix-instantiate:nix-instantiate")))
-          (hsPkgs.buildPackages.nix-build.components.exes.nix-build or (pkgs.buildPackages.nix-build or (errorHandler.buildToolDepError "nix-build:nix-build")))
-          (hsPkgs.buildPackages.nix-env.components.exes.nix-env or (pkgs.buildPackages.nix-env or (errorHandler.buildToolDepError "nix-env:nix-env")))
-          (hsPkgs.buildPackages.nix-store.components.exes.nix-store or (pkgs.buildPackages.nix-store or (errorHandler.buildToolDepError "nix-store:nix-store")))
-          (hsPkgs.buildPackages.nix-hash.components.exes.nix-hash or (pkgs.buildPackages.nix-hash or (errorHandler.buildToolDepError "nix-hash:nix-hash")))
+          (hsPkgs.pkgsBuildBuild.nix-instantiate.components.exes.nix-instantiate or (pkgs.pkgsBuildBuild.nix-instantiate or (errorHandler.buildToolDepError "nix-instantiate:nix-instantiate")))
+          (hsPkgs.pkgsBuildBuild.nix-build.components.exes.nix-build or (pkgs.pkgsBuildBuild.nix-build or (errorHandler.buildToolDepError "nix-build:nix-build")))
+          (hsPkgs.pkgsBuildBuild.nix-env.components.exes.nix-env or (pkgs.pkgsBuildBuild.nix-env or (errorHandler.buildToolDepError "nix-env:nix-env")))
+          (hsPkgs.pkgsBuildBuild.nix-store.components.exes.nix-store or (pkgs.pkgsBuildBuild.nix-store or (errorHandler.buildToolDepError "nix-store:nix-store")))
+          (hsPkgs.pkgsBuildBuild.nix-hash.components.exes.nix-hash or (pkgs.pkgsBuildBuild.nix-hash or (errorHandler.buildToolDepError "nix-hash:nix-hash")))
         ];
         buildable = true;
       };

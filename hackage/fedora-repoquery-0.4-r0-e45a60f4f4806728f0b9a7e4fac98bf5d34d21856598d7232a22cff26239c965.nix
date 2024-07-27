@@ -50,7 +50,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.fedora-repoquery.components.exes.fdrq or (pkgs.buildPackages.fdrq or (errorHandler.buildToolDepError "fedora-repoquery:fdrq")))
+            (hsPkgs.pkgsBuildBuild.fedora-repoquery.components.exes.fdrq or (pkgs.pkgsBuildBuild.fdrq or (errorHandler.buildToolDepError "fedora-repoquery:fdrq")))
           ];
           buildable = true;
         };

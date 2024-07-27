@@ -44,7 +44,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.lsfrom.components.exes.lsfrom or (pkgs.buildPackages.lsfrom or (errorHandler.buildToolDepError "lsfrom:lsfrom")))
+            (hsPkgs.pkgsBuildBuild.lsfrom.components.exes.lsfrom or (pkgs.pkgsBuildBuild.lsfrom or (errorHandler.buildToolDepError "lsfrom:lsfrom")))
           ];
           buildable = true;
         };

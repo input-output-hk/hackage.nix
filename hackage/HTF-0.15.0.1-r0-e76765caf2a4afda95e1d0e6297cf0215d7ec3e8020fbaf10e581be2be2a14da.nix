@@ -22,9 +22,9 @@
       description = "The Haskell Test Framework (/HTF/ for short) lets you define and organize unit tests,\nQuickCheck properties,\nand black box tests in an\neasy and convenient way. HTF uses a custom preprocessor that collects\ntest definitions automatically.\n\nHTF produces highly readable output\nfor failing test cases: it provides exact file name and line number\ninformation,\nit colors and pretty prints expected and\nactual results, and it displays a diff highlighting the mismatching parts.\n\nThe documentation of the \"Test.Framework.Tutorial\" module\nprovides a tutorial for HTF. The /sample/ directory in\nthe HTF repo provides a good starting point for\na project using HTF.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.process or (pkgs.buildPackages.process or (errorHandler.setupDepError "process")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.process or (pkgs.pkgsBuildBuild.process or (errorHandler.setupDepError "process")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
       ];
     };
     components = {
@@ -56,7 +56,7 @@
           (hsPkgs."xmlgen" or (errorHandler.buildDepError "xmlgen"))
         ] ++ pkgs.lib.optional (!system.isWindows) (hsPkgs."unix" or (errorHandler.buildDepError "unix"));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+          (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
         ];
         buildable = true;
       };
@@ -75,7 +75,7 @@
             (hsPkgs."HTF" or (errorHandler.buildDepError "HTF"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };
@@ -90,7 +90,7 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };
@@ -112,7 +112,7 @@
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };
@@ -124,7 +124,7 @@
             (hsPkgs."random" or (errorHandler.buildDepError "random"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.HTF.components.exes.htfpp or (pkgs.buildPackages.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
+            (hsPkgs.pkgsBuildBuild.HTF.components.exes.htfpp or (pkgs.pkgsBuildBuild.htfpp or (errorHandler.buildToolDepError "HTF:htfpp")))
           ];
           buildable = true;
         };

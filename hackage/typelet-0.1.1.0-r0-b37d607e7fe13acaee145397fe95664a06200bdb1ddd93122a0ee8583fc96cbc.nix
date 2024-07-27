@@ -22,8 +22,8 @@
       description = "For a certain class of programs, type-level let is essential\nin order to be able to write these programs in such a way\nthat they do not result in ghc core that is quadratic in\nsize. Type-level let is not explicitly supported in ghc,\nbut we can encode it. The @typelet@ library provides a\ntype-checker plugin that makes the encoding more convenient\nto use as well as more effective.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.cabal-doctest or (pkgs.pkgsBuildBuild.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
       ];
     };
     components = {

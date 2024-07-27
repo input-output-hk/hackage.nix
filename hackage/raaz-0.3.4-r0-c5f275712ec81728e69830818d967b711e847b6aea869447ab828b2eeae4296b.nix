@@ -43,7 +43,7 @@
           (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
           (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
         ];
-        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       sublibs = {
@@ -58,7 +58,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "libverse" = {
@@ -73,7 +73,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "indef" = {
@@ -88,7 +88,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "buffer" = {
@@ -104,7 +104,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "utils" = {
@@ -121,7 +121,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "mac-indef" = {
@@ -139,7 +139,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "xchacha-indef" = {
@@ -155,7 +155,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "digest-api" = {
@@ -173,7 +173,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "auth-api" = {
@@ -191,7 +191,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "random-api" = {
@@ -208,7 +208,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "encrypt-api" = {
@@ -225,7 +225,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "aead-api" = {
@@ -243,7 +243,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "implementation" = {
@@ -259,7 +259,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "test-core" = {
@@ -277,7 +277,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "test-cipher" = {
@@ -297,7 +297,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "test-digest" = {
@@ -318,7 +318,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "test-auth" = {
@@ -339,7 +339,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "test-auth-implementation" = {
@@ -360,7 +360,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "bench-types" = {
@@ -377,7 +377,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "bench-prim" = {
@@ -397,7 +397,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "bench-csprg" = {
@@ -417,7 +417,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
       };
@@ -436,7 +436,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
       };
@@ -467,8 +467,8 @@
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "tests-comparative" = {
@@ -492,8 +492,8 @@
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
         "monocypher" = {
@@ -517,8 +517,8 @@
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+          ] ++ pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
       };
@@ -541,7 +541,7 @@
             (pkgs."Advapi32" or (errorHandler.sysDepError "Advapi32"))
             (pkgs."Kernel32" or (errorHandler.sysDepError "Kernel32"))
           ];
-          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+          build-tools = pkgs.lib.optional (system.isWindows) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
           buildable = true;
         };
       };

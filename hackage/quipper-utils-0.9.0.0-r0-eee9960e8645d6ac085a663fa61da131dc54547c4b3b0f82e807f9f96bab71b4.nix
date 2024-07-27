@@ -22,8 +22,8 @@
       description = "This package provides some utility libraries for Quipper, the\nembedded functional programming language for quantum computing. These\nlibraries are used by Quipper, but do not depend on it. They provide\ngeneral-purpose functionality that could in principle be used by\nother programs, but are are not sufficiently interesting to warrant\ntheir own packages.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.superdoc or (pkgs.buildPackages.superdoc or (errorHandler.setupDepError "superdoc")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.superdoc or (pkgs.pkgsBuildBuild.superdoc or (errorHandler.setupDepError "superdoc")))
       ];
     };
     components = {

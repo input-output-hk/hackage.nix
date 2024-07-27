@@ -733,4 +733,15 @@
       default = "r0";
     };
   };
+  "0.6.2.0" = {
+    sha256 = "2aa16d5d88bc3eb61575248ca1ddb68d02abde8d7e4dd6a66ad37c4aa409061d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/avro-0.6.2.0-r0-a5863e64a9fcfadda6644797c6b6284fea15f9627fea606c6c801d9eea771152.nix;
+        revNum = 0;
+        sha256 = "a5863e64a9fcfadda6644797c6b6284fea15f9627fea606c6c801d9eea771152";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -43,7 +43,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ]) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.ge "6.12") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.10") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.eq "6.8") (hsPkgs."containers" or (errorHandler.buildDepError "containers"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
           build-tools = [
-            (hsPkgs.buildPackages.cabal.components.exes.cabal or (pkgs.buildPackages.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
+            (hsPkgs.pkgsBuildBuild.cabal.components.exes.cabal or (pkgs.pkgsBuildBuild.cabal or (errorHandler.buildToolDepError "cabal:cabal")))
           ];
           buildable = if flags.no-cabal-dev then false else true;
         };

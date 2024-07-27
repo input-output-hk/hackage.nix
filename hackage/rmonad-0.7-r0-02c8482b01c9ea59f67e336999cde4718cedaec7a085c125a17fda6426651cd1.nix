@@ -31,7 +31,7 @@
           (hsPkgs."suitable" or (errorHandler.buildDepError "suitable"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
+          (hsPkgs.pkgsBuildBuild.ghc.components.exes.ghc or (pkgs.pkgsBuildBuild.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
         ];
         buildable = true;
       };

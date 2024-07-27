@@ -38,7 +38,7 @@
           (hsPkgs."http-client-tls" or (errorHandler.buildDepError "http-client-tls"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
         ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
-        build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+        build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.pkgsBuildBuild.hsinspect.components.exes.hsinspect or (pkgs.pkgsBuildBuild.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
         buildable = true;
       };
       exes = {
@@ -58,7 +58,7 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."stack2cabal" or (errorHandler.buildDepError "stack2cabal"))
           ] ++ pkgs.lib.optional (flags.ghcflags) (hsPkgs."ghcflags" or (errorHandler.buildDepError "ghcflags"));
-          build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.buildPackages.hsinspect.components.exes.hsinspect or (pkgs.buildPackages.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
+          build-tools = pkgs.lib.optional (flags.ghcflags) (hsPkgs.pkgsBuildBuild.hsinspect.components.exes.hsinspect or (pkgs.pkgsBuildBuild.hsinspect or (errorHandler.buildToolDepError "hsinspect:hsinspect")));
           buildable = true;
         };
       };

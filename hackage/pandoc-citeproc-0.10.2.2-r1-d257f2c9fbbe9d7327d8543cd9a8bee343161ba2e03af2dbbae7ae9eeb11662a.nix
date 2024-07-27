@@ -28,8 +28,8 @@
       description = "The pandoc-citeproc library exports functions for\nusing the citeproc system with pandoc.  It relies on\nciteproc-hs, a library for rendering\nbibliographic reference citations into a variety\nof styles using a macro language called Citation\nStyle Language (CSL). More details on CSL can be\nfound here: <http://citationstyles.org/>.\n\nCurrently this package includes a heavily revised\ncopy of the citeproc-hs code. When citeproc-hs is\nupdated to be compatible, this package will simply\ndepend on citeproc-hs.\n\nThis package also contains an executable: pandoc-citeproc,\nwhich works as a pandoc filter, and\nalso has a mode for converting bibliographic databases\na YAML format suitable for inclusion in pandoc YAML\nmetadata.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
       ];
     };
     components = {
@@ -68,7 +68,7 @@
             (hsPkgs."time" or (errorHandler.buildDepError "time"))
           ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
-        build-tools = pkgs.lib.optional (flags.embed_data_files) (hsPkgs.buildPackages.hsb2hs.components.exes.hsb2hs or (pkgs.buildPackages.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
+        build-tools = pkgs.lib.optional (flags.embed_data_files) (hsPkgs.pkgsBuildBuild.hsb2hs.components.exes.hsb2hs or (pkgs.pkgsBuildBuild.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")));
         buildable = true;
       };
       exes = {

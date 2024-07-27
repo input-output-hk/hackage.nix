@@ -69,7 +69,7 @@
             (hsPkgs."uuid" or (errorHandler.buildDepError "uuid"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.couchdb.components.exes.couchdb or (pkgs.buildPackages.couchdb or (errorHandler.buildToolDepError "couchdb:couchdb")))
+            (hsPkgs.pkgsBuildBuild.couchdb.components.exes.couchdb or (pkgs.pkgsBuildBuild.couchdb or (errorHandler.buildToolDepError "couchdb:couchdb")))
           ];
           buildable = true;
         };

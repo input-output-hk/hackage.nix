@@ -22,9 +22,9 @@
       description = "Termonad is a terminal emulator configurable in Haskell.  It is extremely\ncustomizable and provides hooks to modify the default behavior.  It can be\nthought of as the \\\"XMonad\\\" of terminal emulators.  Termonad was featured on\nan <https://www.youtube.com/watch?v=TLNr_gBv5HY episode> of\n<https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg DistroTube>.  This\nvideo gives a short overview of Termonad.\n\nPlease see <https://github.com/cdepillabout/termonad#readme README.md> for\nmore information.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.cabal-doctest or (pkgs.buildPackages.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.cabal-doctest or (pkgs.pkgsBuildBuild.cabal-doctest or (errorHandler.setupDepError "cabal-doctest")))
       ];
     };
     components = {

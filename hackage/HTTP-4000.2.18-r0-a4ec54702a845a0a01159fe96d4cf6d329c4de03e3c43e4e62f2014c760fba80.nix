@@ -50,7 +50,7 @@
               (hsPkgs."network" or (errorHandler.buildDepError "network"))
             ])) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"));
         build-tools = [
-          (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
+          (hsPkgs.pkgsBuildBuild.ghc.components.exes.ghc or (pkgs.pkgsBuildBuild.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
         ];
         buildable = true;
       };
@@ -89,7 +89,7 @@
               (hsPkgs."conduit-extra" or (errorHandler.buildDepError "conduit-extra"))
             ]));
           build-tools = [
-            (hsPkgs.buildPackages.ghc.components.exes.ghc or (pkgs.buildPackages.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
+            (hsPkgs.pkgsBuildBuild.ghc.components.exes.ghc or (pkgs.pkgsBuildBuild.ghc or (errorHandler.buildToolDepError "ghc:ghc")))
           ];
           buildable = true;
         };

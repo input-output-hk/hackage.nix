@@ -40,7 +40,7 @@
           (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.require.components.exes.requirepp or (pkgs.buildPackages.requirepp or (errorHandler.buildToolDepError "require:requirepp")))
+          (hsPkgs.pkgsBuildBuild.require.components.exes.requirepp or (pkgs.pkgsBuildBuild.requirepp or (errorHandler.buildToolDepError "require:requirepp")))
         ];
         buildable = true;
       };
@@ -54,7 +54,7 @@
             (hsPkgs."universum" or (errorHandler.buildDepError "universum"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.require.components.exes.requirepp or (pkgs.buildPackages.requirepp or (errorHandler.buildToolDepError "require:requirepp")))
+            (hsPkgs.pkgsBuildBuild.require.components.exes.requirepp or (pkgs.pkgsBuildBuild.requirepp or (errorHandler.buildToolDepError "require:requirepp")))
           ];
           buildable = true;
         };

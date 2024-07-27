@@ -68,7 +68,7 @@
             (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.buildPackages.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
+            (hsPkgs.pkgsBuildBuild.tasty-autocollect.components.exes.tasty-autocollect or (pkgs.pkgsBuildBuild.tasty-autocollect or (errorHandler.buildToolDepError "tasty-autocollect:tasty-autocollect")))
           ];
           buildable = true;
         };

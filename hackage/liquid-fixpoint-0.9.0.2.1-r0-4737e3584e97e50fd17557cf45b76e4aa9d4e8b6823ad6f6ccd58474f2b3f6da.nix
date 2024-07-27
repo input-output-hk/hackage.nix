@@ -89,7 +89,7 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.liquid-fixpoint.components.exes.fixpoint or (pkgs.buildPackages.fixpoint or (errorHandler.buildToolDepError "liquid-fixpoint:fixpoint")))
+            (hsPkgs.pkgsBuildBuild.liquid-fixpoint.components.exes.fixpoint or (pkgs.pkgsBuildBuild.fixpoint or (errorHandler.buildToolDepError "liquid-fixpoint:fixpoint")))
           ];
           buildable = true;
         };

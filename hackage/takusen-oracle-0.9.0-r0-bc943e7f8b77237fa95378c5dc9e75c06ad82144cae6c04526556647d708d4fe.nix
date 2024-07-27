@@ -34,7 +34,7 @@
           then [ (pkgs."oci" or (errorHandler.sysDepError "oci")) ]
           else [ (pkgs."clntsh" or (errorHandler.sysDepError "clntsh")) ];
         build-tools = [
-          (hsPkgs.buildPackages.sqlplus.components.exes.sqlplus or (pkgs.buildPackages.sqlplus or (errorHandler.buildToolDepError "sqlplus:sqlplus")))
+          (hsPkgs.pkgsBuildBuild.sqlplus.components.exes.sqlplus or (pkgs.pkgsBuildBuild.sqlplus or (errorHandler.buildToolDepError "sqlplus:sqlplus")))
         ];
         buildable = true;
       };

@@ -65,8 +65,8 @@
           ]
           else [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ]);
         build-tools = pkgs.lib.optionals (flags.embed_data_files) ([
-          (hsPkgs.buildPackages.hsb2hs.components.exes.hsb2hs or (pkgs.buildPackages.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")))
-        ] ++ pkgs.lib.optional (system.isOsx) (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs"))));
+          (hsPkgs.pkgsBuildBuild.hsb2hs.components.exes.hsb2hs or (pkgs.pkgsBuildBuild.hsb2hs or (errorHandler.buildToolDepError "hsb2hs:hsb2hs")))
+        ] ++ pkgs.lib.optional (system.isOsx) (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs"))));
         buildable = true;
       };
       exes = {

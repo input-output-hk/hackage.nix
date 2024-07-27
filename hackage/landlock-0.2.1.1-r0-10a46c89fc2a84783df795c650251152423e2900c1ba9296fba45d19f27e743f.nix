@@ -41,7 +41,7 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+            (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
           ];
           buildable = true;
         };
@@ -95,7 +95,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.markdown-unlit.components.exes.markdown-unlit or (pkgs.buildPackages.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
+            (hsPkgs.pkgsBuildBuild.markdown-unlit.components.exes.markdown-unlit or (pkgs.pkgsBuildBuild.markdown-unlit or (errorHandler.buildToolDepError "markdown-unlit:markdown-unlit")))
           ];
           buildable = true;
         };
@@ -109,7 +109,7 @@
             (hsPkgs."temporary" or (errorHandler.buildDepError "temporary"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.landlock.components.exes.landlocked or (pkgs.buildPackages.landlocked or (errorHandler.buildToolDepError "landlock:landlocked")))
+            (hsPkgs.pkgsBuildBuild.landlock.components.exes.landlocked or (pkgs.pkgsBuildBuild.landlocked or (errorHandler.buildToolDepError "landlock:landlocked")))
           ];
           buildable = if !flags.landlocked then false else true;
         };

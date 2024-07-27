@@ -31,7 +31,7 @@
         ];
         frameworks = pkgs.lib.optional (system.isLinux) (pkgs."OpenCL" or (errorHandler.sysDepError "OpenCL")) ++ pkgs.lib.optional (system.isOsx) (pkgs."OpenCL" or (errorHandler.sysDepError "OpenCL"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
+          (hsPkgs.pkgsBuildBuild.c2hs.components.exes.c2hs or (pkgs.pkgsBuildBuild.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
         ];
         buildable = true;
       };

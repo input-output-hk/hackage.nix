@@ -40,7 +40,7 @@
         ] ++ pkgs.lib.optional (!flags.disable-webp) (hsPkgs."webp" or (errorHandler.buildDepError "webp"))) ++ pkgs.lib.optional (!flags.disable-avif) (hsPkgs."avif" or (errorHandler.buildDepError "avif"));
         libs = pkgs.lib.optional (flags.with-phash) (pkgs."pHash" or (errorHandler.sysDepError "pHash"));
         build-tools = [
-          (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+          (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
         ];
         buildable = true;
       };
@@ -65,7 +65,7 @@
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };
@@ -78,7 +78,7 @@
             (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };
@@ -93,7 +93,7 @@
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
+            (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")))
           ];
           buildable = true;
         };

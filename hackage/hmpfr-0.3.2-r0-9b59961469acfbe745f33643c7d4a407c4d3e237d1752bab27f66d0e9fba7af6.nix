@@ -29,7 +29,7 @@
         ] ++ pkgs.lib.optional (compiler.isGhc && true) (hsPkgs."integer-simple" or (errorHandler.buildDepError "integer-simple"));
         libs = [ (pkgs."mpfr" or (errorHandler.sysDepError "mpfr")) ];
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

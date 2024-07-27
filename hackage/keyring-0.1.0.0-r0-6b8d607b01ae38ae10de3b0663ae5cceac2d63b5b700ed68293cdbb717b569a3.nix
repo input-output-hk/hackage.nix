@@ -34,7 +34,7 @@
           (pkgs."Security" or (errorHandler.sysDepError "Security"))
           (pkgs."CoreFoundation" or (errorHandler.sysDepError "CoreFoundation"))
         ];
-        build-tools = pkgs.lib.optional (system.isOsx) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (system.isOsx) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       exes = {

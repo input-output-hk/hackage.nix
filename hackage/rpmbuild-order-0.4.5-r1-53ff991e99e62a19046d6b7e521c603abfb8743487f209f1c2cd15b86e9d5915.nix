@@ -62,7 +62,7 @@
             (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.rpmbuild-order.components.exes.rpmbuild-order or (pkgs.buildPackages.rpmbuild-order or (errorHandler.buildToolDepError "rpmbuild-order:rpmbuild-order")))
+            (hsPkgs.pkgsBuildBuild.rpmbuild-order.components.exes.rpmbuild-order or (pkgs.pkgsBuildBuild.rpmbuild-order or (errorHandler.buildToolDepError "rpmbuild-order:rpmbuild-order")))
           ];
           buildable = true;
         };

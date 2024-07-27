@@ -49,7 +49,7 @@
             (hsPkgs."typed-process" or (errorHandler.buildDepError "typed-process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.monad-throw-exit.components.exes.monad-throw-exit-example-command or (pkgs.buildPackages.monad-throw-exit-example-command or (errorHandler.buildToolDepError "monad-throw-exit:monad-throw-exit-example-command")))
+            (hsPkgs.pkgsBuildBuild.monad-throw-exit.components.exes.monad-throw-exit-example-command or (pkgs.pkgsBuildBuild.monad-throw-exit-example-command or (errorHandler.buildToolDepError "monad-throw-exit:monad-throw-exit-example-command")))
           ];
           buildable = true;
         };

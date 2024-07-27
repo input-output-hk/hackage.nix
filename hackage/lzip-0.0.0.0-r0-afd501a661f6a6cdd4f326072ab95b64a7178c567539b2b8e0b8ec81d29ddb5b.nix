@@ -30,7 +30,7 @@
         ] ++ pkgs.lib.optional (flags.int-cast) (hsPkgs."int-cast" or (errorHandler.buildDepError "int-cast"));
         libs = pkgs.lib.optional (flags.use-system-lzlib) (pkgs."lz" or (errorHandler.sysDepError "lz"));
         build-tools = [
-          (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
+          (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")))
         ];
         buildable = true;
       };

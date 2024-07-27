@@ -59,7 +59,7 @@
                 (hsPkgs."jsaddle-wasm" or (errorHandler.buildDepError "jsaddle-wasm"))
               ]
               else pkgs.lib.optional (flags.webkit2gtk && !system.isAndroid) (hsPkgs."jsaddle-webkit2gtk" or (errorHandler.buildDepError "jsaddle-webkit2gtk")));
-        build-tools = pkgs.lib.optional (system.isAndroid) (hsPkgs.buildPackages.hsc2hs.components.exes.hsc2hs or (pkgs.buildPackages.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
+        build-tools = pkgs.lib.optional (system.isAndroid) (hsPkgs.pkgsBuildBuild.hsc2hs.components.exes.hsc2hs or (pkgs.pkgsBuildBuild.hsc2hs or (errorHandler.buildToolDepError "hsc2hs:hsc2hs")));
         buildable = true;
       };
       exes = {

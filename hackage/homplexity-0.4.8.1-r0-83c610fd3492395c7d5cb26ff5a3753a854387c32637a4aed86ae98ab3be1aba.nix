@@ -43,8 +43,8 @@
           (hsPkgs."blaze-markup" or (errorHandler.buildDepError "blaze-markup"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
-          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+          (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
         ];
         buildable = true;
       };
@@ -79,7 +79,7 @@
             (hsPkgs."homplexity" or (errorHandler.buildDepError "homplexity"))
             (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           ] ++ [ (hsPkgs."hspec" or (errorHandler.buildDepError "hspec")) ];
-          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.8.0") (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")));
+          build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.ge "8.8.0") (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")));
           buildable = true;
         };
       };

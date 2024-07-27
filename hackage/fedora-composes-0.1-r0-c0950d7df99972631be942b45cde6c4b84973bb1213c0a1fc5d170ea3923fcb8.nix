@@ -45,7 +45,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.fedora-composes.components.exes.fedora-composes or (pkgs.buildPackages.fedora-composes or (errorHandler.buildToolDepError "fedora-composes:fedora-composes")))
+            (hsPkgs.pkgsBuildBuild.fedora-composes.components.exes.fedora-composes or (pkgs.pkgsBuildBuild.fedora-composes or (errorHandler.buildToolDepError "fedora-composes:fedora-composes")))
           ];
           buildable = true;
         };

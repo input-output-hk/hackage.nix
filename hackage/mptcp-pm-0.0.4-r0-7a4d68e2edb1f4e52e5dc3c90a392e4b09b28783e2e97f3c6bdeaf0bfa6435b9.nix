@@ -48,7 +48,7 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
         ] ++ pkgs.lib.optional (flags.withpolysemy) (hsPkgs."polysemy-plugin" or (errorHandler.buildDepError "polysemy-plugin"));
         build-tools = [
-          (hsPkgs.buildPackages.c2hs.components.exes.c2hs or (pkgs.buildPackages.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
+          (hsPkgs.pkgsBuildBuild.c2hs.components.exes.c2hs or (pkgs.pkgsBuildBuild.c2hs or (errorHandler.buildToolDepError "c2hs:c2hs")))
         ];
         buildable = true;
       };

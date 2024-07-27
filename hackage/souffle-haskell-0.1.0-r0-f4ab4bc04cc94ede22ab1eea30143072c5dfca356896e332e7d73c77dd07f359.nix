@@ -33,7 +33,7 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.souffle.components.exes.souffle or (pkgs.buildPackages.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
+          (hsPkgs.pkgsBuildBuild.souffle.components.exes.souffle or (pkgs.pkgsBuildBuild.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
         ];
         buildable = true;
       };
@@ -51,7 +51,7 @@
           ];
           libs = [ (pkgs."c++" or (errorHandler.sysDepError "c++")) ];
           build-tools = [
-            (hsPkgs.buildPackages.souffle.components.exes.souffle or (pkgs.buildPackages.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
+            (hsPkgs.pkgsBuildBuild.souffle.components.exes.souffle or (pkgs.pkgsBuildBuild.souffle or (errorHandler.buildToolDepError "souffle:souffle")))
           ];
           buildable = true;
         };

@@ -29,8 +29,8 @@
       description = "The pandoc-citeproc library supports automatic\ngeneration of citations and a bibliography in pandoc\ndocuments using the Citation Style Language (CSL)\nmacro language. More details on CSL can be found at\n<http://citationstyles.org/>.\n\nIn addition to a library, the package includes\nan executable, pandoc-citeproc, which works as a pandoc\nfilter and also has a mode for converting bibliographic\ndatabases into CSL JSON and pandoc YAML metadata formats.\n\npandoc-citeproc originated as a fork of Andrea\nRossato's citeproc-hs.";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
       ];
     };
     components = {
@@ -110,7 +110,7 @@
             (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           build-tools = [
-            (hsPkgs.buildPackages.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
+            (hsPkgs.pkgsBuildBuild.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.pkgsBuildBuild.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
           ];
           buildable = if flags.test_citeproc then true else false;
         };
@@ -134,7 +134,7 @@
             (hsPkgs."yaml" or (errorHandler.buildDepError "yaml"))
           ] ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.0") (hsPkgs."semigroups" or (errorHandler.buildDepError "semigroups"))) ++ pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.4") (hsPkgs."base-compat" or (errorHandler.buildDepError "base-compat"));
           build-tools = [
-            (hsPkgs.buildPackages.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.buildPackages.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
+            (hsPkgs.pkgsBuildBuild.pandoc-citeproc.components.exes.pandoc-citeproc or (pkgs.pkgsBuildBuild.pandoc-citeproc or (errorHandler.buildToolDepError "pandoc-citeproc:pandoc-citeproc")))
           ];
           buildable = true;
         };

@@ -89,7 +89,7 @@
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+          (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
         ];
         buildable = true;
       };
@@ -170,7 +170,7 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
           ] ++ pkgs.lib.optional (!flags.release) (hsPkgs."gitrev" or (errorHandler.buildDepError "gitrev"));
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
           ];
           buildable = true;
         };
@@ -247,9 +247,9 @@
             (hsPkgs."regex-base" or (errorHandler.buildDepError "regex-base"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            (hsPkgs.buildPackages.hspec-discover.components.exes.hspec-discover or (pkgs.buildPackages.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
-            (hsPkgs.buildPackages.purescript.components.exes.purs or (pkgs.buildPackages.purs or (errorHandler.buildToolDepError "purescript:purs")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.hspec-discover.components.exes.hspec-discover or (pkgs.pkgsBuildBuild.hspec-discover or (errorHandler.buildToolDepError "hspec-discover:hspec-discover")))
+            (hsPkgs.pkgsBuildBuild.purescript.components.exes.purs or (pkgs.pkgsBuildBuild.purs or (errorHandler.buildToolDepError "purescript:purs")))
           ];
           buildable = true;
         };

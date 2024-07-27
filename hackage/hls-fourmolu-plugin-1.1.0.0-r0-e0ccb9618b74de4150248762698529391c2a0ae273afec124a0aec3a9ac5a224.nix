@@ -54,7 +54,7 @@
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.fourmolu.components.exes.fourmolu or (pkgs.buildPackages.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
+            (hsPkgs.pkgsBuildBuild.fourmolu.components.exes.fourmolu or (pkgs.pkgsBuildBuild.fourmolu or (errorHandler.buildToolDepError "fourmolu:fourmolu")))
           ];
           buildable = if compiler.isGhc && compiler.version.ge "9.3"
             then false

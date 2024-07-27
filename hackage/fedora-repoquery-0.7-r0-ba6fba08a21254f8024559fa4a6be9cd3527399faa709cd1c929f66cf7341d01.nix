@@ -53,7 +53,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.fedora-repoquery.components.exes.fedora-repoquery or (pkgs.buildPackages.fedora-repoquery or (errorHandler.buildToolDepError "fedora-repoquery:fedora-repoquery")))
+            (hsPkgs.pkgsBuildBuild.fedora-repoquery.components.exes.fedora-repoquery or (pkgs.pkgsBuildBuild.fedora-repoquery or (errorHandler.buildToolDepError "fedora-repoquery:fedora-repoquery")))
           ];
           buildable = true;
         };

@@ -32,7 +32,7 @@
           (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
+          (hsPkgs.pkgsBuildBuild.doctest.components.exes.doctest or (pkgs.pkgsBuildBuild.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
         ];
         buildable = true;
       };
@@ -47,7 +47,7 @@
             (hsPkgs."protolude" or (errorHandler.buildDepError "protolude"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.doctest.components.exes.doctest or (pkgs.buildPackages.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
+            (hsPkgs.pkgsBuildBuild.doctest.components.exes.doctest or (pkgs.pkgsBuildBuild.doctest or (errorHandler.buildToolDepError "doctest:doctest")))
           ];
           buildable = true;
         };

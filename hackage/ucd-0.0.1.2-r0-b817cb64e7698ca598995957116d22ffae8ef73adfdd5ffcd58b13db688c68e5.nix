@@ -22,12 +22,12 @@
       description = "";
       buildType = "Custom";
       setup-depends = [
-        (hsPkgs.buildPackages.Cabal or (pkgs.buildPackages.Cabal or (errorHandler.setupDepError "Cabal")))
-        (hsPkgs.buildPackages.base or (pkgs.buildPackages.base or (errorHandler.setupDepError "base")))
-        (hsPkgs.buildPackages.containers or (pkgs.buildPackages.containers or (errorHandler.setupDepError "containers")))
-        (hsPkgs.buildPackages.directory or (pkgs.buildPackages.directory or (errorHandler.setupDepError "directory")))
-        (hsPkgs.buildPackages.regex-applicative or (pkgs.buildPackages.regex-applicative or (errorHandler.setupDepError "regex-applicative")))
-        (hsPkgs.buildPackages.util or (pkgs.buildPackages.util or (errorHandler.setupDepError "util")))
+        (hsPkgs.pkgsBuildBuild.Cabal or (pkgs.pkgsBuildBuild.Cabal or (errorHandler.setupDepError "Cabal")))
+        (hsPkgs.pkgsBuildBuild.base or (pkgs.pkgsBuildBuild.base or (errorHandler.setupDepError "base")))
+        (hsPkgs.pkgsBuildBuild.containers or (pkgs.pkgsBuildBuild.containers or (errorHandler.setupDepError "containers")))
+        (hsPkgs.pkgsBuildBuild.directory or (pkgs.pkgsBuildBuild.directory or (errorHandler.setupDepError "directory")))
+        (hsPkgs.pkgsBuildBuild.regex-applicative or (pkgs.pkgsBuildBuild.regex-applicative or (errorHandler.setupDepError "regex-applicative")))
+        (hsPkgs.pkgsBuildBuild.util or (pkgs.pkgsBuildBuild.util or (errorHandler.setupDepError "util")))
       ];
     };
     components = {

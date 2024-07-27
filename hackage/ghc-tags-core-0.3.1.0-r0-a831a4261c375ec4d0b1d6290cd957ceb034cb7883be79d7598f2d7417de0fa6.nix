@@ -38,7 +38,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
         ];
-        build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.10") (hsPkgs.buildPackages.cpphs.components.exes.cpphs or (pkgs.buildPackages.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
+        build-tools = pkgs.lib.optional (compiler.isGhc && compiler.version.lt "8.10") (hsPkgs.pkgsBuildBuild.cpphs.components.exes.cpphs or (pkgs.pkgsBuildBuild.cpphs or (errorHandler.buildToolDepError "cpphs:cpphs")));
         buildable = true;
       };
       tests = {

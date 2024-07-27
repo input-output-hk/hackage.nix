@@ -38,7 +38,7 @@
           (hsPkgs."th-strict-compat" or (errorHandler.buildDepError "th-strict-compat"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.autoexporter.components.exes.autoexporter or (pkgs.buildPackages.autoexporter or (errorHandler.buildToolDepError "autoexporter:autoexporter")))
+          (hsPkgs.pkgsBuildBuild.autoexporter.components.exes.autoexporter or (pkgs.pkgsBuildBuild.autoexporter or (errorHandler.buildToolDepError "autoexporter:autoexporter")))
         ];
         buildable = true;
       };

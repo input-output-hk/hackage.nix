@@ -35,8 +35,8 @@
             (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.happy.components.exes.happy or (pkgs.buildPackages.happy or (errorHandler.buildToolDepError "happy:happy")))
-            (hsPkgs.buildPackages.alex.components.exes.alex or (pkgs.buildPackages.alex or (errorHandler.buildToolDepError "alex:alex")))
+            (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
+            (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
           ];
           buildable = true;
         };
@@ -48,8 +48,8 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.goldplate.components.exes.goldplate or (pkgs.buildPackages.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
-            (hsPkgs.buildPackages.MiniAgda.components.exes.miniagda or (pkgs.buildPackages.miniagda or (errorHandler.buildToolDepError "MiniAgda:miniagda")))
+            (hsPkgs.pkgsBuildBuild.goldplate.components.exes.goldplate or (pkgs.pkgsBuildBuild.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
+            (hsPkgs.pkgsBuildBuild.MiniAgda.components.exes.miniagda or (pkgs.pkgsBuildBuild.miniagda or (errorHandler.buildToolDepError "MiniAgda:miniagda")))
           ];
           buildable = true;
         };

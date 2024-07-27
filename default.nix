@@ -2351,6 +2351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "auto-update" = import ./nix/auto-update.nix;
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
+  "autodocodec-nix" = import ./nix/autodocodec-nix.nix;
   "autodocodec-openapi3" = import ./nix/autodocodec-openapi3.nix;
   "autodocodec-schema" = import ./nix/autodocodec-schema.nix;
   "autodocodec-servant-multipart" = import ./nix/autodocodec-servant-multipart.nix;
@@ -10787,6 +10788,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mock-httpd" = import ./nix/mock-httpd.nix;
   "mock-time" = import ./nix/mock-time.nix;
   "mockazo" = import ./nix/mockazo.nix;
+  "mockcat" = import ./nix/mockcat.nix;
   "mockery" = import ./nix/mockery.nix;
   "mod" = import ./nix/mod.nix;
   "modbus-tcp" = import ./nix/modbus-tcp.nix;
@@ -11967,6 +11969,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-unlit" = import ./nix/pandoc-unlit.nix;
   "pandoc-utils" = import ./nix/pandoc-utils.nix;
   "pandoc-vimhl" = import ./nix/pandoc-vimhl.nix;
+  "pandocz" = import ./nix/pandocz.nix;
   "pandora" = import ./nix/pandora.nix;
   "pandora-io" = import ./nix/pandora-io.nix;
   "panfiguration" = import ./nix/panfiguration.nix;
@@ -12267,6 +12270,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "peyotls" = import ./nix/peyotls.nix;
   "peyotls-codec" = import ./nix/peyotls-codec.nix;
   "pez" = import ./nix/pez.nix;
+  "pfile" = import ./nix/pfile.nix;
   "pg" = import ./nix/pg.nix;
   "pg-entity" = import ./nix/pg-entity.nix;
   "pg-extras" = import ./nix/pg-extras.nix;

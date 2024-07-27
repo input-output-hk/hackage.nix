@@ -31,7 +31,7 @@
           (hsPkgs."hsx" or (errorHandler.buildDepError "hsx"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
         ];
-        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.buildPackages.trhsx.components.exes.trhsx or (pkgs.buildPackages.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")));
+        build-tools = pkgs.lib.optional (!system.isWindows) (hsPkgs.pkgsBuildBuild.trhsx.components.exes.trhsx or (pkgs.pkgsBuildBuild.trhsx or (errorHandler.buildToolDepError "trhsx:trhsx")));
         buildable = true;
       };
     };

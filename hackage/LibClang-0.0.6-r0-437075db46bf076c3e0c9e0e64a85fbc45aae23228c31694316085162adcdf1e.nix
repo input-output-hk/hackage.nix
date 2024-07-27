@@ -30,7 +30,7 @@
           (hsPkgs."greencard" or (errorHandler.buildDepError "greencard"))
         ];
         build-tools = [
-          (hsPkgs.buildPackages.greencard.components.exes.greencard or (pkgs.buildPackages.greencard or (errorHandler.buildToolDepError "greencard:greencard")))
+          (hsPkgs.pkgsBuildBuild.greencard.components.exes.greencard or (pkgs.pkgsBuildBuild.greencard or (errorHandler.buildToolDepError "greencard:greencard")))
         ];
         buildable = true;
       };

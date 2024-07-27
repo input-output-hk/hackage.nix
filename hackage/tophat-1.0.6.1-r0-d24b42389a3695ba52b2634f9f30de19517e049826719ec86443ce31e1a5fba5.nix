@@ -51,7 +51,7 @@
             (hsPkgs."tophat" or (errorHandler.buildDepError "tophat"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.tophat.components.exes.tophat or (pkgs.buildPackages.tophat or (errorHandler.buildToolDepError "tophat:tophat")))
+            (hsPkgs.pkgsBuildBuild.tophat.components.exes.tophat or (pkgs.pkgsBuildBuild.tophat or (errorHandler.buildToolDepError "tophat:tophat")))
           ];
           buildable = true;
         };

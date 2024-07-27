@@ -54,7 +54,7 @@
             (hsPkgs."simple-cmd" or (errorHandler.buildDepError "simple-cmd"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.dl-fedora.components.exes.dl-fedora or (pkgs.buildPackages.dl-fedora or (errorHandler.buildToolDepError "dl-fedora:dl-fedora")))
+            (hsPkgs.pkgsBuildBuild.dl-fedora.components.exes.dl-fedora or (pkgs.pkgsBuildBuild.dl-fedora or (errorHandler.buildToolDepError "dl-fedora:dl-fedora")))
           ];
           buildable = true;
         };

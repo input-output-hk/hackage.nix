@@ -57,7 +57,7 @@
             (hsPkgs."ormolu" or (errorHandler.buildDepError "ormolu"))
           ];
           build-tools = [
-            (hsPkgs.buildPackages.ormolu.components.exes.ormolu or (pkgs.buildPackages.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")))
+            (hsPkgs.pkgsBuildBuild.ormolu.components.exes.ormolu or (pkgs.pkgsBuildBuild.ormolu or (errorHandler.buildToolDepError "ormolu:ormolu")))
           ];
           buildable = true;
         };
