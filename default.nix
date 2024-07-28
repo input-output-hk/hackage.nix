@@ -15309,6 +15309,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strings" = import ./nix/strings.nix;
   "stringsearch" = import ./nix/stringsearch.nix;
   "stringtable-atom" = import ./nix/stringtable-atom.nix;
+  "stringz" = import ./nix/stringz.nix;
   "strio" = import ./nix/strio.nix;
   "strip-ansi-escape" = import ./nix/strip-ansi-escape.nix;
   "stripe" = import ./nix/stripe.nix;
@@ -17524,6 +17525,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xmonad-wallpaper" = import ./nix/xmonad-wallpaper.nix;
   "xmonad-windownames" = import ./nix/xmonad-windownames.nix;
   "xmpipe" = import ./nix/xmpipe.nix;
+  "xnobar" = import ./nix/xnobar.nix;
   "xor" = import ./nix/xor.nix;
   "xorshift" = import ./nix/xorshift.nix;
   "xorshift-plus" = import ./nix/xorshift-plus.nix;
