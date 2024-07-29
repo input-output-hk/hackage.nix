@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "05052553d8296a4393eefd115995186883bfe66154cdfcab5247cde8e1ec68cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sequitur-0.2.0.0-r0-af7eb5e503a665dc0c537709f0722a010b035f1f8204e4325aba7708632f5a64.nix;
+        revNum = 0;
+        sha256 = "af7eb5e503a665dc0c537709f0722a010b035f1f8204e4325aba7708632f5a64";
+      };
+      default = "r0";
+    };
+  };
 }
