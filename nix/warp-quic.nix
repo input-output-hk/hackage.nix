@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.0.1" = {
+    sha256 = "462a8bb1ca4c4326d656414b3ddf54045404ad8183c0a29ac1cd76a2d80f091b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/warp-quic-0.0.1-r0-47989920442fa29bff596f8f3ed88ad82f1f6a9eacecaa2a93de882b5faeb724.nix;
+        revNum = 0;
+        sha256 = "47989920442fa29bff596f8f3ed88ad82f1f6a9eacecaa2a93de882b5faeb724";
+      };
+      default = "r0";
+    };
+  };
 }

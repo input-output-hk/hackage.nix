@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.4.5.0" = {
+    sha256 = "519ad62b1f3efe6dea6689f8c194835daefdd29f9e5914416db0b59bf2d4d8d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mealy-0.4.5.0-r0-b264ceeb5e819c80dc7a54e19294b903eaae039ee1d6b659d179307f7d9dcc99.nix;
+        revNum = 0;
+        sha256 = "b264ceeb5e819c80dc7a54e19294b903eaae039ee1d6b659d179307f7d9dcc99";
+      };
+      default = "r0";
+    };
+  };
 }

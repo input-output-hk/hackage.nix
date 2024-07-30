@@ -7462,6 +7462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-src-meta" = import ./nix/haskell-src-meta.nix;
   "haskell-src-meta-mwotton" = import ./nix/haskell-src-meta-mwotton.nix;
   "haskell-stack-trace-plugin" = import ./nix/haskell-stack-trace-plugin.nix;
+  "haskell-throttle" = import ./nix/haskell-throttle.nix;
   "haskell-time-range" = import ./nix/haskell-time-range.nix;
   "haskell-to-elm" = import ./nix/haskell-to-elm.nix;
   "haskell-token-utils" = import ./nix/haskell-token-utils.nix;
