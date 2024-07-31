@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "7214f0d51245409fb8fd068ddc323f8db01dc744f1c9b19181b78f282de6003d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-schedule-0.2.0.1-r0-79e9323d4b02b16f170b0ef98bdbadfbdb93b64969f752827ba361f3d527ecdc.nix;
+        revNum = 0;
+        sha256 = "79e9323d4b02b16f170b0ef98bdbadfbdb93b64969f752827ba361f3d527ecdc";
+      };
+      default = "r0";
+    };
+  };
 }

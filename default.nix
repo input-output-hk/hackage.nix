@@ -2111,6 +2111,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "appendful" = import ./nix/appendful.nix;
   "appendful-persistent" = import ./nix/appendful-persistent.nix;
   "appendmap" = import ./nix/appendmap.nix;
+  "apple" = import ./nix/apple.nix;
   "applicable" = import ./nix/applicable.nix;
   "applicative-extras" = import ./nix/applicative-extras.nix;
   "applicative-fail" = import ./nix/applicative-fail.nix;
@@ -3498,6 +3499,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "circle-packing" = import ./nix/circle-packing.nix;
   "circlehs" = import ./nix/circlehs.nix;
   "circuit-breaker" = import ./nix/circuit-breaker.nix;
+  "circuit-notation" = import ./nix/circuit-notation.nix;
   "circular" = import ./nix/circular.nix;
   "circular-enum" = import ./nix/circular-enum.nix;
   "circus" = import ./nix/circus.nix;
@@ -10707,6 +10709,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mini" = import ./nix/mini.nix;
   "mini-egison" = import ./nix/mini-egison.nix;
   "miniball" = import ./nix/miniball.nix;
+  "minici" = import ./nix/minici.nix;
   "minicurl" = import ./nix/minicurl.nix;
   "miniforth" = import ./nix/miniforth.nix;
   "minilens" = import ./nix/minilens.nix;
