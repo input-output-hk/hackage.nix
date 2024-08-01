@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "0b7315e5aa02804bc567ed75d7ccfc489c137bd3c02ef4c3b9a62f851232a75b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/propeller-0.3.0.0-r0-b9f7d1b15540734eac6924bd63a8e02697dd0dea3c0f94ce963920f739e6d40e.nix;
+        revNum = 0;
+        sha256 = "b9f7d1b15540734eac6924bd63a8e02697dd0dea3c0f94ce963920f739e6d40e";
+      };
+      default = "r0";
+    };
+  };
 }

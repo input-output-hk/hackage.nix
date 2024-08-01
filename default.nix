@@ -8112,7 +8112,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hnetcdf" = import ./nix/hnetcdf.nix;
   "hnix" = import ./nix/hnix.nix;
   "hnix-store-core" = import ./nix/hnix-store-core.nix;
+  "hnix-store-db" = import ./nix/hnix-store-db.nix;
+  "hnix-store-json" = import ./nix/hnix-store-json.nix;
+  "hnix-store-nar" = import ./nix/hnix-store-nar.nix;
+  "hnix-store-readonly" = import ./nix/hnix-store-readonly.nix;
   "hnix-store-remote" = import ./nix/hnix-store-remote.nix;
+  "hnix-store-tests" = import ./nix/hnix-store-tests.nix;
   "hnn" = import ./nix/hnn.nix;
   "hnock" = import ./nix/hnock.nix;
   "hnop" = import ./nix/hnop.nix;
@@ -8622,6 +8627,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "html-validator-cli" = import ./nix/html-validator-cli.nix;
   "html2hamlet" = import ./nix/html2hamlet.nix;
   "html5-entity" = import ./nix/html5-entity.nix;
+  "htmx" = import ./nix/htmx.nix;
   "htn" = import ./nix/htn.nix;
   "htodo" = import ./nix/htodo.nix;
   "htoml" = import ./nix/htoml.nix;
