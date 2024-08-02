@@ -8628,6 +8628,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "html2hamlet" = import ./nix/html2hamlet.nix;
   "html5-entity" = import ./nix/html5-entity.nix;
   "htmx" = import ./nix/htmx.nix;
+  "htmx-lucid" = import ./nix/htmx-lucid.nix;
+  "htmx-servant" = import ./nix/htmx-servant.nix;
   "htn" = import ./nix/htn.nix;
   "htodo" = import ./nix/htodo.nix;
   "htoml" = import ./nix/htoml.nix;

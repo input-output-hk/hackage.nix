@@ -170,4 +170,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "73dbbceb341f54665f8267768ffcc96a4ee32b8a3a1befefec2ecd414536e844";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/finite-typelits-0.2.1.0-r0-31d21eede99bbe10e4062f3329708744b4738b6594216266a398c8153e1d5b98.nix;
+        revNum = 0;
+        sha256 = "31d21eede99bbe10e4062f3329708744b4738b6594216266a398c8153e1d5b98";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.0.2" = {
+    sha256 = "f1d9f4d60d3b19250e712342f9eaa836272c1b4f7a87654ea656b2eaa4ed74f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Blammo-wai-0.0.0.2-r0-b5d5c665d5ff919b229ff0d5ee4eea9021a848fcdbecb7dd7b17bbe64c073f21.nix;
+        revNum = 0;
+        sha256 = "b5d5c665d5ff919b229ff0d5ee4eea9021a848fcdbecb7dd7b17bbe64c073f21";
+      };
+      default = "r0";
+    };
+  };
 }
