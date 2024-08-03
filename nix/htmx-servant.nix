@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "1e2bee0ba9ac8a221ca791ab955a836caca3a775a600de6272da49f662e79375";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/htmx-servant-0.2.0.0-r0-b345caa42aa07c7fbe875121830a460e9738286ab18edc00a092b1bded387b11.nix;
+        revNum = 0;
+        sha256 = "b345caa42aa07c7fbe875121830a460e9738286ab18edc00a092b1bded387b11";
+      };
+      default = "r0";
+    };
+  };
 }

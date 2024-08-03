@@ -190,7 +190,12 @@
         revNum = 0;
         sha256 = "065356e5b4f306abda7c18eaa6f0269603951db0498f88e0fa556fa1a5098a91";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/range-set-list-0.1.4-r1-de59a61149694577e90853ca78f3311377c86b8075241534422b077d777e2920.nix;
+        revNum = 1;
+        sha256 = "de59a61149694577e90853ca78f3311377c86b8075241534422b077d777e2920";
+      };
+      default = "r1";
     };
   };
 }

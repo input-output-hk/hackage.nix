@@ -10144,6 +10144,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "list-witnesses" = import ./nix/list-witnesses.nix;
   "list-zip-def" = import ./nix/list-zip-def.nix;
   "list-zipper" = import ./nix/list-zipper.nix;
+  "list1" = import ./nix/list1.nix;
   "listenbrainz-client" = import ./nix/listenbrainz-client.nix;
   "listlike-instances" = import ./nix/listlike-instances.nix;
   "lists" = import ./nix/lists.nix;
@@ -14668,6 +14669,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sjsp" = import ./nix/sjsp.nix;
   "skein" = import ./nix/skein.nix;
   "skeletal-set" = import ./nix/skeletal-set.nix;
+  "skeletest" = import ./nix/skeletest.nix;
   "skeleton" = import ./nix/skeleton.nix;
   "skeletons" = import ./nix/skeletons.nix;
   "skell" = import ./nix/skell.nix;

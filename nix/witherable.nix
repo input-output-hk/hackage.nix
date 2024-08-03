@@ -415,7 +415,12 @@
         revNum = 0;
         sha256 = "de09f94811e19711ac3d3e2c14ad279793ccb3005888672a2a7f45b1db726fbe";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/witherable-0.5-r1-85bab588ebca37996fc3171b9d8b2e065eb0536c9f44224bcf037c0849a881de.nix;
+        revNum = 1;
+        sha256 = "85bab588ebca37996fc3171b9d8b2e065eb0536c9f44224bcf037c0849a881de";
+      };
+      default = "r1";
     };
   };
 }
