@@ -219,6 +219,17 @@
       default = "r0";
     };
   };
+  "0.16.0.0" = {
+    sha256 = "28bfc11063933385e2be3899e3f8d03dd0d61081caa6fed05438734fa8847da9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-0.16.0.0-r0-9c697ddac8e0faea80c30fcd0f6e3dad20820133254cedce46e851801c1b525e.nix;
+        revNum = 0;
+        sha256 = "9c697ddac8e0faea80c30fcd0f6e3dad20820133254cedce46e851801c1b525e";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "55f85e164f47fa55860741f23ccfa69f59d20f3f02b57739d36fffe8b6bd12cc";
     revisions = {

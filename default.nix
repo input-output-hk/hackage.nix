@@ -2037,6 +2037,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ansi-wl-pprint" = import ./nix/ansi-wl-pprint.nix;
   "ansigraph" = import ./nix/ansigraph.nix;
   "antagonist" = import ./nix/antagonist.nix;
+  "antelude" = import ./nix/antelude.nix;
   "antfarm" = import ./nix/antfarm.nix;
   "anticiv" = import ./nix/anticiv.nix;
   "antigate" = import ./nix/antigate.nix;
