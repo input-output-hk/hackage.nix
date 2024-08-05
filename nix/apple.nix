@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "0868dab87c08f4cb7f85db54b21ef3dc090fd39ccac5479a7baf577a39f6216a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/apple-0.2.0.0-r0-fe6439ea41c7c42d7b1be5ad57380f22fab80af831e7c64d2341cec335bfa50f.nix;
+        revNum = 0;
+        sha256 = "fe6439ea41c7c42d7b1be5ad57380f22fab80af831e7c64d2341cec335bfa50f";
+      };
+      default = "r0";
+    };
+  };
 }

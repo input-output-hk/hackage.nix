@@ -71,7 +71,12 @@
         revNum = 0;
         sha256 = "e4e48ecdfb8999ab933e8d42ecc974c7ff26c7460ddab829b3f09a64957e75c3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cantor-pairing-0.2.0.2-r1-e5575e8a8e09ec8b5bac8dcfb95da0e06b0eb98048c6fccbefb0a87edbebba81.nix;
+        revNum = 1;
+        sha256 = "e5575e8a8e09ec8b5bac8dcfb95da0e06b0eb98048c6fccbefb0a87edbebba81";
+      };
+      default = "r1";
     };
   };
 }

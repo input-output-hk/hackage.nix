@@ -15383,6 +15383,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "subzero" = import ./nix/subzero.nix;
   "success" = import ./nix/success.nix;
   "successors" = import ./nix/successors.nix;
+  "suffix" = import ./nix/suffix.nix;
   "suffix-array" = import ./nix/suffix-array.nix;
   "suffixarray" = import ./nix/suffixarray.nix;
   "suffixtree" = import ./nix/suffixtree.nix;
@@ -16493,6 +16494,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-encoding" = import ./nix/typed-encoding.nix;
   "typed-encoding-encoding" = import ./nix/typed-encoding-encoding.nix;
   "typed-fsm" = import ./nix/typed-fsm.nix;
+  "typed-gui" = import ./nix/typed-gui.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;

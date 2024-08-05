@@ -1,0 +1,58 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = { tests = false; };
+    package = {
+      specVersion = "1.10";
+      identifier = { name = "raven-haskell"; version = "0.1.4.1"; };
+      license = "MIT";
+      copyright = "";
+      maintainer = "aenor.realm@gmail.com";
+      author = "Alexander Bondarenko";
+      homepage = "https://gitlab.com/dpwiz/raven-haskell";
+      url = "";
+      synopsis = "Haskell client for Sentry logging service.";
+      description = "";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."http-conduit" or (errorHandler.buildDepError "http-conduit"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."network" or (errorHandler.buildDepError "network"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
+          (hsPkgs."resourcet" or (errorHandler.buildDepError "resourcet"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."uuid-types" or (errorHandler.buildDepError "uuid-types"))
+        ];
+        buildable = true;
+      };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."hspec" or (errorHandler.buildDepError "hspec"))
+            (hsPkgs."raven-haskell" or (errorHandler.buildDepError "raven-haskell"))
+            (hsPkgs."time" or (errorHandler.buildDepError "time"))
+            (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          ];
+          buildable = if !flags.tests then false else true;
+        };
+      };
+    };
+  }

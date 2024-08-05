@@ -174,7 +174,12 @@
         revNum = 3;
         sha256 = "04b8238be541016cf27f8d08900381f922b0f1ca8cced94d52fee961933c2a99";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/hlrdb-core-0.2.0.0-r4-ab5a0243dff2323bdb6a1ce89e63cc3c34dc80ec50b0151cb01b38a3beac31bf.nix;
+        revNum = 4;
+        sha256 = "ab5a0243dff2323bdb6a1ce89e63cc3c34dc80ec50b0151cb01b38a3beac31bf";
+      };
+      default = "r4";
     };
   };
 }
