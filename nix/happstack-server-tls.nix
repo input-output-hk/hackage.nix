@@ -296,4 +296,15 @@
       default = "r0";
     };
   };
+  "7.2.1.6" = {
+    sha256 = "c355778ee48c74f24c9ec7106a437e03e845b6a5cb73d7d8c266cf9ddfc4ed15";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happstack-server-tls-7.2.1.6-r0-35c156f83ddc8ccdf1163717a472afa8cb88fd1231500da25a96490db2d17892.nix;
+        revNum = 0;
+        sha256 = "35c156f83ddc8ccdf1163717a472afa8cb88fd1231500da25a96490db2d17892";
+      };
+      default = "r0";
+    };
+  };
 }

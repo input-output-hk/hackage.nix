@@ -2442,6 +2442,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "b9" = import ./nix/b9.nix;
   "babl" = import ./nix/babl.nix;
   "babylon" = import ./nix/babylon.nix;
+  "babynf" = import ./nix/babynf.nix;
   "backblaze-b2-hs" = import ./nix/backblaze-b2-hs.nix;
   "backdropper" = import ./nix/backdropper.nix;
   "backprop" = import ./nix/backprop.nix;
