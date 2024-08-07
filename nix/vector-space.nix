@@ -246,6 +246,17 @@
       default = "r0";
     };
   };
+  "0.19" = {
+    sha256 = "8917d1041232165f090c9200af07dd98e793fb89e2e0bc0a83ea900f309feb25";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-space-0.19-r0-2d36ea0fbbfeebe1df46a9e6d8dab256e642e79e085066c7e63ce2d579a75e4a.nix;
+        revNum = 0;
+        sha256 = "2d36ea0fbbfeebe1df46a9e6d8dab256e642e79e085066c7e63ce2d579a75e4a";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "8450a7aacb5d5003b7efc3e9d6de4c02559a87c80982a806e1da540f1db08233";
     revisions = {

@@ -6291,6 +6291,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "genvalidity-containers" = import ./nix/genvalidity-containers.nix;
   "genvalidity-criterion" = import ./nix/genvalidity-criterion.nix;
   "genvalidity-dirforest" = import ./nix/genvalidity-dirforest.nix;
+  "genvalidity-dlist" = import ./nix/genvalidity-dlist.nix;
   "genvalidity-hspec" = import ./nix/genvalidity-hspec.nix;
   "genvalidity-hspec-aeson" = import ./nix/genvalidity-hspec-aeson.nix;
   "genvalidity-hspec-binary" = import ./nix/genvalidity-hspec-binary.nix;
@@ -16873,6 +16874,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "validity-bytestring" = import ./nix/validity-bytestring.nix;
   "validity-case-insensitive" = import ./nix/validity-case-insensitive.nix;
   "validity-containers" = import ./nix/validity-containers.nix;
+  "validity-dlist" = import ./nix/validity-dlist.nix;
   "validity-network-uri" = import ./nix/validity-network-uri.nix;
   "validity-path" = import ./nix/validity-path.nix;
   "validity-persistent" = import ./nix/validity-persistent.nix;
