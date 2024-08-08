@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "00491cbf12628252f163825ae07347d60d1b19273526deaef15bc660247a7c82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yosys-rtl-0.1.0.1-r0-afaf966f9b437f3a0592c01456d23edd67674d41f258f6369fcf5eb6c592bdbb.nix;
+        revNum = 0;
+        sha256 = "afaf966f9b437f3a0592c01456d23edd67674d41f258f6369fcf5eb6c592bdbb";
+      };
+      default = "r0";
+    };
+  };
 }

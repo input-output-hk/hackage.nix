@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.5.0" = {
+    sha256 = "aca92f378f4de45a7fa10f6462296b72803eb912cc377fcfa414e0ebaaa43bf2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/s-cargot-letbind-0.2.5.0-r0-7f2696cf7ca4d962c1822fbdab1b29aaa889dc4daf76306e3518f05342281978.nix;
+        revNum = 0;
+        sha256 = "7f2696cf7ca4d962c1822fbdab1b29aaa889dc4daf76306e3518f05342281978";
+      };
+      default = "r0";
+    };
+  };
 }

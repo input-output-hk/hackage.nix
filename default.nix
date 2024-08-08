@@ -16499,6 +16499,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-gui" = import ./nix/typed-gui.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
+  "typed-session" = import ./nix/typed-session.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;
   "typed-streams" = import ./nix/typed-streams.nix;
   "typed-time" = import ./nix/typed-time.nix;
