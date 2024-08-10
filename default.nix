@@ -5977,7 +5977,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "frecently" = import ./nix/frecently.nix;
   "freckle-app" = import ./nix/freckle-app.nix;
   "freckle-env" = import ./nix/freckle-env.nix;
+  "freckle-http" = import ./nix/freckle-http.nix;
   "freckle-kafka" = import ./nix/freckle-kafka.nix;
+  "freckle-memcached" = import ./nix/freckle-memcached.nix;
+  "freckle-otel" = import ./nix/freckle-otel.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-alacarte" = import ./nix/free-alacarte.nix;
