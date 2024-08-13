@@ -72,7 +72,12 @@
         revNum = 2;
         sha256 = "1f7739c38f7c0042339c8e69096f7a7deeafb974679e222ce5068e2e7afec42d";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/system-linux-proc-0.1.1.1-r3-cc6143bb0a972780c371663b1f3932021b21338662f8d5ebcd6004eec5e67256.nix;
+        revNum = 3;
+        sha256 = "cc6143bb0a972780c371663b1f3932021b21338662f8d5ebcd6004eec5e67256";
+      };
+      default = "r3";
     };
   };
 }
