@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "2.3.0" = {
+    sha256 = "7aab90d67dbd93064c97c7014cd0a10f9bd818bc2ac1f481d72c4fa26e0948c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mail-pool-2.3.0-r0-bee294e3bad45d8d803606233ca65f118492c2ff20266055cb22550a777aff93.nix;
+        revNum = 0;
+        sha256 = "bee294e3bad45d8d803606233ca65f118492c2ff20266055cb22550a777aff93";
+      };
+      default = "r0";
+    };
+  };
 }

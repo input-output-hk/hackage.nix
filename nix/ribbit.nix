@@ -144,7 +144,12 @@
         revNum = 0;
         sha256 = "ff73b70c0a533c2d57529f354fd263e6ce853d78ff6cf89e7291fd4131d9b420";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ribbit-1.1.0.1-r1-0685139d4dbf7f3aea3029ec17d30d42dc5cabd6cd6d0e8e4291ae521eabbe02.nix;
+        revNum = 1;
+        sha256 = "0685139d4dbf7f3aea3029ec17d30d42dc5cabd6cd6d0e8e4291ae521eabbe02";
+      };
+      default = "r1";
     };
   };
 }

@@ -5978,10 +5978,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "frecently" = import ./nix/frecently.nix;
   "freckle-app" = import ./nix/freckle-app.nix;
   "freckle-env" = import ./nix/freckle-env.nix;
+  "freckle-exception" = import ./nix/freckle-exception.nix;
   "freckle-http" = import ./nix/freckle-http.nix;
   "freckle-kafka" = import ./nix/freckle-kafka.nix;
   "freckle-memcached" = import ./nix/freckle-memcached.nix;
   "freckle-otel" = import ./nix/freckle-otel.nix;
+  "freckle-prelude" = import ./nix/freckle-prelude.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-alacarte" = import ./nix/free-alacarte.nix;
@@ -15274,6 +15276,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "streamly-posix" = import ./nix/streamly-posix.nix;
   "streamly-process" = import ./nix/streamly-process.nix;
   "streamly-statistics" = import ./nix/streamly-statistics.nix;
+  "streamly-zip" = import ./nix/streamly-zip.nix;
   "streamproc" = import ./nix/streamproc.nix;
   "streams" = import ./nix/streams.nix;
   "streamt" = import ./nix/streamt.nix;
@@ -17299,6 +17302,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wigner-symbols" = import ./nix/wigner-symbols.nix;
   "wigner-ville-accelerate" = import ./nix/wigner-ville-accelerate.nix;
   "wikicfp-scraper" = import ./nix/wikicfp-scraper.nix;
+  "wikimusic-api-spec" = import ./nix/wikimusic-api-spec.nix;
+  "wikimusic-model-hs" = import ./nix/wikimusic-model-hs.nix;
   "wikipedia4epub" = import ./nix/wikipedia4epub.nix;
   "wild-bind" = import ./nix/wild-bind.nix;
   "wild-bind-indicator" = import ./nix/wild-bind-indicator.nix;
