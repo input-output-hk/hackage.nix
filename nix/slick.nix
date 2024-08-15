@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "1.3.1.0" = {
+    sha256 = "82e9f85a9f10d2972f31c9256e058cb5b92f88215fbba8152a543c603cdce6c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/slick-1.3.1.0-r0-038863f9596e52d65957468d4a87b4e293fc0368cff8c2edc4dd807dbdf64527.nix;
+        revNum = 0;
+        sha256 = "038863f9596e52d65957468d4a87b4e293fc0368cff8c2edc4dd807dbdf64527";
+      };
+      default = "r0";
+    };
+  };
 }

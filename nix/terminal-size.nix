@@ -105,7 +105,12 @@
         revNum = 0;
         sha256 = "f0318c54273d04afb65109683b442792dcb67af1ad01ab5ec64423a28bb97715";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/terminal-size-0.3.4-r1-21d7f1320eeb86177e860ec07a3d8e7510977b1b415a96ebb62ee4ad72955770.nix;
+        revNum = 1;
+        sha256 = "21d7f1320eeb86177e860ec07a3d8e7510977b1b415a96ebb62ee4ad72955770";
+      };
+      default = "r1";
     };
   };
 }

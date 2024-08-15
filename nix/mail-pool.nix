@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "2.3.1" = {
+    sha256 = "e45ee6c0fdb45fed6dabb0acbb41927d84544ea9436be08becf3cb8dcae72a4f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mail-pool-2.3.1-r0-bba83f5eaea5fbf3f1b89c46689d3f1ecc446c3e173027b5f1b8bc7cd8ab7e4f.nix;
+        revNum = 0;
+        sha256 = "bba83f5eaea5fbf3f1b89c46689d3f1ecc446c3e173027b5f1b8bc7cd8ab7e4f";
+      };
+      default = "r0";
+    };
+  };
 }

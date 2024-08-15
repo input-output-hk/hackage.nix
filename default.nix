@@ -17302,8 +17302,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wigner-symbols" = import ./nix/wigner-symbols.nix;
   "wigner-ville-accelerate" = import ./nix/wigner-ville-accelerate.nix;
   "wikicfp-scraper" = import ./nix/wikicfp-scraper.nix;
+  "wikimusic-api" = import ./nix/wikimusic-api.nix;
   "wikimusic-api-spec" = import ./nix/wikimusic-api-spec.nix;
   "wikimusic-model-hs" = import ./nix/wikimusic-model-hs.nix;
+  "wikimusic-ssr" = import ./nix/wikimusic-ssr.nix;
   "wikipedia4epub" = import ./nix/wikipedia4epub.nix;
   "wild-bind" = import ./nix/wild-bind.nix;
   "wild-bind-indicator" = import ./nix/wild-bind-indicator.nix;
