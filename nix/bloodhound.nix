@@ -306,6 +306,17 @@
       default = "r0";
     };
   };
+  "0.22.0.0" = {
+    sha256 = "442648bb32f2dbcc4d10931518ad2c32e31d054dc174e1a08a1ce62c76fe2671";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bloodhound-0.22.0.0-r0-3a17af207f8d835e9ded1a0d19e43487dbb6be52f462af27419fc227b23d0331.nix;
+        revNum = 0;
+        sha256 = "3a17af207f8d835e9ded1a0d19e43487dbb6be52f462af27419fc227b23d0331";
+      };
+      default = "r0";
+    };
+  };
   "0.3.0.0" = {
     sha256 = "706276def033062ae86cf6b66ab9104f12311464af2384051477a88fa2c833ed";
     revisions = {

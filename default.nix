@@ -3336,6 +3336,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "category-traced" = import ./nix/category-traced.nix;
   "catnplus" = import ./nix/catnplus.nix;
   "cattrap" = import ./nix/cattrap.nix;
+  "cauldron" = import ./nix/cauldron.nix;
   "cautious" = import ./nix/cautious.nix;
   "cautious-file" = import ./nix/cautious-file.nix;
   "cautious-gen" = import ./nix/cautious-gen.nix;
@@ -8275,6 +8276,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpyrg" = import ./nix/hpyrg.nix;
   "hpython" = import ./nix/hpython.nix;
   "hq" = import ./nix/hq.nix;
+  "hqcsim" = import ./nix/hqcsim.nix;
   "hquantlib" = import ./nix/hquantlib.nix;
   "hquantlib-time" = import ./nix/hquantlib-time.nix;
   "hquery" = import ./nix/hquery.nix;
