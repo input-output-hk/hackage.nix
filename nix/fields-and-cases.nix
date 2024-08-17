@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "bc89c7e8f2f970a489373bda1ba26fa9dfa6656a258f187888fb0fa364eb832f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fields-and-cases-0.2.0.0-r0-4540009e1b29d658a4b43b4cc7191ffcec8929c2384936b447b02abb30714b53.nix;
+        revNum = 0;
+        sha256 = "4540009e1b29d658a4b43b4cc7191ffcec8929c2384936b447b02abb30714b53";
+      };
+      default = "r0";
+    };
+  };
 }

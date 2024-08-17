@@ -7793,6 +7793,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hen" = import ./nix/hen.nix;
   "henet" = import ./nix/henet.nix;
   "hepevt" = import ./nix/hepevt.nix;
+  "heptapod" = import ./nix/heptapod.nix;
   "her-lexer" = import ./nix/her-lexer.nix;
   "her-lexer-parsec" = import ./nix/her-lexer-parsec.nix;
   "herbalizer" = import ./nix/herbalizer.nix;
