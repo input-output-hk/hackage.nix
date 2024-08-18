@@ -5670,6 +5670,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fedora-haskell-tools" = import ./nix/fedora-haskell-tools.nix;
   "fedora-img-dl" = import ./nix/fedora-img-dl.nix;
   "fedora-packages" = import ./nix/fedora-packages.nix;
+  "fedora-releases" = import ./nix/fedora-releases.nix;
   "fedora-repoquery" = import ./nix/fedora-repoquery.nix;
   "fee-estimate" = import ./nix/fee-estimate.nix;
   "feed" = import ./nix/feed.nix;
@@ -14163,6 +14164,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "selda-postgresql" = import ./nix/selda-postgresql.nix;
   "selda-sqlite" = import ./nix/selda-sqlite.nix;
   "select" = import ./nix/select.nix;
+  "select-rpms" = import ./nix/select-rpms.nix;
   "selections" = import ./nix/selections.nix;
   "selective" = import ./nix/selective.nix;
   "selectors" = import ./nix/selectors.nix;
@@ -16909,6 +16911,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "variables" = import ./nix/variables.nix;
   "variadic" = import ./nix/variadic.nix;
   "variadic-function" = import ./nix/variadic-function.nix;
+  "variant" = import ./nix/variant.nix;
   "variation" = import ./nix/variation.nix;
   "vary" = import ./nix/vary.nix;
   "varying" = import ./nix/varying.nix;
