@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "504424022dbe84bbd8b8e3d8d6bd33a04f4bae95184d21a9af9a2e80c1a84528";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heptapod-1.0.0.0-r0-affd365ff3dabee22103f6d046d2a56020c3b41433fff507e73388b7d655fed5.nix;
+        revNum = 0;
+        sha256 = "affd365ff3dabee22103f6d046d2a56020c3b41433fff507e73388b7d655fed5";
+      };
+      default = "r0";
+    };
+  };
 }

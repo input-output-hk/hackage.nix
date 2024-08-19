@@ -4609,6 +4609,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "delicious" = import ./nix/delicious.nix;
   "delimited-text" = import ./nix/delimited-text.nix;
   "delimiter-separated" = import ./nix/delimiter-separated.nix;
+  "delivery-status-notification" = import ./nix/delivery-status-notification.nix;
   "delta" = import ./nix/delta.nix;
   "delta-h" = import ./nix/delta-h.nix;
   "delude" = import ./nix/delude.nix;
@@ -13064,6 +13065,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pureMD5" = import ./nix/pure_M_D5.nix;
   "purebred-email" = import ./nix/purebred-email.nix;
   "purenix" = import ./nix/purenix.nix;
+  "puresat" = import ./nix/puresat.nix;
   "purescheme-wai-routing-core" = import ./nix/purescheme-wai-routing-core.nix;
   "purescript" = import ./nix/purescript.nix;
   "purescript-ast" = import ./nix/purescript-ast.nix;
