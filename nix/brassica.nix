@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "76f4e728f36ad650662c65d3db77e049688bf4a12dff4a86c232f8747859cd83";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brassica-0.3.0-r0-5f2de1064db241b434bd738ecdff8a9eca80f6bd792ecd4a3d40f751912a7c73.nix;
+        revNum = 0;
+        sha256 = "5f2de1064db241b434bd738ecdff8a9eca80f6bd792ecd4a3d40f751912a7c73";
+      };
+      default = "r0";
+    };
+  };
 }

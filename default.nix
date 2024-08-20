@@ -12700,7 +12700,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-cube" = import ./nix/postgresql-cube.nix;
   "postgresql-error-codes" = import ./nix/postgresql-error-codes.nix;
   "postgresql-libpq" = import ./nix/postgresql-libpq.nix;
+  "postgresql-libpq-configure" = import ./nix/postgresql-libpq-configure.nix;
   "postgresql-libpq-notify" = import ./nix/postgresql-libpq-notify.nix;
+  "postgresql-libpq-pkgconfig" = import ./nix/postgresql-libpq-pkgconfig.nix;
   "postgresql-lo-stream" = import ./nix/postgresql-lo-stream.nix;
   "postgresql-ltree" = import ./nix/postgresql-ltree.nix;
   "postgresql-migration" = import ./nix/postgresql-migration.nix;
