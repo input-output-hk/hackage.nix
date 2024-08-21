@@ -3124,6 +3124,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ca-province-codes" = import ./nix/ca-province-codes.nix;
   "cab" = import ./nix/cab.nix;
   "cabal" = import ./nix/cabal.nix;
+  "cabal-add" = import ./nix/cabal-add.nix;
   "cabal-appimage" = import ./nix/cabal-appimage.nix;
   "cabal-audit" = import ./nix/cabal-audit.nix;
   "cabal-auto-expose" = import ./nix/cabal-auto-expose.nix;

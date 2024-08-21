@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "51ed682047dfef1c3640a32adc59f1d350044dbb69ba04264462e7df11bc6c35";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/higgledy-0.4.2.1-r1-7991b62e1291e49cb84b8aea37f20d1bb7c03fcebd909bb9e5fe996412b4d3e1.nix;
+        revNum = 1;
+        sha256 = "7991b62e1291e49cb84b8aea37f20d1bb7c03fcebd909bb9e5fe996412b4d3e1";
+      };
+      default = "r1";
     };
   };
 }
