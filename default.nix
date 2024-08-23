@@ -9860,6 +9860,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lazyboy" = import ./nix/lazyboy.nix;
   "lazyio" = import ./nix/lazyio.nix;
   "lazyio-applicative" = import ./nix/lazyio-applicative.nix;
+  "lazyppl" = import ./nix/lazyppl.nix;
   "lazyset" = import ./nix/lazyset.nix;
   "lazysmallcheck" = import ./nix/lazysmallcheck.nix;
   "lazysplines" = import ./nix/lazysplines.nix;
@@ -16517,6 +16518,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
   "typed-session" = import ./nix/typed-session.nix;
+  "typed-session-state-algorithm" = import ./nix/typed-session-state-algorithm.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;
   "typed-streams" = import ./nix/typed-streams.nix;
   "typed-time" = import ./nix/typed-time.nix;

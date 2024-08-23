@@ -1,4 +1,15 @@
 {
+  "0.9.10.1" = {
+    sha256 = "f43932d61b0cb4bac1b8ab962ddf74fd89ad73f503e80da5630a73c03545b485";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquidhaskell-boot-0.9.10.1-r0-6454cc8c68ff0aab6dc2c8fc81e13f797849051eee02f46041e28f9dcc85b799.nix;
+        revNum = 0;
+        sha256 = "6454cc8c68ff0aab6dc2c8fc81e13f797849051eee02f46041e28f9dcc85b799";
+      };
+      default = "r0";
+    };
+  };
   "0.9.2.5.0" = {
     sha256 = "df0b94999b757e8b7503a5a8ce09536f387f6846a3ac2fe210beb9e775bc6882";
     revisions = {
@@ -50,6 +61,17 @@
         nix = import ../hackage/liquidhaskell-boot-0.9.8.1-r0-5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0.nix;
         revNum = 0;
         sha256 = "5b00e110d7217558e9dd6aad93c452bae4fd766df45919ef97e5758298eacce0";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.8.2" = {
+    sha256 = "193c7b1433f47c2cd6add9a0eae0c25a872e244878dd06c04872e70b9366b25a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquidhaskell-boot-0.9.8.2-r0-058e96ff407caa49e54c41d5cea846753ba4409ddcc18b1811389d95106b19a9.nix;
+        revNum = 0;
+        sha256 = "058e96ff407caa49e54c41d5cea846753ba4409ddcc18b1811389d95106b19a9";
       };
       default = "r0";
     };

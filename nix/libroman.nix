@@ -141,4 +141,15 @@
       default = "r0";
     };
   };
+  "3.2.0" = {
+    sha256 = "86bffbcae13c7852748f61a39aa1ad6b9fe0a3a6c09ce8a2faaa62a10a1b3678";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libroman-3.2.0-r0-944b7bd735c67fee5bf6099e0d226114812d01513edc65c6b1c105dfaf50f6a4.nix;
+        revNum = 0;
+        sha256 = "944b7bd735c67fee5bf6099e0d226114812d01513edc65c6b1c105dfaf50f6a4";
+      };
+      default = "r0";
+    };
+  };
 }

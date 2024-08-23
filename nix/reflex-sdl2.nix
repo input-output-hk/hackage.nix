@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "d0c79e00b9eaf32f1bc97459fe84d450b44fec742340a593595d0bfbb3028c82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-sdl2-0.3.0.3-r0-fcd9b0c091348ce4bb3690fc9ae2fb92bb3061b6b5c58ead2d2220b15d51368f.nix;
+        revNum = 0;
+        sha256 = "fcd9b0c091348ce4bb3690fc9ae2fb92bb3061b6b5c58ead2d2220b15d51368f";
+      };
+      default = "r0";
+    };
+  };
 }

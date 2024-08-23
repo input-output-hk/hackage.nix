@@ -79,4 +79,15 @@
       default = "r1";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "dee57033c7027301ee21e22ab6359d91a5fe84d812610a069238b03207256890";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-arn-0.3.2.0-r0-5c0b6e14b40e1de64082b53c87b8c0c080935e1e7b1b0aafecd5c47e30b604ad.nix;
+        revNum = 0;
+        sha256 = "5c0b6e14b40e1de64082b53c87b8c0c080935e1e7b1b0aafecd5c47e30b604ad";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "5f0383c4ef33740c3bd087dba7138d8f3f7bb4525a7fae6a534a6a775c07bebe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rails-session-0.1.4.0-r0-23f729eccf55b5e13b954af757a5224a524532a92bad93dce4d620a3faecef2c.nix;
+        revNum = 0;
+        sha256 = "23f729eccf55b5e13b954af757a5224a524532a92bad93dce4d620a3faecef2c";
+      };
+      default = "r0";
+    };
+  };
 }
