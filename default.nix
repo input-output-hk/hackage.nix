@@ -14310,6 +14310,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-jsonrpc-client" = import ./nix/servant-jsonrpc-client.nix;
   "servant-jsonrpc-server" = import ./nix/servant-jsonrpc-server.nix;
   "servant-kotlin" = import ./nix/servant-kotlin.nix;
+  "servant-lint" = import ./nix/servant-lint.nix;
   "servant-lucid" = import ./nix/servant-lucid.nix;
   "servant-machines" = import ./nix/servant-machines.nix;
   "servant-match" = import ./nix/servant-match.nix;
@@ -17456,6 +17457,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wybor" = import ./nix/wybor.nix;
   "wyvern" = import ./nix/wyvern.nix;
   "x-dsp" = import ./nix/x-dsp.nix;
+  "x-sum-type-boilerplate" = import ./nix/x-sum-type-boilerplate.nix;
   "x11-xim" = import ./nix/x11-xim.nix;
   "x11-xinput" = import ./nix/x11-xinput.nix;
   "x509" = import ./nix/x509.nix;
