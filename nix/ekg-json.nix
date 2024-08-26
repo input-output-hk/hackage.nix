@@ -134,7 +134,12 @@
         revNum = 0;
         sha256 = "29f3702e573d6910b48dbc31ca975872a6332fcc37d3777baf401498ac4f48ec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ekg-json-0.1.1.0-r1-e9947acafd288614b8a7ddc7ee1df8410c1bbb8dff2987bc81c97d562fa5957f.nix;
+        revNum = 1;
+        sha256 = "e9947acafd288614b8a7ddc7ee1df8410c1bbb8dff2987bc81c97d562fa5957f";
+      };
+      default = "r1";
     };
   };
 }

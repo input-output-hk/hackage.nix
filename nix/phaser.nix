@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.2.0" = {
+    sha256 = "aa3349a8df5728e31028f2875970a235a000ecf82d069b6ecbf4a20817abd3ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phaser-1.0.2.0-r0-a75664e5e7c5b0d84ab53a663d773f2f484436a09df6d15cb7225cdca822aa97.nix;
+        revNum = 0;
+        sha256 = "a75664e5e7c5b0d84ab53a663d773f2f484436a09df6d15cb7225cdca822aa97";
+      };
+      default = "r0";
+    };
+  };
 }

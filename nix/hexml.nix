@@ -81,4 +81,15 @@
       default = "r0";
     };
   };
+  "0.3.5" = {
+    sha256 = "418121ad6e263daa1eefd74a40f7a7fed688b9da0256101b5f04c2d899f1b296";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hexml-0.3.5-r0-e4338024155d7e6cca73510fe433a3161f728a125d19cbe8ba4442fe5489bdf8.nix;
+        revNum = 0;
+        sha256 = "e4338024155d7e6cca73510fe433a3161f728a125d19cbe8ba4442fe5489bdf8";
+      };
+      default = "r0";
+    };
+  };
 }
