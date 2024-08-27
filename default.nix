@@ -6058,7 +6058,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "frpnow-gtk3" = import ./nix/frpnow-gtk3.nix;
   "frpnow-vty" = import ./nix/frpnow-vty.nix;
   "frquotes" = import ./nix/frquotes.nix;
+  "fs-api" = import ./nix/fs-api.nix;
   "fs-events" = import ./nix/fs-events.nix;
+  "fs-sim" = import ./nix/fs-sim.nix;
   "fsh-csv" = import ./nix/fsh-csv.nix;
   "fsharp" = import ./nix/fsharp.nix;
   "fsmActions" = import ./nix/fsm_Actions.nix;
@@ -8296,6 +8298,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hruby" = import ./nix/hruby.nix;
   "hs" = import ./nix/hs.nix;
   "hs-GeoIP" = import ./nix/hs-_Geo_I_P.nix;
+  "hs-asapo" = import ./nix/hs-asapo.nix;
   "hs-aws-lambda" = import ./nix/hs-aws-lambda.nix;
   "hs-bibutils" = import ./nix/hs-bibutils.nix;
   "hs-blake2" = import ./nix/hs-blake2.nix;

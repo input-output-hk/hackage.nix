@@ -197,4 +197,15 @@
       default = "r0";
     };
   };
+  "2.5.1" = {
+    sha256 = "87efa3ae2bf1b2ea6c914bfdd95d7548f9a25f1e97ada8bfdef05fd6add5635f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasmtlib-2.5.1-r0-8e416606a500938c2bf924ee5c8c7675ce12d21d01ba72c8c0a61318f431d61b.nix;
+        revNum = 0;
+        sha256 = "8e416606a500938c2bf924ee5c8c7675ce12d21d01ba72c8c0a61318f431d61b";
+      };
+      default = "r0";
+    };
+  };
 }
