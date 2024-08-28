@@ -662,4 +662,15 @@
       default = "r0";
     };
   };
+  "0.8.8.2" = {
+    sha256 = "445f8d0683c54af44d84392ddeb475b30a725a11a5f7f930706ffedf6c88e089";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/katip-0.8.8.2-r0-c52234acf971668fbabb83a02eee636d18b042c52ddb23a2973828cfc88a66f7.nix;
+        revNum = 0;
+        sha256 = "c52234acf971668fbabb83a02eee636d18b042c52ddb23a2973828cfc88a66f7";
+      };
+      default = "r0";
+    };
+  };
 }

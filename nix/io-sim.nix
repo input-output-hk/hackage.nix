@@ -108,4 +108,20 @@
       default = "r0";
     };
   };
+  "1.6.0.0" = {
+    sha256 = "8a62c2794cabe7a28e66c753cb28be272eb3eadacb3eb1c58298ee5d19f43766";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/io-sim-1.6.0.0-r0-31040fdbc440033b2ce829047023fe4ac9217a88935b4752731a36385c21acc9.nix;
+        revNum = 0;
+        sha256 = "31040fdbc440033b2ce829047023fe4ac9217a88935b4752731a36385c21acc9";
+      };
+      r1 = {
+        nix = import ../hackage/io-sim-1.6.0.0-r1-7f68fd681b117cc757d7c848cfa422eb3e53a94ae47b28f6c80f105be44a812d.nix;
+        revNum = 1;
+        sha256 = "7f68fd681b117cc757d7c848cfa422eb3e53a94ae47b28f6c80f105be44a812d";
+      };
+      default = "r1";
+    };
+  };
 }

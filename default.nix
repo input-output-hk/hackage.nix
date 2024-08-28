@@ -8318,6 +8318,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-gchart" = import ./nix/hs-gchart.nix;
   "hs-gen-iface" = import ./nix/hs-gen-iface.nix;
   "hs-gizapp" = import ./nix/hs-gizapp.nix;
+  "hs-highlight" = import ./nix/hs-highlight.nix;
   "hs-inspector" = import ./nix/hs-inspector.nix;
   "hs-ix" = import ./nix/hs-ix.nix;
   "hs-java" = import ./nix/hs-java.nix;
