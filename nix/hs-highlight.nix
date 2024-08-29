@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "1.0.2" = {
+    sha256 = "e299e72ffddd384484e6063400a798429b8bab1cb8ea8592fba098560970c6ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-highlight-1.0.2-r0-231f158531a6971f779fab0977f979514d317d46e2766f12d40f6333ae01bbc6.nix;
+        revNum = 0;
+        sha256 = "231f158531a6971f779fab0977f979514d317d46e2766f12d40f6333ae01bbc6";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.3" = {
+    sha256 = "3d94be5118193b5ccfd54684b629ba56147f19b892168f82e1ad0b58b649dd54";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-highlight-1.0.3-r0-e79cf9f7352b68b158443ceee42c24fc087b5665c75450655342af83488c9d5a.nix;
+        revNum = 0;
+        sha256 = "e79cf9f7352b68b158443ceee42c24fc087b5665c75450655342af83488c9d5a";
+      };
+      default = "r0";
+    };
+  };
 }
