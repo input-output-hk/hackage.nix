@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "c9ee6d3723c5ef76c4edbae527a08e15e6ca6bcfe42c304bf27f9a75c8de7ad6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/proquint-0.1.0.0-r1-861a05c4c1d21b17400d348dd1df4ad91b576b2a3c5ddc7181899fc9ae1c7adc.nix;
+        revNum = 1;
+        sha256 = "861a05c4c1d21b17400d348dd1df4ad91b576b2a3c5ddc7181899fc9ae1c7adc";
+      };
+      default = "r1";
     };
   };
 }

@@ -263,4 +263,26 @@
       default = "r0";
     };
   };
+  "0.2.7.4" = {
+    sha256 = "8d06a927cac1bc205ea417891986640981900ac01e185f73bbb265663bbb0660";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-trie-0.2.7.4-r0-653f2caa07209b40c76e650d0546d199ec66e605fa9afc22f7b9971ab17cc642.nix;
+        revNum = 0;
+        sha256 = "653f2caa07209b40c76e650d0546d199ec66e605fa9afc22f7b9971ab17cc642";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.7.5" = {
+    sha256 = "4d703a8c9d326882c70abbd571db00778c3d2a5c91d740b85197e663712de10b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-trie-0.2.7.5-r0-3565e6c6d4d89f44ddf8fdc118ecee9f55d93ab8f47d9a472fd0dd76bd71a7f7.nix;
+        revNum = 0;
+        sha256 = "3565e6c6d4d89f44ddf8fdc118ecee9f55d93ab8f47d9a472fd0dd76bd71a7f7";
+      };
+      default = "r0";
+    };
+  };
 }

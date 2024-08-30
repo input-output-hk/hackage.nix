@@ -268,6 +268,17 @@
       default = "r0";
     };
   };
+  "0.9.25" = {
+    sha256 = "180b688d6466ca7bfdd4b73b1a99fed893fecb1fba3b1f72fd739a2223c1d30f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uulib-0.9.25-r0-27c6262ffa2ad7e9bd5a8e459e04f9aae169b139b5f7c3aa95cfa2e69bf7a061.nix;
+        revNum = 0;
+        sha256 = "27c6262ffa2ad7e9bd5a8e459e04f9aae169b139b5f7c3aa95cfa2e69bf7a061";
+      };
+      default = "r0";
+    };
+  };
   "0.9.5" = {
     sha256 = "38415725133af464de582dadc7d7e60b1aeb96344b18b239d176bf2181f98563";
     revisions = {
