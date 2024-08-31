@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.4.2.0" = {
+    sha256 = "b1d5599b62a7a0d11abd5ddf34130887de0586df2799981848a9d74c3fdb1cf8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llvm-pretty-bc-parser-0.4.2.0-r0-148229fa78d2742132c66f2f09fc7845de2976d2cbfb60265726f05816e87e09.nix;
+        revNum = 0;
+        sha256 = "148229fa78d2742132c66f2f09fc7845de2976d2cbfb60265726f05816e87e09";
+      };
+      default = "r0";
+    };
+  };
 }

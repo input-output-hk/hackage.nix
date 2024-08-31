@@ -89,4 +89,15 @@
       default = "r2";
     };
   };
+  "0.16.1" = {
+    sha256 = "14d635490d77dfaa36f7e6309ae7b31b03bb3a8f3817f0ad7ce8826b7913b458";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-pipes-0.16.1-r0-0484664601c7eaf80073e024911b0e8910d4467f99357e8c4d48f08e6558e9e5.nix;
+        revNum = 0;
+        sha256 = "0484664601c7eaf80073e024911b0e8910d4467f99357e8c4d48f08e6558e9e5";
+      };
+      default = "r0";
+    };
+  };
 }

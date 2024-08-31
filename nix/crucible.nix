@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.7.1" = {
+    sha256 = "fb1377c4ad1d50c881f591c5f06b8f6494da9ab2dcb8322c7cfd5984ea442ab1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crucible-0.7.1-r0-4bf700e44cb6ae7fd2f4fa9010cc1098b839d03b728c5b96a4bc50e30ba580ee.nix;
+        revNum = 0;
+        sha256 = "4bf700e44cb6ae7fd2f4fa9010cc1098b839d03b728c5b96a4bc50e30ba580ee";
+      };
+      default = "r0";
+    };
+  };
 }

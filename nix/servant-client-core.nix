@@ -264,4 +264,15 @@
       default = "r2";
     };
   };
+  "0.20.2" = {
+    sha256 = "6ce77c444ca6b412b278d5f8709527f52578e25be94d27546a61236d4140db82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-client-core-0.20.2-r0-665b1c2641f75f8e457e9f0d11ba12ea36409781b611c71dee3a4a80ea1bbb49.nix;
+        revNum = 0;
+        sha256 = "665b1c2641f75f8e457e9f0d11ba12ea36409781b611c71dee3a4a80ea1bbb49";
+      };
+      default = "r0";
+    };
+  };
 }

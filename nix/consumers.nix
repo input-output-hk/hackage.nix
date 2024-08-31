@@ -241,4 +241,15 @@
       default = "r0";
     };
   };
+  "2.3.2.0" = {
+    sha256 = "ae5297d801a68b6271bfb330b18767198e97c29c96fd353a626bf3cbd0b347ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/consumers-2.3.2.0-r0-22361f358c5f8107ba2bfab93dfc24cc5502f31c993daa5e73dd893867441c5d.nix;
+        revNum = 0;
+        sha256 = "22361f358c5f8107ba2bfab93dfc24cc5502f31c993daa5e73dd893867441c5d";
+      };
+      default = "r0";
+    };
+  };
 }
