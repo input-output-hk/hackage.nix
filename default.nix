@@ -16063,6 +16063,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tight-apply" = import ./nix/tight-apply.nix;
   "tightrope" = import ./nix/tightrope.nix;
   "tighttp" = import ./nix/tighttp.nix;
+  "tiktoken" = import ./nix/tiktoken.nix;
   "tikzsd" = import ./nix/tikzsd.nix;
   "tile" = import ./nix/tile.nix;
   "tilings" = import ./nix/tilings.nix;

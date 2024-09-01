@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "2.3.3" = {
+    sha256 = "9aaa29966ade82740c7ab4f5f2dfb7ceaa9b14715875a633648b175d11767077";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lua-2.3.3-r0-c00e5cc263f1d4c93e30e7d0cde773c9030e2b242416029662440cf06765fd8c.nix;
+        revNum = 0;
+        sha256 = "c00e5cc263f1d4c93e30e7d0cde773c9030e2b242416029662440cf06765fd8c";
+      };
+      default = "r0";
+    };
+  };
 }

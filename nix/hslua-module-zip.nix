@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "289db7bb7e28dffb4b67827023cee157952fc61c7caf5d1c443ca8dba809435b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hslua-module-zip-1.1.3-r1-c31bc4cb3d7e63a85e030b4c8938fcf35e8f49c20dad50067a9c40ce3c2481d6.nix;
+        revNum = 1;
+        sha256 = "c31bc4cb3d7e63a85e030b4c8938fcf35e8f49c20dad50067a9c40ce3c2481d6";
+      };
+      default = "r1";
     };
   };
 }
