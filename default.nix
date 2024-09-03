@@ -13355,6 +13355,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rdf4h" = import ./nix/rdf4h.nix;
   "rdf4h-vocab-activitystreams" = import ./nix/rdf4h-vocab-activitystreams.nix;
   "rdioh" = import ./nix/rdioh.nix;
+  "rds-data" = import ./nix/rds-data.nix;
   "rds-data-codecs" = import ./nix/rds-data-codecs.nix;
   "rdtsc" = import ./nix/rdtsc.nix;
   "rdtsc-enolan" = import ./nix/rdtsc-enolan.nix;
@@ -15313,6 +15314,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strict-io" = import ./nix/strict-io.nix;
   "strict-lens" = import ./nix/strict-lens.nix;
   "strict-list" = import ./nix/strict-list.nix;
+  "strict-mutable-base" = import ./nix/strict-mutable-base.nix;
   "strict-mvar" = import ./nix/strict-mvar.nix;
   "strict-optics" = import ./nix/strict-optics.nix;
   "strict-stm" = import ./nix/strict-stm.nix;

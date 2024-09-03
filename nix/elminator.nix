@@ -120,4 +120,26 @@
       default = "r0";
     };
   };
+  "0.2.4.3" = {
+    sha256 = "8fd9bdbcd6be6f9b5f5e693fa47d66442488f9190e029695399bb2fc2603de5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elminator-0.2.4.3-r0-e8fb054ec2627710937c0fe22e580e55fd83b78746777417b94a3fa8de31040b.nix;
+        revNum = 0;
+        sha256 = "e8fb054ec2627710937c0fe22e580e55fd83b78746777417b94a3fa8de31040b";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.4.4" = {
+    sha256 = "0f283dd6d41b2c5f9aa4938c1573190fa0703d1e31ff1c197595b7f96d944f0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elminator-0.2.4.4-r0-c7cc7d718edc94437ec709a7d3318cd8ca399f0761414688a9a2586e0cd1954b.nix;
+        revNum = 0;
+        sha256 = "c7cc7d718edc94437ec709a7d3318cd8ca399f0761414688a9a2586e0cd1954b";
+      };
+      default = "r0";
+    };
+  };
 }

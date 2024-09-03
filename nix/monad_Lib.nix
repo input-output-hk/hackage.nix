@@ -63,6 +63,28 @@
       default = "r0";
     };
   };
+  "3.10.2" = {
+    sha256 = "ab881c8783dfe26a61c84325afa36cc901735c74562c06290733df582cd06bb4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monadLib-3.10.2-r0-bc61840224c087f075b3b8ea5a9ca811cc8bbc1179feb8cf090e1edec8447683.nix;
+        revNum = 0;
+        sha256 = "bc61840224c087f075b3b8ea5a9ca811cc8bbc1179feb8cf090e1edec8447683";
+      };
+      default = "r0";
+    };
+  };
+  "3.10.3" = {
+    sha256 = "6a0ad322fa22c82bde1e7ca36b5904063e8d87628e9afc2b60678893ff981d11";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monadLib-3.10.3-r0-026ba169762e63f0fe5f5c78829808f522a28730043bc3ad9b7c146baedf709f.nix;
+        revNum = 0;
+        sha256 = "026ba169762e63f0fe5f5c78829808f522a28730043bc3ad9b7c146baedf709f";
+      };
+      default = "r0";
+    };
+  };
   "3.3.0" = {
     sha256 = "aaf584d46bd9503bd16a3174a64ceed92f175024897522cafe18763da117733f";
     revisions = {
