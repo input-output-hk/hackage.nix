@@ -164,6 +164,17 @@
       default = "r0";
     };
   };
+  "0.9.17.0" = {
+    sha256 = "a0a3eea011286d1207b53bb61f636f0b91b39e095cf79809812df475db5dbb01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MicroHs-0.9.17.0-r0-bb33e6f596f3249328b604164b62206b58567c53e16cd8827ca0408b535aa247.nix;
+        revNum = 0;
+        sha256 = "bb33e6f596f3249328b604164b62206b58567c53e16cd8827ca0408b535aa247";
+      };
+      default = "r0";
+    };
+  };
   "0.9.2.0" = {
     sha256 = "fbaa8b8b854c1d197c363e185f9cc8c52238f9dadd089b86da9bbeb4af146c46";
     revisions = {

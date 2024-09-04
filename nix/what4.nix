@@ -123,4 +123,15 @@
       default = "r0";
     };
   };
+  "1.6.1" = {
+    sha256 = "db17dd3300bd3178e1eb1ce7bae0960afb7a0a2a7215eb4b74c470b9a06ce94d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/what4-1.6.1-r0-263fd32edaac58ba06dbae2de8836e06ceeb86d64f97a72c922568404e1563ab.nix;
+        revNum = 0;
+        sha256 = "263fd32edaac58ba06dbae2de8836e06ceeb86d64f97a72c922568404e1563ab";
+      };
+      default = "r0";
+    };
+  };
 }
