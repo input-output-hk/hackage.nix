@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "00f063b8208a98691c9080ca39c37207c0f8616f6d1de5417dfb306128499f74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pa-prelude-0.3.0.0-r0-11543369c61e519f43693f125e87b50949238e0923f77a248420ad83c18516c3.nix;
+        revNum = 0;
+        sha256 = "11543369c61e519f43693f125e87b50949238e0923f77a248420ad83c18516c3";
+      };
+      default = "r0";
+    };
+  };
 }

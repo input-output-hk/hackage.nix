@@ -781,6 +781,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "MTGBuilder" = import ./nix/_M_T_G_Builder.nix;
   "MagicHaskeller" = import ./nix/_Magic_Haskeller.nix;
   "MailchimpSimple" = import ./nix/_Mailchimp_Simple.nix;
+  "Mantissa" = import ./nix/_Mantissa.nix;
   "Map" = import ./nix/_Map.nix;
   "MapWith" = import ./nix/_Map_With.nix;
   "Mapping" = import ./nix/_Mapping.nix;

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "df418e3b8e462797854ccfcea3afa50cbdac83850f1a2e909caae7fc8525ccfc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dormouse-uri-0.3.0.0-r0-40a7d3a46a1d3be51b31388d1d6911db7f1566d202c40b257aa2ffc8b7bbcba8.nix;
+        revNum = 0;
+        sha256 = "40a7d3a46a1d3be51b31388d1d6911db7f1566d202c40b257aa2ffc8b7bbcba8";
+      };
+      default = "r0";
+    };
+  };
 }
