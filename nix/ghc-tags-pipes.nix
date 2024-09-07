@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "28a9c6457c61b50a01ddba70c132f0539ee25ae89061e256d14a910d0eabb91c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-tags-pipes-0.1.1.0-r1-09758132d89bbc48635eede317c29907d469b9391c7a72a125fa12bc3fd48064.nix;
+        revNum = 1;
+        sha256 = "09758132d89bbc48635eede317c29907d469b9391c7a72a125fa12bc3fd48064";
+      };
+      default = "r1";
     };
   };
 }

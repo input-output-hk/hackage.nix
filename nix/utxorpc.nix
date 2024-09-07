@@ -1,4 +1,15 @@
 {
+  "0.0.10.0" = {
+    sha256 = "627fd19fd4e80a30869b89e5f806b97228e4f0399678cae0ad053ca891223b78";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/utxorpc-0.0.10.0-r0-ad7c40c6a40cc4d09a655f7d92ff1f9a0979b4d5a9451db4176b03bd324345c1.nix;
+        revNum = 0;
+        sha256 = "ad7c40c6a40cc4d09a655f7d92ff1f9a0979b4d5a9451db4176b03bd324345c1";
+      };
+      default = "r0";
+    };
+  };
   "0.0.3.0" = {
     sha256 = "32c9a650a08e90705a6a73983235912c57172c04723a39e9188624daf7f9a8db";
     revisions = {

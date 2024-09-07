@@ -157,6 +157,28 @@
       default = "r0";
     };
   };
+  "0.2.14.4" = {
+    sha256 = "a8e221efb94625baa77232e95bf05718ccd0df6e8d153e5ffa0a1a60b0ad4a95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-polysemy-0.2.14.4-r0-9acc2043cef3b581c25103c6f332aeba31a12f2a505de0df3839b68c62198cc1.nix;
+        revNum = 0;
+        sha256 = "9acc2043cef3b581c25103c6f332aeba31a12f2a505de0df3839b68c62198cc1";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.14.5" = {
+    sha256 = "b6ac27053971ccb87c920f8eab85f6668580c7b12cbf3d30906e09d885815a09";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-polysemy-0.2.14.5-r0-5a36fe29eebafd9d161807c57b68286d7a4234e55c0084bd37288689e00f8fa1.nix;
+        revNum = 0;
+        sha256 = "5a36fe29eebafd9d161807c57b68286d7a4234e55c0084bd37288689e00f8fa1";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2.0" = {
     sha256 = "c0e6b2e6141f1393152c45b2a4886459e95a70cc69b96a92068eb81d6bb6d646";
     revisions = {
