@@ -13243,6 +13243,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quotet" = import ./nix/quotet.nix;
   "qux" = import ./nix/qux.nix;
   "r-glpk-phonetic-languages-ukrainian-durations" = import ./nix/r-glpk-phonetic-languages-ukrainian-durations.nix;
+  "r-tree" = import ./nix/r-tree.nix;
   "r3x-haskell-sdk" = import ./nix/r3x-haskell-sdk.nix;
   "raaz" = import ./nix/raaz.nix;
   "rabocsv2qif" = import ./nix/rabocsv2qif.nix;

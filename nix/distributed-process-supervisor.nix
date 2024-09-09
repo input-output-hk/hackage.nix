@@ -67,7 +67,12 @@
         revNum = 0;
         sha256 = "b83ce35b45d3b6ccd8e028ac5a4ad52cd283734dfa227a3a21e9da687b5a4b22";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/distributed-process-supervisor-0.2.2-r1-7a704ef0a3b45efbe817ee8e6485cc272e0c8ac575b4fd813f26bb40bd292e6b.nix;
+        revNum = 1;
+        sha256 = "7a704ef0a3b45efbe817ee8e6485cc272e0c8ac575b4fd813f26bb40bd292e6b";
+      };
+      default = "r1";
     };
   };
 }
