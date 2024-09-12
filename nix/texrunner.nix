@@ -73,4 +73,15 @@
       default = "r1";
     };
   };
+  "0.0.2" = {
+    sha256 = "bbde01fc9538af5da19cc39e0eae9a80130167e9f7726e058e284e1b5b8fd6f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/texrunner-0.0.2-r0-7c5dea934ed5a8fc7f43587352db090385ecbce429ae52096881e69f2890d720.nix;
+        revNum = 0;
+        sha256 = "7c5dea934ed5a8fc7f43587352db090385ecbce429ae52096881e69f2890d720";
+      };
+      default = "r0";
+    };
+  };
 }

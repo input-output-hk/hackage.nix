@@ -3173,6 +3173,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-progdeps" = import ./nix/cabal-progdeps.nix;
   "cabal-query" = import ./nix/cabal-query.nix;
   "cabal-rpm" = import ./nix/cabal-rpm.nix;
+  "cabal-scaffold" = import ./nix/cabal-scaffold.nix;
   "cabal-scripts" = import ./nix/cabal-scripts.nix;
   "cabal-setup" = import ./nix/cabal-setup.nix;
   "cabal-sign" = import ./nix/cabal-sign.nix;
@@ -12491,6 +12492,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pkgtreediff" = import ./nix/pkgtreediff.nix;
   "pktree" = import ./nix/pktree.nix;
   "place-cursor-at" = import ./nix/place-cursor-at.nix;
+  "placeholder" = import ./nix/placeholder.nix;
   "placeholders" = import ./nix/placeholders.nix;
   "plaid" = import ./nix/plaid.nix;
   "plailude" = import ./nix/plailude.nix;
