@@ -875,6 +875,17 @@
       default = "r0";
     };
   };
+  "2.13.1.0" = {
+    sha256 = "e366313c15e7cae01c5e24f909e4dbc2db887d18df9658c03798b29555a1ea23";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-mongoDB-2.13.1.0-r0-8c653fcd45a1a9e00ee26eb75d73a27945068f65e68f5d4a65fe68f5a05dbf51.nix;
+        revNum = 0;
+        sha256 = "8c653fcd45a1a9e00ee26eb75d73a27945068f65e68f5d4a65fe68f5a05dbf51";
+      };
+      default = "r0";
+    };
+  };
   "2.5" = {
     sha256 = "e181caeafa76905faa57ba5173ce5171469753b20d276bd008a515eb7e696e84";
     revisions = {

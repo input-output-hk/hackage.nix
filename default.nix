@@ -6589,6 +6589,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gitdo" = import ./nix/gitdo.nix;
   "githash" = import ./nix/githash.nix;
   "github" = import ./nix/github.nix;
+  "github-app-token" = import ./nix/github-app-token.nix;
   "github-backup" = import ./nix/github-backup.nix;
   "github-data" = import ./nix/github-data.nix;
   "github-post-receive" = import ./nix/github-post-receive.nix;
@@ -16448,6 +16449,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "twitter-feed" = import ./nix/twitter-feed.nix;
   "twitter-types" = import ./nix/twitter-types.nix;
   "twitter-types-lens" = import ./nix/twitter-types-lens.nix;
+  "twobitreader" = import ./nix/twobitreader.nix;
   "tx" = import ./nix/tx.nix;
   "txt" = import ./nix/txt.nix;
   "txt-sushi" = import ./nix/txt-sushi.nix;

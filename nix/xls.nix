@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "b99419f90322b2866ac7c469093473a05024c166a03b0832934ab059e6db944f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/xls-0.1.3-r1-c2343bcc8c0e1662b01bd05640ec61742840270ffc64062b892e8d48a8d8b217.nix;
+        revNum = 1;
+        sha256 = "c2343bcc8c0e1662b01bd05640ec61742840270ffc64062b892e8d48a8d8b217";
+      };
+      default = "r1";
     };
   };
 }

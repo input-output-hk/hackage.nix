@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "2dfa26eed19916d03cd70c471992518fd6b81b61becdc65d5fa239cc30bd02d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelits-printf-0.3.0.0-r0-47f3d044056546f5c027db53deb6412dbf455c9dcfb8cbb0637a83692906fc6e.nix;
+        revNum = 0;
+        sha256 = "47f3d044056546f5c027db53deb6412dbf455c9dcfb8cbb0637a83692906fc6e";
+      };
+      default = "r0";
+    };
+  };
 }
