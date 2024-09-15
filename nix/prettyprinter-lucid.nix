@@ -33,7 +33,34 @@
         revNum = 3;
         sha256 = "983a877ee0c52ccfa567756bf8226c869c2ba57a2abb3e81bfbdb4d11dc1cf06";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/prettyprinter-lucid-0.1.0.1-r4-15c5d73946d129ad92a745135af428b1d5a60076e5bd84998f831cc1c784e09b.nix;
+        revNum = 4;
+        sha256 = "15c5d73946d129ad92a745135af428b1d5a60076e5bd84998f831cc1c784e09b";
+      };
+      default = "r4";
+    };
+  };
+  "0.2.0" = {
+    sha256 = "2d875e5807593fa2c4d4012ebaba98f17119a2e56934a9431008c43ceadd6131";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-lucid-0.2.0-r0-6401e233d1a2448e8aeba1ab0c1da893d3b35ca787ae94ff12e9a964444cf72e.nix;
+        revNum = 0;
+        sha256 = "6401e233d1a2448e8aeba1ab0c1da893d3b35ca787ae94ff12e9a964444cf72e";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "736f9a7fd97a99d3db774940d211aefb36c792cd19a3b4baeeb29560b9c7abce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-lucid-0.2.0.1-r0-e0ef87f9239649a492dc8e6aac013d35ebab7287261f1a2f96914195e3dce83e.nix;
+        revNum = 0;
+        sha256 = "e0ef87f9239649a492dc8e6aac013d35ebab7287261f1a2f96914195e3dce83e";
+      };
+      default = "r0";
     };
   };
 }

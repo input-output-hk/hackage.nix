@@ -428,4 +428,15 @@
       default = "r0";
     };
   };
+  "1.2.6.1" = {
+    sha256 = "6d3f2d2da4c85e71eeaf6dfd35bb7e7e3e64c285374311815d1104cde8ae70f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ngx-export-tools-1.2.6.1-r0-62f4a9d7f5927dbb344b61147233aed89f04f61e505d7b25a683b96810f64160.nix;
+        revNum = 0;
+        sha256 = "62f4a9d7f5927dbb344b61147233aed89f04f61e505d7b25a683b96810f64160";
+      };
+      default = "r0";
+    };
+  };
 }
