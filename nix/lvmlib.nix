@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "93202794dad7345f097bd54b57352256cba8998251865d2909d9576d0bc20f2e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/lvmlib-1.1-r2-d54fea453cf26b38624597cb07d10ead37898009a6340fe9eb4e3ea206a4c8ff.nix;
+        revNum = 2;
+        sha256 = "d54fea453cf26b38624597cb07d10ead37898009a6340fe9eb4e3ea206a4c8ff";
+      };
+      default = "r2";
     };
   };
 }

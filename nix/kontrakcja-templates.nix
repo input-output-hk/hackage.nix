@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.12.0.1" = {
+    sha256 = "0986b08db12882782ec1f9baad4b62c1b04d0e005e0ef81d51a7760bf3c30618";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kontrakcja-templates-0.12.0.1-r0-f5a99b3ab3fcbf9880b6dcf203b31bdaf34ace320537f09296cd9200b13576ce.nix;
+        revNum = 0;
+        sha256 = "f5a99b3ab3fcbf9880b6dcf203b31bdaf34ace320537f09296cd9200b13576ce";
+      };
+      default = "r0";
+    };
+  };
 }
