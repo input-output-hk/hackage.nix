@@ -483,4 +483,15 @@
       default = "r0";
     };
   };
+  "4.0.9" = {
+    sha256 = "242d953bbb486f092334a4ce79ee1042732dbb7f08da774090813c8257e78330";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gdk-4.0.9-r0-4196fd5d91a5a3297b2a52debe067409d5001edfec7ed7adb7a44b99a5372893.nix;
+        revNum = 0;
+        sha256 = "4196fd5d91a5a3297b2a52debe067409d5001edfec7ed7adb7a44b99a5372893";
+      };
+      default = "r0";
+    };
+  };
 }

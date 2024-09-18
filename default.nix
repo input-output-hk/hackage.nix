@@ -14671,6 +14671,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "singleton-typelits" = import ./nix/singleton-typelits.nix;
   "singletons" = import ./nix/singletons.nix;
   "singletons-base" = import ./nix/singletons-base.nix;
+  "singletons-default" = import ./nix/singletons-default.nix;
   "singletons-presburger" = import ./nix/singletons-presburger.nix;
   "singletons-th" = import ./nix/singletons-th.nix;
   "singnal" = import ./nix/singnal.nix;

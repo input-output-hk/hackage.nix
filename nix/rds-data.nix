@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.0.0.7" = {
+    sha256 = "cd7b79ef6e5776a61c05c9d37d9ea4ce88c84b5c25d68f839b4d498177789e10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rds-data-0.0.0.7-r0-ae91a962b7acbbee7f0fd551ac594efdbcf58c19a1e7931359a040f4b2480bf6.nix;
+        revNum = 0;
+        sha256 = "ae91a962b7acbbee7f0fd551ac594efdbcf58c19a1e7931359a040f4b2480bf6";
+      };
+      default = "r0";
+    };
+  };
 }
