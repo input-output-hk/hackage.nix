@@ -17796,6 +17796,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yesod-worker" = import ./nix/yesod-worker.nix;
   "yet-another-logger" = import ./nix/yet-another-logger.nix;
   "yggdrasil" = import ./nix/yggdrasil.nix;
+  "yggdrasil-schema" = import ./nix/yggdrasil-schema.nix;
   "yhccore" = import ./nix/yhccore.nix;
   "yhseq" = import ./nix/yhseq.nix;
   "yi" = import ./nix/yi.nix;

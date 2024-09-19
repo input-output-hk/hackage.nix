@@ -89,7 +89,12 @@
         revNum = 1;
         sha256 = "98e3df2425aecfd521ff1bd7f8f7e056689b52d40224b6509586a6f5b3b915e1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/prettyprinter-graphviz-1.1.0.0-r2-2401030745a6fe443096bba4ab4f0464cac651d59b534f4e6a2b8fcd673e3067.nix;
+        revNum = 2;
+        sha256 = "2401030745a6fe443096bba4ab4f0464cac651d59b534f4e6a2b8fcd673e3067";
+      };
+      default = "r2";
     };
   };
 }
