@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "a4f4fbc11bafe306c48b44d778b52d03de9ee3a19619bd7bcc2d0994cf600781";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-containers-1.0.0.2-r0-a1d0fddd4599317517631ffa73eecde0db73c99e883c5e3cfb7a1b7ce9016902.nix;
+        revNum = 0;
+        sha256 = "a1d0fddd4599317517631ffa73eecde0db73c99e883c5e3cfb7a1b7ce9016902";
+      };
+      default = "r0";
+    };
+  };
 }

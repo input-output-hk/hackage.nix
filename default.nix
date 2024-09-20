@@ -7327,6 +7327,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "happy-arbitrary" = import ./nix/happy-arbitrary.nix;
   "happy-dot" = import ./nix/happy-dot.nix;
   "happy-hour" = import ./nix/happy-hour.nix;
+  "happy-lib" = import ./nix/happy-lib.nix;
   "happy-meta" = import ./nix/happy-meta.nix;
   "happybara" = import ./nix/happybara.nix;
   "happybara-webkit" = import ./nix/happybara-webkit.nix;
@@ -10629,6 +10630,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "memory-cd" = import ./nix/memory-cd.nix;
   "memory-hexstring" = import ./nix/memory-hexstring.nix;
   "memorypool" = import ./nix/memorypool.nix;
+  "mempack" = import ./nix/mempack.nix;
   "memscript" = import ./nix/memscript.nix;
   "memzero" = import ./nix/memzero.nix;
   "menoh" = import ./nix/menoh.nix;

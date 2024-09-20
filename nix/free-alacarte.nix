@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "1.0.0.6" = {
+    sha256 = "a7099bde6a5237f627dbaf1204d2feb411660f60cdcd61e0271b222de6b11aaa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-alacarte-1.0.0.6-r0-817982cb812fc60e61b7c92b6d8af946dbe391bfbc87826e3265fcd7d83f95cd.nix;
+        revNum = 0;
+        sha256 = "817982cb812fc60e61b7c92b6d8af946dbe391bfbc87826e3265fcd7d83f95cd";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.7" = {
+    sha256 = "f3bed9ab17a88ffe28c401afd8ec33cc507ea525bb92ac203978c583e11b700c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-alacarte-1.0.0.7-r0-6a3e18b9b90e65252a088323204d5bef3a7b3895e1ebbac72eecf736ec66a244.nix;
+        revNum = 0;
+        sha256 = "6a3e18b9b90e65252a088323204d5bef3a7b3895e1ebbac72eecf736ec66a244";
+      };
+      default = "r0";
+    };
+  };
 }

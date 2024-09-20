@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "8e5775f374bd7eff098ab586d233aa34925d3a5a32043b8f964b0379cd9e70b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/little-logger-3.0.0-r0-1e131c44acce0e7997fb5e62a5d6a71e7ae54c7fd80c0641c6a0aa55cf950c90.nix;
+        revNum = 0;
+        sha256 = "1e131c44acce0e7997fb5e62a5d6a71e7ae54c7fd80c0641c6a0aa55cf950c90";
+      };
+      default = "r0";
+    };
+  };
 }
