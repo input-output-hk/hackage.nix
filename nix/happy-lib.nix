@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "2.0.1" = {
+    sha256 = "ae83b019037a55cfec5d95d03dc0e31489d685d52341d16658027938511fa5be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happy-lib-2.0.1-r0-19331c029192a37fab20192b989bc32582634287a023c0823c4eb151cd8bd251.nix;
+        revNum = 0;
+        sha256 = "19331c029192a37fab20192b989bc32582634287a023c0823c4eb151cd8bd251";
+      };
+      default = "r0";
+    };
+  };
 }
