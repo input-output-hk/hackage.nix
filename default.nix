@@ -1545,6 +1545,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "affine-invariant-ensemble-mcmc" = import ./nix/affine-invariant-ensemble-mcmc.nix;
   "affinely-extended" = import ./nix/affinely-extended.nix;
   "afis" = import ./nix/afis.nix;
+  "aftovolio" = import ./nix/aftovolio.nix;
   "afv" = import ./nix/afv.nix;
   "ag-pictgen" = import ./nix/ag-pictgen.nix;
   "agda-language-server" = import ./nix/agda-language-server.nix;
