@@ -70,4 +70,15 @@
       default = "r0";
     };
   };
+  "1.1.0.1" = {
+    sha256 = "80bd0643dd2867060bd23993e3c638ca8759be91024016fa494069361dd162fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kvitable-1.1.0.1-r0-6620d97049a9e05f50be5dd77063ef1d154ce0ea558c6da329ae41b580bc8146.nix;
+        revNum = 0;
+        sha256 = "6620d97049a9e05f50be5dd77063ef1d154ce0ea558c6da329ae41b580bc8146";
+      };
+      default = "r0";
+    };
+  };
 }

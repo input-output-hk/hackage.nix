@@ -12129,6 +12129,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "partial-uri" = import ./nix/partial-uri.nix;
   "partialord" = import ./nix/partialord.nix;
   "partly" = import ./nix/partly.nix;
+  "paseto" = import ./nix/paseto.nix;
   "passage" = import ./nix/passage.nix;
   "passman" = import ./nix/passman.nix;
   "passman-cli" = import ./nix/passman-cli.nix;
@@ -16535,6 +16536,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-gui" = import ./nix/typed-gui.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
+  "typed-range" = import ./nix/typed-range.nix;
   "typed-session" = import ./nix/typed-session.nix;
   "typed-session-state-algorithm" = import ./nix/typed-session-state-algorithm.nix;
   "typed-spreadsheet" = import ./nix/typed-spreadsheet.nix;

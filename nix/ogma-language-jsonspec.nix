@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.4.1" = {
+    sha256 = "35239ff44e14332d90af3205458bdb419450625cdc5f675bf0dde021fdf584ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-language-jsonspec-1.4.1-r0-a51a17643bc59c469d58cd9b1903c1865bdea18f2e85745142299da064329150.nix;
+        revNum = 0;
+        sha256 = "a51a17643bc59c469d58cd9b1903c1865bdea18f2e85745142299da064329150";
+      };
+      default = "r0";
+    };
+  };
 }

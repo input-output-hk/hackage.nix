@@ -273,4 +273,15 @@
       default = "r0";
     };
   };
+  "3.3.9.2" = {
+    sha256 = "bd9484f8d7217206a22d26a0de124727fb885c83acc61f35eda90af8baedb4f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-GLFW-3.3.9.2-r0-8be764c9e1582fa17be4dc1e1a3835223a270ce0ea787109f46d48c968fde9d6.nix;
+        revNum = 0;
+        sha256 = "8be764c9e1582fa17be4dc1e1a3835223a270ce0ea787109f46d48c968fde9d6";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -639,4 +639,15 @@
       default = "r0";
     };
   };
+  "3.3.9.1" = {
+    sha256 = "46c95b46d712e0050a089502019cfaa4756ca17550cf70e255c3222f8222926a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/GLFW-b-3.3.9.1-r0-5033d900d04402942309bad4c0d124627947d6652f165407a147a6d669d88e21.nix;
+        revNum = 0;
+        sha256 = "5033d900d04402942309bad4c0d124627947d6652f165407a147a6d669d88e21";
+      };
+      default = "r0";
+    };
+  };
 }
