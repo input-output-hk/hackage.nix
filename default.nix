@@ -3614,6 +3614,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cloud-seeder" = import ./nix/cloud-seeder.nix;
   "cloudfront-signer" = import ./nix/cloudfront-signer.nix;
   "cloudi" = import ./nix/cloudi.nix;
+  "cloudy" = import ./nix/cloudy.nix;
   "cloudyfs" = import ./nix/cloudyfs.nix;
   "clplug" = import ./nix/clplug.nix;
   "clr-bindings" = import ./nix/clr-bindings.nix;
@@ -16629,6 +16630,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unbreak" = import ./nix/unbreak.nix;
   "uncaught-exception" = import ./nix/uncaught-exception.nix;
   "uncertain" = import ./nix/uncertain.nix;
+  "unclogging" = import ./nix/unclogging.nix;
   "unconstrained" = import ./nix/unconstrained.nix;
   "unescaping-print" = import ./nix/unescaping-print.nix;
   "unexceptionalio" = import ./nix/unexceptionalio.nix;
