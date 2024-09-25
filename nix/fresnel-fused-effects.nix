@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.0.1" = {
+    sha256 = "9ed0079f0b1b77d2a95e9788ae286349e8c77b86d3dcb40243595c51ad44c000";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fresnel-fused-effects-0.0.0.1-r0-6ae104a67d843d2cfc38a640485f1e856aafad9591c5211352aaa55f87205bae.nix;
+        revNum = 0;
+        sha256 = "6ae104a67d843d2cfc38a640485f1e856aafad9591c5211352aaa55f87205bae";
+      };
+      default = "r0";
+    };
+  };
 }

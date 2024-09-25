@@ -9458,6 +9458,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "json-stream" = import ./nix/json-stream.nix;
   "json-syntax" = import ./nix/json-syntax.nix;
   "json-to-haskell" = import ./nix/json-to-haskell.nix;
+  "json-to-type" = import ./nix/json-to-type.nix;
   "json-togo" = import ./nix/json-togo.nix;
   "json-tokens" = import ./nix/json-tokens.nix;
   "json-tools" = import ./nix/json-tools.nix;
