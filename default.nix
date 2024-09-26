@@ -15707,6 +15707,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-discover" = import ./nix/tasty-discover.nix;
   "tasty-expected-failure" = import ./nix/tasty-expected-failure.nix;
   "tasty-fail-fast" = import ./nix/tasty-fail-fast.nix;
+  "tasty-flaky" = import ./nix/tasty-flaky.nix;
   "tasty-focus" = import ./nix/tasty-focus.nix;
   "tasty-golden" = import ./nix/tasty-golden.nix;
   "tasty-grading-system" = import ./nix/tasty-grading-system.nix;
@@ -16620,6 +16621,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unbeliever" = import ./nix/unbeliever.nix;
   "unbound" = import ./nix/unbound.nix;
   "unbound-generics" = import ./nix/unbound-generics.nix;
+  "unbound-generics-unify" = import ./nix/unbound-generics-unify.nix;
   "unbound-kind-generics" = import ./nix/unbound-kind-generics.nix;
   "unbounded-delays" = import ./nix/unbounded-delays.nix;
   "unbounded-delays-units" = import ./nix/unbounded-delays-units.nix;
