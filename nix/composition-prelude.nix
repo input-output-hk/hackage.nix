@@ -623,4 +623,15 @@
       default = "r0";
     };
   };
+  "3.0.1.0" = {
+    sha256 = "8f4722166b7d5814e57857b9b6c7d9e767259fd3c97ff4001e8e6715b7bd1c19";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/composition-prelude-3.0.1.0-r0-072f6a183d5862cb3ed83ee933f24ab8c2d3d49036c3e0f9a021826ce1222958.nix;
+        revNum = 0;
+        sha256 = "072f6a183d5862cb3ed83ee933f24ab8c2d3d49036c3e0f9a021826ce1222958";
+      };
+      default = "r0";
+    };
+  };
 }

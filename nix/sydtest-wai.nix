@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "e1b9456e5819f032b71763acc563d71e00fef2cdfce967452565edeb3631d50e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-wai-0.2.0.2-r0-ab96ab351ae7e92271deb9b3ff7371a6e900002591d1eb50023479bb05267d20.nix;
+        revNum = 0;
+        sha256 = "ab96ab351ae7e92271deb9b3ff7371a6e900002591d1eb50023479bb05267d20";
+      };
+      default = "r0";
+    };
+  };
 }

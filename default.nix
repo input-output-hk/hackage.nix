@@ -13134,6 +13134,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "qlinear" = import ./nix/qlinear.nix;
   "qm-interpolated-string" = import ./nix/qm-interpolated-string.nix;
   "qnap-decrypt" = import ./nix/qnap-decrypt.nix;
+  "qq-bytes" = import ./nix/qq-bytes.nix;
   "qq-literals" = import ./nix/qq-literals.nix;
   "qr" = import ./nix/qr.nix;
   "qr-imager" = import ./nix/qr-imager.nix;
