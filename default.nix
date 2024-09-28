@@ -7366,6 +7366,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hash" = import ./nix/hash.nix;
   "hash-addressed" = import ./nix/hash-addressed.nix;
   "hash-addressed-cli" = import ./nix/hash-addressed-cli.nix;
+  "hash-cons" = import ./nix/hash-cons.nix;
   "hash-store" = import ./nix/hash-store.nix;
   "hash-tree" = import ./nix/hash-tree.nix;
   "hashable" = import ./nix/hashable.nix;
