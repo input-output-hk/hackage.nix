@@ -70,6 +70,17 @@
       default = "r0";
     };
   };
+  "0.12.0.1" = {
+    sha256 = "05f8de68743a042ae39751297d79440d6a7f2dce0f1fe01c00509269c272ea56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/patat-0.12.0.1-r0-27b06d60cb1e33d75a28e37dc85eeb8d7db11df7cba109d2481e04218951d1a1.nix;
+        revNum = 0;
+        sha256 = "27b06d60cb1e33d75a28e37dc85eeb8d7db11df7cba109d2481e04218951d1a1";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "2dcddc275cac9a6aced791650467316987f8664096cad83b0e06fb28375ece2a";
     revisions = {
