@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.7.5.0" = {
+    sha256 = "dcb7a430d629cd86e269ed1135f67d34144977193bb4845d4e6f9a4e89ae316f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tesla-0.7.5.0-r0-a856cd5f441ff1d88fc2759349dd90fe1d53b7a69af3348f90d7dab88c57de76.nix;
+        revNum = 0;
+        sha256 = "a856cd5f441ff1d88fc2759349dd90fe1d53b7a69af3348f90d7dab88c57de76";
+      };
+      default = "r0";
+    };
+  };
 }

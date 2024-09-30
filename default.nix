@@ -10757,6 +10757,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "minimorph" = import ./nix/minimorph.nix;
   "minimung" = import ./nix/minimung.nix;
   "minio-hs" = import ./nix/minio-hs.nix;
+  "minion" = import ./nix/minion.nix;
+  "minion-conduit" = import ./nix/minion-conduit.nix;
+  "minion-htmx" = import ./nix/minion-htmx.nix;
+  "minion-jwt" = import ./nix/minion-jwt.nix;
+  "minion-openapi3" = import ./nix/minion-openapi3.nix;
+  "minion-wai-extra" = import ./nix/minion-wai-extra.nix;
   "minions" = import ./nix/minions.nix;
   "minioperational" = import ./nix/minioperational.nix;
   "miniplex" = import ./nix/miniplex.nix;

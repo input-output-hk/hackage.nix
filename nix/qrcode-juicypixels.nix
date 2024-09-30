@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.8.6" = {
+    sha256 = "aade0500f3fc1fbed712e66964ba7b5c1af4c8ffb331f05852a4835336e32744";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/qrcode-juicypixels-0.8.6-r0-14ed5339bd187dd7f5a7ee1a32e9fc53da05fe962a35bf27ba72d90ceae8c431.nix;
+        revNum = 0;
+        sha256 = "14ed5339bd187dd7f5a7ee1a32e9fc53da05fe962a35bf27ba72d90ceae8c431";
+      };
+      default = "r0";
+    };
+  };
 }

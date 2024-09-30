@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "c3804f722818507bdc1a8fbcd27e3ec4c47268fda937501cfc74efcde3374c66";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/functor-monad-0.1.1.1-r0-a6ab388ba40fea2dd591cd30f202c77146d1113b9053178f9c05131cd4f8823c.nix;
+        revNum = 0;
+        sha256 = "a6ab388ba40fea2dd591cd30f202c77146d1113b9053178f9c05131cd4f8823c";
+      };
+      default = "r0";
+    };
+  };
 }
