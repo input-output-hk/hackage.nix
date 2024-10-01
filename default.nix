@@ -6603,6 +6603,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "github-webhook-handler" = import ./nix/github-webhook-handler.nix;
   "github-webhook-handler-snap" = import ./nix/github-webhook-handler-snap.nix;
   "github-webhooks" = import ./nix/github-webhooks.nix;
+  "github-workflow-commands" = import ./nix/github-workflow-commands.nix;
   "githud" = import ./nix/githud.nix;
   "gitignore" = import ./nix/gitignore.nix;
   "gitit" = import ./nix/gitit.nix;

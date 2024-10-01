@@ -115,4 +115,26 @@
       default = "r6";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "d198684f7ba1474c4ac146bbfe8bbbfc7304e85510f8e040613e18aab93ed4ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/goldplate-0.2.2.0-r0-c4cc4948b04637f77aa75526cea88304c3265c253dc77a8a0cb559ff235e621f.nix;
+        revNum = 0;
+        sha256 = "c4cc4948b04637f77aa75526cea88304c3265c253dc77a8a0cb559ff235e621f";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.2.1" = {
+    sha256 = "bc0ca0e77916a7d30f6cfdb188b37edb12ded7f1ede9609f19c70efcd519e927";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/goldplate-0.2.2.1-r0-0650858c913c22ab5fe3ffb6e7649ee261b67924695b82c4fcda500ffff0944f.nix;
+        revNum = 0;
+        sha256 = "0650858c913c22ab5fe3ffb6e7649ee261b67924695b82c4fcda500ffff0944f";
+      };
+      default = "r0";
+    };
+  };
 }
