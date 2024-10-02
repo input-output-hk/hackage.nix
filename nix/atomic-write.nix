@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "44cded44a73fe10222198c13339e53f8b14420252d8cf84c196cd7323382b539";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atomic-write-0.2.1.0-r0-ea459a6a39870faed7c497cfa6e8de82cc11e30176c4f8e209b6c39afb953571.nix;
+        revNum = 0;
+        sha256 = "ea459a6a39870faed7c497cfa6e8de82cc11e30176c4f8e209b6c39afb953571";
+      };
+      default = "r0";
+    };
+  };
 }

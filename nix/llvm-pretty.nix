@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "e6a24ee982b988e390d99bbc633ed6aa0a72f797502df8760fe14d5bcdfd9649";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/llvm-pretty-0.12.1.0-r1-bea6d6c782fb4b280fd3b1f7267eb0b2a02ed4597fa004f51f4ba63af242f32c.nix;
+        revNum = 1;
+        sha256 = "bea6d6c782fb4b280fd3b1f7267eb0b2a02ed4597fa004f51f4ba63af242f32c";
+      };
+      default = "r1";
     };
   };
   "0.2.0.0" = {

@@ -82,7 +82,12 @@
         revNum = 0;
         sha256 = "40e791c564c49a52cafad2427d07f3d7e61b4254e6575743ede406e16a203917";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jsonpath-0.3.0.0-r1-3d264563209fc8e82651f28a2a1fc2b3039cdeda60bd5b620106cecb6063234c.nix;
+        revNum = 1;
+        sha256 = "3d264563209fc8e82651f28a2a1fc2b3039cdeda60bd5b620106cecb6063234c";
+      };
+      default = "r1";
     };
   };
 }
