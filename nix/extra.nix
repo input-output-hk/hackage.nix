@@ -944,7 +944,12 @@
         revNum = 0;
         sha256 = "e384751317577554f873812358fab022da02aa9a286c9341308fac83f4d766c5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.10-r1-40545e71e1aa96d44da04d2d4bc234fd9062f47f0d24f5f19d5bc782060c12ad.nix;
+        revNum = 1;
+        sha256 = "40545e71e1aa96d44da04d2d4bc234fd9062f47f0d24f5f19d5bc782060c12ad";
+      };
+      default = "r1";
     };
   };
   "1.7.11" = {
@@ -955,7 +960,12 @@
         revNum = 0;
         sha256 = "601d0663235a91edef3585b7c76baf899b308ef667c1d1be3004f600a80d3c85";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.11-r1-95cae00ec6b7b77c94df729224b235674c907dff4d44849b3cfda18b4dd94639.nix;
+        revNum = 1;
+        sha256 = "95cae00ec6b7b77c94df729224b235674c907dff4d44849b3cfda18b4dd94639";
+      };
+      default = "r1";
     };
   };
   "1.7.12" = {
@@ -966,7 +976,12 @@
         revNum = 0;
         sha256 = "3ac58d7341976173d1052e7b2837d119212d9afcf911735667c7f1ab67aec25f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.12-r1-bb67197427b41b55497b89375bb5bb39dd19874ddef740ea09ca38a2d3c5afc6.nix;
+        revNum = 1;
+        sha256 = "bb67197427b41b55497b89375bb5bb39dd19874ddef740ea09ca38a2d3c5afc6";
+      };
+      default = "r1";
     };
   };
   "1.7.13" = {
@@ -977,7 +992,12 @@
         revNum = 0;
         sha256 = "5f6aa264fd6b30f3f83a3b7f94232255140ff45600fd401305453aba2419a4c4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.13-r1-8a90c37055b2c82c7ce3c8429971a5043e685514c49393d1909b1a9012a85b4c.nix;
+        revNum = 1;
+        sha256 = "8a90c37055b2c82c7ce3c8429971a5043e685514c49393d1909b1a9012a85b4c";
+      };
+      default = "r1";
     };
   };
   "1.7.14" = {
@@ -988,7 +1008,12 @@
         revNum = 0;
         sha256 = "e3d3ce1dc7746b1132930e48c59fb5e8c51a09e92e0c031316be031067a273fb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.14-r1-a28b03291131ba70f08d5112b659f926130ddb1fbca15b54710f2cd3b164eefd.nix;
+        revNum = 1;
+        sha256 = "a28b03291131ba70f08d5112b659f926130ddb1fbca15b54710f2cd3b164eefd";
+      };
+      default = "r1";
     };
   };
   "1.7.15" = {
@@ -999,7 +1024,12 @@
         revNum = 0;
         sha256 = "9dd1ccdb34b6c539012ac3789f8f20743dfe8297bb69a0412d835e82f8cbedc6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.15-r1-2bdd2cb88c716b2c9f3dbffe7e48696c69f24fde920e7f571185aa367471c17d.nix;
+        revNum = 1;
+        sha256 = "2bdd2cb88c716b2c9f3dbffe7e48696c69f24fde920e7f571185aa367471c17d";
+      };
+      default = "r1";
     };
   };
   "1.7.16" = {
@@ -1101,7 +1131,12 @@
         revNum = 0;
         sha256 = "9fa287738baba3c08fafdacc7f99e63dc0fe79f58a634c8d7485332e4adf7c38";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.7-r1-b071695bb61ebc63c154397dfc82f8b45e01b8cade11d68145eba39804ee733b.nix;
+        revNum = 1;
+        sha256 = "b071695bb61ebc63c154397dfc82f8b45e01b8cade11d68145eba39804ee733b";
+      };
+      default = "r1";
     };
   };
   "1.7.8" = {
@@ -1112,7 +1147,12 @@
         revNum = 0;
         sha256 = "113673aa5ab547780c19e8081d463edabfacd34dafe03b5a9a43da9a2fa920ec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.8-r1-ade657569f9d6eb857b2de2141b74a320432db4973f120089de6125f63f7f9ba.nix;
+        revNum = 1;
+        sha256 = "ade657569f9d6eb857b2de2141b74a320432db4973f120089de6125f63f7f9ba";
+      };
+      default = "r1";
     };
   };
   "1.7.9" = {
@@ -1123,7 +1163,12 @@
         revNum = 0;
         sha256 = "f1dec740f0f2025790c540732bfd52c556ec55bde4f5dfd7cf18e22bd44ff3d0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/extra-1.7.9-r1-57e0c4fa2eadf5be1fec117a4b934782861b25f143a7870e4c54755eb41beceb.nix;
+        revNum = 1;
+        sha256 = "57e0c4fa2eadf5be1fec117a4b934782861b25f143a7870e4c54755eb41beceb";
+      };
+      default = "r1";
     };
   };
 }

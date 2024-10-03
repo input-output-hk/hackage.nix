@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "dc13153acf5574b61f4974b5ac155b97152da0305fe842d1f79d53ff27435cfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keid-frp-banana-0.1.2.1-r0-8a7c4a689a570961183762b94992d7a3468b91635a027ec19c87f11964a679e6.nix;
+        revNum = 0;
+        sha256 = "8a7c4a689a570961183762b94992d7a3468b91635a027ec19c87f11964a679e6";
+      };
+      default = "r0";
+    };
+  };
 }
