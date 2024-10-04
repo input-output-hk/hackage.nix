@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "3365d4c8065040400c90d5f9e6037aa2360acce6ccb2704bfb56cc8e19e0c7bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web3-solidity-1.0.1.0-r0-eff20d9b02598044ae78f49cbc4a2c3dc58cfd5ca1b55f42846e28dd83459013.nix;
+        revNum = 0;
+        sha256 = "eff20d9b02598044ae78f49cbc4a2c3dc58cfd5ca1b55f42846e28dd83459013";
+      };
+      default = "r0";
+    };
+  };
 }

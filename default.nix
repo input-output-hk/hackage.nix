@@ -7087,6 +7087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gtkrsync" = import ./nix/gtkrsync.nix;
   "gtksourceview2" = import ./nix/gtksourceview2.nix;
   "gtksourceview3" = import ./nix/gtksourceview3.nix;
+  "gtvm-hs" = import ./nix/gtvm-hs.nix;
   "guarded-allocation" = import ./nix/guarded-allocation.nix;
   "guarded-rewriting" = import ./nix/guarded-rewriting.nix;
   "guardian" = import ./nix/guardian.nix;
