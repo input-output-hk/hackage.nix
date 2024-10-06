@@ -7349,6 +7349,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haroonga" = import ./nix/haroonga.nix;
   "haroonga-httpd" = import ./nix/haroonga-httpd.nix;
   "harp" = import ./nix/harp.nix;
+  "harpie" = import ./nix/harpie.nix;
   "harpy" = import ./nix/harpy.nix;
   "harvest-api" = import ./nix/harvest-api.nix;
   "has" = import ./nix/has.nix;
