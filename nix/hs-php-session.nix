@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "91542b960766fb29d04ffa1f124c72877dd8ffcf26c4cb6109f94d3e6e8f1d9a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hs-php-session-0.0.8.8-r2-81fcdd060548a04c12ea8e4534da2f5bea8ec999b62c34fdb5f72be9e5b4b20a.nix;
+        revNum = 2;
+        sha256 = "81fcdd060548a04c12ea8e4534da2f5bea8ec999b62c34fdb5f72be9e5b4b20a";
+      };
+      default = "r2";
     };
   };
   "0.0.9.0" = {
@@ -33,7 +38,12 @@
         revNum = 2;
         sha256 = "bd65a2ba9c1bac1b22638ee993b5938e7238be1544a62e52863d0834916a47a5";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hs-php-session-0.0.9.0-r3-52b44035d1958c80f4399d83d1858c58d8496e6dda05f08aea6f76aa7f2d8d2c.nix;
+        revNum = 3;
+        sha256 = "52b44035d1958c80f4399d83d1858c58d8496e6dda05f08aea6f76aa7f2d8d2c";
+      };
+      default = "r3";
     };
   };
   "0.0.9.1" = {
@@ -49,7 +59,12 @@
         revNum = 1;
         sha256 = "d5d2b54800442cd4ddf97d7b0760de199f1684832fddae132c7f9cb615d222b3";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hs-php-session-0.0.9.1-r2-40304abaf9465524ba63254295cb0130d0a50761d77ecbe933d4047b7cce00b3.nix;
+        revNum = 2;
+        sha256 = "40304abaf9465524ba63254295cb0130d0a50761d77ecbe933d4047b7cce00b3";
+      };
+      default = "r2";
     };
   };
   "0.0.9.2" = {
@@ -65,7 +80,12 @@
         revNum = 1;
         sha256 = "bf7414407d3582c1063a13d6adcce1eb690044a6f414d01547abea8192f24a87";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hs-php-session-0.0.9.2-r2-ccf5b00bbfb8ffb402de00e4d15d30db3f7cf93e6487a028b715794ed7ddd1d6.nix;
+        revNum = 2;
+        sha256 = "ccf5b00bbfb8ffb402de00e4d15d30db3f7cf93e6487a028b715794ed7ddd1d6";
+      };
+      default = "r2";
     };
   };
   "0.0.9.3" = {
@@ -81,7 +101,12 @@
         revNum = 1;
         sha256 = "88c75908f71543da12b1ddfa7106948f0ed6f67979e31b12106d85b1c7c941b6";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hs-php-session-0.0.9.3-r2-ab8794bb79e22b067a0eda2219ef9476e4476fa502719c4b1662f1e5697e8801.nix;
+        revNum = 2;
+        sha256 = "ab8794bb79e22b067a0eda2219ef9476e4476fa502719c4b1662f1e5697e8801";
+      };
+      default = "r2";
     };
   };
 }

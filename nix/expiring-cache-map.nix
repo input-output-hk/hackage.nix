@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "e297a632a70e2ec89d9374396ede689c1ab60630f1b233711f3a8ff5075750f6";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/expiring-cache-map-0.0.5.0-r3-7b9cb79fa24d9fe721cda36568318e56053d7211f92792ae6b9e12f17724ce2a.nix;
+        revNum = 3;
+        sha256 = "7b9cb79fa24d9fe721cda36568318e56053d7211f92792ae6b9e12f17724ce2a";
+      };
+      default = "r3";
     };
   };
   "0.0.5.3" = {
@@ -38,7 +43,12 @@
         revNum = 2;
         sha256 = "f4f23b6a2a9af9294493176736ee4a310aab93f8c3eec62eb6dea8d39a482ff2";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/expiring-cache-map-0.0.5.3-r3-59b4a571c68585bb808f085f386ee087209086c0424e3d30abf265b622d51adb.nix;
+        revNum = 3;
+        sha256 = "59b4a571c68585bb808f085f386ee087209086c0424e3d30abf265b622d51adb";
+      };
+      default = "r3";
     };
   };
   "0.0.5.4" = {
@@ -54,7 +64,12 @@
         revNum = 1;
         sha256 = "af17261a0921bb377e63484d4c8e3830cf227dfc40e420cf0a48d52ed3362b19";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/expiring-cache-map-0.0.5.4-r2-e00b44e7a6138e92edc9fd445c2a8c4adcd111f9e36111fbc20e0f35d7126a39.nix;
+        revNum = 2;
+        sha256 = "e00b44e7a6138e92edc9fd445c2a8c4adcd111f9e36111fbc20e0f35d7126a39";
+      };
+      default = "r2";
     };
   };
   "0.0.6.0" = {
@@ -70,7 +85,12 @@
         revNum = 1;
         sha256 = "c95ff31c9a1bdf9470725fdb31017b3cd7041c7307246bdb8db9567a07c280d8";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/expiring-cache-map-0.0.6.0-r2-499c09662bf8fca7396bf6a4557be0f24e131eea31035fa85886346bd54b7625.nix;
+        revNum = 2;
+        sha256 = "499c09662bf8fca7396bf6a4557be0f24e131eea31035fa85886346bd54b7625";
+      };
+      default = "r2";
     };
   };
   "0.0.6.1" = {
@@ -86,7 +106,12 @@
         revNum = 1;
         sha256 = "6f298903cb33395b87adaa04874c590dcc1b3903c9e3b3b09ee376a768c4bccc";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/expiring-cache-map-0.0.6.1-r2-94f91c9312bf1df6900816c13d5b2423c3d958bbd3bc604a1ab171134b46e3d1.nix;
+        revNum = 2;
+        sha256 = "94f91c9312bf1df6900816c13d5b2423c3d958bbd3bc604a1ab171134b46e3d1";
+      };
+      default = "r2";
     };
   };
 }
