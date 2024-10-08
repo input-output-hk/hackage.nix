@@ -12783,6 +12783,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "powerqueue-distributed" = import ./nix/powerqueue-distributed.nix;
   "powerqueue-levelmem" = import ./nix/powerqueue-levelmem.nix;
   "powerqueue-sqs" = import ./nix/powerqueue-sqs.nix;
+  "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
+  "ppad-sha256" = import ./nix/ppad-sha256.nix;
+  "ppad-sha512" = import ./nix/ppad-sha512.nix;
   "ppm" = import ./nix/ppm.nix;
   "pprecord" = import ./nix/pprecord.nix;
   "pptable" = import ./nix/pptable.nix;

@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.0.0.10" = {
+    sha256 = "3ca57c6053c00d44798a9a80b423dad3e9f4a1d13b489e10e751bc535328002d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haspara-0.0.0.10-r0-1a310a0db59ec3b33902700bffe82db0ac9f677f1f6d6bb7b7423e6d3285b2b4.nix;
+        revNum = 0;
+        sha256 = "1a310a0db59ec3b33902700bffe82db0ac9f677f1f6d6bb7b7423e6d3285b2b4";
+      };
+      default = "r0";
+    };
+  };
   "0.0.0.2" = {
     sha256 = "df19578f1f3cf819a59bc8a102dc82879ef7e7edb1ae81e4a625f47a12a35416";
     revisions = {

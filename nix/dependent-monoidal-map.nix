@@ -67,7 +67,12 @@
         revNum = 0;
         sha256 = "b5c214e2ca0172e5a71cb6e38131b181d7dcb64ead42ab29744aa13e18a7b47c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dependent-monoidal-map-0.1.1.4-r1-e94915681934a5124c72f1e237df04ffadabc548379a0fa3b7b775494b58a662.nix;
+        revNum = 1;
+        sha256 = "e94915681934a5124c72f1e237df04ffadabc548379a0fa3b7b775494b58a662";
+      };
+      default = "r1";
     };
   };
 }
