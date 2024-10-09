@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "30429eeeb0647c208f807a6fe85bccf1bd7c000a2dccbe986b57ebe06a6581ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/minion-openapi3-0.1.0.1-r0-1628d7254fe5e38f01bde1bc1c66ffca3016fa18c4e83c7c2002b5e69ab1d20b.nix;
+        revNum = 0;
+        sha256 = "1628d7254fe5e38f01bde1bc1c66ffca3016fa18c4e83c7c2002b5e69ab1d20b";
+      };
+      default = "r0";
+    };
+  };
 }

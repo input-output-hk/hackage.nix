@@ -1503,6 +1503,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-flowtyped" = import ./nix/aeson-flowtyped.nix;
   "aeson-gadt-th" = import ./nix/aeson-gadt-th.nix;
   "aeson-generic-compat" = import ./nix/aeson-generic-compat.nix;
+  "aeson-generic-default" = import ./nix/aeson-generic-default.nix;
   "aeson-generics-typescript" = import ./nix/aeson-generics-typescript.nix;
   "aeson-helper" = import ./nix/aeson-helper.nix;
   "aeson-injector" = import ./nix/aeson-injector.nix;
@@ -9203,6 +9204,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "io-choice" = import ./nix/io-choice.nix;
   "io-classes" = import ./nix/io-classes.nix;
   "io-classes-mtl" = import ./nix/io-classes-mtl.nix;
+  "io-embed" = import ./nix/io-embed.nix;
   "io-machine" = import ./nix/io-machine.nix;
   "io-manager" = import ./nix/io-manager.nix;
   "io-memoize" = import ./nix/io-memoize.nix;
