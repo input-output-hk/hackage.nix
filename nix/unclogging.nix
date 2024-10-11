@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "ac54c98e2fcbe26917077c2be4bdea4ad34118de42090cf452aca7909952c5c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unclogging-0.1.0.3-r0-c5c59cf6d5265c5bfe8bbdaa77b9e0f5a80cac9f04eadc7a0cb98a8434525396.nix;
+        revNum = 0;
+        sha256 = "c5c59cf6d5265c5bfe8bbdaa77b9e0f5a80cac9f04eadc7a0cb98a8434525396";
+      };
+      default = "r0";
+    };
+  };
 }

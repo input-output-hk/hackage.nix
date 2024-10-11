@@ -262,4 +262,15 @@
       default = "r0";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "3930a0d6f93d3878a83c3f60f1c235ed1c5c12ca755c9fc549fcbaac212c9c62";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/csv-conduit-1.0.1.0-r0-15a6a98f4aae9185001ca4e10a5dbb21fd57cc7191a20c4f6bf9b568f01c9039.nix;
+        revNum = 0;
+        sha256 = "15a6a98f4aae9185001ca4e10a5dbb21fd57cc7191a20c4f6bf9b568f01c9039";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -337,4 +337,15 @@
       default = "r0";
     };
   };
+  "0.5.2.1" = {
+    sha256 = "ad7cb060439be95fcc1b6bbbfd5c484debce0540769bcd4beea9a8ed001ade00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vivid-0.5.2.1-r0-0515b9bc518455a6f2b1c04c6d2b3166d86c9b09dec0e1f085b4117c5b75c925.nix;
+        revNum = 0;
+        sha256 = "0515b9bc518455a6f2b1c04c6d2b3166d86c9b09dec0e1f085b4117c5b75c925";
+      };
+      default = "r0";
+    };
+  };
 }
