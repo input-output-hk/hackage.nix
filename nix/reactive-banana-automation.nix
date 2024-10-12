@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.5.7" = {
+    sha256 = "679eb8f785260ecdef6888f4457ca436c54a05316cf04569aa0a3ea83c4847f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reactive-banana-automation-0.5.7-r0-534f1eca3694cc673355679910dfa07aadb48ad5528f82f6eec144d47ae4d289.nix;
+        revNum = 0;
+        sha256 = "534f1eca3694cc673355679910dfa07aadb48ad5528f82f6eec144d47ae4d289";
+      };
+      default = "r0";
+    };
+  };
 }

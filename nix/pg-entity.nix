@@ -104,7 +104,17 @@
         revNum = 3;
         sha256 = "7eff7039c0e04b00e63375a59a1cc8f53aa3a6c2d043b7ba0187d7af431f01a4";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/pg-entity-0.0.4.4-r4-bf7eae2d0ac2aa7b065d6da6db338f1ad967a359cf12113c487a19d745e1a12f.nix;
+        revNum = 4;
+        sha256 = "bf7eae2d0ac2aa7b065d6da6db338f1ad967a359cf12113c487a19d745e1a12f";
+      };
+      r5 = {
+        nix = import ../hackage/pg-entity-0.0.4.4-r5-33c2b9b7890ac89a3bdaec4765fa5740cc882fe464f4b94cfa41c16b5cb95cb5.nix;
+        revNum = 5;
+        sha256 = "33c2b9b7890ac89a3bdaec4765fa5740cc882fe464f4b94cfa41c16b5cb95cb5";
+      };
+      default = "r5";
     };
   };
 }

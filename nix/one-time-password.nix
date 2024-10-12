@@ -50,7 +50,12 @@
         revNum = 2;
         sha256 = "edc8c6b586ee14acc2a65a65f40be594fcd4bedd5cb4673f0ef77fd279478390";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/one-time-password-3.0.0.0-r3-0fdbd2f539bef71b5f6c16be8998a53de5bbdeff6f3fe94d64819fc417996c35.nix;
+        revNum = 3;
+        sha256 = "0fdbd2f539bef71b5f6c16be8998a53de5bbdeff6f3fe94d64819fc417996c35";
+      };
+      default = "r3";
     };
   };
 }
