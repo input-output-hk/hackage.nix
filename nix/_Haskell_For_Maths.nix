@@ -208,6 +208,17 @@
       default = "r0";
     };
   };
+  "0.4.10" = {
+    sha256 = "98b028e5bcf872f04caf0387111a6e46977b361eae654c7f4f544cc67be1aa79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaskellForMaths-0.4.10-r0-8cbca3329749b08a91e1c2ead801b480774f89f6317ff3e23619baa439e41997.nix;
+        revNum = 0;
+        sha256 = "8cbca3329749b08a91e1c2ead801b480774f89f6317ff3e23619baa439e41997";
+      };
+      default = "r0";
+    };
+  };
   "0.4.2" = {
     sha256 = "6190813201ea06c17483f76dedb67aea09af44da8595ec92c6527000f8312bef";
     revisions = {
