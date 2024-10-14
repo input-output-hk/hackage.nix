@@ -141,4 +141,15 @@
       default = "r0";
     };
   };
+  "6.0.2" = {
+    sha256 = "06e823a5d17f853a19ad57e9a42d47a00f711e329005454ecb3a0c48dfad998e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-kafka-avro-6.0.2-r0-dead53ae40a6e7bc9b84a17aecf166c592f8dc92188948f5602162f15ee161e1.nix;
+        revNum = 0;
+        sha256 = "dead53ae40a6e7bc9b84a17aecf166c592f8dc92188948f5602162f15ee161e1";
+      };
+      default = "r0";
+    };
+  };
 }

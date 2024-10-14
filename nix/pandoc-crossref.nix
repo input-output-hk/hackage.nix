@@ -757,6 +757,22 @@
       default = "r3";
     };
   };
+  "0.3.18.0" = {
+    sha256 = "4cf1b62f082c2c0d975bbb9d0c095a8368137b3928b476b8837a8ee2f2097206";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-crossref-0.3.18.0-r0-66c46adb2f5b83ac4aaaf10428c1cffa3600ab7988730618633ac68bce57de7d.nix;
+        revNum = 0;
+        sha256 = "66c46adb2f5b83ac4aaaf10428c1cffa3600ab7988730618633ac68bce57de7d";
+      };
+      r1 = {
+        nix = import ../hackage/pandoc-crossref-0.3.18.0-r1-72d227bfda17ff9dcbe477e3a265700c278753f7f47312e148cb903cd8cf8b04.nix;
+        revNum = 1;
+        sha256 = "72d227bfda17ff9dcbe477e3a265700c278753f7f47312e148cb903cd8cf8b04";
+      };
+      default = "r1";
+    };
+  };
   "0.3.2.0" = {
     sha256 = "2a0a916b35f0ef4d404e5ab137e4c775ae0067f78bebb25723123b546f7bcd5f";
     revisions = {

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "7fdf3a57f6eb97d03319dd2966506e412089ffbdca8bcecf73caeff0f3d2ab63";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-aeson-0.2.0.1-r0-a58335cead38b022d5557f5b7d41d64ada57e9000a8833aafeb498e1c044a5c0.nix;
+        revNum = 0;
+        sha256 = "a58335cead38b022d5557f5b7d41d64ada57e9000a8833aafeb498e1c044a5c0";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -1178,6 +1178,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "TBit" = import ./nix/_T_Bit.nix;
   "TCache" = import ./nix/_T_Cache.nix;
   "THEff" = import ./nix/_T_H_Eff.nix;
+  "THSH" = import ./nix/_T_H_S_H.nix;
   "TLT" = import ./nix/_T_L_T.nix;
   "TORCS" = import ./nix/_T_O_R_C_S.nix;
   "TTTAS" = import ./nix/_T_T_T_A_S.nix;
