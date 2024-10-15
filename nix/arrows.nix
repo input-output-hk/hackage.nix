@@ -72,7 +72,12 @@
         revNum = 0;
         sha256 = "c0d00425b485c2cffdd42353d211e8e4c17e977f8abf7e992910877c5823a704";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arrows-0.4.1.2-r1-6b7c417e91a3ca0a7f57d453aeb8c8ebc9222d953d4ca0f9bd97afd8b487974c.nix;
+        revNum = 1;
+        sha256 = "6b7c417e91a3ca0a7f57d453aeb8c8ebc9222d953d4ca0f9bd97afd8b487974c";
+      };
+      default = "r1";
     };
   };
   "0.4.2.0" = {
@@ -83,7 +88,12 @@
         revNum = 0;
         sha256 = "630d7c4d32109c0544c5bdaf43f5b8c194b39df2d7644dd63ed663384d97f98b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arrows-0.4.2.0-r1-1eca30c5d02cef18f176d1dd765ed98d3b665db9cae5cc64b9b14e0eaed615eb.nix;
+        revNum = 1;
+        sha256 = "1eca30c5d02cef18f176d1dd765ed98d3b665db9cae5cc64b9b14e0eaed615eb";
+      };
+      default = "r1";
     };
   };
   "0.4.3.0" = {
@@ -94,7 +104,12 @@
         revNum = 0;
         sha256 = "f5d4052bff234a06574333e31ea17fa581e8b538854f1cdd9c190fca048f5a62";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arrows-0.4.3.0-r1-81258e5bf362aea80805f1b687558163f9cabd42db7a6d9a8a4d27c7eec896dd.nix;
+        revNum = 1;
+        sha256 = "81258e5bf362aea80805f1b687558163f9cabd42db7a6d9a8a4d27c7eec896dd";
+      };
+      default = "r1";
     };
   };
   "0.4.4.0" = {
@@ -105,7 +120,12 @@
         revNum = 0;
         sha256 = "95e9e69d11535dea442e8d1198eb0cd046415b865505fc79b43264e63c688091";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arrows-0.4.4.0-r1-46f5bfd86ac2e7934448020f79f5e7ab2d0e4076759f3cad6f0adbc009774233.nix;
+        revNum = 1;
+        sha256 = "46f5bfd86ac2e7934448020f79f5e7ab2d0e4076759f3cad6f0adbc009774233";
+      };
+      default = "r1";
     };
   };
   "0.4.4.1" = {
@@ -116,7 +136,12 @@
         revNum = 0;
         sha256 = "997e572956e8a78b4f4da82a096e46e502e3e08de761f462cf8f55db51ad8de8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/arrows-0.4.4.1-r1-49fd06a94b3c6b9a1449f200a3bc6bd1e69aa994b80eac64710bb9c04b456289.nix;
+        revNum = 1;
+        sha256 = "49fd06a94b3c6b9a1449f200a3bc6bd1e69aa994b80eac64710bb9c04b456289";
+      };
+      default = "r1";
     };
   };
   "0.4.4.2" = {

@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "0.4.1" = {
+    sha256 = "e77b52bdcbbb927f724384ed04e353f045460f2a4178c122330047aa44d5be48";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ring-buffer-0.4.1-r0-e41c3616149ed8c540079c49d6d19504551249751c21da8589d87d280867cf48.nix;
+        revNum = 0;
+        sha256 = "e41c3616149ed8c540079c49d6d19504551249751c21da8589d87d280867cf48";
+      };
+      default = "r0";
+    };
+  };
 }

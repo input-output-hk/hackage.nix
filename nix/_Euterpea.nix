@@ -157,7 +157,12 @@
         revNum = 1;
         sha256 = "a885d2f3e82680284a85822d1f1b0e39ae44afbd50e61bf92e38ddbc7694b3b9";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/Euterpea-2.0.7-r2-fa8471fe67f0cf4cd7b54e4aa51a044923d9af03e80d019ba010656f84dde817.nix;
+        revNum = 2;
+        sha256 = "fa8471fe67f0cf4cd7b54e4aa51a044923d9af03e80d019ba010656f84dde817";
+      };
+      default = "r2";
     };
   };
 }
