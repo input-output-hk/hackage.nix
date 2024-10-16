@@ -13091,6 +13091,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pure-cdb" = import ./nix/pure-cdb.nix;
   "pure-fft" = import ./nix/pure-fft.nix;
   "pure-io" = import ./nix/pure-io.nix;
+  "pure-noise" = import ./nix/pure-noise.nix;
   "pure-priority-queue" = import ./nix/pure-priority-queue.nix;
   "pure-priority-queue-tests" = import ./nix/pure-priority-queue-tests.nix;
   "pure-shuffle" = import ./nix/pure-shuffle.nix;
