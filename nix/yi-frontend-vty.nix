@@ -197,4 +197,15 @@
       default = "r0";
     };
   };
+  "0.19.1" = {
+    sha256 = "7a9f310440010c7df1887271ccf013d542c099ba22f3173e492e50fefddee3d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yi-frontend-vty-0.19.1-r0-ecd795c821b48d539e7b8c0424e18e275f1d073acdf874032e269716ca5c3929.nix;
+        revNum = 0;
+        sha256 = "ecd795c821b48d539e7b8c0424e18e275f1d073acdf874032e269716ca5c3929";
+      };
+      default = "r0";
+    };
+  };
 }

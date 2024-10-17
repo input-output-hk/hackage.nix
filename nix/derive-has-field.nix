@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.0.1.4" = {
+    sha256 = "a90ee7df1d89314203c3639fdb8f65e9e3f4d28bda3aa7001092303dca7eaba6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derive-has-field-0.0.1.4-r0-20a5a8483d76245dcca6a640e052983a2dac0922a67c0b8e8df1f0783e3e970e.nix;
+        revNum = 0;
+        sha256 = "20a5a8483d76245dcca6a640e052983a2dac0922a67c0b8e8df1f0783e3e970e";
+      };
+      default = "r0";
+    };
+  };
 }

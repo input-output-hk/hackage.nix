@@ -213,4 +213,15 @@
       default = "r0";
     };
   };
+  "0.19.2" = {
+    sha256 = "1edbb4f3c21fb2ec1f777f51e65374c5f7a829cf4da21bb09c3c0be1d86ef0e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yi-frontend-pango-0.19.2-r0-920c3708e696b77ba893e549cfbb88ab3a57d099df541fb94514dc3b2574100e.nix;
+        revNum = 0;
+        sha256 = "920c3708e696b77ba893e549cfbb88ab3a57d099df541fb94514dc3b2574100e";
+      };
+      default = "r0";
+    };
+  };
 }
