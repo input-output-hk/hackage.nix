@@ -128,7 +128,12 @@
         revNum = 3;
         sha256 = "868d9b2e39a1709625a4eb243cc39bf7c903730a24d93f80ec4d7814d49f75c4";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/discrimination-0.5-r4-2f6cf2a7147420b1a60af6ed72cad3b1d8366804d82f384befa536dcead99ad4.nix;
+        revNum = 4;
+        sha256 = "2f6cf2a7147420b1a60af6ed72cad3b1d8366804d82f384befa536dcead99ad4";
+      };
+      default = "r4";
     };
   };
 }

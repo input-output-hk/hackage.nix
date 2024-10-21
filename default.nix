@@ -8828,6 +8828,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hw-parser" = import ./nix/hw-parser.nix;
   "hw-playground-linear" = import ./nix/hw-playground-linear.nix;
   "hw-polysemy" = import ./nix/hw-polysemy.nix;
+  "hw-prelude" = import ./nix/hw-prelude.nix;
   "hw-prim" = import ./nix/hw-prim.nix;
   "hw-prim-bits" = import ./nix/hw-prim-bits.nix;
   "hw-rankselect" = import ./nix/hw-rankselect.nix;
@@ -9420,6 +9421,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jsaddle-dom" = import ./nix/jsaddle-dom.nix;
   "jsaddle-hello" = import ./nix/jsaddle-hello.nix;
   "jsaddle-warp" = import ./nix/jsaddle-warp.nix;
+  "jsaddle-wasm" = import ./nix/jsaddle-wasm.nix;
   "jsaddle-webkit2gtk" = import ./nix/jsaddle-webkit2gtk.nix;
   "jsaddle-webkitgtk" = import ./nix/jsaddle-webkitgtk.nix;
   "jsaddle-wkwebview" = import ./nix/jsaddle-wkwebview.nix;
@@ -10202,6 +10204,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "llvm-base" = import ./nix/llvm-base.nix;
   "llvm-base-types" = import ./nix/llvm-base-types.nix;
   "llvm-base-util" = import ./nix/llvm-base-util.nix;
+  "llvm-codegen" = import ./nix/llvm-codegen.nix;
   "llvm-data-interop" = import ./nix/llvm-data-interop.nix;
   "llvm-dsl" = import ./nix/llvm-dsl.nix;
   "llvm-extension" = import ./nix/llvm-extension.nix;

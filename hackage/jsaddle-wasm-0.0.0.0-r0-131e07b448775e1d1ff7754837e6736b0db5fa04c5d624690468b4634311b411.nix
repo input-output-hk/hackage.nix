@@ -1,0 +1,40 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "jsaddle-wasm"; version = "0.0.0.0"; };
+      license = "CC0-1.0";
+      copyright = "";
+      maintainer = "amesgen@amesgen.de";
+      author = "amesgen";
+      homepage = "https://github.com/amesgen/jsaddle-wasm";
+      url = "";
+      synopsis = "Run JSaddle @JSM@ with the GHC WASM backend";
+      description = "Run JSaddle @JSM@ with the GHC WASM backend.";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
+        ] ++ pkgs.lib.optionals (system.isWasm32) [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
+          (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+          (hsPkgs."ghc-experimental" or (errorHandler.buildDepError "ghc-experimental"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+        ];
+        buildable = true;
+      };
+    };
+  }

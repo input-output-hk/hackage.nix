@@ -59,6 +59,17 @@
       default = "r0";
     };
   };
+  "0.10.1.12" = {
+    sha256 = "70cc7f57e5f723a33b554c2a9455ba3646dfacfede9d5dd28e5d68c14ad0f32f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/byte-count-reader-0.10.1.12-r0-f23918f05e5f2367f47dc90d863c01d1911ad99f71a26a82754730ee9ba5e8b1.nix;
+        revNum = 0;
+        sha256 = "f23918f05e5f2367f47dc90d863c01d1911ad99f71a26a82754730ee9ba5e8b1";
+      };
+      default = "r0";
+    };
+  };
   "0.10.1.2" = {
     sha256 = "411be117e8970191279af468ec67c772a5bfc17c8f1fa1414818530915fabf86";
     revisions = {

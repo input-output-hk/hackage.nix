@@ -807,4 +807,15 @@
       default = "r0";
     };
   };
+  "1.3.8" = {
+    sha256 = "9a5c6bb611557f1fb6ad86a341c5e29c819122dce1813be2a747bfc1911186ef";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dbus-1.3.8-r0-656c406e510af32bf049f7c4411e0f0e9bf010a1e4030faa47a3f8e986f58f7f.nix;
+        revNum = 0;
+        sha256 = "656c406e510af32bf049f7c4411e0f0e9bf010a1e4030faa47a3f8e986f58f7f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -172,4 +172,20 @@
       default = "r0";
     };
   };
+  "0.0.9.0" = {
+    sha256 = "a1ff600d05a8e9bea4d075b60ebf64b47867c1291a4a65f11ad18dc3d5a36a85";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluefin-0.0.9.0-r0-c8f841c0b399f70aea27f1f0523143799e7164082239196783de77d4f5e51c50.nix;
+        revNum = 0;
+        sha256 = "c8f841c0b399f70aea27f1f0523143799e7164082239196783de77d4f5e51c50";
+      };
+      r1 = {
+        nix = import ../hackage/bluefin-0.0.9.0-r1-676d2cdb4a426abcc623f965cd0ffaa12d3e665b6d1acbf54c3065489b339476.nix;
+        revNum = 1;
+        sha256 = "676d2cdb4a426abcc623f965cd0ffaa12d3e665b6d1acbf54c3065489b339476";
+      };
+      default = "r1";
+    };
+  };
 }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "91e941443f02b9c659bbecd784d6722ea710a2ceca6cc7306afcaa9d88116db7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webdriver-wrapper-0.2.0.1-r0-34237d3c061b4d97b9b09236f51edb6601dc4e670636d2425c79207c70a9ab0d.nix;
+        revNum = 0;
+        sha256 = "34237d3c061b4d97b9b09236f51edb6601dc4e670636d2425c79207c70a9ab0d";
+      };
+      default = "r0";
+    };
+  };
 }
