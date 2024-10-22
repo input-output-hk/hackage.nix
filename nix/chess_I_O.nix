@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.9.4.0" = {
+    sha256 = "c2fdab7b7712ba1e0874e582aeba1861ede6c438001ba3881a9d667bf7856bb5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chessIO-0.9.4.0-r0-dccd4769fa7e0ca87f379f577719ee592d65c3cbc0b170b671ced8f39b928207.nix;
+        revNum = 0;
+        sha256 = "dccd4769fa7e0ca87f379f577719ee592d65c3cbc0b170b671ced8f39b928207";
+      };
+      default = "r0";
+    };
+  };
 }

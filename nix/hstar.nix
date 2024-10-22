@@ -96,4 +96,15 @@
       default = "r2";
     };
   };
+  "0.1.0.7" = {
+    sha256 = "2475a2aef57d14f9f915ec5ed9b685bd6266ff1052272afd88ad2fbdaeb2c503";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hstar-0.1.0.7-r0-62c2c358dda630fb81a70524cfe2c54862c441503136530c1b7d42ac61f1c513.nix;
+        revNum = 0;
+        sha256 = "62c2c358dda630fb81a70524cfe2c54862c441503136530c1b7d42ac61f1c513";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "064dfe5c89708a77f5ff1afc51edbc4a2613aeeb82d811dea7d7ee7bdcd2e842";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nri-redis-0.2.0.2-r0-945cae67d5c0321d094ddf004447277f36669801e2347930f73535e288b4f77a.nix;
+        revNum = 0;
+        sha256 = "945cae67d5c0321d094ddf004447277f36669801e2347930f73535e288b4f77a";
+      };
+      default = "r0";
+    };
+  };
 }
