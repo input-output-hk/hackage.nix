@@ -13375,6 +13375,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "raw-feldspar" = import ./nix/raw-feldspar.nix;
   "raw-strings-qq" = import ./nix/raw-strings-qq.nix;
   "rawfilepath" = import ./nix/rawfilepath.nix;
+  "rawlock" = import ./nix/rawlock.nix;
   "rawr" = import ./nix/rawr.nix;
   "rawstring-qm" = import ./nix/rawstring-qm.nix;
   "raylib-imgui" = import ./nix/raylib-imgui.nix;
@@ -13729,6 +13730,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "resource-pool-catchio" = import ./nix/resource-pool-catchio.nix;
   "resource-pool-fork-avanov" = import ./nix/resource-pool-fork-avanov.nix;
   "resource-pool-monad" = import ./nix/resource-pool-monad.nix;
+  "resource-registry" = import ./nix/resource-registry.nix;
   "resource-simple" = import ./nix/resource-simple.nix;
   "resourcet" = import ./nix/resourcet.nix;
   "resourcet-effectful" = import ./nix/resourcet-effectful.nix;

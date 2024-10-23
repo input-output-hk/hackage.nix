@@ -125,4 +125,15 @@
       default = "r7";
     };
   };
+  "0.3" = {
+    sha256 = "eae414e8ca8e35bebf3a632d0230cbf633223233bf88c4f112af43a66fd654f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lift-generics-0.3-r0-ae1efd57b577516c4906dcdb16c1b4ee338952880029a6191a570ad70e0dbd81.nix;
+        revNum = 0;
+        sha256 = "ae1efd57b577516c4906dcdb16c1b4ee338952880029a6191a570ad70e0dbd81";
+      };
+      default = "r0";
+    };
+  };
 }

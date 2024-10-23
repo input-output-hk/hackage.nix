@@ -398,4 +398,15 @@
       default = "r3";
     };
   };
+  "0.8.5" = {
+    sha256 = "699c5a8d4e02dfe7da5f6a8827268e4feb61150ecd0c53df94e6f88466df1176";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-lift-0.8.5-r0-d4b51c6324c9a1cfa0b7092fee38c1a385b0a22b28f59dd77cc3b103f441965c.nix;
+        revNum = 0;
+        sha256 = "d4b51c6324c9a1cfa0b7092fee38c1a385b0a22b28f59dd77cc3b103f441965c";
+      };
+      default = "r0";
+    };
+  };
 }
