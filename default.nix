@@ -8380,6 +8380,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-speedscope" = import ./nix/hs-speedscope.nix;
   "hs-swisstable-hashtables-class" = import ./nix/hs-swisstable-hashtables-class.nix;
   "hs-tags" = import ./nix/hs-tags.nix;
+  "hs-tango" = import ./nix/hs-tango.nix;
   "hs-term-emulator" = import ./nix/hs-term-emulator.nix;
   "hs-twitter" = import ./nix/hs-twitter.nix;
   "hs-twitterarchiver" = import ./nix/hs-twitterarchiver.nix;

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.4.0" = {
+    sha256 = "058ecff34030b2d0a9795482a89c1f81e5eb211c0289f41a0fbff8f9cb9753a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphql-spice-1.0.4.0-r0-ec9217e0670634d2476035396fe6b88c8ec616182df316d5c3b3f38f09724e8a.nix;
+        revNum = 0;
+        sha256 = "ec9217e0670634d2476035396fe6b88c8ec616182df316d5c3b3f38f09724e8a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "a418abfce4103a97bc4a47f07fe27e8d177cb5801aea5100b20d5621a86004de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extism-pdk-1.2.0.0-r0-79a177c4b7a5cefe057657b6f9baa62aba5668c1bbc57eb27198cbedb6d24c8a.nix;
+        revNum = 0;
+        sha256 = "79a177c4b7a5cefe057657b6f9baa62aba5668c1bbc57eb27198cbedb6d24c8a";
+      };
+      default = "r0";
+    };
+  };
 }

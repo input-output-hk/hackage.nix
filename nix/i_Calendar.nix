@@ -150,7 +150,12 @@
         revNum = 0;
         sha256 = "a4d25c1355e5f2422c2766a748c7bd1c141c10d088c31a469b6927782c42af5e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/iCalendar-0.4.1.0-r1-b60f122baae88283cd9f69459aea24a2db4cb797fbd2730bbe6b75d816a2f10c.nix;
+        revNum = 1;
+        sha256 = "b60f122baae88283cd9f69459aea24a2db4cb797fbd2730bbe6b75d816a2f10c";
+      };
+      default = "r1";
     };
   };
 }
