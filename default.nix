@@ -3751,6 +3751,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "comfort-graph" = import ./nix/comfort-graph.nix;
   "comic" = import ./nix/comic.nix;
   "comma" = import ./nix/comma.nix;
+  "comma-and" = import ./nix/comma-and.nix;
   "command" = import ./nix/command.nix;
   "command-qq" = import ./nix/command-qq.nix;
   "commander" = import ./nix/commander.nix;
@@ -9847,6 +9848,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "latex-svg-hakyll" = import ./nix/latex-svg-hakyll.nix;
   "latex-svg-image" = import ./nix/latex-svg-image.nix;
   "latex-svg-pandoc" = import ./nix/latex-svg-pandoc.nix;
+  "lathe" = import ./nix/lathe.nix;
+  "lathe-time" = import ./nix/lathe-time.nix;
   "lattices" = import ./nix/lattices.nix;
   "launchdarkly-server-sdk" = import ./nix/launchdarkly-server-sdk.nix;
   "launchdarkly-server-sdk-redis-hedis" = import ./nix/launchdarkly-server-sdk-redis-hedis.nix;
@@ -14341,6 +14344,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-generic" = import ./nix/servant-generic.nix;
   "servant-github" = import ./nix/servant-github.nix;
   "servant-github-webhook" = import ./nix/servant-github-webhook.nix;
+  "servant-hateoas" = import ./nix/servant-hateoas.nix;
   "servant-haxl-client" = import ./nix/servant-haxl-client.nix;
   "servant-hmac-auth" = import ./nix/servant-hmac-auth.nix;
   "servant-htmx" = import ./nix/servant-htmx.nix;

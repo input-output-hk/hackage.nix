@@ -318,6 +318,17 @@
       default = "r0";
     };
   };
+  "0.19.2" = {
+    sha256 = "f616e5eebdc7442770d0784c31c8900c7df39b968d8920a116c02f2865300f14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yi-language-0.19.2-r0-24ac196a3d81c2c4b86b543f5490c54b88b45a052ea474e889c8f8a17f746e97.nix;
+        revNum = 0;
+        sha256 = "24ac196a3d81c2c4b86b543f5490c54b88b45a052ea474e889c8f8a17f746e97";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "70efb97b787367600871fa68ad794b1af9868ca8e21d0e32960997615bdb14a8";
     revisions = {

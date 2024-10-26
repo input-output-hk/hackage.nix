@@ -47,4 +47,26 @@
       default = "r1";
     };
   };
+  "0.3" = {
+    sha256 = "4aa105170633933a7261dd109732c5ebdffd348e7528f75053ab2de424e7f0d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arch-web-0.3-r0-c68e292b5c851ad7cdc721058eae16ae2db1c36c10e0cd0b690f93af893e7431.nix;
+        revNum = 0;
+        sha256 = "c68e292b5c851ad7cdc721058eae16ae2db1c36c10e0cd0b690f93af893e7431";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.1" = {
+    sha256 = "15576d714bf6d918b16cd3abdb5cadb96b92a00d3cbf592088e74edd00751ffd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arch-web-0.3.1-r0-aa07f3e1905ba1dac02083cf84c8e97b3ad849eaaa85f83ae132e0244613e068.nix;
+        revNum = 0;
+        sha256 = "aa07f3e1905ba1dac02083cf84c8e97b3ad849eaaa85f83ae132e0244613e068";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -328,4 +328,15 @@
       default = "r13";
     };
   };
+  "0.4.1" = {
+    sha256 = "18771ea6cbe49b7c17131810c1fdf066f0656b1e0318db3259ecc39ac21e5a55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/force-layout-0.4.1-r0-8a943ec60f09015b57337cc47f6e5a7c0238cdf0416c6530288b01f7f19ab05f.nix;
+        revNum = 0;
+        sha256 = "8a943ec60f09015b57337cc47f6e5a7c0238cdf0416c6530288b01f7f19ab05f";
+      };
+      default = "r0";
+    };
+  };
 }

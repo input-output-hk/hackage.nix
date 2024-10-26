@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "db828398a92f4961082957492094be1d0fb050daec83ebdef2856f8170accc9e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/radix-tree-1.1.0.0-r0-69a430825e5708c4af8e116f2e2aa6f6161298a40fcd8804f723ee078721e36d.nix;
+        revNum = 0;
+        sha256 = "69a430825e5708c4af8e116f2e2aa6f6161298a40fcd8804f723ee078721e36d";
+      };
+      default = "r0";
+    };
+  };
 }
