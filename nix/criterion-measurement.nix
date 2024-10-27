@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.3.0" = {
+    sha256 = "cc75dca35e8473d6e0c7419fd5a577c2cbb202b3ae0d8af237756c2aeb7cdfe2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/criterion-measurement-0.2.3.0-r0-5d337a2d833839254636731cefa456c57f2c5f6d7ee0ff440459149ad1f9cb7c.nix;
+        revNum = 0;
+        sha256 = "5d337a2d833839254636731cefa456c57f2c5f6d7ee0ff440459149ad1f9cb7c";
+      };
+      default = "r0";
+    };
+  };
 }

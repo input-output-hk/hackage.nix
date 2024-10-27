@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "193b02a60532c15ed2b45c5b1a01970c270cdf4bcb1f80683edef4df4b0f220c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/linear-circuit-0.1.0.4-r1-cd2df3bff1ff32d985b56479da36f240bddc743423aaccb565a949108f409f3d.nix;
+        revNum = 1;
+        sha256 = "cd2df3bff1ff32d985b56479da36f240bddc743423aaccb565a949108f409f3d";
+      };
+      default = "r1";
     };
   };
 }

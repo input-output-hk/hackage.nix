@@ -13886,6 +13886,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ron-rdt" = import ./nix/ron-rdt.nix;
   "ron-schema" = import ./nix/ron-schema.nix;
   "ron-storage" = import ./nix/ron-storage.nix;
+  "ronn" = import ./nix/ronn.nix;
   "roots" = import ./nix/roots.nix;
   "rope" = import ./nix/rope.nix;
   "rope-utf16-splay" = import ./nix/rope-utf16-splay.nix;

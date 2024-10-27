@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "1d2a230639fadecff89d33b87f83baadba401b78ca71554570f8e68a1f4cb879";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/reactive-jack-0.4.1.2-r1-dcdfd1cccf5516b9549a5495fd431cdb3cfa9cf3ae71f7aef173479bd88eaa10.nix;
+        revNum = 1;
+        sha256 = "dcdfd1cccf5516b9549a5495fd431cdb3cfa9cf3ae71f7aef173479bd88eaa10";
+      };
+      default = "r1";
     };
   };
 }

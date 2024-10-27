@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "fee2401904b6aa461df909ff5b164bf3bed80a775795b53700b107dc09721b88";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/interpolation-0.1.1.2-r1-edd3b98b75c10554b2d7e47b4911090a3639d3ef256d56b515b477aae455379d.nix;
+        revNum = 1;
+        sha256 = "edd3b98b75c10554b2d7e47b4911090a3639d3ef256d56b515b477aae455379d";
+      };
+      default = "r1";
     };
   };
 }

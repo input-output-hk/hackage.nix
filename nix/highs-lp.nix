@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "5fe380cf45b4678274274a55578aaaebfc38fc93d74a3941b4aececbdd46b583";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/highs-lp-0.0-r1-3bcd4627b63dea6cc2ce4ee551535b250f419b5477049e860f3efa45dc0a8f7d.nix;
+        revNum = 1;
+        sha256 = "3bcd4627b63dea6cc2ce4ee551535b250f419b5477049e860f3efa45dc0a8f7d";
+      };
+      default = "r1";
     };
   };
 }

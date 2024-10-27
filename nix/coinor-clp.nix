@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "331804e9e0ba8c22ea40565632e7ab74377d44dd48f72850806d8e673eaac07d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/coinor-clp-0.0.0.2-r1-22e69069071841f79ca959042b26f132b9ee7acbf40d3c841822ccf062583604.nix;
+        revNum = 1;
+        sha256 = "22e69069071841f79ca959042b26f132b9ee7acbf40d3c841822ccf062583604";
+      };
+      default = "r1";
     };
   };
 }
