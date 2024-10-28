@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "0.6.0.2" = {
+    sha256 = "363238b7e42e249acd96000abdc3953413efc57ec8a11802d28b8d01c6193d4c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hascard-0.6.0.2-r0-569fb74ecb0dbfce99cfb4fcb91dca9c3289d6165283549209c6a8f6ac304c1a.nix;
+        revNum = 0;
+        sha256 = "569fb74ecb0dbfce99cfb4fcb91dca9c3289d6165283549209c6a8f6ac304c1a";
+      };
+      default = "r0";
+    };
+  };
 }

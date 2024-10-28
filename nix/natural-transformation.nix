@@ -119,4 +119,15 @@
       default = "r12";
     };
   };
+  "0.4.1" = {
+    sha256 = "6e6a8f8ea9452587eb7ed866db4546280c4cf656b29b0a7d37a53ae39ba9a4d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/natural-transformation-0.4.1-r0-4a14e3e8082483c8bfca260ba7c7dde84aa34e1c8bb047b107a5efe8cd9018a8.nix;
+        revNum = 0;
+        sha256 = "4a14e3e8082483c8bfca260ba7c7dde84aa34e1c8bb047b107a5efe8cd9018a8";
+      };
+      default = "r0";
+    };
+  };
 }

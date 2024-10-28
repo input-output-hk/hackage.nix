@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "6d37bc18a90bc4d0e46f3a6eec2786a6830aab835e312bcca45d6ce2c711e400";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elynx-nexus-0.8.0.0-r0-c4a4c8d8450032976ccb5df4025311f3337bdcd69636eb105d5b984261c45673.nix;
+        revNum = 0;
+        sha256 = "c4a4c8d8450032976ccb5df4025311f3337bdcd69636eb105d5b984261c45673";
+      };
+      default = "r0";
+    };
+  };
 }

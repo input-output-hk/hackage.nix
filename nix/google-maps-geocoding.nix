@@ -136,4 +136,15 @@
       default = "r0";
     };
   };
+  "0.7.0.3" = {
+    sha256 = "a996c601e4b0acbd3304b76d493f748c696c7659f4da3ee6cad6d8e7dc5c4132";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/google-maps-geocoding-0.7.0.3-r0-2078a25e363ab1009d494194c7b8070ffcad50758580588590db5cbe0604489a.nix;
+        revNum = 0;
+        sha256 = "2078a25e363ab1009d494194c7b8070ffcad50758580588590db5cbe0604489a";
+      };
+      default = "r0";
+    };
+  };
 }

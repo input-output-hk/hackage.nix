@@ -2533,4 +2533,15 @@
       default = "r0";
     };
   };
+  "2.3.9.1" = {
+    sha256 = "13046d15ecd2332a5b80c8a34a6a1b6b8eecefce9d5c57e3413312b8c11641af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-conduit-2.3.9.1-r0-6a06ba7dfd40c5e9b90dc2836df7d790c54d511c67c835c48528569f9278782b.nix;
+        revNum = 0;
+        sha256 = "6a06ba7dfd40c5e9b90dc2836df7d790c54d511c67c835c48528569f9278782b";
+      };
+      default = "r0";
+    };
+  };
 }
