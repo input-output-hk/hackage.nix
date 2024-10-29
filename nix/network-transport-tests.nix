@@ -133,7 +133,12 @@
         revNum = 0;
         sha256 = "3e89db09330023ecabd579b24b903943f0d8a412c847e5ce2e97aa020fab23b5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/network-transport-tests-0.3.3-r1-9709f11fe747c3758e4b6be377469f2b97af934c2edf351f23444fcdad469e76.nix;
+        revNum = 1;
+        sha256 = "9709f11fe747c3758e4b6be377469f2b97af934c2edf351f23444fcdad469e76";
+      };
+      default = "r1";
     };
   };
 }

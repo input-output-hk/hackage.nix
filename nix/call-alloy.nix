@@ -279,7 +279,17 @@
         revNum = 0;
         sha256 = "81e931bb5d20cfba363910455ea4a135b24ec760c9d14d28416a948054581e2d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/call-alloy-0.5.0.1-r1-ec0dbc5aadb06126d4545274261413949146b2c2aa0c448adc58d717ef725e0f.nix;
+        revNum = 1;
+        sha256 = "ec0dbc5aadb06126d4545274261413949146b2c2aa0c448adc58d717ef725e0f";
+      };
+      r2 = {
+        nix = import ../hackage/call-alloy-0.5.0.1-r2-7563481b6a8441d3d03c4cb492b3a73c73f2f96fa00cf273f12092a85433fe41.nix;
+        revNum = 2;
+        sha256 = "7563481b6a8441d3d03c4cb492b3a73c73f2f96fa00cf273f12092a85433fe41";
+      };
+      default = "r2";
     };
   };
 }

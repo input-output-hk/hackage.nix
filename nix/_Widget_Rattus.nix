@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "a7d29f92f37b0b6afd392cd7049fadee29779bc9a2e874b5f5006cc1bb9a8e90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/WidgetRattus-0.3-r0-7dafeb759d72d404762b5e142dbfaad107b5a3b97f0be79620a3bd596c3df5a0.nix;
+        revNum = 0;
+        sha256 = "7dafeb759d72d404762b5e142dbfaad107b5a3b97f0be79620a3bd596c3df5a0";
+      };
+      default = "r0";
+    };
+  };
 }

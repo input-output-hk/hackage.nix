@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "80e7f986d9ae41b85ca4b779091fb494def0b05291cb401858441caf78e3bbe8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/evm-opcodes-0.2.0-r0-895f20796411a8eef3e32fb5a36226475a89d7fd7019c624d500ac583ebaa686.nix;
+        revNum = 0;
+        sha256 = "895f20796411a8eef3e32fb5a36226475a89d7fd7019c624d500ac583ebaa686";
+      };
+      default = "r0";
+    };
+  };
 }

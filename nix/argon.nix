@@ -133,4 +133,15 @@
       default = "r0";
     };
   };
+  "0.4.2.0" = {
+    sha256 = "87c306de4412bea14e864b68a4da20de56c9452cf67f30ff670b54930691a0b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/argon-0.4.2.0-r0-18c841b3f5b0e2e07a1a7b6d41812f8f1744525792916eb47772e91d6f924be5.nix;
+        revNum = 0;
+        sha256 = "18c841b3f5b0e2e07a1a7b6d41812f8f1744525792916eb47772e91d6f924be5";
+      };
+      default = "r0";
+    };
+  };
 }

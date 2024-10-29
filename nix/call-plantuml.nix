@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "5a20a5abc6938df0d266d7157bf9035ed9de4bd07aa8ec66035c69da097f44f6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/call-plantuml-0.0.1.3-r1-38d04cb6396c61313e77a234830d9215f7c41ccbffbe2549eb521312c12db3e3.nix;
+        revNum = 1;
+        sha256 = "38d04cb6396c61313e77a234830d9215f7c41ccbffbe2549eb521312c12db3e3";
+      };
+      default = "r1";
     };
   };
 }
