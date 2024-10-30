@@ -404,6 +404,17 @@
       default = "r0";
     };
   };
+  "1.17.1" = {
+    sha256 = "4d79b242018da16444b58bbf015779ba0c5ad0d31e11bb58064d9d242ab281d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/discord-haskell-1.17.1-r0-9ae8732e5f75572b3634ecdb124ba7fae68bbf5ec8b8b4c948e76af94c6c08d7.nix;
+        revNum = 0;
+        sha256 = "9ae8732e5f75572b3634ecdb124ba7fae68bbf5ec8b8b4c948e76af94c6c08d7";
+      };
+      default = "r0";
+    };
+  };
   "1.2.0" = {
     sha256 = "4df67b2ec61b9d452cd6b765e566c47119cec17b17d865deadd4d338f6fe1063";
     revisions = {

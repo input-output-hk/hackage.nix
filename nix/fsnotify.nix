@@ -439,7 +439,12 @@
         revNum = 0;
         sha256 = "44540beabea36aeeef930aa4d5f28091d431904bc9923b6ac4d358831c651235";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fsnotify-0.4.1.0-r1-c627fd1edf9714f0a14261a6877e8e53e44ab99b21a6de7477540c51da0118e5.nix;
+        revNum = 1;
+        sha256 = "c627fd1edf9714f0a14261a6877e8e53e44ab99b21a6de7477540c51da0118e5";
+      };
+      default = "r1";
     };
   };
 }

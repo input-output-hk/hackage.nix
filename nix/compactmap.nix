@@ -113,4 +113,15 @@
       default = "r0";
     };
   };
+  "0.1.4.5" = {
+    sha256 = "eeb333096e5d69efa5ba2c31fa81f791f0997e7e772a35e193fe348989e244f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/compactmap-0.1.4.5-r0-1b550cdac627ca43112b5f902e653c2826f1d5773dcad53961c178f5619ebac7.nix;
+        revNum = 0;
+        sha256 = "1b550cdac627ca43112b5f902e653c2826f1d5773dcad53961c178f5619ebac7";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -296,4 +296,15 @@
       default = "r0";
     };
   };
+  "0.7.0.7" = {
+    sha256 = "ff8e3b7fdd7391410ba41860f2a20636318c8c71dbd82717dff5ec78def1c4a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alarmclock-0.7.0.7-r0-9244431f7f6a94192a50cc716e49f587e9135effa7ad30e0bc6788c30b610c1f.nix;
+        revNum = 0;
+        sha256 = "9244431f7f6a94192a50cc716e49f587e9135effa7ad30e0bc6788c30b610c1f";
+      };
+      default = "r0";
+    };
+  };
 }
