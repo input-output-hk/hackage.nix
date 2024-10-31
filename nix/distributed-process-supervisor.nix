@@ -75,4 +75,15 @@
       default = "r1";
     };
   };
+  "0.2.3" = {
+    sha256 = "7caf1d9f3e46b237dfe72c2e2936f278b2ad333ca3743882871c7ed8c39d6804";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/distributed-process-supervisor-0.2.3-r0-87eddeb6df4b484d30b4a69b0bf83342178608afe67a27be076f2265d21366ee.nix;
+        revNum = 0;
+        sha256 = "87eddeb6df4b484d30b4a69b0bf83342178608afe67a27be076f2265d21366ee";
+      };
+      default = "r0";
+    };
+  };
 }

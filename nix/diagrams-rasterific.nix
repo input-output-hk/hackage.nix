@@ -356,4 +356,15 @@
       default = "r3";
     };
   };
+  "1.4.3" = {
+    sha256 = "08b7c9a6718909c3a71a143328377e9e8cd1bfca71f0803739eb37ef654dedd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-rasterific-1.4.3-r0-b16a63a47e1cd545d349dbe375add2425f5b13af5f79dd002e57961a297c9455.nix;
+        revNum = 0;
+        sha256 = "b16a63a47e1cd545d349dbe375add2425f5b13af5f79dd002e57961a297c9455";
+      };
+      default = "r0";
+    };
+  };
 }
