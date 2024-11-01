@@ -1091,4 +1091,15 @@
       default = "r0";
     };
   };
+  "3.2.5" = {
+    sha256 = "315210080fec12654cae17f9feb32610e442efc1f86be0e46a30583051d8ad31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fast-logger-3.2.5-r0-a2d09a3b13f9599e9542dc4407b6ebf37830a562a7caf4153b55806002d057f9.nix;
+        revNum = 0;
+        sha256 = "a2d09a3b13f9599e9542dc4407b6ebf37830a562a7caf4153b55806002d057f9";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -11126,6 +11126,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mtl-compat" = import ./nix/mtl-compat.nix;
   "mtl-evil-instances" = import ./nix/mtl-evil-instances.nix;
   "mtl-extras" = import ./nix/mtl-extras.nix;
+  "mtl-misc-yj" = import ./nix/mtl-misc-yj.nix;
   "mtl-prelude" = import ./nix/mtl-prelude.nix;
   "mtl-tf" = import ./nix/mtl-tf.nix;
   "mtl-unleashed" = import ./nix/mtl-unleashed.nix;
@@ -13015,6 +13016,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "properties" = import ./nix/properties.nix;
   "property" = import ./nix/property.nix;
   "property-list" = import ./nix/property-list.nix;
+  "property-matchers" = import ./nix/property-matchers.nix;
   "proplang" = import ./nix/proplang.nix;
   "props" = import ./nix/props.nix;
   "proquint" = import ./nix/proquint.nix;
@@ -13887,6 +13889,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ron-schema" = import ./nix/ron-schema.nix;
   "ron-storage" = import ./nix/ron-storage.nix;
   "ronn" = import ./nix/ronn.nix;
+  "ronn-envparse" = import ./nix/ronn-envparse.nix;
+  "ronn-opt-env-conf" = import ./nix/ronn-opt-env-conf.nix;
+  "ronn-optparse-applicative" = import ./nix/ronn-optparse-applicative.nix;
   "roots" = import ./nix/roots.nix;
   "rope" = import ./nix/rope.nix;
   "rope-utf16-splay" = import ./nix/rope-utf16-splay.nix;
@@ -15818,6 +15823,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "telegram-types" = import ./nix/telegram-types.nix;
   "telegraph" = import ./nix/telegraph.nix;
   "teleport" = import ./nix/teleport.nix;
+  "telescope" = import ./nix/telescope.nix;
   "teleshell" = import ./nix/teleshell.nix;
   "tell" = import ./nix/tell.nix;
   "tellbot" = import ./nix/tellbot.nix;
@@ -15965,6 +15971,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-manipulate" = import ./nix/text-manipulate.nix;
   "text-markup" = import ./nix/text-markup.nix;
   "text-metrics" = import ./nix/text-metrics.nix;
+  "text-misc-yj" = import ./nix/text-misc-yj.nix;
   "text-normal" = import ./nix/text-normal.nix;
   "text-offset" = import ./nix/text-offset.nix;
   "text-plus" = import ./nix/text-plus.nix;

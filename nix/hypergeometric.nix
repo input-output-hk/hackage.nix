@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.5.1" = {
+    sha256 = "b00e069c214f051a256afdcb5861ec16959f1c0caa60161860d706bb36cf91fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hypergeometric-0.1.5.1-r0-11f22754f1a7d01c88929b44852f50c3d43bce49d18f27778573777e65495de2.nix;
+        revNum = 0;
+        sha256 = "11f22754f1a7d01c88929b44852f50c3d43bce49d18f27778573777e65495de2";
+      };
+      default = "r0";
+    };
+  };
 }
