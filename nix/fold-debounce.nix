@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "0.2.0.14" = {
+    sha256 = "ac838dfac7db87e210f7e4293fc6c73c3f8c061929890c8a0a930111e65baee1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fold-debounce-0.2.0.14-r0-0bd53d720db6c26bde7fa5b1d0ada7fce5b622d11b4f08dddf9c4fc4b24d680f.nix;
+        revNum = 0;
+        sha256 = "0bd53d720db6c26bde7fa5b1d0ada7fce5b622d11b4f08dddf9c4fc4b24d680f";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.2" = {
     sha256 = "971be718a834d0a18fb3b36b20faf2efbaadb8dd3a600c879909aca1e36778d2";
     revisions = {

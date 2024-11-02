@@ -154,6 +154,17 @@
       default = "r0";
     };
   };
+  "0.0.18" = {
+    sha256 = "d4062edc636bdb0cde7c47ea7bfcdfa035ad65d3a2eafbbb83cd22fc5be8f12f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/weigh-0.0.18-r0-78b183a32f86b216db889965da1c67992263040f440ad71d65e4454c36a6dba1.nix;
+        revNum = 0;
+        sha256 = "78b183a32f86b216db889965da1c67992263040f440ad71d65e4454c36a6dba1";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "181f5378ad402a32a6dede86563038dbbc27401206c9149c08a2cefa35904e4b";
     revisions = {

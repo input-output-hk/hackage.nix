@@ -7842,6 +7842,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hesql" = import ./nix/hesql.nix;
   "hetero-dict" = import ./nix/hetero-dict.nix;
   "hetero-map" = import ./nix/hetero-map.nix;
+  "hetero-parameter-list" = import ./nix/hetero-parameter-list.nix;
   "hetero-zip" = import ./nix/hetero-zip.nix;
   "heterocephalus" = import ./nix/heterocephalus.nix;
   "heterogeneous-list-literals" = import ./nix/heterogeneous-list-literals.nix;
@@ -16594,6 +16595,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typelevel" = import ./nix/typelevel.nix;
   "typelevel-rewrite-rules" = import ./nix/typelevel-rewrite-rules.nix;
   "typelevel-tensor" = import ./nix/typelevel-tensor.nix;
+  "typelevel-tools-yj" = import ./nix/typelevel-tools-yj.nix;
   "typelits-printf" = import ./nix/typelits-printf.nix;
   "typelits-witnesses" = import ./nix/typelits-witnesses.nix;
   "typenums" = import ./nix/typenums.nix;
