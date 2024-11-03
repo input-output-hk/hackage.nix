@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "cf5099d94bfeb2a6b73f1d4c8bbb751dc649eebd3b8cd9af4b908ee8a42e5e2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monomer-hagrid-0.4.0.0-r0-af4f5c4e8028ea82c15ea7ebe923ce15e9bedd4335c62d86651ec028d7028023.nix;
+        revNum = 0;
+        sha256 = "af4f5c4e8028ea82c15ea7ebe923ce15e9bedd4335c62d86651ec028d7028023";
+      };
+      default = "r0";
+    };
+  };
 }

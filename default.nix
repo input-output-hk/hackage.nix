@@ -2431,6 +2431,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aws-xray-client" = import ./nix/aws-xray-client.nix;
   "aws-xray-client-persistent" = import ./nix/aws-xray-client-persistent.nix;
   "aws-xray-client-wai" = import ./nix/aws-xray-client-wai.nix;
+  "awsspendsummary" = import ./nix/awsspendsummary.nix;
   "axel" = import ./nix/axel.nix;
   "axiom" = import ./nix/axiom.nix;
   "axiomatic-classes" = import ./nix/axiomatic-classes.nix;
@@ -13657,6 +13658,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reliable-io" = import ./nix/reliable-io.nix;
   "relit" = import ./nix/relit.nix;
   "reload" = import ./nix/reload.nix;
+  "relocant" = import ./nix/relocant.nix;
   "reloto" = import ./nix/reloto.nix;
   "relude" = import ./nix/relude.nix;
   "remark" = import ./nix/remark.nix;
