@@ -2427,6 +2427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aws-simple" = import ./nix/aws-simple.nix;
   "aws-sns" = import ./nix/aws-sns.nix;
   "aws-sns-verify" = import ./nix/aws-sns-verify.nix;
+  "aws-spend-summary" = import ./nix/aws-spend-summary.nix;
   "aws-transcribe-ws" = import ./nix/aws-transcribe-ws.nix;
   "aws-xray-client" = import ./nix/aws-xray-client.nix;
   "aws-xray-client-persistent" = import ./nix/aws-xray-client-persistent.nix;
@@ -14056,6 +14057,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sandman" = import ./nix/sandman.nix;
   "sandwatch" = import ./nix/sandwatch.nix;
   "sandwich" = import ./nix/sandwich.nix;
+  "sandwich-contexts" = import ./nix/sandwich-contexts.nix;
   "sandwich-hedgehog" = import ./nix/sandwich-hedgehog.nix;
   "sandwich-quickcheck" = import ./nix/sandwich-quickcheck.nix;
   "sandwich-slack" = import ./nix/sandwich-slack.nix;
@@ -17660,6 +17662,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xstatic" = import ./nix/xstatic.nix;
   "xstatic-th" = import ./nix/xstatic-th.nix;
   "xtc" = import ./nix/xtc.nix;
+  "xtea" = import ./nix/xtea.nix;
   "xtest" = import ./nix/xtest.nix;
   "xturtle" = import ./nix/xturtle.nix;
   "xxhash" = import ./nix/xxhash.nix;

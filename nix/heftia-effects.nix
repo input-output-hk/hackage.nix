@@ -75,4 +75,15 @@
       default = "r1";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "2517e326863178e3712f6c3eca6d11675d2efcc5efbb1de6262dc20de190122e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heftia-effects-0.5.0.0-r0-fe16e7184c6e7acedba0f229bee9c58b871e2308907777bf0d4a2b5a8df107fa.nix;
+        revNum = 0;
+        sha256 = "fe16e7184c6e7acedba0f229bee9c58b871e2308907777bf0d4a2b5a8df107fa";
+      };
+      default = "r0";
+    };
+  };
 }

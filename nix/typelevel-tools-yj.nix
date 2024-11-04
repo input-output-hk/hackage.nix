@@ -10,4 +10,20 @@
       default = "r0";
     };
   };
+  "0.1.0.7" = {
+    sha256 = "53f5e8dee61bcbf4f3d54b8ce5eae4ccc8e80fff09c6969d6561e0309f70f1a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelevel-tools-yj-0.1.0.7-r0-477a59417aa1d286fe9b198412e4de47e93062c8c42294b687519366f91a509e.nix;
+        revNum = 0;
+        sha256 = "477a59417aa1d286fe9b198412e4de47e93062c8c42294b687519366f91a509e";
+      };
+      r1 = {
+        nix = import ../hackage/typelevel-tools-yj-0.1.0.7-r1-0b89bf7fb7da65e6f52f0fcc961a2713d7eaecba55a712aa214af243446b5f80.nix;
+        revNum = 1;
+        sha256 = "0b89bf7fb7da65e6f52f0fcc961a2713d7eaecba55a712aa214af243446b5f80";
+      };
+      default = "r1";
+    };
+  };
 }
