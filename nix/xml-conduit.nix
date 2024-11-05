@@ -1117,4 +1117,15 @@
       default = "r0";
     };
   };
+  "1.9.1.4" = {
+    sha256 = "049b0d0310bfd07ae31d4315f96f89c17a892b95bd0d6102c140d0605b43df4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-conduit-1.9.1.4-r0-554bb02f0e236fb0c99c4c9be5ddb0893ad294decc1cff3964c900e31462fbdd.nix;
+        revNum = 0;
+        sha256 = "554bb02f0e236fb0c99c4c9be5ddb0893ad294decc1cff3964c900e31462fbdd";
+      };
+      default = "r0";
+    };
+  };
 }

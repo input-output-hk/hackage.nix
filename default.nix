@@ -17482,6 +17482,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wrecker" = import ./nix/wrecker.nix;
   "wrecker-ui" = import ./nix/wrecker-ui.nix;
   "wreq" = import ./nix/wreq.nix;
+  "wreq-effectful" = import ./nix/wreq-effectful.nix;
   "wreq-helper" = import ./nix/wreq-helper.nix;
   "wreq-patchable" = import ./nix/wreq-patchable.nix;
   "wreq-sb" = import ./nix/wreq-sb.nix;
