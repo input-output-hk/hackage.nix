@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.7.2.0" = {
+    sha256 = "059d983c24322836410ec9f6d0e5f4b46207c040f81fb8a5cbd063d14aedd27b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tmp-proc-0.7.2.0-r0-bae9a4c766666cc01d24f4b6372deca8e1082c0a382f5c7657902a66261df244.nix;
+        revNum = 0;
+        sha256 = "bae9a4c766666cc01d24f4b6372deca8e1082c0a382f5c7657902a66261df244";
+      };
+      default = "r0";
+    };
+  };
 }

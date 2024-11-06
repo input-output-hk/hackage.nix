@@ -313,7 +313,12 @@
         revNum = 1;
         sha256 = "57e5f92965f9a311d23a25978bd1122e4c93f7ef46691f1d975703255d658b70";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/SVGFonts-1.8.0.1-r2-4f75cc6fcc24bafa77ddf5cb7095a3516d5f7826c7f853486a5929d0f48267ce.nix;
+        revNum = 2;
+        sha256 = "4f75cc6fcc24bafa77ddf5cb7095a3516d5f7826c7f853486a5929d0f48267ce";
+      };
+      default = "r2";
     };
   };
 }

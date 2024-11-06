@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "9d8b3f291600dcebacee5dffbf9688015fdd8395f98e4b81cfaa31b60d03f039";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-haskell-0.1.0.3-r0-e29d09a7c5fc02ceeaef3dfbd2597bb92c9cd58f8be168ae271755935dbbba19.nix;
+        revNum = 0;
+        sha256 = "e29d09a7c5fc02ceeaef3dfbd2597bb92c9cd58f8be168ae271755935dbbba19";
+      };
+      default = "r0";
+    };
+  };
 }
