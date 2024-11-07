@@ -6937,6 +6937,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gpolyline" = import ./nix/gpolyline.nix;
   "gps" = import ./nix/gps.nix;
   "gps2htmlReport" = import ./nix/gps2html_Report.nix;
+  "gpu-vulkan-core" = import ./nix/gpu-vulkan-core.nix;
+  "gpu-vulkan-middle" = import ./nix/gpu-vulkan-middle.nix;
   "gpx-conduit" = import ./nix/gpx-conduit.nix;
   "grab" = import ./nix/grab.nix;
   "grab-form" = import ./nix/grab-form.nix;
@@ -7845,6 +7847,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hetero-dict" = import ./nix/hetero-dict.nix;
   "hetero-map" = import ./nix/hetero-map.nix;
   "hetero-parameter-list" = import ./nix/hetero-parameter-list.nix;
+  "hetero-parameter-list-with-typelevel-tools" = import ./nix/hetero-parameter-list-with-typelevel-tools.nix;
   "hetero-zip" = import ./nix/hetero-zip.nix;
   "heterocephalus" = import ./nix/heterocephalus.nix;
   "heterogeneous-list-literals" = import ./nix/heterogeneous-list-literals.nix;
@@ -9819,6 +9822,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "language-sh" = import ./nix/language-sh.nix;
   "language-slice" = import ./nix/language-slice.nix;
   "language-spelling" = import ./nix/language-spelling.nix;
+  "language-spir-v" = import ./nix/language-spir-v.nix;
   "language-sqlite" = import ./nix/language-sqlite.nix;
   "language-sygus" = import ./nix/language-sygus.nix;
   "language-thrift" = import ./nix/language-thrift.nix;
@@ -15283,7 +15287,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "storable-complex" = import ./nix/storable-complex.nix;
   "storable-endian" = import ./nix/storable-endian.nix;
   "storable-enum" = import ./nix/storable-enum.nix;
+  "storable-hetero-list" = import ./nix/storable-hetero-list.nix;
   "storable-offset" = import ./nix/storable-offset.nix;
+  "storable-peek-poke" = import ./nix/storable-peek-poke.nix;
   "storable-record" = import ./nix/storable-record.nix;
   "storable-static-array" = import ./nix/storable-static-array.nix;
   "storable-tuple" = import ./nix/storable-tuple.nix;
@@ -16275,6 +16281,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "too-many-cells" = import ./nix/too-many-cells.nix;
   "toodles" = import ./nix/toodles.nix;
   "toolbox" = import ./nix/toolbox.nix;
+  "tools-yj" = import ./nix/tools-yj.nix;
   "toolshed" = import ./nix/toolshed.nix;
   "top" = import ./nix/top.nix;
   "topaz" = import ./nix/topaz.nix;
@@ -17884,6 +17891,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yices-easy" = import ./nix/yices-easy.nix;
   "yices-painless" = import ./nix/yices-painless.nix;
   "yiyd" = import ./nix/yiyd.nix;
+  "yj-sandbox" = import ./nix/yj-sandbox.nix;
   "yjftp" = import ./nix/yjftp.nix;
   "yjftp-libs" = import ./nix/yjftp-libs.nix;
   "yjsvg" = import ./nix/yjsvg.nix;

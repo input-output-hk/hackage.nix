@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "a3aaa2bac03e50fd2c9837ed45df037c1dfd94c5fe66ebab479932c27cf82606";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/LPFP-core-1.1.1-r1-1f0aac0efd125abb6d1470071793ab5818aed29d2db431868e39b8ab8a69b6ff.nix;
+        revNum = 1;
+        sha256 = "1f0aac0efd125abb6d1470071793ab5818aed29d2db431868e39b8ab8a69b6ff";
+      };
+      default = "r1";
     };
   };
 }
