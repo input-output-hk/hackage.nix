@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "2.0.0" = {
+    sha256 = "9336fe33f120664634972183cefe345106e95a43bada477690ff4c111c8be8b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-tango-2.0.0-r0-9cfa1f35f5dd5f704d5cb6af525f36d86da9fe9755dbcfff33081fce20b9e803.nix;
+        revNum = 0;
+        sha256 = "9cfa1f35f5dd5f704d5cb6af525f36d86da9fe9755dbcfff33081fce20b9e803";
+      };
+      default = "r0";
+    };
+  };
 }

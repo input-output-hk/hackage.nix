@@ -6937,6 +6937,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gpolyline" = import ./nix/gpolyline.nix;
   "gps" = import ./nix/gps.nix;
   "gps2htmlReport" = import ./nix/gps2html_Report.nix;
+  "gpu-vulkan" = import ./nix/gpu-vulkan.nix;
   "gpu-vulkan-core" = import ./nix/gpu-vulkan-core.nix;
   "gpu-vulkan-middle" = import ./nix/gpu-vulkan-middle.nix;
   "gpx-conduit" = import ./nix/gpx-conduit.nix;

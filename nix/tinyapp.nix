@@ -53,4 +53,15 @@
       default = "r2";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "2d1886aca6becb279ac990d922b7b5af30acd742d681ff97475e44cf792079e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tinyapp-0.2.1.0-r0-84e472301ce222a5dd64d1367200548b1cb322b782985ff95c35b6c056417c44.nix;
+        revNum = 0;
+        sha256 = "84e472301ce222a5dd64d1367200548b1cb322b782985ff95c35b6c056417c44";
+      };
+      default = "r0";
+    };
+  };
 }
