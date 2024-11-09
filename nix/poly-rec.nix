@@ -42,4 +42,15 @@
       default = "r0";
     };
   };
+  "0.7.0.4" = {
+    sha256 = "6a0b06780623ca7a431f7ca7ca48c64cb1edeeca353f522849a71216af16a41c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/poly-rec-0.7.0.4-r0-fcfd550ee1ebb00c147e31ab7ec25337316e548f1b49c55ff2f79a9e59a3101a.nix;
+        revNum = 0;
+        sha256 = "fcfd550ee1ebb00c147e31ab7ec25337316e548f1b49c55ff2f79a9e59a3101a";
+      };
+      default = "r0";
+    };
+  };
 }

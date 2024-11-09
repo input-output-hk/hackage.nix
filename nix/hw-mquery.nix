@@ -143,4 +143,15 @@
       default = "r1";
     };
   };
+  "0.2.1.2" = {
+    sha256 = "bd863f6a02d2ed2ae752eb1877787a16ba117dd6f6082a422fd36e267546b67d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-mquery-0.2.1.2-r0-2a7f2daaa65c8a650395d92bb58d3b3f3946fdaaca9f8fed22028ba8a38503d4.nix;
+        revNum = 0;
+        sha256 = "2a7f2daaa65c8a650395d92bb58d3b3f3946fdaaca9f8fed22028ba8a38503d4";
+      };
+      default = "r0";
+    };
+  };
 }

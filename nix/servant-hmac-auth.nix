@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.1.8" = {
+    sha256 = "0b0a8ddbcdfc10276342aa5c5ebfc260e39f3f36f00564f5a4a0f75810a39fe6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-hmac-auth-0.1.8-r0-5903cadb1b01333fa86bb45cd4225af8f99b7b65dcb1f8debeb13890711860df.nix;
+        revNum = 0;
+        sha256 = "5903cadb1b01333fa86bb45cd4225af8f99b7b65dcb1f8debeb13890711860df";
+      };
+      default = "r0";
+    };
+  };
 }

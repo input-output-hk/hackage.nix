@@ -315,4 +315,15 @@
       default = "r2";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "d05ebbc57d5082a35a5e73bb92ffb42e8d75e099986fe9f2fa9324cf9bc65801";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AspectAG-0.8.0.0-r0-10ddbfe422d0cdbe0c98988f30274ba2f60fc5fd5b7195924975db9723369756.nix;
+        revNum = 0;
+        sha256 = "10ddbfe422d0cdbe0c98988f30274ba2f60fc5fd5b7195924975db9723369756";
+      };
+      default = "r0";
+    };
+  };
 }

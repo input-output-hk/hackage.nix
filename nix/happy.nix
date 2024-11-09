@@ -580,4 +580,15 @@
       default = "r0";
     };
   };
+  "2.1.3" = {
+    sha256 = "cd02a093fd0984dcc5398af43ec22870656cfeb05048ca055ecf08c02fbc2c4b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/happy-2.1.3-r0-9a6ff473172cd355df75ca271d667e2e81b11be9be88ef78cec5a417759129a2.nix;
+        revNum = 0;
+        sha256 = "9a6ff473172cd355df75ca271d667e2e81b11be9be88ef78cec5a417759129a2";
+      };
+      default = "r0";
+    };
+  };
 }
