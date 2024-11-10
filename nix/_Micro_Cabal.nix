@@ -43,4 +43,26 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "9c2726fd9d06ca4a2dd5b87de5317cfffdf15d9093eec4c28dad871943878fe3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MicroCabal-0.3.1.0-r0-3a49b94c49f15f8051b05f6d3ad5cddef4a1cada96982f7e7b55f8622a23fc10.nix;
+        revNum = 0;
+        sha256 = "3a49b94c49f15f8051b05f6d3ad5cddef4a1cada96982f7e7b55f8622a23fc10";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.1.1" = {
+    sha256 = "4721389758d8912f10e41757050512963066fd8c13b287f8ca82196a06cf97fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MicroCabal-0.3.1.1-r0-b4fd2ca02d62d404e39fd394a8429a444d4b38336cec59d877f60c429169b551.nix;
+        revNum = 0;
+        sha256 = "b4fd2ca02d62d404e39fd394a8429a444d4b38336cec59d877f60c429169b551";
+      };
+      default = "r0";
+    };
+  };
 }

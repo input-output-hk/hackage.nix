@@ -288,4 +288,15 @@
       default = "r0";
     };
   };
+  "0.7.2" = {
+    sha256 = "23e9d386817b4d59611c857b38b8040bea14e8fba6767d7414d593318f393387";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cron-0.7.2-r0-59168f29d001c07ce19ba16f0b8abf4e8659fdf90e0e630ddd493e582d499fdc.nix;
+        revNum = 0;
+        sha256 = "59168f29d001c07ce19ba16f0b8abf4e8659fdf90e0e630ddd493e582d499fdc";
+      };
+      default = "r0";
+    };
+  };
 }
