@@ -26,4 +26,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "ad876a1bf7121c96e4b29c1d39e4e9073aab0b843a4142f10c33159123fb0b8d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arrow-utils-0.1.2-r0-6a0a20f1e01531998c4524f06ffbf828bd8c72a518ba2107456b5976b490db84.nix;
+        revNum = 0;
+        sha256 = "6a0a20f1e01531998c4524f06ffbf828bd8c72a518ba2107456b5976b490db84";
+      };
+      default = "r0";
+    };
+  };
 }
