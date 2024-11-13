@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "0e7654373970a14b9ad852a44842851469d9ca0fdfc17e91b41d9a2a49c099bd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/derive-has-field-0.0.1.0-r1-221c266bc815ff666fa8a1b83a78bfa367d4b8797fb173f8c00d2f9b080cb1d4.nix;
+        revNum = 1;
+        sha256 = "221c266bc815ff666fa8a1b83a78bfa367d4b8797fb173f8c00d2f9b080cb1d4";
+      };
+      default = "r1";
     };
   };
   "0.0.1.1" = {
