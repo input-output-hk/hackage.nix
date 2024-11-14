@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "38d76fa879a61c2bcb8505c2e83c5843ed2d8f36e65db1ac1c5bc0f7cf42b0e5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/chell-hunit-0.3.0.2-r1-ed8ca8da42ef941856ac2d8c8c6b0e6db03a8ecbf5e10ecd03b379799c4d9f20.nix;
+        revNum = 1;
+        sha256 = "ed8ca8da42ef941856ac2d8c8c6b0e6db03a8ecbf5e10ecd03b379799c4d9f20";
+      };
+      default = "r1";
     };
   };
 }

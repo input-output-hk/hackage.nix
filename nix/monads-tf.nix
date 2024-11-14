@@ -126,7 +126,12 @@
         revNum = 1;
         sha256 = "5b7c0c160af77b8a972baa6ac097c62b65877e6f292fdee0a9b5876057ba6680";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/monads-tf-0.3.0.1-r2-66e89d2e69d869004ef7ba3f28168e81a8398b99140314c6106fba8bb8a0cef3.nix;
+        revNum = 2;
+        sha256 = "66e89d2e69d869004ef7ba3f28168e81a8398b99140314c6106fba8bb8a0cef3";
+      };
+      default = "r2";
     };
   };
 }

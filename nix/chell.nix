@@ -301,7 +301,17 @@
         revNum = 0;
         sha256 = "869f5216784b582f040b0266799c9f43656ba52cc4d1db7a2666ace5562f1861";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/chell-0.5.0.2-r1-9bc12b2d5affb51bec9ccf01651c229d4f714c744fc7dc85b0946c7bdb068c6d.nix;
+        revNum = 1;
+        sha256 = "9bc12b2d5affb51bec9ccf01651c229d4f714c744fc7dc85b0946c7bdb068c6d";
+      };
+      r2 = {
+        nix = import ../hackage/chell-0.5.0.2-r2-deefd202e729f7b13aae15a8035a0264c68cfa7348656ebddfa5268cdef784c6.nix;
+        revNum = 2;
+        sha256 = "deefd202e729f7b13aae15a8035a0264c68cfa7348656ebddfa5268cdef784c6";
+      };
+      default = "r2";
     };
   };
 }
