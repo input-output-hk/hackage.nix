@@ -48,4 +48,15 @@
       default = "r1";
     };
   };
+  "0.1.0.5" = {
+    sha256 = "e7b9c3872130a1e57f2fc59fa523ac3106b166c93e80deef1a6bf469adbdf07c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gltf-codec-0.1.0.5-r0-685df774608724fd46f359a4e24a4071e01a9b901b41b4f9e6e2daddd20c9af2.nix;
+        revNum = 0;
+        sha256 = "685df774608724fd46f359a4e24a4071e01a9b901b41b4f9e6e2daddd20c9af2";
+      };
+      default = "r0";
+    };
+  };
 }

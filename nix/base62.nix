@@ -88,7 +88,12 @@
         revNum = 0;
         sha256 = "fb222b4e9693b6620204ac56b024b15be44ca76d3b1f86ad4ab23b645c8c5b38";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/base62-0.1.1.2-r1-21d4e0e74f7ecda332b9e588548af7f1afc88fe01984e4c6163eb6a04af3b353.nix;
+        revNum = 1;
+        sha256 = "21d4e0e74f7ecda332b9e588548af7f1afc88fe01984e4c6163eb6a04af3b353";
+      };
+      default = "r1";
     };
   };
 }
