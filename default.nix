@@ -17677,6 +17677,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xturtle" = import ./nix/xturtle.nix;
   "xxhash" = import ./nix/xxhash.nix;
   "xxhash-ffi" = import ./nix/xxhash-ffi.nix;
+  "xz" = import ./nix/xz.nix;
+  "xz-clib" = import ./nix/xz-clib.nix;
   "y0l0bot" = import ./nix/y0l0bot.nix;
   "yabi" = import ./nix/yabi.nix;
   "yabi-muno" = import ./nix/yabi-muno.nix;

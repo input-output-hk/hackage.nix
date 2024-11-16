@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "4e02534db0b7201ffc2adceb58ae69f37e9fc9e488f668c5cf900724c08e77e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/htree-0.2.0.0-r0-520edcab482725c95e14e347deb952b831706baa472684403bb5f7ee783e140f.nix;
+        revNum = 0;
+        sha256 = "520edcab482725c95e14e347deb952b831706baa472684403bb5f7ee783e140f";
+      };
+      default = "r0";
+    };
+  };
 }

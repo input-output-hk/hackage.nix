@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "53f56de8f3d0246dd075ee56583cdb4acfad70124b36c3df68d2008cb137742b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libsecp256k1-0.3.0-r0-a8b48c86218afbb6c2139bcd779bb48d0d615c514a4bf1d59d7d24fe49c21eb9.nix;
+        revNum = 0;
+        sha256 = "a8b48c86218afbb6c2139bcd779bb48d0d615c514a4bf1d59d7d24fe49c21eb9";
+      };
+      default = "r0";
+    };
+  };
 }
