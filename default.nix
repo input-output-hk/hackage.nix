@@ -3663,6 +3663,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "co-log" = import ./nix/co-log.nix;
   "co-log-concurrent" = import ./nix/co-log-concurrent.nix;
   "co-log-core" = import ./nix/co-log-core.nix;
+  "co-log-effectful" = import ./nix/co-log-effectful.nix;
   "co-log-json" = import ./nix/co-log-json.nix;
   "co-log-polysemy" = import ./nix/co-log-polysemy.nix;
   "co-log-polysemy-formatting" = import ./nix/co-log-polysemy-formatting.nix;
@@ -14557,6 +14558,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shared-memory" = import ./nix/shared-memory.nix;
   "sharedio" = import ./nix/sharedio.nix;
   "she" = import ./nix/she.nix;
+  "shebanger" = import ./nix/shebanger.nix;
   "sheets" = import ./nix/sheets.nix;
   "shelduck" = import ./nix/shelduck.nix;
   "shell-conduit" = import ./nix/shell-conduit.nix;
