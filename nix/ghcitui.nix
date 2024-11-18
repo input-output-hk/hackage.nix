@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "1fffcebc249cec3d8055f6b2f5f39fcf4c04265bf8c75cbe854482b946f19123";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcitui-0.4.0.0-r0-0966eebd244c2d21bb58ee788d24de197ed12e6c17aea40c8e28d2dc1205c2a4.nix;
+        revNum = 0;
+        sha256 = "0966eebd244c2d21bb58ee788d24de197ed12e6c17aea40c8e28d2dc1205c2a4";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.1.0" = {
+    sha256 = "bfdd975041310905b665f45f12fe9581ce926ae62c32df0112ac7f8807d18915";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcitui-0.4.1.0-r0-2d7500799ec775720cd6cd7c8f235a53ba79c7901f18ac5b12b909c610ec73bb.nix;
+        revNum = 0;
+        sha256 = "2d7500799ec775720cd6cd7c8f235a53ba79c7901f18ac5b12b909c610ec73bb";
+      };
+      default = "r0";
+    };
+  };
 }
