@@ -76,4 +76,37 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "66efd577e0ce37e20f95abfedba147376c3793b8b99fdc9fc22792d2e6d37e1b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aftovolio-0.5.0.0-r0-35e3141a4c2da0f033ee309385063994761dfea4e7100e2316134bb5835e4c59.nix;
+        revNum = 0;
+        sha256 = "35e3141a4c2da0f033ee309385063994761dfea4e7100e2316134bb5835e4c59";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.1.0" = {
+    sha256 = "18014ddc30b4e1895825bf61d11c65b643b92fcf39f2657faa2e7b446e04434e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aftovolio-0.5.1.0-r0-1ad526fe6da158e7b34a2e007e09d695b516c7eb78c11864dd20bf6aa716af36.nix;
+        revNum = 0;
+        sha256 = "1ad526fe6da158e7b34a2e007e09d695b516c7eb78c11864dd20bf6aa716af36";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.1.1" = {
+    sha256 = "da105040347194dc685aaf0aa7cb2a165c5b78b7aa01a1d5f432a5710d23097a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aftovolio-0.5.1.1-r0-8d3eacb9683115c439c78a1e32f284f97204d186ad626cbbd5a5a02d952ee38e.nix;
+        revNum = 0;
+        sha256 = "8d3eacb9683115c439c78a1e32f284f97204d186ad626cbbd5a5a02d952ee38e";
+      };
+      default = "r0";
+    };
+  };
 }

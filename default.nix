@@ -12351,6 +12351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pg-harness" = import ./nix/pg-harness.nix;
   "pg-harness-client" = import ./nix/pg-harness-client.nix;
   "pg-harness-server" = import ./nix/pg-harness-server.nix;
+  "pg-query" = import ./nix/pg-query.nix;
   "pg-recorder" = import ./nix/pg-recorder.nix;
   "pg-store" = import ./nix/pg-store.nix;
   "pg-transact" = import ./nix/pg-transact.nix;

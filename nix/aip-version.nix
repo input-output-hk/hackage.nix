@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.0.3" = {
+    sha256 = "0c08aa656dbf37d607c577846d1fdcd3f49413d75748138126e8136d49f4bf6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aip-version-0.0.0.3-r0-46eb44b1ed9f73e60746305fe55dfa4b0b038203f5cb928701cf0de43972c264.nix;
+        revNum = 0;
+        sha256 = "46eb44b1ed9f73e60746305fe55dfa4b0b038203f5cb928701cf0de43972c264";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "bd844d2a31b08834671e7fc00878e970e5b5a7bd1ac3e1b73946003bd76236f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deep-map-0.3.0-r0-a8d6b4abad54309beb318153f2bc2cbcdf47faac9c7d279ae1289fa1212c7996.nix;
+        revNum = 0;
+        sha256 = "a8d6b4abad54309beb318153f2bc2cbcdf47faac9c7d279ae1289fa1212c7996";
+      };
+      default = "r0";
+    };
+  };
 }
