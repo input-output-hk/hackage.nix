@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.20" = {
+    sha256 = "f1a73fc3ee5048884fd4cb1bff2f70338e2858e174abb1716c3088fc1f585f4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tools-yj-0.1.0.20-r0-1a353e0061d325b563a31659d42cc9b2caf94ac37293f2070c84e0df333b6741.nix;
+        revNum = 0;
+        sha256 = "1a353e0061d325b563a31659d42cc9b2caf94ac37293f2070c84e0df333b6741";
+      };
+      default = "r0";
+    };
+  };
 }

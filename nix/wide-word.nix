@@ -258,7 +258,12 @@
         revNum = 3;
         sha256 = "b9a1bb1e462696e552bdf90a00363496bb9e9a6baa7563ab8df6efb3231b7e07";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/wide-word-0.1.6.0-r4-1d45b614eff715e704388373f907db729aa400276414e9b04a05ce531dbb61d9.nix;
+        revNum = 4;
+        sha256 = "1d45b614eff715e704388373f907db729aa400276414e9b04a05ce531dbb61d9";
+      };
+      default = "r4";
     };
   };
 }

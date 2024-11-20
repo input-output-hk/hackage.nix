@@ -663,6 +663,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "IcoGrid" = import ./nix/_Ico_Grid.nix;
   "IfElse" = import ./nix/_If_Else.nix;
   "Imlib" = import ./nix/_Imlib.nix;
+  "ImpSpec" = import ./nix/_Imp_Spec.nix;
   "ImperativeHaskell" = import ./nix/_Imperative_Haskell.nix;
   "IndentParser" = import ./nix/_Indent_Parser.nix;
   "IndexedList" = import ./nix/_Indexed_List.nix;
