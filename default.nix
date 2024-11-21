@@ -5184,6 +5184,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effectful-plugin" = import ./nix/effectful-plugin.nix;
   "effectful-st" = import ./nix/effectful-st.nix;
   "effectful-th" = import ./nix/effectful-th.nix;
+  "effectful-zoo" = import ./nix/effectful-zoo.nix;
   "effective-aspects" = import ./nix/effective-aspects.nix;
   "effective-aspects-mzv" = import ./nix/effective-aspects-mzv.nix;
   "effects" = import ./nix/effects.nix;
@@ -8478,6 +8479,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsfcsh" = import ./nix/hsfcsh.nix;
   "hsfilt" = import ./nix/hsfilt.nix;
   "hsforce" = import ./nix/hsforce.nix;
+  "hsftp" = import ./nix/hsftp.nix;
   "hsgnutls" = import ./nix/hsgnutls.nix;
   "hsgnutls-yj" = import ./nix/hsgnutls-yj.nix;
   "hsgsom" = import ./nix/hsgsom.nix;
@@ -12889,6 +12891,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prettyprinter-compat-annotated-wl-pprint" = import ./nix/prettyprinter-compat-annotated-wl-pprint.nix;
   "prettyprinter-compat-ansi-wl-pprint" = import ./nix/prettyprinter-compat-ansi-wl-pprint.nix;
   "prettyprinter-compat-wl-pprint" = import ./nix/prettyprinter-compat-wl-pprint.nix;
+  "prettyprinter-configurable" = import ./nix/prettyprinter-configurable.nix;
   "prettyprinter-convert-ansi-wl-pprint" = import ./nix/prettyprinter-convert-ansi-wl-pprint.nix;
   "prettyprinter-graphviz" = import ./nix/prettyprinter-graphviz.nix;
   "prettyprinter-interp" = import ./nix/prettyprinter-interp.nix;
