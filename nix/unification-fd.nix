@@ -85,6 +85,17 @@
       default = "r0";
     };
   };
+  "0.12.0" = {
+    sha256 = "10cd67a6148ad748f2d4c4b15311ff66f402354f1ecebe23b72e8d97100e3700";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unification-fd-0.12.0-r0-00ac875b0acd4a68f38fb76f06e4dd487e5ecc93873e6efaa20c8b88e542360a.nix;
+        revNum = 0;
+        sha256 = "00ac875b0acd4a68f38fb76f06e4dd487e5ecc93873e6efaa20c8b88e542360a";
+      };
+      default = "r0";
+    };
+  };
   "0.5.0" = {
     sha256 = "2d65113f1645eb8b32ca102d1d987f173fa3b217c910f6b9c29422c385d0bd0b";
     revisions = {
