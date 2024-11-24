@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.2.3" = {
+    sha256 = "475397a470763e4259ff56fefee11cbeee1346b8f3f02f20de4d4fe5041940f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Raincat-1.2.3-r0-fc86fba38c0f087ea6ff25d732c2d35469548d933e52b03b7cc310fd4045442d.nix;
+        revNum = 0;
+        sha256 = "fc86fba38c0f087ea6ff25d732c2d35469548d933e52b03b7cc310fd4045442d";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -4574,6 +4574,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "debug-trace-file" = import ./nix/debug-trace-file.nix;
   "debug-trace-var" = import ./nix/debug-trace-var.nix;
   "debug-tracy" = import ./nix/debug-tracy.nix;
+  "debuggable" = import ./nix/debuggable.nix;
   "debugger-hs" = import ./nix/debugger-hs.nix;
   "deburr" = import ./nix/deburr.nix;
   "dec" = import ./nix/dec.nix;

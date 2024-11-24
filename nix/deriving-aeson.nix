@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "0.2.10" = {
+    sha256 = "3afb52ac0a82f543783cdd683b6e1aa9ea7ab018ca0a020ccdd269f74ff03677";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deriving-aeson-0.2.10-r0-c6f2725d437f352c3267165575c756d18fbb16c1125d3263e3516e6a39098c10.nix;
+        revNum = 0;
+        sha256 = "c6f2725d437f352c3267165575c756d18fbb16c1125d3263e3516e6a39098c10";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2" = {
     sha256 = "cd049a07c4f4f71e3da404796e25cbf3478d81e641c159bef53f55e75d626743";
     revisions = {
