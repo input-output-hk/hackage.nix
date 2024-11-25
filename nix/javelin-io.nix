@@ -28,7 +28,12 @@
         revNum = 1;
         sha256 = "0f94ca9a9f23135847b406a3245dc63dccbe0abbe43e218052faf302f9b6457c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/javelin-io-0.1.1.1-r2-a4ba297200cf223ce1fd007385685b2d390d05a87776635772b711a8e41ddc85.nix;
+        revNum = 2;
+        sha256 = "a4ba297200cf223ce1fd007385685b2d390d05a87776635772b711a8e41ddc85";
+      };
+      default = "r2";
     };
   };
 }

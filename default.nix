@@ -8365,6 +8365,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-instrumentation-http-client" = import ./nix/hs-opentelemetry-instrumentation-http-client.nix;
   "hs-opentelemetry-instrumentation-persistent" = import ./nix/hs-opentelemetry-instrumentation-persistent.nix;
   "hs-opentelemetry-instrumentation-postgresql-simple" = import ./nix/hs-opentelemetry-instrumentation-postgresql-simple.nix;
+  "hs-opentelemetry-instrumentation-tasty" = import ./nix/hs-opentelemetry-instrumentation-tasty.nix;
   "hs-opentelemetry-instrumentation-wai" = import ./nix/hs-opentelemetry-instrumentation-wai.nix;
   "hs-opentelemetry-instrumentation-yesod" = import ./nix/hs-opentelemetry-instrumentation-yesod.nix;
   "hs-opentelemetry-otlp" = import ./nix/hs-opentelemetry-otlp.nix;
@@ -13073,6 +13074,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prototype" = import ./nix/prototype.nix;
   "prove-everywhere-server" = import ./nix/prove-everywhere-server.nix;
   "provenience" = import ./nix/provenience.nix;
+  "provide" = import ./nix/provide.nix;
   "proxied" = import ./nix/proxied.nix;
   "proxy" = import ./nix/proxy.nix;
   "proxy-kindness" = import ./nix/proxy-kindness.nix;

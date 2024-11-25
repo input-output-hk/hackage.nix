@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.0.1.4" = {
+    sha256 = "2465395c8e7901f1075d445f077fbdd86753d7c69aaa9652a4801e7d9a24312f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-exporter-in-memory-0.0.1.4-r0-b9da6759249ce36d870bddf78c2234cb2f543dab2a6740847ca31979ad940c02.nix;
+        revNum = 0;
+        sha256 = "b9da6759249ce36d870bddf78c2234cb2f543dab2a6740847ca31979ad940c02";
+      };
+      default = "r0";
+    };
+  };
 }
