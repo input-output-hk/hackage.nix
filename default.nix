@@ -12335,6 +12335,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "persistent-refs" = import ./nix/persistent-refs.nix;
   "persistent-relational-record" = import ./nix/persistent-relational-record.nix;
   "persistent-spatial" = import ./nix/persistent-spatial.nix;
+  "persistent-sql-lifted" = import ./nix/persistent-sql-lifted.nix;
   "persistent-sqlite" = import ./nix/persistent-sqlite.nix;
   "persistent-stm" = import ./nix/persistent-stm.nix;
   "persistent-template" = import ./nix/persistent-template.nix;
@@ -17719,6 +17720,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaml-config" = import ./nix/yaml-config.nix;
   "yaml-light" = import ./nix/yaml-light.nix;
   "yaml-light-lens" = import ./nix/yaml-light-lens.nix;
+  "yaml-marked" = import ./nix/yaml-marked.nix;
   "yaml-pretty-extras" = import ./nix/yaml-pretty-extras.nix;
   "yaml-rpc" = import ./nix/yaml-rpc.nix;
   "yaml-rpc-scotty" = import ./nix/yaml-rpc-scotty.nix;
