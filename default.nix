@@ -2977,6 +2977,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bricks-rendering" = import ./nix/bricks-rendering.nix;
   "bricks-syntax" = import ./nix/bricks-syntax.nix;
   "brillig" = import ./nix/brillig.nix;
+  "brillo" = import ./nix/brillo.nix;
+  "brillo-algorithms" = import ./nix/brillo-algorithms.nix;
+  "brillo-examples" = import ./nix/brillo-examples.nix;
+  "brillo-juicy" = import ./nix/brillo-juicy.nix;
+  "brillo-rendering" = import ./nix/brillo-rendering.nix;
   "brittany" = import ./nix/brittany.nix;
   "broadcast-chan" = import ./nix/broadcast-chan.nix;
   "broadcast-chan-conduit" = import ./nix/broadcast-chan-conduit.nix;
@@ -17906,6 +17911,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yices" = import ./nix/yices.nix;
   "yices-easy" = import ./nix/yices-easy.nix;
   "yices-painless" = import ./nix/yices-painless.nix;
+  "yield" = import ./nix/yield.nix;
   "yiyd" = import ./nix/yiyd.nix;
   "yj-sandbox" = import ./nix/yj-sandbox.nix;
   "yjftp" = import ./nix/yjftp.nix;

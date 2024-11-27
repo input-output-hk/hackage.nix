@@ -211,4 +211,15 @@
       default = "r0";
     };
   };
+  "0.7.6" = {
+    sha256 = "2249f68dc313543d3ca0b3ce61a9be88d7dd3d2ddbcd887af1d41fac3c17edff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libxml-sax-0.7.6-r0-e0c7e8bcf0f2ae7ad96cd6161e6a2f338045aee952ce42f48de77aec554b5bc3.nix;
+        revNum = 0;
+        sha256 = "e0c7e8bcf0f2ae7ad96cd6161e6a2f338045aee952ce42f48de77aec554b5bc3";
+      };
+      default = "r0";
+    };
+  };
 }
