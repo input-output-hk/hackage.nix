@@ -183,6 +183,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ChasingBottoms" = import ./nix/_Chasing_Bottoms.nix;
   "CheatSheet" = import ./nix/_Cheat_Sheet.nix;
   "Checked" = import ./nix/_Checked.nix;
+  "ChibiHash" = import ./nix/_Chibi_Hash.nix;
   "Chitra" = import ./nix/_Chitra.nix;
   "ChristmasTree" = import ./nix/_Christmas_Tree.nix;
   "CirruParser" = import ./nix/_Cirru_Parser.nix;
@@ -3979,6 +3980,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "constrained-monads" = import ./nix/constrained-monads.nix;
   "constrained-normal" = import ./nix/constrained-normal.nix;
   "constrained-platform-instances" = import ./nix/constrained-platform-instances.nix;
+  "constrained-some" = import ./nix/constrained-some.nix;
   "constraint" = import ./nix/constraint.nix;
   "constraint-classes" = import ./nix/constraint-classes.nix;
   "constraint-manip" = import ./nix/constraint-manip.nix;
