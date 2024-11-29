@@ -274,4 +274,26 @@
       default = "r0";
     };
   };
+  "2.7.2" = {
+    sha256 = "04f8d7b8f36211a9fb36bacbd7325d0ac1d31888ad00d3244d95a3e4ebc1de68";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasmtlib-2.7.2-r0-5eceb477bbd77e474fea92242bd883d0d5fef1a0b81d292b70794732d4282b7a.nix;
+        revNum = 0;
+        sha256 = "5eceb477bbd77e474fea92242bd883d0d5fef1a0b81d292b70794732d4282b7a";
+      };
+      default = "r0";
+    };
+  };
+  "2.8.0" = {
+    sha256 = "56444e44b8d19ecb4a635a8bf9191e388eb4f0844eeb26c7bdf31a6a23f84f28";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasmtlib-2.8.0-r0-905707bd68a20650704e34a8c95f558b2cf2674841fb73355c5f7308b73d3cfc.nix;
+        revNum = 0;
+        sha256 = "905707bd68a20650704e34a8c95f558b2cf2674841fb73355c5f7308b73d3cfc";
+      };
+      default = "r0";
+    };
+  };
 }
