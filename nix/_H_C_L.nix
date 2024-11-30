@@ -165,4 +165,15 @@
       default = "r0";
     };
   };
+  "1.9" = {
+    sha256 = "5033e144b581deb3b3fc877894c93536809c2621bbad5fb1962b9a796e888466";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HCL-1.9-r0-6df4dc760c509f436d81337389a0f704e57563b9483ded4dab5b07ddf42f6ce7.nix;
+        revNum = 0;
+        sha256 = "6df4dc760c509f436d81337389a0f704e57563b9483ded4dab5b07ddf42f6ce7";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.1.6" = {
+    sha256 = "924120f80a574f81b782151821b59f33d1e2fdc8285e3b1715cdb03ccf34125a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wikimusic-ssr-1.0.1.6-r0-594182f6a379b77c3f936996854d4a8ad15bb408d0bd3c88c2b9b50367202db2.nix;
+        revNum = 0;
+        sha256 = "594182f6a379b77c3f936996854d4a8ad15bb408d0bd3c88c2b9b50367202db2";
+      };
+      default = "r0";
+    };
+  };
 }

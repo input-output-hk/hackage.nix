@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.2.1.3" = {
+    sha256 = "0cec8d3114fd934dd5c198d6dccf4eba0b08863e25b61b983f13eb7a505e6698";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wikimusic-api-spec-1.2.1.3-r0-bafa69f0a0c33da1041d00d44717cb43cb8773ab6f902834370d2257940eb4f5.nix;
+        revNum = 0;
+        sha256 = "bafa69f0a0c33da1041d00d44717cb43cb8773ab6f902834370d2257940eb4f5";
+      };
+      default = "r0";
+    };
+  };
 }

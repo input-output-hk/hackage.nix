@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.0.6" = {
+    sha256 = "91850ec4c309c105428c110e5d2f7c13c6516e7a459f87e7a4eaaca806179a8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yggdrasil-schema-1.0.0.6-r0-193e23c058038da76fec69314c390b17ca613e8e7108f874b3eec3cad8846648.nix;
+        revNum = 0;
+        sha256 = "193e23c058038da76fec69314c390b17ca613e8e7108f874b3eec3cad8846648";
+      };
+      default = "r0";
+    };
+  };
 }
