@@ -659,4 +659,15 @@
       default = "r0";
     };
   };
+  "0.8.5.2" = {
+    sha256 = "67d3a09e8750d910a67be9c5e9f43d4e6ef758241c1a8d17766ca7b51eb39a4c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hackport-0.8.5.2-r0-3ea3f8a13096e4d310d6289bf7983ba3196f626f6d4bfa643dffdc359a698982.nix;
+        revNum = 0;
+        sha256 = "3ea3f8a13096e4d310d6289bf7983ba3196f626f6d4bfa643dffdc359a698982";
+      };
+      default = "r0";
+    };
+  };
 }

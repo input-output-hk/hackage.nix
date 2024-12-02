@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "575a3e38547f58f242ce593acbaac453904a63ee50cb9e9a4bb6c19fee84d3dd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Chart-gtk3-1.9.3-r1-40c91cd69ab79a94181d2c73adb2906352084675d3439f4db3f75a3b26b9de50.nix;
+        revNum = 1;
+        sha256 = "40c91cd69ab79a94181d2c73adb2906352084675d3439f4db3f75a3b26b9de50";
+      };
+      default = "r1";
     };
   };
 }
