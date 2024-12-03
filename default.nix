@@ -192,6 +192,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ClasshSS" = import ./nix/_Classh_S_S.nix;
   "ClassyPrelude" = import ./nix/_Classy_Prelude.nix;
   "Clean" = import ./nix/_Clean.nix;
+  "ClickHaskell" = import ./nix/_Click_Haskell.nix;
   "Clipboard" = import ./nix/_Clipboard.nix;
   "ClustalParser" = import ./nix/_Clustal_Parser.nix;
   "Coadjute" = import ./nix/_Coadjute.nix;
@@ -17460,6 +17461,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wl-pprint-terminfo" = import ./nix/wl-pprint-terminfo.nix;
   "wl-pprint-text" = import ./nix/wl-pprint-text.nix;
   "wlc-hs" = import ./nix/wlc-hs.nix;
+  "wled-json" = import ./nix/wled-json.nix;
   "wobsurv" = import ./nix/wobsurv.nix;
   "woe" = import ./nix/woe.nix;
   "woffex" = import ./nix/woffex.nix;
