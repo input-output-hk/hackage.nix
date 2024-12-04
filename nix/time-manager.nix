@@ -70,4 +70,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "1815c29ccf2f04012d9576d8c3f83d472ed39432a2fac5d76376a8da5d3b9fc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/time-manager-0.2.0-r0-f64c65b3a4adf3c13b5c8741831aa9aae467bd03c2876c9a72716e1f7978281a.nix;
+        revNum = 0;
+        sha256 = "f64c65b3a4adf3c13b5c8741831aa9aae467bd03c2876c9a72716e1f7978281a";
+      };
+      default = "r0";
+    };
+  };
 }

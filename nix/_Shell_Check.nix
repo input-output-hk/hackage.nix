@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "4cd33a2d99c45a04a39923afcdbd3b949a314559f14d1fa3274892bc0bcdc467";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ShellCheck-0.10.0-r1-477f2cbb990f9f52a89569360d910c517cdbab03632c72184b6fe4e07f9665a4.nix;
+        revNum = 1;
+        sha256 = "477f2cbb990f9f52a89569360d910c517cdbab03632c72184b6fe4e07f9665a4";
+      };
+      default = "r1";
     };
   };
   "0.3.0" = {

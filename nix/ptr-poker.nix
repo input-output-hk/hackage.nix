@@ -153,6 +153,17 @@
       default = "r0";
     };
   };
+  "0.1.2.16" = {
+    sha256 = "14f09802521d36a1f12606c96e7a13e67b82f3e98d65a223f1832a187b32a197";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-poker-0.1.2.16-r0-7bd15e3d3d38b724c779c3a13ceab1be5199cbe35b066d705fc38e9a3dd159d9.nix;
+        revNum = 0;
+        sha256 = "7bd15e3d3d38b724c779c3a13ceab1be5199cbe35b066d705fc38e9a3dd159d9";
+      };
+      default = "r0";
+    };
+  };
   "0.1.2.2" = {
     sha256 = "709b2ffa7b9c44243457244d70113277c1a6e8f396fe5ecd6e5fa313e180d997";
     revisions = {
