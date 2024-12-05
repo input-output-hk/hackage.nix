@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "15c4770f233500e9fd1642cfcd25d4263951c57ef02f5e36f3beb960e81e229c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/eventlog2html-0.11.1-r1-5142ac71e1864d8b1d8ccfb0452a6d980ef2bbf0c51f2a2449a323075202ab4f.nix;
+        revNum = 1;
+        sha256 = "5142ac71e1864d8b1d8ccfb0452a6d980ef2bbf0c51f2a2449a323075202ab4f";
+      };
+      default = "r1";
     };
   };
   "0.2.0" = {

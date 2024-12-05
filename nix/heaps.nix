@@ -244,4 +244,15 @@
       default = "r0";
     };
   };
+  "0.4.1" = {
+    sha256 = "8763a4663a2d0b3c912400a547d66ae11b46a954403b6747272148e950aa0382";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heaps-0.4.1-r0-74ce60a23b8ef247b8bca71eeb38289e82b3b5e83b2383600b2c838a68218068.nix;
+        revNum = 0;
+        sha256 = "74ce60a23b8ef247b8bca71eeb38289e82b3b5e83b2383600b2c838a68218068";
+      };
+      default = "r0";
+    };
+  };
 }

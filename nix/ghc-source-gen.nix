@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.4.6.0" = {
+    sha256 = "948e1c058739097ef5bb213da4fa13759ae4a15e58d969934fe2557994762f03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-source-gen-0.4.6.0-r0-e6a310d225e65f453fca3d365952c99e69ed2ce7f2d6c14e464ef6ff590cf8fb.nix;
+        revNum = 0;
+        sha256 = "e6a310d225e65f453fca3d365952c99e69ed2ce7f2d6c14e464ef6ff590cf8fb";
+      };
+      default = "r0";
+    };
+  };
 }

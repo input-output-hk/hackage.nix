@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "3.2.1" = {
+    sha256 = "ff994b2c105b18f8c1de5f8718041dc597201c28d5a16fc303f98dc52f5f1883";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ip2proxy-3.2.1-r0-7d348bdcabbd691fbc7af2379a23cddd0b283a5a867499f2143a1b279cec620d.nix;
+        revNum = 0;
+        sha256 = "7d348bdcabbd691fbc7af2379a23cddd0b283a5a867499f2143a1b279cec620d";
+      };
+      default = "r0";
+    };
+  };
 }

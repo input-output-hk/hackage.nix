@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.19" = {
+    sha256 = "cd651b3f691a66198a935e892bf73941ff4889d2e9f9226155ed1a56673c9a5d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/toxcore-c-0.2.19-r0-61959fb920dcdb1feb291486b489af310a8dcea9d3fa817df0b4b076909d8ab9.nix;
+        revNum = 0;
+        sha256 = "61959fb920dcdb1feb291486b489af310a8dcea9d3fa817df0b4b076909d8ab9";
+      };
+      default = "r0";
+    };
+  };
 }

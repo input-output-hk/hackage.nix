@@ -177,6 +177,17 @@
       default = "r1";
     };
   };
+  "0.3.11" = {
+    sha256 = "9343757569249865b42aa218461c311d619d3c8027dfddbb635146363cc08aac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/charset-0.3.11-r0-0521970d253950ae712425a03c886bdc8a88a08dc0e095fa63250b0977328f03.nix;
+        revNum = 0;
+        sha256 = "0521970d253950ae712425a03c886bdc8a88a08dc0e095fa63250b0977328f03";
+      };
+      default = "r0";
+    };
+  };
   "0.3.2" = {
     sha256 = "2a602eada4268b333df267dc82589edfbd427f09eb7cacb0245fd37cce3b1e66";
     revisions = {

@@ -148,7 +148,12 @@
         revNum = 1;
         sha256 = "2f00aa0fa980427b5d8a2911c34bc0acf16d109c8cfc9addc4e5362aa48a284a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gloss-rendering-1.13.1.2-r2-2047344b061332101a4c38a1902a4a10b7f11998d3842cfc367b6b5563c3f580.nix;
+        revNum = 2;
+        sha256 = "2047344b061332101a4c38a1902a4a10b7f11998d3842cfc367b6b5563c3f580";
+      };
+      default = "r2";
     };
   };
   "1.9.1.1" = {

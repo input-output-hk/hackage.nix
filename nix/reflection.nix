@@ -690,4 +690,15 @@
       default = "r0";
     };
   };
+  "2.1.9" = {
+    sha256 = "c6a7d5e41ad0ee1a05c660acf4fd34b21f38330eec165d246b7fffb398e59fb3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflection-2.1.9-r0-6f0ac9648b61040293e9257bac90123102c546ae1e2f924c3fdebba340a9381b.nix;
+        revNum = 0;
+        sha256 = "6f0ac9648b61040293e9257bac90123102c546ae1e2f924c3fdebba340a9381b";
+      };
+      default = "r0";
+    };
+  };
 }

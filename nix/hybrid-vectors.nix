@@ -147,4 +147,15 @@
       default = "r2";
     };
   };
+  "0.2.5" = {
+    sha256 = "0b038ae2afcb015c6f8e0201be52821555677daa4f10f9c98e3a86d8df635325";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hybrid-vectors-0.2.5-r0-d4041e1e58b29ed60b8c4681c4b7990b7c76049c097a2d95cd901380fd129d67.nix;
+        revNum = 0;
+        sha256 = "d4041e1e58b29ed60b8c4681c4b7990b7c76049c097a2d95cd901380fd129d67";
+      };
+      default = "r0";
+    };
+  };
 }
