@@ -128,7 +128,12 @@
         revNum = 0;
         sha256 = "e6a310d225e65f453fca3d365952c99e69ed2ce7f2d6c14e464ef6ff590cf8fb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-source-gen-0.4.6.0-r1-3239c77806cd256f42c5e949440148d8b102f183c6aa357a8e1c44c2573957cd.nix;
+        revNum = 1;
+        sha256 = "3239c77806cd256f42c5e949440148d8b102f183c6aa357a8e1c44c2573957cd";
+      };
+      default = "r1";
     };
   };
 }

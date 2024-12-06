@@ -175,6 +175,28 @@
       default = "r0";
     };
   };
+  "2.2.0.14" = {
+    sha256 = "143ace03374189235c0d16c0689e16d18df06c4a6be0290c02d2f66c97991ab3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-tabular-list-2.2.0.14-r0-fcb425e92cab9d480b3061853f421f942408e47ccdf6ad5d82d08ed3ff88977d.nix;
+        revNum = 0;
+        sha256 = "fcb425e92cab9d480b3061853f421f942408e47ccdf6ad5d82d08ed3ff88977d";
+      };
+      default = "r0";
+    };
+  };
+  "2.2.0.15" = {
+    sha256 = "dad8212c547c32aa4043c5d0abb3316d7b0f4758e38c5c527348afbe964944a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-tabular-list-2.2.0.15-r0-200e9a61c1be42c0c1bb08321cad179cf132366522ba34f3c43f5e331cc08579.nix;
+        revNum = 0;
+        sha256 = "200e9a61c1be42c0c1bb08321cad179cf132366522ba34f3c43f5e331cc08579";
+      };
+      default = "r0";
+    };
+  };
   "2.2.0.2" = {
     sha256 = "afc45cf4dd61b98f4557e9f44a47ef111e8ad8811b9b297464461558722673a6";
     revisions = {

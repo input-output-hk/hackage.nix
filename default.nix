@@ -837,6 +837,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "MuCheck-Hspec" = import ./nix/_Mu_Check-_Hspec.nix;
   "MuCheck-QuickCheck" = import ./nix/_Mu_Check-_Quick_Check.nix;
   "MuCheck-SmallCheck" = import ./nix/_Mu_Check-_Small_Check.nix;
+  "MultiChor" = import ./nix/_Multi_Chor.nix;
   "MultipletCombiner" = import ./nix/_Multiplet_Combiner.nix;
   "Munkres" = import ./nix/_Munkres.nix;
   "Munkres-simple" = import ./nix/_Munkres-simple.nix;

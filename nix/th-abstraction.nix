@@ -363,4 +363,15 @@
       default = "r0";
     };
   };
+  "0.7.1.0" = {
+    sha256 = "f9b6184aba4c6b61dd0d96f7dad41a4c9db0a01d3cdbf993a7d860488f1c04c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/th-abstraction-0.7.1.0-r0-5d98ce7bf51db907310f8067822d694571686436777d4476055f5e569a45c9b9.nix;
+        revNum = 0;
+        sha256 = "5d98ce7bf51db907310f8067822d694571686436777d4476055f5e569a45c9b9";
+      };
+      default = "r0";
+    };
+  };
 }

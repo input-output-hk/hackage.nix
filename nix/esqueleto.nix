@@ -1488,6 +1488,17 @@
       default = "r0";
     };
   };
+  "3.5.13.1" = {
+    sha256 = "b4ceb845ce86d01fc63fc7633f1fdaf8297ac0d675a6335d841cc18076a58173";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-3.5.13.1-r0-11c1731a4283b4338a0635f605d237abf26f4db6c394c6faccaa09773ef33ed9.nix;
+        revNum = 0;
+        sha256 = "11c1731a4283b4338a0635f605d237abf26f4db6c394c6faccaa09773ef33ed9";
+      };
+      default = "r0";
+    };
+  };
   "3.5.2.0" = {
     sha256 = "fce703227f4ebb38f1bd65a6a0e31a5acf690edc72f48a1dfdbb65bf2cb0e51b";
     revisions = {

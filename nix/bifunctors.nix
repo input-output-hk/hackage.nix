@@ -797,7 +797,12 @@
         revNum = 0;
         sha256 = "e6a6e576b9e027ca374383c2d3a43753bce42c63c72724d3a35208a982d68c0f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bifunctors-5.6.2-r1-ffd926ed71d6a046b7d5d92980d92269d7198e6b4768ffd33d120b44b88c2bbe.nix;
+        revNum = 1;
+        sha256 = "ffd926ed71d6a046b7d5d92980d92269d7198e6b4768ffd33d120b44b88c2bbe";
+      };
+      default = "r1";
     };
   };
 }
