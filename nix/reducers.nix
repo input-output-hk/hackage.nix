@@ -647,4 +647,15 @@
       default = "r7";
     };
   };
+  "3.12.5" = {
+    sha256 = "109561d4ccbcd66283e053182148c6fccc72be1d0d80b0e9e6b04ad993cf821c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reducers-3.12.5-r0-4460e90241922cb62e8e4ec269340aecaedde340b2c57d0e3108241e71ae23a7.nix;
+        revNum = 0;
+        sha256 = "4460e90241922cb62e8e4ec269340aecaedde340b2c57d0e3108241e71ae23a7";
+      };
+      default = "r0";
+    };
+  };
 }

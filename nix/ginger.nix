@@ -293,7 +293,12 @@
         revNum = 0;
         sha256 = "a6657c23ca63d3d84587bb93bf7cc3e35fac1d1cb3fe8df4576dc58c0a18b3c9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ginger-0.10.5.2-r1-cda9c5a24cd3ea74af730a8ea64b0d8ae90696ea56f14b787cc4d92646f7ddad.nix;
+        revNum = 1;
+        sha256 = "cda9c5a24cd3ea74af730a8ea64b0d8ae90696ea56f14b787cc4d92646f7ddad";
+      };
+      default = "r1";
     };
   };
   "0.2.0.0" = {

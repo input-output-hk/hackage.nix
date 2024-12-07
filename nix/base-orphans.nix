@@ -438,4 +438,15 @@
       default = "r0";
     };
   };
+  "0.9.3" = {
+    sha256 = "17a35079c8719014560c028d9805ec1301b900972adf212e00af23fe3ebfabd8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/base-orphans-0.9.3-r0-c95cd3490ef99998a496de26afe8879a1d7780fa181a4479a956c690d74f75f1.nix;
+        revNum = 0;
+        sha256 = "c95cd3490ef99998a496de26afe8879a1d7780fa181a4479a956c690d74f75f1";
+      };
+      default = "r0";
+    };
+  };
 }

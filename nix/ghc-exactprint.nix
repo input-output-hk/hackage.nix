@@ -447,6 +447,17 @@
       default = "r0";
     };
   };
+  "1.11.0.0" = {
+    sha256 = "c2fbd50ef7ed544e016f2731ae6df2af0c978372c86c984b2a7767f9a8f7f9e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-exactprint-1.11.0.0-r0-044e1c2c8e3ff5b56804e9dca9352ccc09dcd6fc4e099b09d0cda329cd99b6ea.nix;
+        revNum = 0;
+        sha256 = "044e1c2c8e3ff5b56804e9dca9352ccc09dcd6fc4e099b09d0cda329cd99b6ea";
+      };
+      default = "r0";
+    };
+  };
   "1.2.0" = {
     sha256 = "9344ef68ef9b7cbd53d638025c93d2a5aeb39c64bf7c0e1fccef34bc0f87b237";
     revisions = {

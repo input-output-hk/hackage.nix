@@ -65,4 +65,26 @@
       default = "r0";
     };
   };
+  "0.1.0.153" = {
+    sha256 = "d40ee6e94a79988357a9b54e31ef76a43a5e57bdf9d48b3c671830a24e82eedf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gpu-vulkan-0.1.0.153-r0-1b3caa4e12b17929e5047fb992ffc4ef8c17eb72dfade39722bc07e4e5bddcba.nix;
+        revNum = 0;
+        sha256 = "1b3caa4e12b17929e5047fb992ffc4ef8c17eb72dfade39722bc07e4e5bddcba";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.154" = {
+    sha256 = "2af31fba1c7d14458de89d12c58076c20645457891f897fc1bcb7ea21bb66c57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gpu-vulkan-0.1.0.154-r0-78295066daaf07bff64e7e052960fb3ed2757e4080dc16f11605f5249ac7b1d3.nix;
+        revNum = 0;
+        sha256 = "78295066daaf07bff64e7e052960fb3ed2757e4080dc16f11605f5249ac7b1d3";
+      };
+      default = "r0";
+    };
+  };
 }
