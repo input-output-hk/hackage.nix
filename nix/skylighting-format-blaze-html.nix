@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.1.3" = {
+    sha256 = "44e82ceaebb240f22882e7640633d747453887f74384dd5ffd258d802d7352e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/skylighting-format-blaze-html-0.1.1.3-r0-b3df323fb58b6fe9d1ffc028d676b10af5872b30865d2c3146a292570267f7d9.nix;
+        revNum = 0;
+        sha256 = "b3df323fb58b6fe9d1ffc028d676b10af5872b30865d2c3146a292570267f7d9";
+      };
+      default = "r0";
+    };
+  };
 }
