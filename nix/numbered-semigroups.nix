@@ -25,4 +25,15 @@
       default = "r3";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "3763e082f5f7d80182ceb4676aba0fc7e2f9e3956132433b56b1e8337f0e6c71";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/numbered-semigroups-0.1.1.0-r0-1b8ecab40ad0e3eae3192f16fa8ab48a44e45e66e2ed3c56a98aaf3fa345678b.nix;
+        revNum = 0;
+        sha256 = "1b8ecab40ad0e3eae3192f16fa8ab48a44e45e66e2ed3c56a98aaf3fa345678b";
+      };
+      default = "r0";
+    };
+  };
 }

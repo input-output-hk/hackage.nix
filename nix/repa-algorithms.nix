@@ -294,4 +294,15 @@
       default = "r0";
     };
   };
+  "3.4.2.0" = {
+    sha256 = "9b0ff255582d29f9c5be1fca140afc4b4b315cdaf5330e1aa3152f55820db28b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repa-algorithms-3.4.2.0-r0-2ae8bf504969e3d83c06aada31c051d0ff6798ca76d975fa0071485ee4e15c5c.nix;
+        revNum = 0;
+        sha256 = "2ae8bf504969e3d83c06aada31c051d0ff6798ca76d975fa0071485ee4e15c5c";
+      };
+      default = "r0";
+    };
+  };
 }

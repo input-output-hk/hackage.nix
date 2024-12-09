@@ -277,4 +277,15 @@
       default = "r0";
     };
   };
+  "3.4.2.0" = {
+    sha256 = "910b8e8c6e4496e1f84a222cf2ea89614c1ed26f3e31979e1752fe7a1fab4415";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repa-io-3.4.2.0-r0-cea75d3f09f16d05317d8f6cc8461695750e71181098809c8675e293506e3d82.nix;
+        revNum = 0;
+        sha256 = "cea75d3f09f16d05317d8f6cc8461695750e71181098809c8675e293506e3d82";
+      };
+      default = "r0";
+    };
+  };
 }

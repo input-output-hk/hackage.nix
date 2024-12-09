@@ -7195,6 +7195,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hackage-processing" = import ./nix/hackage-processing.nix;
   "hackage-proxy" = import ./nix/hackage-proxy.nix;
   "hackage-repo-tool" = import ./nix/hackage-repo-tool.nix;
+  "hackage-revdeps" = import ./nix/hackage-revdeps.nix;
   "hackage-security" = import ./nix/hackage-security.nix;
   "hackage-security-HTTP" = import ./nix/hackage-security-_H_T_T_P.nix;
   "hackage-server" = import ./nix/hackage-server.nix;

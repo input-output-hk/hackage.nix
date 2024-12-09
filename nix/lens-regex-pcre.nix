@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "1.1.1.0" = {
+    sha256 = "c7f87f720af636841b5b87f93e25cc217ea9182a9ed6180dce11aeca65a54c15";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-regex-pcre-1.1.1.0-r0-0d23a77311a5ad0d29fa12847ebbefeeeaa75b845a211d431eacb055da9df6a8.nix;
+        revNum = 0;
+        sha256 = "0d23a77311a5ad0d29fa12847ebbefeeeaa75b845a211d431eacb055da9df6a8";
+      };
+      default = "r0";
+    };
+  };
 }
