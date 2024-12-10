@@ -6132,6 +6132,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "functor-monadic" = import ./nix/functor-monadic.nix;
   "functor-products" = import ./nix/functor-products.nix;
   "functor-utils" = import ./nix/functor-utils.nix;
+  "functora-witch" = import ./nix/functora-witch.nix;
   "functorm" = import ./nix/functorm.nix;
   "functors" = import ./nix/functors.nix;
   "funflow" = import ./nix/funflow.nix;
@@ -10672,6 +10673,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "memory" = import ./nix/memory.nix;
   "memory-cd" = import ./nix/memory-cd.nix;
   "memory-hexstring" = import ./nix/memory-hexstring.nix;
+  "memory-pool" = import ./nix/memory-pool.nix;
   "memorypool" = import ./nix/memorypool.nix;
   "mempack" = import ./nix/mempack.nix;
   "memscript" = import ./nix/memscript.nix;
