@@ -15313,6 +15313,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "storable-complex" = import ./nix/storable-complex.nix;
   "storable-endian" = import ./nix/storable-endian.nix;
   "storable-enum" = import ./nix/storable-enum.nix;
+  "storable-generic" = import ./nix/storable-generic.nix;
   "storable-hetero-list" = import ./nix/storable-hetero-list.nix;
   "storable-offset" = import ./nix/storable-offset.nix;
   "storable-peek-poke" = import ./nix/storable-peek-poke.nix;

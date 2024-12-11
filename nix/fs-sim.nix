@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "984ba359d98674136ecedea27fb21b1115fff584dd73cf9af80a9eb112730763";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fs-sim-0.3.1.0-r0-f36c7f6091611639800086414bbb0c400b1228079bca574ce151959d7d5f5c17.nix;
+        revNum = 0;
+        sha256 = "f36c7f6091611639800086414bbb0c400b1228079bca574ce151959d7d5f5c17";
+      };
+      default = "r0";
+    };
+  };
 }

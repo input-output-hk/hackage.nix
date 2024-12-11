@@ -1012,6 +1012,17 @@
       default = "r0";
     };
   };
+  "1.41" = {
+    sha256 = "5f6a085180a2876b5dad19420fd6c85a35e02c7d79e7e1c9ede7336f44c77f05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hledger-ui-1.41-r0-db9bb74b9e7d8799402c2b4f42a87da2c708b28c4c2bdfb3bcc3a8067b76c937.nix;
+        revNum = 0;
+        sha256 = "db9bb74b9e7d8799402c2b4f42a87da2c708b28c4c2bdfb3bcc3a8067b76c937";
+      };
+      default = "r0";
+    };
+  };
   "1.5" = {
     sha256 = "ddf0a2777f619b5a84409104ca7f208b126ac9095c2d57d3439bb776b1979b80";
     revisions = {
