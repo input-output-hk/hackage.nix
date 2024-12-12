@@ -14529,6 +14529,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sha-validation" = import ./nix/sha-validation.nix;
   "sha1" = import ./nix/sha1.nix;
   "shade" = import ./nix/shade.nix;
+  "shaderc" = import ./nix/shaderc.nix;
   "shadower" = import ./nix/shadower.nix;
   "shadowsocks" = import ./nix/shadowsocks.nix;
   "shady-gen" = import ./nix/shady-gen.nix;

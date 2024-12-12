@@ -856,4 +856,15 @@
       default = "r0";
     };
   };
+  "2.4.0.6" = {
+    sha256 = "75fdc62b195b2accdb0f6b48b6a3565f38dc16046e8431d35ead439f9761aeae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dejafu-2.4.0.6-r0-0be586131cecbfc11c529357dd9fbc8d2f673fb8198a88378746a2a5c0aac398.nix;
+        revNum = 0;
+        sha256 = "0be586131cecbfc11c529357dd9fbc8d2f673fb8198a88378746a2a5c0aac398";
+      };
+      default = "r0";
+    };
+  };
 }

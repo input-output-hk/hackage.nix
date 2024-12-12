@@ -288,4 +288,15 @@
       default = "r0";
     };
   };
+  "0.4.5.6" = {
+    sha256 = "a60643a90678a29c30f695dd93f812d9701f113250bfd29fb6564355e3fb968e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bencoding-0.4.5.6-r0-ceda320189ef3ee259654f08d26d8a1f103134ac60cb0d6aa7073e67015471a7.nix;
+        revNum = 0;
+        sha256 = "ceda320189ef3ee259654f08d26d8a1f103134ac60cb0d6aa7073e67015471a7";
+      };
+      default = "r0";
+    };
+  };
 }
