@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "976b7c83d389e9e1cac37a574ac7ea254562f383d209f5fc2fe5eee043645887";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glib-stopgap-0.1.0.1-r0-c196b54b50b39bdfe02b9819d1d39665c5251ab27113beb3dc07e67867fcc3b2.nix;
+        revNum = 0;
+        sha256 = "c196b54b50b39bdfe02b9819d1d39665c5251ab27113beb3dc07e67867fcc3b2";
+      };
+      default = "r0";
+    };
+  };
 }
