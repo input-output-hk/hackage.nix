@@ -10065,6 +10065,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libsystemd-journal" = import ./nix/libsystemd-journal.nix;
   "libtagc" = import ./nix/libtagc.nix;
   "libtelnet" = import ./nix/libtelnet.nix;
+  "libtorch-ffi" = import ./nix/libtorch-ffi.nix;
+  "libtorch-ffi-helper" = import ./nix/libtorch-ffi-helper.nix;
   "libversion" = import ./nix/libversion.nix;
   "libvirt-hs" = import ./nix/libvirt-hs.nix;
   "libvorbis" = import ./nix/libvorbis.nix;

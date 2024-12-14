@@ -1063,6 +1063,17 @@
       default = "r0";
     };
   };
+  "1.0.21.0" = {
+    sha256 = "4dd93ea334c0169500402f07aa39c98dbb7bffe55dc63fdf228da2cc22c7c5cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mono-traversable-1.0.21.0-r0-7e6269eadfa45fe8433e01f6dace1397eb3ae423931071634be806eb2ed73b17.nix;
+        revNum = 0;
+        sha256 = "7e6269eadfa45fe8433e01f6dace1397eb3ae423931071634be806eb2ed73b17";
+      };
+      default = "r0";
+    };
+  };
   "1.0.4.0" = {
     sha256 = "23b83f6ff713ab464658166f6c0487a422a206ffc9912cd56f2abf229cfc9563";
     revisions = {
