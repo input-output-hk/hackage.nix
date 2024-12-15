@@ -227,7 +227,12 @@
         revNum = 0;
         sha256 = "b8e71bd3a8d8174cb65ea4f04e805dc1a747b6b9a328231157a7af6febbe2361";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hackernews-1.4.0.0-r1-11b35e5551c054d418d1e6e15e9bcf1101ce9aa621d2c1357965a369a8ee2d86.nix;
+        revNum = 1;
+        sha256 = "11b35e5551c054d418d1e6e15e9bcf1101ce9aa621d2c1357965a369a8ee2d86";
+      };
+      default = "r1";
     };
   };
 }

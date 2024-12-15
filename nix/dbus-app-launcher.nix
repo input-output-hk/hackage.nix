@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "1c7b0bd23fe44b58de0de95e802f72d491f37bd34ea45e1a37e14a60828bea43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dbus-app-launcher-0.1.1.0-r0-34df40e526d5b970c52e1368867ac141259f60718e47790c0c3692a140d18999.nix;
+        revNum = 0;
+        sha256 = "34df40e526d5b970c52e1368867ac141259f60718e47790c0c3692a140d18999";
+      };
+      default = "r0";
+    };
+  };
 }

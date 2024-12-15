@@ -12827,6 +12827,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "powerqueue-distributed" = import ./nix/powerqueue-distributed.nix;
   "powerqueue-levelmem" = import ./nix/powerqueue-levelmem.nix;
   "powerqueue-sqs" = import ./nix/powerqueue-sqs.nix;
+  "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;
@@ -16769,6 +16770,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "uniform-watch" = import ./nix/uniform-watch.nix;
   "uniform-webserver" = import ./nix/uniform-webserver.nix;
   "uniformBase" = import ./nix/uniform_Base.nix;
+  "unimap" = import ./nix/unimap.nix;
   "union" = import ./nix/union.nix;
   "union-angle" = import ./nix/union-angle.nix;
   "union-color" = import ./nix/union-color.nix;
