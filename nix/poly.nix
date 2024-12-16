@@ -44,7 +44,12 @@
         revNum = 1;
         sha256 = "da8ab6312169bbe9c5e99fd9a469a3c918f26fe82df7276cd1f6313523eb6440";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/poly-0.3.0.0-r2-1b120a78c68251dc6c4d0532e5a944e662d7e0dd2d8c50d9211f832256f20647.nix;
+        revNum = 2;
+        sha256 = "1b120a78c68251dc6c4d0532e5a944e662d7e0dd2d8c50d9211f832256f20647";
+      };
+      default = "r2";
     };
   };
   "0.3.1.0" = {
