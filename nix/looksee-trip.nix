@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "1940cf67f47af0f49b4a1aaef7e93d013f8e1c8d787d3b6ac183fa63429f91ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/looksee-trip-0.7.0-r0-27682e8c2b897affa4ba83817b143eacc910bbb1c727435c45846285860893d4.nix;
+        revNum = 0;
+        sha256 = "27682e8c2b897affa4ba83817b143eacc910bbb1c727435c45846285860893d4";
+      };
+      default = "r0";
+    };
+  };
 }

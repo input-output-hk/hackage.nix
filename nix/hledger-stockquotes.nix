@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "0.1.3.2" = {
+    sha256 = "3f1ce1d062bb8acfd1e563e9c790fa7b2aa73751c00cc9afaaf485c7911d3ba6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hledger-stockquotes-0.1.3.2-r0-58f8f3c6cbb9f9fea8f30c1ea286787fab0c0f76ea9f3b5bca13ac32ed27b986.nix;
+        revNum = 0;
+        sha256 = "58f8f3c6cbb9f9fea8f30c1ea286787fab0c0f76ea9f3b5bca13ac32ed27b986";
+      };
+      default = "r0";
+    };
+  };
 }

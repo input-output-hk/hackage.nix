@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.7" = {
+    sha256 = "7ebefe525734ac19e51e50024746526355acda59a8c014d0ec5e60da31628de9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/open-witness-0.7-r0-5eb33f9ec31d170b972811cc904398eae8188a9153d7c0d529345056987ad722.nix;
+        revNum = 0;
+        sha256 = "5eb33f9ec31d170b972811cc904398eae8188a9153d7c0d529345056987ad722";
+      };
+      default = "r0";
+    };
+  };
 }
