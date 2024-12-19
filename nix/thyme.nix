@@ -290,4 +290,15 @@
       default = "r1";
     };
   };
+  "0.4.1" = {
+    sha256 = "09e96653c5931be3135fd4ece88601c6fc2e44dad085b6f0b49a6d134acd76c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/thyme-0.4.1-r0-66d3faa1591e55d9526a1be59a838f664a62d6990686014d9cc0b56652505fd9.nix;
+        revNum = 0;
+        sha256 = "66d3faa1591e55d9526a1be59a838f664a62d6990686014d9cc0b56652505fd9";
+      };
+      default = "r0";
+    };
+  };
 }

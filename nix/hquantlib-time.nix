@@ -43,6 +43,17 @@
       default = "r0";
     };
   };
+  "0.0.5.3" = {
+    sha256 = "9f7224ca952c38288ce770c331da15216ed5a2e7925009d705c8a10196545558";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hquantlib-time-0.0.5.3-r0-0d08b6dbae542ada2bd6fe20072a2284ba70506a1520b888a8967c3b1b20d30e.nix;
+        revNum = 0;
+        sha256 = "0d08b6dbae542ada2bd6fe20072a2284ba70506a1520b888a8967c3b1b20d30e";
+      };
+      default = "r0";
+    };
+  };
   "0.1.0" = {
     sha256 = "444927475773e0677eb317e2d274e1b1c5181f61d07fa46b88b95b954836a2a8";
     revisions = {
@@ -50,6 +61,17 @@
         nix = import ../hackage/hquantlib-time-0.1.0-r0-2395c5e9a783450e1a8c69f73787a55e7691427833bea69f7927dcb642dca8cd.nix;
         revNum = 0;
         sha256 = "2395c5e9a783450e1a8c69f73787a55e7691427833bea69f7927dcb642dca8cd";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.1" = {
+    sha256 = "c8c04394ff028d97fb9c5380ead3fdea2ffb95b6e463c52e4dab29958c933d1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hquantlib-time-0.1.1-r0-ec43269f6f7b4ad0df815ebe087e2fd413995706f8fe3e5bd421134f661dfff0.nix;
+        revNum = 0;
+        sha256 = "ec43269f6f7b4ad0df815ebe087e2fd413995706f8fe3e5bd421134f661dfff0";
       };
       default = "r0";
     };

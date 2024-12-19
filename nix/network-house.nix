@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "b2908871efe9f785916da570b07a8778bbe4de928087eefe06ef0eb19c1ad54c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-house-0.1.0.3-r0-c778ff5aa05e6a19674117b70070b241fd5dd214fbd5a940f286d839634164bc.nix;
+        revNum = 0;
+        sha256 = "c778ff5aa05e6a19674117b70070b241fd5dd214fbd5a940f286d839634164bc";
+      };
+      default = "r0";
+    };
+  };
 }

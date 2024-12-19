@@ -10051,6 +10051,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "librato" = import ./nix/librato.nix;
   "libravatar" = import ./nix/libravatar.nix;
   "librdkafka" = import ./nix/librdkafka.nix;
+  "libremidi" = import ./nix/libremidi.nix;
   "libretls" = import ./nix/libretls.nix;
   "libriscv" = import ./nix/libriscv.nix;
   "libroman" = import ./nix/libroman.nix;
@@ -10650,6 +10651,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "megastore" = import ./nix/megastore.nix;
   "meldable-heap" = import ./nix/meldable-heap.nix;
   "melf" = import ./nix/melf.nix;
+  "mello" = import ./nix/mello.nix;
   "mellon-core" = import ./nix/mellon-core.nix;
   "mellon-gpio" = import ./nix/mellon-gpio.nix;
   "mellon-web" = import ./nix/mellon-web.nix;
@@ -12827,6 +12829,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "powerqueue-distributed" = import ./nix/powerqueue-distributed.nix;
   "powerqueue-levelmem" = import ./nix/powerqueue-levelmem.nix;
   "powerqueue-sqs" = import ./nix/powerqueue-sqs.nix;
+  "ppad-base58" = import ./nix/ppad-base58.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
@@ -14170,6 +14173,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scons2dot" = import ./nix/scons2dot.nix;
   "scope" = import ./nix/scope.nix;
   "scope-cairo" = import ./nix/scope-cairo.nix;
+  "scoped-codensity" = import ./nix/scoped-codensity.nix;
   "scottish" = import ./nix/scottish.nix;
   "scotty" = import ./nix/scotty.nix;
   "scotty-binding-play" = import ./nix/scotty-binding-play.nix;
@@ -15789,6 +15793,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-flaky" = import ./nix/tasty-flaky.nix;
   "tasty-focus" = import ./nix/tasty-focus.nix;
   "tasty-golden" = import ./nix/tasty-golden.nix;
+  "tasty-golden-extra" = import ./nix/tasty-golden-extra.nix;
   "tasty-grading-system" = import ./nix/tasty-grading-system.nix;
   "tasty-groundhog-converters" = import ./nix/tasty-groundhog-converters.nix;
   "tasty-hedgehog" = import ./nix/tasty-hedgehog.nix;

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "f58d683e90d3a14ebb7d0ffbc064b76fac6c12e29771d814f2263ae1f11245f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/require-callstack-0.2.0.1-r0-d08c6b3ee3142b24d86f70162e1d2637ae9da62872c3c76623ea33b6a56ece88.nix;
+        revNum = 0;
+        sha256 = "d08c6b3ee3142b24d86f70162e1d2637ae9da62872c3c76623ea33b6a56ece88";
+      };
+      default = "r0";
+    };
+  };
 }

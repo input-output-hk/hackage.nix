@@ -97,4 +97,15 @@
       default = "r1";
     };
   };
+  "4.2.4.0" = {
+    sha256 = "3b3a2dcc7622a5de1d4d743ddddd5a0ff06f7477c895f704186cc263b6d221cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repa-scalar-4.2.4.0-r0-2b8a348d2377936e21d17f46c4c4a1dfa1765a0c633bf0c02c6a1451c78dc940.nix;
+        revNum = 0;
+        sha256 = "2b8a348d2377936e21d17f46c4c4a1dfa1765a0c633bf0c02c6a1451c78dc940";
+      };
+      default = "r0";
+    };
+  };
 }

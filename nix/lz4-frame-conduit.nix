@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "8cdc6c7ee93c5f73221fc0552afc98d2e51d07c55af897e287b5ea722e626919";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lz4-frame-conduit-0.1.0.2-r0-4231f8161eb5807a800252047b61442f0ce7cdf324b61c429397f65d1d67922d.nix;
+        revNum = 0;
+        sha256 = "4231f8161eb5807a800252047b61442f0ce7cdf324b61c429397f65d1d67922d";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "8a0194dd3e9054f99f399d1103743967533d9d1496345143ab2b5c3ac0b37fd0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/haskyapi-0.0.0.2-r1-c081fa35a4fe2f6beae4798cc9507553b7cc8c1d556f360aa6575d16fc72f451.nix;
+        revNum = 1;
+        sha256 = "c081fa35a4fe2f6beae4798cc9507553b7cc8c1d556f360aa6575d16fc72f451";
+      };
+      default = "r1";
     };
   };
 }
