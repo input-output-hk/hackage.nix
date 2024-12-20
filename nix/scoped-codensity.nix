@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "b70055aa6812086dc4ae7f5d830800321cbdb9e562bf94e5091d682233df6d56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scoped-codensity-0.2.0.0-r0-23beae4a0b74894edd0a3b2e3e99e11f82645783e6f549055bdf62f1304b12f1.nix;
+        revNum = 0;
+        sha256 = "23beae4a0b74894edd0a3b2e3e99e11f82645783e6f549055bdf62f1304b12f1";
+      };
+      default = "r0";
+    };
+  };
 }

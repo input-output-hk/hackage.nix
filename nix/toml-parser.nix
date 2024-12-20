@@ -201,7 +201,12 @@
         revNum = 0;
         sha256 = "b6dc274c233ab6c3e43e1a3f3c93aa68d340cc73950fff273e1c6fb6ffd3e0dd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/toml-parser-2.0.1.0-r1-13b6e9987e26a41e57f8e57dacf4ff069cc076f61be366ee8c9e6da5d61771d4.nix;
+        revNum = 1;
+        sha256 = "13b6e9987e26a41e57f8e57dacf4ff069cc076f61be366ee8c9e6da5d61771d4";
+      };
+      default = "r1";
     };
   };
 }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "dac71c3f955a23af7a88c055fac2e312e5e2c85c37ba18edf6c82d9ffa1f1b59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/registry-hedgehog-aeson-0.3.1.0-r0-37c2863cdb6805596def15eaa46d34773f863685ac0ddb2ff9e8e7c0a50ccfdb.nix;
+        revNum = 0;
+        sha256 = "37c2863cdb6805596def15eaa46d34773f863685ac0ddb2ff9e8e7c0a50ccfdb";
+      };
+      default = "r0";
+    };
+  };
 }

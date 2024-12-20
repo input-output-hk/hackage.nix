@@ -703,6 +703,17 @@
       default = "r0";
     };
   };
+  "0.44.0.0" = {
+    sha256 = "f694ed5d249e3f9dccdcc0adbdf33f0a0ff655caa6c39bad91ccec22b9947ca6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dobutokO2-0.44.0.0-r0-0445e98e080653f05c04c107a7e33fac9f22932f2ec7b007499320841d37be73.nix;
+        revNum = 0;
+        sha256 = "0445e98e080653f05c04c107a7e33fac9f22932f2ec7b007499320841d37be73";
+      };
+      default = "r0";
+    };
+  };
   "0.5.0.0" = {
     sha256 = "324da74e498c553bbe1de6f1beebf3c9f8b2c5eb07866428711e4d7f01812b2c";
     revisions = {
