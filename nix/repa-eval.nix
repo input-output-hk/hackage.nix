@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "4.2.4.0" = {
+    sha256 = "c1e24f66cae9cad13cedc59fc1e23fc84816c391559bac342c2857467ac92ec7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repa-eval-4.2.4.0-r0-65cc085373702830568c1587ff6f1016c2ce90034646a9d01b0ce5a7838fcba3.nix;
+        revNum = 0;
+        sha256 = "65cc085373702830568c1587ff6f1016c2ce90034646a9d01b0ce5a7838fcba3";
+      };
+      default = "r0";
+    };
+  };
 }

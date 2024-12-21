@@ -61,6 +61,22 @@
         revNum = 0;
         sha256 = "246024c24ed06e8999e948badf244c1b4e0e55f51e706fff82273a321f9db021";
       };
+      r1 = {
+        nix = import ../hackage/directory-ospath-streaming-0.2-r1-c19b5e1f52fa6b9235818fadc0873e0d122c58c49aaa9a0a0cf645337143244c.nix;
+        revNum = 1;
+        sha256 = "c19b5e1f52fa6b9235818fadc0873e0d122c58c49aaa9a0a0cf645337143244c";
+      };
+      default = "r1";
+    };
+  };
+  "0.2.1" = {
+    sha256 = "45c56130594256f3bb0f77743804b4f6cf949a7ad19694fdd8a46047ea185706";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/directory-ospath-streaming-0.2.1-r0-204801aabf4c7aa43a02a64ea8a152028e9cec3257eeb7d2a533d6d78d9451c8.nix;
+        revNum = 0;
+        sha256 = "204801aabf4c7aa43a02a64ea8a152028e9cec3257eeb7d2a533d6d78d9451c8";
+      };
       default = "r0";
     };
   };

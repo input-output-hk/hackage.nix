@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "fffd530e9fe8f84d298cd082017a88186ad8a9e0c14304d3ad8b48376ed7fa5d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/storable-peek-poke-0.1.0.2-r0-416da729ac76d53d39a744021a735ecc095b0d5f84b2ea235b54c457b9de619c.nix;
+        revNum = 0;
+        sha256 = "416da729ac76d53d39a744021a735ecc095b0d5f84b2ea235b54c457b9de619c";
+      };
+      default = "r0";
+    };
+  };
 }

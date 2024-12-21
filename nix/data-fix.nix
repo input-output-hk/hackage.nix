@@ -184,7 +184,12 @@
         revNum = 0;
         sha256 = "49114884d59f74ab62a3fc9ab1fd8888ed81b234e30b5d798be4aec4ddba0113";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/data-fix-0.3.4-r1-ee78be6168ca0878d670fede957195d3debf4a37a806d13d72182b274901261b.nix;
+        revNum = 1;
+        sha256 = "ee78be6168ca0878d670fede957195d3debf4a37a806d13d72182b274901261b";
+      };
+      default = "r1";
     };
   };
 }
