@@ -1514,6 +1514,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-injector" = import ./nix/aeson-injector.nix;
   "aeson-iproute" = import ./nix/aeson-iproute.nix;
   "aeson-json-ast" = import ./nix/aeson-json-ast.nix;
+  "aeson-jsonpath" = import ./nix/aeson-jsonpath.nix;
   "aeson-lens" = import ./nix/aeson-lens.nix;
   "aeson-match-qq" = import ./nix/aeson-match-qq.nix;
   "aeson-modern-tojson" = import ./nix/aeson-modern-tojson.nix;
@@ -3701,6 +3702,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "coerce-role" = import ./nix/coerce-role.nix;
   "coerce-util" = import ./nix/coerce-util.nix;
   "coercible-subtypes" = import ./nix/coercible-subtypes.nix;
+  "coercible-subtypes-profunctor" = import ./nix/coercible-subtypes-profunctor.nix;
   "coercible-utils" = import ./nix/coercible-utils.nix;
   "coercion-extras" = import ./nix/coercion-extras.nix;
   "coformat" = import ./nix/coformat.nix;
