@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.2.2.2" = {
+    sha256 = "0e2b2ed962e42a9ff655be24103e91b6b12e46b254d4aef4a61476d945215aeb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/QuickCheck-GenT-0.2.2.2-r0-ade531b7215a745f1d91ff12800dac88bca75130c822ce306ef8dbf3422015fb.nix;
+        revNum = 0;
+        sha256 = "ade531b7215a745f1d91ff12800dac88bca75130c822ce306ef8dbf3422015fb";
+      };
+      default = "r0";
+    };
+  };
 }

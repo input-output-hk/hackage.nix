@@ -3756,6 +3756,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "combinatorial" = import ./nix/combinatorial.nix;
   "combinatorial-problems" = import ./nix/combinatorial-problems.nix;
   "combinatorics" = import ./nix/combinatorics.nix;
+  "combinators" = import ./nix/combinators.nix;
   "combobuffer" = import ./nix/combobuffer.nix;
   "comfort-array" = import ./nix/comfort-array.nix;
   "comfort-array-shape" = import ./nix/comfort-array-shape.nix;
@@ -6558,6 +6559,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-javascriptcore" = import ./nix/gi-javascriptcore.nix;
   "gi-json" = import ./nix/gi-json.nix;
   "gi-keybinder" = import ./nix/gi-keybinder.nix;
+  "gi-nm" = import ./nix/gi-nm.nix;
   "gi-notify" = import ./nix/gi-notify.nix;
   "gi-ostree" = import ./nix/gi-ostree.nix;
   "gi-pango" = import ./nix/gi-pango.nix;
@@ -17660,6 +17662,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xml-tydom-conduit" = import ./nix/xml-tydom-conduit.nix;
   "xml-tydom-core" = import ./nix/xml-tydom-core.nix;
   "xml-types" = import ./nix/xml-types.nix;
+  "xml-types-content" = import ./nix/xml-types-content.nix;
   "xml-verify" = import ./nix/xml-verify.nix;
   "xml2html" = import ./nix/xml2html.nix;
   "xml2json" = import ./nix/xml2json.nix;

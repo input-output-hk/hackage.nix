@@ -163,4 +163,15 @@
       default = "r2";
     };
   };
+  "0.4.1.1" = {
+    sha256 = "3007aa1544d6c7e0f51dfc4c6eef86883bda8a395c1710ec07e430040275ba2d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/iCalendar-0.4.1.1-r0-ab9ee5a25e94bd6333fa2c47e7984a3becf4dc8658bd7a86defe61e96f0ee3c0.nix;
+        revNum = 0;
+        sha256 = "ab9ee5a25e94bd6333fa2c47e7984a3becf4dc8658bd7a86defe61e96f0ee3c0";
+      };
+      default = "r0";
+    };
+  };
 }

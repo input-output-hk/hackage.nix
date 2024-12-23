@@ -593,6 +593,17 @@
       default = "r0";
     };
   };
+  "4.0.11" = {
+    sha256 = "885492cf082a5f1e913015a902cafe75b505b95c71746ca070f28a34f1b0c59f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gtk-4.0.11-r0-9cbc1cd2f0c3a9c7a54a7eee32a243b1d2357f05eda3404c43846f865994ae03.nix;
+        revNum = 0;
+        sha256 = "9cbc1cd2f0c3a9c7a54a7eee32a243b1d2357f05eda3404c43846f865994ae03";
+      };
+      default = "r0";
+    };
+  };
   "4.0.2" = {
     sha256 = "173e00d2eb2bbdc6797a6d408de5d03eff8dcf9698500ba33f6e1c47f058abd2";
     revisions = {
