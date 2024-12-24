@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "a92584cc878ec244d15e705dace152451e828ef39a57cc53e6de4e3db940373a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/th-deepstrict-0.1.1.0-r2-1654f3ab27974a2caa5bdb398ca6678d50419f5d4ee4671798437a364b879ac0.nix;
+        revNum = 2;
+        sha256 = "1654f3ab27974a2caa5bdb398ca6678d50419f5d4ee4671798437a364b879ac0";
+      };
+      default = "r2";
     };
   };
 }

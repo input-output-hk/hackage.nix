@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "2.4" = {
+    sha256 = "47fc0bd2fbf5dcf7e35fd30b0e396cbf789ba423aaecb2387ae0f56e9b7a63bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linearEqSolver-2.4-r0-3b0307465ff88ff684c8db41a640ee6b4ec6b0ec1f249751c97aaa6eac28cc9d.nix;
+        revNum = 0;
+        sha256 = "3b0307465ff88ff684c8db41a640ee6b4ec6b0ec1f249751c97aaa6eac28cc9d";
+      };
+      default = "r0";
+    };
+  };
 }

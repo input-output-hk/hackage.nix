@@ -4637,6 +4637,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "delivery-status-notification" = import ./nix/delivery-status-notification.nix;
   "delta" = import ./nix/delta.nix;
   "delta-h" = import ./nix/delta-h.nix;
+  "deltaq" = import ./nix/deltaq.nix;
   "delude" = import ./nix/delude.nix;
   "demangler" = import ./nix/demangler.nix;
   "demarcate" = import ./nix/demarcate.nix;
@@ -12978,6 +12979,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prob" = import ./nix/prob.nix;
   "prob-fx" = import ./nix/prob-fx.nix;
   "probability" = import ./nix/probability.nix;
+  "probability-polynomial" = import ./nix/probability-polynomial.nix;
   "probable" = import ./nix/probable.nix;
   "proc" = import ./nix/proc.nix;
   "proc-net" = import ./nix/proc-net.nix;
