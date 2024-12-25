@@ -296,4 +296,15 @@
       default = "r0";
     };
   };
+  "4.4.1" = {
+    sha256 = "afc13214ea471460958b89efb9cbcd3ee9d3844e1a0bbdc41619cf7f4267346e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/launchdarkly-server-sdk-4.4.1-r0-3a035c386b293b5961d99d10badf2813da8f4dc4535560cd8e66362ca9e74681.nix;
+        revNum = 0;
+        sha256 = "3a035c386b293b5961d99d10badf2813da8f4dc4535560cd8e66362ca9e74681";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "390ad0e0813f9cbc145d9a989f5acb18e5e228f93f7827993c7abffb3069ef1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasktorch-0.2.1.0-r0-5c588ec50654373dbadeb9866622e12e252ece415a646879a3aec1b2945b7d63.nix;
+        revNum = 0;
+        sha256 = "5c588ec50654373dbadeb9866622e12e252ece415a646879a3aec1b2945b7d63";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.1.1" = {
+    sha256 = "24a7665fce297273abc66ab3d842d65b334c2f46887cf6901ea01a916b9187bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasktorch-0.2.1.1-r0-0915c13035e1d113f456b6be7edad890dca72fa1221ca8ccd532fc88aa165722.nix;
+        revNum = 0;
+        sha256 = "0915c13035e1d113f456b6be7edad890dca72fa1221ca8ccd532fc88aa165722";
+      };
+      default = "r0";
+    };
+  };
 }

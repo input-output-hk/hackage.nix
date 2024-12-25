@@ -3536,6 +3536,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cl3" = import ./nix/cl3.nix;
   "cl3-hmatrix-interface" = import ./nix/cl3-hmatrix-interface.nix;
   "cl3-linear-interface" = import ./nix/cl3-linear-interface.nix;
+  "cl3-posit" = import ./nix/cl3-posit.nix;
   "clac" = import ./nix/clac.nix;
   "clafer" = import ./nix/clafer.nix;
   "claferIG" = import ./nix/clafer_I_G.nix;
