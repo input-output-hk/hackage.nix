@@ -5822,6 +5822,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fix-symbols-gitit" = import ./nix/fix-symbols-gitit.nix;
   "fix-whitespace" = import ./nix/fix-whitespace.nix;
   "fixed" = import ./nix/fixed.nix;
+  "fixed-generic" = import ./nix/fixed-generic.nix;
   "fixed-length" = import ./nix/fixed-length.nix;
   "fixed-list" = import ./nix/fixed-list.nix;
   "fixed-point" = import ./nix/fixed-point.nix;
@@ -14667,6 +14668,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "significant-figures" = import ./nix/significant-figures.nix;
   "signify-hs" = import ./nix/signify-hs.nix;
   "silently" = import ./nix/silently.nix;
+  "silero-vad" = import ./nix/silero-vad.nix;
   "silkscreen" = import ./nix/silkscreen.nix;
   "silvi" = import ./nix/silvi.nix;
   "simd" = import ./nix/simd.nix;

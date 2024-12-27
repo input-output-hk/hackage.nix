@@ -207,4 +207,15 @@
       default = "r2";
     };
   };
+  "1.9.8" = {
+    sha256 = "502ef8694a5b131b47c0e5df2e9053d005a3b345b30f5225af04f081d3ef5cf0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/time-compat-1.9.8-r0-31af49b09fa7195071cd841aa142eb1c4601d4a336ee76cd63242eebff8f98a7.nix;
+        revNum = 0;
+        sha256 = "31af49b09fa7195071cd841aa142eb1c4601d4a336ee76cd63242eebff8f98a7";
+      };
+      default = "r0";
+    };
+  };
 }
