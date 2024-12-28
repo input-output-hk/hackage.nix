@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.0.5" = {
+    sha256 = "ffb3a62e24f4f2555a23291ef4cc8d3317fda759448295517bd37b21c4e6d1d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/silero-vad-0.1.0.5-r0-0251cdb16f2813f2602e9b9c3976f4b9a39f700b6abcc3e918ae455c11fb5fc8.nix;
+        revNum = 0;
+        sha256 = "0251cdb16f2813f2602e9b9c3976f4b9a39f700b6abcc3e918ae455c11fb5fc8";
+      };
+      default = "r0";
+    };
+  };
 }

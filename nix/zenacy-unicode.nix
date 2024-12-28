@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.3" = {
+    sha256 = "a60b81fcdef5198eb874b90a6d4cdf67cd1ca9ded9098c6a8158c8995f743f86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zenacy-unicode-1.0.3-r0-a1579a63e374846ad321da5421c9ef0309f0729a4e577bdeed0566b9719c8957.nix;
+        revNum = 0;
+        sha256 = "a1579a63e374846ad321da5421c9ef0309f0729a4e577bdeed0566b9719c8957";
+      };
+      default = "r0";
+    };
+  };
 }
