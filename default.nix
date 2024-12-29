@@ -1359,6 +1359,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "abstract-par" = import ./nix/abstract-par.nix;
   "abstract-par-accelerate" = import ./nix/abstract-par-accelerate.nix;
   "abt" = import ./nix/abt.nix;
+  "ac-library-hs" = import ./nix/ac-library-hs.nix;
   "ac-machine" = import ./nix/ac-machine.nix;
   "ac-machine-conduit" = import ./nix/ac-machine-conduit.nix;
   "acc" = import ./nix/acc.nix;
@@ -16700,6 +16701,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "uhc-util" = import ./nix/uhc-util.nix;
   "uhexdump" = import ./nix/uhexdump.nix;
   "uhttpc" = import ./nix/uhttpc.nix;
+  "ui" = import ./nix/ui.nix;
   "ui-command" = import ./nix/ui-command.nix;
   "uid" = import ./nix/uid.nix;
   "ukrainian-phonetics-basic" = import ./nix/ukrainian-phonetics-basic.nix;

@@ -132,4 +132,15 @@
       default = "r13";
     };
   };
+  "0.2.4" = {
+    sha256 = "e1cfd0b2b5565132d4693e1f053fcae1e7b1c23f067f1056349ca47b7f2fb66c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yampa-canvas-0.2.4-r0-83d68bcb58802b6ee14e4e3b09dfc3d38eca720bd4a95f64884651443c28660f.nix;
+        revNum = 0;
+        sha256 = "83d68bcb58802b6ee14e4e3b09dfc3d38eca720bd4a95f64884651443c28660f";
+      };
+      default = "r0";
+    };
+  };
 }

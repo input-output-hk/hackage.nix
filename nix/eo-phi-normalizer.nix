@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "e3ae0ef1c8490eda1a72da6760337a2603684c560cd2d273c59fb2ab7184d01d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eo-phi-normalizer-3.0.0-r0-99abea4dd4dbf17edbfbc105e24a50f56592e79c8b0906f0b7bd540e9f0a2c3b.nix;
+        revNum = 0;
+        sha256 = "99abea4dd4dbf17edbfbc105e24a50f56592e79c8b0906f0b7bd540e9f0a2c3b";
+      };
+      default = "r0";
+    };
+  };
 }
