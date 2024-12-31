@@ -209,7 +209,12 @@
         revNum = 1;
         sha256 = "1a63ed9d9b3d0ed6343b5ada90576e721d4cc24d386e1e8496152ce9027c758a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/singleton-nats-0.4.7-r2-3c6b4574ae75aa2f34cbbf30ae011ed25f754cada99f1ce128b0f327675a86df.nix;
+        revNum = 2;
+        sha256 = "3c6b4574ae75aa2f34cbbf30ae011ed25f754cada99f1ce128b0f327675a86df";
+      };
+      default = "r2";
     };
   };
 }

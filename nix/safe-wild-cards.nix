@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "6c5a20f3649947ff09eccfcb523360d5058b8d882e03d1d4e147b4b39ad5a26c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/safe-wild-cards-1.0.0.2-r2-b11c18bac421bde5f442e4e56280698c5c5590e665ea801d851a7ab91873b16c.nix;
+        revNum = 2;
+        sha256 = "b11c18bac421bde5f442e4e56280698c5c5590e665ea801d851a7ab91873b16c";
+      };
+      default = "r2";
     };
   };
 }

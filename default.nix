@@ -9460,6 +9460,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jsaddle-webkitgtk" = import ./nix/jsaddle-webkitgtk.nix;
   "jsaddle-wkwebview" = import ./nix/jsaddle-wkwebview.nix;
   "jsc" = import ./nix/jsc.nix;
+  "jsdom-extras" = import ./nix/jsdom-extras.nix;
   "jsmw" = import ./nix/jsmw.nix;
   "json" = import ./nix/json.nix;
   "json-alt" = import ./nix/json-alt.nix;
@@ -14767,6 +14768,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "singleton-typelits" = import ./nix/singleton-typelits.nix;
   "singletons" = import ./nix/singletons.nix;
   "singletons-base" = import ./nix/singletons-base.nix;
+  "singletons-base-code-generator" = import ./nix/singletons-base-code-generator.nix;
   "singletons-default" = import ./nix/singletons-default.nix;
   "singletons-presburger" = import ./nix/singletons-presburger.nix;
   "singletons-th" = import ./nix/singletons-th.nix;

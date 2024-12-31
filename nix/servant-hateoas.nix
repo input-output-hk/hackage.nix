@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.3.4" = {
+    sha256 = "584ca0bf2fcc83be159a74564f884e35ce3704ebff44a62892fad2b702db1ed3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-hateoas-0.3.4-r0-326feecff08cd9a1070f19e85f080f731321e0460971733cc8e3fa3ff6c59a8a.nix;
+        revNum = 0;
+        sha256 = "326feecff08cd9a1070f19e85f080f731321e0460971733cc8e3fa3ff6c59a8a";
+      };
+      default = "r0";
+    };
+  };
 }
