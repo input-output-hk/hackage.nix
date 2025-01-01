@@ -309,4 +309,15 @@
       default = "r0";
     };
   };
+  "2.3.0.1" = {
+    sha256 = "c6529b295fde341235d6051144af101a13154f762dc4153abe5ccb18eb38f879";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lsp-types-2.3.0.1-r0-a5497aa4ae7b27d956df8dab701495d3062b88eee52e3a6c65fc13fa28b7b191.nix;
+        revNum = 0;
+        sha256 = "a5497aa4ae7b27d956df8dab701495d3062b88eee52e3a6c65fc13fa28b7b191";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.6.1.0" = {
+    sha256 = "52231001dd2a1dd41201f84b5afe4269988d10d3c2265c8fe8a1c82daf945611";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cauldron-0.6.1.0-r0-caf0b04fb063503e7af9ec482b2867d021f182896e62ca8949faeb4e50d70b78.nix;
+        revNum = 0;
+        sha256 = "caf0b04fb063503e7af9ec482b2867d021f182896e62ca8949faeb4e50d70b78";
+      };
+      default = "r0";
+    };
+  };
 }

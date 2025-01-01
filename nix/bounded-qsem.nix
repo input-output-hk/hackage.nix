@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "8f7d44901c2d167fd6f0ee1cdf3823cfc3e78161645e31c6e3e32526cf8434f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bounded-qsem-0.1.0.3-r0-d8d6e1e598850632978c71855bc240975a9ffe3c3c5732143480b9e6ab7482cf.nix;
+        revNum = 0;
+        sha256 = "d8d6e1e598850632978c71855bc240975a9ffe3c3c5732143480b9e6ab7482cf";
+      };
+      default = "r0";
+    };
+  };
 }

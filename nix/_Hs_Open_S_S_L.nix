@@ -607,7 +607,12 @@
         revNum = 0;
         sha256 = "267af93588280b3cf57847f4f68c11079c587777aff6f6b62354845c170a5c23";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.13-r1-9df27f76e84d5d9f485157bb8644b6e6e71a96436049d2af8f8ff385c0cffb99.nix;
+        revNum = 1;
+        sha256 = "9df27f76e84d5d9f485157bb8644b6e6e71a96436049d2af8f8ff385c0cffb99";
+      };
+      default = "r1";
     };
   };
   "0.11.4.14" = {
@@ -623,7 +628,12 @@
         revNum = 1;
         sha256 = "bb1572487ab7babad7b7e9174bf52e415e37936539525ea393ef60af9fd19dcf";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.14-r2-ed8071f37a8a7adea796105a9999973db6ad52fae4a4f11a027063761cce7a78.nix;
+        revNum = 2;
+        sha256 = "ed8071f37a8a7adea796105a9999973db6ad52fae4a4f11a027063761cce7a78";
+      };
+      default = "r2";
     };
   };
   "0.11.4.15" = {
@@ -639,7 +649,12 @@
         revNum = 1;
         sha256 = "bf4c3e461cc30b8636b0244c45323bd97d9630dfccde3c1f5c613f27afe06c2e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.15-r2-688639e36e134660612412cd05e36c47b95b9ca2c6127338a205eb7c3eabf1ac.nix;
+        revNum = 2;
+        sha256 = "688639e36e134660612412cd05e36c47b95b9ca2c6127338a205eb7c3eabf1ac";
+      };
+      default = "r2";
     };
   };
   "0.11.4.16" = {
@@ -660,7 +675,12 @@
         revNum = 2;
         sha256 = "4352a3df874822c367a6f51cbd4b2a2807cbbafbdf935318e2e4b1910e46e2b1";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.16-r3-ee3f78f22f281e09524c9d9d8f7cfa66a600c51815e903c9e30c7a261cbc096a.nix;
+        revNum = 3;
+        sha256 = "ee3f78f22f281e09524c9d9d8f7cfa66a600c51815e903c9e30c7a261cbc096a";
+      };
+      default = "r3";
     };
   };
   "0.11.4.17" = {
@@ -671,7 +691,12 @@
         revNum = 0;
         sha256 = "0fc5dd03b708efea0b180e2be26eadd8bf336766f2c6bc9fd7dc64bde908238b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.17-r1-ce55f44a530aed1747ad0d494c40a629c25ee879a55360ff127d27780f88d23a.nix;
+        revNum = 1;
+        sha256 = "ce55f44a530aed1747ad0d494c40a629c25ee879a55360ff127d27780f88d23a";
+      };
+      default = "r1";
     };
   };
   "0.11.4.18" = {
@@ -682,7 +707,12 @@
         revNum = 0;
         sha256 = "5b2c5785dc9e257155146377c368187f4306ca10d40a39b1e395413cc302f879";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.18-r1-be0df63c04132b28f211bd8eb28697e34cbcfa58bc9f580df891392d19eb173c.nix;
+        revNum = 1;
+        sha256 = "be0df63c04132b28f211bd8eb28697e34cbcfa58bc9f580df891392d19eb173c";
+      };
+      default = "r1";
     };
   };
   "0.11.4.19" = {
@@ -693,7 +723,12 @@
         revNum = 0;
         sha256 = "8e9716fba6438b9b7e3328482dc12e019d24865880ab227514031ab1ee2a819b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.19-r1-f228a6ced693b31e34e4bd724edacf04b00548b51748a415ead4bc6392e15d67.nix;
+        revNum = 1;
+        sha256 = "f228a6ced693b31e34e4bd724edacf04b00548b51748a415ead4bc6392e15d67";
+      };
+      default = "r1";
     };
   };
   "0.11.4.2" = {
@@ -715,7 +750,12 @@
         revNum = 0;
         sha256 = "b88bd010ef07db2f7109b53bee08476c00c9d5b9d01005f0b44477f7eb3ec74d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.4.20-r1-1d976045f50be9e3b3b6213dc047a81c8b0326ce8c61fbccf80d502213c48df6.nix;
+        revNum = 1;
+        sha256 = "1d976045f50be9e3b3b6213dc047a81c8b0326ce8c61fbccf80d502213c48df6";
+      };
+      default = "r1";
     };
   };
   "0.11.4.3" = {
@@ -823,7 +863,12 @@
         revNum = 1;
         sha256 = "09a766fefeb54c24e11d3c59965a8c0ccf5135cf2574896af5bd7e2018816896";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsOpenSSL-0.11.5-r2-2351481b51976dc8a42b28245ccbac393a78877174d2fb3702b91a0a707f8293.nix;
+        revNum = 2;
+        sha256 = "2351481b51976dc8a42b28245ccbac393a78877174d2fb3702b91a0a707f8293";
+      };
+      default = "r2";
     };
   };
   "0.11.5.1" = {
@@ -834,7 +879,12 @@
         revNum = 0;
         sha256 = "5e2a7d82507a406478442ab54d3395c33ef8c29e4ab95df66725fb49843d9a0d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.5.1-r1-5c04658f2139048fa597ee08c6bac05e0b66a7823939ff5bf63c5820b382def2.nix;
+        revNum = 1;
+        sha256 = "5c04658f2139048fa597ee08c6bac05e0b66a7823939ff5bf63c5820b382def2";
+      };
+      default = "r1";
     };
   };
   "0.11.6" = {
@@ -845,7 +895,12 @@
         revNum = 0;
         sha256 = "d89349d8e30685f94c3da82f11c69085f9ac0ed37435088849c0a90a4225618c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.6-r1-52b84d49cb585857a21af63d8ac51669e30f9d27b93b6f45c7191f329703e57f.nix;
+        revNum = 1;
+        sha256 = "52b84d49cb585857a21af63d8ac51669e30f9d27b93b6f45c7191f329703e57f";
+      };
+      default = "r1";
     };
   };
   "0.11.6.1" = {
@@ -856,7 +911,12 @@
         revNum = 0;
         sha256 = "a6d47d384e892a1cb5ac6a731503a92b55a0d3bb0a0bde4027de71dc67332305";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.6.1-r1-788dcbb4956a5bb63cec176ac59781ed70c4d81a77fa2d8db9918416215e88e3.nix;
+        revNum = 1;
+        sha256 = "788dcbb4956a5bb63cec176ac59781ed70c4d81a77fa2d8db9918416215e88e3";
+      };
+      default = "r1";
     };
   };
   "0.11.6.2" = {
@@ -867,7 +927,12 @@
         revNum = 0;
         sha256 = "1520442524f9ea1b334a9aa02e57138b28139313da3692098147dcdb17150b25";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.6.2-r1-6be201eaeabb7523ebf51a783e233ee4ed857dae0992ec16a2a9e65f866d9247.nix;
+        revNum = 1;
+        sha256 = "6be201eaeabb7523ebf51a783e233ee4ed857dae0992ec16a2a9e65f866d9247";
+      };
+      default = "r1";
     };
   };
   "0.11.7" = {
@@ -878,7 +943,12 @@
         revNum = 0;
         sha256 = "bad13d889c4a90cc212bcd390b6f5cefbcddd7525fbbd07d68f3145111af43f1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7-r1-397a52b811c3f9917345285d04046c87c2e93c777fe03e393d69f68403a87b7e.nix;
+        revNum = 1;
+        sha256 = "397a52b811c3f9917345285d04046c87c2e93c777fe03e393d69f68403a87b7e";
+      };
+      default = "r1";
     };
   };
   "0.11.7.1" = {
@@ -889,7 +959,12 @@
         revNum = 0;
         sha256 = "a28b27558f5703e69f058be06684b951e48c119acc9b7961352cea4d280f9943";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.1-r1-368e9b3b3f3c9b96f0bcfc79f8bdcbd346b5e731375d54764dbcf3190b6015df.nix;
+        revNum = 1;
+        sha256 = "368e9b3b3f3c9b96f0bcfc79f8bdcbd346b5e731375d54764dbcf3190b6015df";
+      };
+      default = "r1";
     };
   };
   "0.11.7.2" = {
@@ -915,7 +990,12 @@
         revNum = 3;
         sha256 = "0d6ad69a40322febb0bc959f5ec6ccf6cccbbf256a6145930088e883aaef585b";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.2-r4-e3983e0ebefba77bb7dff41fcb7be2642ce36af3b3caaa58cea3d2549b0da031.nix;
+        revNum = 4;
+        sha256 = "e3983e0ebefba77bb7dff41fcb7be2642ce36af3b3caaa58cea3d2549b0da031";
+      };
+      default = "r4";
     };
   };
   "0.11.7.3" = {
@@ -931,7 +1011,12 @@
         revNum = 1;
         sha256 = "b23bf86bcd065a81dcf54808de4ad50625690c418d385dbfb0febdda55576a0e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.3-r2-3c1f7c8b909c3dfd728cbbe3692ff68fb7cc59eaf7cae4e90d9ce398e6b1b8b4.nix;
+        revNum = 2;
+        sha256 = "3c1f7c8b909c3dfd728cbbe3692ff68fb7cc59eaf7cae4e90d9ce398e6b1b8b4";
+      };
+      default = "r2";
     };
   };
   "0.11.7.4" = {
@@ -942,7 +1027,12 @@
         revNum = 0;
         sha256 = "06c64b060dbd3471550a5f6ddc9ae97fe30f8e8af1d2bf073b2bf48907bd791f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.4-r1-52a4f0ded1935697cc15c209a6ea475f914087bbbb7cd8839b96b732bd47789f.nix;
+        revNum = 1;
+        sha256 = "52a4f0ded1935697cc15c209a6ea475f914087bbbb7cd8839b96b732bd47789f";
+      };
+      default = "r1";
     };
   };
   "0.11.7.5" = {
@@ -953,7 +1043,12 @@
         revNum = 0;
         sha256 = "68be3efdab9f7fb77820595f499ab1417463c5b526f60ea6ef29c09a6187f8c7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.5-r1-6bbae1f26900b427dbe7e1c28831c229af51e85ac7ecda586140db3f45c98d1e.nix;
+        revNum = 1;
+        sha256 = "6bbae1f26900b427dbe7e1c28831c229af51e85ac7ecda586140db3f45c98d1e";
+      };
+      default = "r1";
     };
   };
   "0.11.7.6" = {
@@ -969,7 +1064,12 @@
         revNum = 1;
         sha256 = "61dea76588e4594e7b3d9b1432dd2f5ef37813a689e1d46ff3e7771e5e5a1b5b";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.6-r2-e311f754eaaf4a9953c9265b485090a982809bc9d0a3413abb85195924ae063f.nix;
+        revNum = 2;
+        sha256 = "e311f754eaaf4a9953c9265b485090a982809bc9d0a3413abb85195924ae063f";
+      };
+      default = "r2";
     };
   };
   "0.11.7.7" = {
@@ -980,7 +1080,12 @@
         revNum = 0;
         sha256 = "43117f6ad97a0471b2be0d2db17f509e798e7e8f49affd43acc38b4d160a51b2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.7-r1-104b2473743ab4a246a62df403dc003d8db511650923928fc8af23e5ab113db9.nix;
+        revNum = 1;
+        sha256 = "104b2473743ab4a246a62df403dc003d8db511650923928fc8af23e5ab113db9";
+      };
+      default = "r1";
     };
   };
   "0.11.7.8" = {
@@ -991,7 +1096,12 @@
         revNum = 0;
         sha256 = "e338393d9161ba5b222213c1bc5a4a16ea2769f8a4dc69be463a5c71d91cda9f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HsOpenSSL-0.11.7.8-r1-63e0aaec9f2b490445df17a90358c0d0500dd803994dd3c799887b3a1ec2b9e6.nix;
+        revNum = 1;
+        sha256 = "63e0aaec9f2b490445df17a90358c0d0500dd803994dd3c799887b3a1ec2b9e6";
+      };
+      default = "r1";
     };
   };
   "0.2" = {
