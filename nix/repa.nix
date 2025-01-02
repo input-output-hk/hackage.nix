@@ -550,7 +550,12 @@
         revNum = 0;
         sha256 = "855d4e0521f7bdb3ff9fcd331626166a0186dea3652808d555697322724bf7df";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/repa-3.4.2.0-r1-7fc52911966c64cc1676843f5fee1777931d0161e2e55581bf925feac4ac30c2.nix;
+        revNum = 1;
+        sha256 = "7fc52911966c64cc1676843f5fee1777931d0161e2e55581bf925feac4ac30c2";
+      };
+      default = "r1";
     };
   };
 }

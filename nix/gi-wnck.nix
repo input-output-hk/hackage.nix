@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "3.0.16" = {
+    sha256 = "de45487a124dce0c73f2bf2d0aab7cd74464052ff9a6acc138a76d761605f310";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-wnck-3.0.16-r0-1ca3c18b02bce23b6089b24a8afae4419217d381a1d5748ec9fca9ad0de3e959.nix;
+        revNum = 0;
+        sha256 = "1ca3c18b02bce23b6089b24a8afae4419217d381a1d5748ec9fca9ad0de3e959";
+      };
+      default = "r0";
+    };
+  };
   "3.0.3" = {
     sha256 = "51188faf1abc9623990cef4668269434a8447fbc64c0687ca4d48de91595ca2e";
     revisions = {

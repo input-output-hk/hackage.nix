@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "4.0.9" = {
+    sha256 = "150647df8d059483ecab5ae63de3e84032b5059f7b3abb6dfc395b2beda7721e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gsk-4.0.9-r0-85c8153ce3d463b48d1b43bdedf7d7fdef7a5ce36e525e694c98a21743fb77d0.nix;
+        revNum = 0;
+        sha256 = "85c8153ce3d463b48d1b43bdedf7d7fdef7a5ce36e525e694c98a21743fb77d0";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "0.4.16" = {
+    sha256 = "94dd47c1d1f8ece887b05b1ef2b14e45fa8f2c95063f456f049665a29e47f7b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-dbusmenugtk3-0.4.16-r0-274f2d6f4b1c7c39a8ff179a97a66b211555796825708d4eff9aa9ea8a1c33eb.nix;
+        revNum = 0;
+        sha256 = "274f2d6f4b1c7c39a8ff179a97a66b211555796825708d4eff9aa9ea8a1c33eb";
+      };
+      default = "r0";
+    };
+  };
   "0.4.2" = {
     sha256 = "9c746b7cdd2703ea18c86beb7b1e8d9a2ee2e6be3237acc50f576cc5a2efd471";
     revisions = {

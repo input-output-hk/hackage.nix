@@ -341,6 +341,17 @@
       default = "r2";
     };
   };
+  "0.4.1.11" = {
+    sha256 = "f5dd5a01278f8318d9793ed6071b742f13ce36c7456328baae4acc818e2d92ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/entropy-0.4.1.11-r0-1a40e0ff033e6b392d3d4aa29c4d2b89b4e915f69f10e3b240f681a18279dc64.nix;
+        revNum = 0;
+        sha256 = "1a40e0ff033e6b392d3d4aa29c4d2b89b4e915f69f10e3b240f681a18279dc64";
+      };
+      default = "r0";
+    };
+  };
   "0.4.1.2" = {
     sha256 = "e2d7934a3684ac781d944780fe1ea98dbc44984279707caa124118849daae896";
     revisions = {

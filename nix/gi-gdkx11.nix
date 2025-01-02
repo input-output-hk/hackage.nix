@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "3.0.17" = {
+    sha256 = "e3f32ea86980179bfe98f73d0f07523d7a19b89496e0a595a7888bc13fbd5e0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gdkx11-3.0.17-r0-990216f90cb950086f737fd27b9c29a8ba7c93328645c1bc5ed201e1139a6820.nix;
+        revNum = 0;
+        sha256 = "990216f90cb950086f737fd27b9c29a8ba7c93328645c1bc5ed201e1139a6820";
+      };
+      default = "r0";
+    };
+  };
   "3.0.2" = {
     sha256 = "4cc93329af472ba46572784e1d6b9a5ac25c237381a0462a14db5c6390cf7168";
     revisions = {
@@ -226,6 +237,17 @@
         nix = import ../hackage/gi-gdkx11-4.0.8-r0-ab2e7865e1b452343192572aec2cfa59d1bb7fbc99d63a2243426e3491fa09be.nix;
         revNum = 0;
         sha256 = "ab2e7865e1b452343192572aec2cfa59d1bb7fbc99d63a2243426e3491fa09be";
+      };
+      default = "r0";
+    };
+  };
+  "4.0.9" = {
+    sha256 = "0580ac7f6c7f310e88ea153bdba06e6575b1d4d2764db914a3ed4532be59292f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-gdkx11-4.0.9-r0-7e08f2aeb1890aea7c613eafbde68ece3f844fd5d5cca0ed556d0768c5f702d3.nix;
+        revNum = 0;
+        sha256 = "7e08f2aeb1890aea7c613eafbde68ece3f844fd5d5cca0ed556d0768c5f702d3";
       };
       default = "r0";
     };

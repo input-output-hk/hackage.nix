@@ -107,4 +107,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "a4f80c5caf53db092c44182121656cd3a654fcf639a7c3461f6de394a6dd995a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geodetics-1.0.0-r0-4717876e1f997729269e04734e807a81bac1db0a72264acfd6bfb70eed79b40f.nix;
+        revNum = 0;
+        sha256 = "4717876e1f997729269e04734e807a81bac1db0a72264acfd6bfb70eed79b40f";
+      };
+      default = "r0";
+    };
+  };
 }

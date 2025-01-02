@@ -340,6 +340,17 @@
       default = "r0";
     };
   };
+  "2.4.30" = {
+    sha256 = "4a4d8d3b2663a34940bfb7096e43d09137e339ade0930a7f7c429cc863b72cb1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-soup-2.4.30-r0-72d5ff9fdacdadf84ae50f8c0a1685a2c38551ef7d9fa7a0fdfdf5478a12a81e.nix;
+        revNum = 0;
+        sha256 = "72d5ff9fdacdadf84ae50f8c0a1685a2c38551ef7d9fa7a0fdfdf5478a12a81e";
+      };
+      default = "r0";
+    };
+  };
   "2.4.4" = {
     sha256 = "8284732ddd001d87221992d47fd980d4629ac62e2460b3710a75926b1de5bce6";
     revisions = {
@@ -424,6 +435,17 @@
         nix = import ../hackage/gi-soup-3.0.3-r0-4932b8cd67b8fc0ac11aa292617719d29c0f009578699d66fe47532c5ca7ce56.nix;
         revNum = 0;
         sha256 = "4932b8cd67b8fc0ac11aa292617719d29c0f009578699d66fe47532c5ca7ce56";
+      };
+      default = "r0";
+    };
+  };
+  "3.0.4" = {
+    sha256 = "b64310d0c0854db3cf41ff1413d54415ac031b050c5a8155543f5b4d7d98037f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-soup-3.0.4-r0-27e3d0d853dfe48f3f2d4479814ff8b610f1a691c1b92734fcdc5002b63a18df.nix;
+        revNum = 0;
+        sha256 = "27e3d0d853dfe48f3f2d4479814ff8b610f1a691c1b92734fcdc5002b63a18df";
       };
       default = "r0";
     };
