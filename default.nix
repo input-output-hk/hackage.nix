@@ -160,6 +160,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "CTRex" = import ./nix/_C_T_Rex.nix;
   "CV" = import ./nix/_C_V.nix;
   "Cabal" = import ./nix/_Cabal.nix;
+  "Cabal-hooks" = import ./nix/_Cabal-hooks.nix;
   "Cabal-ide-backend" = import ./nix/_Cabal-ide-backend.nix;
   "Cabal-syntax" = import ./nix/_Cabal-syntax.nix;
   "CabalSearch" = import ./nix/_Cabal_Search.nix;

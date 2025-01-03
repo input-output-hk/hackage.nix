@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "1c5ed7dd3302b6391be631f835fe94c9189284f5eff7179c8acb85ffae50ab1e";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-0.1.0-r3-7b078dc3fc6bc0089a31da0f77d986932f92f402d61b59a8a887f25703b33ebb.nix;
+        revNum = 3;
+        sha256 = "7b078dc3fc6bc0089a31da0f77d986932f92f402d61b59a8a887f25703b33ebb";
+      };
+      default = "r3";
     };
   };
   "0.2.0" = {
@@ -38,7 +43,12 @@
         revNum = 2;
         sha256 = "7bb592106e20055b6ad30e1362ced78fddb6ccd138c0ff969661bc7745e4e91f";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-0.2.0-r3-bc37ce79ca4b0ae1396cd014387c91c8bc9daa869e261f8ea7a4b1f6b9a7eca9.nix;
+        revNum = 3;
+        sha256 = "bc37ce79ca4b0ae1396cd014387c91c8bc9daa869e261f8ea7a4b1f6b9a7eca9";
+      };
+      default = "r3";
     };
   };
   "1.0.0" = {
@@ -59,7 +69,12 @@
         revNum = 2;
         sha256 = "79918a6349e39a654a85a436164f80c5ae0d42444e2a8e5e1bc056b8afe4dec5";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-1.0.0-r3-aa607b7a29f577f4bfa45a131a49cc29543a8de5edfa1bdb3fc0b4b57c3f58c3.nix;
+        revNum = 3;
+        sha256 = "aa607b7a29f577f4bfa45a131a49cc29543a8de5edfa1bdb3fc0b4b57c3f58c3";
+      };
+      default = "r3";
     };
   };
   "1.0.1" = {
@@ -80,7 +95,12 @@
         revNum = 2;
         sha256 = "17514fe5f56888072d2341b57dc29983006c9618ff5aedb320c207e6d893e336";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-1.0.1-r3-82ac1053210ba54eb17257b16836979649c76105b15a978a31e41cba65c9b9db.nix;
+        revNum = 3;
+        sha256 = "82ac1053210ba54eb17257b16836979649c76105b15a978a31e41cba65c9b9db";
+      };
+      default = "r3";
     };
   };
   "1.0.2" = {
@@ -101,7 +121,12 @@
         revNum = 2;
         sha256 = "d274d37f07196655adb0b4486811e5b566e7e0a800be67149d312d8592259784";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-1.0.2-r3-ad2031a79451f0152488f87133fc0b63f9f89b14b6ab483c0bb205c7c879a1db.nix;
+        revNum = 3;
+        sha256 = "ad2031a79451f0152488f87133fc0b63f9f89b14b6ab483c0bb205c7c879a1db";
+      };
+      default = "r3";
     };
   };
   "1.0.3" = {
@@ -122,7 +147,12 @@
         revNum = 2;
         sha256 = "f297bf10a5ff2c9ad1b5b048595da5e16acb3d8b94183daa48688c979868ef02";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-1.0.3-r3-ba98e931ca16a64810e8c97e87b4bb03bfe946b83ccd1019b11a93efeef330de.nix;
+        revNum = 3;
+        sha256 = "ba98e931ca16a64810e8c97e87b4bb03bfe946b83ccd1019b11a93efeef330de";
+      };
+      default = "r3";
     };
   };
   "1.0.3.1" = {
@@ -143,7 +173,12 @@
         revNum = 2;
         sha256 = "d4fb45bdb09219bf9093d7c6afd6d699b9f4f9a7663a6864a03b50f87ee7926b";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/http-link-header-1.0.3.1-r3-6d586e04af23736d3cbbd2e03600ca7efb086e3d7abaace93050f2396ee5a524.nix;
+        revNum = 3;
+        sha256 = "6d586e04af23736d3cbbd2e03600ca7efb086e3d7abaace93050f2396ee5a524";
+      };
+      default = "r3";
     };
   };
   "1.1.1" = {
@@ -211,7 +246,12 @@
         revNum = 3;
         sha256 = "9df7b42011c14a21f3259a81317a2c2d6386c7f97019f505812f2df419d9ab9b";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/http-link-header-1.2.1-r4-e99fae2b017eff1c005fa8be4fa7349edeba64fbe2b9d0c70887275a56e7d73b.nix;
+        revNum = 4;
+        sha256 = "e99fae2b017eff1c005fa8be4fa7349edeba64fbe2b9d0c70887275a56e7d73b";
+      };
+      default = "r4";
     };
   };
 }

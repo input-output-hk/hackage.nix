@@ -358,4 +358,15 @@
       default = "r1";
     };
   };
+  "0.7.1.0" = {
+    sha256 = "64f1caa8dba734ba94d12b91b0236dde0ad1f500df57deaafeced9e2e47da40a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/equational-reasoning-0.7.1.0-r0-10af3f7bdc545188d98179f85dfcd8f76d7de281c746b2eb9f675e48573e2acb.nix;
+        revNum = 0;
+        sha256 = "10af3f7bdc545188d98179f85dfcd8f76d7de281c746b2eb9f675e48573e2acb";
+      };
+      default = "r0";
+    };
+  };
 }
