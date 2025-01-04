@@ -49,7 +49,12 @@
         revNum = 0;
         sha256 = "f7922b325f6248231d81dfa73350bbdf2a5830ef8f8af754009f266b1c1a83b0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/redact-0.6.0.0-r1-ccde3950e7650eeba96feb8fe30725efd9a14a77acf07eab0512cf623271433c.nix;
+        revNum = 1;
+        sha256 = "ccde3950e7650eeba96feb8fe30725efd9a14a77acf07eab0512cf623271433c";
+      };
+      default = "r1";
     };
   };
 }
