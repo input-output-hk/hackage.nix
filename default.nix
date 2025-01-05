@@ -4513,6 +4513,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "database-id-groundhog" = import ./nix/database-id-groundhog.nix;
   "database-migrate" = import ./nix/database-migrate.nix;
   "database-study" = import ./nix/database-study.nix;
+  "datacrypto" = import ./nix/datacrypto.nix;
   "datadog" = import ./nix/datadog.nix;
   "datadog-tracing" = import ./nix/datadog-tracing.nix;
   "dataenc" = import ./nix/dataenc.nix;

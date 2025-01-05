@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.11.1" = {
+    sha256 = "d45ecfdbb6b87bb89b0a5e94f6727578532a5be61c9b466c81458ea0c4d00930";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-bash-0.11.1-r0-58efd517a36669e5c8abc54d58f6ef84b825454f2ea5ce526e25b9e9e56a381f.nix;
+        revNum = 0;
+        sha256 = "58efd517a36669e5c8abc54d58f6ef84b825454f2ea5ce526e25b9e9e56a381f";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "8be094db3dae841a7358b306d2c890b636ca8acdc97d22d3fb2b6eac778d50eb";
     revisions = {

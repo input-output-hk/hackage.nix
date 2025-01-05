@@ -91,7 +91,12 @@
         revNum = 0;
         sha256 = "a7fe2d73d0efc314dcc41b5c4b52707e05d003c460e0e013bf0c6758e5aad4ac";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/these-optics-1.0.2-r1-f5a1ea342b5c3cea00b3c766627c6a888b5f43eadb9201afd7a0641fbf874598.nix;
+        revNum = 1;
+        sha256 = "f5a1ea342b5c3cea00b3c766627c6a888b5f43eadb9201afd7a0641fbf874598";
+      };
+      default = "r1";
     };
   };
 }

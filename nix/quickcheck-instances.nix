@@ -485,7 +485,12 @@
         revNum = 0;
         sha256 = "1d43313a0ddcad324ad748a6bfdcdc686560e645f763abf7745b5ae1f439a8e4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/quickcheck-instances-0.3.32-r1-8772458bddd354e07102bf05b45976896c278282e71ff8420beac6b9b77efb34.nix;
+        revNum = 1;
+        sha256 = "8772458bddd354e07102bf05b45976896c278282e71ff8420beac6b9b77efb34";
+      };
+      default = "r1";
     };
   };
   "0.3.4" = {

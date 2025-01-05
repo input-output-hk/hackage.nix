@@ -331,7 +331,12 @@
         revNum = 1;
         sha256 = "6be0b8bf9e51486a572f3e7893658ed809283a1a730123b501ca091f32d44bb2";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/lattices-2.2.1-r2-5150df533fb241ba7ce50b42b3860e9d51d2d014c58ef07e00a6a9d1447701f8.nix;
+        revNum = 2;
+        sha256 = "5150df533fb241ba7ce50b42b3860e9d51d2d014c58ef07e00a6a9d1447701f8";
+      };
+      default = "r2";
     };
   };
 }
