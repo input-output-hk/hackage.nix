@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "d52ede7cfb587b3dfcd609fcd2e042e7f9370ea88517b9601dffa3994d9183ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eccrypto-ed25519-bindings-0.1.2.1-r0-b3d30f230e4649530d6ff721c45d518174ac8305c2a070b098cb8471f3ddb014.nix;
+        revNum = 0;
+        sha256 = "b3d30f230e4649530d6ff721c45d518174ac8305c2a070b098cb8471f3ddb014";
+      };
+      default = "r0";
+    };
+  };
 }

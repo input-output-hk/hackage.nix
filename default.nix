@@ -2879,6 +2879,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bluefin-algae" = import ./nix/bluefin-algae.nix;
   "bluefin-internal" = import ./nix/bluefin-internal.nix;
   "bluemix-sdk" = import ./nix/bluemix-sdk.nix;
+  "bluesky-tools" = import ./nix/bluesky-tools.nix;
   "bluetile" = import ./nix/bluetile.nix;
   "bluetileutils" = import ./nix/bluetileutils.nix;
   "blunk-hask-tests" = import ./nix/blunk-hask-tests.nix;

@@ -1,0 +1,24 @@
+{
+  "0.2.0.0" = {
+    sha256 = "927ce4c94836843f58037c401b2e461c73fef65c6767d9fece2efbcadabf12a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluesky-tools-0.2.0.0-r0-bebb9d3445ea3c2f4c097b888c9d3a06efb0abcd549968ec90c7aefe25999390.nix;
+        revNum = 0;
+        sha256 = "bebb9d3445ea3c2f4c097b888c9d3a06efb0abcd549968ec90c7aefe25999390";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.2.0" = {
+    sha256 = "550b60952b05b271fe01634618d7346dcbaf0723d827b3fb0d75f02037bf12bd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluesky-tools-0.2.2.0-r0-9b429a1bc67b69a01f6af7d3938350d6e35da503ab1ede378109e8b8139a89a3.nix;
+        revNum = 0;
+        sha256 = "9b429a1bc67b69a01f6af7d3938350d6e35da503ab1ede378109e8b8139a89a3";
+      };
+      default = "r0";
+    };
+  };
+}
