@@ -16464,6 +16464,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "trek-db" = import ./nix/trek-db.nix;
   "trek-lens" = import ./nix/trek-lens.nix;
   "tremulous-query" = import ./nix/tremulous-query.nix;
+  "trexio-hs" = import ./nix/trexio-hs.nix;
   "trhsx" = import ./nix/trhsx.nix;
   "trial" = import ./nix/trial.nix;
   "trial-optparse-applicative" = import ./nix/trial-optparse-applicative.nix;

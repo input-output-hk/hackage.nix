@@ -122,7 +122,12 @@
         revNum = 1;
         sha256 = "b8d8002f9098555969780608383a950ef3920929eaa334f875316eaf5997991a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dsp-0.2.5.2-r2-3d7e11956f405e5d95db729610c7036194378f63745a10363c95a5eb0ff846a4.nix;
+        revNum = 2;
+        sha256 = "3d7e11956f405e5d95db729610c7036194378f63745a10363c95a5eb0ff846a4";
+      };
+      default = "r2";
     };
   };
 }

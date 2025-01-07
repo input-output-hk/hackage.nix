@@ -55,7 +55,12 @@
         revNum = 2;
         sha256 = "f0283980d001f5edf63fafade17dc87baf48f9191bbf538c5b6880d5e558743e";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/comfort-glpk-0.1-r3-dccaa8bac9e8d9d8657a6631e3c3e7c8f97874e5c88fdf9bc3f6998204583995.nix;
+        revNum = 3;
+        sha256 = "dccaa8bac9e8d9d8657a6631e3c3e7c8f97874e5c88fdf9bc3f6998204583995";
+      };
+      default = "r3";
     };
   };
 }

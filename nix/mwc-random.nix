@@ -301,7 +301,12 @@
         revNum = 2;
         sha256 = "48e4b01a7447671b8bd13957de65f19ef41ee0376083c0c501e179e68768276a";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/mwc-random-0.15.0.1-r3-deca5ea3c2c26ba93c599b55257d77c7a9aa9a270287205e5db68d300a4a7328.nix;
+        revNum = 3;
+        sha256 = "deca5ea3c2c26ba93c599b55257d77c7a9aa9a270287205e5db68d300a4a7328";
+      };
+      default = "r3";
     };
   };
   "0.15.0.2" = {
@@ -317,7 +322,12 @@
         revNum = 1;
         sha256 = "109e0fb72ce64bda468fc44d9cb5abbf455d6337140b57eb851a8183baba0597";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/mwc-random-0.15.0.2-r2-0aa131d364770ced99611342c96965ead2d823fb4f7262dab876d134c6948d8b.nix;
+        revNum = 2;
+        sha256 = "0aa131d364770ced99611342c96965ead2d823fb4f7262dab876d134c6948d8b";
+      };
+      default = "r2";
     };
   };
   "0.15.1.0" = {
@@ -328,7 +338,12 @@
         revNum = 0;
         sha256 = "2951e9dbbc10b0036bccd3c84fe78fa25a5ed0a1e640a65b32288d7e588ee14c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mwc-random-0.15.1.0-r1-47180645318f2bce3c481b01d350d518aa8dd0f6b6d730cf5945db0ad78ab334.nix;
+        revNum = 1;
+        sha256 = "47180645318f2bce3c481b01d350d518aa8dd0f6b6d730cf5945db0ad78ab334";
+      };
+      default = "r1";
     };
   };
   "0.4.1" = {

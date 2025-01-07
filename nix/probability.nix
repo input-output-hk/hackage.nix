@@ -171,7 +171,12 @@
         revNum = 1;
         sha256 = "650acf8475d827355a9970f2c17b62bfaf3d9cf233351dfeaeb507e68b475295";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/probability-0.2.8-r2-6236eb559a1f9fb94f63814fb6ef3176b1b1c9e39ace631ccf8885e6c9670625.nix;
+        revNum = 2;
+        sha256 = "6236eb559a1f9fb94f63814fb6ef3176b1b1c9e39ace631ccf8885e6c9670625";
+      };
+      default = "r2";
     };
   };
 }

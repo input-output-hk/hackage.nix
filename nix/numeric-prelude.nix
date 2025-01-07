@@ -420,7 +420,12 @@
         revNum = 2;
         sha256 = "a2cb7905806d06945e9d59a7bb5603dbd0b0339c2eb923ea68e63940e97dd031";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/numeric-prelude-0.4.4-r3-6b0b19554b3f4edec77d0c6aaadb0c48108dd6dfd912eb1ce022fe2cf295275b.nix;
+        revNum = 3;
+        sha256 = "6b0b19554b3f4edec77d0c6aaadb0c48108dd6dfd912eb1ce022fe2cf295275b";
+      };
+      default = "r3";
     };
   };
 }

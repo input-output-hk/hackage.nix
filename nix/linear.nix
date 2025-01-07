@@ -1432,7 +1432,12 @@
         revNum = 1;
         sha256 = "d1b1a382b6b7e43cf638466d8f5e95915e35def41e577762229135d9e54054dd";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/linear-1.23-r2-9b524450c03b4dcc1473fee75a97fa05a8650d4f5dd65a87dcc3780f4bb5e7f5.nix;
+        revNum = 2;
+        sha256 = "9b524450c03b4dcc1473fee75a97fa05a8650d4f5dd65a87dcc3780f4bb5e7f5";
+      };
+      default = "r2";
     };
   };
   "1.3" = {
