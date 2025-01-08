@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "7f8d2cfd5a7b4d15389c03816875a161cde53a18e1d72757688713d671406f4b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posix-timer-0.3.0.2-r0-d692b3bbb382d4a2b5f9765f5b23d1add26127f6c4dad33af476c39b7cc7fd82.nix;
+        revNum = 0;
+        sha256 = "d692b3bbb382d4a2b5f9765f5b23d1add26127f6c4dad33af476c39b7cc7fd82";
+      };
+      default = "r0";
+    };
+  };
 }

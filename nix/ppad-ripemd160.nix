@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "b670d65f75d7768028b21e9c35a1159f4fc92a95c703d794972f3edf779c78ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-ripemd160-0.1.1-r0-9c9a6a3563f06184ea14053c9920c43f001e4a908f491e06ee1628edd05a1fa9.nix;
+        revNum = 0;
+        sha256 = "9c9a6a3563f06184ea14053c9920c43f001e4a908f491e06ee1628edd05a1fa9";
+      };
+      default = "r0";
+    };
+  };
 }

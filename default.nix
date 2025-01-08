@@ -11846,6 +11846,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "open-typerep" = import ./nix/open-typerep.nix;
   "open-union" = import ./nix/open-union.nix;
   "open-witness" = import ./nix/open-witness.nix;
+  "openai" = import ./nix/openai.nix;
   "openai-hs" = import ./nix/openai-hs.nix;
   "openai-servant" = import ./nix/openai-servant.nix;
   "openai-servant-gen" = import ./nix/openai-servant-gen.nix;
@@ -14835,6 +14836,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "skylighting-format-blaze-html" = import ./nix/skylighting-format-blaze-html.nix;
   "skylighting-format-context" = import ./nix/skylighting-format-context.nix;
   "skylighting-format-latex" = import ./nix/skylighting-format-latex.nix;
+  "skylighting-format-typst" = import ./nix/skylighting-format-typst.nix;
   "skylighting-lucid" = import ./nix/skylighting-lucid.nix;
   "skylighting-modding" = import ./nix/skylighting-modding.nix;
   "skype4hs" = import ./nix/skype4hs.nix;

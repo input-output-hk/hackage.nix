@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "019e5406c67f0a005acd3edb56efb5b32dff02cab91b7dc39de4af1050afd6f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaskellNet-SSL-0.4.0.0-r0-15653b72e2f13093def44fb37ba3ec48646eea5ee49fd3fdfa97fe2a5605ced4.nix;
+        revNum = 0;
+        sha256 = "15653b72e2f13093def44fb37ba3ec48646eea5ee49fd3fdfa97fe2a5605ced4";
+      };
+      default = "r0";
+    };
+  };
 }

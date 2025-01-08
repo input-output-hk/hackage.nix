@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "1.0.1.4" = {
+    sha256 = "3fcef541ffae1e3a50bca39e434f7c6b24040ae9be6620ed2d04add461b82ccc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tensort-1.0.1.4-r0-e5de8eaa92972c7baa784adc277ded8eb0849c576f38e77eb9e9cf8cb05f35cc.nix;
+        revNum = 0;
+        sha256 = "e5de8eaa92972c7baa784adc277ded8eb0849c576f38e77eb9e9cf8cb05f35cc";
+      };
+      default = "r0";
+    };
+  };
 }
