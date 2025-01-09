@@ -60,7 +60,12 @@
         revNum = 2;
         sha256 = "903513b8a4cfe31c41041ef6814e75c29e5004b2c8214a28f98d5eee8d06dc52";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/fused-effects-th-0.1.0.3-r3-f445f55318a17ec7cdd91e4241098c31a1aab280156fe4db992c9db331aa824f.nix;
+        revNum = 3;
+        sha256 = "f445f55318a17ec7cdd91e4241098c31a1aab280156fe4db992c9db331aa824f";
+      };
+      default = "r3";
     };
   };
 }

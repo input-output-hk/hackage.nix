@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "330a38137dbc4d43bed72c8771128916ef0238b5f54b57f2b46239170c0ab8ac";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/fused-effects-mwc-random-0.1.0.0-r2-72f04ee27a8fa794a1a62c7a5599a29f7673f0ea1fcf1947b271cd998bbd99bd.nix;
+        revNum = 2;
+        sha256 = "72f04ee27a8fa794a1a62c7a5599a29f7673f0ea1fcf1947b271cd998bbd99bd";
+      };
+      default = "r2";
     };
   };
 }

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.4.2" = {
+    sha256 = "8d06fb3e4dc859543294767db3ffde3e242e911883cdbe74ac4862046211c967";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libremidi-0.4.2-r0-1539e0884669fe8e8ee75aa133c178a357e0fdf595ca44bd860c5d83170be2c9.nix;
+        revNum = 0;
+        sha256 = "1539e0884669fe8e8ee75aa133c178a357e0fdf595ca44bd860c5d83170be2c9";
+      };
+      default = "r0";
+    };
+  };
 }

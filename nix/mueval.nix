@@ -401,7 +401,17 @@
         revNum = 1;
         sha256 = "02e24a736362c91f786daf6a40633ccf0fa6d95a5747dbdd39a885353e563590";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/mueval-0.9.4-r2-7e30c618507f19554e53a65ea78e0de46579bab530197804e056856349e873ac.nix;
+        revNum = 2;
+        sha256 = "7e30c618507f19554e53a65ea78e0de46579bab530197804e056856349e873ac";
+      };
+      r3 = {
+        nix = import ../hackage/mueval-0.9.4-r3-85f647ff548b14c601604ecd52b4c2024f2d00e03fa2c555b8d84f3c08f880c2.nix;
+        revNum = 3;
+        sha256 = "85f647ff548b14c601604ecd52b4c2024f2d00e03fa2c555b8d84f3c08f880c2";
+      };
+      default = "r3";
     };
   };
 }

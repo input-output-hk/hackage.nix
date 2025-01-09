@@ -450,4 +450,15 @@
       default = "r0";
     };
   };
+  "0.5.7.1" = {
+    sha256 = "bb7a22913abebf80cfbb9407e7302c6d53d8c397b57b2e212fa5e81a6de00918";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pontarius-xmpp-0.5.7.1-r0-9c2d98cf418c67a6b8c8feb7ac35856da579ce39e347f611fbd46e2d11dcda14.nix;
+        revNum = 0;
+        sha256 = "9c2d98cf418c67a6b8c8feb7ac35856da579ce39e347f611fbd46e2d11dcda14";
+      };
+      default = "r0";
+    };
+  };
 }

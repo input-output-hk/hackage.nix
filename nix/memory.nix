@@ -514,7 +514,12 @@
         revNum = 0;
         sha256 = "e12bde756b01c1a28c62e46f0f8433c4890898051a786794a7d88907ca14abca";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/memory-0.18.0-r1-9f4de967352f80b6f174c9a166f315393dde80b77d7b67e41268ae7dec0319f9.nix;
+        revNum = 1;
+        sha256 = "9f4de967352f80b6f174c9a166f315393dde80b77d7b67e41268ae7dec0319f9";
+      };
+      default = "r1";
     };
   };
   "0.2" = {

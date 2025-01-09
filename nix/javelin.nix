@@ -85,4 +85,15 @@
       default = "r0";
     };
   };
+  "0.1.4.1" = {
+    sha256 = "29c0b77887964a1841741b21e59c8eaa49e25fb6540e9fe8e9b63c02ae7bfc69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/javelin-0.1.4.1-r0-881d8a19c84e4769eabda8d6c884e46dc1eeb04ba1a5d6540642882515bf0110.nix;
+        revNum = 0;
+        sha256 = "881d8a19c84e4769eabda8d6c884e46dc1eeb04ba1a5d6540642882515bf0110";
+      };
+      default = "r0";
+    };
+  };
 }

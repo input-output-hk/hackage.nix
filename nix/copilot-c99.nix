@@ -461,4 +461,15 @@
       default = "r0";
     };
   };
+  "4.2" = {
+    sha256 = "c55833539d8c572953aca2b2b40f716b5f5ebbf85cd67729ebceeef7c0407721";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-c99-4.2-r0-c735f1271076d789a2956d3a76dce811898446e81802a3a4a4fb8bbba8a7a4a5.nix;
+        revNum = 0;
+        sha256 = "c735f1271076d789a2956d3a76dce811898446e81802a3a4a4fb8bbba8a7a4a5";
+      };
+      default = "r0";
+    };
+  };
 }

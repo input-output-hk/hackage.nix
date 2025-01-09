@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "890d373bf613fe7a2f91e6edfadcd32e1a6fec7e51b667c23ceaf4d60be6a148";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fused-effects-readline-0.2.0.0-r0-7a91b0fab3b4aeb126d78c6b0ce9417a74ed7e1f689038b02517725daa4262f8.nix;
+        revNum = 0;
+        sha256 = "7a91b0fab3b4aeb126d78c6b0ce9417a74ed7e1f689038b02517725daa4262f8";
+      };
+      default = "r0";
+    };
+  };
 }

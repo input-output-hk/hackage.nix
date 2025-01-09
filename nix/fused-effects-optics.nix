@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "d9a8e976fb25f40ea7581ecd922e564925f931288a479ecf99b793c9d6fa0e34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fused-effects-optics-0.3.0.0-r0-b927251228d78aaa6c50e57ec17cf0bd7919bf9e949ffb37f2dce63375945d49.nix;
+        revNum = 0;
+        sha256 = "b927251228d78aaa6c50e57ec17cf0bd7919bf9e949ffb37f2dce63375945d49";
+      };
+      default = "r0";
+    };
+  };
 }
