@@ -13538,6 +13538,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "records-sop" = import ./nix/records-sop.nix;
   "records-th" = import ./nix/records-th.nix;
   "recover-rtti" = import ./nix/recover-rtti.nix;
+  "recurly-client" = import ./nix/recurly-client.nix;
   "recursion" = import ./nix/recursion.nix;
   "recursion-schemes" = import ./nix/recursion-schemes.nix;
   "recursion-schemes-ext" = import ./nix/recursion-schemes-ext.nix;
