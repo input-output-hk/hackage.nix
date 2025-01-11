@@ -12857,6 +12857,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "powerqueue-sqs" = import ./nix/powerqueue-sqs.nix;
   "ppad-base58" = import ./nix/ppad-base58.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
+  "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;
@@ -15611,6 +15612,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "swiss-ephemeris" = import ./nix/swiss-ephemeris.nix;
   "swisstable" = import ./nix/swisstable.nix;
   "switch" = import ./nix/switch.nix;
+  "swizzle" = import ./nix/swizzle.nix;
   "sws" = import ./nix/sws.nix;
   "sxml" = import ./nix/sxml.nix;
   "syb" = import ./nix/syb.nix;
