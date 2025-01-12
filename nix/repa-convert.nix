@@ -86,4 +86,15 @@
       default = "r0";
     };
   };
+  "4.2.4.0" = {
+    sha256 = "c8e87ce23a405e717a21a6d7d9d7c4cc598926090c01e2cbe6c56d57b48c25b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repa-convert-4.2.4.0-r0-c9d3914e33a5c0823e73b3aa7503774990e4bfcb019c7da4ba2c5fbf3d429e56.nix;
+        revNum = 0;
+        sha256 = "c9d3914e33a5c0823e73b3aa7503774990e4bfcb019c7da4ba2c5fbf3d429e56";
+      };
+      default = "r0";
+    };
+  };
 }

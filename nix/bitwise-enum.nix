@@ -157,7 +157,12 @@
         revNum = 0;
         sha256 = "2deef1b4d70404355f33da9e7c7fcada865b4026a5547f366c271108ee2f03c9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bitwise-enum-1.0.1.2-r1-f2f4b46fee6a1b8adf1f076a1df5fe1eae00d355833cb0bafb3b6bf1f967dea6.nix;
+        revNum = 1;
+        sha256 = "f2f4b46fee6a1b8adf1f076a1df5fe1eae00d355833cb0bafb3b6bf1f967dea6";
+      };
+      default = "r1";
     };
   };
 }
