@@ -392,7 +392,12 @@
         revNum = 1;
         sha256 = "c6b7444f413f451749ad971dcd647779f3222ddb1583385ffbec813a1d8ae07a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/psqueues-0.2.8.0-r2-ec280f21f93c4b607c2c14f8827ace931fb6b46c55d8d977723c197c49eb07e3.nix;
+        revNum = 2;
+        sha256 = "ec280f21f93c4b607c2c14f8827ace931fb6b46c55d8d977723c197c49eb07e3";
+      };
+      default = "r2";
     };
   };
 }
