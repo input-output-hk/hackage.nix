@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "5b67c8a00acec1203bd1f430a57e6d81041c25a79cafdad994252b6cff76ed66";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nonempty-zipper-1.0.1.0-r0-9456e020dd4f7d0bb3b999346d4f09c0e64026287459d5a6eb98cd73833c98ab.nix;
+        revNum = 0;
+        sha256 = "9456e020dd4f7d0bb3b999346d4f09c0e64026287459d5a6eb98cd73833c98ab";
+      };
+      default = "r0";
+    };
+  };
 }

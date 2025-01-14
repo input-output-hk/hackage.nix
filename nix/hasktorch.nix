@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.1.2" = {
+    sha256 = "251824703c500fcf7f8e748f628e30566fdca5cb4b1aa5e289b592648ee838c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasktorch-0.2.1.2-r0-2893f8efae939e71315883cbafc0d5d0324b178e69a59b269fdab670ddcb3294.nix;
+        revNum = 0;
+        sha256 = "2893f8efae939e71315883cbafc0d5d0324b178e69a59b269fdab670ddcb3294";
+      };
+      default = "r0";
+    };
+  };
 }
