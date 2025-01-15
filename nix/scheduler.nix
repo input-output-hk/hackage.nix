@@ -242,4 +242,15 @@
       default = "r1";
     };
   };
+  "2.0.1.0" = {
+    sha256 = "beb00e83c319553b8794b8c3bf0da21341083d367a54dfd3c9a98613452c5a3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scheduler-2.0.1.0-r0-c8e367520c8190fc098dda02c6e2b34aae1f1a420a2ea9d7929708cdbea10b2e.nix;
+        revNum = 0;
+        sha256 = "c8e367520c8190fc098dda02c6e2b34aae1f1a420a2ea9d7929708cdbea10b2e";
+      };
+      default = "r0";
+    };
+  };
 }

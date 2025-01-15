@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "b40985e9214adf22d8ff03caddb0246730a9e62920310f573fe208acf352f21a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-aeson-orphans-0.1.0.2-r0-49271a3761b3fa8b00c8fc27694ab81e23f8445b08d89939817493a074228e49.nix;
+        revNum = 0;
+        sha256 = "49271a3761b3fa8b00c8fc27694ab81e23f8445b08d89939817493a074228e49";
+      };
+      default = "r0";
+    };
+  };
 }

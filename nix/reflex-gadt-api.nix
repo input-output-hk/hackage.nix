@@ -80,4 +80,15 @@
       default = "r1";
     };
   };
+  "0.2.2.2" = {
+    sha256 = "652094d05fed02350b7d32eed39ff5477c99a87f2810507e51d177137461cabf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-gadt-api-0.2.2.2-r0-e4212ecb017df7261ae142383dbe7a8a412bef85bb33ab2cfc5cd0c08bb1faef.nix;
+        revNum = 0;
+        sha256 = "e4212ecb017df7261ae142383dbe7a8a412bef85bb33ab2cfc5cd0c08bb1faef";
+      };
+      default = "r0";
+    };
+  };
 }

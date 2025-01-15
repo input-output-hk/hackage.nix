@@ -301,7 +301,12 @@
         revNum = 0;
         sha256 = "14ec269ca7f26f3742075e0bf1e73f1368e26805dfc2537f8c80b6969bda6ae0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hosc-0.21-r1-f6932b213db33cf042a31f8db3a3d3cb1e3aab8478bd9d4feb5183a239cb50bc.nix;
+        revNum = 1;
+        sha256 = "f6932b213db33cf042a31f8db3a3d3cb1e3aab8478bd9d4feb5183a239cb50bc";
+      };
+      default = "r1";
     };
   };
   "0.3" = {
