@@ -6066,6 +6066,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fregel" = import ./nix/fregel.nix;
   "french-cards" = import ./nix/french-cards.nix;
   "freq" = import ./nix/freq.nix;
+  "frequent-substring" = import ./nix/frequent-substring.nix;
   "fresco-binding" = import ./nix/fresco-binding.nix;
   "fresh" = import ./nix/fresh.nix;
   "fresnel" = import ./nix/fresnel.nix;
@@ -7859,6 +7860,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "heptapod" = import ./nix/heptapod.nix;
   "her-lexer" = import ./nix/her-lexer.nix;
   "her-lexer-parsec" = import ./nix/her-lexer-parsec.nix;
+  "herb" = import ./nix/herb.nix;
   "herbalizer" = import ./nix/herbalizer.nix;
   "hercules-ci-agent" = import ./nix/hercules-ci-agent.nix;
   "hercules-ci-api" = import ./nix/hercules-ci-api.nix;

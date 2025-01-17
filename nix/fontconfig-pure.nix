@@ -124,4 +124,31 @@
       default = "r0";
     };
   };
+  "0.5.0.1" = {
+    sha256 = "b9f3fdfa2f6c172c4a328f7dc866a7a71abfdc5c7c79729add6bb8f130795527";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontconfig-pure-0.5.0.1-r0-b240e6f3de30ed141664a33369e229f723af91a0a1ab8581c67a15a7bb95f727.nix;
+        revNum = 0;
+        sha256 = "b240e6f3de30ed141664a33369e229f723af91a0a1ab8581c67a15a7bb95f727";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.0.2" = {
+    sha256 = "f62b0ab0472796a258433528262f660a12f4ac78c2ac240ca7f895b0ef164afe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontconfig-pure-0.5.0.2-r0-6efd4a653c5dbccb0f9564dec641ce4bc87a259513207100148f9f76691db5dc.nix;
+        revNum = 0;
+        sha256 = "6efd4a653c5dbccb0f9564dec641ce4bc87a259513207100148f9f76691db5dc";
+      };
+      r1 = {
+        nix = import ../hackage/fontconfig-pure-0.5.0.2-r1-731278682acbb016a6ace5c5aba11d89fef8e70db436ed583e5e8e4a0975cb64.nix;
+        revNum = 1;
+        sha256 = "731278682acbb016a6ace5c5aba11d89fef8e70db436ed583e5e8e4a0975cb64";
+      };
+      default = "r1";
+    };
+  };
 }
