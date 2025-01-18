@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "cdf41d50a50bb3f1a70b302cfe110f75a19008a696e7d0405b006b50a4c84d27";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mem-info-0.3.0.1-r0-ccbe5504d1d46d55997cb0c4993bdb9721fe1f2386df1c000f9ac505549f4a88.nix;
+        revNum = 0;
+        sha256 = "ccbe5504d1d46d55997cb0c4993bdb9721fe1f2386df1c000f9ac505549f4a88";
+      };
+      default = "r0";
+    };
+  };
 }

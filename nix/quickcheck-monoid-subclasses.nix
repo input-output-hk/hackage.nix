@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.3.0.5" = {
+    sha256 = "340e6799e1e7d839a25aef39342ba2a80379ec6e5047466058826db593a9d942";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quickcheck-monoid-subclasses-0.3.0.5-r0-be2d6d539637abdba49e053bf8178dccc603437bd903218c2195f74b2ae84735.nix;
+        revNum = 0;
+        sha256 = "be2d6d539637abdba49e053bf8178dccc603437bd903218c2195f74b2ae84735";
+      };
+      default = "r0";
+    };
+  };
 }
