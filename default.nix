@@ -8001,6 +8001,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "highlighter2" = import ./nix/highlighter2.nix;
   "highlighting-kate" = import ./nix/highlighting-kate.nix;
   "highs-lp" = import ./nix/highs-lp.nix;
+  "hikchr" = import ./nix/hikchr.nix;
   "hills" = import ./nix/hills.nix;
   "himerge" = import ./nix/himerge.nix;
   "himg" = import ./nix/himg.nix;
@@ -9165,6 +9166,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "inline-c-objc" = import ./nix/inline-c-objc.nix;
   "inline-c-win32" = import ./nix/inline-c-win32.nix;
   "inline-java" = import ./nix/inline-java.nix;
+  "inline-python" = import ./nix/inline-python.nix;
   "inline-r" = import ./nix/inline-r.nix;
   "inliterate" = import ./nix/inliterate.nix;
   "input-parsers" = import ./nix/input-parsers.nix;

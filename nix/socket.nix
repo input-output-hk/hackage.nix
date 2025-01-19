@@ -337,7 +337,12 @@
         revNum = 1;
         sha256 = "25c35fc352de42010871ac2162b344a48d43512fa51f3ac24e8518fb964cc11e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/socket-0.8.3.0-r2-c7c8433770729eef056445b15ceb0e77807ec3b0bea4e47a2f4c609bbeab2638.nix;
+        revNum = 2;
+        sha256 = "c7c8433770729eef056445b15ceb0e77807ec3b0bea4e47a2f4c609bbeab2638";
+      };
+      default = "r2";
     };
   };
 }

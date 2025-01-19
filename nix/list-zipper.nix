@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.0.12" = {
+    sha256 = "53b987b6cba1180c2dc2481c119756dfa4aa807972addbd202078c1b6abf09a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/list-zipper-0.0.12-r0-f8e19cded3124d64fefde66923e8ad86fe93f9be64fcf45ece19da043527e3d2.nix;
+        revNum = 0;
+        sha256 = "f8e19cded3124d64fefde66923e8ad86fe93f9be64fcf45ece19da043527e3d2";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "675db31ca02db9d3172dbdd712d9f84c50bcf23b5842ab0275194471b79d8cfa";
     revisions = {

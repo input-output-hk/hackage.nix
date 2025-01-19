@@ -319,7 +319,12 @@
         revNum = 1;
         sha256 = "af0a24388d9f7070c4b7e116610a9318865aa9be2632271bb72a209f0dc21de8";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/monoidal-containers-0.6.5.0-r2-15a08da08022bb30d2ae56040cd75e5c694d4c0826412597b82d21d90564c188.nix;
+        revNum = 2;
+        sha256 = "15a08da08022bb30d2ae56040cd75e5c694d4c0826412597b82d21d90564c188";
+      };
+      default = "r2";
     };
   };
 }
