@@ -126,4 +126,15 @@
       default = "r2";
     };
   };
+  "1.0.7" = {
+    sha256 = "62bbb1c002f6d415580b516debda54290ff6ccf348782833a3cc904b8979727a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-openapi-1.0.7-r0-b3233957d1d9a85a8335a0e2bd5e1742c564ebd97955f4c326511bd6bfdd0845.nix;
+        revNum = 0;
+        sha256 = "b3233957d1d9a85a8335a0e2bd5e1742c564ebd97955f4c326511bd6bfdd0845";
+      };
+      default = "r0";
+    };
+  };
 }

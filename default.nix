@@ -12026,6 +12026,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "packcheck" = import ./nix/packcheck.nix;
   "packdeps" = import ./nix/packdeps.nix;
   "packed" = import ./nix/packed.nix;
+  "packed-data" = import ./nix/packed-data.nix;
   "packed-dawg" = import ./nix/packed-dawg.nix;
   "packed-multikey-map" = import ./nix/packed-multikey-map.nix;
   "packedstring" = import ./nix/packedstring.nix;
@@ -12584,6 +12585,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pkggraph" = import ./nix/pkggraph.nix;
   "pkgtreediff" = import ./nix/pkgtreediff.nix;
   "pktree" = import ./nix/pktree.nix;
+  "pl-synth" = import ./nix/pl-synth.nix;
   "place-cursor-at" = import ./nix/place-cursor-at.nix;
   "placeholder" = import ./nix/placeholder.nix;
   "placeholders" = import ./nix/placeholders.nix;
@@ -12865,6 +12867,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
+  "ppad-script" = import ./nix/ppad-script.nix;
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;
   "ppad-sha256" = import ./nix/ppad-sha256.nix;
   "ppad-sha512" = import ./nix/ppad-sha512.nix;

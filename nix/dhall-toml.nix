@@ -63,4 +63,15 @@
       default = "r2";
     };
   };
+  "1.0.4" = {
+    sha256 = "e2a71fe3a9939728b4829f32146ca949b3c5b3f61e1245486a9fd43ba86f32dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-toml-1.0.4-r0-99ff4d0f42c246fef9c437841c97645f53ea4a40cfa6448f56fa77c6810548e7.nix;
+        revNum = 0;
+        sha256 = "99ff4d0f42c246fef9c437841c97645f53ea4a40cfa6448f56fa77c6810548e7";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -157,4 +157,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "c3b82920e9f761c17d53901fe0297b277a628b14ec1b9882f02784b6bcaabf6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gigaparsec-0.3.1.0-r0-fb4b8698aac7aa9de0d3088000205728010431474b4ab9c3c7fe12eaeefde01d.nix;
+        revNum = 0;
+        sha256 = "fb4b8698aac7aa9de0d3088000205728010431474b4ab9c3c7fe12eaeefde01d";
+      };
+      default = "r0";
+    };
+  };
 }
