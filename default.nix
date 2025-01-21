@@ -7420,6 +7420,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hash-addressed-cli" = import ./nix/hash-addressed-cli.nix;
   "hash-cons" = import ./nix/hash-cons.nix;
   "hash-store" = import ./nix/hash-store.nix;
+  "hash-string" = import ./nix/hash-string.nix;
   "hash-tree" = import ./nix/hash-tree.nix;
   "hashable" = import ./nix/hashable.nix;
   "hashable-accelerate" = import ./nix/hashable-accelerate.nix;
@@ -14572,6 +14573,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sha-streams" = import ./nix/sha-streams.nix;
   "sha-validation" = import ./nix/sha-validation.nix;
   "sha1" = import ./nix/sha1.nix;
+  "sha256" = import ./nix/sha256.nix;
   "shade" = import ./nix/shade.nix;
   "shaderc" = import ./nix/shaderc.nix;
   "shadower" = import ./nix/shadower.nix;
@@ -15621,6 +15623,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "swisstable" = import ./nix/swisstable.nix;
   "switch" = import ./nix/switch.nix;
   "swizzle" = import ./nix/swizzle.nix;
+  "swizzle-set" = import ./nix/swizzle-set.nix;
   "sws" = import ./nix/sws.nix;
   "sxml" = import ./nix/sxml.nix;
   "syb" = import ./nix/syb.nix;

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "c63bd9cef3a32611a554f2bb8886035b01e59433d09954632c46b12e5c3555e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/g3p-hash-2.0.0.0-r0-035b4ca0d9f83409f39a2a71684ebcf04de652556398f2c99729c07372ed983e.nix;
+        revNum = 0;
+        sha256 = "035b4ca0d9f83409f39a2a71684ebcf04de652556398f2c99729c07372ed983e";
+      };
+      default = "r0";
+    };
+  };
 }

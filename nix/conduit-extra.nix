@@ -1299,4 +1299,15 @@
       default = "r0";
     };
   };
+  "1.3.7" = {
+    sha256 = "b2bd6f8626909c1784793d791078bedc0831fbaf97cb3e837d9fd94c89532b57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-extra-1.3.7-r0-41666ef19ef54e207e9bd27eb8860f1a9745371f0f912db6cb44dade6da89ad9.nix;
+        revNum = 0;
+        sha256 = "41666ef19ef54e207e9bd27eb8860f1a9745371f0f912db6cb44dade6da89ad9";
+      };
+      default = "r0";
+    };
+  };
 }

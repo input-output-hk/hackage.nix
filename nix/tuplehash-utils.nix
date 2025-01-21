@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "db2d3b5ad80baeb5eef4595ca90b10292c88a84c344bc0058e59dc84415be116";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tuplehash-utils-0.1.0.0-r0-d934cfd60d6bdc8e9870ffbb74d0f5219b409d77f8ba6d02b1a5f0a90f0a6c80.nix;
+        revNum = 0;
+        sha256 = "d934cfd60d6bdc8e9870ffbb74d0f5219b409d77f8ba6d02b1a5f0a90f0a6c80";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.0.4" = {
+    sha256 = "097dd54114c409bd4c2d0aa017dcf80895b05f60188c0ad6b8caec5c0695bf51";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/swizzle-0.1.0.4-r0-a1a30c4adb2b29f50be8b9e7fa4a535cbf92d83141c0fa2a97c326a9b2c60dbb.nix;
+        revNum = 0;
+        sha256 = "a1a30c4adb2b29f50be8b9e7fa4a535cbf92d83141c0fa2a97c326a9b2c60dbb";
+      };
+      default = "r0";
+    };
+  };
 }
