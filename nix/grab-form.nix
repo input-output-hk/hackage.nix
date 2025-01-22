@@ -70,4 +70,15 @@
       default = "r1";
     };
   };
+  "0.0.0.9" = {
+    sha256 = "cb88f6f3fbc40be93e7eb0a55179353528dfcaec3dfe3cb519a5ce7a66479e77";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grab-form-0.0.0.9-r0-b6552e6f55789775707193e0516cd32083bedb73e4417290a112478bcfb601ef.nix;
+        revNum = 0;
+        sha256 = "b6552e6f55789775707193e0516cd32083bedb73e4417290a112478bcfb601ef";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "035b4ca0d9f83409f39a2a71684ebcf04de652556398f2c99729c07372ed983e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/g3p-hash-2.0.0.0-r1-2e790a4928fb6a63c18350b910403d11c798aa4946613bb63948fe34439bf2e5.nix;
+        revNum = 1;
+        sha256 = "2e790a4928fb6a63c18350b910403d11c798aa4946613bb63948fe34439bf2e5";
+      };
+      default = "r1";
     };
   };
 }

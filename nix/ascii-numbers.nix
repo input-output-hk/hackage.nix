@@ -110,4 +110,15 @@
       default = "r0";
     };
   };
+  "1.2.0.2" = {
+    sha256 = "e157e316687015bf6cffdfa5874e10d8df813a70318fef868a2ddc7237c96df8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ascii-numbers-1.2.0.2-r0-80ffbc3f80cc7c96c9f6278ce3aa8b02606c3072160485b4740fd424872042f7.nix;
+        revNum = 0;
+        sha256 = "80ffbc3f80cc7c96c9f6278ce3aa8b02606c3072160485b4740fd424872042f7";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -16552,6 +16552,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "turingMachine" = import ./nix/turing_Machine.nix;
   "turkish-deasciifier" = import ./nix/turkish-deasciifier.nix;
   "turn-loop" = import ./nix/turn-loop.nix;
+  "turncoat" = import ./nix/turncoat.nix;
   "turni" = import ./nix/turni.nix;
   "turtle" = import ./nix/turtle.nix;
   "turtle-options" = import ./nix/turtle-options.nix;

@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.0.0.1" = {
+    sha256 = "55b4365525b61b70d7454f0605feefee15c50a0720eb77066d32f3ed4185f69c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-secrets-0.0.0.1-r0-840361c31f62d26c3c63947216e072436c5c01ef3a544089ba19b8b92ba82613.nix;
+        revNum = 0;
+        sha256 = "840361c31f62d26c3c63947216e072436c5c01ef3a544089ba19b8b92ba82613";
+      };
+      default = "r0";
+    };
+  };
 }
