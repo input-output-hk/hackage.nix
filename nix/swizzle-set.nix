@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "b7c317aeb297ee496665043c322316d7574416421d595a49f0778059a2999cdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/swizzle-set-0.2.0.0-r0-5fe7be6695d589de962d79146f1e17b0737d379ef5a3b5a27cf2656f741f73f2.nix;
+        revNum = 0;
+        sha256 = "5fe7be6695d589de962d79146f1e17b0737d379ef5a3b5a27cf2656f741f73f2";
+      };
+      default = "r0";
+    };
+  };
 }

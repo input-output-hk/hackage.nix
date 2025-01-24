@@ -73,7 +73,12 @@
         revNum = 0;
         sha256 = "070419eb324a58008cc278c6af7907d8dc3292491ae6ac735327fe647a6569b0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-zoo-0.0.4.1-r1-badb9b133599daf49ec675ed41f17529e42f8a78ad230bb26a70b7f6cb7a5384.nix;
+        revNum = 1;
+        sha256 = "badb9b133599daf49ec675ed41f17529e42f8a78ad230bb26a70b7f6cb7a5384";
+      };
+      default = "r1";
     };
   };
 }

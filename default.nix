@@ -6014,6 +6014,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fraxl" = import ./nix/fraxl.nix;
   "frecently" = import ./nix/frecently.nix;
   "freckle-app" = import ./nix/freckle-app.nix;
+  "freckle-ecs" = import ./nix/freckle-ecs.nix;
   "freckle-env" = import ./nix/freckle-env.nix;
   "freckle-exception" = import ./nix/freckle-exception.nix;
   "freckle-http" = import ./nix/freckle-http.nix;
@@ -6021,6 +6022,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freckle-memcached" = import ./nix/freckle-memcached.nix;
   "freckle-otel" = import ./nix/freckle-otel.nix;
   "freckle-prelude" = import ./nix/freckle-prelude.nix;
+  "freckle-stats" = import ./nix/freckle-stats.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-alacarte" = import ./nix/free-alacarte.nix;
@@ -6633,6 +6635,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gitHUD" = import ./nix/git_H_U_D.nix;
   "gitcache" = import ./nix/gitcache.nix;
   "gitdo" = import ./nix/gitdo.nix;
+  "gitea-api" = import ./nix/gitea-api.nix;
   "githash" = import ./nix/githash.nix;
   "github" = import ./nix/github.nix;
   "github-app-token" = import ./nix/github-app-token.nix;
@@ -6994,6 +6997,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grapefruit-records" = import ./nix/grapefruit-records.nix;
   "grapefruit-ui" = import ./nix/grapefruit-ui.nix;
   "grapefruit-ui-gtk" = import ./nix/grapefruit-ui-gtk.nix;
+  "grapesy" = import ./nix/grapesy.nix;
   "graph" = import ./nix/graph.nix;
   "graph-core" = import ./nix/graph-core.nix;
   "graph-generators" = import ./nix/graph-generators.nix;
@@ -7089,6 +7093,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grpc-etcd-client" = import ./nix/grpc-etcd-client.nix;
   "grpc-haskell" = import ./nix/grpc-haskell.nix;
   "grpc-haskell-core" = import ./nix/grpc-haskell-core.nix;
+  "grpc-spec" = import ./nix/grpc-spec.nix;
   "gruff" = import ./nix/gruff.nix;
   "gruff-examples" = import ./nix/gruff-examples.nix;
   "gsasl" = import ./nix/gsasl.nix;
@@ -11783,6 +11788,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ogma-language-fret-reqs" = import ./nix/ogma-language-fret-reqs.nix;
   "ogma-language-jsonspec" = import ./nix/ogma-language-jsonspec.nix;
   "ogma-language-smv" = import ./nix/ogma-language-smv.nix;
+  "ogma-language-xmlspec" = import ./nix/ogma-language-xmlspec.nix;
   "ogma-spec" = import ./nix/ogma-spec.nix;
   "ogmarkup" = import ./nix/ogmarkup.nix;
   "ohhecs" = import ./nix/ohhecs.nix;
@@ -17177,6 +17183,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "viewprof" = import ./nix/viewprof.nix;
   "views" = import ./nix/views.nix;
   "vigilance" = import ./nix/vigilance.nix;
+  "vikunja-api" = import ./nix/vikunja-api.nix;
   "vimeta" = import ./nix/vimeta.nix;
   "vimus" = import ./nix/vimus.nix;
   "vintage-basic" = import ./nix/vintage-basic.nix;

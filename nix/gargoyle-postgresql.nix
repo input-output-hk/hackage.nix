@@ -58,4 +58,15 @@
       default = "r2";
     };
   };
+  "0.2.0.3" = {
+    sha256 = "ccc9dee83cfd7e92d4c4bc0f0f29665fe8247eadd188970a5d9ed0b6b36326b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gargoyle-postgresql-0.2.0.3-r0-517f2dc278cebbfba77bd0e40491de2c431d840a9efb4d0c9df4c2d343c1c021.nix;
+        revNum = 0;
+        sha256 = "517f2dc278cebbfba77bd0e40491de2c431d840a9efb4d0c9df4c2d343c1c021";
+      };
+      default = "r0";
+    };
+  };
 }

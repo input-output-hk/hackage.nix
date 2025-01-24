@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.0.9" = {
+    sha256 = "6e31907a927dd0cb9a11bee0c3e9f07279a3a4dbe4b842b3b2077326afc8e944";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uri-bytestring-aeson-0.1.0.9-r0-c060456839508425c1ca7ff80d943ffaaa3a93a0108c8bafecc6d221fd7abe47.nix;
+        revNum = 0;
+        sha256 = "c060456839508425c1ca7ff80d943ffaaa3a93a0108c8bafecc6d221fd7abe47";
+      };
+      default = "r0";
+    };
+  };
 }

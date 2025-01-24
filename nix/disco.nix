@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "0.2" = {
+    sha256 = "da55e07fec48a886b159251ff1aa5d7841909f8682464f0c570daafec3bcefd9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/disco-0.2-r0-faec155a4af3c4b78944eea47a4791c9ba21ed62c53db16536b3928e19ff2fc4.nix;
+        revNum = 0;
+        sha256 = "faec155a4af3c4b78944eea47a4791c9ba21ed62c53db16536b3928e19ff2fc4";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -171,4 +171,15 @@
       default = "r1";
     };
   };
+  "1.4.0.1" = {
+    sha256 = "9c1a0d5615478cf4e162e5f74dba0c9968036e08e2fda74fb9d01c545a293732";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/o-clock-1.4.0.1-r0-6ffbd6e7554516ae38fbbc3b4306cdb4be34f36314dc13e90f96603bc8043dbf.nix;
+        revNum = 0;
+        sha256 = "6ffbd6e7554516ae38fbbc3b4306cdb4be34f36314dc13e90f96603bc8043dbf";
+      };
+      default = "r0";
+    };
+  };
 }

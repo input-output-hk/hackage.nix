@@ -53,4 +53,15 @@
       default = "r0";
     };
   };
+  "1.0.0.4" = {
+    sha256 = "eef0a3dae07f86e5660021a14869ee39c3c0491da36aa9a7bd893d52076c5979";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hedgehog-optics-1.0.0.4-r0-0231a4cdda4db562e359f955b124afe9d464c095562bd851fd00ccf95da65c99.nix;
+        revNum = 0;
+        sha256 = "0231a4cdda4db562e359f955b124afe9d464c095562bd851fd00ccf95da65c99";
+      };
+      default = "r0";
+    };
+  };
 }

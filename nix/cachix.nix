@@ -499,4 +499,15 @@
       default = "r0";
     };
   };
+  "1.7.6" = {
+    sha256 = "36c75de09eac32a58d465ccd6a4da2c0c5efcb477fa047af6e753feef2a46414";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cachix-1.7.6-r0-3a0f99575296255d4bab616ddf4f59bb57b7a11ec9d0e6252ac6b49d4584be3f.nix;
+        revNum = 0;
+        sha256 = "3a0f99575296255d4bab616ddf4f59bb57b7a11ec9d0e6252ac6b49d4584be3f";
+      };
+      default = "r0";
+    };
+  };
 }
