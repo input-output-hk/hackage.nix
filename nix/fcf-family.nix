@@ -47,4 +47,15 @@
       default = "r1";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "0f5bcbc8095eed4aa671b391c638cf9a17db7e4d7edddd7318e563f94a9c7bc2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fcf-family-0.2.0.2-r0-6ad9d920cd0424d8fec1a3037cd1be92609a26cc794639f7164fd806850b564b.nix;
+        revNum = 0;
+        sha256 = "6ad9d920cd0424d8fec1a3037cd1be92609a26cc794639f7164fd806850b564b";
+      };
+      default = "r0";
+    };
+  };
 }
