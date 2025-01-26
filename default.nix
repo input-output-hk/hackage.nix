@@ -6258,6 +6258,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gemini-textboard" = import ./nix/gemini-textboard.nix;
   "gemmula" = import ./nix/gemmula.nix;
   "gemmula-altera" = import ./nix/gemmula-altera.nix;
+  "gemoire" = import ./nix/gemoire.nix;
   "gemstone" = import ./nix/gemstone.nix;
   "gen-imports" = import ./nix/gen-imports.nix;
   "gen-passwd" = import ./nix/gen-passwd.nix;

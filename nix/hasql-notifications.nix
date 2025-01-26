@@ -125,6 +125,17 @@
       default = "r0";
     };
   };
+  "0.2.2.1" = {
+    sha256 = "4b1c84dbbdd2a284f5e4a807431e50cbfe41db533d7cbaf930102394bd73c298";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-notifications-0.2.2.1-r0-f26154af896bb1c07ea342707500a6d1eedcc04ebaeb1ada4e252d7bc5c4ccce.nix;
+        revNum = 0;
+        sha256 = "f26154af896bb1c07ea342707500a6d1eedcc04ebaeb1ada4e252d7bc5c4ccce";
+      };
+      default = "r0";
+    };
+  };
   "0.2.3.0" = {
     sha256 = "9eb0ab9c43c5bf0d9b8aea4f61c45536f1245dbbfb35f52b1968ce57f5e326f3";
     revisions = {
@@ -143,6 +154,17 @@
         nix = import ../hackage/hasql-notifications-0.2.3.1-r0-f2ae8da24758573cbce3d82d85f02f76a5f04d6f141e34469efac11d14d11a4a.nix;
         revNum = 0;
         sha256 = "f2ae8da24758573cbce3d82d85f02f76a5f04d6f141e34469efac11d14d11a4a";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.3.2" = {
+    sha256 = "ed76b7dd2cf00f3f4d1b9be38bbff9f674d17ea4dca24ff6cdd181843dfb5803";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-notifications-0.2.3.2-r0-547c1c677227b3063042f3af4d150dd224c1219545e936428da6d6b05e56c5fb.nix;
+        revNum = 0;
+        sha256 = "547c1c677227b3063042f3af4d150dd224c1219545e936428da6d6b05e56c5fb";
       };
       default = "r0";
     };
