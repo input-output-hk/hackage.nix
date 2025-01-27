@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "55fd0c66809f48fa482391206916bc1fa4132c2f8ce85b1421102b29633d6495";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/belgian-structured-communication-0.2.0.0-r0-677e318c3766a4467d90aade82b5ed9b9f68235d4da431feb0cf4bda8cf57a18.nix;
+        revNum = 0;
+        sha256 = "677e318c3766a4467d90aade82b5ed9b9f68235d4da431feb0cf4bda8cf57a18";
+      };
+      default = "r0";
+    };
+  };
 }
