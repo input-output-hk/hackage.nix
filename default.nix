@@ -15630,6 +15630,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "swisstable" = import ./nix/swisstable.nix;
   "switch" = import ./nix/switch.nix;
   "swizzle" = import ./nix/swizzle.nix;
+  "swizzle-modify" = import ./nix/swizzle-modify.nix;
   "swizzle-set" = import ./nix/swizzle-set.nix;
   "sws" = import ./nix/sws.nix;
   "sxml" = import ./nix/sxml.nix;

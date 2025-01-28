@@ -354,4 +354,15 @@
       default = "r0";
     };
   };
+  "2.0.3" = {
+    sha256 = "074314eac4cf0854a09041aa34a960bcbe8c5918d802d6678c5620400f78e672";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fast-tags-2.0.3-r0-c49282b9edeeff747560d4856b803852b92e5d291c9a6cfadb48254a14fc34e6.nix;
+        revNum = 0;
+        sha256 = "c49282b9edeeff747560d4856b803852b92e5d291c9a6cfadb48254a14fc34e6";
+      };
+      default = "r0";
+    };
+  };
 }
