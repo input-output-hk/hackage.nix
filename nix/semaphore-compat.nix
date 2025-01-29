@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "2de5218cef72b8ef090bd7d0fd930ffa143242a120c62e013b5cf039858f1855";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/semaphore-compat-1.0.0-r4-2dff81c2c0ec9bac9f8bae364db497188654d2e1e4330f4a0e2f12310149f3e9.nix;
+        revNum = 4;
+        sha256 = "2dff81c2c0ec9bac9f8bae364db497188654d2e1e4330f4a0e2f12310149f3e9";
+      };
+      default = "r4";
     };
   };
 }
