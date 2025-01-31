@@ -15691,6 +15691,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symmetry-operations-symbols" = import ./nix/symmetry-operations-symbols.nix;
   "symon" = import ./nix/symon.nix;
   "symparsec" = import ./nix/symparsec.nix;
+  "symtegration" = import ./nix/symtegration.nix;
   "sync" = import ./nix/sync.nix;
   "sync-mht" = import ./nix/sync-mht.nix;
   "synchronous-channels" = import ./nix/synchronous-channels.nix;

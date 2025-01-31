@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.7" = {
+    sha256 = "91c1314dbf9ce7fdc11f66642afb4b47de3d0e1fb2ac5ce0987b8c82f2063ba0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shaderc-0.1.0.7-r0-559d1ae01a39e1232cfbdde4a5bbb35ce6b481c864cd642939d7ae5ba6064798.nix;
+        revNum = 0;
+        sha256 = "559d1ae01a39e1232cfbdde4a5bbb35ce6b481c864cd642939d7ae5ba6064798";
+      };
+      default = "r0";
+    };
+  };
 }
