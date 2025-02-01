@@ -83,7 +83,12 @@
         revNum = 2;
         sha256 = "a0401f366ef964cca5c9df9f3579e53722c5422ddcf2fd23f54c5de66beb2879";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/oplang-0.5.0.0-r3-a039e9b22f971d435e4fc74fa25908e659ff423c652b95550f728df4dea6d541.nix;
+        revNum = 3;
+        sha256 = "a039e9b22f971d435e4fc74fa25908e659ff423c652b95550f728df4dea6d541";
+      };
+      default = "r3";
     };
   };
 }
