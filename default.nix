@@ -9052,6 +9052,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-parsec" = import ./nix/ihaskell-parsec.nix;
   "ihaskell-plot" = import ./nix/ihaskell-plot.nix;
   "ihaskell-rlangqq" = import ./nix/ihaskell-rlangqq.nix;
+  "ihaskell-symtegration" = import ./nix/ihaskell-symtegration.nix;
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
   "ihp-openai" = import ./nix/ihp-openai.nix;
@@ -13256,9 +13257,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "qsem" = import ./nix/qsem.nix;
   "qt" = import ./nix/qt.nix;
   "qtah-cpp-qt5" = import ./nix/qtah-cpp-qt5.nix;
+  "qtah-cpp-qt6" = import ./nix/qtah-cpp-qt6.nix;
   "qtah-examples" = import ./nix/qtah-examples.nix;
   "qtah-generator" = import ./nix/qtah-generator.nix;
   "qtah-qt5" = import ./nix/qtah-qt5.nix;
+  "qtah-qt6" = import ./nix/qtah-qt6.nix;
   "quaalude" = import ./nix/quaalude.nix;
   "quack" = import ./nix/quack.nix;
   "quadratic-irrational" = import ./nix/quadratic-irrational.nix;

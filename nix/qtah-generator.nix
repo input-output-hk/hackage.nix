@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "fc0d7982db8f8914ddeaf7211769ad333efe60b0300eba9516aa29baf38a57aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/qtah-generator-0.9.0-r0-50d64a35ed4e12f740d2bcb07c293846a6368168b93af417f5ba1397eab21505.nix;
+        revNum = 0;
+        sha256 = "50d64a35ed4e12f740d2bcb07c293846a6368168b93af417f5ba1397eab21505";
+      };
+      default = "r0";
+    };
+  };
 }

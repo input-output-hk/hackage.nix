@@ -318,4 +318,15 @@
       default = "r0";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "ebcefef3637771b695f3d75330c40b73109020d499c1b52a54bcc5b79159a348";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-0.3.0.3-r0-1cd757d3e7af7aaaa68cf91b125aace3fde87a1a347c25e14e3cbf78282eea99.nix;
+        revNum = 0;
+        sha256 = "1cd757d3e7af7aaaa68cf91b125aace3fde87a1a347c25e14e3cbf78282eea99";
+      };
+      default = "r0";
+    };
+  };
 }

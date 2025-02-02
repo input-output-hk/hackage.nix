@@ -439,4 +439,15 @@
       default = "r0";
     };
   };
+  "2.0.2.3" = {
+    sha256 = "b7a5b8d8762579a80555b8ea998ad4b778bf8a1541c927656a8f0cf0e8df73cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wuss-2.0.2.3-r0-6f8e93b72deeae4837392b430645d1a5496c642dc97a69be3557ea69ac98d9db.nix;
+        revNum = 0;
+        sha256 = "6f8e93b72deeae4837392b430645d1a5496c642dc97a69be3557ea69ac98d9db";
+      };
+      default = "r0";
+    };
+  };
 }

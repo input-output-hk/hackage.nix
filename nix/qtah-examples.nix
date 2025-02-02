@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "be86e6856fc00140e831fb0a765529cd7a11511bbebb48c8217f9f812d259fdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/qtah-examples-0.9.0-r0-722f52e1579d5ea7e92dbd7e31e25355f5ccc30fd96cab6d8ecdf7eb70ce25fb.nix;
+        revNum = 0;
+        sha256 = "722f52e1579d5ea7e92dbd7e31e25355f5ccc30fd96cab6d8ecdf7eb70ce25fb";
+      };
+      default = "r0";
+    };
+  };
 }
