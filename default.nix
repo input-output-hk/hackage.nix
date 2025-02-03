@@ -9199,6 +9199,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "instrument-chord" = import ./nix/instrument-chord.nix;
   "instrument-cloudwatch" = import ./nix/instrument-cloudwatch.nix;
   "int-cast" = import ./nix/int-cast.nix;
+  "int-conv" = import ./nix/int-conv.nix;
   "int-interval-map" = import ./nix/int-interval-map.nix;
   "int-like" = import ./nix/int-like.nix;
   "int-multimap" = import ./nix/int-multimap.nix;
@@ -9430,6 +9431,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "javasf" = import ./nix/javasf.nix;
   "javav" = import ./nix/javav.nix;
   "javelin" = import ./nix/javelin.nix;
+  "javelin-frames" = import ./nix/javelin-frames.nix;
   "javelin-io" = import ./nix/javelin-io.nix;
   "jbi" = import ./nix/jbi.nix;
   "jcdecaux-vls" = import ./nix/jcdecaux-vls.nix;
@@ -10267,6 +10269,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "live-sequencer" = import ./nix/live-sequencer.nix;
   "liveplot" = import ./nix/liveplot.nix;
   "ll-picosat" = import ./nix/ll-picosat.nix;
+  "llama-cpp-haskell" = import ./nix/llama-cpp-haskell.nix;
   "llrbtree" = import ./nix/llrbtree.nix;
   "llsd" = import ./nix/llsd.nix;
   "llvm" = import ./nix/llvm.nix;

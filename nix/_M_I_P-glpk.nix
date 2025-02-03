@@ -20,4 +20,15 @@
       default = "r2";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "356c73d8931b0e05d2947e53022b2b65dee3e21b6de18b485a58bd37eca32498";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MIP-glpk-0.2.0.0-r0-6e431d1173ed314754e5450f1ded4bb06c79241efef25b7bf1847c584c63942d.nix;
+        revNum = 0;
+        sha256 = "6e431d1173ed314754e5450f1ded4bb06c79241efef25b7bf1847c584c63942d";
+      };
+      default = "r0";
+    };
+  };
 }

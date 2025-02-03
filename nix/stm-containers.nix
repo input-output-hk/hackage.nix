@@ -425,4 +425,15 @@
       default = "r0";
     };
   };
+  "1.2.1.1" = {
+    sha256 = "256c64a2bdb01eb8c30bc33cbdbc35332ca05705c7d9e54fe8f19aeb2fa14870";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stm-containers-1.2.1.1-r0-ad0d5e6d64b30aa27e0d5c14d304f15dc61cc414b771e30842e118c2b0a4bad5.nix;
+        revNum = 0;
+        sha256 = "ad0d5e6d64b30aa27e0d5c14d304f15dc61cc414b771e30842e118c2b0a4bad5";
+      };
+      default = "r0";
+    };
+  };
 }
