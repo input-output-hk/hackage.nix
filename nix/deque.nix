@@ -262,4 +262,15 @@
       default = "r0";
     };
   };
+  "0.4.4.2" = {
+    sha256 = "a26dd89e6b1cb2cbf061717bd37a8c27d9bc2660e632a8c786b5c0f48740af14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deque-0.4.4.2-r0-71f167399745c8f58e898bad132ba1d357780490e6e78c2f2d618d6214a3c962.nix;
+        revNum = 0;
+        sha256 = "71f167399745c8f58e898bad132ba1d357780490e6e78c2f2d618d6214a3c962";
+      };
+      default = "r0";
+    };
+  };
 }

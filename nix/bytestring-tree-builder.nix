@@ -175,6 +175,17 @@
       default = "r0";
     };
   };
+  "0.2.7.13" = {
+    sha256 = "8f7e532e617393dfb2c285e0311317345ba108fc014b31c618f4279046fa6768";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-tree-builder-0.2.7.13-r0-0189526898a07a3533195fc2885e110d53b349b3b04bc6df66a51ccdcd640d73.nix;
+        revNum = 0;
+        sha256 = "0189526898a07a3533195fc2885e110d53b349b3b04bc6df66a51ccdcd640d73";
+      };
+      default = "r0";
+    };
+  };
   "0.2.7.2" = {
     sha256 = "a12df2ef970eab34c7bb968ba1a157fb01e478cd9abada097fc3e4ec61b5020e";
     revisions = {

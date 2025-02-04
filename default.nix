@@ -2361,6 +2361,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "authoring" = import ./nix/authoring.nix;
   "auto" = import ./nix/auto.nix;
   "auto-lift-classes" = import ./nix/auto-lift-classes.nix;
+  "auto-split" = import ./nix/auto-split.nix;
   "auto-update" = import ./nix/auto-update.nix;
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
