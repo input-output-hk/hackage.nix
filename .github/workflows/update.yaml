@@ -36,7 +36,7 @@ jobs:
           git config --local user.name "IOHK"
           git add .
           git commit -m "Automatic Update" || echo "No changes to commit"
-          git push
+          git push --set-upstream origin for-stackage
 
       - name: "Update master branch"
         run: |
