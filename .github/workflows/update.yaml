@@ -38,16 +38,10 @@ jobs:
           git commit -m "Automatic Update" || echo "No changes to commit"
           git push --set-upstream origin for-stackage
 
-      - name: "Update master branch"
+      - name: "Update master branch with index-state-hashes.nix"
         run: |
           git checkout master
-          git merge for-stackage --allow-unrelated-histories --no-edit
-
-          # Remove files only needed for stackage
-          rm -rf hackage nix
-          rm hackage.json update.sh default.nix
-
-          # Stage deletions and any other changes, and commit if there are differences.
-          git add -A
-          git diff --cached --quiet || git commit -m "Update index-state-only branch"
+          git checkout for-stackage -- index-state-hashes.nix
+          git add index-state-hashes.nix
+          git commit -m "Update index-state-hashes.nix" || echo "No changes to commit"
           git push
