@@ -239,4 +239,15 @@
       default = "r0";
     };
   };
+  "0.3.3" = {
+    sha256 = "ad2c00116d6f18cc5cbe9e0a74aabd3913a2ce106678b6233d12f144752107af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/distributed-process-simplelocalnet-0.3.3-r0-12ddd4eff2246f9b9f6a586df465029c5585b1f0be2c29e5b67d87e5e72684fa.nix;
+        revNum = 0;
+        sha256 = "12ddd4eff2246f9b9f6a586df465029c5585b1f0be2c29e5b67d87e5e72684fa";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -64,4 +64,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "d94cd149fd8bfdb8fdbe3a6a283a9ad4e647213b32acd98f98f8a3cc2531d794";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ekg-wai-0.1.2.0-r0-c46715349194a7f5fed2dafcc4372faa64a7956dce2cfcfaecd1d9f3aeaa0373.nix;
+        revNum = 0;
+        sha256 = "c46715349194a7f5fed2dafcc4372faa64a7956dce2cfcfaecd1d9f3aeaa0373";
+      };
+      default = "r0";
+    };
+  };
 }
