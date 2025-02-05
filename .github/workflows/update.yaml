@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: "Checkout the for-stackage branch"
+        run: |
+          git fetch --depth=1 origin for-stackage:for-stackage
+          git checkout for-stackage
+
       - uses: cachix/install-nix-action@v15
         with:
           nix_path: nixpkgs=channel:nixos-unstable
@@ -27,9 +32,6 @@ jobs:
 
       - name: "Commit and push changes to the for-stackage branch"
         run: |
-          git fetch --depth=1 origin for-stackage:for-stackage
-          git checkout for-stackage
-
           git config --local user.email "devops+nix-tools@iohk.io"
           git config --local user.name "IOHK"
           git add .
