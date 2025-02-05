@@ -41,12 +41,12 @@ jobs:
       - name: "Update master branch"
         run: |
           git checkout master
-          git merge for-stackage --no-edit
+          git merge for-stackage --allow-unrelated-histories --no-edit
 
           # Remove files only needed for stackage
           rm -rf hackage nix
           rm hackage.json update.sh default.nix
-          
+
           # Stage deletions and any other changes, and commit if there are differences.
           git add -A
           git diff --cached --quiet || git commit -m "Update index-state-only branch"
