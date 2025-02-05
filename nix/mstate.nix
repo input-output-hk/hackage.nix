@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "0.2.11" = {
+    sha256 = "f3bf8e60e10790c9c7379e03f6f063695b2387763edb8253ec40fe0fa11e13e7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mstate-0.2.11-r0-4da59459290dde003989c25471d193f75a89d27bac0eba66c9034248ea2ea449.nix;
+        revNum = 0;
+        sha256 = "4da59459290dde003989c25471d193f75a89d27bac0eba66c9034248ea2ea449";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2" = {
     sha256 = "0a49a5fcde0bbadc31330d7e99afd650bbeaf98040a28f7ca8b91114c56804f3";
     revisions = {

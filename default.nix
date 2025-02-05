@@ -14145,6 +14145,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sandwatch" = import ./nix/sandwatch.nix;
   "sandwich" = import ./nix/sandwich.nix;
   "sandwich-contexts" = import ./nix/sandwich-contexts.nix;
+  "sandwich-contexts-kubernetes" = import ./nix/sandwich-contexts-kubernetes.nix;
+  "sandwich-contexts-minio" = import ./nix/sandwich-contexts-minio.nix;
   "sandwich-hedgehog" = import ./nix/sandwich-hedgehog.nix;
   "sandwich-quickcheck" = import ./nix/sandwich-quickcheck.nix;
   "sandwich-slack" = import ./nix/sandwich-slack.nix;
