@@ -27,6 +27,7 @@ jobs:
 
       - name: "Commit and push changes to the for-stackage branch"
         run: |
+          git fetch --depth=1 origin for-stackage:for-stackage
           git checkout for-stackage
 
           git config --local user.email "devops+nix-tools@iohk.io"
