@@ -1,0 +1,50 @@
+name: "Update hackage.nix"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  update-hackage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: cachix/install-nix-action@v15
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= loony-tools:pr9m4BkM/5/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+            substituters = https://cache.iog.io https://cache.zw3rk.com https://cache.nixos.org/
+
+      - name: "Update hackage.nix and stackage.nix"
+        run: |
+          export CABAL_DIR=$HOME/.cabal
+          nix run github:input-output-hk/haskell.nix#cabal -- v2-update
+          nix run github:input-output-hk/haskell.nix#hackage-to-nix -- . $CABAL_DIR/packages/hackage.haskell.org/01-index.tar
+          nix run github:input-output-hk/haskell.nix#haskell-nix.update-index-state-hashes > index-state-hashes.nix
+
+      - name: "Commit and push changes to the for-stackage branch"
+        run: |
+          git checkout for-stackage
+
+          git config --local user.email "devops+nix-tools@iohk.io"
+          git config --local user.name "IOHK"
+          git add .
+          git commit -m "Automatic Update" || echo "No changes to commit"
+          git push
+
+      - name: "Update master branch"
+        run: |
+          git checkout master
+          git merge for-stackage --no-edit
+
+          # Remove files only needed for stackage
+          rm -rf hackage nix
+          rm hackage.json update.sh default.nix
+          
+          # Stage deletions and any other changes, and commit if there are differences.
+          git add -A
+          git diff --cached --quiet || git commit -m "Update index-state-only branch"
+          git push
