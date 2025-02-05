@@ -10,22 +10,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: cachix/install-nix-action@v15
         with:
           nix_path: nixpkgs=channel:nixos-unstable
           extra_nix_config: |
             trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= loony-tools:pr9m4BkM/5/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
             substituters = https://cache.iog.io https://cache.zw3rk.com https://cache.nixos.org/
+
       - name: "Update hackage.nix and stackage.nix"
         run: |
           export CABAL_DIR=$HOME/.cabal
           nix run github:input-output-hk/haskell.nix#cabal -- v2-update
           nix run github:input-output-hk/haskell.nix#hackage-to-nix -- . $CABAL_DIR/packages/hackage.haskell.org/01-index.tar
           nix run github:input-output-hk/haskell.nix#haskell-nix.update-index-state-hashes > index-state-hashes.nix
-      - name: Commit and push changes
+
+      - name: "Commit and push changes to main branch"
         run: |
           git config --local user.email "devops+nix-tools@iohk.io"
           git config --local user.name "IOHK"
           git add .
-          git commit -m "Automatic Update"
+          git commit -m "Automatic Update" || echo "No changes to commit"
           git push
+
+      - name: "Update index-state-only branch"
+        run: |
+          if git show-ref --verify --quiet refs/heads/index-state-only; then
+            git checkout index-state-only
+            git merge main --no-edit
+          else
+            git checkout -b index-state-only
+          fi
+          
+          # Remove the 'hackage' directory so that only index-state-hashes.nix remains.
+          rm -rf hackage
+          
+          # Stage deletions and any other changes, and commit if there are differences.
+          git add -A
+          git diff --cached --quiet || git commit -m "Update index-state-only branch"
+          
+          # Push the branch normally (no force push).
+          git push origin index-state-only
