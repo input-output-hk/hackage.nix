@@ -274,4 +274,15 @@
       default = "r0";
     };
   };
+  "0.6.0" = {
+    sha256 = "4ff11b09ffe290a6f30cdf124de7d4f9adbf43cd552d8e661e3857c92601e691";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/code-conjure-0.6.0-r0-f776e642bb5bbd40fb4a82aa16c9265a94e1ea7ee0d2ee2ea232c282f0e1101b.nix;
+        revNum = 0;
+        sha256 = "f776e642bb5bbd40fb4a82aa16c9265a94e1ea7ee0d2ee2ea232c282f0e1101b";
+      };
+      default = "r0";
+    };
+  };
 }

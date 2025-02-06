@@ -4246,6 +4246,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cryptoids-types" = import ./nix/cryptoids-types.nix;
   "cryptol" = import ./nix/cryptol.nix;
   "crypton" = import ./nix/crypton.nix;
+  "crypton-box" = import ./nix/crypton-box.nix;
   "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
   "crypton-x509" = import ./nix/crypton-x509.nix;
@@ -8237,6 +8238,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hold-em" = import ./nix/hold-em.nix;
   "hole" = import ./nix/hole.nix;
   "holey-format" = import ./nix/holey-format.nix;
+  "holidays" = import ./nix/holidays.nix;
   "holmes" = import ./nix/holmes.nix;
   "holy-project" = import ./nix/holy-project.nix;
   "homeomorphic" = import ./nix/homeomorphic.nix;
@@ -18111,6 +18113,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ztar" = import ./nix/ztar.nix;
   "zuramaru" = import ./nix/zuramaru.nix;
   "zuul" = import ./nix/zuul.nix;
+  "zwirn-core" = import ./nix/zwirn-core.nix;
   "zxcvbn-c" = import ./nix/zxcvbn-c.nix;
   "zxcvbn-dvorak" = import ./nix/zxcvbn-dvorak.nix;
   "zxcvbn-hs" = import ./nix/zxcvbn-hs.nix;
