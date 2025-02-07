@@ -16470,6 +16470,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "traypoweroff" = import ./nix/traypoweroff.nix;
   "treap" = import ./nix/treap.nix;
   "tree-diff" = import ./nix/tree-diff.nix;
+  "tree-edit-distance" = import ./nix/tree-edit-distance.nix;
   "tree-fun" = import ./nix/tree-fun.nix;
   "tree-monad" = import ./nix/tree-monad.nix;
   "tree-render-text" = import ./nix/tree-render-text.nix;

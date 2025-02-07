@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "691dce1b418137cea301d80c80262cebec2115ed3a999bb42393e6775997154c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-hmac-drbg-0.1.2-r0-c21e575df8f19160fac6e1f9e29843b434f888f664e93c49bb6e5193d53197d1.nix;
+        revNum = 0;
+        sha256 = "c21e575df8f19160fac6e1f9e29843b434f888f664e93c49bb6e5193d53197d1";
+      };
+      default = "r0";
+    };
+  };
 }
