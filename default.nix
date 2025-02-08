@@ -2446,6 +2446,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "axiomatic-classes" = import ./nix/axiomatic-classes.nix;
   "azimuth-hs" = import ./nix/azimuth-hs.nix;
   "aztecs" = import ./nix/aztecs.nix;
+  "aztecs-asset" = import ./nix/aztecs-asset.nix;
+  "aztecs-sdl" = import ./nix/aztecs-sdl.nix;
+  "aztecs-transform" = import ./nix/aztecs-transform.nix;
   "azubi" = import ./nix/azubi.nix;
   "azure-acs" = import ./nix/azure-acs.nix;
   "azure-email" = import ./nix/azure-email.nix;
