@@ -818,4 +818,15 @@
       default = "r3";
     };
   };
+  "0.8.3.0" = {
+    sha256 = "9157d281f4fd5f649f35c1bff5ae1f106a057823d6af8ae4c628bc5eab643585";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskeline-0.8.3.0-r0-5dcb5f1e1f7bed4dc81007fe3c7718fe3408587094bc8de6f58892cdd03745d9.nix;
+        revNum = 0;
+        sha256 = "5dcb5f1e1f7bed4dc81007fe3c7718fe3408587094bc8de6f58892cdd03745d9";
+      };
+      default = "r0";
+    };
+  };
 }

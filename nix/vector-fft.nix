@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "c3b28f2fc2b50bbb1b79cfd2fb8f1c6521ef165952116ed491e586f363bd6bc0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-fft-0.2.0.0-r0-c5b9d0543a3a97434079f6e4f2af2feaf188a00421ea8621b295d30eeedd5ee8.nix;
+        revNum = 0;
+        sha256 = "c5b9d0543a3a97434079f6e4f2af2feaf188a00421ea8621b295d30eeedd5ee8";
+      };
+      default = "r0";
+    };
+  };
 }
