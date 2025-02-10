@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.2.3" = {
+    sha256 = "b4bcf8b4f76a32eab79de97678f8fda2e58b1540da5a742d5aebdc0bf69eefa0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/commonmark-pandoc-0.2.3-r0-15e2048b450fc616f3ad8ef14909320d7904bbede874a131bce38f2df50d0124.nix;
+        revNum = 0;
+        sha256 = "15e2048b450fc616f3ad8ef14909320d7904bbede874a131bce38f2df50d0124";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -3123,6 +3123,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "byteunits" = import ./nix/byteunits.nix;
   "bytezap" = import ./nix/bytezap.nix;
   "bz2" = import ./nix/bz2.nix;
+  "bz3" = import ./nix/bz3.nix;
   "bzip-signature" = import ./nix/bzip-signature.nix;
   "bzip2-clib" = import ./nix/bzip2-clib.nix;
   "bzlib" = import ./nix/bzlib.nix;
@@ -18117,6 +18118,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ztar" = import ./nix/ztar.nix;
   "zuramaru" = import ./nix/zuramaru.nix;
   "zuul" = import ./nix/zuul.nix;
+  "zwirn" = import ./nix/zwirn.nix;
   "zwirn-core" = import ./nix/zwirn-core.nix;
   "zxcvbn-c" = import ./nix/zxcvbn-c.nix;
   "zxcvbn-dvorak" = import ./nix/zxcvbn-dvorak.nix;

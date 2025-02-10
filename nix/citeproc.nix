@@ -365,4 +365,15 @@
       default = "r0";
     };
   };
+  "0.8.1.3" = {
+    sha256 = "714dc748a20d47f89f6098e3e38d78dd71fc69aa3044dc474a3a976ff7c1c23e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/citeproc-0.8.1.3-r0-1a040473358e5148737a5236efda66a2920319f7e8b4f81863e9a683bf4eb9fe.nix;
+        revNum = 0;
+        sha256 = "1a040473358e5148737a5236efda66a2920319f7e8b4f81863e9a683bf4eb9fe";
+      };
+      default = "r0";
+    };
+  };
 }

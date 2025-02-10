@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "3.7.1" = {
+    sha256 = "a087fa01a1c52f5386d43f5355f64841c5a4b56b53720090d66b5aa00bfeb106";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/js-jquery-3.7.1-r0-fdbdfd4d413848c678a3737f2b985a5db66b796c6847b1ae08246ea3795c0ba2.nix;
+        revNum = 0;
+        sha256 = "fdbdfd4d413848c678a3737f2b985a5db66b796c6847b1ae08246ea3795c0ba2";
+      };
+      default = "r0";
+    };
+  };
 }
