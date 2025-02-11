@@ -3430,6 +3430,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "chan-split" = import ./nix/chan-split.nix;
   "change-monger" = import ./nix/change-monger.nix;
   "changelogged" = import ./nix/changelogged.nix;
+  "changeset" = import ./nix/changeset.nix;
+  "changeset-containers" = import ./nix/changeset-containers.nix;
+  "changeset-lens" = import ./nix/changeset-lens.nix;
+  "changeset-reflex" = import ./nix/changeset-reflex.nix;
   "chapelure" = import ./nix/chapelure.nix;
   "char-boxdrawing" = import ./nix/char-boxdrawing.nix;
   "char-decode" = import ./nix/char-decode.nix;
@@ -9748,6 +9752,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ksystools" = import ./nix/ksystools.nix;
   "ktx" = import ./nix/ktx.nix;
   "ktx-codec" = import ./nix/ktx-codec.nix;
+  "kubernetes-api" = import ./nix/kubernetes-api.nix;
   "kubernetes-client" = import ./nix/kubernetes-client.nix;
   "kubernetes-client-core" = import ./nix/kubernetes-client-core.nix;
   "kubernetes-webhook-haskell" = import ./nix/kubernetes-webhook-haskell.nix;
