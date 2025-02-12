@@ -664,4 +664,15 @@
       default = "r0";
     };
   };
+  "1.8.7.0" = {
+    sha256 = "e93f70bdc5b1d3c148d8eec2b713500c0c2b2d1fd697c1be8bed88bdee20b56d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/miso-1.8.7.0-r0-7481cffa5318c0e69c76a4c7b0d541670ba1e1aa509e5d297dcafcc96376ac56.nix;
+        revNum = 0;
+        sha256 = "7481cffa5318c0e69c76a4c7b0d541670ba1e1aa509e5d297dcafcc96376ac56";
+      };
+      default = "r0";
+    };
+  };
 }

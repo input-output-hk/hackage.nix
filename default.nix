@@ -9753,6 +9753,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ktx" = import ./nix/ktx.nix;
   "ktx-codec" = import ./nix/ktx-codec.nix;
   "kubernetes-api" = import ./nix/kubernetes-api.nix;
+  "kubernetes-api-client" = import ./nix/kubernetes-api-client.nix;
   "kubernetes-client" = import ./nix/kubernetes-client.nix;
   "kubernetes-client-core" = import ./nix/kubernetes-client-core.nix;
   "kubernetes-webhook-haskell" = import ./nix/kubernetes-webhook-haskell.nix;
@@ -12186,6 +12187,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "parochial" = import ./nix/parochial.nix;
   "parport" = import ./nix/parport.nix;
   "parquet-hs" = import ./nix/parquet-hs.nix;
+  "parsable" = import ./nix/parsable.nix;
+  "parsable-test" = import ./nix/parsable-test.nix;
   "parse" = import ./nix/parse.nix;
   "parse-dimacs" = import ./nix/parse-dimacs.nix;
   "parse-gcstats" = import ./nix/parse-gcstats.nix;
@@ -12778,6 +12781,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "port-utils" = import ./nix/port-utils.nix;
   "portable-lines" = import ./nix/portable-lines.nix;
   "portable-template-haskell-lens" = import ./nix/portable-template-haskell-lens.nix;
+  "portage-hs" = import ./nix/portage-hs.nix;
   "portager" = import ./nix/portager.nix;
   "portaudio" = import ./nix/portaudio.nix;
   "porte" = import ./nix/porte.nix;
