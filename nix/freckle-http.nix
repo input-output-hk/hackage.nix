@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "016da34383ca1ccebb57a84346caa18b31862a892948c756fdd2c6f443d711a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-http-0.1.0.0-r0-5a37954b73746331e0d7441f8f18ebbe089d5dcadd83fe8b5659223946ad7334.nix;
+        revNum = 0;
+        sha256 = "5a37954b73746331e0d7441f8f18ebbe089d5dcadd83fe8b5659223946ad7334";
+      };
+      default = "r0";
+    };
+  };
 }
