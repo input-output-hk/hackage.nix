@@ -2447,6 +2447,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "azimuth-hs" = import ./nix/azimuth-hs.nix;
   "aztecs" = import ./nix/aztecs.nix;
   "aztecs-asset" = import ./nix/aztecs-asset.nix;
+  "aztecs-hierarchy" = import ./nix/aztecs-hierarchy.nix;
   "aztecs-sdl" = import ./nix/aztecs-sdl.nix;
   "aztecs-transform" = import ./nix/aztecs-transform.nix;
   "azubi" = import ./nix/azubi.nix;
@@ -6697,6 +6698,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glazier-react" = import ./nix/glazier-react.nix;
   "glazier-react-examples" = import ./nix/glazier-react-examples.nix;
   "glazier-react-widget" = import ./nix/glazier-react-widget.nix;
+  "glfw-group" = import ./nix/glfw-group.nix;
   "gli" = import ./nix/gli.nix;
   "glib" = import ./nix/glib.nix;
   "glib-stopgap" = import ./nix/glib-stopgap.nix;
@@ -9303,6 +9305,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ip" = import ./nix/ip.nix;
   "ip-quoter" = import ./nix/ip-quoter.nix;
   "ip2location" = import ./nix/ip2location.nix;
+  "ip2location-io" = import ./nix/ip2location-io.nix;
   "ip2proxy" = import ./nix/ip2proxy.nix;
   "ip6addr" = import ./nix/ip6addr.nix;
   "ipa" = import ./nix/ipa.nix;
