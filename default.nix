@@ -6994,7 +6994,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gps2htmlReport" = import ./nix/gps2html_Report.nix;
   "gpu-vulkan" = import ./nix/gpu-vulkan.nix;
   "gpu-vulkan-core" = import ./nix/gpu-vulkan-core.nix;
+  "gpu-vulkan-core-khr-surface" = import ./nix/gpu-vulkan-core-khr-surface.nix;
+  "gpu-vulkan-core-khr-swapchain" = import ./nix/gpu-vulkan-core-khr-swapchain.nix;
+  "gpu-vulkan-khr-surface" = import ./nix/gpu-vulkan-khr-surface.nix;
+  "gpu-vulkan-khr-swapchain" = import ./nix/gpu-vulkan-khr-swapchain.nix;
   "gpu-vulkan-middle" = import ./nix/gpu-vulkan-middle.nix;
+  "gpu-vulkan-middle-khr-surface" = import ./nix/gpu-vulkan-middle-khr-surface.nix;
+  "gpu-vulkan-middle-khr-surface-glfw" = import ./nix/gpu-vulkan-middle-khr-surface-glfw.nix;
+  "gpu-vulkan-middle-khr-swapchain" = import ./nix/gpu-vulkan-middle-khr-swapchain.nix;
   "gpx-conduit" = import ./nix/gpx-conduit.nix;
   "grab" = import ./nix/grab.nix;
   "grab-form" = import ./nix/grab-form.nix;
