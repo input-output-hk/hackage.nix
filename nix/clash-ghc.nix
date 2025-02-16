@@ -1249,7 +1249,12 @@
         revNum = 0;
         sha256 = "a5e5fe902fbc02f2fc825e13855b9e57bbc782928bc1820c29d3faabaa8457bb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/clash-ghc-1.8.2-r1-255c869f8e5f68394bd58cf5e000d15c00119226545b02bc9ce85359cfd35909.nix;
+        revNum = 1;
+        sha256 = "255c869f8e5f68394bd58cf5e000d15c00119226545b02bc9ce85359cfd35909";
+      };
+      default = "r1";
     };
   };
 }

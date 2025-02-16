@@ -863,7 +863,17 @@
         revNum = 0;
         sha256 = "a9409f93aa7806a4fb4d39efc7fae78f638cfd0e9bd57140adf04e0f2fcc27bf";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/clash-prelude-1.8.2-r1-d943dda8b4b0c8e8b16fe45ac969bdc399ca790f750b98bcd04e8e61702dabcb.nix;
+        revNum = 1;
+        sha256 = "d943dda8b4b0c8e8b16fe45ac969bdc399ca790f750b98bcd04e8e61702dabcb";
+      };
+      r2 = {
+        nix = import ../hackage/clash-prelude-1.8.2-r2-ac6639e955680371da2eb4cad1d43748132465f05ecb2c3f36373a3b4449b817.nix;
+        revNum = 2;
+        sha256 = "ac6639e955680371da2eb4cad1d43748132465f05ecb2c3f36373a3b4449b817";
+      };
+      default = "r2";
     };
   };
 }

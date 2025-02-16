@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "b77795b3ea7dbe9f026b33361b2a0be59163b3f9719f211701234e299d9b25f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/debruijn-safe-0.3-r0-b7ab706be13d339f141e1bc3213fb05b3a35114bd07cce3e6ee1e88d3b804c2d.nix;
+        revNum = 0;
+        sha256 = "b7ab706be13d339f141e1bc3213fb05b3a35114bd07cce3e6ee1e88d3b804c2d";
+      };
+      default = "r0";
+    };
+  };
 }

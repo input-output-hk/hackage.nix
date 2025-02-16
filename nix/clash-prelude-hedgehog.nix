@@ -106,7 +106,12 @@
         revNum = 0;
         sha256 = "4ffc0a4897a60cfae1bee5feaa946be652942bcdd624b3bf153b4596754ddd0b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/clash-prelude-hedgehog-1.8.2-r1-e3f1b82ab81a80e195b08da94f6a099b090c0f4ffda2ba7112816ee2efa36cc3.nix;
+        revNum = 1;
+        sha256 = "e3f1b82ab81a80e195b08da94f6a099b090c0f4ffda2ba7112816ee2efa36cc3";
+      };
+      default = "r1";
     };
   };
 }

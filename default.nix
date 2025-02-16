@@ -6997,6 +6997,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gpu-vulkan-core-khr-surface" = import ./nix/gpu-vulkan-core-khr-surface.nix;
   "gpu-vulkan-core-khr-swapchain" = import ./nix/gpu-vulkan-core-khr-swapchain.nix;
   "gpu-vulkan-khr-surface" = import ./nix/gpu-vulkan-khr-surface.nix;
+  "gpu-vulkan-khr-surface-glfw" = import ./nix/gpu-vulkan-khr-surface-glfw.nix;
   "gpu-vulkan-khr-swapchain" = import ./nix/gpu-vulkan-khr-swapchain.nix;
   "gpu-vulkan-middle" = import ./nix/gpu-vulkan-middle.nix;
   "gpu-vulkan-middle-khr-surface" = import ./nix/gpu-vulkan-middle-khr-surface.nix;
@@ -11987,6 +11988,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "optparse-th" = import ./nix/optparse-th.nix;
   "optparse-version" = import ./nix/optparse-version.nix;
   "optstream" = import ./nix/optstream.nix;
+  "opus" = import ./nix/opus.nix;
   "opusfile" = import ./nix/opusfile.nix;
   "orbits" = import ./nix/orbits.nix;
   "orc" = import ./nix/orc.nix;
@@ -16063,6 +16065,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "testbench" = import ./nix/testbench.nix;
   "testcontainers" = import ./nix/testcontainers.nix;
   "testing-feat" = import ./nix/testing-feat.nix;
+  "testing-tensor" = import ./nix/testing-tensor.nix;
   "testing-type-modifiers" = import ./nix/testing-type-modifiers.nix;
   "testloop" = import ./nix/testloop.nix;
   "testpack" = import ./nix/testpack.nix;
