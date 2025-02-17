@@ -725,6 +725,39 @@
       default = "r0";
     };
   };
+  "0.45.0.0" = {
+    sha256 = "814ef021223dbe25a193645322aeebe8183a0a46c31474df16f8125e61a3de7c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dobutokO2-0.45.0.0-r0-24b895063eb6a0fcc743f6182752b3be32c5e3b501d62262e141a894e8cabbc7.nix;
+        revNum = 0;
+        sha256 = "24b895063eb6a0fcc743f6182752b3be32c5e3b501d62262e141a894e8cabbc7";
+      };
+      default = "r0";
+    };
+  };
+  "0.45.1.0" = {
+    sha256 = "d903d624ab2d1e933f608638803d8eb4ec7896dcd24d67727500b4e799047dcc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dobutokO2-0.45.1.0-r0-b6d64d4aca180b3e775079c6434745c8ec47daed0003d9906bbe0d8db41bfa09.nix;
+        revNum = 0;
+        sha256 = "b6d64d4aca180b3e775079c6434745c8ec47daed0003d9906bbe0d8db41bfa09";
+      };
+      default = "r0";
+    };
+  };
+  "0.45.1.1" = {
+    sha256 = "512caa5d5d77d42fb9f7d0743c74f78613684535d2384cee95904ffbae2a5d0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dobutokO2-0.45.1.1-r0-df33436b5f9eb88d5a6068f912aff6a8605d7e7510e48df2e2107a679feeb915.nix;
+        revNum = 0;
+        sha256 = "df33436b5f9eb88d5a6068f912aff6a8605d7e7510e48df2e2107a679feeb915";
+      };
+      default = "r0";
+    };
+  };
   "0.5.0.0" = {
     sha256 = "324da74e498c553bbe1de6f1beebf3c9f8b2c5eb07866428711e4d7f01812b2c";
     revisions = {

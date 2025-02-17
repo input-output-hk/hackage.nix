@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "2.3.2.2" = {
+    sha256 = "b7f5d647507196b6118ff1772d33c0e2d6fa49e4b60371c2fc1549cc246b438a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Clipboard-2.3.2.2-r0-56535a029ac33fd5d5ed02536803e19d5c46ebecb2a75375ae516e7f1cdf48fe.nix;
+        revNum = 0;
+        sha256 = "56535a029ac33fd5d5ed02536803e19d5c46ebecb2a75375ae516e7f1cdf48fe";
+      };
+      default = "r0";
+    };
+  };
 }

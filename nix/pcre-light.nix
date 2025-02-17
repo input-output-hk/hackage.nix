@@ -177,4 +177,15 @@
       default = "r0";
     };
   };
+  "0.4.1.3" = {
+    sha256 = "bce6289ead1b83ca027897795783a5c2215f09c0be8f240aa41c2a3136b814e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pcre-light-0.4.1.3-r0-a7035e40324f5af331aa8e4c4e9c08a7c351ce5f34fa1c3b6a25508b8326dc15.nix;
+        revNum = 0;
+        sha256 = "a7035e40324f5af331aa8e4c4e9c08a7c351ce5f34fa1c3b6a25508b8326dc15";
+      };
+      default = "r0";
+    };
+  };
 }

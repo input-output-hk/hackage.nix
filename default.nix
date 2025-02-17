@@ -11458,6 +11458,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nested-sequence" = import ./nix/nested-sequence.nix;
   "nested-sets" = import ./nix/nested-sets.nix;
   "nestedmap" = import ./nix/nestedmap.nix;
+  "nestedtext" = import ./nix/nestedtext.nix;
   "net-concurrent" = import ./nix/net-concurrent.nix;
   "net-mqtt" = import ./nix/net-mqtt.nix;
   "net-mqtt-lens" = import ./nix/net-mqtt-lens.nix;

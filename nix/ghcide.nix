@@ -703,4 +703,15 @@
       default = "r0";
     };
   };
+  "2.9.0.1" = {
+    sha256 = "f1def018fa04326cd96dec42ac387b81f7a4287590542dd1b48788a14409d91a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcide-2.9.0.1-r0-c8c4bd06b008ac021862adc8ee641cd9287cbaad215d2e0c719047f24d4830ec.nix;
+        revNum = 0;
+        sha256 = "c8c4bd06b008ac021862adc8ee641cd9287cbaad215d2e0c719047f24d4830ec";
+      };
+      default = "r0";
+    };
+  };
 }

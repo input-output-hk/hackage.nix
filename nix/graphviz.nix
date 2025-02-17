@@ -567,6 +567,17 @@
       default = "r0";
     };
   };
+  "2999.20.2.1" = {
+    sha256 = "8ffc0fa59e01de47f9802ed1ca486c6d000babb51d7da7cd17c85ef068d7b382";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphviz-2999.20.2.1-r0-7531a98afe26ea4af8f7caef46b6087d24bdc94c7c04e071f52234cdff5e4a52.nix;
+        revNum = 0;
+        sha256 = "7531a98afe26ea4af8f7caef46b6087d24bdc94c7c04e071f52234cdff5e4a52";
+      };
+      default = "r0";
+    };
+  };
   "2999.5.0.0" = {
     sha256 = "50df82bd98228c0aa7cd05ed043c9f8958e2fde6594aff43dd3ac424b894c7b3";
     revisions = {
