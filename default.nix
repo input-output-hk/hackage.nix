@@ -2449,6 +2449,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aztecs-asset" = import ./nix/aztecs-asset.nix;
   "aztecs-hierarchy" = import ./nix/aztecs-hierarchy.nix;
   "aztecs-sdl" = import ./nix/aztecs-sdl.nix;
+  "aztecs-sdl-image" = import ./nix/aztecs-sdl-image.nix;
+  "aztecs-sdl-text" = import ./nix/aztecs-sdl-text.nix;
   "aztecs-transform" = import ./nix/aztecs-transform.nix;
   "azubi" = import ./nix/azubi.nix;
   "azure-acs" = import ./nix/azure-acs.nix;
@@ -7019,6 +7021,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grapefruit-ui" = import ./nix/grapefruit-ui.nix;
   "grapefruit-ui-gtk" = import ./nix/grapefruit-ui-gtk.nix;
   "grapesy" = import ./nix/grapesy.nix;
+  "grapesy-etcd" = import ./nix/grapesy-etcd.nix;
   "graph" = import ./nix/graph.nix;
   "graph-core" = import ./nix/graph-core.nix;
   "graph-generators" = import ./nix/graph-generators.nix;
