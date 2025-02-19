@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.3" = {
+    sha256 = "533e34466aab27c90adcf74c76bd0718cda6e25de211411191c595469c77608b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/itanium-abi-0.1.3-r0-997f5dc0de9febb2715185ec42186e846583f9002b9e57a2a9f67fed057873ce.nix;
+        revNum = 0;
+        sha256 = "997f5dc0de9febb2715185ec42186e846583f9002b9e57a2a9f67fed057873ce";
+      };
+      default = "r0";
+    };
+  };
 }

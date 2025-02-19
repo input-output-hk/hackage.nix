@@ -120,6 +120,17 @@
       default = "r0";
     };
   };
+  "0.3.11" = {
+    sha256 = "6ee296e209f805b36825eaeb8166bb8404e9d74714214053b6654745b2cee170";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/raaz-0.3.11-r0-6a4fa98e6077eb991b486f920c6fe52633ad3308906a1201ac75be9f5c5080d7.nix;
+        revNum = 0;
+        sha256 = "6a4fa98e6077eb991b486f920c6fe52633ad3308906a1201ac75be9f5c5080d7";
+      };
+      default = "r0";
+    };
+  };
   "0.3.2" = {
     sha256 = "4b869c3a634e4f8e23b8a31b454d7a222b4f526e521642e0e8e298e6003707e5";
     revisions = {

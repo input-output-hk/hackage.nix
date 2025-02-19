@@ -97,4 +97,15 @@
       default = "r1";
     };
   };
+  "0.1.6.1" = {
+    sha256 = "194eaaa151a3392271b5825439d730d32d9274f12d8d666e10eea96515b61d84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-logger-syslog-0.1.6.1-r0-2cd79cb15caf0f2d79b54b5839b59b6b5654d0b6a198f4fc7bdc1dfc410f1ffe.nix;
+        revNum = 0;
+        sha256 = "2cd79cb15caf0f2d79b54b5839b59b6b5654d0b6a198f4fc7bdc1dfc410f1ffe";
+      };
+      default = "r0";
+    };
+  };
 }

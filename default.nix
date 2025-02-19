@@ -13713,6 +13713,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "regex-pcre" = import ./nix/regex-pcre.nix;
   "regex-pcre-builtin" = import ./nix/regex-pcre-builtin.nix;
   "regex-pcre-text" = import ./nix/regex-pcre-text.nix;
+  "regex-pcre2" = import ./nix/regex-pcre2.nix;
   "regex-pderiv" = import ./nix/regex-pderiv.nix;
   "regex-posix" = import ./nix/regex-posix.nix;
   "regex-posix-clib" = import ./nix/regex-posix-clib.nix;

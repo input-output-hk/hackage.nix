@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.1.8" = {
+    sha256 = "c4e410ee68bf40bb9ebe6595f903fe6bac9d6f58106f153141161591306c6f7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hfsevents-0.1.8-r0-0a736ab01a1c26a6e081a857254e5a6aa5c84ff5ee84a24ea91a8a2b503cea45.nix;
+        revNum = 0;
+        sha256 = "0a736ab01a1c26a6e081a857254e5a6aa5c84ff5ee84a24ea91a8a2b503cea45";
+      };
+      default = "r0";
+    };
+  };
 }

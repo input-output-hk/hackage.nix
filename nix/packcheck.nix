@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.7.1" = {
+    sha256 = "4b4bad00ca792668f28c35ded55cbdb29e537c335a3596829628bbcdea1b401d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/packcheck-0.7.1-r0-691d1f8d6eb6fcd6c4bb00c9fef5776da966f8680326204fd3ec94a414ccb8f9.nix;
+        revNum = 0;
+        sha256 = "691d1f8d6eb6fcd6c4bb00c9fef5776da966f8680326204fd3ec94a414ccb8f9";
+      };
+      default = "r0";
+    };
+  };
 }

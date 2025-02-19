@@ -389,4 +389,15 @@
       default = "r1";
     };
   };
+  "0.9.0" = {
+    sha256 = "398a8ee9b57bddac36dd5a31c8c774916f52959cc8f580a6082eecb52b4744a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/toysolver-0.9.0-r0-488dc331842dcaaa134f6fb6f5807122030fcf290d0fb822163d921dbebbbe15.nix;
+        revNum = 0;
+        sha256 = "488dc331842dcaaa134f6fb6f5807122030fcf290d0fb822163d921dbebbbe15";
+      };
+      default = "r0";
+    };
+  };
 }
