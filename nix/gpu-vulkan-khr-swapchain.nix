@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "50f8ecbba535e649eb4fc14ab156f9a2bc4bf3521aa6fc7224bc356263fac1f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gpu-vulkan-khr-swapchain-0.1.0.1-r0-35aee842273436d0cc121c67f5bbddf824f72fc12111e05918951b9e55dce7c4.nix;
+        revNum = 0;
+        sha256 = "35aee842273436d0cc121c67f5bbddf824f72fc12111e05918951b9e55dce7c4";
+      };
+      default = "r0";
+    };
+  };
 }

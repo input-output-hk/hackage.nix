@@ -98,6 +98,17 @@
       default = "r0";
     };
   };
+  "2.16.0" = {
+    sha256 = "58dc8bcab79310cc9fadaa765ae7a3e5accb083a5ee2b5f17d5919e9a4c11b76";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hmp3-ng-2.16.0-r0-f9a40eb7cabd5dc8c0c54313bc3b9b1fb1a6494c936c363d6edfbdc25a18f098.nix;
+        revNum = 0;
+        sha256 = "f9a40eb7cabd5dc8c0c54313bc3b9b1fb1a6494c936c363d6edfbdc25a18f098";
+      };
+      default = "r0";
+    };
+  };
   "2.4.2" = {
     sha256 = "3908dda496aa30e007a0de91591fbed43b396fd4feac933d8d363e17b5feea32";
     revisions = {

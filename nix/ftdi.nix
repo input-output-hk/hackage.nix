@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.3.0.4" = {
+    sha256 = "93328f121966814d6cdbde41104850f999d66932b39e4c32fad1067d73ee4a08";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ftdi-0.3.0.4-r0-212fbab50fc16bd4bee0a41a53e4efda0de502fddf22fbc8d00bad2fa2dcde0e.nix;
+        revNum = 0;
+        sha256 = "212fbab50fc16bd4bee0a41a53e4efda0de502fddf22fbc8d00bad2fa2dcde0e";
+      };
+      default = "r0";
+    };
+  };
 }

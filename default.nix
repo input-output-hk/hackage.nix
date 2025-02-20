@@ -13148,6 +13148,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "proto-lens-arbitrary" = import ./nix/proto-lens-arbitrary.nix;
   "proto-lens-combinators" = import ./nix/proto-lens-combinators.nix;
   "proto-lens-descriptors" = import ./nix/proto-lens-descriptors.nix;
+  "proto-lens-etcd" = import ./nix/proto-lens-etcd.nix;
   "proto-lens-jsonpb" = import ./nix/proto-lens-jsonpb.nix;
   "proto-lens-optparse" = import ./nix/proto-lens-optparse.nix;
   "proto-lens-protobuf-types" = import ./nix/proto-lens-protobuf-types.nix;
@@ -16250,6 +16251,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tickle" = import ./nix/tickle.nix;
   "tictactoe3d" = import ./nix/tictactoe3d.nix;
   "tidal" = import ./nix/tidal.nix;
+  "tidal-core" = import ./nix/tidal-core.nix;
   "tidal-link" = import ./nix/tidal-link.nix;
   "tidal-midi" = import ./nix/tidal-midi.nix;
   "tidal-serial" = import ./nix/tidal-serial.nix;

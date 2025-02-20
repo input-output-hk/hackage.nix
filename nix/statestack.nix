@@ -140,7 +140,12 @@
         revNum = 3;
         sha256 = "471da9a48912bbf6766afeb228b9eb12e81cae927df7a98943f28a9842e3836c";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/statestack-0.3.1.1-r4-26787cad31850c6cbf64fc0ed64b9980fc4da988c0e085731340644999ad1777.nix;
+        revNum = 4;
+        sha256 = "26787cad31850c6cbf64fc0ed64b9980fc4da988c0e085731340644999ad1777";
+      };
+      default = "r4";
     };
   };
 }
