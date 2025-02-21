@@ -288,4 +288,15 @@
       default = "r0";
     };
   };
+  "0.5.4.0" = {
+    sha256 = "9859460ff4116af833297bcc088472d4e920a4f392771e547c7bd2fbfd002755";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HList-0.5.4.0-r0-0cc3758d6191aaf3e0e8525419172a6ee085928a5d3801ecaca57eceeafb852b.nix;
+        revNum = 0;
+        sha256 = "0cc3758d6191aaf3e0e8525419172a6ee085928a5d3801ecaca57eceeafb852b";
+      };
+      default = "r0";
+    };
+  };
 }

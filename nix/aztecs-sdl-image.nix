@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "f36d8ad45ce99f25a48ea753a6e4e5e4289a74c28c21c3c3128ddf53a242e79d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aztecs-sdl-image-0.3.0-r0-ee98540c7cb887392704b06a3f88ea6e7540b6db7427b11baa5753a038aa5dbf.nix;
+        revNum = 0;
+        sha256 = "ee98540c7cb887392704b06a3f88ea6e7540b6db7427b11baa5753a038aa5dbf";
+      };
+      default = "r0";
+    };
+  };
 }
