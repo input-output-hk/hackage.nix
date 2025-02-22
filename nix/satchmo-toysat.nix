@@ -33,7 +33,12 @@
         revNum = 2;
         sha256 = "ae5666a481311220846873fdb7986bb3208132de89beb3427af15b424f6c33e1";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/satchmo-toysat-0.2.1.0-r3-5bee06ddc536eb87e6e91e4b58cd95af54edc4515e90b9d4188414088572bbd2.nix;
+        revNum = 3;
+        sha256 = "5bee06ddc536eb87e6e91e4b58cd95af54edc4515e90b9d4188414088572bbd2";
+      };
+      default = "r3";
     };
   };
 }

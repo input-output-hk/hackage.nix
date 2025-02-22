@@ -141,4 +141,15 @@
       default = "r0";
     };
   };
+  "1.6.0.0" = {
+    sha256 = "3f12d70d61b263c4dba93896d3254063bb619d5d176edc3a11312abb7ec5ced6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exploring-interpreters-1.6.0.0-r0-31d57e611948f92f70b16d972ac9fd8f7b88f1b9e258dc091f8d64f2e5468bb9.nix;
+        revNum = 0;
+        sha256 = "31d57e611948f92f70b16d972ac9fd8f7b88f1b9e258dc091f8d64f2e5468bb9";
+      };
+      default = "r0";
+    };
+  };
 }

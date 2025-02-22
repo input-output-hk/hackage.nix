@@ -616,6 +616,17 @@
       default = "r0";
     };
   };
+  "3.23.0.1" = {
+    sha256 = "f3c5ddc2e2fbcfbeb22db717a265e54042ff6926c1c1efd089e75b75f38d28f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaTeX-3.23.0.1-r0-847b0b6443945de904b7519a8d1b90f07624502cd4bcfafa6c9476e41e157d4d.nix;
+        revNum = 0;
+        sha256 = "847b0b6443945de904b7519a8d1b90f07624502cd4bcfafa6c9476e41e157d4d";
+      };
+      default = "r0";
+    };
+  };
   "3.3" = {
     sha256 = "b1d2a27b6750a12da68fd83cc3270266df645a89fe91ba25ddcd6ece0d712086";
     revisions = {

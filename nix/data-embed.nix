@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "be225ef3940d3f970c227447643ffa328b4f2aa8a87365fa8fdf1eeab59ba130";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/data-embed-0.1.0.0-r3-1a512d630fdcce6d489ba2084592e4dc316f5dbcda7fb51af2699c8ece8a7dcc.nix;
+        revNum = 3;
+        sha256 = "1a512d630fdcce6d489ba2084592e4dc316f5dbcda7fb51af2699c8ece8a7dcc";
+      };
+      default = "r3";
     };
   };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "2025.2.21" = {
+    sha256 = "215e21065912598e5041bf2df528e3c382101044aa081dd782b7071603f2c2e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/djinn-2025.2.21-r0-66556201a2ff234c0352f880948095f9e4788693d53c510bd8c4af3b9c6d1d5b.nix;
+        revNum = 0;
+        sha256 = "66556201a2ff234c0352f880948095f9e4788693d53c510bd8c4af3b9c6d1d5b";
+      };
+      default = "r0";
+    };
+  };
 }
