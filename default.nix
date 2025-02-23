@@ -4693,6 +4693,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "derive-enumerable" = import ./nix/derive-enumerable.nix;
   "derive-gadt" = import ./nix/derive-gadt.nix;
   "derive-has-field" = import ./nix/derive-has-field.nix;
+  "derive-is-data-con" = import ./nix/derive-is-data-con.nix;
   "derive-lifted-instances" = import ./nix/derive-lifted-instances.nix;
   "derive-monoid" = import ./nix/derive-monoid.nix;
   "derive-prim" = import ./nix/derive-prim.nix;
@@ -12908,6 +12909,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-base16" = import ./nix/ppad-base16.nix;
   "ppad-base58" = import ./nix/ppad-base58.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
+  "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;

@@ -75,4 +75,15 @@
       default = "r1";
     };
   };
+  "0.1.2.3" = {
+    sha256 = "e7cde7eace85daf48c9c23e95a09d225180481257a510a77a29650d76867bb33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/retroclash-lib-0.1.2.3-r0-c3b2c2757f4950a42663f2bc1693c0b81ca37885955ac1702e59dcee87900b49.nix;
+        revNum = 0;
+        sha256 = "c3b2c2757f4950a42663f2bc1693c0b81ca37885955ac1702e59dcee87900b49";
+      };
+      default = "r0";
+    };
+  };
 }

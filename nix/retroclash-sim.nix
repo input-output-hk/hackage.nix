@@ -26,4 +26,15 @@
       default = "r1";
     };
   };
+  "0.1.2" = {
+    sha256 = "4134e9742c48395735c95870a04cda48cc5da1512e89d861cce410213241f99b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/retroclash-sim-0.1.2-r0-23c926d83774aeeae7b72118bad2dea813f38066fc210483337efb910140eb72.nix;
+        revNum = 0;
+        sha256 = "23c926d83774aeeae7b72118bad2dea813f38066fc210483337efb910140eb72";
+      };
+      default = "r0";
+    };
+  };
 }
