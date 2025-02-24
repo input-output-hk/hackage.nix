@@ -1920,4 +1920,15 @@
       default = "r0";
     };
   };
+  "1.3.6.1" = {
+    sha256 = "69902af03ea7e4cb982fa83da42afe36973b62d0a52ea140ae5362e52854ba3f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-1.3.6.1-r0-4e5be34eeff16646eb7e13471c7ae7e8db59a3f7cc3125ecb1fc0ae3632baac9.nix;
+        revNum = 0;
+        sha256 = "4e5be34eeff16646eb7e13471c7ae7e8db59a3f7cc3125ecb1fc0ae3632baac9";
+      };
+      default = "r0";
+    };
+  };
 }

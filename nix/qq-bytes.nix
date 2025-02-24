@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "fe4fe4ce6d90c3478059542a3ab26310795a9e0ab7e2358bc6730972d73e6c04";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/qq-bytes-1.0.0.1-r0-683dbede8fdb784dd337c752adfb0bea392ecc26a368b1146999dd98a9d61af6.nix;
+        revNum = 0;
+        sha256 = "683dbede8fdb784dd337c752adfb0bea392ecc26a368b1146999dd98a9d61af6";
+      };
+      default = "r0";
+    };
+  };
 }

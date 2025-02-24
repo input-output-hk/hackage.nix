@@ -84,6 +84,22 @@
         revNum = 0;
         sha256 = "77eada9a166a38320ee08bdc76c65922ff90be2d80621ca70c255b4a50b28e30";
       };
+      r1 = {
+        nix = import ../hackage/trie-simple-0.4.3-r1-86373dae71641d1e08ab55c69bf30338517d5fb96d05238d3d20f3d5e95892ea.nix;
+        revNum = 1;
+        sha256 = "86373dae71641d1e08ab55c69bf30338517d5fb96d05238d3d20f3d5e95892ea";
+      };
+      default = "r1";
+    };
+  };
+  "0.4.4" = {
+    sha256 = "c7cea6438c0cc144baea5379ce716abd98b918952166bd5ed77ae742d350009b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trie-simple-0.4.4-r0-0122d8aa90713aaaf006e7be9d37af2c32c9b348cb8f4d27c5bc32c7de730d8b.nix;
+        revNum = 0;
+        sha256 = "0122d8aa90713aaaf006e7be9d37af2c32c9b348cb8f4d27c5bc32c7de730d8b";
+      };
       default = "r0";
     };
   };
