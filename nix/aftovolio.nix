@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.7.1.0" = {
+    sha256 = "a6294feeb53b6d550264a26a0b9c3990c3eea8c0c81da20122309f97787cf2fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aftovolio-0.7.1.0-r0-4152760c5155465a19c9e243b2141d6e9fe8dc6555ca4e0885741424ee749fab.nix;
+        revNum = 0;
+        sha256 = "4152760c5155465a19c9e243b2141d6e9fe8dc6555ca4e0885741424ee749fab";
+      };
+      default = "r0";
+    };
+  };
 }

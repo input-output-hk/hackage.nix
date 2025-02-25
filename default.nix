@@ -6018,6 +6018,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fquery" = import ./nix/fquery.nix;
   "fractal" = import ./nix/fractal.nix;
   "fractals" = import ./nix/fractals.nix;
+  "fractaltext" = import ./nix/fractaltext.nix;
   "fraction" = import ./nix/fraction.nix;
   "fractionizer" = import ./nix/fractionizer.nix;
   "frag" = import ./nix/frag.nix;
@@ -7064,6 +7065,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "graphula" = import ./nix/graphula.nix;
   "graphula-core" = import ./nix/graphula-core.nix;
   "graphviz" = import ./nix/graphviz.nix;
+  "graphwiz" = import ./nix/graphwiz.nix;
   "graql" = import ./nix/graql.nix;
   "grasp" = import ./nix/grasp.nix;
   "gravatar" = import ./nix/gravatar.nix;
@@ -12912,6 +12914,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
+  "ppad-pbkdf" = import ./nix/ppad-pbkdf.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
   "ppad-script" = import ./nix/ppad-script.nix;
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;

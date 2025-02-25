@@ -150,4 +150,15 @@
       default = "r0";
     };
   };
+  "0.1.4.3" = {
+    sha256 = "46f82d9d7f35d595155a7bc824d490dcf4863b17e0a43e19f374456f20ac9714";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shellwords-0.1.4.3-r0-4a63ddbadb0be4eb0c6088ee48dfdb1009813760e9b399aaef8a3fd0122ca2ab.nix;
+        revNum = 0;
+        sha256 = "4a63ddbadb0be4eb0c6088ee48dfdb1009813760e9b399aaef8a3fd0122ca2ab";
+      };
+      default = "r0";
+    };
+  };
 }
