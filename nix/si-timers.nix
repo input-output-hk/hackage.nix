@@ -113,7 +113,12 @@
         revNum = 1;
         sha256 = "913c8c2e045e8abbf5e91ac357d9baf304664fe9f77c3c8b345643d060c0b5cc";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/si-timers-1.5.0.0-r2-1c136643d581f13d054a75fa7de0b2d6bae9a03b3dca2e99ed6ca8398af7446c.nix;
+        revNum = 2;
+        sha256 = "1c136643d581f13d054a75fa7de0b2d6bae9a03b3dca2e99ed6ca8398af7446c";
+      };
+      default = "r2";
     };
   };
 }

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "8aad72c1eff4f76ceeecf6b6fdad9739f2a0bf85b1ca39fc9afdbfa207a476ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opentracing-jaeger-0.3.0.1-r0-460b248d6db64df842ea2f842ad09a8a6c1fb0d1d1e0e29fe5da0b37ccb925e0.nix;
+        revNum = 0;
+        sha256 = "460b248d6db64df842ea2f842ad09a8a6c1fb0d1d1e0e29fe5da0b37ccb925e0";
+      };
+      default = "r0";
+    };
+  };
 }

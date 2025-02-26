@@ -4601,6 +4601,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "debug-dump" = import ./nix/debug-dump.nix;
   "debug-me" = import ./nix/debug-me.nix;
   "debug-pp" = import ./nix/debug-pp.nix;
+  "debug-print" = import ./nix/debug-print.nix;
   "debug-time" = import ./nix/debug-time.nix;
   "debug-trace-file" = import ./nix/debug-trace-file.nix;
   "debug-trace-var" = import ./nix/debug-trace-var.nix;
@@ -11118,6 +11119,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoidal-containers" = import ./nix/monoidal-containers.nix;
   "monoidal-functors" = import ./nix/monoidal-functors.nix;
   "monoidmap" = import ./nix/monoidmap.nix;
+  "monoidmap-aeson" = import ./nix/monoidmap-aeson.nix;
   "monoidplus" = import ./nix/monoidplus.nix;
   "monoids" = import ./nix/monoids.nix;
   "monomer" = import ./nix/monomer.nix;

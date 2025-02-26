@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "da0cda867b0ed44c706b9dc3b9dea9d4fa9c0aa9d9ef02a355da69dd9ae616ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opentracing-zipkin-v1-0.3.0.1-r0-b40610c327fa7357e20429c736bd28cfbb3679426eefb93ade4e0b5296a2316d.nix;
+        revNum = 0;
+        sha256 = "b40610c327fa7357e20429c736bd28cfbb3679426eefb93ade4e0b5296a2316d";
+      };
+      default = "r0";
+    };
+  };
 }

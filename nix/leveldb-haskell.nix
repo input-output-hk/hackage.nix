@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.6.5.1" = {
+    sha256 = "8665b2c2652a6018b6a6e48136a8017a38b922cd87655da75e9d991bed871627";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/leveldb-haskell-0.6.5.1-r0-2993e51257ab9b09da781451e514a43d7a3b243eec29e400cd26c613f681579d.nix;
+        revNum = 0;
+        sha256 = "2993e51257ab9b09da781451e514a43d7a3b243eec29e400cd26c613f681579d";
+      };
+      default = "r0";
+    };
+  };
 }
