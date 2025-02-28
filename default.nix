@@ -4495,6 +4495,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-ref" = import ./nix/data-ref.nix;
   "data-reify" = import ./nix/data-reify.nix;
   "data-reify-cse" = import ./nix/data-reify-cse.nix;
+  "data-reify-gadt" = import ./nix/data-reify-gadt.nix;
   "data-repr" = import ./nix/data-repr.nix;
   "data-result" = import ./nix/data-result.nix;
   "data-rev" = import ./nix/data-rev.nix;
@@ -12914,6 +12915,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-base58" = import ./nix/ppad-base58.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
+  "ppad-bip39" = import ./nix/ppad-bip39.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-pbkdf" = import ./nix/ppad-pbkdf.nix;

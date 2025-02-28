@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "5296a3f7ffd1a067bab2ea7019e44a525e3f2277b3604ac327cf3d697f538920";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dwergaz-0.3.0.2-r0-23695c644a5d034c6b8731bb1c9736e924b8f41358fbaa2cb8e13d0e81725822.nix;
+        revNum = 0;
+        sha256 = "23695c644a5d034c6b8731bb1c9736e924b8f41358fbaa2cb8e13d0e81725822";
+      };
+      default = "r0";
+    };
+  };
 }

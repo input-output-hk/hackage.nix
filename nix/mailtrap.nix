@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "6b77fa098d2574e496ad52cea367e3cad10952e30715180e0bf54980479e988f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mailtrap-0.1.2.2-r0-06c8f2711d639ddee59ec914e6963dca7402ea6afd39c75487bbd205b044281a.nix;
+        revNum = 0;
+        sha256 = "06c8f2711d639ddee59ec914e6963dca7402ea6afd39c75487bbd205b044281a";
+      };
+      default = "r0";
+    };
+  };
 }
