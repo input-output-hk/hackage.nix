@@ -221,7 +221,12 @@
         revNum = 0;
         sha256 = "5160322917f145f1feef29ff0d086607f61c2e7b61575c2795e57eada5589494";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-0.4.1-r1-c38a77747f14e8d26ca99869b879ee56099b04e5381a74a62255dcbab85aab84.nix;
+        revNum = 1;
+        sha256 = "c38a77747f14e8d26ca99869b879ee56099b04e5381a74a62255dcbab85aab84";
+      };
+      default = "r1";
     };
   };
 }

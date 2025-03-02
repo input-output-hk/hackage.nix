@@ -199,7 +199,12 @@
         revNum = 0;
         sha256 = "db3263ed01a712bfacd96eea9e24ae9dd1dc02b9954e20e52f652d6765c5949d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/exp-pairs-0.2.1.1-r1-99f14955a3134e2a1dce48550e2765b10981bc6899523e138827571eb669b67f.nix;
+        revNum = 1;
+        sha256 = "99f14955a3134e2a1dce48550e2765b10981bc6899523e138827571eb669b67f";
+      };
+      default = "r1";
     };
   };
 }

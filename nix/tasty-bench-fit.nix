@@ -33,7 +33,12 @@
         revNum = 0;
         sha256 = "f9f231d793590d5a1a3b1c455004712c7468b6c6953aa129c4961e38dd8a2f9a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tasty-bench-fit-0.1.1-r1-aa300865236c5d6ef65bef09033a92484f0a91c3902bc29d0e6d02aa3626c4bd.nix;
+        revNum = 1;
+        sha256 = "aa300865236c5d6ef65bef09033a92484f0a91c3902bc29d0e6d02aa3626c4bd";
+      };
+      default = "r1";
     };
   };
 }

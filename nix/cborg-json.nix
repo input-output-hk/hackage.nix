@@ -124,7 +124,12 @@
         revNum = 2;
         sha256 = "0a7048bda51431a251a809a7782a0fd049fd535a390daa7f7466e93926ba47ee";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cborg-json-0.2.6.0-r3-19e95cc4d7078f5749b77c5dd2c755b96f4d5b994de43d6fcf4821ea65a995b6.nix;
+        revNum = 3;
+        sha256 = "19e95cc4d7078f5749b77c5dd2c755b96f4d5b994de43d6fcf4821ea65a995b6";
+      };
+      default = "r3";
     };
   };
 }

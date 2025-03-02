@@ -3303,6 +3303,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "carbonara" = import ./nix/carbonara.nix;
   "carboncopy" = import ./nix/carboncopy.nix;
   "cardano-coin-selection" = import ./nix/cardano-coin-selection.nix;
+  "cardano-crypto" = import ./nix/cardano-crypto.nix;
   "cardano-transactions" = import ./nix/cardano-transactions.nix;
   "carettah" = import ./nix/carettah.nix;
   "carray" = import ./nix/carray.nix;
@@ -11121,6 +11122,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoidal-functors" = import ./nix/monoidal-functors.nix;
   "monoidmap" = import ./nix/monoidmap.nix;
   "monoidmap-aeson" = import ./nix/monoidmap-aeson.nix;
+  "monoidmap-quickcheck" = import ./nix/monoidmap-quickcheck.nix;
   "monoidplus" = import ./nix/monoidplus.nix;
   "monoids" = import ./nix/monoids.nix;
   "monomer" = import ./nix/monomer.nix;

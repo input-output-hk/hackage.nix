@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "f71ae5f162bc83eb5cfdd72ac71d68e414a12fe2e5c4ce3bd673a6a9a7125d01";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/language-c-0.10.0-r1-a66b5876fdec5a1defa9df5527c8bec52fc911335d36ee9c4b45fa11b5badbb9.nix;
+        revNum = 1;
+        sha256 = "a66b5876fdec5a1defa9df5527c8bec52fc911335d36ee9c4b45fa11b5badbb9";
+      };
+      default = "r1";
     };
   };
   "0.3.0" = {
