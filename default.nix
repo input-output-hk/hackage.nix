@@ -15736,6 +15736,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symbol" = import ./nix/symbol.nix;
   "symbol-parser" = import ./nix/symbol-parser.nix;
   "symbolic-link" = import ./nix/symbolic-link.nix;
+  "symbolise" = import ./nix/symbolise.nix;
   "symbolize" = import ./nix/symbolize.nix;
   "symbols" = import ./nix/symbols.nix;
   "symengine" = import ./nix/symengine.nix;

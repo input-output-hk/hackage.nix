@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "4f305a6b3a0d8514790229eb7bda368c0c8b86909cb4dbbd9f76712cc56a89bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/javelin-frames-0.1.0.1-r0-f886f8168873b6811a14f5c7e129d5128de38165dd81b310289b4c247a93d21b.nix;
+        revNum = 0;
+        sha256 = "f886f8168873b6811a14f5c7e129d5128de38165dd81b310289b4c247a93d21b";
+      };
+      default = "r0";
+    };
+  };
 }

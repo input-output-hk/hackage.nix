@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "eb243a6041d3d3c31199e04c93eb457f920775119f14d7214e48cdd803960cab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-bip39-0.2.1-r0-f2ce6069fca7e71b6ef4055a226c661ba1208505746781b7b582b0ff3aab0b4d.nix;
+        revNum = 0;
+        sha256 = "f2ce6069fca7e71b6ef4055a226c661ba1208505746781b7b582b0ff3aab0b4d";
+      };
+      default = "r0";
+    };
+  };
 }

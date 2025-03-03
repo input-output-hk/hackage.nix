@@ -413,4 +413,15 @@
       default = "r3";
     };
   };
+  "0.96.0.2" = {
+    sha256 = "7e570460c35c5deec54d1ba46305ddb4679c7d4aae84f631dd0c61daaeaa8150";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regex-posix-0.96.0.2-r0-faf170ca5073e8d538a7a18f727a02a96f2a36c5fd53a1696263a70ab81bc6fe.nix;
+        revNum = 0;
+        sha256 = "faf170ca5073e8d538a7a18f727a02a96f2a36c5fd53a1696263a70ab81bc6fe";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -238,4 +238,15 @@
       default = "r0";
     };
   };
+  "0.9.0.2" = {
+    sha256 = "c494f92280ba085c54288250533a87ca315a0f215f2cb2e374f87d727253b1e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atom-conduit-0.9.0.2-r0-3d0d1a3f9263bd547506476fe336cf251bdcfacd7ff825f4c737664605da46b5.nix;
+        revNum = 0;
+        sha256 = "3d0d1a3f9263bd547506476fe336cf251bdcfacd7ff825f4c737664605da46b5";
+      };
+      default = "r0";
+    };
+  };
 }

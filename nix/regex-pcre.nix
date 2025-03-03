@@ -210,4 +210,15 @@
       default = "r6";
     };
   };
+  "0.95.0.1" = {
+    sha256 = "29967bc3662f6ad35ae1dd753bc4c3fe2495916ed3432def5079bcbab6fdb7e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regex-pcre-0.95.0.1-r0-3709b4d27411a96ffc765dfa6c989088181eb4616a7e704e833d415d0709e58a.nix;
+        revNum = 0;
+        sha256 = "3709b4d27411a96ffc765dfa6c989088181eb4616a7e704e833d415d0709e58a";
+      };
+      default = "r0";
+    };
+  };
 }
