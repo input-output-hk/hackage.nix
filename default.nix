@@ -3302,6 +3302,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "caramia" = import ./nix/caramia.nix;
   "carbonara" = import ./nix/carbonara.nix;
   "carboncopy" = import ./nix/carboncopy.nix;
+  "cardano-addresses" = import ./nix/cardano-addresses.nix;
   "cardano-coin-selection" = import ./nix/cardano-coin-selection.nix;
   "cardano-crypto" = import ./nix/cardano-crypto.nix;
   "cardano-transactions" = import ./nix/cardano-transactions.nix;
@@ -4019,6 +4020,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "constructive-algebra" = import ./nix/constructive-algebra.nix;
   "consul-haskell" = import ./nix/consul-haskell.nix;
   "consumers" = import ./nix/consumers.nix;
+  "consumers-metrics-prometheus" = import ./nix/consumers-metrics-prometheus.nix;
   "container" = import ./nix/container.nix;
   "container-builder" = import ./nix/container-builder.nix;
   "container-classes" = import ./nix/container-classes.nix;
@@ -17460,6 +17462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "web-routes-wai" = import ./nix/web-routes-wai.nix;
   "web-routing" = import ./nix/web-routing.nix;
   "web-view" = import ./nix/web-view.nix;
+  "web-view-colonnade" = import ./nix/web-view-colonnade.nix;
   "web3" = import ./nix/web3.nix;
   "web3-bignum" = import ./nix/web3-bignum.nix;
   "web3-crypto" = import ./nix/web3-crypto.nix;

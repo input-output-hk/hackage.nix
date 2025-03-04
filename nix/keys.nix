@@ -484,7 +484,12 @@
         revNum = 0;
         sha256 = "94f0ca8845cb45f3f34c5eddb2d94510821a511f4e439210853bdf17cb14d97a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/keys-3.12.4-r1-ce43085eb0506a2fff6020dc61351e1c0c61c29f90d3ea5030756f3ed50caa16.nix;
+        revNum = 1;
+        sha256 = "ce43085eb0506a2fff6020dc61351e1c0c61c29f90d3ea5030756f3ed50caa16";
+      };
+      default = "r1";
     };
   };
 }

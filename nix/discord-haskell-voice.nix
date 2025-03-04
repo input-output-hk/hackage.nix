@@ -69,4 +69,15 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "c20410f90f0b62957efd7578436dd8a6064cfa85081ef19e5414e8af413d4c59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/discord-haskell-voice-3.0.0-r0-4eb006bc89c49ade9df43209f954a232ff9b5b3ddc2e49848d892446a51d9e6d.nix;
+        revNum = 0;
+        sha256 = "4eb006bc89c49ade9df43209f954a232ff9b5b3ddc2e49848d892446a51d9e6d";
+      };
+      default = "r0";
+    };
+  };
 }

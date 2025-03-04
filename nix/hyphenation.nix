@@ -413,4 +413,15 @@
       default = "r4";
     };
   };
+  "0.8.3" = {
+    sha256 = "572468569f501a7d4ac8a13a4a1c5f68d176b8f9197615784faadf63e808f836";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hyphenation-0.8.3-r0-0671fe2e3ab6dcc5b9c09acccd926b407763d3ed47ef137e7bd96126e187c229.nix;
+        revNum = 0;
+        sha256 = "0671fe2e3ab6dcc5b9c09acccd926b407763d3ed47ef137e7bd96126e187c229";
+      };
+      default = "r0";
+    };
+  };
 }
