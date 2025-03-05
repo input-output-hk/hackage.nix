@@ -223,6 +223,17 @@
       default = "r0";
     };
   };
+  "0.7.13" = {
+    sha256 = "ed0fd086cef17997624a104e0c9f9df2331c565a5f4376ba9ca507257faa647d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-knownnat-0.7.13-r0-8a12f11f8165346922444d3f7bfe3495ff1373bd8c109d598acfcb9c9f011149.nix;
+        revNum = 0;
+        sha256 = "8a12f11f8165346922444d3f7bfe3495ff1373bd8c109d598acfcb9c9f011149";
+      };
+      default = "r0";
+    };
+  };
   "0.7.2" = {
     sha256 = "0cc2162ab4071fcb0c461729bb441b61a3eb1f3864d6b143bb390960dbbdb1f1";
     revisions = {

@@ -3470,6 +3470,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "check-email" = import ./nix/check-email.nix;
   "check-pvp" = import ./nix/check-pvp.nix;
   "checked" = import ./nix/checked.nix;
+  "checked-exceptions" = import ./nix/checked-exceptions.nix;
   "checkers" = import ./nix/checkers.nix;
   "checkmate" = import ./nix/checkmate.nix;
   "checksum" = import ./nix/checksum.nix;
