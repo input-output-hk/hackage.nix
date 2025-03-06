@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "ff2177a178481b70200c95e02ccaa56d7ce144a917aa03d46b2406ead90e4a78";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tasty-golden-extra-0.1.0.0-r2-7c12c203ed92dc3aa23f66a4bc93f941046fdb2302c991cde9c55aed43f646ee.nix;
+        revNum = 2;
+        sha256 = "7c12c203ed92dc3aa23f66a4bc93f941046fdb2302c991cde9c55aed43f646ee";
+      };
+      default = "r2";
     };
   };
 }

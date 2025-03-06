@@ -5723,6 +5723,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fedora-dists" = import ./nix/fedora-dists.nix;
   "fedora-haskell-tools" = import ./nix/fedora-haskell-tools.nix;
   "fedora-img-dl" = import ./nix/fedora-img-dl.nix;
+  "fedora-krb" = import ./nix/fedora-krb.nix;
   "fedora-packages" = import ./nix/fedora-packages.nix;
   "fedora-releases" = import ./nix/fedora-releases.nix;
   "fedora-repoquery" = import ./nix/fedora-repoquery.nix;
