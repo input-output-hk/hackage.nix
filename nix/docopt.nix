@@ -143,7 +143,12 @@
         revNum = 1;
         sha256 = "d96a4e95322abdab048c7c886617b8ec302b950475c9a8f0827070b0a27fe88e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/docopt-0.7.0.8-r2-db1c1d94e04231d296443915d24c2aed71ed881e5688f7e9a431206b132e791f.nix;
+        revNum = 2;
+        sha256 = "db1c1d94e04231d296443915d24c2aed71ed881e5688f7e9a431206b132e791f";
+      };
+      default = "r2";
     };
   };
 }
