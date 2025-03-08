@@ -64,4 +64,15 @@
       default = "r1";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "1cbc73ed8dc8fd6e3a32049ccadf87dfaf882b15c99a339f6df738e412d7da05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stylist-traits-0.1.4.0-r0-798fa275a6ad25ba401da7c9e4007cc312c2588b8bacc2cd8c183198d1f48522.nix;
+        revNum = 0;
+        sha256 = "798fa275a6ad25ba401da7c9e4007cc312c2588b8bacc2cd8c183198d1f48522";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "880d8477eba3f4783705d1c92b4de84b0210ef9ed9a7b123e5e470b8e24c8f71";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pgvector-0.1.1-r0-24ce054cde2319cd606b9f2abd8fc1a333eb45f9bbcbeb6440a1aa8a03d650b1.nix;
+        revNum = 0;
+        sha256 = "24ce054cde2319cd606b9f2abd8fc1a333eb45f9bbcbeb6440a1aa8a03d650b1";
+      };
+      default = "r0";
+    };
+  };
 }

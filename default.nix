@@ -14024,6 +14024,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "roman-numerals" = import ./nix/roman-numerals.nix;
   "romkan" = import ./nix/romkan.nix;
   "ron" = import ./nix/ron.nix;
+  "ron-hs" = import ./nix/ron-hs.nix;
   "ron-rdt" = import ./nix/ron-rdt.nix;
   "ron-schema" = import ./nix/ron-schema.nix;
   "ron-storage" = import ./nix/ron-storage.nix;
@@ -16458,6 +16459,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tptp" = import ./nix/tptp.nix;
   "trace" = import ./nix/trace.nix;
   "trace-call" = import ./nix/trace-call.nix;
+  "trace-embrace" = import ./nix/trace-embrace.nix;
   "trace-function-call" = import ./nix/trace-function-call.nix;
   "traced" = import ./nix/traced.nix;
   "tracer" = import ./nix/tracer.nix;
