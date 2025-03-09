@@ -15612,6 +15612,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "subzero" = import ./nix/subzero.nix;
   "success" = import ./nix/success.nix;
   "successors" = import ./nix/successors.nix;
+  "succinct" = import ./nix/succinct.nix;
   "suffix" = import ./nix/suffix.nix;
   "suffix-array" = import ./nix/suffix-array.nix;
   "suffixarray" = import ./nix/suffixarray.nix;
