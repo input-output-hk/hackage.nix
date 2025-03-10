@@ -220,7 +220,17 @@
         revNum = 2;
         sha256 = "2aabb92fcc188389b325bfb107a3d43f488c8ab169affacbe993e8e4c7cfa9d2";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/relude-1.2.2.0-r3-af541ec9d09d6df632bbc8dd6afc317ae291dd769ed67c84346ec02691e99a8a.nix;
+        revNum = 3;
+        sha256 = "af541ec9d09d6df632bbc8dd6afc317ae291dd769ed67c84346ec02691e99a8a";
+      };
+      r4 = {
+        nix = import ../hackage/relude-1.2.2.0-r4-dfface802ec963690179c6069e404574d8989c377d718a54849ee27ab976d0dd.nix;
+        revNum = 4;
+        sha256 = "dfface802ec963690179c6069e404574d8989c377d718a54849ee27ab976d0dd";
+      };
+      default = "r4";
     };
   };
 }

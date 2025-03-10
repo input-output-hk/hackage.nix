@@ -3565,6 +3565,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clanki" = import ./nix/clanki.nix;
   "clarifai" = import ./nix/clarifai.nix;
   "clash" = import ./nix/clash.nix;
+  "clash-finite" = import ./nix/clash-finite.nix;
   "clash-ghc" = import ./nix/clash-ghc.nix;
   "clash-lib" = import ./nix/clash-lib.nix;
   "clash-lib-hedgehog" = import ./nix/clash-lib-hedgehog.nix;
@@ -12922,9 +12923,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-bip39" = import ./nix/ppad-bip39.nix;
+  "ppad-chacha" = import ./nix/ppad-chacha.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-pbkdf" = import ./nix/ppad-pbkdf.nix;
+  "ppad-poly1305" = import ./nix/ppad-poly1305.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
   "ppad-script" = import ./nix/ppad-script.nix;
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;

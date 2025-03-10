@@ -120,6 +120,17 @@
       default = "r0";
     };
   };
+  "0.0.20" = {
+    sha256 = "5785a09ab27a018fe8c0adf7fbab9502e5c1c47f2b53f18dd216277ec53db264";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-secret-0.0.20-r0-ce0806ac1d70520e7a34f3092cc56374efb862e9bf8ed1ab297ed9616e2a3fc9.nix;
+        revNum = 0;
+        sha256 = "ce0806ac1d70520e7a34f3092cc56374efb862e9bf8ed1ab297ed9616e2a3fc9";
+      };
+      default = "r0";
+    };
+  };
   "0.0.3" = {
     sha256 = "65cdd333749a60c0c9434a888b3f30f02d08e17b4e319b7aadbd4eba2494b3f8";
     revisions = {
