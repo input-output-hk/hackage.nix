@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "67aa5b63642bc00e6a08f8c94d906fd4908b6ddf598b4917955eaa284dcded07";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/data-elevator-0.2-r1-920ecc79d6c1dda6f6f0f30dcf09774420a919302f52ca15fae275e31dd04788.nix;
+        revNum = 1;
+        sha256 = "920ecc79d6c1dda6f6f0f30dcf09774420a919302f52ca15fae275e31dd04788";
+      };
+      default = "r1";
     };
   };
 }

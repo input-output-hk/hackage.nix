@@ -190,7 +190,12 @@
         revNum = 0;
         sha256 = "38b814ac8545a0096509b6e03e62f0f65ce5c97084c0b9c2459b5062c646e2fd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ekg-core-0.1.1.8-r1-711fdd8f04623d186f511b9ba3b53df32866bf4425ca3e96ac72210595d19ad3.nix;
+        revNum = 1;
+        sha256 = "711fdd8f04623d186f511b9ba3b53df32866bf4425ca3e96ac72210595d19ad3";
+      };
+      default = "r1";
     };
   };
 }

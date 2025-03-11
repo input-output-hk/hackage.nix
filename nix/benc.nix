@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "2b6dc72b27b04260198b43d4515ced60e0639356a592f8e605bd99060c0fcba9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/benc-0.1.1.0-r1-9b5864fa0611f4269cc20d475376b60cde798746626a4a99ed88756ff148c56a.nix;
+        revNum = 1;
+        sha256 = "9b5864fa0611f4269cc20d475376b60cde798746626a4a99ed88756ff148c56a";
+      };
+      default = "r1";
     };
   };
 }

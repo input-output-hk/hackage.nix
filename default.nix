@@ -1624,6 +1624,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "align" = import ./nix/align.nix;
   "align-affine" = import ./nix/align-affine.nix;
   "align-audio" = import ./nix/align-audio.nix;
+  "align-equal" = import ./nix/align-equal.nix;
   "align-text" = import ./nix/align-text.nix;
   "aligned-foreignptr" = import ./nix/aligned-foreignptr.nix;
   "alignment" = import ./nix/alignment.nix;
@@ -5890,6 +5891,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "flat-mcmc" = import ./nix/flat-mcmc.nix;
   "flat-tex" = import ./nix/flat-tex.nix;
   "flatbuffers" = import ./nix/flatbuffers.nix;
+  "flatbuffers-builder" = import ./nix/flatbuffers-builder.nix;
   "flatparse" = import ./nix/flatparse.nix;
   "flay" = import ./nix/flay.nix;
   "flexible-defaults" = import ./nix/flexible-defaults.nix;
@@ -17242,6 +17244,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "versions" = import ./nix/versions.nix;
   "vertexenum" = import ./nix/vertexenum.nix;
   "vessel" = import ./nix/vessel.nix;
+  "vext" = import ./nix/vext.nix;
   "vflow-types" = import ./nix/vflow-types.nix;
   "vformat" = import ./nix/vformat.nix;
   "vformat-aeson" = import ./nix/vformat-aeson.nix;
