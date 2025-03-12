@@ -155,7 +155,12 @@
         revNum = 10;
         sha256 = "d9673eb4f2cebd0fceb0c352c9afabc7beffa89382e51757bac43f5c94a66927";
       };
-      default = "r10";
+      r11 = {
+        nix = import ../hackage/safecopy-0.10.4.2-r11-55b2d9f2a89ee52d695499e367505ab29ed9567308c087fae5768941246a970c.nix;
+        revNum = 11;
+        sha256 = "55b2d9f2a89ee52d695499e367505ab29ed9567308c087fae5768941246a970c";
+      };
+      default = "r11";
     };
   };
   "0.2" = {

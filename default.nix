@@ -2580,6 +2580,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "beam" = import ./nix/beam.nix;
   "beam-automigrate" = import ./nix/beam-automigrate.nix;
   "beam-core" = import ./nix/beam-core.nix;
+  "beam-large-records" = import ./nix/beam-large-records.nix;
   "beam-migrate" = import ./nix/beam-migrate.nix;
   "beam-mysql" = import ./nix/beam-mysql.nix;
   "beam-newtype-field" = import ./nix/beam-newtype-field.nix;
@@ -2747,6 +2748,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "binembed-example" = import ./nix/binembed-example.nix;
   "bini" = import ./nix/bini.nix;
   "binrep" = import ./nix/binrep.nix;
+  "binrep-instances" = import ./nix/binrep-instances.nix;
   "bins" = import ./nix/bins.nix;
   "binsm" = import ./nix/binsm.nix;
   "bio" = import ./nix/bio.nix;
@@ -5190,6 +5192,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eccrypto" = import ./nix/eccrypto.nix;
   "eccrypto-ed25519-bindings" = import ./nix/eccrypto-ed25519-bindings.nix;
   "ecdsa" = import ./nix/ecdsa.nix;
+  "ech-config" = import ./nix/ech-config.nix;
   "echo" = import ./nix/echo.nix;
   "ecma262" = import ./nix/ecma262.nix;
   "ecstasy" = import ./nix/ecstasy.nix;
@@ -8370,6 +8373,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpdft" = import ./nix/hpdft.nix;
   "hpg" = import ./nix/hpg.nix;
   "hpio" = import ./nix/hpio.nix;
+  "hpke" = import ./nix/hpke.nix;
   "hplayground" = import ./nix/hplayground.nix;
   "hplaylist" = import ./nix/hplaylist.nix;
   "hpodder" = import ./nix/hpodder.nix;
@@ -12920,6 +12924,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "powerqueue-distributed" = import ./nix/powerqueue-distributed.nix;
   "powerqueue-levelmem" = import ./nix/powerqueue-levelmem.nix;
   "powerqueue-sqs" = import ./nix/powerqueue-sqs.nix;
+  "ppad-aead" = import ./nix/ppad-aead.nix;
   "ppad-base16" = import ./nix/ppad-base16.nix;
   "ppad-base58" = import ./nix/ppad-base58.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
