@@ -4456,6 +4456,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-filter" = import ./nix/data-filter.nix;
   "data-fin" = import ./nix/data-fin.nix;
   "data-fin-simple" = import ./nix/data-fin-simple.nix;
+  "data-findcycle" = import ./nix/data-findcycle.nix;
   "data-fix" = import ./nix/data-fix.nix;
   "data-fix-cse" = import ./nix/data-fix-cse.nix;
   "data-flags" = import ./nix/data-flags.nix;
@@ -7287,6 +7288,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haddock-leksah" = import ./nix/haddock-leksah.nix;
   "haddock-library" = import ./nix/haddock-library.nix;
   "haddock-test" = import ./nix/haddock-test.nix;
+  "haddock-use-refs" = import ./nix/haddock-use-refs.nix;
   "haddocset" = import ./nix/haddocset.nix;
   "hadolint" = import ./nix/hadolint.nix;
   "hadoop-formats" = import ./nix/hadoop-formats.nix;
