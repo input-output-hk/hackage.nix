@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.5" = {
+    sha256 = "2ed5ec161ac697777b1815d9aeaa9048b2a3773992cc5199fd62780c8b40626b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trace-embrace-1.0.5-r0-c2795b1e4f4fe9234304f6713afeb4cd056e7bbb857c39347ef9d2a4fe86e5a5.nix;
+        revNum = 0;
+        sha256 = "c2795b1e4f4fe9234304f6713afeb4cd056e7bbb857c39347ef9d2a4fe86e5a5";
+      };
+      default = "r0";
+    };
+  };
 }
