@@ -16210,6 +16210,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "th-letrec" = import ./nix/th-letrec.nix;
   "th-lift" = import ./nix/th-lift.nix;
   "th-lift-instances" = import ./nix/th-lift-instances.nix;
+  "th-lock" = import ./nix/th-lock.nix;
   "th-nowq" = import ./nix/th-nowq.nix;
   "th-orphans" = import ./nix/th-orphans.nix;
   "th-pprint" = import ./nix/th-pprint.nix;
@@ -16391,6 +16392,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tls-debug" = import ./nix/tls-debug.nix;
   "tls-extra" = import ./nix/tls-extra.nix;
   "tls-session-manager" = import ./nix/tls-session-manager.nix;
+  "tls-sslkeylogfile" = import ./nix/tls-sslkeylogfile.nix;
   "tlynx" = import ./nix/tlynx.nix;
   "tmapchan" = import ./nix/tmapchan.nix;
   "tmapmvar" = import ./nix/tmapmvar.nix;

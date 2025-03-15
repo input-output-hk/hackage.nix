@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.0.5" = {
+    sha256 = "ac136242fb9fda04a8306e0e4ebfa43c65245d29f16254d593430b51673c943d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/real-dice-0.1.0.5-r0-afa8217df9ff418ecb10400efcde37d70ae19291ea27a9f51e0dcba9b2c7edb5.nix;
+        revNum = 0;
+        sha256 = "afa8217df9ff418ecb10400efcde37d70ae19291ea27a9f51e0dcba9b2c7edb5";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -1,4 +1,15 @@
 {
+  "1.0.10" = {
+    sha256 = "9997989f0e49b784cd2ad6e277cbc7fb53289339efb9771c32af184f2f144edc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trace-embrace-1.0.10-r0-f11fd38deb100eb53da73879bd7102a3d79d7b09e96bb5464f2d0b8d51498058.nix;
+        revNum = 0;
+        sha256 = "f11fd38deb100eb53da73879bd7102a3d79d7b09e96bb5464f2d0b8d51498058";
+      };
+      default = "r0";
+    };
+  };
   "1.0.2" = {
     sha256 = "8f8453aecaef87843aa9f375ba1c56aa4d17a24063e462ed847add852ab9eb96";
     revisions = {
