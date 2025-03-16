@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "d4c97dd2fe46e6f1bbb6b3e73ada9e25d60474f66d4e4f0d4faba69f83b5231c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cpuinfo-0.1.0.3-r0-d94a67b889dfca86537651deb30d9be71e06833b337dc9e01dcebfecca48156f.nix;
+        revNum = 0;
+        sha256 = "d94a67b889dfca86537651deb30d9be71e06833b337dc9e01dcebfecca48156f";
+      };
+      default = "r0";
+    };
+  };
 }

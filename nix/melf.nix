@@ -83,7 +83,12 @@
         revNum = 2;
         sha256 = "36a3d25110837cdb6aa4b9d73698e977d13193b7be81c9516cab8b2f64170261";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/melf-1.3.1-r3-167dd798237451e8ccca8c7d98ec719ce20ce1752445dda1fee165b389830b4e.nix;
+        revNum = 3;
+        sha256 = "167dd798237451e8ccca8c7d98ec719ce20ce1752445dda1fee165b389830b4e";
+      };
+      default = "r3";
     };
   };
 }

@@ -43,6 +43,17 @@
       default = "r0";
     };
   };
+  "0.11.1.0" = {
+    sha256 = "d1d82e3af4d1890c6c638f2a15b168b2a0fecd480a67327d1d0150c101bfba34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polysemy-log-0.11.1.0-r0-6a281d37e78009ae0e67f9b76500743efdf10e3be84c62a8d878af7dc7f61add.nix;
+        revNum = 0;
+        sha256 = "6a281d37e78009ae0e67f9b76500743efdf10e3be84c62a8d878af7dc7f61add";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "1632619c63f7ca7802cf7bb81311edf9a5cc6494dd55607c3b3b2d4c4c2200ec";
     revisions = {

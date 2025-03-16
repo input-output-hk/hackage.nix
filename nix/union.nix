@@ -139,4 +139,15 @@
       default = "r9";
     };
   };
+  "0.1.3" = {
+    sha256 = "b94a3d5886721a7adcf9fe640bb8d059eba3bb5fbc1803e0eba2b020804e59d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/union-0.1.3-r0-29dbafc1ecf5c389f918772bfda9f12d91193e619fecebf36a6afbfec2039f1c.nix;
+        revNum = 0;
+        sha256 = "29dbafc1ecf5c389f918772bfda9f12d91193e619fecebf36a6afbfec2039f1c";
+      };
+      default = "r0";
+    };
+  };
 }
