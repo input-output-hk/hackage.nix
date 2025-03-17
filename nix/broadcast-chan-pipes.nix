@@ -79,4 +79,15 @@
       default = "r3";
     };
   };
+  "0.3.0" = {
+    sha256 = "2021aa9ea5b7dee3d87593954bd356fc06ed236731480709d4c8d031bcc2310c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/broadcast-chan-pipes-0.3.0-r0-bbaa679b9dbdb2a3cd58e32b3ffa949595236cfb4d6dd292ece3d861605a84f4.nix;
+        revNum = 0;
+        sha256 = "bbaa679b9dbdb2a3cd58e32b3ffa949595236cfb4d6dd292ece3d861605a84f4";
+      };
+      default = "r0";
+    };
+  };
 }

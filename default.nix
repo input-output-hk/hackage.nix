@@ -2588,6 +2588,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "beam-sqlite" = import ./nix/beam-sqlite.nix;
   "beam-th" = import ./nix/beam-th.nix;
   "beamable" = import ./nix/beamable.nix;
+  "bearlibterminal" = import ./nix/bearlibterminal.nix;
   "bearriver" = import ./nix/bearriver.nix;
   "beautifHOL" = import ./nix/beautif_H_O_L.nix;
   "bech32" = import ./nix/bech32.nix;
@@ -15086,6 +15087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sndfile-enumerators" = import ./nix/sndfile-enumerators.nix;
   "sneakyterm" = import ./nix/sneakyterm.nix;
   "sneathlane-haste" = import ./nix/sneathlane-haste.nix;
+  "snelstart-import" = import ./nix/snelstart-import.nix;
   "snipcheck" = import ./nix/snipcheck.nix;
   "snippet-extractor" = import ./nix/snippet-extractor.nix;
   "snm" = import ./nix/snm.nix;

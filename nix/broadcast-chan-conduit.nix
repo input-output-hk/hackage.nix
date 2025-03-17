@@ -90,4 +90,15 @@
       default = "r3";
     };
   };
+  "0.3.0" = {
+    sha256 = "9332851d5967f03ea61312c4cd28f8285501d2bae4b9b80620cc14779bb5fff6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/broadcast-chan-conduit-0.3.0-r0-5d08a6bcf587e6f384f1ccab26be02ea2e1a1666bd6fccdf97e8b51e8fe982cb.nix;
+        revNum = 0;
+        sha256 = "5d08a6bcf587e6f384f1ccab26be02ea2e1a1666bd6fccdf97e8b51e8fe982cb";
+      };
+      default = "r0";
+    };
+  };
 }
