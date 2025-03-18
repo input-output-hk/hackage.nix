@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "96c521ad0e43bd4ebd340be9067056a99e7281f4f15b41860b236cef769ccc3e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/open-browser-0.3.0.1-r0-1a2ead3c9c4118ffebe493afa2183d9d65f55f256c3a62531b0dd198b64fe149.nix;
+        revNum = 0;
+        sha256 = "1a2ead3c9c4118ffebe493afa2183d9d65f55f256c3a62531b0dd198b64fe149";
+      };
+      default = "r0";
+    };
+  };
 }

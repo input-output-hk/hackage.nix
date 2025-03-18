@@ -2073,6 +2073,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "antlrc" = import ./nix/antlrc.nix;
   "any-pat" = import ./nix/any-pat.nix;
   "anydbm" = import ./nix/anydbm.nix;
+  "aoc" = import ./nix/aoc.nix;
   "aop-prelude" = import ./nix/aop-prelude.nix;
   "aos-signature" = import ./nix/aos-signature.nix;
   "aosd" = import ./nix/aosd.nix;
