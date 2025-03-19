@@ -159,7 +159,12 @@
         revNum = 0;
         sha256 = "51e46443e79235df51fd1f05da2f43f56ddd55b8fe47c66baafbeb8a3f34dbc6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/vector-fftw-0.1.4.1-r1-1653881651a9c37e5910c0152322e1c19b5c772a00a376e2259a7caa69e4e7e8.nix;
+        revNum = 1;
+        sha256 = "1653881651a9c37e5910c0152322e1c19b5c772a00a376e2259a7caa69e4e7e8";
+      };
+      default = "r1";
     };
   };
 }

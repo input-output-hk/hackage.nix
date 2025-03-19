@@ -2053,6 +2053,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "antfarm" = import ./nix/antfarm.nix;
   "anticiv" = import ./nix/anticiv.nix;
   "antigate" = import ./nix/antigate.nix;
+  "antikythera" = import ./nix/antikythera.nix;
   "antimirov" = import ./nix/antimirov.nix;
   "antiope-athena" = import ./nix/antiope-athena.nix;
   "antiope-contract" = import ./nix/antiope-contract.nix;
@@ -4947,6 +4948,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "distribution-opensuse" = import ./nix/distribution-opensuse.nix;
   "distribution-plot" = import ./nix/distribution-plot.nix;
   "distributive" = import ./nix/distributive.nix;
+  "distributors" = import ./nix/distributors.nix;
   "ditto" = import ./nix/ditto.nix;
   "ditto-lucid" = import ./nix/ditto-lucid.nix;
   "diversity" = import ./nix/diversity.nix;
