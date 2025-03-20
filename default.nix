@@ -6308,6 +6308,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-aeson" = import ./nix/generic-aeson.nix;
   "generic-arbitrary" = import ./nix/generic-arbitrary.nix;
   "generic-binary" = import ./nix/generic-binary.nix;
+  "generic-case" = import ./nix/generic-case.nix;
   "generic-church" = import ./nix/generic-church.nix;
   "generic-constraints" = import ./nix/generic-constraints.nix;
   "generic-data" = import ./nix/generic-data.nix;

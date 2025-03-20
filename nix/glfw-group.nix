@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.0.6" = {
+    sha256 = "5f3c7404b19197a797bf3f1fe18334625364721a323f2c09e6bee6f0484c45bd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glfw-group-0.1.0.6-r0-f759b9f92cd469d4268d79aed9560d124cc7f8eca85da37d8a2ec440cb9983c3.nix;
+        revNum = 0;
+        sha256 = "f759b9f92cd469d4268d79aed9560d124cc7f8eca85da37d8a2ec440cb9983c3";
+      };
+      default = "r0";
+    };
+  };
 }

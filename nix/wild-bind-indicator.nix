@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0.3" = {
+    sha256 = "5eab78040edc9f7c265a4769ad5792b747c87d8171956ace70b9be04dad41b46";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wild-bind-indicator-1.0.0.3-r0-575ef9209ce83c4eb1809304db4a771405c47d54df9ed7dbdf938b2aeeb08a8e.nix;
+        revNum = 0;
+        sha256 = "575ef9209ce83c4eb1809304db4a771405c47d54df9ed7dbdf938b2aeeb08a8e";
+      };
+      default = "r0";
+    };
+  };
 }

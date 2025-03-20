@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.9.10.1.2" = {
+    sha256 = "26f98f214eb69412d4374a32403e734973f6a514e029ad6e5c54093ceefd491d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-prelude-0.9.10.1.2-r0-cd9203369b25081b65cf60c1a228400928cba48fa88dc190c2c45b6e865cc190.nix;
+        revNum = 0;
+        sha256 = "cd9203369b25081b65cf60c1a228400928cba48fa88dc190c2c45b6e865cc190";
+      };
+      default = "r0";
+    };
+  };
   "0.9.2.5" = {
     sha256 = "ed778aa7c20f60b61f7a876b75cf6fd5b445a00af648afd6af4433df05fa638c";
     revisions = {
