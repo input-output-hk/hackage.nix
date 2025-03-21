@@ -48,6 +48,17 @@
       default = "r1";
     };
   };
+  "0.13.0.0" = {
+    sha256 = "9d7933108008ad8d20f80cadbb06576f6cfbe330537fb1d0bc5776e93db1220b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llvm-pretty-0.13.0.0-r0-863db9c037ec518b813333822edb3d43bc0504393a627f540680b343301ea47f.nix;
+        revNum = 0;
+        sha256 = "863db9c037ec518b813333822edb3d43bc0504393a627f540680b343301ea47f";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "0e458929142396e4d5ddf031fe5f617d948fddd9bfe9c86fceba0b38dd87c9fb";
     revisions = {

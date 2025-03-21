@@ -213,4 +213,26 @@
       default = "r1";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "65381c9180c7171407ddb2b108bf147b7e8737ed526a327bad0396ce842f4576";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-sort-0.1.2.1-r0-341728ab2e98926fb3b4949d7a62c52d22730ef2ad446031768ec10d753ab240.nix;
+        revNum = 0;
+        sha256 = "341728ab2e98926fb3b4949d7a62c52d22730ef2ad446031768ec10d753ab240";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.2.2" = {
+    sha256 = "bfb975c005e1585db65b00addc63c76dcf952280fc9d764850fed782482bddbf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-sort-0.1.2.2-r0-f67e54369d005688962367aa21a91ed22202152be38094a0fe1987675ce1b947.nix;
+        revNum = 0;
+        sha256 = "f67e54369d005688962367aa21a91ed22202152be38094a0fe1987675ce1b947";
+      };
+      default = "r0";
+    };
+  };
 }

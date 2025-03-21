@@ -1177,6 +1177,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "SuffixStructures" = import ./nix/_Suffix_Structures.nix;
   "SvgIcons" = import ./nix/_Svg_Icons.nix;
   "SybWidget" = import ./nix/_Syb_Widget.nix;
+  "Synapse" = import ./nix/_Synapse.nix;
   "SyntaxMacros" = import ./nix/_Syntax_Macros.nix;
   "Sysmon" = import ./nix/_Sysmon.nix;
   "TBC" = import ./nix/_T_B_C.nix;
@@ -11140,6 +11141,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoidal-functors" = import ./nix/monoidal-functors.nix;
   "monoidmap" = import ./nix/monoidmap.nix;
   "monoidmap-aeson" = import ./nix/monoidmap-aeson.nix;
+  "monoidmap-examples" = import ./nix/monoidmap-examples.nix;
+  "monoidmap-internal" = import ./nix/monoidmap-internal.nix;
   "monoidmap-quickcheck" = import ./nix/monoidmap-quickcheck.nix;
   "monoidplus" = import ./nix/monoidplus.nix;
   "monoids" = import ./nix/monoids.nix;

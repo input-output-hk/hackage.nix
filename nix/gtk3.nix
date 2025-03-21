@@ -351,6 +351,17 @@
       default = "r0";
     };
   };
+  "0.15.10" = {
+    sha256 = "09ba8a0756b26628126ab8edc6598e1c8c55fdb8ad56772605ad7079662454af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk3-0.15.10-r0-4652b389674d3bcd1c3240e6dbd5a6d16a3b98b064f43df358dafe154bbbe187.nix;
+        revNum = 0;
+        sha256 = "4652b389674d3bcd1c3240e6dbd5a6d16a3b98b064f43df358dafe154bbbe187";
+      };
+      default = "r0";
+    };
+  };
   "0.15.3" = {
     sha256 = "a763011b2bea622b5ae2cc4ece7e39e5ea8a0c677305971cf08d5b665f7db383";
     revisions = {

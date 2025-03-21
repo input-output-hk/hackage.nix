@@ -298,6 +298,17 @@
       default = "r0";
     };
   };
+  "0.13.12.0" = {
+    sha256 = "2308f302b1a55376c715778b89b15d0d7e0cc20c8589b803b5f9010ea2f1e495";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk2hs-buildtools-0.13.12.0-r0-e6312c122bfb8b549594d65ad69494d7d14ff19bb2b15d81110284dbef1fc02d.nix;
+        revNum = 0;
+        sha256 = "e6312c122bfb8b549594d65ad69494d7d14ff19bb2b15d81110284dbef1fc02d";
+      };
+      default = "r0";
+    };
+  };
   "0.13.2.0" = {
     sha256 = "6ed2758a2311d2c0369b46df065c72f67319294496c63729ae149385ee1e1aab";
     revisions = {

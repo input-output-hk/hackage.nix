@@ -440,7 +440,12 @@
         revNum = 2;
         sha256 = "e1fcdab8f7b01d8a78ef4a8c6f584fe4d7e42e89de870f310ab293b6e0ffda07";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/zip-2.1.0-r3-c5d9cd43b392fa0c051acc1849746fe3cc8ef855a0b07cf058415565d533d25e.nix;
+        revNum = 3;
+        sha256 = "c5d9cd43b392fa0c051acc1849746fe3cc8ef855a0b07cf058415565d533d25e";
+      };
+      default = "r3";
     };
   };
 }
