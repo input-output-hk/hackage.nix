@@ -4224,8 +4224,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cronus" = import ./nix/cronus.nix;
   "cropty" = import ./nix/cropty.nix;
   "crucible" = import ./nix/crucible.nix;
+  "crucible-debug" = import ./nix/crucible-debug.nix;
   "crucible-llvm" = import ./nix/crucible-llvm.nix;
   "crucible-symio" = import ./nix/crucible-symio.nix;
+  "crucible-syntax" = import ./nix/crucible-syntax.nix;
   "cruncher-types" = import ./nix/cruncher-types.nix;
   "crunghc" = import ./nix/crunghc.nix;
   "crux" = import ./nix/crux.nix;
@@ -5422,6 +5424,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eros" = import ./nix/eros.nix;
   "eros-client" = import ./nix/eros-client.nix;
   "eros-http" = import ./nix/eros-http.nix;
+  "erpnext-api-client" = import ./nix/erpnext-api-client.nix;
   "errata" = import ./nix/errata.nix;
   "errno" = import ./nix/errno.nix;
   "error" = import ./nix/error.nix;
@@ -11814,6 +11817,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oauth10a" = import ./nix/oauth10a.nix;
   "oauth2-jwt-bearer" = import ./nix/oauth2-jwt-bearer.nix;
   "oauthenticated" = import ./nix/oauthenticated.nix;
+  "ob" = import ./nix/ob.nix;
   "obd" = import ./nix/obd.nix;
   "obdd" = import ./nix/obdd.nix;
   "oberon0" = import ./nix/oberon0.nix;
