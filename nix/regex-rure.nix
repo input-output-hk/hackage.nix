@@ -106,4 +106,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "f1f1178a4470a862de79ab7176458fabb6415d9429280a108fdd7b75a00f14f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regex-rure-1.0.0.0-r0-3bb3a96cee041666b23367d8c23ad5836fdf07daf03a8fe2f538dbf33f0189ef.nix;
+        revNum = 0;
+        sha256 = "3bb3a96cee041666b23367d8c23ad5836fdf07daf03a8fe2f538dbf33f0189ef";
+      };
+      default = "r0";
+    };
+  };
 }

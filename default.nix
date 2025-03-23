@@ -11850,10 +11850,13 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ogma-language-c" = import ./nix/ogma-language-c.nix;
   "ogma-language-cocospec" = import ./nix/ogma-language-cocospec.nix;
   "ogma-language-copilot" = import ./nix/ogma-language-copilot.nix;
+  "ogma-language-csv" = import ./nix/ogma-language-csv.nix;
   "ogma-language-fret-cs" = import ./nix/ogma-language-fret-cs.nix;
   "ogma-language-fret-reqs" = import ./nix/ogma-language-fret-reqs.nix;
   "ogma-language-jsonspec" = import ./nix/ogma-language-jsonspec.nix;
+  "ogma-language-lustre" = import ./nix/ogma-language-lustre.nix;
   "ogma-language-smv" = import ./nix/ogma-language-smv.nix;
+  "ogma-language-xlsx" = import ./nix/ogma-language-xlsx.nix;
   "ogma-language-xmlspec" = import ./nix/ogma-language-xmlspec.nix;
   "ogma-spec" = import ./nix/ogma-spec.nix;
   "ogmarkup" = import ./nix/ogmarkup.nix;
@@ -11940,6 +11943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "opencv-extra" = import ./nix/opencv-extra.nix;
   "opencv-raw" = import ./nix/opencv-raw.nix;
   "opendatatable" = import ./nix/opendatatable.nix;
+  "opendht-hs" = import ./nix/opendht-hs.nix;
   "openexchangerates" = import ./nix/openexchangerates.nix;
   "openexr-write" = import ./nix/openexr-write.nix;
   "openflow" = import ./nix/openflow.nix;

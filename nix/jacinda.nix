@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "3fbc62b7cb1b02b9b7e967090171b37ff6cc164e5b8b4b8842be6d0b0528cfbb";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-0.1.0.0-r3-8b01e78e4a1327c8b531d539fc98dc34493a53bee09d13623a395197e55bef23.nix;
+        revNum = 3;
+        sha256 = "8b01e78e4a1327c8b531d539fc98dc34493a53bee09d13623a395197e55bef23";
+      };
+      default = "r3";
     };
   };
   "0.2.0.0" = {
@@ -33,7 +38,12 @@
         revNum = 1;
         sha256 = "94c78adf834721ad2a5a4f051d9796f61763f6f91c87bc8d79a504eed927d9c6";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-0.2.0.0-r2-9d9a96e32e930d8d417183f9df9ff3f73c83526cf5c507710a78ef70dae9ca28.nix;
+        revNum = 2;
+        sha256 = "9d9a96e32e930d8d417183f9df9ff3f73c83526cf5c507710a78ef70dae9ca28";
+      };
+      default = "r2";
     };
   };
   "0.2.1.0" = {
@@ -49,7 +59,12 @@
         revNum = 1;
         sha256 = "6432cee3e6ded59e388614c8114a45fe3524a94b9ad58d924fb8cf5503f73bb4";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-0.2.1.0-r2-cb81155fa21f9630d80f108ee13d7e703aef215122c1466d0f7121c73f1e7883.nix;
+        revNum = 2;
+        sha256 = "cb81155fa21f9630d80f108ee13d7e703aef215122c1466d0f7121c73f1e7883";
+      };
+      default = "r2";
     };
   };
   "0.3.0.0" = {
@@ -65,7 +80,12 @@
         revNum = 1;
         sha256 = "d4038f0524635e5e080717161e459f3e0d425d0f40746d82afddb1aaf23ce92c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-0.3.0.0-r2-35fdd71788e6e72550dedd62ef422cf1e5b639b02b880d6bc32665a8801fc6fd.nix;
+        revNum = 2;
+        sha256 = "35fdd71788e6e72550dedd62ef422cf1e5b639b02b880d6bc32665a8801fc6fd";
+      };
+      default = "r2";
     };
   };
   "0.3.1.0" = {
@@ -81,7 +101,12 @@
         revNum = 1;
         sha256 = "10fc38d26a249be677dc2a23954653cab9d0dc7a9223854bac9d8918d4b048ef";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-0.3.1.0-r2-058b3beabb850a5ea09b4e4e30bd4ae1f486af24a16714ac65f1a10793be8192.nix;
+        revNum = 2;
+        sha256 = "058b3beabb850a5ea09b4e4e30bd4ae1f486af24a16714ac65f1a10793be8192";
+      };
+      default = "r2";
     };
   };
   "1.0.0.0" = {
@@ -97,7 +122,12 @@
         revNum = 1;
         sha256 = "ffefb19c2f56b12355b409e2eb3ab98ec2a1d5661d02480e3a1949c57f2bd994";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-1.0.0.0-r2-2dc2ff0785117eaf280eb3cb47fcb075442ac3a3296a8f483c00d206762f862c.nix;
+        revNum = 2;
+        sha256 = "2dc2ff0785117eaf280eb3cb47fcb075442ac3a3296a8f483c00d206762f862c";
+      };
+      default = "r2";
     };
   };
   "1.1.0.0" = {
@@ -113,7 +143,12 @@
         revNum = 1;
         sha256 = "b207c3c08b52ef949d8de9938fc5d452f583a59f541e9af363cb461f6b751f08";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-1.1.0.0-r2-06b5cac093469cc63c737890eda19639d5ced1f4cced16e728d806f0d0910477.nix;
+        revNum = 2;
+        sha256 = "06b5cac093469cc63c737890eda19639d5ced1f4cced16e728d806f0d0910477";
+      };
+      default = "r2";
     };
   };
   "1.2.0.0" = {
@@ -140,7 +175,12 @@
         revNum = 0;
         sha256 = "ffbf93fff771665a4f9488a19a617a0727272c45ab1c0b95c5cac5b64eb68981";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-2.0.0.0-r1-0fceb4c8ea49b6d27a66e310bb48f37082c46e09ecabbff33ae41abeab8b8727.nix;
+        revNum = 1;
+        sha256 = "0fceb4c8ea49b6d27a66e310bb48f37082c46e09ecabbff33ae41abeab8b8727";
+      };
+      default = "r1";
     };
   };
   "2.0.1.0" = {
@@ -151,7 +191,12 @@
         revNum = 0;
         sha256 = "6470aa8b5b43616338a4642098075caef7e5de719c0cf1fbf6a1b8eb0632a278";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-2.0.1.0-r1-d2ca42e681a1caa53c6a31cbacae9c7d8ba62011b14d1c5760a1deab6520296b.nix;
+        revNum = 1;
+        sha256 = "d2ca42e681a1caa53c6a31cbacae9c7d8ba62011b14d1c5760a1deab6520296b";
+      };
+      default = "r1";
     };
   };
   "2.0.2.0" = {
@@ -162,7 +207,12 @@
         revNum = 0;
         sha256 = "4cbcfd9f3ed5aa54725d467a4eedb533305e370216047023527e4521be1110a0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-2.0.2.0-r1-8a7e143d6fc879144eac308f1f119fc9c1a25e393b8ad81bbcfcb12791a5d187.nix;
+        revNum = 1;
+        sha256 = "8a7e143d6fc879144eac308f1f119fc9c1a25e393b8ad81bbcfcb12791a5d187";
+      };
+      default = "r1";
     };
   };
   "3.0.0.0" = {
@@ -183,7 +233,12 @@
         revNum = 2;
         sha256 = "b8169dcc064fa1b30c7cc8f0cc2db94de68431bd175f4f0ec8c9b3ac7b8f2a3f";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-3.0.0.0-r3-af4b0cb223fe591d29721d8f841a1b3a2a1205755a79c0d0a626aa659760e5bb.nix;
+        revNum = 3;
+        sha256 = "af4b0cb223fe591d29721d8f841a1b3a2a1205755a79c0d0a626aa659760e5bb";
+      };
+      default = "r3";
     };
   };
   "3.0.1.0" = {
@@ -204,7 +259,12 @@
         revNum = 2;
         sha256 = "03590d2268c0062571c37f50b05203c19fe9e0c5c21c699400ecf11e20761829";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-3.0.1.0-r3-ee97de32b438fd7111124f9b3ccb90d051341189bf9cd725c300cce7cf8b6a44.nix;
+        revNum = 3;
+        sha256 = "ee97de32b438fd7111124f9b3ccb90d051341189bf9cd725c300cce7cf8b6a44";
+      };
+      default = "r3";
     };
   };
   "3.0.1.1" = {
@@ -225,7 +285,12 @@
         revNum = 2;
         sha256 = "9cd01df6ef40316cdb9522169b163fd6c0878caddfdba93fe5339c40b339c844";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-3.0.1.1-r3-ae8596fcf4c5fae441397b512b7cfea00ab2ce8fe2deec32471036f4d950ba0b.nix;
+        revNum = 3;
+        sha256 = "ae8596fcf4c5fae441397b512b7cfea00ab2ce8fe2deec32471036f4d950ba0b";
+      };
+      default = "r3";
     };
   };
   "3.0.2.0" = {
@@ -246,7 +311,12 @@
         revNum = 2;
         sha256 = "f7e2afa1f8e0e0941348d404d4d8498f13080915bf34df7e648e13e2f49bb689";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-3.0.2.0-r3-c9762f62eb56e66f5c0a0e371f6eac9e8b0d39fa88bbb4f6647dc28b3ef69455.nix;
+        revNum = 3;
+        sha256 = "c9762f62eb56e66f5c0a0e371f6eac9e8b0d39fa88bbb4f6647dc28b3ef69455";
+      };
+      default = "r3";
     };
   };
   "3.1.0.0" = {
@@ -257,7 +327,12 @@
         revNum = 0;
         sha256 = "354a7cb8e4a58655cd65cce3c80a11bdbaafc90458f5cc18f77a4878009b515e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.1.0.0-r1-1467c2f792181b87c7c58fe7d39be296fcde42926e2b5451dc211c3c02dfc7e6.nix;
+        revNum = 1;
+        sha256 = "1467c2f792181b87c7c58fe7d39be296fcde42926e2b5451dc211c3c02dfc7e6";
+      };
+      default = "r1";
     };
   };
   "3.1.0.1" = {
@@ -268,7 +343,12 @@
         revNum = 0;
         sha256 = "698c89218b4c156ca23d32bcf40f1e80b999b4678d2e815e70b7ab7534add3b8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.1.0.1-r1-8228f3ae4da738c63447639464b358fdd795623ca82012ca4ce8c44a67ee2dad.nix;
+        revNum = 1;
+        sha256 = "8228f3ae4da738c63447639464b358fdd795623ca82012ca4ce8c44a67ee2dad";
+      };
+      default = "r1";
     };
   };
   "3.1.1.0" = {
@@ -279,7 +359,12 @@
         revNum = 0;
         sha256 = "c6f18e19d463f7e3e09887f324f5969412bb43951b791e70f40794fba4fdb6b5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.1.1.0-r1-02abd3973c5d47775cced25a70c4d2a8051a2553ee86311e8e480e7e9543ef61.nix;
+        revNum = 1;
+        sha256 = "02abd3973c5d47775cced25a70c4d2a8051a2553ee86311e8e480e7e9543ef61";
+      };
+      default = "r1";
     };
   };
   "3.1.1.1" = {
@@ -295,7 +380,12 @@
         revNum = 1;
         sha256 = "0b8cdf3f0380694f40e66b165db2b452e67f2f5e5e86837c2936604e4a56fe63";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/jacinda-3.1.1.1-r2-388732043a49cd97e17039caf0effd1c5a8b2491fa3183a05f3a0054473e8a40.nix;
+        revNum = 2;
+        sha256 = "388732043a49cd97e17039caf0effd1c5a8b2491fa3183a05f3a0054473e8a40";
+      };
+      default = "r2";
     };
   };
   "3.2.0.0" = {
@@ -316,7 +406,12 @@
         revNum = 2;
         sha256 = "2c742e516cd78a74b2ba0ce6fd48eb69c0451383b086d242a493ee3351fcc561";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/jacinda-3.2.0.0-r3-35cff819dc67ea8362164a3fdaa232e082db99171665b2dd37a31c164ff308c3.nix;
+        revNum = 3;
+        sha256 = "35cff819dc67ea8362164a3fdaa232e082db99171665b2dd37a31c164ff308c3";
+      };
+      default = "r3";
     };
   };
   "3.2.0.1" = {
@@ -327,7 +422,12 @@
         revNum = 0;
         sha256 = "87f1f93dcd8eff9db6fb8114f2aa9e9c71a72c166c095c90ac2b361804934e9f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.2.0.1-r1-53d094e5cd2eb4d883097fffffee1e532663afa0f9f624b2c5d316b136785cf9.nix;
+        revNum = 1;
+        sha256 = "53d094e5cd2eb4d883097fffffee1e532663afa0f9f624b2c5d316b136785cf9";
+      };
+      default = "r1";
     };
   };
   "3.3.0.0" = {
@@ -338,7 +438,12 @@
         revNum = 0;
         sha256 = "15b83145628a0fc77b6dfc3ffe3d38c2bb3c21483f108a0cd50bd4b04a8c8d8c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.3.0.0-r1-f3534bd40068be5b5f855a97fb961dec456c23d4662c030891bcffd3f61110a4.nix;
+        revNum = 1;
+        sha256 = "f3534bd40068be5b5f855a97fb961dec456c23d4662c030891bcffd3f61110a4";
+      };
+      default = "r1";
     };
   };
   "3.3.0.1" = {
@@ -349,7 +454,12 @@
         revNum = 0;
         sha256 = "5809860de9c91f3b37c89d45283e14516ce1719411149d50fbe79b362371ed4a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.3.0.1-r1-c9e9ede3b687f9e4b0aca4f235a5e0be12d236eb7ab9f5f24ddceba887d4785c.nix;
+        revNum = 1;
+        sha256 = "c9e9ede3b687f9e4b0aca4f235a5e0be12d236eb7ab9f5f24ddceba887d4785c";
+      };
+      default = "r1";
     };
   };
   "3.3.0.2" = {
@@ -360,7 +470,12 @@
         revNum = 0;
         sha256 = "66b26220e05caaab6063f1133b671fedafc84fd39c89986ef82b71840fb7289c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.3.0.2-r1-3eb626194a84e6801892968c0fce1a2b893d4098d8e5452383549dfaac307a36.nix;
+        revNum = 1;
+        sha256 = "3eb626194a84e6801892968c0fce1a2b893d4098d8e5452383549dfaac307a36";
+      };
+      default = "r1";
     };
   };
   "3.3.0.3" = {
@@ -371,7 +486,12 @@
         revNum = 0;
         sha256 = "9a7fec692516a381b8bbb5f8c8bdd51aee049e61f67da670ac174ba95a8535e7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/jacinda-3.3.0.3-r1-b719ed4a00e262f627222706f0cbe270ecf68702f89c5fffd373f185f6c690c0.nix;
+        revNum = 1;
+        sha256 = "b719ed4a00e262f627222706f0cbe270ecf68702f89c5fffd373f185f6c690c0";
+      };
+      default = "r1";
     };
   };
 }
