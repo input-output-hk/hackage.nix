@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "92499c9f2dad02115094b05925fa5018581fb198f482ecc6064bce368baee31d";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/sel-0.0.2.0-r2-5ee2db0b9f05a11420444a67c082dd13680dacaf4f51c9a860ca975aa47cc3dc.nix;
+        revNum = 2;
+        sha256 = "5ee2db0b9f05a11420444a67c082dd13680dacaf4f51c9a860ca975aa47cc3dc";
+      };
+      default = "r2";
     };
   };
 }

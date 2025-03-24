@@ -11549,6 +11549,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-data" = import ./nix/network-data.nix;
   "network-dbus" = import ./nix/network-dbus.nix;
   "network-dns" = import ./nix/network-dns.nix;
+  "network-effectful" = import ./nix/network-effectful.nix;
   "network-enumerator" = import ./nix/network-enumerator.nix;
   "network-fancy" = import ./nix/network-fancy.nix;
   "network-hans" = import ./nix/network-hans.nix;

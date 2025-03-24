@@ -81,4 +81,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "b520e32ca6301fca4ac7c34e09cc5bfcd3632e967f852a0c69f6b606b902bfc2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-fsnotify-0.3.0.2-r0-479691a512cb170cd0ea1c8de5da2aa2bf016b62440010977920ed35f81cec52.nix;
+        revNum = 0;
+        sha256 = "479691a512cb170cd0ea1c8de5da2aa2bf016b62440010977920ed35f81cec52";
+      };
+      default = "r0";
+    };
+  };
 }
