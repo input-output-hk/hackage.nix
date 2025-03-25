@@ -6980,6 +6980,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "goldplate" = import ./nix/goldplate.nix;
   "gooey" = import ./nix/gooey.nix;
   "google-cloud" = import ./nix/google-cloud.nix;
+  "google-cloud-common" = import ./nix/google-cloud-common.nix;
+  "google-cloud-compute" = import ./nix/google-cloud-compute.nix;
+  "google-cloud-logging" = import ./nix/google-cloud-logging.nix;
+  "google-cloud-storage" = import ./nix/google-cloud-storage.nix;
   "google-dictionary" = import ./nix/google-dictionary.nix;
   "google-drive" = import ./nix/google-drive.nix;
   "google-html5-slide" = import ./nix/google-html5-slide.nix;

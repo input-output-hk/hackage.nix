@@ -263,4 +263,15 @@
       default = "r0";
     };
   };
+  "2.2.0.0" = {
+    sha256 = "4566e5af09111db9839ff09ff91849018b243b48c0353ae5566825441c4ce5db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/slack-web-2.2.0.0-r0-997e6991fcc2ebbf9089c31a61327799d90dc78474a12bbcf3f677c3c471233e.nix;
+        revNum = 0;
+        sha256 = "997e6991fcc2ebbf9089c31a61327799d90dc78474a12bbcf3f677c3c471233e";
+      };
+      default = "r0";
+    };
+  };
 }

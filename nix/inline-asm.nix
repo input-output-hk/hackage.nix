@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.5.0.3" = {
+    sha256 = "b9e73ed69f97d12780ddb4e6a9d77bb25018e7aade1babb4d8f87b1915cc6911";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inline-asm-0.5.0.3-r0-e80fa73d56e7955f1a6db37ae6f6e726171f7e1fbc7934abafe1f66f67221908.nix;
+        revNum = 0;
+        sha256 = "e80fa73d56e7955f1a6db37ae6f6e726171f7e1fbc7934abafe1f66f67221908";
+      };
+      default = "r0";
+    };
+  };
 }
