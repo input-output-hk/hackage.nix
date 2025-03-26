@@ -4145,6 +4145,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "count" = import ./nix/count.nix;
   "countable" = import ./nix/countable.nix;
   "countable-inflections" = import ./nix/countable-inflections.nix;
+  "countdown-numbers-game" = import ./nix/countdown-numbers-game.nix;
   "counter" = import ./nix/counter.nix;
   "country" = import ./nix/country.nix;
   "country-codes" = import ./nix/country-codes.nix;
@@ -15786,6 +15787,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symon" = import ./nix/symon.nix;
   "symparsec" = import ./nix/symparsec.nix;
   "symtegration" = import ./nix/symtegration.nix;
+  "synapse" = import ./nix/synapse.nix;
   "sync" = import ./nix/sync.nix;
   "sync-mht" = import ./nix/sync-mht.nix;
   "synchronous-channels" = import ./nix/synchronous-channels.nix;
@@ -15917,6 +15919,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tar-conduit" = import ./nix/tar-conduit.nix;
   "tardis" = import ./nix/tardis.nix;
   "target" = import ./nix/target.nix;
+  "targeted-quickcheck" = import ./nix/targeted-quickcheck.nix;
   "tart" = import ./nix/tart.nix;
   "task" = import ./nix/task.nix;
   "task-distribution" = import ./nix/task-distribution.nix;
@@ -17205,6 +17208,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vcatt" = import ./nix/vcatt.nix;
   "vcd" = import ./nix/vcd.nix;
   "vcf" = import ./nix/vcf.nix;
+  "vcr" = import ./nix/vcr.nix;
   "vcs-ignore" = import ./nix/vcs-ignore.nix;
   "vcs-revision" = import ./nix/vcs-revision.nix;
   "vcs-web-hook-parse" = import ./nix/vcs-web-hook-parse.nix;
