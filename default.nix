@@ -10769,6 +10769,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "memfd" = import ./nix/memfd.nix;
   "meminfo" = import ./nix/meminfo.nix;
   "memis" = import ./nix/memis.nix;
+  "memo-map" = import ./nix/memo-map.nix;
   "memo-ptr" = import ./nix/memo-ptr.nix;
   "memo-sqlite" = import ./nix/memo-sqlite.nix;
   "memoization-utils" = import ./nix/memoization-utils.nix;

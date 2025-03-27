@@ -98,6 +98,17 @@
       default = "r0";
     };
   };
+  "0.18.0" = {
+    sha256 = "ab42580866da56ea8cdd80946bfd5eaf6a98cb0556b1ad27c87c95cf2a9e3e48";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/github-webhooks-0.18.0-r0-ab727b38442a042d4176671404b8759f49f8d2df0d8f3c088bc03b789268b07c.nix;
+        revNum = 0;
+        sha256 = "ab727b38442a042d4176671404b8759f49f8d2df0d8f3c088bc03b789268b07c";
+      };
+      default = "r0";
+    };
+  };
   "0.9.0" = {
     sha256 = "0ed8274c4280197544d60cba0258b5d966f42f77130aa96a7a80c634e8d1f3bf";
     revisions = {

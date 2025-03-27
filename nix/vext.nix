@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "1d0495083fe0d9d59b6e7fd2a7c51b0493984b03afc1df362e78a45bf11aab05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vext-0.1.4.0-r0-b8262a12d59b938ef58f42ce879621b5e6a8f084ded60d2b1fc5452343500dbd.nix;
+        revNum = 0;
+        sha256 = "b8262a12d59b938ef58f42ce879621b5e6a8f084ded60d2b1fc5452343500dbd";
+      };
+      default = "r0";
+    };
+  };
 }

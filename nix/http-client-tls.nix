@@ -410,7 +410,17 @@
         revNum = 0;
         sha256 = "17217717fbbcda951b4ff000a7fbce416975b154c9bc09e56d9cac8ffb3b9525";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/http-client-tls-0.3.6.4-r1-e2c818de85acec1a86e809a1d0a966616958dfcdc489f1ceb70c01fb5b88105b.nix;
+        revNum = 1;
+        sha256 = "e2c818de85acec1a86e809a1d0a966616958dfcdc489f1ceb70c01fb5b88105b";
+      };
+      r2 = {
+        nix = import ../hackage/http-client-tls-0.3.6.4-r2-efe0a32d59c3a38ea35eb9c1b6e7beffa3592e39b2065a727cb84ccd654d16f3.nix;
+        revNum = 2;
+        sha256 = "efe0a32d59c3a38ea35eb9c1b6e7beffa3592e39b2065a727cb84ccd654d16f3";
+      };
+      default = "r2";
     };
   };
 }

@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "f283310a20baa42c761ede96bf0ae26104ac8f1c618a79ecd3cd1f8eb5a21047";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-sql-lifted-0.4.1.0-r0-e826b968878e4346ec4728f631ff4155354905d53e3e09232225758dbd30b279.nix;
+        revNum = 0;
+        sha256 = "e826b968878e4346ec4728f631ff4155354905d53e3e09232225758dbd30b279";
+      };
+      default = "r0";
+    };
+  };
 }
