@@ -4674,6 +4674,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "delivery-status-notification" = import ./nix/delivery-status-notification.nix;
   "delta" = import ./nix/delta.nix;
   "delta-h" = import ./nix/delta-h.nix;
+  "delta-store" = import ./nix/delta-store.nix;
+  "delta-types" = import ./nix/delta-types.nix;
   "deltaq" = import ./nix/deltaq.nix;
   "delude" = import ./nix/delude.nix;
   "demangler" = import ./nix/demangler.nix;
@@ -5905,6 +5907,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "flat-tex" = import ./nix/flat-tex.nix;
   "flatbuffers" = import ./nix/flatbuffers.nix;
   "flatbuffers-builder" = import ./nix/flatbuffers-builder.nix;
+  "flatbuffers-parser" = import ./nix/flatbuffers-parser.nix;
   "flatparse" = import ./nix/flatparse.nix;
   "flay" = import ./nix/flay.nix;
   "flexible-defaults" = import ./nix/flexible-defaults.nix;
@@ -6300,6 +6303,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gemstone" = import ./nix/gemstone.nix;
   "gen-imports" = import ./nix/gen-imports.nix;
   "gen-passwd" = import ./nix/gen-passwd.nix;
+  "genai-lib" = import ./nix/genai-lib.nix;
   "gencheck" = import ./nix/gencheck.nix;
   "gender" = import ./nix/gender.nix;
   "genders" = import ./nix/genders.nix;
