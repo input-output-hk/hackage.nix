@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.1.5" = {
+    sha256 = "0c8744cbb05f49aabf146ec2dd18cbb6bdd18e1871eda7b03c7588a4fdd82247";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-control-0.1.5-r0-b9ae98bdd197f80538201733f7e3aafa74841c822f1723679f984dbf2cb1c50b.nix;
+        revNum = 0;
+        sha256 = "b9ae98bdd197f80538201733f7e3aafa74841c822f1723679f984dbf2cb1c50b";
+      };
+      default = "r0";
+    };
+  };
 }

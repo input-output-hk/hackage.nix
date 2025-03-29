@@ -64,4 +64,15 @@
       default = "r1";
     };
   };
+  "0.4" = {
+    sha256 = "592559481b64fd19231de4ac13604f97702d5f0335477a671a329f4b0bd6ee14";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tart-0.4-r0-a0ff12ccc727cb176e9a16c31bcab26492d282119f3c3316ceb3edd13aa6066c.nix;
+        revNum = 0;
+        sha256 = "a0ff12ccc727cb176e9a16c31bcab26492d282119f3c3316ceb3edd13aa6066c";
+      };
+      default = "r0";
+    };
+  };
 }

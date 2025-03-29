@@ -13177,6 +13177,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "promise" = import ./nix/promise.nix;
   "promises" = import ./nix/promises.nix;
   "prompt" = import ./nix/prompt.nix;
+  "prompt-hs" = import ./nix/prompt-hs.nix;
   "pronounce" = import ./nix/pronounce.nix;
   "proof-assistant-bot" = import ./nix/proof-assistant-bot.nix;
   "proof-combinators" = import ./nix/proof-combinators.nix;
