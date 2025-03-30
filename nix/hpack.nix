@@ -1948,7 +1948,12 @@
         revNum = 0;
         sha256 = "9b4603d67f1963b3f8cae9229b223f37dbf8ad1c19966e12089479f4d8541f7f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hpack-0.38.0-r1-c4d5fa1c8b0ceee6564218eeb5702af5c3ada84dcb6611e7f8226f193176f80a.nix;
+        revNum = 1;
+        sha256 = "c4d5fa1c8b0ceee6564218eeb5702af5c3ada84dcb6611e7f8226f193176f80a";
+      };
+      default = "r1";
     };
   };
   "0.4.0" = {

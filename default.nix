@@ -4506,6 +4506,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-partition" = import ./nix/data-partition.nix;
   "data-pdf-fieldreader" = import ./nix/data-pdf-fieldreader.nix;
   "data-pprint" = import ./nix/data-pprint.nix;
+  "data-prometheus" = import ./nix/data-prometheus.nix;
   "data-quotientref" = import ./nix/data-quotientref.nix;
   "data-r-tree" = import ./nix/data-r-tree.nix;
   "data-ref" = import ./nix/data-ref.nix;
