@@ -17491,6 +17491,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "weak-bag" = import ./nix/weak-bag.nix;
   "weather-api" = import ./nix/weather-api.nix;
   "weatherhs" = import ./nix/weatherhs.nix;
+  "weave" = import ./nix/weave.nix;
+  "weave-core" = import ./nix/weave-core.nix;
   "web-browser-in-haskell" = import ./nix/web-browser-in-haskell.nix;
   "web-css" = import ./nix/web-css.nix;
   "web-encodings" = import ./nix/web-encodings.nix;
