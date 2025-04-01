@@ -3646,6 +3646,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clock" = import ./nix/clock.nix;
   "clock-extras" = import ./nix/clock-extras.nix;
   "clocked" = import ./nix/clocked.nix;
+  "clod" = import ./nix/clod.nix;
   "clogparse" = import ./nix/clogparse.nix;
   "clone-all" = import ./nix/clone-all.nix;
   "closed" = import ./nix/closed.nix;
@@ -11495,6 +11496,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "neolua" = import ./nix/neolua.nix;
   "neononempty" = import ./nix/neononempty.nix;
   "neptune-backend" = import ./nix/neptune-backend.nix;
+  "nerd-font-icons" = import ./nix/nerd-font-icons.nix;
   "nerf" = import ./nix/nerf.nix;
   "nero" = import ./nix/nero.nix;
   "nero-wai" = import ./nix/nero-wai.nix;
