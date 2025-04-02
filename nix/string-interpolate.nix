@@ -319,7 +319,12 @@
         revNum = 1;
         sha256 = "a21d2d47e2c315c5734279b8912ae684053e3fbc1d6a2e77e9def60af8738a98";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/string-interpolate-0.3.4.0-r2-7304fdb3ad1622e4832bf10e115ab4dc8879c34691bd798f858eb51e8fe68657.nix;
+        revNum = 2;
+        sha256 = "7304fdb3ad1622e4832bf10e115ab4dc8879c34691bd798f858eb51e8fe68657";
+      };
+      default = "r2";
     };
   };
 }

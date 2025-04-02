@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.0.1" = {
+    sha256 = "97a7a70e24facb8c38391c6099978dcef7dc02684ead6d5ac337e3b52f59f4c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grapesy-1.0.1-r0-c38da107f5caddfa87f802d82e36f292f12fbf53908b6bb44b252d929c72c8dc.nix;
+        revNum = 0;
+        sha256 = "c38da107f5caddfa87f802d82e36f292f12fbf53908b6bb44b252d929c72c8dc";
+      };
+      default = "r0";
+    };
+  };
 }

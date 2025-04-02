@@ -7157,6 +7157,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grpc-spec" = import ./nix/grpc-spec.nix;
   "gruff" = import ./nix/gruff.nix;
   "gruff-examples" = import ./nix/gruff-examples.nix;
+  "gruvbox-colors" = import ./nix/gruvbox-colors.nix;
   "gsasl" = import ./nix/gsasl.nix;
   "gsc-weighting" = import ./nix/gsc-weighting.nix;
   "gscholar-rss" = import ./nix/gscholar-rss.nix;
