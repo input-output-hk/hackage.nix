@@ -94,7 +94,12 @@
         revNum = 1;
         sha256 = "74a8585a90e3c06667134939cd170cff24067d5a988e14829785af0dfa6bd10f";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hie-compat-0.3.1.2-r2-c3a05ec29b7b11d222fb80b60165a81b5ece93ff6e2b34ad3ffaeb243fff925e.nix;
+        revNum = 2;
+        sha256 = "c3a05ec29b7b11d222fb80b60165a81b5ece93ff6e2b34ad3ffaeb243fff925e";
+      };
+      default = "r2";
     };
   };
 }
