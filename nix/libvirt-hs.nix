@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "0.2.3" = {
+    sha256 = "442454db90b0b77b8b959a8992038c5804c243885190bf2722c8bc340689771d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libvirt-hs-0.2.3-r0-381f38f3fa9f7c27f22805d959c8816e51d9b208668adb9951b1b1507d706d98.nix;
+        revNum = 0;
+        sha256 = "381f38f3fa9f7c27f22805d959c8816e51d9b208668adb9951b1b1507d706d98";
+      };
+      default = "r0";
+    };
+  };
 }

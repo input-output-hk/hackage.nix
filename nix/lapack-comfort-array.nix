@@ -48,4 +48,15 @@
       default = "r1";
     };
   };
+  "0.0.1.1" = {
+    sha256 = "12bc06c16e8e3be9310a4ca4b1efec66a3ed03fa2fdffd327c766946d5019a12";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lapack-comfort-array-0.0.1.1-r0-a3934cdf94797cf90cf5fd052388fdff30c97217627f2762d4f41dbeed212a5e.nix;
+        revNum = 0;
+        sha256 = "a3934cdf94797cf90cf5fd052388fdff30c97217627f2762d4f41dbeed212a5e";
+      };
+      default = "r0";
+    };
+  };
 }

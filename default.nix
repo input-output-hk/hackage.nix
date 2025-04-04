@@ -12592,6 +12592,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pinch-gen" = import ./nix/pinch-gen.nix;
   "pinchot" = import ./nix/pinchot.nix;
   "pine" = import ./nix/pine.nix;
+  "pinecone" = import ./nix/pinecone.nix;
   "ping" = import ./nix/ping.nix;
   "ping-parser-attoparsec" = import ./nix/ping-parser-attoparsec.nix;
   "ping-wrapper" = import ./nix/ping-wrapper.nix;

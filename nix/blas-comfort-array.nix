@@ -48,4 +48,15 @@
       default = "r1";
     };
   };
+  "0.0.0.4" = {
+    sha256 = "4a1a7309f3f7d89f8d95da9e8614ac71bf3dd55af318c47d550939f5ebbca14e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blas-comfort-array-0.0.0.4-r0-829122a8f979dc7595733a89342c264bd3bf9897e4c5de265b074ef2419c4438.nix;
+        revNum = 0;
+        sha256 = "829122a8f979dc7595733a89342c264bd3bf9897e4c5de265b074ef2419c4438";
+      };
+      default = "r0";
+    };
+  };
 }
