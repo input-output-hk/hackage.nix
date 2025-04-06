@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.6.1.1" = {
+    sha256 = "751f5840be12762ff2effb55c9599a049967719a7bb4da3d84877f862b1e2571";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/manifolds-core-0.6.1.1-r0-e58f62fb3423be58b64739db153b32ab9627a121eb1fc6977c7b6fcfd50da200.nix;
+        revNum = 0;
+        sha256 = "e58f62fb3423be58b64739db153b32ab9627a121eb1fc6977c7b6fcfd50da200";
+      };
+      default = "r0";
+    };
+  };
 }

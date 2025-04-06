@@ -290,4 +290,15 @@
       default = "r0";
     };
   };
+  "0.6.0.7" = {
+    sha256 = "25d455b99b15a5d2b60d2b32d123b7964a8f54d7a33b0fcbd4b18abb36625261";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/taskwarrior-0.6.0.7-r0-be6960270f24d0c85a3a32749905e394558ee760d11553b3ccd40526f2f6c33a.nix;
+        revNum = 0;
+        sha256 = "be6960270f24d0c85a3a32749905e394558ee760d11553b3ccd40526f2f6c33a";
+      };
+      default = "r0";
+    };
+  };
 }

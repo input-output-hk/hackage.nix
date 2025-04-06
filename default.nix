@@ -11310,6 +11310,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "multiarg" = import ./nix/multiarg.nix;
   "multibase" = import ./nix/multibase.nix;
   "multicurryable" = import ./nix/multicurryable.nix;
+  "multidir" = import ./nix/multidir.nix;
   "multifile" = import ./nix/multifile.nix;
   "multifocal" = import ./nix/multifocal.nix;
   "multihash" = import ./nix/multihash.nix;

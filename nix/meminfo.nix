@@ -28,7 +28,12 @@
         revNum = 2;
         sha256 = "25dea9d2884fd65615e79bfb0ad381d67d3a576fa5f738bf44ce7bc2d9b2df44";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/meminfo-0.2.0.0-r3-fe0ddd18f79e620818f9792da4c9e79a4ca18039e91a3939b71651c3a463873e.nix;
+        revNum = 3;
+        sha256 = "fe0ddd18f79e620818f9792da4c9e79a4ca18039e91a3939b71651c3a463873e";
+      };
+      default = "r3";
     };
   };
 }

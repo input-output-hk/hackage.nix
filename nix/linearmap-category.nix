@@ -225,4 +225,15 @@
       default = "r1";
     };
   };
+  "0.6.0.2" = {
+    sha256 = "44cda058c29a7cb0767134c0872b637b33f42244f77b0fc4430af73693266f5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linearmap-category-0.6.0.2-r0-7432aca14634047ddbcd7674169688aed0da100083dff75d7c693f464bd22839.nix;
+        revNum = 0;
+        sha256 = "7432aca14634047ddbcd7674169688aed0da100083dff75d7c693f464bd22839";
+      };
+      default = "r0";
+    };
+  };
 }
