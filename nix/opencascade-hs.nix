@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "a68c6552e598c324cce3bfb437e8376c8570b8821aee4ec53b8570ffbf239080";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opencascade-hs-0.5.0.0-r0-c4077ef1638119d56bb49756cd4c42cddb3f2777b7b5e78c03d1949b4f98bbbe.nix;
+        revNum = 0;
+        sha256 = "c4077ef1638119d56bb49756cd4c42cddb3f2777b7b5e78c03d1949b4f98bbbe";
+      };
+      default = "r0";
+    };
+  };
 }

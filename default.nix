@@ -16157,6 +16157,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-ascii" = import ./nix/text-ascii.nix;
   "text-binary" = import ./nix/text-binary.nix;
   "text-builder" = import ./nix/text-builder.nix;
+  "text-builder-core" = import ./nix/text-builder-core.nix;
   "text-builder-dev" = import ./nix/text-builder-dev.nix;
   "text-builder-linear" = import ./nix/text-builder-linear.nix;
   "text-compression" = import ./nix/text-compression.nix;
@@ -17484,6 +17485,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "watchit" = import ./nix/watchit.nix;
   "waterfall-cad" = import ./nix/waterfall-cad.nix;
   "waterfall-cad-examples" = import ./nix/waterfall-cad-examples.nix;
+  "waterfall-cad-svg" = import ./nix/waterfall-cad-svg.nix;
   "wavconvert" = import ./nix/wavconvert.nix;
   "wave" = import ./nix/wave.nix;
   "wavefront" = import ./nix/wavefront.nix;
