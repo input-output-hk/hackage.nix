@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "d9d492bf3e91be8014e66ef904a07457b8ecd391d7ca5532d0943936e0294f44";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MultiChor-1.1.0.0-r0-63ae22e0738303d71181ea03a9e5caebaacc8e1ef5bf11847ef4ff1cf790cb7f.nix;
+        revNum = 0;
+        sha256 = "63ae22e0738303d71181ea03a9e5caebaacc8e1ef5bf11847ef4ff1cf790cb7f";
+      };
+      default = "r0";
+    };
+  };
 }

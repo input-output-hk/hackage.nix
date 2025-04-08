@@ -4553,6 +4553,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "datafix" = import ./nix/datafix.nix;
   "dataflow" = import ./nix/dataflow.nix;
   "dataflower" = import ./nix/dataflower.nix;
+  "dataframe" = import ./nix/dataframe.nix;
   "datalog" = import ./nix/datalog.nix;
   "datapacker" = import ./nix/datapacker.nix;
   "datarobot" = import ./nix/datarobot.nix;
@@ -17501,6 +17502,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "weave" = import ./nix/weave.nix;
   "weave-core" = import ./nix/weave-core.nix;
   "web-browser-in-haskell" = import ./nix/web-browser-in-haskell.nix;
+  "web-cookiejar" = import ./nix/web-cookiejar.nix;
   "web-css" = import ./nix/web-css.nix;
   "web-encodings" = import ./nix/web-encodings.nix;
   "web-fpco" = import ./nix/web-fpco.nix;

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "d94227a3ce96eccb293ba8689a65109421ba6deab6839e32e859b0bc9dda4aac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-braille-0.1.2-r0-28ab3e09212609d6c9891a82336a01174b8034c08115f73f315f04ee7d20414a.nix;
+        revNum = 0;
+        sha256 = "28ab3e09212609d6c9891a82336a01174b8034c08115f73f315f04ee7d20414a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.0.13" = {
+    sha256 = "9eadbcb5fad4570a2b71e0621cfd32b329263636dc024c20e59c5b2ba459008c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/axel-0.0.13-r0-f9a1ad085a0ee54c3740058896fda629ad9152c92ceff99a348f564b5625d7d2.nix;
+        revNum = 0;
+        sha256 = "f9a1ad085a0ee54c3740058896fda629ad9152c92ceff99a348f564b5625d7d2";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "c3a29b336204fa8ba3710b20c7f5e1239a7060733e438b9faae0ae6e4bcc4e6f";
     revisions = {

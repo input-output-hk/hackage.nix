@@ -318,6 +318,17 @@
       default = "r0";
     };
   };
+  "0.1.41" = {
+    sha256 = "c49ae31f70dc9a26d091a22a7ac07a20d215b1bc4ec59f59ec3f047f51d4d28f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clod-0.1.41-r0-8bb68f196d17e295940aee93af54cf2292c5e2a6f5e0cb9c6c23f9f153065497.nix;
+        revNum = 0;
+        sha256 = "8bb68f196d17e295940aee93af54cf2292c5e2a6f5e0cb9c6c23f9f153065497";
+      };
+      default = "r0";
+    };
+  };
   "0.1.5" = {
     sha256 = "2ec526843f99c77903c4e16a40a1c73c395271ace69dc9d6e1d4dd8d81f47316";
     revisions = {
@@ -336,6 +347,17 @@
         nix = import ../hackage/clod-0.1.6-r0-2a7eec963d0f09032aac375c956c0448504ddec4bc4e2b4f40508b239ea1e8f9.nix;
         revNum = 0;
         sha256 = "2a7eec963d0f09032aac375c956c0448504ddec4bc4e2b4f40508b239ea1e8f9";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0" = {
+    sha256 = "60a64d8e187db70c7be1440a82e115560b95b6f91c78a057c63c91d981a4ec40";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clod-0.2.0-r0-4d9f9d3c088e0cc03bd591728d3ac85ac4cf2d265950a6968f7d6ecf9a5157f2.nix;
+        revNum = 0;
+        sha256 = "4d9f9d3c088e0cc03bd591728d3ac85ac4cf2d265950a6968f7d6ecf9a5157f2";
       };
       default = "r0";
     };

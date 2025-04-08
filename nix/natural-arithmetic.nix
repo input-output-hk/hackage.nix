@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "ca9780b27237b55e33870166f2a3c841b390b6b8e374382ebc3f0e0d2ea346df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/natural-arithmetic-0.2.2.0-r0-dab3a911138672766a7bd6e56b38494d2b22cbaadcf409d15862028707a9d694.nix;
+        revNum = 0;
+        sha256 = "dab3a911138672766a7bd6e56b38494d2b22cbaadcf409d15862028707a9d694";
+      };
+      default = "r0";
+    };
+  };
 }
