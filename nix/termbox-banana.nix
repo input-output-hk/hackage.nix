@@ -117,4 +117,15 @@
       default = "r2";
     };
   };
+  "2.0.0.1" = {
+    sha256 = "332b5063a4712f2bd41e84a7bc76e8eb676213c52358aa41e16fbd1c1d36ed31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/termbox-banana-2.0.0.1-r0-0526ff28357b9a35491128d372b5db8672507f52f2df9b795bdd66f6001bd8e8.nix;
+        revNum = 0;
+        sha256 = "0526ff28357b9a35491128d372b5db8672507f52f2df9b795bdd66f6001bd8e8";
+      };
+      default = "r0";
+    };
+  };
 }

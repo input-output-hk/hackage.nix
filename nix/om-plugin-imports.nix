@@ -169,4 +169,15 @@
       default = "r0";
     };
   };
+  "0.4.0.1.9.12" = {
+    sha256 = "06b6b5ae570edcfad3735d989d24262dfdff05f1eb994f40199a77f371eadc4b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-plugin-imports-0.4.0.1.9.12-r0-0330b76229f7e3f8b7f6d242da9097f3708912280529f329599ab02265288642.nix;
+        revNum = 0;
+        sha256 = "0330b76229f7e3f8b7f6d242da9097f3708912280529f329599ab02265288642";
+      };
+      default = "r0";
+    };
+  };
 }

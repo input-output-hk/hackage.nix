@@ -9144,6 +9144,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "immortal" = import ./nix/immortal.nix;
   "immortal-queue" = import ./nix/immortal-queue.nix;
   "immortal-worker" = import ./nix/immortal-worker.nix;
+  "immutaball-core" = import ./nix/immutaball-core.nix;
   "imp" = import ./nix/imp.nix;
   "imparse" = import ./nix/imparse.nix;
   "imperative-edsl" = import ./nix/imperative-edsl.nix;
@@ -9618,6 +9619,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jsonlogic" = import ./nix/jsonlogic.nix;
   "jsonlogic-aeson" = import ./nix/jsonlogic-aeson.nix;
   "jsonnet" = import ./nix/jsonnet.nix;
+  "jsonpatch" = import ./nix/jsonpatch.nix;
   "jsonpath" = import ./nix/jsonpath.nix;
   "jsonresume" = import ./nix/jsonresume.nix;
   "jsonrpc-conduit" = import ./nix/jsonrpc-conduit.nix;
@@ -9884,6 +9886,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "laminar" = import ./nix/laminar.nix;
   "landlock" = import ./nix/landlock.nix;
   "lang" = import ./nix/lang.nix;
+  "langchain-hs" = import ./nix/langchain-hs.nix;
   "language-Modula2" = import ./nix/language-_Modula2.nix;
   "language-asn" = import ./nix/language-asn.nix;
   "language-asn1" = import ./nix/language-asn1.nix;

@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "485658eb1d77c65312c7d3f61098ee7838842c33136ec8220e184d3629ca9e08";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/annotated-exception-0.3.0.3-r0-adaecd8fc78744d35efc745cc2d466af4c6b544c47eb6345a473fc81809105d6.nix;
+        revNum = 0;
+        sha256 = "adaecd8fc78744d35efc745cc2d466af4c6b544c47eb6345a473fc81809105d6";
+      };
+      default = "r0";
+    };
+  };
 }
