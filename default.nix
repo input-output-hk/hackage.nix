@@ -16164,6 +16164,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-builder-core" = import ./nix/text-builder-core.nix;
   "text-builder-dev" = import ./nix/text-builder-dev.nix;
   "text-builder-linear" = import ./nix/text-builder-linear.nix;
+  "text-builder-time" = import ./nix/text-builder-time.nix;
   "text-compression" = import ./nix/text-compression.nix;
   "text-containers" = import ./nix/text-containers.nix;
   "text-conversions" = import ./nix/text-conversions.nix;

@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.7.1.12" = {
+    sha256 = "e682a732c88839c9fb68ddb52e127f9fc5f5f11fe3ce2e3af9c8a57e791538ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-fork-0.7.1.12-r0-c5edcae413345db9bc32c7d82bba1270b941ce9bb9fce9d0af2e691782e1a968.nix;
+        revNum = 0;
+        sha256 = "c5edcae413345db9bc32c7d82bba1270b941ce9bb9fce9d0af2e691782e1a968";
+      };
+      default = "r0";
+    };
+  };
   "0.7.1.6" = {
     sha256 = "4454e405909243993622577ed6a41fe8a996ff5b146c330a4e166f32c4344252";
     revisions = {
