@@ -15209,7 +15209,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sparse-lin-alg" = import ./nix/sparse-lin-alg.nix;
   "sparse-linear-algebra" = import ./nix/sparse-linear-algebra.nix;
   "sparse-merkle-trees" = import ./nix/sparse-merkle-trees.nix;
+  "sparse-set" = import ./nix/sparse-set.nix;
   "sparse-tensor" = import ./nix/sparse-tensor.nix;
+  "sparse-vector" = import ./nix/sparse-vector.nix;
   "sparsebit" = import ./nix/sparsebit.nix;
   "sparsecheck" = import ./nix/sparsecheck.nix;
   "sparser" = import ./nix/sparser.nix;

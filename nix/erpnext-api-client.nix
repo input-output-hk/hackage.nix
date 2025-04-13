@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e0994cba81f26483b01b49af964995813b801a997a0b1262fd4a0b2be3d40c0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/erpnext-api-client-0.2.0.0-r0-c13663460e706e5c60a4542289f1cfb18fdbc9b13d669c7473192e35c5a495f6.nix;
+        revNum = 0;
+        sha256 = "c13663460e706e5c60a4542289f1cfb18fdbc9b13d669c7473192e35c5a495f6";
+      };
+      default = "r0";
+    };
+  };
 }
