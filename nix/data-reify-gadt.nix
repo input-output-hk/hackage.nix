@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "5487a7a3d8a56cf8ee84806e2ced2da4a327e93998b6467e22042ac9849a787d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/data-reify-gadt-0.1.0.1-r0-46fdb21d0de36ade2b00ac710cea488c336837d8a672a4def1979f922be4ea3e.nix;
+        revNum = 0;
+        sha256 = "46fdb21d0de36ade2b00ac710cea488c336837d8a672a4def1979f922be4ea3e";
+      };
+      default = "r0";
+    };
+  };
 }
