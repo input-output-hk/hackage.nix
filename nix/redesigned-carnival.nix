@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.4.0.2" = {
+    sha256 = "72fbc6e199320b3f5e2c9ac5acdece72872c45629909f0d72522cc5a122ab429";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/redesigned-carnival-0.4.0.2-r0-6301fd4b2db1dab460b9a2b7d281672a73f8cb8a381440a30d162b218cb96ae4.nix;
+        revNum = 0;
+        sha256 = "6301fd4b2db1dab460b9a2b7d281672a73f8cb8a381440a30d162b218cb96ae4";
+      };
+      default = "r0";
+    };
+  };
   "1.0.0.0" = {
     sha256 = "1d061f1b745218c0f58bcc9887e66fa6771a76c947f137168d7739010837eb61";
     revisions = {

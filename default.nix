@@ -8272,6 +8272,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hnop" = import ./nix/hnop.nix;
   "hnormalise" = import ./nix/hnormalise.nix;
   "ho-rewriting" = import ./nix/ho-rewriting.nix;
+  "hoare" = import ./nix/hoare.nix;
   "hoauth" = import ./nix/hoauth.nix;
   "hoauth2" = import ./nix/hoauth2.nix;
   "hoauth2-demo" = import ./nix/hoauth2-demo.nix;

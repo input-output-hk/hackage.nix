@@ -268,7 +268,12 @@
         revNum = 0;
         sha256 = "56d19610c4418f7fd72add7cf2762e8a9c8b112b907cf25c33d1024739713fb4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/diagrams-canvas-1.4.2-r1-661fc42162db54143cd28fae1a4eb8bc809d69857fb52ca521409d09423cf522.nix;
+        revNum = 1;
+        sha256 = "661fc42162db54143cd28fae1a4eb8bc809d69857fb52ca521409d09423cf522";
+      };
+      default = "r1";
     };
   };
 }

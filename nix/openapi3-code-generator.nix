@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "b84d56c1cbc9417d98f8b4722f5169c6dfc34aae31e7da88a64caa8d516dce8e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openapi3-code-generator-0.2.0.0-r0-1fbf59896f8298d0a2c79c76a3cf41cc03fd297163973f60c482b5a2a0323ba4.nix;
+        revNum = 0;
+        sha256 = "1fbf59896f8298d0a2c79c76a3cf41cc03fd297163973f60c482b5a2a0323ba4";
+      };
+      default = "r0";
+    };
+  };
 }
