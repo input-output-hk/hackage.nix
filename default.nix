@@ -4376,6 +4376,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daemons" = import ./nix/daemons.nix;
   "dag" = import ./nix/dag.nix;
   "dahdit" = import ./nix/dahdit.nix;
+  "dahdit-audio" = import ./nix/dahdit-audio.nix;
   "dahdit-midi" = import ./nix/dahdit-midi.nix;
   "dahdit-network" = import ./nix/dahdit-network.nix;
   "dahdit-test" = import ./nix/dahdit-test.nix;
