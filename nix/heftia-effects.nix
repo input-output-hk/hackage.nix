@@ -94,6 +94,22 @@
         revNum = 0;
         sha256 = "52a9d2a10af42b37054ad325766a0e4268b61fb1a5864c86591398b135aea350";
       };
+      r1 = {
+        nix = import ../hackage/heftia-effects-0.6.0.0-r1-5adca6badf1875733283a5da1740530d8d7a96457c5111ce0f895a9f411e9e7e.nix;
+        revNum = 1;
+        sha256 = "5adca6badf1875733283a5da1740530d8d7a96457c5111ce0f895a9f411e9e7e";
+      };
+      default = "r1";
+    };
+  };
+  "0.6.0.1" = {
+    sha256 = "d8ab559b96b6792d4fe60e33a55ead7892a21782fb6ba3747aa78b2f71bebd49";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heftia-effects-0.6.0.1-r0-af67ea0e84d4710220471dfaaffc1ffe3c3743ebe6f56bdbc5757079dbcaf5e7.nix;
+        revNum = 0;
+        sha256 = "af67ea0e84d4710220471dfaaffc1ffe3c3743ebe6f56bdbc5757079dbcaf5e7";
+      };
       default = "r0";
     };
   };

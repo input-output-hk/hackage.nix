@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "3.0.5" = {
+    sha256 = "2014b230926e2638f2b8462b08e7afa20921c75d1edfcb9bd74b54b1f6b47f3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gi-soup3-3.0.5-r0-f1328be840b8fffff1508d57ddbd48966db291a7ad420024ab61c853ec2704a1.nix;
+        revNum = 0;
+        sha256 = "f1328be840b8fffff1508d57ddbd48966db291a7ad420024ab61c853ec2704a1";
+      };
+      default = "r0";
+    };
+  };
 }
