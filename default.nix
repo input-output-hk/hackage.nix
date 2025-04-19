@@ -18241,4 +18241,5 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zxcvbn-hs" = import ./nix/zxcvbn-hs.nix;
   "zydiskell" = import ./nix/zydiskell.nix;
   "zyre2" = import ./nix/zyre2.nix;
+
 }
