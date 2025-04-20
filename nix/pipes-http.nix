@@ -93,7 +93,12 @@
         revNum = 3;
         sha256 = "0afd05f7d31a6b59df3ed613040442d0c2e0236736db677676cf94916ba66854";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/pipes-http-1.0.6-r4-693f4fd27730d83be5372d831f3d9d8d9a6faf20b60d19bf57ce363ddb492482.nix;
+        revNum = 4;
+        sha256 = "693f4fd27730d83be5372d831f3d9d8d9a6faf20b60d19bf57ce363ddb492482";
+      };
+      default = "r4";
     };
   };
 }
