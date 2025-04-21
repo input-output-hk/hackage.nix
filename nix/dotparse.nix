@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "7d1bbfa2ce61e7df40fed48f86c9d53ca54e278101e785b0ca304a7330dcc87e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dotparse-0.1.2.2-r0-e980c376168249c31fe1d194bc3bfb6614cbc8186399ea606c84dc7b0bab6c55.nix;
+        revNum = 0;
+        sha256 = "e980c376168249c31fe1d194bc3bfb6614cbc8186399ea606c84dc7b0bab6c55";
+      };
+      default = "r0";
+    };
+  };
 }
