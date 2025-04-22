@@ -17553,6 +17553,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "webcrank-wai" = import ./nix/webcrank-wai.nix;
   "webdriver" = import ./nix/webdriver.nix;
   "webdriver-angular" = import ./nix/webdriver-angular.nix;
+  "webdriver-precore" = import ./nix/webdriver-precore.nix;
   "webdriver-snoy" = import ./nix/webdriver-snoy.nix;
   "webdriver-w3c" = import ./nix/webdriver-w3c.nix;
   "webdriver-wrapper" = import ./nix/webdriver-wrapper.nix;
