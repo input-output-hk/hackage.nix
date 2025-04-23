@@ -2985,6 +2985,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "breve" = import ./nix/breve.nix;
   "brians-brain" = import ./nix/brians-brain.nix;
   "brick" = import ./nix/brick.nix;
+  "brick-calendar" = import ./nix/brick-calendar.nix;
   "brick-dropdownmenu" = import ./nix/brick-dropdownmenu.nix;
   "brick-filetree" = import ./nix/brick-filetree.nix;
   "brick-list-search" = import ./nix/brick-list-search.nix;
@@ -3424,6 +3425,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cflp" = import ./nix/cflp.nix;
   "cfn-flip" = import ./nix/cfn-flip.nix;
   "cfopu" = import ./nix/cfopu.nix;
+  "cfuture" = import ./nix/cfuture.nix;
   "cg" = import ./nix/cg.nix;
   "cgen" = import ./nix/cgen.nix;
   "cgi" = import ./nix/cgi.nix;
@@ -12103,6 +12105,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ot" = import ./nix/ot.nix;
   "otp-authenticator" = import ./nix/otp-authenticator.nix;
   "ottparse-pretty" = import ./nix/ottparse-pretty.nix;
+  "oughta" = import ./nix/oughta.nix;
   "outsort" = import ./nix/outsort.nix;
   "overeasy" = import ./nix/overeasy.nix;
   "overhang" = import ./nix/overhang.nix;
