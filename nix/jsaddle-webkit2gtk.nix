@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.9.9.3" = {
+    sha256 = "c67a268b17fad5cdd1ba6579b8138d437f645aac7878aa233a8cf4b33e9c7121";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsaddle-webkit2gtk-0.9.9.3-r0-586d1ebb776de4b64cea600f52276268b97a083c2424187160cb7e226b923b9e.nix;
+        revNum = 0;
+        sha256 = "586d1ebb776de4b64cea600f52276268b97a083c2424187160cb7e226b923b9e";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -5719,6 +5719,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fay-websockets" = import ./nix/fay-websockets.nix;
   "fb" = import ./nix/fb.nix;
   "fb-persistent" = import ./nix/fb-persistent.nix;
+  "fb-stubs" = import ./nix/fb-stubs.nix;
+  "fb-util" = import ./nix/fb-util.nix;
   "fbmessenger-api" = import ./nix/fbmessenger-api.nix;
   "fbrnch" = import ./nix/fbrnch.nix;
   "fca" = import ./nix/fca.nix;
@@ -10629,6 +10631,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mancala" = import ./nix/mancala.nix;
   "mandrill" = import ./nix/mandrill.nix;
   "mandulia" = import ./nix/mandulia.nix;
+  "mangle" = import ./nix/mangle.nix;
   "mangopay" = import ./nix/mangopay.nix;
   "mangrove" = import ./nix/mangrove.nix;
   "manifold-random" = import ./nix/manifold-random.nix;
@@ -16313,6 +16316,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "threepenny-gui-contextmenu" = import ./nix/threepenny-gui-contextmenu.nix;
   "threepenny-gui-flexbox" = import ./nix/threepenny-gui-flexbox.nix;
   "thrift" = import ./nix/thrift.nix;
+  "thrift-compiler" = import ./nix/thrift-compiler.nix;
+  "thrift-haxl" = import ./nix/thrift-haxl.nix;
+  "thrift-http" = import ./nix/thrift-http.nix;
+  "thrift-lib" = import ./nix/thrift-lib.nix;
   "thrist" = import ./nix/thrist.nix;
   "throttle" = import ./nix/throttle.nix;
   "throttle-io-stream" = import ./nix/throttle-io-stream.nix;

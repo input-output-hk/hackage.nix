@@ -81,7 +81,12 @@
         revNum = 0;
         sha256 = "f0fe725ae8ffdb7f6d3ccb1565d0aeaf00bac16b69d426d5a6b379eeb0eaac17";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.1.4.0-r1-e55ed5cfdffe7fa9fce04b8279816cf641edb2f8c899e2ccd8abaa7012a091b5.nix;
+        revNum = 1;
+        sha256 = "e55ed5cfdffe7fa9fce04b8279816cf641edb2f8c899e2ccd8abaa7012a091b5";
+      };
+      default = "r1";
     };
   };
   "0.1.4.1" = {
@@ -108,7 +113,12 @@
         revNum = 0;
         sha256 = "d243523297c0526d32e9b7de98e04b79a4227577ddb25d3fecd7981439de243c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.1.4.2-r1-bc317bf18d91c4268da215f65aa481b4fca30c166ea05eb3aa31245a00f1f7bb.nix;
+        revNum = 1;
+        sha256 = "bc317bf18d91c4268da215f65aa481b4fca30c166ea05eb3aa31245a00f1f7bb";
+      };
+      default = "r1";
     };
   };
   "0.1.5.0" = {
@@ -156,7 +166,12 @@
         revNum = 0;
         sha256 = "ca12e20785c24a18bd3d5da3f323c6255b863d705e4cf9a6ca0e1d2ad30736c5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.2.0.0-r1-4e8e893b3d55926c6653761b87f60d9138ead17fd3c57d2ba3d154fceb52ca6a.nix;
+        revNum = 1;
+        sha256 = "4e8e893b3d55926c6653761b87f60d9138ead17fd3c57d2ba3d154fceb52ca6a";
+      };
+      default = "r1";
     };
   };
   "0.2.0.1" = {
@@ -167,7 +182,12 @@
         revNum = 0;
         sha256 = "75aa9a40abe4450a78099e0cc853c058b6b0017bd06eada523fd612b3bc53cb9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.2.0.1-r1-e9028fd3cbe145566105261a9ed7cf06bd82dedf255b5652dafd30638ed11a7d.nix;
+        revNum = 1;
+        sha256 = "e9028fd3cbe145566105261a9ed7cf06bd82dedf255b5652dafd30638ed11a7d";
+      };
+      default = "r1";
     };
   };
   "0.2.1.0" = {
@@ -178,7 +198,12 @@
         revNum = 0;
         sha256 = "31d21eede99bbe10e4062f3329708744b4738b6594216266a398c8153e1d5b98";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finite-typelits-0.2.1.0-r1-1bd2df3c0bf6892be8e9df512e86cad5ca2e0ba817a0645d146952d8f6efc7a4.nix;
+        revNum = 1;
+        sha256 = "1bd2df3c0bf6892be8e9df512e86cad5ca2e0ba817a0645d146952d8f6efc7a4";
+      };
+      default = "r1";
     };
   };
 }

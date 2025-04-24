@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.9.9.3" = {
+    sha256 = "bb6ae7bd276ee1ca912369f2b84d9bacc7eeddfb903f7bb382d9c543294b92c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsaddle-wkwebview-0.9.9.3-r0-e52c42e28cdae269c1cdd1db6e687d029f503856497bc2c9c16c345dbf79657b.nix;
+        revNum = 0;
+        sha256 = "e52c42e28cdae269c1cdd1db6e687d029f503856497bc2c9c16c345dbf79657b";
+      };
+      default = "r0";
+    };
+  };
 }

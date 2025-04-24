@@ -30,4 +30,15 @@
       default = "r4";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "1492b19a3a9beadd93c03d084675cde689661a65a212485fdf63f38c2b9e0a60";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-calendar-0.2.0.0-r0-25b56e274ba5b5522e25bbaba173da1ae32c58bc06e369e14e1766e4718cdea9.nix;
+        revNum = 0;
+        sha256 = "25b56e274ba5b5522e25bbaba173da1ae32c58bc06e369e14e1766e4718cdea9";
+      };
+      default = "r0";
+    };
+  };
 }

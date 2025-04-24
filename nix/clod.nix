@@ -384,4 +384,15 @@
       default = "r0";
     };
   };
+  "0.2.3" = {
+    sha256 = "669d2e5ea2b23a92dac930a6238b4fbce9181ee7f3781e332a17c012e0ebe331";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clod-0.2.3-r0-11b9b79846a1cbd34800b57437fc7c91110ab03547ea575281415418e5d5fa99.nix;
+        revNum = 0;
+        sha256 = "11b9b79846a1cbd34800b57437fc7c91110ab03547ea575281415418e5d5fa99";
+      };
+      default = "r0";
+    };
+  };
 }
