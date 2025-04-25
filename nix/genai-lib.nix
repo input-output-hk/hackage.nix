@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.1.0" = {
+    sha256 = "77eb72d8aa4561cd4b33cc8678a217b6ddb51cbe5d46433fa9683cf9c09d9fde";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genai-lib-2.1.0-r0-eba688115fd8df0674d56e5e4dde2e956a65e0e05783f3942aa3523d9ea8bee1.nix;
+        revNum = 0;
+        sha256 = "eba688115fd8df0674d56e5e4dde2e956a65e0e05783f3942aa3523d9ea8bee1";
+      };
+      default = "r0";
+    };
+  };
 }
