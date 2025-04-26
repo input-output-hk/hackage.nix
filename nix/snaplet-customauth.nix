@@ -64,4 +64,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "648c9d852f4f1897b82f155fd9576f4c79a7bed58bcab530e14cff1c3fa2f280";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/snaplet-customauth-0.3.0-r0-e8b6cfab3c18ad41de49194cbe41da98e70ac87fa33552888257fe9e9cdc2342.nix;
+        revNum = 0;
+        sha256 = "e8b6cfab3c18ad41de49194cbe41da98e70ac87fa33552888257fe9e9cdc2342";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -11897,6 +11897,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "old-time" = import ./nix/old-time.nix;
   "old-version" = import ./nix/old-version.nix;
   "ollama-haskell" = import ./nix/ollama-haskell.nix;
+  "ollama-holes-plugin" = import ./nix/ollama-holes-plugin.nix;
   "olwrapper" = import ./nix/olwrapper.nix;
   "om-actor" = import ./nix/om-actor.nix;
   "om-doh" = import ./nix/om-doh.nix;
