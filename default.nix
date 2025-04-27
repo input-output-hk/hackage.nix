@@ -4170,6 +4170,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cps-except" = import ./nix/cps-except.nix;
   "cpsa" = import ./nix/cpsa.nix;
   "cpu" = import ./nix/cpu.nix;
+  "cpu-features" = import ./nix/cpu-features.nix;
   "cpuid" = import ./nix/cpuid.nix;
   "cpuinfo" = import ./nix/cpuinfo.nix;
   "cpuperf" = import ./nix/cpuperf.nix;
