@@ -113,4 +113,15 @@
       default = "r6";
     };
   };
+  "0.3.5" = {
+    sha256 = "184ba87260f61094756acf68119e9d8b375825270502fb8cabe20beed3a58598";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-swagger-ui-jensoleg-0.3.5-r0-ba2de898924f89e7e544daeab8f6ef723facff67ae9276bd40a7eeb5f6dec8bc.nix;
+        revNum = 0;
+        sha256 = "ba2de898924f89e7e544daeab8f6ef723facff67ae9276bd40a7eeb5f6dec8bc";
+      };
+      default = "r0";
+    };
+  };
 }
