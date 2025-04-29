@@ -9399,6 +9399,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ircbouncer" = import ./nix/ircbouncer.nix;
   "ireal" = import ./nix/ireal.nix;
   "iri" = import ./nix/iri.nix;
+  "iri-orphans" = import ./nix/iri-orphans.nix;
   "iridium" = import ./nix/iridium.nix;
   "iris" = import ./nix/iris.nix;
   "iron-mq" = import ./nix/iron-mq.nix;
