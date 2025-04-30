@@ -13633,6 +13633,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "readability" = import ./nix/readability.nix;
   "readable" = import ./nix/readable.nix;
   "readcsv" = import ./nix/readcsv.nix;
+  "reader" = import ./nix/reader.nix;
   "reader-soup" = import ./nix/reader-soup.nix;
   "readline" = import ./nix/readline.nix;
   "readline-in-other-words" = import ./nix/readline-in-other-words.nix;
@@ -15302,6 +15303,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sql-simple-postgresql" = import ./nix/sql-simple-postgresql.nix;
   "sql-simple-sqlite" = import ./nix/sql-simple-sqlite.nix;
   "sql-words" = import ./nix/sql-words.nix;
+  "sqlc-hs" = import ./nix/sqlc-hs.nix;
   "sqlcipher" = import ./nix/sqlcipher.nix;
   "sqlcli" = import ./nix/sqlcli.nix;
   "sqlcli-odbc" = import ./nix/sqlcli-odbc.nix;

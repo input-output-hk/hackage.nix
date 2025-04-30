@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "0d2f6377e628775db2c72ff71760839f447f56dba087f69f270bc1d311094762";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatbuffers-parser-0.2.0.0-r0-9de9834cc5668c53cdb4cda7d6874e9f395145561594ae5dfb0a1a57baf3a4bf.nix;
+        revNum = 0;
+        sha256 = "9de9834cc5668c53cdb4cda7d6874e9f395145561594ae5dfb0a1a57baf3a4bf";
+      };
+      default = "r0";
+    };
+  };
 }
