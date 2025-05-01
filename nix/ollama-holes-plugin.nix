@@ -21,4 +21,37 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "d242182d14bd8016fa344c5e9182de1e9f7d17599e572c13b9d1188ccc40804a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-holes-plugin-0.1.2.0-r0-2707fcb0b539f9e6a2a6c1783d19b8db5bb0a64f1896d17069816068fb541512.nix;
+        revNum = 0;
+        sha256 = "2707fcb0b539f9e6a2a6c1783d19b8db5bb0a64f1896d17069816068fb541512";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.3.0" = {
+    sha256 = "60d70a01118be8731044c0c7d0da530cbd633a5408ff493b661199d1f5c0d96d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-holes-plugin-0.1.3.0-r0-22eb7528a17361a68a55502f7a255ade42a7bf1296589dd52a29560e1a3e362f.nix;
+        revNum = 0;
+        sha256 = "22eb7528a17361a68a55502f7a255ade42a7bf1296589dd52a29560e1a3e362f";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.4.0" = {
+    sha256 = "db348179c80efdef1f0f91e564fa0965ce5f9766cf5eba828f7e1517cc20cab5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-holes-plugin-0.1.4.0-r0-4f3bfa819ac9fe807988818759410cf83e2695e1d11f99f18e21afa2d73babea.nix;
+        revNum = 0;
+        sha256 = "4f3bfa819ac9fe807988818759410cf83e2695e1d11f99f18e21afa2d73babea";
+      };
+      default = "r0";
+    };
+  };
 }

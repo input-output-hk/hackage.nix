@@ -6237,6 +6237,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fuzzy-time" = import ./nix/fuzzy-time.nix;
   "fuzzy-time-gen" = import ./nix/fuzzy-time-gen.nix;
   "fuzzy-timings" = import ./nix/fuzzy-timings.nix;
+  "fuzzySets" = import ./nix/fuzzy_Sets.nix;
   "fuzzyfind" = import ./nix/fuzzyfind.nix;
   "fuzzyset" = import ./nix/fuzzyset.nix;
   "fuzzytime" = import ./nix/fuzzytime.nix;
