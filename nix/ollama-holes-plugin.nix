@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "0.1.5.3" = {
+    sha256 = "f9f2a09d3ca255760dfb445026df69e27550315dcbdd975255a0c926a3688136";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-holes-plugin-0.1.5.3-r0-000de8c3d84c94a0e715258122d2fe8242b042fda4a08311a00d63e3dc0ef784.nix;
+        revNum = 0;
+        sha256 = "000de8c3d84c94a0e715258122d2fe8242b042fda4a08311a00d63e3dc0ef784";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.6.0" = {
+    sha256 = "b15c94f3ec0170a5b99525b94b3619edc3f4f9e0e26117bb74ad1497ee986a6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ollama-holes-plugin-0.1.6.0-r0-a3bc8b67fe53c8eddce6f318ca30bd1a5ef3c95d75679e977af4e8adfc2061f4.nix;
+        revNum = 0;
+        sha256 = "a3bc8b67fe53c8eddce6f318ca30bd1a5ef3c95d75679e977af4e8adfc2061f4";
+      };
+      default = "r0";
+    };
+  };
 }

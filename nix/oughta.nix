@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "72a87c4c5f8705cafe1949ec0a3e9a760374d12795311c2bad655f49123d49d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/oughta-0.2.0.0-r0-9551c987deb187e830ae6ca34ed5e7874ddc85028ff855aff861911489cc5ee9.nix;
+        revNum = 0;
+        sha256 = "9551c987deb187e830ae6ca34ed5e7874ddc85028ff855aff861911489cc5ee9";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "b7ab706be13d339f141e1bc3213fb05b3a35114bd07cce3e6ee1e88d3b804c2d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/debruijn-safe-0.3-r1-f336e722b02862bbd4945a15cf4629a617d442f910deac4623acc16e07ad8f42.nix;
+        revNum = 1;
+        sha256 = "f336e722b02862bbd4945a15cf4629a617d442f910deac4623acc16e07ad8f42";
+      };
+      default = "r1";
     };
   };
 }

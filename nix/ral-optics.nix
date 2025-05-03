@@ -54,7 +54,12 @@
         revNum = 0;
         sha256 = "8ef30e446b8c844bc61587462bc8b422b84fbbc0ba238f11273676394105276d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ral-optics-0.2.1-r1-aacd6e21079b6c3861854faf698777487a74d26846750e33764a7b3159e0dc74.nix;
+        revNum = 1;
+        sha256 = "aacd6e21079b6c3861854faf698777487a74d26846750e33764a7b3159e0dc74";
+      };
+      default = "r1";
     };
   };
 }

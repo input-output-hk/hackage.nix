@@ -22,7 +22,12 @@
         revNum = 3;
         sha256 = "3c22f558d995c03d9b5973b14cf5e11d6ce161c187d4699c38b73806d3d584b4";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/skew-list-0.1-r4-9ff80c7b031e42a2b1ca48365a01e57076295c39d5d49e0f78fde13fc5d1e250.nix;
+        revNum = 4;
+        sha256 = "9ff80c7b031e42a2b1ca48365a01e57076295c39d5d49e0f78fde13fc5d1e250";
+      };
+      default = "r4";
     };
   };
 }

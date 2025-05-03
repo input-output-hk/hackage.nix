@@ -70,7 +70,12 @@
         revNum = 1;
         sha256 = "abcbf91621c891244a7f5f74a886ee2c88068f3ff551877a2a5af64eb4c26ec8";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ral-0.2.2-r2-b52967fc000cc2e907a0452c97bcc97703192d54c1a5512737e9ceb48a1f2ca8.nix;
+        revNum = 2;
+        sha256 = "b52967fc000cc2e907a0452c97bcc97703192d54c1a5512737e9ceb48a1f2ca8";
+      };
+      default = "r2";
     };
   };
 }

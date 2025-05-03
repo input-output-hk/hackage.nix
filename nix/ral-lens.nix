@@ -54,7 +54,12 @@
         revNum = 0;
         sha256 = "fd4b2ce475b490566132c50d2003735a6d668ae00c67f1ebb862df0672db5979";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ral-lens-0.2.1-r1-ef65503c7661da37f2659c39f51b33c66cddd3cb1a14c4952252973bfd7bd32e.nix;
+        revNum = 1;
+        sha256 = "ef65503c7661da37f2659c39f51b33c66cddd3cb1a14c4952252973bfd7bd32e";
+      };
+      default = "r1";
     };
   };
 }
