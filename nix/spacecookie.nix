@@ -81,4 +81,15 @@
       default = "r0";
     };
   };
+  "1.0.0.3" = {
+    sha256 = "a0471d772e7fc218df62121067eb1749f14d3c298113d0993c47cc26045effcf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spacecookie-1.0.0.3-r0-8cde0a5a90990b3f7aff9714afb30443fa3e18c2575790d37b818c0671a583e8.nix;
+        revNum = 0;
+        sha256 = "8cde0a5a90990b3f7aff9714afb30443fa3e18c2575790d37b818c0671a583e8";
+      };
+      default = "r0";
+    };
+  };
 }
