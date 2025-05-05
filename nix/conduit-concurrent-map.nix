@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.4" = {
+    sha256 = "b1eab31f35de9e6d9c9f8c85891bfebdf5e16d49cc895de9a834282e7df311f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-concurrent-map-0.1.4-r0-987c7773504e26b8359cedd8e70563bc3cbb21b79f7f1a587827390e09591ce5.nix;
+        revNum = 0;
+        sha256 = "987c7773504e26b8359cedd8e70563bc3cbb21b79f7f1a587827390e09591ce5";
+      };
+      default = "r0";
+    };
+  };
 }
