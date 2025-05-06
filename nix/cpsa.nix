@@ -637,4 +637,15 @@
       default = "r0";
     };
   };
+  "4.4.6" = {
+    sha256 = "ae32cbb1f2ccaf1b292ca0eaf138dd3b5bd065bf24bf86ec3441b3cebb3ba50b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cpsa-4.4.6-r0-f82f88f50438807c0201f6ecf356f956ae5f9a5e893fe2450630892f16e8b8b9.nix;
+        revNum = 0;
+        sha256 = "f82f88f50438807c0201f6ecf356f956ae5f9a5e893fe2450630892f16e8b8b9";
+      };
+      default = "r0";
+    };
+  };
 }

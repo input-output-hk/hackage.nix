@@ -54,7 +54,12 @@
         revNum = 2;
         sha256 = "fdd6a3ccb64b546ec57d38d8126a9a465c64eb4fc4db7c1d69f1b5d0b6490b7b";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/park-bench-0.1.1.0-r3-5fb9d391a4675dee672a7d237584d799b8503585180556efd057a264fbab0b09.nix;
+        revNum = 3;
+        sha256 = "5fb9d391a4675dee672a7d237584d799b8503585180556efd057a264fbab0b09";
+      };
+      default = "r3";
     };
   };
 }

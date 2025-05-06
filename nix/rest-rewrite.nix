@@ -120,7 +120,23 @@
         revNum = 1;
         sha256 = "a8567fd4144fb44fde240a0baf2e616014e49869be92f4b1eea11394e07d1cc2";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/rest-rewrite-0.4.4-r2-476adb7dab95417b36b7149bbff5ff2f1475cbd4ca2ff38ac31abd3ab0c2d28b.nix;
+        revNum = 2;
+        sha256 = "476adb7dab95417b36b7149bbff5ff2f1475cbd4ca2ff38ac31abd3ab0c2d28b";
+      };
+      default = "r2";
+    };
+  };
+  "0.4.5" = {
+    sha256 = "c4db03c300fdce217c1094ffd4b738a430b703308ee1cecc002fb3ce1d1faf7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rest-rewrite-0.4.5-r0-20ed368d3e3751e9f041bf45784c29f8a24fd910e21f30ced01647cb361edb85.nix;
+        revNum = 0;
+        sha256 = "20ed368d3e3751e9f041bf45784c29f8a24fd910e21f30ced01647cb361edb85";
+      };
+      default = "r0";
     };
   };
 }

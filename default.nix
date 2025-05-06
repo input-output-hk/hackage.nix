@@ -14825,6 +14825,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "signals" = import ./nix/signals.nix;
   "signature" = import ./nix/signature.nix;
   "signed-multiset" = import ./nix/signed-multiset.nix;
+  "signet" = import ./nix/signet.nix;
   "significant-figures" = import ./nix/significant-figures.nix;
   "signify-hs" = import ./nix/signify-hs.nix;
   "silently" = import ./nix/silently.nix;
