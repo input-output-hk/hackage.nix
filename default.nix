@@ -6719,6 +6719,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gitlib-test" = import ./nix/gitlib-test.nix;
   "gitlib-utils" = import ./nix/gitlib-utils.nix;
   "gitrev" = import ./nix/gitrev.nix;
+  "gitrev-typed" = import ./nix/gitrev-typed.nix;
   "gitson" = import ./nix/gitson.nix;
   "gitter" = import ./nix/gitter.nix;
   "givegif" = import ./nix/givegif.nix;
