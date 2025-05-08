@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "2fbbebdb7756a79ae60e809f88cb538cb7ee1d935c15e887caeaeaa4945bc826";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-firebaseremoteconfig-1.0.0-r0-2cd7a91f81176dbce9ba6be4d9491ca0ff977ef26e2af29de114c67b3af74e26.nix;
+        revNum = 0;
+        sha256 = "2cd7a91f81176dbce9ba6be4d9491ca0ff977ef26e2af29de114c67b3af74e26";
+      };
+      default = "r0";
+    };
+  };
 }

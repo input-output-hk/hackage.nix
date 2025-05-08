@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "105e02a0dba57f37e65663f4bee4bcd25637574a9b5bfcbc24611f0f27c6190b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-blogger-1.0.0-r0-381ce61fc387321ba3f8f464a4d201580adc863206f9c0934153d50527b08042.nix;
+        revNum = 0;
+        sha256 = "381ce61fc387321ba3f8f464a4d201580adc863206f9c0934153d50527b08042";
+      };
+      default = "r0";
+    };
+  };
 }

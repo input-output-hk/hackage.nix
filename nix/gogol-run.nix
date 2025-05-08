@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "d8fc3f4dd123b7248fa9b860e8e419eb48e541d9f8e31f897ea8097399f0981f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-run-1.0.0-r0-44762892a32158eae6c72aa6a382a2ee3d8cc55d0b2fe24b0d28374e275ed85f.nix;
+        revNum = 0;
+        sha256 = "44762892a32158eae6c72aa6a382a2ee3d8cc55d0b2fe24b0d28374e275ed85f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "e43d7aa54e16cecf5ae6ea65991f7286707260687f94953713d37a6a1ad6d6b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-appengine-1.0.0-r0-5668b56f585ce7094950a8b2b1cfbdbaee3f3a68fb54b52729fa602162eb7b7b.nix;
+        revNum = 0;
+        sha256 = "5668b56f585ce7094950a8b2b1cfbdbaee3f3a68fb54b52729fa602162eb7b7b";
+      };
+      default = "r0";
+    };
+  };
 }

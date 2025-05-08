@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "acd07082c95cba5cc3a14eec21693d47588f83b4cd96aadf56851bada85b4ca3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-fusiontables-1.0.0-r0-74f49e1129e3c0cb154c49b0d2e5336a377882969686101ad51aa3c1b2766a33.nix;
+        revNum = 0;
+        sha256 = "74f49e1129e3c0cb154c49b0d2e5336a377882969686101ad51aa3c1b2766a33";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "a271ad146c969c67ff1a3cb329b83089e7833b34768414892102008e49cf9c91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-replicapool-updater-1.0.0-r0-940b5cc0048cf445f466930b29741d6476d8b1a7443e8b46efa76ef7d6a4c312.nix;
+        revNum = 0;
+        sha256 = "940b5cc0048cf445f466930b29741d6476d8b1a7443e8b46efa76ef7d6a4c312";
+      };
+      default = "r0";
+    };
+  };
 }

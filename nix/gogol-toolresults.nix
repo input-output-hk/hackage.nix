@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "2a164abc8f2c0a87f895706059156050ec14961eb75a1e24c7baafe4c4381d81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-toolresults-1.0.0-r0-db15467e845079468fdcdae540e48c8e37f99ad1912b217743bb0b72ff36a8a4.nix;
+        revNum = 0;
+        sha256 = "db15467e845079468fdcdae540e48c8e37f99ad1912b217743bb0b72ff36a8a4";
+      };
+      default = "r0";
+    };
+  };
 }

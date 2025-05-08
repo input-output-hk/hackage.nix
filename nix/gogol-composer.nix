@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f0843e2a9028bfcea3eb987ad001432c61c4a0e1d8fc1825869e7243e1529348";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-composer-1.0.0-r0-50e36bdf8b68848151be983ce64dd41a64f7d619456e1a7c14212f0b91927df1.nix;
+        revNum = 0;
+        sha256 = "50e36bdf8b68848151be983ce64dd41a64f7d619456e1a7c14212f0b91927df1";
+      };
+      default = "r0";
+    };
+  };
 }

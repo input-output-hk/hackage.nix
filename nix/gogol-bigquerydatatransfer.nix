@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6041839013661695bd9923e03f2b71182fcd7c1060a029288a327c313194686f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-bigquerydatatransfer-1.0.0-r0-7ab8708c3d5f847d24debe25bbcb5cf1a18118a4e9b0d5370e91737b397d747c.nix;
+        revNum = 0;
+        sha256 = "7ab8708c3d5f847d24debe25bbcb5cf1a18118a4e9b0d5370e91737b397d747c";
+      };
+      default = "r0";
+    };
+  };
 }

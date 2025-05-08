@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "3a4cddb18ff846a34759951c325dc178724a32049f087f867b26cf90f02959e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-people-1.0.0-r0-21c6716e7dbe4a84e8905f071d310cdc33c80fce5e93e388e8d50e3e694df728.nix;
+        revNum = 0;
+        sha256 = "21c6716e7dbe4a84e8905f071d310cdc33c80fce5e93e388e8d50e3e694df728";
+      };
+      default = "r0";
+    };
+  };
 }

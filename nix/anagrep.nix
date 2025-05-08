@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "ec4d9fc0405eaf42a930b45341e9332783f0bed597b34c700f32451d9051fc37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/anagrep-0.1.0.1-r0-222d170b97e3c346c780572e2b56042ef4e908e28044ce6ca97ad4197567f91a.nix;
+        revNum = 0;
+        sha256 = "222d170b97e3c346c780572e2b56042ef4e908e28044ce6ca97ad4197567f91a";
+      };
+      default = "r0";
+    };
+  };
 }

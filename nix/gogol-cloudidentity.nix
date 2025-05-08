@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "c6645d93be7a057472d1727b2d5d10794b8905c827effc65e072adb71dc1ed79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudidentity-1.0.0-r0-79a9316a75858d02247877cdc3c965475df85a6837dec47e587062dfa567b02b.nix;
+        revNum = 0;
+        sha256 = "79a9316a75858d02247877cdc3c965475df85a6837dec47e587062dfa567b02b";
+      };
+      default = "r0";
+    };
+  };
 }

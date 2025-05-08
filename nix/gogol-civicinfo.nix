@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "fc80d5e54ea3ccb131fe537477b9dd5a330dd903961faa74fe6d42a4fbeee0b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-civicinfo-1.0.0-r0-d8dbbdc6948282b4300ff55455a8d567c2cb93827195d77476d523c7d9c72aa6.nix;
+        revNum = 0;
+        sha256 = "d8dbbdc6948282b4300ff55455a8d567c2cb93827195d77476d523c7d9c72aa6";
+      };
+      default = "r0";
+    };
+  };
 }

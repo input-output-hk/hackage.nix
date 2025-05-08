@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "a0864038ee0d9d02220d232ce00c4f33c57c7600258d60145d2c46f20947b5f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-identity-toolkit-1.0.0-r0-df5463398dee5ddd38ff0d4e4a6bfd444224f4a00a7463d7b9edf035629bbc84.nix;
+        revNum = 0;
+        sha256 = "df5463398dee5ddd38ff0d4e4a6bfd444224f4a00a7463d7b9edf035629bbc84";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "2132a87208e343e698673cd92e91c5a4543e98266ec622d00403409a555cfeae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-surveys-1.0.0-r0-ffeaf01335204f39d8b9a671811194d3e54373cbedc857ebc9c52901d42979f4.nix;
+        revNum = 0;
+        sha256 = "ffeaf01335204f39d8b9a671811194d3e54373cbedc857ebc9c52901d42979f4";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "4361e7c5873cf98bf4255fccce130f72e4c66a283b13fbad3243222ab094b3c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-apps-tasks-1.0.0-r0-eff8210991d351e76256aa0827b64229ac0d51018a7176190beff0aacdd58edd.nix;
+        revNum = 0;
+        sha256 = "eff8210991d351e76256aa0827b64229ac0d51018a7176190beff0aacdd58edd";
+      };
+      default = "r0";
+    };
+  };
 }

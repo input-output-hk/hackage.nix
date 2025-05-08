@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "8637dbb11fa8a845f482fac28a190f7e13c358b3d991dd94199ea5c74c20192d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-books-1.0.0-r0-239a10e5316adf60c5d5eb468e42a02c3e6e184a724afb999e18182e6d6e7867.nix;
+        revNum = 0;
+        sha256 = "239a10e5316adf60c5d5eb468e42a02c3e6e184a724afb999e18182e6d6e7867";
+      };
+      default = "r0";
+    };
+  };
 }

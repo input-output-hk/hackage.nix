@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "98705f4a00a2341da0166d25645527b69e9a21e5953de35656dd79413bb2dcfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-firebase-rules-1.0.0-r0-27206757a27e5d7947bdf8a3d299f7b98e3eb5ca4b96509e0c5d81be75362f70.nix;
+        revNum = 0;
+        sha256 = "27206757a27e5d7947bdf8a3d299f7b98e3eb5ca4b96509e0c5d81be75362f70";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "e60c848e735ca5d4b1973b2e412fcde544561952bd2ad91a7ebd02d5ce9c246a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-mirror-1.0.0-r0-c8663c733e574f97a13a83bdf1f2a6fc9eb6f102c1c3d0c18e47bb3768612326.nix;
+        revNum = 0;
+        sha256 = "c8663c733e574f97a13a83bdf1f2a6fc9eb6f102c1c3d0c18e47bb3768612326";
+      };
+      default = "r0";
+    };
+  };
 }

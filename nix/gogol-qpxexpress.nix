@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "86ddb04f5cb1624e7c49964c8f243f3e99db6d669252c3e697404533121376db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-qpxexpress-1.0.0-r0-babd07bace28d6da8a607450e77d7332e52c0cde6ef41b6cde9c0003e0fc489d.nix;
+        revNum = 0;
+        sha256 = "babd07bace28d6da8a607450e77d7332e52c0cde6ef41b6cde9c0003e0fc489d";
+      };
+      default = "r0";
+    };
+  };
 }

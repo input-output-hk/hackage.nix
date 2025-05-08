@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "5a9cd6f0f6841e54a34e3e4d148ae246dd3c5cd9c7a07d4423e82bae7d467b44";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-servicemanagement-1.0.0-r0-e6b4b89c408992535d0d86a33989081be556a9d8870076253911ac54d0b6dc53.nix;
+        revNum = 0;
+        sha256 = "e6b4b89c408992535d0d86a33989081be556a9d8870076253911ac54d0b6dc53";
+      };
+      default = "r0";
+    };
+  };
 }

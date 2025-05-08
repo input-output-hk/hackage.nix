@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "9dd57c5ae352e525b2e1f1a7fcbd7a673284bc7bad91f88f908ed2557136100b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-adsense-1.0.0-r0-2b6dd46cdda35e467c93ae45df68c4d384563df149a97f1baaef05b7faa02b3a.nix;
+        revNum = 0;
+        sha256 = "2b6dd46cdda35e467c93ae45df68c4d384563df149a97f1baaef05b7faa02b3a";
+      };
+      default = "r0";
+    };
+  };
 }

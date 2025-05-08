@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6e17436dd1dbb46201be9bda939c6c82d69a5237e642c807ea24f22ad048d612";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-siteverification-1.0.0-r0-126227841798f92aebcc62b06751ba9e3e6b73c6bb1b97b90ad9071695527fa9.nix;
+        revNum = 0;
+        sha256 = "126227841798f92aebcc62b06751ba9e3e6b73c6bb1b97b90ad9071695527fa9";
+      };
+      default = "r0";
+    };
+  };
 }

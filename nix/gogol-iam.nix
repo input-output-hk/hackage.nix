@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "8f6bce96ad2b4ebb5871aff69ada7a42be57f1c4fb7e5e0d111b291e7ef7997a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-iam-1.0.0-r0-8b3d201bf6bf7858e09e3953db7a34c47e6b9f09a134ed9abf39a2233bec4369.nix;
+        revNum = 0;
+        sha256 = "8b3d201bf6bf7858e09e3953db7a34c47e6b9f09a134ed9abf39a2233bec4369";
+      };
+      default = "r0";
+    };
+  };
 }

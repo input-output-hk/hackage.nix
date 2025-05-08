@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "2ce2224430105f7c7fca2756ea2ec111657706d63770eb484f4d050aa2615529";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-sqladmin-1.0.0-r0-91770adb653f8e452e2706f5fe60e1c7d8fb98d08e5071ff607a349c68950394.nix;
+        revNum = 0;
+        sha256 = "91770adb653f8e452e2706f5fe60e1c7d8fb98d08e5071ff607a349c68950394";
+      };
+      default = "r0";
+    };
+  };
 }

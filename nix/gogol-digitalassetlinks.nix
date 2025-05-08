@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f75a4f5747327319b9509ee5508350a04a0212b936227e6be9a0dcae0322d9a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-digitalassetlinks-1.0.0-r0-e54007ac536fb065ef3c3bfdd2d8cccc8b17cbdc1ef3423807fe6919b23fcbd5.nix;
+        revNum = 0;
+        sha256 = "e54007ac536fb065ef3c3bfdd2d8cccc8b17cbdc1ef3423807fe6919b23fcbd5";
+      };
+      default = "r0";
+    };
+  };
 }

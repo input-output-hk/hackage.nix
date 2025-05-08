@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f806c99688f8f604fb2c4a1a758089e3334f825e688157297847800f2ca547df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-analyticsreporting-1.0.0-r0-c3e8e5d14f2ce17f02bcef3e5584cedd52cd5a1b5a5e03895cd487f43ad7a47c.nix;
+        revNum = 0;
+        sha256 = "c3e8e5d14f2ce17f02bcef3e5584cedd52cd5a1b5a5e03895cd487f43ad7a47c";
+      };
+      default = "r0";
+    };
+  };
 }

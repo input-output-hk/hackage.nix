@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "335c3c5ea8d37e9522a70b48f92ae3db008877d962f28d328ee721d1dd1dd672";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudtrace-1.0.0-r0-4516ac6a15b0429166c9273503dc90acf37edcb5ac60afbad65e28430597ac84.nix;
+        revNum = 0;
+        sha256 = "4516ac6a15b0429166c9273503dc90acf37edcb5ac60afbad65e28430597ac84";
+      };
+      default = "r0";
+    };
+  };
 }

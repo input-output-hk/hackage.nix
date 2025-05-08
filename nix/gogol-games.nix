@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "83dddc4179169866c2b6792cd65f593d50b5ea9f9d9ab7ead89d5ba733bee350";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-games-1.0.0-r0-fd435eac746d0c05d82ee3d5c2f098cfe6d773219345c4a7ad3bb6dd64d6a976.nix;
+        revNum = 0;
+        sha256 = "fd435eac746d0c05d82ee3d5c2f098cfe6d773219345c4a7ad3bb6dd64d6a976";
+      };
+      default = "r0";
+    };
+  };
 }

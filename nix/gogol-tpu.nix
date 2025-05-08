@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "372ad099dc007806552ea9272410d3afe36acb4ea295e05dedaa3ca607b00b26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-tpu-1.0.0-r0-7fa0e97378377d34f643af711e6656f131fbc6db2bcceb652f79c8733bdfd500.nix;
+        revNum = 0;
+        sha256 = "7fa0e97378377d34f643af711e6656f131fbc6db2bcceb652f79c8733bdfd500";
+      };
+      default = "r0";
+    };
+  };
 }

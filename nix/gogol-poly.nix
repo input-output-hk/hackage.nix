@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "3bdd87209f121d3a51f0ca4708930718fac3af046ecd9b2bffa7e55df4970745";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-poly-1.0.0-r0-049566b65c4f89e49b52b43b12757dcc61bc1a802dc5d5ca0a729f92614520b7.nix;
+        revNum = 0;
+        sha256 = "049566b65c4f89e49b52b43b12757dcc61bc1a802dc5d5ca0a729f92614520b7";
+      };
+      default = "r0";
+    };
+  };
 }

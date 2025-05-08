@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "4f39dc94996bd56737774eb3fa6fa4093cff61d50fd63a326ed8a8fdcb188c19";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-slides-1.0.0-r0-fca924e5f28befd084df1a2474a8bc591c71bbf54c0740fefecca56e8cef8498.nix;
+        revNum = 0;
+        sha256 = "fca924e5f28befd084df1a2474a8bc591c71bbf54c0740fefecca56e8cef8498";
+      };
+      default = "r0";
+    };
+  };
 }

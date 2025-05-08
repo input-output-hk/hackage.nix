@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "c67c4de9572b21d2fb9777e74a399418065dd9ac67de4dbecda34bd4d10d2962";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-dataflow-1.0.0-r0-f66b523ba51be8ac53f1884b700467533153b9229a873094afb339b2fad435b5.nix;
+        revNum = 0;
+        sha256 = "f66b523ba51be8ac53f1884b700467533153b9229a873094afb339b2fad435b5";
+      };
+      default = "r0";
+    };
+  };
 }

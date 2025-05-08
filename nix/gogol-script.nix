@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "1a1e82b33c6a01fb2b99e608aab8e46ddea2e4c4f62be83e9f2b1994a6bf57a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-script-1.0.0-r0-43491c58fc042e8274164b4c99514a8067137459f013f07e2bfe92ef2b8d6796.nix;
+        revNum = 0;
+        sha256 = "43491c58fc042e8274164b4c99514a8067137459f013f07e2bfe92ef2b8d6796";
+      };
+      default = "r0";
+    };
+  };
 }

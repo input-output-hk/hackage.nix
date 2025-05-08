@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "4a731d83a3c47aa8994145e431b1dc44d2aa850a50aaf9f46cae15ab6c52347c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-spectrum-1.0.0-r0-384fe2b732a91c61c332f7da6df1de102b93f1a68d53b208971854ab131fdeac.nix;
+        revNum = 0;
+        sha256 = "384fe2b732a91c61c332f7da6df1de102b93f1a68d53b208971854ab131fdeac";
+      };
+      default = "r0";
+    };
+  };
 }

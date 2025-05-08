@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "3b4a0c5f185ddcb59482f5ed9b0a51c8f6e07da937653a6db4d55e8b8fc1ba95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-fonts-1.0.0-r0-2701d718c78682a222fcee05e53317d2890c61f1608c1f4c6a1ad24c79c90306.nix;
+        revNum = 0;
+        sha256 = "2701d718c78682a222fcee05e53317d2890c61f1608c1f4c6a1ad24c79c90306";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "be55fe94ebc8906c1057079da206382f49cc412287874c0ab7248a11cb097390";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-deploymentmanager-1.0.0-r0-5f2d1d5b8e1d024cea5b4c8c6de28d73e454e1f724dd24137e02c8d1133d8151.nix;
+        revNum = 0;
+        sha256 = "5f2d1d5b8e1d024cea5b4c8c6de28d73e454e1f724dd24137e02c8d1133d8151";
+      };
+      default = "r0";
+    };
+  };
 }

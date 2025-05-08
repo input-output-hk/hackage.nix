@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "881aab7c194175e78ea5a52663bb272c3d99fc01e0eb6151120a36e144c67371";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-spanner-1.0.0-r0-e78420a75d9ab6f9159270b25f9656e7e6b54b7adf86df8542f37a1c25f9511e.nix;
+        revNum = 0;
+        sha256 = "e78420a75d9ab6f9159270b25f9656e7e6b54b7adf86df8542f37a1c25f9511e";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "9a39cb7ce05991a38e37ee1f9866201f989c609aefd09d67c645f2273b9ee6ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-speech-1.0.0-r0-ab1ca6e9b05c1bea31d41ad991e03e92042c05a37c1df76537c2cd66e782c4d7.nix;
+        revNum = 0;
+        sha256 = "ab1ca6e9b05c1bea31d41ad991e03e92042c05a37c1df76537c2cd66e782c4d7";
+      };
+      default = "r0";
+    };
+  };
 }

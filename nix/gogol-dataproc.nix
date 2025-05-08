@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6aa1bf05c2237b1dac166b7259e54e5983773903e3ff531448edac70ce439abe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-dataproc-1.0.0-r0-2d1f2dfd3646f50831170aeb8c704eeeaed6301267597a918d8df31f052d10b3.nix;
+        revNum = 0;
+        sha256 = "2d1f2dfd3646f50831170aeb8c704eeeaed6301267597a918d8df31f052d10b3";
+      };
+      default = "r0";
+    };
+  };
 }

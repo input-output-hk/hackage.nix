@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "756009121085ff7e7ba81b6ddadab8e86360530d55394a2b019936b612215435";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-texttospeech-1.0.0-r0-819526ff1170aa0d4fd13454cf056643b52101d8b31eecadfa59853bcaf4ee8a.nix;
+        revNum = 0;
+        sha256 = "819526ff1170aa0d4fd13454cf056643b52101d8b31eecadfa59853bcaf4ee8a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "fa4ac66cb0fb43deadbf83c63131882454241f66f4bf554d26ed5320f585948e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-vision-1.0.0-r0-52f3d32a61198ace1d1b3a9a3c737fed22e2646d8229e8791352a70ecd43181d.nix;
+        revNum = 0;
+        sha256 = "52f3d32a61198ace1d1b3a9a3c737fed22e2646d8229e8791352a70ecd43181d";
+      };
+      default = "r0";
+    };
+  };
 }

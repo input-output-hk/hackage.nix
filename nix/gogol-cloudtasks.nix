@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "ec3d008a59c82c25eb01b4b96b066bedcd2e8b5c2916ea1910568931d454cf87";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudtasks-1.0.0-r0-a83f9b7bf8eb1d765b206d9b8b401c266929a8c0a518a0d9766be37908492873.nix;
+        revNum = 0;
+        sha256 = "a83f9b7bf8eb1d765b206d9b8b401c266929a8c0a518a0d9766be37908492873";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6c631896b9b04d2dad86ba004723189c5e5bb35aeff2b965ad2ee16da32a2505";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-doubleclick-bids-1.0.0-r0-8f0750bf29f5d35928df1181bcdcf6887f6108546065148d50c03e92ca2bcd0c.nix;
+        revNum = 0;
+        sha256 = "8f0750bf29f5d35928df1181bcdcf6887f6108546065148d50c03e92ca2bcd0c";
+      };
+      default = "r0";
+    };
+  };
 }

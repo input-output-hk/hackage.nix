@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "df04ac2ff4a3ad59594bbff7dd18d24a56292f25117f19382493665d3d494673";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-billing-1.0.0-r0-8aa49f571b7bd5e99e81a3b76ae96684aaefe34a3b6a0246ead3731a5be4c24b.nix;
+        revNum = 0;
+        sha256 = "8aa49f571b7bd5e99e81a3b76ae96684aaefe34a3b6a0246ead3731a5be4c24b";
+      };
+      default = "r0";
+    };
+  };
 }

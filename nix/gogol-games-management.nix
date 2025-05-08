@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "8df1c37799245d202e30b2c34bc1233b75cca4434d97b552c866698a225ec57f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-games-management-1.0.0-r0-70a799124ba624ee1c4beaf7000981e25f7d1b8db813a40b7a768a407ed0acdb.nix;
+        revNum = 0;
+        sha256 = "70a799124ba624ee1c4beaf7000981e25f7d1b8db813a40b7a768a407ed0acdb";
+      };
+      default = "r0";
+    };
+  };
 }

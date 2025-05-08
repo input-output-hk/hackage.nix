@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b6826784c0f9c0c9a88a2d61b3117c18eaadf37532be0a3b83464074ba230cee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-dfareporting-1.0.0-r0-6d459e0cb5343164865b3252ccbec21684c7ff0c8f36e9851501fbe595878fe0.nix;
+        revNum = 0;
+        sha256 = "6d459e0cb5343164865b3252ccbec21684c7ff0c8f36e9851501fbe595878fe0";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "1f3c3e235ffbd12c0388ec628c0c14fc5cac44ea10d51d5cb461fb7e5043b98f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-apps-licensing-1.0.0-r0-b6e1923585bcbd4670e74b579d1780fb7d638c75bde3ba28184ccbf5146daf80.nix;
+        revNum = 0;
+        sha256 = "b6e1923585bcbd4670e74b579d1780fb7d638c75bde3ba28184ccbf5146daf80";
+      };
+      default = "r0";
+    };
+  };
 }

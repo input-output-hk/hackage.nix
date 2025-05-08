@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "74db48b99f975dbed417233ce82a9de27a6ceb38186101139c9b8f817eab961a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-driveactivity-1.0.0-r0-f92a482818cf81cb963c7309cc790bd0ee8f7331eff564ba94597ae5a7f67f30.nix;
+        revNum = 0;
+        sha256 = "f92a482818cf81cb963c7309cc790bd0ee8f7331eff564ba94597ae5a7f67f30";
+      };
+      default = "r0";
+    };
+  };
 }

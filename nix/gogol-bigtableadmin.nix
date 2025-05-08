@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "cfcb31f7412fc9cd056d2cb015e6dd9002217ca5332231ef1e91f7fc708160e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-bigtableadmin-1.0.0-r0-b788ba39135b56ac416dde88938f5546a933ca890f0a6335b085479a8c2c6ef8.nix;
+        revNum = 0;
+        sha256 = "b788ba39135b56ac416dde88938f5546a933ca890f0a6335b085479a8c2c6ef8";
+      };
+      default = "r0";
+    };
+  };
 }

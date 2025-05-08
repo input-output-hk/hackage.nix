@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b8fcff7603d69480511d393bd6e141232ea21bd56d5b0e429c54f0b2ac350449";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-urlshortener-1.0.0-r0-7f36e688201670f477d02d5293bbdf03388f16688d17ee50b81baaefb662afaa.nix;
+        revNum = 0;
+        sha256 = "7f36e688201670f477d02d5293bbdf03388f16688d17ee50b81baaefb662afaa";
+      };
+      default = "r0";
+    };
+  };
 }

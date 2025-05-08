@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "48789cf40dafdc4aab7ff836b21cfc35ed56c58a9cea456f07aac9c083cdf8c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-dns-1.0.0-r0-3f21c718a40f78e428e53771d6fea523e245311e944d2784ce829977997c18dd.nix;
+        revNum = 0;
+        sha256 = "3f21c718a40f78e428e53771d6fea523e245311e944d2784ce829977997c18dd";
+      };
+      default = "r0";
+    };
+  };
 }

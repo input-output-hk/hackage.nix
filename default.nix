@@ -6943,6 +6943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gogol-proximitybeacon" = import ./nix/gogol-proximitybeacon.nix;
   "gogol-pubsub" = import ./nix/gogol-pubsub.nix;
   "gogol-qpxexpress" = import ./nix/gogol-qpxexpress.nix;
+  "gogol-recaptcha-enterprise" = import ./nix/gogol-recaptcha-enterprise.nix;
   "gogol-redis" = import ./nix/gogol-redis.nix;
   "gogol-remotebuildexecution" = import ./nix/gogol-remotebuildexecution.nix;
   "gogol-replicapool" = import ./nix/gogol-replicapool.nix;

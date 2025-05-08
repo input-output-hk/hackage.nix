@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "c4fde776a4e8c96b1799872c3d91bfed6bcac29ee0cd352e3912a51d972bd0bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-discovery-1.0.0-r0-4030eac342dbf0a47f814d814654418df9c2609bd8c50a66c039a65d4c14a336.nix;
+        revNum = 0;
+        sha256 = "4030eac342dbf0a47f814d814654418df9c2609bd8c50a66c039a65d4c14a336";
+      };
+      default = "r0";
+    };
+  };
 }

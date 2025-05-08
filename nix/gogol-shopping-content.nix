@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f4ad19072949997a61ad2c478b78e84e96d821bfdec25703c27d72c5f4514326";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-shopping-content-1.0.0-r0-873c4e57bb3abc3038a5c6c1dece9eb52ce8875b83e9874a9c1030f918fd4877.nix;
+        revNum = 0;
+        sha256 = "873c4e57bb3abc3038a5c6c1dece9eb52ce8875b83e9874a9c1030f918fd4877";
+      };
+      default = "r0";
+    };
+  };
 }

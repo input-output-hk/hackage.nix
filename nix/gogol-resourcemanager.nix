@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f51589970a8df417314218ad8a368759d589d3d4e40b7f9f2e8ba54eb8ecb08a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-resourcemanager-1.0.0-r0-9adfc44deeabc0543d74bb80b5398eabfb001e8d17c9311a851a38ae531a82f8.nix;
+        revNum = 0;
+        sha256 = "9adfc44deeabc0543d74bb80b5398eabfb001e8d17c9311a851a38ae531a82f8";
+      };
+      default = "r0";
+    };
+  };
 }

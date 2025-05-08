@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "3f267d0bc9fb11464d32afce53b31c50505ae3f472224dc8be554570ca6dcad1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-tagmanager-1.0.0-r0-6da3410e1e158d59b4bb7ef9dffe90a449107c7e508f74c15cd2eb4a2ee070b3.nix;
+        revNum = 0;
+        sha256 = "6da3410e1e158d59b4bb7ef9dffe90a449107c7e508f74c15cd2eb4a2ee070b3";
+      };
+      default = "r0";
+    };
+  };
 }

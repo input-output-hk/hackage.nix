@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "09eb449383f2b9b727bf84d93897954aeb999546f24762ba6a62d750ef7253b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-healthcare-1.0.0-r0-5f472e72bb3e27f91633c49e82b71e8830fd2d37dc9e505a461599b6f8961abe.nix;
+        revNum = 0;
+        sha256 = "5f472e72bb3e27f91633c49e82b71e8830fd2d37dc9e505a461599b6f8961abe";
+      };
+      default = "r0";
+    };
+  };
 }

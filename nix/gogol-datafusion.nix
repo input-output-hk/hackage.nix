@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "ce5e0debd8e17398473ce2960ae67b26570b1dbba9ea17f83180470619634864";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-datafusion-1.0.0-r0-df2cee11237f66f9a7df5bf1245ca875fe101e5ccb4183a3943912b54da702ce.nix;
+        revNum = 0;
+        sha256 = "df2cee11237f66f9a7df5bf1245ca875fe101e5ccb4183a3943912b54da702ce";
+      };
+      default = "r0";
+    };
+  };
 }

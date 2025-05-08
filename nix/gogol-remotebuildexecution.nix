@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "c62bfbe068a3ce87b69878f999844aa9efc8e69ea3d9731835da00bf15c3260c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-remotebuildexecution-1.0.0-r0-d79a7e6134533c77577768078c5f6c43ef9cf6a3632c74f05ad3c93c369d84b1.nix;
+        revNum = 0;
+        sha256 = "d79a7e6134533c77577768078c5f6c43ef9cf6a3632c74f05ad3c93c369d84b1";
+      };
+      default = "r0";
+    };
+  };
 }

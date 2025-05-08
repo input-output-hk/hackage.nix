@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "8a2f1d8c71d4d93a30f394e920313387d823767082240f733a73ff568bb8038c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-videointelligence-1.0.0-r0-0fb41fd248968b72b54b0e6a5ad2bddc3a24c7376b2970d2d770ab4e878a8875.nix;
+        revNum = 0;
+        sha256 = "0fb41fd248968b72b54b0e6a5ad2bddc3a24c7376b2970d2d770ab4e878a8875";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b605160de9c6d2962fea25ec331b7e89416645f945145c270a5ad149cc4c26fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudshell-1.0.0-r0-a5a2ce7d2162156c4e7caff38d0898fd2a7f3ebb2a567b75618d9409dc792c46.nix;
+        revNum = 0;
+        sha256 = "a5a2ce7d2162156c4e7caff38d0898fd2a7f3ebb2a567b75618d9409dc792c46";
+      };
+      default = "r0";
+    };
+  };
 }

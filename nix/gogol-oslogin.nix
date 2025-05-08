@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "feaefc0f9852b3d2f58e4467ca93cec10b4c22cf6d33e4ac5a9e2d8c4dff9d57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-oslogin-1.0.0-r0-177c445643b55a455502a30de86e17ef6fa7e3ec7afe6d09ffb6bed3cf3a57ab.nix;
+        revNum = 0;
+        sha256 = "177c445643b55a455502a30de86e17ef6fa7e3ec7afe6d09ffb6bed3cf3a57ab";
+      };
+      default = "r0";
+    };
+  };
 }

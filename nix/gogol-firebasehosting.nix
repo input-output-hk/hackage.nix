@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "47ff6c8870bbfcc9670227ad19198cceda3c2e5b12a763f109f3f5e9dc5b126c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-firebasehosting-1.0.0-r0-877ba6693ff9ead0e95d44867fd1a13da9284079b3efe89cc076a0a3dc1c1818.nix;
+        revNum = 0;
+        sha256 = "877ba6693ff9ead0e95d44867fd1a13da9284079b3efe89cc076a0a3dc1c1818";
+      };
+      default = "r0";
+    };
+  };
 }

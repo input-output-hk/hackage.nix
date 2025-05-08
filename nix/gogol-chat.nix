@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "a410af8f38ca9c3a6be94427c1a77fa634e9ee516cec3743d41dd187a29bb1d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-chat-1.0.0-r0-940cbe6402bed246ac935e89687001f27fa2d316f395511fce6262dceaad2359.nix;
+        revNum = 0;
+        sha256 = "940cbe6402bed246ac935e89687001f27fa2d316f395511fce6262dceaad2359";
+      };
+      default = "r0";
+    };
+  };
 }

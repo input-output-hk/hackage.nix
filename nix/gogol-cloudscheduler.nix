@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "7ca9ad91c16e3e42826affa1ac13c15735fff6a514f9dbb352f33ce4fd83eb91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudscheduler-1.0.0-r0-044672847791111d2dee4183cb874d1e4cb3e2b1e7fad419c528af25c56a01da.nix;
+        revNum = 0;
+        sha256 = "044672847791111d2dee4183cb874d1e4cb3e2b1e7fad419c528af25c56a01da";
+      };
+      default = "r0";
+    };
+  };
 }

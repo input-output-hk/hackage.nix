@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "7d677783947229aec9bce33e6f5a135cfd45fe69be05b93c322223f7d61c46a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-fitness-1.0.0-r0-a895ed635ae85719b9e0c590d9a6bd0f77f08b99bc4d1f2be784aee94e482f47.nix;
+        revNum = 0;
+        sha256 = "a895ed635ae85719b9e0c590d9a6bd0f77f08b99bc4d1f2be784aee94e482f47";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6fd6531c56ad6ea1927ed1dc11b82edca6754fbe7374ecaedbb0c4658c135195";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-translate-1.0.0-r0-3265ea0217b687930811e624b149de4b7ee9acfc6b1a27ada29ce96934ea1f8d.nix;
+        revNum = 0;
+        sha256 = "3265ea0217b687930811e624b149de4b7ee9acfc6b1a27ada29ce96934ea1f8d";
+      };
+      default = "r0";
+    };
+  };
 }

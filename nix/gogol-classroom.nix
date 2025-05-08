@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "5daf76bd2654bc5012843ab3220002a551c5d7e72ef2b82855b0b26262756234";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-classroom-1.0.0-r0-d0801bef19e617fe576ac76ca580c4cd76f6284d321a527a98dae26d3815c192.nix;
+        revNum = 0;
+        sha256 = "d0801bef19e617fe576ac76ca580c4cd76f6284d321a527a98dae26d3815c192";
+      };
+      default = "r0";
+    };
+  };
 }

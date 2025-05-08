@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "892c51ddd0c8b3b66f8817ae490219edf49d292f7a0989bfec72d606951c8e2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-drive-1.0.0-r0-024e9dafb9d19607231ea64410d422e1ec5a4e8a8248b83704dd7d983d8aed4f.nix;
+        revNum = 0;
+        sha256 = "024e9dafb9d19607231ea64410d422e1ec5a4e8a8248b83704dd7d983d8aed4f";
+      };
+      default = "r0";
+    };
+  };
 }

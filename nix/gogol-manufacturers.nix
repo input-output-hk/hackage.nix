@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "af1c6ce2f6febf5a92e8887250515ce6b887690d352270ae5bc5f0dcd9a0bd79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-manufacturers-1.0.0-r0-24a79cef8c654100232d470ba1891e0c3f839125f668c1f48492d88224da2199.nix;
+        revNum = 0;
+        sha256 = "24a79cef8c654100232d470ba1891e0c3f839125f668c1f48492d88224da2199";
+      };
+      default = "r0";
+    };
+  };
 }

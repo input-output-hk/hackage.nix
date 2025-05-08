@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "af00d46d79dd69e404d95c050a108dafa2ddc2e175df379020ee933373bcb474";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aoc-0.1.0.2-r0-a54d73258f929659778375b7d546fd1ee2612fcdba6d92baf1e7a38b618e7ba3.nix;
+        revNum = 0;
+        sha256 = "a54d73258f929659778375b7d546fd1ee2612fcdba6d92baf1e7a38b618e7ba3";
+      };
+      default = "r0";
+    };
+  };
 }

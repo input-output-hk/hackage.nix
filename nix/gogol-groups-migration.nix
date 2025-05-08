@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f5b910363ede942ca3894b9e5a7f32ab69bbe2f0446ba494d13f8d399b5f533f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-groups-migration-1.0.0-r0-9aa2ccf234171b1bec0146051af05028bb712631092fb70186d53c2eca807040.nix;
+        revNum = 0;
+        sha256 = "9aa2ccf234171b1bec0146051af05028bb712631092fb70186d53c2eca807040";
+      };
+      default = "r0";
+    };
+  };
 }

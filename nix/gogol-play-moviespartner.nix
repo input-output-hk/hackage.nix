@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6484f1592da994fd044296ae80350cc8636b80321ef546c317efe9b20b07cc16";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-play-moviespartner-1.0.0-r0-26de2cba357de6d7946ca6f8e423f0897e2c3a28f2992a911e4ca98f676ce07b.nix;
+        revNum = 0;
+        sha256 = "26de2cba357de6d7946ca6f8e423f0897e2c3a28f2992a911e4ca98f676ce07b";
+      };
+      default = "r0";
+    };
+  };
 }

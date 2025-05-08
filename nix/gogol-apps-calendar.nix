@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "c33648343e1d6a0c548721eb76579faed38839bf236450287190397ef4762f85";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-apps-calendar-1.0.0-r0-8c788d2dce437a5a02cba36e07139bb9481ede515eadde7fa11e72bf5a0816f4.nix;
+        revNum = 0;
+        sha256 = "8c788d2dce437a5a02cba36e07139bb9481ede515eadde7fa11e72bf5a0816f4";
+      };
+      default = "r0";
+    };
+  };
 }

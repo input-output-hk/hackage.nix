@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f1624bddac592715a0cb9a5d8e0112135da624042252f4c6085c7ebaef1dead5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-playcustomapp-1.0.0-r0-360ef1b9970504e9f7c1e5c3a5727fa4c5580ba41488abe04111cc941eabb8d4.nix;
+        revNum = 0;
+        sha256 = "360ef1b9970504e9f7c1e5c3a5727fa4c5580ba41488abe04111cc941eabb8d4";
+      };
+      default = "r0";
+    };
+  };
 }

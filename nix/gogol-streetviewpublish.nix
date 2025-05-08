@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "0cc46ac92a51397b15dea335d5ae98d35c2aa5d007327eb66090b9832634ed0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-streetviewpublish-1.0.0-r0-c85b9d23db74fef6125eff60ce730f728a1bc2179e9b5a32ab60f9df4d2b1ecc.nix;
+        revNum = 0;
+        sha256 = "c85b9d23db74fef6125eff60ce730f728a1bc2179e9b5a32ab60f9df4d2b1ecc";
+      };
+      default = "r0";
+    };
+  };
 }

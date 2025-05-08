@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "6abe6e49eddc5589b2d8cbdb2f6b3d3f1c8d5f0312b6d463bac837de716d0407";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-consumersurveys-1.0.0-r0-aa8e89cdc26fbf3fe929a26f597d744127dc8075b098e8ae3164fc13a80c2880.nix;
+        revNum = 0;
+        sha256 = "aa8e89cdc26fbf3fe929a26f597d744127dc8075b098e8ae3164fc13a80c2880";
+      };
+      default = "r0";
+    };
+  };
 }

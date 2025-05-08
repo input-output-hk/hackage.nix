@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "527f9ca3a1d03e870ad990015409c3e118cf61884bb7fdd53f4eaffc1af60005";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-servicenetworking-1.0.0-r0-c2e82012e381b13af26a14a8ef42ffe7a4d42c34545964b89778c7269110993a.nix;
+        revNum = 0;
+        sha256 = "c2e82012e381b13af26a14a8ef42ffe7a4d42c34545964b89778c7269110993a";
+      };
+      default = "r0";
+    };
+  };
 }

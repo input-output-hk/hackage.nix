@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "72424cd94f27df9c4f1edb312b3afaae7f1c8c6df4e5d08c8eb70e65d0f69ced";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-commentanalyzer-1.0.0-r0-9021114f558a540ecb68594a5577b23735f1343974952e526b6601337a1cdb79.nix;
+        revNum = 0;
+        sha256 = "9021114f558a540ecb68594a5577b23735f1343974952e526b6601337a1cdb79";
+      };
+      default = "r0";
+    };
+  };
 }

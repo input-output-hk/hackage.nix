@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b75912097507ea1459881e9853eb3786841f6f8c8fe3e2cc45034cfffff36fb7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudiot-1.0.0-r0-e5f4c3981156fac5ca3e80092fff4992af0077d64cfd407b7cdc333f91da1b39.nix;
+        revNum = 0;
+        sha256 = "e5f4c3981156fac5ca3e80092fff4992af0077d64cfd407b7cdc333f91da1b39";
+      };
+      default = "r0";
+    };
+  };
 }

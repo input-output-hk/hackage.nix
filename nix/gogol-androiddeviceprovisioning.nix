@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "de68d7aaf97ff8c6929b736dd5dfc868de2dd9d33f2aedccf2417fb948f0c36d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-androiddeviceprovisioning-1.0.0-r0-6d184b831ee62867f5e6fd0b395e9473c48231fa3823dd0521708ce207b74ac3.nix;
+        revNum = 0;
+        sha256 = "6d184b831ee62867f5e6fd0b395e9473c48231fa3823dd0521708ce207b74ac3";
+      };
+      default = "r0";
+    };
+  };
 }

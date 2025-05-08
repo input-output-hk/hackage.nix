@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b2b0df8b8c9e323d5f08ee0c614951de177f2622453177f781462d27c9b68050";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-android-enterprise-1.0.0-r0-cf85505531d35f40ad874aca708ed27331ab2ea666391486ad138d62c8bc4a33.nix;
+        revNum = 0;
+        sha256 = "cf85505531d35f40ad874aca708ed27331ab2ea666391486ad138d62c8bc4a33";
+      };
+      default = "r0";
+    };
+  };
 }

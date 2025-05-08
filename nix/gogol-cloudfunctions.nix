@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "1897f433857fc3cf4c124ae5ced3680a8c9aba1e312f043afc47cfe794beacf0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-cloudfunctions-1.0.0-r0-0817f5a109ff769633c8107609a59bc0efcb674cdf3a106a15032dd2f6088b79.nix;
+        revNum = 0;
+        sha256 = "0817f5a109ff769633c8107609a59bc0efcb674cdf3a106a15032dd2f6088b79";
+      };
+      default = "r0";
+    };
+  };
 }

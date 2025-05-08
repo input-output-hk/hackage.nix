@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "a837ed3de755ff8b408eb005656f07cf7fc43df6d2399b7877e35cb1653955d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-adexchange-buyer-1.0.0-r0-e3e8de90e36f1a13a26e181aea3f597158bac9e272067e61107dc2d9f15afe9a.nix;
+        revNum = 0;
+        sha256 = "e3e8de90e36f1a13a26e181aea3f597158bac9e272067e61107dc2d9f15afe9a";
+      };
+      default = "r0";
+    };
+  };
 }

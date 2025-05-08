@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "5f2b733e3b318bf506a650ee2287ff86448b62b917ad27f283fd6ef1bf2ce092";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-youtube-reporting-1.0.0-r0-d7f53774a0ee11dcbbbcbcb342bce24a36fb1d316d8c13faf10f6b084a844ea4.nix;
+        revNum = 0;
+        sha256 = "d7f53774a0ee11dcbbbcbcb342bce24a36fb1d316d8c13faf10f6b084a844ea4";
+      };
+      default = "r0";
+    };
+  };
 }

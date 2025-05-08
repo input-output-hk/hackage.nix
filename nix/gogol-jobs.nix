@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "68e84a7a7ad4db341d60c271cbd4051a4a2fd88fcc847d1d9acf8abfc3883745";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-jobs-1.0.0-r0-c2c995282e3260884a53e8436eb898289ef201ace8af8b9c7f0bfc27fde41f56.nix;
+        revNum = 0;
+        sha256 = "c2c995282e3260884a53e8436eb898289ef201ace8af8b9c7f0bfc27fde41f56";
+      };
+      default = "r0";
+    };
+  };
 }

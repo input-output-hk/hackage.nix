@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b20f8c65323106b63cf5bda86eafaab179b82ee25253732f915883fc7ba8dca3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-firebase-dynamiclinks-1.0.0-r0-8b0585b0124f81f28f42e7261145eb14f44d8ebab6fbee7ce959ba772c6b9a46.nix;
+        revNum = 0;
+        sha256 = "8b0585b0124f81f28f42e7261145eb14f44d8ebab6fbee7ce959ba772c6b9a46";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "22b8a15b82282c71fd86ea6a74b4024e081210cb723ec8a10673e109cb8d212a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-apps-activity-1.0.0-r0-0978328d4afa67f460e1c0413222bf0a7a8de2bf9cc0bbb3c5b07aee3a176d41.nix;
+        revNum = 0;
+        sha256 = "0978328d4afa67f460e1c0413222bf0a7a8de2bf9cc0bbb3c5b07aee3a176d41";
+      };
+      default = "r0";
+    };
+  };
 }

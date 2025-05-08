@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "4d69e7784e5d22dd46174bd3565264160c6d9dbe75656ce69ec846d3821aeac6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-appstate-1.0.0-r0-8ac2dfefaae350b389f39fc81f90793753acde92eddc183da11df199c1af9368.nix;
+        revNum = 0;
+        sha256 = "8ac2dfefaae350b389f39fc81f90793753acde92eddc183da11df199c1af9368";
+      };
+      default = "r0";
+    };
+  };
 }

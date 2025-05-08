@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "8557006ae32c18714cbab324b7b44889eed5423a63971b67b2213ecad4b4b5e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-storage-1.0.0-r0-7a24826f67446c2ed4f148aac1bfc2c85b537d6d928c1326f21bc22f6587d5d3.nix;
+        revNum = 0;
+        sha256 = "7a24826f67446c2ed4f148aac1bfc2c85b537d6d928c1326f21bc22f6587d5d3";
+      };
+      default = "r0";
+    };
+  };
 }

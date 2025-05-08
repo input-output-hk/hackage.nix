@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "e69d4bbdc2e3a4e12a47d19d58dd1831ff0450d92efe91086c47ad0a935932be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-dialogflow-1.0.0-r0-95f830dd4190ffb0fd13e1f42c6b4a87b072b506cf6a7dec04b40bd74696449e.nix;
+        revNum = 0;
+        sha256 = "95f830dd4190ffb0fd13e1f42c6b4a87b072b506cf6a7dec04b40bd74696449e";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "b53ec778704bfbe6f9f118525319cf7cef2808d699ba6a96668420ab7a6bbe35";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-genomics-1.0.0-r0-e08cf4587f4bb548cfa7359c065a03659c3ff5a80db43f425121f42e8f6d27bd.nix;
+        revNum = 0;
+        sha256 = "e08cf4587f4bb548cfa7359c065a03659c3ff5a80db43f425121f42e8f6d27bd";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "ea5ffa9df87ffbb80b1f895241699a3dfcccc2fdda409a9a6028eeeb3dc3b010";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-gmail-1.0.0-r0-4602932c5d00a566821abdf2477d5adea5842c366b17990a5102712cd78a3402.nix;
+        revNum = 0;
+        sha256 = "4602932c5d00a566821abdf2477d5adea5842c366b17990a5102712cd78a3402";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "d63a70b0f14fa0adbca2d56aee2f8824dbe9125c418cdfda2505c74d40a8df8f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-proximitybeacon-1.0.0-r0-67528afa4ae1a475b60e6fe5757c697fc22d4b4186186ca2269b9ff8ad74e00b.nix;
+        revNum = 0;
+        sha256 = "67528afa4ae1a475b60e6fe5757c697fc22d4b4186186ca2269b9ff8ad74e00b";
+      };
+      default = "r0";
+    };
+  };
 }

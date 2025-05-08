@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "7ebdbca607e70e1a4dd11f6f5c116b8fc409b7c94e98e76a21abf5d22aa4343a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gogol-firestore-1.0.0-r0-c396d400596c34b22fb14cdd914c525f2f83498ffe0c6199abfa9a94544280df.nix;
+        revNum = 0;
+        sha256 = "c396d400596c34b22fb14cdd914c525f2f83498ffe0c6199abfa9a94544280df";
+      };
+      default = "r0";
+    };
+  };
 }
