@@ -6468,6 +6468,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-debug-common" = import ./nix/ghc-debug-common.nix;
   "ghc-debug-convention" = import ./nix/ghc-debug-convention.nix;
   "ghc-debug-stub" = import ./nix/ghc-debug-stub.nix;
+  "ghc-debugger" = import ./nix/ghc-debugger.nix;
   "ghc-definitions-th" = import ./nix/ghc-definitions-th.nix;
   "ghc-dump-core" = import ./nix/ghc-dump-core.nix;
   "ghc-dump-tree" = import ./nix/ghc-dump-tree.nix;

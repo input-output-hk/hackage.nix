@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.0" = {
+    sha256 = "d1209c651674b4ebbcdbcc1ae3b2c5101326c69ef9e6def303e8249f61a89332";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/partialord-0.1.0-r0-8edb699271a3b30e676769cfe498bdc6db766aba181ea3c139a213cb2b1f9166.nix;
+        revNum = 0;
+        sha256 = "8edb699271a3b30e676769cfe498bdc6db766aba181ea3c139a213cb2b1f9166";
+      };
+      default = "r0";
+    };
+  };
 }
