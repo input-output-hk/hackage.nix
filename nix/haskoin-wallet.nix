@@ -101,4 +101,15 @@
       default = "r0";
     };
   };
+  "0.9.4" = {
+    sha256 = "c3d55bd407a0b7f08242eba0d09c53594591bc2f977794a34464aa4553cee11b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskoin-wallet-0.9.4-r0-50ff10b2276e667e6c43104b51263e26ca8b92d5a400fe6ed1688cf036a25bbe.nix;
+        revNum = 0;
+        sha256 = "50ff10b2276e667e6c43104b51263e26ca8b92d5a400fe6ed1688cf036a25bbe";
+      };
+      default = "r0";
+    };
+  };
 }

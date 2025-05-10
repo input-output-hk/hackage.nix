@@ -90,4 +90,15 @@
       default = "r0";
     };
   };
+  "1.0.6" = {
+    sha256 = "0b4e0e88ff7f9f45a7e9258271c79edb3204ecd3eb33c26eace29df86b8183d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/murmur3-1.0.6-r0-6e6cf90dc7e075e44098a650957e14333613f24b9415569fd7c974b9ad1977c6.nix;
+        revNum = 0;
+        sha256 = "6e6cf90dc7e075e44098a650957e14333613f24b9415569fd7c974b9ad1977c6";
+      };
+      default = "r0";
+    };
+  };
 }

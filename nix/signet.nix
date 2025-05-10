@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2025.5.9" = {
+    sha256 = "7aed4d2c000129e9ebe3b7cb90bee2a4a8f2201d8669a44e9953c70c49e95e92";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/signet-0.2025.5.9-r0-74cf2e551d7e89ab8f736f646abd45761f3f0a8ac5c502f898b6f62a8ad3a0e5.nix;
+        revNum = 0;
+        sha256 = "74cf2e551d7e89ab8f736f646abd45761f3f0a8ac5c502f898b6f62a8ad3a0e5";
+      };
+      default = "r0";
+    };
+  };
 }

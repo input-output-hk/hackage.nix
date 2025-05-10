@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "05ef6343d43005f4ab84eeac098e81b653785419a1705c66370c79fcf165c04c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stm-delay-0.1.1.2-r0-1e2a35cb9262ff71f24f7f6e91692025ba384434dae19cda7327f5a925d19be9.nix;
+        revNum = 0;
+        sha256 = "1e2a35cb9262ff71f24f7f6e91692025ba384434dae19cda7327f5a925d19be9";
+      };
+      default = "r0";
+    };
+  };
 }

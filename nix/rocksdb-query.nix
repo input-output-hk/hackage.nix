@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.4.3" = {
+    sha256 = "c8259c34d4baf91785d2ab0dd73fb6f326c07b33acf7f509f043b320f3f1b4d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rocksdb-query-0.4.3-r0-e66da6755954433379d5a455f326a34839f34ee91744b8ada03736a30c2a182b.nix;
+        revNum = 0;
+        sha256 = "e66da6755954433379d5a455f326a34839f34ee91744b8ada03736a30c2a182b";
+      };
+      default = "r0";
+    };
+  };
 }
