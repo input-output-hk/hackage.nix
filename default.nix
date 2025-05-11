@@ -700,6 +700,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "JuicyPixels-blurhash" = import ./nix/_Juicy_Pixels-blurhash.nix;
   "JuicyPixels-canvas" = import ./nix/_Juicy_Pixels-canvas.nix;
   "JuicyPixels-extra" = import ./nix/_Juicy_Pixels-extra.nix;
+  "JuicyPixels-jpeg-turbo" = import ./nix/_Juicy_Pixels-jpeg-turbo.nix;
   "JuicyPixels-repa" = import ./nix/_Juicy_Pixels-repa.nix;
   "JuicyPixels-scale-dct" = import ./nix/_Juicy_Pixels-scale-dct.nix;
   "JuicyPixels-stbir" = import ./nix/_Juicy_Pixels-stbir.nix;
@@ -9552,6 +9553,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "journalctl-stream" = import ./nix/journalctl-stream.nix;
   "joy-rewrite" = import ./nix/joy-rewrite.nix;
   "jpeg" = import ./nix/jpeg.nix;
+  "jpeg-turbo" = import ./nix/jpeg-turbo.nix;
   "jpl-horizons-api" = import ./nix/jpl-horizons-api.nix;
   "jps" = import ./nix/jps.nix;
   "js-chart" = import ./nix/js-chart.nix;

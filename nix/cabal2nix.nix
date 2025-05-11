@@ -1271,6 +1271,22 @@
         revNum = 0;
         sha256 = "b088542eddc81151eac6d7c75198ef67258d17ba0a2098fa25f0b050c125f86f";
       };
+      r1 = {
+        nix = import ../hackage/cabal2nix-2.20.0-r1-d19c6088b606514c2f485b4fb3f852b8bce6b854a791dd17744e31d70cd2cba4.nix;
+        revNum = 1;
+        sha256 = "d19c6088b606514c2f485b4fb3f852b8bce6b854a791dd17744e31d70cd2cba4";
+      };
+      default = "r1";
+    };
+  };
+  "2.20.1" = {
+    sha256 = "7231de9ed1c4674ba3daf519629de891dbd36181412ef5ea09c85def6a86387a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal2nix-2.20.1-r0-f24a12ecb5efef78a6fd73ca0628fb05b8b25a26ca25ffb9ef8445f6a925bd0e.nix;
+        revNum = 0;
+        sha256 = "f24a12ecb5efef78a6fd73ca0628fb05b8b25a26ca25ffb9ef8445f6a925bd0e";
+      };
       default = "r0";
     };
   };

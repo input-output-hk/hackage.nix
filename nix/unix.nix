@@ -496,4 +496,15 @@
       default = "r1";
     };
   };
+  "2.8.7.0" = {
+    sha256 = "cbdd879d5aaf0755eeeedc95e3c4adde74edb8dbb7164aa1297b0b84d916fb83";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unix-2.8.7.0-r0-1f5f3cf31be1a052ab2d7caebc5185888adeca0c6606c6bc7e45223d09cca9f0.nix;
+        revNum = 0;
+        sha256 = "1f5f3cf31be1a052ab2d7caebc5185888adeca0c6606c6bc7e45223d09cca9f0";
+      };
+      default = "r0";
+    };
+  };
 }
