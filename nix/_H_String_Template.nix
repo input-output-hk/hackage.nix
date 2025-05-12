@@ -652,7 +652,12 @@
         revNum = 8;
         sha256 = "892814bda115d1ac934fc4d38c863fec469ff0424c8e8a4445c6ba6e36b3b48a";
       };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/HStringTemplate-0.8.8-r9-772983c4730d3cf28bbbfc483e4fc13e0614ed315251e1c76dcf43f6cd03d6dd.nix;
+        revNum = 9;
+        sha256 = "772983c4730d3cf28bbbfc483e4fc13e0614ed315251e1c76dcf43f6cd03d6dd";
+      };
+      default = "r9";
     };
   };
 }

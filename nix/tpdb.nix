@@ -285,4 +285,15 @@
       default = "r0";
     };
   };
+  "2.8.1" = {
+    sha256 = "48ff6850c6e3cb77aa9608f7137101a2188418e2a78086192af60c56bc1526f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tpdb-2.8.1-r0-a35eff2282c932e4ac6a21ce8ac24f5fe565b05cf516f5bfda97e42fa6b491d8.nix;
+        revNum = 0;
+        sha256 = "a35eff2282c932e4ac6a21ce8ac24f5fe565b05cf516f5bfda97e42fa6b491d8";
+      };
+      default = "r0";
+    };
+  };
 }
