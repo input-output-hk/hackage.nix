@@ -214,4 +214,26 @@
       default = "r0";
     };
   };
+  "0.1.6.0" = {
+    sha256 = "6b88e5499b05232f1b2219f85fce2e9ee9d150dd2719e6567149b0fc5a0f047d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fingertree-0.1.6.0-r0-3fa7e578e6a373ea8226cb6c019bf208d8a4b0a561acd203416e8b2c3b07c5e4.nix;
+        revNum = 0;
+        sha256 = "3fa7e578e6a373ea8226cb6c019bf208d8a4b0a561acd203416e8b2c3b07c5e4";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.6.1" = {
+    sha256 = "f5fb43b0be7cd046b4344ade973d100a3f7400c27104124967f0b5c6d2b6a24f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fingertree-0.1.6.1-r0-801e199e5a38b4d5c3a004be290144c20f5582e48f28793219a5f65cdf72af1e.nix;
+        revNum = 0;
+        sha256 = "801e199e5a38b4d5c3a004be290144c20f5582e48f28793219a5f65cdf72af1e";
+      };
+      default = "r0";
+    };
+  };
 }

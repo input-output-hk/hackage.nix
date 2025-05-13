@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "d7d30f004de032001752c90731d2443182d49319490935e2289310fcf436ebb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cairo-canvas-0.1.0.1-r0-d49ca5ccd33795b3b48e89451d3f3fd901aecd736aa1479694a71d396b1ca841.nix;
+        revNum = 0;
+        sha256 = "d49ca5ccd33795b3b48e89451d3f3fd901aecd736aa1479694a71d396b1ca841";
+      };
+      default = "r0";
+    };
+  };
 }

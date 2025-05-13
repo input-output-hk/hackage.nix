@@ -336,6 +336,28 @@
       default = "r0";
     };
   };
+  "0.12.10.1" = {
+    sha256 = "c1a532e9e632ac7ac24682a1280eac3f905849ad3ba82d2067f707f39de5ad33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/texmath-0.12.10.1-r0-2cf2845f10e32e637b3fe7dfdf9b56efb629f230b1113efba5511cd41680820b.nix;
+        revNum = 0;
+        sha256 = "2cf2845f10e32e637b3fe7dfdf9b56efb629f230b1113efba5511cd41680820b";
+      };
+      default = "r0";
+    };
+  };
+  "0.12.10.2" = {
+    sha256 = "c671d2084d9f4a3e0796bda783b5e6a7d26ffab5d3dccc44d1caa31a0e59bc0b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/texmath-0.12.10.2-r0-b1a6ae3523f58954506779eaccddd498442d8a2e2b50ddf2bf5013dabbb1667d.nix;
+        revNum = 0;
+        sha256 = "b1a6ae3523f58954506779eaccddd498442d8a2e2b50ddf2bf5013dabbb1667d";
+      };
+      default = "r0";
+    };
+  };
   "0.12.2" = {
     sha256 = "be6fd90af8a6349111e3969f3ff030aeaad5cb236772348d7cbb6fcb52591153";
     revisions = {

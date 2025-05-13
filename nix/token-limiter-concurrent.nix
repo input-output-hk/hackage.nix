@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "eb6a7fa0898db27e200902ad95a494a1f3b5b42a4a21e9cf875bf324a96b08b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/token-limiter-concurrent-0.2.0.0-r0-cfc4af21e51318cb07758cacd3a0cdb9b002fcc1415c92c3e99ac87ec87cf019.nix;
+        revNum = 0;
+        sha256 = "cfc4af21e51318cb07758cacd3a0cdb9b002fcc1415c92c3e99ac87ec87cf019";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "f6b2e57d70309942d9172a9610a44f95a39486ff749c26884d829a7d79f1e828";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/token-limiter-concurrent-0.2.0.1-r0-3e5fd64f2820477fbaf8ef614273841edcc758e11cb81307ec76279758017b67.nix;
+        revNum = 0;
+        sha256 = "3e5fd64f2820477fbaf8ef614273841edcc758e11cb81307ec76279758017b67";
+      };
+      default = "r0";
+    };
+  };
 }

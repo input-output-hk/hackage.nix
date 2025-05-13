@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "0.2.3.1" = {
+    sha256 = "0b0144cb9bc09cf623b47910f5faeeac33dc53ef938b9248408df30e20386ea2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rawstring-qm-0.2.3.1-r0-ff8cde565704af5fa69f84336d4f948cc68f03fdb85a1ae8fef148de3002a56f.nix;
+        revNum = 0;
+        sha256 = "ff8cde565704af5fa69f84336d4f948cc68f03fdb85a1ae8fef148de3002a56f";
+      };
+      default = "r0";
+    };
+  };
 }
