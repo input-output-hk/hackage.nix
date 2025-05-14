@@ -3658,6 +3658,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "closure" = import ./nix/closure.nix;
   "cloud-haskell" = import ./nix/cloud-haskell.nix;
   "cloud-seeder" = import ./nix/cloud-seeder.nix;
+  "cloudevents-haskell" = import ./nix/cloudevents-haskell.nix;
   "cloudfront-signer" = import ./nix/cloudfront-signer.nix;
   "cloudi" = import ./nix/cloudi.nix;
   "cloudy" = import ./nix/cloudy.nix;
@@ -4697,6 +4698,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dep-t-dynamic" = import ./nix/dep-t-dynamic.nix;
   "dep-t-value" = import ./nix/dep-t-value.nix;
   "dependency" = import ./nix/dependency.nix;
+  "dependent-enummap" = import ./nix/dependent-enummap.nix;
   "dependent-hashmap" = import ./nix/dependent-hashmap.nix;
   "dependent-literals" = import ./nix/dependent-literals.nix;
   "dependent-literals-plugin" = import ./nix/dependent-literals-plugin.nix;
