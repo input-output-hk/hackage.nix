@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "9d62064e5d0d9efed5a44f0b7360c2f23c2061a570268163da40f3f5a1d4df61";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hsql-1.7-r1-6440b70f79acea208409970fadb5fa6aa51f122d83bf7a2d07661691d9db08bc.nix;
+        revNum = 1;
+        sha256 = "6440b70f79acea208409970fadb5fa6aa51f122d83bf7a2d07661691d9db08bc";
+      };
+      default = "r1";
     };
   };
   "1.7.1" = {
@@ -29,7 +34,12 @@
         revNum = 0;
         sha256 = "f57dab03e77f3d73731ea539d0ddb4f43ae389517cc378d76a46dce3336fdde9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hsql-1.8.1-r1-ed484a8f4e424c16c4caebd4d76db999ac4b618cfcaa1b129d3384f75ec81d20.nix;
+        revNum = 1;
+        sha256 = "ed484a8f4e424c16c4caebd4d76db999ac4b618cfcaa1b129d3384f75ec81d20";
+      };
+      default = "r1";
     };
   };
   "1.8.2" = {
@@ -40,7 +50,12 @@
         revNum = 0;
         sha256 = "1fde21d65f15d082ad9cf3e7b665060d567233602a85c5f73257b2338323f82f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hsql-1.8.2-r1-f6e8681ca846329718bcb08e59bdbaa93ec1ccd4cd521a699240fdde07ba8fab.nix;
+        revNum = 1;
+        sha256 = "f6e8681ca846329718bcb08e59bdbaa93ec1ccd4cd521a699240fdde07ba8fab";
+      };
+      default = "r1";
     };
   };
 }

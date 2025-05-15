@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "73fb19967d6819eeda67c1c979766df2ab93b86384898e446d53bfe655c76fc9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/verismith-1.1.0-r0-c53ba7f542b52ef6243c06cb801f5e5619d2bbee320e4cf4ada728453419974e.nix;
+        revNum = 0;
+        sha256 = "c53ba7f542b52ef6243c06cb801f5e5619d2bbee320e4cf4ada728453419974e";
+      };
+      default = "r0";
+    };
+  };
 }

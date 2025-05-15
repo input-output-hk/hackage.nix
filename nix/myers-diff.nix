@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "7c42091bf3d7462264743e745329e78d575fb879cd6fddff6d44c969f1281e70";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/myers-diff-0.3.0.2-r0-11f649619eacb013b6cd152b4f2563cb2ce69ece8cfc2fc6d18e05f78b1a73b6.nix;
+        revNum = 0;
+        sha256 = "11f649619eacb013b6cd152b4f2563cb2ce69ece8cfc2fc6d18e05f78b1a73b6";
+      };
+      default = "r0";
+    };
+  };
 }
