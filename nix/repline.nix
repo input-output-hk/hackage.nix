@@ -154,7 +154,12 @@
         revNum = 0;
         sha256 = "3d863dedf6d840d0578b597bb3b85c95e400c895c67e77a0c286b184d8be51b2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/repline-0.4.2.0-r1-2ae7fe9144390cab969be07a083ab997d42f0321fc4d7af9deb284c0b56c138d.nix;
+        revNum = 1;
+        sha256 = "2ae7fe9144390cab969be07a083ab997d42f0321fc4d7af9deb284c0b56c138d";
+      };
+      default = "r1";
     };
   };
 }

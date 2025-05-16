@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.1.0.9" = {
+    sha256 = "3f629e8eec8641d6989c0821bed8079581b81104eabc907955284b360267f0b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelevel-tools-yj-0.1.0.9-r0-4579961d93b3b97b677b69bcc0316689fae6e064dced12799a0ee99478170596.nix;
+        revNum = 0;
+        sha256 = "4579961d93b3b97b677b69bcc0316689fae6e064dced12799a0ee99478170596";
+      };
+      default = "r0";
+    };
+  };
 }
