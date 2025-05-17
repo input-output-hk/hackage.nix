@@ -162,4 +162,15 @@
       default = "r1";
     };
   };
+  "0.4.3.0" = {
+    sha256 = "9465ae3451cd0deba096b5936b8010b632c9c476583609928392cfcac63f3e12";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repline-0.4.3.0-r0-452199670c41c74e2b21d6c05eb11b40947c0ac7ef3a5dd51a91a2934bf815c9.nix;
+        revNum = 0;
+        sha256 = "452199670c41c74e2b21d6c05eb11b40947c0ac7ef3a5dd51a91a2934bf815c9";
+      };
+      default = "r0";
+    };
+  };
 }
