@@ -563,7 +563,12 @@
         revNum = 1;
         sha256 = "0ad26fef4e6be4cb13e1df93aab7bdbe9c3d3bc6c63b84d9e29cc0f691fe12b9";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/cpphs-1.20.9.1-r2-ace77a2e5ec1d18136ef80a07606c983eafc1d23f184761bb9f44e70cdd8aa6f.nix;
+        revNum = 2;
+        sha256 = "ace77a2e5ec1d18136ef80a07606c983eafc1d23f184761bb9f44e70cdd8aa6f";
+      };
+      default = "r2";
     };
   };
   "1.3" = {

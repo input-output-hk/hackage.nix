@@ -296,4 +296,15 @@
       default = "r0";
     };
   };
+  "0.8.2.2" = {
+    sha256 = "4d279e98bfa83bddd937c2ef37453291523994d6423bd1105e8c5ee8fc7e5f8b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/registry-hedgehog-0.8.2.2-r0-f105b6f22deb1788646c5d5b763b9f2dcfcd10691c87332e3b81164919a194d7.nix;
+        revNum = 0;
+        sha256 = "f105b6f22deb1788646c5d5b763b9f2dcfcd10691c87332e3b81164919a194d7";
+      };
+      default = "r0";
+    };
+  };
 }
