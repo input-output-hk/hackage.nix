@@ -252,4 +252,15 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "3895f5b162c45cd934970c322e7eab2a65104e25fcec37462760bb5ffe0cae35";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/table-layout-1.0.0.2-r0-d1d7fb2afb618bed9c749c0873011f746f2448c3cd45b704380f8768b449af29.nix;
+        revNum = 0;
+        sha256 = "d1d7fb2afb618bed9c749c0873011f746f2448c3cd45b704380f8768b449af29";
+      };
+      default = "r0";
+    };
+  };
 }

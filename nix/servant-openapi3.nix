@@ -210,7 +210,12 @@
         revNum = 7;
         sha256 = "60be03aa18d9a2e267ec3814d3305c3bd341398dcfcdf868ab851a12a1e81591";
       };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/servant-openapi3-2.0.1.6-r8-228b7f17fa3602a4b5c4a7e79cd50a476b3e11619138e79ad0fa089b731a153e.nix;
+        revNum = 8;
+        sha256 = "228b7f17fa3602a4b5c4a7e79cd50a476b3e11619138e79ad0fa089b731a153e";
+      };
+      default = "r8";
     };
   };
 }
