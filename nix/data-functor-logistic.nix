@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "b48b7827c784693522a0ebe77308d15d4143d29fcadae406559b1122839fe710";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/data-functor-logistic-0.0-r3-746677a793bc26434da456ae52fd054fa09fcf545b166e6b663502b446875dd4.nix;
+        revNum = 3;
+        sha256 = "746677a793bc26434da456ae52fd054fa09fcf545b166e6b663502b446875dd4";
+      };
+      default = "r3";
     };
   };
 }

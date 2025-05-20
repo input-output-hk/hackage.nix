@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "0e33faad2507ee9ebf52f55bfaf7c03d8d7b40ec35e1120ea08f443bb7fd2c14";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/apportionment-0.0.0.4-r2-ea289bf621b90e19e7e056a829fee33f66511c151d79ee1d166600d0ca20f8bf.nix;
+        revNum = 2;
+        sha256 = "ea289bf621b90e19e7e056a829fee33f66511c151d79ee1d166600d0ca20f8bf";
+      };
+      default = "r2";
     };
   };
 }

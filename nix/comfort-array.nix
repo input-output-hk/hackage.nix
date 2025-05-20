@@ -264,7 +264,12 @@
         revNum = 0;
         sha256 = "9541df267bb48835888edd33bc48b8ef71152f9ee0a6ec822a454c18d96decc2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/comfort-array-0.5.5-r1-99fdc61cb30aca5780cc0f7205f89d451ec718eb69cd868210948dfd413c7888.nix;
+        revNum = 1;
+        sha256 = "99fdc61cb30aca5780cc0f7205f89d451ec718eb69cd868210948dfd413c7888";
+      };
+      default = "r1";
     };
   };
 }

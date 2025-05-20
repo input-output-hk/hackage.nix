@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "a19e8e4459960850d54af4a763df06b6d2083b1afd705bded7396bbea87fe036";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/calendar-recycling-0.0.0.1-r2-ea947add09195f4d5a86909b64ba4c6e487661c5be3624c6556e409882645955.nix;
+        revNum = 2;
+        sha256 = "ea947add09195f4d5a86909b64ba4c6e487661c5be3624c6556e409882645955";
+      };
+      default = "r2";
     };
   };
 }

@@ -133,7 +133,12 @@
         revNum = 1;
         sha256 = "0aae772d68b4a11901a9c456d099083ca03086770751285ca82c311d81201278";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wraxml-0.5-r2-e34537f827b4bc8dd623d308ad166b967f86d2f9d96cadfe8b392a29fa8071a0.nix;
+        revNum = 2;
+        sha256 = "e34537f827b4bc8dd623d308ad166b967f86d2f9d96cadfe8b392a29fa8071a0";
+      };
+      default = "r2";
     };
   };
 }

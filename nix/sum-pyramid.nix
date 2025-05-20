@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.1" = {
+    sha256 = "de547858ed3e318f99cddc0930e371bd679f1dd7fcc8e71c47af90d14c7807fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sum-pyramid-0.0.1-r0-ed191fd99bf2b850ba9ed40d9505fc70590855790d01c4efb288e952018b24aa.nix;
+        revNum = 0;
+        sha256 = "ed191fd99bf2b850ba9ed40d9505fc70590855790d01c4efb288e952018b24aa";
+      };
+      default = "r0";
+    };
+  };
 }

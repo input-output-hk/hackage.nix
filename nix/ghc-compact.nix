@@ -32,7 +32,12 @@
         revNum = 5;
         sha256 = "b44501893933b72938210b8c48637adc649da7dea224be06c187056edd5e3238";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/ghc-compact-0.1.0.0-r6-f51e7d23f005ba409650886fbaa0be20ac67f589fb416b0eb516b5f73a5c95ec.nix;
+        revNum = 6;
+        sha256 = "f51e7d23f005ba409650886fbaa0be20ac67f589fb416b0eb516b5f73a5c95ec";
+      };
+      default = "r6";
     };
   };
 }

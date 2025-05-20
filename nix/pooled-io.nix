@@ -100,7 +100,12 @@
         revNum = 1;
         sha256 = "9f993ecb6eefe117c76a9f5b7484a66e508c0085e5845e02e35f88fc287f4fb0";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pooled-io-0.0.2.3-r2-06b2d7b464b0023c1df393a055a1d2da5c9101c0c756e283ddab7c075237e79e.nix;
+        revNum = 2;
+        sha256 = "06b2d7b464b0023c1df393a055a1d2da5c9101c0c756e283ddab7c075237e79e";
+      };
+      default = "r2";
     };
   };
 }

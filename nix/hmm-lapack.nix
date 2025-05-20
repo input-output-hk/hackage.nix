@@ -114,7 +114,12 @@
         revNum = 2;
         sha256 = "1925d4a0a301aafeacda29722a706097ee88ff2bb5817550dd0685c8dbc5e5c9";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hmm-lapack-0.5.0.1-r3-3e11ca51c3fd2b45430c1ccc970b4d4bb342b3f396c0d5b2cd68289511cd153f.nix;
+        revNum = 3;
+        sha256 = "3e11ca51c3fd2b45430c1ccc970b4d4bb342b3f396c0d5b2cd68289511cd153f";
+      };
+      default = "r3";
     };
   };
 }

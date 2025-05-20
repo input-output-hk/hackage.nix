@@ -132,7 +132,12 @@
         revNum = 2;
         sha256 = "0c61881d4a4cdee8f7f8ac0c1ac52989bfbc3053654461f062ecff4127a619b7";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/board-games-0.4-r3-2f085a2ba7e58a5eeb5b1b621292be7ba3489e1d1b9be52c2cc4ba6510565cf1.nix;
+        revNum = 3;
+        sha256 = "2f085a2ba7e58a5eeb5b1b621292be7ba3489e1d1b9be52c2cc4ba6510565cf1";
+      };
+      default = "r3";
     };
   };
 }

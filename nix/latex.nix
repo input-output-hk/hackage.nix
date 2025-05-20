@@ -56,7 +56,12 @@
         revNum = 1;
         sha256 = "8b314d50204ebfcf1289d0079780fa22054f1c366b8878625ae924aeb3e0d267";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/latex-0.1.0.4-r2-3360fbe3cd385030b9d268ff0a711d1c9407bc2cb7997141cece62da0e2b3e54.nix;
+        revNum = 2;
+        sha256 = "3360fbe3cd385030b9d268ff0a711d1c9407bc2cb7997141cece62da0e2b3e54";
+      };
+      default = "r2";
     };
   };
 }

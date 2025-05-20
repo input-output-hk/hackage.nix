@@ -204,7 +204,12 @@
         revNum = 1;
         sha256 = "6d1eed25c72ac0cea3d3a0e86df04955a387aefef151d4e16ef911f2295b95d9";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/sox-0.2.3.2-r2-17a2273c3cd27ab24a095ffcbf0849a75ac228952064fa658db2446a7d34429d.nix;
+        revNum = 2;
+        sha256 = "17a2273c3cd27ab24a095ffcbf0849a75ac228952064fa658db2446a7d34429d";
+      };
+      default = "r2";
     };
   };
 }

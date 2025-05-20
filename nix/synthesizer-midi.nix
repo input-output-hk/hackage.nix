@@ -100,7 +100,12 @@
         revNum = 1;
         sha256 = "13ff946feb1ccc145551f972a3fd58f09d42ef04a52701e395f9879d5d7b2d18";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/synthesizer-midi-0.6.1.2-r2-0d6187297680b8f5fb1a392057975f4d4740354b6dc37ca6ccb8ed0cf98e53b4.nix;
+        revNum = 2;
+        sha256 = "0d6187297680b8f5fb1a392057975f4d4740354b6dc37ca6ccb8ed0cf98e53b4";
+      };
+      default = "r2";
     };
   };
 }

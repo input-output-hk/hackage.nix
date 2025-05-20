@@ -127,7 +127,12 @@
         revNum = 2;
         sha256 = "3d7e11956f405e5d95db729610c7036194378f63745a10363c95a5eb0ff846a4";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/dsp-0.2.5.2-r3-97a583546c0432f5cb77ef5a2e314d20a8ea87668c7b109702470136ed8d3c15.nix;
+        revNum = 3;
+        sha256 = "97a583546c0432f5cb77ef5a2e314d20a8ea87668c7b109702470136ed8d3c15";
+      };
+      default = "r3";
     };
   };
 }

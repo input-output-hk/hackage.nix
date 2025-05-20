@@ -11577,6 +11577,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-builder" = import ./nix/network-builder.nix;
   "network-byte-order" = import ./nix/network-byte-order.nix;
   "network-bytestring" = import ./nix/network-bytestring.nix;
+  "network-can" = import ./nix/network-can.nix;
   "network-carbon" = import ./nix/network-carbon.nix;
   "network-conduit" = import ./nix/network-conduit.nix;
   "network-conduit-tls" = import ./nix/network-conduit-tls.nix;

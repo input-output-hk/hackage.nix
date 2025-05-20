@@ -110,7 +110,12 @@
         revNum = 3;
         sha256 = "a271d2e37af0cb39f4646436f2e26a886473ec295983a96dabe0a1c291e87aa2";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/unique-logic-tf-0.5.1-r4-99b19e7b796cf6d62559bfdd97e591126e8103897583ffb1f5f487b6564fb415.nix;
+        revNum = 4;
+        sha256 = "99b19e7b796cf6d62559bfdd97e591126e8103897583ffb1f5f487b6564fb415";
+      };
+      default = "r4";
     };
   };
 }

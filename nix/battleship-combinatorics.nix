@@ -66,7 +66,12 @@
         revNum = 2;
         sha256 = "1710e48346b52004ba9111b33b662821888c90b3d2ca0bddac8ac5b25bc55f7c";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/battleship-combinatorics-0.0.1-r3-bf76aa16247092758380182138495520e2d71bfed7f3c91c00188f464a9f04e1.nix;
+        revNum = 3;
+        sha256 = "bf76aa16247092758380182138495520e2d71bfed7f3c91c00188f464a9f04e1";
+      };
+      default = "r3";
     };
   };
 }

@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "bc4a3dd5302cfb2eab8ebff30ec6972a96134c9d57676c8b724772269d589418";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wordify-0.3.0.0-r0-d99027671427b943d92299450547b34e6938f4cdbcf0679adea4f6353d44f0bc.nix;
+        revNum = 0;
+        sha256 = "d99027671427b943d92299450547b34e6938f4cdbcf0679adea4f6353d44f0bc";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.0.1" = {
+    sha256 = "f814935dcb421c5099b04d21320a70ef3dd482c07b3774e6b536072b362b5d2d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wordify-0.3.0.1-r0-d64c44de9fcc82274318c07b12327b5f7b8becd71ccf2b9bc0b852d115f3ff23.nix;
+        revNum = 0;
+        sha256 = "d64c44de9fcc82274318c07b12327b5f7b8becd71ccf2b9bc0b852d115f3ff23";
+      };
+      default = "r0";
+    };
+  };
 }
