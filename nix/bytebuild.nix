@@ -121,7 +121,12 @@
         revNum = 0;
         sha256 = "3544811d144411b7ab4b9793c2d72502d0743440394e11505c20de61da3a8545";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytebuild-0.3.16.3-r1-cdae9435106134c0465d5e6411e6f54068d3e00dea8cc46abc4e28d44ab99849.nix;
+        revNum = 1;
+        sha256 = "cdae9435106134c0465d5e6411e6f54068d3e00dea8cc46abc4e28d44ab99849";
+      };
+      default = "r1";
     };
   };
   "0.3.4.0" = {

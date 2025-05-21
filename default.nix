@@ -12932,6 +12932,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-lo-stream" = import ./nix/postgresql-lo-stream.nix;
   "postgresql-ltree" = import ./nix/postgresql-ltree.nix;
   "postgresql-migration" = import ./nix/postgresql-migration.nix;
+  "postgresql-migration-persistent" = import ./nix/postgresql-migration-persistent.nix;
   "postgresql-named" = import ./nix/postgresql-named.nix;
   "postgresql-orm" = import ./nix/postgresql-orm.nix;
   "postgresql-placeholder-converter" = import ./nix/postgresql-placeholder-converter.nix;

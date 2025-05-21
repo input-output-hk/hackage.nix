@@ -72,7 +72,12 @@
         revNum = 1;
         sha256 = "1dfa79a9f0571329b51b3b12e30a10107ef4338a5f4d39cfae0c799a706432d2";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/czipwith-1.0.1.4-r2-7b7cc118d4465fb64d0be6a48fa7b05c0b3d46fc25c607091a9b501290248168.nix;
+        revNum = 2;
+        sha256 = "7b7cc118d4465fb64d0be6a48fa7b05c0b3d46fc25c607091a9b501290248168";
+      };
+      default = "r2";
     };
   };
 }
