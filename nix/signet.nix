@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.2025.5.21" = {
+    sha256 = "772406b911064ddb91c5eddb04923dfdb10875a16db2ea6b1574135528613907";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/signet-0.2025.5.21-r0-3b31ee6c6b29aeef1e3a5f4036bcdb8a798777066456b74a3c18abc3576cdd8d.nix;
+        revNum = 0;
+        sha256 = "3b31ee6c6b29aeef1e3a5f4036bcdb8a798777066456b74a3c18abc3576cdd8d";
+      };
+      default = "r0";
+    };
+  };
   "0.2025.5.5" = {
     sha256 = "5970fb0c72a07a1452a66f81f0527cf3debfe986ffed10ba87ca1d5357083dde";
     revisions = {

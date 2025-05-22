@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "2.0.1" = {
+    sha256 = "47d13766f521b4705e14d30b404e804d8b9aff4ff7610cf41d350309b40af28a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amqp-worker-2.0.1-r0-d8d2c0d5ef2f1973d6eef1b7d393ec7494a7c327070d823b3fed7186ac61354c.nix;
+        revNum = 0;
+        sha256 = "d8d2c0d5ef2f1973d6eef1b7d393ec7494a7c327070d823b3fed7186ac61354c";
+      };
+      default = "r0";
+    };
+  };
 }

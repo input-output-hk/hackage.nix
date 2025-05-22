@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.6" = {
+    sha256 = "8052c5ebc0ea25c0fdb2746e3dee9b777bda1cfaf42d1cf5616edc2145ad08fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-pkpass-0.6-r0-d6146365c062be0ac482ee16c9ce0743b0250b2909a8aca9c9f7a3a255575379.nix;
+        revNum = 0;
+        sha256 = "d6146365c062be0ac482ee16c9ce0743b0250b2909a8aca9c9f7a3a255575379";
+      };
+      default = "r0";
+    };
+  };
 }

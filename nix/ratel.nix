@@ -433,6 +433,17 @@
       default = "r0";
     };
   };
+  "2.0.0.14" = {
+    sha256 = "2e37f6fb3d5625a831ed8d951c42e618e719a0c266380f3b34e79f91e4719fed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ratel-2.0.0.14-r0-a098008bf571c3a2a6429b2a3a41ef1ff55c48661e164dc0e71428315a810b29.nix;
+        revNum = 0;
+        sha256 = "a098008bf571c3a2a6429b2a3a41ef1ff55c48661e164dc0e71428315a810b29";
+      };
+      default = "r0";
+    };
+  };
   "2.0.0.2" = {
     sha256 = "c35d72696f00e258f7a2b27a190e478e6f6176c9e1569f41df2d046684a2bcfc";
     revisions = {

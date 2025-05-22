@@ -2304,6 +2304,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "atom-conduit" = import ./nix/atom-conduit.nix;
   "atom-msp430" = import ./nix/atom-msp430.nix;
   "atomic-counter" = import ./nix/atomic-counter.nix;
+  "atomic-css" = import ./nix/atomic-css.nix;
   "atomic-file-ops" = import ./nix/atomic-file-ops.nix;
   "atomic-modify" = import ./nix/atomic-modify.nix;
   "atomic-modify-general" = import ./nix/atomic-modify-general.nix;
@@ -10357,6 +10358,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "liveplot" = import ./nix/liveplot.nix;
   "ll-picosat" = import ./nix/ll-picosat.nix;
   "llama-cpp-haskell" = import ./nix/llama-cpp-haskell.nix;
+  "llama-cpp-hs" = import ./nix/llama-cpp-hs.nix;
   "llrbtree" = import ./nix/llrbtree.nix;
   "llsd" = import ./nix/llsd.nix;
   "llvm" = import ./nix/llvm.nix;
@@ -16834,6 +16836,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-gui" = import ./nix/typed-gui.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
+  "typed-protocols" = import ./nix/typed-protocols.nix;
+  "typed-protocols-doc" = import ./nix/typed-protocols-doc.nix;
   "typed-range" = import ./nix/typed-range.nix;
   "typed-session" = import ./nix/typed-session.nix;
   "typed-session-state-algorithm" = import ./nix/typed-session-state-algorithm.nix;
