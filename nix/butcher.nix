@@ -328,7 +328,12 @@
         revNum = 1;
         sha256 = "9513d3bba9c58a43199c43d856dd3901d374117406fb438786dddef6ad8639b1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/butcher-1.3.3.2-r2-54049089a8b13144098232034b7fea43f106742542a5b74b638bb8d2880af089.nix;
+        revNum = 2;
+        sha256 = "54049089a8b13144098232034b7fea43f106742542a5b74b638bb8d2880af089";
+      };
+      default = "r2";
     };
   };
 }

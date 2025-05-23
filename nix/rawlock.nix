@@ -31,4 +31,15 @@
       default = "r2";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "d1694d3cd83b750c8b0efcf2b34d35a8314f192f6c81c4dfcb0f1d0797163c5f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rawlock-0.1.2.0-r0-a78894694199d9d8de98380909f314c3f9db0afe40a28072173025f4ddaca637.nix;
+        revNum = 0;
+        sha256 = "a78894694199d9d8de98380909f314c3f9db0afe40a28072173025f4ddaca637";
+      };
+      default = "r0";
+    };
+  };
 }

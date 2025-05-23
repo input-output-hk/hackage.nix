@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.1.0.6" = {
+    sha256 = "dc6ed500a3008a45655f8114ad59219b998a384a0f6457ca49920ba26fbeac3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cfn-flip-0.1.0.6-r0-d62347bcee085e7503fd4a6fd17ebbeaf3e09f8095751be73977fe0b6f2eddb7.nix;
+        revNum = 0;
+        sha256 = "d62347bcee085e7503fd4a6fd17ebbeaf3e09f8095751be73977fe0b6f2eddb7";
+      };
+      default = "r0";
+    };
+  };
 }

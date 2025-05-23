@@ -230,6 +230,17 @@
       default = "r0";
     };
   };
+  "2.0.0.10" = {
+    sha256 = "cf8ed36c412e673ca363d8a3e4a1aabdfe7ad5cbd6fed638a70032ff83678d1b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ratel-wai-2.0.0.10-r0-3e54e555a1bbcc20f804602e8c75d992b7df2c77e57c40aca430827346a5f21d.nix;
+        revNum = 0;
+        sha256 = "3e54e555a1bbcc20f804602e8c75d992b7df2c77e57c40aca430827346a5f21d";
+      };
+      default = "r0";
+    };
+  };
   "2.0.0.2" = {
     sha256 = "de155e44d797356cfe85eeb9c0310573fe53ab3b9960275e8a35640f6c728693";
     revisions = {

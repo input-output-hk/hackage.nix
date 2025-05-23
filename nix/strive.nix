@@ -549,6 +549,17 @@
       default = "r0";
     };
   };
+  "6.0.0.17" = {
+    sha256 = "b041cabf3610c81ee3fb45190506c66c14fac9f70a572b50bdc7939e89cd581f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strive-6.0.0.17-r0-a6aff0685aaec2dab235a2e3be847f0db1a1b1b7890741b7319377198822ecee.nix;
+        revNum = 0;
+        sha256 = "a6aff0685aaec2dab235a2e3be847f0db1a1b1b7890741b7319377198822ecee";
+      };
+      default = "r0";
+    };
+  };
   "6.0.0.2" = {
     sha256 = "1396d10ff6942404282aa81cae33209c290c64ceefbe70bfa74df6e834467c09";
     revisions = {

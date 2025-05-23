@@ -7880,6 +7880,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "heavy-logger-instances" = import ./nix/heavy-logger-instances.nix;
   "hebrew-time" = import ./nix/hebrew-time.nix;
   "hecc" = import ./nix/hecc.nix;
+  "heck" = import ./nix/heck.nix;
   "heckin" = import ./nix/heckin.nix;
   "heckle" = import ./nix/heckle.nix;
   "heddit" = import ./nix/heddit.nix;
@@ -10492,6 +10493,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lp-diagrams" = import ./nix/lp-diagrams.nix;
   "lp-diagrams-svg" = import ./nix/lp-diagrams-svg.nix;
   "lpeg" = import ./nix/lpeg.nix;
+  "lr-acts" = import ./nix/lr-acts.nix;
   "lrucache" = import ./nix/lrucache.nix;
   "lrucaching" = import ./nix/lrucaching.nix;
   "lrucaching-haxl" = import ./nix/lrucaching-haxl.nix;
@@ -11395,6 +11397,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mustache2hs" = import ./nix/mustache2hs.nix;
   "mutable" = import ./nix/mutable.nix;
   "mutable-containers" = import ./nix/mutable-containers.nix;
+  "mutable-fenwick" = import ./nix/mutable-fenwick.nix;
   "mutable-iter" = import ./nix/mutable-iter.nix;
   "mutable-lens" = import ./nix/mutable-lens.nix;
   "mute-unmute" = import ./nix/mute-unmute.nix;
@@ -12897,6 +12900,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "poseidon-postgis" = import ./nix/poseidon-postgis.nix;
   "posit" = import ./nix/posit.nix;
   "positive" = import ./nix/positive.nix;
+  "positive-integer" = import ./nix/positive-integer.nix;
   "positron" = import ./nix/positron.nix;
   "posix-acl" = import ./nix/posix-acl.nix;
   "posix-api" = import ./nix/posix-api.nix;
@@ -15585,6 +15589,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "strict" = import ./nix/strict.nix;
   "strict-base" = import ./nix/strict-base.nix;
   "strict-base-types" = import ./nix/strict-base-types.nix;
+  "strict-checked-vars" = import ./nix/strict-checked-vars.nix;
   "strict-concurrency" = import ./nix/strict-concurrency.nix;
   "strict-containers" = import ./nix/strict-containers.nix;
   "strict-containers-lens" = import ./nix/strict-containers-lens.nix;
