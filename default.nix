@@ -2613,6 +2613,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bencodex" = import ./nix/bencodex.nix;
   "bencoding" = import ./nix/bencoding.nix;
   "bencoding-lens" = import ./nix/bencoding-lens.nix;
+  "benign" = import ./nix/benign.nix;
+  "benign-katip" = import ./nix/benign-katip.nix;
+  "benign-timestats" = import ./nix/benign-timestats.nix;
   "benri-hspec" = import ./nix/benri-hspec.nix;
   "bento" = import ./nix/bento.nix;
   "berkeleydb" = import ./nix/berkeleydb.nix;
