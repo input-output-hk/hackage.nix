@@ -129,4 +129,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "5ac59c0836cc484476d849648e258ac83a0936d5cc11ea64182124e1ef0ac0d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stan-0.2.1.0-r0-cd9ef21b1e9cb052d7d81f0a474cf872e169ead9ac611187992cd542b3ff47ff.nix;
+        revNum = 0;
+        sha256 = "cd9ef21b1e9cb052d7d81f0a474cf872e169ead9ac611187992cd542b3ff47ff";
+      };
+      default = "r0";
+    };
+  };
 }

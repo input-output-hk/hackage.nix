@@ -252,4 +252,15 @@
       default = "r0";
     };
   };
+  "0.9.9.5" = {
+    sha256 = "22abe58d65f24ccf01bf0ade1423820de719667f38dce38a985b47ac1431f1f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsaddle-warp-0.9.9.5-r0-ab68bd3720fb97078c5ae7545a7ebee05ac01f5c169f05365eb2cd28fcce1a4a.nix;
+        revNum = 0;
+        sha256 = "ab68bd3720fb97078c5ae7545a7ebee05ac01f5c169f05365eb2cd28fcce1a4a";
+      };
+      default = "r0";
+    };
+  };
 }
