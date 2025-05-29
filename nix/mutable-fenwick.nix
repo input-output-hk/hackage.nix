@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "b9c86d6c06b767d85dd2b7b89d3ac6d7fef2d39fcb3e66143de96837e45749b0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mutable-fenwick-0.1.1.0-r0-afbc221efcd8bef1458104faab5878747be00e4538614c7fdeba0b8689640abf.nix;
+        revNum = 0;
+        sha256 = "afbc221efcd8bef1458104faab5878747be00e4538614c7fdeba0b8689640abf";
+      };
+      default = "r0";
+    };
+  };
 }
