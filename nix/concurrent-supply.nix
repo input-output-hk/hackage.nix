@@ -150,7 +150,12 @@
         revNum = 2;
         sha256 = "80b658533141660818d0781b8c8fb9a8cf69b987fcfbab782dc788bfc7df4846";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/concurrent-supply-0.1.8-r3-6f921f62de9f32015f74b084ca5839b7e0f96b507cbd16433c7b5cec65e473f9.nix;
+        revNum = 3;
+        sha256 = "6f921f62de9f32015f74b084ca5839b7e0f96b507cbd16433c7b5cec65e473f9";
+      };
+      default = "r3";
     };
   };
 }

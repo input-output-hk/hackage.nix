@@ -469,4 +469,26 @@
       default = "r0";
     };
   };
+  "0.7.1" = {
+    sha256 = "39b449d3b7c9e4abc7e73c3fe529a6c81a2a3ad3455f3abc7e2e82d6e0f47ea0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/casr-logbook-0.7.1-r0-fdc26cfd74ad3a0709b343808f3f3ae7fc5525023066d8d659b5816aa87fccaa.nix;
+        revNum = 0;
+        sha256 = "fdc26cfd74ad3a0709b343808f3f3ae7fc5525023066d8d659b5816aa87fccaa";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.2" = {
+    sha256 = "af56cb597c009f9fc13f6f5f4426149090f27f4ff7104d0a241704dd431a2b2d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/casr-logbook-0.7.2-r0-6a62843ab53b7d7828ac8566421469d123be2a54b4df1da65539a465f77000b5.nix;
+        revNum = 0;
+        sha256 = "6a62843ab53b7d7828ac8566421469d123be2a54b4df1da65539a465f77000b5";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -157,6 +157,17 @@
       default = "r3";
     };
   };
+  "0.2.15.0" = {
+    sha256 = "8d40960154da270757baa098ca5bddff03f63784adbc679af5270c5b63ef8f25";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/threadscope-0.2.15.0-r0-b63d7f4862785ec1574634c02fb97795ce8adee1ef9cb37f603128ef8245ff6f.nix;
+        revNum = 0;
+        sha256 = "b63d7f4862785ec1574634c02fb97795ce8adee1ef9cb37f603128ef8245ff6f";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2" = {
     sha256 = "8345bd2334ddec44b23b400f359d2b50ff7590102f55d4e93958c29086fa951d";
     revisions = {
