@@ -2340,6 +2340,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "attoparsec-framer" = import ./nix/attoparsec-framer.nix;
   "attoparsec-ip" = import ./nix/attoparsec-ip.nix;
   "attoparsec-iso8601" = import ./nix/attoparsec-iso8601.nix;
+  "attoparsec-isotropic" = import ./nix/attoparsec-isotropic.nix;
   "attoparsec-iteratee" = import ./nix/attoparsec-iteratee.nix;
   "attoparsec-parsec" = import ./nix/attoparsec-parsec.nix;
   "attoparsec-path" = import ./nix/attoparsec-path.nix;
@@ -6343,6 +6344,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-data-surgery" = import ./nix/generic-data-surgery.nix;
   "generic-deepseq" = import ./nix/generic-deepseq.nix;
   "generic-deriving" = import ./nix/generic-deriving.nix;
+  "generic-diff" = import ./nix/generic-diff.nix;
   "generic-enum" = import ./nix/generic-enum.nix;
   "generic-enumeration" = import ./nix/generic-enumeration.nix;
   "generic-env" = import ./nix/generic-env.nix;
@@ -7579,6 +7581,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-gi-overloading" = import ./nix/haskell-gi-overloading.nix;
   "haskell-go-checkers" = import ./nix/haskell-go-checkers.nix;
   "haskell-google-trends" = import ./nix/haskell-google-trends.nix;
+  "haskell-halogen-core" = import ./nix/haskell-halogen-core.nix;
   "haskell-holes-th" = import ./nix/haskell-holes-th.nix;
   "haskell-igraph" = import ./nix/haskell-igraph.nix;
   "haskell-import-graph" = import ./nix/haskell-import-graph.nix;
@@ -16200,6 +16203,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-builder" = import ./nix/text-builder.nix;
   "text-builder-core" = import ./nix/text-builder-core.nix;
   "text-builder-dev" = import ./nix/text-builder-dev.nix;
+  "text-builder-lawful-conversions" = import ./nix/text-builder-lawful-conversions.nix;
   "text-builder-linear" = import ./nix/text-builder-linear.nix;
   "text-builder-time" = import ./nix/text-builder-time.nix;
   "text-compression" = import ./nix/text-compression.nix;

@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "ff97fb56b296a07a37c00b16ebec778060b44dc740930fbce5b99b6c2790a8b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wordify-0.4.0.0-r0-54cba8e1bbfe8a5e9a97cb92896921deef95695b3d81666052616b6f50287ea5.nix;
+        revNum = 0;
+        sha256 = "54cba8e1bbfe8a5e9a97cb92896921deef95695b3d81666052616b6f50287ea5";
+      };
+      default = "r0";
+    };
+  };
 }
