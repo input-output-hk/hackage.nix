@@ -103,7 +103,12 @@
         revNum = 1;
         sha256 = "e7d29510add4612172754c9efe43da8db4cee5b72078fe7948d5c2eee23e0cac";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/free-vector-spaces-0.1.5.2-r2-5588899814b02a361401739948cdf32ace3994fa81571cd1f26469e8aaa48aca.nix;
+        revNum = 2;
+        sha256 = "5588899814b02a361401739948cdf32ace3994fa81571cd1f26469e8aaa48aca";
+      };
+      default = "r2";
     };
   };
 }

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.2.1" = {
+    sha256 = "7302e988d10db49d6b1ed9e5cadefc1e9b71d71787dedda24edc94d1daf1a223";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lambdasound-1.2.1-r0-cff4e694f8f46d967ed4b6bd23d1513c7725083026a67c3005369af0c1b2ea97.nix;
+        revNum = 0;
+        sha256 = "cff4e694f8f46d967ed4b6bd23d1513c7725083026a67c3005369af0c1b2ea97";
+      };
+      default = "r0";
+    };
+  };
 }

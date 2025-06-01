@@ -108,4 +108,26 @@
       default = "r0";
     };
   };
+  "0.0.5.2" = {
+    sha256 = "4c10fe176a00d37c6caa63db20ec0e800eef649d9692a5a6aafc4e7ba1398e8a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effectful-zoo-0.0.5.2-r0-29aea1ebfca81b2f642b9467205ab6432517c29815a0dbffc85dc264c4ceb1e7.nix;
+        revNum = 0;
+        sha256 = "29aea1ebfca81b2f642b9467205ab6432517c29815a0dbffc85dc264c4ceb1e7";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.6.0" = {
+    sha256 = "1e0453c50c2899efc0a61ff82fa60052921c54ac8a7dcf154b813644a40dfb97";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effectful-zoo-0.0.6.0-r0-a7d51ba1092a3eb312e450149e15443fabd9724bdad60a57c0c5cdc3de922694.nix;
+        revNum = 0;
+        sha256 = "a7d51ba1092a3eb312e450149e15443fabd9724bdad60a57c0c5cdc3de922694";
+      };
+      default = "r0";
+    };
+  };
 }

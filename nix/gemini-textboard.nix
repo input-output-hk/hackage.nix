@@ -36,4 +36,15 @@
       default = "r2";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "80d1794cfbb2319a73cdc1cdc0dcc3e46554e7f597d0badf6762cf08053c22f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gemini-textboard-0.2.0.2-r0-ee0679844718a84cbeeb6797fc6e61fcfb8c2f4f9f0b1c8b44e1e2da7768ede8.nix;
+        revNum = 0;
+        sha256 = "ee0679844718a84cbeeb6797fc6e61fcfb8c2f4f9f0b1c8b44e1e2da7768ede8";
+      };
+      default = "r0";
+    };
+  };
 }

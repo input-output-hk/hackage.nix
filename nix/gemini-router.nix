@@ -49,7 +49,12 @@
         revNum = 1;
         sha256 = "e86c849b97a2d7ec7a2089edbdcdf66c35d09232b7c20bac1aaf16d345a19f72";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/gemini-router-0.1.2.0-r2-7a0421a492166256683a963170279b119abbfe3765f03a2d85fde876467c75e8.nix;
+        revNum = 2;
+        sha256 = "7a0421a492166256683a963170279b119abbfe3765f03a2d85fde876467c75e8";
+      };
+      default = "r2";
     };
   };
 }
