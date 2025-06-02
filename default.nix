@@ -3769,6 +3769,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "colonnade" = import ./nix/colonnade.nix;
   "color-counter" = import ./nix/color-counter.nix;
   "colorful-monoids" = import ./nix/colorful-monoids.nix;
+  "colorhash" = import ./nix/colorhash.nix;
   "colorize-haskell" = import ./nix/colorize-haskell.nix;
   "colorless" = import ./nix/colorless.nix;
   "colorless-http-client" = import ./nix/colorless-http-client.nix;
@@ -12552,6 +12553,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "phaser" = import ./nix/phaser.nix;
   "phash" = import ./nix/phash.nix;
   "phatsort" = import ./nix/phatsort.nix;
+  "phino" = import ./nix/phino.nix;
   "phizzle" = import ./nix/phizzle.nix;
   "phkdf" = import ./nix/phkdf.nix;
   "phladiprelio-general-datatype" = import ./nix/phladiprelio-general-datatype.nix;
@@ -13425,6 +13427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quibble-core" = import ./nix/quibble-core.nix;
   "quic" = import ./nix/quic.nix;
   "quick-generator" = import ./nix/quick-generator.nix;
+  "quick-process" = import ./nix/quick-process.nix;
   "quick-schema" = import ./nix/quick-schema.nix;
   "quickbench" = import ./nix/quickbench.nix;
   "quickbooks" = import ./nix/quickbooks.nix;
