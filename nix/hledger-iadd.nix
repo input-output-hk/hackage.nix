@@ -513,7 +513,12 @@
         revNum = 8;
         sha256 = "07123d4db44bbbbe8d97bf10923d477d7457b679d3d40118e803e90a1f9cdb98";
       };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/hledger-iadd-1.3.21-r9-b4ec052679e93bcb3a0dae70946f55980128e2209f4a3465af6747ac1f9a133a.nix;
+        revNum = 9;
+        sha256 = "b4ec052679e93bcb3a0dae70946f55980128e2209f4a3465af6747ac1f9a133a";
+      };
+      default = "r9";
     };
   };
   "1.3.3" = {

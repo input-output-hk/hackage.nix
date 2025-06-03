@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.0.4" = {
+    sha256 = "95dc2e3eec6ed4e968c6584e1c9283d239a7e370329ad954103bfbdc2b76b90e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conduit-find-0.1.0.4-r0-aab1b9be3d8f9a981c9e800953ae05d9596d87469402f13a39d9ad9ed71ddb08.nix;
+        revNum = 0;
+        sha256 = "aab1b9be3d8f9a981c9e800953ae05d9596d87469402f13a39d9ad9ed71ddb08";
+      };
+      default = "r0";
+    };
+  };
 }

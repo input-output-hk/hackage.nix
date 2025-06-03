@@ -6670,6 +6670,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gigaparsec" = import ./nix/gigaparsec.nix;
   "gimlh" = import ./nix/gimlh.nix;
   "ginger" = import ./nix/ginger.nix;
+  "ginger2" = import ./nix/ginger2.nix;
   "gingersnap" = import ./nix/gingersnap.nix;
   "ginsu" = import ./nix/ginsu.nix;
   "gio" = import ./nix/gio.nix;
@@ -12766,6 +12767,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "plural" = import ./nix/plural.nix;
   "ply-loader" = import ./nix/ply-loader.nix;
   "plzwrk" = import ./nix/plzwrk.nix;
+  "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "png-file" = import ./nix/png-file.nix;
   "pngload" = import ./nix/pngload.nix;
   "pngload-fixed" = import ./nix/pngload-fixed.nix;

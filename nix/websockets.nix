@@ -409,7 +409,12 @@
         revNum = 4;
         sha256 = "da4660dddcc43913b73ef2fdd7e5a578d1c79d16dbc6c5c6014401611949cebc";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/websockets-0.13.0.0-r5-9b3680ba5055e0b34ab29c341b21d70084bf067519fc059af0e597cd90a4a05a.nix;
+        revNum = 5;
+        sha256 = "9b3680ba5055e0b34ab29c341b21d70084bf067519fc059af0e597cd90a4a05a";
+      };
+      default = "r5";
     };
   };
   "0.2.0.1" = {

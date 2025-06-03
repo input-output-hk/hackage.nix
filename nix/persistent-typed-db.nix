@@ -156,7 +156,12 @@
         revNum = 1;
         sha256 = "68a7a95de773a55a61e2fff1c68ab7ca527e95ce710310b5d41451819ab381a6";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/persistent-typed-db-0.1.0.7-r2-9f476ce80a3841b6e703f0dba8c903c7dfa1930dcd374e6d0d1304c9dc96aa54.nix;
+        revNum = 2;
+        sha256 = "9f476ce80a3841b6e703f0dba8c903c7dfa1930dcd374e6d0d1304c9dc96aa54";
+      };
+      default = "r2";
     };
   };
 }
