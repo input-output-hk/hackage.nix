@@ -8676,6 +8676,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsparql" = import ./nix/hsparql.nix;
   "hspear" = import ./nix/hspear.nix;
   "hspec" = import ./nix/hspec.nix;
+  "hspec-annotated-exception" = import ./nix/hspec-annotated-exception.nix;
   "hspec-api" = import ./nix/hspec-api.nix;
   "hspec-attoparsec" = import ./nix/hspec-attoparsec.nix;
   "hspec-bracket" = import ./nix/hspec-bracket.nix;
@@ -12768,6 +12769,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ply-loader" = import ./nix/ply-loader.nix;
   "plzwrk" = import ./nix/plzwrk.nix;
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
+  "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "png-file" = import ./nix/png-file.nix;
   "pngload" = import ./nix/pngload.nix;
   "pngload-fixed" = import ./nix/pngload-fixed.nix;

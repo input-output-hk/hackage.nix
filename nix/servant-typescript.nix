@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "b70967150818d535dc46b5570d76e1f8cf9da1f3614da4cf9c582e139a6e2074";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-typescript-0.1.0.3-r0-7289d247e1bd8ef323bc08db05bf04e9fc23a48b2c7873fe6b8a84393e021ae6.nix;
+        revNum = 0;
+        sha256 = "7289d247e1bd8ef323bc08db05bf04e9fc23a48b2c7873fe6b8a84393e021ae6";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -284,4 +284,15 @@
       default = "r0";
     };
   };
+  "0.5.2" = {
+    sha256 = "55b330b1ab66f720cae39acf096834a5c66056d80d69ed77160a690fe735a44a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-protocol-xmpp-0.5.2-r0-2a867d473df868b812eb2001b440cadf90fb3ee737a53f12a17be35e90413dd6.nix;
+        revNum = 0;
+        sha256 = "2a867d473df868b812eb2001b440cadf90fb3ee737a53f12a17be35e90413dd6";
+      };
+      default = "r0";
+    };
+  };
 }
