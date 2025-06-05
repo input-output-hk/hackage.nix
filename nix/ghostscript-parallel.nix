@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "b6e27030818231b9a4fff2427d5ec4d69c940e69f415af7a9af088bb2394b7e8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghostscript-parallel-0.0.1-r1-f9d2b5601dd7f57d6eabf1631ac5a88c5ebcb6d94e90ba091c2c89ea00cca1e9.nix;
+        revNum = 1;
+        sha256 = "f9d2b5601dd7f57d6eabf1631ac5a88c5ebcb6d94e90ba091c2c89ea00cca1e9";
+      };
+      default = "r1";
     };
   };
 }

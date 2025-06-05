@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "b9735d04a7bced76be1eba2b3261c0d0bd3702541a9272446064e784a2dbeeb1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tax-0.2.1.0-r0-5e26c0b8724c4e65b1f4c5d2ff20c4024d17a3cca67b2e80ca438e242d2ccb83.nix;
+        revNum = 0;
+        sha256 = "5e26c0b8724c4e65b1f4c5d2ff20c4024d17a3cca67b2e80ca438e242d2ccb83";
+      };
+      default = "r0";
+    };
+  };
 }

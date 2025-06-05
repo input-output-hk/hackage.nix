@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "dee494df0fc08bf1acf1456d9bd431d4d7f209f0843f19b16867516b0e4913e7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/countdown-numbers-game-0.0.0.1-r1-b8a8b00b0ca760b070137631b63b2d1875df458d3e815024b77b1ec759342014.nix;
+        revNum = 1;
+        sha256 = "b8a8b00b0ca760b070137631b63b2d1875df458d3e815024b77b1ec759342014";
+      };
+      default = "r1";
     };
   };
 }

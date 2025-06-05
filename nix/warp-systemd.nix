@@ -65,7 +65,12 @@
         revNum = 2;
         sha256 = "7cc1b1d294431421eaab03344b6a6cb38d8894630e661fec9825e19e5eccf326";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/warp-systemd-0.3.0.0-r3-0d3d6d617b507fe6dfd9278374bbb9abf183987f96e6194b90972ebfddc365e5.nix;
+        revNum = 3;
+        sha256 = "0d3d6d617b507fe6dfd9278374bbb9abf183987f96e6194b90972ebfddc365e5";
+      };
+      default = "r3";
     };
   };
 }

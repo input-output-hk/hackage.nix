@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "b9792915ba77dc7c239379ac9338009c212078fb6daf2844cee5fc8bd4ae70fa";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/midimory-0.0.2.3-r1-85be051993d2a653400e7a5b4b317ccf0cfa29f3a12966dc62ce8a546fec07eb.nix;
+        revNum = 1;
+        sha256 = "85be051993d2a653400e7a5b4b317ccf0cfa29f3a12966dc62ce8a546fec07eb";
+      };
+      default = "r1";
     };
   };
 }

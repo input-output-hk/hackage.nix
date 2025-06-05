@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "ed191fd99bf2b850ba9ed40d9505fc70590855790d01c4efb288e952018b24aa";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sum-pyramid-0.0.1-r1-ad4eae6a919d647e5d50c03904be4ca83ce40e8b7f9c759a160cace7135a065f.nix;
+        revNum = 1;
+        sha256 = "ad4eae6a919d647e5d50c03904be4ca83ce40e8b7f9c759a160cace7135a065f";
+      };
+      default = "r1";
     };
   };
 }

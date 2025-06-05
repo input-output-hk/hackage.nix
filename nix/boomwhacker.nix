@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "cbd7f71a588f9b9e803150818f37ad88133915740017004f4ddcc675a16a9843";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/boomwhacker-0.0.2-r2-b3be192a9fea46ae37f1054843d6a8c6689c8a3a637947046b282029c4d01e4b.nix;
+        revNum = 2;
+        sha256 = "b3be192a9fea46ae37f1054843d6a8c6689c8a3a637947046b282029c4d01e4b";
+      };
+      default = "r2";
     };
   };
 }

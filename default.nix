@@ -6494,6 +6494,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-generic-instances" = import ./nix/ghc-generic-instances.nix;
   "ghc-heap" = import ./nix/ghc-heap.nix;
   "ghc-heap-view" = import ./nix/ghc-heap-view.nix;
+  "ghc-hie" = import ./nix/ghc-hie.nix;
   "ghc-hotswap" = import ./nix/ghc-hotswap.nix;
   "ghc-hs-meta" = import ./nix/ghc-hs-meta.nix;
   "ghc-imported-from" = import ./nix/ghc-imported-from.nix;
@@ -7582,6 +7583,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-gi-base" = import ./nix/haskell-gi-base.nix;
   "haskell-gi-overloading" = import ./nix/haskell-gi-overloading.nix;
   "haskell-go-checkers" = import ./nix/haskell-go-checkers.nix;
+  "haskell-google-genai-client" = import ./nix/haskell-google-genai-client.nix;
   "haskell-google-trends" = import ./nix/haskell-google-trends.nix;
   "haskell-halogen-core" = import ./nix/haskell-halogen-core.nix;
   "haskell-holes-th" = import ./nix/haskell-holes-th.nix;
@@ -17267,6 +17269,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "variadic-function" = import ./nix/variadic-function.nix;
   "variant" = import ./nix/variant.nix;
   "variation" = import ./nix/variation.nix;
+  "variety" = import ./nix/variety.nix;
   "vary" = import ./nix/vary.nix;
   "varying" = import ./nix/varying.nix;
   "vault" = import ./nix/vault.nix;

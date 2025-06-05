@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "8eb18267bb31e581d281700d47bb97c0a66abb3b8020f3ce631c785e5927c565";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ods2csv-0.1.0.1-r1-1586034326f05cb0a4db00569158faa48590b010e585ae9b2c8d12c335996769.nix;
+        revNum = 1;
+        sha256 = "1586034326f05cb0a4db00569158faa48590b010e585ae9b2c8d12c335996769";
+      };
+      default = "r1";
     };
   };
 }

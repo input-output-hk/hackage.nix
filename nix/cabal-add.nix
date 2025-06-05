@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "f5a058fb47edde9dd8744151d78fa696f0d01c738da37b9b60fa22930fee65e1";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cabal-add-0.1-r3-9bf0e727714530bafb647930ff837bccf050262e97243f014b7ab18ea52a3b6a.nix;
+        revNum = 3;
+        sha256 = "9bf0e727714530bafb647930ff837bccf050262e97243f014b7ab18ea52a3b6a";
+      };
+      default = "r3";
     };
   };
 }

@@ -246,4 +246,15 @@
       default = "r0";
     };
   };
+  "2.0.0.1" = {
+    sha256 = "d04decad7335b268701a6ddc94dcb3cd9ee86d71ada5475d801a513a44f2e1a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ip6addr-2.0.0.1-r0-78ae4f6cf2e6b8ee7749ef9ed16066be801fd37e17baba2ac85ff702c7baf69d.nix;
+        revNum = 0;
+        sha256 = "78ae4f6cf2e6b8ee7749ef9ed16066be801fd37e17baba2ac85ff702c7baf69d";
+      };
+      default = "r0";
+    };
+  };
 }

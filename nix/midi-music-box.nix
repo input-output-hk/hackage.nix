@@ -125,7 +125,12 @@
         revNum = 6;
         sha256 = "9cbbbdcb89b15c7ae6f4b3551f23a9fd35fe19179a87ce7b974c71c06b1a002d";
       };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/midi-music-box-0.0.1.2-r7-17c012c83cf8445f7c5be3277fbf40e55e5405fa1505b92e6426b2c26da3b60b.nix;
+        revNum = 7;
+        sha256 = "17c012c83cf8445f7c5be3277fbf40e55e5405fa1505b92e6426b2c26da3b60b";
+      };
+      default = "r7";
     };
   };
 }

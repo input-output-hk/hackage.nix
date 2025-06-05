@@ -94,7 +94,12 @@
         revNum = 1;
         sha256 = "d918e9d205863520996f023d5ecc04d52551aeaa7e3a893c78a27f2bea66c954";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/med-module-0.1.3-r2-7f0fddec283b855b0b044e94f7a164a9ae77dac43e6821d29259c489733ea52c.nix;
+        revNum = 2;
+        sha256 = "7f0fddec283b855b0b044e94f7a164a9ae77dac43e6821d29259c489733ea52c";
+      };
+      default = "r2";
     };
   };
 }
