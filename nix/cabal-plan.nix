@@ -257,4 +257,15 @@
       default = "r0";
     };
   };
+  "0.7.6.0" = {
+    sha256 = "1a0e05cd32180574a8f741249958ebe1f87b0eb8152ea0e653d445ef9f29d858";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-plan-0.7.6.0-r0-a03292283b45ae013a101a92292717de385826e59db39d308ce81b5c89f15dd7.nix;
+        revNum = 0;
+        sha256 = "a03292283b45ae013a101a92292717de385826e59db39d308ce81b5c89f15dd7";
+      };
+      default = "r0";
+    };
+  };
 }

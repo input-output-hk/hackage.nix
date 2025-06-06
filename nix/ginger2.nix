@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.2.0.0" = {
+    sha256 = "c6b83891819e85ce8fa6fca3e5286288453246dd794e8f39c5689d4d48520a29";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ginger2-2.2.0.0-r0-edf84e78f7d6cb0cf1c5572877321775638995e390cefca220df3a3026e83a5b.nix;
+        revNum = 0;
+        sha256 = "edf84e78f7d6cb0cf1c5572877321775638995e390cefca220df3a3026e83a5b";
+      };
+      default = "r0";
+    };
+  };
 }

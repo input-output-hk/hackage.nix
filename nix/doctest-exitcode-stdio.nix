@@ -20,4 +20,15 @@
       default = "r2";
     };
   };
+  "0.0.0.1" = {
+    sha256 = "73b7747859fc37a4271e6f5d5039edb0c7adbdc5b83323d9c5dbc74778ece54d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doctest-exitcode-stdio-0.0.0.1-r0-d1d58ad57f1b3054c74bb3fdcfec4b06d3aba37746fededc42de770575b029dc.nix;
+        revNum = 0;
+        sha256 = "d1d58ad57f1b3054c74bb3fdcfec4b06d3aba37746fededc42de770575b029dc";
+      };
+      default = "r0";
+    };
+  };
 }

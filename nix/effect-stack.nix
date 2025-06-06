@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "07bdb41c8a71d6e54e3b077eab06ba438eff2ca792633ee9d6aefc2f37cec513";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effect-stack-0.3.0.1-r0-cbdbc98f9acef6b9b7bbc53fbd7717c59ceb8900585190221b9d0d160611585f.nix;
+        revNum = 0;
+        sha256 = "cbdbc98f9acef6b9b7bbc53fbd7717c59ceb8900585190221b9d0d160611585f";
+      };
+      default = "r0";
+    };
+  };
 }

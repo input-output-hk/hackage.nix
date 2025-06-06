@@ -323,4 +323,26 @@
       default = "r0";
     };
   };
+  "0.2.7.1" = {
+    sha256 = "803f07c3ae33ac574efe957a17e987c691518a5146c3f6d7d851163ffe40fac8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/backprop-0.2.7.1-r0-55bbd838c05f1605d155b33671ea170650098433b30f9205c682c1f4566f6409.nix;
+        revNum = 0;
+        sha256 = "55bbd838c05f1605d155b33671ea170650098433b30f9205c682c1f4566f6409";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.7.2" = {
+    sha256 = "871f43dc5e71e9502dc68bcbebf0b58a8687997857d6268263994d14f213f9ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/backprop-0.2.7.2-r0-c1fb006b55444df07bb106b1e9c6235a5d934dacd03a984f31dc9529e2ecbde0.nix;
+        revNum = 0;
+        sha256 = "c1fb006b55444df07bb106b1e9c6235a5d934dacd03a984f31dc9529e2ecbde0";
+      };
+      default = "r0";
+    };
+  };
 }

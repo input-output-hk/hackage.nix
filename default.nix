@@ -10764,6 +10764,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mcmc-samplers" = import ./nix/mcmc-samplers.nix;
   "mcmc-synthesis" = import ./nix/mcmc-synthesis.nix;
   "mcmc-types" = import ./nix/mcmc-types.nix;
+  "mcp-server" = import ./nix/mcp-server.nix;
   "mcpi" = import ./nix/mcpi.nix;
   "md5" = import ./nix/md5.nix;
   "mdapi" = import ./nix/mdapi.nix;
@@ -12772,6 +12773,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "plzwrk" = import ./nix/plzwrk.nix;
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
+  "pms-ui-request" = import ./nix/pms-ui-request.nix;
+  "pms-ui-response" = import ./nix/pms-ui-response.nix;
   "png-file" = import ./nix/png-file.nix;
   "pngload" = import ./nix/pngload.nix;
   "pngload-fixed" = import ./nix/pngload-fixed.nix;
