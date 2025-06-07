@@ -153,4 +153,48 @@
       default = "r0";
     };
   };
+  "0.1.0.33" = {
+    sha256 = "0e736e8c7007b8bc220fffc550f22f91c8a47f05aff4b08b38f8a5b1defa2d63";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tools-yj-0.1.0.33-r0-56253fd376574ae1c8e59420c3dce52e0ab6beb3c87182a211576e3297a7b8ab.nix;
+        revNum = 0;
+        sha256 = "56253fd376574ae1c8e59420c3dce52e0ab6beb3c87182a211576e3297a7b8ab";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.34" = {
+    sha256 = "8624dd78d3e549faebd52ac5ac4436570ea5a2dba2acb6d011bca3abe85d9a5f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tools-yj-0.1.0.34-r0-959f6e47532711569c06dc301e7a61e9fb0ae12a6aa029f581702e628da183e3.nix;
+        revNum = 0;
+        sha256 = "959f6e47532711569c06dc301e7a61e9fb0ae12a6aa029f581702e628da183e3";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.35" = {
+    sha256 = "50851fccc20f75bcbdb3cda35d80fdd294bbde0f22fbf94720c130274d2a8d0c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tools-yj-0.1.0.35-r0-b1fdf1daaa52a0cc461fcdd94e8536373a26aa2b693c574995b3e46c1debd45b.nix;
+        revNum = 0;
+        sha256 = "b1fdf1daaa52a0cc461fcdd94e8536373a26aa2b693c574995b3e46c1debd45b";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.36" = {
+    sha256 = "0bd83fa3eb5388a3afeb02c2e3c9f6fa17fd9f5c66c406af4fd74d57aa37e33d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tools-yj-0.1.0.36-r0-1c3b99c088b888dee090db9a2980c1d3ba00fefb2e4823ab17c9e6a234c0158d.nix;
+        revNum = 0;
+        sha256 = "1c3b99c088b888dee090db9a2980c1d3ba00fefb2e4823ab17c9e6a234c0158d";
+      };
+      default = "r0";
+    };
+  };
 }

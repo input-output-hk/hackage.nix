@@ -12771,8 +12771,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "plural" = import ./nix/plural.nix;
   "ply-loader" = import ./nix/ply-loader.nix;
   "plzwrk" = import ./nix/plzwrk.nix;
+  "pms-application-service" = import ./nix/pms-application-service.nix;
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
+  "pms-infrastructure" = import ./nix/pms-infrastructure.nix;
   "pms-ui-request" = import ./nix/pms-ui-request.nix;
   "pms-ui-response" = import ./nix/pms-ui-response.nix;
   "png-file" = import ./nix/png-file.nix;
@@ -13308,6 +13310,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ptr" = import ./nix/ptr.nix;
   "ptr-poker" = import ./nix/ptr-poker.nix;
   "ptrdiff" = import ./nix/ptrdiff.nix;
+  "pty-mcp-server" = import ./nix/pty-mcp-server.nix;
   "pub" = import ./nix/pub.nix;
   "publicsuffix" = import ./nix/publicsuffix.nix;
   "publicsuffixlist" = import ./nix/publicsuffixlist.nix;

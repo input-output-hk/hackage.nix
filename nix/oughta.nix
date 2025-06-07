@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "f108c648f70cf7fe01dc7243c0ad7f9a6e41fc3e306af03f8a8369a6b795a384";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/oughta-0.3.0.0-r0-7c3267a8861d71d36e9126a64d877e3c2dcfb94ad8ac644fcf8f9a35dae6722b.nix;
+        revNum = 0;
+        sha256 = "7c3267a8861d71d36e9126a64d877e3c2dcfb94ad8ac644fcf8f9a35dae6722b";
+      };
+      default = "r0";
+    };
+  };
 }
