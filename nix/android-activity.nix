@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "0d0962014795929b2dac8cf7c70ae5b888cdc979668591b94046a4e1629a02d1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/android-activity-0.2.0.2-r0-c3bf31790f3e02734180da579648a173c6929838e563c7fd04d3960dbcfe099c.nix;
+        revNum = 0;
+        sha256 = "c3bf31790f3e02734180da579648a173c6929838e563c7fd04d3960dbcfe099c";
+      };
+      default = "r0";
+    };
+  };
 }

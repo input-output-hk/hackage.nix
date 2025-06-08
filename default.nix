@@ -15221,6 +15221,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "some-dict-of" = import ./nix/some-dict-of.nix;
   "sonic-visualiser" = import ./nix/sonic-visualiser.nix;
   "sop-core" = import ./nix/sop-core.nix;
+  "sop-satisfier" = import ./nix/sop-satisfier.nix;
   "sophia" = import ./nix/sophia.nix;
   "sort" = import ./nix/sort.nix;
   "sort-by-pinyin" = import ./nix/sort-by-pinyin.nix;

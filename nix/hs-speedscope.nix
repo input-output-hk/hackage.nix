@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "a3132a422c03bf3f8b8c6a4a4a3233407f0f93d9f6f54ffadcf31a97f0783521";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-speedscope-0.3.0-r0-de1b2cee6eff5019b638fc2157a55ae3add2974b2119bfa1ccce8291b0f041e1.nix;
+        revNum = 0;
+        sha256 = "de1b2cee6eff5019b638fc2157a55ae3add2974b2119bfa1ccce8291b0f041e1";
+      };
+      default = "r0";
+    };
+  };
 }

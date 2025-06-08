@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.14.0.1" = {
+    sha256 = "f19c0231f7de0e4acd29a64c6f4fe574a0355a52e531e5d002f1583e6224d9be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shellify-0.14.0.1-r0-a6468e9bfb1a18f185223c6bb3e4973285887c887d3ed98e18c34d07e8fc197c.nix;
+        revNum = 0;
+        sha256 = "a6468e9bfb1a18f185223c6bb3e4973285887c887d3ed98e18c34d07e8fc197c";
+      };
+      default = "r0";
+    };
+  };
 }
