@@ -4442,6 +4442,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-construction" = import ./nix/data-construction.nix;
   "data-constructors" = import ./nix/data-constructors.nix;
   "data-cycle" = import ./nix/data-cycle.nix;
+  "data-debruijn" = import ./nix/data-debruijn.nix;
   "data-default" = import ./nix/data-default.nix;
   "data-default-class" = import ./nix/data-default-class.nix;
   "data-default-extra" = import ./nix/data-default-extra.nix;
@@ -7952,6 +7953,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hen" = import ./nix/hen.nix;
   "henet" = import ./nix/henet.nix;
   "hepevt" = import ./nix/hepevt.nix;
+  "heph-sparse-set" = import ./nix/heph-sparse-set.nix;
   "heptapod" = import ./nix/heptapod.nix;
   "her-lexer" = import ./nix/her-lexer.nix;
   "her-lexer-parsec" = import ./nix/her-lexer-parsec.nix;

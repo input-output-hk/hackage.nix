@@ -325,4 +325,15 @@
       default = "r1";
     };
   };
+  "0.6.2" = {
+    sha256 = "449baedb6a1e9564ae199c892bf19bbb69dd4c11141b5489700238b2caae8f8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaskellNet-0.6.2-r0-afc178bd40f0e8d8368bef8308881f73985ccbe3ce8f4c68ba5d7db3ca18cc36.nix;
+        revNum = 0;
+        sha256 = "afc178bd40f0e8d8368bef8308881f73985ccbe3ce8f4c68ba5d7db3ca18cc36";
+      };
+      default = "r0";
+    };
+  };
 }

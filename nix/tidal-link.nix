@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "5b6feadab19bd66a15645b8520f066770ae6e43d624c3269160aa2ef54ab5897";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tidal-link-1.2.0-r0-56543c7b7bf6032c166ad7e9ba429ab9c4c053b80d39b62d6cfc69738f43be47.nix;
+        revNum = 0;
+        sha256 = "56543c7b7bf6032c166ad7e9ba429ab9c4c053b80d39b62d6cfc69738f43be47";
+      };
+      default = "r0";
+    };
+  };
 }
