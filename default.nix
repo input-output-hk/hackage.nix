@@ -2883,6 +2883,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "blockfrost-pretty" = import ./nix/blockfrost-pretty.nix;
   "blockhash" = import ./nix/blockhash.nix;
   "blocking-transactions" = import ./nix/blocking-transactions.nix;
+  "blockio-uring" = import ./nix/blockio-uring.nix;
   "blogination" = import ./nix/blogination.nix;
   "bloodhound" = import ./nix/bloodhound.nix;
   "bloodhound-amazonka-auth" = import ./nix/bloodhound-amazonka-auth.nix;

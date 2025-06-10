@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.2" = {
+    sha256 = "a7429c517c85f056f1b6f1a93753f6dccd0b7a3f0dbf006ec676260bea72a1fc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-hie-0.0.2-r0-2a09d3372fa978677747681675f2c51552c90a51eae14f9218bb5b544d9013a2.nix;
+        revNum = 0;
+        sha256 = "2a09d3372fa978677747681675f2c51552c90a51eae14f9218bb5b544d9013a2";
+      };
+      default = "r0";
+    };
+  };
 }

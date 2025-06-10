@@ -69,7 +69,7 @@
           (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
           (hsPkgs."zlib" or (errorHandler.buildDepError "zlib"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
-        ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isFreebsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isDragonfly) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isOsx) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (flags.llvm) [
+        ] ++ pkgs.lib.optional (system.isLinux) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isFreebsd) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isDragonFly) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isOsx) (hsPkgs."unix" or (errorHandler.buildDepError "unix"))) ++ pkgs.lib.optional (system.isWindows) (hsPkgs."Win32" or (errorHandler.buildDepError "Win32"))) ++ pkgs.lib.optionals (flags.llvm) [
           (hsPkgs."llvm-general" or (errorHandler.buildDepError "llvm-general"))
           (hsPkgs."llvm-general-pure" or (errorHandler.buildDepError "llvm-general-pure"))
         ]) ++ pkgs.lib.optional (flags.ffi) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))) ++ pkgs.lib.optional (flags.gmp) (hsPkgs."libffi" or (errorHandler.buildDepError "libffi"))) ++ pkgs.lib.optional (flags.curses) (hsPkgs."hscurses" or (errorHandler.buildDepError "hscurses"));

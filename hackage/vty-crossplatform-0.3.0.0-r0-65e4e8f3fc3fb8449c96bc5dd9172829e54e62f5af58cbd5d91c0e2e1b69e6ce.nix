@@ -35,7 +35,7 @@
             then [
               (hsPkgs."vty-unix" or (errorHandler.buildDepError "vty-unix"))
             ]
-            else if system.isFreebsd || system.isOpenbsd || system.isNetbsd || system.isDragonfly
+            else if system.isFreebsd || system.isOpenbsd || system.isNetbsd || system.isDragonFly
               then [
                 (hsPkgs."vty-unix" or (errorHandler.buildDepError "vty-unix"))
               ]
