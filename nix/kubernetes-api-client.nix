@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "0.6.1.0" = {
+    sha256 = "b29a7e682d65eef89643e0197fe22426b2c13441542e510af773bef1735250c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kubernetes-api-client-0.6.1.0-r0-f86b284b564102b0efb84e13bbc20048194e30e14834676d8ce724cfd3f0ad4c.nix;
+        revNum = 0;
+        sha256 = "f86b284b564102b0efb84e13bbc20048194e30e14834676d8ce724cfd3f0ad4c";
+      };
+      default = "r0";
+    };
+  };
+  "0.6.1.1" = {
+    sha256 = "ff880a65982aec7734f39b862e37735e4ba20680ab1e1d023a8ef7f48d767a38";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kubernetes-api-client-0.6.1.1-r0-ae17e14e83e6750bd92529365b29f63f29fa01bbf1c8a6623e43b5553cbf569e.nix;
+        revNum = 0;
+        sha256 = "ae17e14e83e6750bd92529365b29f63f29fa01bbf1c8a6623e43b5553cbf569e";
+      };
+      default = "r0";
+    };
+  };
 }

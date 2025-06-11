@@ -14651,6 +14651,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-response" = import ./nix/servant-response.nix;
   "servant-router" = import ./nix/servant-router.nix;
   "servant-routes" = import ./nix/servant-routes.nix;
+  "servant-routes-golden" = import ./nix/servant-routes-golden.nix;
   "servant-ruby" = import ./nix/servant-ruby.nix;
   "servant-scotty" = import ./nix/servant-scotty.nix;
   "servant-seo" = import ./nix/servant-seo.nix;

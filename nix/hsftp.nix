@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.4.0" = {
+    sha256 = "e011eba85ee06de7da052ec86d3ecb7872f10ab75fbc3b3b3fbe1b9e667edf05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsftp-1.4.0-r0-6ac9104819f77c86b772db478649fa125e8e1f707b962612b2a5ec4e6b7d82ca.nix;
+        revNum = 0;
+        sha256 = "6ac9104819f77c86b772db478649fa125e8e1f707b962612b2a5ec4e6b7d82ca";
+      };
+      default = "r0";
+    };
+  };
 }

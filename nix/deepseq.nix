@@ -300,7 +300,12 @@
         revNum = 0;
         sha256 = "6adeff09469103c4e6cf94c2803d74ac1c652366250eacff97dea8415c3fb4ea";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/deepseq-1.5.1.0-r1-9946e565a93cdd608d8d4e392ba06ad8c38f849d9aaa06f517083da3d329de53.nix;
+        revNum = 1;
+        sha256 = "9946e565a93cdd608d8d4e392ba06ad8c38f849d9aaa06f517083da3d329de53";
+      };
+      default = "r1";
     };
   };
   "1.6.0.0" = {
