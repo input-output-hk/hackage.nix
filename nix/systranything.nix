@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.3.0" = {
+    sha256 = "dee546ae2a13a97888301577610d0563389e3bdc7af1771eca6ed59e17ffc89f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/systranything-0.1.3.0-r0-949c93307ca22e4f0ae55d514bd9cc952d34978c67e170159defe924b29a06fa.nix;
+        revNum = 0;
+        sha256 = "949c93307ca22e4f0ae55d514bd9cc952d34978c67e170159defe924b29a06fa";
+      };
+      default = "r0";
+    };
+  };
 }
