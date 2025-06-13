@@ -10767,6 +10767,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mcmc-samplers" = import ./nix/mcmc-samplers.nix;
   "mcmc-synthesis" = import ./nix/mcmc-synthesis.nix;
   "mcmc-types" = import ./nix/mcmc-types.nix;
+  "mcp" = import ./nix/mcp.nix;
   "mcp-server" = import ./nix/mcp-server.nix;
   "mcpi" = import ./nix/mcpi.nix;
   "md5" = import ./nix/md5.nix;

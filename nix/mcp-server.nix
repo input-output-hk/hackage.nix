@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.1.0.8" = {
+    sha256 = "6b819d9869be61446f64ec43c7e7e178fbc6ec642df69ef81a77e82240aa8d6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mcp-server-0.1.0.8-r0-606a09f22fb54190a78de614427641f6aa3c6d5e97ecdee7fd64ca12957e433e.nix;
+        revNum = 0;
+        sha256 = "606a09f22fb54190a78de614427641f6aa3c6d5e97ecdee7fd64ca12957e433e";
+      };
+      default = "r0";
+    };
+  };
 }
