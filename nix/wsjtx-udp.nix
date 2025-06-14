@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "474ad59b64fdecc0a6aaf018b20993729d9fe48a49888de2385f6deba513e93b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wsjtx-udp-0.5.0.0-r0-4ae25075e00f72cf0733b83cfb51b341d3a7d5ab8101250b4900d0b2097dc182.nix;
+        revNum = 0;
+        sha256 = "4ae25075e00f72cf0733b83cfb51b341d3a7d5ab8101250b4900d0b2097dc182";
+      };
+      default = "r0";
+    };
+  };
 }
