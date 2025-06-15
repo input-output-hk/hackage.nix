@@ -16943,6 +16943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ukrainian-phonetics-basic-array" = import ./nix/ukrainian-phonetics-basic-array.nix;
   "ukrainian-phonetics-basic-array-bytestring" = import ./nix/ukrainian-phonetics-basic-array-bytestring.nix;
   "ukrainian-phonetics-common" = import ./nix/ukrainian-phonetics-common.nix;
+  "uku" = import ./nix/uku.nix;
   "ulid" = import ./nix/ulid.nix;
   "ulid-tight" = import ./nix/ulid-tight.nix;
   "una" = import ./nix/una.nix;

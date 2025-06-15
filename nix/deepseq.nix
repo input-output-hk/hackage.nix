@@ -305,7 +305,23 @@
         revNum = 1;
         sha256 = "9946e565a93cdd608d8d4e392ba06ad8c38f849d9aaa06f517083da3d329de53";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/deepseq-1.5.1.0-r2-b048f955a49f2cd7710189b76fe49c950a15b63e2e7dd80f154d243068bda5c9.nix;
+        revNum = 2;
+        sha256 = "b048f955a49f2cd7710189b76fe49c950a15b63e2e7dd80f154d243068bda5c9";
+      };
+      default = "r2";
+    };
+  };
+  "1.5.2.0" = {
+    sha256 = "09d7800d7f45085b7c0083a2d46ea454ea9aa3d744d8bbc8b8b1bd38ec0cfbe5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deepseq-1.5.2.0-r0-389965a3e1ef85b7eb51aa19e8622560e04a5d748db78cd21e29873552bd5684.nix;
+        revNum = 0;
+        sha256 = "389965a3e1ef85b7eb51aa19e8622560e04a5d748db78cd21e29873552bd5684";
+      };
+      default = "r0";
     };
   };
   "1.6.0.0" = {
