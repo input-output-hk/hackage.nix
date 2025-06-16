@@ -2411,6 +2411,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "awesomium-glut" = import ./nix/awesomium-glut.nix;
   "awesomium-raw" = import ./nix/awesomium-raw.nix;
   "aws" = import ./nix/aws.nix;
+  "aws-academy-grade-exporter" = import ./nix/aws-academy-grade-exporter.nix;
   "aws-arn" = import ./nix/aws-arn.nix;
   "aws-cloudfront-signed-cookies" = import ./nix/aws-cloudfront-signed-cookies.nix;
   "aws-cloudfront-signer" = import ./nix/aws-cloudfront-signer.nix;
@@ -7826,6 +7827,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hbf" = import ./nix/hbf.nix;
   "hblas" = import ./nix/hblas.nix;
   "hblock" = import ./nix/hblock.nix;
+  "hblosc" = import ./nix/hblosc.nix;
   "hbro" = import ./nix/hbro.nix;
   "hbro-contrib" = import ./nix/hbro-contrib.nix;
   "hburg" = import ./nix/hburg.nix;
@@ -13637,6 +13639,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rdioh" = import ./nix/rdioh.nix;
   "rds-data" = import ./nix/rds-data.nix;
   "rds-data-codecs" = import ./nix/rds-data-codecs.nix;
+  "rds-data-polysemy" = import ./nix/rds-data-polysemy.nix;
   "rdtsc" = import ./nix/rdtsc.nix;
   "rdtsc-enolan" = import ./nix/rdtsc-enolan.nix;
   "re2" = import ./nix/re2.nix;
