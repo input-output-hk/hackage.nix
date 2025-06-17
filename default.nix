@@ -2236,6 +2236,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ascii-th" = import ./nix/ascii-th.nix;
   "ascii-vector-avc" = import ./nix/ascii-vector-avc.nix;
   "ascii85-conduit" = import ./nix/ascii85-conduit.nix;
+  "ascii85x" = import ./nix/ascii85x.nix;
   "asciichart" = import ./nix/asciichart.nix;
   "asciidiagram" = import ./nix/asciidiagram.nix;
   "asic" = import ./nix/asic.nix;
@@ -7560,6 +7561,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-aliyun" = import ./nix/haskell-aliyun.nix;
   "haskell-awk" = import ./nix/haskell-awk.nix;
   "haskell-bcrypt" = import ./nix/haskell-bcrypt.nix;
+  "haskell-bee" = import ./nix/haskell-bee.nix;
+  "haskell-bee-pgmq" = import ./nix/haskell-bee-pgmq.nix;
+  "haskell-bee-redis" = import ./nix/haskell-bee-redis.nix;
+  "haskell-bee-stm" = import ./nix/haskell-bee-stm.nix;
+  "haskell-bee-tests" = import ./nix/haskell-bee-tests.nix;
   "haskell-bitmex-client" = import ./nix/haskell-bitmex-client.nix;
   "haskell-bitmex-rest" = import ./nix/haskell-bitmex-rest.nix;
   "haskell-brainfuck" = import ./nix/haskell-brainfuck.nix;
@@ -7610,6 +7616,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-overridez" = import ./nix/haskell-overridez.nix;
   "haskell-packages" = import ./nix/haskell-packages.nix;
   "haskell-pdf-presenter" = import ./nix/haskell-pdf-presenter.nix;
+  "haskell-pgmq" = import ./nix/haskell-pgmq.nix;
   "haskell-platform-test" = import ./nix/haskell-platform-test.nix;
   "haskell-player" = import ./nix/haskell-player.nix;
   "haskell-plot" = import ./nix/haskell-plot.nix;
@@ -17856,6 +17863,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xdg-userdirs" = import ./nix/xdg-userdirs.nix;
   "xdot" = import ./nix/xdot.nix;
   "xeno" = import ./nix/xeno.nix;
+  "xenomorph" = import ./nix/xenomorph.nix;
   "xenstore" = import ./nix/xenstore.nix;
   "xfconf" = import ./nix/xfconf.nix;
   "xformat" = import ./nix/xformat.nix;

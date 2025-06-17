@@ -176,4 +176,15 @@
       default = "r0";
     };
   };
+  "0.54" = {
+    sha256 = "a61caee5d057e857138bbeceafee4280a0541cff4eb76588fd36d0acb859ec4e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HsSyck-0.54-r0-bfb639d0587dabbc8eb7930e5a6df0b9f16916fab99dbb27565a55b899aa4876.nix;
+        revNum = 0;
+        sha256 = "bfb639d0587dabbc8eb7930e5a6df0b9f16916fab99dbb27565a55b899aa4876";
+      };
+      default = "r0";
+    };
+  };
 }

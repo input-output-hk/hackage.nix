@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.0.4" = {
+    sha256 = "8de01f469a6857f70249a21430dc4cfb79c61705142860d080f3b31fd306abd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-split-1.0.0.4-r0-15c7b0b6a34690a2804ab4b88f2bc1f1598fd23b475acfeca52afe281a354032.nix;
+        revNum = 0;
+        sha256 = "15c7b0b6a34690a2804ab4b88f2bc1f1598fd23b475acfeca52afe281a354032";
+      };
+      default = "r0";
+    };
+  };
 }

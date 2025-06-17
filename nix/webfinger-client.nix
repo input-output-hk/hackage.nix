@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.2.1" = {
+    sha256 = "a0f1abd118822baeb53984ef5adf24e8b169974f7be9618e61513cd49ffc8e67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/webfinger-client-0.2.2.1-r0-49392ba0b1c4dfcbef7167d5c1e9f21f2f24384b7ec53ec9f2c9469bf6e5ef93.nix;
+        revNum = 0;
+        sha256 = "49392ba0b1c4dfcbef7167d5c1e9f21f2f24384b7ec53ec9f2c9469bf6e5ef93";
+      };
+      default = "r0";
+    };
+  };
 }
