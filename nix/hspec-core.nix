@@ -838,7 +838,12 @@
         revNum = 0;
         sha256 = "4856221a10a31935006fa03cd2a4f185d89810d79616b9cbb714cf2c0f5cde17";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hspec-core-2.11.12-r1-9862660946d84cd40142ef48b42bcc6f6769cc44ca554f7eec6f3dc695b5097b.nix;
+        revNum = 1;
+        sha256 = "9862660946d84cd40142ef48b42bcc6f6769cc44ca554f7eec6f3dc695b5097b";
+      };
+      default = "r1";
     };
   };
   "2.11.2" = {

@@ -139,7 +139,12 @@
         revNum = 0;
         sha256 = "ce3a3b92b8c99be1851b11ca809f9dc2a800363e01b5f251054e6047afe8b45e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/graphql-client-1.2.4-r1-f02afef2fd689c341ec85356b65ba953d99c08fc92ac646fbb0555d7bfc0273a.nix;
+        revNum = 1;
+        sha256 = "f02afef2fd689c341ec85356b65ba953d99c08fc92ac646fbb0555d7bfc0273a";
+      };
+      default = "r1";
     };
   };
 }

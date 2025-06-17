@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "585929c62b3c91431907574f788cd1bace5033c68978d514070f135512fccbe4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haiji-0.4.0.0-r0-d6e2daaf8f7389a12e86996ef46a62534ab283b92a61cb44cba1f0bc21cb11b5.nix;
+        revNum = 0;
+        sha256 = "d6e2daaf8f7389a12e86996ef46a62534ab283b92a61cb44cba1f0bc21cb11b5";
+      };
+      default = "r0";
+    };
+  };
 }
