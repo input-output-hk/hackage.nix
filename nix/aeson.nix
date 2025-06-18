@@ -2284,7 +2284,12 @@
         revNum = 3;
         sha256 = "61e559f2bad61a98aac564f2a4fd892d21e9e1712e14e3db93326317aa944a9b";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/aeson-2.2.3.0-r4-7d48c2395ef168d2c2070fdb02c7998384be27d31a03bb35d1740af4a19a857b.nix;
+        revNum = 4;
+        sha256 = "7d48c2395ef168d2c2070fdb02c7998384be27d31a03bb35d1740af4a19a857b";
+      };
+      default = "r4";
     };
   };
 }
