@@ -98,7 +98,12 @@
         revNum = 1;
         sha256 = "7bd7cf87cc0554a0cab94b356d4b5da2e7f8f7669c5216f5be0f884c0663300c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dumb-cas-0.2.1.1-r2-cdf10bf0fac8cd209b5f3318d10f2623a9425375710c69f81dc5a18c56f7e73d.nix;
+        revNum = 2;
+        sha256 = "cdf10bf0fac8cd209b5f3318d10f2623a9425375710c69f81dc5a18c56f7e73d";
+      };
+      default = "r2";
     };
   };
 }

@@ -252,4 +252,26 @@
       default = "r0";
     };
   };
+  "1.0.0.5" = {
+    sha256 = "1b1186ff9363f42a7f5647e29964a70d51d8f32503156465a7baa151489e2d5d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/greskell-core-1.0.0.5-r0-0f6a7e8ab6a2cab012a99490ba89ea57994f7367d94c197d5f2aa47c62427152.nix;
+        revNum = 0;
+        sha256 = "0f6a7e8ab6a2cab012a99490ba89ea57994f7367d94c197d5f2aa47c62427152";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.6" = {
+    sha256 = "682945d3df88d29527de287b7df4b1ba6fbf3fd4d777f2ef45ab0dd78996ba93";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/greskell-core-1.0.0.6-r0-3fb1dae3f81728f51d122d8822e9230af38af3a931ab48fbe33b2aa6e31680dd.nix;
+        revNum = 0;
+        sha256 = "3fb1dae3f81728f51d122d8822e9230af38af3a931ab48fbe33b2aa6e31680dd";
+      };
+      default = "r0";
+    };
+  };
 }
