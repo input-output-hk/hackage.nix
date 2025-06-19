@@ -1,0 +1,105 @@
+# Update workflow for hackage.nix/index-sate.nix
+# - Runs every 5 minutes to check for Hackage updates (note: GitHub may throttle frequent runs)
+# - Uses ETag to skip unnecessary updates
+# - Maintains index-state.nix with latest index hash
+
+name: Update Hackage Index State Hash
+
+on:
+  schedule:
+    # Run every 5 minutes (minimum interval on GitHub Actions)
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-hackage-index-state:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Check Hackage ETag
+        id: check-etag
+        run: |
+          # Get current stored ETag (create empty file if doesn't exist)
+          touch hackage.etag
+          STORED_ETAG=$(cat hackage.etag)
+
+          # Fetch current ETag from Hackage
+          HTTP_STATUS=$(curl -sI -w "%{http_code}" -o headers.txt https://hackage.haskell.org/01-index.tar.gz)
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Failed to fetch ETag: HTTP $HTTP_STATUS"
+            exit 1
+          fi
+          CURRENT_ETAG=$(grep -i "^etag:" headers.txt | cut -d' ' -f2 | tr -d '\r\n')
+
+          echo "Stored ETag: $STORED_ETAG"
+          echo "Current ETag: $CURRENT_ETAG"
+
+          if [ "$STORED_ETAG" = "$CURRENT_ETAG" ] && [ -n "$STORED_ETAG" ]; then
+            echo "ETag unchanged, skipping update"
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "ETag changed, proceeding with update"
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "new_etag=$CURRENT_ETAG" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install Nix
+        if: steps.check-etag.outputs.changed == 'true'
+        uses: cachix/install-nix-action@v22
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+            substituters = https://cache.iog.io https://cache.nixos.org/
+
+      - name: Update Hackage Index
+        if: steps.check-etag.outputs.changed == 'true'
+        run: |
+          # Initialize index-state.nix if it doesn't exist
+          if [ ! -f index-state.nix ]; then
+            echo "{}" > index-state.nix
+          fi
+
+          # Download the latest Hackage index
+          curl -LR -o 01-index.tar.gz https://hackage.haskell.org/01-index.tar.gz
+
+          # Get the current timestamp for index-state
+          INDEX_STATE=$(date -u -r 01-index.tar.gz +"%Y-%m-%dT%H:%M:%SZ")
+
+          # Calculate the SHA256 hash of the index
+          INDEX_HASH=$(nix-hash --type sha256 --flat 01-index.tar.gz)
+
+          # Update index-state.nix with the latest hash
+          cat > index-state.nix <<EOF
+          {
+            index-state = "$INDEX_STATE";
+            index-hash = "$INDEX_HASH";
+          }
+          EOF
+
+          # Store the new ETag
+          echo "${{ steps.check-etag.outputs.new_etag }}" > hackage.etag
+
+          # Clean up
+          rm -f 01-index.tar.gz
+
+      - name: Commit and push changes
+        if: steps.check-etag.outputs.changed == 'true'
+        run: |
+          git config --local user.email "devops+nix-tools@iohk.io"
+          git config --local user.name "IOHK"
+
+          git add index-state.nix hackage.etag
+
+          # Commit if there are changes
+          if ! git diff --staged --quiet; then
+            INDEX_STATE=$(grep "index-state =" index-state.nix | cut -d'"' -f2)
+            git commit -m "Update Hackage index state to $INDEX_STATE"
+            git push
+          fi
