@@ -67,10 +67,14 @@ jobs:
           fi
 
           # Download the latest Hackage index
-          curl -LR -o 01-index.tar.gz https://hackage.haskell.org/01-index.tar.gz
+          curl -LR -o raw-01-index.tar.gz https://hackage.haskell.org/01-index.tar.gz
 
           # Get the current timestamp for index-state
-          INDEX_STATE=$(date -u -r 01-index.tar.gz +"%Y-%m-%dT%H:%M:%SZ")
+          INDEX_STATE=$(date -u -r raw-01-index.tar.gz +"%Y-%m-%dT%H:%M:%SZ")
+
+          # Run truncate-index on the index
+          nix run github:input-output-hk/haskell.nix#truncate-index -- \
+            -o 01-index.tar.gz -i raw-01-index.tar.gz -s $INDEX_STATE
 
           # Calculate the SHA256 hash of the index
           INDEX_HASH=$(nix-hash --type sha256 --flat 01-index.tar.gz)
