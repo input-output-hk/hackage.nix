@@ -78,8 +78,7 @@ jobs:
           # Update index-state.nix with the latest hash
           cat > index-state.nix <<EOF
           {
-            index-state = "$INDEX_STATE";
-            index-sha256 = "$INDEX_HASH";
+            "$INDEX_STATE" = "$INDEX_HASH";
           }
           EOF
 
