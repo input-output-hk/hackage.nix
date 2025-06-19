@@ -34,7 +34,7 @@ jobs:
             echo "Failed to fetch ETag: HTTP $HTTP_STATUS"
             exit 1
           fi
-          CURRENT_ETAG=$(grep -i "^etag:" headers.txt | cut -d' ' -f2 | tr -d '\r\n')
+          CURRENT_ETAG=$(awk 'tolower($1) == "etag:" { print $2 }' headers.txt | tr -d '\r\n"')
 
           echo "Stored ETag: $STORED_ETAG"
           echo "Current ETag: $CURRENT_ETAG"
@@ -79,7 +79,7 @@ jobs:
           cat > index-state.nix <<EOF
           {
             index-state = "$INDEX_STATE";
-            index-hash = "$INDEX_HASH";
+            index-sha256 = "$INDEX_HASH";
           }
           EOF
 
