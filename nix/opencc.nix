@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "f87d2ffd18845e2f7df7bc376675a9031dd534b9108e46fbfd003f459f3a856e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opencc-0.1.2.0-r0-cf5e1503c12c7d6d9d692a9119878fd9a3d88b3a4721d52c528bfa112bfe2dcf.nix;
+        revNum = 0;
+        sha256 = "cf5e1503c12c7d6d9d692a9119878fd9a3d88b3a4721d52c528bfa112bfe2dcf";
+      };
+      default = "r0";
+    };
+  };
 }

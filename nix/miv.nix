@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.4.9" = {
+    sha256 = "fa9a6d22289fb1e58ed0370be91ea5c16317f64ef4d30c8d83022d39dee670fc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/miv-0.4.9-r0-34ac6e7fa3b60162b7256093ebf6317ca791709f8025ff049d9cbd0e5676ee82.nix;
+        revNum = 0;
+        sha256 = "34ac6e7fa3b60162b7256093ebf6317ca791709f8025ff049d9cbd0e5676ee82";
+      };
+      default = "r0";
+    };
+  };
 }

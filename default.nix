@@ -16242,6 +16242,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-conversions" = import ./nix/text-conversions.nix;
   "text-cp437" = import ./nix/text-cp437.nix;
   "text-display" = import ./nix/text-display.nix;
+  "text-encode" = import ./nix/text-encode.nix;
   "text-format" = import ./nix/text-format.nix;
   "text-format-heavy" = import ./nix/text-format-heavy.nix;
   "text-format-simple" = import ./nix/text-format-simple.nix;
