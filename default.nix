@@ -2373,6 +2373,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "auto-update" = import ./nix/auto-update.nix;
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
+  "autodocodec-exact" = import ./nix/autodocodec-exact.nix;
   "autodocodec-nix" = import ./nix/autodocodec-nix.nix;
   "autodocodec-openapi3" = import ./nix/autodocodec-openapi3.nix;
   "autodocodec-schema" = import ./nix/autodocodec-schema.nix;
@@ -16240,6 +16241,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "text-compression" = import ./nix/text-compression.nix;
   "text-containers" = import ./nix/text-containers.nix;
   "text-conversions" = import ./nix/text-conversions.nix;
+  "text-convert" = import ./nix/text-convert.nix;
   "text-cp437" = import ./nix/text-cp437.nix;
   "text-display" = import ./nix/text-display.nix;
   "text-encode" = import ./nix/text-encode.nix;

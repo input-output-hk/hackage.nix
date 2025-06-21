@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.0.5" = {
+    sha256 = "ee04a2c205f0db125ceb8d13f5e63be8f1eb241037f79c0da6cfd34228f2e0a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/roc-id-0.2.0.5-r0-22c5b76403bedd16e280bb9554be1d3c641a8bcbe73151a48c3556f95901c321.nix;
+        revNum = 0;
+        sha256 = "22c5b76403bedd16e280bb9554be1d3c641a8bcbe73151a48c3556f95901c321";
+      };
+      default = "r0";
+    };
+  };
 }
