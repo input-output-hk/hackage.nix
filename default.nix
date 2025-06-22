@@ -12788,7 +12788,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-application-service" = import ./nix/pms-application-service.nix;
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
+  "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
+  "pms-infra-watch" = import ./nix/pms-infra-watch.nix;
   "pms-infrastructure" = import ./nix/pms-infrastructure.nix;
+  "pms-ui-notification" = import ./nix/pms-ui-notification.nix;
   "pms-ui-request" = import ./nix/pms-ui-request.nix;
   "pms-ui-response" = import ./nix/pms-ui-response.nix;
   "png-file" = import ./nix/png-file.nix;
