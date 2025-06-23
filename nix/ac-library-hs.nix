@@ -197,4 +197,15 @@
       default = "r0";
     };
   };
+  "1.5.2.0" = {
+    sha256 = "89fbb33dddaaa762cbcc234cdc2f64d24f452b63af3e11931464736264400709";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ac-library-hs-1.5.2.0-r0-576008df6c5f007709224753b688f106c74a810c1a1f439281e9722112601257.nix;
+        revNum = 0;
+        sha256 = "576008df6c5f007709224753b688f106c74a810c1a1f439281e9722112601257";
+      };
+      default = "r0";
+    };
+  };
 }

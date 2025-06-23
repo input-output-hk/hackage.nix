@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "ecf8fd0cb36e501e0dddb62b763c328480c0a5bcd97346d2bd2b9f37d550a02d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-contexts-0.3.0.3-r0-c4ff0ae6add411bafce6d15817eeb9df5a3c26025d18a8f939d5d44a5869f4b6.nix;
+        revNum = 0;
+        sha256 = "c4ff0ae6add411bafce6d15817eeb9df5a3c26025d18a8f939d5d44a5869f4b6";
+      };
+      default = "r0";
+    };
+  };
 }

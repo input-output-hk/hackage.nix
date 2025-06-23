@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "63aa6ba14574b497afcf55590a8d212c8161b0c40f66ba1cee906889e5a6dc52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-spend-summary-0.3.0.0-r0-2228b4710839af982ed5d57dbe845d1bf0b1f8bafcee73060dec73043f7ce5fd.nix;
+        revNum = 0;
+        sha256 = "2228b4710839af982ed5d57dbe845d1bf0b1f8bafcee73060dec73043f7ce5fd";
+      };
+      default = "r0";
+    };
+  };
 }
