@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "2.4.0" = {
+    sha256 = "1ac62515ec5de84126077844c9b578b93e5e73a25ca0bf63b43bf7855fa1a73e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-objectorientation-2.4.0-r0-00d1f3c08d4c3447980452b473a21d6dd34edd3f2565c8f2569fe1dd3a4e65ae.nix;
+        revNum = 0;
+        sha256 = "00d1f3c08d4c3447980452b473a21d6dd34edd3f2565c8f2569fe1dd3a4e65ae";
+      };
+      default = "r0";
+    };
+  };
 }
