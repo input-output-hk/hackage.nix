@@ -4342,6 +4342,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cuckoo-filter" = import ./nix/cuckoo-filter.nix;
   "cuda" = import ./nix/cuda.nix;
   "cudd" = import ./nix/cudd.nix;
+  "cuddle" = import ./nix/cuddle.nix;
   "cue-sheet" = import ./nix/cue-sheet.nix;
   "cufft" = import ./nix/cufft.nix;
   "curl" = import ./nix/curl.nix;

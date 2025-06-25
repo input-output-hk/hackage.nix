@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "25306da6d0ea121b3c3fc8e2fb64cb76e2c7808318789239153193acbb4fbc3f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-activeresource-0.2.0.0-r0-444b8d2a04e4f9d451fc67f9b6e410810285d7315f29afc705686d3e251deeb0.nix;
+        revNum = 0;
+        sha256 = "444b8d2a04e4f9d451fc67f9b6e410810285d7315f29afc705686d3e251deeb0";
+      };
+      default = "r0";
+    };
+  };
 }
