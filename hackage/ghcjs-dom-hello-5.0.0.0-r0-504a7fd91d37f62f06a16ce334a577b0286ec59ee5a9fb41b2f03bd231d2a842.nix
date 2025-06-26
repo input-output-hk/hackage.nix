@@ -37,7 +37,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."ghcjs-dom" or (errorHandler.buildDepError "ghcjs-dom"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
-          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
+          ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIOS
             then [
               (hsPkgs."jsaddle-wkwebview" or (errorHandler.buildDepError "jsaddle-wkwebview"))
             ]
@@ -57,7 +57,7 @@
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
             (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           ];
-          buildable = if !flags.warp || compiler.isGhcjs && true || system.isIos
+          buildable = if !flags.warp || compiler.isGhcjs && true || system.isIOS
             then false
             else true;
         };
@@ -73,7 +73,7 @@
             else [
               (hsPkgs."jsaddle-webkitgtk" or (errorHandler.buildDepError "jsaddle-webkitgtk"))
             ]);
-          buildable = if !flags.webkitgtk || compiler.isGhcjs && true || system.isIos
+          buildable = if !flags.webkitgtk || compiler.isGhcjs && true || system.isIOS
             then false
             else true;
         };

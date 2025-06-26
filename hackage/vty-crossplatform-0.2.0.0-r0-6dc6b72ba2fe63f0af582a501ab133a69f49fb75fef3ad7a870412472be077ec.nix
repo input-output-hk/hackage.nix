@@ -39,7 +39,7 @@
               then [
                 (hsPkgs."vty-unix" or (errorHandler.buildDepError "vty-unix"))
               ]
-              else if system.isSolaris || system.isAix || system.isHpux || system.isIrix || system.isHurd
+              else if system.isSolaris || system.isAix || system.isHPUX || system.isIRIX || system.isHurd
                 then [
                   (hsPkgs."vty-unix" or (errorHandler.buildDepError "vty-unix"))
                 ]

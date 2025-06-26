@@ -72,7 +72,7 @@
             (hsPkgs."websockets" or (errorHandler.buildDepError "websockets"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ];
-          buildable = if compiler.isGhcjs && true || system.isIos
+          buildable = if compiler.isGhcjs && true || system.isIOS
             then false
             else true;
         };

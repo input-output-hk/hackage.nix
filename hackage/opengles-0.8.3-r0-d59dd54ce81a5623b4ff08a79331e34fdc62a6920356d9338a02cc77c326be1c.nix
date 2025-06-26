@@ -56,7 +56,7 @@
             (pkgs."libGLESv2" or (errorHandler.sysDepError "libGLESv2"))
           ]
           else [ (pkgs."opengl32" or (errorHandler.sysDepError "opengl32")) ]);
-        frameworks = pkgs.lib.optionals (system.isIos) [
+        frameworks = pkgs.lib.optionals (system.isIOS) [
           (pkgs."QuartzCore" or (errorHandler.sysDepError "QuartzCore"))
           (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES"))
         ] ++ pkgs.lib.optional (system.isOsx) (pkgs."OpenGL" or (errorHandler.sysDepError "OpenGL"));

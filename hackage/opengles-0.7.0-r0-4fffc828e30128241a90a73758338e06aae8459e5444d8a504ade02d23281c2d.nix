@@ -39,7 +39,7 @@
           (pkgs."EGL" or (errorHandler.sysDepError "EGL"))
           (pkgs."GLESv2" or (errorHandler.sysDepError "GLESv2"))
         ];
-        frameworks = pkgs.lib.optionals (system.isIos) [
+        frameworks = pkgs.lib.optionals (system.isIOS) [
           (pkgs."QuartzCore" or (errorHandler.sysDepError "QuartzCore"))
           (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES"))
         ];

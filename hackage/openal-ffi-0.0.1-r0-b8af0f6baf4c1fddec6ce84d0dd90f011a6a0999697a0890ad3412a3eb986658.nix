@@ -26,7 +26,7 @@
       "library" = {
         depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
         libs = [ (pkgs."openal" or (errorHandler.sysDepError "openal")) ];
-        frameworks = pkgs.lib.optional (system.isOsx || system.isIos) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
+        frameworks = pkgs.lib.optional (system.isOsx || system.isIOS) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL"));
         buildable = true;
       };
       tests = {

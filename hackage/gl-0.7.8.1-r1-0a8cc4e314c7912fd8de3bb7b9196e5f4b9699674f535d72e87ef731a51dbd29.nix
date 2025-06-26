@@ -37,10 +37,10 @@
         ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."opengl32" or (errorHandler.sysDepError "opengl32")) ]
-          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIos) (pkgs."GL" or (errorHandler.sysDepError "GL")));
+          else pkgs.lib.optionals (!system.isOsx) (pkgs.lib.optional (!system.isIOS) (pkgs."GL" or (errorHandler.sysDepError "GL")));
         frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (if system.isOsx
           then [ (pkgs."OpenGL" or (errorHandler.sysDepError "OpenGL")) ]
-          else pkgs.lib.optional (system.isIos) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
+          else pkgs.lib.optional (system.isIOS) (pkgs."OpenGLES" or (errorHandler.sysDepError "OpenGLES")));
         buildable = true;
       };
     };

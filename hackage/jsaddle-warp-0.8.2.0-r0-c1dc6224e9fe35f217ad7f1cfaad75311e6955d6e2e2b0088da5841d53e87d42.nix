@@ -59,7 +59,7 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
           ];
-          buildable = if compiler.isGhcjs && true || system.isIos
+          buildable = if compiler.isGhcjs && true || system.isIOS
             then false
             else true;
         };

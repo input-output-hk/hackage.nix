@@ -42,7 +42,7 @@
           (hsPkgs."android-activity" or (errorHandler.buildDepError "android-activity"))
           (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
           (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
-        ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIos
+        ]) ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isOsx || system.isIOS
           then [
             (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))

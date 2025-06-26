@@ -33,8 +33,8 @@
         ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."OpenAL32" or (errorHandler.sysDepError "OpenAL32")) ]
-          else pkgs.lib.optional (!(system.isOsx || system.isIos)) (pkgs."openal" or (errorHandler.sysDepError "openal"));
-        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx || system.isIos) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL")));
+          else pkgs.lib.optional (!(system.isOsx || system.isIOS)) (pkgs."openal" or (errorHandler.sysDepError "openal"));
+        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isOsx || system.isIOS) (pkgs."OpenAL" or (errorHandler.sysDepError "OpenAL")));
         buildable = true;
       };
     };

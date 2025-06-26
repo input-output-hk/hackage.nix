@@ -32,8 +32,8 @@
         ];
         libs = if system.isWindows && flags.usenativewindowslibraries
           then [ (pkgs."alut" or (errorHandler.sysDepError "alut")) ]
-          else pkgs.lib.optional (!system.isIos) (pkgs."alut" or (errorHandler.sysDepError "alut"));
-        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isIos) (pkgs."ALUT" or (errorHandler.sysDepError "ALUT")));
+          else pkgs.lib.optional (!system.isIOS) (pkgs."alut" or (errorHandler.sysDepError "alut"));
+        frameworks = pkgs.lib.optionals (!(system.isWindows && flags.usenativewindowslibraries)) (pkgs.lib.optional (system.isIOS) (pkgs."ALUT" or (errorHandler.sysDepError "ALUT")));
         buildable = true;
       };
       exes = {

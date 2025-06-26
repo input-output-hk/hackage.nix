@@ -35,7 +35,7 @@
         frameworks = [
           (pkgs."Foundation" or (errorHandler.sysDepError "Foundation"))
           (pkgs."WebKit" or (errorHandler.sysDepError "WebKit"))
-        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIos
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (if system.isIOS
           then [
             (pkgs."UIKit" or (errorHandler.sysDepError "UIKit"))
             (pkgs."UserNotifications" or (errorHandler.sysDepError "UserNotifications"))

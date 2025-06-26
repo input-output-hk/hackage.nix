@@ -309,6 +309,17 @@
       default = "r2";
     };
   };
+  "1.3.1.16" = {
+    sha256 = "3575c5ca4c84923d26834da855eee4e762e52d70963570d2dd98b8ac5000ef23";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ChasingBottoms-1.3.1.16-r0-3bbb617af0e8499d8afd1e933b4359d1959d2aded1fe4e098582d5747355ea0a.nix;
+        revNum = 0;
+        sha256 = "3bbb617af0e8499d8afd1e933b4359d1959d2aded1fe4e098582d5747355ea0a";
+      };
+      default = "r0";
+    };
+  };
   "1.3.1.2" = {
     sha256 = "796e278b60c4a24eb6772155ea0edff9e20f96d396cfcd6c5a55d10a3bd2b8d6";
     revisions = {

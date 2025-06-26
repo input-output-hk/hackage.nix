@@ -46,7 +46,7 @@
             (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
             (hsPkgs."jsaddle-warp" or (errorHandler.buildDepError "jsaddle-warp"))
           ]
-          else if system.isOsx || system.isIos
+          else if system.isOsx || system.isIOS
             then [
               (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
               (hsPkgs."jsaddle" or (errorHandler.buildDepError "jsaddle"))
