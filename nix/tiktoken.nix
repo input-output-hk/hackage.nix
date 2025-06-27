@@ -45,7 +45,12 @@
         revNum = 0;
         sha256 = "5d9b67982d1c24d0556f94ab1f542948ef9d73cc14bd301d5536390832df7858";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tiktoken-1.0.3-r1-76c911527029f9e45380cbde2952e6475bab50f72c50f252f2ba2d2cedc79d5f.nix;
+        revNum = 1;
+        sha256 = "76c911527029f9e45380cbde2952e6475bab50f72c50f252f2ba2d2cedc79d5f";
+      };
+      default = "r1";
     };
   };
 }

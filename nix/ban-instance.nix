@@ -38,7 +38,12 @@
         revNum = 4;
         sha256 = "33de5b2cabe66584b1b2d645821ee9537d1200d00851b006e34c48dbd752e2c6";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/ban-instance-0.1.0.1-r5-8b95b4ab5dc2764485145fca02fbd2fa013249a5102c1dd5bd0fdfe626801da8.nix;
+        revNum = 5;
+        sha256 = "8b95b4ab5dc2764485145fca02fbd2fa013249a5102c1dd5bd0fdfe626801da8";
+      };
+      default = "r5";
     };
   };
 }

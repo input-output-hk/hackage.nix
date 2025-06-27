@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.4.1.1" = {
+    sha256 = "04f392f99ab1ac5f13321e55ab2242a10c1c3676853ea9b2f7e3ddb3b7aff1e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghcitui-0.4.1.1-r0-1fd2a29f232f32deb02ad50eada9aef3fa237894f05d2d8b69cf600bc03ffde2.nix;
+        revNum = 0;
+        sha256 = "1fd2a29f232f32deb02ad50eada9aef3fa237894f05d2d8b69cf600bc03ffde2";
+      };
+      default = "r0";
+    };
+  };
 }

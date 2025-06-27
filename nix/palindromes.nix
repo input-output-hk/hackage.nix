@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "9fb9d5b0f2b50c87b3749e5831962d81fccf3dc9397b986c5bbc87e0c402d8b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/palindromes-1.1.0.0-r0-5b3a4bc8963c47ced8d400ebeb85743f9847c1c1c525c79d669132e50d0b1984.nix;
+        revNum = 0;
+        sha256 = "5b3a4bc8963c47ced8d400ebeb85743f9847c1c1c525c79d669132e50d0b1984";
+      };
+      default = "r0";
+    };
+  };
 }
