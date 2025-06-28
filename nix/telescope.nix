@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.4.0" = {
+    sha256 = "27e54b9f5d674ee42e94d22ec2c9af1cb8a6896667c4728b6b6672fa19d2748d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/telescope-0.4.0-r0-252b106adfaaef1a28ad0522bca8cc52326a119d45aa7df4d5d0b4af9f09ee1e.nix;
+        revNum = 0;
+        sha256 = "252b106adfaaef1a28ad0522bca8cc52326a119d45aa7df4d5d0b4af9f09ee1e";
+      };
+      default = "r0";
+    };
+  };
 }
