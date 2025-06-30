@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.2.2" = {
+    sha256 = "daa80dded6fae98a41ac7194116dc93c8a6d14456adbed0bafb309aef9e7ea73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/double-x-encoding-1.2.2-r0-a4aa9a03e3bfd593ff1216482ee7a9b9245581bc2a9b28a0dd086defc0c507c2.nix;
+        revNum = 0;
+        sha256 = "a4aa9a03e3bfd593ff1216482ee7a9b9245581bc2a9b28a0dd086defc0c507c2";
+      };
+      default = "r0";
+    };
+  };
 }
