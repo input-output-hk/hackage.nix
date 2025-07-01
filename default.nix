@@ -12161,6 +12161,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "overloaded-records" = import ./nix/overloaded-records.nix;
   "overture" = import ./nix/overture.nix;
   "owoify-hs" = import ./nix/owoify-hs.nix;
+  "ox-arrays" = import ./nix/ox-arrays.nix;
   "pa-error-tree" = import ./nix/pa-error-tree.nix;
   "pa-field-parser" = import ./nix/pa-field-parser.nix;
   "pa-json" = import ./nix/pa-json.nix;
@@ -15490,6 +15491,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "statistics-linreg" = import ./nix/statistics-linreg.nix;
   "statistics-skinny" = import ./nix/statistics-skinny.nix;
   "stats" = import ./nix/stats.nix;
+  "stats-monad" = import ./nix/stats-monad.nix;
   "statsd" = import ./nix/statsd.nix;
   "statsd-client" = import ./nix/statsd-client.nix;
   "statsd-datadog" = import ./nix/statsd-datadog.nix;

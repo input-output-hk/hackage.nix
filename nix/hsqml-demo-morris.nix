@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "a265eaab588cbb4ef47a20c346d9bd2654da39bb460b2f4205bf2e920ea5802d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsqml-demo-morris-0.3.2.0-r0-478b15330e2ff64a7841d055bf1c230f2afb188f871447066f2fcd534b783b96.nix;
+        revNum = 0;
+        sha256 = "478b15330e2ff64a7841d055bf1c230f2afb188f871447066f2fcd534b783b96";
+      };
+      default = "r0";
+    };
+  };
 }

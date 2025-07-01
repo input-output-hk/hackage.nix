@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.4.0" = {
+    sha256 = "7878f410cda97836007052df56b81e113ce431daf3fec74f9b2d95ed39d825cc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsqml-demo-notes-0.3.4.0-r0-a8ae05f12c6749f7b41cba2092fab5a6377442b1b66bc10e6ded1e3568d1a004.nix;
+        revNum = 0;
+        sha256 = "a8ae05f12c6749f7b41cba2092fab5a6377442b1b66bc10e6ded1e3568d1a004";
+      };
+      default = "r0";
+    };
+  };
 }

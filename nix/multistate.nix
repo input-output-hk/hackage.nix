@@ -218,7 +218,12 @@
         revNum = 1;
         sha256 = "38b2202d4474f3348e09fe31d9d2cdf1b40aba7c4e28f7270e5cc7b0bdd83c54";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/multistate-0.8.0.4-r2-76e4fe45e9c1ab1c3676a29d89a85f32fff35310bc6ad490e68b74a27d56bdbd.nix;
+        revNum = 2;
+        sha256 = "76e4fe45e9c1ab1c3676a29d89a85f32fff35310bc6ad490e68b74a27d56bdbd";
+      };
+      default = "r2";
     };
   };
 }
