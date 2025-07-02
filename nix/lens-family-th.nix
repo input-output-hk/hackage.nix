@@ -193,4 +193,15 @@
       default = "r1";
     };
   };
+  "0.5.3.2" = {
+    sha256 = "308f0ec402ebf93e65b225b0ac782c3ef73924f948a95e7969dd3e2a95cd7fd2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lens-family-th-0.5.3.2-r0-7aef4df51d7a295cbae5a5d936ee9cb469535d18154d2d0dca67a19602e3334d.nix;
+        revNum = 0;
+        sha256 = "7aef4df51d7a295cbae5a5d936ee9cb469535d18154d2d0dca67a19602e3334d";
+      };
+      default = "r0";
+    };
+  };
 }

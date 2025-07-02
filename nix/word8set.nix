@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "c98aa2102fc19723c70ba59c537b181b3f01591019ca1478e06392bf3549fc68";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/word8set-0.1.2-r1-920215c3de8ee8b98de29b220e14ef9f909c2922ae780368deb5bc38910b7cf0.nix;
+        revNum = 1;
+        sha256 = "920215c3de8ee8b98de29b220e14ef9f909c2922ae780368deb5bc38910b7cf0";
+      };
+      default = "r1";
     };
   };
 }

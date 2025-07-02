@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.3.6.1" = {
+    sha256 = "d5cefd4d2c1d346e0dce77b938125593d989ad91365913345132353507eb7673";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsqml-0.3.6.1-r0-3dd17a4cdead9032f44f6d71a597029dcd1b165d1e13b66c9e7c053f3cc1c59e.nix;
+        revNum = 0;
+        sha256 = "3dd17a4cdead9032f44f6d71a597029dcd1b165d1e13b66c9e7c053f3cc1c59e";
+      };
+      default = "r0";
+    };
+  };
 }

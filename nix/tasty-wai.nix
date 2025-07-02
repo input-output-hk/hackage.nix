@@ -86,7 +86,12 @@
         revNum = 2;
         sha256 = "06cc057d500aed373fb945e8b263363518ffefab5eface3524c1ccccad541390";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tasty-wai-0.1.2.0-r3-241a4afbfffb440c89c3c96f25494ce72f0065d3d7f19e1365216ae58985bb4b.nix;
+        revNum = 3;
+        sha256 = "241a4afbfffb440c89c3c96f25494ce72f0065d3d7f19e1365216ae58985bb4b";
+      };
+      default = "r3";
     };
   };
 }

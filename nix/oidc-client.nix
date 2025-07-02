@@ -150,7 +150,12 @@
         revNum = 0;
         sha256 = "b07cb83e836e037014f37da4641687905e9a9f04817692ef64f0e3a00456e5b4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/oidc-client-0.8.0.0-r1-ad04bcb9680c81ca364ed097929265fe79a036b5a2dd556f6ff344146da34afd.nix;
+        revNum = 1;
+        sha256 = "ad04bcb9680c81ca364ed097929265fe79a036b5a2dd556f6ff344146da34afd";
+      };
+      default = "r1";
     };
   };
 }

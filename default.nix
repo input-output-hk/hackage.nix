@@ -216,6 +216,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Configurable" = import ./nix/_Configurable.nix;
   "ConsStream" = import ./nix/_Cons_Stream.nix;
   "Conscript" = import ./nix/_Conscript.nix;
+  "ConsoleAsk" = import ./nix/_Console_Ask.nix;
   "ConstraintKinds" = import ./nix/_Constraint_Kinds.nix;
   "Consumer" = import ./nix/_Consumer.nix;
   "ContArrow" = import ./nix/_Cont_Arrow.nix;
@@ -6711,6 +6712,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gitea-api" = import ./nix/gitea-api.nix;
   "githash" = import ./nix/githash.nix;
   "github" = import ./nix/github.nix;
+  "github-actions" = import ./nix/github-actions.nix;
   "github-app-token" = import ./nix/github-app-token.nix;
   "github-backup" = import ./nix/github-backup.nix;
   "github-data" = import ./nix/github-data.nix;
@@ -17146,6 +17148,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unusable-pkg" = import ./nix/unusable-pkg.nix;
   "unused" = import ./nix/unused.nix;
   "unwrapped-functors" = import ./nix/unwrapped-functors.nix;
+  "unzip-traversable" = import ./nix/unzip-traversable.nix;
   "uom-plugin" = import ./nix/uom-plugin.nix;
   "up" = import ./nix/up.nix;
   "up-grade" = import ./nix/up-grade.nix;

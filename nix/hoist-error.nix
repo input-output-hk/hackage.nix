@@ -128,6 +128,22 @@
         revNum = 0;
         sha256 = "612d3451a4995fc88dbc8fad01633a60fbe089156cfa111f1a7aaba8f50307ae";
       };
+      r1 = {
+        nix = import ../hackage/hoist-error-0.3.0.0-r1-1ca1d98a231c2898c7c6375180288fdc2efe2e5e4ef907f0172f9f933e6af146.nix;
+        revNum = 1;
+        sha256 = "1ca1d98a231c2898c7c6375180288fdc2efe2e5e4ef907f0172f9f933e6af146";
+      };
+      default = "r1";
+    };
+  };
+  "0.3.1.0" = {
+    sha256 = "0513ee4041d9ccb3cca45fab2556a8e3f4a5c6003b0ec0ac695267697e37188a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hoist-error-0.3.1.0-r0-b0cf9a36e0b2827673523b18c765e22cf5b664203ed370bbd008812292ceb3e1.nix;
+        revNum = 0;
+        sha256 = "b0cf9a36e0b2827673523b18c765e22cf5b664203ed370bbd008812292ceb3e1";
+      };
       default = "r0";
     };
   };
