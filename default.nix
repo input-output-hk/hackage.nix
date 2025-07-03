@@ -7983,6 +7983,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "here" = import ./nix/here.nix;
   "heredoc" = import ./nix/heredoc.nix;
   "heredocs" = import ./nix/heredocs.nix;
+  "heredocs-r2" = import ./nix/heredocs-r2.nix;
   "herf-time" = import ./nix/herf-time.nix;
   "hermes" = import ./nix/hermes.nix;
   "hermes-json" = import ./nix/hermes-json.nix;

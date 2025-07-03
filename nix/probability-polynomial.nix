@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "884dd0cb30f826ce7067f2d612e3ceb0d63a369c0b972b3f0ccf8f89fe825b81";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/probability-polynomial-1.0.0.1-r2-d5ddeeca9d66befbffbd6b77b211acae2f644f5e588709920de87f6a3eb9360d.nix;
+        revNum = 2;
+        sha256 = "d5ddeeca9d66befbffbd6b77b211acae2f644f5e588709920de87f6a3eb9360d";
+      };
+      default = "r2";
     };
   };
 }

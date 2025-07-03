@@ -224,6 +224,28 @@
       default = "r0";
     };
   };
+  "0.16.6" = {
+    sha256 = "3ae5dd9b1a61c37f36082a7d5a19b63c7fd882d6de36d88e26ab1bab5b9d2a84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fortran-src-0.16.6-r0-fe23738644109607d3448f97dbf0b292ebdc0bb72486df7a0c806606a60a7c5f.nix;
+        revNum = 0;
+        sha256 = "fe23738644109607d3448f97dbf0b292ebdc0bb72486df7a0c806606a60a7c5f";
+      };
+      default = "r0";
+    };
+  };
+  "0.16.7" = {
+    sha256 = "9b15e9aa90ea86635d367a3d8bfec0dd820f9b314c8eb52d197a2a31c432a489";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fortran-src-0.16.7-r0-d3893620f67782b020523884bd5444ec9f2e11566f4dccc363a9b9a848f93716.nix;
+        revNum = 0;
+        sha256 = "d3893620f67782b020523884bd5444ec9f2e11566f4dccc363a9b9a848f93716";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "8cdb2d3999d3f96d92bf5dd5c4e73b3beda351798f2b5705add5aa9551c9bf56";
     revisions = {

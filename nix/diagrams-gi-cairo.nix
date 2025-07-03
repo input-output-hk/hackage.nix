@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.5" = {
+    sha256 = "3a443f1d765118018b270b355801ff20a6a11b5fd4445dce04621ca7aa2879f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-gi-cairo-1.5-r0-5c36124c42e97760a0e26706e93f16f5c140fd3e645c4bcb9a9d53e76d151d91.nix;
+        revNum = 0;
+        sha256 = "5c36124c42e97760a0e26706e93f16f5c140fd3e645c4bcb9a9d53e76d151d91";
+      };
+      default = "r0";
+    };
+  };
 }

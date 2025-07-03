@@ -509,7 +509,12 @@
         revNum = 0;
         sha256 = "1f5f3cf31be1a052ab2d7caebc5185888adeca0c6606c6bc7e45223d09cca9f0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unix-2.8.7.0-r1-2d298da0c11ad7759993a801221d89630188f60190fd51d1ce1262a970c27ed7.nix;
+        revNum = 1;
+        sha256 = "2d298da0c11ad7759993a801221d89630188f60190fd51d1ce1262a970c27ed7";
+      };
+      default = "r1";
     };
   };
 }
