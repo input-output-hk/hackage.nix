@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "68bf6682474affc303c00899eaff12690d22e9c244255da74e3ea118b371b75c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unzip-traversable-0.1.1-r0-ee6752996cbb4d4c3870fbf15b200f220523b7be1747c4a897a958475ca9e592.nix;
+        revNum = 0;
+        sha256 = "ee6752996cbb4d4c3870fbf15b200f220523b7be1747c4a897a958475ca9e592";
+      };
+      default = "r0";
+    };
+  };
 }
