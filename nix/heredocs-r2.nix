@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "7db9584e95e97818074574c977de92ceec0043498ce7074d931112bbe87afab7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heredocs-r2-0.1.0.2-r0-ddec3be0947699b32c8530de288bb48f2ccf9308337dfe0b96070436fba8442c.nix;
+        revNum = 0;
+        sha256 = "ddec3be0947699b32c8530de288bb48f2ccf9308337dfe0b96070436fba8442c";
+      };
+      default = "r0";
+    };
+  };
 }

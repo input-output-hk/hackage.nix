@@ -6566,6 +6566,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghci-ng" = import ./nix/ghci-ng.nix;
   "ghci-pretty" = import ./nix/ghci-pretty.nix;
   "ghci-websockets" = import ./nix/ghci-websockets.nix;
+  "ghci4luatex" = import ./nix/ghci4luatex.nix;
   "ghcid" = import ./nix/ghcid.nix;
   "ghcide" = import ./nix/ghcide.nix;
   "ghcide-bench" = import ./nix/ghcide-bench.nix;
@@ -12461,6 +12462,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "peakachu" = import ./nix/peakachu.nix;
   "peano" = import ./nix/peano.nix;
   "peano-inf" = import ./nix/peano-inf.nix;
+  "pear" = import ./nix/pear.nix;
   "pec" = import ./nix/pec.nix;
   "pecoff" = import ./nix/pecoff.nix;
   "pedersen-commitment" = import ./nix/pedersen-commitment.nix;
@@ -13252,6 +13254,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prometheus-effect" = import ./nix/prometheus-effect.nix;
   "prometheus-metrics-ghc" = import ./nix/prometheus-metrics-ghc.nix;
   "prometheus-proc" = import ./nix/prometheus-proc.nix;
+  "prometheus-wai" = import ./nix/prometheus-wai.nix;
   "prometheus-wai-middleware" = import ./nix/prometheus-wai-middleware.nix;
   "promise" = import ./nix/promise.nix;
   "promises" = import ./nix/promises.nix;
