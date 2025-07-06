@@ -564,6 +564,17 @@
       default = "r0";
     };
   };
+  "0.26.16" = {
+    sha256 = "b8e05e0984494bccfbfd97e139d345616be19761e907266d52658babb497b76c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-gi-0.26.16-r0-c6c7852ed799a8f5e5f2754fad5d4153dc378daf8c318486bf245fd175023328.nix;
+        revNum = 0;
+        sha256 = "c6c7852ed799a8f5e5f2754fad5d4153dc378daf8c318486bf245fd175023328";
+      };
+      default = "r0";
+    };
+  };
   "0.26.2" = {
     sha256 = "5ce4170782b59c77dff552be7fa980edfb92a0a45fc973cf4bc616b03e232817";
     revisions = {

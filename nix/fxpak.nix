@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.3" = {
+    sha256 = "a93135f3b415ad1fa94e6ce956a84f2fe51e30a10477d91a97a97f053f47c8ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fxpak-0.1.3-r0-d79af6db1346e5d3dddaa34aa615dc26845f5452723c64fb686c14de8babcb7d.nix;
+        revNum = 0;
+        sha256 = "d79af6db1346e5d3dddaa34aa615dc26845f5452723c64fb686c14de8babcb7d";
+      };
+      default = "r0";
+    };
+  };
 }

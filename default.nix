@@ -6641,6 +6641,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-gtk-layer-shell" = import ./nix/gi-gtk-layer-shell.nix;
   "gi-gtk3" = import ./nix/gi-gtk3.nix;
   "gi-gtk4" = import ./nix/gi-gtk4.nix;
+  "gi-gtk4-layer-shell" = import ./nix/gi-gtk4-layer-shell.nix;
   "gi-gtkosxapplication" = import ./nix/gi-gtkosxapplication.nix;
   "gi-gtksheet" = import ./nix/gi-gtksheet.nix;
   "gi-gtksource" = import ./nix/gi-gtksource.nix;
