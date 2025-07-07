@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.3.0" = {
+    sha256 = "fdf66bedc43691757315ebbd9bcdad31294fc1e3e00e6d62def7dce47af39153";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-watch-0.0.3.0-r0-53a875500674035172412826e573d2a7bac475d801deb3cfc5c9e2fb0b9192ab.nix;
+        revNum = 0;
+        sha256 = "53a875500674035172412826e573d2a7bac475d801deb3cfc5c9e2fb0b9192ab";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "1f4d91430ddd381fa0c3f708f0323ff6bad05a130b3e0110e2376e42c9a31344";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hquantlib-time-0.1.2-r0-bd299f51c03b0ed09aa13e55de5899054b1750bec5a58f7899989eeed9214963.nix;
+        revNum = 0;
+        sha256 = "bd299f51c03b0ed09aa13e55de5899054b1750bec5a58f7899989eeed9214963";
+      };
+      default = "r0";
+    };
+  };
 }

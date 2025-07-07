@@ -12798,6 +12798,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
   "pms-infra-procspawn" = import ./nix/pms-infra-procspawn.nix;
+  "pms-infra-socket" = import ./nix/pms-infra-socket.nix;
   "pms-infra-watch" = import ./nix/pms-infra-watch.nix;
   "pms-infrastructure" = import ./nix/pms-infrastructure.nix;
   "pms-ui-notification" = import ./nix/pms-ui-notification.nix;

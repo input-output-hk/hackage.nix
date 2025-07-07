@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.0.4.0" = {
+    sha256 = "55191fa7a3f641c5cd15519e406c17395f1003d17e9e623eec6067097c13e4f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-ui-request-0.0.4.0-r0-e6503a919eedab286ba7b8b263b20fb19f9de6a64e17d297fa597cda5d5ad96a.nix;
+        revNum = 0;
+        sha256 = "e6503a919eedab286ba7b8b263b20fb19f9de6a64e17d297fa597cda5d5ad96a";
+      };
+      default = "r0";
+    };
+  };
 }
