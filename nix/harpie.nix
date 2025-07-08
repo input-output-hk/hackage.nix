@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.3.0" = {
+    sha256 = "79c7b2f7382f584bf71df81a7dc1d7bbec16a3bb9742746101673e9685b9f3a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/harpie-0.1.3.0-r0-f6ea141faa9d490b084c743c8e442b2a60ab611a90bcf7dea6f9b22b71f60248.nix;
+        revNum = 0;
+        sha256 = "f6ea141faa9d490b084c743c8e442b2a60ab611a90bcf7dea6f9b22b71f60248";
+      };
+      default = "r0";
+    };
+  };
 }

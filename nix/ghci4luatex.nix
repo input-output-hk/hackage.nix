@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1" = {
+    sha256 = "a813d96b1c37c5caff5f41cbd17d718065e3982652f5a5f5f69652c53a6f73f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghci4luatex-0.1-r0-a73d29cb469cc0f685d6bff37416896670478874ef24a89d04f22dfd4931736c.nix;
+        revNum = 0;
+        sha256 = "a73d29cb469cc0f685d6bff37416896670478874ef24a89d04f22dfd4931736c";
+      };
+      default = "r0";
+    };
+  };
 }

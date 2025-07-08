@@ -4111,6 +4111,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "convertible" = import ./nix/convertible.nix;
   "convertible-ascii" = import ./nix/convertible-ascii.nix;
   "convertible-text" = import ./nix/convertible-text.nix;
+  "convex-schema-parser" = import ./nix/convex-schema-parser.nix;
   "convexHullNd" = import ./nix/convex_Hull_Nd.nix;
   "cookbook" = import ./nix/cookbook.nix;
   "cookie" = import ./nix/cookie.nix;
@@ -15237,6 +15238,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sockets-and-pipes" = import ./nix/sockets-and-pipes.nix;
   "socketson" = import ./nix/socketson.nix;
   "socks" = import ./nix/socks.nix;
+  "socks5" = import ./nix/socks5.nix;
   "sodium" = import ./nix/sodium.nix;
   "soegtk" = import ./nix/soegtk.nix;
   "softfloat-hs" = import ./nix/softfloat-hs.nix;
@@ -17873,6 +17875,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xbattbar" = import ./nix/xbattbar.nix;
   "xcb-types" = import ./nix/xcb-types.nix;
   "xcffib" = import ./nix/xcffib.nix;
+  "xcframework" = import ./nix/xcframework.nix;
   "xchat-plugin" = import ./nix/xchat-plugin.nix;
   "xcp" = import ./nix/xcp.nix;
   "xdcc" = import ./nix/xdcc.nix;
