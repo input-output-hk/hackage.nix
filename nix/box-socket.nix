@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.5.2.1" = {
+    sha256 = "e544500e3e2e4fc009e32b4cb9488fc9e676bb44dbb68c8c20e823a44fe0553c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/box-socket-0.5.2.1-r0-a0056c7e69f06a417a01510cf873121ce806c306ea69cf91fc589a990619834e.nix;
+        revNum = 0;
+        sha256 = "a0056c7e69f06a417a01510cf873121ce806c306ea69cf91fc589a990619834e";
+      };
+      default = "r0";
+    };
+  };
 }

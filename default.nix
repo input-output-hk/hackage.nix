@@ -4132,6 +4132,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "copilot-sbv" = import ./nix/copilot-sbv.nix;
   "copilot-theorem" = import ./nix/copilot-theorem.nix;
   "copilot-verifier" = import ./nix/copilot-verifier.nix;
+  "copilot-visualizer" = import ./nix/copilot-visualizer.nix;
   "copr" = import ./nix/copr.nix;
   "copr-api" = import ./nix/copr-api.nix;
   "coquina" = import ./nix/coquina.nix;
@@ -8935,6 +8936,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "huff" = import ./nix/huff.nix;
   "huffman" = import ./nix/huffman.nix;
   "hugs2yc" = import ./nix/hugs2yc.nix;
+  "huihua" = import ./nix/huihua.nix;
   "hulk" = import ./nix/hulk.nix;
   "hum" = import ./nix/hum.nix;
   "human-parse" = import ./nix/human-parse.nix;
