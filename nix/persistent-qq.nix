@@ -81,6 +81,17 @@
       default = "r0";
     };
   };
+  "2.12.0.7" = {
+    sha256 = "c4cda9d44feb4746cd62f4478dd4f9b99f43e7c23f5ee609935658fc02838beb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-qq-2.12.0.7-r0-1a1fff7feaff25264e0ff946eec339c7c2c3ed81e867d58443c815180c72e017.nix;
+        revNum = 0;
+        sha256 = "1a1fff7feaff25264e0ff946eec339c7c2c3ed81e867d58443c815180c72e017";
+      };
+      default = "r0";
+    };
+  };
   "2.9.0" = {
     sha256 = "006ef9f8b161aa0d75c145fdff21ce1ce15d04c669410c1219c9bbaa68d5bb09";
     revisions = {

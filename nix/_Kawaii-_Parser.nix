@@ -43,4 +43,25 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "49594877c56085a0869e1e7bf9c8259a259f5c4d1d3b1a4934a45d8f7d26f227";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Kawaii-Parser-3.0.0-r0-ba471ad95eb940a3a0d58f2b24ddb50e9c6b62d96445102b457c49c6df4cb3f4.nix;
+        revNum = 0;
+        sha256 = "ba471ad95eb940a3a0d58f2b24ddb50e9c6b62d96445102b457c49c6df4cb3f4";
+      };
+      r1 = {
+        nix = import ../hackage/Kawaii-Parser-3.0.0-r1-7b328a18e1ce72a471bae14dbfcda1d49660b80980819b3b751e93d4c8656ac9.nix;
+        revNum = 1;
+        sha256 = "7b328a18e1ce72a471bae14dbfcda1d49660b80980819b3b751e93d4c8656ac9";
+      };
+      r2 = {
+        nix = import ../hackage/Kawaii-Parser-3.0.0-r2-7cd653a577d583f0d93656e6e6639f534666044682ea692ae09f47357bacc354.nix;
+        revNum = 2;
+        sha256 = "7cd653a577d583f0d93656e6e6639f534666044682ea692ae09f47357bacc354";
+      };
+      default = "r2";
+    };
+  };
 }

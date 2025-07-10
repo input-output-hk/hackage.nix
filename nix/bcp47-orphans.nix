@@ -81,4 +81,26 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "3b896c36502f0696e838c7b784dfaadc50a2469e851831893e319249d1335e21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bcp47-orphans-0.1.2.0-r0-3acc9adb12f3538ecd8b0d5844db61dca4ea5639b59034d99d44ac33dc135cbc.nix;
+        revNum = 0;
+        sha256 = "3acc9adb12f3538ecd8b0d5844db61dca4ea5639b59034d99d44ac33dc135cbc";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.3.0" = {
+    sha256 = "c2b7fa6a3ac08d18fa7f877ddd84ce53ddd152afc4b321a74b2bce131fe5302c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bcp47-orphans-0.1.3.0-r0-dc1f3878702a4b2fa57786730d0308dcd9b28a6053397f4c59b844d1fcbbd6af.nix;
+        revNum = 0;
+        sha256 = "dc1f3878702a4b2fa57786730d0308dcd9b28a6053397f4c59b844d1fcbbd6af";
+      };
+      default = "r0";
+    };
+  };
 }
