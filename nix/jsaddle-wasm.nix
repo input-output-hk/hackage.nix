@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "fb8cdd295cdbd709c18c2c9ba68136ce56fceeaab0f1208c6672b7dc4ae407a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsaddle-wasm-0.1.2.1-r0-44ca427f5dfa469784e9f9963e13855afc826a07f73b9cdf7cf6fa8e3d49ab10.nix;
+        revNum = 0;
+        sha256 = "44ca427f5dfa469784e9f9963e13855afc826a07f73b9cdf7cf6fa8e3d49ab10";
+      };
+      default = "r0";
+    };
+  };
 }

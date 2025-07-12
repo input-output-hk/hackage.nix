@@ -607,6 +607,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "HaskellTutorials" = import ./nix/_Haskell_Tutorials.nix;
   "Haskelloids" = import ./nix/_Haskelloids.nix;
   "Hastodon" = import ./nix/_Hastodon.nix;
+  "Hastructure" = import ./nix/_Hastructure.nix;
   "Hate" = import ./nix/_Hate.nix;
   "Hawk" = import ./nix/_Hawk.nix;
   "Hayoo" = import ./nix/_Hayoo.nix;
@@ -4294,6 +4295,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "crypton-box" = import ./nix/crypton-box.nix;
   "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
+  "crypton-socks" = import ./nix/crypton-socks.nix;
   "crypton-x509" = import ./nix/crypton-x509.nix;
   "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
   "crypton-x509-system" = import ./nix/crypton-x509-system.nix;
@@ -5902,6 +5904,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fixed-storable-array" = import ./nix/fixed-storable-array.nix;
   "fixed-timestep" = import ./nix/fixed-timestep.nix;
   "fixed-vector" = import ./nix/fixed-vector.nix;
+  "fixed-vector-QC" = import ./nix/fixed-vector-_Q_C.nix;
+  "fixed-vector-aeson" = import ./nix/fixed-vector-aeson.nix;
   "fixed-vector-binary" = import ./nix/fixed-vector-binary.nix;
   "fixed-vector-cborg" = import ./nix/fixed-vector-cborg.nix;
   "fixed-vector-cereal" = import ./nix/fixed-vector-cereal.nix;
@@ -12999,6 +13003,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-simple" = import ./nix/postgresql-simple.nix;
   "postgresql-simple-bind" = import ./nix/postgresql-simple-bind.nix;
   "postgresql-simple-interpolate" = import ./nix/postgresql-simple-interpolate.nix;
+  "postgresql-simple-interval" = import ./nix/postgresql-simple-interval.nix;
   "postgresql-simple-ltree" = import ./nix/postgresql-simple-ltree.nix;
   "postgresql-simple-migration" = import ./nix/postgresql-simple-migration.nix;
   "postgresql-simple-named" = import ./nix/postgresql-simple-named.nix;
@@ -15392,6 +15397,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "squares" = import ./nix/squares.nix;
   "squeal-postgresql" = import ./nix/squeal-postgresql.nix;
   "squeal-postgresql-ltree" = import ./nix/squeal-postgresql-ltree.nix;
+  "squeal-postgresql-qq" = import ./nix/squeal-postgresql-qq.nix;
   "squeal-postgresql-uuid-ossp" = import ./nix/squeal-postgresql-uuid-ossp.nix;
   "squeather" = import ./nix/squeather.nix;
   "squeeze" = import ./nix/squeeze.nix;

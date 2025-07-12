@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "bf8195b22c4090f4c1806d37bda58026a36832200caca656e3c888804bc9805b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghci4luatex-0.1.1-r0-135ebb4ddbb52a2ab8c2091f051fc76782246f4524c0e78338033e0d3f7ce7a5.nix;
+        revNum = 0;
+        sha256 = "135ebb4ddbb52a2ab8c2091f051fc76782246f4524c0e78338033e0d3f7ce7a5";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.2" = {
+    sha256 = "52f8ff83431503be524141c59cb54172f543724708f4cf5ac4c316234592608a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghci4luatex-0.1.2-r0-5dd3547b2450a6b755096fc597de5965a6195e5c63728e9ddbcc75cd049d8df1.nix;
+        revNum = 0;
+        sha256 = "5dd3547b2450a6b755096fc597de5965a6195e5c63728e9ddbcc75cd049d8df1";
+      };
+      default = "r0";
+    };
+  };
 }

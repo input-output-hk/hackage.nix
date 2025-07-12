@@ -100,7 +100,12 @@
         revNum = 1;
         sha256 = "f6a30d76e7260757a199deaab85348ba189d4703c4a0e56521cef39c03a13cfd";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/curve25519-0.2.8-r2-1c710f36b64223b7795bd0426269a0c5c37295639da3f0b113e5053710e2cd9b.nix;
+        revNum = 2;
+        sha256 = "1c710f36b64223b7795bd0426269a0c5c37295639da3f0b113e5053710e2cd9b";
+      };
+      default = "r2";
     };
   };
 }

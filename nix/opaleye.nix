@@ -155,6 +155,17 @@
       default = "r0";
     };
   };
+  "0.10.6.0" = {
+    sha256 = "d0d07c6f6358946720911409cb25726179ee7deb07ab8c46f7f0f31c80ee460e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/opaleye-0.10.6.0-r0-c3745ebba947404379cbc8a07cf90f237f6ec604f0dee0d17a84a51738707e2b.nix;
+        revNum = 0;
+        sha256 = "c3745ebba947404379cbc8a07cf90f237f6ec604f0dee0d17a84a51738707e2b";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "87082b4175eae2fe8c7cef21c601ac67f4f76899160129ba3e963389b27e1423";
     revisions = {

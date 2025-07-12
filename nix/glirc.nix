@@ -725,7 +725,12 @@
         revNum = 0;
         sha256 = "452723fc9b6f17725382c2060ceb733e0c44b31fbb530675c955af0206a16907";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/glirc-2.41-r1-fb3036aa74418a2dc333d861727f652a683e98bfaf80559bf50e97f1d492dcc6.nix;
+        revNum = 1;
+        sha256 = "fb3036aa74418a2dc333d861727f652a683e98bfaf80559bf50e97f1d492dcc6";
+      };
+      default = "r1";
     };
   };
   "2.5" = {

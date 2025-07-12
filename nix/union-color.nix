@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "c47a923bd8657a5b1e50feecc9badb876df405cf33f4f9013a329065f7b6d606";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/union-color-0.1.4.0-r0-fff0a64a791bed0c4df60eb17828b6521e8c3ab25573924b3a89d6d078792067.nix;
+        revNum = 0;
+        sha256 = "fff0a64a791bed0c4df60eb17828b6521e8c3ab25573924b3a89d6d078792067";
+      };
+      default = "r0";
+    };
+  };
 }

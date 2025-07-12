@@ -148,7 +148,12 @@
         revNum = 3;
         sha256 = "9f16f6f3bb97500627cbe689b0675b742028e6de04d68b1160d96e2900da6ef8";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/patch-image-0.3.3.2-r4-b36c1c65ccf30e5e2829f36bed62a90deeaf53c82dbff5699d3b9d7654a62452.nix;
+        revNum = 4;
+        sha256 = "b36c1c65ccf30e5e2829f36bed62a90deeaf53c82dbff5699d3b9d7654a62452";
+      };
+      default = "r4";
     };
   };
 }

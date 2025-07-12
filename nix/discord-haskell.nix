@@ -187,7 +187,12 @@
         revNum = 0;
         sha256 = "84a8efffdd12a5ab08540ed06628c30a344a39579735b813f1418d25f8414d95";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.10.0-r1-3959c8d43c1860b58638c5471c59061e13b4322f8ec98f4ca0df76d54e0498c2.nix;
+        revNum = 1;
+        sha256 = "3959c8d43c1860b58638c5471c59061e13b4322f8ec98f4ca0df76d54e0498c2";
+      };
+      default = "r1";
     };
   };
   "1.11.0" = {
@@ -198,7 +203,12 @@
         revNum = 0;
         sha256 = "3f58689582a69c8797dccf3f0ce9860b2ab5c5010a6603f87cb85c68a223339a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.11.0-r1-3ab38bfd2f476348d7dede598cdb799bb1a4cf825b63a7f3ad46fbcc30faf05b.nix;
+        revNum = 1;
+        sha256 = "3ab38bfd2f476348d7dede598cdb799bb1a4cf825b63a7f3ad46fbcc30faf05b";
+      };
+      default = "r1";
     };
   };
   "1.12.0" = {
@@ -209,7 +219,12 @@
         revNum = 0;
         sha256 = "aa427494f6c1f646c9bba81b15330557b972cae4d32ff329262ce30d13b77e3e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.0-r1-753a168a427b5165628cdc0c6213196d41dc752b71a3c308b09de909bb1c68b7.nix;
+        revNum = 1;
+        sha256 = "753a168a427b5165628cdc0c6213196d41dc752b71a3c308b09de909bb1c68b7";
+      };
+      default = "r1";
     };
   };
   "1.12.1" = {
@@ -220,7 +235,12 @@
         revNum = 0;
         sha256 = "d58210538d1cfebba958099f599fe97176daeb9c46136d757483487086d761d2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.1-r1-56b804738aa046bd1fc146f33fc4846a25cf4b34ab846b5d6d422f730f0e4cd9.nix;
+        revNum = 1;
+        sha256 = "56b804738aa046bd1fc146f33fc4846a25cf4b34ab846b5d6d422f730f0e4cd9";
+      };
+      default = "r1";
     };
   };
   "1.12.2" = {
@@ -231,7 +251,12 @@
         revNum = 0;
         sha256 = "473aafb5639bf9847741186fc169ee5ca844dd64ae998a864574afbeb688f44e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.2-r1-641662a75e97468625a29f070527eba762eab47527d5bc5b6c07de2509e9149c.nix;
+        revNum = 1;
+        sha256 = "641662a75e97468625a29f070527eba762eab47527d5bc5b6c07de2509e9149c";
+      };
+      default = "r1";
     };
   };
   "1.12.3" = {
@@ -242,7 +267,12 @@
         revNum = 0;
         sha256 = "f85db2355305e415bca6b0f798fad15581214b80e00146d2a8acdf409c7f4e0a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.3-r1-a516dc8b8b863b0c88377cac1d4042f298124d4b4c0339ded94abc33d196ad38.nix;
+        revNum = 1;
+        sha256 = "a516dc8b8b863b0c88377cac1d4042f298124d4b4c0339ded94abc33d196ad38";
+      };
+      default = "r1";
     };
   };
   "1.12.4" = {
@@ -253,7 +283,12 @@
         revNum = 0;
         sha256 = "80ca52ccb6ceeb0dee3114037c16065ad2e1bf8223b80869566f60afeac5f6c3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.4-r1-764733e64b637ed9ed7b5c86f45a2b4ec73bcf9ee017c2376d48c0908dc77a72.nix;
+        revNum = 1;
+        sha256 = "764733e64b637ed9ed7b5c86f45a2b4ec73bcf9ee017c2376d48c0908dc77a72";
+      };
+      default = "r1";
     };
   };
   "1.12.5" = {
@@ -264,7 +299,12 @@
         revNum = 0;
         sha256 = "939a677754edc67316d4af1982cd4c359761148badd75cf4b733bf22260235bd";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.12.5-r1-4af51a57c66619afeeef73fc0f9637ee170f4802c865d46ecd9ed614fc4eded4.nix;
+        revNum = 1;
+        sha256 = "4af51a57c66619afeeef73fc0f9637ee170f4802c865d46ecd9ed614fc4eded4";
+      };
+      default = "r1";
     };
   };
   "1.13.0" = {
@@ -275,7 +315,12 @@
         revNum = 0;
         sha256 = "3b25487f1dc866dc598cbbc64affbb1f42302e1271bcb07a7c57de3179dc2fc2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.13.0-r1-8cc41f7c9ed97b587c2d24f09f9f5c7b4ec1ba9b7598fe3d75a92ba882887583.nix;
+        revNum = 1;
+        sha256 = "8cc41f7c9ed97b587c2d24f09f9f5c7b4ec1ba9b7598fe3d75a92ba882887583";
+      };
+      default = "r1";
     };
   };
   "1.14.0" = {
@@ -511,7 +556,12 @@
         revNum = 0;
         sha256 = "bcede12f4ac273e5f36e41c7ca80e901a723143030122c5ca87296819d011b63";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.6.1-r1-a49051c101bc8b7bd33d8ee437214fbdae64008c3790f87593b5f68c61d75c9b.nix;
+        revNum = 1;
+        sha256 = "a49051c101bc8b7bd33d8ee437214fbdae64008c3790f87593b5f68c61d75c9b";
+      };
+      default = "r1";
     };
   };
   "1.7.0" = {
@@ -522,7 +572,12 @@
         revNum = 0;
         sha256 = "27a4f66f47f8392449ce7e18ca8656d235c51237edf6f87329ca2508ae341843";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.7.0-r1-60c14ab2173d408571dad5e700f66153c40b52652c278b7b4f3420c8b45838ec.nix;
+        revNum = 1;
+        sha256 = "60c14ab2173d408571dad5e700f66153c40b52652c278b7b4f3420c8b45838ec";
+      };
+      default = "r1";
     };
   };
   "1.8.0" = {
@@ -533,7 +588,12 @@
         revNum = 0;
         sha256 = "420515069c5be313dd31d16e9a4b163d2b3fdda18ba18e98cbb0b0536cbae136";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.0-r1-e6c47ab1f734572a53d297937e32614b8b30642a3a280c31322cfc24ef664876.nix;
+        revNum = 1;
+        sha256 = "e6c47ab1f734572a53d297937e32614b8b30642a3a280c31322cfc24ef664876";
+      };
+      default = "r1";
     };
   };
   "1.8.1" = {
@@ -544,7 +604,12 @@
         revNum = 0;
         sha256 = "86d8777ce02ed404c81d02c7b9b0fd5f870e52c6e3a07d98ce3681a7873f7e0e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.1-r1-693c31faca663d8b939b7f74fa4366581092eea1f4c298f0671b153687813b9d.nix;
+        revNum = 1;
+        sha256 = "693c31faca663d8b939b7f74fa4366581092eea1f4c298f0671b153687813b9d";
+      };
+      default = "r1";
     };
   };
   "1.8.2" = {
@@ -555,7 +620,12 @@
         revNum = 0;
         sha256 = "33eb0341af81ed424ea703b1b29a570479484caf875dbcb8d788a5b7b0d2c65a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.2-r1-bc48d797f7701cefd0c24409e47716a071cddc2481644341609fc3d634fae16d.nix;
+        revNum = 1;
+        sha256 = "bc48d797f7701cefd0c24409e47716a071cddc2481644341609fc3d634fae16d";
+      };
+      default = "r1";
     };
   };
   "1.8.3" = {
@@ -566,7 +636,12 @@
         revNum = 0;
         sha256 = "5216830fc38f505ba91cd794ca4aeb650c89269267c3fad95a34dfe51ece3a69";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.3-r1-388109beea4142464d83a578e1c86525845555aaad5de1c048af3250e1d63b8b.nix;
+        revNum = 1;
+        sha256 = "388109beea4142464d83a578e1c86525845555aaad5de1c048af3250e1d63b8b";
+      };
+      default = "r1";
     };
   };
   "1.8.4" = {
@@ -577,7 +652,12 @@
         revNum = 0;
         sha256 = "8960a4f54a6e81ac35649b0ce187530a086cc2d90fba00b84c1442876c78d572";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.4-r1-01e5781f7d24efca913e818b98ad0f40b96515e306a716392680d6a7e21c279d.nix;
+        revNum = 1;
+        sha256 = "01e5781f7d24efca913e818b98ad0f40b96515e306a716392680d6a7e21c279d";
+      };
+      default = "r1";
     };
   };
   "1.8.5" = {
@@ -588,7 +668,12 @@
         revNum = 0;
         sha256 = "56265067a27de25c8f372b3ecf3c282d7c1927503ba59a5b0a9d01fd81e268a0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.5-r1-119603f36faeb457078f88ed9a64ee9dfde0929a58ba4175625bb49476386675.nix;
+        revNum = 1;
+        sha256 = "119603f36faeb457078f88ed9a64ee9dfde0929a58ba4175625bb49476386675";
+      };
+      default = "r1";
     };
   };
   "1.8.6" = {
@@ -599,7 +684,12 @@
         revNum = 0;
         sha256 = "59aa6be20aa7ee107251beb2b98a185c9b656af8afc8da8ba6737808b24f2b45";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.6-r1-c4ca8083f8d7f82b5e507c095d1d47e7228caeddf3f4abbc61f64276037a81dd.nix;
+        revNum = 1;
+        sha256 = "c4ca8083f8d7f82b5e507c095d1d47e7228caeddf3f4abbc61f64276037a81dd";
+      };
+      default = "r1";
     };
   };
   "1.8.7" = {
@@ -610,7 +700,12 @@
         revNum = 0;
         sha256 = "2c601338f96f27955a545050c68329778f2f06c6618237d49d65e91c8cbe4d66";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.7-r1-5e8aa02f8bfd91b46a643b494cb92e4bc00f0712a796f0698c51c16f173859e3.nix;
+        revNum = 1;
+        sha256 = "5e8aa02f8bfd91b46a643b494cb92e4bc00f0712a796f0698c51c16f173859e3";
+      };
+      default = "r1";
     };
   };
   "1.8.8" = {
@@ -621,7 +716,12 @@
         revNum = 0;
         sha256 = "647bf08777aebcc8d5eacdb729906b2b05f7832c3b767d87059ef13462ff8875";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.8-r1-fc85685963eaad6d1caf767bbf4802523baec2537738bd9c0251edc9e62d225f.nix;
+        revNum = 1;
+        sha256 = "fc85685963eaad6d1caf767bbf4802523baec2537738bd9c0251edc9e62d225f";
+      };
+      default = "r1";
     };
   };
   "1.8.9" = {
@@ -632,7 +732,12 @@
         revNum = 0;
         sha256 = "70db1ad4cc268378b695395181d2d60d1f6034de5c508f569b8a5fbcbb4cb7a3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.8.9-r1-1340b2570f7b18d043b713388febef51348adcc2be259ec2c7ad0c9144618332.nix;
+        revNum = 1;
+        sha256 = "1340b2570f7b18d043b713388febef51348adcc2be259ec2c7ad0c9144618332";
+      };
+      default = "r1";
     };
   };
   "1.9.0" = {
@@ -643,7 +748,12 @@
         revNum = 0;
         sha256 = "d1e7a8d4bad1318444f7a9bd54a232ebb388f68a14866a2efc4ebb15c25d6c83";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.9.0-r1-ff53898741ff15c36cc5858fc84178d403fc05ff932ada1150487397c952aa7b.nix;
+        revNum = 1;
+        sha256 = "ff53898741ff15c36cc5858fc84178d403fc05ff932ada1150487397c952aa7b";
+      };
+      default = "r1";
     };
   };
   "1.9.1" = {
@@ -654,7 +764,12 @@
         revNum = 0;
         sha256 = "8145dcae4db532e2aba049fbdafef08f742c80a15b5c5694f7e6ed3beb452549";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.9.1-r1-59c7741c8d0ea77c020df160d954c3cd9785a18e1dce580e0af7df5f033ff15d.nix;
+        revNum = 1;
+        sha256 = "59c7741c8d0ea77c020df160d954c3cd9785a18e1dce580e0af7df5f033ff15d";
+      };
+      default = "r1";
     };
   };
   "1.9.2" = {
@@ -665,7 +780,12 @@
         revNum = 0;
         sha256 = "49b8a4caca243a85ca357917604c9487dd1c7ebf4fbd721b22ae5b4541fe06e6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/discord-haskell-1.9.2-r1-d28dce908f5b09b64949bbf8415a26d71a1db9a216c66c4a20f8c3ad0a67372a.nix;
+        revNum = 1;
+        sha256 = "d28dce908f5b09b64949bbf8415a26d71a1db9a216c66c4a20f8c3ad0a67372a";
+      };
+      default = "r1";
     };
   };
 }

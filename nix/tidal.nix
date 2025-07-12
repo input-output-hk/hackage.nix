@@ -1895,6 +1895,17 @@
       default = "r2";
     };
   };
+  "1.10.1" = {
+    sha256 = "9838b0847167100c013366e51d7dce42ad640b1affe9b6b4aa8d26422da7735e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tidal-1.10.1-r0-78341c01002163364c4ff9e808c993d686405b0b43f16c0f5063a90389133e7a.nix;
+        revNum = 0;
+        sha256 = "78341c01002163364c4ff9e808c993d686405b0b43f16c0f5063a90389133e7a";
+      };
+      default = "r0";
+    };
+  };
   "1.2.0" = {
     sha256 = "51ecd2d7a441b34ccac972c537c679eceb5934670e4abc6f96a2878ac687b794";
     revisions = {

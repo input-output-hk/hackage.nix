@@ -58,4 +58,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "5d0adf1362cf7f13c64c3923bed46624634d58382bd78f7d4143fc294d304c5d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fixed-vector-cereal-2.0.0.0-r0-8ff766d13ac568ce1920e3437edc11de2d0feea5dea85e82eb76225f988e9cde.nix;
+        revNum = 0;
+        sha256 = "8ff766d13ac568ce1920e3437edc11de2d0feea5dea85e82eb76225f988e9cde";
+      };
+      default = "r0";
+    };
+  };
 }
