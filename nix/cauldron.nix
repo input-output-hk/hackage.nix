@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "0.9.0.0" = {
+    sha256 = "c592df63514ee87fa859b1be52693f68af83f4c63a3f021a9cca36c3fc23e2f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cauldron-0.9.0.0-r0-e2ae616984dde33b0e7dbd53dc6ae7463ea1bc4d43133433bf020a7d5ff99b9c.nix;
+        revNum = 0;
+        sha256 = "e2ae616984dde33b0e7dbd53dc6ae7463ea1bc4d43133433bf020a7d5ff99b9c";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.0.1" = {
+    sha256 = "c40b508fbb5030ba5fab29508c55e8e9ba9df8071073e95e50fbe2339aa89ef1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cauldron-0.9.0.1-r0-4f7e2d1d1c55ee4fea9120f1ace156546fd901764af863e70a9efc5aa06ef626.nix;
+        revNum = 0;
+        sha256 = "4f7e2d1d1c55ee4fea9120f1ace156546fd901764af863e70a9efc5aa06ef626";
+      };
+      default = "r0";
+    };
+  };
 }

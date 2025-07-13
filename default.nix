@@ -4295,6 +4295,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "crypton-box" = import ./nix/crypton-box.nix;
   "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
+  "crypton-pem" = import ./nix/crypton-pem.nix;
   "crypton-socks" = import ./nix/crypton-socks.nix;
   "crypton-x509" = import ./nix/crypton-x509.nix;
   "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
@@ -12805,6 +12806,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
   "pms-infra-procspawn" = import ./nix/pms-infra-procspawn.nix;
+  "pms-infra-serial" = import ./nix/pms-infra-serial.nix;
   "pms-infra-socket" = import ./nix/pms-infra-socket.nix;
   "pms-infra-watch" = import ./nix/pms-infra-watch.nix;
   "pms-infrastructure" = import ./nix/pms-infrastructure.nix;
@@ -18055,6 +18057,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaml2owl" = import ./nix/yaml2owl.nix;
   "yamlkeysdiff" = import ./nix/yamlkeysdiff.nix;
   "yamlparse-applicative" = import ./nix/yamlparse-applicative.nix;
+  "yamlscript" = import ./nix/yamlscript.nix;
   "yampa-canvas" = import ./nix/yampa-canvas.nix;
   "yampa-glfw" = import ./nix/yampa-glfw.nix;
   "yampa-gloss" = import ./nix/yampa-gloss.nix;

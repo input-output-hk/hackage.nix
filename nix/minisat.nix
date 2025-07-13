@@ -63,4 +63,15 @@
       default = "r1";
     };
   };
+  "0.1.4" = {
+    sha256 = "d851955f24577d11128c3936c9cd40a121ae2db82d29f7c4a574c331ce36c96c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/minisat-0.1.4-r0-c0aaecbec2383b3bfa836295dbd0e57e6d8cf405fb124ea594f71d303a97ba9e.nix;
+        revNum = 0;
+        sha256 = "c0aaecbec2383b3bfa836295dbd0e57e6d8cf405fb124ea594f71d303a97ba9e";
+      };
+      default = "r0";
+    };
+  };
 }

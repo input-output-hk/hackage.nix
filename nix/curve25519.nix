@@ -108,4 +108,15 @@
       default = "r2";
     };
   };
+  "0.2.8.1" = {
+    sha256 = "b2cd7b959e4fb222335ed28050467dc5e56cd146e76e9ffb5d9d9d439aea595c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/curve25519-0.2.8.1-r0-7b46479c562619886c65585d1f766d97318796be99c2cc7dd81ad7e7db7e7599.nix;
+        revNum = 0;
+        sha256 = "7b46479c562619886c65585d1f766d97318796be99c2cc7dd81ad7e7db7e7599";
+      };
+      default = "r0";
+    };
+  };
 }
