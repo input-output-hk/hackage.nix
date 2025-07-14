@@ -74,4 +74,15 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "5b590a65f34821a4c4b21a4686dc84b0df6ddd7de467c2e4a343adac46168d76";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hegg-0.6.0.0-r0-7bc8f34d095d7db65890506ffcc59c9b1bc28aa16cfba55b15544e6d5d4e4787.nix;
+        revNum = 0;
+        sha256 = "7bc8f34d095d7db65890506ffcc59c9b1bc28aa16cfba55b15544e6d5d4e4787";
+      };
+      default = "r0";
+    };
+  };
 }

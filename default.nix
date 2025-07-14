@@ -4292,6 +4292,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cryptoids-types" = import ./nix/cryptoids-types.nix;
   "cryptol" = import ./nix/cryptol.nix;
   "crypton" = import ./nix/crypton.nix;
+  "crypton-asn1-encoding" = import ./nix/crypton-asn1-encoding.nix;
+  "crypton-asn1-parse" = import ./nix/crypton-asn1-parse.nix;
+  "crypton-asn1-types" = import ./nix/crypton-asn1-types.nix;
   "crypton-box" = import ./nix/crypton-box.nix;
   "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
@@ -6711,6 +6714,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "git-mediate" = import ./nix/git-mediate.nix;
   "git-monitor" = import ./nix/git-monitor.nix;
   "git-object" = import ./nix/git-object.nix;
+  "git-phoenix" = import ./nix/git-phoenix.nix;
   "git-remote-ipfs" = import ./nix/git-remote-ipfs.nix;
   "git-repair" = import ./nix/git-repair.nix;
   "git-sanity" = import ./nix/git-sanity.nix;
