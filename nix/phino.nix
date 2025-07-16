@@ -98,6 +98,28 @@
       default = "r0";
     };
   };
+  "0.0.0.18" = {
+    sha256 = "dad8e3c60a824b4f6677359a03d866606b6ae6bf60597173f1efbbe8376e149e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phino-0.0.0.18-r0-fd9381579a7c95d22518573f2113bdfd3f3152ef1d347778a8042d1876ae6da3.nix;
+        revNum = 0;
+        sha256 = "fd9381579a7c95d22518573f2113bdfd3f3152ef1d347778a8042d1876ae6da3";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.0.19" = {
+    sha256 = "ec52f018c64d9772e385181cf7eec944890fef6da73f07a67e634ea399557ef9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phino-0.0.0.19-r0-6a0ca3e1a134c9120328cd8e7bff3c1cf7c78ecba9e41dd2c43a23d8fab1b5bf.nix;
+        revNum = 0;
+        sha256 = "6a0ca3e1a134c9120328cd8e7bff3c1cf7c78ecba9e41dd2c43a23d8fab1b5bf";
+      };
+      default = "r0";
+    };
+  };
   "0.0.0.2" = {
     sha256 = "780f499e19b0376bbe5b21909fa98bab3443e05ac084ee17d64455b210b3c674";
     revisions = {
@@ -105,6 +127,28 @@
         nix = import ../hackage/phino-0.0.0.2-r0-89dc5f902396c5e197c6dc8ad85793314f07c1dfb1065e4f4c5b372d60b2e4e6.nix;
         revNum = 0;
         sha256 = "89dc5f902396c5e197c6dc8ad85793314f07c1dfb1065e4f4c5b372d60b2e4e6";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.0.20" = {
+    sha256 = "1eab1c9bf2105ccce88af91784392130b985afe46626642ec7265921eb2d6231";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phino-0.0.0.20-r0-795eb2f29b1cda97a4e6fb75b110bd1f7ec5c46ac6f3673aa74a1274069d80cd.nix;
+        revNum = 0;
+        sha256 = "795eb2f29b1cda97a4e6fb75b110bd1f7ec5c46ac6f3673aa74a1274069d80cd";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.0.21" = {
+    sha256 = "d72278ad5b0f9b302352a0a03c7afddca2885a0d809303879fbdb3b03008b8b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/phino-0.0.0.21-r0-2e4153fd9659705e22358d60cc0d9d27eb28a467fcdfa0fde0910ceb81a0f5f1.nix;
+        revNum = 0;
+        sha256 = "2e4153fd9659705e22358d60cc0d9d27eb28a467fcdfa0fde0910ceb81a0f5f1";
       };
       default = "r0";
     };

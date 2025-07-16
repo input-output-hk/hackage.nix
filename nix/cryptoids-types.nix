@@ -46,4 +46,15 @@
       default = "r2";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "17e1b1ab9cb1603e69ea73da29b2ef1949772c0a28dd22524da6b745e0aa0e17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cryptoids-types-1.0.0.1-r0-f24826559339784d419f1452fd3b74655baea61cce4f39785ca164c9ce9e336f.nix;
+        revNum = 0;
+        sha256 = "f24826559339784d419f1452fd3b74655baea61cce4f39785ca164c9ce9e336f";
+      };
+      default = "r0";
+    };
+  };
 }

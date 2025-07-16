@@ -353,4 +353,20 @@
       default = "r1";
     };
   };
+  "1.1.7.0" = {
+    sha256 = "315763a80382904b3d8251e20dd9769b2e8eefc902ef493deb6728f45eda9e3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chronos-1.1.7.0-r0-ec0abfb396865b3e4be7a1b0928015450143656faa7546f5f4547ff718177f83.nix;
+        revNum = 0;
+        sha256 = "ec0abfb396865b3e4be7a1b0928015450143656faa7546f5f4547ff718177f83";
+      };
+      r1 = {
+        nix = import ../hackage/chronos-1.1.7.0-r1-e718e93f447e7d268ac9ccacb3fc3c4a661f72e9949713a0c7389fcc86b62f50.nix;
+        revNum = 1;
+        sha256 = "e718e93f447e7d268ac9ccacb3fc3c4a661f72e9949713a0c7389fcc86b62f50";
+      };
+      default = "r1";
+    };
+  };
 }

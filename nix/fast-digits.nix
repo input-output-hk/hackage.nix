@@ -67,7 +67,12 @@
         revNum = 0;
         sha256 = "2c8016c2de46fccafed860d4f1895a0d465fe3837a7728757717a22aec7cd021";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fast-digits-0.3.2.0-r1-cc7b44198c0978d0dc0ea4d85e7a4252d76ea3fe19dc10f7eb20a6386c00e0e6.nix;
+        revNum = 1;
+        sha256 = "cc7b44198c0978d0dc0ea4d85e7a4252d76ea3fe19dc10f7eb20a6386c00e0e6";
+      };
+      default = "r1";
     };
   };
 }

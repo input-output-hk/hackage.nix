@@ -2888,6 +2888,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "blockfrost-pretty" = import ./nix/blockfrost-pretty.nix;
   "blockhash" = import ./nix/blockhash.nix;
   "blocking-transactions" = import ./nix/blocking-transactions.nix;
+  "blockio" = import ./nix/blockio.nix;
   "blockio-uring" = import ./nix/blockio-uring.nix;
   "blogination" = import ./nix/blogination.nix;
   "bloodhound" = import ./nix/bloodhound.nix;
@@ -6020,6 +6021,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "follow" = import ./nix/follow.nix;
   "follow-file" = import ./nix/follow-file.nix;
   "follower" = import ./nix/follower.nix;
+  "folly-clib" = import ./nix/folly-clib.nix;
   "foma" = import ./nix/foma.nix;
   "font-awesome-type" = import ./nix/font-awesome-type.nix;
   "font-opengl-basic4x6" = import ./nix/font-opengl-basic4x6.nix;
@@ -6775,6 +6777,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glazier-react" = import ./nix/glazier-react.nix;
   "glazier-react-examples" = import ./nix/glazier-react-examples.nix;
   "glazier-react-widget" = import ./nix/glazier-react-widget.nix;
+  "glean" = import ./nix/glean.nix;
   "glfw-group" = import ./nix/glfw-group.nix;
   "gli" = import ./nix/gli.nix;
   "glib" = import ./nix/glib.nix;
@@ -10076,6 +10079,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lazy-io" = import ./nix/lazy-io.nix;
   "lazy-io-streams" = import ./nix/lazy-io-streams.nix;
   "lazy-priority-queue" = import ./nix/lazy-priority-queue.nix;
+  "lazy-scope" = import ./nix/lazy-scope.nix;
   "lazy-search" = import ./nix/lazy-search.nix;
   "lazyarray" = import ./nix/lazyarray.nix;
   "lazyboy" = import ./nix/lazyboy.nix;
@@ -15709,6 +15713,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stringtable-atom" = import ./nix/stringtable-atom.nix;
   "stringz" = import ./nix/stringz.nix;
   "strio" = import ./nix/strio.nix;
+  "strip-ansi" = import ./nix/strip-ansi.nix;
   "strip-ansi-escape" = import ./nix/strip-ansi-escape.nix;
   "stripe" = import ./nix/stripe.nix;
   "stripe-concepts" = import ./nix/stripe-concepts.nix;

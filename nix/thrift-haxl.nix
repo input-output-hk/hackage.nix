@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "45a4153430ce82220666adddf6bc32af3659d17dde62d61ac3dac5bf18f974d3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/thrift-haxl-0.2.0.0-r0-991ad21f0a057a08a2b1b57066a24dfd17d1fe819cdb221ca89fa45a8985efb5.nix;
+        revNum = 0;
+        sha256 = "991ad21f0a057a08a2b1b57066a24dfd17d1fe819cdb221ca89fa45a8985efb5";
+      };
+      default = "r0";
+    };
+  };
 }

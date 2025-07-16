@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "48f3fecb718b215cc1c8a47c37e2c912c63646ad470de791f38f4dec9844380d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/barbly-0.2.0.0-r0-69d03af3a8b2a027b03b8719800b007449f4f92a4249d242d7be852d895863d4.nix;
+        revNum = 0;
+        sha256 = "69d03af3a8b2a027b03b8719800b007449f4f92a4249d242d7be852d895863d4";
+      };
+      default = "r0";
+    };
+  };
 }

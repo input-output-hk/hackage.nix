@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "bfc779754ed22f856fa57b41440daf6be4a634b0f4dff5590c9f652fc0a4d5cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/thrift-lib-0.2.0.0-r0-f7ca7f2ddcb3746ee403e694fd407ae4e64858bebe78386fe655323f3886daf1.nix;
+        revNum = 0;
+        sha256 = "f7ca7f2ddcb3746ee403e694fd407ae4e64858bebe78386fe655323f3886daf1";
+      };
+      default = "r0";
+    };
+  };
 }

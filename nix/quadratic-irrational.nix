@@ -117,4 +117,15 @@
       default = "r3";
     };
   };
+  "0.1.2" = {
+    sha256 = "765f75e46d23f1411cbd40ebfc760dfd0a99013387f5185a7c0dc7161e9fc706";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quadratic-irrational-0.1.2-r0-2aaea6ca2c3a574caa2ab7ff43b8bf82e36acfdbd7f235ad109a1c5afbaf3759.nix;
+        revNum = 0;
+        sha256 = "2aaea6ca2c3a574caa2ab7ff43b8bf82e36acfdbd7f235ad109a1c5afbaf3759";
+      };
+      default = "r0";
+    };
+  };
 }
