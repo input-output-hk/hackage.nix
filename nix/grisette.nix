@@ -54,6 +54,17 @@
       default = "r0";
     };
   };
+  "0.13.0.1" = {
+    sha256 = "a5457995c67db111f9fa77e973bb972f389d7da943a855e105f4440db4482d52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/grisette-0.13.0.1-r0-10c3078bfcfc6acdfc89fb321782a907ca34082cdb7f5cef1d5923c2c3b499b7.nix;
+        revNum = 0;
+        sha256 = "10c3078bfcfc6acdfc89fb321782a907ca34082cdb7f5cef1d5923c2c3b499b7";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "fd215f3da3c349c5ed2b17333731c10622c3a38c3aa3a31cfd65f5741055ea50";
     revisions = {

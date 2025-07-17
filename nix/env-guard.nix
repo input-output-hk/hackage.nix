@@ -122,4 +122,15 @@
       default = "r6";
     };
   };
+  "0.2.1" = {
+    sha256 = "78c53332914c564c205642ac2d6a1e3ee55a2508bac6a584f16ec669d130a976";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/env-guard-0.2.1-r0-f50499a07c5eddc8309b9896363e9861a28091f4f96254f9b76bc34426e25c79.nix;
+        revNum = 0;
+        sha256 = "f50499a07c5eddc8309b9896363e9861a28091f4f96254f9b76bc34426e25c79";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "805561307fab58b1e67276f0b7d667fe96739158e94ccc26cd76216712b358f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persist-1.0.0.0-r0-192e7df7dc9d640306d4209ca836b9cbbfaaa81c251f308b72e780c713740c12.nix;
+        revNum = 0;
+        sha256 = "192e7df7dc9d640306d4209ca836b9cbbfaaa81c251f308b72e780c713740c12";
+      };
+      default = "r0";
+    };
+  };
 }
