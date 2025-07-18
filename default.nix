@@ -10299,6 +10299,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "linear-base" = import ./nix/linear-base.nix;
   "linear-circuit" = import ./nix/linear-circuit.nix;
   "linear-code" = import ./nix/linear-code.nix;
+  "linear-free" = import ./nix/linear-free.nix;
   "linear-generics" = import ./nix/linear-generics.nix;
   "linear-geo" = import ./nix/linear-geo.nix;
   "linear-grammar" = import ./nix/linear-grammar.nix;

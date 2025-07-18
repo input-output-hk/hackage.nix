@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.5.1" = {
+    sha256 = "07a022a96b4252667a1a348601ec6294110846ba91c85969266a56dd61df298a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/immutaball-core-0.1.0.5.1-r0-5df40ef51203f421779ab63bdf23ba727b7c58ea5b8277d7e2047a903873dc82.nix;
+        revNum = 0;
+        sha256 = "5df40ef51203f421779ab63bdf23ba727b7c58ea5b8277d7e2047a903873dc82";
+      };
+      default = "r0";
+    };
+  };
 }
