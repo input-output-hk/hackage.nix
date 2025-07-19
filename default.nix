@@ -8405,6 +8405,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hops" = import ./nix/hops.nix;
   "hoq" = import ./nix/hoq.nix;
   "hora" = import ./nix/hora.nix;
+  "horde-ad" = import ./nix/horde-ad.nix;
   "horizon" = import ./nix/horizon.nix;
   "horizon-gen-nix" = import ./nix/horizon-gen-nix.nix;
   "horizon-spec" = import ./nix/horizon-spec.nix;
@@ -12130,6 +12131,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "orchid" = import ./nix/orchid.nix;
   "orchid-demo" = import ./nix/orchid-demo.nix;
   "ord-adhoc" = import ./nix/ord-adhoc.nix;
+  "ord-axiomata" = import ./nix/ord-axiomata.nix;
   "order-maintenance" = import ./nix/order-maintenance.nix;
   "order-statistic-tree" = import ./nix/order-statistic-tree.nix;
   "order-statistics" = import ./nix/order-statistics.nix;

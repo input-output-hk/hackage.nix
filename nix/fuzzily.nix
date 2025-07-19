@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "acf168c126b6b3553d8616ea56bd72b8425a6a19f0b3bd03c779166f8b1bcafa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuzzily-0.2.1.0-r0-dfb7cc0083a42cc0460e23d2205724cd47c4ef58cac1d2edd8f51ac0284e36f2.nix;
+        revNum = 0;
+        sha256 = "dfb7cc0083a42cc0460e23d2205724cd47c4ef58cac1d2edd8f51ac0284e36f2";
+      };
+      default = "r0";
+    };
+  };
 }

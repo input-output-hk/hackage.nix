@@ -97,4 +97,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "426cc3a9025d4ccc7ee61439b5d7b34533905b479ab141d8d51c88e128a15539";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bolt-0.3.2.0-r0-0a80e63c1b7845c119b22f48f7e4d56c3323d6f6df046acdc6ef127bfe5cefae.nix;
+        revNum = 0;
+        sha256 = "0a80e63c1b7845c119b22f48f7e4d56c3323d6f6df046acdc6ef127bfe5cefae";
+      };
+      default = "r0";
+    };
+  };
 }
