@@ -13668,6 +13668,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rawr" = import ./nix/rawr.nix;
   "rawstring-qm" = import ./nix/rawstring-qm.nix;
   "raylib-imgui" = import ./nix/raylib-imgui.nix;
+  "raytrace" = import ./nix/raytrace.nix;
   "raz" = import ./nix/raz.nix;
   "razom-text-util" = import ./nix/razom-text-util.nix;
   "rbpcp-api" = import ./nix/rbpcp-api.nix;

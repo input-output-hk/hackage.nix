@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.6" = {
+    sha256 = "13c91698656d0662dbfd645fabeaef8eea4b3586a6a90dc64793cbf5c178c52d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typelet-0.1.6-r0-4a623d129832abe75a4b3eb825ccf720aabbe7a74c95736d70d6c2943b64c02f.nix;
+        revNum = 0;
+        sha256 = "4a623d129832abe75a4b3eb825ccf720aabbe7a74c95736d70d6c2943b64c02f";
+      };
+      default = "r0";
+    };
+  };
 }

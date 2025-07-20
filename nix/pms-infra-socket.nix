@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.3.0" = {
+    sha256 = "2f1d732b725d87d9670d432ae192bbedb9f71d70220853feabed6a94981b8ee0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-socket-0.0.3.0-r0-fda710dd09fce5423356971dc232663163cbb550c1a52acb163fd6f8c32c51e4.nix;
+        revNum = 0;
+        sha256 = "fda710dd09fce5423356971dc232663163cbb550c1a52acb163fd6f8c32c51e4";
+      };
+      default = "r0";
+    };
+  };
 }

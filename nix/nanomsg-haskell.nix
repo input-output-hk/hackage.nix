@@ -92,4 +92,15 @@
       default = "r1";
     };
   };
+  "0.2.5" = {
+    sha256 = "454d97ba531623139d9472bfd27d2bfc27b3f524e8304e3de4887e89575a189f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nanomsg-haskell-0.2.5-r0-da32c05f64ab2f10e3a7f18ce555a4cefbb8ccc90985538671083e9b1249c2a4.nix;
+        revNum = 0;
+        sha256 = "da32c05f64ab2f10e3a7f18ce555a4cefbb8ccc90985538671083e9b1249c2a4";
+      };
+      default = "r0";
+    };
+  };
 }
