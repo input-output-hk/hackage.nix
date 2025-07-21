@@ -4224,6 +4224,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "credential-store" = import ./nix/credential-store.nix;
   "credentials" = import ./nix/credentials.nix;
   "credentials-cli" = import ./nix/credentials-cli.nix;
+  "creditmonad" = import ./nix/creditmonad.nix;
   "crem" = import ./nix/crem.nix;
   "crf-chain1" = import ./nix/crf-chain1.nix;
   "crf-chain1-constrained" = import ./nix/crf-chain1-constrained.nix;
@@ -13401,6 +13402,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "purescript-cst" = import ./nix/purescript-cst.nix;
   "purescript-iso" = import ./nix/purescript-iso.nix;
   "purescript-tsd-gen" = import ./nix/purescript-tsd-gen.nix;
+  "purl" = import ./nix/purl.nix;
   "pursuit-client" = import ./nix/pursuit-client.nix;
   "purview" = import ./nix/purview.nix;
   "push-notifications" = import ./nix/push-notifications.nix;
@@ -16466,6 +16468,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "time-domain" = import ./nix/time-domain.nix;
   "time-extras" = import ./nix/time-extras.nix;
   "time-exts" = import ./nix/time-exts.nix;
+  "time-hourglass" = import ./nix/time-hourglass.nix;
   "time-http" = import ./nix/time-http.nix;
   "time-interval" = import ./nix/time-interval.nix;
   "time-io-access" = import ./nix/time-io-access.nix;
