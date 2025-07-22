@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "4dfcf9571f7fe5fdafaaaf1112fc69ea4cfbda3d69e493396712cbeb7d81b7db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/github-actions-0.1.1.0-r0-ecddfb15784fd4d54ec2784f13259a93bc105b5216ee53fd1f92575dfc0a4859.nix;
+        revNum = 0;
+        sha256 = "ecddfb15784fd4d54ec2784f13259a93bc105b5216ee53fd1f92575dfc0a4859";
+      };
+      default = "r0";
+    };
+  };
 }

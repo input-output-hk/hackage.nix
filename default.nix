@@ -3746,6 +3746,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "codo-notation" = import ./nix/codo-notation.nix;
   "coerce-role" = import ./nix/coerce-role.nix;
   "coerce-util" = import ./nix/coerce-util.nix;
+  "coerce-with-substitution" = import ./nix/coerce-with-substitution.nix;
   "coercible-subtypes" = import ./nix/coercible-subtypes.nix;
   "coercible-subtypes-profunctor" = import ./nix/coercible-subtypes-profunctor.nix;
   "coercible-utils" = import ./nix/coercible-utils.nix;
@@ -18084,6 +18085,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yandex-translate" = import ./nix/yandex-translate.nix;
   "yaop" = import ./nix/yaop.nix;
   "yap" = import ./nix/yap.nix;
+  "yap-examples" = import ./nix/yap-examples.nix;
   "yapb" = import ./nix/yapb.nix;
   "yarl" = import ./nix/yarl.nix;
   "yarn-lock" = import ./nix/yarn-lock.nix;

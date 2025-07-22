@@ -37,4 +37,15 @@
       default = "r1";
     };
   };
+  "0.3.0" = {
+    sha256 = "62bfbe024ec72d02a3dbdad4368b139f40d8f6d61bf40e3bf43b4755b317cadc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yap-0.3.0-r0-da9310d068c767d8a3fcc5ce60a414541fe24258613d0212bc0858dc8fb06c37.nix;
+        revNum = 0;
+        sha256 = "da9310d068c767d8a3fcc5ce60a414541fe24258613d0212bc0858dc8fb06c37";
+      };
+      default = "r0";
+    };
+  };
 }
