@@ -5271,7 +5271,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effect-stack" = import ./nix/effect-stack.nix;
   "effectful" = import ./nix/effectful.nix;
   "effectful-core" = import ./nix/effectful-core.nix;
+  "effectful-opaleye" = import ./nix/effectful-opaleye.nix;
   "effectful-plugin" = import ./nix/effectful-plugin.nix;
+  "effectful-postgresql" = import ./nix/effectful-postgresql.nix;
   "effectful-st" = import ./nix/effectful-st.nix;
   "effectful-th" = import ./nix/effectful-th.nix;
   "effectful-zoo" = import ./nix/effectful-zoo.nix;

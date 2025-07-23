@@ -274,4 +274,15 @@
       default = "r0";
     };
   };
+  "0.55.1" = {
+    sha256 = "a946365a520d0bd9e010c7512bc2dcf0ff023b9b38a446f27e125ef081c3d997";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hevm-0.55.1-r0-fc4a13bb231bd5c08f5863cd7c18b5af2f2df6460457fcc55041794df8edd616.nix;
+        revNum = 0;
+        sha256 = "fc4a13bb231bd5c08f5863cd7c18b5af2f2df6460457fcc55041794df8edd616";
+      };
+      default = "r0";
+    };
+  };
 }
