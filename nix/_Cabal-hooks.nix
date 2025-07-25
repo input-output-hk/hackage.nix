@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "3.16" = {
+    sha256 = "59ba20b258fad4a3621c9c7f5513ba052667d091bb674b3829cc131de4df48e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Cabal-hooks-3.16-r0-5793081368a2fda03bafea70eb7b97bc347d84b614f762bd88e58f1cf3f7bbce.nix;
+        revNum = 0;
+        sha256 = "5793081368a2fda03bafea70eb7b97bc347d84b614f762bd88e58f1cf3f7bbce";
+      };
+      default = "r0";
+    };
+  };
 }

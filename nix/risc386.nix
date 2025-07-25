@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "a605d08e58a0e97ddaca2455e1c8661d1e3b1ef9332dd54d7d37987c5524efc6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/risc386-0.0.20230928-r1-ce7a99ba35d402c5548b43bc3fcbf9f6f7bae9fde0fc11046d78b5b7c62ab272.nix;
+        revNum = 1;
+        sha256 = "ce7a99ba35d402c5548b43bc3fcbf9f6f7bae9fde0fc11046d78b5b7c62ab272";
+      };
+      default = "r1";
     };
   };
 }

@@ -1,0 +1,66 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.4";
+      identifier = { name = "MiniAgda"; version = "0.2025.7.23"; };
+      license = "MIT";
+      copyright = "";
+      maintainer = "Andreas Abel <andreas.abel@cse.gu.se>";
+      author = "Andreas Abel and Karl Mehltretter";
+      homepage = "http://www.cse.chalmers.se/~abela/miniagda/";
+      url = "";
+      synopsis = "A toy dependently typed programming language with type-based termination.";
+      description = "MiniAgda is a tiny dependently-typed programming language in the style\nof Agda. It serves as a laboratory to test potential additions to the\nlanguage and type system of Agda. MiniAgda's termination checker is a\nfusion of sized types and size-change termination and supports\ncoinduction. Equality incorporates eta-expansion at record and\nsingleton types. Function arguments can be declared as static; such\narguments are discarded during equality checking and compilation.\nRecent features include bounded size quantification and destructor\npatterns for a more general handling of coinduction.";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."array" or (errorHandler.buildDepError "array"))
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."haskell-src-exts" or (errorHandler.buildDepError "haskell-src-exts"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
+          (hsPkgs."pretty" or (errorHandler.buildDepError "pretty"))
+          (hsPkgs."string-qq" or (errorHandler.buildDepError "string-qq"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+        ];
+        build-tools = [
+          (hsPkgs.pkgsBuildBuild.happy.components.exes.happy or (pkgs.pkgsBuildBuild.happy or (errorHandler.buildToolDepError "happy:happy")))
+          (hsPkgs.pkgsBuildBuild.alex.components.exes.alex or (pkgs.pkgsBuildBuild.alex or (errorHandler.buildToolDepError "alex:alex")))
+        ];
+        buildable = true;
+      };
+      exes = {
+        "miniagda" = {
+          depends = [
+            (hsPkgs."MiniAgda" or (errorHandler.buildDepError "MiniAgda"))
+          ];
+          buildable = true;
+        };
+      };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."process" or (errorHandler.buildDepError "process"))
+          ];
+          build-tools = [
+            (hsPkgs.pkgsBuildBuild.goldplate.components.exes.goldplate or (pkgs.pkgsBuildBuild.goldplate or (errorHandler.buildToolDepError "goldplate:goldplate")))
+            (hsPkgs.pkgsBuildBuild.MiniAgda.components.exes.miniagda or (pkgs.pkgsBuildBuild.miniagda or (errorHandler.buildToolDepError "MiniAgda:miniagda")))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }

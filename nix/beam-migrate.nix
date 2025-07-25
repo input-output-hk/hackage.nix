@@ -202,7 +202,12 @@
         revNum = 1;
         sha256 = "d009867b13077ec7ad148752a66f3a7d9d45438c7be287ce10759e49d640a66a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/beam-migrate-0.5.3.1-r2-0acdbccb69b95a2eb2be13fdb43ecf0ef7578582253c7827741717db5a72254a.nix;
+        revNum = 2;
+        sha256 = "0acdbccb69b95a2eb2be13fdb43ecf0ef7578582253c7827741717db5a72254a";
+      };
+      default = "r2";
     };
   };
   "0.5.3.2" = {
@@ -213,7 +218,12 @@
         revNum = 0;
         sha256 = "e50566519f0d2aadc51534e9ccf16986e4a8f9eb8762e3a7ab6dad4a2d03ebad";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/beam-migrate-0.5.3.2-r1-021a2b7aeb551d237c3db1723115213f469ab643d2e3c61aeefd2cde6fe8306c.nix;
+        revNum = 1;
+        sha256 = "021a2b7aeb551d237c3db1723115213f469ab643d2e3c61aeefd2cde6fe8306c";
+      };
+      default = "r1";
     };
   };
 }

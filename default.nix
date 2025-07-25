@@ -2516,6 +2516,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "base" = import ./nix/base.nix;
   "base-compat" = import ./nix/base-compat.nix;
   "base-compat-batteries" = import ./nix/base-compat-batteries.nix;
+  "base-compat-constptr" = import ./nix/base-compat-constptr.nix;
   "base-compat-migrate" = import ./nix/base-compat-migrate.nix;
   "base-encoding" = import ./nix/base-encoding.nix;
   "base-feature-macros" = import ./nix/base-feature-macros.nix;
@@ -8526,6 +8527,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-mesos" = import ./nix/hs-mesos.nix;
   "hs-multiaddr" = import ./nix/hs-multiaddr.nix;
   "hs-nombre-generator" = import ./nix/hs-nombre-generator.nix;
+  "hs-onnxruntime-capi" = import ./nix/hs-onnxruntime-capi.nix;
   "hs-openmoji-data" = import ./nix/hs-openmoji-data.nix;
   "hs-opentelemetry-api" = import ./nix/hs-opentelemetry-api.nix;
   "hs-opentelemetry-awsxray" = import ./nix/hs-opentelemetry-awsxray.nix;
@@ -8569,6 +8571,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-tags" = import ./nix/hs-tags.nix;
   "hs-tango" = import ./nix/hs-tango.nix;
   "hs-term-emulator" = import ./nix/hs-term-emulator.nix;
+  "hs-tree-sitter" = import ./nix/hs-tree-sitter.nix;
+  "hs-tree-sitter-capi" = import ./nix/hs-tree-sitter-capi.nix;
   "hs-twitter" = import ./nix/hs-twitter.nix;
   "hs-twitterarchiver" = import ./nix/hs-twitterarchiver.nix;
   "hs-vcard" = import ./nix/hs-vcard.nix;

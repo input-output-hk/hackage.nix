@@ -137,6 +137,22 @@
         revNum = 0;
         sha256 = "d6b4f4ba7435bf2d95c403c4bcd2f4e7ded3b2bc5bb08b831d80f80c984d1c30";
       };
+      r1 = {
+        nix = import ../hackage/MiniAgda-0.2022.3.11-r1-51033e9514d50aca9cee53c475c8ab5dba8aa07643753c414ccb89b118055d9e.nix;
+        revNum = 1;
+        sha256 = "51033e9514d50aca9cee53c475c8ab5dba8aa07643753c414ccb89b118055d9e";
+      };
+      default = "r1";
+    };
+  };
+  "0.2025.7.23" = {
+    sha256 = "b39fce61e9139b08beda8758a30268057aee7e448b715d3b7b796d290c5e7d8f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MiniAgda-0.2025.7.23-r0-911c2f7867eccc5348c1f011aaa294e311e400d9707c0b28c6fc769c9e268483.nix;
+        revNum = 0;
+        sha256 = "911c2f7867eccc5348c1f011aaa294e311e400d9707c0b28c6fc769c9e268483";
+      };
       default = "r0";
     };
   };

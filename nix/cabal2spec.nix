@@ -336,4 +336,15 @@
       default = "r1";
     };
   };
+  "2.8.0" = {
+    sha256 = "6951b70d204988b810253b383cc8c64be5b9f5da191cbe1d18984f2f755eef96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal2spec-2.8.0-r0-dc1f87188b10f764b1bf787112dc63757227c31ac67f199e1a92f1bb053f2fbf.nix;
+        revNum = 0;
+        sha256 = "dc1f87188b10f764b1bf787112dc63757227c31ac67f199e1a92f1bb053f2fbf";
+      };
+      default = "r0";
+    };
+  };
 }

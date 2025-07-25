@@ -185,7 +185,12 @@
         revNum = 1;
         sha256 = "2b52aa1803923edc6fe00b3ec29b33a01821ccb6181c4b945536a28413d81c30";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/hw-simd-0.1.2.2-r2-db9bc201480ba19c8c89011ccb0f646bcfadb3b9d959d1e18b9c24ead89b4e17.nix;
+        revNum = 2;
+        sha256 = "db9bc201480ba19c8c89011ccb0f646bcfadb3b9d959d1e18b9c24ead89b4e17";
+      };
+      default = "r2";
     };
   };
 }

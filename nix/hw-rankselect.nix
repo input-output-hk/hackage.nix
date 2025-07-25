@@ -442,7 +442,17 @@
         revNum = 3;
         sha256 = "f185da50c665876f5a168f8cf5f93a41c16d93635b18ccb05f2b543e3c948fbb";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/hw-rankselect-0.13.4.1-r4-8c9fb33027e32d6ef57c218a18f166a32399973287ffee59816af818b739ec68.nix;
+        revNum = 4;
+        sha256 = "8c9fb33027e32d6ef57c218a18f166a32399973287ffee59816af818b739ec68";
+      };
+      r5 = {
+        nix = import ../hackage/hw-rankselect-0.13.4.1-r5-d274f53420665ccc9fdb7db03d7af97bc873d0dd0f71aef17b623a4b5bb9253c.nix;
+        revNum = 5;
+        sha256 = "d274f53420665ccc9fdb7db03d7af97bc873d0dd0f71aef17b623a4b5bb9253c";
+      };
+      default = "r5";
     };
   };
   "0.2.0.0" = {

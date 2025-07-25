@@ -122,4 +122,15 @@
       default = "r1";
     };
   };
+  "0.1.1.3" = {
+    sha256 = "b126471a63fadc79b8b195a8cb0be5f1e51b2445666d027a81bd3e773f5995e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hw-json-simd-0.1.1.3-r0-6e79ac7644137aa1079dfc6775ee584980cf4878db35a98c5952b1f4a6882f6f.nix;
+        revNum = 0;
+        sha256 = "6e79ac7644137aa1079dfc6775ee584980cf4878db35a98c5952b1f4a6882f6f";
+      };
+      default = "r0";
+    };
+  };
 }

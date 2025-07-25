@@ -255,7 +255,12 @@
         revNum = 0;
         sha256 = "57de4ba65dc2c79cc059f45cff4c9859639d16d1a98ee7e1de2f399d7fc5c84e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hw-xml-0.5.1.2-r1-1aec18f5ce6106d3b57291e24adccb4895a3cbd0fe4852eff15499e32f1d32cb.nix;
+        revNum = 1;
+        sha256 = "1aec18f5ce6106d3b57291e24adccb4895a3cbd0fe4852eff15499e32f1d32cb";
+      };
+      default = "r1";
     };
   };
 }
