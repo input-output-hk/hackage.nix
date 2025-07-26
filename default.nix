@@ -7264,6 +7264,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gvti" = import ./nix/gvti.nix;
   "gw" = import ./nix/gw.nix;
   "gyah-bin" = import ./nix/gyah-bin.nix;
+  "gym-hs" = import ./nix/gym-hs.nix;
   "gym-http-api" = import ./nix/gym-http-api.nix;
   "h-booru" = import ./nix/h-booru.nix;
   "h-gpgme" = import ./nix/h-gpgme.nix;

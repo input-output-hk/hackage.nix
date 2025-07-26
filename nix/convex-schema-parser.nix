@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.8.0" = {
+    sha256 = "bb0696bf7bbfe7923a83702339051b74ac27e6e57e18f4c761061eb5d9939f95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/convex-schema-parser-0.1.8.0-r0-5e090ca78573609d984deff0ef5c1209339ab899a43e1d64212bad8590687e48.nix;
+        revNum = 0;
+        sha256 = "5e090ca78573609d984deff0ef5c1209339ab899a43e1d64212bad8590687e48";
+      };
+      default = "r0";
+    };
+  };
 }
