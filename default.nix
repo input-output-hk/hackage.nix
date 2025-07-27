@@ -2906,6 +2906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bluefin" = import ./nix/bluefin.nix;
   "bluefin-algae" = import ./nix/bluefin-algae.nix;
   "bluefin-internal" = import ./nix/bluefin-internal.nix;
+  "bluefin-random" = import ./nix/bluefin-random.nix;
   "bluemix-sdk" = import ./nix/bluemix-sdk.nix;
   "bluesky-tools" = import ./nix/bluesky-tools.nix;
   "bluetile" = import ./nix/bluetile.nix;
@@ -10839,6 +10840,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "megalisp" = import ./nix/megalisp.nix;
   "megaparsec" = import ./nix/megaparsec.nix;
   "megaparsec-tests" = import ./nix/megaparsec-tests.nix;
+  "megaparsec-time" = import ./nix/megaparsec-time.nix;
   "megastore" = import ./nix/megastore.nix;
   "meldable-heap" = import ./nix/meldable-heap.nix;
   "melf" = import ./nix/melf.nix;

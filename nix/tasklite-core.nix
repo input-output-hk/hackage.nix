@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "c166f7bea732689757fd531c815ab60c6b84effc02deb09525ba16b309a673ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasklite-core-0.5.0.0-r0-650d6dc7f8de4cfda60e8ebc5357119ec0787d17a7d381cd7fe10cabbb18e242.nix;
+        revNum = 0;
+        sha256 = "650d6dc7f8de4cfda60e8ebc5357119ec0787d17a7d381cd7fe10cabbb18e242";
+      };
+      default = "r0";
+    };
+  };
 }

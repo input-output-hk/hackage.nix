@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "597a72866dd728b53c6a9bc0de275affb98fc33aa2eaa32a8368cbeae667506a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/horde-ad-0.2.0.0-r0-a169beac93ba4aa8d5b638f50816e83048724b6b790fc0abb01f687a9ae47912.nix;
+        revNum = 0;
+        sha256 = "a169beac93ba4aa8d5b638f50816e83048724b6b790fc0abb01f687a9ae47912";
+      };
+      default = "r0";
+    };
+  };
 }
