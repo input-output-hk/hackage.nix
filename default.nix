@@ -10841,6 +10841,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "megaparsec" = import ./nix/megaparsec.nix;
   "megaparsec-tests" = import ./nix/megaparsec-tests.nix;
   "megaparsec-time" = import ./nix/megaparsec-time.nix;
+  "megaparsec-utils" = import ./nix/megaparsec-utils.nix;
   "megastore" = import ./nix/megastore.nix;
   "meldable-heap" = import ./nix/meldable-heap.nix;
   "melf" = import ./nix/melf.nix;
