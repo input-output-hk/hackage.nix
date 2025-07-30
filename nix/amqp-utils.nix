@@ -290,4 +290,15 @@
       default = "r0";
     };
   };
+  "0.6.7.2" = {
+    sha256 = "bca0bfb7e5d2723eb96e870593798e8f5e98131bae19434acba7ed5502e9f37a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/amqp-utils-0.6.7.2-r0-e6ff08e61bf9c134ae59de4b4595f01e14da0588e1662d607c00c3c5530b726f.nix;
+        revNum = 0;
+        sha256 = "e6ff08e61bf9c134ae59de4b4595f01e14da0588e1662d607c00c3c5530b726f";
+      };
+      default = "r0";
+    };
+  };
 }

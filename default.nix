@@ -3825,6 +3825,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "commonmark" = import ./nix/commonmark.nix;
   "commonmark-cli" = import ./nix/commonmark-cli.nix;
   "commonmark-extensions" = import ./nix/commonmark-extensions.nix;
+  "commonmark-initial" = import ./nix/commonmark-initial.nix;
   "commonmark-pandoc" = import ./nix/commonmark-pandoc.nix;
   "commonmark-simple" = import ./nix/commonmark-simple.nix;
   "commonmark-wikilink" = import ./nix/commonmark-wikilink.nix;
