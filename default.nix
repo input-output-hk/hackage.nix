@@ -13178,6 +13178,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prim-uniq" = import ./nix/prim-uniq.nix;
   "primal" = import ./nix/primal.nix;
   "primal-memory" = import ./nix/primal-memory.nix;
+  "primdata" = import ./nix/primdata.nix;
   "prime" = import ./nix/prime.nix;
   "primecount" = import ./nix/primecount.nix;
   "primes" = import ./nix/primes.nix;
