@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "4c04630ce466d92419efdbca3932f1ac0ec4159ad38d98770a5f6df24cdea284";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/raytrace-0.2.0.0-r0-e3c35a0dbd50162fdf7b9c9b422f9475a7a414542df57bd39eeca71bdfad782e.nix;
+        revNum = 0;
+        sha256 = "e3c35a0dbd50162fdf7b9c9b422f9475a7a414542df57bd39eeca71bdfad782e";
+      };
+      default = "r0";
+    };
+  };
 }

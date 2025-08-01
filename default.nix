@@ -13092,6 +13092,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pqc" = import ./nix/pqc.nix;
   "pqueue" = import ./nix/pqueue.nix;
   "pqueue-mtl" = import ./nix/pqueue-mtl.nix;
+  "pr-tools" = import ./nix/pr-tools.nix;
   "practice-room" = import ./nix/practice-room.nix;
   "praglude" = import ./nix/praglude.nix;
   "pragmatic-show" = import ./nix/pragmatic-show.nix;
@@ -16462,6 +16463,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tidal-core" = import ./nix/tidal-core.nix;
   "tidal-link" = import ./nix/tidal-link.nix;
   "tidal-midi" = import ./nix/tidal-midi.nix;
+  "tidal-parse" = import ./nix/tidal-parse.nix;
   "tidal-serial" = import ./nix/tidal-serial.nix;
   "tidal-vis" = import ./nix/tidal-vis.nix;
   "tie-knot" = import ./nix/tie-knot.nix;

@@ -118,4 +118,15 @@
       default = "r4";
     };
   };
+  "0.5.1.1" = {
+    sha256 = "93c7dfb45e11f79736787dd7224cd41300a72f1b574258ccea6bb3f595a6cc50";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-tf-0.5.1.1-r0-589021d7299dc079327a8b3de96bc62ae80d081c2d337239b10e74bf46f478cd.nix;
+        revNum = 0;
+        sha256 = "589021d7299dc079327a8b3de96bc62ae80d081c2d337239b10e74bf46f478cd";
+      };
+      default = "r0";
+    };
+  };
 }
