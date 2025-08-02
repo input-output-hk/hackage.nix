@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4.0" = {
+    sha256 = "d528ff5c5e0404498c81d3cd9bc9b87651a79f19070fa34b8dcea48a269d6f1d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypton-asn1-types-0.4.0-r0-d08cdbe9c1be00af4827684483d23790198563291737470dbec5874bddd9fbe7.nix;
+        revNum = 0;
+        sha256 = "d08cdbe9c1be00af4827684483d23790198563291737470dbec5874bddd9fbe7";
+      };
+      default = "r0";
+    };
+  };
 }

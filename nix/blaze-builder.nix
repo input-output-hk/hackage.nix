@@ -483,4 +483,15 @@
       default = "r0";
     };
   };
+  "0.4.4" = {
+    sha256 = "3cabbd7cc1d4a9206c032f4bd4da7e7ddd40c3c6adce07271b6e643b5d6ea849";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blaze-builder-0.4.4-r0-148ead34082927c6f33d99f5b1274ec2b4bc5cd763836c9ac67af5dd7479e350.nix;
+        revNum = 0;
+        sha256 = "148ead34082927c6f33d99f5b1274ec2b4bc5cd763836c9ac67af5dd7479e350";
+      };
+      default = "r0";
+    };
+  };
 }

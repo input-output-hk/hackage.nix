@@ -8028,6 +8028,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hetero-parameter-list-with-typelevel-tools" = import ./nix/hetero-parameter-list-with-typelevel-tools.nix;
   "hetero-zip" = import ./nix/hetero-zip.nix;
   "heterocephalus" = import ./nix/heterocephalus.nix;
+  "heterogeneous-comparison" = import ./nix/heterogeneous-comparison.nix;
   "heterogeneous-list-literals" = import ./nix/heterogeneous-list-literals.nix;
   "heterolist" = import ./nix/heterolist.nix;
   "hetris" = import ./nix/hetris.nix;

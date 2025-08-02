@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "9c7c7c74dda5033160328606cb3e8724201abadf9a140271c73c89a2612b9d22";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/time-hourglass-0.3.0-r0-ee02356fe24919ec43ae17fc0007398c2fd0bbe822833b2d7a9c849537b90580.nix;
+        revNum = 0;
+        sha256 = "ee02356fe24919ec43ae17fc0007398c2fd0bbe822833b2d7a9c849537b90580";
+      };
+      default = "r0";
+    };
+  };
 }

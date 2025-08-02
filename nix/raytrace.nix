@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "e3c35a0dbd50162fdf7b9c9b422f9475a7a414542df57bd39eeca71bdfad782e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/raytrace-0.2.0.0-r1-84d46cc82f0b1880f0ececb6aa2b546ab8af4d86766d24fe9f0537000d16102a.nix;
+        revNum = 1;
+        sha256 = "84d46cc82f0b1880f0ececb6aa2b546ab8af4d86766d24fe9f0537000d16102a";
+      };
+      default = "r1";
     };
   };
 }
