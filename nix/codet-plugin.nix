@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "0d3cbf9c27467538fee7a5d121f62a9a168e25ac8a5a98bfbfd3d7d6937a711f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/codet-plugin-0.1.0.1-r1-01a1691a43997da9fbfbea6ce3001eab0348d5d205907701786c4c9548ee5962.nix;
+        revNum = 1;
+        sha256 = "01a1691a43997da9fbfbea6ce3001eab0348d5d205907701786c4c9548ee5962";
+      };
+      default = "r1";
     };
   };
 }

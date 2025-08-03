@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "0.13.0" = {
+    sha256 = "73e53c34cefef3609829fbb28b62b5b7e76180b4c67e28f73381752941bb2ccc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aztecs-0.13.0-r0-0203873708f39249f5d6a372c0521adda4cfcb9a992595e4c7b44f621f88fce3.nix;
+        revNum = 0;
+        sha256 = "0203873708f39249f5d6a372c0521adda4cfcb9a992595e4c7b44f621f88fce3";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "e76381e34f80a96393240e43b67bc3896ceee34fe3c334bb160153591dc7506b";
     revisions = {

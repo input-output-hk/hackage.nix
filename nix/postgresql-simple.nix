@@ -1237,4 +1237,15 @@
       default = "r3";
     };
   };
+  "0.7.0.1" = {
+    sha256 = "597cf320650318d6033ee538b19eb28e43f02b88590baae7272bc21275f3ab99";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postgresql-simple-0.7.0.1-r0-b2dffe014fa8b211feda3661921f2a6aabd63b055a0a00fe415ec2a823f9aaea.nix;
+        revNum = 0;
+        sha256 = "b2dffe014fa8b211feda3661921f2a6aabd63b055a0a00fe415ec2a823f9aaea";
+      };
+      default = "r0";
+    };
+  };
 }
