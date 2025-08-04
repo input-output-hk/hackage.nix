@@ -11071,6 +11071,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mmtf" = import ./nix/mmtf.nix;
   "mmtl" = import ./nix/mmtl.nix;
   "mmtl-base" = import ./nix/mmtl-base.nix;
+  "mmzk-env" = import ./nix/mmzk-env.nix;
   "mmzk-typeid" = import ./nix/mmzk-typeid.nix;
   "mnist-idx" = import ./nix/mnist-idx.nix;
   "mnist-idx-conduit" = import ./nix/mnist-idx-conduit.nix;
