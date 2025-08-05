@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "5fb982a01e3a2fbdf1ca8f9b28cd481708364d2c785d46acb0b0b297b4a43315";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/serdoc-binary-0.3.2.0-r0-7505c8bffc106d03fe6645fbb87fb9eb9ef0563ca5f35368d11cbdf94ee8785a.nix;
+        revNum = 0;
+        sha256 = "7505c8bffc106d03fe6645fbb87fb9eb9ef0563ca5f35368d11cbdf94ee8785a";
+      };
+      default = "r0";
+    };
+  };
 }

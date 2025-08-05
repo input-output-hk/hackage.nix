@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "06fd9d58b3a4e86bf0fe2009fd4cf35b48c126d2b82e27ab2ddf049c10cab9f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trexio-hs-0.2.0-r0-f4eb9900a93e4109a9e120bdbc06b7e9d6e19e3c09913fe7e2f482b937f8ad83.nix;
+        revNum = 0;
+        sha256 = "f4eb9900a93e4109a9e120bdbc06b7e9d6e19e3c09913fe7e2f482b937f8ad83";
+      };
+      default = "r0";
+    };
+  };
 }

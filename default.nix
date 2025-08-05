@@ -5650,6 +5650,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "extcore" = import ./nix/extcore.nix;
   "extemp" = import ./nix/extemp.nix;
   "extend-record-data-th" = import ./nix/extend-record-data-th.nix;
+  "extended" = import ./nix/extended.nix;
   "extended-categories" = import ./nix/extended-categories.nix;
   "extended-containers" = import ./nix/extended-containers.nix;
   "extended-containers-lens" = import ./nix/extended-containers-lens.nix;
