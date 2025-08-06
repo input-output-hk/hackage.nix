@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.8.5" = {
+    sha256 = "4316c4e783a75a0b39f4b4d488a59c22378f9d66f311202a78f3d900b23b63a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-igraph-0.8.5-r0-448759324e5c5685e8c5d18df629ecc758ba87410c9fd12676668f7d11d4dd13.nix;
+        revNum = 0;
+        sha256 = "448759324e5c5685e8c5d18df629ecc758ba87410c9fd12676668f7d11d4dd13";
+      };
+      default = "r0";
+    };
+  };
 }
