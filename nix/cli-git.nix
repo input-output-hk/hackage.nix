@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "0.2.0.3" = {
+    sha256 = "b235db1f07dba19ce93ab8b334d349aa1418253e1253d98137f720745d43d632";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cli-git-0.2.0.3-r0-b59ada17303a0314e08662bf81b40fe4d26bbcc55bcd498e4adba0e72a519e4e.nix;
+        revNum = 0;
+        sha256 = "b59ada17303a0314e08662bf81b40fe4d26bbcc55bcd498e4adba0e72a519e4e";
+      };
+      default = "r0";
+    };
+  };
 }

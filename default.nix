@@ -2896,6 +2896,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bloodhound-amazonka-auth" = import ./nix/bloodhound-amazonka-auth.nix;
   "bloohm" = import ./nix/bloohm.nix;
   "bloomfilter" = import ./nix/bloomfilter.nix;
+  "bloomfilter-blocked" = import ./nix/bloomfilter-blocked.nix;
   "bloomfilter-redis" = import ./nix/bloomfilter-redis.nix;
   "blosum" = import ./nix/blosum.nix;
   "bloxorz" = import ./nix/bloxorz.nix;
