@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "831a54334b40c2506d8b74bad7a47b4ecfc868b557603c4a1988071771a79ea9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llama-cpp-haskell-0.1.1-r0-dea64a6e82f2afbd3c4bf6d134a6f1788f232adcc2de717f9322f9317322407f.nix;
+        revNum = 0;
+        sha256 = "dea64a6e82f2afbd3c4bf6d134a6f1788f232adcc2de717f9322f9317322407f";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.1.2" = {
+    sha256 = "4506a0f45b13b14b4e809ccf55d9f09b65076050b7e0c5583e2b85c5f98a9f87";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llama-cpp-haskell-0.1.1.2-r0-32f5fdd0b60430ee3e1a54b462279d9458be3b935d58029c444844d3025789e9.nix;
+        revNum = 0;
+        sha256 = "32f5fdd0b60430ee3e1a54b462279d9458be3b935d58029c444844d3025789e9";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "60409129a49d37b9502929780c168e12e179b4413323f39e59a0678fa21e4fa9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gargoyle-0.1.2.2-r0-7534fd9165e36e44b8e309291eba8c9f51fb842a552b42b399a4eb379dadbaa3.nix;
+        revNum = 0;
+        sha256 = "7534fd9165e36e44b8e309291eba8c9f51fb842a552b42b399a4eb379dadbaa3";
+      };
+      default = "r0";
+    };
+  };
 }

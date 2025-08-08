@@ -3725,6 +3725,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "co-log-json" = import ./nix/co-log-json.nix;
   "co-log-polysemy" = import ./nix/co-log-polysemy.nix;
   "co-log-polysemy-formatting" = import ./nix/co-log-polysemy-formatting.nix;
+  "co-log-simple" = import ./nix/co-log-simple.nix;
   "co-log-sys" = import ./nix/co-log-sys.nix;
   "coalpit" = import ./nix/coalpit.nix;
   "cobot" = import ./nix/cobot.nix;
@@ -10563,6 +10564,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lscabal" = import ./nix/lscabal.nix;
   "lsfrom" = import ./nix/lsfrom.nix;
   "lsh" = import ./nix/lsh.nix;
+  "lsm-tree" = import ./nix/lsm-tree.nix;
   "lsp" = import ./nix/lsp.nix;
   "lsp-client" = import ./nix/lsp-client.nix;
   "lsp-test" = import ./nix/lsp-test.nix;
