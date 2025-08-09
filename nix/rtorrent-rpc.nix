@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "dcd54e180fa0e3cecf9d77670191cc19105d350b012a168e75f2418c3707434f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rtorrent-rpc-0.3.0.0-r0-2380c37ac7981e59970aba14d2d6e105a8f6e00c1051519dcea841b04ec7e328.nix;
+        revNum = 0;
+        sha256 = "2380c37ac7981e59970aba14d2d6e105a8f6e00c1051519dcea841b04ec7e328";
+      };
+      default = "r0";
+    };
+  };
 }

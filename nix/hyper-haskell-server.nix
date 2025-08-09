@@ -62,7 +62,12 @@
         revNum = 0;
         sha256 = "be9d56c83fa273da0f2005c8ccd9a7d35df9f87f2cf3307f04197bef51e792be";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hyper-haskell-server-0.2.3.1-r1-3bee7cf0d58ed04e3f59d36fca064a4abf7115e0d60ecd068640e0f30dc068ee.nix;
+        revNum = 1;
+        sha256 = "3bee7cf0d58ed04e3f59d36fca064a4abf7115e0d60ecd068640e0f30dc068ee";
+      };
+      default = "r1";
     };
   };
 }

@@ -9814,6 +9814,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kerry" = import ./nix/kerry.nix;
   "kesha" = import ./nix/kesha.nix;
   "keter" = import ./nix/keter.nix;
+  "keter-rate-limiting-plugin" = import ./nix/keter-rate-limiting-plugin.nix;
   "keuringsdienst" = import ./nix/keuringsdienst.nix;
   "kevin" = import ./nix/kevin.nix;
   "kewar" = import ./nix/kewar.nix;
@@ -16912,6 +16913,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-level-show" = import ./nix/type-level-show.nix;
   "type-level-tf" = import ./nix/type-level-tf.nix;
   "type-list" = import ./nix/type-list.nix;
+  "type-machine" = import ./nix/type-machine.nix;
   "type-map" = import ./nix/type-map.nix;
   "type-natural" = import ./nix/type-natural.nix;
   "type-of-html" = import ./nix/type-of-html.nix;
