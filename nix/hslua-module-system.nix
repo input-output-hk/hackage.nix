@@ -202,4 +202,26 @@
       default = "r0";
     };
   };
+  "1.2.2" = {
+    sha256 = "ac782bd6ac8413081bdde5ab4ef7fccf26d0d6c344078c270a75f7cf0394d9a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-module-system-1.2.2-r0-8eda5a5eb2d23e80c7acababa6b665fe45b30859a0946d0901385244d9a4bbb9.nix;
+        revNum = 0;
+        sha256 = "8eda5a5eb2d23e80c7acababa6b665fe45b30859a0946d0901385244d9a4bbb9";
+      };
+      default = "r0";
+    };
+  };
+  "1.2.3" = {
+    sha256 = "53faeaec2252641b5ee6b4df6337fdc5c8da96d8ebf18755193c51903028ad88";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-module-system-1.2.3-r0-fa335104b5fae58c9d5791e1ea9213eeb46753056c67a8d2149d181122658775.nix;
+        revNum = 0;
+        sha256 = "fa335104b5fae58c9d5791e1ea9213eeb46753056c67a8d2149d181122658775";
+      };
+      default = "r0";
+    };
+  };
 }

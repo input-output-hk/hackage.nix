@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.5.0" = {
+    sha256 = "59d5afef947e836e2f8cb1bcd80cd13df0a17979ccc708f90cc74338771a8164";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihp-hsx-1.5.0-r0-91970c74d09e99ce7f12a11879d070e75ddfa75ac7a017f778d2795ef6e34e72.nix;
+        revNum = 0;
+        sha256 = "91970c74d09e99ce7f12a11879d070e75ddfa75ac7a017f778d2795ef6e34e72";
+      };
+      default = "r0";
+    };
+  };
 }

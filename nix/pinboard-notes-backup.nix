@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "1.0.7.1" = {
+    sha256 = "a12bc4457064541c22d518462bb39554a613f4aef2cf7b15f17bbc88bdb3cbdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pinboard-notes-backup-1.0.7.1-r0-dd1f624052b36560925dbc12a0a97b2c05455c8cdb2f34422fbe44e3d64e37d1.nix;
+        revNum = 0;
+        sha256 = "dd1f624052b36560925dbc12a0a97b2c05455c8cdb2f34422fbe44e3d64e37d1";
+      };
+      default = "r0";
+    };
+  };
 }
