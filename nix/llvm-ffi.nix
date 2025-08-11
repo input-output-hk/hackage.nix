@@ -142,6 +142,17 @@
       default = "r0";
     };
   };
+  "21.0.0.2" = {
+    sha256 = "4322d5e96318f728e3bdf327f2ae396f99b03b4ae05a64f105ddf2d1c6f8316a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llvm-ffi-21.0.0.2-r0-d898d53846373b86a6e34fc2c72cb79cbbe4398bd38e127c69367a933eba6e57.nix;
+        revNum = 0;
+        sha256 = "d898d53846373b86a6e34fc2c72cb79cbbe4398bd38e127c69367a933eba6e57";
+      };
+      default = "r0";
+    };
+  };
   "3.0.0" = {
     sha256 = "9b012f897d95f852e69221b87225d0b16ecfe06685007d65bef581c98f250b1e";
     revisions = {

@@ -1348,6 +1348,17 @@
       default = "r0";
     };
   };
+  "5.18" = {
+    sha256 = "e995d70a5a543ca729a78c66eab03c7c16ac5bddb009ec978a63f0c3692eb71a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/propellor-5.18-r0-155fe0790d41ab4e732e6feec1312b1460f80e65e2109448da447e293f191ac2.nix;
+        revNum = 0;
+        sha256 = "155fe0790d41ab4e732e6feec1312b1460f80e65e2109448da447e293f191ac2";
+      };
+      default = "r0";
+    };
+  };
   "5.2.0" = {
     sha256 = "30af0485416ed9e75bb0bc6cd04bb02eec8b3ab93b82c5e275cb45d167c0011a";
     revisions = {

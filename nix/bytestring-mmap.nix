@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "d04e6bc5a158dd292757d3b9b032beb8a2c43e768777d64a8289abf89f612f67";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytestring-mmap-0.2.2-r1-2e53597f8d9fc36d39b1e5ef621ad1f38badb2ddcdf0b3c48ff5837361e82114.nix;
+        revNum = 1;
+        sha256 = "2e53597f8d9fc36d39b1e5ef621ad1f38badb2ddcdf0b3c48ff5837361e82114";
+      };
+      default = "r1";
     };
   };
 }

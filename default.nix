@@ -5775,6 +5775,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fcm-client" = import ./nix/fcm-client.nix;
   "fdo-notify" = import ./nix/fdo-notify.nix;
   "fdo-trash" = import ./nix/fdo-trash.nix;
+  "fearOfView" = import ./nix/fear_Of_View.nix;
   "feather" = import ./nix/feather.nix;
   "feature-flags" = import ./nix/feature-flags.nix;
   "feature-flipper" = import ./nix/feature-flipper.nix;
@@ -8373,6 +8374,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "holidays" = import ./nix/holidays.nix;
   "holmes" = import ./nix/holmes.nix;
   "holy-project" = import ./nix/holy-project.nix;
+  "home-assistant-client" = import ./nix/home-assistant-client.nix;
   "homeomorphic" = import ./nix/homeomorphic.nix;
   "hommage" = import ./nix/hommage.nix;
   "hommage-ds" = import ./nix/hommage-ds.nix;
