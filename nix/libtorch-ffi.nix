@@ -81,4 +81,26 @@
       default = "r0";
     };
   };
+  "2.0.1.6" = {
+    sha256 = "6a312143d4a9871df4246301445147f98bd02450e8a44ba974fdf8e97e542104";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libtorch-ffi-2.0.1.6-r0-24407f700d8c909e3c4a1f76d1d1477976f88dc284fd8ec2360dd0d8462420c0.nix;
+        revNum = 0;
+        sha256 = "24407f700d8c909e3c4a1f76d1d1477976f88dc284fd8ec2360dd0d8462420c0";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.1.7" = {
+    sha256 = "64085d4727ee1b786736708dcb80903d3ab93495dfe307d51a2e5ed8ab1265dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libtorch-ffi-2.0.1.7-r0-2d72ce3cd7c29df5e265ed42df3a0816e6c012b5cf511b8ef9cf60a794d3dd5b.nix;
+        revNum = 0;
+        sha256 = "2d72ce3cd7c29df5e265ed42df3a0816e6c012b5cf511b8ef9cf60a794d3dd5b";
+      };
+      default = "r0";
+    };
+  };
 }

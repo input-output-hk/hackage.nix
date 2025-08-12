@@ -169,4 +169,15 @@
       default = "r0";
     };
   };
+  "0.8.0" = {
+    sha256 = "713633d0d0d1377124a2d658e2ac46d115c97722bb2d7aff3ebecaa3eaca776e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-lens-0.8.0-r0-7fd1cba76a5885a008ffc2003c5516ba6ddce48a71560a71afe9bbd0521da00d.nix;
+        revNum = 0;
+        sha256 = "7fd1cba76a5885a008ffc2003c5516ba6ddce48a71560a71afe9bbd0521da00d";
+      };
+      default = "r0";
+    };
+  };
 }
