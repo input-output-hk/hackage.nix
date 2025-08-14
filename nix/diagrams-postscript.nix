@@ -475,4 +475,15 @@
       default = "r2";
     };
   };
+  "1.5.3" = {
+    sha256 = "16491d31d8393fcdcd893d6bdf01af234eac2cf01384eb854d472d059981541a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-postscript-1.5.3-r0-8fcaaf12614bc9c919bc2cad72eb9d2f683fd1d930e9cab81babb94add742e89.nix;
+        revNum = 0;
+        sha256 = "8fcaaf12614bc9c919bc2cad72eb9d2f683fd1d930e9cab81babb94add742e89";
+      };
+      default = "r0";
+    };
+  };
 }
