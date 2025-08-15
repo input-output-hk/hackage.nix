@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "6f5db3c1b2644b7466e51017d020073d7c5b253626343e8ca7e62520d505e26f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/homura-stopwatch-0.2.0.1-r0-2692bde259337981034bbae3e6010bd8fbd8f2e147aff92cc8c84fc8ac1835b1.nix;
+        revNum = 0;
+        sha256 = "2692bde259337981034bbae3e6010bd8fbd8f2e147aff92cc8c84fc8ac1835b1";
+      };
+      default = "r0";
+    };
+  };
 }
