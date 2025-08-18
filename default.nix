@@ -15247,6 +15247,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "snappy-c" = import ./nix/snappy-c.nix;
   "snappy-conduit" = import ./nix/snappy-conduit.nix;
   "snappy-framing" = import ./nix/snappy-framing.nix;
+  "snappy-hs" = import ./nix/snappy-hs.nix;
   "snappy-iteratee" = import ./nix/snappy-iteratee.nix;
   "snappy-lazy" = import ./nix/snappy-lazy.nix;
   "sndfile-enumerators" = import ./nix/sndfile-enumerators.nix;
