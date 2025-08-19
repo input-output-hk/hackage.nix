@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "700a83b2c19002ad9e6765ff3616becc0157c9bd2f6109b61db342210d894028";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llama-cpp-haskell-0.2.1-r0-fa7453af3617c3808bdd39185447cfbdbf7fb41cc7fcde74aad7ddc598c87374.nix;
+        revNum = 0;
+        sha256 = "fa7453af3617c3808bdd39185447cfbdbf7fb41cc7fcde74aad7ddc598c87374";
+      };
+      default = "r0";
+    };
+  };
 }
