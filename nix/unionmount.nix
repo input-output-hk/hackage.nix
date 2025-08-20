@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "b3ee04ceb52ea53c45a2623b13837763e535ac1e18b4c6cc6c1fce6856808189";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unionmount-0.3.0.0-r0-d76eed1712412920b1eed0dc13667f4e3543c294e505512288f935a2500f8688.nix;
+        revNum = 0;
+        sha256 = "d76eed1712412920b1eed0dc13667f4e3543c294e505512288f935a2500f8688";
+      };
+      default = "r0";
+    };
+  };
 }

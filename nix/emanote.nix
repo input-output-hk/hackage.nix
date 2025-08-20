@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.4.0.0" = {
+    sha256 = "7f709be4c7d02392842ee4e5534de0fe81a666e631da5f273e1ed8c7282a0c13";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/emanote-1.4.0.0-r0-8e29850c9648d99c21363bbd7a2bb1649b1338ef8c4792e4309b54f33bcdd7c5.nix;
+        revNum = 0;
+        sha256 = "8e29850c9648d99c21363bbd7a2bb1649b1338ef8c4792e4309b54f33bcdd7c5";
+      };
+      default = "r0";
+    };
+  };
 }

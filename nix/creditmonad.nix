@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "cf203c01bc46fdd97bc74b6e4dd6f936a258cc90485418892e58fc33070cd87f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/creditmonad-1.1.0-r0-528cd9dd5c1eccde2f8735ba63e3041b1be3843e699202fe82cf54651e12a454.nix;
+        revNum = 0;
+        sha256 = "528cd9dd5c1eccde2f8735ba63e3041b1be3843e699202fe82cf54651e12a454";
+      };
+      default = "r0";
+    };
+  };
 }

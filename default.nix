@@ -7109,6 +7109,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grakn" = import ./nix/grakn.nix;
   "grammar-combinators" = import ./nix/grammar-combinators.nix;
   "grammatical-parsers" = import ./nix/grammatical-parsers.nix;
+  "granite" = import ./nix/granite.nix;
   "grapefruit-examples" = import ./nix/grapefruit-examples.nix;
   "grapefruit-frp" = import ./nix/grapefruit-frp.nix;
   "grapefruit-records" = import ./nix/grapefruit-records.nix;
