@@ -130,4 +130,15 @@
       default = "r0";
     };
   };
+  "1.1.2.0" = {
+    sha256 = "8821a36ddc80ee0a3f3d4192dc2d47dcaf890b9840e1419a868747f1cbcb9780";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/venzone-1.1.2.0-r0-c9b23e7d773cec1d96c738fe472030080a8b0ae64accbeb70a59373178c68eb8.nix;
+        revNum = 0;
+        sha256 = "c9b23e7d773cec1d96c738fe472030080a8b0ae64accbeb70a59373178c68eb8";
+      };
+      default = "r0";
+    };
+  };
 }

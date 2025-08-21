@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "ff86455b055b52a96d7a2224fa29fdd975433f04334634668ce5f3609e17e0f3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/TreeStructures-0.0.2-r1-62ea7e1bddfd7c8543cd98f32c8ca0b8a25c9a2e0e9b3e1d5f016ac57be7d87e.nix;
+        revNum = 1;
+        sha256 = "62ea7e1bddfd7c8543cd98f32c8ca0b8a25c9a2e0e9b3e1d5f016ac57be7d87e";
+      };
+      default = "r1";
     };
   };
 }
