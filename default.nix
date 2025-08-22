@@ -4186,6 +4186,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cpkg" = import ./nix/cpkg.nix;
   "cplex-hs" = import ./nix/cplex-hs.nix;
   "cplusplus-th" = import ./nix/cplusplus-th.nix;
+  "cpmonad" = import ./nix/cpmonad.nix;
   "cppfilt" = import ./nix/cppfilt.nix;
   "cpphs" = import ./nix/cpphs.nix;
   "cprng-aes" = import ./nix/cprng-aes.nix;
