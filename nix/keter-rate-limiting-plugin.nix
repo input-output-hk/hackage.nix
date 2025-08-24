@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "1d80e7e943ff34d2f2546704f081dbd2c0b12cba8fb78e0460e0c5f11a5c5c67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keter-rate-limiting-plugin-0.2.0.0-r0-564df71e33f1d0edc012e20980e413eec3f3bc5456a663db5c3fdc357c8369c4.nix;
+        revNum = 0;
+        sha256 = "564df71e33f1d0edc012e20980e413eec3f3bc5456a663db5c3fdc357c8369c4";
+      };
+      default = "r0";
+    };
+  };
 }
