@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.7.1" = {
+    sha256 = "2fff7d6b36ba15497134da525196522649a4a8901a42c7ff59b69601308250bc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/orthotope-0.1.7.1-r0-b89889ccdc25fa465704b3a7f3960573aba1fc045f6f8ceb0c65c38b846ec5b8.nix;
+        revNum = 0;
+        sha256 = "b89889ccdc25fa465704b3a7f3960573aba1fc045f6f8ceb0c65c38b846ec5b8";
+      };
+      default = "r0";
+    };
+  };
 }

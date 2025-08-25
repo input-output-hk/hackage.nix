@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.0.9.0" = {
+    sha256 = "4181c09f0b0ade1ee2a19c231325f5bb4a492b3af5bbbbcdd75407455acc9dc5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-domain-service-0.0.9.0-r0-04bfe84330bee057adff7f392d01615cb5f5643787c3b43137cf64a4a9ffd417.nix;
+        revNum = 0;
+        sha256 = "04bfe84330bee057adff7f392d01615cb5f5643787c3b43137cf64a4a9ffd417";
+      };
+      default = "r0";
+    };
+  };
 }
