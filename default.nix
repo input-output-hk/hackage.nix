@@ -2906,6 +2906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bludigon" = import ./nix/bludigon.nix;
   "bluefin" = import ./nix/bluefin.nix;
   "bluefin-algae" = import ./nix/bluefin-algae.nix;
+  "bluefin-contrib" = import ./nix/bluefin-contrib.nix;
   "bluefin-internal" = import ./nix/bluefin-internal.nix;
   "bluefin-random" = import ./nix/bluefin-random.nix;
   "bluemix-sdk" = import ./nix/bluemix-sdk.nix;
@@ -16053,6 +16054,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tahoe-ssk" = import ./nix/tahoe-ssk.nix;
   "tai" = import ./nix/tai.nix;
   "tai64" = import ./nix/tai64.nix;
+  "tail" = import ./nix/tail.nix;
   "tailfile-hinotify" = import ./nix/tailfile-hinotify.nix;
   "tailwind" = import ./nix/tailwind.nix;
   "tak" = import ./nix/tak.nix;

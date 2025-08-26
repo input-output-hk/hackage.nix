@@ -406,4 +406,15 @@
       default = "r0";
     };
   };
+  "1.4.9.4" = {
+    sha256 = "cdd2d4f943ac741bb318133d8784cdc095119d0d8b1edf5ae076f05ccfa5a6ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/boomerang-1.4.9.4-r0-74de59f01f6ee3066d7fc6a0ac05a606d6d2d1549df8ffef5af1a1e0d8596eba.nix;
+        revNum = 0;
+        sha256 = "74de59f01f6ee3066d7fc6a0ac05a606d6d2d1549df8ffef5af1a1e0d8596eba";
+      };
+      default = "r0";
+    };
+  };
 }

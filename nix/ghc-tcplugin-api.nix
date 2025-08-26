@@ -103,6 +103,17 @@
       default = "r0";
     };
   };
+  "0.17.0.0" = {
+    sha256 = "39f855843a520280c77d5749950689cb2a7d69c86f2f3951de9269eda64d90d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-tcplugin-api-0.17.0.0-r0-84c50802ff66b8eaae1c62ad1a6b9325c716e8826c6b4dbc1aa3b5d94db95f3d.nix;
+        revNum = 0;
+        sha256 = "84c50802ff66b8eaae1c62ad1a6b9325c716e8826c6b4dbc1aa3b5d94db95f3d";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "cdf9834e4724ac9bda95fd7b2496e94ef66d086e9c9a1efadda9dc72a3d0a874";
     revisions = {
