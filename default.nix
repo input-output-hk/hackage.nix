@@ -14171,6 +14171,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rlglue" = import ./nix/rlglue.nix;
   "rlist" = import ./nix/rlist.nix;
   "rlwe-challenges" = import ./nix/rlwe-challenges.nix;
+  "rme" = import ./nix/rme.nix;
+  "rme-what4" = import ./nix/rme-what4.nix;
   "rmonad" = import ./nix/rmonad.nix;
   "rncryptor" = import ./nix/rncryptor.nix;
   "rng-utils" = import ./nix/rng-utils.nix;
@@ -16010,6 +16012,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "table-layout" = import ./nix/table-layout.nix;
   "table-tennis" = import ./nix/table-tennis.nix;
   "tableaux" = import ./nix/tableaux.nix;
+  "tabler-icons" = import ./nix/tabler-icons.nix;
   "tables" = import ./nix/tables.nix;
   "tablestorage" = import ./nix/tablestorage.nix;
   "tablize" = import ./nix/tablize.nix;
