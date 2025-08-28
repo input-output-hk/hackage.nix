@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "96e14c92c5862b22defaebfe97a7196280034f21d4dc728650a7e55bd9bf53d9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.0-r0-5944dfe8796e3231d8fb7e266e27f55b8c316f6cea86b69891c7d3a7cd156171.nix;
+        revNum = 0;
+        sha256 = "5944dfe8796e3231d8fb7e266e27f55b8c316f6cea86b69891c7d3a7cd156171";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -133,4 +133,15 @@
       default = "r0";
     };
   };
+  "0.1.1.8" = {
+    sha256 = "72ab22e966feb4f6021425fdf9e6f758e3ca711b0156eeb3f8590b8e1092b62e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/filelock-0.1.1.8-r0-7ff7556d4a814f1d446c615e3bfc3c149f3892cbc46dcf6bdad20fc7169836e8.nix;
+        revNum = 0;
+        sha256 = "7ff7556d4a814f1d446c615e3bfc3c149f3892cbc46dcf6bdad20fc7169836e8";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -4179,6 +4179,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "courier" = import ./nix/courier.nix;
   "court" = import ./nix/court.nix;
   "covariance" = import ./nix/covariance.nix;
+  "covenant" = import ./nix/covenant.nix;
   "coverage" = import ./nix/coverage.nix;
   "coya" = import ./nix/coya.nix;
   "cozo-hs" = import ./nix/cozo-hs.nix;
@@ -7612,6 +7613,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-course-preludes" = import ./nix/haskell-course-preludes.nix;
   "haskell-dap" = import ./nix/haskell-dap.nix;
   "haskell-debug-adapter" = import ./nix/haskell-debug-adapter.nix;
+  "haskell-debugger" = import ./nix/haskell-debugger.nix;
   "haskell-disque" = import ./nix/haskell-disque.nix;
   "haskell-docs" = import ./nix/haskell-docs.nix;
   "haskell-docs-cli" = import ./nix/haskell-docs-cli.nix;

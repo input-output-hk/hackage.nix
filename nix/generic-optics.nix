@@ -53,4 +53,15 @@
       default = "r2";
     };
   };
+  "2.3.0.0" = {
+    sha256 = "4cf13149d63cd654f8c8aa34cd36979cf48d4c081783cf52f9ec10ebec5a6880";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/generic-optics-2.3.0.0-r0-7642f8ea940910b491247f0f9e805cd6a31fe35f3bcc2db75bfb2874b93cc5b7.nix;
+        revNum = 0;
+        sha256 = "7642f8ea940910b491247f0f9e805cd6a31fe35f3bcc2db75bfb2874b93cc5b7";
+      };
+      default = "r0";
+    };
+  };
 }

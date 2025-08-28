@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "7b9b3c592d511ef11679a1aa3d2f7a1e819b9caf942a697d2b67d38116bfe443";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tabler-icons-0.1.0.2-r0-e0641b21c1820c6aefb0f1fca64580af02eefd88f14037d68b3de9e7963b2243.nix;
+        revNum = 0;
+        sha256 = "e0641b21c1820c6aefb0f1fca64580af02eefd88f14037d68b3de9e7963b2243";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -15,4 +15,26 @@
       default = "r1";
     };
   };
+  "0.1.1" = {
+    sha256 = "647dfeb0767a9152c9dd4fef5050fc555fe87bfe21968a96ec51175fc07d7cfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/testing-tensor-0.1.1-r0-d0c2a849688f48de3d15a0721ca79d66ea449b75b5d9fc38a8723513883c8d5a.nix;
+        revNum = 0;
+        sha256 = "d0c2a849688f48de3d15a0721ca79d66ea449b75b5d9fc38a8723513883c8d5a";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.2" = {
+    sha256 = "dc8672621f3b6036706bf7a1d6583145547181fb3583d12973ea670785192af7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/testing-tensor-0.1.2-r0-359a9ae34f64fd69a52ba5a3a4adab6c7e72201c0de968bf0ecca3299d5e61ba.nix;
+        revNum = 0;
+        sha256 = "359a9ae34f64fd69a52ba5a3a4adab6c7e72201c0de968bf0ecca3299d5e61ba";
+      };
+      default = "r0";
+    };
+  };
 }
