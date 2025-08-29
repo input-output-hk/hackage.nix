@@ -4605,6 +4605,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dawdle" = import ./nix/dawdle.nix;
   "dawg" = import ./nix/dawg.nix;
   "dawg-ord" = import ./nix/dawg-ord.nix;
+  "dawgdic" = import ./nix/dawgdic.nix;
   "day-comonoid" = import ./nix/day-comonoid.nix;
   "daytripper" = import ./nix/daytripper.nix;
   "dbcleaner" = import ./nix/dbcleaner.nix;
@@ -9205,6 +9206,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
   "ihp-openai" = import ./nix/ihp-openai.nix;
+  "ihp-postgresql-simple-extra" = import ./nix/ihp-postgresql-simple-extra.nix;
   "ihs" = import ./nix/ihs.nix;
   "ihttp" = import ./nix/ihttp.nix;
   "ilist" = import ./nix/ilist.nix;

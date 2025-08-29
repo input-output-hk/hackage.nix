@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.2.0" = {
+    sha256 = "7a5f6fa478b568cdf06571488c8a003785119c49dd6807e58fd60d60f80eb870";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ronn-1.1.2.0-r0-55bbd33c880558a7aadaa73ce34da4775c47fdcbf6946872f307273003623a25.nix;
+        revNum = 0;
+        sha256 = "55bbd33c880558a7aadaa73ce34da4775c47fdcbf6946872f307273003623a25";
+      };
+      default = "r0";
+    };
+  };
 }

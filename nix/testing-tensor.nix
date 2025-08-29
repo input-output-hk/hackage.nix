@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "0006468e4b0a90c077173e6cd9c3a4b035eb67022544004846583786dd26b1b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/testing-tensor-0.2.0-r0-0756a3c090c1ad62843d9dba41ff0ade4489db520a8f0220a65370de133a823d.nix;
+        revNum = 0;
+        sha256 = "0756a3c090c1ad62843d9dba41ff0ade4489db520a8f0220a65370de133a823d";
+      };
+      default = "r0";
+    };
+  };
 }

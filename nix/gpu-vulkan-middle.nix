@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.1.0.77" = {
+    sha256 = "c372ec63523b7f3f5f857e15dc7699391ff6751044b48c156a5c44280ed723ab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gpu-vulkan-middle-0.1.0.77-r0-a6b75b38855cf0cf709061ced2282d0d85dc8f6fe8ebb2a797ffc235006bcc7e.nix;
+        revNum = 0;
+        sha256 = "a6b75b38855cf0cf709061ced2282d0d85dc8f6fe8ebb2a797ffc235006bcc7e";
+      };
+      default = "r0";
+    };
+  };
 }

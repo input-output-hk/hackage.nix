@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.2.0" = {
+    sha256 = "5984757049f4139c625846e6c4c72b75975ecbf29b60de0a821fbd5f8b7ec8e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ronn-optparse-applicative-1.0.2.0-r0-8cf88ad3df1ad1e54b8b04cb815f3b75c1103c1b582d8c0f33c393c68a934e6c.nix;
+        revNum = 0;
+        sha256 = "8cf88ad3df1ad1e54b8b04cb815f3b75c1103c1b582d8c0f33c393c68a934e6c";
+      };
+      default = "r0";
+    };
+  };
 }
