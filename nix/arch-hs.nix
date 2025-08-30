@@ -161,6 +161,17 @@
       default = "r1";
     };
   };
+  "0.12.0.4" = {
+    sha256 = "a647e3a54439b824f95ba5ad3b384862e7a97ca7d36449b6408788669e1d085d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arch-hs-0.12.0.4-r0-bffc8dd383add2f16f6b0328d224bb79cdfeba9784c49fbf81682076bacc6b90.nix;
+        revNum = 0;
+        sha256 = "bffc8dd383add2f16f6b0328d224bb79cdfeba9784c49fbf81682076bacc6b90";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "c8f9698e7bf31ceb53ccef923965e27842c9c541155a481cd3210621ab74f222";
     revisions = {

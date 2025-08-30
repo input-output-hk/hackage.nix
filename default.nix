@@ -13389,6 +13389,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ptera-th" = import ./nix/ptera-th.nix;
   "pthread" = import ./nix/pthread.nix;
   "ptr" = import ./nix/ptr.nix;
+  "ptr-peeker" = import ./nix/ptr-peeker.nix;
   "ptr-poker" = import ./nix/ptr-poker.nix;
   "ptrdiff" = import ./nix/ptrdiff.nix;
   "pty-mcp-server" = import ./nix/pty-mcp-server.nix;
