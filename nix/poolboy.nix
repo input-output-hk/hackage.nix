@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "086075701fbcb57b44a348181424b25809ca0562051afb2148fb361a574cf377";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/poolboy-0.4.1.0-r0-73247b4fb96e7d814bc8eeb0ad03b74ef62e910b0ee948ddc2312f6de43243c5.nix;
+        revNum = 0;
+        sha256 = "73247b4fb96e7d814bc8eeb0ad03b74ef62e910b0ee948ddc2312f6de43243c5";
+      };
+      default = "r0";
+    };
+  };
 }
