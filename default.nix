@@ -4255,6 +4255,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cron-compat" = import ./nix/cron-compat.nix;
   "cronus" = import ./nix/cronus.nix;
   "cropty" = import ./nix/cropty.nix;
+  "croque-mort" = import ./nix/croque-mort.nix;
   "crucible" = import ./nix/crucible.nix;
   "crucible-debug" = import ./nix/crucible-debug.nix;
   "crucible-llvm" = import ./nix/crucible-llvm.nix;
@@ -9204,7 +9205,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-rlangqq" = import ./nix/ihaskell-rlangqq.nix;
   "ihaskell-symtegration" = import ./nix/ihaskell-symtegration.nix;
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
+  "ihp" = import ./nix/ihp.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
+  "ihp-ide" = import ./nix/ihp-ide.nix;
+  "ihp-migrate" = import ./nix/ihp-migrate.nix;
   "ihp-openai" = import ./nix/ihp-openai.nix;
   "ihp-postgresql-simple-extra" = import ./nix/ihp-postgresql-simple-extra.nix;
   "ihs" = import ./nix/ihs.nix;
