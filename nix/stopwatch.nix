@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.1.0.7" = {
+    sha256 = "178aa590dd792aaf8aa193fb7749306c969e9decbc13d76d8a9e89f880596b6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stopwatch-0.1.0.7-r0-a1299bf1a1c9131560b2876c16d83e50f1be69ae60a2e7a38fcccbf107d0373d.nix;
+        revNum = 0;
+        sha256 = "a1299bf1a1c9131560b2876c16d83e50f1be69ae60a2e7a38fcccbf107d0373d";
+      };
+      default = "r0";
+    };
+  };
 }
