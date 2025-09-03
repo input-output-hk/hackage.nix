@@ -76,7 +76,12 @@
         revNum = 1;
         sha256 = "4afc8f7b0dbcde069ee5028c5c694b4428ae27ae4e8e4e8229e9274f155c7582";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dhall-csv-1.0.4-r2-7271b5625b61ed73a3b48cd20e9e727f7df511b7262b5d0cc07d59de7edaa675.nix;
+        revNum = 2;
+        sha256 = "7271b5625b61ed73a3b48cd20e9e727f7df511b7262b5d0cc07d59de7edaa675";
+      };
+      default = "r2";
     };
   };
 }

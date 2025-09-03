@@ -42,4 +42,15 @@
       default = "r2";
     };
   };
+  "0.1.1.3" = {
+    sha256 = "421374235fc263a9b23965677f7a4aca44db814bc60004868fccdb270758f1de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/GOST34112012-Hash-0.1.1.3-r0-aa1775510882d82d0d8ffae5e4d024e923bbaeb7ecbff51a7f04d7d714f2e392.nix;
+        revNum = 0;
+        sha256 = "aa1775510882d82d0d8ffae5e4d024e923bbaeb7ecbff51a7f04d7d714f2e392";
+      };
+      default = "r0";
+    };
+  };
 }

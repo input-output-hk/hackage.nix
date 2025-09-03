@@ -593,6 +593,17 @@
       default = "r0";
     };
   };
+  "2.13.1" = {
+    sha256 = "6d9da973687f1f68b8f67872dfff39daa7d5ee9515bdfed085cbe65eee579c30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hadolint-2.13.1-r0-d082ecc606fd6cbe50aead3d9215cf70815e849043d12cd96042b2102b5adfda.nix;
+        revNum = 0;
+        sha256 = "d082ecc606fd6cbe50aead3d9215cf70815e849043d12cd96042b2102b5adfda";
+      };
+      default = "r0";
+    };
+  };
   "2.2.0" = {
     sha256 = "ece526282364a5a0cb5510e8399a3205f898e2583a1392d6b9779f2369a0978e";
     revisions = {
