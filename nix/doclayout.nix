@@ -125,4 +125,15 @@
       default = "r0";
     };
   };
+  "0.5.0.1" = {
+    sha256 = "6521d8b04b0b49f5a0d633874c9e5b3b5e2aa4abd94a9bae80f976c0932c7007";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doclayout-0.5.0.1-r0-586072d2f2b8b61aca5d830fac0e74c3fca727b546c00c18a31ed967f5547f6a.nix;
+        revNum = 0;
+        sha256 = "586072d2f2b8b61aca5d830fac0e74c3fca727b546c00c18a31ed967f5547f6a";
+      };
+      default = "r0";
+    };
+  };
 }

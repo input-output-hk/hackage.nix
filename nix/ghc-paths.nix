@@ -64,7 +64,12 @@
         revNum = 7;
         sha256 = "6214f13c955993eb716c594b166c17914391c66da375f2826ae397bf82443847";
       };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/ghc-paths-0.1.0.12-r8-424d50a2a38c6ff5b8454ede5da7fb46ea5370c2d9e1886c480a514223c0b0fa.nix;
+        revNum = 8;
+        sha256 = "424d50a2a38c6ff5b8454ede5da7fb46ea5370c2d9e1886c480a514223c0b0fa";
+      };
+      default = "r8";
     };
   };
   "0.1.0.2" = {

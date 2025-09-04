@@ -76,7 +76,12 @@
         revNum = 1;
         sha256 = "e5575e8a8e09ec8b5bac8dcfb95da0e06b0eb98048c6fccbefb0a87edbebba81";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/cantor-pairing-0.2.0.2-r2-657a68f44569fb0fc42bb15dc455215237fd0490cb3b00d8ad0dfd8752917e08.nix;
+        revNum = 2;
+        sha256 = "657a68f44569fb0fc42bb15dc455215237fd0490cb3b00d8ad0dfd8752917e08";
+      };
+      default = "r2";
     };
   };
 }
