@@ -11378,6 +11378,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mtl-compat" = import ./nix/mtl-compat.nix;
   "mtl-evil-instances" = import ./nix/mtl-evil-instances.nix;
   "mtl-extras" = import ./nix/mtl-extras.nix;
+  "mtl-mhs" = import ./nix/mtl-mhs.nix;
   "mtl-misc-yj" = import ./nix/mtl-misc-yj.nix;
   "mtl-prelude" = import ./nix/mtl-prelude.nix;
   "mtl-tf" = import ./nix/mtl-tf.nix;
@@ -12148,6 +12149,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "options-time" = import ./nix/options-time.nix;
   "optparse-applicative" = import ./nix/optparse-applicative.nix;
   "optparse-applicative-cmdline-util" = import ./nix/optparse-applicative-cmdline-util.nix;
+  "optparse-applicative-dex" = import ./nix/optparse-applicative-dex.nix;
   "optparse-applicative-simple" = import ./nix/optparse-applicative-simple.nix;
   "optparse-declarative" = import ./nix/optparse-declarative.nix;
   "optparse-enum" = import ./nix/optparse-enum.nix;
@@ -13651,6 +13653,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "random-fu" = import ./nix/random-fu.nix;
   "random-fu-multivariate" = import ./nix/random-fu-multivariate.nix;
   "random-hypergeometric" = import ./nix/random-hypergeometric.nix;
+  "random-mhs" = import ./nix/random-mhs.nix;
   "random-names" = import ./nix/random-names.nix;
   "random-shuffle" = import ./nix/random-shuffle.nix;
   "random-source" = import ./nix/random-source.nix;
@@ -16497,6 +16500,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tie-knot" = import ./nix/tie-knot.nix;
   "tiempo" = import ./nix/tiempo.nix;
   "tiger" = import ./nix/tiger.nix;
+  "tigerbeetle-hs" = import ./nix/tigerbeetle-hs.nix;
   "tight-apply" = import ./nix/tight-apply.nix;
   "tightrope" = import ./nix/tightrope.nix;
   "tighttp" = import ./nix/tighttp.nix;

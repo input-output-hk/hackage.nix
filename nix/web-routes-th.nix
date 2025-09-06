@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.22.8.3" = {
+    sha256 = "e5900778b34d3b0931f3f3287b04121153eb3d6873bf67dd7e96dbe2cafb3171";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-routes-th-0.22.8.3-r0-fd18bddafafc999293b71a8627ee3a6aa35b0757015799cea724dd69d3d85221.nix;
+        revNum = 0;
+        sha256 = "fd18bddafafc999293b71a8627ee3a6aa35b0757015799cea724dd69d3d85221";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "86667541d819c13787aef21dd213ed0a5bc0ecf14e1a7170179c6f24935f78cb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/gibbon-0.1.1-r1-5a7e0399b4cd9e0e680abc56f14d0295f383e04966cf9e20e1dff1ac2c3c9d59.nix;
+        revNum = 1;
+        sha256 = "5a7e0399b4cd9e0e680abc56f14d0295f383e04966cf9e20e1dff1ac2c3c9d59";
+      };
+      default = "r1";
     };
   };
 }

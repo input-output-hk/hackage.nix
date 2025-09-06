@@ -74,4 +74,15 @@
       default = "r0";
     };
   };
+  "0.2025.9.5" = {
+    sha256 = "24c04b16803982828f7f734259fbc4b7a2b4daf8387f277409b10e08d1f64916";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agda2lagda-0.2025.9.5-r0-c7d73ac26b5251a22376ebd25eb0aa1a548d9b04955a2ac39516a15678226332.nix;
+        revNum = 0;
+        sha256 = "c7d73ac26b5251a22376ebd25eb0aa1a548d9b04955a2ac39516a15678226332";
+      };
+      default = "r0";
+    };
+  };
 }
