@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.0.7.0" = {
+    sha256 = "9d32ab34d05ca1aad165299c73e4c6e414b32a1ab0664e849542de800c7e7025";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-procspawn-0.0.7.0-r0-f5872e44d2b31403d09b7585c11adbfabdda27c66a31f0bc6459d9668101e879.nix;
+        revNum = 0;
+        sha256 = "f5872e44d2b31403d09b7585c11adbfabdda27c66a31f0bc6459d9668101e879";
+      };
+      default = "r0";
+    };
+  };
 }

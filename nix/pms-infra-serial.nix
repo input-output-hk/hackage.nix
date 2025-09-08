@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.0.4.0" = {
+    sha256 = "83f4290866407fa3c8eb9255e96c4c15e454313f3de27429db6543b16e50dd92";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-serial-0.0.4.0-r0-12c257aa5c7a3a6f9079de50ff92a9a9e682749162fd285eeff8a3be32828e39.nix;
+        revNum = 0;
+        sha256 = "12c257aa5c7a3a6f9079de50ff92a9a9e682749162fd285eeff8a3be32828e39";
+      };
+      default = "r0";
+    };
+  };
 }

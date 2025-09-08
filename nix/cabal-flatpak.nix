@@ -124,7 +124,12 @@
         revNum = 2;
         sha256 = "835210b1e24b825cee56f3fe4eefd60651491558844e065049816e5ba4bb3806";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/cabal-flatpak-0.1.2-r3-a7b902d0e9090ae746fb56d9aeb1cab2f07b01346204a0ed17283f02c8d2d103.nix;
+        revNum = 3;
+        sha256 = "a7b902d0e9090ae746fb56d9aeb1cab2f07b01346204a0ed17283f02c8d2d103";
+      };
+      default = "r3";
     };
   };
 }

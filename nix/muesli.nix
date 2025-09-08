@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "f61807f182e60f58bbaed87bada69b22f82c7d9db4e976c6df531c97b6d58fbc";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/muesli-0.1.1.0-r1-0ff3ab031f5c711dfb094e8264c522ccbb353026ee35ae8fd7a5e20229d1ee15.nix;
+        revNum = 1;
+        sha256 = "0ff3ab031f5c711dfb094e8264c522ccbb353026ee35ae8fd7a5e20229d1ee15";
+      };
+      default = "r1";
     };
   };
 }
