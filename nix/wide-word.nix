@@ -288,4 +288,15 @@
       default = "r0";
     };
   };
+  "0.1.8.0" = {
+    sha256 = "2384a594c100cd9827d12cc8db97b8d0cbf97ac6d397ff3bea55c2aa20734345";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wide-word-0.1.8.0-r0-4b6fca5d02c422e32c9e389b59184512f394abc5dbaddf973051a15df742b0eb.nix;
+        revNum = 0;
+        sha256 = "4b6fca5d02c422e32c9e389b59184512f394abc5dbaddf973051a15df742b0eb";
+      };
+      default = "r0";
+    };
+  };
 }

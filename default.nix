@@ -4117,6 +4117,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "conversions" = import ./nix/conversions.nix;
   "convert" = import ./nix/convert.nix;
   "convert-annotation" = import ./nix/convert-annotation.nix;
+  "convert-units" = import ./nix/convert-units.nix;
   "convertible" = import ./nix/convertible.nix;
   "convertible-ascii" = import ./nix/convertible-ascii.nix;
   "convertible-text" = import ./nix/convertible-text.nix;
@@ -12956,6 +12957,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polysoup" = import ./nix/polysoup.nix;
   "polytypeable" = import ./nix/polytypeable.nix;
   "polytypeable-utils" = import ./nix/polytypeable-utils.nix;
+  "polytyped" = import ./nix/polytyped.nix;
   "polyvariadic" = import ./nix/polyvariadic.nix;
   "pomaps" = import ./nix/pomaps.nix;
   "pomodoro" = import ./nix/pomodoro.nix;
@@ -16300,6 +16302,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "testPkg" = import ./nix/test_Pkg.nix;
   "testbench" = import ./nix/testbench.nix;
   "testcontainers" = import ./nix/testcontainers.nix;
+  "testcontainers-postgresql" = import ./nix/testcontainers-postgresql.nix;
   "testing-feat" = import ./nix/testing-feat.nix;
   "testing-tensor" = import ./nix/testing-tensor.nix;
   "testing-type-modifiers" = import ./nix/testing-type-modifiers.nix;

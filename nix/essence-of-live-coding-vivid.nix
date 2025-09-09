@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.9" = {
+    sha256 = "23c82cac75fdc184955a3796699e39a4350e4d83f2b154414b9158b3a1b6e1b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/essence-of-live-coding-vivid-0.2.9-r0-08a11d405a054e83b93243098c042dfd16e6085ee23c624f5c5971315cd5d322.nix;
+        revNum = 0;
+        sha256 = "08a11d405a054e83b93243098c042dfd16e6085ee23c624f5c5971315cd5d322";
+      };
+      default = "r0";
+    };
+  };
 }
