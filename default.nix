@@ -10429,6 +10429,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "listsafe" = import ./nix/listsafe.nix;
   "liszt" = import ./nix/liszt.nix;
   "lit" = import ./nix/lit.nix;
+  "literally" = import ./nix/literally.nix;
   "literals" = import ./nix/literals.nix;
   "literatex" = import ./nix/literatex.nix;
   "little-earley" = import ./nix/little-earley.nix;

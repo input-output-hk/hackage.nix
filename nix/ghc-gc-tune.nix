@@ -51,7 +51,12 @@
         revNum = 0;
         sha256 = "b81176bf9acfb1ce4931511156bcdc075099277e4e666dcefd3740327930852c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-gc-tune-0.3.2-r1-962bdcec1e86270417c20063e2d39ca818b8d98e5c22c24fe34322d855732b25.nix;
+        revNum = 1;
+        sha256 = "962bdcec1e86270417c20063e2d39ca818b8d98e5c22c24fe34322d855732b25";
+      };
+      default = "r1";
     };
   };
 }
