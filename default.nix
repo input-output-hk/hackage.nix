@@ -7055,6 +7055,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "google-cloud-common" = import ./nix/google-cloud-common.nix;
   "google-cloud-compute" = import ./nix/google-cloud-compute.nix;
   "google-cloud-logging" = import ./nix/google-cloud-logging.nix;
+  "google-cloud-pubsub" = import ./nix/google-cloud-pubsub.nix;
   "google-cloud-storage" = import ./nix/google-cloud-storage.nix;
   "google-dictionary" = import ./nix/google-dictionary.nix;
   "google-drive" = import ./nix/google-drive.nix;

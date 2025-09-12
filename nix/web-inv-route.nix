@@ -123,4 +123,15 @@
       default = "r0";
     };
   };
+  "0.1.3.3" = {
+    sha256 = "bc3cd625ec39decc29444d9553d6e4c3f508b95c3e69811055977a4dce6d4c1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-inv-route-0.1.3.3-r0-66a6997c4103f95d6f6e28755a70f00c676a890c49e051fa672aaaaca5fcf33d.nix;
+        revNum = 0;
+        sha256 = "66a6997c4103f95d6f6e28755a70f00c676a890c49e051fa672aaaaca5fcf33d";
+      };
+      default = "r0";
+    };
+  };
 }
