@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "8d8cd4490c25279d337ce88a74f3e189d0b4f053e266d8d880e7bb22cbd0dddb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rollbar-2.0.0.0-r0-c41c684601d2fff4dd24b2645247214320cbb3ac97f54d5f743d422c39e4c3a7.nix;
+        revNum = 0;
+        sha256 = "c41c684601d2fff4dd24b2645247214320cbb3ac97f54d5f743d422c39e4c3a7";
+      };
+      default = "r0";
+    };
+  };
 }

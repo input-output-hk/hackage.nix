@@ -177,6 +177,22 @@
       default = "r1";
     };
   };
+  "0.12.1" = {
+    sha256 = "db4ee1d3fa419a8867062bcd2a039e4b799767e3dcc9c010bee62dd86715ca61";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arch-hs-0.12.1-r0-ffb1c0074551ca83fc0d9c61bbd789f04318bae6a654d9885450d15c996d6357.nix;
+        revNum = 0;
+        sha256 = "ffb1c0074551ca83fc0d9c61bbd789f04318bae6a654d9885450d15c996d6357";
+      };
+      r1 = {
+        nix = import ../hackage/arch-hs-0.12.1-r1-45b24eebd20c5e217d93a9e7025ed4cde3e8e4e44f43d3c405e61db95ea1c381.nix;
+        revNum = 1;
+        sha256 = "45b24eebd20c5e217d93a9e7025ed4cde3e8e4e44f43d3c405e61db95ea1c381";
+      };
+      default = "r1";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "c8f9698e7bf31ceb53ccef923965e27842c9c541155a481cd3210621ab74f222";
     revisions = {

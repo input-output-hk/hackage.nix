@@ -2201,6 +2201,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "array-forth" = import ./nix/array-forth.nix;
   "array-list" = import ./nix/array-list.nix;
   "array-memoize" = import ./nix/array-memoize.nix;
+  "array-mhs" = import ./nix/array-mhs.nix;
   "array-primops" = import ./nix/array-primops.nix;
   "array-utils" = import ./nix/array-utils.nix;
   "arrayfire" = import ./nix/arrayfire.nix;
@@ -15699,12 +15700,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "streamly-cassava" = import ./nix/streamly-cassava.nix;
   "streamly-core" = import ./nix/streamly-core.nix;
   "streamly-examples" = import ./nix/streamly-examples.nix;
+  "streamly-fsevents" = import ./nix/streamly-fsevents.nix;
   "streamly-fsnotify" = import ./nix/streamly-fsnotify.nix;
   "streamly-lmdb" = import ./nix/streamly-lmdb.nix;
   "streamly-lz4" = import ./nix/streamly-lz4.nix;
   "streamly-posix" = import ./nix/streamly-posix.nix;
   "streamly-process" = import ./nix/streamly-process.nix;
   "streamly-statistics" = import ./nix/streamly-statistics.nix;
+  "streamly-text" = import ./nix/streamly-text.nix;
   "streamly-zip" = import ./nix/streamly-zip.nix;
   "streamproc" = import ./nix/streamproc.nix;
   "streams" = import ./nix/streams.nix;
