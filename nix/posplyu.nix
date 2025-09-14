@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "d8e7518da80c1910dddc6d2645f1aa122ce9a87f067b70ff7824a2895d75ea1e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/posplyu-0.1.1-r0-9a7dffa25084a03596ab32993710c28f88cbfd783b7f206220c90ef41e1b2f78.nix;
+        revNum = 0;
+        sha256 = "9a7dffa25084a03596ab32993710c28f88cbfd783b7f206220c90ef41e1b2f78";
+      };
+      default = "r0";
+    };
+  };
 }
