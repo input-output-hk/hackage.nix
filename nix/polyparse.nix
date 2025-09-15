@@ -151,6 +151,17 @@
       default = "r9";
     };
   };
+  "1.13.1" = {
+    sha256 = "395b89ed9901e9b19eaa652d2a17b9d1ed04c111b2cd92b8996868bea642bfd6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polyparse-1.13.1-r0-b25f23ff1173d8779c450f56689dea0511e89294e1e3dd74b77933728356e9e0.nix;
+        revNum = 0;
+        sha256 = "b25f23ff1173d8779c450f56689dea0511e89294e1e3dd74b77933728356e9e0";
+      };
+      default = "r0";
+    };
+  };
   "1.2" = {
     sha256 = "4c9cda146f3f792fab964ab096a3fe8fb4643f786814848ddea3492515ec7588";
     revisions = {

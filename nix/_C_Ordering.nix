@@ -47,4 +47,15 @@
       default = "r1";
     };
   };
+  "2.3.1" = {
+    sha256 = "838f174bc6809a0936d2c3a1786a45be6730a5c94baaaa7147275bddf3a1c9d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/COrdering-2.3.1-r0-60c7328d87f41de27cdd26fbe4d3e75e60660f6ad5b14bb280ff3e5c6ec00161.nix;
+        revNum = 0;
+        sha256 = "60c7328d87f41de27cdd26fbe4d3e75e60660f6ad5b14bb280ff3e5c6ec00161";
+      };
+      default = "r0";
+    };
+  };
 }

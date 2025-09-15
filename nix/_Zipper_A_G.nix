@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "1337a511de3cfe7b3660bed37ff3b888660a365f5bb7d8a3b3fb4f6c1e1a8fe5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ZipperAG-1.0.0-r0-29db34f3d9d8f1b05f81ea27cc388a960a4c75f8893cde435c78410aefdb5aa0.nix;
+        revNum = 0;
+        sha256 = "29db34f3d9d8f1b05f81ea27cc388a960a4c75f8893cde435c78410aefdb5aa0";
+      };
+      default = "r0";
+    };
+  };
 }
