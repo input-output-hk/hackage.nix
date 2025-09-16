@@ -1889,7 +1889,12 @@
         revNum = 0;
         sha256 = "c9af372bb98c02072bfec25eba566ce37f46f886a2dc46d735547f5c9e56f264";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/vty-6.4-r1-ad9312e99e1d251ee58640210adcc7d63f65fb0687e0e481ef9e708a568bfd9a.nix;
+        revNum = 1;
+        sha256 = "ad9312e99e1d251ee58640210adcc7d63f65fb0687e0e481ef9e708a568bfd9a";
+      };
+      default = "r1";
     };
   };
 }

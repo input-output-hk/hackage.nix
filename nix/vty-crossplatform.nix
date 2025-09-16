@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "e07531db732ee44a40e8ef3a2fd3b3db6d2615a9f8f83b87de574e204f19be7c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/vty-crossplatform-0.1.0.0-r2-e03566a75e1a7f448ee7578af678c36e51de7718095aa323e684df02be307e8e.nix;
+        revNum = 2;
+        sha256 = "e03566a75e1a7f448ee7578af678c36e51de7718095aa323e684df02be307e8e";
+      };
+      default = "r2";
     };
   };
   "0.2.0.0" = {

@@ -1349,6 +1349,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ZipFold" = import ./nix/_Zip_Fold.nix;
   "ZipperAG" = import ./nix/_Zipper_A_G.nix;
   "Zora" = import ./nix/_Zora.nix;
+  "Ztrategic" = import ./nix/_Ztrategic.nix;
   "Zwaluw" = import ./nix/_Zwaluw.nix;
   "a50" = import ./nix/a50.nix;
   "aasam" = import ./nix/aasam.nix;
@@ -1569,6 +1570,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda2hs" = import ./nix/agda2hs.nix;
   "agda2lagda" = import ./nix/agda2lagda.nix;
   "agda2train" = import ./nix/agda2train.nix;
+  "age" = import ./nix/age.nix;
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
