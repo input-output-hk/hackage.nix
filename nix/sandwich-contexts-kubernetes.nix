@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "859f5bf1a886960e13538f7205c2621ee76ef935b73fddaee2980def2855dba6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-contexts-kubernetes-0.1.2.0-r0-1433bb56a7f6a0d46edc0fc0ef01de914e0d810ce49ece3ea2afbdfd381c4dd5.nix;
+        revNum = 0;
+        sha256 = "1433bb56a7f6a0d46edc0fc0ef01de914e0d810ce49ece3ea2afbdfd381c4dd5";
+      };
+      default = "r0";
+    };
+  };
 }

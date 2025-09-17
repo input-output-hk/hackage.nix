@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.0.4" = {
+    sha256 = "54d2ed913a5a27f752ae3422f3dae76fdae36496520c85d7fa2b79a00052961a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/roboservant-0.1.0.4-r0-5bf23ebc836513eaa96676b96f938c8f3b2dd59b0fcf4c1450a92a8e6c403869.nix;
+        revNum = 0;
+        sha256 = "5bf23ebc836513eaa96676b96f938c8f3b2dd59b0fcf4c1450a92a8e6c403869";
+      };
+      default = "r0";
+    };
+  };
 }

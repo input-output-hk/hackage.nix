@@ -191,4 +191,15 @@
       default = "r0";
     };
   };
+  "0.4.0.2" = {
+    sha256 = "66d974692b2bf87d8da67a1b02aab42bcfef136eb3c656b6e38a78e736c0acc7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sandwich-webdriver-0.4.0.2-r0-b3d6d8f03ed619b894eaf468844b64ba0bb33909b51702e498257952dc4350fe.nix;
+        revNum = 0;
+        sha256 = "b3d6d8f03ed619b894eaf468844b64ba0bb33909b51702e498257952dc4350fe";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -171,4 +171,15 @@
       default = "r1";
     };
   };
+  "1.5.0.1" = {
+    sha256 = "4fb8d827996a4ed92bde4b7a110bb35dec08b8dc06efdd9d3bc60e3d31fba477";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-pgf-1.5.0.1-r0-20ce138ddcf9120ad3ebdda9ea5c875d3697fe6ffa428cf04a979dccfbe42852.nix;
+        revNum = 0;
+        sha256 = "20ce138ddcf9120ad3ebdda9ea5c875d3697fe6ffa428cf04a979dccfbe42852";
+      };
+      default = "r0";
+    };
+  };
 }

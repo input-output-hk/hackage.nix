@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "19fd81d6cafc79d70c7d5b5dc2bccf0c68c2d9f5b28eb463e7a22d6a67d7f2f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/signet-1.0.0.0-r0-da4923e258a171bc8440e314987df77d3c81c8ec633e2b2c59eb3804acfcfa1c.nix;
+        revNum = 0;
+        sha256 = "da4923e258a171bc8440e314987df77d3c81c8ec633e2b2c59eb3804acfcfa1c";
+      };
+      default = "r0";
+    };
+  };
 }
