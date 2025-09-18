@@ -2818,6 +2818,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bitmap" = import ./nix/bitmap.nix;
   "bitmap-opengl" = import ./nix/bitmap-opengl.nix;
   "bitmaps" = import ./nix/bitmaps.nix;
+  "bitmasks" = import ./nix/bitmasks.nix;
   "bits" = import ./nix/bits.nix;
   "bits-atomic" = import ./nix/bits-atomic.nix;
   "bits-bytestring" = import ./nix/bits-bytestring.nix;
@@ -5562,6 +5563,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventful-sql-common" = import ./nix/eventful-sql-common.nix;
   "eventful-sqlite" = import ./nix/eventful-sqlite.nix;
   "eventful-test-helpers" = import ./nix/eventful-test-helpers.nix;
+  "eventlog-live" = import ./nix/eventlog-live.nix;
+  "eventlog-live-influxdb" = import ./nix/eventlog-live-influxdb.nix;
+  "eventlog-live-otelcol" = import ./nix/eventlog-live-otelcol.nix;
   "eventlog-socket" = import ./nix/eventlog-socket.nix;
   "eventlog2html" = import ./nix/eventlog2html.nix;
   "eventloop" = import ./nix/eventloop.nix;
@@ -11596,6 +11600,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "naturalcomp" = import ./nix/naturalcomp.nix;
   "naturals" = import ./nix/naturals.nix;
   "naver-translate" = import ./nix/naver-translate.nix;
+  "nbparts" = import ./nix/nbparts.nix;
   "nbt" = import ./nix/nbt.nix;
   "nc-indicators" = import ./nix/nc-indicators.nix;
   "ncurses" = import ./nix/ncurses.nix;

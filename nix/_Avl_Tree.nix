@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "4.3" = {
+    sha256 = "392349be48899f03fa933e3c04277a068e23d78dd401d652318b304a407a8dd0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AvlTree-4.3-r0-1c45243efdf782b8bef89e3d6a55f437beb273669a7a1f9fb55f2ce1c29e9cd5.nix;
+        revNum = 0;
+        sha256 = "1c45243efdf782b8bef89e3d6a55f437beb273669a7a1f9fb55f2ce1c29e9cd5";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -523,7 +523,23 @@
         revNum = 10;
         sha256 = "d1aeb8b63707e39e4ea1f205010537c976975381729aa5f4683da9c502986804";
       };
-      default = "r10";
+      r11 = {
+        nix = import ../hackage/hledger-iadd-1.3.21-r11-6eb701837867f1e6384c796f21e66a60962d15649f685f5e957c7ea2f80b629b.nix;
+        revNum = 11;
+        sha256 = "6eb701837867f1e6384c796f21e66a60962d15649f685f5e957c7ea2f80b629b";
+      };
+      default = "r11";
+    };
+  };
+  "1.3.22" = {
+    sha256 = "9bf249c381428f6851b1656275c29b9fd02e41c4e42d642a7af356889f3cfb1c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hledger-iadd-1.3.22-r0-78f74a4936e91a985bf6dbf451e7b612b7463aeb5729312e6987b987298f1682.nix;
+        revNum = 0;
+        sha256 = "78f74a4936e91a985bf6dbf451e7b612b7463aeb5729312e6987b987298f1682";
+      };
+      default = "r0";
     };
   };
   "1.3.3" = {
