@@ -183,4 +183,15 @@
       default = "r0";
     };
   };
+  "0.1.4.6" = {
+    sha256 = "a8e13b00bb67eb2192c8bc3bd96eea877fe4621331199ada006cb421406b4a02";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shellwords-0.1.4.6-r0-c0bf4694c2107db9ee0d64cbe4fd8af3bc9feda7d1f98e5cdd3b47bcb4c45f62.nix;
+        revNum = 0;
+        sha256 = "c0bf4694c2107db9ee0d64cbe4fd8af3bc9feda7d1f98e5cdd3b47bcb4c45f62";
+      };
+      default = "r0";
+    };
+  };
 }

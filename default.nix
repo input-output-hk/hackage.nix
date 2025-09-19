@@ -8180,6 +8180,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hinquire" = import ./nix/hinquire.nix;
   "hinstaller" = import ./nix/hinstaller.nix;
   "hint" = import ./nix/hint.nix;
+  "hint-nix" = import ./nix/hint-nix.nix;
   "hint-server" = import ./nix/hint-server.nix;
   "hinter" = import ./nix/hinter.nix;
   "hinterface" = import ./nix/hinterface.nix;
@@ -14203,6 +14204,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rng-utils" = import ./nix/rng-utils.nix;
   "rob" = import ./nix/rob.nix;
   "robin" = import ./nix/robin.nix;
+  "robin-hood-profit" = import ./nix/robin-hood-profit.nix;
   "roboservant" = import ./nix/roboservant.nix;
   "robot" = import ./nix/robot.nix;
   "robots-txt" = import ./nix/robots-txt.nix;
@@ -17672,6 +17674,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "warp-static" = import ./nix/warp-static.nix;
   "warp-systemd" = import ./nix/warp-systemd.nix;
   "warp-tls" = import ./nix/warp-tls.nix;
+  "warp-tls-simple" = import ./nix/warp-tls-simple.nix;
   "warp-tls-uid" = import ./nix/warp-tls-uid.nix;
   "warped" = import ./nix/warped.nix;
   "wasm" = import ./nix/wasm.nix;

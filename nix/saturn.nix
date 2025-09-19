@@ -175,4 +175,15 @@
       default = "r0";
     };
   };
+  "1.1.0.1" = {
+    sha256 = "740cf53f1bbc8c88e63cf68e97cf1ea845252aae0c8ae4630e3d38853416b337";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/saturn-1.1.0.1-r0-7508674bbecfe2140e54f14074180cc51f887037f0f46398d9b5eec580ab6472.nix;
+        revNum = 0;
+        sha256 = "7508674bbecfe2140e54f14074180cc51f887037f0f46398d9b5eec580ab6472";
+      };
+      default = "r0";
+    };
+  };
 }
