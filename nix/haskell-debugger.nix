@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "757522da6bd5a281802abfdebab3cc95d12c58d766437aedcf47ba933dc0d13a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-debugger-0.8.0.0-r0-bd600c9dbde7f1e3e5235d0a7d7966d9a57b43908357b634fde0ad12cd449aa6.nix;
+        revNum = 0;
+        sha256 = "bd600c9dbde7f1e3e5235d0a7d7966d9a57b43908357b634fde0ad12cd449aa6";
+      };
+      default = "r0";
+    };
+  };
 }

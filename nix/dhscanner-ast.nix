@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "1.1.2" = {
+    sha256 = "aa642216f899b9313ffa3a8986637e8ce5376543441bd00cbd98b4b0d2e72829";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-ast-1.1.2-r0-3fed76ce066f035557792db83551cc2261472bd56bf77b1e576dbe4716c12c35.nix;
+        revNum = 0;
+        sha256 = "3fed76ce066f035557792db83551cc2261472bd56bf77b1e576dbe4716c12c35";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "1.0.9" = {
+    sha256 = "b57777cd897f6e77b40efa514a48301191a0ae89abb006fadb288e2a354cf13b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-bitcode-1.0.9-r0-c8ae9d554d92efe3f94207ccfe0709bfdff1fef76301875d19a9225ed1a28c80.nix;
+        revNum = 0;
+        sha256 = "c8ae9d554d92efe3f94207ccfe0709bfdff1fef76301875d19a9225ed1a28c80";
+      };
+      default = "r0";
+    };
+  };
 }

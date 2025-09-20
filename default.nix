@@ -17395,6 +17395,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "var" = import ./nix/var.nix;
   "var-monad" = import ./nix/var-monad.nix;
   "varan" = import ./nix/varan.nix;
+  "varargs" = import ./nix/varargs.nix;
   "variable-media-field" = import ./nix/variable-media-field.nix;
   "variable-media-field-dhall" = import ./nix/variable-media-field-dhall.nix;
   "variable-media-field-optics" = import ./nix/variable-media-field-optics.nix;

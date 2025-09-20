@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.9.2" = {
+    sha256 = "89417e714c2cf8a01aa49202ccc8af8152b69951729081dfa91b44e3b27dafa9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-asapo-0.9.2-r0-992f6dc95266ca5be92ea5404445aa62f239f03d02637b7a9fc41616816241cd.nix;
+        revNum = 0;
+        sha256 = "992f6dc95266ca5be92ea5404445aa62f239f03d02637b7a9fc41616816241cd";
+      };
+      default = "r0";
+    };
+  };
 }

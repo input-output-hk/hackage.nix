@@ -291,7 +291,12 @@
         revNum = 0;
         sha256 = "5b8af59ebb0cac781038923b8aea93c027e1a55ef165933cf7050c45af6dab3f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/exon-1.7.2.0-r1-61a84b334c70b459c26653fd4bc91b684fd660fd37726fb7a7e2afb5842f1685.nix;
+        revNum = 1;
+        sha256 = "61a84b334c70b459c26653fd4bc91b684fd660fd37726fb7a7e2afb5842f1685";
+      };
+      default = "r1";
     };
   };
 }

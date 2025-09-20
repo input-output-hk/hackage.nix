@@ -100,7 +100,12 @@
         revNum = 0;
         sha256 = "fc1f43156a3ae2e25f00e71bc744cf02d76ed7c5f7661aefc3b30b9a0f3c0622";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nvfetcher-0.7.0.0-r1-68ee2e254f4c1106d2528de78620d73637efc31c878ea473b68e987ed2d26c5e.nix;
+        revNum = 1;
+        sha256 = "68ee2e254f4c1106d2528de78620d73637efc31c878ea473b68e987ed2d26c5e";
+      };
+      default = "r1";
     };
   };
 }
