@@ -17738,6 +17738,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "webauthn" = import ./nix/webauthn.nix;
   "webby" = import ./nix/webby.nix;
   "webcloud" = import ./nix/webcloud.nix;
+  "webcolor-labels" = import ./nix/webcolor-labels.nix;
   "webcrank" = import ./nix/webcrank.nix;
   "webcrank-dispatch" = import ./nix/webcrank-dispatch.nix;
   "webcrank-wai" = import ./nix/webcrank-wai.nix;
