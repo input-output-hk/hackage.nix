@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.4.0" = {
+    sha256 = "0645805304f25e6e0af802d9c4e87a6f42736ea13e1eeb5e3a69e3ea1ab6ec5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihp-openai-1.4.0-r0-512ca75ea8f03bc8b13d27986111c3438c098e0ac1911441ec75ae8a0a1b90cb.nix;
+        revNum = 0;
+        sha256 = "512ca75ea8f03bc8b13d27986111c3438c098e0ac1911441ec75ae8a0a1b90cb";
+      };
+      default = "r0";
+    };
+  };
 }

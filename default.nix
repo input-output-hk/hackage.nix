@@ -11489,6 +11489,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "musicw" = import ./nix/musicw.nix;
   "musicxml" = import ./nix/musicxml.nix;
   "musicxml2" = import ./nix/musicxml2.nix;
+  "musig2" = import ./nix/musig2.nix;
   "mustache" = import ./nix/mustache.nix;
   "mustache-haskell" = import ./nix/mustache-haskell.nix;
   "mustache2hs" = import ./nix/mustache2hs.nix;
