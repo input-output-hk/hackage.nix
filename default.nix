@@ -1492,6 +1492,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aern2-mfun" = import ./nix/aern2-mfun.nix;
   "aern2-mp" = import ./nix/aern2-mp.nix;
   "aern2-real" = import ./nix/aern2-real.nix;
+  "aes-gcm" = import ./nix/aes-gcm.nix;
   "aeson" = import ./nix/aeson.nix;
   "aeson-applicative" = import ./nix/aeson-applicative.nix;
   "aeson-attoparsec" = import ./nix/aeson-attoparsec.nix;
@@ -11157,6 +11158,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monad-control-identity" = import ./nix/monad-control-identity.nix;
   "monad-coroutine" = import ./nix/monad-coroutine.nix;
   "monad-dijkstra" = import ./nix/monad-dijkstra.nix;
+  "monad-effect" = import ./nix/monad-effect.nix;
   "monad-exception" = import ./nix/monad-exception.nix;
   "monad-extras" = import ./nix/monad-extras.nix;
   "monad-finally" = import ./nix/monad-finally.nix;
@@ -13432,6 +13434,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pulseaudio" = import ./nix/pulseaudio.nix;
   "punkt" = import ./nix/punkt.nix;
   "punycode" = import ./nix/punycode.nix;
+  "pup" = import ./nix/pup.nix;
   "puppetresources" = import ./nix/puppetresources.nix;
   "pure-cdb" = import ./nix/pure-cdb.nix;
   "pure-fft" = import ./nix/pure-fft.nix;
@@ -15538,6 +15541,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stackage2nix" = import ./nix/stackage2nix.nix;
   "stackcollapse-ghc" = import ./nix/stackcollapse-ghc.nix;
   "stackctl" = import ./nix/stackctl.nix;
+  "stacked" = import ./nix/stacked.nix;
   "stacked-dag" = import ./nix/stacked-dag.nix;
   "staf" = import ./nix/staf.nix;
   "staged-gg" = import ./nix/staged-gg.nix;
@@ -15710,6 +15714,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "streamly-cassava" = import ./nix/streamly-cassava.nix;
   "streamly-core" = import ./nix/streamly-core.nix;
   "streamly-examples" = import ./nix/streamly-examples.nix;
+  "streamly-filepath" = import ./nix/streamly-filepath.nix;
   "streamly-fsevents" = import ./nix/streamly-fsevents.nix;
   "streamly-fsnotify" = import ./nix/streamly-fsnotify.nix;
   "streamly-lmdb" = import ./nix/streamly-lmdb.nix;

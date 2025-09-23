@@ -213,6 +213,17 @@
       default = "r0";
     };
   };
+  "15.0.0" = {
+    sha256 = "a2c5298aa098d73226437c395459a354cf2a937eb2870bc6bc8416d39a5a97d0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/language-docker-15.0.0-r0-77f997fa1852c9197606100409c3fd30956be62b740abfec908bb2632820be14.nix;
+        revNum = 0;
+        sha256 = "77f997fa1852c9197606100409c3fd30956be62b740abfec908bb2632820be14";
+      };
+      default = "r0";
+    };
+  };
   "2.0.0" = {
     sha256 = "dbf1cc48cc5d9a1243bbfab8b1292aabef87c3f83d1c47795a5ebfa6d304bdae";
     revisions = {

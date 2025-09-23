@@ -505,7 +505,12 @@
         revNum = 1;
         sha256 = "6ec5e753c01c3a6dd3b8359939beb407c19074582fa117969133ace22e35a48d";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/mmark-0.0.8.0-r2-b9d6676ed273597e3832a5fa929023a83115d2c9754f9e0d523f04c99536c63f.nix;
+        revNum = 2;
+        sha256 = "b9d6676ed273597e3832a5fa929023a83115d2c9754f9e0d523f04c99536c63f";
+      };
+      default = "r2";
     };
   };
 }

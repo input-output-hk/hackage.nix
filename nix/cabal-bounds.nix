@@ -679,4 +679,15 @@
       default = "r0";
     };
   };
+  "2.7.0" = {
+    sha256 = "cd69c7303b2ae0e10cad137956ca44286444229294b498f22303cc028de1b427";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-bounds-2.7.0-r0-7f79bde4fc324ff330be02ac5b39bc72b9c7306c98887859c9b8c83a3a4c7b9d.nix;
+        revNum = 0;
+        sha256 = "7f79bde4fc324ff330be02ac5b39bc72b9c7306c98887859c9b8c83a3a4c7b9d";
+      };
+      default = "r0";
+    };
+  };
 }

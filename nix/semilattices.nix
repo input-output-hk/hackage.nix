@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.0.0.9" = {
+    sha256 = "666290788e505ebcc0574ae30ee9cb1a6bc621db652a1d76defc9e4df0a91ae0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semilattices-0.0.0.9-r0-309dbf8ea1d3e34a06e8dc687ba4a861565d0a73472d58e16131bfb4a09f737d.nix;
+        revNum = 0;
+        sha256 = "309dbf8ea1d3e34a06e8dc687ba4a861565d0a73472d58e16131bfb4a09f737d";
+      };
+      default = "r0";
+    };
+  };
 }
