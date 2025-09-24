@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "b09a963a4b8d71298d8aa06d05fa61ba5661a9562cb305987f5edeaef673d171";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relocant-1.1.0-r0-6ae05de424ca064aa229c9362b1d12a266fa20cfaab0e39b1fe3a2da3137397a.nix;
+        revNum = 0;
+        sha256 = "6ae05de424ca064aa229c9362b1d12a266fa20cfaab0e39b1fe3a2da3137397a";
+      };
+      default = "r0";
+    };
+  };
 }

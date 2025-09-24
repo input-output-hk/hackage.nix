@@ -12969,6 +12969,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polysemy-zoo" = import ./nix/polysemy-zoo.nix;
   "polyseq" = import ./nix/polyseq.nix;
   "polysoup" = import ./nix/polysoup.nix;
+  "polytree" = import ./nix/polytree.nix;
   "polytypeable" = import ./nix/polytypeable.nix;
   "polytypeable-utils" = import ./nix/polytypeable-utils.nix;
   "polytyped" = import ./nix/polytyped.nix;

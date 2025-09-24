@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "20aa41de94dcca84021bb78f4c2762bffff2c7c48c725a55d562cfc83c3efce2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventlog-live-otelcol-0.1.0.2-r0-b1ba6b9c70643d1164e5efc53b2278ba0f06fb6c5c802bd312ad9c829caf2d5a.nix;
+        revNum = 0;
+        sha256 = "b1ba6b9c70643d1164e5efc53b2278ba0f06fb6c5c802bd312ad9c829caf2d5a";
+      };
+      default = "r0";
+    };
+  };
 }

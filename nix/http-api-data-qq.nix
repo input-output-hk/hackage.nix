@@ -40,4 +40,15 @@
       default = "r6";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "3678a8a5d872163ca1d24d7a832095a8f777be167de8dc4ee844535c9f2e50b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-api-data-qq-0.1.0.1-r0-4550b7acce78a6dad801d9f91c83da9c87922486f431ad7622120beccdef8206.nix;
+        revNum = 0;
+        sha256 = "4550b7acce78a6dad801d9f91c83da9c87922486f431ad7622120beccdef8206";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.0.8.0" = {
+    sha256 = "60b8957a5ec90e6736545d699b84000fc4b4b79db81d2831c04dc9401f400760";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-cmdrun-0.0.8.0-r0-1a411fb58d9addf6aa89cfffba2ca85dc080c8a3ad43b921f501cbbbd04e9e55.nix;
+        revNum = 0;
+        sha256 = "1a411fb58d9addf6aa89cfffba2ca85dc080c8a3ad43b921f501cbbbd04e9e55";
+      };
+      default = "r0";
+    };
+  };
 }
