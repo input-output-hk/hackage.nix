@@ -5205,6 +5205,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dyna-gloss" = import ./nix/dyna-gloss.nix;
   "dyna-processing" = import ./nix/dyna-processing.nix;
   "dynamic" = import ./nix/dynamic.nix;
+  "dynamic-array" = import ./nix/dynamic-array.nix;
   "dynamic-cabal" = import ./nix/dynamic-cabal.nix;
   "dynamic-graph" = import ./nix/dynamic-graph.nix;
   "dynamic-graphs" = import ./nix/dynamic-graphs.nix;
@@ -16573,6 +16574,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "timemap" = import ./nix/timemap.nix;
   "timeout" = import ./nix/timeout.nix;
   "timeout-control" = import ./nix/timeout-control.nix;
+  "timeout-snooze" = import ./nix/timeout-snooze.nix;
   "timeout-with-results" = import ./nix/timeout-with-results.nix;
   "timeparsers" = import ./nix/timeparsers.nix;
   "timeplot" = import ./nix/timeplot.nix;

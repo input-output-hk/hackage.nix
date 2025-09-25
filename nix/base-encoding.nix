@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "e03559402549b9781834e001c281a1e055bbd9e6275e5a6ad74e4dbfd4473f98";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/base-encoding-0.3.0.0-r1-45dbb4849bdc9fdd06d4d0f69997320a5d42c83b5d023db770b88de4ef2b2355.nix;
+        revNum = 1;
+        sha256 = "45dbb4849bdc9fdd06d4d0f69997320a5d42c83b5d023db770b88de4ef2b2355";
+      };
+      default = "r1";
     };
   };
 }
