@@ -6501,6 +6501,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gev-lib" = import ./nix/gev-lib.nix;
   "gf" = import ./nix/gf.nix;
   "ggtsTC" = import ./nix/ggts_T_C.nix;
+  "gh" = import ./nix/gh.nix;
   "gh-labeler" = import ./nix/gh-labeler.nix;
   "gh-pocket-knife" = import ./nix/gh-pocket-knife.nix;
   "ghc" = import ./nix/ghc.nix;
@@ -7364,6 +7365,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hackage-plot" = import ./nix/hackage-plot.nix;
   "hackage-processing" = import ./nix/hackage-processing.nix;
   "hackage-proxy" = import ./nix/hackage-proxy.nix;
+  "hackage-publish" = import ./nix/hackage-publish.nix;
   "hackage-repo-tool" = import ./nix/hackage-repo-tool.nix;
   "hackage-revdeps" = import ./nix/hackage-revdeps.nix;
   "hackage-security" = import ./nix/hackage-security.nix;
@@ -17578,6 +17580,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-control" = import ./nix/wai-control.nix;
   "wai-cors" = import ./nix/wai-cors.nix;
   "wai-cryptocookie" = import ./nix/wai-cryptocookie.nix;
+  "wai-csrf" = import ./nix/wai-csrf.nix;
   "wai-devel" = import ./nix/wai-devel.nix;
   "wai-digestive-functors" = import ./nix/wai-digestive-functors.nix;
   "wai-dispatch" = import ./nix/wai-dispatch.nix;
