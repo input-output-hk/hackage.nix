@@ -47,4 +47,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "ca58bc65845ad988fab573f146dd70d44a431045624d081e7f1748916806355f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mempack-0.2.0.0-r0-596577bc74650a405eac3d8c1a4976d53dc09a9226fa6fee6420cb2296febeb5.nix;
+        revNum = 0;
+        sha256 = "596577bc74650a405eac3d8c1a4976d53dc09a9226fa6fee6420cb2296febeb5";
+      };
+      default = "r0";
+    };
+  };
 }

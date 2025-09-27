@@ -2331,6 +2331,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "attempt" = import ./nix/attempt.nix;
   "attenuation" = import ./nix/attenuation.nix;
   "attenuation-profunctors" = import ./nix/attenuation-profunctors.nix;
+  "attic" = import ./nix/attic.nix;
   "attic-schedule" = import ./nix/attic-schedule.nix;
   "atto-lisp" = import ./nix/atto-lisp.nix;
   "attomail" = import ./nix/attomail.nix;

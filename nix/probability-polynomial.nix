@@ -31,4 +31,15 @@
       default = "r2";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "82dcbb3b8e2918cda5a6b2392d9fa982da0811c5a1142aa54f5c9265ca63d643";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/probability-polynomial-1.0.1.0-r0-fc10063e8d049197890ff8849ca0716aeadcd9fd45aeb71a86e847d85680e66c.nix;
+        revNum = 0;
+        sha256 = "fc10063e8d049197890ff8849ca0716aeadcd9fd45aeb71a86e847d85680e66c";
+      };
+      default = "r0";
+    };
+  };
 }

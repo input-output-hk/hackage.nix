@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.0.1.0" = {
+    sha256 = "4e223ca0da2aa39b748f34efb0809fa8ac7ed8522b0f2e876ba731b36cd69efd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deltaq-1.0.1.0-r0-d6bc0c0af88d09e1fe6c7e77cbdd08f2edc4d1a90df7f4fbe54745bd09103687.nix;
+        revNum = 0;
+        sha256 = "d6bc0c0af88d09e1fe6c7e77cbdd08f2edc4d1a90df7f4fbe54745bd09103687";
+      };
+      default = "r0";
+    };
+  };
 }
