@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "1.4.0" = {
+    sha256 = "73aa03b80667147a095cdd0a5701d8ebf7b714b090eb9166bd42665d98cb8ee7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uuagc-cabal-1.4.0-r0-65e7752535099705c5c67bcc5642446896d13f2b023ab17518bee1e5c526e559.nix;
+        revNum = 0;
+        sha256 = "65e7752535099705c5c67bcc5642446896d13f2b023ab17518bee1e5c526e559";
+      };
+      default = "r0";
+    };
+  };
 }
