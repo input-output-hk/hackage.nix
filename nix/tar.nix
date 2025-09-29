@@ -494,7 +494,12 @@
         revNum = 0;
         sha256 = "11eac681a28411d01c5545ff28c222d78361a79b548f11e103195bb490b04a35";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tar-0.7.0.0-r1-bdde4112115bf21aaf647f00da0b57fab93eefcbc3c536191c2e582098898168.nix;
+        revNum = 1;
+        sha256 = "bdde4112115bf21aaf647f00da0b57fab93eefcbc3c536191c2e582098898168";
+      };
+      default = "r1";
     };
   };
 }

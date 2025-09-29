@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.2" = {
+    sha256 = "d79fec50587e4c7a107d0ecc093245c82b842be1fc602cc1651970c2334c7aa8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/huffman-1.0.2-r0-2cc8cfdc982bee1993d002cc30b4b1f034fdfcd3a0858728cbf1b833fef1696c.nix;
+        revNum = 0;
+        sha256 = "2cc8cfdc982bee1993d002cc30b4b1f034fdfcd3a0858728cbf1b833fef1696c";
+      };
+      default = "r0";
+    };
+  };
 }
