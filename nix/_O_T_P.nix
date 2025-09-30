@@ -33,7 +33,12 @@
         revNum = 2;
         sha256 = "9a989937dfbbe24671d187cf970d739ae91bef5148fe12f336934ab9af885e04";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/OTP-0.1.0.0-r3-af4b3c80771079b0a914503fe802ab81964b2f0a0afa47a65999ea54710fbe03.nix;
+        revNum = 3;
+        sha256 = "af4b3c80771079b0a914503fe802ab81964b2f0a0afa47a65999ea54710fbe03";
+      };
+      default = "r3";
     };
   };
 }

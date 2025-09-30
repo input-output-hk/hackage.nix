@@ -694,4 +694,15 @@
       default = "r0";
     };
   };
+  "1.3.2.5" = {
+    sha256 = "2e3dfb449a548484f7d3b4e2a1b1040b39be26c4f3182a47004dc5eddf028a78";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regex-tdfa-1.3.2.5-r0-b2724328a8b02d6520186aa24d6a0bc926e86206361a76535b22d31ef84b3451.nix;
+        revNum = 0;
+        sha256 = "b2724328a8b02d6520186aa24d6a0bc926e86206361a76535b22d31ef84b3451";
+      };
+      default = "r0";
+    };
+  };
 }
