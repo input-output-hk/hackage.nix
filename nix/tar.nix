@@ -483,7 +483,12 @@
         revNum = 2;
         sha256 = "068db937ec55970547a6190f407189482a22bf0a249231ceda853686892a8e1c";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/tar-0.6.4.0-r3-0d1994a06313622b29192d1b6ede870849962d6ce23a9608204e139861871267.nix;
+        revNum = 3;
+        sha256 = "0d1994a06313622b29192d1b6ede870849962d6ce23a9608204e139861871267";
+      };
+      default = "r3";
     };
   };
   "0.7.0.0" = {
@@ -499,7 +504,12 @@
         revNum = 1;
         sha256 = "bdde4112115bf21aaf647f00da0b57fab93eefcbc3c536191c2e582098898168";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/tar-0.7.0.0-r2-8b5cebb9e34f240029bc471e5e46d4df636a2b77956b3ef3a882e897eb76a63f.nix;
+        revNum = 2;
+        sha256 = "8b5cebb9e34f240029bc471e5e46d4df636a2b77956b3ef3a882e897eb76a63f";
+      };
+      default = "r2";
     };
   };
 }

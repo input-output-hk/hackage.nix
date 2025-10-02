@@ -140,4 +140,15 @@
       default = "r0";
     };
   };
+  "2.2.1" = {
+    sha256 = "98e6aa5a571f68629cfe924a18eb6d7d77cae5fbe8b6500089a26c5f655cdd48";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hora-2.2.1-r0-8fc515a02a2d3568db36189402fc8c20623294078a3436734c4f98e1b10d1515.nix;
+        revNum = 0;
+        sha256 = "8fc515a02a2d3568db36189402fc8c20623294078a3436734c4f98e1b10d1515";
+      };
+      default = "r0";
+    };
+  };
 }

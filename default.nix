@@ -16245,11 +16245,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "templatise" = import ./nix/templatise.nix;
   "tempo" = import ./nix/tempo.nix;
   "tempodb" = import ./nix/tempodb.nix;
+  "temporal-api-protos" = import ./nix/temporal-api-protos.nix;
   "temporal-csound" = import ./nix/temporal-csound.nix;
   "temporal-media" = import ./nix/temporal-media.nix;
   "temporal-music-notation" = import ./nix/temporal-music-notation.nix;
   "temporal-music-notation-demo" = import ./nix/temporal-music-notation-demo.nix;
   "temporal-music-notation-western" = import ./nix/temporal-music-notation-western.nix;
+  "temporal-sdk" = import ./nix/temporal-sdk.nix;
+  "temporal-sdk-core" = import ./nix/temporal-sdk-core.nix;
   "temporary" = import ./nix/temporary.nix;
   "temporary-rc" = import ./nix/temporary-rc.nix;
   "temporary-resourcet" = import ./nix/temporary-resourcet.nix;

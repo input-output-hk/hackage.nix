@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e0d2ec34fe40a0fcc44abddec126824dd6e94542181d42ad2c0e213277c24bb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ImpSpec-0.2.0.0-r0-35ec5401707d5cabb6e5fdb8b27d65792995fafb17f5c6aeaa0c758066d932b9.nix;
+        revNum = 0;
+        sha256 = "35ec5401707d5cabb6e5fdb8b27d65792995fafb17f5c6aeaa0c758066d932b9";
+      };
+      default = "r0";
+    };
+  };
 }
