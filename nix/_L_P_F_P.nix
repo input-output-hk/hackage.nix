@@ -101,4 +101,15 @@
       default = "r2";
     };
   };
+  "1.2.1" = {
+    sha256 = "aee69d4e6edd49186f4c134b22c69fd092198c38438976a302276e12f8cc30b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/LPFP-1.2.1-r0-e2b1f16876db0c4e6526bdaf476cc6b363dd82c611d9f65353b22e92aff1c9c0.nix;
+        revNum = 0;
+        sha256 = "e2b1f16876db0c4e6526bdaf476cc6b363dd82c611d9f65353b22e92aff1c9c0";
+      };
+      default = "r0";
+    };
+  };
 }
