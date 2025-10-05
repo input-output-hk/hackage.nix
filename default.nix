@@ -3222,6 +3222,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-install-solver" = import ./nix/cabal-install-solver.nix;
   "cabal-lenses" = import ./nix/cabal-lenses.nix;
   "cabal-macosx" = import ./nix/cabal-macosx.nix;
+  "cabal-matrix" = import ./nix/cabal-matrix.nix;
   "cabal-meta" = import ./nix/cabal-meta.nix;
   "cabal-mon" = import ./nix/cabal-mon.nix;
   "cabal-nirvana" = import ./nix/cabal-nirvana.nix;
@@ -6516,6 +6517,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-check" = import ./nix/ghc-check.nix;
   "ghc-clippy-plugin" = import ./nix/ghc-clippy-plugin.nix;
   "ghc-compact" = import ./nix/ghc-compact.nix;
+  "ghc-compat" = import ./nix/ghc-compat.nix;
   "ghc-core" = import ./nix/ghc-core.nix;
   "ghc-core-html" = import ./nix/ghc-core-html.nix;
   "ghc-core-smallstep" = import ./nix/ghc-core-smallstep.nix;
@@ -16234,7 +16236,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "template-default" = import ./nix/template-default.nix;
   "template-haskell" = import ./nix/template-haskell.nix;
   "template-haskell-compat-v0208" = import ./nix/template-haskell-compat-v0208.nix;
+  "template-haskell-lift" = import ./nix/template-haskell-lift.nix;
   "template-haskell-optics" = import ./nix/template-haskell-optics.nix;
+  "template-haskell-quasiquoter" = import ./nix/template-haskell-quasiquoter.nix;
   "template-haskell-util" = import ./nix/template-haskell-util.nix;
   "template-hsml" = import ./nix/template-hsml.nix;
   "template-toolkit" = import ./nix/template-toolkit.nix;
