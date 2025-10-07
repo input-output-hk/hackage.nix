@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "05e46065f7c8c37076e192471b73d35f222053ac7c73511031fe494fff3bb446";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/covenant-1.2.0-r0-7250adb150940144264a907423ea88cf6d5ab7161fb8c5efb79da27241f2d9bf.nix;
+        revNum = 0;
+        sha256 = "7250adb150940144264a907423ea88cf6d5ab7161fb8c5efb79da27241f2d9bf";
+      };
+      default = "r0";
+    };
+  };
 }
