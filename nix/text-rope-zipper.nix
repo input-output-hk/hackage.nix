@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "9a452dc9c3c825fc705bdb6766f1d91b79b76c06a783479dd452b3c084ed0613";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/text-rope-zipper-0.1.1.0-r1-92f1e2f4cbd7ace059bcefd64b09c7b839e82ca069dd6b00c4cbd6b94da26375.nix;
+        revNum = 1;
+        sha256 = "92f1e2f4cbd7ace059bcefd64b09c7b839e82ca069dd6b00c4cbd6b94da26375";
+      };
+      default = "r1";
     };
   };
 }

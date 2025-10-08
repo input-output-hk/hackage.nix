@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.2.4" = {
+    sha256 = "b101e8dedc66da051a16022287d9b05c2dcb2f54f973fb09298b3486cd63ec2f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atomic-counter-0.1.2.4-r0-51c0178c727ef4ccd694514c0a44369eb8593ae83dde42bc5fb5c89d5b4c60b5.nix;
+        revNum = 0;
+        sha256 = "51c0178c727ef4ccd694514c0a44369eb8593ae83dde42bc5fb5c89d5b4c60b5";
+      };
+      default = "r0";
+    };
+  };
 }

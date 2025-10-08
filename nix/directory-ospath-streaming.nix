@@ -66,7 +66,12 @@
         revNum = 1;
         sha256 = "c19b5e1f52fa6b9235818fadc0873e0d122c58c49aaa9a0a0cf645337143244c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/directory-ospath-streaming-0.2-r2-29f90689aa0e36e78c14566f6ae978ee829b2e0cca0999faf0b6dbab6d990426.nix;
+        revNum = 2;
+        sha256 = "29f90689aa0e36e78c14566f6ae978ee829b2e0cca0999faf0b6dbab6d990426";
+      };
+      default = "r2";
     };
   };
   "0.2.1" = {
@@ -77,7 +82,12 @@
         revNum = 0;
         sha256 = "204801aabf4c7aa43a02a64ea8a152028e9cec3257eeb7d2a533d6d78d9451c8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/directory-ospath-streaming-0.2.1-r1-d95e241cbb21e57572795e2dba8da730a661895ab7da630ac6470f6555453717.nix;
+        revNum = 1;
+        sha256 = "d95e241cbb21e57572795e2dba8da730a661895ab7da630ac6470f6555453717";
+      };
+      default = "r1";
     };
   };
   "0.2.2" = {
@@ -88,7 +98,12 @@
         revNum = 0;
         sha256 = "8931b9ce6e63bf6202dc0c992ae3e6f2ad8e7f4b6eb69994ac6d512c6c9c0f77";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/directory-ospath-streaming-0.2.2-r1-b24ec42ce02c42a76732323c4e59414d9b5439ac5fa99304412719ba7f4c6a3f.nix;
+        revNum = 1;
+        sha256 = "b24ec42ce02c42a76732323c4e59414d9b5439ac5fa99304412719ba7f4c6a3f";
+      };
+      default = "r1";
     };
   };
   "0.3" = {
@@ -99,7 +114,12 @@
         revNum = 0;
         sha256 = "c0ea5a6c5d17abe1e0dedb89380847e3d13d6bacf54e204525d96197cd7a6e46";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/directory-ospath-streaming-0.3-r1-6dbfaeade84d388e9b75cdaa6ffe452a44b7f89321bd691350f41b223e2b1898.nix;
+        revNum = 1;
+        sha256 = "6dbfaeade84d388e9b75cdaa6ffe452a44b7f89321bd691350f41b223e2b1898";
+      };
+      default = "r1";
     };
   };
 }

@@ -340,7 +340,12 @@
         revNum = 1;
         sha256 = "cfca7def6240ba28aeb44f84eb41ad055eb01d4657d802cbc224966dc3321828";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.6.0.0-r2-4052b5e24a8c99b448193aa3091afc8a621a4d4e2fe72d90f64f13dc7d5fbfe4.nix;
+        revNum = 2;
+        sha256 = "4052b5e24a8c99b448193aa3091afc8a621a4d4e2fe72d90f64f13dc7d5fbfe4";
+      };
+      default = "r2";
     };
   };
   "0.6.1.0" = {
@@ -356,7 +361,12 @@
         revNum = 1;
         sha256 = "389f01324c180b3e52d1b7076e4db93a911b0c1ba6a89c5da070dc3c659ad4fe";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.6.1.0-r2-8bac98beff802791d335e46b19c297c2534091051434f039b6988b4d50a2d9d8.nix;
+        revNum = 2;
+        sha256 = "8bac98beff802791d335e46b19c297c2534091051434f039b6988b4d50a2d9d8";
+      };
+      default = "r2";
     };
   };
   "0.6.2.0" = {
@@ -372,7 +382,12 @@
         revNum = 1;
         sha256 = "eaacf0d799b07e816973282fa1d853f0f4fc7fbdce6e8b1960e29a0bb3a9ff7a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.6.2.0-r2-6ebc14cd817e34245974c542ff3b0d7b333467d536c879f698d06cabdb85699e.nix;
+        revNum = 2;
+        sha256 = "6ebc14cd817e34245974c542ff3b0d7b333467d536c879f698d06cabdb85699e";
+      };
+      default = "r2";
     };
   };
   "0.6.2.1" = {
@@ -388,7 +403,12 @@
         revNum = 1;
         sha256 = "aaeec8817fd13356b6be84d2d534292650105d5a333720f07964f20adb9a484c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.6.2.1-r2-d649e37ed684af0b7ac4c4a1d2d15f1bda7de183b793f6e878cf55e622d28ba0.nix;
+        revNum = 2;
+        sha256 = "d649e37ed684af0b7ac4c4a1d2d15f1bda7de183b793f6e878cf55e622d28ba0";
+      };
+      default = "r2";
     };
   };
   "0.6.3.0" = {
@@ -404,7 +424,12 @@
         revNum = 1;
         sha256 = "26948b73c7a9815516f46287eb44835fe452854b6ffd486524e5ed5e909562bf";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.6.3.0-r2-e9acb092360e038f04269804218b8aeab386c1dfc11a555cb9cb231c0a4ee065.nix;
+        revNum = 2;
+        sha256 = "e9acb092360e038f04269804218b8aeab386c1dfc11a555cb9cb231c0a4ee065";
+      };
+      default = "r2";
     };
   };
   "0.7.0.0" = {
@@ -420,7 +445,12 @@
         revNum = 1;
         sha256 = "171304c72f39e1856709e1b575c7585d56a1774a03c15ef48c89d2b26350f4d3";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/katip-0.7.0.0-r2-0e3023b829638ed952d229348d7209fa4510bb5e2072e0bc200d82d96d854d83.nix;
+        revNum = 2;
+        sha256 = "0e3023b829638ed952d229348d7209fa4510bb5e2072e0bc200d82d96d854d83";
+      };
+      default = "r2";
     };
   };
   "0.8.0.0" = {
