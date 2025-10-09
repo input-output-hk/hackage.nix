@@ -90,4 +90,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "531229ac278a12e2759310a62b51339c0a1a5a782260aadebe327e6fc381007c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/emacs-module-0.3-r0-0b55aa5cf3953c8b76312dc2f5094772126576a185f9f03990180c57f22bef80.nix;
+        revNum = 0;
+        sha256 = "0b55aa5cf3953c8b76312dc2f5094772126576a185f9f03990180c57f22bef80";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -4601,6 +4601,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dataflow" = import ./nix/dataflow.nix;
   "dataflower" = import ./nix/dataflower.nix;
   "dataframe" = import ./nix/dataframe.nix;
+  "dataframe-hasktorch" = import ./nix/dataframe-hasktorch.nix;
   "datalog" = import ./nix/datalog.nix;
   "datapacker" = import ./nix/datapacker.nix;
   "datarobot" = import ./nix/datarobot.nix;

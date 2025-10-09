@@ -93,7 +93,12 @@
         revNum = 0;
         sha256 = "67faefdb4f9b550a73dd0bf7356e5df93b3c4314687e2c5d2c9adf6936b0c266";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/enummapset-0.6.0.1-r1-2157a97fe06a4789e3a62eafbf4e83f86c86f1f5ef771f2b2ac53a77056f0d4d.nix;
+        revNum = 1;
+        sha256 = "2157a97fe06a4789e3a62eafbf4e83f86c86f1f5ef771f2b2ac53a77056f0d4d";
+      };
+      default = "r1";
     };
   };
   "0.6.0.2" = {
@@ -104,7 +109,12 @@
         revNum = 0;
         sha256 = "e4875c46640327685399cf3ed4bf71580ecca8c8b62ce96f87595b968af2e86a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/enummapset-0.6.0.2-r1-aea1ff2a38f95fc8588f6bd15c586d4e53c5e7597c1e21e9be8a78d8d0036384.nix;
+        revNum = 1;
+        sha256 = "aea1ff2a38f95fc8588f6bd15c586d4e53c5e7597c1e21e9be8a78d8d0036384";
+      };
+      default = "r1";
     };
   };
   "0.6.0.3" = {
@@ -115,7 +125,12 @@
         revNum = 0;
         sha256 = "9b694cd949a6a2bb076f7f9a8dc3ce5a6c39400b90b7bd6a8af293dd544411d9";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/enummapset-0.6.0.3-r1-27b75a7efddab91721146ce3357054100ffed5cefa588449f603f2e26428eec7.nix;
+        revNum = 1;
+        sha256 = "27b75a7efddab91721146ce3357054100ffed5cefa588449f603f2e26428eec7";
+      };
+      default = "r1";
     };
   };
   "0.7.0.0" = {

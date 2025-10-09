@@ -1378,4 +1378,15 @@
       default = "r0";
     };
   };
+  "2.1.7.1" = {
+    sha256 = "daaf1c052e9a58628a4b70755080cba54b0042ec71655d2628f4c9393eead119";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shakespeare-2.1.7.1-r0-e5d7318bdab8633fa87fb44a7f4ed570ebd772a8d0f5ac452a5e4bae8789b416.nix;
+        revNum = 0;
+        sha256 = "e5d7318bdab8633fa87fb44a7f4ed570ebd772a8d0f5ac452a5e4bae8789b416";
+      };
+      default = "r0";
+    };
+  };
 }

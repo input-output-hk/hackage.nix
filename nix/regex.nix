@@ -559,7 +559,12 @@
         revNum = 0;
         sha256 = "a09ab626310c46161d358590839aa8681a41351841ba76a3a521e5db144373d8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/regex-1.1.0.0-r1-20e111c70d1e33fbfced9a95c930d83e917b4c58b51f4c1c79ac80e8ae7c5b8e.nix;
+        revNum = 1;
+        sha256 = "20e111c70d1e33fbfced9a95c930d83e917b4c58b51f4c1c79ac80e8ae7c5b8e";
+      };
+      default = "r1";
     };
   };
   "1.1.0.1" = {
