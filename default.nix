@@ -13054,6 +13054,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-common" = import ./nix/postgresql-common.nix;
   "postgresql-common-persistent" = import ./nix/postgresql-common-persistent.nix;
   "postgresql-config" = import ./nix/postgresql-config.nix;
+  "postgresql-connection-string" = import ./nix/postgresql-connection-string.nix;
   "postgresql-connector" = import ./nix/postgresql-connector.nix;
   "postgresql-copy-escape" = import ./nix/postgresql-copy-escape.nix;
   "postgresql-cube" = import ./nix/postgresql-cube.nix;

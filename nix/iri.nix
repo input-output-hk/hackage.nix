@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.5.1.2" = {
+    sha256 = "6e6fc4a870a6c40d3e960e2a06920c964ee6d6d9f9df83c6e8f3cf66fb7c09f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/iri-0.5.1.2-r0-9426afd2c987700301b782e5e09196963c4f8d4fd094b0659113a1ec2491b22e.nix;
+        revNum = 0;
+        sha256 = "9426afd2c987700301b782e5e09196963c4f8d4fd094b0659113a1ec2491b22e";
+      };
+      default = "r0";
+    };
+  };
 }

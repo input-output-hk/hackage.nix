@@ -65,4 +65,37 @@
       default = "r0";
     };
   };
+  "0.0.7" = {
+    sha256 = "92cb13d03bb239112c035a9c41e22e3a4e3468363ff619c8da0d14c7bdfe6555";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polytree-0.0.7-r0-d82488989d9097edc08d349e80dccee4a55efc01f711b61ded2dbe2c71b9371b.nix;
+        revNum = 0;
+        sha256 = "d82488989d9097edc08d349e80dccee4a55efc01f711b61ded2dbe2c71b9371b";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.8" = {
+    sha256 = "44886d9b4432a3783245a5d08ef09482e333e1dfe08b275f1b0aca8b9ccb8b38";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polytree-0.0.8-r0-b7566b1902e06f35c6584ae4c551925fa7db143bb1a0d4423adc1a74174a1b88.nix;
+        revNum = 0;
+        sha256 = "b7566b1902e06f35c6584ae4c551925fa7db143bb1a0d4423adc1a74174a1b88";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.9" = {
+    sha256 = "2a9d7bcdf6847fdbb13c83943c634812a8e65920beb7c24b63db7dd4b6c18d9e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polytree-0.0.9-r0-106410663a2768f9026e274b0bc9a9e4c25049ede846122aaabda6a3bee41d97.nix;
+        revNum = 0;
+        sha256 = "106410663a2768f9026e274b0bc9a9e4c25049ede846122aaabda6a3bee41d97";
+      };
+      default = "r0";
+    };
+  };
 }

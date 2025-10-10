@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "e53b3a7b76f640a4bde03d156542af00c7a39d8b5195d9be9dc5a33a885cfee3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/regex-pcre-builtin-0.94.1.0.7.7-r1-1af5e392cfa00f451af6ff6b4b72966d97b2225660edabaa0a781d30d7da8a30.nix;
+        revNum = 1;
+        sha256 = "1af5e392cfa00f451af6ff6b4b72966d97b2225660edabaa0a781d30d7da8a30";
+      };
+      default = "r1";
     };
   };
   "0.94.2.0.7.7" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "419f87f1383fbc3ff4575c9be19eeab88554ec3c6a452103de0a0846e6a2207e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/regex-pcre-builtin-0.94.2.0.7.7-r1-38a6c83215d6d4e79e387d19a46a736668d615d79bfa72b2c77093bcc0f4b770.nix;
+        revNum = 1;
+        sha256 = "38a6c83215d6d4e79e387d19a46a736668d615d79bfa72b2c77093bcc0f4b770";
+      };
+      default = "r1";
     };
   };
   "0.94.2.1.7.7" = {
