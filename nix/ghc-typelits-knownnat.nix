@@ -338,4 +338,15 @@
       default = "r1";
     };
   };
+  "0.8.1" = {
+    sha256 = "f424391d4696c513f832c416f488144ea6f0454d2f1d71fc584e6573ec399c53";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-knownnat-0.8.1-r0-98d57ca19b37f3d31744191c552e8d9f82430fa9aae75c91477fcfe25d13e3c2.nix;
+        revNum = 0;
+        sha256 = "98d57ca19b37f3d31744191c552e8d9f82430fa9aae75c91477fcfe25d13e3c2";
+      };
+      default = "r0";
+    };
+  };
 }

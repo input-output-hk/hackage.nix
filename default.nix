@@ -3704,7 +3704,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cmake-syntax" = import ./nix/cmake-syntax.nix;
   "cmark" = import ./nix/cmark.nix;
   "cmark-gfm" = import ./nix/cmark-gfm.nix;
+  "cmark-gfm-lens" = import ./nix/cmark-gfm-lens.nix;
   "cmark-highlight" = import ./nix/cmark-highlight.nix;
+  "cmark-lens" = import ./nix/cmark-lens.nix;
   "cmark-lucid" = import ./nix/cmark-lucid.nix;
   "cmark-patterns" = import ./nix/cmark-patterns.nix;
   "cmark-sections" = import ./nix/cmark-sections.nix;
@@ -13856,6 +13858,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "redo" = import ./nix/redo.nix;
   "reduce-equations" = import ./nix/reduce-equations.nix;
   "reducers" = import ./nix/reducers.nix;
+  "reduxwise" = import ./nix/reduxwise.nix;
   "reedsolomon" = import ./nix/reedsolomon.nix;
   "reenact" = import ./nix/reenact.nix;
   "reexport-crypto-random" = import ./nix/reexport-crypto-random.nix;

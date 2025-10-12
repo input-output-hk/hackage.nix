@@ -135,4 +135,15 @@
       default = "r3";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "2bcd80ed1e3ecf5ac22627c1b504085fa64f30ed4c6099a8e07e8c532dad59d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bumper-0.7.0.0-r0-fad1e3f2c47f322de4d1cec146c598bc4d3d194372d40621d083075a8c0b244d.nix;
+        revNum = 0;
+        sha256 = "fad1e3f2c47f322de4d1cec146c598bc4d3d194372d40621d083075a8c0b244d";
+      };
+      default = "r0";
+    };
+  };
 }

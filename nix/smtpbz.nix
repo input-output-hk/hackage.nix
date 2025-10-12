@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "4e25732718621724d1d3aeec1ed5437818681e4dbe77cbe284daf4bdbf4db7b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smtpbz-1.2.0-r0-9ec0fd6d423e3cedd496522fefcdb9d4820006254868c94dd12de4da9aeb2abc.nix;
+        revNum = 0;
+        sha256 = "9ec0fd6d423e3cedd496522fefcdb9d4820006254868c94dd12de4da9aeb2abc";
+      };
+      default = "r0";
+    };
+  };
 }

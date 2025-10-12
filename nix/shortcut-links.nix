@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.5.2.0" = {
+    sha256 = "2bfd9e70ec52eabce3c717f7c3c7d74256340597967a1992baf499b93629bcbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shortcut-links-0.5.2.0-r0-3c01fe7667b2a15dc09d2f534eb0d3505d94c568496cd838bc30496badfa4a87.nix;
+        revNum = 0;
+        sha256 = "3c01fe7667b2a15dc09d2f534eb0d3505d94c568496cd838bc30496badfa4a87";
+      };
+      default = "r0";
+    };
+  };
 }

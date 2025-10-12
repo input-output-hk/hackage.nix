@@ -217,7 +217,12 @@
         revNum = 1;
         sha256 = "324fd86fdb44b05a6c8550b1832848fbd08c5f74809d0df41caf170218d91681";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/megaparsec-tests-9.7.0-r2-0e7769f0780d5badc567bb37f0bc2608de7c6217a7ef99b8f5fb8218c6919322.nix;
+        revNum = 2;
+        sha256 = "0e7769f0780d5badc567bb37f0bc2608de7c6217a7ef99b8f5fb8218c6919322";
+      };
+      default = "r2";
     };
   };
 }

@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "b53d4bfe1b685914737771ba4c3e0aef25f69709da6f03186aa23e84e19175b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/raketka-1.2.0-r0-97cc4c5049fd973c3418be063e75fba5f4889116a9616d9b48ad301c858bab00.nix;
+        revNum = 0;
+        sha256 = "97cc4c5049fd973c3418be063e75fba5f4889116a9616d9b48ad301c858bab00";
+      };
+      default = "r0";
+    };
+  };
 }

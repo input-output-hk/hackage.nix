@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "9bb1b6c1327306124ac1d972f83050217d74e38a174d4952c8b195d3c78f709f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyll-shortcut-links-0.1.1.0-r0-e232b5bfe2c26fc555b6bbe2c55183b51d3c49571daf1f185a8d900495befc30.nix;
+        revNum = 0;
+        sha256 = "e232b5bfe2c26fc555b6bbe2c55183b51d3c49571daf1f185a8d900495befc30";
+      };
+      default = "r0";
+    };
+  };
 }
