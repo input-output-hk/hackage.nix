@@ -228,7 +228,12 @@
         revNum = 2;
         sha256 = "87ab9dce11c8fc80e8d7342327534ee7fdf8b24a36376479896d67f1ab77a25d";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/beam-migrate-0.5.3.2-r3-62fc44e77ccea567bfd7e711dac3189c3e2b283ff7374ef00ea3d25e435d084f.nix;
+        revNum = 3;
+        sha256 = "62fc44e77ccea567bfd7e711dac3189c3e2b283ff7374ef00ea3d25e435d084f";
+      };
+      default = "r3";
     };
   };
 }

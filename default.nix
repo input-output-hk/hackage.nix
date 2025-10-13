@@ -5177,7 +5177,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dual-tree" = import ./nix/dual-tree.nix;
   "dualizer" = import ./nix/dualizer.nix;
   "dublincore-xml-conduit" = import ./nix/dublincore-xml-conduit.nix;
+  "duckdb-ffi" = import ./nix/duckdb-ffi.nix;
   "duckdb-haskell" = import ./nix/duckdb-haskell.nix;
+  "duckdb-simple" = import ./nix/duckdb-simple.nix;
   "duckling" = import ./nix/duckling.nix;
   "duet" = import ./nix/duet.nix;
   "dumb-cas" = import ./nix/dumb-cas.nix;
@@ -17693,6 +17695,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "waldo" = import ./nix/waldo.nix;
   "wallpaper" = import ./nix/wallpaper.nix;
   "warc" = import ./nix/warc.nix;
+  "warlock" = import ./nix/warlock.nix;
   "warp" = import ./nix/warp.nix;
   "warp-dynamic" = import ./nix/warp-dynamic.nix;
   "warp-grpc" = import ./nix/warp-grpc.nix;

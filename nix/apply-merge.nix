@@ -43,7 +43,12 @@
         revNum = 5;
         sha256 = "80cb0dabe38cf63133dac37de83e16fad6bcd34774597d2ea90b94c7cc6597ad";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/apply-merge-0.1.1.0-r6-3da6c03877eab5773019e2a7145e57b94af9ab806434d73b24b5922091dd28ad.nix;
+        revNum = 6;
+        sha256 = "3da6c03877eab5773019e2a7145e57b94af9ab806434d73b24b5922091dd28ad";
+      };
+      default = "r6";
     };
   };
 }

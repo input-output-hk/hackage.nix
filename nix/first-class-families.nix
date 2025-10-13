@@ -170,4 +170,15 @@
       default = "r0";
     };
   };
+  "0.8.2.0" = {
+    sha256 = "de3ca4516447a15728af9839713cb3d307d8225d41b35dd2680ae301f77817a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/first-class-families-0.8.2.0-r0-146f656a446fba803aa44176c03c7e0cbe6daae4fa9db9d67ffb1e1ab08ce779.nix;
+        revNum = 0;
+        sha256 = "146f656a446fba803aa44176c03c7e0cbe6daae4fa9db9d67ffb1e1ab08ce779";
+      };
+      default = "r0";
+    };
+  };
 }
