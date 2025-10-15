@@ -979,6 +979,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ProbabilityMonads" = import ./nix/_Probability_Monads.nix;
   "Probnet" = import ./nix/_Probnet.nix;
   "PropLogic" = import ./nix/_Prop_Logic.nix;
+  "PropRatt" = import ./nix/_Prop_Ratt.nix;
   "PropaFP" = import ./nix/_Propa_F_P.nix;
   "Proper" = import ./nix/_Proper.nix;
   "ProxN" = import ./nix/_Prox_N.nix;
@@ -5266,6 +5267,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "echo" = import ./nix/echo.nix;
   "ecma262" = import ./nix/ecma262.nix;
   "ecstasy" = import ./nix/ecstasy.nix;
+  "ecstatic" = import ./nix/ecstatic.nix;
   "ecta" = import ./nix/ecta.nix;
   "ecta-plugin" = import ./nix/ecta-plugin.nix;
   "ecu" = import ./nix/ecu.nix;

@@ -58,7 +58,12 @@
         revNum = 2;
         sha256 = "4af6924e3570e5c527975e737d6bcbf88deeb7960f42c98b72092df2407110e3";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/timeline-0.1.1.0-r3-24e34a6c48871a3ab174bd01bb0406509cbda4e4f12220a38b05cbc8500ba98b.nix;
+        revNum = 3;
+        sha256 = "24e34a6c48871a3ab174bd01bb0406509cbda4e4f12220a38b05cbc8500ba98b";
+      };
+      default = "r3";
     };
   };
 }
