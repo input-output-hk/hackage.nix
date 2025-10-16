@@ -672,6 +672,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ImperativeHaskell" = import ./nix/_Imperative_Haskell.nix;
   "IndentParser" = import ./nix/_Indent_Parser.nix;
   "IndexedList" = import ./nix/_Indexed_List.nix;
+  "Infinitree" = import ./nix/_Infinitree.nix;
   "InfixApplicative" = import ./nix/_Infix_Applicative.nix;
   "IntFormats" = import ./nix/_Int_Formats.nix;
   "IntGraph" = import ./nix/_Int_Graph.nix;
@@ -10123,6 +10124,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "layout-bootstrap" = import ./nix/layout-bootstrap.nix;
   "layout-rules" = import ./nix/layout-rules.nix;
   "layouting" = import ./nix/layouting.nix;
+  "layoutz" = import ./nix/layoutz.nix;
+  "layoutz-hs" = import ./nix/layoutz-hs.nix;
   "lazify" = import ./nix/lazify.nix;
   "lazy" = import ./nix/lazy.nix;
   "lazy-async" = import ./nix/lazy-async.nix;

@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "1.5.5" = {
+    sha256 = "bc0b07434c8afd820dd49bca3d31b1b0ded515b0ded52298edc0d2727de9b5e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hylolib-1.5.5-r0-7fb237b34f670b9e534df563180f8272b997b3c0badcf1e6127506412863f1cc.nix;
+        revNum = 0;
+        sha256 = "7fb237b34f670b9e534df563180f8272b997b3c0badcf1e6127506412863f1cc";
+      };
+      default = "r0";
+    };
+  };
 }
