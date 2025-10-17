@@ -11804,6 +11804,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nist-beacon" = import ./nix/nist-beacon.nix;
   "nitro" = import ./nix/nitro.nix;
   "niv" = import ./nix/niv.nix;
+  "nix" = import ./nix/nix.nix;
   "nix-delegate" = import ./nix/nix-delegate.nix;
   "nix-deploy" = import ./nix/nix-deploy.nix;
   "nix-derivation" = import ./nix/nix-derivation.nix;
@@ -13818,6 +13819,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reasonable-operational" = import ./nix/reasonable-operational.nix;
   "rebase" = import ./nix/rebase.nix;
   "rebindable" = import ./nix/rebindable.nix;
+  "rebound" = import ./nix/rebound.nix;
   "rec-def" = import ./nix/rec-def.nix;
   "rec-smallarray" = import ./nix/rec-smallarray.nix;
   "recaptcha" = import ./nix/recaptcha.nix;

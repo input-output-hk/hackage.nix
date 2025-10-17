@@ -65,4 +65,20 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "61c457c1df9ee9e92c51931a3781896f052cd176da12f38d7fbe454d8225b0cb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventlog-live-otelcol-0.3.0.0-r0-03a88b6322245019b67202739ec1e46aeddf06088130badb53f3975ee365c8b3.nix;
+        revNum = 0;
+        sha256 = "03a88b6322245019b67202739ec1e46aeddf06088130badb53f3975ee365c8b3";
+      };
+      r1 = {
+        nix = import ../hackage/eventlog-live-otelcol-0.3.0.0-r1-b4736aa8b8ffc272c58b87dafcccf26e5e51e4ad3c3b3005bb39c9afed69eecd.nix;
+        revNum = 1;
+        sha256 = "b4736aa8b8ffc272c58b87dafcccf26e5e51e4ad3c3b3005bb39c9afed69eecd";
+      };
+      default = "r1";
+    };
+  };
 }

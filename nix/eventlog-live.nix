@@ -53,4 +53,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "f6f561b9b8e8bd8036a1bac165e59a89b45f4e9ee0d2786fda032cfc95e41c54";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventlog-live-0.3.0.0-r0-2c1687f56fd580fae23a85ff76e4d8818099eaa5be279ccc4cd9c115595a17f0.nix;
+        revNum = 0;
+        sha256 = "2c1687f56fd580fae23a85ff76e4d8818099eaa5be279ccc4cd9c115595a17f0";
+      };
+      default = "r0";
+    };
+  };
 }
