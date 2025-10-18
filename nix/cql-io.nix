@@ -240,4 +240,15 @@
       default = "r0";
     };
   };
+  "2.0.0" = {
+    sha256 = "175d335dcb2465e01404c64cf6b709b870d2c822d7ce52b0ded15f55acf4f0d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cql-io-2.0.0-r0-a55739f946d44d2cb82fc70c290e86020dda0b17f71178d5a3a42fa3b1763543.nix;
+        revNum = 0;
+        sha256 = "a55739f946d44d2cb82fc70c290e86020dda0b17f71178d5a3a42fa3b1763543";
+      };
+      default = "r0";
+    };
+  };
 }

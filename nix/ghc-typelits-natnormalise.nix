@@ -482,4 +482,20 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "5290883c2f6f29abb79427609033edbaf746343cf1e2b821de7a630816104103";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-natnormalise-0.9.0-r0-296267060fff818f887f380229f5ea492894f6ed39b2482904a30f2c71433981.nix;
+        revNum = 0;
+        sha256 = "296267060fff818f887f380229f5ea492894f6ed39b2482904a30f2c71433981";
+      };
+      r1 = {
+        nix = import ../hackage/ghc-typelits-natnormalise-0.9.0-r1-a5f633de23886c35f9cf3d8c9bbd4d6d4e3bb65a78c3b33f7847b86d5dbfbd06.nix;
+        revNum = 1;
+        sha256 = "a5f633de23886c35f9cf3d8c9bbd4d6d4e3bb65a78c3b33f7847b86d5dbfbd06";
+      };
+      default = "r1";
+    };
+  };
 }
