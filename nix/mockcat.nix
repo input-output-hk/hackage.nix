@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.5.3.0" = {
+    sha256 = "c71d27c2138793f353f44744ff0ca2a616878845ff2fc808c01d360455c83f6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mockcat-0.5.3.0-r0-28b7923fcc520c3f3de8b235b1fcc9428e8c85b6a1b61692bc8ca1d0a4c8e08a.nix;
+        revNum = 0;
+        sha256 = "28b7923fcc520c3f3de8b235b1fcc9428e8c85b6a1b61692bc8ca1d0a4c8e08a";
+      };
+      default = "r0";
+    };
+  };
 }

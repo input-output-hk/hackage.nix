@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "0ae6e99666bd02da4392f4688f34d7e546928a33407fbdabba15b3e75762829b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/duckdb-simple-0.1.2.2-r0-78f1289fa08fc4b851ae82a4bf164748dd0873e63c6d5cf7ca8e004e70cb7442.nix;
+        revNum = 0;
+        sha256 = "78f1289fa08fc4b851ae82a4bf164748dd0873e63c6d5cf7ca8e004e70cb7442";
+      };
+      default = "r0";
+    };
+  };
 }
