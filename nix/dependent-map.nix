@@ -182,4 +182,15 @@
       default = "r2";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "4da32e3c57a8afb1e61664bac9e79c3b410e31e839ffd78e0c7716be415a2cde";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dependent-map-0.4.0.1-r0-778b6e2b90b13c6ed7ce195de403cb6d21a4aa6d0bd9ce0dcd65c30e1195a3b8.nix;
+        revNum = 0;
+        sha256 = "778b6e2b90b13c6ed7ce195de403cb6d21a4aa6d0bd9ce0dcd65c30e1195a3b8";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -102,4 +102,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "eefe3fcae0e6a6af8cc932b0c46252115941b77e29933df859d13fe6cf216517";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-gadt-api-0.3.0.0-r0-d89ddc607a4f9f4aa91d7cee0b909e75afae23acf3e66c25e3199c382624d428.nix;
+        revNum = 0;
+        sha256 = "d89ddc607a4f9f4aa91d7cee0b909e75afae23acf3e66c25e3199c382624d428";
+      };
+      default = "r0";
+    };
+  };
 }

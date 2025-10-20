@@ -11297,6 +11297,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoidmap" = import ./nix/monoidmap.nix;
   "monoidmap-aeson" = import ./nix/monoidmap-aeson.nix;
   "monoidmap-examples" = import ./nix/monoidmap-examples.nix;
+  "monoidmap-hashable" = import ./nix/monoidmap-hashable.nix;
   "monoidmap-internal" = import ./nix/monoidmap-internal.nix;
   "monoidmap-quickcheck" = import ./nix/monoidmap-quickcheck.nix;
   "monoidplus" = import ./nix/monoidplus.nix;
