@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "05c91c468aec9017b03a758e9ccda682a2fc973d763603c6b02330bdab0a2336";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsdom-extras-0.1.1.0-r0-da246e3d543c242a14246af1a22da9dc91a621880b9a29c267abcdf57a92e998.nix;
+        revNum = 0;
+        sha256 = "da246e3d543c242a14246af1a22da9dc91a621880b9a29c267abcdf57a92e998";
+      };
+      default = "r0";
+    };
+  };
 }
