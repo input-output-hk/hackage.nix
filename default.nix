@@ -9743,6 +9743,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jsonrpc-conduit" = import ./nix/jsonrpc-conduit.nix;
   "jsonrpc-tinyclient" = import ./nix/jsonrpc-tinyclient.nix;
   "jsons-to-schema" = import ./nix/jsons-to-schema.nix;
+  "jsonschema" = import ./nix/jsonschema.nix;
   "jsonschema-gen" = import ./nix/jsonschema-gen.nix;
   "jsonsql" = import ./nix/jsonsql.nix;
   "jsontsv" = import ./nix/jsontsv.nix;

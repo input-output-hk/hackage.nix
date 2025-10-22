@@ -1044,4 +1044,26 @@
       default = "r2";
     };
   };
+  "1.5.9.0" = {
+    sha256 = "8afe6a1835042253484cbe717c0de88f7deb35233b9cce31fcc6350de73186a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lentil-1.5.9.0-r0-411449ee73c92fa309a9e25f52fc547001521c1e2ce04528b893b9ca3fd8a081.nix;
+        revNum = 0;
+        sha256 = "411449ee73c92fa309a9e25f52fc547001521c1e2ce04528b893b9ca3fd8a081";
+      };
+      default = "r0";
+    };
+  };
+  "1.5.9.1" = {
+    sha256 = "6c72ab5d0305bcde8e94274c642af6658773629053fa900f65524fe6bfaf856f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lentil-1.5.9.1-r0-7de9958c2aebc09ebbbf00088cf8b48810863395ceffc1a01d75cc012b4df0cd.nix;
+        revNum = 0;
+        sha256 = "7de9958c2aebc09ebbbf00088cf8b48810863395ceffc1a01d75cc012b4df0cd";
+      };
+      default = "r0";
+    };
+  };
 }
