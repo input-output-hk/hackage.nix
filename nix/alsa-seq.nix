@@ -54,6 +54,17 @@
       default = "r0";
     };
   };
+  "0.6.0.10" = {
+    sha256 = "7cb46ace379c369908115b2faa9a4684755c67926a63fc36367506f2bdc3da18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alsa-seq-0.6.0.10-r0-1dd356885e1c53dd4475c384c596d22728c91f60e4c763e7e8915b0564fd5f9d.nix;
+        revNum = 0;
+        sha256 = "1dd356885e1c53dd4475c384c596d22728c91f60e4c763e7e8915b0564fd5f9d";
+      };
+      default = "r0";
+    };
+  };
   "0.6.0.2" = {
     sha256 = "afe280ae3f2b6a83eb4160aae384b62d7bad7c043c066245c82e2f9db9e8d020";
     revisions = {

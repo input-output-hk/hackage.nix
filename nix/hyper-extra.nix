@@ -86,4 +86,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "31cc72bfe3ae2bf898a6500f01be99fc46b87e255e319c977855852766dc45e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hyper-extra-0.3.0.0-r0-b409168b5c1ea17261104ed5ca5cec9654e382ceb3537ec145ab895aa2ef5c3b.nix;
+        revNum = 0;
+        sha256 = "b409168b5c1ea17261104ed5ca5cec9654e382ceb3537ec145ab895aa2ef5c3b";
+      };
+      default = "r0";
+    };
+  };
 }
