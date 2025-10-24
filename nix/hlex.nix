@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.1" = {
+    sha256 = "54b934572e46b50f0438f247d220af1c9806ed9695f55a2750bc278f9660f01a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hlex-1.0.1-r0-5006e23618c514ed9e1c914e9bab4535b04e6419494b15ea3261a596cb30167e.nix;
+        revNum = 0;
+        sha256 = "5006e23618c514ed9e1c914e9bab4535b04e6419494b15ea3261a596cb30167e";
+      };
+      default = "r0";
+    };
+  };
 }

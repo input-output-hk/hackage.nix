@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "a4fa372478756a292838c7cb34bf2db3a7cf3ce22ef78e0d1fc1dd7a13c303ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hoauth2-tutorial-0.9.0-r0-1d9abc13536a016a0aaafa4e310a9bb6803a69f603d07770db02e990954c2551.nix;
+        revNum = 0;
+        sha256 = "1d9abc13536a016a0aaafa4e310a9bb6803a69f603d07770db02e990954c2551";
+      };
+      default = "r0";
+    };
+  };
 }
