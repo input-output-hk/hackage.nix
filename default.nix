@@ -4247,6 +4247,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "credentials-cli" = import ./nix/credentials-cli.nix;
   "creditmonad" = import ./nix/creditmonad.nix;
   "crem" = import ./nix/crem.nix;
+  "cretheus" = import ./nix/cretheus.nix;
   "crf-chain1" = import ./nix/crf-chain1.nix;
   "crf-chain1-constrained" = import ./nix/crf-chain1-constrained.nix;
   "crf-chain2-generic" = import ./nix/crf-chain2-generic.nix;
@@ -6195,7 +6196,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "friendly" = import ./nix/friendly.nix;
   "friendly-time" = import ./nix/friendly-time.nix;
   "frisby" = import ./nix/frisby.nix;
+  "from" = import ./nix/from.nix;
   "from-env" = import ./nix/from-env.nix;
+  "from-string" = import ./nix/from-string.nix;
   "from-sum" = import ./nix/from-sum.nix;
   "fromhtml" = import ./nix/fromhtml.nix;
   "front" = import ./nix/front.nix;
