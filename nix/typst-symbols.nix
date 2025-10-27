@@ -141,4 +141,26 @@
       default = "r0";
     };
   };
+  "0.1.9" = {
+    sha256 = "49e309368862b65a5cda0b7adf718fa0cabd43d4916ddffe40f4f7063a1db3c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.9-r0-b38b827adaa630cb39925711d3d656cf3787bc3708b63159cd573997dc221e00.nix;
+        revNum = 0;
+        sha256 = "b38b827adaa630cb39925711d3d656cf3787bc3708b63159cd573997dc221e00";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.9.1" = {
+    sha256 = "c3c871564bdc52a7d8b550ed75886bf63d172fd1ca5776e3f25a52ca7c6d125f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typst-symbols-0.1.9.1-r0-c3e2574dd530068e9aace790a6ca70673e5d22a271561f4391c5883094e09584.nix;
+        revNum = 0;
+        sha256 = "c3e2574dd530068e9aace790a6ca70673e5d22a271561f4391c5883094e09584";
+      };
+      default = "r0";
+    };
+  };
 }
