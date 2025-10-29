@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "cb77efea7310a314ce78b286f8366f15db09900425ba179b1400ecb0186be5bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bitstream-0.3.0.2-r0-a1daee3c298660ffcb0a1840e268cc03d3c3a467a26f345f69a3fcb87edb686e.nix;
+        revNum = 0;
+        sha256 = "a1daee3c298660ffcb0a1840e268cc03d3c3a467a26f345f69a3fcb87edb686e";
+      };
+      default = "r0";
+    };
+  };
 }

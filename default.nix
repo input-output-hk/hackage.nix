@@ -2223,6 +2223,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "artifact" = import ./nix/artifact.nix;
   "arx" = import ./nix/arx.nix;
   "arxiv" = import ./nix/arxiv.nix;
+  "arxiv-client" = import ./nix/arxiv-client.nix;
+  "arxiv-client-cli" = import ./nix/arxiv-client-cli.nix;
   "asana" = import ./nix/asana.nix;
   "asap" = import ./nix/asap.nix;
   "ascetic" = import ./nix/ascetic.nix;
