@@ -11812,6 +11812,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nitro" = import ./nix/nitro.nix;
   "niv" = import ./nix/niv.nix;
   "nix" = import ./nix/nix.nix;
+  "nix-cache-server" = import ./nix/nix-cache-server.nix;
   "nix-delegate" = import ./nix/nix-delegate.nix;
   "nix-deploy" = import ./nix/nix-deploy.nix;
   "nix-derivation" = import ./nix/nix-derivation.nix;
@@ -16756,6 +16757,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "trackit" = import ./nix/trackit.nix;
   "traction" = import ./nix/traction.nix;
   "tracy" = import ./nix/tracy.nix;
+  "tracy-profiler" = import ./nix/tracy-profiler.nix;
   "trade-journal" = import ./nix/trade-journal.nix;
   "traildb" = import ./nix/traildb.nix;
   "trajectory" = import ./nix/trajectory.nix;
