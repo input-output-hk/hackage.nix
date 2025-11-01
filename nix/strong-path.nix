@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "2444fa5f99a8ecd92f55d7103256a68a5c4f5c784730e33c706f95589f13e892";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strong-path-1.2.0.0-r0-3fe1c5cddf56668ad5460edd2921d135cde21c14e3ca9a9e74c6a02bf00c3e7a.nix;
+        revNum = 0;
+        sha256 = "3fe1c5cddf56668ad5460edd2921d135cde21c14e3ca9a9e74c6a02bf00c3e7a";
+      };
+      default = "r0";
+    };
+  };
 }
