@@ -1407,6 +1407,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "achille" = import ./nix/achille.nix;
   "acid-state" = import ./nix/acid-state.nix;
   "acid-state-dist" = import ./nix/acid-state-dist.nix;
+  "acid-state-events" = import ./nix/acid-state-events.nix;
   "acid-state-tls" = import ./nix/acid-state-tls.nix;
   "acl2" = import ./nix/acl2.nix;
   "acme-all-monad" = import ./nix/acme-all-monad.nix;
