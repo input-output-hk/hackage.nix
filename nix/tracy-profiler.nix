@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "a2789754e379e1844a66e4bb0f14e0076f5cbbe8c05ad308450f0b714f7ca1fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tracy-profiler-0.1.2.1-r0-b38130bb031d81f40e724ac0f5b125e8e9bba167ce4e6e312e2f7eb5a1851570.nix;
+        revNum = 0;
+        sha256 = "b38130bb031d81f40e724ac0f5b125e8e9bba167ce4e6e312e2f7eb5a1851570";
+      };
+      default = "r0";
+    };
+  };
 }

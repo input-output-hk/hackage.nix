@@ -11102,6 +11102,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mkcabal" = import ./nix/mkcabal.nix;
   "ml-w" = import ./nix/ml-w.nix;
   "mlist" = import ./nix/mlist.nix;
+  "mlkem" = import ./nix/mlkem.nix;
   "mltool" = import ./nix/mltool.nix;
   "mm2" = import ./nix/mm2.nix;
   "mmap" = import ./nix/mmap.nix;
