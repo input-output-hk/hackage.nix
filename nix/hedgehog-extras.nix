@@ -10,6 +10,17 @@
       default = "r0";
     };
   };
+  "0.10.1.0" = {
+    sha256 = "df9f55c9342bd28fd7f83dcfe890d50e9895ade41efa675156bc2012820ea512";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hedgehog-extras-0.10.1.0-r0-367c48dee30e03e43d0bed06b51f6b3823c5e9a011b09aa91c818ade8f900cb6.nix;
+        revNum = 0;
+        sha256 = "367c48dee30e03e43d0bed06b51f6b3823c5e9a011b09aa91c818ade8f900cb6";
+      };
+      default = "r0";
+    };
+  };
   "0.3.0.1" = {
     sha256 = "52d4e412a04b3509d1b105ffc6afbfe0e6a32cdf16bd2e104b3925ea724a9d37";
     revisions = {
