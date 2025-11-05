@@ -2093,6 +2093,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "apache-md5" = import ./nix/apache-md5.nix;
   "apart" = import ./nix/apart.nix;
   "apecs" = import ./nix/apecs.nix;
+  "apecs-brillo" = import ./nix/apecs-brillo.nix;
   "apecs-effectful" = import ./nix/apecs-effectful.nix;
   "apecs-gloss" = import ./nix/apecs-gloss.nix;
   "apecs-physics" = import ./nix/apecs-physics.nix;
