@@ -735,6 +735,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "LPFP-core" = import ./nix/_L_P_F_P-core.nix;
   "LPPaver" = import ./nix/_L_P_Paver.nix;
   "LParse" = import ./nix/_L_Parse.nix;
+  "LR-demo" = import ./nix/_L_R-demo.nix;
   "LRU" = import ./nix/_L_R_U.nix;
   "LTS" = import ./nix/_L_T_S.nix;
   "LTree" = import ./nix/_L_Tree.nix;
@@ -11186,6 +11187,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monad-coroutine" = import ./nix/monad-coroutine.nix;
   "monad-dijkstra" = import ./nix/monad-dijkstra.nix;
   "monad-effect" = import ./nix/monad-effect.nix;
+  "monad-effect-logging" = import ./nix/monad-effect-logging.nix;
   "monad-exception" = import ./nix/monad-exception.nix;
   "monad-extras" = import ./nix/monad-extras.nix;
   "monad-finally" = import ./nix/monad-finally.nix;
