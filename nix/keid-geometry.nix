@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "306984583da19010477d9899e63d06e54e7acfa653335351444258a9a840fa93";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keid-geometry-0.1.2.0-r0-16a12b233f19f48242e0c90c4f6644d3c892c5b409e27e1ef7752730ea080fc7.nix;
+        revNum = 0;
+        sha256 = "16a12b233f19f48242e0c90c4f6644d3c892c5b409e27e1ef7752730ea080fc7";
+      };
+      default = "r0";
+    };
+  };
 }

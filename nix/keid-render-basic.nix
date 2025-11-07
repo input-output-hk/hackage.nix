@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "0.1.10.0" = {
+    sha256 = "9d6cf3bff682ab0e3a15bb040d798b091fbacfb49644ab78c13e7b0358a02cce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keid-render-basic-0.1.10.0-r0-f12ffd84d88664b988c7b028992f06c94c6f55c6478eebd63cd6493150b153c0.nix;
+        revNum = 0;
+        sha256 = "f12ffd84d88664b988c7b028992f06c94c6f55c6478eebd63cd6493150b153c0";
+      };
+      default = "r0";
+    };
+  };
   "0.1.2.0" = {
     sha256 = "4158296c7490e5aea681c6fd5e7ec229e4218df463a1c5a5173277fbe8f0d98f";
     revisions = {

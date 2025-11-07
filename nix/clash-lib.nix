@@ -1022,4 +1022,15 @@
       default = "r0";
     };
   };
+  "1.8.4" = {
+    sha256 = "3d6d4ded9410e9e0e47cf74c9d029a64d3747579715ec6106cbf8841035231df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clash-lib-1.8.4-r0-6d08a798f5e2e4772290d6c480f0e3de4ef3309d737ace37f0a27281433e3adb.nix;
+        revNum = 0;
+        sha256 = "6d08a798f5e2e4772290d6c480f0e3de4ef3309d737ace37f0a27281433e3adb";
+      };
+      default = "r0";
+    };
+  };
 }

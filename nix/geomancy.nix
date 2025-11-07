@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "3909d2972f2d4a6d7f9a381fabbedb223ae64a6c8ea17d4387f22037378b05d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geomancy-0.3.0.0-r0-237493387b0ac7036e0611df9074738985e5c1fed0dc2097bfb54f017f5c2e03.nix;
+        revNum = 0;
+        sha256 = "237493387b0ac7036e0611df9074738985e5c1fed0dc2097bfb54f017f5c2e03";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.1.1" = {
+    sha256 = "cec36e13dc80a858b611db6728e269898b200ac8d4e80d2f66684a584c8ba65f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rme-what4-0.1.1-r0-552253c5801688244745d00376cb79b08f1dd8760ac2381992b1f2f6399126ee.nix;
+        revNum = 0;
+        sha256 = "552253c5801688244745d00376cb79b08f1dd8760ac2381992b1f2f6399126ee";
+      };
+      default = "r0";
+    };
+  };
 }

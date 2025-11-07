@@ -4791,6 +4791,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "deriving-openapi3" = import ./nix/deriving-openapi3.nix;
   "deriving-show-simple" = import ./nix/deriving-show-simple.nix;
   "deriving-trans" = import ./nix/deriving-trans.nix;
+  "deriving-via-fun" = import ./nix/deriving-via-fun.nix;
   "derivingvia-extras" = import ./nix/derivingvia-extras.nix;
   "derp" = import ./nix/derp.nix;
   "derp-lib" = import ./nix/derp-lib.nix;
@@ -5519,6 +5520,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ersaconcat" = import ./nix/ersaconcat.nix;
   "ersatz" = import ./nix/ersatz.nix;
   "ersatz-toysat" = import ./nix/ersatz-toysat.nix;
+  "ersatz-viz" = import ./nix/ersatz-viz.nix;
   "ert" = import ./nix/ert.nix;
   "escape-artist" = import ./nix/escape-artist.nix;
   "escaped" = import ./nix/escaped.nix;

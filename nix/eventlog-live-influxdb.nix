@@ -42,4 +42,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "759a391a50f38f836aed6c898f0ffc585544ae8b5600fb30a1edd8be0fceecad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventlog-live-influxdb-0.2.0.1-r0-9f250ed22c926f4e40e89f5686887d60e1539eccf8c06a2b40f77ec18817ab25.nix;
+        revNum = 0;
+        sha256 = "9f250ed22c926f4e40e89f5686887d60e1539eccf8c06a2b40f77ec18817ab25";
+      };
+      default = "r0";
+    };
+  };
 }
