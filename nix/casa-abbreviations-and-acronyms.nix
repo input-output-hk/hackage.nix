@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.0.12" = {
+    sha256 = "26cb8ac677b7091579493c202e44fbaba831b3671a3d1b9f6209d3e6709fe498";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/casa-abbreviations-and-acronyms-0.0.12-r0-0b8f7c363f9745b72f0ad04acd31ed4d0e5873ecb5e8d1f064c8ce61d93ae967.nix;
+        revNum = 0;
+        sha256 = "0b8f7c363f9745b72f0ad04acd31ed4d0e5873ecb5e8d1f064c8ce61d93ae967";
+      };
+      default = "r0";
+    };
+  };
   "0.0.2" = {
     sha256 = "c2921147a01a07b2b9d304a854290fed74f175da365407f7be745c436ed00230";
     revisions = {

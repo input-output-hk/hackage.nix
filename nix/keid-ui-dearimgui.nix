@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "5d93c8fca79a3e1f18be00fdcabe52241eabf7010c116c00158a6c88e9656310";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/keid-ui-dearimgui-0.1.3.2-r1-29130b00bfc83101553a4cae93b942d55f4546424d8c2d53bd4e827864ce06bf.nix;
+        revNum = 1;
+        sha256 = "29130b00bfc83101553a4cae93b942d55f4546424d8c2d53bd4e827864ce06bf";
+      };
+      default = "r1";
     };
   };
 }

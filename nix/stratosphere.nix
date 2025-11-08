@@ -978,4 +978,26 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "bcdf3b428bd2145f301d96ff7cd7ae627b0d6e6fb52810ea61056c404cb2ce30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stratosphere-1.0.0-r0-fdca11cd9ae7c5e02c31e4be7c3b3e6def8db00342e6375786ad615b14f2bea4.nix;
+        revNum = 0;
+        sha256 = "fdca11cd9ae7c5e02c31e4be7c3b3e6def8db00342e6375786ad615b14f2bea4";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.1" = {
+    sha256 = "d61fbe11c51a09b8011f7ea50f66f5db7a87c262dbb68f2d1af59562f84a98a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stratosphere-1.0.1-r0-1b00e45befafa8671188329a3cdcb333af1d0e8f5e74b2d273a21d0b8c66dfb7.nix;
+        revNum = 0;
+        sha256 = "1b00e45befafa8671188329a3cdcb333af1d0e8f5e74b2d273a21d0b8c66dfb7";
+      };
+      default = "r0";
+    };
+  };
 }
