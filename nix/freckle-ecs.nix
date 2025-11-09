@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.0.1" = {
+    sha256 = "e755b9ad4f7e8ad00b1ef81a3675aa1c008841289f846173fb8d1426a9b2b48b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-ecs-0.0.0.1-r0-1c86ddda0519d0b8f85ec6b286f86f1eaa7a1fd0030faba2077c48363e583444.nix;
+        revNum = 0;
+        sha256 = "1c86ddda0519d0b8f85ec6b286f86f1eaa7a1fd0030faba2077c48363e583444";
+      };
+      default = "r0";
+    };
+  };
 }

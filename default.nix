@@ -2382,6 +2382,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "authinfo-hs" = import ./nix/authinfo-hs.nix;
   "authoring" = import ./nix/authoring.nix;
   "auto" = import ./nix/auto.nix;
+  "auto-export" = import ./nix/auto-export.nix;
+  "auto-extract" = import ./nix/auto-extract.nix;
+  "auto-import" = import ./nix/auto-import.nix;
   "auto-lift-classes" = import ./nix/auto-lift-classes.nix;
   "auto-split" = import ./nix/auto-split.nix;
   "auto-update" = import ./nix/auto-update.nix;
@@ -11310,6 +11313,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoid-transformer" = import ./nix/monoid-transformer.nix;
   "monoidal-containers" = import ./nix/monoidal-containers.nix;
   "monoidal-functors" = import ./nix/monoidal-functors.nix;
+  "monoidal-plugins" = import ./nix/monoidal-plugins.nix;
   "monoidmap" = import ./nix/monoidmap.nix;
   "monoidmap-aeson" = import ./nix/monoidmap-aeson.nix;
   "monoidmap-examples" = import ./nix/monoidmap-examples.nix;

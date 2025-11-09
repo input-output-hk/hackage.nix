@@ -521,4 +521,15 @@
       default = "r0";
     };
   };
+  "4.6" = {
+    sha256 = "911a6514025b01ceb71afe5ed87fea319bf54ebcda4d11df14f8294f43d99406";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-language-4.6-r0-0c5de0938776a2df0793d14fe233ae81dfd9ef57c05ba0e1dec255421c68ec67.nix;
+        revNum = 0;
+        sha256 = "0c5de0938776a2df0793d14fe233ae81dfd9ef57c05ba0e1dec255421c68ec67";
+      };
+      default = "r0";
+    };
+  };
 }
