@@ -8180,6 +8180,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "higgledy" = import ./nix/higgledy.nix;
   "highWaterMark" = import ./nix/high_Water_Mark.nix;
   "higher-leveldb" = import ./nix/higher-leveldb.nix;
+  "higher-order-freer-monad" = import ./nix/higher-order-freer-monad.nix;
   "higherorder" = import ./nix/higherorder.nix;
   "highjson" = import ./nix/highjson.nix;
   "highjson-swagger" = import ./nix/highjson-swagger.nix;
@@ -18014,6 +18015,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wavefront-obj" = import ./nix/wavefront-obj.nix;
   "wavesurfer" = import ./nix/wavesurfer.nix;
   "wavy" = import ./nix/wavy.nix;
+  "waypoint" = import ./nix/waypoint.nix;
   "wcwidth" = import ./nix/wcwidth.nix;
   "wd" = import ./nix/wd.nix;
   "weak" = import ./nix/weak.nix;
