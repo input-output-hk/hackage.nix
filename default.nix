@@ -8181,6 +8181,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "highWaterMark" = import ./nix/high_Water_Mark.nix;
   "higher-leveldb" = import ./nix/higher-leveldb.nix;
   "higher-order-freer-monad" = import ./nix/higher-order-freer-monad.nix;
+  "higher-order-open-union" = import ./nix/higher-order-open-union.nix;
   "higherorder" = import ./nix/higherorder.nix;
   "highjson" = import ./nix/highjson.nix;
   "highjson-swagger" = import ./nix/highjson-swagger.nix;
@@ -9194,6 +9195,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "icon-fonts" = import ./nix/icon-fonts.nix;
   "iconv" = import ./nix/iconv.nix;
   "iconv-typed" = import ./nix/iconv-typed.nix;
+  "id" = import ./nix/id.nix;
   "ide-backend" = import ./nix/ide-backend.nix;
   "ide-backend-common" = import ./nix/ide-backend-common.nix;
   "ide-backend-rts" = import ./nix/ide-backend-rts.nix;

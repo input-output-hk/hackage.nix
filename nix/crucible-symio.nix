@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "37123a753b7c3ff1aaa4c5ce4d2bad2e7c4c8419ed966f9e73a0a173b355b8bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crucible-symio-0.2.0.0-r0-f3e7c899f7b3292b52d6c7979f7af8df195a0e112285c44e6249c5a80e47e76d.nix;
+        revNum = 0;
+        sha256 = "f3e7c899f7b3292b52d6c7979f7af8df195a0e112285c44e6249c5a80e47e76d";
+      };
+      default = "r0";
+    };
+  };
 }
