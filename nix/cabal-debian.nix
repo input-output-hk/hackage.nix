@@ -1107,4 +1107,26 @@
       default = "r0";
     };
   };
+  "5.4.0" = {
+    sha256 = "12ffbac4f53a592eb9ef09247c2d54f608b804d8462ef0d793216c3c17a08d0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-debian-5.4.0-r0-75020f098921dd9e8fb67bd18633c0010dde4086f5c3e2e740f8646c2078dea2.nix;
+        revNum = 0;
+        sha256 = "75020f098921dd9e8fb67bd18633c0010dde4086f5c3e2e740f8646c2078dea2";
+      };
+      default = "r0";
+    };
+  };
+  "5.4.1" = {
+    sha256 = "3bb1fca3e0a8a756be2cf9111ffb54300b8e5c22179beb2da449350693948399";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-debian-5.4.1-r0-80a08332706ae6b087bd0f018e1a27a314043b02028dc91c1b48079c5f6d6971.nix;
+        revNum = 0;
+        sha256 = "80a08332706ae6b087bd0f018e1a27a314043b02028dc91c1b48079c5f6d6971";
+      };
+      default = "r0";
+    };
+  };
 }
