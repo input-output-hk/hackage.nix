@@ -18127,6 +18127,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wheb-strapped" = import ./nix/wheb-strapped.nix;
   "wherefrom-compat" = import ./nix/wherefrom-compat.nix;
   "which" = import ./nix/which.nix;
+  "which-embed" = import ./nix/which-embed.nix;
   "while-lang-parser" = import ./nix/while-lang-parser.nix;
   "whim" = import ./nix/whim.nix;
   "whiskers" = import ./nix/whiskers.nix;

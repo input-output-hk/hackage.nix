@@ -246,6 +246,17 @@
       default = "r0";
     };
   };
+  "0.16.8" = {
+    sha256 = "130e182a4bbbe88fd2ec2802f7b025e79f21a2b7e3e83fcfecef501554384c94";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fortran-src-0.16.8-r0-6587c88ca0c98dfa52b18d0f4c0336db245a4adb5bd9415b88f2267ebb470a71.nix;
+        revNum = 0;
+        sha256 = "6587c88ca0c98dfa52b18d0f4c0336db245a4adb5bd9415b88f2267ebb470a71";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "8cdb2d3999d3f96d92bf5dd5c4e73b3beda351798f2b5705add5aa9551c9bf56";
     revisions = {
