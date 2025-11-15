@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "1.1.0.2" = {
+    sha256 = "2a2c14424772fcdf0c25ebc16a549976b114bd0dc156e6c84e23751b3ed37ca9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/makefile-1.1.0.2-r0-09d52ffff4f23d658d8dab4a7bd0714398efdc585f0bf5b04cbf2b6267fc05b7.nix;
+        revNum = 0;
+        sha256 = "09d52ffff4f23d658d8dab4a7bd0714398efdc585f0bf5b04cbf2b6267fc05b7";
+      };
+      default = "r0";
+    };
+  };
 }

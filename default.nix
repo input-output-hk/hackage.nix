@@ -11290,6 +11290,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monads-tf" = import ./nix/monads-tf.nix;
   "monadtransform" = import ./nix/monadtransform.nix;
   "monarch" = import ./nix/monarch.nix;
+  "monatone" = import ./nix/monatone.nix;
   "mondo" = import ./nix/mondo.nix;
   "monetdb-mapi" = import ./nix/monetdb-mapi.nix;
   "money" = import ./nix/money.nix;
@@ -18432,6 +18433,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yabi" = import ./nix/yabi.nix;
   "yabi-muno" = import ./nix/yabi-muno.nix;
   "yackage" = import ./nix/yackage.nix;
+  "yaftee" = import ./nix/yaftee.nix;
   "yahoo-finance-api" = import ./nix/yahoo-finance-api.nix;
   "yahoo-finance-conduit" = import ./nix/yahoo-finance-conduit.nix;
   "yahoo-prices" = import ./nix/yahoo-prices.nix;
