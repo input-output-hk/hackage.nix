@@ -90,4 +90,15 @@
       default = "r0";
     };
   };
+  "0.3.4" = {
+    sha256 = "1838bfff6ca4030be408464749e72055b902b9325ba8b90977be02343f48d45f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/control-monad-omega-0.3.4-r0-6fbac6ca51341af85ea40aeee43985a5f6717321f9fdabc89f5e79c30791394d.nix;
+        revNum = 0;
+        sha256 = "6fbac6ca51341af85ea40aeee43985a5f6717321f9fdabc89f5e79c30791394d";
+      };
+      default = "r0";
+    };
+  };
 }

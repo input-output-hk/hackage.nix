@@ -65,6 +65,17 @@
       default = "r0";
     };
   };
+  "2024.0.0.1" = {
+    sha256 = "42ee826d14749e4a28b8966a2a3cefad862f082979eaf1db2b4c548b68510fd7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canadian-income-tax-2024.0.0.1-r0-90125ecd7219193377ff90a017970788f21937fee89a898daeddd3539d47fdc5.nix;
+        revNum = 0;
+        sha256 = "90125ecd7219193377ff90a017970788f21937fee89a898daeddd3539d47fdc5";
+      };
+      default = "r0";
+    };
+  };
   "2024.1" = {
     sha256 = "729f44c34640bca2f8fb1b20fe9ff4c04e0262302ce654dda040bd02e4b0c8c8";
     revisions = {
@@ -72,6 +83,17 @@
         nix = import ../hackage/canadian-income-tax-2024.1-r0-74411a60361fab0742dc798e5488964b976b4904cee04157d329b5156450b90e.nix;
         revNum = 0;
         sha256 = "74411a60361fab0742dc798e5488964b976b4904cee04157d329b5156450b90e";
+      };
+      default = "r0";
+    };
+  };
+  "2024.1.0.1" = {
+    sha256 = "3ac55672c2e43e3cdf082f7df603d93a2e197ebde9ac25e9472f57461cb80413";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canadian-income-tax-2024.1.0.1-r0-88a0bc5f421d81f4d71daaff6f6363acad5765e64cbebb0458ca4520d6c91397.nix;
+        revNum = 0;
+        sha256 = "88a0bc5f421d81f4d71daaff6f6363acad5765e64cbebb0458ca4520d6c91397";
       };
       default = "r0";
     };

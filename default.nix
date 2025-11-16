@@ -18434,6 +18434,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yabi-muno" = import ./nix/yabi-muno.nix;
   "yackage" = import ./nix/yackage.nix;
   "yaftee" = import ./nix/yaftee.nix;
+  "yaftee-basic-monads" = import ./nix/yaftee-basic-monads.nix;
+  "yaftee-conduit" = import ./nix/yaftee-conduit.nix;
   "yahoo-finance-api" = import ./nix/yahoo-finance-api.nix;
   "yahoo-finance-conduit" = import ./nix/yahoo-finance-conduit.nix;
   "yahoo-prices" = import ./nix/yahoo-prices.nix;

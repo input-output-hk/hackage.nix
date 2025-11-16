@@ -36,4 +36,15 @@
       default = "r2";
     };
   };
+  "0.1.2" = {
+    sha256 = "495f2c4a9f840297bec12d28dd5d0e9cc01b51307c73e0ae0fd1bfc382534378";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/snappy-c-0.1.2-r0-0eb33f4dfd7814ada66a3bc1251209ddd3beddcfa0f23876728f574ea766cf09.nix;
+        revNum = 0;
+        sha256 = "0eb33f4dfd7814ada66a3bc1251209ddd3beddcfa0f23876728f574ea766cf09";
+      };
+      default = "r0";
+    };
+  };
 }
