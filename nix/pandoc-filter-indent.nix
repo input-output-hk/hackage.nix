@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "0.3.3.0" = {
+    sha256 = "a5796928e23cb19908570b54c0d4ba0c8b29e9b938b2f4474a451b224ff9b232";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-filter-indent-0.3.3.0-r0-519a6e0d076ee22ff381626397ef07486c73486d14d3e9f95166bd8915b9f38d.nix;
+        revNum = 0;
+        sha256 = "519a6e0d076ee22ff381626397ef07486c73486d14d3e9f95166bd8915b9f38d";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.3.1" = {
+    sha256 = "cb0de2fdd7a6ac2c1eb4803067f352c99be546facbe16c3a109cfebe42f11f91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-filter-indent-0.3.3.1-r0-318e141e3d8a814059633118f9758399f35a4ac896ae71714dd2e9e203a61dc8.nix;
+        revNum = 0;
+        sha256 = "318e141e3d8a814059633118f9758399f35a4ac896ae71714dd2e9e203a61dc8";
+      };
+      default = "r0";
+    };
+  };
 }

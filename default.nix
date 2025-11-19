@@ -1622,6 +1622,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "algebra-sql" = import ./nix/algebra-sql.nix;
   "algebraic" = import ./nix/algebraic.nix;
   "algebraic-classes" = import ./nix/algebraic-classes.nix;
+  "algebraic-graph-duoids" = import ./nix/algebraic-graph-duoids.nix;
   "algebraic-graphs" = import ./nix/algebraic-graphs.nix;
   "algebraic-graphs-io" = import ./nix/algebraic-graphs-io.nix;
   "algebraic-prelude" = import ./nix/algebraic-prelude.nix;
@@ -2441,6 +2442,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aws-ec2" = import ./nix/aws-ec2.nix;
   "aws-ec2-knownhosts" = import ./nix/aws-ec2-knownhosts.nix;
   "aws-elastic-transcoder" = import ./nix/aws-elastic-transcoder.nix;
+  "aws-eventbridge-cron" = import ./nix/aws-eventbridge-cron.nix;
   "aws-general" = import ./nix/aws-general.nix;
   "aws-kinesis" = import ./nix/aws-kinesis.nix;
   "aws-kinesis-client" = import ./nix/aws-kinesis-client.nix;
@@ -2809,6 +2811,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bit-stream" = import ./nix/bit-stream.nix;
   "bit-vector" = import ./nix/bit-vector.nix;
   "bitarray" = import ./nix/bitarray.nix;
+  "bitarray-bs" = import ./nix/bitarray-bs.nix;
   "bitcoin-address" = import ./nix/bitcoin-address.nix;
   "bitcoin-api" = import ./nix/bitcoin-api.nix;
   "bitcoin-api-extra" = import ./nix/bitcoin-api-extra.nix;
@@ -3143,6 +3146,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bytestring-encoding" = import ./nix/bytestring-encoding.nix;
   "bytestring-encodings" = import ./nix/bytestring-encodings.nix;
   "bytestring-from" = import ./nix/bytestring-from.nix;
+  "bytestring-ft" = import ./nix/bytestring-ft.nix;
   "bytestring-handle" = import ./nix/bytestring-handle.nix;
   "bytestring-lexing" = import ./nix/bytestring-lexing.nix;
   "bytestring-mmap" = import ./nix/bytestring-mmap.nix;
@@ -5138,6 +5142,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "downloader" = import ./nix/downloader.nix;
   "dozenal" = import ./nix/dozenal.nix;
   "dozens" = import ./nix/dozens.nix;
+  "dpapi" = import ./nix/dpapi.nix;
   "dph-base" = import ./nix/dph-base.nix;
   "dph-examples" = import ./nix/dph-examples.nix;
   "dph-lifted-base" = import ./nix/dph-lifted-base.nix;
@@ -5201,6 +5206,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dunai" = import ./nix/dunai.nix;
   "dunai-core" = import ./nix/dunai-core.nix;
   "dunai-test" = import ./nix/dunai-test.nix;
+  "duoidal-transformers" = import ./nix/duoidal-transformers.nix;
+  "duoids" = import ./nix/duoids.nix;
+  "duoids-hedgehog" = import ./nix/duoids-hedgehog.nix;
   "dupIO" = import ./nix/dup_I_O.nix;
   "duplo" = import ./nix/duplo.nix;
   "dura" = import ./nix/dura.nix;
@@ -7657,6 +7665,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-dap" = import ./nix/haskell-dap.nix;
   "haskell-debug-adapter" = import ./nix/haskell-debug-adapter.nix;
   "haskell-debugger" = import ./nix/haskell-debugger.nix;
+  "haskell-debugger-view" = import ./nix/haskell-debugger-view.nix;
   "haskell-disque" = import ./nix/haskell-disque.nix;
   "haskell-docs" = import ./nix/haskell-docs.nix;
   "haskell-docs-cli" = import ./nix/haskell-docs-cli.nix;
@@ -9236,6 +9245,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-basic" = import ./nix/ihaskell-basic.nix;
   "ihaskell-blaze" = import ./nix/ihaskell-blaze.nix;
   "ihaskell-charts" = import ./nix/ihaskell-charts.nix;
+  "ihaskell-dataframe" = import ./nix/ihaskell-dataframe.nix;
   "ihaskell-diagrams" = import ./nix/ihaskell-diagrams.nix;
   "ihaskell-display" = import ./nix/ihaskell-display.nix;
   "ihaskell-gnuplot" = import ./nix/ihaskell-gnuplot.nix;
@@ -16965,6 +16975,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "to-string-instances" = import ./nix/to-string-instances.nix;
   "toboggan" = import ./nix/toboggan.nix;
   "todo" = import ./nix/todo.nix;
+  "todoist-sdk" = import ./nix/todoist-sdk.nix;
   "todos" = import ./nix/todos.nix;
   "tofromxml" = import ./nix/tofromxml.nix;
   "toilet" = import ./nix/toilet.nix;
@@ -18061,6 +18072,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "web3-polkadot" = import ./nix/web3-polkadot.nix;
   "web3-provider" = import ./nix/web3-provider.nix;
   "web3-solidity" = import ./nix/web3-solidity.nix;
+  "web3-tools" = import ./nix/web3-tools.nix;
   "webapi" = import ./nix/webapi.nix;
   "webapp" = import ./nix/webapp.nix;
   "webauthn" = import ./nix/webauthn.nix;
@@ -18436,6 +18448,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaftee" = import ./nix/yaftee.nix;
   "yaftee-basic-monads" = import ./nix/yaftee-basic-monads.nix;
   "yaftee-conduit" = import ./nix/yaftee-conduit.nix;
+  "yaftee-conduit-bytestring" = import ./nix/yaftee-conduit-bytestring.nix;
   "yahoo-finance-api" = import ./nix/yahoo-finance-api.nix;
   "yahoo-finance-conduit" = import ./nix/yahoo-finance-conduit.nix;
   "yahoo-prices" = import ./nix/yahoo-prices.nix;
@@ -18738,6 +18751,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zlib-bytes" = import ./nix/zlib-bytes.nix;
   "zlib-clib" = import ./nix/zlib-clib.nix;
   "zlib-conduit" = import ./nix/zlib-conduit.nix;
+  "zlib-core" = import ./nix/zlib-core.nix;
   "zlib-enum" = import ./nix/zlib-enum.nix;
   "zlib-lens" = import ./nix/zlib-lens.nix;
   "zm" = import ./nix/zm.nix;

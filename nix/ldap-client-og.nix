@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.5.0" = {
+    sha256 = "f4a03b7f027d11fa7beb9d940da820391fd17cd187109279dcc26f4499d37c08";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ldap-client-og-0.5.0-r0-86216e048fd197deb79695680fafd93f5764289c1429e1c2191bbc5cf876ef3a.nix;
+        revNum = 0;
+        sha256 = "86216e048fd197deb79695680fafd93f5764289c1429e1c2191bbc5cf876ef3a";
+      };
+      default = "r0";
+    };
+  };
 }

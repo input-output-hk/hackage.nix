@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.1.8.4" = {
+    sha256 = "f5d7387525a2d01cc9e2b775561b84b9efe40f250d66d878d3db0ecda4ea5114";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gothic-0.1.8.4-r0-839ca8e4d991194801b8fe7c9b32316a574fb098298f68884b20b86fa300528b.nix;
+        revNum = 0;
+        sha256 = "839ca8e4d991194801b8fe7c9b32316a574fb098298f68884b20b86fa300528b";
+      };
+      default = "r0";
+    };
+  };
 }
