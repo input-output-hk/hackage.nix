@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "1.10" = {
+    sha256 = "871f0e50654762e8260005546f9200362684e672b77e4e26cad80d549dca6cb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-tags-1.10-r0-b6a422d6af64b86cb767f8df07b3d0b11865ec4f3fcf5032e9e81f39baace26f.nix;
+        revNum = 0;
+        sha256 = "b6a422d6af64b86cb767f8df07b3d0b11865ec4f3fcf5032e9e81f39baace26f";
+      };
+      default = "r0";
+    };
+  };
   "1.2" = {
     sha256 = "11c6102ffe96a82f9af0e5a5d4f70ab81e59dff12af8386568ab54da2ea8e675";
     revisions = {

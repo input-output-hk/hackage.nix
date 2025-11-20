@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "1da8ec3ac0480f22715ab7f4935c35f63cc569253be2b9bdc850865a709896b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inf-backprop-0.2.0.0-r0-316cb817df6769e3c0e29b7e902244e9fb4d1b70e842f275c4084036ac95ba8d.nix;
+        revNum = 0;
+        sha256 = "316cb817df6769e3c0e29b7e902244e9fb4d1b70e842f275c4084036ac95ba8d";
+      };
+      default = "r0";
+    };
+  };
 }
