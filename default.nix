@@ -9219,6 +9219,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "identifiers" = import ./nix/identifiers.nix;
   "idiii" = import ./nix/idiii.nix;
   "idiomatic" = import ./nix/idiomatic.nix;
+  "idn" = import ./nix/idn.nix;
   "idna" = import ./nix/idna.nix;
   "idna2008" = import ./nix/idna2008.nix;
   "idringen" = import ./nix/idringen.nix;

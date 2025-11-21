@@ -824,6 +824,17 @@
       default = "r0";
     };
   };
+  "1.5.10.0" = {
+    sha256 = "3a70e251753b5213b69536091d08489aed0bc09e7c6c733748ba79924b1929f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lentil-1.5.10.0-r0-ea660f09a2b244622cb77afba29e0a018700db634ee110de7a621a8f848e74bd.nix;
+        revNum = 0;
+        sha256 = "ea660f09a2b244622cb77afba29e0a018700db634ee110de7a621a8f848e74bd";
+      };
+      default = "r0";
+    };
+  };
   "1.5.2.0" = {
     sha256 = "51936876856a3b5246a462c0865ee3275b1102a2c263a6398a9491789e457956";
     revisions = {
