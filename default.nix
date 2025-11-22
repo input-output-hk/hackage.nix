@@ -18450,6 +18450,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaftee-basic-monads" = import ./nix/yaftee-basic-monads.nix;
   "yaftee-conduit" = import ./nix/yaftee-conduit.nix;
   "yaftee-conduit-bytestring" = import ./nix/yaftee-conduit-bytestring.nix;
+  "yaftee-conduit-bytestring-ft" = import ./nix/yaftee-conduit-bytestring-ft.nix;
   "yaftee-conduit-mono-traversable" = import ./nix/yaftee-conduit-mono-traversable.nix;
   "yahoo-finance-api" = import ./nix/yahoo-finance-api.nix;
   "yahoo-finance-conduit" = import ./nix/yahoo-finance-conduit.nix;

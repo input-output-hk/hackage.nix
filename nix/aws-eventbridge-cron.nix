@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "f7cf439a8456edf9e392d597d31c2812a8e9e49ae400a9b5985e7a656ea6474a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-eventbridge-cron-0.1.2.0-r0-41bf486698d1a8bb02ad8ad410f1ed101e3d0d051e0403c94ca4c5b1484019a5.nix;
+        revNum = 0;
+        sha256 = "41bf486698d1a8bb02ad8ad410f1ed101e3d0d051e0403c94ca4c5b1484019a5";
+      };
+      default = "r0";
+    };
+  };
 }
