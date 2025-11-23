@@ -21,6 +21,39 @@
       default = "r0";
     };
   };
+  "1.0.10" = {
+    sha256 = "ce8bfa33570c9f33eacb03a5a039baf1088b8268df3625d9484c54c349cce4f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-kbgen-1.0.10-r0-b7bcbc4d2d177e002a1761952d7946683ebfb33871e9d1fd19237ce13462051a.nix;
+        revNum = 0;
+        sha256 = "b7bcbc4d2d177e002a1761952d7946683ebfb33871e9d1fd19237ce13462051a";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.11" = {
+    sha256 = "9d08b7272b1df67be06eaed6f879ad7a385b7aa7113475ce96539357d8e6a991";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-kbgen-1.0.11-r0-edf7c047ca16bee66031f28826f2c11b461a4e70ce41cf16b42da14f44785343.nix;
+        revNum = 0;
+        sha256 = "edf7c047ca16bee66031f28826f2c11b461a4e70ce41cf16b42da14f44785343";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.12" = {
+    sha256 = "230a5110e49f15600027908df96cdb39666e3c703df77a3e1761de042361b6fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-kbgen-1.0.12-r0-5a92f3faf8cc06e461e1435b02c18d3eee7d92c07e2c8d3546e1c1e84bc87eb0.nix;
+        revNum = 0;
+        sha256 = "5a92f3faf8cc06e461e1435b02c18d3eee7d92c07e2c8d3546e1c1e84bc87eb0";
+      };
+      default = "r0";
+    };
+  };
   "1.0.2" = {
     sha256 = "c93948d2c18cfc6bda15083786c194acbe477b1f641ef677ac5a6a9b37631e72";
     revisions = {

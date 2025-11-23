@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "600f90a43ec9c26402e2466e5751a2b2158f614c94fd56ec62b40f3fe44757b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-eventbridge-cron-0.1.2.1-r0-0f61e6992cb42cf9279c8211cb8b1ebbca589f81b84d9d760455c11befbd725e.nix;
+        revNum = 0;
+        sha256 = "0f61e6992cb42cf9279c8211cb8b1ebbca589f81b84d9d760455c11befbd725e";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.0" = {
+    sha256 = "e04a66fd8242ac8c196b6fc15a6dd0cab900f3dc1dfc4f44426ce619469562b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aws-eventbridge-cron-0.2.0.0-r0-fa890aacd2e09b21e60b7de520ef1920651466b15448e8dd665548d11be962be.nix;
+        revNum = 0;
+        sha256 = "fa890aacd2e09b21e60b7de520ef1920651466b15448e8dd665548d11be962be";
+      };
+      default = "r0";
+    };
+  };
 }

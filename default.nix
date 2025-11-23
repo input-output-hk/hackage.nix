@@ -12272,6 +12272,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ory-kratos" = import ./nix/ory-kratos.nix;
   "os-release" = import ./nix/os-release.nix;
   "os-string" = import ./nix/os-string.nix;
+  "os-string-compat" = import ./nix/os-string-compat.nix;
   "osc" = import ./nix/osc.nix;
   "oscpacking" = import ./nix/oscpacking.nix;
   "osdkeys" = import ./nix/osdkeys.nix;
