@@ -5320,6 +5320,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effectful-core" = import ./nix/effectful-core.nix;
   "effectful-opaleye" = import ./nix/effectful-opaleye.nix;
   "effectful-plugin" = import ./nix/effectful-plugin.nix;
+  "effectful-poolboy" = import ./nix/effectful-poolboy.nix;
   "effectful-postgresql" = import ./nix/effectful-postgresql.nix;
   "effectful-st" = import ./nix/effectful-st.nix;
   "effectful-th" = import ./nix/effectful-th.nix;
@@ -8772,6 +8773,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsmagick" = import ./nix/hsmagick.nix;
   "hsmisc" = import ./nix/hsmisc.nix;
   "hsmodetweaks" = import ./nix/hsmodetweaks.nix;
+  "hsmrc" = import ./nix/hsmrc.nix;
   "hsmtpclient" = import ./nix/hsmtpclient.nix;
   "hsndfile" = import ./nix/hsndfile.nix;
   "hsndfile-storablevector" = import ./nix/hsndfile-storablevector.nix;
@@ -17513,6 +17515,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "units" = import ./nix/units.nix;
   "units-attoparsec" = import ./nix/units-attoparsec.nix;
   "units-defs" = import ./nix/units-defs.nix;
+  "units-list" = import ./nix/units-list.nix;
   "units-parser" = import ./nix/units-parser.nix;
   "unittyped" = import ./nix/unittyped.nix;
   "unity-testresult-parser" = import ./nix/unity-testresult-parser.nix;
