@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.3.3.2" = {
+    sha256 = "3082dd4d5da4906cac9c649125afc41f88b9ed4bc07329ba50930638a3e228c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/google-oauth2-jwt-0.3.3.2-r0-ae51398f0444ca3d95b6edab96268395bcc9a8fd33168882878b91b265409823.nix;
+        revNum = 0;
+        sha256 = "ae51398f0444ca3d95b6edab96268395bcc9a8fd33168882878b91b265409823";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -1236,6 +1236,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Treiber" = import ./nix/_Treiber.nix;
   "TrendGraph" = import ./nix/_Trend_Graph.nix;
   "TrieMap" = import ./nix/_Trie_Map.nix;
+  "TrivialMonadWithUnitType" = import ./nix/_Trivial_Monad_With_Unit_Type.nix;
   "Twofish" = import ./nix/_Twofish.nix;
   "TypeClass" = import ./nix/_Type_Class.nix;
   "TypeCompose" = import ./nix/_Type_Compose.nix;
@@ -17291,6 +17292,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-level-natural-number-induction" = import ./nix/type-level-natural-number-induction.nix;
   "type-level-natural-number-operations" = import ./nix/type-level-natural-number-operations.nix;
   "type-level-numbers" = import ./nix/type-level-numbers.nix;
+  "type-level-prng" = import ./nix/type-level-prng.nix;
   "type-level-sets" = import ./nix/type-level-sets.nix;
   "type-level-show" = import ./nix/type-level-show.nix;
   "type-level-tf" = import ./nix/type-level-tf.nix;
