@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "20cc44cbb5ab7f534dfc9315c230c2c84aef5872cbec0ef76550a3e66c0be55a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bloomfilter-blocked-0.1.0.1-r0-384926a0c94e3310ec569984a5d9ad989360d4c1b1959e06fde011a4d9b8fd1a.nix;
+        revNum = 0;
+        sha256 = "384926a0c94e3310ec569984a5d9ad989360d4c1b1959e06fde011a4d9b8fd1a";
+      };
+      default = "r0";
+    };
+  };
 }

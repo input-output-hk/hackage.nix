@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "78f2606f0763bfcb6698215a3ffa5c410b95eb86995fa7e874f3600e824d0b39";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoogle-4.0-r1-a5e1d11740302a5024e292890590e3ab3cf2afcf77a6ddb640df155156c921ff.nix;
+        revNum = 1;
+        sha256 = "a5e1d11740302a5024e292890590e3ab3cf2afcf77a6ddb640df155156c921ff";
+      };
+      default = "r1";
     };
   };
   "4.0.0.1" = {
@@ -29,7 +34,12 @@
         revNum = 0;
         sha256 = "9a3abff9af7199934ed7c000d182342d554be54c6019ca0381f4ab114c270bd7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoogle-4.0.0.1-r1-2aea842583d8dcbf4eb9f10ec3ff7a8e776704e90a588a09d68663c08208b972.nix;
+        revNum = 1;
+        sha256 = "2aea842583d8dcbf4eb9f10ec3ff7a8e776704e90a588a09d68663c08208b972";
+      };
+      default = "r1";
     };
   };
   "4.0.0.2" = {
@@ -40,7 +50,12 @@
         revNum = 0;
         sha256 = "908ffdc58b29e7d50cc6e30ee6e444feee5432188f68cb33a07a9c45bd1e055a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoogle-4.0.0.2-r1-6b06e0f94b82a801f3772f77b755ce8fbbdcb24f06a7865a07c730d3cffa826e.nix;
+        revNum = 1;
+        sha256 = "6b06e0f94b82a801f3772f77b755ce8fbbdcb24f06a7865a07c730d3cffa826e";
+      };
+      default = "r1";
     };
   };
   "4.0.0.3" = {
@@ -51,7 +66,12 @@
         revNum = 0;
         sha256 = "30490514e0b4f26f347cb1aaae01dd494e15f07cf48dd34b71846048b395d3d5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoogle-4.0.0.3-r1-18ff8b188ecd221e059655c1ad5902b1350f7b48ad6343ad29a04dfe79914787.nix;
+        revNum = 1;
+        sha256 = "18ff8b188ecd221e059655c1ad5902b1350f7b48ad6343ad29a04dfe79914787";
+      };
+      default = "r1";
     };
   };
   "4.0.0.5" = {
@@ -62,7 +82,12 @@
         revNum = 0;
         sha256 = "f1a626e4e268185873e9c92fd77f301cc267c494dce4ec9bb8d483d791d52126";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoogle-4.0.0.5-r1-98a2ad5519abaef71349294c3e8c8e937f722ea0fe6cea94ce8ebe77c83e2a90.nix;
+        revNum = 1;
+        sha256 = "98a2ad5519abaef71349294c3e8c8e937f722ea0fe6cea94ce8ebe77c83e2a90";
+      };
+      default = "r1";
     };
   };
   "4.0.6" = {

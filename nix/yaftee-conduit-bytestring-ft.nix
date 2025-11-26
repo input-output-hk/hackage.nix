@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "7456ed825eb3fafd568f3cf24fd4c8804f04b6c8c157bd8bef339d4edb23f4e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaftee-conduit-bytestring-ft-0.1.0.1-r0-7efd6b94a83e5ec1683595aef500e2c192292c50674fe50d0ffb98638c8f7f5a.nix;
+        revNum = 0;
+        sha256 = "7efd6b94a83e5ec1683595aef500e2c192292c50674fe50d0ffb98638c8f7f5a";
+      };
+      default = "r0";
+    };
+  };
 }
