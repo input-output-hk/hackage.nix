@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "e4e117079173d93dce0d4551d4defb9b675c5898ebc0010e495d9a691e3e3687";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaftee-conduit-mono-traversable-0.1.0.1-r0-a700f88e67b862c2335dbe1397134b2136481d9e04e3b6da8963911229399349.nix;
+        revNum = 0;
+        sha256 = "a700f88e67b862c2335dbe1397134b2136481d9e04e3b6da8963911229399349";
+      };
+      default = "r0";
+    };
+  };
 }

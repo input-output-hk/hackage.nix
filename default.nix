@@ -5255,6 +5255,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dzen-utils" = import ./nix/dzen-utils.nix;
   "e11y" = import ./nix/e11y.nix;
   "e11y-otel" = import ./nix/e11y-otel.nix;
+  "e9571-config-reader-haskell" = import ./nix/e9571-config-reader-haskell.nix;
   "each" = import ./nix/each.nix;
   "eager-sockets" = import ./nix/eager-sockets.nix;
   "eap" = import ./nix/eap.nix;
@@ -18022,6 +18023,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "warp-tls" = import ./nix/warp-tls.nix;
   "warp-tls-simple" = import ./nix/warp-tls-simple.nix;
   "warp-tls-uid" = import ./nix/warp-tls-uid.nix;
+  "warpZ" = import ./nix/warp_Z.nix;
+  "warpZ-tls" = import ./nix/warp_Z-tls.nix;
   "warped" = import ./nix/warped.nix;
   "wasm" = import ./nix/wasm.nix;
   "watchdog" = import ./nix/watchdog.nix;
