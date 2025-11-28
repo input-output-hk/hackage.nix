@@ -317,4 +317,15 @@
       default = "r0";
     };
   };
+  "0.5.0.3" = {
+    sha256 = "c740cb6b6e1e479ec747488ca8a78c80483a6002011f4e0508df730a848d1fc5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xml-hamlet-0.5.0.3-r0-7bd041934bd7bf912214e5649eec0fb2b7ce7152bcd7fd333735d073ff5bc383.nix;
+        revNum = 0;
+        sha256 = "7bd041934bd7bf912214e5649eec0fb2b7ce7152bcd7fd333735d073ff5bc383";
+      };
+      default = "r0";
+    };
+  };
 }

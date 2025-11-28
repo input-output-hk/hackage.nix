@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "1a87a6bab7c43eddd6bf1edaa58c8064dcd61c9e8ae3d724fcd222eb3db39bcb";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/oasis-xrd-1.0-r2-04d0118c06149c738539ce58ecb8b1972750bfb8849e375f6b6638fca2b913ff.nix;
+        revNum = 2;
+        sha256 = "04d0118c06149c738539ce58ecb8b1972750bfb8849e375f6b6638fca2b913ff";
+      };
+      default = "r2";
     };
   };
 }

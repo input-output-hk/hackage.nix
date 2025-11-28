@@ -6873,6 +6873,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gloss-raster" = import ./nix/gloss-raster.nix;
   "gloss-raster-accelerate" = import ./nix/gloss-raster-accelerate.nix;
   "gloss-raster-massiv" = import ./nix/gloss-raster-massiv.nix;
+  "gloss-relative" = import ./nix/gloss-relative.nix;
   "gloss-rendering" = import ./nix/gloss-rendering.nix;
   "gloss-sodium" = import ./nix/gloss-sodium.nix;
   "glpk-headers" = import ./nix/glpk-headers.nix;
