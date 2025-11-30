@@ -7706,6 +7706,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-names" = import ./nix/haskell-names.nix;
   "haskell-neo4j-client" = import ./nix/haskell-neo4j-client.nix;
   "haskell-openflow" = import ./nix/haskell-openflow.nix;
+  "haskell-opentimestamps" = import ./nix/haskell-opentimestamps.nix;
   "haskell-overridez" = import ./nix/haskell-overridez.nix;
   "haskell-packages" = import ./nix/haskell-packages.nix;
   "haskell-pdf-presenter" = import ./nix/haskell-pdf-presenter.nix;
