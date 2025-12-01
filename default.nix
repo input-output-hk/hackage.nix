@@ -2254,6 +2254,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ascii85x" = import ./nix/ascii85x.nix;
   "asciichart" = import ./nix/asciichart.nix;
   "asciidiagram" = import ./nix/asciidiagram.nix;
+  "asciidoc" = import ./nix/asciidoc.nix;
   "asic" = import ./nix/asic.nix;
   "asif" = import ./nix/asif.nix;
   "asil" = import ./nix/asil.nix;
@@ -13611,6 +13612,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "queues" = import ./nix/queues.nix;
   "quibble-core" = import ./nix/quibble-core.nix;
   "quic" = import ./nix/quic.nix;
+  "quic-simple" = import ./nix/quic-simple.nix;
   "quick-generator" = import ./nix/quick-generator.nix;
   "quick-process" = import ./nix/quick-process.nix;
   "quick-schema" = import ./nix/quick-schema.nix;

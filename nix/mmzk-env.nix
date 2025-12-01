@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "9964b2356aa12ad7656fd9c4e1489ad3d41c9f82570664b053db115f2ca3b13b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmzk-env-0.2.1.0-r0-d09c063cee57cb42a6fd3c024ac8401051aec608279830faed50662b05401104.nix;
+        revNum = 0;
+        sha256 = "d09c063cee57cb42a6fd3c024ac8401051aec608279830faed50662b05401104";
+      };
+      default = "r0";
+    };
+  };
 }

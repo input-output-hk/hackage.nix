@@ -108,4 +108,15 @@
       default = "r2";
     };
   };
+  "0.6.1.2" = {
+    sha256 = "df6b6525b24baf169b85be00ab42232771f41e22ddffa48704e1cb682f7f8409";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alsa-pcm-0.6.1.2-r0-83f9ef396dcd1eb115eda11ab8549fe5d16af37613c5987f5be244e7cf61d259.nix;
+        revNum = 0;
+        sha256 = "83f9ef396dcd1eb115eda11ab8549fe5d16af37613c5987f5be244e7cf61d259";
+      };
+      default = "r0";
+    };
+  };
 }
