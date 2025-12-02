@@ -87,6 +87,17 @@
       default = "r0";
     };
   };
+  "0.2.10.0" = {
+    sha256 = "3d0a912f6345f81f6fcadd4555b693f23a7781052930c937e8a2128338607c5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/advent-of-code-api-0.2.10.0-r0-95d02bf6333de3692b98b4cac38bf4f81380313c87cf666937c2bfdad5f32470.nix;
+        revNum = 0;
+        sha256 = "95d02bf6333de3692b98b4cac38bf4f81380313c87cf666937c2bfdad5f32470";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2.0" = {
     sha256 = "20c64f240fcf700c7a883f6f74597bf1837e0764f91e1732a9904043d19a06e4";
     revisions = {
