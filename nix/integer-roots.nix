@@ -69,4 +69,15 @@
       default = "r0";
     };
   };
+  "1.0.4.0" = {
+    sha256 = "a50c8287fe5f84a66bc196864e23cfc4bb9ecd10c7d664383c0c00e8f1896526";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/integer-roots-1.0.4.0-r0-36abf0ce8f1e901c87adfb640755449f7b0321c6cc75d819c0e026f4a1bd140c.nix;
+        revNum = 0;
+        sha256 = "36abf0ce8f1e901c87adfb640755449f7b0321c6cc75d819c0e026f4a1bd140c";
+      };
+      default = "r0";
+    };
+  };
 }

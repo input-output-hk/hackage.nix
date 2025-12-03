@@ -603,6 +603,17 @@
       default = "r0";
     };
   };
+  "2.13.1.6" = {
+    sha256 = "09a4fc8d8458b1a88e5a666990bcc089ec7dd68470ec1b7adf9f9d4c72bbac37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-mysql-2.13.1.6-r0-45c192294603567ea9567cf8e26da3987c480c04c54cd4c51be918226fe46333.nix;
+        revNum = 0;
+        sha256 = "45c192294603567ea9567cf8e26da3987c480c04c54cd4c51be918226fe46333";
+      };
+      default = "r0";
+    };
+  };
   "2.2" = {
     sha256 = "e9bb569739cb268b6a6895490ce4235bc789cd1fddc98ac3ac79cac7b7930a26";
     revisions = {

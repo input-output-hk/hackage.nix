@@ -7366,6 +7366,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hTensor" = import ./nix/h_Tensor.nix;
   "hVOIDP" = import ./nix/h_V_O_I_D_P.nix;
   "hXmixer" = import ./nix/h_Xmixer.nix;
+  "haal" = import ./nix/haal.nix;
   "haar" = import ./nix/haar.nix;
   "habit" = import ./nix/habit.nix;
   "hable" = import ./nix/hable.nix;
@@ -7708,6 +7709,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-neo4j-client" = import ./nix/haskell-neo4j-client.nix;
   "haskell-openflow" = import ./nix/haskell-openflow.nix;
   "haskell-opentimestamps" = import ./nix/haskell-opentimestamps.nix;
+  "haskell-opentimestamps-client" = import ./nix/haskell-opentimestamps-client.nix;
   "haskell-overridez" = import ./nix/haskell-overridez.nix;
   "haskell-packages" = import ./nix/haskell-packages.nix;
   "haskell-pdf-presenter" = import ./nix/haskell-pdf-presenter.nix;
