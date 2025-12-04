@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.0.0.3" = {
+    sha256 = "0682b2e97c3367ecf375be26125e28f07edd7acad475747e34088f36bc920203";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libtorch-ffi-helper-2.0.0.3-r0-855a016c1ee8c22c8bdf69903b35d969752fdd02a50014fdb5b3c9315d82eab9.nix;
+        revNum = 0;
+        sha256 = "855a016c1ee8c22c8bdf69903b35d969752fdd02a50014fdb5b3c9315d82eab9";
+      };
+      default = "r0";
+    };
+  };
 }

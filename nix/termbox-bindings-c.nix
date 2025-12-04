@@ -47,4 +47,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "b5e32cd5f3ef662627be520399c7a9740496760d9b58e7cc14e92ed10f964135";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/termbox-bindings-c-0.1.0.3-r0-1549fe4a0dc1cf4d3bd45de1ebb2ebc1c0fa19bee045d668ab8707e6859f78a4.nix;
+        revNum = 0;
+        sha256 = "1549fe4a0dc1cf4d3bd45de1ebb2ebc1c0fa19bee045d668ab8707e6859f78a4";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.2.7.1" = {
+    sha256 = "b625a37ee00ab2831661d1a355022e1cc6f066dc56fd2c1962c13a0ba09f0555";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-csp-0.2.7.1-r0-20ca8c767522538816b72f6d60c0a25651dc54b924c008fabc004da553a5352f.nix;
+        revNum = 0;
+        sha256 = "20ca8c767522538816b72f6d60c0a25651dc54b924c008fabc004da553a5352f";
+      };
+      default = "r0";
+    };
+  };
 }

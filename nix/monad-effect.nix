@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "5b8b9ace23f77e29e7878f464a562bb1e6cd0b07d0035ace8a4245916a1288f6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-effect-0.2.2.0-r0-e242b3aca1a9c2101a95e2c56a4b9afb88e808eed575a14ad42aa5d2a1da1101.nix;
+        revNum = 0;
+        sha256 = "e242b3aca1a9c2101a95e2c56a4b9afb88e808eed575a14ad42aa5d2a1da1101";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -300,4 +300,15 @@
       default = "r0";
     };
   };
+  "0.5.2" = {
+    sha256 = "313265569c062aece86e4e7a9d369660ff8eb7ee0f2b6c2dbea3fc1ac77a800e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-extra-0.5.2-r0-0d04483a660be3987213418316d2bd9c1a3dcb4227df0a0f80c32e98b87f76fe.nix;
+        revNum = 0;
+        sha256 = "0d04483a660be3987213418316d2bd9c1a3dcb4227df0a0f80c32e98b87f76fe";
+      };
+      default = "r0";
+    };
+  };
 }

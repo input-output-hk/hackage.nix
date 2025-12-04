@@ -12943,6 +12943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-ui-notification" = import ./nix/pms-ui-notification.nix;
   "pms-ui-request" = import ./nix/pms-ui-request.nix;
   "pms-ui-response" = import ./nix/pms-ui-response.nix;
+  "png-chunk-yaftee" = import ./nix/png-chunk-yaftee.nix;
   "png-file" = import ./nix/png-file.nix;
   "pngload" = import ./nix/pngload.nix;
   "pngload-fixed" = import ./nix/pngload-fixed.nix;
