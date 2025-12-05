@@ -93,7 +93,12 @@
         revNum = 4;
         sha256 = "c264ea69af918c20b5b826101eaf9c64a9d2d40878a3ba2656886899dfee1a5f";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/ktx-codec-0.0.2.1-r5-a1a41a9ce4f13e3da735ea302bf50deb75706632cb3da282c4431d7d75685436.nix;
+        revNum = 5;
+        sha256 = "a1a41a9ce4f13e3da735ea302bf50deb75706632cb3da282c4431d7d75685436";
+      };
+      default = "r5";
     };
   };
 }
