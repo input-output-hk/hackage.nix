@@ -8843,6 +8843,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-test-framework" = import ./nix/hspec-test-framework.nix;
   "hspec-test-framework-th" = import ./nix/hspec-test-framework-th.nix;
   "hspec-test-sandbox" = import ./nix/hspec-test-sandbox.nix;
+  "hspec-tidy-formatter" = import ./nix/hspec-tidy-formatter.nix;
   "hspec-tmp-proc" = import ./nix/hspec-tmp-proc.nix;
   "hspec-wai" = import ./nix/hspec-wai.nix;
   "hspec-wai-json" = import ./nix/hspec-wai-json.nix;
