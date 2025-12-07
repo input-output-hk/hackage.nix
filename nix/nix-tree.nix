@@ -263,4 +263,15 @@
       default = "r0";
     };
   };
+  "0.8.0" = {
+    sha256 = "9f5eb43c7ffd0bd6a95ca248b605e354436b60b1e839060606f721c493a14e0d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nix-tree-0.8.0-r0-69f500dadb59fa7755278f2381855358f2696f0f7428b295be5afddffd6a7b26.nix;
+        revNum = 0;
+        sha256 = "69f500dadb59fa7755278f2381855358f2696f0f7428b295be5afddffd6a7b26";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -6303,6 +6303,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fused-effects" = import ./nix/fused-effects.nix;
   "fused-effects-exceptions" = import ./nix/fused-effects-exceptions.nix;
   "fused-effects-lens" = import ./nix/fused-effects-lens.nix;
+  "fused-effects-logger" = import ./nix/fused-effects-logger.nix;
   "fused-effects-mwc-random" = import ./nix/fused-effects-mwc-random.nix;
   "fused-effects-optics" = import ./nix/fused-effects-optics.nix;
   "fused-effects-random" = import ./nix/fused-effects-random.nix;
