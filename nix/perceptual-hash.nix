@@ -278,7 +278,12 @@
         revNum = 0;
         sha256 = "2566ebc95709e3b9135fd145b503d2f43b7bd92748c74aff71fd0eb8a61182e3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/perceptual-hash-0.1.4.6-r1-72e4af8cfc196e5fa95361d41e8f575e733df3cce19941363b6d3e18d980d3aa.nix;
+        revNum = 1;
+        sha256 = "72e4af8cfc196e5fa95361d41e8f575e733df3cce19941363b6d3e18d980d3aa";
+      };
+      default = "r1";
     };
   };
   "0.1.4.7" = {
@@ -289,7 +294,12 @@
         revNum = 0;
         sha256 = "a2f7b1cace82db194e60ce13f99b40fb2a7eefc66821aec6c91e5296aed3ae26";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/perceptual-hash-0.1.4.7-r1-81ec52841236ff33f244391b710a82b22a401e3a4fd373b600b5808261bc6e3a.nix;
+        revNum = 1;
+        sha256 = "81ec52841236ff33f244391b710a82b22a401e3a4fd373b600b5808261bc6e3a";
+      };
+      default = "r1";
     };
   };
 }

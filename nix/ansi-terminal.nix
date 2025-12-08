@@ -680,4 +680,15 @@
       default = "r0";
     };
   };
+  "1.1.4" = {
+    sha256 = "c8a7b5031571a201eb31fa33a75c6beac60488e49a57f8853fce858f32ed8763";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ansi-terminal-1.1.4-r0-1daa625223a2efab7178832f60b946b309ebffc3a7175b004db5a7614652ebd2.nix;
+        revNum = 0;
+        sha256 = "1daa625223a2efab7178832f60b946b309ebffc3a7175b004db5a7614652ebd2";
+      };
+      default = "r0";
+    };
+  };
 }
