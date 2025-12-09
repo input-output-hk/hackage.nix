@@ -2566,6 +2566,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "base64-string" = import ./nix/base64-string.nix;
   "base91" = import ./nix/base91.nix;
   "based" = import ./nix/based.nix;
+  "baseless" = import ./nix/baseless.nix;
   "basement" = import ./nix/basement.nix;
   "basement-cd" = import ./nix/basement-cd.nix;
   "basen" = import ./nix/basen.nix;
