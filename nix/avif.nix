@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "8399f50305f73fc0eccf1802a9f3336ed49e4827501ed92a73bbcedc38cb22cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/avif-2.0.0.0-r0-c8990d52742616c21554c4b5f53e6215ee42ba103828fab3814bbffe0da9060f.nix;
+        revNum = 0;
+        sha256 = "c8990d52742616c21554c4b5f53e6215ee42ba103828fab3814bbffe0da9060f";
+      };
+      default = "r0";
+    };
+  };
 }

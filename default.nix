@@ -6616,6 +6616,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-simple" = import ./nix/ghc-simple.nix;
   "ghc-source-gen" = import ./nix/ghc-source-gen.nix;
   "ghc-srcspan-plugin" = import ./nix/ghc-srcspan-plugin.nix;
+  "ghc-stack-annotations" = import ./nix/ghc-stack-annotations.nix;
   "ghc-stdin" = import ./nix/ghc-stdin.nix;
   "ghc-syb" = import ./nix/ghc-syb.nix;
   "ghc-syb-utils" = import ./nix/ghc-syb-utils.nix;
@@ -17877,6 +17878,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "visual-graphrewrite" = import ./nix/visual-graphrewrite.nix;
   "visual-prof" = import ./nix/visual-prof.nix;
   "visualize-cbn" = import ./nix/visualize-cbn.nix;
+  "visualize-type-inference" = import ./nix/visualize-type-inference.nix;
   "vitrea" = import ./nix/vitrea.nix;
   "vivid" = import ./nix/vivid.nix;
   "vivid-osc" = import ./nix/vivid-osc.nix;
