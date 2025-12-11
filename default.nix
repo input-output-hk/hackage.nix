@@ -6617,6 +6617,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-source-gen" = import ./nix/ghc-source-gen.nix;
   "ghc-srcspan-plugin" = import ./nix/ghc-srcspan-plugin.nix;
   "ghc-stack-annotations" = import ./nix/ghc-stack-annotations.nix;
+  "ghc-stack-profiler" = import ./nix/ghc-stack-profiler.nix;
+  "ghc-stack-profiler-core" = import ./nix/ghc-stack-profiler-core.nix;
+  "ghc-stack-profiler-speedscope" = import ./nix/ghc-stack-profiler-speedscope.nix;
   "ghc-stdin" = import ./nix/ghc-stdin.nix;
   "ghc-syb" = import ./nix/ghc-syb.nix;
   "ghc-syb-utils" = import ./nix/ghc-syb-utils.nix;
