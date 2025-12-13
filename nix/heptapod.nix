@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.0.1" = {
+    sha256 = "fdb0770fdd27e44fbacc0c401fb613794f63a9a25d683e8ad4facdaf241d85a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heptapod-1.1.0.1-r0-338a9a99fa935407a79aafceb065e3ed3e3e0ae40fcf19d6c30d37e1bc65ef34.nix;
+        revNum = 0;
+        sha256 = "338a9a99fa935407a79aafceb065e3ed3e3e0ae40fcf19d6c30d37e1bc65ef34";
+      };
+      default = "r0";
+    };
+  };
 }

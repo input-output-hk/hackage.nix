@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "7b5c0abbc5bb81a33b2fb7a973f8f7a088ed0fc708de09891943696df652a7bd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/immortal-queue-0.2.0.0-r0-048ea6b8f521ce8b8b6fcbc1cb9a21ae488a6c2f03b3f85d91b1bad77adf73c7.nix;
+        revNum = 0;
+        sha256 = "048ea6b8f521ce8b8b6fcbc1cb9a21ae488a6c2f03b3f85d91b1bad77adf73c7";
+      };
+      default = "r0";
+    };
+  };
 }

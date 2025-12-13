@@ -229,4 +229,26 @@
       default = "r1";
     };
   };
+  "3.2.1" = {
+    sha256 = "c95fab83e89dc63f9c0a590a45b67d87c944a80af0253f29a22c33a72d8d2964";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-monitor-3.2.1-r0-8b663c8651511e9056ba8741cc2b972a6883134a09150ca17ac7b486fdaaf9cc.nix;
+        revNum = 0;
+        sha256 = "8b663c8651511e9056ba8741cc2b972a6883134a09150ca17ac7b486fdaaf9cc";
+      };
+      default = "r0";
+    };
+  };
+  "3.2.2" = {
+    sha256 = "a115f94599ff034846b1b915e6c1b1facbc77f6faea61795ed108683e84538f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-monitor-3.2.2-r0-cbfdf26334802746af06ae9012af2bb8961ceefbdfdc561b146c0665e23dbe8f.nix;
+        revNum = 0;
+        sha256 = "cbfdf26334802746af06ae9012af2bb8961ceefbdfdc561b146c0665e23dbe8f";
+      };
+      default = "r0";
+    };
+  };
 }
