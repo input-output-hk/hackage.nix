@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.1.3.0" = {
+    sha256 = "235d79415cf581565ec66d6860b5fae207d998995bd5c118684d0048882b91cb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tasty-flaky-0.1.3.0-r0-fc5aa1058d60524c39d56c563b5811b504c0b8283662c13116890512a73b6ba1.nix;
+        revNum = 0;
+        sha256 = "fc5aa1058d60524c39d56c563b5811b504c0b8283662c13116890512a73b6ba1";
+      };
+      default = "r0";
+    };
+  };
 }
