@@ -391,7 +391,12 @@
         revNum = 0;
         sha256 = "2d87998ea5057c68512ef4e1d45446b034e54f623478d6432c005ffc078a9756";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unordered-containers-0.2.21-r1-bcff64f48fba1e25bf9b5346d1c3545402cd2f1293b411435e7850ccb62884e5.nix;
+        revNum = 1;
+        sha256 = "bcff64f48fba1e25bf9b5346d1c3545402cd2f1293b411435e7850ccb62884e5";
+      };
+      default = "r1";
     };
   };
   "0.2.3.0" = {

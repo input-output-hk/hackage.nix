@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "6b1557d6b2584d5f8f1908e0cd32045969b9eb754cfece5b64b6f7490b4a4dc2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsec-core-0.3.0.0-r0-21d566c3ca504119f948758f5b22b9f2116f55028c237008b81bde525c38f0d8.nix;
+        revNum = 0;
+        sha256 = "21d566c3ca504119f948758f5b22b9f2116f55028c237008b81bde525c38f0d8";
+      };
+      default = "r0";
+    };
+  };
 }

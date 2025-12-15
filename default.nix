@@ -194,6 +194,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ClassyPrelude" = import ./nix/_Classy_Prelude.nix;
   "Clean" = import ./nix/_Clean.nix;
   "ClickHaskell" = import ./nix/_Click_Haskell.nix;
+  "ClickHaskell-tls" = import ./nix/_Click_Haskell-tls.nix;
   "Clipboard" = import ./nix/_Clipboard.nix;
   "ClustalParser" = import ./nix/_Clustal_Parser.nix;
   "Coadjute" = import ./nix/_Coadjute.nix;
@@ -4448,6 +4449,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
   "dani-servant-lucid2" = import ./nix/dani-servant-lucid2.nix;
+  "dani-sqlite" = import ./nix/dani-sqlite.nix;
   "danibot" = import ./nix/danibot.nix;
   "dao" = import ./nix/dao.nix;
   "dap" = import ./nix/dap.nix;
@@ -10642,6 +10644,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lostcities" = import ./nix/lostcities.nix;
   "louis" = import ./nix/louis.nix;
   "loup" = import ./nix/loup.nix;
+  "louter" = import ./nix/louter.nix;
   "lowgl" = import ./nix/lowgl.nix;
   "lowlin" = import ./nix/lowlin.nix;
   "lp-diagrams" = import ./nix/lp-diagrams.nix;
