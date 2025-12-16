@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "69fff228b57ef45803a8d8dc9938406f47137d524f91233f8793d7122ae85922";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aoc-0.3.0.0-r0-fb2a1c2d1f4bc95415ca8118e2514a40a1157a74115d4d571c0f1bb66b8d2845.nix;
+        revNum = 0;
+        sha256 = "fb2a1c2d1f4bc95415ca8118e2514a40a1157a74115d4d571c0f1bb66b8d2845";
+      };
+      default = "r0";
+    };
+  };
 }

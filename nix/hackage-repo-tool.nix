@@ -159,7 +159,12 @@
         revNum = 0;
         sha256 = "2543c393d2cd78dc1f852229c57e698d10d71fbd80ec0d574d214543f8c21f7b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hackage-repo-tool-0.1.1.5-r1-fcb12227e9e3644da9149fa8f5feda7286a4da9897aef605375f60183f591063.nix;
+        revNum = 1;
+        sha256 = "fcb12227e9e3644da9149fa8f5feda7286a4da9897aef605375f60183f591063";
+      };
+      default = "r1";
     };
   };
 }

@@ -5602,6 +5602,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventful-sql-common" = import ./nix/eventful-sql-common.nix;
   "eventful-sqlite" = import ./nix/eventful-sqlite.nix;
   "eventful-test-helpers" = import ./nix/eventful-test-helpers.nix;
+  "eventium-core" = import ./nix/eventium-core.nix;
+  "eventium-memory" = import ./nix/eventium-memory.nix;
+  "eventium-postgresql" = import ./nix/eventium-postgresql.nix;
+  "eventium-sql-common" = import ./nix/eventium-sql-common.nix;
+  "eventium-sqlite" = import ./nix/eventium-sqlite.nix;
+  "eventium-test-helpers" = import ./nix/eventium-test-helpers.nix;
   "eventlog-live" = import ./nix/eventlog-live.nix;
   "eventlog-live-influxdb" = import ./nix/eventlog-live-influxdb.nix;
   "eventlog-live-otelcol" = import ./nix/eventlog-live-otelcol.nix;

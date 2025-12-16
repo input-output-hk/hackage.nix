@@ -136,4 +136,15 @@
       default = "r0";
     };
   };
+  "0.2.2.2" = {
+    sha256 = "9dd20f19c540bf9232c13652ced8ab12e129e2eefa612e09a82cf85ce923649d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/elm-street-0.2.2.2-r0-fc9beab8d324a90398e9fd18b3aa075528c78ad0e0c5fea96f9a98375e7e39aa.nix;
+        revNum = 0;
+        sha256 = "fc9beab8d324a90398e9fd18b3aa075528c78ad0e0c5fea96f9a98375e7e39aa";
+      };
+      default = "r0";
+    };
+  };
 }
