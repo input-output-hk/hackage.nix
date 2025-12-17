@@ -307,4 +307,26 @@
       default = "r0";
     };
   };
+  "4.5.0" = {
+    sha256 = "6056708d3f63c62b14419318712402cc744b76e716287dac0550981a39de1c0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/launchdarkly-server-sdk-4.5.0-r0-ceb764562b62d78b44ca7d3c46725ef3ad45c9be7875d21fc74cea2049d15e4f.nix;
+        revNum = 0;
+        sha256 = "ceb764562b62d78b44ca7d3c46725ef3ad45c9be7875d21fc74cea2049d15e4f";
+      };
+      default = "r0";
+    };
+  };
+  "4.5.1" = {
+    sha256 = "e06044e5b3a20568d37d29c7c114365e5c6cea978a5f149fc9f6af7d2a2e9fe7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/launchdarkly-server-sdk-4.5.1-r0-1587c9d7d2153106b7e3d5336433bf9308639d8109d455f4147f6bfc8a5df445.nix;
+        revNum = 0;
+        sha256 = "1587c9d7d2153106b7e3d5336433bf9308639d8109d455f4147f6bfc8a5df445";
+      };
+      default = "r0";
+    };
+  };
 }

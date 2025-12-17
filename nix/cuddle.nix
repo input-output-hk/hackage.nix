@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "1.1.1.0" = {
+    sha256 = "71c3d5d78fc0cc4bce5de14d51babc0f6af156136679f945f99fbe716f140865";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cuddle-1.1.1.0-r0-161890cfa18188d90c167ed65b3aaa673b7bbaaae1aee4259d2bcaeb4360c74e.nix;
+        revNum = 0;
+        sha256 = "161890cfa18188d90c167ed65b3aaa673b7bbaaae1aee4259d2bcaeb4360c74e";
+      };
+      default = "r0";
+    };
+  };
+  "1.1.2.0" = {
+    sha256 = "67defd0049b86da70aacc24a796c8d0fd8d158c129faaad91e4fe00c78c43732";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cuddle-1.1.2.0-r0-86df1774e868883aabd1c8f4ad3c2fc7955cc2d2dbbf16e4911c8b03f4565286.nix;
+        revNum = 0;
+        sha256 = "86df1774e868883aabd1c8f4ad3c2fc7955cc2d2dbbf16e4911c8b03f4565286";
+      };
+      default = "r0";
+    };
+  };
 }

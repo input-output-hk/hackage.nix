@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.0.0.4" = {
+    sha256 = "bef3f29b145c914f4fdef4d49848ef0fc15e9ffc6e4c6946faca1b1e4b208d81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-kafka-0.0.0.4-r0-0b53083daf71d07bbf992bf5db3064e0ee207c916f70425e392f23d3a077135b.nix;
+        revNum = 0;
+        sha256 = "0b53083daf71d07bbf992bf5db3064e0ee207c916f70425e392f23d3a077135b";
+      };
+      default = "r0";
+    };
+  };
 }

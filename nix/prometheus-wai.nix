@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "c5f7894b8e563f7f3e280752b8c62d6895b1efcc82d7f3486b24a6ca1553cf5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prometheus-wai-0.1.0.0-r0-67d988cf6e6547d84789638abe381e0aba6995d69f12a9c3dba0aa9997d92076.nix;
+        revNum = 0;
+        sha256 = "67d988cf6e6547d84789638abe381e0aba6995d69f12a9c3dba0aa9997d92076";
+      };
+      default = "r0";
+    };
+  };
 }
