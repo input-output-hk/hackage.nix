@@ -322,4 +322,15 @@
       default = "r0";
     };
   };
+  "1.1.2.6" = {
+    sha256 = "bf4951fc3483371350fde50a35c1b394355eb80cb4b1bad2cb93c7a375e8f728";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fused-effects-1.1.2.6-r0-f3e4c3e152a5e8a2ea21e3dbd1e49c8bdde6e6e12b527cd4975e03b623dd1f80.nix;
+        revNum = 0;
+        sha256 = "f3e4c3e152a5e8a2ea21e3dbd1e49c8bdde6e6e12b527cd4975e03b623dd1f80";
+      };
+      default = "r0";
+    };
+  };
 }

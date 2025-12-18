@@ -3641,6 +3641,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "classy-prelude-conduit" = import ./nix/classy-prelude-conduit.nix;
   "classy-prelude-yesod" = import ./nix/classy-prelude-yesod.nix;
   "classyplate" = import ./nix/classyplate.nix;
+  "claude" = import ./nix/claude.nix;
   "clay" = import ./nix/clay.nix;
   "clckwrks" = import ./nix/clckwrks.nix;
   "clckwrks-cli" = import ./nix/clckwrks-cli.nix;
@@ -3699,6 +3700,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "closure" = import ./nix/closure.nix;
   "cloud-haskell" = import ./nix/cloud-haskell.nix;
   "cloud-seeder" = import ./nix/cloud-seeder.nix;
+  "cloudchor" = import ./nix/cloudchor.nix;
   "cloudevents-haskell" = import ./nix/cloudevents-haskell.nix;
   "cloudfront-signer" = import ./nix/cloudfront-signer.nix;
   "cloudi" = import ./nix/cloudi.nix;
@@ -10945,6 +10947,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mega-sdist" = import ./nix/mega-sdist.nix;
   "megalisp" = import ./nix/megalisp.nix;
   "megaparsec" = import ./nix/megaparsec.nix;
+  "megaparsec-csv" = import ./nix/megaparsec-csv.nix;
   "megaparsec-tests" = import ./nix/megaparsec-tests.nix;
   "megaparsec-time" = import ./nix/megaparsec-time.nix;
   "megaparsec-utils" = import ./nix/megaparsec-utils.nix;
