@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "5a5bc4f971e925a7914cdd2ad718fe4c2f85570f9d29a751c318da1645b184e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/egison-pattern-src-haskell-mode-0.2.2.0-r0-b761baa467fdb04e356383ed0b04507bcef91ef8cbd2b281a9e2ad821a5873c5.nix;
+        revNum = 0;
+        sha256 = "b761baa467fdb04e356383ed0b04507bcef91ef8cbd2b281a9e2ad821a5873c5";
+      };
+      default = "r0";
+    };
+  };
 }

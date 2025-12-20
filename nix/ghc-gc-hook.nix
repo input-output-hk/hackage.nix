@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "5e30b67a02071a7a851549f67849316d2fc9dae279748ef4757831fc45f87ac4";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ghc-gc-hook-0.2.1.0-r2-9a2292de45e223072669ed28ad9dd5c6bf7b7470836868fa68865e4e7ab4d13b.nix;
+        revNum = 2;
+        sha256 = "9a2292de45e223072669ed28ad9dd5c6bf7b7470836868fa68865e4e7ab4d13b";
+      };
+      default = "r2";
     };
   };
 }

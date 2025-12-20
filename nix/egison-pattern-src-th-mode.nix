@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "1aa3868aaeddc3e28f53c28370f52728179a43e8d58351198ba864e620326565";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/egison-pattern-src-th-mode-0.2.2.0-r0-7b6da725395bfd2335c11afbc7c68c6b8e75bfc9946cfeccdb3cea15772836de.nix;
+        revNum = 0;
+        sha256 = "7b6da725395bfd2335c11afbc7c68c6b8e75bfc9946cfeccdb3cea15772836de";
+      };
+      default = "r0";
+    };
+  };
 }
