@@ -6582,6 +6582,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-dump-tree" = import ./nix/ghc-dump-tree.nix;
   "ghc-dump-util" = import ./nix/ghc-dump-util.nix;
   "ghc-dup" = import ./nix/ghc-dup.nix;
+  "ghc-eventlog-loopback" = import ./nix/ghc-eventlog-loopback.nix;
   "ghc-events" = import ./nix/ghc-events.nix;
   "ghc-events-analyze" = import ./nix/ghc-events-analyze.nix;
   "ghc-events-parallel" = import ./nix/ghc-events-parallel.nix;
@@ -13206,6 +13207,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-bip39" = import ./nix/ppad-bip39.nix;
   "ppad-chacha" = import ./nix/ppad-chacha.nix;
+  "ppad-fixed" = import ./nix/ppad-fixed.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
   "ppad-pbkdf" = import ./nix/ppad-pbkdf.nix;

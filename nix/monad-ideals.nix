@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "ecfc141bfb86d8ced35c570b781e34932dd17cd7b3646ee688a51ee69c752f08";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/monad-ideals-0.1.1.0-r2-d57e5bc2703caf6e4a3431d80c93f6a215a8ec8c946ebab0e4d375aa85326038.nix;
+        revNum = 2;
+        sha256 = "d57e5bc2703caf6e4a3431d80c93f6a215a8ec8c946ebab0e4d375aa85326038";
+      };
+      default = "r2";
     };
   };
 }
