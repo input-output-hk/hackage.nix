@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "b71bf37c7dcefbaa1de9472b2c604d89a51636e05efb4d2b3fe9a5f1a9b3d785";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/musig2-0.1.1-r0-cbfc8d772a544dcf50814ae75e9072597f0c88ddebccdc6595c93aca26becee7.nix;
+        revNum = 0;
+        sha256 = "cbfc8d772a544dcf50814ae75e9072597f0c88ddebccdc6595c93aca26becee7";
+      };
+      default = "r0";
+    };
+  };
 }

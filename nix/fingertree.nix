@@ -247,4 +247,15 @@
       default = "r0";
     };
   };
+  "0.1.6.3" = {
+    sha256 = "87e0ae5fd8dfe57119b8a6a291f66b2aa9751fe3c6dfeff7f7de87d9fcdba2b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fingertree-0.1.6.3-r0-cd256474cab1d0a2e40f9440ad8194f790b06cef7aa70e5bc12bad09fc8acd96.nix;
+        revNum = 0;
+        sha256 = "cd256474cab1d0a2e40f9440ad8194f790b06cef7aa70e5bc12bad09fc8acd96";
+      };
+      default = "r0";
+    };
+  };
 }
