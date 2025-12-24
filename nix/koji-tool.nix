@@ -257,4 +257,15 @@
       default = "r0";
     };
   };
+  "1.3.1" = {
+    sha256 = "b3c0520f0cea974886e1b4b7927a9a4547d0ce8302c10a82b0bed65fc5f4f9e2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/koji-tool-1.3.1-r0-93b6ec09e4397003b0ff04181f8ad7159085a6a28766fc66360b19c43dc57954.nix;
+        revNum = 0;
+        sha256 = "93b6ec09e4397003b0ff04181f8ad7159085a6a28766fc66360b19c43dc57954";
+      };
+      default = "r0";
+    };
+  };
 }

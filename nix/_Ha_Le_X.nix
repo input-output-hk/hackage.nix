@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "1.3.0" = {
+    sha256 = "ffec437e93cb7a2d4cfcd31572a80ce253a3d91fcbdfa79c4ec81f210fd944ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HaLeX-1.3.0-r0-4a8ef5df09820bda6b3eee0b83db04ba752ef80658f69363280ee597a38ccac8.nix;
+        revNum = 0;
+        sha256 = "4a8ef5df09820bda6b3eee0b83db04ba752ef80658f69363280ee597a38ccac8";
+      };
+      default = "r0";
+    };
+  };
 }
