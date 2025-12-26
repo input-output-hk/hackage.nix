@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "1db6c851697648fd9093fae8d9f2657c817436a9929ae644e9f92ea00fd1eae2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/louter-0.1.1.1-r0-ab37d847d072a0ae66763a31d9dd44e6e31f5e8432a753e77597df10e1c28ede.nix;
+        revNum = 0;
+        sha256 = "ab37d847d072a0ae66763a31d9dd44e6e31f5e8432a753e77597df10e1c28ede";
+      };
+      default = "r0";
+    };
+  };
 }
