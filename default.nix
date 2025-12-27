@@ -1369,6 +1369,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "abstract-deque-tests" = import ./nix/abstract-deque-tests.nix;
   "abstract-par" = import ./nix/abstract-par.nix;
   "abstract-par-accelerate" = import ./nix/abstract-par-accelerate.nix;
+  "abstractly-keyed-implicits" = import ./nix/abstractly-keyed-implicits.nix;
   "abt" = import ./nix/abt.nix;
   "ac-library-hs" = import ./nix/ac-library-hs.nix;
   "ac-machine" = import ./nix/ac-machine.nix;
@@ -6689,6 +6690,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghcprofview" = import ./nix/ghcprofview.nix;
   "ghcup" = import ./nix/ghcup.nix;
   "ghczdecode" = import ./nix/ghczdecode.nix;
+  "gherkin" = import ./nix/gherkin.nix;
   "ghost-buster" = import ./nix/ghost-buster.nix;
   "ghostscript-parallel" = import ./nix/ghostscript-parallel.nix;
   "ght" = import ./nix/ght.nix;

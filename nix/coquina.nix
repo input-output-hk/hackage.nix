@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "11b4197288971a1191ae157ac2d310b3858d7cf7c6ab9106325f58f92bf7a133";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coquina-0.2.0.1-r0-069b09cac9ca1b367c2063ed469d61192daedb7056bbdb6d9bd0354f718c233f.nix;
+        revNum = 0;
+        sha256 = "069b09cac9ca1b367c2063ed469d61192daedb7056bbdb6d9bd0354f718c233f";
+      };
+      default = "r0";
+    };
+  };
 }

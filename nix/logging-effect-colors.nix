@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "1ff3e80576d04a5e2f6a11021c326cd0ddb65fd04087c635d86caf3ddc89b992";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/logging-effect-colors-0.1.1.1-r0-070db050b17b890e48f0cb1bfd39a351a4a423f43ccf9f0c306b14d9dce5db8c.nix;
+        revNum = 0;
+        sha256 = "070db050b17b890e48f0cb1bfd39a351a4a423f43ccf9f0c306b14d9dce5db8c";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -49,7 +49,12 @@
         revNum = 0;
         sha256 = "1d0b340b4c1803fc5dbc46fd1bee08e157913733497deb58a63749c800e94c85";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/armor-0.2.0.1-r1-2c4e7f45195965189ba4d23faad2da543fd14d81a3396cbba24b8b28cfeb4b83.nix;
+        revNum = 1;
+        sha256 = "2c4e7f45195965189ba4d23faad2da543fd14d81a3396cbba24b8b28cfeb4b83";
+      };
+      default = "r1";
     };
   };
 }
