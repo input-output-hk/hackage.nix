@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "6b50adcc9be3796ed077c55f86f3238dece286677632c4a0b6e1e99487cd61bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cretheus-1.2.0-r0-fd612fabd04bd796a600a5bdfe14ab09f6678d29b0dc5b441c0e7e78eaac2344.nix;
+        revNum = 0;
+        sha256 = "fd612fabd04bd796a600a5bdfe14ab09f6678d29b0dc5b441c0e7e78eaac2344";
+      };
+      default = "r0";
+    };
+  };
 }
