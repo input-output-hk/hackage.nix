@@ -422,4 +422,15 @@
       default = "r0";
     };
   };
+  "0.2.8.3" = {
+    sha256 = "10bcbe9aeb3ca00d72e86d940cf91b021b83f908885375120d4d51d0240ad076";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/psqueues-0.2.8.3-r0-24b660add7d540e94245f6c4604d7b02bcfe75c36e68d5dad824cf28f7ebddf4.nix;
+        revNum = 0;
+        sha256 = "24b660add7d540e94245f6c4604d7b02bcfe75c36e68d5dad824cf28f7ebddf4";
+      };
+      default = "r0";
+    };
+  };
 }
