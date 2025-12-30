@@ -16193,6 +16193,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "submark" = import ./nix/submark.nix;
   "subnet" = import ./nix/subnet.nix;
   "subsample" = import ./nix/subsample.nix;
+  "substrate-protocol" = import ./nix/substrate-protocol.nix;
+  "substrate-synapse" = import ./nix/substrate-synapse.nix;
   "substring-parser" = import ./nix/substring-parser.nix;
   "subtitleParser" = import ./nix/subtitle_Parser.nix;
   "subtitles" = import ./nix/subtitles.nix;

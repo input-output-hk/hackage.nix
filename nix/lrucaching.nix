@@ -162,4 +162,15 @@
       default = "r0";
     };
   };
+  "0.3.5" = {
+    sha256 = "26c122ea08b346bd84b5a4f3b0710898b49824fcd599cb8b84ccc7eb2878182f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lrucaching-0.3.5-r0-27bf853283f36d4ce3c268842288c11d1b03e35445ba9ad615674f9ecc0ecd2a.nix;
+        revNum = 0;
+        sha256 = "27bf853283f36d4ce3c268842288c11d1b03e35445ba9ad615674f9ecc0ecd2a";
+      };
+      default = "r0";
+    };
+  };
 }

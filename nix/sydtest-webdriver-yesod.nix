@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.1.0" = {
+    sha256 = "e765c5423bc210b6d733e32f4d351d5c1354fcc83ec10330da4acb1a6617e061";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-webdriver-yesod-0.0.1.0-r0-106fad01e31ae29fe4f19e6d0b3381bd8784738090e0485412bf3c5d833a1391.nix;
+        revNum = 0;
+        sha256 = "106fad01e31ae29fe4f19e6d0b3381bd8784738090e0485412bf3c5d833a1391";
+      };
+      default = "r0";
+    };
+  };
 }
