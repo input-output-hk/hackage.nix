@@ -248,4 +248,15 @@
       default = "r0";
     };
   };
+  "1.3.3.3" = {
+    sha256 = "0cfcf5238e46f487a840a64481d802718d8b7b88fe2fd8e918233bcc5e6eeb86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/EdisonCore-1.3.3.3-r0-ab36c904ac87c5c5df44f464975e1cc59558873f32a010f5b62860f5b2b63fd6.nix;
+        revNum = 0;
+        sha256 = "ab36c904ac87c5c5df44f464975e1cc59558873f32a010f5b62860f5b2b63fd6";
+      };
+      default = "r0";
+    };
+  };
 }

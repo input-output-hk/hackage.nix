@@ -229,4 +229,15 @@
       default = "r0";
     };
   };
+  "1.26" = {
+    sha256 = "26a3a55d1a2e71a1af353e12e18c3dc704dfcebe9fa4418940f20aba0ee8c6a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lhs2tex-1.26-r0-35461dc7fff71d0a6bb00db67afcd31620e7dc99c69e14dc0117f0a61876a735.nix;
+        revNum = 0;
+        sha256 = "35461dc7fff71d0a6bb00db67afcd31620e7dc99c69e14dc0117f0a61876a735";
+      };
+      default = "r0";
+    };
+  };
 }

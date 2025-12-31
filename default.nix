@@ -9870,6 +9870,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kawaii" = import ./nix/kawaii.nix;
   "kawhi" = import ./nix/kawhi.nix;
   "kazura-queue" = import ./nix/kazura-queue.nix;
+  "kb-text-shape" = import ./nix/kb-text-shape.nix;
   "kbq-gu" = import ./nix/kbq-gu.nix;
   "kcd" = import ./nix/kcd.nix;
   "kd-tree" = import ./nix/kd-tree.nix;
@@ -11453,6 +11454,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ms-azure-api" = import ./nix/ms-azure-api.nix;
   "ms-graph-api" = import ./nix/ms-graph-api.nix;
   "ms-tds" = import ./nix/ms-tds.nix;
+  "msdf-atlas" = import ./nix/msdf-atlas.nix;
   "msgpack" = import ./nix/msgpack.nix;
   "msgpack-aeson" = import ./nix/msgpack-aeson.nix;
   "msgpack-arbitrary" = import ./nix/msgpack-arbitrary.nix;
@@ -11631,6 +11633,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "n2o-nitro" = import ./nix/n2o-nitro.nix;
   "n2o-protocols" = import ./nix/n2o-protocols.nix;
   "n2o-web" = import ./nix/n2o-web.nix;
+  "nacre" = import ./nix/nacre.nix;
   "nagios-check" = import ./nix/nagios-check.nix;
   "nagios-config" = import ./nix/nagios-config.nix;
   "nagios-perfdata" = import ./nix/nagios-perfdata.nix;

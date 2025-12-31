@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "ace9ccdfb56ba3179538ff82b56252a3bc9a296f36a62abee24872fb410d908f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/botan-bindings-0.2.0.0-r0-371c6cf7945ae474ea36aab768960b39138036495c1d543bb179fb3ba8d3d489.nix;
+        revNum = 0;
+        sha256 = "371c6cf7945ae474ea36aab768960b39138036495c1d543bb179fb3ba8d3d489";
+      };
+      default = "r0";
+    };
+  };
 }

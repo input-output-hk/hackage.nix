@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "359afb1e355b81ad4e33e69e90d74858d5e31c8ad62db9fea0b892395a3d7e63";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/botan-low-0.1.0.0-r0-3c149c404666a9fc13b2e3cec480f9c2761acc65e36f28168722857399f99e57.nix;
+        revNum = 0;
+        sha256 = "3c149c404666a9fc13b2e3cec480f9c2761acc65e36f28168722857399f99e57";
+      };
+      default = "r0";
+    };
+  };
 }
