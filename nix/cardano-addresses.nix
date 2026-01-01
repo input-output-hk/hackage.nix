@@ -26,4 +26,15 @@
       default = "r0";
     };
   };
+  "4.0.2" = {
+    sha256 = "88208c5d11c0492faca626acdf67b08474e1b2b7af12720a070fb4a2d7c92d29";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cardano-addresses-4.0.2-r0-15e702d5551acaf466e973a53ab66d2bbb9579a50d6a070379bf143661dbd963.nix;
+        revNum = 0;
+        sha256 = "15e702d5551acaf466e973a53ab66d2bbb9579a50d6a070379bf143661dbd963";
+      };
+      default = "r0";
+    };
+  };
 }

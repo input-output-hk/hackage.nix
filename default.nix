@@ -12960,6 +12960,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
+  "pms-infra-filesystem" = import ./nix/pms-infra-filesystem.nix;
   "pms-infra-procspawn" = import ./nix/pms-infra-procspawn.nix;
   "pms-infra-serial" = import ./nix/pms-infra-serial.nix;
   "pms-infra-socket" = import ./nix/pms-infra-socket.nix;

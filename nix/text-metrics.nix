@@ -107,7 +107,12 @@
         revNum = 0;
         sha256 = "30aaca8f59579ffdf18d109d32965775dcf400b1a778c8bf32174f349da11d47";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/text-metrics-0.3.3-r1-6bf74b58e165195bae692fc9cd28d54d4bff2c724b1806a561238e2e7ae823e6.nix;
+        revNum = 1;
+        sha256 = "6bf74b58e165195bae692fc9cd28d54d4bff2c724b1806a561238e2e7ae823e6";
+      };
+      default = "r1";
     };
   };
 }
