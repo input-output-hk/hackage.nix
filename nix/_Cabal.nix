@@ -931,6 +931,17 @@
       default = "r1";
     };
   };
+  "3.16.1.0" = {
+    sha256 = "c6b8a37d21dc67c1c68d36a6258ea529391d4bb8bcc1caebaa9b483d93ef2556";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Cabal-3.16.1.0-r0-6d7ee02dc18c7485d597d131356cee25b3b95778746f39b73bca1d2d44b12e11.nix;
+        revNum = 0;
+        sha256 = "6d7ee02dc18c7485d597d131356cee25b3b95778746f39b73bca1d2d44b12e11";
+      };
+      default = "r0";
+    };
+  };
   "3.2.0.0" = {
     sha256 = "f2053a57c66457cfe48db906f0bdf98eb717a12c3c16a98561921f15035de66f";
     revisions = {

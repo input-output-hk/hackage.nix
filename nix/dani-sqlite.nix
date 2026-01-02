@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "185c6d3f9442085ab9db33954d6cc912521c805dd547900dc5f87c90ec81b55e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dani-sqlite-0.1.1.0-r0-dc238148727ebb9dff724f0bf39c782bbbd4ca6e13862f18e6154ee781d9a39f.nix;
+        revNum = 0;
+        sha256 = "dc238148727ebb9dff724f0bf39c782bbbd4ca6e13862f18e6154ee781d9a39f";
+      };
+      default = "r0";
+    };
+  };
 }

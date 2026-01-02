@@ -8230,6 +8230,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "highs-lp" = import ./nix/highs-lp.nix;
   "hikchr" = import ./nix/hikchr.nix;
   "hills" = import ./nix/hills.nix;
+  "himari" = import ./nix/himari.nix;
   "himerge" = import ./nix/himerge.nix;
   "himg" = import ./nix/himg.nix;
   "himpy" = import ./nix/himpy.nix;
@@ -11815,6 +11816,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-transport-amqp" = import ./nix/network-transport-amqp.nix;
   "network-transport-composed" = import ./nix/network-transport-composed.nix;
   "network-transport-inmemory" = import ./nix/network-transport-inmemory.nix;
+  "network-transport-quic" = import ./nix/network-transport-quic.nix;
   "network-transport-tcp" = import ./nix/network-transport-tcp.nix;
   "network-transport-tests" = import ./nix/network-transport-tests.nix;
   "network-transport-zeromq" = import ./nix/network-transport-zeromq.nix;

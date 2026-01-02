@@ -487,4 +487,15 @@
       default = "r0";
     };
   };
+  "1.6.2" = {
+    sha256 = "96b20cbd70607b938c3163cb47b611fd13cb8a69685b34fc60f37405fa47a79e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dimensional-1.6.2-r0-3046c5d1b114707a509bf0778020be753572b6da104ed730f36935adae14592f.nix;
+        revNum = 0;
+        sha256 = "3046c5d1b114707a509bf0778020be753572b6da104ed730f36935adae14592f";
+      };
+      default = "r0";
+    };
+  };
 }
