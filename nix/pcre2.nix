@@ -274,4 +274,15 @@
       default = "r0";
     };
   };
+  "2.3.0" = {
+    sha256 = "a468ad444c00806511c4d6b2addfbac8e2850def003e0c51397bac054713e8f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pcre2-2.3.0-r0-44db4e2490ba5060aedde66f23efa179526c190c003343da47ef6ab8299cbc7d.nix;
+        revNum = 0;
+        sha256 = "44db4e2490ba5060aedde66f23efa179526c190c003343da47ef6ab8299cbc7d";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -34,7 +34,12 @@
         revNum = 0;
         sha256 = "f2f1ba1e708016d1c446a4cf536fc4b496263fe95872893bfe80fb9fe0e3da12";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/javelin-frames-0.1.0.2-r1-c46b7f7d7c5e3774b39ac68843204b79cdae1888c8b3e75a5a4570fe68321ca3.nix;
+        revNum = 1;
+        sha256 = "c46b7f7d7c5e3774b39ac68843204b79cdae1888c8b3e75a5a4570fe68321ca3";
+      };
+      default = "r1";
     };
   };
 }
