@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "6ec81e1aca1de3e45a4d7b60fdd7eba538523220e7ce0383fc394f5b6eacb28e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/psi-0.2.0.0-r0-68a9fc2ade4e2ad1420f9118b145deaa4b469a7be42287f40f585a94f28bd2c3.nix;
+        revNum = 0;
+        sha256 = "68a9fc2ade4e2ad1420f9118b145deaa4b469a7be42287f40f585a94f28bd2c3";
+      };
+      default = "r0";
+    };
+  };
 }

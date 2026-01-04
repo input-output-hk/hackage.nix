@@ -9877,6 +9877,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kd-tree" = import ./nix/kd-tree.nix;
   "kdesrc-build-extra" = import ./nix/kdesrc-build-extra.nix;
   "kdesrc-build-profiles" = import ./nix/kdesrc-build-profiles.nix;
+  "kdl-hs" = import ./nix/kdl-hs.nix;
   "kdt" = import ./nix/kdt.nix;
   "keccak" = import ./nix/keccak.nix;
   "keelung" = import ./nix/keelung.nix;
@@ -11691,6 +11692,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "natural-transformation" = import ./nix/natural-transformation.nix;
   "naturalcomp" = import ./nix/naturalcomp.nix;
   "naturals" = import ./nix/naturals.nix;
+  "nauty-parser" = import ./nix/nauty-parser.nix;
   "naver-translate" = import ./nix/naver-translate.nix;
   "nbparts" = import ./nix/nbparts.nix;
   "nbt" = import ./nix/nbt.nix;
