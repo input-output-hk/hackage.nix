@@ -14209,6 +14209,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "restartable" = import ./nix/restartable.nix;
   "restful-snap" = import ./nix/restful-snap.nix;
   "restless-git" = import ./nix/restless-git.nix;
+  "restman" = import ./nix/restman.nix;
   "restricted-workers" = import ./nix/restricted-workers.nix;
   "restyle" = import ./nix/restyle.nix;
   "result" = import ./nix/result.nix;

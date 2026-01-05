@@ -1,0 +1,53 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = { optimised-mixer = false; };
+    package = {
+      specVersion = "2.4";
+      identifier = { name = "splitmix"; version = "0.1.3.2"; };
+      license = "BSD-3-Clause";
+      copyright = "";
+      maintainer = "Oleg Grenrus <oleg.grenrus@iki.fi>";
+      author = "";
+      homepage = "";
+      url = "";
+      synopsis = "Fast Splittable PRNG";
+      description = "Pure Haskell implementation of SplitMix described in\n\nGuy L. Steele, Jr., Doug Lea, and Christine H. Flood. 2014.\nFast splittable pseudorandom number generators. In Proceedings\nof the 2014 ACM International Conference on Object Oriented\nProgramming Systems Languages & Applications (OOPSLA '14). ACM,\nNew York, NY, USA, 453-472. DOI:\n<https://doi.org/10.1145/2660193.2660195>\n\nThe paper describes a new algorithm /SplitMix/ for /splittable/\npseudorandom number generator that is quite fast: 9 64 bit arithmetic/logical\noperations per 64 bits generated.\n\n/SplitMix/ is tested with two standard statistical test suites (DieHarder and\nTestU01, this implementation only using the former) and it appears to be\nadequate for \"everyday\" use, such as Monte Carlo algorithms and randomized\ndata structures where speed is important.\n\nIn particular, it __should not be used for cryptographic or security applications__,\nbecause generated sequences of pseudorandom values are too predictable\n(the mixing functions are easily inverted, and two successive outputs\nsuffice to reconstruct the internal state).";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+        ] ++ pkgs.lib.optionals (!(compiler.isGhcjs && true)) (pkgs.lib.optional (!(compiler.isGhc && true)) (hsPkgs."time" or (errorHandler.buildDepError "time")));
+        frameworks = pkgs.lib.optionals (!(compiler.isGhcjs && true)) (pkgs.lib.optionals (compiler.isGhc && true) (pkgs.lib.optionals (!system.isWindows) (pkgs.lib.optional (system.isOsx || system.isIOS) (pkgs."Security" or (errorHandler.sysDepError "Security")))));
+        buildable = true;
+      };
+      tests = {
+        "splitmix-examples" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."HUnit" or (errorHandler.buildDepError "HUnit"))
+            (hsPkgs."splitmix" or (errorHandler.buildDepError "splitmix"))
+          ];
+          buildable = true;
+        };
+        "splitmix-th-test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."splitmix" or (errorHandler.buildDepError "splitmix"))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }

@@ -39,7 +39,12 @@
         revNum = 1;
         sha256 = "941d4ae16e2124cbff5defe2abedb49efc8e03a594f817035bf231a317e6c1c9";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/integer-conversion-0.1.1-r2-123d1b088404f0976500c68d8105978aa2e32908ce5508e32aebd237f0447c9f.nix;
+        revNum = 2;
+        sha256 = "123d1b088404f0976500c68d8105978aa2e32908ce5508e32aebd237f0447c9f";
+      };
+      default = "r2";
     };
   };
 }
