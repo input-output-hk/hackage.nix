@@ -84,7 +84,17 @@
         revNum = 0;
         sha256 = "3ee71894e1f5b88df2a096de96b173b421341aa4fbc6d86ddd199d47fb33a9d1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/Hastructure-0.50.4-r1-01922264eef43acf285d6138e0c2ee56b20cc9eb8c673f5cd92bb1760e433630.nix;
+        revNum = 1;
+        sha256 = "01922264eef43acf285d6138e0c2ee56b20cc9eb8c673f5cd92bb1760e433630";
+      };
+      r2 = {
+        nix = import ../hackage/Hastructure-0.50.4-r2-29ecb25ecabe0bbb47020400b2452e6973fe577db720fcddebc81d61df464948.nix;
+        revNum = 2;
+        sha256 = "29ecb25ecabe0bbb47020400b2452e6973fe577db720fcddebc81d61df464948";
+      };
+      default = "r2";
     };
   };
 }

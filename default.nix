@@ -5543,6 +5543,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ersatz-toysat" = import ./nix/ersatz-toysat.nix;
   "ersatz-viz" = import ./nix/ersatz-viz.nix;
   "ert" = import ./nix/ert.nix;
+  "esb-fireplace" = import ./nix/esb-fireplace.nix;
   "escape-artist" = import ./nix/escape-artist.nix;
   "escaped" = import ./nix/escaped.nix;
   "escoger" = import ./nix/escoger.nix;

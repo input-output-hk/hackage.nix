@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "a5da3b09cef530fdb02a850b51e5a1efa0becb7836c057aba9a134fffb6ac54b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/derive-lifted-instances-0.3-r0-415bbb94ad54450b414c8e8d2f622fad3f2efe85ece495251bb02cff4da4ea6e.nix;
+        revNum = 0;
+        sha256 = "415bbb94ad54450b414c8e8d2f622fad3f2efe85ece495251bb02cff4da4ea6e";
+      };
+      default = "r0";
+    };
+  };
 }

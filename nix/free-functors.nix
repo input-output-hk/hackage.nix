@@ -405,4 +405,15 @@
       default = "r0";
     };
   };
+  "1.3" = {
+    sha256 = "cf251ed22158f7bf463c4a36fb3d0c23c3bcfaaf5c5b4319c902e782a15851ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/free-functors-1.3-r0-e5debd617b0bb31a662d4a30bc71ce9e64dd440216cddcb38b01c6b709930ae6.nix;
+        revNum = 0;
+        sha256 = "e5debd617b0bb31a662d4a30bc71ce9e64dd440216cddcb38b01c6b709930ae6";
+      };
+      default = "r0";
+    };
+  };
 }

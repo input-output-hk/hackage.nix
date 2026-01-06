@@ -97,4 +97,15 @@
       default = "r0";
     };
   };
+  "0.0.6.0" = {
+    sha256 = "b21b1e7a4b874ae04048a5f81c6e90e4afbfc958bfd1f8a66be39d56f5c5ab6f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shellmet-0.0.6.0-r0-6a3332c4e68fdfd01277d5a936ab4ad5534830520246149fe01b9c4b8d1994c1.nix;
+        revNum = 0;
+        sha256 = "6a3332c4e68fdfd01277d5a936ab4ad5534830520246149fe01b9c4b8d1994c1";
+      };
+      default = "r0";
+    };
+  };
 }

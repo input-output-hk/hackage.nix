@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.10" = {
+    sha256 = "0fe91fbd5253a696e040f9cdec6dddd9ec03030463616ffa18558afbd7e9069c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-classes-0.10-r0-977e18696655ca2c72741eb8e111fbd8b1ba6301e62790043350b8555c7f3e2a.nix;
+        revNum = 0;
+        sha256 = "977e18696655ca2c72741eb8e111fbd8b1ba6301e62790043350b8555c7f3e2a";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "0ac8bd88bc1d8ef9c16ea1ad4342d36d2fa45e82c71319ed1aa45850bd66acef";
     revisions = {

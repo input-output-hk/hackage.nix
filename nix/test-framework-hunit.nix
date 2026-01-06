@@ -220,4 +220,15 @@
       default = "r3";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "667b06836cd4e52f7af62e103f33bc51b84cacb8419cbf1d0c79261cd9d4bb46";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/test-framework-hunit-0.3.0.3-r0-1ec5a6a278a4d8c2f763666c70095d2b3d4e1940c1136c71319b7c8c1eaa390f.nix;
+        revNum = 0;
+        sha256 = "1ec5a6a278a4d8c2f763666c70095d2b3d4e1940c1136c71319b7c8c1eaa390f";
+      };
+      default = "r0";
+    };
+  };
 }
