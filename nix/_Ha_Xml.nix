@@ -508,7 +508,12 @@
         revNum = 1;
         sha256 = "8a826dccca8f93a6b6d6a1e6b85f83140ad9f4c32760df4f3aee9a162e3bca02";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/HaXml-1.25.14-r2-c18049af0cba520139be8f57e8aa0a0e59cd95ccafb87eec384194cfb4d4cc2a.nix;
+        revNum = 2;
+        sha256 = "c18049af0cba520139be8f57e8aa0a0e59cd95ccafb87eec384194cfb4d4cc2a";
+      };
+      default = "r2";
     };
   };
   "1.25.2" = {

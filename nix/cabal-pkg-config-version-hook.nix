@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "ce8849354e01954c63921acd658d08a4365dd0de2b880719dea42081593b88a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-pkg-config-version-hook-0.1.1.0-r0-329290c8fd06f57ca273e478f192b23eb3ade1e17fb69b018d82dc1c56d9697b.nix;
+        revNum = 0;
+        sha256 = "329290c8fd06f57ca273e478f192b23eb3ade1e17fb69b018d82dc1c56d9697b";
+      };
+      default = "r0";
+    };
+  };
 }

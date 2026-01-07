@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "0.10.8" = {
+    sha256 = "a93ce26d13d95116e470d820b5775400692c68b0df38ab76eb7a811e5d2f0d39";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hercules-ci-agent-0.10.8-r0-74a39846ced5cfbab6f025fca4d152970761f965c23cf488798cc49adb31c480.nix;
+        revNum = 0;
+        sha256 = "74a39846ced5cfbab6f025fca4d152970761f965c23cf488798cc49adb31c480";
+      };
+      default = "r0";
+    };
+  };
   "0.7.1" = {
     sha256 = "1a9335edf554f98e8ae615525a4fd0ca68b8653c80cdcdcb1173db349279e23e";
     revisions = {

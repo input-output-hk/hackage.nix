@@ -3427,6 +3427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cayenne-lpp" = import ./nix/cayenne-lpp.nix;
   "cayley-client" = import ./nix/cayley-client.nix;
   "cayley-dickson" = import ./nix/cayley-dickson.nix;
+  "cbf" = import ./nix/cbf.nix;
   "cblrepo" = import ./nix/cblrepo.nix;
   "cbor-tool" = import ./nix/cbor-tool.nix;
   "cborg" = import ./nix/cborg.nix;
@@ -4451,6 +4452,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dahdit-test" = import ./nix/dahdit-test.nix;
   "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
+  "dani-optics-dot" = import ./nix/dani-optics-dot.nix;
   "dani-servant-lucid2" = import ./nix/dani-servant-lucid2.nix;
   "dani-sqlite" = import ./nix/dani-sqlite.nix;
   "danibot" = import ./nix/danibot.nix;

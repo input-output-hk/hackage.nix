@@ -341,4 +341,30 @@
       default = "r1";
     };
   };
+  "1.1" = {
+    sha256 = "bbb9fafc0d202b8b9b2939014751c0970a3b06c59294f2448f3750362cf44b35";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unfoldable-1.1-r0-71351f1aa74bbbccd5db2d81751197ed6d4199287cabd4d1f1011e3e36e99c27.nix;
+        revNum = 0;
+        sha256 = "71351f1aa74bbbccd5db2d81751197ed6d4199287cabd4d1f1011e3e36e99c27";
+      };
+      r1 = {
+        nix = import ../hackage/unfoldable-1.1-r1-07f840441bc3139a2b70be38bc7460aeda0273530c16e63b87fa8167f29d85e6.nix;
+        revNum = 1;
+        sha256 = "07f840441bc3139a2b70be38bc7460aeda0273530c16e63b87fa8167f29d85e6";
+      };
+      r2 = {
+        nix = import ../hackage/unfoldable-1.1-r2-815a74fc9f2b4de53fdbca93cfe56cf6c3e2269be426bd09b6924ae715a53156.nix;
+        revNum = 2;
+        sha256 = "815a74fc9f2b4de53fdbca93cfe56cf6c3e2269be426bd09b6924ae715a53156";
+      };
+      r3 = {
+        nix = import ../hackage/unfoldable-1.1-r3-ac661c1265553cd3d27467f4853a665a191a7d90c1911dbb7a0bfe37107e68bc.nix;
+        revNum = 3;
+        sha256 = "ac661c1265553cd3d27467f4853a665a191a7d90c1911dbb7a0bfe37107e68bc";
+      };
+      default = "r3";
+    };
+  };
 }
