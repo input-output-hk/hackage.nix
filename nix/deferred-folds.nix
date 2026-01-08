@@ -714,6 +714,28 @@
       default = "r0";
     };
   };
+  "0.9.18.8" = {
+    sha256 = "1d0e916a2110cbf3104a137f3ca1942a0969dd41204b97431bbd968061ff047c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deferred-folds-0.9.18.8-r0-3b3f76d3f3cf7b1bc5e4a10bfecd3be2f461f622ea04d7949922628907aa2a84.nix;
+        revNum = 0;
+        sha256 = "3b3f76d3f3cf7b1bc5e4a10bfecd3be2f461f622ea04d7949922628907aa2a84";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.18.9" = {
+    sha256 = "739a0798fc0184d9d8f66eb514d1888189fb9d64fbe35cca189c0b96c510d2d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/deferred-folds-0.9.18.9-r0-ff9afb29821bb39b37b15471b021b4ae8ff1e063f273cd49fe5384a0b519be4d.nix;
+        revNum = 0;
+        sha256 = "ff9afb29821bb39b37b15471b021b4ae8ff1e063f273cd49fe5384a0b519be4d";
+      };
+      default = "r0";
+    };
+  };
   "0.9.2" = {
     sha256 = "318166a5d44c1560a3e9e66fd6cc897f4bfd6dc1f247b0811be3efec47db9411";
     revisions = {

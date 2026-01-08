@@ -336,7 +336,12 @@
         revNum = 2;
         sha256 = "a62864a0a096f844db946a38c3b9981f20cc50cb36ef8bbb148b695976ae4c75";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/generics-sop-0.5.1.4-r3-c97aa3bbf4a3660e8b39684b9136f20c3e15dc0e52e792e2daea34f2999e3467.nix;
+        revNum = 3;
+        sha256 = "c97aa3bbf4a3660e8b39684b9136f20c3e15dc0e52e792e2daea34f2999e3467";
+      };
+      default = "r3";
     };
   };
 }

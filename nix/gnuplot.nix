@@ -378,7 +378,12 @@
         revNum = 3;
         sha256 = "c5f0e8895cf2bdf4b1f0b643550fb52906da5e2b91dca194b99f1a48529e94e7";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/gnuplot-0.5.7-r4-68f50c4aefec000dc5f1755c46636e0382f1b2f80fda34a69970a03c72c2b8b1.nix;
+        revNum = 4;
+        sha256 = "68f50c4aefec000dc5f1755c46636e0382f1b2f80fda34a69970a03c72c2b8b1";
+      };
+      default = "r4";
     };
   };
 }

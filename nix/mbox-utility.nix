@@ -60,7 +60,12 @@
         revNum = 3;
         sha256 = "3bb672d5d33c2c5266b672a575839e339e457ff0fb184c63051639c047ed5583";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/mbox-utility-0.0.3.1-r4-748e8fa13058e41918cebf4396e263239f66901d0d91bee955baf1b3ed5cd942.nix;
+        revNum = 4;
+        sha256 = "748e8fa13058e41918cebf4396e263239f66901d0d91bee955baf1b3ed5cd942";
+      };
+      default = "r4";
     };
   };
 }

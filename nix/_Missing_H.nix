@@ -576,4 +576,15 @@
       default = "r0";
     };
   };
+  "1.6.0.3" = {
+    sha256 = "1a93d86c9c33fbf8c5dafdf0d5d32ddc12bb5206a0f56a931d204328716ca4a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MissingH-1.6.0.3-r0-d04949af894c528c37cbf5640bbc80a88ea1497de4b2dab788cecba29dbf32f8.nix;
+        revNum = 0;
+        sha256 = "d04949af894c528c37cbf5640bbc80a88ea1497de4b2dab788cecba29dbf32f8";
+      };
+      default = "r0";
+    };
+  };
 }
