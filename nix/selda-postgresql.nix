@@ -226,4 +226,15 @@
       default = "r0";
     };
   };
+  "0.1.8.3" = {
+    sha256 = "fbdb1273f6158ff7af6e92500a5df34d7f1d1834de8b6396dbe8d31049e105e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/selda-postgresql-0.1.8.3-r0-f4c7dbefb00614cddb70c623d968e7039d548eb16f261a05813ff89f72702444.nix;
+        revNum = 0;
+        sha256 = "f4c7dbefb00614cddb70c623d968e7039d548eb16f261a05813ff89f72702444";
+      };
+      default = "r0";
+    };
+  };
 }

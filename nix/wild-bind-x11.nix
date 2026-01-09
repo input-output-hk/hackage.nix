@@ -186,6 +186,17 @@
       default = "r0";
     };
   };
+  "0.2.0.18" = {
+    sha256 = "48ea0a05d049ce7d299a6231b17931c8d8b9b987df100796482ef77434591f99";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wild-bind-x11-0.2.0.18-r0-0e1b35a5c39497288f0ab4338a2760465261cbe2af2e510381b15730b3de4ff9.nix;
+        revNum = 0;
+        sha256 = "0e1b35a5c39497288f0ab4338a2760465261cbe2af2e510381b15730b3de4ff9";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.2" = {
     sha256 = "94a1ca8c5e3b594e0ecc4082c7c52d9f401e2dc2d9559c7966d01cfe4a95c66d";
     revisions = {

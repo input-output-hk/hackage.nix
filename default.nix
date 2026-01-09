@@ -6832,6 +6832,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "github-workflow-commands" = import ./nix/github-workflow-commands.nix;
   "githud" = import ./nix/githud.nix;
   "gitignore" = import ./nix/gitignore.nix;
+  "gitignore-ospath" = import ./nix/gitignore-ospath.nix;
   "gitit" = import ./nix/gitit.nix;
   "gitlab-api" = import ./nix/gitlab-api.nix;
   "gitlab-haskell" = import ./nix/gitlab-haskell.nix;

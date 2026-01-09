@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "0.2.0.9" = {
+    sha256 = "9a60fcd49aa947fdd8664738f9bfb04e9480a0852e8743dea0ebaa9f5a613a80";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fold-debounce-conduit-0.2.0.9-r0-6aaa4a64eb7e9ff584d4b1a3f44c5525f3610ec7cb24641aad8f90806015fc63.nix;
+        revNum = 0;
+        sha256 = "6aaa4a64eb7e9ff584d4b1a3f44c5525f3610ec7cb24641aad8f90806015fc63";
+      };
+      default = "r0";
+    };
+  };
 }

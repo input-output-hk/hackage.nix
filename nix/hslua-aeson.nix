@@ -277,4 +277,15 @@
       default = "r0";
     };
   };
+  "2.3.2" = {
+    sha256 = "b94661c55e9ef54ea1a789faa662c995a9ae643f97c408bb840b970e110298d0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hslua-aeson-2.3.2-r0-fa7036d24541f2277abeafc9358ec30cdf4750a7e3d3e20a3f9a65f89d35c78c.nix;
+        revNum = 0;
+        sha256 = "fa7036d24541f2277abeafc9358ec30cdf4750a7e3d3e20a3f9a65f89d35c78c";
+      };
+      default = "r0";
+    };
+  };
 }

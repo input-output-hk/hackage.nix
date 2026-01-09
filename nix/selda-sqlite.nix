@@ -183,4 +183,15 @@
       default = "r0";
     };
   };
+  "0.1.7.3" = {
+    sha256 = "303098d74256feefe42500b575036c46bff4d2859e3ab05d65c94d1a44f52c66";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/selda-sqlite-0.1.7.3-r0-25533f2d8307cf6e7f46d907f14a01eb31e9da5aec13e0b1b7e16626bd1fad8c.nix;
+        revNum = 0;
+        sha256 = "25533f2d8307cf6e7f46d907f14a01eb31e9da5aec13e0b1b7e16626bd1fad8c";
+      };
+      default = "r0";
+    };
+  };
 }

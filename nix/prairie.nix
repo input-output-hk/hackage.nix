@@ -86,4 +86,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "37ec5a67011166032747c296ab2fc552afbefd3d9e5c28164f5792cadb6d62c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prairie-0.1.1.0-r0-b9beec070e7936769950aec24b3193f2efd032f55977daea4d9821c9a137993f.nix;
+        revNum = 0;
+        sha256 = "b9beec070e7936769950aec24b3193f2efd032f55977daea4d9821c9a137993f";
+      };
+      default = "r0";
+    };
+  };
 }

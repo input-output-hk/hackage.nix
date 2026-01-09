@@ -42,4 +42,15 @@
       default = "r0";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "8eb67dbadf85a1d1d69c8bc48fb71b6f49171e2dace47d9b6459aed440fd5e8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/selda-json-0.1.1.2-r0-21411720c1abbd353d6dd62656d8692b2494127241f6d1a738fc8974493ea283.nix;
+        revNum = 0;
+        sha256 = "21411720c1abbd353d6dd62656d8692b2494127241f6d1a738fc8974493ea283";
+      };
+      default = "r0";
+    };
+  };
 }
