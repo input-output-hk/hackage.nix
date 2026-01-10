@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e2fb24cb452c3a8528ce2c3e285c5b72ed4a505f8aa1601229d80e60d00ede34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dani-optics-dot-0.2.0.0-r0-2acb758529e99fd934882407805f2ff280b83457588edf12eb1cc556399ab5ef.nix;
+        revNum = 0;
+        sha256 = "2acb758529e99fd934882407805f2ff280b83457588edf12eb1cc556399ab5ef";
+      };
+      default = "r0";
+    };
+  };
 }

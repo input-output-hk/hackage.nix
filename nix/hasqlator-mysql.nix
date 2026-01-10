@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.2.2" = {
+    sha256 = "6512bae78c1711a1ff4f151a7263150cd853a90064323a7e4cbdc5640ba79643";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasqlator-mysql-0.2.2-r0-a83a06694dd02a2f042c40ed56ee6fec67518a3510e036f44344f4a8f7d9daaa.nix;
+        revNum = 0;
+        sha256 = "a83a06694dd02a2f042c40ed56ee6fec67518a3510e036f44344f4a8f7d9daaa";
+      };
+      default = "r0";
+    };
+  };
 }

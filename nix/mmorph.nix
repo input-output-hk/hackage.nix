@@ -282,4 +282,15 @@
       default = "r1";
     };
   };
+  "1.2.2" = {
+    sha256 = "dd6f2d2b3b6776544fc6fefe914c9ba4016ca911755383ec639d6ede417b9faf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmorph-1.2.2-r0-79a05eb89ce43d888e8d1cef3e669efd72ca0830e9a56acd42893f58bbe8db0a.nix;
+        revNum = 0;
+        sha256 = "79a05eb89ce43d888e8d1cef3e669efd72ca0830e9a56acd42893f58bbe8db0a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10293,6 +10293,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lenz-mtl" = import ./nix/lenz-mtl.nix;
   "lenz-template" = import ./nix/lenz-template.nix;
   "less-arbitrary" = import ./nix/less-arbitrary.nix;
+  "lesspass" = import ./nix/lesspass.nix;
   "level-monad" = import ./nix/level-monad.nix;
   "leveldb-haskell" = import ./nix/leveldb-haskell.nix;
   "leveldb-haskell-fork" = import ./nix/leveldb-haskell-fork.nix;
@@ -10669,6 +10670,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lp-diagrams-svg" = import ./nix/lp-diagrams-svg.nix;
   "lpeg" = import ./nix/lpeg.nix;
   "lr-acts" = import ./nix/lr-acts.nix;
+  "lrclib-client" = import ./nix/lrclib-client.nix;
   "lrucache" = import ./nix/lrucache.nix;
   "lrucaching" = import ./nix/lrucaching.nix;
   "lrucaching-haxl" = import ./nix/lrucaching-haxl.nix;
@@ -14632,6 +14634,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scuttlebutt-types" = import ./nix/scuttlebutt-types.nix;
   "scythe" = import ./nix/scythe.nix;
   "scyther-proof" = import ./nix/scyther-proof.nix;
+  "sd-jwt" = import ./nix/sd-jwt.nix;
   "sde-solver" = import ./nix/sde-solver.nix;
   "sdf2p1-parser" = import ./nix/sdf2p1-parser.nix;
   "sdl-try-drivers" = import ./nix/sdl-try-drivers.nix;

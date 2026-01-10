@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "820879243be24c7a31d9f2be9b7c1cdd6ca4a8213ad2403f1a1355e8170dcf62";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gitignore-ospath-0.1.0.2-r0-e1d59cca83160534572681fd6a1e4ad21e218bd7350a0b20dab36d4b9c985fc7.nix;
+        revNum = 0;
+        sha256 = "e1d59cca83160534572681fd6a1e4ad21e218bd7350a0b20dab36d4b9c985fc7";
+      };
+      default = "r0";
+    };
+  };
 }
