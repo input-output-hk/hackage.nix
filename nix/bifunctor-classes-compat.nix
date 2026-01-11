@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "e38c0e0b8bd4d57604c661dbc753816f06dae8787aea5a5d1fb883b2ef549b9a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bifunctor-classes-compat-0.1.1-r0-884e2b2d71e67859a05c8bd6c76445c685bb4f9d2187d53b5e9b55c9576c72e4.nix;
+        revNum = 0;
+        sha256 = "884e2b2d71e67859a05c8bd6c76445c685bb4f9d2187d53b5e9b55c9576c72e4";
+      };
+      default = "r0";
+    };
+  };
 }

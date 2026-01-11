@@ -794,6 +794,17 @@
       default = "r2";
     };
   };
+  "5.0.10" = {
+    sha256 = "e9739df2bf5944958062a4ea73bde3bf35c0879cee0944edf7f05bebf993f9c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/comonad-5.0.10-r0-e8606e010e306f41019026e94b0676993c175260d1d8908e4518b2b06a40272b.nix;
+        revNum = 0;
+        sha256 = "e8606e010e306f41019026e94b0676993c175260d1d8908e4518b2b06a40272b";
+      };
+      default = "r0";
+    };
+  };
   "5.0.2" = {
     sha256 = "1bb0fe396ecd16008411862ee453e8bd7c3e0f3a7299537dd59466604a54b784";
     revisions = {

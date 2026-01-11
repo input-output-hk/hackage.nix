@@ -111,7 +111,12 @@
         revNum = 4;
         sha256 = "9cf9b0edc9a4d6c695f8fe472b490a00b0ce28a787811db656426472819da9d7";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/language-sygus-0.1.1.3-r5-b8d1317c84d03dce87e6cb38ba3ae3c96b25a7aa989ed3e7a94cf88f5c01437c.nix;
+        revNum = 5;
+        sha256 = "b8d1317c84d03dce87e6cb38ba3ae3c96b25a7aa989ed3e7a94cf88f5c01437c";
+      };
+      default = "r5";
     };
   };
 }

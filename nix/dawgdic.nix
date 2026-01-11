@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "f26c7da3e53f4a464507fa4f0fab09502f3468c8574123054cb0ae2df2bc9e3f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dawgdic-1.0.0-r0-029f91383a996a4ca28cf2bed22f709c54cb906781bb3590a37d90b44ed8e058.nix;
+        revNum = 0;
+        sha256 = "029f91383a996a4ca28cf2bed22f709c54cb906781bb3590a37d90b44ed8e058";
+      };
+      default = "r0";
+    };
+  };
 }
