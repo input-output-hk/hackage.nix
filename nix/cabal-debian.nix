@@ -1151,4 +1151,15 @@
       default = "r0";
     };
   };
+  "5.4.4" = {
+    sha256 = "18289b526f726c89e3d77090e902480d7573c25d9659cdd28767015001763ce0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-debian-5.4.4-r0-1209f314fd5a4ec7230c2c06c48a956cb74b699fdc4aab0a2523d7b658d6c8a2.nix;
+        revNum = 0;
+        sha256 = "1209f314fd5a4ec7230c2c06c48a956cb74b699fdc4aab0a2523d7b658d6c8a2";
+      };
+      default = "r0";
+    };
+  };
 }

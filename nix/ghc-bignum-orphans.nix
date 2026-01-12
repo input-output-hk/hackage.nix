@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "9e4f0ac982bd25bfbeb0392d9714b542f55ed6c49cc372753414a3cd6dafff34";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ghc-bignum-orphans-0.1.1-r2-bb1b4fb56b12f2ae86823a2cf008fd2f35ecac585a0f1205730b8bc143a026bf.nix;
+        revNum = 2;
+        sha256 = "bb1b4fb56b12f2ae86823a2cf008fd2f35ecac585a0f1205730b8bc143a026bf";
+      };
+      default = "r2";
     };
   };
 }

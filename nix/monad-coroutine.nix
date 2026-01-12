@@ -207,4 +207,15 @@
       default = "r0";
     };
   };
+  "0.9.3" = {
+    sha256 = "9d7963ca31b37566cfe1a704b06c069eea253931c2b2334b31d5bce9172bc2f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-coroutine-0.9.3-r0-87421dde181aa6b4f861ad2e977c3cdc6b1db1a2038387825d25321a995856c0.nix;
+        revNum = 0;
+        sha256 = "87421dde181aa6b4f861ad2e977c3cdc6b1db1a2038387825d25321a995856c0";
+      };
+      default = "r0";
+    };
+  };
 }

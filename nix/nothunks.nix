@@ -152,7 +152,12 @@
         revNum = 1;
         sha256 = "4a66b0d70b1cd62ebb3e02037b33281fa8afc4f646dd036539757226fd5d4ae3";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/nothunks-0.3.1-r2-83eca59b2d67a1c68df5e7a20dddb098ca2cdf82dee431e338a4c3b3af273d6c.nix;
+        revNum = 2;
+        sha256 = "83eca59b2d67a1c68df5e7a20dddb098ca2cdf82dee431e338a4c3b3af273d6c";
+      };
+      default = "r2";
     };
   };
 }

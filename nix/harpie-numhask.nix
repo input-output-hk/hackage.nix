@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "751b77e7728a33dfd97d69e93b7bc58c55fbada1564b665a95eb3738256a7677";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/harpie-numhask-0.2.0.0-r0-b2ec054cb1294e2e23b448be2b088f9ebd7a88bb86bf5f80767778cb38385d9f.nix;
+        revNum = 0;
+        sha256 = "b2ec054cb1294e2e23b448be2b088f9ebd7a88bb86bf5f80767778cb38385d9f";
+      };
+      default = "r0";
+    };
+  };
 }

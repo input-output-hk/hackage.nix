@@ -697,7 +697,12 @@
         revNum = 0;
         sha256 = "868edaebd07cc8d2b68a046c2a1f32ccbcad6ccd08d9f01bad2f6e07c4fc9d89";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/singletons-3.0.4-r1-4c765cc87d78ecc436cd77231d87e646d119e1dd7d0ed027c0eddaa80e284401.nix;
+        revNum = 1;
+        sha256 = "4c765cc87d78ecc436cd77231d87e646d119e1dd7d0ed027c0eddaa80e284401";
+      };
+      default = "r1";
     };
   };
 }

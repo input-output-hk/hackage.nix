@@ -1410,7 +1410,12 @@
         revNum = 0;
         sha256 = "e17b280bf4e461a4a14bc1c0a8fa3df60c8e2ca313cb3f2f12d4475d19d10120";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/criterion-1.6.4.1-r1-3aced557b21cc501ea80336f3c0997a6132cc358976596ccb00784bff6644b0b.nix;
+        revNum = 1;
+        sha256 = "3aced557b21cc501ea80336f3c0997a6132cc358976596ccb00784bff6644b0b";
+      };
+      default = "r1";
     };
   };
 }

@@ -477,4 +477,20 @@
       default = "r7";
     };
   };
+  "0.7.5" = {
+    sha256 = "bd5c2d22f35f8ecd00b432122b5ef6ca71134971c3252b6c031537c01c9c7844";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blank-canvas-0.7.5-r0-706938d0137e9d1230a800e83b9332ede802b95de65a07f22e5047e239fcc5dc.nix;
+        revNum = 0;
+        sha256 = "706938d0137e9d1230a800e83b9332ede802b95de65a07f22e5047e239fcc5dc";
+      };
+      r1 = {
+        nix = import ../hackage/blank-canvas-0.7.5-r1-d72bacf7dfa9f88994078553c3b88f50b9ca9a3fe751744244d39af58e9b3b0e.nix;
+        revNum = 1;
+        sha256 = "d72bacf7dfa9f88994078553c3b88f50b9ca9a3fe751744244d39af58e9b3b0e";
+      };
+      default = "r1";
+    };
+  };
 }

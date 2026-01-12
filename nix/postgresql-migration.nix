@@ -102,7 +102,12 @@
         revNum = 1;
         sha256 = "61a4127f6e74c80d57fafe1b2f6b728157a1c1c34ca61c6e6f6d0de09a3f12e5";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/postgresql-migration-0.2.1.8-r2-6d395f6529a2d3a811af7209607e9b26350142574ab757a04c67e61f6fe737b2.nix;
+        revNum = 2;
+        sha256 = "6d395f6529a2d3a811af7209607e9b26350142574ab757a04c67e61f6fe737b2";
+      };
+      default = "r2";
     };
   };
 }

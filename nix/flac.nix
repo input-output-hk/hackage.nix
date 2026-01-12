@@ -121,7 +121,12 @@
         revNum = 3;
         sha256 = "579a2118931ef7cb51d9dbba5921e69953aecadf1162e59bbe8cf9fc7f4b3de8";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/flac-0.2.1-r4-e9c88aecdaba30228e4f608d28c8f44a4d620301824ffc145d7f7b0192cf89ed.nix;
+        revNum = 4;
+        sha256 = "e9c88aecdaba30228e4f608d28c8f44a4d620301824ffc145d7f7b0192cf89ed";
+      };
+      default = "r4";
     };
   };
 }

@@ -196,4 +196,15 @@
       default = "r0";
     };
   };
+  "0.8.0.1" = {
+    sha256 = "1a1ece8b3beedfd4872f8b3b5c6ca9301c353fbe39f5b8ff5f7385cfd4b8e30d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-parallel-0.8.0.1-r0-f99063587cd4f8b48546d972881e6bbf0affe47db214b8ec4649fa3fa9a9c9e0.nix;
+        revNum = 0;
+        sha256 = "f99063587cd4f8b48546d972881e6bbf0affe47db214b8ec4649fa3fa9a9c9e0";
+      };
+      default = "r0";
+    };
+  };
 }
