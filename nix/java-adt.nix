@@ -43,4 +43,20 @@
       default = "r0";
     };
   };
+  "1.1" = {
+    sha256 = "39b52e0966d8e7ea5daa6ffe6a6551b82e9a9e1d5ebf092f55065e612a940b0b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/java-adt-1.1-r0-a705485b1684b942ddbbfac3af4f4c3255b181e22b6fc859e6a6ad48323543b8.nix;
+        revNum = 0;
+        sha256 = "a705485b1684b942ddbbfac3af4f4c3255b181e22b6fc859e6a6ad48323543b8";
+      };
+      r1 = {
+        nix = import ../hackage/java-adt-1.1-r1-1c51bc19df818ff84138232d09b50c2446ecc099a32fe023eae357912d2fc1cb.nix;
+        revNum = 1;
+        sha256 = "1c51bc19df818ff84138232d09b50c2446ecc099a32fe023eae357912d2fc1cb";
+      };
+      default = "r1";
+    };
+  };
 }

@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "e3be1855a6a99ece56e7af1ed1157d2a277b18d76f5ea4eca2ab392aaa8744ec";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dap-0.3.2.0-r0-6c43b7f44f52cb6f9b47cc08a0ff6a563a4c160f92f11ed79bddbba05b20b382.nix;
+        revNum = 0;
+        sha256 = "6c43b7f44f52cb6f9b47cc08a0ff6a563a4c160f92f11ed79bddbba05b20b382";
+      };
+      default = "r0";
+    };
+  };
 }

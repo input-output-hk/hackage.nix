@@ -6665,6 +6665,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghci-lib" = import ./nix/ghci-lib.nix;
   "ghci-ng" = import ./nix/ghci-ng.nix;
   "ghci-pretty" = import ./nix/ghci-pretty.nix;
+  "ghci-quickfix" = import ./nix/ghci-quickfix.nix;
   "ghci-websockets" = import ./nix/ghci-websockets.nix;
   "ghci4luatex" = import ./nix/ghci4luatex.nix;
   "ghcid" = import ./nix/ghcid.nix;
@@ -14151,6 +14152,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "repa-stream" = import ./nix/repa-stream.nix;
   "repa-v4l2" = import ./nix/repa-v4l2.nix;
   "repl" = import ./nix/repl.nix;
+  "repl-alliance" = import ./nix/repl-alliance.nix;
   "repl-toolkit" = import ./nix/repl-toolkit.nix;
   "replace-attoparsec" = import ./nix/replace-attoparsec.nix;
   "replace-megaparsec" = import ./nix/replace-megaparsec.nix;
@@ -15658,6 +15660,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "staf" = import ./nix/staf.nix;
   "staged-gg" = import ./nix/staged-gg.nix;
   "stagen" = import ./nix/stagen.nix;
+  "stakhanov" = import ./nix/stakhanov.nix;
   "stamina" = import ./nix/stamina.nix;
   "stan" = import ./nix/stan.nix;
   "standalone-derive-topdown" = import ./nix/standalone-derive-topdown.nix;

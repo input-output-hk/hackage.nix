@@ -109,7 +109,12 @@
         revNum = 1;
         sha256 = "3fb6cdb127a95d8c6fd408aa001b1276a4ead6165affe5eb84b330b34363dec8";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wave-0.2.1-r2-b9d176cab50d14a49c4b5295e7d60ee1ff58e934878282f004465d3817859b68.nix;
+        revNum = 2;
+        sha256 = "b9d176cab50d14a49c4b5295e7d60ee1ff58e934878282f004465d3817859b68";
+      };
+      default = "r2";
     };
   };
 }
