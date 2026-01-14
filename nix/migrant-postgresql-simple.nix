@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "f715f3f3ec0cbe8e1397fffcc740cbcbeb45dd018fdda1b0fe2629f963d423d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/migrant-postgresql-simple-0.1.1.1-r0-59129dc9752a2a30860829ea2108c9ec538c787d1c3fbc042c4aa0ec51984153.nix;
+        revNum = 0;
+        sha256 = "59129dc9752a2a30860829ea2108c9ec538c787d1c3fbc042c4aa0ec51984153";
+      };
+      default = "r0";
+    };
+  };
 }

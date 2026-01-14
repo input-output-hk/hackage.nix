@@ -43,4 +43,26 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "d2506feae81aa9e9c5359e1e0069744d2e12fc281e13f734f461ddbcf5012c06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inline-python-0.2.0.1-r0-879adbb30e16f216584de6c1efabc6e8fa0bac8088029e9e812bc0ec1cbef730.nix;
+        revNum = 0;
+        sha256 = "879adbb30e16f216584de6c1efabc6e8fa0bac8088029e9e812bc0ec1cbef730";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.1.0" = {
+    sha256 = "c4ccddb9843136013a4fc35305ea8eec6a84d1d2bf2aea4bbea498d6ae520c00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inline-python-0.2.1.0-r0-2d743390ab183b221b97edb832da65296da63dc5fc32e0e2e8cd6aa933ece717.nix;
+        revNum = 0;
+        sha256 = "2d743390ab183b221b97edb832da65296da63dc5fc32e0e2e8cd6aa933ece717";
+      };
+      default = "r0";
+    };
+  };
 }

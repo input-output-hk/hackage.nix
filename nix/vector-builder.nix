@@ -266,4 +266,15 @@
       default = "r0";
     };
   };
+  "0.3.8.7" = {
+    sha256 = "b1ca331c87885b1fd168f4ab49a8590f9a36779513af8d8fdbeaf824265bcb51";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vector-builder-0.3.8.7-r0-caf51095eabbe9e9da2a90d56569ffefe6cab6a2ce9b023ea4f64bfa19a4f55f.nix;
+        revNum = 0;
+        sha256 = "caf51095eabbe9e9da2a90d56569ffefe6cab6a2ce9b023ea4f64bfa19a4f55f";
+      };
+      default = "r0";
+    };
+  };
 }

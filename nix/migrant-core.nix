@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "29115658653998e763f619911146e1e2ea342554dfb0e44230900d348a14fdd1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/migrant-core-0.1.1.1-r0-862c78ff5e56735c7508a88ed87d30328b8433be17865973dd10464ed9aa0768.nix;
+        revNum = 0;
+        sha256 = "862c78ff5e56735c7508a88ed87d30328b8433be17865973dd10464ed9aa0768";
+      };
+      default = "r0";
+    };
+  };
 }

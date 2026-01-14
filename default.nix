@@ -4348,6 +4348,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "crypton-x509" = import ./nix/crypton-x509.nix;
   "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
   "crypton-x509-system" = import ./nix/crypton-x509-system.nix;
+  "crypton-x509-util" = import ./nix/crypton-x509-util.nix;
   "crypton-x509-validation" = import ./nix/crypton-x509-validation.nix;
   "cryptonite" = import ./nix/cryptonite.nix;
   "cryptonite-cd" = import ./nix/cryptonite-cd.nix;
