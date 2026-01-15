@@ -7,7 +7,17 @@
         revNum = 0;
         sha256 = "95e4f64f1e096f0d6d54c7111ef00fd361ae5a5cef005b48a2c536bbf5d0793c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crucible-llvm-0.6-r1-9fbd04f8108db6c7ac18173a4bc55dabd30d9400d6ec40d8e79b6e965beeccc6.nix;
+        revNum = 1;
+        sha256 = "9fbd04f8108db6c7ac18173a4bc55dabd30d9400d6ec40d8e79b6e965beeccc6";
+      };
+      r2 = {
+        nix = import ../hackage/crucible-llvm-0.6-r2-40949780a6b5ad2f272cec4c21ff565a05c1be71433fceabee6e82075f61b5fa.nix;
+        revNum = 2;
+        sha256 = "40949780a6b5ad2f272cec4c21ff565a05c1be71433fceabee6e82075f61b5fa";
+      };
+      default = "r2";
     };
   };
   "0.7" = {

@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.3.1" = {
+    sha256 = "c809239265359f1a493b7b96377d3425a99f79af4a9ddde997d9ac45b83525a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web-cookiejar-0.1.3.1-r0-afeda3b0c12165fe7f4404a7f7701d07dd4129aa9d445d9d42eb287698270a66.nix;
+        revNum = 0;
+        sha256 = "afeda3b0c12165fe7f4404a7f7701d07dd4129aa9d445d9d42eb287698270a66";
+      };
+      default = "r0";
+    };
+  };
 }

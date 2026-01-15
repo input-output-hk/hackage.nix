@@ -3613,6 +3613,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clafer" = import ./nix/clafer.nix;
   "claferIG" = import ./nix/clafer_I_G.nix;
   "claferwiki" = import ./nix/claferwiki.nix;
+  "claims-x12-dsl" = import ./nix/claims-x12-dsl.nix;
   "clang-compilation-database" = import ./nix/clang-compilation-database.nix;
   "clang-pure" = import ./nix/clang-pure.nix;
   "clanki" = import ./nix/clanki.nix;
@@ -8199,6 +8200,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hi" = import ./nix/hi.nix;
   "hi-file-parser" = import ./nix/hi-file-parser.nix;
   "hi3status" = import ./nix/hi3status.nix;
+  "hic" = import ./nix/hic.nix;
   "hiccup" = import ./nix/hiccup.nix;
   "hichi" = import ./nix/hichi.nix;
   "hid" = import ./nix/hid.nix;
@@ -10322,6 +10324,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libcspm" = import ./nix/libcspm.nix;
   "libexpect" = import ./nix/libexpect.nix;
   "libffi" = import ./nix/libffi.nix;
+  "libffi-clib" = import ./nix/libffi-clib.nix;
   "libffi-dynamic" = import ./nix/libffi-dynamic.nix;
   "libfuse3" = import ./nix/libfuse3.nix;
   "libgit" = import ./nix/libgit.nix;
@@ -10484,6 +10487,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "liquid-base" = import ./nix/liquid-base.nix;
   "liquid-bytestring" = import ./nix/liquid-bytestring.nix;
   "liquid-containers" = import ./nix/liquid-containers.nix;
+  "liquid-finfield" = import ./nix/liquid-finfield.nix;
   "liquid-fixpoint" = import ./nix/liquid-fixpoint.nix;
   "liquid-ghc-prim" = import ./nix/liquid-ghc-prim.nix;
   "liquid-parallel" = import ./nix/liquid-parallel.nix;
@@ -11456,6 +11460,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mpvguihs" = import ./nix/mpvguihs.nix;
   "mqtt" = import ./nix/mqtt.nix;
   "mqtt-hs" = import ./nix/mqtt-hs.nix;
+  "mquickjs-hs" = import ./nix/mquickjs-hs.nix;
   "mr-env" = import ./nix/mr-env.nix;
   "mrifk" = import ./nix/mrifk.nix;
   "mrm" = import ./nix/mrm.nix;
@@ -13668,6 +13673,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-combinators" = import ./nix/quickcheck-combinators.nix;
   "quickcheck-dynamic" = import ./nix/quickcheck-dynamic.nix;
   "quickcheck-enum-instances" = import ./nix/quickcheck-enum-instances.nix;
+  "quickcheck-extras" = import ./nix/quickcheck-extras.nix;
   "quickcheck-groups" = import ./nix/quickcheck-groups.nix;
   "quickcheck-higherorder" = import ./nix/quickcheck-higherorder.nix;
   "quickcheck-instances" = import ./nix/quickcheck-instances.nix;
@@ -18359,6 +18365,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wxturtle" = import ./nix/wxturtle.nix;
   "wybor" = import ./nix/wybor.nix;
   "wyvern" = import ./nix/wyvern.nix;
+  "wyvern-diagrams" = import ./nix/wyvern-diagrams.nix;
   "x-dsp" = import ./nix/x-dsp.nix;
   "x-sum-type-boilerplate" = import ./nix/x-sum-type-boilerplate.nix;
   "x11-xim" = import ./nix/x11-xim.nix;

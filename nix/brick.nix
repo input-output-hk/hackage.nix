@@ -2061,7 +2061,12 @@
         revNum = 0;
         sha256 = "068105a24b10d5a1d13c3778ba50dba4caa92216627da47e2bd7531fb0f4b94d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.1-r1-70b0ce9d96a764b900c4811eca6771847d9a5ac26174f1f370c43d055f03f099.nix;
+        revNum = 1;
+        sha256 = "70b0ce9d96a764b900c4811eca6771847d9a5ac26174f1f370c43d055f03f099";
+      };
+      default = "r1";
     };
   };
   "2.1.1" = {
@@ -2072,7 +2077,12 @@
         revNum = 0;
         sha256 = "ff36d64f1027eac17a14a83de053067413accb58b79e5002dce2a79cb8a3dcb3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.1.1-r1-a708a9b57f519625c9ad1b6287f1dd8cccc4cbc7305e1c4c892de0ab45ceb02e.nix;
+        revNum = 1;
+        sha256 = "a708a9b57f519625c9ad1b6287f1dd8cccc4cbc7305e1c4c892de0ab45ceb02e";
+      };
+      default = "r1";
     };
   };
   "2.10" = {
@@ -2094,7 +2104,12 @@
         revNum = 0;
         sha256 = "fc28cddc88e8f1058af647ae06ec7494c6b81587f82d2cfeaeec031a75923b54";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.2-r1-ac79be71cae0dfa43a5b45487fe80b614e0b8193c0d77e2afb87e89fd3e64fd6.nix;
+        revNum = 1;
+        sha256 = "ac79be71cae0dfa43a5b45487fe80b614e0b8193c0d77e2afb87e89fd3e64fd6";
+      };
+      default = "r1";
     };
   };
   "2.3" = {
@@ -2105,7 +2120,12 @@
         revNum = 0;
         sha256 = "0748c752671d5fa5bb42495a8945fa8a7ca6fac120ef5750a04de7d49086296c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.3-r1-3f84d44f55abaefdb288c7468b5f00a271bdad7e00922d1dad506cbcbebda75a.nix;
+        revNum = 1;
+        sha256 = "3f84d44f55abaefdb288c7468b5f00a271bdad7e00922d1dad506cbcbebda75a";
+      };
+      default = "r1";
     };
   };
   "2.3.1" = {
@@ -2116,7 +2136,12 @@
         revNum = 0;
         sha256 = "4c36e5d77dc360641a5aa9361949d981e4aecc7f1372c862e0b2451d614b5f5c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.3.1-r1-f6969994f217592fe9a137b664c8ab41681192f9696c188f060e8a5732c09bfe.nix;
+        revNum = 1;
+        sha256 = "f6969994f217592fe9a137b664c8ab41681192f9696c188f060e8a5732c09bfe";
+      };
+      default = "r1";
     };
   };
   "2.3.2" = {
@@ -2127,7 +2152,12 @@
         revNum = 0;
         sha256 = "306406d75165cd597cbf486492c8a37a3a5f105a16d781856a442cbceaff2365";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.3.2-r1-64356ec3ad4e601ac644adf4c87318154ce21d469b55f44c12489de98873c244.nix;
+        revNum = 1;
+        sha256 = "64356ec3ad4e601ac644adf4c87318154ce21d469b55f44c12489de98873c244";
+      };
+      default = "r1";
     };
   };
   "2.4" = {
@@ -2138,7 +2168,12 @@
         revNum = 0;
         sha256 = "e9abb07ba552358d02e8d9d8e59f1086372b0a595ca8a8fb3dd54cac15cb0b3f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/brick-2.4-r1-77e489137fe1176bf204270be357f79a5dfd4a8e867104c2154ea21507e60476.nix;
+        revNum = 1;
+        sha256 = "77e489137fe1176bf204270be357f79a5dfd4a8e867104c2154ea21507e60476";
+      };
+      default = "r1";
     };
   };
   "2.5" = {

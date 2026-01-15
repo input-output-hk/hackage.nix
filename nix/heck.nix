@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "950254deca4a54f3ab6a699a7ab9ca77f8340b1d86a6258dca43c9258c0f5949";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/heck-1.0.0.2-r0-83ff1380adc6112f6157b038da04142656f7ba36c705ba7bba47523a5f96ec07.nix;
+        revNum = 0;
+        sha256 = "83ff1380adc6112f6157b038da04142656f7ba36c705ba7bba47523a5f96ec07";
+      };
+      default = "r0";
+    };
+  };
 }

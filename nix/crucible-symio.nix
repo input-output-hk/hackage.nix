@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "89f89c1c04655c2b95bb738a1cdfdbf554d51c4c461710479fcad4f2893a9e1d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crucible-symio-0.1-r1-76bb7fd6467c93a8ae2634d97d55713848044fcee7a434b5d1e45ba7d28af8fb.nix;
+        revNum = 1;
+        sha256 = "76bb7fd6467c93a8ae2634d97d55713848044fcee7a434b5d1e45ba7d28af8fb";
+      };
+      default = "r1";
     };
   };
   "0.1.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "756ae85c7bb36a01532d1b570a47059b5b2d33e86dbf215670de5419bf7dc46b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crucible-symio-0.1.1-r1-74d026028662c954e977e8d2f2cf89691ce4d0e3df126ad92bc7fedd6bc87f7a.nix;
+        revNum = 1;
+        sha256 = "74d026028662c954e977e8d2f2cf89691ce4d0e3df126ad92bc7fedd6bc87f7a";
+      };
+      default = "r1";
     };
   };
   "0.2.0.0" = {

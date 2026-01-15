@@ -133,4 +133,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "da087f2a81e15f15dbb1ee12d71fb56e55da99098fe22898f33062fae986a78d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/typerep-map-0.7.0.0-r0-91cc11f9628d07b6799d61ef2e8ce57b127775d636c964c8b7cd3862d4b1bb4b.nix;
+        revNum = 0;
+        sha256 = "91cc11f9628d07b6799d61ef2e8ce57b127775d636c964c8b7cd3862d4b1bb4b";
+      };
+      default = "r0";
+    };
+  };
 }
