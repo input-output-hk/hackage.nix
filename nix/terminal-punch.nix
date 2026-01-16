@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "118f002ec7ab84cb0e565cf8230fe723731201331fb2790bc890f5959ccb5c31";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/terminal-punch-0.2.1-r0-0c3269f0fb4ae1e3627a8b9f0cad88a0ad895b27ed2a33f7c95eb604cbf3feda.nix;
+        revNum = 0;
+        sha256 = "0c3269f0fb4ae1e3627a8b9f0cad88a0ad895b27ed2a33f7c95eb604cbf3feda";
+      };
+      default = "r0";
+    };
+  };
 }

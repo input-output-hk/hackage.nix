@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "74f8f00c9e94be4f60b9e0a9d5fe7e3583e92e1f82527e79d8b567c98dac0988";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crux-0.7.2-r1-c7502f3b8ccf843553b3cb58768a87e8dce84bf5d247a71382e83c1988bf59fa.nix;
+        revNum = 1;
+        sha256 = "c7502f3b8ccf843553b3cb58768a87e8dce84bf5d247a71382e83c1988bf59fa";
+      };
+      default = "r1";
     };
   };
   "0.8.0.0" = {

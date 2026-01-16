@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.6.0" = {
+    sha256 = "64faf3cf3d7cf42b6cb1448318b8ff9ab3af03bb4868c93cfb80711070a9bba7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hyperbole-0.6.0-r0-7e58e57f4a6ead008a9330ef2de3eac7d213f9e4249e2a957ca99b51f18cb485.nix;
+        revNum = 0;
+        sha256 = "7e58e57f4a6ead008a9330ef2de3eac7d213f9e4249e2a957ca99b51f18cb485";
+      };
+      default = "r0";
+    };
+  };
 }
