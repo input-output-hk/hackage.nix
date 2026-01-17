@@ -70,4 +70,15 @@
       default = "r0";
     };
   };
+  "2.2.0.0" = {
+    sha256 = "7183f8599536f67afbf69c97ceb08700115e5955386e16df43c530f086e6847d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/summoner-tui-2.2.0.0-r0-207f0fa8de654a97654501533e2e4a7fddc2099f21a79d083100be1b2b92fb3e.nix;
+        revNum = 0;
+        sha256 = "207f0fa8de654a97654501533e2e4a7fddc2099f21a79d083100be1b2b92fb3e";
+      };
+      default = "r0";
+    };
+  };
 }

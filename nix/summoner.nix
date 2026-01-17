@@ -246,4 +246,15 @@
       default = "r0";
     };
   };
+  "2.2.0.0" = {
+    sha256 = "71bec713d98f3eb94078b3654f72b7d1fd49adf895afbf4311b53836cb4a7e24";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/summoner-2.2.0.0-r0-75f297562bb3693c4fe26e295c38397388d9eb0e17e21267a295de2476977f95.nix;
+        revNum = 0;
+        sha256 = "75f297562bb3693c4fe26e295c38397388d9eb0e17e21267a295de2476977f95";
+      };
+      default = "r0";
+    };
+  };
 }

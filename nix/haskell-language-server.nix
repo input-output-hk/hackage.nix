@@ -317,6 +317,17 @@
       default = "r0";
     };
   };
+  "2.13.0.0" = {
+    sha256 = "bb67863048033f96b1bf5ab47c07fed3ef0b47b749f3535b8276e0f900b9a5c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-language-server-2.13.0.0-r0-d7d8df5f8876b72c2e794250569a39a2c519f1e6a718cb506009a4a8f384521d.nix;
+        revNum = 0;
+        sha256 = "d7d8df5f8876b72c2e794250569a39a2c519f1e6a718cb506009a4a8f384521d";
+      };
+      default = "r0";
+    };
+  };
   "2.2.0.0" = {
     sha256 = "beee1d709e3fa245a5ef0d8e5c237a4eccc787a6c460f89fbe75cadc4c942621";
     revisions = {

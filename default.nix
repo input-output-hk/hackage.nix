@@ -7494,6 +7494,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hakyll-contrib-links" = import ./nix/hakyll-contrib-links.nix;
   "hakyll-convert" = import ./nix/hakyll-convert.nix;
   "hakyll-dhall" = import ./nix/hakyll-dhall.nix;
+  "hakyll-diagrams" = import ./nix/hakyll-diagrams.nix;
   "hakyll-dir-list" = import ./nix/hakyll-dir-list.nix;
   "hakyll-elm" = import ./nix/hakyll-elm.nix;
   "hakyll-favicon" = import ./nix/hakyll-favicon.nix;

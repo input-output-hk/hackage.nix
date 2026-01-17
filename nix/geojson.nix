@@ -363,4 +363,26 @@
       default = "r0";
     };
   };
+  "4.1.2" = {
+    sha256 = "acf543059c54c1f058bddbd3ac37dcd2abae5932aa98ca81bc28fda9d35bfe59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geojson-4.1.2-r0-e63bbea8299ad015613312f2188e997d188ee6da692769eff4553ae82bb4225d.nix;
+        revNum = 0;
+        sha256 = "e63bbea8299ad015613312f2188e997d188ee6da692769eff4553ae82bb4225d";
+      };
+      default = "r0";
+    };
+  };
+  "4.1.3" = {
+    sha256 = "50ffd80cc87c8e908ddd31d1743763c72b17b985c5dfb888323bb4a190128854";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/geojson-4.1.3-r0-27d1353da178b2737767b75adf40051dca7e659be33acdf89de0801c03b46360.nix;
+        revNum = 0;
+        sha256 = "27d1353da178b2737767b75adf40051dca7e659be33acdf89de0801c03b46360";
+      };
+      default = "r0";
+    };
+  };
 }
