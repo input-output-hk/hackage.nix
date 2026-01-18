@@ -6022,6 +6022,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "flatbuffers" = import ./nix/flatbuffers.nix;
   "flatbuffers-builder" = import ./nix/flatbuffers-builder.nix;
   "flatbuffers-parser" = import ./nix/flatbuffers-parser.nix;
+  "flatcv" = import ./nix/flatcv.nix;
   "flatparse" = import ./nix/flatparse.nix;
   "flay" = import ./nix/flay.nix;
   "flexible-defaults" = import ./nix/flexible-defaults.nix;
