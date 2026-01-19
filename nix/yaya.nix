@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "149684ade5fb57547fccfa55cc9e7556fd317cafc9ed8ffc79c1ef5af14d8e82";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaya-0.7.0.0-r0-1d110f98bd062412a310de9a66883a5b041c6a8703e5fa55874dc68860d9a347.nix;
+        revNum = 0;
+        sha256 = "1d110f98bd062412a310de9a66883a5b041c6a8703e5fa55874dc68860d9a347";
+      };
+      default = "r0";
+    };
+  };
 }

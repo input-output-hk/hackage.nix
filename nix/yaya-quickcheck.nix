@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "95da51c45158d8cc403cd3745d95a8d002a390a0f613fb174820af0494dfd7b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaya-quickcheck-0.3.0.0-r0-3c1ed3e3be9e891c1a09e9002a5501cb79330d33cdb4b500fa18a2c4cede906c.nix;
+        revNum = 0;
+        sha256 = "3c1ed3e3be9e891c1a09e9002a5501cb79330d33cdb4b500fa18a2c4cede906c";
+      };
+      default = "r0";
+    };
+  };
 }

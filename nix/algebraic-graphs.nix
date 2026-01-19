@@ -189,4 +189,15 @@
       default = "r3";
     };
   };
+  "0.8" = {
+    sha256 = "a4a68993245f9d3b59738f0091c0ec5b4261e2dbb3c9342c73ea1a5a203a381c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-graphs-0.8-r0-518e0c7636a67012cd876739fa2fec1ed48c417149541c9953b5a8accb63cc0e.nix;
+        revNum = 0;
+        sha256 = "518e0c7636a67012cd876739fa2fec1ed48c417149541c9953b5a8accb63cc0e";
+      };
+      default = "r0";
+    };
+  };
 }

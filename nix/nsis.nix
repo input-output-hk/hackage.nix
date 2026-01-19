@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.3.4" = {
+    sha256 = "ec84014eb89d2cc4173b4a32474e577a04593795dfedb33d1e14b88faac3a5a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nsis-0.3.4-r0-a5ac4734f11f03e51480eb98535d89282cb8cd993acca16cce98ca896e162864.nix;
+        revNum = 0;
+        sha256 = "a5ac4734f11f03e51480eb98535d89282cb8cd993acca16cce98ca896e162864";
+      };
+      default = "r0";
+    };
+  };
 }
