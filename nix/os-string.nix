@@ -151,4 +151,15 @@
       default = "r0";
     };
   };
+  "2.0.9" = {
+    sha256 = "56d6e141b160620f99ac911b51df5da183226c3247d47705e5fe819e6dd315f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/os-string-2.0.9-r0-cf49cef00519bf82cfd081a20d6aa25109041b071b474cba329fa1da28529597.nix;
+        revNum = 0;
+        sha256 = "cf49cef00519bf82cfd081a20d6aa25109041b071b474cba329fa1da28529597";
+      };
+      default = "r0";
+    };
+  };
 }

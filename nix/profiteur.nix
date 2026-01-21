@@ -284,4 +284,15 @@
       default = "r0";
     };
   };
+  "0.4.7.1" = {
+    sha256 = "3ff47e1d22c997a13065c937a07d5ed581e0b4bc5aea07fe0ad4b604cf0c734a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/profiteur-0.4.7.1-r0-95a0e9b5eb85904edb4eaad68518959216e81c9f657f880985cec26357bf241b.nix;
+        revNum = 0;
+        sha256 = "95a0e9b5eb85904edb4eaad68518959216e81c9f657f880985cec26357bf241b";
+      };
+      default = "r0";
+    };
+  };
 }

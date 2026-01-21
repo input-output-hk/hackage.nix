@@ -2068,6 +2068,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "antfarm" = import ./nix/antfarm.nix;
   "anticiv" = import ./nix/anticiv.nix;
   "antigate" = import ./nix/antigate.nix;
+  "antigen" = import ./nix/antigen.nix;
   "antikythera" = import ./nix/antikythera.nix;
   "antimirov" = import ./nix/antimirov.nix;
   "antiope-athena" = import ./nix/antiope-athena.nix;
@@ -16360,6 +16361,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symbol" = import ./nix/symbol.nix;
   "symbol-parser" = import ./nix/symbol-parser.nix;
   "symbolic-link" = import ./nix/symbolic-link.nix;
+  "symbolic-regression" = import ./nix/symbolic-regression.nix;
   "symbolise" = import ./nix/symbolise.nix;
   "symbolize" = import ./nix/symbolize.nix;
   "symbols" = import ./nix/symbols.nix;

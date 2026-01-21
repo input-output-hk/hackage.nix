@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "f9924942bc5c0e23723e667544483da15a99ead0666f0bc163975962307a9392";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wyvern-diagrams-0.3.1.0-r0-3d2a6899dbeca31c22a276ca54b37dd21df394a9308be95c89ccd01454a0061d.nix;
+        revNum = 0;
+        sha256 = "3d2a6899dbeca31c22a276ca54b37dd21df394a9308be95c89ccd01454a0061d";
+      };
+      default = "r0";
+    };
+  };
 }

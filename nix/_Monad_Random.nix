@@ -723,4 +723,15 @@
       default = "r0";
     };
   };
+  "0.6.2.1" = {
+    sha256 = "b3103b475fa6cf4d14ef1b1bce0b4b00026d70b68e8842acfe87b894e4b178b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MonadRandom-0.6.2.1-r0-41658e853fe97b97aa92f752300c82e6d7a7ab99bea425160e2746a1a7eb79dd.nix;
+        revNum = 0;
+        sha256 = "41658e853fe97b97aa92f752300c82e6d7a7ab99bea425160e2746a1a7eb79dd";
+      };
+      default = "r0";
+    };
+  };
 }
