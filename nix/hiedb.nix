@@ -209,4 +209,15 @@
       default = "r0";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "8500d0339bd2baeec255139290a1256bfbd3694bb945638a92d2e9161d38d849";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hiedb-0.8.0.0-r0-2a16762d495bf1bce4a89a6edd66330338664651334ef6df8d41932a91a7d4f5.nix;
+        revNum = 0;
+        sha256 = "2a16762d495bf1bce4a89a6edd66330338664651334ef6df8d41932a91a7d4f5";
+      };
+      default = "r0";
+    };
+  };
 }

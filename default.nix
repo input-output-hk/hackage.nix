@@ -10322,6 +10322,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libBF" = import ./nix/lib_B_F.nix;
   "libGenI" = import ./nix/lib_Gen_I.nix;
   "libarchive" = import ./nix/libarchive.nix;
+  "libarchive-clib" = import ./nix/libarchive-clib.nix;
   "libarchive-conduit" = import ./nix/libarchive-conduit.nix;
   "libconfig" = import ./nix/libconfig.nix;
   "libcspm" = import ./nix/libcspm.nix;
