@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.8.2" = {
+    sha256 = "3560418e3e18940f7fd2692efca7aaacbad24a84a149c5650dd685757f9e179b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flat-tex-0.8.2-r0-a56b52f654023314cae9d8904b6467e97101198b5255537f7177c0d5bf19948d.nix;
+        revNum = 0;
+        sha256 = "a56b52f654023314cae9d8904b6467e97101198b5255537f7177c0d5bf19948d";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -7903,6 +7903,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-pool" = import ./nix/hasql-pool.nix;
   "hasql-postgres" = import ./nix/hasql-postgres.nix;
   "hasql-postgres-options" = import ./nix/hasql-postgres-options.nix;
+  "hasql-postgresql-types" = import ./nix/hasql-postgresql-types.nix;
   "hasql-queue" = import ./nix/hasql-queue.nix;
   "hasql-resource-pool" = import ./nix/hasql-resource-pool.nix;
   "hasql-simple" = import ./nix/hasql-simple.nix;
@@ -11240,6 +11241,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mole" = import ./nix/mole.nix;
   "mollie-api-haskell" = import ./nix/mollie-api-haskell.nix;
   "monad-abort-fd" = import ./nix/monad-abort-fd.nix;
+  "monad-actions" = import ./nix/monad-actions.nix;
   "monad-atom" = import ./nix/monad-atom.nix;
   "monad-atom-simple" = import ./nix/monad-atom-simple.nix;
   "monad-batcher" = import ./nix/monad-batcher.nix;
@@ -13191,6 +13193,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-simple-migration" = import ./nix/postgresql-simple-migration.nix;
   "postgresql-simple-named" = import ./nix/postgresql-simple-named.nix;
   "postgresql-simple-opts" = import ./nix/postgresql-simple-opts.nix;
+  "postgresql-simple-postgresql-types" = import ./nix/postgresql-simple-postgresql-types.nix;
   "postgresql-simple-queue" = import ./nix/postgresql-simple-queue.nix;
   "postgresql-simple-sop" = import ./nix/postgresql-simple-sop.nix;
   "postgresql-simple-typed" = import ./nix/postgresql-simple-typed.nix;
@@ -13205,6 +13208,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-tx-squeal-compat-simple" = import ./nix/postgresql-tx-squeal-compat-simple.nix;
   "postgresql-typed" = import ./nix/postgresql-typed.nix;
   "postgresql-typed-lifted" = import ./nix/postgresql-typed-lifted.nix;
+  "postgresql-types" = import ./nix/postgresql-types.nix;
+  "postgresql-types-algebra" = import ./nix/postgresql-types-algebra.nix;
   "postgrest" = import ./nix/postgrest.nix;
   "postgrest-ws" = import ./nix/postgrest-ws.nix;
   "postie" = import ./nix/postie.nix;
