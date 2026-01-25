@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "4a08becd08aa9ce28644302fe5f870b37f324d3b612c4381d9d093a3d37d13a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-ffprobe-0.1.0.2-r0-25157b34dcd8b0106eee37af58796ca3cbdb93f2f4e2fb36c6979210048362b4.nix;
+        revNum = 0;
+        sha256 = "25157b34dcd8b0106eee37af58796ca3cbdb93f2f4e2fb36c6979210048362b4";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.3" = {
+    sha256 = "5508f10022d7221fde5fd82fbabf0d916499b1896b639306236af6c1547594b0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-ffprobe-0.1.0.3-r0-910fa565652b9b634260c07cba2d4aaa9c45d779a526e963ab54e5c1af7269e6.nix;
+        revNum = 0;
+        sha256 = "910fa565652b9b634260c07cba2d4aaa9c45d779a526e963ab54e5c1af7269e6";
+      };
+      default = "r0";
+    };
+  };
 }
