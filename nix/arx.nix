@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.3.3" = {
+    sha256 = "8d6c665dc63a358b664a7e36b988bb1bd4fae4947fe8dbccf54d5617658aefa1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arx-0.3.3-r0-af41717a9851c626a3dcaf5f19eeac482f1d37e23132b4d1f905bf76dc4a23b7.nix;
+        revNum = 0;
+        sha256 = "af41717a9851c626a3dcaf5f19eeac482f1d37e23132b4d1f905bf76dc4a23b7";
+      };
+      default = "r0";
+    };
+  };
 }
