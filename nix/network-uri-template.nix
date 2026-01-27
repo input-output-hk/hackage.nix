@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "a5d671cbc0f54ddcf705233528701db2927f7321227d2ef1e9e2d5cb49b7e7b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-uri-template-0.1.2.0-r0-e68e03175c21102ad36a1a3e4805d661780caea79197e50a2f9776a8023547fd.nix;
+        revNum = 0;
+        sha256 = "e68e03175c21102ad36a1a3e4805d661780caea79197e50a2f9776a8023547fd";
+      };
+      default = "r0";
+    };
+  };
 }

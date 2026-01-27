@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "d1a87947ee286673f06754f57aa1d2e84ab61a0a8ff76341e2a1c8f578b02a1a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ruby-marshal-0.0.1-r2-9a9c32682f17120e410512c008284709d8eea9097ec898f4474200a891d719aa.nix;
+        revNum = 2;
+        sha256 = "9a9c32682f17120e410512c008284709d8eea9097ec898f4474200a891d719aa";
+      };
+      default = "r2";
     };
   };
   "0.1.0" = {
@@ -28,7 +33,12 @@
         revNum = 1;
         sha256 = "d64b88914a26ddc3802dfd5e68e73f37d1199abd1d6486f0c7b69058a15de353";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/ruby-marshal-0.1.0-r2-5c6841cf5e2d6b52111be816f8656c77155cbf4545e8010555912b14c039911a.nix;
+        revNum = 2;
+        sha256 = "5c6841cf5e2d6b52111be816f8656c77155cbf4545e8010555912b14c039911a";
+      };
+      default = "r2";
     };
   };
   "0.1.1" = {
@@ -49,7 +59,12 @@
         revNum = 2;
         sha256 = "9ff81150c224b80ae90899398c7cc8b9da88d50edd40760cd59d07750a9e35bc";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ruby-marshal-0.1.1-r3-cea1238718f3a47aeb817166c4dcc8b424e7b734680d28b64eab40ca5eef1a94.nix;
+        revNum = 3;
+        sha256 = "cea1238718f3a47aeb817166c4dcc8b424e7b734680d28b64eab40ca5eef1a94";
+      };
+      default = "r3";
     };
   };
   "0.1.2" = {
@@ -70,7 +85,12 @@
         revNum = 2;
         sha256 = "4281008dde200aaa474ec986cd37be6fde1f58e1eb935286f8a7b0469a09c83d";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ruby-marshal-0.1.2-r3-2699015589aa41a765f495872ac340f1b15249e0a4fac571a9057e97cccd57b9.nix;
+        revNum = 3;
+        sha256 = "2699015589aa41a765f495872ac340f1b15249e0a4fac571a9057e97cccd57b9";
+      };
+      default = "r3";
     };
   };
   "0.1.3" = {
@@ -91,7 +111,12 @@
         revNum = 2;
         sha256 = "9414eca9e8ae25fc738c59d56a18e3fb7c9ad746945b74b050ec497d907365f2";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ruby-marshal-0.1.3-r3-de5e3fd8ca1408824c7df614495ea28460e1e7ae2ef01659fe608a476420701d.nix;
+        revNum = 3;
+        sha256 = "de5e3fd8ca1408824c7df614495ea28460e1e7ae2ef01659fe608a476420701d";
+      };
+      default = "r3";
     };
   };
   "0.2.0" = {
@@ -102,7 +127,12 @@
         revNum = 0;
         sha256 = "7d90418d02621d2553ca9d9901af165f17ce231e2e548f4523f3d63cbee8805b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ruby-marshal-0.2.0-r1-c6e216d370497a56afdf4c9e02ac3d4400fa2cc0ec5bf2f5505b8cf5174ef060.nix;
+        revNum = 1;
+        sha256 = "c6e216d370497a56afdf4c9e02ac3d4400fa2cc0ec5bf2f5505b8cf5174ef060";
+      };
+      default = "r1";
     };
   };
   "0.2.1" = {
@@ -123,7 +153,12 @@
         revNum = 2;
         sha256 = "2d5703a50bc6e9b1b3bd68ba75042a2a3627e82ae309e14bd670b8b3c57ca66a";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ruby-marshal-0.2.1-r3-6a36a6be1badcabd98d0c269faace6672e4231aaa030bb261ddc4ed3f8cffb07.nix;
+        revNum = 3;
+        sha256 = "6a36a6be1badcabd98d0c269faace6672e4231aaa030bb261ddc4ed3f8cffb07";
+      };
+      default = "r3";
     };
   };
 }

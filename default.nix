@@ -2481,6 +2481,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "azimuth-hs" = import ./nix/azimuth-hs.nix;
   "aztecs" = import ./nix/aztecs.nix;
   "aztecs-asset" = import ./nix/aztecs-asset.nix;
+  "aztecs-gl" = import ./nix/aztecs-gl.nix;
+  "aztecs-glfw" = import ./nix/aztecs-glfw.nix;
   "aztecs-hierarchy" = import ./nix/aztecs-hierarchy.nix;
   "aztecs-sdl" = import ./nix/aztecs-sdl.nix;
   "aztecs-sdl-image" = import ./nix/aztecs-sdl-image.nix;
@@ -8627,6 +8629,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-gchart" = import ./nix/hs-gchart.nix;
   "hs-gen-iface" = import ./nix/hs-gen-iface.nix;
   "hs-gizapp" = import ./nix/hs-gizapp.nix;
+  "hs-hath" = import ./nix/hs-hath.nix;
   "hs-highlight" = import ./nix/hs-highlight.nix;
   "hs-inspector" = import ./nix/hs-inspector.nix;
   "hs-ix" = import ./nix/hs-ix.nix;

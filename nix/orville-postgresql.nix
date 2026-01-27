@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.1.0" = {
+    sha256 = "fbca9d616833326e0d4c058f1953c2a629838ce145e25e5ee0f169e8ad3a6708";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/orville-postgresql-1.1.1.0-r0-eac1118bebf37b7d14eb8a8d7d3cafb926974eb4a10f33765b69de7e7932bf7d.nix;
+        revNum = 0;
+        sha256 = "eac1118bebf37b7d14eb8a8d7d3cafb926974eb4a10f33765b69de7e7932bf7d";
+      };
+      default = "r0";
+    };
+  };
 }
