@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.0.4" = {
+    sha256 = "f51f0171d85fbdcb82cc23db9cd872f15c1fce900b265e555c826ad3d71e85e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pollock-0.1.0.4-r0-5f3de2398dc4afcbbea04fd24a6a0d2f77236e606bec36dc2d543bd04b9e117e.nix;
+        revNum = 0;
+        sha256 = "5f3de2398dc4afcbbea04fd24a6a0d2f77236e606bec36dc2d543bd04b9e117e";
+      };
+      default = "r0";
+    };
+  };
 }

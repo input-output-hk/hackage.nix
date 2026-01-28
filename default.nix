@@ -2482,6 +2482,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aztecs" = import ./nix/aztecs.nix;
   "aztecs-asset" = import ./nix/aztecs-asset.nix;
   "aztecs-gl" = import ./nix/aztecs-gl.nix;
+  "aztecs-gl-text" = import ./nix/aztecs-gl-text.nix;
   "aztecs-glfw" = import ./nix/aztecs-glfw.nix;
   "aztecs-hierarchy" = import ./nix/aztecs-hierarchy.nix;
   "aztecs-sdl" = import ./nix/aztecs-sdl.nix;

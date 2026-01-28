@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "e577128e22a6e44de33e2a40186d63fecaa1a467322c7ba3fd5795d46ebc0f47";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aztecs-gl-0.3.0-r0-8595a9735c0d21ed047b34b1cf23d7eb807166fc0407468100e877ee8487520e.nix;
+        revNum = 0;
+        sha256 = "8595a9735c0d21ed047b34b1cf23d7eb807166fc0407468100e877ee8487520e";
+      };
+      default = "r0";
+    };
+  };
 }

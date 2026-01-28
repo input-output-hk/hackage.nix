@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "2.1.0.0" = {
+    sha256 = "990bf578ed51904fd8305da147578bc7fb183449e9ba43a802060f15b706f011";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fixed-vector-QC-2.1.0.0-r0-636c90a2b4a75a260f7d3e4c523c9dd4f0cca7666539c24b45e8ac18fb2ee458.nix;
+        revNum = 0;
+        sha256 = "636c90a2b4a75a260f7d3e4c523c9dd4f0cca7666539c24b45e8ac18fb2ee458";
+      };
+      default = "r0";
+    };
+  };
 }

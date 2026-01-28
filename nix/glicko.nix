@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.3.0.3" = {
+    sha256 = "821f528e83e9b5d3b3ce3156b84cb79adc67706bd96d068f136b5a18b920746c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glicko-0.3.0.3-r0-91c64f1b3a543d66455a319974e1a8c1c9229099d3b16848152cfb885e7b56a7.nix;
+        revNum = 0;
+        sha256 = "91c64f1b3a543d66455a319974e1a8c1c9229099d3b16848152cfb885e7b56a7";
+      };
+      default = "r0";
+    };
+  };
 }

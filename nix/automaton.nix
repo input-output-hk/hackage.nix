@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.6.1" = {
+    sha256 = "b5917735d9ae9a58ebefd8eed214a9b2386c5f8b32c25bc393a37d3fce66aca6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/automaton-1.6.1-r0-615cfa9a0f7d30a549604b1ae2c75022e9cfd906bad3f521cb3e9afc4e1aa0d2.nix;
+        revNum = 0;
+        sha256 = "615cfa9a0f7d30a549604b1ae2c75022e9cfd906bad3f521cb3e9afc4e1aa0d2";
+      };
+      default = "r0";
+    };
+  };
 }
