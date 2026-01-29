@@ -202,4 +202,15 @@
       default = "r0";
     };
   };
+  "2.0.1.6" = {
+    sha256 = "5f737e9ab9254435bb33093c13eeeeaa4ea9d5d7ec11cb00db60395b29568c78";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/srtree-2.0.1.6-r0-618f3d35b07f7b570bda9400002b740db8d018f2ac8337fd9eb035882c268816.nix;
+        revNum = 0;
+        sha256 = "618f3d35b07f7b570bda9400002b740db8d018f2ac8337fd9eb035882c268816";
+      };
+      default = "r0";
+    };
+  };
 }

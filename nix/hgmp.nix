@@ -96,7 +96,12 @@
         revNum = 2;
         sha256 = "b3eb47429c31be3cac8b124cc0e1836fc9d7ca149c13c896362e95bbce03c696";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/hgmp-0.1.2.1-r3-ed836689cdecc9beedbdddb5a1a6b1eeb9ee95d2926c56b5e7ab605fcd8799d4.nix;
+        revNum = 3;
+        sha256 = "ed836689cdecc9beedbdddb5a1a6b1eeb9ee95d2926c56b5e7ab605fcd8799d4";
+      };
+      default = "r3";
     };
   };
 }

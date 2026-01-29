@@ -8092,6 +8092,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hemokit" = import ./nix/hemokit.nix;
   "hen" = import ./nix/hen.nix;
   "henet" = import ./nix/henet.nix;
+  "henforcer" = import ./nix/henforcer.nix;
   "hepevt" = import ./nix/hepevt.nix;
   "heph-sparse-set" = import ./nix/heph-sparse-set.nix;
   "heptapod" = import ./nix/heptapod.nix;

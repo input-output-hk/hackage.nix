@@ -122,4 +122,15 @@
       default = "r0";
     };
   };
+  "1.2.0.4" = {
+    sha256 = "ef93393accd6550040d0232a4f9e688b4fb5886bcdcebed6cd62e45d04c74513";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ztail-1.2.0.4-r0-8bedd6ea19db268c245084f864ffd0ab990998ce12fdadefd6f5f43a016b1847.nix;
+        revNum = 0;
+        sha256 = "8bedd6ea19db268c245084f864ffd0ab990998ce12fdadefd6f5f43a016b1847";
+      };
+      default = "r0";
+    };
+  };
 }
