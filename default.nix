@@ -1628,6 +1628,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "algebraic-graph-duoids" = import ./nix/algebraic-graph-duoids.nix;
   "algebraic-graphs" = import ./nix/algebraic-graphs.nix;
   "algebraic-graphs-io" = import ./nix/algebraic-graphs-io.nix;
+  "algebraic-path" = import ./nix/algebraic-path.nix;
   "algebraic-prelude" = import ./nix/algebraic-prelude.nix;
   "algo-s" = import ./nix/algo-s.nix;
   "algolia" = import ./nix/algolia.nix;
@@ -5235,6 +5236,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dvdread" = import ./nix/dvdread.nix;
   "dvi-processing" = import ./nix/dvi-processing.nix;
   "dvorak" = import ./nix/dvorak.nix;
+  "dvv" = import ./nix/dvv.nix;
   "dwarf" = import ./nix/dwarf.nix;
   "dwarf-el" = import ./nix/dwarf-el.nix;
   "dwarfadt" = import ./nix/dwarfadt.nix;

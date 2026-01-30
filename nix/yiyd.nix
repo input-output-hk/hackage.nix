@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "61ba622311c29e1a5df69a35b6158f2327dce7076e98925cb3b7fb85a8f2070f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yiyd-1.1.0-r0-c192d9c24e66278b24b8490e3436437759b39841b869bc479f153a06a75c8d17.nix;
+        revNum = 0;
+        sha256 = "c192d9c24e66278b24b8490e3436437759b39841b869bc479f153a06a75c8d17";
+      };
+      default = "r0";
+    };
+  };
 }
