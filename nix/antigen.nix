@@ -66,7 +66,12 @@
         revNum = 1;
         sha256 = "dd7ac3da4524ac63b83ab242cd591b3d5ae152206994d9e57ee9667dc8e57bda";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/antigen-0.3.0.0-r2-b51297961ac44d8209378ee0b38724c3fe52b701668cb2a5e9767159f9c1cd92.nix;
+        revNum = 2;
+        sha256 = "b51297961ac44d8209378ee0b38724c3fe52b701668cb2a5e9767159f9c1cd92";
+      };
+      default = "r2";
     };
   };
 }

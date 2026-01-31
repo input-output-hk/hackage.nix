@@ -7133,6 +7133,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gogol-youtube-analytics" = import ./nix/gogol-youtube-analytics.nix;
   "gogol-youtube-reporting" = import ./nix/gogol-youtube-reporting.nix;
   "goldplate" = import ./nix/goldplate.nix;
+  "golds-gym" = import ./nix/golds-gym.nix;
   "gooey" = import ./nix/gooey.nix;
   "google-cloud" = import ./nix/google-cloud.nix;
   "google-cloud-common" = import ./nix/google-cloud-common.nix;
@@ -9989,6 +9990,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "knit-haskell" = import ./nix/knit-haskell.nix;
   "knob" = import ./nix/knob.nix;
   "knots" = import ./nix/knots.nix;
+  "known-lists" = import ./nix/known-lists.nix;
   "koellner-phonetic" = import ./nix/koellner-phonetic.nix;
   "koji" = import ./nix/koji.nix;
   "koji-install" = import ./nix/koji-install.nix;
