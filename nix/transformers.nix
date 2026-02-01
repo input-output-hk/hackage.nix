@@ -693,7 +693,12 @@
         revNum = 0;
         sha256 = "7b36be73734cbb49d0499730ad226b798e63eb20ff1a6a96f9b99d3246060d82";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/transformers-0.6.3.0-r1-9be284cf67a9b843263192cd5a2d013f67f9a5bee48f6592b936e514cc53278a.nix;
+        revNum = 1;
+        sha256 = "9be284cf67a9b843263192cd5a2d013f67f9a5bee48f6592b936e514cc53278a";
+      };
+      default = "r1";
     };
   };
 }

@@ -3952,6 +3952,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "concatenative" = import ./nix/concatenative.nix;
   "conceit" = import ./nix/conceit.nix;
   "concise" = import ./nix/concise.nix;
+  "concoct" = import ./nix/concoct.nix;
   "concorde" = import ./nix/concorde.nix;
   "concraft" = import ./nix/concraft.nix;
   "concraft-hr" = import ./nix/concraft-hr.nix;

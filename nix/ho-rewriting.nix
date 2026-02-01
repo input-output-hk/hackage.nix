@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "5203cf248f9538cd2e25ae53b3f3658cf5b17f454bbae4430093c6ee8efa9263";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ho-rewriting-0.3-r0-ed986ddcb5af59efd3460a718412b72cefb06d22e3038f8fecb3d73312bf0801.nix;
+        revNum = 0;
+        sha256 = "ed986ddcb5af59efd3460a718412b72cefb06d22e3038f8fecb3d73312bf0801";
+      };
+      default = "r0";
+    };
+  };
 }
