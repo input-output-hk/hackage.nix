@@ -98,6 +98,17 @@
       default = "r0";
     };
   };
+  "0.13" = {
+    sha256 = "c72ce2e569508ec6218d020d1bc16fcb504a7975bfdd9238eb047d02bd5877b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/citeproc-0.13-r0-56f1b01073df5ba6f058cd90799c070bb13dff460b86808d9ba04ca99142b495.nix;
+        revNum = 0;
+        sha256 = "56f1b01073df5ba6f058cd90799c070bb13dff460b86808d9ba04ca99142b495";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "26aef254629e08e5fb7c01714d2f21b8af1cb77a702256bc8c4e35f67d7a2bca";
     revisions = {

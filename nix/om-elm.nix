@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "2.0.1.2" = {
+    sha256 = "adef70b7dce1f2dab027b7ee5513c941697cf64b88993a38e5a7ae54bee4fd04";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-elm-2.0.1.2-r0-cdc95b7beaa1d832d21592766550615a382591ef7ffd151372f16b73a5409138.nix;
+        revNum = 0;
+        sha256 = "cdc95b7beaa1d832d21592766550615a382591ef7ffd151372f16b73a5409138";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -6456,6 +6456,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "generic-deepseq" = import ./nix/generic-deepseq.nix;
   "generic-deriving" = import ./nix/generic-deriving.nix;
   "generic-diff" = import ./nix/generic-diff.nix;
+  "generic-diff-instances" = import ./nix/generic-diff-instances.nix;
   "generic-enum" = import ./nix/generic-enum.nix;
   "generic-enumeration" = import ./nix/generic-enumeration.nix;
   "generic-env" = import ./nix/generic-env.nix;
@@ -6580,6 +6581,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-clippy-plugin" = import ./nix/ghc-clippy-plugin.nix;
   "ghc-compact" = import ./nix/ghc-compact.nix;
   "ghc-compat" = import ./nix/ghc-compat.nix;
+  "ghc-compat-plugin" = import ./nix/ghc-compat-plugin.nix;
   "ghc-core" = import ./nix/ghc-core.nix;
   "ghc-core-html" = import ./nix/ghc-core-html.nix;
   "ghc-core-smallstep" = import ./nix/ghc-core-smallstep.nix;

@@ -21,4 +21,37 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "35dd8c97e64ae29df60f650ed5c7329722a3f4e7684e58ed48443a58408b46fb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/golds-gym-0.3.0.0-r0-ec0bc1c62e802a5fed8b33f0d91e141623ba429a7de64e50b643241e2b8d902e.nix;
+        revNum = 0;
+        sha256 = "ec0bc1c62e802a5fed8b33f0d91e141623ba429a7de64e50b643241e2b8d902e";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.0" = {
+    sha256 = "683cbc26b62eb87f9b7abfd2d46cfdd13151376aced890162d62cb5e4a06ac01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/golds-gym-0.4.0.0-r0-c2cbc4e4f20b0fc4212febb84b11c80edad5c74fe81378ad4c8189b5b5c10edb.nix;
+        revNum = 0;
+        sha256 = "c2cbc4e4f20b0fc4212febb84b11c80edad5c74fe81378ad4c8189b5b5c10edb";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.0.0" = {
+    sha256 = "676e680b9be541de53440e931786270f9a2ac32630ae1d68fda07556e3ced7c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/golds-gym-0.5.0.0-r0-30f1c93cd8c07ceb8c41d305347eaded6b84d24b593de964e10c4e429edfa749.nix;
+        revNum = 0;
+        sha256 = "30f1c93cd8c07ceb8c41d305347eaded6b84d24b593de964e10c4e429edfa749";
+      };
+      default = "r0";
+    };
+  };
 }
