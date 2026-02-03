@@ -8100,6 +8100,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "henet" = import ./nix/henet.nix;
   "henforcer" = import ./nix/henforcer.nix;
   "hepevt" = import ./nix/hepevt.nix;
+  "heph-aligned-storable" = import ./nix/heph-aligned-storable.nix;
   "heph-sparse-set" = import ./nix/heph-sparse-set.nix;
   "heptapod" = import ./nix/heptapod.nix;
   "her-lexer" = import ./nix/her-lexer.nix;
@@ -12446,6 +12447,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-symreg" = import ./nix/pandoc-symreg.nix;
   "pandoc-throw" = import ./nix/pandoc-throw.nix;
   "pandoc-types" = import ./nix/pandoc-types.nix;
+  "pandoc-typescript" = import ./nix/pandoc-typescript.nix;
   "pandoc-unlit" = import ./nix/pandoc-unlit.nix;
   "pandoc-utils" = import ./nix/pandoc-utils.nix;
   "pandoc-vimhl" = import ./nix/pandoc-vimhl.nix;

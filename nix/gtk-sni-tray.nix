@@ -164,4 +164,15 @@
       default = "r0";
     };
   };
+  "0.1.9.1" = {
+    sha256 = "80895d1a8f0c9b0053e1552d857b673a73ffda7b4641d2bc1e34f3a35c4e8cbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.9.1-r0-a5b458c6d7a9782f489b0bb75729384c42dcb96dc4ea5af2fc742e6fd42aa685.nix;
+        revNum = 0;
+        sha256 = "a5b458c6d7a9782f489b0bb75729384c42dcb96dc4ea5af2fc742e6fd42aa685";
+      };
+      default = "r0";
+    };
+  };
 }
