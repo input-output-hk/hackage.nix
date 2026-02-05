@@ -17967,6 +17967,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vowpal-utils" = import ./nix/vowpal-utils.nix;
   "voyeur" = import ./nix/voyeur.nix;
   "vp-tree" = import ./nix/vp-tree.nix;
+  "vpn-router" = import ./nix/vpn-router.nix;
   "vpq" = import ./nix/vpq.nix;
   "vrpn" = import ./nix/vrpn.nix;
   "vt-utils" = import ./nix/vt-utils.nix;

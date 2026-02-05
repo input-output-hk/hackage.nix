@@ -43,6 +43,17 @@
       default = "r0";
     };
   };
+  "0.9.11" = {
+    sha256 = "6d86ec84e2ddf176ab346cc86e8a452e673fdca01d6241c31fefa5d1c9b689a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/qrcode-core-0.9.11-r0-7814f99264bdb1de9e60e17dcb1166fa24fc3e97004c27783475b015e2e02d7d.nix;
+        revNum = 0;
+        sha256 = "7814f99264bdb1de9e60e17dcb1166fa24fc3e97004c27783475b015e2e02d7d";
+      };
+      default = "r0";
+    };
+  };
   "0.9.2" = {
     sha256 = "fe56ac16900741260e3074b6957c89e3e3cd49bbfbcd83d338150e5b8c0a429d";
     revisions = {

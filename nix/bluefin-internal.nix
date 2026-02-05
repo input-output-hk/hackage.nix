@@ -343,4 +343,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "3daf46e6f73c5faac2366c0d2727ebc7180c7accb52539d93818d766fd72a1a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluefin-internal-0.4.0.0-r0-9dc2cebff26b6dd8f73cd45314fd4d0dcea9d9822850ae6329030aaaa13eaed7.nix;
+        revNum = 0;
+        sha256 = "9dc2cebff26b6dd8f73cd45314fd4d0dcea9d9822850ae6329030aaaa13eaed7";
+      };
+      default = "r0";
+    };
+  };
 }
