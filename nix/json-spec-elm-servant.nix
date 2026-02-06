@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.4.4.3" = {
+    sha256 = "44af36d84a1526e514b38cd2e4e5d1def338a98e6817a9c661711dade27d3304";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/json-spec-elm-servant-0.4.4.3-r0-b297f6eace27108fc3f52fb31b73bb6fb66fde2998ecb7371e7dce017edac710.nix;
+        revNum = 0;
+        sha256 = "b297f6eace27108fc3f52fb31b73bb6fb66fde2998ecb7371e7dce017edac710";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -85,4 +85,15 @@
       default = "r0";
     };
   };
+  "1.3.2.0" = {
+    sha256 = "b32550dc9009844fda277707cc99c98aed1dbc0679948bd246c493b61e4850c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cached-io-1.3.2.0-r0-6da1e2f0c589b6c338261731ef16b05bbc74b467b4048fe0ddee12db8b5cd8fc.nix;
+        revNum = 0;
+        sha256 = "6da1e2f0c589b6c338261731ef16b05bbc74b467b4048fe0ddee12db8b5cd8fc";
+      };
+      default = "r0";
+    };
+  };
 }
