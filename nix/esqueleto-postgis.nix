@@ -43,4 +43,26 @@
       default = "r0";
     };
   };
+  "2.0.0" = {
+    sha256 = "f457f2576bb79dd50c0d504ae7cd9e74f6cdd70992dbee3ecb3e175467bb0051";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-postgis-2.0.0-r0-eba7ea2b6431fb48cb63adb4c33ea86742ba0a47f64f6bb3fd7472f380d6669c.nix;
+        revNum = 0;
+        sha256 = "eba7ea2b6431fb48cb63adb4c33ea86742ba0a47f64f6bb3fd7472f380d6669c";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.1" = {
+    sha256 = "5140ac11a806cfef05f6108e60aae8295b8221d14c9bb50276fbd4305750ec57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-postgis-2.0.1-r0-b48d948cddd9db9f0c761c6aa8972fef2a62b26d50848bd1365368d853a02c11.nix;
+        revNum = 0;
+        sha256 = "b48d948cddd9db9f0c761c6aa8972fef2a62b26d50848bd1365368d853a02c11";
+      };
+      default = "r0";
+    };
+  };
 }

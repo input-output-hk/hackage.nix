@@ -74,4 +74,20 @@
       default = "r2";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "8783858dcacd1697fde74da0b7bb87f7a68afc3bf58288c0a693d20372d4ff4e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/antigen-0.3.1.0-r0-9d5f86fc2c2743d544628939c193a20b16750fb835a4f745e3f56ed90c3c46e1.nix;
+        revNum = 0;
+        sha256 = "9d5f86fc2c2743d544628939c193a20b16750fb835a4f745e3f56ed90c3c46e1";
+      };
+      r1 = {
+        nix = import ../hackage/antigen-0.3.1.0-r1-41f46b318c14f4700feb8a8c4fe98d5ac758d5a8c6c51357470b7b48253fa7d4.nix;
+        revNum = 1;
+        sha256 = "41f46b318c14f4700feb8a8c4fe98d5ac758d5a8c6c51357470b7b48253fa7d4";
+      };
+      default = "r1";
+    };
+  };
 }

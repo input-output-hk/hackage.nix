@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.2.0" = {
+    sha256 = "5473ddebcd4266b15c497e5693d5628cce1e4ae666fad8c7055708d1e1af979b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/CPL-0.2.0-r0-ac2cba779c77be47130b4ef8624c3bf4bede2ad9602e0d60737169c1a5d0c890.nix;
+        revNum = 0;
+        sha256 = "ac2cba779c77be47130b4ef8624c3bf4bede2ad9602e0d60737169c1a5d0c890";
+      };
+      default = "r0";
+    };
+  };
 }
