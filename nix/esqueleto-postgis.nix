@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "2.1.0" = {
+    sha256 = "ac2d672cc52db47d6a0b49361fde6c09215dbf0292e574a6d816e05d4877a2cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/esqueleto-postgis-2.1.0-r0-0576d2f757b470b6e4c8217a0785701e71888055dc1287b91653cceac20813c6.nix;
+        revNum = 0;
+        sha256 = "0576d2f757b470b6e4c8217a0785701e71888055dc1287b91653cceac20813c6";
+      };
+      default = "r0";
+    };
+  };
 }

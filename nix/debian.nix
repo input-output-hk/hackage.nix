@@ -746,4 +746,26 @@
       default = "r0";
     };
   };
+  "4.1.1" = {
+    sha256 = "3a8e7f3c937a0eba798b355bd54bf61a2545b811deabaef74c2f16df0933cc74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/debian-4.1.1-r0-681b78aadce98f666f787d08616ab5556b46b949d47a53fcf9d84731208a6e84.nix;
+        revNum = 0;
+        sha256 = "681b78aadce98f666f787d08616ab5556b46b949d47a53fcf9d84731208a6e84";
+      };
+      default = "r0";
+    };
+  };
+  "4.1.2" = {
+    sha256 = "384d2db892a4e66d9c7e8b476c21acf0420464617ec48f1a96cecbe2eaaff9f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/debian-4.1.2-r0-d3cc6224ba4656f2f9235dd1f922e267929cd6f1bc17863e1f3ca580aa24026c.nix;
+        revNum = 0;
+        sha256 = "d3cc6224ba4656f2f9235dd1f922e267929cd6f1bc17863e1f3ca580aa24026c";
+      };
+      default = "r0";
+    };
+  };
 }

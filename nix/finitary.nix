@@ -144,7 +144,12 @@
         revNum = 0;
         sha256 = "078f5f082c25bb537eeb1c9edd8605bedabe9e1225f759e3c9e835b62cb7f756";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/finitary-2.2.0.0-r1-486bb48934e2cbf2706a8b10a71f4924b19ac5bdeeeed7268db486032d35d246.nix;
+        revNum = 1;
+        sha256 = "486bb48934e2cbf2706a8b10a71f4924b19ac5bdeeeed7268db486032d35d246";
+      };
+      default = "r1";
     };
   };
 }
