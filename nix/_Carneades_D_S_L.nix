@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "4a6622aa0f68792c48647b588b71f2de04e4cd2924cfb4b2bd1882a216c91945";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/CarneadesDSL-2.0.0.0-r0-060bac6edb706127bf2075817ed0f1eb821759648bbabf83947b9b1fdd340260.nix;
+        revNum = 0;
+        sha256 = "060bac6edb706127bf2075817ed0f1eb821759648bbabf83947b9b1fdd340260";
+      };
+      default = "r0";
+    };
+  };
 }

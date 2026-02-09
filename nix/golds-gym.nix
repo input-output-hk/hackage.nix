@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "833970c95ebaa8d8213c782a162f49b0561e568a90f8b478dbe77bdf8c4c6e01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/golds-gym-0.7.0.0-r0-52998c2f2d0f8e923b3fbe5ff1b3c2207075be3af30d82b0d718e9e744dd2b59.nix;
+        revNum = 0;
+        sha256 = "52998c2f2d0f8e923b3fbe5ff1b3c2207075be3af30d82b0d718e9e744dd2b59";
+      };
+      default = "r0";
+    };
+  };
 }

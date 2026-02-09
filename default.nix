@@ -666,6 +666,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "IOSpec" = import ./nix/_I_O_Spec.nix;
   "IPv6Addr" = import ./nix/_I_Pv6_Addr.nix;
   "IPv6DB" = import ./nix/_I_Pv6_D_B.nix;
+  "IStr" = import ./nix/_I_Str.nix;
   "IcoGrid" = import ./nix/_Ico_Grid.nix;
   "IfElse" = import ./nix/_If_Else.nix;
   "Imlib" = import ./nix/_Imlib.nix;
@@ -10559,6 +10560,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ll-picosat" = import ./nix/ll-picosat.nix;
   "llama-cpp-haskell" = import ./nix/llama-cpp-haskell.nix;
   "llama-cpp-hs" = import ./nix/llama-cpp-hs.nix;
+  "llm-with-context" = import ./nix/llm-with-context.nix;
   "llrbtree" = import ./nix/llrbtree.nix;
   "llsd" = import ./nix/llsd.nix;
   "llvm" = import ./nix/llvm.nix;
@@ -14016,6 +14018,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reflex-backend-socket" = import ./nix/reflex-backend-socket.nix;
   "reflex-backend-wai" = import ./nix/reflex-backend-wai.nix;
   "reflex-basic-host" = import ./nix/reflex-basic-host.nix;
+  "reflex-classhss" = import ./nix/reflex-classhss.nix;
   "reflex-dom" = import ./nix/reflex-dom.nix;
   "reflex-dom-ace" = import ./nix/reflex-dom-ace.nix;
   "reflex-dom-colonnade" = import ./nix/reflex-dom-colonnade.nix;
@@ -14655,6 +14658,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scrapbook" = import ./nix/scrapbook.nix;
   "scrapbook-core" = import ./nix/scrapbook-core.nix;
   "scrape-changes" = import ./nix/scrape-changes.nix;
+  "scrappy-core" = import ./nix/scrappy-core.nix;
+  "scrappy-requests" = import ./nix/scrappy-requests.nix;
+  "scrappy-template" = import ./nix/scrappy-template.nix;
   "screenshot-to-clipboard" = import ./nix/screenshot-to-clipboard.nix;
   "script-monad" = import ./nix/script-monad.nix;
   "scrobble" = import ./nix/scrobble.nix;
@@ -17480,6 +17486,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "uglymemo" = import ./nix/uglymemo.nix;
   "uhc-light" = import ./nix/uhc-light.nix;
   "uhc-util" = import ./nix/uhc-util.nix;
+  "uhd" = import ./nix/uhd.nix;
   "uhexdump" = import ./nix/uhexdump.nix;
   "uhttpc" = import ./nix/uhttpc.nix;
   "ui" = import ./nix/ui.nix;

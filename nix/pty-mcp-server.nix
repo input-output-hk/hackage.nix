@@ -175,4 +175,15 @@
       default = "r0";
     };
   };
+  "0.1.6.0" = {
+    sha256 = "9a0d5aa6d3658add205dbbcdb53f0bbe0412716c086b63ef7a8d0501c749eec3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pty-mcp-server-0.1.6.0-r0-47b3517b00b245dba3029b4bc06702c2a0a8ee695f59b1e336cb6a78be6b5618.nix;
+        revNum = 0;
+        sha256 = "47b3517b00b245dba3029b4bc06702c2a0a8ee695f59b1e336cb6a78be6b5618";
+      };
+      default = "r0";
+    };
+  };
 }

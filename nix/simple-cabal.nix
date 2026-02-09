@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "acbb1e74bd52ea6ae4af165363dc88e3e774d8fc1fc30ac167e63bbaca9c6aab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simple-cabal-0.2.1-r0-bf37767605b0f602c70974be444e856da47f9dff854478e31020699407743e8d.nix;
+        revNum = 0;
+        sha256 = "bf37767605b0f602c70974be444e856da47f9dff854478e31020699407743e8d";
+      };
+      default = "r0";
+    };
+  };
 }

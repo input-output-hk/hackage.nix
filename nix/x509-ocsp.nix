@@ -62,7 +62,17 @@
         revNum = 0;
         sha256 = "7a0c8a86d5604acfcf0ca86130f2ff3f9f7e66efd5688e528dc7b21ccde1d958";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/x509-ocsp-0.4.0.0-r1-e16e2f4bebe1a035cfb1c3e213e8fe863f4dc888aa22f976c3fb0c642e19769d.nix;
+        revNum = 1;
+        sha256 = "e16e2f4bebe1a035cfb1c3e213e8fe863f4dc888aa22f976c3fb0c642e19769d";
+      };
+      r2 = {
+        nix = import ../hackage/x509-ocsp-0.4.0.0-r2-670ea7e07faf29cf68cdb38e5fa2bfcb1edbbe96a944533c19db17138df9072a.nix;
+        revNum = 2;
+        sha256 = "670ea7e07faf29cf68cdb38e5fa2bfcb1edbbe96a944533c19db17138df9072a";
+      };
+      default = "r2";
     };
   };
   "0.4.0.1" = {
@@ -73,7 +83,17 @@
         revNum = 0;
         sha256 = "c06d571921c6eb24e424c5e40c6f2b5543848640f8877fded281203d21101a54";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/x509-ocsp-0.4.0.1-r1-e02816cabcddddef12a2bf8dc47ad0a00b271551a36ca0ff7223d4438d7e7ec2.nix;
+        revNum = 1;
+        sha256 = "e02816cabcddddef12a2bf8dc47ad0a00b271551a36ca0ff7223d4438d7e7ec2";
+      };
+      r2 = {
+        nix = import ../hackage/x509-ocsp-0.4.0.1-r2-78ae2d78b65a248513a5e02351996e1cdacc4fc5549e2ef995c40f4b93d633a6.nix;
+        revNum = 2;
+        sha256 = "78ae2d78b65a248513a5e02351996e1cdacc4fc5549e2ef995c40f4b93d633a6";
+      };
+      default = "r2";
     };
   };
   "0.4.1.0" = {
@@ -84,7 +104,17 @@
         revNum = 0;
         sha256 = "d1bfebe76037e8ad5ace0eafc857d642d53d15436bec30f51ff8bdf18de2e4e3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/x509-ocsp-0.4.1.0-r1-0144f0826acc57d44224a628dcdc314ab86921a1d21a10473b5cc122e891f913.nix;
+        revNum = 1;
+        sha256 = "0144f0826acc57d44224a628dcdc314ab86921a1d21a10473b5cc122e891f913";
+      };
+      r2 = {
+        nix = import ../hackage/x509-ocsp-0.4.1.0-r2-c3b36103f91f1fde482f3ba1e16ad83c6deea31082526befbb1983846e118e99.nix;
+        revNum = 2;
+        sha256 = "c3b36103f91f1fde482f3ba1e16ad83c6deea31082526befbb1983846e118e99";
+      };
+      default = "r2";
     };
   };
 }

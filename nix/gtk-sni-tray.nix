@@ -32,6 +32,94 @@
       default = "r0";
     };
   };
+  "0.1.10.1" = {
+    sha256 = "d5b85c144154f547cf0ce90f9b65ce4b72f079ad9693c5265c4816590e9f6370";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.10.1-r0-e70acfefe4468463009b144961276ae3088fecb13f36879d589521c4c391c3a1.nix;
+        revNum = 0;
+        sha256 = "e70acfefe4468463009b144961276ae3088fecb13f36879d589521c4c391c3a1";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.10.2" = {
+    sha256 = "09dad1df93ed35a60e321be107dcc769da22976996917780e0722d49198b297b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.10.2-r0-dfcf1d1c1c4246644d1d82fa7c9633462204df083f98a34b45a061eea37b666d.nix;
+        revNum = 0;
+        sha256 = "dfcf1d1c1c4246644d1d82fa7c9633462204df083f98a34b45a061eea37b666d";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.10.3" = {
+    sha256 = "de1c6a79d9e53be57975c43fc92db158794890d9ecd8027b532fdce6fb91afee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.10.3-r0-9bd3b1ac5eb5bdf2b2bc277e8a9eb2223a292e9b4c9d80dc75d3f4e2067fdfe1.nix;
+        revNum = 0;
+        sha256 = "9bd3b1ac5eb5bdf2b2bc277e8a9eb2223a292e9b4c9d80dc75d3f4e2067fdfe1";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.11.0" = {
+    sha256 = "b80ad25887c2fd54ad9435b845b751e9ae5ac20511f93a2429eb3df51bce6b84";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.11.0-r0-5cb1d73bac3576e3b126dda6b88d5ff3293dde5d1bcec7207fa2fa0b21602fd8.nix;
+        revNum = 0;
+        sha256 = "5cb1d73bac3576e3b126dda6b88d5ff3293dde5d1bcec7207fa2fa0b21602fd8";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.11.1" = {
+    sha256 = "5e0e7225357ed24aa9bb35f1f772e0f0f676f6179865ccd56c80182a1f2bea02";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.11.1-r0-1aefc8d1788eff51cfa4a362bc8c04ea80308bd66bb03aaf3a2a3d2e39a2ad16.nix;
+        revNum = 0;
+        sha256 = "1aefc8d1788eff51cfa4a362bc8c04ea80308bd66bb03aaf3a2a3d2e39a2ad16";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.11.2" = {
+    sha256 = "a20c16ebe593ebb423328927ee2fde54ccd041ec6cb89fca9ca636913a262b26";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.11.2-r0-3982823394e9f44e012764ca6d010c097afa8977399c163546fb111f93a1acfa.nix;
+        revNum = 0;
+        sha256 = "3982823394e9f44e012764ca6d010c097afa8977399c163546fb111f93a1acfa";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.11.3" = {
+    sha256 = "9a12c5bb157397ada50126d0abf4d1cd1ff650f37dfb6ee598076a33cf3a2bdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.11.3-r0-2042e7ac2ff74859f0e747fa034710863f8f522ce3a4e55843909f34f05c01f9.nix;
+        revNum = 0;
+        sha256 = "2042e7ac2ff74859f0e747fa034710863f8f522ce3a4e55843909f34f05c01f9";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.12.0" = {
+    sha256 = "144c03936be1130b9fa3132024cd3f2b5bd1d74eb84285af90c8014b211c0a58";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.12.0-r0-47f596d398abadc3c07c0b3471e8d78c0956d07b21f87be06cc33b1a22fdbd98.nix;
+        revNum = 0;
+        sha256 = "47f596d398abadc3c07c0b3471e8d78c0956d07b21f87be06cc33b1a22fdbd98";
+      };
+      default = "r0";
+    };
+  };
   "0.1.2.0" = {
     sha256 = "1503fa51f70923c6c70d703f7ca6c44b23be1b58bdcc4eb9134f374786b2afc6";
     revisions = {
