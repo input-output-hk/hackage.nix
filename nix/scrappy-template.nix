@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "347230525acab2eb559425cc4650ac27fcf7075e4aff5be9569c9a5c9cd84384";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/scrappy-template-0.1.0.0-r1-0d02264fc4176c6259a032fa6595f16d41b92afc99e36061d95a19476c8a69bf.nix;
+        revNum = 1;
+        sha256 = "0d02264fc4176c6259a032fa6595f16d41b92afc99e36061d95a19476c8a69bf";
+      };
+      default = "r1";
     };
   };
 }

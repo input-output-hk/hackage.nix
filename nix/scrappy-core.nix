@@ -12,7 +12,17 @@
         revNum = 1;
         sha256 = "db959a0494cdd38e27a6afc48523cc48590259b77a31f61763e21b9ac5bb5bb6";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/scrappy-core-0.1.0.0-r2-bfc922c26b84089ea5f5ede9dba11c25bb2e94125d889a64b6c372fc201091e8.nix;
+        revNum = 2;
+        sha256 = "bfc922c26b84089ea5f5ede9dba11c25bb2e94125d889a64b6c372fc201091e8";
+      };
+      r3 = {
+        nix = import ../hackage/scrappy-core-0.1.0.0-r3-55d9b0fb02b958a3ab943b5f45c2b5c3a318fb9942bffb17813635b1064ae37c.nix;
+        revNum = 3;
+        sha256 = "55d9b0fb02b958a3ab943b5f45c2b5c3a318fb9942bffb17813635b1064ae37c";
+      };
+      default = "r3";
     };
   };
 }

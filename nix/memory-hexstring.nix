@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "3e92726ca4590335a4fc4024143dbaf9513eb014fd768ecc7983369adc6e3fc5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/memory-hexstring-1.1.0.0-r0-17ad3f90427e9e86f2e013212c7a562b7c779570d5b84111fb89a4b8b67a92b6.nix;
+        revNum = 0;
+        sha256 = "17ad3f90427e9e86f2e013212c7a562b7c779570d5b84111fb89a4b8b67a92b6";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "2ff375351834657a061377e9a78ee2c5b47f394134410a6002fce947efcf97f0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jsonrpc-tinyclient-1.1.0.0-r0-33ebead17931b1f770e0d0d449568b96aa0880f485bbe0a0154ef24cec44ba26.nix;
+        revNum = 0;
+        sha256 = "33ebead17931b1f770e0d0d449568b96aa0880f485bbe0a0154ef24cec44ba26";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -1535,6 +1535,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-match-qq" = import ./nix/aeson-match-qq.nix;
   "aeson-modern-tojson" = import ./nix/aeson-modern-tojson.nix;
   "aeson-native" = import ./nix/aeson-native.nix;
+  "aeson-openapi-record-as-tuple" = import ./nix/aeson-openapi-record-as-tuple.nix;
   "aeson-optics" = import ./nix/aeson-optics.nix;
   "aeson-options" = import ./nix/aeson-options.nix;
   "aeson-parsec-picky" = import ./nix/aeson-parsec-picky.nix;
@@ -3875,6 +3876,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "commutative" = import ./nix/commutative.nix;
   "commutative-semigroups" = import ./nix/commutative-semigroups.nix;
   "comonad" = import ./nix/comonad.nix;
+  "comonad-coactions" = import ./nix/comonad-coactions.nix;
   "comonad-extras" = import ./nix/comonad-extras.nix;
   "comonad-random" = import ./nix/comonad-random.nix;
   "comonad-transformers" = import ./nix/comonad-transformers.nix;
@@ -4669,6 +4671,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dbus-client" = import ./nix/dbus-client.nix;
   "dbus-core" = import ./nix/dbus-core.nix;
   "dbus-hslogger" = import ./nix/dbus-hslogger.nix;
+  "dbus-menu" = import ./nix/dbus-menu.nix;
   "dbus-qq" = import ./nix/dbus-qq.nix;
   "dbus-th" = import ./nix/dbus-th.nix;
   "dbus-th-introspection" = import ./nix/dbus-th-introspection.nix;
@@ -6396,6 +6399,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gasp" = import ./nix/gasp.nix;
   "gather" = import ./nix/gather.nix;
   "gauge" = import ./nix/gauge.nix;
+  "gbnet-hs" = import ./nix/gbnet-hs.nix;
   "gbs-downloader" = import ./nix/gbs-downloader.nix;
   "gbu" = import ./nix/gbu.nix;
   "gc" = import ./nix/gc.nix;
@@ -14460,6 +14464,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ruler-core" = import ./nix/ruler-core.nix;
   "run-haskell-module" = import ./nix/run-haskell-module.nix;
   "run-st" = import ./nix/run-st.nix;
+  "runGhcBWrap-core" = import ./nix/run_Ghc_B_Wrap-core.nix;
   "rungekutta" = import ./nix/rungekutta.nix;
   "rungekutta2" = import ./nix/rungekutta2.nix;
   "runghc" = import ./nix/runghc.nix;
@@ -16655,6 +16660,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "templateify" = import ./nix/templateify.nix;
   "templatepg" = import ./nix/templatepg.nix;
   "templater" = import ./nix/templater.nix;
+  "templates" = import ./nix/templates.nix;
   "templatise" = import ./nix/templatise.nix;
   "tempo" = import ./nix/tempo.nix;
   "tempodb" = import ./nix/tempodb.nix;

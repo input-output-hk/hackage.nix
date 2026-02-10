@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "457783782909ff1d06aa29c4290e40a5f0aee048c461d715340a2d0ee5f0c63c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dbus-hslogger-0.1.1.0-r0-361457ffd172207e6e0ee9685e91903130469724ec7315fbdd6de87bb715d956.nix;
+        revNum = 0;
+        sha256 = "361457ffd172207e6e0ee9685e91903130469724ec7315fbdd6de87bb715d956";
+      };
+      default = "r0";
+    };
+  };
 }

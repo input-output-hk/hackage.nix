@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "6c9db87e2c916bc3d013e54cb000fdb48f05e7c1e34cf0545858cf29c0f32c4f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web3-crypto-1.1.0.0-r0-8b8f8f5c0cc7ea5ed6fe49bcfb7aecbfcda7554b67f57a321fbcbd8496aebe3e.nix;
+        revNum = 0;
+        sha256 = "8b8f8f5c0cc7ea5ed6fe49bcfb7aecbfcda7554b67f57a321fbcbd8496aebe3e";
+      };
+      default = "r0";
+    };
+  };
 }
