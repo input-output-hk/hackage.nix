@@ -17369,6 +17369,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "type-errors" = import ./nix/type-errors.nix;
   "type-errors-pretty" = import ./nix/type-errors-pretty.nix;
   "type-flip" = import ./nix/type-flip.nix;
+  "type-fold" = import ./nix/type-fold.nix;
   "type-fun" = import ./nix/type-fun.nix;
   "type-functions" = import ./nix/type-functions.nix;
   "type-hint" = import ./nix/type-hint.nix;

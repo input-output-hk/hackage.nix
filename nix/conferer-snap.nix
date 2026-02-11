@@ -115,7 +115,23 @@
         revNum = 4;
         sha256 = "2426f70a6a0ec8939ceb4e3e89404e35238e0af5eb82b6c697e1d6ec5c6a5daa";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/conferer-snap-1.0.0.0-r5-02b1a558519f83c71181391f821868847824eedfefcd89d90485b5de2e9d5c8e.nix;
+        revNum = 5;
+        sha256 = "02b1a558519f83c71181391f821868847824eedfefcd89d90485b5de2e9d5c8e";
+      };
+      default = "r5";
+    };
+  };
+  "1.1.0.0" = {
+    sha256 = "e495eeec35f762bbc4c2d60337704e9538914f99d02b3929ebb7cf01f562aa98";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/conferer-snap-1.1.0.0-r0-203c4d74c0c30ff7ed3bc2e5d2e93a4b0fa39d122568517b8370ac21ffa3c53d.nix;
+        revNum = 0;
+        sha256 = "203c4d74c0c30ff7ed3bc2e5d2e93a4b0fa39d122568517b8370ac21ffa3c53d";
+      };
+      default = "r0";
     };
   };
 }

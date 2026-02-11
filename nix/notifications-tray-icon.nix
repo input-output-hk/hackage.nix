@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "71b4e12bea0e83d2ab0ad358485e040d8d7357382e716354f80a84af0f4906c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/notifications-tray-icon-0.2.0.1-r0-a52c77b7bdb5f7be0a88dc0d0b00c09f3d06ae4920aaaca5e791765a505f6f11.nix;
+        revNum = 0;
+        sha256 = "a52c77b7bdb5f7be0a88dc0d0b00c09f3d06ae4920aaaca5e791765a505f6f11";
+      };
+      default = "r0";
+    };
+  };
 }

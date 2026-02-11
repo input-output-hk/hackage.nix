@@ -96,4 +96,15 @@
       default = "r1";
     };
   };
+  "0.4.2" = {
+    sha256 = "1b8dc4928ad6b23953a9d3a640bba5dbfd9c0fd8e60e1f9b327bb4db6c6ddce7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/optics-core-0.4.2-r0-98291728c852300e5314fb6791bfe2627eabca28f00361e4fa908ec30c7c2e8c.nix;
+        revNum = 0;
+        sha256 = "98291728c852300e5314fb6791bfe2627eabca28f00361e4fa908ec30c7c2e8c";
+      };
+      default = "r0";
+    };
+  };
 }

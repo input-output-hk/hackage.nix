@@ -83,7 +83,17 @@
         revNum = 1;
         sha256 = "9ffd0ffb288594c3aea9535f4389a07b0361b4df02ee2b07eb4243ace85103e3";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/optics-0.4.2.1-r2-ba0dbab2c716500cef3fd4086f4d6636da52636d300b6768bfc729ff93e803c6.nix;
+        revNum = 2;
+        sha256 = "ba0dbab2c716500cef3fd4086f4d6636da52636d300b6768bfc729ff93e803c6";
+      };
+      r3 = {
+        nix = import ../hackage/optics-0.4.2.1-r3-a410f0fdc09a7ae466ec224b86d7f964c9aa5488a64e5b6872cf90b3d389ed28.nix;
+        revNum = 3;
+        sha256 = "a410f0fdc09a7ae466ec224b86d7f964c9aa5488a64e5b6872cf90b3d389ed28";
+      };
+      default = "r3";
     };
   };
 }

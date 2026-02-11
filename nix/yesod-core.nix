@@ -3122,6 +3122,17 @@
       default = "r0";
     };
   };
+  "1.6.29.0" = {
+    sha256 = "aa9f93037594cc6db7c7131c503611041a7973e93b6baf0bf1a2fed6c7629732";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-core-1.6.29.0-r0-9126b5846077e2991632a7af94e793d696ae38a023dd44f762f3ffc015a9e4e8.nix;
+        revNum = 0;
+        sha256 = "9126b5846077e2991632a7af94e793d696ae38a023dd44f762f3ffc015a9e4e8";
+      };
+      default = "r0";
+    };
+  };
   "1.6.3" = {
     sha256 = "aff34bacc36849ef98f4f298905ee9c7fa77af1b25ae3580b28bf39b97e54f4c";
     revisions = {
