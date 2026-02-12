@@ -476,4 +476,15 @@
       default = "r0";
     };
   };
+  "5.1.2" = {
+    sha256 = "c9a66bbadea3eb1b6d69b2374154384691e8d09b5739f7c531b1db6fb4854889";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/taffybar-5.1.2-r0-80905972a8e84c4189bf851785b53023ad99545ab7d81b35a234c7f2d99f5743.nix;
+        revNum = 0;
+        sha256 = "80905972a8e84c4189bf851785b53023ad99545ab7d81b35a234c7f2d99f5743";
+      };
+      default = "r0";
+    };
+  };
 }

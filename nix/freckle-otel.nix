@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.0.3" = {
+    sha256 = "241467f6365cdbfa7f429fa0cbdecf98ab25ceb5ab38882ceaff56a7949e5ce6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-otel-0.0.0.3-r0-69394f117c37ea850600abb55342fb090fbf95d30a051af135b8a43db7a081b1.nix;
+        revNum = 0;
+        sha256 = "69394f117c37ea850600abb55342fb090fbf95d30a051af135b8a43db7a081b1";
+      };
+      default = "r0";
+    };
+  };
 }

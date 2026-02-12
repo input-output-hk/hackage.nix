@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.3" = {
+    sha256 = "bfc39c4adbb18cce88a171f0fe38ebb40ee67ac3140121643e3a6efe3a298df6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pagure-cli-0.2.3-r0-afebadb0ceb3f8e869c1d070ef1dde4c888035acb7711e7df3c7a4d8a43b512e.nix;
+        revNum = 0;
+        sha256 = "afebadb0ceb3f8e869c1d070ef1dde4c888035acb7711e7df3c7a4d8a43b512e";
+      };
+      default = "r0";
+    };
+  };
 }

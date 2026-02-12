@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "ad9bbf5df6f143bcf0b74e121f9be7af0d6f5d2d35dc7eccc5b2c3d3afedeeed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stakhanov-0.1.0.0-r0-fc6182a1bb4bb8364c5f9a0de997019cf2a36caa21385f29af09c890e0f1255f.nix;
+        revNum = 0;
+        sha256 = "fc6182a1bb4bb8364c5f9a0de997019cf2a36caa21385f29af09c890e0f1255f";
+      };
+      default = "r0";
+    };
+  };
 }
