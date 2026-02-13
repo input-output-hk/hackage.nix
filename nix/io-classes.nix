@@ -214,7 +214,12 @@
         revNum = 0;
         sha256 = "84117906a73f36377b86684abb2b1d344ce74fd0737c1ceda85e5875cbd378a1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/io-classes-1.8.0.1-r1-b01a0de1d562c9d161033300de00a93087620d8c4a0b46862f76cdbeabd55ffc.nix;
+        revNum = 1;
+        sha256 = "b01a0de1d562c9d161033300de00a93087620d8c4a0b46862f76cdbeabd55ffc";
+      };
+      default = "r1";
     };
   };
   "1.9.0.0" = {

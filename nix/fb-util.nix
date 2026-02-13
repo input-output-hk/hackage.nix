@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "90119ae7b38bf99eb7cba2c405bcdc3816374796e5b04c641ae590b50c9be47e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fb-util-0.2.0.1-r0-2e57a9a665e3cab040326ec3c6c4caa4997a0b885364cd44a9d8446c2e2a1ba4.nix;
+        revNum = 0;
+        sha256 = "2e57a9a665e3cab040326ec3c6c4caa4997a0b885364cd44a9d8446c2e2a1ba4";
+      };
+      default = "r0";
+    };
+  };
 }

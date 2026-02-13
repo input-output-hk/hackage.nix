@@ -5970,6 +5970,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "finite-typelits" = import ./nix/finite-typelits.nix;
   "finito" = import ./nix/finito.nix;
   "firebase-database" = import ./nix/firebase-database.nix;
+  "firebase-hs" = import ./nix/firebase-hs.nix;
   "firefly" = import ./nix/firefly.nix;
   "firefly-example" = import ./nix/firefly-example.nix;
   "firestore" = import ./nix/firestore.nix;
@@ -6886,6 +6887,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glazier-react-examples" = import ./nix/glazier-react-examples.nix;
   "glazier-react-widget" = import ./nix/glazier-react-widget.nix;
   "glean" = import ./nix/glean.nix;
+  "glean-lsp" = import ./nix/glean-lsp.nix;
   "glfw-group" = import ./nix/glfw-group.nix;
   "gli" = import ./nix/gli.nix;
   "glib" = import ./nix/glib.nix;
@@ -10593,6 +10595,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "llvm-tf" = import ./nix/llvm-tf.nix;
   "llvm-tools" = import ./nix/llvm-tools.nix;
   "lmdb" = import ./nix/lmdb.nix;
+  "lmdb-clib" = import ./nix/lmdb-clib.nix;
   "lmdb-high-level" = import ./nix/lmdb-high-level.nix;
   "lmdb-simple" = import ./nix/lmdb-simple.nix;
   "lmonad" = import ./nix/lmonad.nix;

@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "c5930812e742c999363d876c60cb5f95c72b50cb46c3cd76d0f30020d27062c1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/finite-semigroups-0.1.0.0-r2-5167ee8aee6998f83f1b7bdda9fe4231320a02abbbaec8bb2196dd22f2277aea.nix;
+        revNum = 2;
+        sha256 = "5167ee8aee6998f83f1b7bdda9fe4231320a02abbbaec8bb2196dd22f2277aea";
+      };
+      default = "r2";
     };
   };
 }

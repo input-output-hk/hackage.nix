@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "20260203.1245" = {
+    sha256 = "dae2c191759e09b794aba4c4d89100c926bd26f7d0be82eb62fe71207818b2cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/folly-clib-20260203.1245-r0-73e6168438c1a8034ed45fc2b20a0414d149c654fcb10b843e75707b97da3704.nix;
+        revNum = 0;
+        sha256 = "73e6168438c1a8034ed45fc2b20a0414d149c654fcb10b843e75707b97da3704";
+      };
+      default = "r0";
+    };
+  };
 }

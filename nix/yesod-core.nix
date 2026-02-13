@@ -3016,7 +3016,12 @@
         revNum = 0;
         sha256 = "b83b119b661bd530508153105fb389af075e24f2effe179dca665ceb6244cf5d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.24.4-r1-ac65b7e8fffe26919cace0986ce6271dede9e17af03345396a61ad1a50e46e60.nix;
+        revNum = 1;
+        sha256 = "ac65b7e8fffe26919cace0986ce6271dede9e17af03345396a61ad1a50e46e60";
+      };
+      default = "r1";
     };
   };
   "1.6.24.5" = {
@@ -3027,7 +3032,12 @@
         revNum = 0;
         sha256 = "a968b866d83554b6d50aa4ea96d40eb75169d8cdd1ac6683803b21c1231e4cae";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.24.5-r1-f9117b65994942b975e0dbae9f0876f99597d9b4a059516f06e24de2700a0793.nix;
+        revNum = 1;
+        sha256 = "f9117b65994942b975e0dbae9f0876f99597d9b4a059516f06e24de2700a0793";
+      };
+      default = "r1";
     };
   };
   "1.6.25.0" = {
@@ -3038,7 +3048,12 @@
         revNum = 0;
         sha256 = "243029350f0f759677c20c42ed5a2fa06b020fc95c36a4096f02e2669f5892eb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.25.0-r1-03c7cf6d59f697607ecab575c21bb332ff4c3cdd3bcc99f45d105ff469aa28ef.nix;
+        revNum = 1;
+        sha256 = "03c7cf6d59f697607ecab575c21bb332ff4c3cdd3bcc99f45d105ff469aa28ef";
+      };
+      default = "r1";
     };
   };
   "1.6.25.1" = {
@@ -3054,7 +3069,12 @@
         revNum = 1;
         sha256 = "a491ceb81aca964cec0ea738e89a419d17801036d8b506182574f4dee9e4bdcc";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yesod-core-1.6.25.1-r2-0d0dd08124a4ed23b93f75b5cdb6dd92550409a73f61786766eb531e84e9fe74.nix;
+        revNum = 2;
+        sha256 = "0d0dd08124a4ed23b93f75b5cdb6dd92550409a73f61786766eb531e84e9fe74";
+      };
+      default = "r2";
     };
   };
   "1.6.26.0" = {
@@ -3070,7 +3090,12 @@
         revNum = 1;
         sha256 = "38845d166cb492103a47ad5dd59ad711dc02eb3effa8af588ba5af21578d0aff";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yesod-core-1.6.26.0-r2-01f2e37399443cdad654494383281865808fb3b3188aa8ab575b830259933b4c.nix;
+        revNum = 2;
+        sha256 = "01f2e37399443cdad654494383281865808fb3b3188aa8ab575b830259933b4c";
+      };
+      default = "r2";
     };
   };
   "1.6.27.0" = {
@@ -3086,7 +3111,12 @@
         revNum = 1;
         sha256 = "c2b846ecb34cefdc81908a455917690d8ec256503a2ea7a9902ce9ad007126bd";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/yesod-core-1.6.27.0-r2-64b6a672b2ed982adf434a3aee3c60d879d79870a8628351548ea62e9b7d5143.nix;
+        revNum = 2;
+        sha256 = "64b6a672b2ed982adf434a3aee3c60d879d79870a8628351548ea62e9b7d5143";
+      };
+      default = "r2";
     };
   };
   "1.6.27.1" = {
@@ -3097,7 +3127,12 @@
         revNum = 0;
         sha256 = "638c6f814f858bf21e6552077dd97405d085461d3249296c13c8e15fafb6884c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.27.1-r1-6ba0cdb3a59f7e16aa8dc94e6d1f3b26e745ab8dfbbfb18ee1b72f67264c9f47.nix;
+        revNum = 1;
+        sha256 = "6ba0cdb3a59f7e16aa8dc94e6d1f3b26e745ab8dfbbfb18ee1b72f67264c9f47";
+      };
+      default = "r1";
     };
   };
   "1.6.28.0" = {
@@ -3108,7 +3143,12 @@
         revNum = 0;
         sha256 = "eb032194dfd4b922db70a6a9ea6163e770cde79fe4b4e4e1257593d01627e3ce";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.28.0-r1-85ed0c09b64d640a3046be8b2f1f05d1d3efc12d8113cd6d1e9ee3854f2dff9f.nix;
+        revNum = 1;
+        sha256 = "85ed0c09b64d640a3046be8b2f1f05d1d3efc12d8113cd6d1e9ee3854f2dff9f";
+      };
+      default = "r1";
     };
   };
   "1.6.28.1" = {
@@ -3119,7 +3159,12 @@
         revNum = 0;
         sha256 = "3d93579f3ec866a94cba55377528e5d2763ac07690f81531fc5eadfd0b2eff28";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.28.1-r1-c236981c6224e5bb89f7a6a42d09cf12c50a49ef10d3561a0f9fb179b860c817.nix;
+        revNum = 1;
+        sha256 = "c236981c6224e5bb89f7a6a42d09cf12c50a49ef10d3561a0f9fb179b860c817";
+      };
+      default = "r1";
     };
   };
   "1.6.29.0" = {
@@ -3129,6 +3174,22 @@
         nix = import ../hackage/yesod-core-1.6.29.0-r0-9126b5846077e2991632a7af94e793d696ae38a023dd44f762f3ffc015a9e4e8.nix;
         revNum = 0;
         sha256 = "9126b5846077e2991632a7af94e793d696ae38a023dd44f762f3ffc015a9e4e8";
+      };
+      r1 = {
+        nix = import ../hackage/yesod-core-1.6.29.0-r1-7b487e48075abccddf0ea65c3222f4b5bf8ba49c83535a27bb391191ef4ffd19.nix;
+        revNum = 1;
+        sha256 = "7b487e48075abccddf0ea65c3222f4b5bf8ba49c83535a27bb391191ef4ffd19";
+      };
+      default = "r1";
+    };
+  };
+  "1.6.29.1" = {
+    sha256 = "62a4b2b074b555ff71f1706b520303a9e9e6850f45f49abb56a870e58b6e1590";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-core-1.6.29.1-r0-6a54354e99233822a6f726f1910fb31efc4bb985877982040387696205171a79.nix;
+        revNum = 0;
+        sha256 = "6a54354e99233822a6f726f1910fb31efc4bb985877982040387696205171a79";
       };
       default = "r0";
     };
