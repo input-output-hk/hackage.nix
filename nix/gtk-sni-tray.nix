@@ -164,6 +164,28 @@
       default = "r0";
     };
   };
+  "0.1.14.2" = {
+    sha256 = "a8d5155e08eedbf57b68564ec65c330e922529ff3207b829ed8c36dcd70ec034";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.14.2-r0-6b4e5702a800242af56ca57101d23410d2303115f38964c29975c1de84d91905.nix;
+        revNum = 0;
+        sha256 = "6b4e5702a800242af56ca57101d23410d2303115f38964c29975c1de84d91905";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.15.0" = {
+    sha256 = "5e124e8ae0afd15cf61701dd976a30f732d5693fbc4489c25f864d3827c2cf79";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-sni-tray-0.1.15.0-r0-0afc6385656385689c084b303d618ddb23a10fa92f901fcb0e1b9261257b4cff.nix;
+        revNum = 0;
+        sha256 = "0afc6385656385689c084b303d618ddb23a10fa92f901fcb0e1b9261257b4cff";
+      };
+      default = "r0";
+    };
+  };
   "0.1.2.0" = {
     sha256 = "1503fa51f70923c6c70d703f7ca6c44b23be1b58bdcc4eb9134f374786b2afc6";
     revisions = {

@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.6.4.0" = {
+    sha256 = "fc5c6f9bfb87360fe77e942294e847bf633ca3f19ff0dd65c51f6dcde8d48c0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hpc-codecov-0.6.4.0-r0-ef3a4ea0082e8b4b680e79edfbd41c92178972fb0b72d366a52b15f258aa85bb.nix;
+        revNum = 0;
+        sha256 = "ef3a4ea0082e8b4b680e79edfbd41c92178972fb0b72d366a52b15f258aa85bb";
+      };
+      default = "r0";
+    };
+  };
 }

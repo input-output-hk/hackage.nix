@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "94a8ff75971facb01d08191156ff3956fdbb3ed1a31a6ee6b25d1889e15b75be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glean-0.2.0.1-r0-2c2c6858c386a5bfef567f3b5b3e3b42ad30312dd56d3e977de623466f6f7bb6.nix;
+        revNum = 0;
+        sha256 = "2c2c6858c386a5bfef567f3b5b3e3b42ad30312dd56d3e977de623466f6f7bb6";
+      };
+      default = "r0";
+    };
+  };
 }
