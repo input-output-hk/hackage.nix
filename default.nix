@@ -5511,6 +5511,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "epanet-haskell" = import ./nix/epanet-haskell.nix;
   "epass" = import ./nix/epass.nix;
   "ephemeral" = import ./nix/ephemeral.nix;
+  "ephemeral-pg" = import ./nix/ephemeral-pg.nix;
   "epi-sim" = import ./nix/epi-sim.nix;
   "epic" = import ./nix/epic.nix;
   "epoll" = import ./nix/epoll.nix;
@@ -10555,6 +10556,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "listsafe" = import ./nix/listsafe.nix;
   "liszt" = import ./nix/liszt.nix;
   "lit" = import ./nix/lit.nix;
+  "literal-flake-input" = import ./nix/literal-flake-input.nix;
   "literally" = import ./nix/literally.nix;
   "literals" = import ./nix/literals.nix;
   "literatex" = import ./nix/literatex.nix;
@@ -15483,6 +15485,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "socks5" = import ./nix/socks5.nix;
   "sodium" = import ./nix/sodium.nix;
   "soegtk" = import ./nix/soegtk.nix;
+  "sofetch" = import ./nix/sofetch.nix;
+  "sofetch-otel" = import ./nix/sofetch-otel.nix;
   "softfloat-hs" = import ./nix/softfloat-hs.nix;
   "solana-staking-csvs" = import ./nix/solana-staking-csvs.nix;
   "solar" = import ./nix/solar.nix;
