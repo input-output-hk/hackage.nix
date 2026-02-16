@@ -233,7 +233,12 @@
         revNum = 0;
         sha256 = "8866cf7ba6d9a651be7af7f9212332f1c510667e7dc7c1aef65e2d959eefde76";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/irc-core-2.13-r1-f3ca7e09539fd5284a61a34e5b0aed408245b64577e14115a32818acaceeb814.nix;
+        revNum = 1;
+        sha256 = "f3ca7e09539fd5284a61a34e5b0aed408245b64577e14115a32818acaceeb814";
+      };
+      default = "r1";
     };
   };
   "2.2.0.0" = {

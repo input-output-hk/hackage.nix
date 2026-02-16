@@ -9172,6 +9172,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hweblib" = import ./nix/hweblib.nix;
   "hwhile" = import ./nix/hwhile.nix;
   "hwk" = import ./nix/hwk.nix;
+  "hwm" = import ./nix/hwm.nix;
   "hworker" = import ./nix/hworker.nix;
   "hworker-ses" = import ./nix/hworker-ses.nix;
   "hwormhole" = import ./nix/hwormhole.nix;
@@ -18317,6 +18318,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wl-pprint-text" = import ./nix/wl-pprint-text.nix;
   "wlc-hs" = import ./nix/wlc-hs.nix;
   "wled-json" = import ./nix/wled-json.nix;
+  "wlsunset-sni" = import ./nix/wlsunset-sni.nix;
   "wobsurv" = import ./nix/wobsurv.nix;
   "woe" = import ./nix/woe.nix;
   "woffex" = import ./nix/woffex.nix;
