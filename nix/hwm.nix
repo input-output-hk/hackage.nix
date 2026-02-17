@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.5" = {
+    sha256 = "f3bcb9dcae83a2c0a64cac68435651c07fdcccf86c1507943257b89db3b54645";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hwm-0.0.5-r0-f16ec23590a3661a9ff342d4f4587915ae3cb546f4f08536a4febd6da3375747.nix;
+        revNum = 0;
+        sha256 = "f16ec23590a3661a9ff342d4f4587915ae3cb546f4f08536a4febd6da3375747";
+      };
+      default = "r0";
+    };
+  };
 }

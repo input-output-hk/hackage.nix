@@ -7680,6 +7680,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasim" = import ./nix/hasim.nix;
   "hask" = import ./nix/hask.nix;
   "hask-home" = import ./nix/hask-home.nix;
+  "hask-redis-mux" = import ./nix/hask-redis-mux.nix;
   "haskades" = import ./nix/haskades.nix;
   "haskakafka" = import ./nix/haskakafka.nix;
   "haskanoid" = import ./nix/haskanoid.nix;
@@ -9833,6 +9834,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jsonpatch" = import ./nix/jsonpatch.nix;
   "jsonpath" = import ./nix/jsonpath.nix;
   "jsonresume" = import ./nix/jsonresume.nix;
+  "jsonrpc" = import ./nix/jsonrpc.nix;
   "jsonrpc-conduit" = import ./nix/jsonrpc-conduit.nix;
   "jsonrpc-tinyclient" = import ./nix/jsonrpc-tinyclient.nix;
   "jsons-to-schema" = import ./nix/jsons-to-schema.nix;
@@ -10969,6 +10971,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mcmc-types" = import ./nix/mcmc-types.nix;
   "mcp" = import ./nix/mcp.nix;
   "mcp-server" = import ./nix/mcp-server.nix;
+  "mcp-types" = import ./nix/mcp-types.nix;
   "mcpi" = import ./nix/mcpi.nix;
   "md5" = import ./nix/md5.nix;
   "mdapi" = import ./nix/mdapi.nix;
@@ -11116,6 +11119,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mig" = import ./nix/mig.nix;
   "mig-client" = import ./nix/mig-client.nix;
   "mig-extra" = import ./nix/mig-extra.nix;
+  "mig-rio" = import ./nix/mig-rio.nix;
   "mig-server" = import ./nix/mig-server.nix;
   "mig-swagger-ui" = import ./nix/mig-swagger-ui.nix;
   "mig-wai" = import ./nix/mig-wai.nix;
@@ -12099,6 +12103,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oath" = import ./nix/oath.nix;
   "oauth10a" = import ./nix/oauth10a.nix;
   "oauth2-jwt-bearer" = import ./nix/oauth2-jwt-bearer.nix;
+  "oauth2-server" = import ./nix/oauth2-server.nix;
   "oauthenticated" = import ./nix/oauthenticated.nix;
   "ob" = import ./nix/ob.nix;
   "obd" = import ./nix/obd.nix;
@@ -15639,6 +15644,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "squeal-postgresql-ltree" = import ./nix/squeal-postgresql-ltree.nix;
   "squeal-postgresql-qq" = import ./nix/squeal-postgresql-qq.nix;
   "squeal-postgresql-uuid-ossp" = import ./nix/squeal-postgresql-uuid-ossp.nix;
+  "squealgen" = import ./nix/squealgen.nix;
   "squeather" = import ./nix/squeather.nix;
   "squeeze" = import ./nix/squeeze.nix;
   "sr-extra" = import ./nix/sr-extra.nix;
