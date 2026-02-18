@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4.0" = {
+    sha256 = "85079ef8d02509e8e57583a5df424c889dd9b353cb2fc95ee916f811bd7aab7e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mello-0.4.0-r0-95fe78c6fc778d8d252005baaa1b2ce6d765670999331baa3a7a81530afcf2ff.nix;
+        revNum = 0;
+        sha256 = "95fe78c6fc778d8d252005baaa1b2ce6d765670999331baa3a7a81530afcf2ff";
+      };
+      default = "r0";
+    };
+  };
 }

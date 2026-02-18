@@ -5337,6 +5337,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "editor-open" = import ./nix/editor-open.nix;
   "editpipe" = import ./nix/editpipe.nix;
   "edits" = import ./nix/edits.nix;
+  "effable" = import ./nix/effable.nix;
   "effect-handlers" = import ./nix/effect-handlers.nix;
   "effect-monad" = import ./nix/effect-monad.nix;
   "effect-stack" = import ./nix/effect-stack.nix;

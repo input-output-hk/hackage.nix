@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.3.0" = {
+    sha256 = "3f8f87b0e2ea4a9e0a36b9d024f73fc4deb97278fb7a43dfed83d16af70b6456";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/claude-1.3.0-r0-459c5e459ebfe193e69d8bf3c79fd760b57df90b6c9007ba8221e6b2d59b1093.nix;
+        revNum = 0;
+        sha256 = "459c5e459ebfe193e69d8bf3c79fd760b57df90b6c9007ba8221e6b2d59b1093";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "794e43e8f1f2bc3d3565209282a048c2f858ab6ffd068c3774817a435086eb70";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mig-server-0.2.2.0-r0-24dc6c0f41a67a25904ef593c31d0433d8380126ede26cc5c233974b84b1da13.nix;
+        revNum = 0;
+        sha256 = "24dc6c0f41a67a25904ef593c31d0433d8380126ede26cc5c233974b84b1da13";
+      };
+      default = "r0";
+    };
+  };
 }

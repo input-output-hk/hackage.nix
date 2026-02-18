@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "291a19772377c38726934b9cba30d6f96f98981d0f263ade3ca87766b2c85984";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mig-swagger-ui-0.1.1.0-r0-f1f6f339713c56118e3f715a55c86c2ffb9f1ce25344d77d7cf81870df412d53.nix;
+        revNum = 0;
+        sha256 = "f1f6f339713c56118e3f715a55c86c2ffb9f1ce25344d77d7cf81870df412d53";
+      };
+      default = "r0";
+    };
+  };
 }

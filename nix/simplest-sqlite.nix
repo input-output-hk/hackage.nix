@@ -219,4 +219,37 @@
       default = "r0";
     };
   };
+  "0.1.0.6" = {
+    sha256 = "fa4d43ab9950e6837b8566d20369d30410c58b9967c8778c82f74e04fdc127b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simplest-sqlite-0.1.0.6-r0-70f3a4edc39d01e5e72b85b7e77b24486572a1e309f00e33bb7ff3eb7d1ee375.nix;
+        revNum = 0;
+        sha256 = "70f3a4edc39d01e5e72b85b7e77b24486572a1e309f00e33bb7ff3eb7d1ee375";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.7" = {
+    sha256 = "a3afbff00bf4f9838d74e7a85a03048766224f0a1c9ea62c1877db4e06a652f4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simplest-sqlite-0.1.0.7-r0-6db3d731fd894825c9d1b0959689d0e7ebf03db8234700544dd5b23731214e4f.nix;
+        revNum = 0;
+        sha256 = "6db3d731fd894825c9d1b0959689d0e7ebf03db8234700544dd5b23731214e4f";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.8" = {
+    sha256 = "4ffe88b807063e40696c22cccd56d61f378da3af94ada21e78d4dece20c395ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simplest-sqlite-0.1.0.8-r0-0128292f4b72da535ecd56ed39d870e4a48a64a376b7ea875be09ac021f41e68.nix;
+        revNum = 0;
+        sha256 = "0128292f4b72da535ecd56ed39d870e4a48a64a376b7ea875be09ac021f41e68";
+      };
+      default = "r0";
+    };
+  };
 }
