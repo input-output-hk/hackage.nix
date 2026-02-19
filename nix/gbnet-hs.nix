@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.6.0" = {
+    sha256 = "8d95d52afe8a28c704857ddb6b68e5cb1499831728b9592371f931bafb057203";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gbnet-hs-0.2.6.0-r0-522a54e1536877b0662cf079dabbf3a3b918e08b12ce9f9445b1689e016db3a7.nix;
+        revNum = 0;
+        sha256 = "522a54e1536877b0662cf079dabbf3a3b918e08b12ce9f9445b1689e016db3a7";
+      };
+      default = "r0";
+    };
+  };
 }
