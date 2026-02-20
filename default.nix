@@ -6402,6 +6402,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gasp" = import ./nix/gasp.nix;
   "gather" = import ./nix/gather.nix;
   "gauge" = import ./nix/gauge.nix;
+  "gb-sprite" = import ./nix/gb-sprite.nix;
+  "gb-synth" = import ./nix/gb-synth.nix;
   "gbnet-hs" = import ./nix/gbnet-hs.nix;
   "gbs-downloader" = import ./nix/gbs-downloader.nix;
   "gbu" = import ./nix/gbu.nix;
