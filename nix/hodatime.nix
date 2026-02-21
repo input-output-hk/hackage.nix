@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "fac858f05e158f3ab0921b3e05278cd67d82e443029cbbdefe5d421f637d6e62";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hodatime-0.2.1.1-r1-048d166c196a6e5da7ca6531d641ab2140ba10cfa86886df1da70990325a5541.nix;
+        revNum = 1;
+        sha256 = "048d166c196a6e5da7ca6531d641ab2140ba10cfa86886df1da70990325a5541";
+      };
+      default = "r1";
     };
   };
 }
