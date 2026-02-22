@@ -67,7 +67,12 @@
         revNum = 0;
         sha256 = "394b5ce16c22cd43fadaa6043a3c41122ebf7c2ae84dc34ca23506d54f284f27";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hzenity-0.4.1-r1-1a364ea3872a03082d4999f36ffc3055583c717e2e2fdafd87b5ea7a09c1d5c4.nix;
+        revNum = 1;
+        sha256 = "1a364ea3872a03082d4999f36ffc3055583c717e2e2fdafd87b5ea7a09c1d5c4";
+      };
+      default = "r1";
     };
   };
 }

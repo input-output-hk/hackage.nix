@@ -179,4 +179,15 @@
       default = "r0";
     };
   };
+  "0.8.1" = {
+    sha256 = "27c908a3899e30b1396617f65baf46ba532105a42a38a57040df0e43053a1c7c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trackit-0.8.1-r0-0cd995ea4dbf41b562060289dcd86962331e25b412f112024e61f17b4cdac7fe.nix;
+        revNum = 0;
+        sha256 = "0cd995ea4dbf41b562060289dcd86962331e25b412f112024e61f17b4cdac7fe";
+      };
+      default = "r0";
+    };
+  };
 }

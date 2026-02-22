@@ -6402,6 +6402,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gasp" = import ./nix/gasp.nix;
   "gather" = import ./nix/gather.nix;
   "gauge" = import ./nix/gauge.nix;
+  "gb-nix-cache" = import ./nix/gb-nix-cache.nix;
   "gb-sprite" = import ./nix/gb-sprite.nix;
   "gb-synth" = import ./nix/gb-synth.nix;
   "gbnet-hs" = import ./nix/gbnet-hs.nix;
@@ -12791,6 +12792,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pgdl" = import ./nix/pgdl.nix;
   "pgf2" = import ./nix/pgf2.nix;
   "pgm" = import ./nix/pgm.nix;
+  "pgmq-core" = import ./nix/pgmq-core.nix;
+  "pgmq-effectful" = import ./nix/pgmq-effectful.nix;
+  "pgmq-hasql" = import ./nix/pgmq-hasql.nix;
+  "pgmq-migration" = import ./nix/pgmq-migration.nix;
   "pgp-wordlist" = import ./nix/pgp-wordlist.nix;
   "pgsql-simple" = import ./nix/pgsql-simple.nix;
   "pgstream" = import ./nix/pgstream.nix;
@@ -12985,6 +12990,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "playlists-http" = import ./nix/playlists-http.nix;
   "plegg" = import ./nix/plegg.nix;
   "plex" = import ./nix/plex.nix;
+  "plexus-protocol" = import ./nix/plexus-protocol.nix;
+  "plexus-synapse" = import ./nix/plexus-synapse.nix;
   "plist" = import ./nix/plist.nix;
   "plist-buddy" = import ./nix/plist-buddy.nix;
   "plivo" = import ./nix/plivo.nix;
@@ -14682,6 +14689,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scrappy-template" = import ./nix/scrappy-template.nix;
   "screenshot-to-clipboard" = import ./nix/screenshot-to-clipboard.nix;
   "script-monad" = import ./nix/script-monad.nix;
+  "scripths" = import ./nix/scripths.nix;
   "scrobble" = import ./nix/scrobble.nix;
   "scroll" = import ./nix/scroll.nix;
   "scroll-list" = import ./nix/scroll-list.nix;
@@ -16421,6 +16429,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symparsec" = import ./nix/symparsec.nix;
   "symtegration" = import ./nix/symtegration.nix;
   "synapse" = import ./nix/synapse.nix;
+  "synapse-cc" = import ./nix/synapse-cc.nix;
   "sync" = import ./nix/sync.nix;
   "sync-mht" = import ./nix/sync-mht.nix;
   "synchronous-channels" = import ./nix/synchronous-channels.nix;

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.0" = {
+    sha256 = "4e74ac616c16ac97480d3d7dc535a545248533a2342c67a778a820930bff35bb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kdl-hs-1.0.0-r0-08d086ffe44d9787aea28dd95d90c11a6ce51ef912abaf0cd8fe7e73bc976a17.nix;
+        revNum = 0;
+        sha256 = "08d086ffe44d9787aea28dd95d90c11a6ce51ef912abaf0cd8fe7e73bc976a17";
+      };
+      default = "r0";
+    };
+  };
 }
