@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "910bf3ebe3de82b1382f7586a37db2f91630e502fbb1c97a3f21ee0f147e4bd1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/summer-0.4.0.0-r0-e41b45375b5f07eb9227f648b1bc19b772ab54d6a13319f3f413f2e08a62a01f.nix;
+        revNum = 0;
+        sha256 = "e41b45375b5f07eb9227f648b1bc19b772ab54d6a13319f3f413f2e08a62a01f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10484,6 +10484,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lines-of-action" = import ./nix/lines-of-action.nix;
   "lingo" = import ./nix/lingo.nix;
   "linguistic-ordinals" = import ./nix/linguistic-ordinals.nix;
+  "link-canonical" = import ./nix/link-canonical.nix;
   "link-relations" = import ./nix/link-relations.nix;
   "linkcheck" = import ./nix/linkcheck.nix;
   "linkchk" = import ./nix/linkchk.nix;
@@ -12018,6 +12019,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "notmuch-haskell" = import ./nix/notmuch-haskell.nix;
   "notmuch-web" = import ./nix/notmuch-web.nix;
   "notzero" = import ./nix/notzero.nix;
+  "nova-cache" = import ./nix/nova-cache.nix;
   "now-haskell" = import ./nix/now-haskell.nix;
   "nowdoc" = import ./nix/nowdoc.nix;
   "np-extras" = import ./nix/np-extras.nix;
@@ -14691,6 +14693,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "script-monad" = import ./nix/script-monad.nix;
   "scripths" = import ./nix/scripths.nix;
   "scrobble" = import ./nix/scrobble.nix;
+  "scrod" = import ./nix/scrod.nix;
   "scroll" = import ./nix/scroll.nix;
   "scroll-list" = import ./nix/scroll-list.nix;
   "scrypt" = import ./nix/scrypt.nix;

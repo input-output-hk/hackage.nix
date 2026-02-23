@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "0d090b12b282c85e985035314d6f46e670a66bf8d04b362af6ee4598aa206e3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/firebase-hs-0.1.1.0-r0-3801d678727c502f38297128ef4649c518aa74e1456faa2d6298f2eb6c5f7946.nix;
+        revNum = 0;
+        sha256 = "3801d678727c502f38297128ef4649c518aa74e1456faa2d6298f2eb6c5f7946";
+      };
+      default = "r0";
+    };
+  };
 }

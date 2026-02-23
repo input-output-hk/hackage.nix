@@ -79,4 +79,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "3322231cabf5ae7ab4b3688058898743d152345892347c85351e3d30f220b8f1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-event-stream-0.3.2.0-r0-e09cb2aacfc0958d4d946fedf114e5acbd6ff7cfb1801b47e73124f9a06eda95.nix;
+        revNum = 0;
+        sha256 = "e09cb2aacfc0958d4d946fedf114e5acbd6ff7cfb1801b47e73124f9a06eda95";
+      };
+      default = "r0";
+    };
+  };
 }
