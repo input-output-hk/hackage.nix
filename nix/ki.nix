@@ -141,7 +141,12 @@
         revNum = 2;
         sha256 = "6f9f5aa6add1e3fac54b19853e4355780b5f2243f1ab390f8bd362c0ae51a3a5";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/ki-1.0.1.2-r3-350521aba11b4f8ae1507407e27cba23cf77422e3ec373a3dc01f063c79319c1.nix;
+        revNum = 3;
+        sha256 = "350521aba11b4f8ae1507407e27cba23cf77422e3ec373a3dc01f063c79319c1";
+      };
+      default = "r3";
     };
   };
 }

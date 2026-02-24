@@ -8864,6 +8864,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-core" = import ./nix/hspec-core.nix;
   "hspec-dirstream" = import ./nix/hspec-dirstream.nix;
   "hspec-discover" = import ./nix/hspec-discover.nix;
+  "hspec-discover-discover" = import ./nix/hspec-discover-discover.nix;
   "hspec-expectations" = import ./nix/hspec-expectations.nix;
   "hspec-expectations-json" = import ./nix/hspec-expectations-json.nix;
   "hspec-expectations-lens" = import ./nix/hspec-expectations-lens.nix;
@@ -17309,6 +17310,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ttrie" = import ./nix/ttrie.nix;
   "tttool" = import ./nix/tttool.nix;
   "tubes" = import ./nix/tubes.nix;
+  "tuispec" = import ./nix/tuispec.nix;
   "tuntap" = import ./nix/tuntap.nix;
   "tuntap-simple" = import ./nix/tuntap-simple.nix;
   "tup-functor" = import ./nix/tup-functor.nix;
