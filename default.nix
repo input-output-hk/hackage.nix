@@ -12021,6 +12021,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "notmuch-web" = import ./nix/notmuch-web.nix;
   "notzero" = import ./nix/notzero.nix;
   "nova-cache" = import ./nix/nova-cache.nix;
+  "nova-nix" = import ./nix/nova-nix.nix;
   "now-haskell" = import ./nix/now-haskell.nix;
   "nowdoc" = import ./nix/nowdoc.nix;
   "np-extras" = import ./nix/np-extras.nix;
@@ -12800,6 +12801,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pgmq-hasql" = import ./nix/pgmq-hasql.nix;
   "pgmq-migration" = import ./nix/pgmq-migration.nix;
   "pgp-wordlist" = import ./nix/pgp-wordlist.nix;
+  "pgrep" = import ./nix/pgrep.nix;
   "pgsql-simple" = import ./nix/pgsql-simple.nix;
   "pgstream" = import ./nix/pgstream.nix;
   "pgvector" = import ./nix/pgvector.nix;
@@ -14691,6 +14693,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scrappy-requests" = import ./nix/scrappy-requests.nix;
   "scrappy-template" = import ./nix/scrappy-template.nix;
   "screenshot-to-clipboard" = import ./nix/screenshot-to-clipboard.nix;
+  "screp" = import ./nix/screp.nix;
   "script-monad" = import ./nix/script-monad.nix;
   "scripths" = import ./nix/scripths.nix;
   "scrobble" = import ./nix/scrobble.nix;
@@ -15108,6 +15111,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shentong" = import ./nix/shentong.nix;
   "shh" = import ./nix/shh.nix;
   "shh-extras" = import ./nix/shh-extras.nix;
+  "shibuya-core" = import ./nix/shibuya-core.nix;
+  "shibuya-metrics" = import ./nix/shibuya-metrics.nix;
+  "shibuya-pgmq-adapter" = import ./nix/shibuya-pgmq-adapter.nix;
   "shift" = import ./nix/shift.nix;
   "shikensu" = import ./nix/shikensu.nix;
   "shimmer" = import ./nix/shimmer.nix;

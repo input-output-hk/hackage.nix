@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.0.1" = {
+    sha256 = "1e99e49e1616acaac38e574d3fdaea89bfd7b14936fce0f9b7b9dce65872ce8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web3-ethereum-1.1.0.1-r0-c3d7e2476910ded4c2c7fddb7ebd3865bbd1d6e1c2cb518db7921f4dc378358d.nix;
+        revNum = 0;
+        sha256 = "c3d7e2476910ded4c2c7fddb7ebd3865bbd1d6e1c2cb518db7921f4dc378358d";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.0.1" = {
+    sha256 = "1687fe3c316db1140e69494fa08bcbc0d77a7b7e62dbea5254bddc8cb5ba5e67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/web3-polkadot-1.1.0.1-r0-3653e3677b6bdd24bbfb165371cc0be33f8c96b6410b7738931f229edffe17e3.nix;
+        revNum = 0;
+        sha256 = "3653e3677b6bdd24bbfb165371cc0be33f8c96b6410b7738931f229edffe17e3";
+      };
+      default = "r0";
+    };
+  };
 }

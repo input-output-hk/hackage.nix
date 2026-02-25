@@ -39,7 +39,12 @@
         revNum = 0;
         sha256 = "1e8d2115ee2299ca65cd63899fd5ed33a00d8e7fd604aabe000c03446e908068";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/fs-api-0.4.0.0-r1-659ccea56daded0cea057bc50de3f2375fa849aabc355f980e361a8c86379acc.nix;
+        revNum = 1;
+        sha256 = "659ccea56daded0cea057bc50de3f2375fa849aabc355f980e361a8c86379acc";
+      };
+      default = "r1";
     };
   };
 }
