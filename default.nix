@@ -8,6 +8,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "3d-graphics-examples" = import ./nix/3d-graphics-examples.nix;
   "3dmodels" = import ./nix/3dmodels.nix;
   "4Blocks" = import ./nix/4_Blocks.nix;
+  "A-gent" = import ./nix/_A-gent.nix;
   "AAI" = import ./nix/_A_A_I.nix;
   "ABList" = import ./nix/_A_B_List.nix;
   "AC-Angle" = import ./nix/_A_C-_Angle.nix;
