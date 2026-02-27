@@ -1482,6 +1482,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "adaptive-tuple" = import ./nix/adaptive-tuple.nix;
   "adb" = import ./nix/adb.nix;
   "adblock2privoxy" = import ./nix/adblock2privoxy.nix;
+  "add-dependent-file" = import ./nix/add-dependent-file.nix;
   "addLicenseInfo" = import ./nix/add_License_Info.nix;
   "addy" = import ./nix/addy.nix;
   "adhoc-fixtures" = import ./nix/adhoc-fixtures.nix;
@@ -2622,6 +2623,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "beam" = import ./nix/beam.nix;
   "beam-automigrate" = import ./nix/beam-automigrate.nix;
   "beam-core" = import ./nix/beam-core.nix;
+  "beam-duckdb" = import ./nix/beam-duckdb.nix;
   "beam-large-records" = import ./nix/beam-large-records.nix;
   "beam-migrate" = import ./nix/beam-migrate.nix;
   "beam-mysql" = import ./nix/beam-mysql.nix;
@@ -13810,6 +13812,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rados-haskell" = import ./nix/rados-haskell.nix;
   "raft" = import ./nix/raft.nix;
   "rail-compiler-editor" = import ./nix/rail-compiler-editor.nix;
+  "railroad" = import ./nix/railroad.nix;
   "rails-session" = import ./nix/rails-session.nix;
   "rainbow" = import ./nix/rainbow.nix;
   "rainbow-tests" = import ./nix/rainbow-tests.nix;
