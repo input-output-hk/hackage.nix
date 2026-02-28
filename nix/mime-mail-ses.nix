@@ -329,4 +329,15 @@
       default = "r0";
     };
   };
+  "0.4.4" = {
+    sha256 = "ffdf46c1b0b89a87e12d91f8cc1e7a820816a79f80210b0d58d29763e6c6fcfb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mime-mail-ses-0.4.4-r0-70d384a9924c8e6ab8cf4cadb897bc3f56d12e2e69f0d5e2894d10f7f18b46a2.nix;
+        revNum = 0;
+        sha256 = "70d384a9924c8e6ab8cf4cadb897bc3f56d12e2e69f0d5e2894d10f7f18b46a2";
+      };
+      default = "r0";
+    };
+  };
 }

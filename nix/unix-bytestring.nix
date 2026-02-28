@@ -240,4 +240,15 @@
       default = "r0";
     };
   };
+  "0.4.0.4" = {
+    sha256 = "a8c797ee9ebc98f5c45b31deb17b3b92a0347a9bce983a59585ef1382d51a7ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unix-bytestring-0.4.0.4-r0-d6f0cc8916fb75030eff6c95cd833312352536ab9c340fb92a5a1768f04555a7.nix;
+        revNum = 0;
+        sha256 = "d6f0cc8916fb75030eff6c95cd833312352536ab9c340fb92a5a1768f04555a7";
+      };
+      default = "r0";
+    };
+  };
 }

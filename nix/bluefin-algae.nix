@@ -44,7 +44,12 @@
         revNum = 3;
         sha256 = "0b0b60e914ab54aa49c463c56a548ec6401d3a1cf7243d4d8cd846e03d502e54";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/bluefin-algae-0.1.0.2-r4-b20511c50ac1d9de52331e745696f41494ca0d2fa5151296fd46743fcb431d0a.nix;
+        revNum = 4;
+        sha256 = "b20511c50ac1d9de52331e745696f41494ca0d2fa5151296fd46743fcb431d0a";
+      };
+      default = "r4";
     };
   };
 }

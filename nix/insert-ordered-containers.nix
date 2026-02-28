@@ -280,7 +280,12 @@
         revNum = 1;
         sha256 = "49e8bd196e4b9517b76c2eccb438def67ad52563eb209469725afde57713c381";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/insert-ordered-containers-0.2.7-r2-54d8e2bf9a55803c8dc65f35f4a1c8f0965e03c74ea74279bc1a375a09c3f429.nix;
+        revNum = 2;
+        sha256 = "54d8e2bf9a55803c8dc65f35f4a1c8f0965e03c74ea74279bc1a375a09c3f429";
+      };
+      default = "r2";
     };
   };
 }

@@ -2942,6 +2942,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bluefin-algae" = import ./nix/bluefin-algae.nix;
   "bluefin-contrib" = import ./nix/bluefin-contrib.nix;
   "bluefin-internal" = import ./nix/bluefin-internal.nix;
+  "bluefin-opaleye" = import ./nix/bluefin-opaleye.nix;
+  "bluefin-postgresql" = import ./nix/bluefin-postgresql.nix;
   "bluefin-random" = import ./nix/bluefin-random.nix;
   "bluemix-sdk" = import ./nix/bluemix-sdk.nix;
   "bluesky-tools" = import ./nix/bluesky-tools.nix;
@@ -3054,6 +3056,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brillo" = import ./nix/brillo.nix;
   "brillo-algorithms" = import ./nix/brillo-algorithms.nix;
   "brillo-examples" = import ./nix/brillo-examples.nix;
+  "brillo-export" = import ./nix/brillo-export.nix;
   "brillo-juicy" = import ./nix/brillo-juicy.nix;
   "brillo-rendering" = import ./nix/brillo-rendering.nix;
   "brittany" = import ./nix/brittany.nix;
@@ -4648,6 +4651,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "datapacker" = import ./nix/datapacker.nix;
   "datarobot" = import ./nix/datarobot.nix;
   "datasets" = import ./nix/datasets.nix;
+  "datastar-hs" = import ./nix/datastar-hs.nix;
   "dataurl" = import ./nix/dataurl.nix;
   "date-cache" = import ./nix/date-cache.nix;
   "date-conversions" = import ./nix/date-conversions.nix;
@@ -6122,6 +6126,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "font-awesome-type" = import ./nix/font-awesome-type.nix;
   "font-opengl-basic4x6" = import ./nix/font-opengl-basic4x6.nix;
   "fontconfig-pure" = import ./nix/fontconfig-pure.nix;
+  "fontwhich" = import ./nix/fontwhich.nix;
   "foo" = import ./nix/foo.nix;
   "foobar" = import ./nix/foobar.nix;
   "for-free" = import ./nix/for-free.nix;
@@ -13227,6 +13232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "postgresql-migration" = import ./nix/postgresql-migration.nix;
   "postgresql-migration-persistent" = import ./nix/postgresql-migration-persistent.nix;
   "postgresql-named" = import ./nix/postgresql-named.nix;
+  "postgresql-operation-counting" = import ./nix/postgresql-operation-counting.nix;
   "postgresql-orm" = import ./nix/postgresql-orm.nix;
   "postgresql-placeholder-converter" = import ./nix/postgresql-placeholder-converter.nix;
   "postgresql-pure" = import ./nix/postgresql-pure.nix;

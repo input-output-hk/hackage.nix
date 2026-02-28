@@ -10,4 +10,26 @@
       default = "r0";
     };
   };
+  "2.0.0" = {
+    sha256 = "cc4cac70517a8475a49ba99c76b5f965dbdb977343137fdddc068dc7b584b022";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brillo-examples-2.0.0-r0-be71133c840a04247572ce3f65fce9ee5fc9b1696c7f5284c3df1c6f77af7c8c.nix;
+        revNum = 0;
+        sha256 = "be71133c840a04247572ce3f65fce9ee5fc9b1696c7f5284c3df1c6f77af7c8c";
+      };
+      default = "r0";
+    };
+  };
+  "2.0.1" = {
+    sha256 = "9d93b152e6a1119a92c8930dbeb6ffd79fecc1ec67a2ce7e78bb9caae375cb95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brillo-examples-2.0.1-r0-1b7bd9de2c82723f109ed17d85150b6ed3884615bec91bda0763b2456c866828.nix;
+        revNum = 0;
+        sha256 = "1b7bd9de2c82723f109ed17d85150b6ed3884615bec91bda0763b2456c866828";
+      };
+      default = "r0";
+    };
+  };
 }
