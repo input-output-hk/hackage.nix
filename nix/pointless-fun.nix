@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "1.1.0.13" = {
+    sha256 = "1b5d18ece9789e11123da5a80395c4dc1824cf877d9ad1fdf0ea29cbafd93cd3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pointless-fun-1.1.0.13-r0-a14daafc909e0c7ee1ab72c1e957f9f2fef6b1f1db8227da45d5c74d4128770e.nix;
+        revNum = 0;
+        sha256 = "a14daafc909e0c7ee1ab72c1e957f9f2fef6b1f1db8227da45d5c74d4128770e";
+      };
+      default = "r0";
+    };
+  };
   "1.1.0.5" = {
     sha256 = "9c32c9f22d543e301915b3409ffcfdff84bc0ecd58361d5e34b40059f880ff9d";
     revisions = {

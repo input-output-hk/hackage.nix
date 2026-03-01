@@ -12024,6 +12024,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "notcpp" = import ./nix/notcpp.nix;
   "nothunks" = import ./nix/nothunks.nix;
   "notifications-tray-icon" = import ./nix/notifications-tray-icon.nix;
+  "notion-client" = import ./nix/notion-client.nix;
   "notmuch" = import ./nix/notmuch.nix;
   "notmuch-haskell" = import ./nix/notmuch-haskell.nix;
   "notmuch-web" = import ./nix/notmuch-web.nix;

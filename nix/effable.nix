@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "799d422433bc4ac25fcc10b260640fde7d97dd7bb6d2280f9fcbb1ded2ee9f23";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effable-0.3.0.0-r0-205e48b454f2b1a87f7de1646e27a8a3c9d51c87294f556ac67e9bd2291146fc.nix;
+        revNum = 0;
+        sha256 = "205e48b454f2b1a87f7de1646e27a8a3c9d51c87294f556ac67e9bd2291146fc";
+      };
+      default = "r0";
+    };
+  };
 }

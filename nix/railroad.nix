@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.1" = {
+    sha256 = "932ba60eac4a036eb31b32ee35d9ec91c483674b84afeea019e1548ffcaf124a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.1.1.1-r0-e897396a5fcb4ee1d3f49d29eeefa51a4644b37e8a7177f293ea04eec0cef6b9.nix;
+        revNum = 0;
+        sha256 = "e897396a5fcb4ee1d3f49d29eeefa51a4644b37e8a7177f293ea04eec0cef6b9";
+      };
+      default = "r0";
+    };
+  };
 }

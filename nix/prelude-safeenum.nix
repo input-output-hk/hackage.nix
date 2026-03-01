@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.1.8" = {
+    sha256 = "088cbe35b0416044b225ca3a4e75c8936dd00f8c44f9d13a341322b80a4ff330";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prelude-safeenum-0.1.1.8-r0-3469ef825578fefd8877bf4469b07078e59000d2b2b39e039f16f374c096a177.nix;
+        revNum = 0;
+        sha256 = "3469ef825578fefd8877bf4469b07078e59000d2b2b39e039f16f374c096a177";
+      };
+      default = "r0";
+    };
+  };
 }
