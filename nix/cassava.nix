@@ -511,7 +511,12 @@
         revNum = 0;
         sha256 = "e512db2503331007bd0e36dfac07ea8b90ac4e9c8f59460fd17439fc6bd2ca1a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cassava-0.5.5.0-r1-559788ac6cad6ae4234ba89332c0494b055b92d08a435d87fea2f650effaa489.nix;
+        revNum = 1;
+        sha256 = "559788ac6cad6ae4234ba89332c0494b055b92d08a435d87fea2f650effaa489";
+      };
+      default = "r1";
     };
   };
 }

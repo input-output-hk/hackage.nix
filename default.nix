@@ -7921,6 +7921,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-dynamic-statements" = import ./nix/hasql-dynamic-statements.nix;
   "hasql-effectful" = import ./nix/hasql-effectful.nix;
   "hasql-explain-tests" = import ./nix/hasql-explain-tests.nix;
+  "hasql-generate" = import ./nix/hasql-generate.nix;
   "hasql-generic" = import ./nix/hasql-generic.nix;
   "hasql-implicits" = import ./nix/hasql-implicits.nix;
   "hasql-interpolate" = import ./nix/hasql-interpolate.nix;
@@ -13833,6 +13834,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ral-optics" = import ./nix/ral-optics.nix;
   "ralist" = import ./nix/ralist.nix;
   "rallod" = import ./nix/rallod.nix;
+  "ram" = import ./nix/ram.nix;
   "raml" = import ./nix/raml.nix;
   "rampart" = import ./nix/rampart.nix;
   "ramus" = import ./nix/ramus.nix;
