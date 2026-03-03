@@ -6413,6 +6413,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gb-nix-cache" = import ./nix/gb-nix-cache.nix;
   "gb-sprite" = import ./nix/gb-sprite.nix;
   "gb-synth" = import ./nix/gb-synth.nix;
+  "gb-vector" = import ./nix/gb-vector.nix;
   "gbnet-hs" = import ./nix/gbnet-hs.nix;
   "gbs-downloader" = import ./nix/gbs-downloader.nix;
   "gbu" = import ./nix/gbu.nix;
@@ -7926,6 +7927,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-implicits" = import ./nix/hasql-implicits.nix;
   "hasql-interpolate" = import ./nix/hasql-interpolate.nix;
   "hasql-listen-notify" = import ./nix/hasql-listen-notify.nix;
+  "hasql-mapping" = import ./nix/hasql-mapping.nix;
   "hasql-migration" = import ./nix/hasql-migration.nix;
   "hasql-mover" = import ./nix/hasql-mover.nix;
   "hasql-notifications" = import ./nix/hasql-notifications.nix;
@@ -9589,6 +9591,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ipatch" = import ./nix/ipatch.nix;
   "ipc" = import ./nix/ipc.nix;
   "ipcvar" = import ./nix/ipcvar.nix;
+  "ipedb" = import ./nix/ipedb.nix;
   "ipfs" = import ./nix/ipfs.nix;
   "ipfs-api" = import ./nix/ipfs-api.nix;
   "ipld-cid" = import ./nix/ipld-cid.nix;
@@ -16722,6 +16725,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "temporal-sdk" = import ./nix/temporal-sdk.nix;
   "temporal-sdk-core" = import ./nix/temporal-sdk-core.nix;
   "temporary" = import ./nix/temporary.nix;
+  "temporary-ospath" = import ./nix/temporary-ospath.nix;
   "temporary-rc" = import ./nix/temporary-rc.nix;
   "temporary-resourcet" = import ./nix/temporary-resourcet.nix;
   "tempus" = import ./nix/tempus.nix;
