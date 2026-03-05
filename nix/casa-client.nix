@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.0.4" = {
+    sha256 = "054492f3ebc9c7450f917f36d3d0812f45851b19f568f4ed248a7b1140c628ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/casa-client-0.0.4-r0-2bcff165c0b73c16b9e7d0a916559f26fc6e18fa43c3d173d8aebd7027dae59c.nix;
+        revNum = 0;
+        sha256 = "2bcff165c0b73c16b9e7d0a916559f26fc6e18fa43c3d173d8aebd7027dae59c";
+      };
+      default = "r0";
+    };
+  };
 }

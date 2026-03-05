@@ -54,7 +54,12 @@
         revNum = 3;
         sha256 = "204c05d11c505fe0eceacdd8716888d78d39b3f4eb49ca49bb9c88928fcc61c0";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/smtlib-backends-z3-0.3.1-r4-6d6dd6677cbaef08ca12bf4e4e4ea89a6d178932999c1f6853b0d39e216981c8.nix;
+        revNum = 4;
+        sha256 = "6d6dd6677cbaef08ca12bf4e4e4ea89a6d178932999c1f6853b0d39e216981c8";
+      };
+      default = "r4";
     };
   };
 }

@@ -5640,6 +5640,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventlog-live-influxdb" = import ./nix/eventlog-live-influxdb.nix;
   "eventlog-live-otelcol" = import ./nix/eventlog-live-otelcol.nix;
   "eventlog-socket" = import ./nix/eventlog-socket.nix;
+  "eventlog-socket-control" = import ./nix/eventlog-socket-control.nix;
   "eventlog2html" = import ./nix/eventlog2html.nix;
   "eventloop" = import ./nix/eventloop.nix;
   "eventsource-api" = import ./nix/eventsource-api.nix;

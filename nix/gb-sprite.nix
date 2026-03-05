@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "2c11539dbe586793e30329865283eede163a20183a37a8dc9d47324ef19748ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gb-sprite-0.3.0.0-r0-30e397c1b6cb2f85d63399ab2e4cfcb8dab8963bb4b116ed3b81318180e89d31.nix;
+        revNum = 0;
+        sha256 = "30e397c1b6cb2f85d63399ab2e4cfcb8dab8963bb4b116ed3b81318180e89d31";
+      };
+      default = "r0";
+    };
+  };
 }
