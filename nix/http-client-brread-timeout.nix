@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "3b7943e8d5a95edaa67fc39f603d1eeae11c7d70abfc910573e4a262ce1892a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-client-brread-timeout-0.3.0.0-r0-de1c357117b5979d9605a47bb86c2122fcdf9e24329109e9ea84073432b0da28.nix;
+        revNum = 0;
+        sha256 = "de1c357117b5979d9605a47bb86c2122fcdf9e24329109e9ea84073432b0da28";
+      };
+      default = "r0";
+    };
+  };
 }
