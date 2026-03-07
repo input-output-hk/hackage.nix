@@ -5636,6 +5636,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "eventium-sql-common" = import ./nix/eventium-sql-common.nix;
   "eventium-sqlite" = import ./nix/eventium-sqlite.nix;
   "eventium-test-helpers" = import ./nix/eventium-test-helpers.nix;
+  "eventium-testkit" = import ./nix/eventium-testkit.nix;
   "eventlog-live" = import ./nix/eventlog-live.nix;
   "eventlog-live-influxdb" = import ./nix/eventlog-live-influxdb.nix;
   "eventlog-live-otelcol" = import ./nix/eventlog-live-otelcol.nix;
@@ -7352,6 +7353,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gtk-jsinput" = import ./nix/gtk-jsinput.nix;
   "gtk-largeTreeStore" = import ./nix/gtk-large_Tree_Store.nix;
   "gtk-mac-integration" = import ./nix/gtk-mac-integration.nix;
+  "gtk-scaling-image" = import ./nix/gtk-scaling-image.nix;
   "gtk-serialized-event" = import ./nix/gtk-serialized-event.nix;
   "gtk-simple-list-view" = import ./nix/gtk-simple-list-view.nix;
   "gtk-sni-tray" = import ./nix/gtk-sni-tray.nix;
