@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "ce4762361b509d1719b5d500604a5a1f2d75c2c53f4fe75f7c4ef2faec4f8352";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cryptostore-0.3.1.0-r1-6417091d43c84a35076b7554d94db17e2ddb8f79c01905031637dfea716b0f9d.nix;
+        revNum = 1;
+        sha256 = "6417091d43c84a35076b7554d94db17e2ddb8f79c01905031637dfea716b0f9d";
+      };
+      default = "r1";
     };
   };
   "0.4.0.0" = {
@@ -95,7 +100,12 @@
         revNum = 0;
         sha256 = "8c23b5e1fd06769f7777a572d1ecde39de1bc833eff7df9da225c079e0692a6b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cryptostore-0.4.0.0-r1-2679291e7d0ef03bcbcf36d50a53e7dcee71051d8fd7d52d9211725228888177.nix;
+        revNum = 1;
+        sha256 = "2679291e7d0ef03bcbcf36d50a53e7dcee71051d8fd7d52d9211725228888177";
+      };
+      default = "r1";
     };
   };
   "0.5.0.0" = {
@@ -106,7 +116,12 @@
         revNum = 0;
         sha256 = "56173cf3adba00c218f1f110d008233660e1cd1538d07124b93c1b7f0ed68b3e";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cryptostore-0.5.0.0-r1-f9d686342b459d3149c27bc712690d1c31d88346016460806dfc98dfb3c7f001.nix;
+        revNum = 1;
+        sha256 = "f9d686342b459d3149c27bc712690d1c31d88346016460806dfc98dfb3c7f001";
+      };
+      default = "r1";
     };
   };
 }

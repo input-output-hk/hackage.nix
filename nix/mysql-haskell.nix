@@ -279,4 +279,26 @@
       default = "r0";
     };
   };
+  "1.1.8" = {
+    sha256 = "d85e8108d771cf86eb56c720c9d6bad609ec4ce2de9b06b8f0ed18280f7bb8ab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mysql-haskell-1.1.8-r0-68b44ce934a01cd8ebcd0689eceaa27b1c69ac757476293ae1697670dd347b85.nix;
+        revNum = 0;
+        sha256 = "68b44ce934a01cd8ebcd0689eceaa27b1c69ac757476293ae1697670dd347b85";
+      };
+      default = "r0";
+    };
+  };
+  "1.2.0" = {
+    sha256 = "4fc0c24540fe5390d415ed4b69cb046eac3bf6428e87754b1774a24b8eda98c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mysql-haskell-1.2.0-r0-e998f903f248bf0a2a415092a9259c95c6d0034630e39e32e7dae860dd218ab7.nix;
+        revNum = 0;
+        sha256 = "e998f903f248bf0a2a415092a9259c95c6d0034630e39e32e7dae860dd218ab7";
+      };
+      default = "r0";
+    };
+  };
 }

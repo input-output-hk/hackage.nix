@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "714cea374203880066659e9e7b690dc40eb0108d06db6de0713462d1e4e88158";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-duckdb-0.2.0.0-r0-832b8c62b37bd0837171ce2c24c44f2eead03cebaa6c27db0f7b71882525e0f9.nix;
+        revNum = 0;
+        sha256 = "832b8c62b37bd0837171ce2c24c44f2eead03cebaa6c27db0f7b71882525e0f9";
+      };
+      default = "r0";
+    };
+  };
 }

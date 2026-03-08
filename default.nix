@@ -2962,6 +2962,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bogre-banana" = import ./nix/bogre-banana.nix;
   "boilerplate" = import ./nix/boilerplate.nix;
   "bolt" = import ./nix/bolt.nix;
+  "bolty" = import ./nix/bolty.nix;
+  "bolty-streamly" = import ./nix/bolty-streamly.nix;
   "boltzmann-brain" = import ./nix/boltzmann-brain.nix;
   "boltzmann-samplers" = import ./nix/boltzmann-samplers.nix;
   "bond" = import ./nix/bond.nix;
@@ -10355,6 +10357,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lex-applicative" = import ./nix/lex-applicative.nix;
   "lexer-applicative" = import ./nix/lexer-applicative.nix;
   "lfst" = import ./nix/lfst.nix;
+  "lfudacaching" = import ./nix/lfudacaching.nix;
   "lgtk" = import ./nix/lgtk.nix;
   "lha" = import ./nix/lha.nix;
   "lhae" = import ./nix/lhae.nix;
@@ -12430,6 +12433,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "packer-messagepack" = import ./nix/packer-messagepack.nix;
   "packman" = import ./nix/packman.nix;
   "packstream" = import ./nix/packstream.nix;
+  "packstream-bolt" = import ./nix/packstream-bolt.nix;
   "packunused" = import ./nix/packunused.nix;
   "pacman-memcache" = import ./nix/pacman-memcache.nix;
   "pact-time" = import ./nix/pact-time.nix;
@@ -13634,6 +13638,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pure-zlib" = import ./nix/pure-zlib.nix;
   "pureMD5" = import ./nix/pure_M_D5.nix;
   "purebred-email" = import ./nix/purebred-email.nix;
+  "purekell" = import ./nix/purekell.nix;
   "purenix" = import ./nix/purenix.nix;
   "puresat" = import ./nix/puresat.nix;
   "purescheme-wai-routing-core" = import ./nix/purescheme-wai-routing-core.nix;

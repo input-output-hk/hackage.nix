@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "19a6f233a73952c408599d082db8d6a3487ab9c1abe0fa350b8d362ab61776ad";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/crypton-x509-1.7.6-r3-a465829bf0706b677aa793df0e96fa59cd87743fbf2a3569be622e313c691e36.nix;
+        revNum = 3;
+        sha256 = "a465829bf0706b677aa793df0e96fa59cd87743fbf2a3569be622e313c691e36";
+      };
+      default = "r3";
     };
   };
   "1.7.7" = {
@@ -28,7 +33,12 @@
         revNum = 0;
         sha256 = "bc5834cabe1a301ff1ab50f373a50b5ce237ea4ea01f008f554544ab8cae1686";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypton-x509-1.7.7-r1-89e227a3ded52d46c65fcc4e9b17a15d39e9f4252faa61cf9a89a3ef30f13722.nix;
+        revNum = 1;
+        sha256 = "89e227a3ded52d46c65fcc4e9b17a15d39e9f4252faa61cf9a89a3ef30f13722";
+      };
+      default = "r1";
     };
   };
   "1.8.0" = {
@@ -39,7 +49,12 @@
         revNum = 0;
         sha256 = "d4822ba8dcb19ee3233fc98152f5afda383ac952770a1d07f1d01168e9fcdbc2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypton-x509-1.8.0-r1-cf3988532758205ca8a7af73f624dc32eaaeb9507dedf575a598efac6ca97548.nix;
+        revNum = 1;
+        sha256 = "cf3988532758205ca8a7af73f624dc32eaaeb9507dedf575a598efac6ca97548";
+      };
+      default = "r1";
     };
   };
   "1.9.0" = {
