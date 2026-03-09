@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "6c98b3e1838b4f37e42fe4e3e86bf9ac3065e49bc0c903bfc44f9b663fd2d0d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scrod-1.1.0.0-r0-82507022233459f4f03f44fe22f1106497babda041092c9367bd0fb070a1d826.nix;
+        revNum = 0;
+        sha256 = "82507022233459f4f03f44fe22f1106497babda041092c9367bd0fb070a1d826";
+      };
+      default = "r0";
+    };
+  };
 }

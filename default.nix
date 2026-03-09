@@ -17748,6 +17748,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "unsequential" = import ./nix/unsequential.nix;
   "unusable-pkg" = import ./nix/unusable-pkg.nix;
   "unused" = import ./nix/unused.nix;
+  "unwitch" = import ./nix/unwitch.nix;
   "unwrapped-functors" = import ./nix/unwrapped-functors.nix;
   "unzip-traversable" = import ./nix/unzip-traversable.nix;
   "uom-plugin" = import ./nix/uom-plugin.nix;

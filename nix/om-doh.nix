@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.0.5" = {
+    sha256 = "96bb272b1a356b04fcea8615b293eb989e13bc5ae9197d8777ca30f016d08032";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-doh-0.1.0.5-r0-00254023bcbfa9ac43dd6842b896f5a3cc750fe83852b9e7ee215bf412e01c8e.nix;
+        revNum = 0;
+        sha256 = "00254023bcbfa9ac43dd6842b896f5a3cc750fe83852b9e7ee215bf412e01c8e";
+      };
+      default = "r0";
+    };
+  };
 }
