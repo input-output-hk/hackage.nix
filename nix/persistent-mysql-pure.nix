@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.3" = {
+    sha256 = "930aa4611ee1aa75c929c6e05578f673ed240a0afaf1ea8b56e969f8bc97bf90";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/persistent-mysql-pure-1.0.3-r0-63c4b9c3da8ece280fd74bceb411ecaabb944872a529221d9f88760f9a7ee283.nix;
+        revNum = 0;
+        sha256 = "63c4b9c3da8ece280fd74bceb411ecaabb944872a529221d9f88760f9a7ee283";
+      };
+      default = "r0";
+    };
+  };
 }

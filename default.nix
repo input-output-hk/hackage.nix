@@ -1641,6 +1641,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "algorithmic-composition-complex" = import ./nix/algorithmic-composition-complex.nix;
   "algorithmic-composition-frequency-shift" = import ./nix/algorithmic-composition-frequency-shift.nix;
   "algorithmic-composition-overtones" = import ./nix/algorithmic-composition-overtones.nix;
+  "algraph" = import ./nix/algraph.nix;
   "align" = import ./nix/align.nix;
   "align-affine" = import ./nix/align-affine.nix;
   "align-audio" = import ./nix/align-audio.nix;
@@ -8689,7 +8690,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-instrumentation-conduit" = import ./nix/hs-opentelemetry-instrumentation-conduit.nix;
   "hs-opentelemetry-instrumentation-hspec" = import ./nix/hs-opentelemetry-instrumentation-hspec.nix;
   "hs-opentelemetry-instrumentation-http-client" = import ./nix/hs-opentelemetry-instrumentation-http-client.nix;
+  "hs-opentelemetry-instrumentation-hw-kafka-client" = import ./nix/hs-opentelemetry-instrumentation-hw-kafka-client.nix;
   "hs-opentelemetry-instrumentation-persistent" = import ./nix/hs-opentelemetry-instrumentation-persistent.nix;
+  "hs-opentelemetry-instrumentation-persistent-mysql" = import ./nix/hs-opentelemetry-instrumentation-persistent-mysql.nix;
   "hs-opentelemetry-instrumentation-postgresql-simple" = import ./nix/hs-opentelemetry-instrumentation-postgresql-simple.nix;
   "hs-opentelemetry-instrumentation-tasty" = import ./nix/hs-opentelemetry-instrumentation-tasty.nix;
   "hs-opentelemetry-instrumentation-wai" = import ./nix/hs-opentelemetry-instrumentation-wai.nix;
@@ -8699,6 +8702,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-opentelemetry-propagator-datadog" = import ./nix/hs-opentelemetry-propagator-datadog.nix;
   "hs-opentelemetry-propagator-w3c" = import ./nix/hs-opentelemetry-propagator-w3c.nix;
   "hs-opentelemetry-sdk" = import ./nix/hs-opentelemetry-sdk.nix;
+  "hs-opentelemetry-semantic-conventions" = import ./nix/hs-opentelemetry-semantic-conventions.nix;
   "hs-opentelemetry-utils-exceptions" = import ./nix/hs-opentelemetry-utils-exceptions.nix;
   "hs-opentelemetry-vendor-honeycomb" = import ./nix/hs-opentelemetry-vendor-honeycomb.nix;
   "hs-pattrans" = import ./nix/hs-pattrans.nix;
@@ -10488,6 +10492,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "linear-geo" = import ./nix/linear-geo.nix;
   "linear-grammar" = import ./nix/linear-grammar.nix;
   "linear-maps" = import ./nix/linear-maps.nix;
+  "linear-massiv" = import ./nix/linear-massiv.nix;
   "linear-opengl" = import ./nix/linear-opengl.nix;
   "linear-programming" = import ./nix/linear-programming.nix;
   "linear-smc" = import ./nix/linear-smc.nix;
@@ -12004,6 +12009,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "non-empty-text" = import ./nix/non-empty-text.nix;
   "non-empty-zipper" = import ./nix/non-empty-zipper.nix;
   "non-negative" = import ./nix/non-negative.nix;
+  "non-negative-time-diff" = import ./nix/non-negative-time-diff.nix;
   "nonce" = import ./nix/nonce.nix;
   "nondeterminism" = import ./nix/nondeterminism.nix;
   "nonempty-alternative" = import ./nix/nonempty-alternative.nix;
@@ -12040,6 +12046,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "notmuch-web" = import ./nix/notmuch-web.nix;
   "notzero" = import ./nix/notzero.nix;
   "nova-cache" = import ./nix/nova-cache.nix;
+  "nova-net" = import ./nix/nova-net.nix;
   "nova-nix" = import ./nix/nova-nix.nix;
   "now-haskell" = import ./nix/now-haskell.nix;
   "nowdoc" = import ./nix/nowdoc.nix;
@@ -16576,6 +16583,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tail" = import ./nix/tail.nix;
   "tailfile-hinotify" = import ./nix/tailfile-hinotify.nix;
   "tailwind" = import ./nix/tailwind.nix;
+  "taiwan-id" = import ./nix/taiwan-id.nix;
   "tak" = import ./nix/tak.nix;
   "tak-ai" = import ./nix/tak-ai.nix;
   "takahashi" = import ./nix/takahashi.nix;
@@ -16811,6 +16819,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "testbench" = import ./nix/testbench.nix;
   "testcontainers" = import ./nix/testcontainers.nix;
   "testcontainers-postgresql" = import ./nix/testcontainers-postgresql.nix;
+  "tesths" = import ./nix/tesths.nix;
   "testing-feat" = import ./nix/testing-feat.nix;
   "testing-tensor" = import ./nix/testing-tensor.nix;
   "testing-type-modifiers" = import ./nix/testing-type-modifiers.nix;

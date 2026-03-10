@@ -60,7 +60,12 @@
         revNum = 0;
         sha256 = "9d0311292fd23229282507dedc47866dc5c18540d90c5f4d8f16821f5633465b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/warp-quic-0.0.3-r1-e2df51ff2d48aa46b0c73c75dd849de4778d73d6bc6929e1cbf1f6f4a58fdd17.nix;
+        revNum = 1;
+        sha256 = "e2df51ff2d48aa46b0c73c75dd849de4778d73d6bc6929e1cbf1f6f4a58fdd17";
+      };
+      default = "r1";
     };
   };
 }

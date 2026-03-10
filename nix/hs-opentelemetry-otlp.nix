@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "1d8ec1ed5e77c3a7865c7a82fd683e8bb64f32d68f50dee67139970cf0b1c979";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-otlp-0.2.0.0-r0-d7a52c77fc9ab1aa4d1f730e459df9d3accf0de9420eb0bd3dc7f2fdf83a11d3.nix;
+        revNum = 0;
+        sha256 = "d7a52c77fc9ab1aa4d1f730e459df9d3accf0de9420eb0bd3dc7f2fdf83a11d3";
+      };
+      default = "r0";
+    };
+  };
 }
