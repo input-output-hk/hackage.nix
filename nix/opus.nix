@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "12906f21f0d26eb88bf6c4b1781f17821fcfb3583f1b0b921e2acccdc2e48fd4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/opus-0.3.0.0-r1-e37ab7a5c469a47853fe0551a0448932cc9eb1e8b67ece188a43dbf5112d17ca.nix;
+        revNum = 1;
+        sha256 = "e37ab7a5c469a47853fe0551a0448932cc9eb1e8b67ece188a43dbf5112d17ca";
+      };
+      default = "r1";
     };
   };
 }

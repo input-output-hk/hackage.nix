@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "6ccfd609920f4310b05f8ca5c742447348e20f4f4bd150a1a1058ef25d10abeb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zwirn-0.2.2.0-r0-629820cb330aa3dfbcd4769983254b5366f3c9d2f5efbf9b389e4fe1a458f7f2.nix;
+        revNum = 0;
+        sha256 = "629820cb330aa3dfbcd4769983254b5366f3c9d2f5efbf9b389e4fe1a458f7f2";
+      };
+      default = "r0";
+    };
+  };
 }

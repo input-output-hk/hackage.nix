@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "1.1.1.1" = {
+    sha256 = "9f31b9a32b7e498767a863127972d81bc45f0cdc934098923f6b826b82515757";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kvitable-1.1.1.1-r0-1cb8418960797e3d71d1609a34ca6d4e0b742bb4045a38c8607d667f040a3421.nix;
+        revNum = 0;
+        sha256 = "1cb8418960797e3d71d1609a34ca6d4e0b742bb4045a38c8607d667f040a3421";
+      };
+      default = "r0";
+    };
+  };
 }

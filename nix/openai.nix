@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "2.5.3" = {
+    sha256 = "00d4ea3bedb8b017a74540a1f383ef8a078226684571f66cf064b82b26bff565";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openai-2.5.3-r0-f49e80130be0575add87c1d9b47daf81d3733fa7d11c01255eb5c4c91809304c.nix;
+        revNum = 0;
+        sha256 = "f49e80130be0575add87c1d9b47daf81d3733fa7d11c01255eb5c4c91809304c";
+      };
+      default = "r0";
+    };
+  };
 }
