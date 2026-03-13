@@ -2584,6 +2584,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "basen" = import ./nix/basen.nix;
   "basen-bytestring" = import ./nix/basen-bytestring.nix;
   "baserock-schema" = import ./nix/baserock-schema.nix;
+  "basesystems" = import ./nix/basesystems.nix;
   "basex-client" = import ./nix/basex-client.nix;
   "bash" = import ./nix/bash.nix;
   "basic" = import ./nix/basic.nix;
@@ -5238,6 +5239,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dunai" = import ./nix/dunai.nix;
   "dunai-core" = import ./nix/dunai-core.nix;
   "dunai-test" = import ./nix/dunai-test.nix;
+  "dunning-t-digest" = import ./nix/dunning-t-digest.nix;
   "duoidal-transformers" = import ./nix/duoidal-transformers.nix;
   "duoids" = import ./nix/duoids.nix;
   "duoids-hedgehog" = import ./nix/duoids-hedgehog.nix;
@@ -11106,6 +11108,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "metronome" = import ./nix/metronome.nix;
   "mezzo" = import ./nix/mezzo.nix;
   "mezzolens" = import ./nix/mezzolens.nix;
+  "mfmts" = import ./nix/mfmts.nix;
   "mfsolve" = import ./nix/mfsolve.nix;
   "mgeneric" = import ./nix/mgeneric.nix;
   "mi" = import ./nix/mi.nix;
@@ -12823,6 +12826,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pgdl" = import ./nix/pgdl.nix;
   "pgf2" = import ./nix/pgf2.nix;
   "pgm" = import ./nix/pgm.nix;
+  "pgmq-config" = import ./nix/pgmq-config.nix;
   "pgmq-core" = import ./nix/pgmq-core.nix;
   "pgmq-effectful" = import ./nix/pgmq-effectful.nix;
   "pgmq-hasql" = import ./nix/pgmq-hasql.nix;
