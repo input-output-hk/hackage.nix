@@ -12264,6 +12264,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "opencascade-hs" = import ./nix/opencascade-hs.nix;
   "opencc" = import ./nix/opencc.nix;
   "opench-meteo" = import ./nix/opench-meteo.nix;
+  "opencode" = import ./nix/opencode.nix;
   "opencog-atomspace" = import ./nix/opencog-atomspace.nix;
   "opencv" = import ./nix/opencv.nix;
   "opencv-extra" = import ./nix/opencv-extra.nix;

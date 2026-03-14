@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "024ba06e8c27ed87a4ca287818008eb5b2dd860d9d24edbe67bd0142b7e8fd36";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ptr-peeker-0.2.0.1-r0-09e890fa44e9c065c60e20096501fede5f6ac33e9bb3eaa74b9031edbf024af1.nix;
+        revNum = 0;
+        sha256 = "09e890fa44e9c065c60e20096501fede5f6ac33e9bb3eaa74b9031edbf024af1";
+      };
+      default = "r0";
+    };
+  };
 }
