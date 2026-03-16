@@ -10055,6 +10055,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ksystools" = import ./nix/ksystools.nix;
   "ktx" = import ./nix/ktx.nix;
   "ktx-codec" = import ./nix/ktx-codec.nix;
+  "ktx-font" = import ./nix/ktx-font.nix;
   "kubernetes-api" = import ./nix/kubernetes-api.nix;
   "kubernetes-api-client" = import ./nix/kubernetes-api-client.nix;
   "kubernetes-client" = import ./nix/kubernetes-client.nix;

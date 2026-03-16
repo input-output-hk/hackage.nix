@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "45dcc22177152eb5fd980b62e931ecf1a28dff91ae50b3f805d35dbd1fdd0116";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/erebos-0.2.1-r0-5ad13732e3273f3b326fbd56e53a8a60b4d964c633a002310198962246d7dd09.nix;
+        revNum = 0;
+        sha256 = "5ad13732e3273f3b326fbd56e53a8a60b4d964c633a002310198962246d7dd09";
+      };
+      default = "r0";
+    };
+  };
 }

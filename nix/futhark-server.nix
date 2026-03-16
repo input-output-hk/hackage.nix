@@ -142,4 +142,20 @@
       default = "r0";
     };
   };
+  "1.3.2.0" = {
+    sha256 = "07ecac53e36a97eda44780f8a41afb27ab8bfeb386bd6b8dfcf6ad043e68fbe6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/futhark-server-1.3.2.0-r0-c9e096da14cfe9562332932f5400bf3727aff2ef530a342a4580823db6b98fb1.nix;
+        revNum = 0;
+        sha256 = "c9e096da14cfe9562332932f5400bf3727aff2ef530a342a4580823db6b98fb1";
+      };
+      r1 = {
+        nix = import ../hackage/futhark-server-1.3.2.0-r1-38a086258f4bee80f7ba00f72a32823b363d4651cedff80ab4f982a4c3d8dac9.nix;
+        revNum = 1;
+        sha256 = "38a086258f4bee80f7ba00f72a32823b363d4651cedff80ab4f982a4c3d8dac9";
+      };
+      default = "r1";
+    };
+  };
 }

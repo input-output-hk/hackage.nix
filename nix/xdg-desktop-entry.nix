@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.1.4" = {
+    sha256 = "c72cdf0c6829d7d19f2559e5c4e352268710c6b3e3f2376583e25973bd5a32a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xdg-desktop-entry-0.1.1.4-r0-23b71fe57312204c2b31e398c0e01cef687058adbcd8d7252b3db821fcadf0e3.nix;
+        revNum = 0;
+        sha256 = "23b71fe57312204c2b31e398c0e01cef687058adbcd8d7252b3db821fcadf0e3";
+      };
+      default = "r0";
+    };
+  };
 }

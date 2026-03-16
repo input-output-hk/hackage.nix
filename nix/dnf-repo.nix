@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.6.2" = {
+    sha256 = "033b8259f1c39523ade290c3b0abbf33401473ae29d913b0ebeeb7cd2d1a545a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dnf-repo-0.6.2-r0-55d58e676e6bfada84a059ef2df317b24e63742f8f07247d9cdb9a45d0fd9c0a.nix;
+        revNum = 0;
+        sha256 = "55d58e676e6bfada84a059ef2df317b24e63742f8f07247d9cdb9a45d0fd9c0a";
+      };
+      default = "r0";
+    };
+  };
 }

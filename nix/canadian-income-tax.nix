@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "2025.1" = {
+    sha256 = "fdcca49f57d7f6d0935b770abec78da8bb16fff4027ca5ca14b1bd5e353b90a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canadian-income-tax-2025.1-r0-fb952c5b704e12cae0e029a591d5c298ac2a9f3d624aaf6610cbc35f84bda2b2.nix;
+        revNum = 0;
+        sha256 = "fb952c5b704e12cae0e029a591d5c298ac2a9f3d624aaf6610cbc35f84bda2b2";
+      };
+      default = "r0";
+    };
+  };
 }
