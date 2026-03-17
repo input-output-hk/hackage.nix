@@ -535,4 +535,15 @@
       default = "r0";
     };
   };
+  "2.9.6.3" = {
+    sha256 = "96eef06265b023b12778aa8fee3b74febc16b107f395a8f5290224ddad4896c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/BNFC-2.9.6.3-r0-b8862084e3397d6d394642754f6953386b3f22938103816ea4d5c634d915da9c.nix;
+        revNum = 0;
+        sha256 = "b8862084e3397d6d394642754f6953386b3f22938103816ea4d5c634d915da9c";
+      };
+      default = "r0";
+    };
+  };
 }

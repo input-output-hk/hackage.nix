@@ -1629,6 +1629,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "algebra-sql" = import ./nix/algebra-sql.nix;
   "algebraic" = import ./nix/algebraic.nix;
   "algebraic-classes" = import ./nix/algebraic-classes.nix;
+  "algebraic-edge-graphs" = import ./nix/algebraic-edge-graphs.nix;
   "algebraic-graph-duoids" = import ./nix/algebraic-graph-duoids.nix;
   "algebraic-graphs" = import ./nix/algebraic-graphs.nix;
   "algebraic-graphs-io" = import ./nix/algebraic-graphs-io.nix;
@@ -4202,6 +4203,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "core-data" = import ./nix/core-data.nix;
   "core-effect-effectful" = import ./nix/core-effect-effectful.nix;
   "core-haskell" = import ./nix/core-haskell.nix;
+  "core-of-name" = import ./nix/core-of-name.nix;
   "core-program" = import ./nix/core-program.nix;
   "core-telemetry" = import ./nix/core-telemetry.nix;
   "core-text" = import ./nix/core-text.nix;

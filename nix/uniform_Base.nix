@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.5.2" = {
+    sha256 = "d7f0265b5c2575d31c21657cd2c96f65dacb5629572d7fa8d57bc9bb55ba8536";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uniformBase-0.1.5.2-r0-5ddc9e21ebaf9ea942cd199b34770631afc3d8c2779da9cc155fcb6697e48b40.nix;
+        revNum = 0;
+        sha256 = "5ddc9e21ebaf9ea942cd199b34770631afc3d8c2779da9cc155fcb6697e48b40";
+      };
+      default = "r0";
+    };
+  };
 }

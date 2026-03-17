@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.5.2" = {
+    sha256 = "5ffc8dc70a82c8274c31c30205a8acda8e0edfe8f479dabf4bcf40ad748fa370";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uniform-fileio-0.1.5.2-r0-8d7e8e82899bb4d2ed641ca2f76ef4f38488323b7ce81290e208acc4c0287198.nix;
+        revNum = 0;
+        sha256 = "8d7e8e82899bb4d2ed641ca2f76ef4f38488323b7ce81290e208acc4c0287198";
+      };
+      default = "r0";
+    };
+  };
 }
