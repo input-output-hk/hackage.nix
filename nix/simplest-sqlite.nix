@@ -263,4 +263,26 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "70e7ba74b086faf3e2718761664a577867a14344b6c2d1f9be1d744e7b2a8a0d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simplest-sqlite-0.1.1.0-r0-c4af1d5b0fee3a7a4af47643f9712c414020c0d9deef5b91dedfe335468b1819.nix;
+        revNum = 0;
+        sha256 = "c4af1d5b0fee3a7a4af47643f9712c414020c0d9deef5b91dedfe335468b1819";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.1.1" = {
+    sha256 = "90394a7d775447b28b3bbf584911919a950e76e6e073a687641ac50054bb47c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simplest-sqlite-0.1.1.1-r0-72997afbb04c501a0e561b95403a4569ae7f250511e06e60a2288bfb8f105d06.nix;
+        revNum = 0;
+        sha256 = "72997afbb04c501a0e561b95403a4569ae7f250511e06e60a2288bfb8f105d06";
+      };
+      default = "r0";
+    };
+  };
 }

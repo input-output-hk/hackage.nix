@@ -45,7 +45,12 @@
         revNum = 1;
         sha256 = "e473c6845759578fd4553057826ed21e4dbea67663824fa21496e4e174dcb6e2";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/io-sim-1.10.0.0-r2-2065a9b55c3d58009319efb56b543f21fb983fbd65dfb71d9900290020599891.nix;
+        revNum = 2;
+        sha256 = "2065a9b55c3d58009319efb56b543f21fb983fbd65dfb71d9900290020599891";
+      };
+      default = "r2";
     };
   };
   "1.2.0.0" = {

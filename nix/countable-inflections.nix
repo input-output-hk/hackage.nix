@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.2" = {
+    sha256 = "e9653d87477cd02ea7e6a6f6e3daaf1e82832c7413cbf84556660398777f64e7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/countable-inflections-0.3.2-r0-33daab4689524ae282c3bd55647b44f2e32193faa0aa372d5629021cf1cf3ea1.nix;
+        revNum = 0;
+        sha256 = "33daab4689524ae282c3bd55647b44f2e32193faa0aa372d5629021cf1cf3ea1";
+      };
+      default = "r0";
+    };
+  };
 }

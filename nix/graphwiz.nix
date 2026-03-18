@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "fd6d2f7f98649e3fbfc1747effaaa8e92b4e3701215341eafdfa98810623d01d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphwiz-3.0.0-r0-438e8ebf9a83b568d5267049f18defd98cb38d3f09960b3ddfc7cb59f082eabf.nix;
+        revNum = 0;
+        sha256 = "438e8ebf9a83b568d5267049f18defd98cb38d3f09960b3ddfc7cb59f082eabf";
+      };
+      default = "r0";
+    };
+  };
 }

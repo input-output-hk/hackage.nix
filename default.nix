@@ -1358,6 +1358,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "Zora" = import ./nix/_Zora.nix;
   "Ztrategic" = import ./nix/_Ztrategic.nix;
   "Zwaluw" = import ./nix/_Zwaluw.nix;
+  "a-piece-of-flake" = import ./nix/a-piece-of-flake.nix;
   "a50" = import ./nix/a50.nix;
   "aasam" = import ./nix/aasam.nix;
   "abacate" = import ./nix/abacate.nix;
@@ -7767,6 +7768,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-kubernetes" = import ./nix/haskell-kubernetes.nix;
   "haskell-language-server" = import ./nix/haskell-language-server.nix;
   "haskell-lexer" = import ./nix/haskell-lexer.nix;
+  "haskell-list-builder" = import ./nix/haskell-list-builder.nix;
   "haskell-lsp" = import ./nix/haskell-lsp.nix;
   "haskell-lsp-client" = import ./nix/haskell-lsp-client.nix;
   "haskell-lsp-types" = import ./nix/haskell-lsp-types.nix;
@@ -9355,10 +9357,17 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-symtegration" = import ./nix/ihaskell-symtegration.nix;
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
   "ihp" = import ./nix/ihp.nix;
+  "ihp-context" = import ./nix/ihp-context.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
   "ihp-ide" = import ./nix/ihp-ide.nix;
+  "ihp-imagemagick" = import ./nix/ihp-imagemagick.nix;
+  "ihp-log" = import ./nix/ihp-log.nix;
   "ihp-migrate" = import ./nix/ihp-migrate.nix;
+  "ihp-modal" = import ./nix/ihp-modal.nix;
   "ihp-openai" = import ./nix/ihp-openai.nix;
+  "ihp-pagehead" = import ./nix/ihp-pagehead.nix;
+  "ihp-pglistener" = import ./nix/ihp-pglistener.nix;
+  "ihp-postgres-parser" = import ./nix/ihp-postgres-parser.nix;
   "ihp-postgresql-simple-extra" = import ./nix/ihp-postgresql-simple-extra.nix;
   "ihs" = import ./nix/ihs.nix;
   "ihttp" = import ./nix/ihttp.nix;
@@ -12576,6 +12585,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "park-bench" = import ./nix/park-bench.nix;
   "parochial" = import ./nix/parochial.nix;
   "parport" = import ./nix/parport.nix;
+  "parquet-haskell" = import ./nix/parquet-haskell.nix;
   "parquet-hs" = import ./nix/parquet-hs.nix;
   "parsable" = import ./nix/parsable.nix;
   "parsable-test" = import ./nix/parsable-test.nix;
@@ -12639,6 +12649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "passman-cli" = import ./nix/passman-cli.nix;
   "passman-core" = import ./nix/passman-core.nix;
   "password" = import ./nix/password.nix;
+  "password-cli" = import ./nix/password-cli.nix;
   "password-instances" = import ./nix/password-instances.nix;
   "password-types" = import ./nix/password-types.nix;
   "passwords" = import ./nix/passwords.nix;
@@ -17358,6 +17369,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ttrie" = import ./nix/ttrie.nix;
   "tttool" = import ./nix/tttool.nix;
   "tubes" = import ./nix/tubes.nix;
+  "tui-launcher" = import ./nix/tui-launcher.nix;
   "tuispec" = import ./nix/tuispec.nix;
   "tuntap" = import ./nix/tuntap.nix;
   "tuntap-simple" = import ./nix/tuntap-simple.nix;
@@ -18086,6 +18098,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-accept-language" = import ./nix/wai-accept-language.nix;
   "wai-app-file-cgi" = import ./nix/wai-app-file-cgi.nix;
   "wai-app-static" = import ./nix/wai-app-static.nix;
+  "wai-asset-path" = import ./nix/wai-asset-path.nix;
   "wai-cli" = import ./nix/wai-cli.nix;
   "wai-conduit" = import ./nix/wai-conduit.nix;
   "wai-control" = import ./nix/wai-control.nix;
@@ -18100,6 +18113,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-eventsource" = import ./nix/wai-eventsource.nix;
   "wai-extra" = import ./nix/wai-extra.nix;
   "wai-feature-flags" = import ./nix/wai-feature-flags.nix;
+  "wai-flash-messages" = import ./nix/wai-flash-messages.nix;
   "wai-frontend-monadcgi" = import ./nix/wai-frontend-monadcgi.nix;
   "wai-git-http" = import ./nix/wai-git-http.nix;
   "wai-graceful" = import ./nix/wai-graceful.nix;
@@ -18159,6 +18173,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-rate-limit" = import ./nix/wai-rate-limit.nix;
   "wai-rate-limit-postgres" = import ./nix/wai-rate-limit-postgres.nix;
   "wai-rate-limit-redis" = import ./nix/wai-rate-limit-redis.nix;
+  "wai-request-params" = import ./nix/wai-request-params.nix;
   "wai-request-spec" = import ./nix/wai-request-spec.nix;
   "wai-responsible" = import ./nix/wai-responsible.nix;
   "wai-route" = import ./nix/wai-route.nix;
