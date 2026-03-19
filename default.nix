@@ -6191,6 +6191,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fptest" = import ./nix/fptest.nix;
   "fquery" = import ./nix/fquery.nix;
   "fractal" = import ./nix/fractal.nix;
+  "fractal-layer" = import ./nix/fractal-layer.nix;
   "fractals" = import ./nix/fractals.nix;
   "fractaltext" = import ./nix/fractaltext.nix;
   "fraction" = import ./nix/fraction.nix;
