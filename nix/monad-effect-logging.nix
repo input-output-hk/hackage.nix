@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "ab486c8d5202198a3fe28b0e008f8385798b110aafc624bde7cc9e23fcf7afa1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monad-effect-logging-0.3.0.0-r0-2180b435f82476ec8433f9053b8c5dd3e4381152dacd9ec81caa9d638e84eb4c.nix;
+        revNum = 0;
+        sha256 = "2180b435f82476ec8433f9053b8c5dd3e4381152dacd9ec81caa9d638e84eb4c";
+      };
+      default = "r0";
+    };
+  };
 }

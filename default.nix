@@ -9649,6 +9649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ironforge" = import ./nix/ironforge.nix;
   "irt" = import ./nix/irt.nix;
   "is" = import ./nix/is.nix;
+  "is-list" = import ./nix/is-list.nix;
   "isbn" = import ./nix/isbn.nix;
   "isdicom" = import ./nix/isdicom.nix;
   "isevaluated" = import ./nix/isevaluated.nix;
@@ -11377,6 +11378,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monad-persist" = import ./nix/monad-persist.nix;
   "monad-primitive" = import ./nix/monad-primitive.nix;
   "monad-products" = import ./nix/monad-products.nix;
+  "monad-rail" = import ./nix/monad-rail.nix;
   "monad-ran" = import ./nix/monad-ran.nix;
   "monad-recorder" = import ./nix/monad-recorder.nix;
   "monad-resumption" = import ./nix/monad-resumption.nix;

@@ -531,4 +531,26 @@
       default = "r0";
     };
   };
+  "0.9.4" = {
+    sha256 = "ae8498c1635581b1a6a6dbb3f6da3211cb799689ca2857572af3d83fd017217c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-natnormalise-0.9.4-r0-ccff924fb7db1172211abfaf64b7e0ecaff83a89ce24185e2c0b3f2c9f2d65e9.nix;
+        revNum = 0;
+        sha256 = "ccff924fb7db1172211abfaf64b7e0ecaff83a89ce24185e2c0b3f2c9f2d65e9";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.5" = {
+    sha256 = "7869dfaef05982d33746627a6b7ef7249f266d6160a771ddf2131882605d218d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-typelits-natnormalise-0.9.5-r0-692d7a936ecee9e3a994f0a60d136be1f03137d38aca90f03b8efcb40bed90ca.nix;
+        revNum = 0;
+        sha256 = "692d7a936ecee9e3a994f0a60d136be1f03137d38aca90f03b8efcb40bed90ca";
+      };
+      default = "r0";
+    };
+  };
 }
