@@ -17925,6 +17925,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "validity-uuid" = import ./nix/validity-uuid.nix;
   "validity-vector" = import ./nix/validity-vector.nix;
   "valor" = import ./nix/valor.nix;
+  "valuations" = import ./nix/valuations.nix;
   "value-supply" = import ./nix/value-supply.nix;
   "vampire" = import ./nix/vampire.nix;
   "var" = import ./nix/var.nix;
