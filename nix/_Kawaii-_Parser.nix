@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "5.0.0" = {
+    sha256 = "4b4bfde4b41a20d8b2d285cedf91e84b7f00c4c8e7bfa67875297669616c611c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Kawaii-Parser-5.0.0-r0-ce7efd86335d5412d2f53d433b1a0f9529d67971fb9c69ff3546f6e10eda8971.nix;
+        revNum = 0;
+        sha256 = "ce7efd86335d5412d2f53d433b1a0f9529d67971fb9c69ff3546f6e10eda8971";
+      };
+      default = "r0";
+    };
+  };
 }

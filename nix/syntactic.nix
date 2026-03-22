@@ -587,4 +587,15 @@
       default = "r0";
     };
   };
+  "3.8.5" = {
+    sha256 = "72672950fbe82348e6bfab61d9de5c0a5fe2ebcaa9908a9e583d0fa690e64c88";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/syntactic-3.8.5-r0-2210bdc78923033e8b3abca919e0aedb9335099c3d8e6d31e9ef42a42a78cd3b.nix;
+        revNum = 0;
+        sha256 = "2210bdc78923033e8b3abca919e0aedb9335099c3d8e6d31e9ef42a42a78cd3b";
+      };
+      default = "r0";
+    };
+  };
 }

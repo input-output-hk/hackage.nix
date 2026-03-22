@@ -7437,6 +7437,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hVOIDP" = import ./nix/h_V_O_I_D_P.nix;
   "hXmixer" = import ./nix/h_Xmixer.nix;
   "haal" = import ./nix/haal.nix;
+  "haal-models" = import ./nix/haal-models.nix;
   "haar" = import ./nix/haar.nix;
   "habit" = import ./nix/habit.nix;
   "hable" = import ./nix/hable.nix;

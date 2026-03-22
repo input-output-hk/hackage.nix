@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "fef474b4e472023995f231479e271e4bf359acbfd1851cd7ee17dcefef532d77";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Aoide-1.0.0.0-r0-b03fa021d5689ac2db7c4f5654d7bdb234f296da78c1354147a0f18cabafc2cc.nix;
+        revNum = 0;
+        sha256 = "b03fa021d5689ac2db7c4f5654d7bdb234f296da78c1354147a0f18cabafc2cc";
+      };
+      default = "r0";
+    };
+  };
 }
