@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "1.13.0" = {
+    sha256 = "c31fb030cdda1e76fe52728e40e64f28420ffb61f34a99bc4d7d638e910746b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-language-lustre-1.13.0-r0-ec754a469a7a2ead4ea4f4c48a3a59b09375407a80e12689a61b618ddd2f4333.nix;
+        revNum = 0;
+        sha256 = "ec754a469a7a2ead4ea4f4c48a3a59b09375407a80e12689a61b618ddd2f4333";
+      };
+      default = "r0";
+    };
+  };
   "1.7.0" = {
     sha256 = "6d64fac44a2e26ffac16701cc8a32cba3b6bb99f9ca7c497e92165f6381d4688";
     revisions = {

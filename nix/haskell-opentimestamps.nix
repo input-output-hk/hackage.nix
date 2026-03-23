@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.5.5.2" = {
+    sha256 = "a8d0e65cf7ea6c7ae7f69a0d19243cccf6886ac78f3819de9cf308982938ed91";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haskell-opentimestamps-0.5.5.2-r0-a1d39ccc69756f179c2bab9c0e3a37ce6c429204c59800eff8054e1d960d053c.nix;
+        revNum = 0;
+        sha256 = "a1d39ccc69756f179c2bab9c0e3a37ce6c429204c59800eff8054e1d960d053c";
+      };
+      default = "r0";
+    };
+  };
 }

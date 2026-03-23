@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "1.13.0" = {
+    sha256 = "950b1dde6b84f6020c8364507952c7075f7dfc70fd32cd993e34b312bf13356d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ogma-language-xlsx-1.13.0-r0-86ce28b7a7d2dd3528ea8858b02808179624dca2709a0a2c60b0003120108924.nix;
+        revNum = 0;
+        sha256 = "86ce28b7a7d2dd3528ea8858b02808179624dca2709a0a2c60b0003120108924";
+      };
+      default = "r0";
+    };
+  };
   "1.7.0" = {
     sha256 = "406fe76e908948a94ac7a73058b182df98a2e4d8d1339640cf4917c1f6594de7";
     revisions = {

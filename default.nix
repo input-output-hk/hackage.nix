@@ -8866,6 +8866,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsmisc" = import ./nix/hsmisc.nix;
   "hsmodetweaks" = import ./nix/hsmodetweaks.nix;
   "hsmrc" = import ./nix/hsmrc.nix;
+  "hsmrc-marc8" = import ./nix/hsmrc-marc8.nix;
   "hsmtpclient" = import ./nix/hsmtpclient.nix;
   "hsndfile" = import ./nix/hsndfile.nix;
   "hsndfile-storablevector" = import ./nix/hsndfile-storablevector.nix;
@@ -12840,6 +12841,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pg-harness-server" = import ./nix/pg-harness-server.nix;
   "pg-query" = import ./nix/pg-query.nix;
   "pg-recorder" = import ./nix/pg-recorder.nix;
+  "pg-schema" = import ./nix/pg-schema.nix;
   "pg-store" = import ./nix/pg-store.nix;
   "pg-transact" = import ./nix/pg-transact.nix;
   "pgdl" = import ./nix/pgdl.nix;
@@ -15142,6 +15144,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shared-buffer" = import ./nix/shared-buffer.nix;
   "shared-fields" = import ./nix/shared-fields.nix;
   "shared-memory" = import ./nix/shared-memory.nix;
+  "shared-resource-cache" = import ./nix/shared-resource-cache.nix;
   "sharedio" = import ./nix/sharedio.nix;
   "she" = import ./nix/she.nix;
   "shebanger" = import ./nix/shebanger.nix;
