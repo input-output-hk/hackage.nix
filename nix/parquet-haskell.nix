@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "80ff271f79d5315cbba3f42dd70d240814352d46f3b6e0e46089a0b2f31d191e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/parquet-haskell-0.1.1.0-r0-68ad83b3bbae6aa738b171239154acdb5f5226fad1827107fea305a9f6156717.nix;
+        revNum = 0;
+        sha256 = "68ad83b3bbae6aa738b171239154acdb5f5226fad1827107fea305a9f6156717";
+      };
+      default = "r0";
+    };
+  };
 }
