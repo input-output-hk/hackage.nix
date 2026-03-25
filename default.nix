@@ -18193,6 +18193,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-session" = import ./nix/wai-session.nix;
   "wai-session-alt" = import ./nix/wai-session-alt.nix;
   "wai-session-clientsession" = import ./nix/wai-session-clientsession.nix;
+  "wai-session-clientsession-deferred" = import ./nix/wai-session-clientsession-deferred.nix;
+  "wai-session-maybe" = import ./nix/wai-session-maybe.nix;
   "wai-session-mysql" = import ./nix/wai-session-mysql.nix;
   "wai-session-postgresql" = import ./nix/wai-session-postgresql.nix;
   "wai-session-redis" = import ./nix/wai-session-redis.nix;
