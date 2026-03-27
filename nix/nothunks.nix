@@ -120,7 +120,17 @@
         revNum = 0;
         sha256 = "4ece69fe8195af3dafbf584fbf1d614f1f00a70e4ffc29f40e085357816cedd3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nothunks-0.2.1.1-r1-90d75b7f3d100de544c0523607ea3940ed838fbab5ec674b3ba4e916c92ee6b8.nix;
+        revNum = 1;
+        sha256 = "90d75b7f3d100de544c0523607ea3940ed838fbab5ec674b3ba4e916c92ee6b8";
+      };
+      r2 = {
+        nix = import ../hackage/nothunks-0.2.1.1-r2-ab00ee9f915b8e3138e1727e74b137a63f0e8746e9ae80b871c94a86af1578f0.nix;
+        revNum = 2;
+        sha256 = "ab00ee9f915b8e3138e1727e74b137a63f0e8746e9ae80b871c94a86af1578f0";
+      };
+      default = "r2";
     };
   };
   "0.3.0.0" = {

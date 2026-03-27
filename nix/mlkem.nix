@@ -31,4 +31,15 @@
       default = "r1";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "df90213d0e44c36ab892e2920cbe9042564cfc18be0088259e44b3487905d867";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mlkem-0.2.0.0-r0-c51d0779dc69ff375420444ffa2f0ce9229bd8e967eb4b17216c0fa85a53984f.nix;
+        revNum = 0;
+        sha256 = "c51d0779dc69ff375420444ffa2f0ce9229bd8e967eb4b17216c0fa85a53984f";
+      };
+      default = "r0";
+    };
+  };
 }

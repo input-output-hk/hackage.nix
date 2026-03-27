@@ -2293,6 +2293,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "assoc" = import ./nix/assoc.nix;
   "assoc-list" = import ./nix/assoc-list.nix;
   "assoc-listlike" = import ./nix/assoc-listlike.nix;
+  "associative" = import ./nix/associative.nix;
   "assumpta" = import ./nix/assumpta.nix;
   "assumpta-core" = import ./nix/assumpta-core.nix;
   "ast-monad" = import ./nix/ast-monad.nix;
@@ -8095,6 +8096,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedgehog-optics" = import ./nix/hedgehog-optics.nix;
   "hedgehog-quickcheck" = import ./nix/hedgehog-quickcheck.nix;
   "hedgehog-servant" = import ./nix/hedgehog-servant.nix;
+  "hedgehog-utils" = import ./nix/hedgehog-utils.nix;
   "hedis" = import ./nix/hedis.nix;
   "hedis-config" = import ./nix/hedis-config.nix;
   "hedis-effectful" = import ./nix/hedis-effectful.nix;
@@ -9361,10 +9363,16 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihaskell-widgets" = import ./nix/ihaskell-widgets.nix;
   "ihp" = import ./nix/ihp.nix;
   "ihp-context" = import ./nix/ihp-context.nix;
+  "ihp-datasync" = import ./nix/ihp-datasync.nix;
+  "ihp-datasync-typescript" = import ./nix/ihp-datasync-typescript.nix;
+  "ihp-graphql" = import ./nix/ihp-graphql.nix;
+  "ihp-hspec" = import ./nix/ihp-hspec.nix;
   "ihp-hsx" = import ./nix/ihp-hsx.nix;
   "ihp-ide" = import ./nix/ihp-ide.nix;
   "ihp-imagemagick" = import ./nix/ihp-imagemagick.nix;
+  "ihp-job-dashboard" = import ./nix/ihp-job-dashboard.nix;
   "ihp-log" = import ./nix/ihp-log.nix;
+  "ihp-mail" = import ./nix/ihp-mail.nix;
   "ihp-migrate" = import ./nix/ihp-migrate.nix;
   "ihp-modal" = import ./nix/ihp-modal.nix;
   "ihp-openai" = import ./nix/ihp-openai.nix;
@@ -9372,6 +9380,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihp-pglistener" = import ./nix/ihp-pglistener.nix;
   "ihp-postgres-parser" = import ./nix/ihp-postgres-parser.nix;
   "ihp-postgresql-simple-extra" = import ./nix/ihp-postgresql-simple-extra.nix;
+  "ihp-schema-compiler" = import ./nix/ihp-schema-compiler.nix;
+  "ihp-sitemap" = import ./nix/ihp-sitemap.nix;
+  "ihp-ssc" = import ./nix/ihp-ssc.nix;
+  "ihp-typed-sql" = import ./nix/ihp-typed-sql.nix;
+  "ihp-welcome" = import ./nix/ihp-welcome.nix;
   "ihs" = import ./nix/ihs.nix;
   "ihttp" = import ./nix/ihttp.nix;
   "ilist" = import ./nix/ilist.nix;
@@ -10527,6 +10540,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lingo" = import ./nix/lingo.nix;
   "linguistic-ordinals" = import ./nix/linguistic-ordinals.nix;
   "link-canonical" = import ./nix/link-canonical.nix;
+  "link-canonical-effectful" = import ./nix/link-canonical-effectful.nix;
   "link-relations" = import ./nix/link-relations.nix;
   "linkcheck" = import ./nix/linkcheck.nix;
   "linkchk" = import ./nix/linkchk.nix;
@@ -12237,6 +12251,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "on-demand-ssh-tunnel" = import ./nix/on-demand-ssh-tunnel.nix;
   "onama" = import ./nix/onama.nix;
   "once" = import ./nix/once.nix;
+  "one" = import ./nix/one.nix;
   "one-line-aeson-text" = import ./nix/one-line-aeson-text.nix;
   "one-liner" = import ./nix/one-liner.nix;
   "one-liner-instances" = import ./nix/one-liner-instances.nix;

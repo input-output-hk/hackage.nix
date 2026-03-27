@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "8db002816d10f145dee4e07b1593b12c5202c5204d2b097f5b0b5f743183cdd0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/lsm-tree-1.0.0.1-r1-d03aa092199963ab37f9be4103f63d051c72f85c2436464a31049c2e3e87d929.nix;
+        revNum = 1;
+        sha256 = "d03aa092199963ab37f9be4103f63d051c72f85c2436464a31049c2e3e87d929";
+      };
+      default = "r1";
     };
   };
 }

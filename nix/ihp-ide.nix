@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.5.0" = {
+    sha256 = "94ef18a11e549ab75f130508b6937ffe7121e6b2d2da5cb884d490e608e7e6e4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ihp-ide-1.5.0-r0-9e6852238c491ee08f06e2e1c046252b8606b636d02a71629d61ce910bd31136.nix;
+        revNum = 0;
+        sha256 = "9e6852238c491ee08f06e2e1c046252b8606b636d02a71629d61ce910bd31136";
+      };
+      default = "r0";
+    };
+  };
 }

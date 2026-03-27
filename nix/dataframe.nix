@@ -493,4 +493,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "981613441b2b8d1f2cda0dde741008daf7ed9e5ba83fcdf521fe7463a80c6f7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-1.0.0.1-r0-9d08737198cb5886a09a6376443289dd4a9e2c32f3db05c18172e497820603cf.nix;
+        revNum = 0;
+        sha256 = "9d08737198cb5886a09a6376443289dd4a9e2c32f3db05c18172e497820603cf";
+      };
+      default = "r0";
+    };
+  };
 }
