@@ -39,7 +39,12 @@
         revNum = 2;
         sha256 = "e7b506de0cdc4952f126beddbd1cad64b09e5c0118684ce43d3891e1546a202c";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/bluefin-random-0.2.0.0-r3-16c6f154307ef313c4d552ab8ddcd448b8bebbc1d7b7e2f08980ded23b571306.nix;
+        revNum = 3;
+        sha256 = "16c6f154307ef313c4d552ab8ddcd448b8bebbc1d7b7e2f08980ded23b571306";
+      };
+      default = "r3";
     };
   };
 }

@@ -10107,6 +10107,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "labyrinth-server" = import ./nix/labyrinth-server.nix;
   "lackey" = import ./nix/lackey.nix;
   "lacroix" = import ./nix/lacroix.nix;
+  "lager" = import ./nix/lager.nix;
   "lagrangian" = import ./nix/lagrangian.nix;
   "laika" = import ./nix/laika.nix;
   "lambda" = import ./nix/lambda.nix;

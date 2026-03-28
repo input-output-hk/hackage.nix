@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "5266873d6ad455c163f8f4d5b41acf19e398ec1f39cc2e7a3670c14c0dc4e189";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fontwhich-0.3-r0-a9a667622eea8d63c2b52b5bcd1f6bfa71740aecbda188fd822ba00181834332.nix;
+        revNum = 0;
+        sha256 = "a9a667622eea8d63c2b52b5bcd1f6bfa71740aecbda188fd822ba00181834332";
+      };
+      default = "r0";
+    };
+  };
 }

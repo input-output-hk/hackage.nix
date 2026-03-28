@@ -1608,7 +1608,23 @@
         revNum = 3;
         sha256 = "bc998c79cef868ccaf90d1642119dfc7868dc64d4afd0b838f988f89be55b7a0";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/hakyll-4.16.7.1-r4-03e8bb4a027c448e7349339452453da2c441b38bbfd89e177b8bcd374a7d0e94.nix;
+        revNum = 4;
+        sha256 = "03e8bb4a027c448e7349339452453da2c441b38bbfd89e177b8bcd374a7d0e94";
+      };
+      default = "r4";
+    };
+  };
+  "4.16.8.0" = {
+    sha256 = "b7d003fc605bb3d8578cc0f7cefd18dd0c7d250252ac27c92891d80c3cbacd42";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyll-4.16.8.0-r0-e90ca77f897057d2e164a92b4d268928fbe8043dfefaed7f6cf7c5c5bc809566.nix;
+        revNum = 0;
+        sha256 = "e90ca77f897057d2e164a92b4d268928fbe8043dfefaed7f6cf7c5c5bc809566";
+      };
+      default = "r0";
     };
   };
   "4.2.0.0" = {
