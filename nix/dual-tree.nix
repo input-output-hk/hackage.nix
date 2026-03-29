@@ -291,4 +291,15 @@
       default = "r5";
     };
   };
+  "0.2.3.2" = {
+    sha256 = "85ce6bd69afbf354e28a2214986a6c0e84b884f86d91bd3378a013234817628a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dual-tree-0.2.3.2-r0-ff381c0e75b6baaf5df98b010c00a819646cf4bb9df76850cd50d76e88e00408.nix;
+        revNum = 0;
+        sha256 = "ff381c0e75b6baaf5df98b010c00a819646cf4bb9df76850cd50d76e88e00408";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -3080,6 +3080,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brotli-conduit" = import ./nix/brotli-conduit.nix;
   "brotli-streams" = import ./nix/brotli-streams.nix;
   "browscap" = import ./nix/browscap.nix;
+  "brush-strokes" = import ./nix/brush-strokes.nix;
+  "brush-stroking" = import ./nix/brush-stroking.nix;
   "bsb-http-chunked" = import ./nix/bsb-http-chunked.nix;
   "bsd-sysctl" = import ./nix/bsd-sysctl.nix;
   "bson" = import ./nix/bson.nix;
@@ -4395,6 +4397,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cspmchecker" = import ./nix/cspmchecker.nix;
   "cspretty" = import ./nix/cspretty.nix;
   "css" = import ./nix/css.nix;
+  "css-class-bindings" = import ./nix/css-class-bindings.nix;
   "css-easings" = import ./nix/css-easings.nix;
   "css-selectors" = import ./nix/css-selectors.nix;
   "css-simple" = import ./nix/css-simple.nix;

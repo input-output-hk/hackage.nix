@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.22.0" = {
+    sha256 = "2f7e4011c36e029d9f3b7079a4e692e1962f330f7f0b0a117f360398d2035d15";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ram-0.22.0-r0-f6ce64a025929eb6ce42deeb80d072960a9ea2d83b9b9b28de668cc2b623127c.nix;
+        revNum = 0;
+        sha256 = "f6ce64a025929eb6ce42deeb80d072960a9ea2d83b9b9b28de668cc2b623127c";
+      };
+      default = "r0";
+    };
+  };
 }
