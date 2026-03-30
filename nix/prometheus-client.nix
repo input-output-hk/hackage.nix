@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "1da307440eb77ba0e23aad60f3b951421c18318a1d7ac9d4792dda85bbda4fd2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/prometheus-client-1.1.0-r1-6894bcb9fc0dd6b336a4f1c1047d090af8d7cbac010b9921ae65b02611aa8afb.nix;
+        revNum = 1;
+        sha256 = "6894bcb9fc0dd6b336a4f1c1047d090af8d7cbac010b9921ae65b02611aa8afb";
+      };
+      default = "r1";
     };
   };
   "1.1.1" = {
@@ -106,7 +111,12 @@
         revNum = 0;
         sha256 = "c4f75230e611fde9745b2f09d948902a849f7832a7729272eb4a553394a18af8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/prometheus-client-1.1.1-r1-5a867ac5d8e838f0ddb14ad2a51853c1bfaa6e0763a8af0ce7689e29f03a4b74.nix;
+        revNum = 1;
+        sha256 = "5a867ac5d8e838f0ddb14ad2a51853c1bfaa6e0763a8af0ce7689e29f03a4b74";
+      };
+      default = "r1";
     };
   };
 }

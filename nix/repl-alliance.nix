@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "8dff3cc878da669f4b5dc6e87e2b94bc166db94421816f7745c6f936a2088af3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repl-alliance-0.1.0.1-r0-5e26cea8c99b483fceafc2d0b000405a48cb4c9ab4a7edb6f328312b7209d040.nix;
+        revNum = 0;
+        sha256 = "5e26cea8c99b483fceafc2d0b000405a48cb4c9ab4a7edb6f328312b7209d040";
+      };
+      default = "r0";
+    };
+  };
 }

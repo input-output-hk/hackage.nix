@@ -8868,6 +8868,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslua-typing" = import ./nix/hslua-typing.nix;
   "hsluv-haskell" = import ./nix/hsluv-haskell.nix;
   "hsmagick" = import ./nix/hsmagick.nix;
+  "hsmin" = import ./nix/hsmin.nix;
   "hsmisc" = import ./nix/hsmisc.nix;
   "hsmodetweaks" = import ./nix/hsmodetweaks.nix;
   "hsmrc" = import ./nix/hsmrc.nix;
@@ -14713,6 +14714,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scat" = import ./nix/scat.nix;
   "scc" = import ./nix/scc.nix;
   "scenegraph" = import ./nix/scenegraph.nix;
+  "scfg" = import ./nix/scfg.nix;
   "scgi" = import ./nix/scgi.nix;
   "schedevr" = import ./nix/schedevr.nix;
   "schedule" = import ./nix/schedule.nix;

@@ -315,7 +315,12 @@
         revNum = 0;
         sha256 = "c1fb293edd6a1e0456034b6f61559b151431c76b1baf3a0b986f5eeb599406a7";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/proto-lens-protoc-0.9.0.0-r1-dba138480b0e28a5d69f0a0ef416e640b4fa6cbf8af0aea5a8b80520fbfac9a2.nix;
+        revNum = 1;
+        sha256 = "dba138480b0e28a5d69f0a0ef416e640b4fa6cbf8af0aea5a8b80520fbfac9a2";
+      };
+      default = "r1";
     };
   };
 }
