@@ -164,6 +164,39 @@
       default = "r0";
     };
   };
+  "0.3.2.11" = {
+    sha256 = "9ccbba0bc91c34a70feee306ada50a1df060a501d45640b62c2c08fdab8065b8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/status-notifier-item-0.3.2.11-r0-a512832a2264b1c944b572e4a2d67be90abd19d315e18e19a952459cdbb91112.nix;
+        revNum = 0;
+        sha256 = "a512832a2264b1c944b572e4a2d67be90abd19d315e18e19a952459cdbb91112";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.2.12" = {
+    sha256 = "4c64c6967e441c2dcfa2d388104eaa2ad37e7b56c04c88cb06285be7f2a1557c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/status-notifier-item-0.3.2.12-r0-e75795250e6323f5a92b2f1d71b1c399ac58a774de05c73f99357f224f18cb8a.nix;
+        revNum = 0;
+        sha256 = "e75795250e6323f5a92b2f1d71b1c399ac58a774de05c73f99357f224f18cb8a";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.2.13" = {
+    sha256 = "e8f087b6e119e22c74775b514130bc911615ee32d8e9c375fcd846ce7bd7df10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/status-notifier-item-0.3.2.13-r0-312c76d8f57aea5eb5667cf79cbb742314666c68d4afda88ec93ac953b007348.nix;
+        revNum = 0;
+        sha256 = "312c76d8f57aea5eb5667cf79cbb742314666c68d4afda88ec93ac953b007348";
+      };
+      default = "r0";
+    };
+  };
   "0.3.2.2" = {
     sha256 = "afb8b1119a0d516772d08710d80afd1ab15fd6508e3c03fd457c663a27fa91e2";
     revisions = {

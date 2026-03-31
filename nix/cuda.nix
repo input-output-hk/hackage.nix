@@ -86,6 +86,17 @@
       default = "r0";
     };
   };
+  "0.13.0.0" = {
+    sha256 = "32300b9ede5b993f9ecd4c5bdf672c70260e4092ec0cdd08842bbb45fd9fbb0f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cuda-0.13.0.0-r0-cad8a671eab624fb3d59ed7cac9a4819e13eaacaaa78adb51072694153e1a0ee.nix;
+        revNum = 0;
+        sha256 = "cad8a671eab624fb3d59ed7cac9a4819e13eaacaaa78adb51072694153e1a0ee";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "345372ba6b34b173c5ebb3f35f94b0f940a4b102e5921eec03c2fe510b9e52be";
     revisions = {

@@ -4901,6 +4901,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dia-base" = import ./nix/dia-base.nix;
   "dia-functions" = import ./nix/dia-functions.nix;
   "diagnose" = import ./nix/diagnose.nix;
+  "diagnostician" = import ./nix/diagnostician.nix;
   "diagrams" = import ./nix/diagrams.nix;
   "diagrams-boolean" = import ./nix/diagrams-boolean.nix;
   "diagrams-braille" = import ./nix/diagrams-braille.nix;
@@ -6116,6 +6117,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fn" = import ./nix/fn.nix;
   "fn-extra" = import ./nix/fn-extra.nix;
   "fnmatch" = import ./nix/fnmatch.nix;
+  "fnotation" = import ./nix/fnotation.nix;
   "focus" = import ./nix/focus.nix;
   "focuslist" = import ./nix/focuslist.nix;
   "fold-debounce" = import ./nix/fold-debounce.nix;
