@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "649bc44ad244b31a31d3dced1969a7eeeb9becf250f498f7388e12572af63824";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/timezone-olson-th-0.1.0.11-r1-fdc082ef3702f17a670764ed9363cd5e29847f2ece09e535448bb1317a3151ba.nix;
+        revNum = 1;
+        sha256 = "fdc082ef3702f17a670764ed9363cd5e29847f2ece09e535448bb1317a3151ba";
+      };
+      default = "r1";
     };
   };
   "0.1.0.2" = {

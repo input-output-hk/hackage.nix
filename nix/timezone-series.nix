@@ -34,7 +34,12 @@
         revNum = 1;
         sha256 = "8cdb5edd19fa90516fcf7245219d1eae3a488f1483f7b0af8e56e0f0d12d60aa";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/timezone-series-0.1.13-r2-f4e800f67b229b8c09c210924cdf1445b68a1abe5a80552e7d4c3a8863be4912.nix;
+        revNum = 2;
+        sha256 = "f4e800f67b229b8c09c210924cdf1445b68a1abe5a80552e7d4c3a8863be4912";
+      };
+      default = "r2";
     };
   };
   "0.1.2" = {

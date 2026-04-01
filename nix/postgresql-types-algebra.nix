@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "7acb3e5acbde38ad613a32956ca902a39fadbedf5d8acb36438c86db811c8435";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postgresql-types-algebra-0.1.0.1-r0-6799911bf6c7484e00d53ac8565099d0ed8238306280ff33b0cd375a21c59bb4.nix;
+        revNum = 0;
+        sha256 = "6799911bf6c7484e00d53ac8565099d0ed8238306280ff33b0cd375a21c59bb4";
+      };
+      default = "r0";
+    };
+  };
 }

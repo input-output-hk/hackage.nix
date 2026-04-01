@@ -1230,4 +1230,15 @@
       default = "r0";
     };
   };
+  "2.3.4" = {
+    sha256 = "ff3310760135a706bd7fc22c5d80ae011f5b06fda282874cf6289c37c7237f29";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keter-2.3.4-r0-0c0ac9eb04368920e7b5ba0ec11111d3106607a7456988aab3ae4fb0f1809434.nix;
+        revNum = 0;
+        sha256 = "0c0ac9eb04368920e7b5ba0ec11111d3106607a7456988aab3ae4fb0f1809434";
+      };
+      default = "r0";
+    };
+  };
 }

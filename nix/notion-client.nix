@@ -65,4 +65,26 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "8f0d25404c43fc0ef30c1f437e36d9498bc5765b7cac5991b5b7e02a5c296b73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/notion-client-0.6.0.0-r0-f3109c0c1ea2e3110632e3cf74c19baddc214194670f728e10095a901e668a5a.nix;
+        revNum = 0;
+        sha256 = "f3109c0c1ea2e3110632e3cf74c19baddc214194670f728e10095a901e668a5a";
+      };
+      default = "r0";
+    };
+  };
+  "0.6.1.0" = {
+    sha256 = "cc3ec3c429fa315665a2d13014795a5f050f22501659120130fe1a2f2a750dba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/notion-client-0.6.1.0-r0-17bba42014311efdcda355441fb20aa9ee59c95b8de2088cab35862e818dfaae.nix;
+        revNum = 0;
+        sha256 = "17bba42014311efdcda355441fb20aa9ee59c95b8de2088cab35862e818dfaae";
+      };
+      default = "r0";
+    };
+  };
 }

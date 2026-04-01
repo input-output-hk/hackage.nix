@@ -10635,6 +10635,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "little-logger" = import ./nix/little-logger.nix;
   "little-rio" = import ./nix/little-rio.nix;
   "live-sequencer" = import ./nix/live-sequencer.nix;
+  "live-stats" = import ./nix/live-stats.nix;
   "liveplot" = import ./nix/liveplot.nix;
   "ll-picosat" = import ./nix/ll-picosat.nix;
   "llama-cpp-haskell" = import ./nix/llama-cpp-haskell.nix;
@@ -18870,6 +18871,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yesod-tls" = import ./nix/yesod-tls.nix;
   "yesod-transloadit" = import ./nix/yesod-transloadit.nix;
   "yesod-vend" = import ./nix/yesod-vend.nix;
+  "yesod-vite" = import ./nix/yesod-vite.nix;
   "yesod-websockets" = import ./nix/yesod-websockets.nix;
   "yesod-websockets-extra" = import ./nix/yesod-websockets-extra.nix;
   "yesod-worker" = import ./nix/yesod-worker.nix;

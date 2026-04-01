@@ -312,4 +312,15 @@
       default = "r0";
     };
   };
+  "1.2.2" = {
+    sha256 = "a59a8ab779839ac9576c2d07c8484998a8b1726a00cfb8149de7ad6682cda3b7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mysql-haskell-1.2.2-r0-728856c7e64d23762a6257aa9bc3d8b1206677133bc25f558109d4f0be14184e.nix;
+        revNum = 0;
+        sha256 = "728856c7e64d23762a6257aa9bc3d8b1206677133bc25f558109d4f0be14184e";
+      };
+      default = "r0";
+    };
+  };
 }

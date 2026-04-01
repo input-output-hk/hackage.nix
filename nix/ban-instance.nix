@@ -46,4 +46,15 @@
       default = "r5";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "be2c319a69aade3e3a0eec547e054c22e287d498374db10f446e3bd619cf9a9c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ban-instance-0.1.1.0-r0-476d2e2d2eafbb5a1bf3b9fc72c811a9f38ef815cfe750aaf53bc444137156ee.nix;
+        revNum = 0;
+        sha256 = "476d2e2d2eafbb5a1bf3b9fc72c811a9f38ef815cfe750aaf53bc444137156ee";
+      };
+      default = "r0";
+    };
+  };
 }

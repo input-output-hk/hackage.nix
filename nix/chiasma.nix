@@ -32,6 +32,28 @@
       default = "r0";
     };
   };
+  "0.10.2.0" = {
+    sha256 = "9368ac4c1eb4cfd138f0f27b15e0aef2698d56972c1b5e201304c6b383b02d62";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chiasma-0.10.2.0-r0-099cf77ef359edc539f1f99b7a744de1f4595aa584eaf2e6f508414b108f8989.nix;
+        revNum = 0;
+        sha256 = "099cf77ef359edc539f1f99b7a744de1f4595aa584eaf2e6f508414b108f8989";
+      };
+      default = "r0";
+    };
+  };
+  "0.11.0.0" = {
+    sha256 = "29e3238631fcb0af3e2574b5f800c833c4d76cd8e20f6d921d5ca133a8ea3750";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chiasma-0.11.0.0-r0-7d27c0fab63965f66d7b07b8105d62aea7fa3ae5968e03c3107ef412046c924c.nix;
+        revNum = 0;
+        sha256 = "7d27c0fab63965f66d7b07b8105d62aea7fa3ae5968e03c3107ef412046c924c";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "357d6b71a048513d15a3b21c3a7b488d24b6a0c740b1c6858625dc4a6b7aeb86";
     revisions = {
