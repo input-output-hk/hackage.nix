@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "1.9.0" = {
+    sha256 = "7b0bdeb192fc9acb09fbb5151bd45920bc0470a991ad3e646dc89557bd595dd9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-match-qq-1.9.0-r0-d759476ffc12d1cd94763c1855a763bc0e796a624f71fc121e1966bc40981de4.nix;
+        revNum = 0;
+        sha256 = "d759476ffc12d1cd94763c1855a763bc0e796a624f71fc121e1966bc40981de4";
+      };
+      default = "r0";
+    };
+  };
 }

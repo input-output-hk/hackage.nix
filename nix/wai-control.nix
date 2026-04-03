@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "cf991c27fdf23def418ece32d63f684cd7e4e539d12589de030868073dc11583";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-control-0.2.0.1-r0-16a700cd3b9112b5d30c599e22019e9206eb8f05d161184dc6b968632771b394.nix;
+        revNum = 0;
+        sha256 = "16a700cd3b9112b5d30c599e22019e9206eb8f05d161184dc6b968632771b394";
+      };
+      default = "r0";
+    };
+  };
 }

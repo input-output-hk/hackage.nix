@@ -101,4 +101,15 @@
       default = "r0";
     };
   };
+  "1.4.0.0" = {
+    sha256 = "a5af408e16ee2ca04b065c5bbdcf208472aa824dd13c8e020c5c716eadb8e038";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-llvm-ptx-1.4.0.0-r0-d684deed97e3cee8ec840bc45d08b57f466a3631a152ec9fe6c26def0708278e.nix;
+        revNum = 0;
+        sha256 = "d684deed97e3cee8ec840bc45d08b57f466a3631a152ec9fe6c26def0708278e";
+      };
+      default = "r0";
+    };
+  };
 }

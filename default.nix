@@ -15887,6 +15887,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stern-brocot" = import ./nix/stern-brocot.nix;
   "stgi" = import ./nix/stgi.nix;
   "stickyKeysHotKey" = import ./nix/sticky_Keys_Hot_Key.nix;
+  "stim-parser" = import ./nix/stim-parser.nix;
   "stitch" = import ./nix/stitch.nix;
   "stm" = import ./nix/stm.nix;
   "stm-actor" = import ./nix/stm-actor.nix;

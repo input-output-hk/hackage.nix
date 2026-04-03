@@ -1418,4 +1418,15 @@
       default = "r1";
     };
   };
+  "1.6.5.0" = {
+    sha256 = "d613d80c91b40058e90b7ee11c4bb27ca73aae27da4885d03237fd156408e038";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/criterion-1.6.5.0-r0-97b7304db50ad54f63fbd5dd45896121d5f5d9e1e828c000b5cb7b00663292d4.nix;
+        revNum = 0;
+        sha256 = "97b7304db50ad54f63fbd5dd45896121d5f5d9e1e828c000b5cb7b00663292d4";
+      };
+      default = "r0";
+    };
+  };
 }
