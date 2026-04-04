@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "5e67cfc9d0619b070df25bd5094483f2f41685d01c848d2d69b0ff1b86d4afb4";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crucible-syntax-0.5.0.0-r1-1a0e3bd6649d9f660268e0785ed929adc5f62c79012875b19942269ca9973590.nix;
+        revNum = 1;
+        sha256 = "1a0e3bd6649d9f660268e0785ed929adc5f62c79012875b19942269ca9973590";
+      };
+      default = "r1";
     };
   };
 }
