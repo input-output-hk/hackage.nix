@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "3.1.0.0" = {
+    sha256 = "eafc847d26560f1caa7d6804d5ae6ecca54cb9b2f79c2e446b770ae05f611e7c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mpd-current-json-3.1.0.0-r0-aa0b794c0f500baeae1655bee949c2db8dbb40187c82bbdd7ec27706e8eb8b27.nix;
+        revNum = 0;
+        sha256 = "aa0b794c0f500baeae1655bee949c2db8dbb40187c82bbdd7ec27706e8eb8b27";
+      };
+      default = "r0";
+    };
+  };
 }

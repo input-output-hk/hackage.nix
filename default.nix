@@ -1562,6 +1562,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "aeson-unqualified-ast" = import ./nix/aeson-unqualified-ast.nix;
   "aeson-utils" = import ./nix/aeson-utils.nix;
   "aeson-value-parser" = import ./nix/aeson-value-parser.nix;
+  "aeson-value-qq" = import ./nix/aeson-value-qq.nix;
   "aeson-via" = import ./nix/aeson-via.nix;
   "aeson-warning-parser" = import ./nix/aeson-warning-parser.nix;
   "aeson-with" = import ./nix/aeson-with.nix;
@@ -3313,6 +3314,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cachix" = import ./nix/cachix.nix;
   "cachix-api" = import ./nix/cachix-api.nix;
   "cacophony" = import ./nix/cacophony.nix;
+  "cadence" = import ./nix/cadence.nix;
   "caerbannog" = import ./nix/caerbannog.nix;
   "caf" = import ./nix/caf.nix;
   "cafeteria-prelude" = import ./nix/cafeteria-prelude.nix;
@@ -3546,6 +3548,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "check-pvp" = import ./nix/check-pvp.nix;
   "checked" = import ./nix/checked.nix;
   "checked-exceptions" = import ./nix/checked-exceptions.nix;
+  "checked-literals" = import ./nix/checked-literals.nix;
   "checkers" = import ./nix/checkers.nix;
   "checkmate" = import ./nix/checkmate.nix;
   "checksum" = import ./nix/checksum.nix;
@@ -8852,6 +8855,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslogstash" = import ./nix/hslogstash.nix;
   "hslua" = import ./nix/hslua.nix;
   "hslua-aeson" = import ./nix/hslua-aeson.nix;
+  "hslua-annotations" = import ./nix/hslua-annotations.nix;
   "hslua-classes" = import ./nix/hslua-classes.nix;
   "hslua-cli" = import ./nix/hslua-cli.nix;
   "hslua-core" = import ./nix/hslua-core.nix;
@@ -9103,6 +9107,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-slim" = import ./nix/http-slim.nix;
   "http-streams" = import ./nix/http-streams.nix;
   "http-test" = import ./nix/http-test.nix;
+  "http-tower-hs" = import ./nix/http-tower-hs.nix;
   "http-trace" = import ./nix/http-trace.nix;
   "http-types" = import ./nix/http-types.nix;
   "http-wget" = import ./nix/http-wget.nix;
@@ -11259,8 +11264,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mismi-s3-core" = import ./nix/mismi-s3-core.nix;
   "miso" = import ./nix/miso.nix;
   "miso-action-logger" = import ./nix/miso-action-logger.nix;
+  "miso-aeson" = import ./nix/miso-aeson.nix;
   "miso-examples" = import ./nix/miso-examples.nix;
   "miso-from-html" = import ./nix/miso-from-html.nix;
+  "miso-optics" = import ./nix/miso-optics.nix;
   "miss" = import ./nix/miss.nix;
   "miss-porcelain" = import ./nix/miss-porcelain.nix;
   "missing-foreign" = import ./nix/missing-foreign.nix;
