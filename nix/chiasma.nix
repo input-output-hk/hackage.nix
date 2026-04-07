@@ -76,6 +76,17 @@
       default = "r0";
     };
   };
+  "0.12.2.0" = {
+    sha256 = "bd434e0017eb242bc84058a21b60a377d354790ff33440477cc785a17bd25907";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chiasma-0.12.2.0-r0-81ef313b1014aec942af6ea25554788c1684d799e841b2711db5344a29d78558.nix;
+        revNum = 0;
+        sha256 = "81ef313b1014aec942af6ea25554788c1684d799e841b2711db5344a29d78558";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "357d6b71a048513d15a3b21c3a7b488d24b6a0c740b1c6858625dc4a6b7aeb86";
     revisions = {

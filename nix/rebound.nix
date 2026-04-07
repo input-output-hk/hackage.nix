@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "8a930c282e31c70752b70389dd6b465ca1a14fd560722f4b427840dcb4a96c5c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rebound-0.1.2.0-r0-aec1b7cbf3925314056ae824b0e62cabc0d6e393c90d022a8e9d4b3839791a51.nix;
+        revNum = 0;
+        sha256 = "aec1b7cbf3925314056ae824b0e62cabc0d6e393c90d022a8e9d4b3839791a51";
+      };
+      default = "r0";
+    };
+  };
 }

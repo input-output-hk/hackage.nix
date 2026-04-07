@@ -89,7 +89,12 @@
         revNum = 0;
         sha256 = "8cde0a5a90990b3f7aff9714afb30443fa3e18c2575790d37b818c0671a583e8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/spacecookie-1.0.0.3-r1-87414fe94b7c89fad9ada2ed67f255c7b6e5dc48d1372c9d8e8cb7d2ab4835cf.nix;
+        revNum = 1;
+        sha256 = "87414fe94b7c89fad9ada2ed67f255c7b6e5dc48d1372c9d8e8cb7d2ab4835cf";
+      };
+      default = "r1";
     };
   };
 }

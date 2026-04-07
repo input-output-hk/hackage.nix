@@ -12684,8 +12684,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "passman-cli" = import ./nix/passman-cli.nix;
   "passman-core" = import ./nix/passman-core.nix;
   "password" = import ./nix/password.nix;
+  "password-aeson" = import ./nix/password-aeson.nix;
   "password-cli" = import ./nix/password-cli.nix;
+  "password-http-api-data" = import ./nix/password-http-api-data.nix;
   "password-instances" = import ./nix/password-instances.nix;
+  "password-persistent" = import ./nix/password-persistent.nix;
   "password-types" = import ./nix/password-types.nix;
   "passwords" = import ./nix/passwords.nix;
   "pasta" = import ./nix/pasta.nix;
@@ -15057,6 +15060,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-swagger-ui-jensoleg" = import ./nix/servant-swagger-ui-jensoleg.nix;
   "servant-swagger-ui-redoc" = import ./nix/servant-swagger-ui-redoc.nix;
   "servant-to-elm" = import ./nix/servant-to-elm.nix;
+  "servant-tower-hs" = import ./nix/servant-tower-hs.nix;
   "servant-tracing" = import ./nix/servant-tracing.nix;
   "servant-typed-error" = import ./nix/servant-typed-error.nix;
   "servant-typescript" = import ./nix/servant-typescript.nix;
@@ -17256,6 +17260,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "total-maps" = import ./nix/total-maps.nix;
   "touched" = import ./nix/touched.nix;
   "tower" = import ./nix/tower.nix;
+  "tower-hs" = import ./nix/tower-hs.nix;
   "toxcore" = import ./nix/toxcore.nix;
   "toxcore-c" = import ./nix/toxcore-c.nix;
   "toxiproxy-haskell" = import ./nix/toxiproxy-haskell.nix;
