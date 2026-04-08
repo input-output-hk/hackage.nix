@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.4" = {
+    sha256 = "c3cc20236ce0640505a70f24485af6c4cc4937593f5ec35520bd09bdcbbdf301";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/css-class-bindings-0.0.4-r0-0882e6b537e281a5866ed02c43e26b4bd479385e33abf0cf14fb37661eb7b864.nix;
+        revNum = 0;
+        sha256 = "0882e6b537e281a5866ed02c43e26b4bd479385e33abf0cf14fb37661eb7b864";
+      };
+      default = "r0";
+    };
+  };
 }

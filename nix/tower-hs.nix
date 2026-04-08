@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "b883d8001faedcc22af710d6046bbb1ffd5d8a16833440e2c62f96d6c9c3b6fa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tower-hs-0.2.0.0-r0-326be7c977908780d735402a01b34f6bdacce126a648295cb507a64977f20002.nix;
+        revNum = 0;
+        sha256 = "326be7c977908780d735402a01b34f6bdacce126a648295cb507a64977f20002";
+      };
+      default = "r0";
+    };
+  };
 }

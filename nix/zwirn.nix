@@ -26,4 +26,15 @@
       default = "r0";
     };
   };
+  "0.2.2.1" = {
+    sha256 = "aa08ef43fc0e1a407f5ed211e0c170a9fb2e10d7503292c55f01ee439d6c0895";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zwirn-0.2.2.1-r0-b38e78cf60394f99f6b85eacee69e3ba1113609a91d27e029ceeab73bc247f61.nix;
+        revNum = 0;
+        sha256 = "b38e78cf60394f99f6b85eacee69e3ba1113609a91d27e029ceeab73bc247f61";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -16530,6 +16530,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symmetry-operations-symbols" = import ./nix/symmetry-operations-symbols.nix;
   "symon" = import ./nix/symon.nix;
   "symparsec" = import ./nix/symparsec.nix;
+  "symplectic-chp" = import ./nix/symplectic-chp.nix;
   "symtegration" = import ./nix/symtegration.nix;
   "synapse" = import ./nix/synapse.nix;
   "synapse-cc" = import ./nix/synapse-cc.nix;
