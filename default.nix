@@ -15825,6 +15825,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stackctl" = import ./nix/stackctl.nix;
   "stacked" = import ./nix/stacked.nix;
   "stacked-dag" = import ./nix/stacked-dag.nix;
+  "stacker" = import ./nix/stacker.nix;
   "staf" = import ./nix/staf.nix;
   "staged-gg" = import ./nix/staged-gg.nix;
   "stagen" = import ./nix/stagen.nix;

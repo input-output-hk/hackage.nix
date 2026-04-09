@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "d7184ce9210e4acdc481b82148a95c77c3ea4330c9aac211a8463852d775f917";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-tower-hs-0.1.2.0-r0-ba9fb5997967f040c12953d25e0c7e9fd6a6a786e155a2972fd74ff98c05c4d9.nix;
+        revNum = 0;
+        sha256 = "ba9fb5997967f040c12953d25e0c7e9fd6a6a786e155a2972fd74ff98c05c4d9";
+      };
+      default = "r0";
+    };
+  };
 }

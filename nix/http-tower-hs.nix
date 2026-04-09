@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "6e7364695659b0b0a769306cab610a21a874942bcddb53698e19a895b11571dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http-tower-hs-0.3.1.0-r0-5bd25c642025d7975478c2832b2b6661fefa0171c26db1698a323e500544a5f1.nix;
+        revNum = 0;
+        sha256 = "5bd25c642025d7975478c2832b2b6661fefa0171c26db1698a323e500544a5f1";
+      };
+      default = "r0";
+    };
+  };
 }
