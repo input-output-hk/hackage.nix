@@ -3789,6 +3789,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cobot" = import ./nix/cobot.nix;
   "cobot-io" = import ./nix/cobot-io.nix;
   "cobot-tools" = import ./nix/cobot-tools.nix;
+  "coco" = import ./nix/coco.nix;
   "code-builder" = import ./nix/code-builder.nix;
   "code-conjure" = import ./nix/code-conjure.nix;
   "code-page" = import ./nix/code-page.nix;
@@ -9396,6 +9397,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ihp-ssc" = import ./nix/ihp-ssc.nix;
   "ihp-typed-sql" = import ./nix/ihp-typed-sql.nix;
   "ihp-welcome" = import ./nix/ihp-welcome.nix;
+  "ihp-zip" = import ./nix/ihp-zip.nix;
   "ihs" = import ./nix/ihs.nix;
   "ihttp" = import ./nix/ihttp.nix;
   "ilist" = import ./nix/ilist.nix;
@@ -17163,6 +17165,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tinyMesh" = import ./nix/tiny_Mesh.nix;
   "tinyXml" = import ./nix/tiny_Xml.nix;
   "tinyapp" = import ./nix/tinyapp.nix;
+  "tinycheck" = import ./nix/tinycheck.nix;
   "tinyfiledialogs" = import ./nix/tinyfiledialogs.nix;
   "tinyid" = import ./nix/tinyid.nix;
   "tinylog" = import ./nix/tinylog.nix;

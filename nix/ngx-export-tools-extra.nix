@@ -485,7 +485,12 @@
         revNum = 0;
         sha256 = "3969c56d3dd205945efd1ee92413d72336c9df11588e14065aa254dcd978f776";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ngx-export-tools-extra-1.2.12-r1-92531090fab51232c01709d05a483d30de51b7b437a600f98f972545ee125155.nix;
+        revNum = 1;
+        sha256 = "92531090fab51232c01709d05a483d30de51b7b437a600f98f972545ee125155";
+      };
+      default = "r1";
     };
   };
   "1.2.12.1" = {
@@ -496,7 +501,12 @@
         revNum = 0;
         sha256 = "62cd8ff5c9155f768cca3854aebcc29793768467fc9bce597e390b3a2d5a1552";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ngx-export-tools-extra-1.2.12.1-r1-b0ea6179663fd4a0916bb06d0f77462ec9e109e316d2f9d6d9f80eae6f7a5ebe.nix;
+        revNum = 1;
+        sha256 = "b0ea6179663fd4a0916bb06d0f77462ec9e109e316d2f9d6d9f80eae6f7a5ebe";
+      };
+      default = "r1";
     };
   };
   "1.2.12.2" = {
@@ -507,7 +517,12 @@
         revNum = 0;
         sha256 = "ed6b74d942f7a1f4d37a613b28dd95317007593da64beaf169b7b521e12080c3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ngx-export-tools-extra-1.2.12.2-r1-406c05787057ca285581430e37f7c4162cae2d4e70cfb53fe72d52eea2f8fb4d.nix;
+        revNum = 1;
+        sha256 = "406c05787057ca285581430e37f7c4162cae2d4e70cfb53fe72d52eea2f8fb4d";
+      };
+      default = "r1";
     };
   };
   "1.2.12.3" = {
