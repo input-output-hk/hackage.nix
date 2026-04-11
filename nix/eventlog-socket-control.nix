@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "6fb480099d06e1ec0f45451279f392664aafe6a327b354342e394560fdfea929";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventlog-socket-control-0.1.1.0-r0-24349a56d3261c844ab5d81729b29350074d02eaa92ec7f167cdfedefbdccf62.nix;
+        revNum = 0;
+        sha256 = "24349a56d3261c844ab5d81729b29350074d02eaa92ec7f167cdfedefbdccf62";
+      };
+      default = "r0";
+    };
+  };
 }

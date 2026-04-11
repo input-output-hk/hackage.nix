@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "2956a5c5da6dbd783b758fd02a40c2bcee449269a340cc9789f254381bc53d6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-stack-profiler-speedscope-0.2.0.0-r0-e5855ef30848f5282f1a351588b0968e51b854f0b47959cf0960ed33ec1a5e11.nix;
+        revNum = 0;
+        sha256 = "e5855ef30848f5282f1a351588b0968e51b854f0b47959cf0960ed33ec1a5e11";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "609966a6c01ed9e717cb2cfd417e5f137980a1642685aa9e5c4110451b5b7085";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-postgresql-0.3.0-r0-a9a0b8df1b8f7c918c04963c496f6d245e121264f80d9ddba0b8a8a524135953.nix;
+        revNum = 0;
+        sha256 = "a9a0b8df1b8f7c918c04963c496f6d245e121264f80d9ddba0b8a8a524135953";
+      };
+      default = "r0";
+    };
+  };
 }
