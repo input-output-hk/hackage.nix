@@ -87,6 +87,17 @@
       default = "r0";
     };
   };
+  "0.1.14.0" = {
+    sha256 = "a6bcceb20655ca452dc9707f294499498ad37cd780a26cbc76fcea704301548d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monadic-recursion-schemes-0.1.14.0-r0-162f79d9c1a6cdef25a09976b6e419abb67fa2b5d1ab4cbe9b78d693d92879db.nix;
+        revNum = 0;
+        sha256 = "162f79d9c1a6cdef25a09976b6e419abb67fa2b5d1ab4cbe9b78d693d92879db";
+      };
+      default = "r0";
+    };
+  };
   "0.1.2.0" = {
     sha256 = "91c25bbdaff5f2c9ceda63f6ea38a89efa86843debfcffe030e1e883beb9cbde";
     revisions = {

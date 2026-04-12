@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1" = {
+    sha256 = "0c1306b20b954dd3d8a9d17e0c6276fb908c034572e0f16057863e02e503b668";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-memory-0.3.1-r0-fd53bf23adb27b957ad596b79dc6bb19221631e0668a8f1e8e99f9b761f17315.nix;
+        revNum = 0;
+        sha256 = "fd53bf23adb27b957ad596b79dc6bb19221631e0668a8f1e8e99f9b761f17315";
+      };
+      default = "r0";
+    };
+  };
 }

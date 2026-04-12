@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "f138709c7e6ee59a18d71ecda036b64b863328b1a4a112dc947d2b8a046c2f29";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/uhd-0.1.0.1-r0-5e780c66128fa0b47f1b9bffc2cf913b00aa071986852b46b0be086be984509e.nix;
+        revNum = 0;
+        sha256 = "5e780c66128fa0b47f1b9bffc2cf913b00aa071986852b46b0be086be984509e";
+      };
+      default = "r0";
+    };
+  };
 }

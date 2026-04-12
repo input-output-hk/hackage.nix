@@ -18931,6 +18931,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yjftp-libs" = import ./nix/yjftp-libs.nix;
   "yjsvg" = import ./nix/yjsvg.nix;
   "yjtools" = import ./nix/yjtools.nix;
+  "ymonad" = import ./nix/ymonad.nix;
   "yocto" = import ./nix/yocto.nix;
   "yoctoparsec" = import ./nix/yoctoparsec.nix;
   "yoda" = import ./nix/yoda.nix;

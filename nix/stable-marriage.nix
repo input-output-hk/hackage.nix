@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.2.0" = {
+    sha256 = "cd166e1ab8ebcc453c0fbe07f8692ff6d782e53b182edbadc5d1b0dc8b042d73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stable-marriage-0.2.2.0-r0-867833ed85fb4fc0cd418b84d0fd61d86f2a10f8a93be68b9168bd604d4b6453.nix;
+        revNum = 0;
+        sha256 = "867833ed85fb4fc0cd418b84d0fd61d86f2a10f8a93be68b9168bd604d4b6453";
+      };
+      default = "r0";
+    };
+  };
 }

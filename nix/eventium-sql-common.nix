@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1" = {
+    sha256 = "12b839fd1dede1fd6138ad61dd381550b69e6334de39b5d149b3a0a3a3435074";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-sql-common-0.3.1-r0-bfa49fcdfdd188ac3f74bf8af5376b702ddcf83d049139566cbb8c7c9fb20982.nix;
+        revNum = 0;
+        sha256 = "bfa49fcdfdd188ac3f74bf8af5376b702ddcf83d049139566cbb8c7c9fb20982";
+      };
+      default = "r0";
+    };
+  };
 }

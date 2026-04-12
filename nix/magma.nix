@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "b3ab0760ec56f68b59dac68717d77d503be43416306078e125d1fa2e6ff148cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/magma-0.7.0.0-r0-ea42013106d992b67976cd8977ec50ae8b10c2909a21fca7bfbdc4a35a5f844d.nix;
+        revNum = 0;
+        sha256 = "ea42013106d992b67976cd8977ec50ae8b10c2909a21fca7bfbdc4a35a5f844d";
+      };
+      default = "r0";
+    };
+  };
 }
