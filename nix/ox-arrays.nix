@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "10135b67840e81195c1fe3a39b07ce86a99f4b5781ebd57310c184452764437c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ox-arrays-0.2.0.0-r0-2cc38f83f525f5b029b25c6b0259d796bb03fcdf0b00c4871bd8f5a7536c8687.nix;
+        revNum = 0;
+        sha256 = "2cc38f83f525f5b029b25c6b0259d796bb03fcdf0b00c4871bd8f5a7536c8687";
+      };
+      default = "r0";
+    };
+  };
 }

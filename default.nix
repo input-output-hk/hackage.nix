@@ -6612,6 +6612,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gh-pocket-knife" = import ./nix/gh-pocket-knife.nix;
   "ghc" = import ./nix/ghc.nix;
   "ghc-api-compat" = import ./nix/ghc-api-compat.nix;
+  "ghc-bench" = import ./nix/ghc-bench.nix;
   "ghc-bignum" = import ./nix/ghc-bignum.nix;
   "ghc-bignum-orphans" = import ./nix/ghc-bignum-orphans.nix;
   "ghc-boot" = import ./nix/ghc-boot.nix;
@@ -8750,6 +8751,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-twitterarchiver" = import ./nix/hs-twitterarchiver.nix;
   "hs-vcard" = import ./nix/hs-vcard.nix;
   "hs-watchman" = import ./nix/hs-watchman.nix;
+  "hs-wayland-scanner" = import ./nix/hs-wayland-scanner.nix;
   "hs-zstd" = import ./nix/hs-zstd.nix;
   "hs2048" = import ./nix/hs2048.nix;
   "hs2ats" = import ./nix/hs2ats.nix;
