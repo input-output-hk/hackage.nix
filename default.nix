@@ -7995,6 +7995,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hath" = import ./nix/hath.nix;
   "hats" = import ./nix/hats.nix;
   "hatt" = import ./nix/hatt.nix;
+  "hatter" = import ./nix/hatter.nix;
   "haveibeenpwned" = import ./nix/haveibeenpwned.nix;
   "haven" = import ./nix/haven.nix;
   "haverer" = import ./nix/haverer.nix;

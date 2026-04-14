@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "e689964e77a43aa8073eec99b5778a644f5b2a6542f81cb90651e2f3b6fb3d8a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagnostician-0.1.1.0-r0-c583c9356bb28d9f0acc8ca368a9e3d75ea9662e5e6ccad1957ed090677a256e.nix;
+        revNum = 0;
+        sha256 = "c583c9356bb28d9f0acc8ca368a9e3d75ea9662e5e6ccad1957ed090677a256e";
+      };
+      default = "r0";
+    };
+  };
 }

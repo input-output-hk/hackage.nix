@@ -230,4 +230,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "5f0970ea49246db0af0596bc5c6a68efd94d988692d47a7f8ffb68a90f0761f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/inflections-0.4.1.0-r0-85a4c79612dd887ee9530decf0a3873e7f898f52ae0e955f758b6af3f1b5c825.nix;
+        revNum = 0;
+        sha256 = "85a4c79612dd887ee9530decf0a3873e7f898f52ae0e955f758b6af3f1b5c825";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -500,4 +500,15 @@
       default = "r0";
     };
   };
+  "0.5.2" = {
+    sha256 = "c040bd5089eae83c24c3c1496be7d6df635a5c3c8955b7db7a0a6ce3eefc7878";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mime-mail-0.5.2-r0-3fa6d45580040229406373489bf0bee132d0ac4770b1c692f3e930b45afe5202.nix;
+        revNum = 0;
+        sha256 = "3fa6d45580040229406373489bf0bee132d0ac4770b1c692f3e930b45afe5202";
+      };
+      default = "r0";
+    };
+  };
 }
