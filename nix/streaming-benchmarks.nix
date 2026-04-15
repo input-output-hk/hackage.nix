@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4.1" = {
+    sha256 = "90c6ea12807f723f7fe389cd0947051b7a199fdd937871c9753398f1711bd44e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streaming-benchmarks-0.4.1-r0-3d0aad3c2b24c98d480fb0145a1cc895eac4fb031b39c5a9bd69a5d63eacd120.nix;
+        revNum = 0;
+        sha256 = "3d0aad3c2b24c98d480fb0145a1cc895eac4fb031b39c5a9bd69a5d63eacd120";
+      };
+      default = "r0";
+    };
+  };
 }

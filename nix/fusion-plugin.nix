@@ -129,4 +129,15 @@
       default = "r4";
     };
   };
+  "0.2.8" = {
+    sha256 = "290f58055ad56791702edf1069d192560a04b6f19407833d3d1c817f74ee8aa0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fusion-plugin-0.2.8-r0-2b5342e3abea89f99f67ca7f2ab728480c345cc74ea2c706807be248042848f7.nix;
+        revNum = 0;
+        sha256 = "2b5342e3abea89f99f67ca7f2ab728480c345cc74ea2c706807be248042848f7";
+      };
+      default = "r0";
+    };
+  };
 }
