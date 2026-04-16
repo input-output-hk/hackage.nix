@@ -344,4 +344,15 @@
       default = "r3";
     };
   };
+  "2.2.1.1" = {
+    sha256 = "d1341cb79e20fd0b2c479036eaac49b38084e8a0bef28399df9e3b04def723a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lattices-2.2.1.1-r0-e4083880e7b7ae1a5e298ffadbaa9bc898f6374de44cb2194a484225f5b691bb.nix;
+        revNum = 0;
+        sha256 = "e4083880e7b7ae1a5e298ffadbaa9bc898f6374de44cb2194a484225f5b691bb";
+      };
+      default = "r0";
+    };
+  };
 }

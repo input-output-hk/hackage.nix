@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "88231e45a17b981e692df282623d4c061ed98289c4b1b0b7b99aea847ed45f4c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/streamly-fsevents-0.1.1-r0-37e97c49a34fa20a9a0e55da48bb2096868f176993b410b936dd9960bef30e98.nix;
+        revNum = 0;
+        sha256 = "37e97c49a34fa20a9a0e55da48bb2096868f176993b410b936dd9960bef30e98";
+      };
+      default = "r0";
+    };
+  };
 }

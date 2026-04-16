@@ -123,7 +123,12 @@
         revNum = 1;
         sha256 = "6349d9dce82e522b3266a28774a039ba2e0834b95da5cf43ff40d971ea90687e";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/universe-instances-extended-1.1.4-r2-921a702ece417798fab4184616deda049afd48cc57d3e1e1a71f2865a9fdfa16.nix;
+        revNum = 2;
+        sha256 = "921a702ece417798fab4184616deda049afd48cc57d3e1e1a71f2865a9fdfa16";
+      };
+      default = "r2";
     };
   };
 }

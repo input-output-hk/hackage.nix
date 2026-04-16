@@ -31,4 +31,20 @@
       default = "r1";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "8b17020fa6322e2399e378e1b940cdc5d0603b837956506bc4681419f08a80d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unliftio-servant-server-0.1.0.2-r0-60d1f6099b434553ccd1c7e4c9aca8934124cd10f180cf6c51653b40086754f7.nix;
+        revNum = 0;
+        sha256 = "60d1f6099b434553ccd1c7e4c9aca8934124cd10f180cf6c51653b40086754f7";
+      };
+      r1 = {
+        nix = import ../hackage/unliftio-servant-server-0.1.0.2-r1-6712904033d8915cb82aaef975ebb1a00f9c5eba163bc1af5f53cffc929cc6ca.nix;
+        revNum = 1;
+        sha256 = "6712904033d8915cb82aaef975ebb1a00f9c5eba163bc1af5f53cffc929cc6ca";
+      };
+      default = "r1";
+    };
+  };
 }

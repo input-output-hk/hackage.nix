@@ -14443,6 +14443,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "riemann" = import ./nix/riemann.nix;
   "riff" = import ./nix/riff.nix;
   "rigel-viz" = import ./nix/rigel-viz.nix;
+  "riichi-scoring" = import ./nix/riichi-scoring.nix;
   "ring-buffer" = import ./nix/ring-buffer.nix;
   "ring-buffers" = import ./nix/ring-buffers.nix;
   "rings" = import ./nix/rings.nix;
