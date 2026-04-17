@@ -37,4 +37,26 @@
       default = "r1";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "10134d57666f55e81f56467e099a00b99e7e9c361a4ead5471868281bcd1001f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/riichi-scoring-0.2.0.1-r0-98071ff81b74228bb394d85cb2643c5739e43dbb4933841a5e099497dd83a41f.nix;
+        revNum = 0;
+        sha256 = "98071ff81b74228bb394d85cb2643c5739e43dbb4933841a5e099497dd83a41f";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.2" = {
+    sha256 = "5326ff13046ba2f758967a83fc4a7532a525ded1cbafeb64d1e83b073d33bb59";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/riichi-scoring-0.2.0.2-r0-4946f200275b6f0fdc797d2e7c11cd34835d264ece3622dd1cea671a47452873.nix;
+        revNum = 0;
+        sha256 = "4946f200275b6f0fdc797d2e7c11cd34835d264ece3622dd1cea671a47452873";
+      };
+      default = "r0";
+    };
+  };
 }
