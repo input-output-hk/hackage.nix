@@ -901,6 +901,17 @@
       default = "r0";
     };
   };
+  "2.15.1" = {
+    sha256 = "456d69c490e388c28deb9131805de374790fe2bdd2cfc6134c2846e88a28f48c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hoauth2-2.15.1-r0-820a2d2409f20d96eedc99f3f923f3bc2265ddaa7246aa99dd9fcc7418329500.nix;
+        revNum = 0;
+        sha256 = "820a2d2409f20d96eedc99f3f923f3bc2265ddaa7246aa99dd9fcc7418329500";
+      };
+      default = "r0";
+    };
+  };
   "2.2.0" = {
     sha256 = "f7b570b14db29483776a4d1e7b9b09922b680035c1c42e1d7707b9b587c09dc5";
     revisions = {

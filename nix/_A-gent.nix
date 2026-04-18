@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.11.0.10" = {
+    sha256 = "1f2262b5c58180fe4ac43516b0c7b1b48ad059b6004085ee5da61fe5a1d441ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/A-gent-0.11.0.10-r0-1ecb21925b22164b41b40c4a45dfa3f1500cccf697e6fd673023a66d4b9b15b1.nix;
+        revNum = 0;
+        sha256 = "1ecb21925b22164b41b40c4a45dfa3f1500cccf697e6fd673023a66d4b9b15b1";
+      };
+      default = "r0";
+    };
+  };
   "0.11.0.2" = {
     sha256 = "fcb127ae07e06c7ea6b8f7713782445699238b7596c7afa336599764122620f2";
     revisions = {

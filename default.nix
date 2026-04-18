@@ -6395,6 +6395,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fuzzySets" = import ./nix/fuzzy_Sets.nix;
   "fuzzyfind" = import ./nix/fuzzyfind.nix;
   "fuzzyset" = import ./nix/fuzzyset.nix;
+  "fuzzystrmatch-pg" = import ./nix/fuzzystrmatch-pg.nix;
   "fuzzytime" = import ./nix/fuzzytime.nix;
   "fvars" = import ./nix/fvars.nix;
   "fwgl" = import ./nix/fwgl.nix;
@@ -8122,6 +8123,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hedra" = import ./nix/hedra.nix;
   "heftia" = import ./nix/heftia.nix;
   "heftia-effects" = import ./nix/heftia-effects.nix;
+  "hegel" = import ./nix/hegel.nix;
   "hegg" = import ./nix/hegg.nix;
   "heidi" = import ./nix/heidi.nix;
   "hein" = import ./nix/hein.nix;
@@ -8934,6 +8936,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-need-env" = import ./nix/hspec-need-env.nix;
   "hspec-parsec" = import ./nix/hspec-parsec.nix;
   "hspec-pg-transact" = import ./nix/hspec-pg-transact.nix;
+  "hspec-quickcheck-classes" = import ./nix/hspec-quickcheck-classes.nix;
   "hspec-server" = import ./nix/hspec-server.nix;
   "hspec-setup" = import ./nix/hspec-setup.nix;
   "hspec-shouldbe" = import ./nix/hspec-shouldbe.nix;
@@ -9200,6 +9203,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hw-kafka-avro" = import ./nix/hw-kafka-avro.nix;
   "hw-kafka-client" = import ./nix/hw-kafka-client.nix;
   "hw-kafka-conduit" = import ./nix/hw-kafka-conduit.nix;
+  "hw-kafka-streamly" = import ./nix/hw-kafka-streamly.nix;
   "hw-lazy" = import ./nix/hw-lazy.nix;
   "hw-mquery" = import ./nix/hw-mquery.nix;
   "hw-packed-vector" = import ./nix/hw-packed-vector.nix;
@@ -9945,6 +9949,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kafka-device-leap" = import ./nix/kafka-device-leap.nix;
   "kafka-device-spacenav" = import ./nix/kafka-device-spacenav.nix;
   "kafka-device-vrpn" = import ./nix/kafka-device-vrpn.nix;
+  "kafka-effectful" = import ./nix/kafka-effectful.nix;
   "kafka-interchange" = import ./nix/kafka-interchange.nix;
   "kaleidoscope" = import ./nix/kaleidoscope.nix;
   "kalman" = import ./nix/kalman.nix;
