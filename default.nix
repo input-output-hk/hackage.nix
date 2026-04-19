@@ -13380,6 +13380,13 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-bip39" = import ./nix/ppad-bip39.nix;
+  "ppad-bolt1" = import ./nix/ppad-bolt1.nix;
+  "ppad-bolt2" = import ./nix/ppad-bolt2.nix;
+  "ppad-bolt3" = import ./nix/ppad-bolt3.nix;
+  "ppad-bolt4" = import ./nix/ppad-bolt4.nix;
+  "ppad-bolt7" = import ./nix/ppad-bolt7.nix;
+  "ppad-bolt8" = import ./nix/ppad-bolt8.nix;
+  "ppad-bolt9" = import ./nix/ppad-bolt9.nix;
   "ppad-chacha" = import ./nix/ppad-chacha.nix;
   "ppad-fixed" = import ./nix/ppad-fixed.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
@@ -13391,6 +13398,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-secp256k1" = import ./nix/ppad-secp256k1.nix;
   "ppad-sha256" = import ./nix/ppad-sha256.nix;
   "ppad-sha512" = import ./nix/ppad-sha512.nix;
+  "ppad-tx" = import ./nix/ppad-tx.nix;
   "ppm" = import ./nix/ppm.nix;
   "pprecord" = import ./nix/pprecord.nix;
   "pptable" = import ./nix/pptable.nix;
@@ -15215,6 +15223,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shh" = import ./nix/shh.nix;
   "shh-extras" = import ./nix/shh-extras.nix;
   "shibuya-core" = import ./nix/shibuya-core.nix;
+  "shibuya-kafka-adapter" = import ./nix/shibuya-kafka-adapter.nix;
   "shibuya-metrics" = import ./nix/shibuya-metrics.nix;
   "shibuya-pgmq-adapter" = import ./nix/shibuya-pgmq-adapter.nix;
   "shift" = import ./nix/shift.nix;

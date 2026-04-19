@@ -64,4 +64,15 @@
       default = "r0";
     };
   };
+  "0.2.4.0" = {
+    sha256 = "797ba2796096d8279556e37d1b5b90267cacf5602d52fc58e3b48c98a6b68179";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libyaml-streamly-0.2.4.0-r0-fd0f983d11eceabb98e093f561941956c9f0b7396a2ff4cc337d980963f6ab37.nix;
+        revNum = 0;
+        sha256 = "fd0f983d11eceabb98e093f561941956c9f0b7396a2ff4cc337d980963f6ab37";
+      };
+      default = "r0";
+    };
+  };
 }

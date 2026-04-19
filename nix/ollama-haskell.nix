@@ -95,7 +95,17 @@
         revNum = 0;
         sha256 = "f2648417acd999d194d54481017d69a9807157fc01882b9ec75a76f03b21d1d5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ollama-haskell-0.2.1.0-r1-8a306a7df2c5654d005446d3916aca69362013e50259a63da20ec3527f97d84a.nix;
+        revNum = 1;
+        sha256 = "8a306a7df2c5654d005446d3916aca69362013e50259a63da20ec3527f97d84a";
+      };
+      r2 = {
+        nix = import ../hackage/ollama-haskell-0.2.1.0-r2-de6a05389be07665119e04f7c76c2dc3387916a03a7190d24a010d7d15e32aac.nix;
+        revNum = 2;
+        sha256 = "de6a05389be07665119e04f7c76c2dc3387916a03a7190d24a010d7d15e32aac";
+      };
+      default = "r2";
     };
   };
 }
