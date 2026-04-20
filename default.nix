@@ -13384,6 +13384,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bolt2" = import ./nix/ppad-bolt2.nix;
   "ppad-bolt3" = import ./nix/ppad-bolt3.nix;
   "ppad-bolt4" = import ./nix/ppad-bolt4.nix;
+  "ppad-bolt5" = import ./nix/ppad-bolt5.nix;
   "ppad-bolt7" = import ./nix/ppad-bolt7.nix;
   "ppad-bolt8" = import ./nix/ppad-bolt8.nix;
   "ppad-bolt9" = import ./nix/ppad-bolt9.nix;

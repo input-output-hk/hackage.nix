@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.0.0.7" = {
+    sha256 = "eeda23715e104a6227827350ffcf4e885d5f8b36c7f83978d41dc61d45d698e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoidmap-aeson-0.0.0.7-r0-0538f50b393e97d47d5dbe4b8cc14e5cca4a548a9257bdc8847c454af42dea1c.nix;
+        revNum = 0;
+        sha256 = "0538f50b393e97d47d5dbe4b8cc14e5cca4a548a9257bdc8847c454af42dea1c";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "fdd849629c7e5528c86ea81f5d9578f7831a6f0b599471b3c94364dbcbf2a9a0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytesmith-0.1.0.0-r1-49f2732ef328912bfee2f3453a2ef7bc66bc5cf29bf354bcb35226095a66c231.nix;
+        revNum = 1;
+        sha256 = "49f2732ef328912bfee2f3453a2ef7bc66bc5cf29bf354bcb35226095a66c231";
+      };
+      default = "r1";
     };
   };
   "0.2.0.0" = {
@@ -126,7 +131,12 @@
         revNum = 0;
         sha256 = "76484c157f94c1dd3f7a0639b00d16d42e8d87742e69482095fad8b0dc63bf67";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/bytesmith-0.3.14.0-r1-daf1ff1e06bebd45707db415cd255490be4ad49348f28e91d55c451995fd2a85.nix;
+        revNum = 1;
+        sha256 = "daf1ff1e06bebd45707db415cd255490be4ad49348f28e91d55c451995fd2a85";
+      };
+      default = "r1";
     };
   };
   "0.3.2.0" = {
@@ -229,7 +239,12 @@
         revNum = 1;
         sha256 = "20a2ec7e89d74506c73c0e5e8829cd3ca8ad20b8b88d5de475c02b21fd21c253";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/bytesmith-0.3.9.0-r2-a63708b3bfedb4263195a590dedf7d59fce231d44cd8f7218aa7d528831b45c2.nix;
+        revNum = 2;
+        sha256 = "a63708b3bfedb4263195a590dedf7d59fce231d44cd8f7218aa7d528831b45c2";
+      };
+      default = "r2";
     };
   };
   "0.3.9.1" = {

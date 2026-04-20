@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.0.1.9" = {
+    sha256 = "7b0c62f1c129313d9977036d0757a2f9f377a7820c1c15b9bdaf302887ebf33f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quickcheck-quid-0.0.1.9-r0-41a3e123a383dd6c7a964df5c9e7d552f6093b059d5c1634b0c3f55ca2730154.nix;
+        revNum = 0;
+        sha256 = "41a3e123a383dd6c7a964df5c9e7d552f6093b059d5c1634b0c3f55ca2730154";
+      };
+      default = "r0";
+    };
+  };
 }
