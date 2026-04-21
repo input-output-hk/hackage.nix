@@ -4660,6 +4660,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dataflow" = import ./nix/dataflow.nix;
   "dataflower" = import ./nix/dataflower.nix;
   "dataframe" = import ./nix/dataframe.nix;
+  "dataframe-fastcsv" = import ./nix/dataframe-fastcsv.nix;
   "dataframe-hasktorch" = import ./nix/dataframe-hasktorch.nix;
   "dataframe-persistent" = import ./nix/dataframe-persistent.nix;
   "datalog" = import ./nix/datalog.nix;
@@ -15742,6 +15743,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "spoon" = import ./nix/spoon.nix;
   "spoonutil" = import ./nix/spoonutil.nix;
   "spork" = import ./nix/spork.nix;
+  "sport" = import ./nix/sport.nix;
   "spotify" = import ./nix/spotify.nix;
   "spoty" = import ./nix/spoty.nix;
   "spreadsheet" = import ./nix/spreadsheet.nix;
@@ -15941,6 +15943,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stm-promise" = import ./nix/stm-promise.nix;
   "stm-queue" = import ./nix/stm-queue.nix;
   "stm-queue-extras" = import ./nix/stm-queue-extras.nix;
+  "stm-ringbuffer" = import ./nix/stm-ringbuffer.nix;
   "stm-sbchan" = import ./nix/stm-sbchan.nix;
   "stm-split" = import ./nix/stm-split.nix;
   "stm-stats" = import ./nix/stm-stats.nix;

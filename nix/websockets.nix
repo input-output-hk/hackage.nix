@@ -414,7 +414,12 @@
         revNum = 5;
         sha256 = "9b3680ba5055e0b34ab29c341b21d70084bf067519fc059af0e597cd90a4a05a";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/websockets-0.13.0.0-r6-eaf0ec6b390c6ef6627534e897b733151aae75c9b441b28754011359cfffa75b.nix;
+        revNum = 6;
+        sha256 = "eaf0ec6b390c6ef6627534e897b733151aae75c9b441b28754011359cfffa75b";
+      };
+      default = "r6";
     };
   };
   "0.2.0.1" = {

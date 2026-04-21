@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "3.0.0" = {
+    sha256 = "a9e5aeb5191ffd81de8b24b76c43b0c436f473d54f6bb079fb3a1aa5f17d0eca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unwitch-3.0.0-r0-b64bac9ab933e8c93d44d7317465ea6d3c7be693d10f02ec47192440347e150a.nix;
+        revNum = 0;
+        sha256 = "b64bac9ab933e8c93d44d7317465ea6d3c7be693d10f02ec47192440347e150a";
+      };
+      default = "r0";
+    };
+  };
 }
