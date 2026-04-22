@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "a1fbf3ba405cbbf05e1b4d06f2d1ad27d10ab4e012d0677e8777bec6c87d409f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sport-0.2.0.0-r0-7df86ec1c94b39bcc9461914bd4dde50df27d9a8217bd40c34359d1d9b0ce9b1.nix;
+        revNum = 0;
+        sha256 = "7df86ec1c94b39bcc9461914bd4dde50df27d9a8217bd40c34359d1d9b0ce9b1";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -3653,6 +3653,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clash-prelude-hedgehog" = import ./nix/clash-prelude-hedgehog.nix;
   "clash-prelude-quickcheck" = import ./nix/clash-prelude-quickcheck.nix;
   "clash-shake" = import ./nix/clash-shake.nix;
+  "clash-shockwaves" = import ./nix/clash-shockwaves.nix;
   "clash-systemverilog" = import ./nix/clash-systemverilog.nix;
   "clash-verilog" = import ./nix/clash-verilog.nix;
   "clash-vhdl" = import ./nix/clash-vhdl.nix;

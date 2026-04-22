@@ -274,4 +274,15 @@
       default = "r0";
     };
   };
+  "1.0.0.7" = {
+    sha256 = "cd61f23e80262bd61b5187656833e44b45758513aa8eb0aadab503e33296b704";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/greskell-core-1.0.0.7-r0-bc261cc90a2743ff9502c79d38187d1f5edae71a2eab5b8f4a66561a7a13342f.nix;
+        revNum = 0;
+        sha256 = "bc261cc90a2743ff9502c79d38187d1f5edae71a2eab5b8f4a66561a7a13342f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -175,4 +175,15 @@
       default = "r0";
     };
   };
+  "1.0.0.5" = {
+    sha256 = "8d670c0f46efcb0ddf5139d09766c331e6682e24adce91cbd804c16819e55f74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/greskell-websocket-1.0.0.5-r0-0586e92122d06c2caba41d01fc52f2e7d418cbaa07e46829e156cfa851c53359.nix;
+        revNum = 0;
+        sha256 = "0586e92122d06c2caba41d01fc52f2e7d418cbaa07e46829e156cfa851c53359";
+      };
+      default = "r0";
+    };
+  };
 }

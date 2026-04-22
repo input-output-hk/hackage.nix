@@ -77,7 +77,12 @@
         revNum = 2;
         sha256 = "8e52563c932c152c4ef6be7781d02947c190ca7fad4449d076f7b2f35c492633";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/bench-show-0.3.2-r3-c1e765890976b318dbb3512c2b33fa1603ff7eecd1f956f8899c0757b3ca35f1.nix;
+        revNum = 3;
+        sha256 = "c1e765890976b318dbb3512c2b33fa1603ff7eecd1f956f8899c0757b3ca35f1";
+      };
+      default = "r3";
     };
   };
 }

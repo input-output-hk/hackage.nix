@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "7f63bfb6d0318ad0c8483113bc80c4b6e6ec47cf833cd3d5a806d7508dcea503";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/isocline-1.1.0-r0-fa2d29aa9736c498059c214930208d8762475de4b0d37611dd7ab8499fe8e985.nix;
+        revNum = 0;
+        sha256 = "fa2d29aa9736c498059c214930208d8762475de4b0d37611dd7ab8499fe8e985";
+      };
+      default = "r0";
+    };
+  };
 }
