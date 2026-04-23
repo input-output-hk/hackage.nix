@@ -4896,6 +4896,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dhrun" = import ./nix/dhrun.nix;
   "dhscanner-ast" = import ./nix/dhscanner-ast.nix;
   "dhscanner-bitcode" = import ./nix/dhscanner-bitcode.nix;
+  "dhscanner-kbapi" = import ./nix/dhscanner-kbapi.nix;
   "dhscanner-kbgen" = import ./nix/dhscanner-kbgen.nix;
   "di" = import ./nix/di.nix;
   "di-core" = import ./nix/di-core.nix;
@@ -8265,6 +8266,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hgrev" = import ./nix/hgrev.nix;
   "hgrib" = import ./nix/hgrib.nix;
   "hharp" = import ./nix/hharp.nix;
+  "hhlo" = import ./nix/hhlo.nix;
   "hhp" = import ./nix/hhp.nix;
   "hhwloc" = import ./nix/hhwloc.nix;
   "hi" = import ./nix/hi.nix;
@@ -10344,6 +10346,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lean-peano" = import ./nix/lean-peano.nix;
   "leancheck" = import ./nix/leancheck.nix;
   "leancheck-enum-instances" = import ./nix/leancheck-enum-instances.nix;
+  "leancheck-extras" = import ./nix/leancheck-extras.nix;
   "leancheck-instances" = import ./nix/leancheck-instances.nix;
   "leankit-api" = import ./nix/leankit-api.nix;
   "leanpub-concepts" = import ./nix/leanpub-concepts.nix;
@@ -10431,6 +10434,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libarchive" = import ./nix/libarchive.nix;
   "libarchive-clib" = import ./nix/libarchive-clib.nix;
   "libarchive-conduit" = import ./nix/libarchive-conduit.nix;
+  "libasterix" = import ./nix/libasterix.nix;
   "libconfig" = import ./nix/libconfig.nix;
   "libcspm" = import ./nix/libcspm.nix;
   "libexpect" = import ./nix/libexpect.nix;
