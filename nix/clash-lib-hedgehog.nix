@@ -1,4 +1,15 @@
 {
+  "1.10.0" = {
+    sha256 = "8e7eca2abc2260c0c8e74ebb664690c36467f31bbc596cf2985c3bba26ceec1c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clash-lib-hedgehog-1.10.0-r0-efa58d712f57ae946aff0cd7b825f6b62566a7e37a3a81b69ee384db7b696c01.nix;
+        revNum = 0;
+        sha256 = "efa58d712f57ae946aff0cd7b825f6b62566a7e37a3a81b69ee384db7b696c01";
+      };
+      default = "r0";
+    };
+  };
   "1.6.0" = {
     sha256 = "a8354b837ad04633f9510a565139b03034b5e1a52fd2b75d51605beb890221df";
     revisions = {

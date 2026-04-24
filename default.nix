@@ -18233,6 +18233,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-middleware-hmac-client" = import ./nix/wai-middleware-hmac-client.nix;
   "wai-middleware-json-errors" = import ./nix/wai-middleware-json-errors.nix;
   "wai-middleware-metrics" = import ./nix/wai-middleware-metrics.nix;
+  "wai-middleware-openapi" = import ./nix/wai-middleware-openapi.nix;
   "wai-middleware-preprocessor" = import ./nix/wai-middleware-preprocessor.nix;
   "wai-middleware-prometheus" = import ./nix/wai-middleware-prometheus.nix;
   "wai-middleware-rollbar" = import ./nix/wai-middleware-rollbar.nix;

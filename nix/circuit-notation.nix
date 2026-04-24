@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e3eeb0cba9056af15c9a1a2d62f0bb9e2be888bfed8d6601019a8feb63bf9717";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/circuit-notation-0.2.0.0-r0-a9385711f2fc8eb602b556b4ef3b9b2f3f26ad42eacc6f854555b3c8d6188cc6.nix;
+        revNum = 0;
+        sha256 = "a9385711f2fc8eb602b556b4ef3b9b2f3f26ad42eacc6f854555b3c8d6188cc6";
+      };
+      default = "r0";
+    };
+  };
 }
