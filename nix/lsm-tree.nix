@@ -26,4 +26,15 @@
       default = "r1";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "cee73c7f2474bd8316a59a41c600bb9284dc54c672c528da956e2c266f591047";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lsm-tree-1.0.0.2-r0-53cd45b839db6999377fd2f9a67f1f0ca172c322678e9528e31946e0edda77e2.nix;
+        revNum = 0;
+        sha256 = "53cd45b839db6999377fd2f9a67f1f0ca172c322678e9528e31946e0edda77e2";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "2.1.1.0" = {
+    sha256 = "92d9024789c8fa8c8749e9f39e5a593520b7c9788558da45e5f29e2ad4d0d3d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/alfred-margaret-2.1.1.0-r0-50ca0049482e6ba8d1b13501593dfe89378e4aa0953a7a2c98ab520dd6f266b5.nix;
+        revNum = 0;
+        sha256 = "50ca0049482e6ba8d1b13501593dfe89378e4aa0953a7a2c98ab520dd6f266b5";
+      };
+      default = "r0";
+    };
+  };
 }

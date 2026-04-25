@@ -17,7 +17,12 @@
         revNum = 2;
         sha256 = "f07e491e34bcac09bd816daefe1b9cfba163249a776b5c669821ebd0f7a5118b";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/leb128-0.1.0.0-r3-1574d7a9b77eb7173d17297e79e9394caaf168fd8be2cdaeee2f03a14c35165a.nix;
+        revNum = 3;
+        sha256 = "1574d7a9b77eb7173d17297e79e9394caaf168fd8be2cdaeee2f03a14c35165a";
+      };
+      default = "r3";
     };
   };
 }
