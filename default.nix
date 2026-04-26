@@ -8017,6 +8017,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hb3sum" = import ./nix/hb3sum.nix;
   "hback" = import ./nix/hback.nix;
   "hbayes" = import ./nix/hbayes.nix;
+  "hbayesian" = import ./nix/hbayesian.nix;
   "hbb" = import ./nix/hbb.nix;
   "hbcd" = import ./nix/hbcd.nix;
   "hbeanstalk" = import ./nix/hbeanstalk.nix;

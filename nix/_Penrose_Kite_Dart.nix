@@ -185,4 +185,15 @@
       default = "r0";
     };
   };
+  "1.8" = {
+    sha256 = "e97de76345d55b9618bb86860d72f91e070a348a759f2766307b725b666990e9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PenroseKiteDart-1.8-r0-0afa72cce9cfbf603bcfa17891b7ec78c02f6a39b4e0624f37150ed0af98dd86.nix;
+        revNum = 0;
+        sha256 = "0afa72cce9cfbf603bcfa17891b7ec78c02f6a39b4e0624f37150ed0af98dd86";
+      };
+      default = "r0";
+    };
+  };
 }
