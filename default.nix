@@ -16715,6 +16715,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-bdd" = import ./nix/tasty-bdd.nix;
   "tasty-bench" = import ./nix/tasty-bench.nix;
   "tasty-bench-fit" = import ./nix/tasty-bench-fit.nix;
+  "tasty-cache" = import ./nix/tasty-cache.nix;
   "tasty-checklist" = import ./nix/tasty-checklist.nix;
   "tasty-coverage" = import ./nix/tasty-coverage.nix;
   "tasty-dejafu" = import ./nix/tasty-dejafu.nix;
