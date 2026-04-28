@@ -453,7 +453,12 @@
         revNum = 0;
         sha256 = "038a1de7f5b05f62961da650eb32e438ee4b5625c7ae2b4a48094e6aa2f52b90";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ekg-0.4.1.2-r1-df9815979134383dd8f33ae976e1270eb3918d11c3fd41c1cbf2b6c1ab41047f.nix;
+        revNum = 1;
+        sha256 = "df9815979134383dd8f33ae976e1270eb3918d11c3fd41c1cbf2b6c1ab41047f";
+      };
+      default = "r1";
     };
   };
 }

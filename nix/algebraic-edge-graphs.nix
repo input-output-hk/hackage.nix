@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "8904fb2c11746b4b1ac7bc0986ab674033e531c19b6a60430564c14238fb90bd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-edge-graphs-0.1.1-r0-b507ef7408c747e6ceaf0134036bb723b3ca8f214cd69c7ac4136d0821b2e1e8.nix;
+        revNum = 0;
+        sha256 = "b507ef7408c747e6ceaf0134036bb723b3ca8f214cd69c7ac4136d0821b2e1e8";
+      };
+      default = "r0";
+    };
+  };
 }
