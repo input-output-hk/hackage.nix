@@ -123,4 +123,15 @@
       default = "r0";
     };
   };
+  "1.1.4" = {
+    sha256 = "912cd340d5c2583111e2eaeb9aa03b87551ca2e3dd78bbfd346756b9f1e6c9fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-ansi-terminal-1.1.4-r0-5184ba6002a650de3307547347eaba19bdc9b82eb68e943f406818caa215ce4f.nix;
+        revNum = 0;
+        sha256 = "5184ba6002a650de3307547347eaba19bdc9b82eb68e943f406818caa215ce4f";
+      };
+      default = "r0";
+    };
+  };
 }

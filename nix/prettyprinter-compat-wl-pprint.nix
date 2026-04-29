@@ -67,4 +67,15 @@
       default = "r0";
     };
   };
+  "1.0.2" = {
+    sha256 = "555dac23b28239b16a8a4e606c28858b11a710648db95e62d0c591bc0e9ac067";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-compat-wl-pprint-1.0.2-r0-f381b3898d096bf0f75e21a90aecf240e7ff2be04096b535a094f039856d0001.nix;
+        revNum = 0;
+        sha256 = "f381b3898d096bf0f75e21a90aecf240e7ff2be04096b535a094f039856d0001";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -52,4 +52,15 @@
       default = "r1";
     };
   };
+  "1.1.3" = {
+    sha256 = "63351d83a9fd26d0e570344b02c11d6581203d52329543ee07dbcf790a746700";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-convert-ansi-wl-pprint-1.1.3-r0-325e099522b7e312ef5bb3f48455d6f19b432cf5ef7e1a97a301e7091513febf.nix;
+        revNum = 0;
+        sha256 = "325e099522b7e312ef5bb3f48455d6f19b432cf5ef7e1a97a301e7091513febf";
+      };
+      default = "r0";
+    };
+  };
 }

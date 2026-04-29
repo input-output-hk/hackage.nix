@@ -3355,6 +3355,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "calligraphy" = import ./nix/calligraphy.nix;
   "camfort" = import ./nix/camfort.nix;
   "camh" = import ./nix/camh.nix;
+  "caml-parser" = import ./nix/caml-parser.nix;
   "campfire" = import ./nix/campfire.nix;
   "can-i-haz" = import ./nix/can-i-haz.nix;
   "canadian-income-tax" = import ./nix/canadian-income-tax.nix;
@@ -3563,6 +3564,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "chell" = import ./nix/chell.nix;
   "chell-hunit" = import ./nix/chell-hunit.nix;
   "chell-quickcheck" = import ./nix/chell-quickcheck.nix;
+  "chemical-equation" = import ./nix/chemical-equation.nix;
   "cherry-core-alpha" = import ./nix/cherry-core-alpha.nix;
   "chessIO" = import ./nix/chess_I_O.nix;
   "chesshs" = import ./nix/chesshs.nix;
@@ -3660,6 +3662,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clash-prelude" = import ./nix/clash-prelude.nix;
   "clash-prelude-hedgehog" = import ./nix/clash-prelude-hedgehog.nix;
   "clash-prelude-quickcheck" = import ./nix/clash-prelude-quickcheck.nix;
+  "clash-protocols" = import ./nix/clash-protocols.nix;
+  "clash-protocols-base" = import ./nix/clash-protocols-base.nix;
   "clash-shake" = import ./nix/clash-shake.nix;
   "clash-shockwaves" = import ./nix/clash-shockwaves.nix;
   "clash-systemverilog" = import ./nix/clash-systemverilog.nix;
@@ -19059,6 +19063,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "zip-cmd" = import ./nix/zip-cmd.nix;
   "zip-conduit" = import ./nix/zip-conduit.nix;
   "zip-stream" = import ./nix/zip-stream.nix;
+  "zip2tar" = import ./nix/zip2tar.nix;
   "zipedit" = import ./nix/zipedit.nix;
   "zipkin" = import ./nix/zipkin.nix;
   "zipper" = import ./nix/zipper.nix;

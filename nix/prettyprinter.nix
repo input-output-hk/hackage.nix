@@ -303,4 +303,15 @@
       default = "r0";
     };
   };
+  "1.7.2" = {
+    sha256 = "f04eb6fd865512ad8672da1e8bfcea1c384509fc2f662c41b7ac39d7898706ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettyprinter-1.7.2-r0-e3a802ea939d465b2e37b9fa09d8e5bb88b5775d6d62dd2ec6ca32b63416656d.nix;
+        revNum = 0;
+        sha256 = "e3a802ea939d465b2e37b9fa09d8e5bb88b5775d6d62dd2ec6ca32b63416656d";
+      };
+      default = "r0";
+    };
+  };
 }
