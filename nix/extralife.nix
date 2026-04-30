@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.0.3" = {
+    sha256 = "2afda49ae2c01a46d2de043429e066ad17dab3bd40795d52df2071130f9217a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/extralife-0.2.0.3-r0-3fb0c2cb1e762d2d31bdf33a5c7237ea7c621d3f8015f7dcadddd44c1e4247cb.nix;
+        revNum = 0;
+        sha256 = "3fb0c2cb1e762d2d31bdf33a5c7237ea7c621d3f8015f7dcadddd44c1e4247cb";
+      };
+      default = "r0";
+    };
+  };
 }

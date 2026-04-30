@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "a3706ceffa91026e2e7e2799701f2537da7a6e50af8d922e66ae03ed7cfc1c80";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spire-websocket-0.1.0.1-r0-06c8a8fb06253d1d14cd13beb10b8fd2eecc390f8e959145e26c8eac827d4a55.nix;
+        revNum = 0;
+        sha256 = "06c8a8fb06253d1d14cd13beb10b8fd2eecc390f8e959145e26c8eac827d4a55";
+      };
+      default = "r0";
+    };
+  };
 }

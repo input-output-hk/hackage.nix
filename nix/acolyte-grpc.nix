@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "cfe2374fdd13d29764d1713c53caf479ada7cf0e5668e1b13bea4563a613d7a5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/acolyte-grpc-0.1.0.1-r0-c4cf6699847b1a689e7c3df06411b35e40e08a15fe009feb9f02a7082ffc7bba.nix;
+        revNum = 0;
+        sha256 = "c4cf6699847b1a689e7c3df06411b35e40e08a15fe009feb9f02a7082ffc7bba";
+      };
+      default = "r0";
+    };
+  };
 }

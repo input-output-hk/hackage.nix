@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1" = {
+    sha256 = "605941101fb57eff9a6fe164320f547942185cd4e5d1e31ba520fa6176618cf9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/clash-protocols-base-0.1.1-r0-b47a046b2dde007f20017bdeeda96919418053578594bbba21791eafec22ad00.nix;
+        revNum = 0;
+        sha256 = "b47a046b2dde007f20017bdeeda96919418053578594bbba21791eafec22ad00";
+      };
+      default = "r0";
+    };
+  };
 }

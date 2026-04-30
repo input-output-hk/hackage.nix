@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e237c92caf4a1d6729108a891f01c29b2b26542f1c6e61c710a6180c8331cdd3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-can-0.2.0.0-r0-e4a636987c5512f33ea78eee70d47544bd0eff1b57f6ce247641242275225e8c.nix;
+        revNum = 0;
+        sha256 = "e4a636987c5512f33ea78eee70d47544bd0eff1b57f6ce247641242275225e8c";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -14640,6 +14640,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "s-cargot" = import ./nix/s-cargot.nix;
   "s-cargot-letbind" = import ./nix/s-cargot-letbind.nix;
   "s-expression" = import ./nix/s-expression.nix;
+  "s2n-tls" = import ./nix/s2n-tls.nix;
+  "s2n-tls-ffi" = import ./nix/s2n-tls-ffi.nix;
   "s3-signer" = import ./nix/s3-signer.nix;
   "safe" = import ./nix/safe.nix;
   "safe-access" = import ./nix/safe-access.nix;
@@ -18326,6 +18328,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "warp-dynamic" = import ./nix/warp-dynamic.nix;
   "warp-grpc" = import ./nix/warp-grpc.nix;
   "warp-quic" = import ./nix/warp-quic.nix;
+  "warp-s2n-tls" = import ./nix/warp-s2n-tls.nix;
   "warp-static" = import ./nix/warp-static.nix;
   "warp-systemd" = import ./nix/warp-systemd.nix;
   "warp-tls" = import ./nix/warp-tls.nix;

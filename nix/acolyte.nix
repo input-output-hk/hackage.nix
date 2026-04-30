@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "110e4241bece3d9f16adee09b6bd7f8fdf9fafeaf40916fc053f6b0aca296ad8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/acolyte-0.1.0.1-r0-03e229dd8f9cb6e173e7b62abaea479d965ab4bd16f7af82810f801c755d4e87.nix;
+        revNum = 0;
+        sha256 = "03e229dd8f9cb6e173e7b62abaea479d965ab4bd16f7af82810f801c755d4e87";
+      };
+      default = "r0";
+    };
+  };
 }

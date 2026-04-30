@@ -54,4 +54,26 @@
       default = "r0";
     };
   };
+  "0.6.1.0" = {
+    sha256 = "cc25d4dbc8325f966e237860bb66933224271091606b3891239325a4be8a317d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-schema-0.6.1.0-r0-c5c3fb98edd9d33b0fa1cd062bf17b333bab4577a60df28eeefb979ccb2c4497.nix;
+        revNum = 0;
+        sha256 = "c5c3fb98edd9d33b0fa1cd062bf17b333bab4577a60df28eeefb979ccb2c4497";
+      };
+      default = "r0";
+    };
+  };
+  "0.6.1.1" = {
+    sha256 = "95eca06a06f2d600111279120fdbd95114ced293d3e8d10e554ca57250aeb0c1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-schema-0.6.1.1-r0-5e89f24282106ed22547d4243281c088f22a10e557b6ea0d7afec18622e7679b.nix;
+        revNum = 0;
+        sha256 = "5e89f24282106ed22547d4243281c088f22a10e557b6ea0d7afec18622e7679b";
+      };
+      default = "r0";
+    };
+  };
 }

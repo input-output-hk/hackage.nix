@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "88f8d90f90b4399dcace958735485412912f716f937a6143b2a569532a330c83";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spire-http-0.1.0.1-r0-297f506dcb4b484696b041f6888c4fc65e7d9c3d5a37384d287d62ac29a3a66f.nix;
+        revNum = 0;
+        sha256 = "297f506dcb4b484696b041f6888c4fc65e7d9c3d5a37384d287d62ac29a3a66f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "724722627f401ee2c1fb13a9c8b14044ae2e75f20eaf584e9d20c3a0bba230ea";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spire-grpc-0.1.0.1-r0-86a3420d5895cb54a1180b0214e28b4189bac497e82330d6df70677af14ab81c.nix;
+        revNum = 0;
+        sha256 = "86a3420d5895cb54a1180b0214e28b4189bac497e82330d6df70677af14ab81c";
+      };
+      default = "r0";
+    };
+  };
 }

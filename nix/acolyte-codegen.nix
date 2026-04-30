@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "97e3c50f444ef5ad2b8355c2e62838add6ba22940c9ebed338028ac7305442a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/acolyte-codegen-0.1.0.1-r0-d2ad7ca56c0974b60d1f4a53f128d2dbb4337a7a8d076d35e1a8471a3ccd3965.nix;
+        revNum = 0;
+        sha256 = "d2ad7ca56c0974b60d1f4a53f128d2dbb4337a7a8d076d35e1a8471a3ccd3965";
+      };
+      default = "r0";
+    };
+  };
 }
