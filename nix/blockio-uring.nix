@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "5196b0e7d80ae16dc4f69d7374c6de6c36ac666fb0cc9be5b9057e1e569bcaa7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blockio-uring-0.2.0.0-r0-995352e0dfd57a0baaae1eb9ee7c7f90b6454b8fcfca07c850b312e7720bc20a.nix;
+        revNum = 0;
+        sha256 = "995352e0dfd57a0baaae1eb9ee7c7f90b6454b8fcfca07c850b312e7720bc20a";
+      };
+      default = "r0";
+    };
+  };
 }

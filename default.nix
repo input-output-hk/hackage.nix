@@ -11840,6 +11840,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nats" = import ./nix/nats.nix;
   "nats-client" = import ./nix/nats-client.nix;
   "nats-queue" = import ./nix/nats-queue.nix;
+  "natskell" = import ./nix/natskell.nix;
   "natural" = import ./nix/natural.nix;
   "natural-arithmetic" = import ./nix/natural-arithmetic.nix;
   "natural-induction" = import ./nix/natural-induction.nix;
@@ -18836,6 +18837,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaya" = import ./nix/yaya.nix;
   "yaya-containers" = import ./nix/yaya-containers.nix;
   "yaya-hedgehog" = import ./nix/yaya-hedgehog.nix;
+  "yaya-lens" = import ./nix/yaya-lens.nix;
   "yaya-quickcheck" = import ./nix/yaya-quickcheck.nix;
   "yaya-test" = import ./nix/yaya-test.nix;
   "yaya-unsafe" = import ./nix/yaya-unsafe.nix;

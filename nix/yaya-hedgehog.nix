@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "f2622d7409b155068e7bc57b8a45deec34b9362b86ae8c7b46cc095ced091022";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yaya-hedgehog-1.0.0.0-r0-f9565d543c60d9275fe2d5da491bd1af447ae2d25ce995e09c25b3ed05a5aa92.nix;
+        revNum = 0;
+        sha256 = "f9565d543c60d9275fe2d5da491bd1af447ae2d25ce995e09c25b3ed05a5aa92";
+      };
+      default = "r0";
+    };
+  };
 }

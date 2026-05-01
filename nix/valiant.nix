@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "0a084435e287c43960ccac846b71537893fd4710604b25f08dfc81af9ce99ac6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/valiant-0.1.0.1-r0-169f6487c18f4fb9db42951b10de378081d79e10c86fc8e0ff471be586576dd4.nix;
+        revNum = 0;
+        sha256 = "169f6487c18f4fb9db42951b10de378081d79e10c86fc8e0ff471be586576dd4";
+      };
+      default = "r0";
+    };
+  };
 }
