@@ -4256,6 +4256,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "covariance" = import ./nix/covariance.nix;
   "covenant" = import ./nix/covenant.nix;
   "coverage" = import ./nix/coverage.nix;
+  "cow" = import ./nix/cow.nix;
   "coya" = import ./nix/coya.nix;
   "cozo-hs" = import ./nix/cozo-hs.nix;
   "cparsing" = import ./nix/cparsing.nix;
