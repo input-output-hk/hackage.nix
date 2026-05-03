@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "0db2cb6c5ed6a6f5fd581beca93dd3e1d597eddd7a5adea7899ee5bf8d28a967";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hakyll-diagrams-0.1.0.3-r0-fc68684091058df374f368b8e3df85816bd9d85f3465f789ed7acdfd07a93c3f.nix;
+        revNum = 0;
+        sha256 = "fc68684091058df374f368b8e3df85816bd9d85f3465f789ed7acdfd07a93c3f";
+      };
+      default = "r0";
+    };
+  };
 }
