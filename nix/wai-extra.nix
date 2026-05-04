@@ -2715,7 +2715,12 @@
         revNum = 1;
         sha256 = "dc27670cfd2981c8d36bdd546cfd9795683b8eb95bfe29ff18e7512f2f51561a";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wai-extra-3.1.7-r2-81444251d360c938db44e6a770850666c8f5da912db385ede343bc11a08bfcb5.nix;
+        revNum = 2;
+        sha256 = "81444251d360c938db44e6a770850666c8f5da912db385ede343bc11a08bfcb5";
+      };
+      default = "r2";
     };
   };
   "3.1.8" = {
@@ -2731,7 +2736,12 @@
         revNum = 1;
         sha256 = "3fe67480dda983338f1a108e32c467dbe84ff1c4227a7062239de9ba56e3679d";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/wai-extra-3.1.8-r2-0dfdf7cada950c9d6c6e6b69c60ce4d228600be2a3f16c5da20e8c18596f819e.nix;
+        revNum = 2;
+        sha256 = "0dfdf7cada950c9d6c6e6b69c60ce4d228600be2a3f16c5da20e8c18596f819e";
+      };
+      default = "r2";
     };
   };
   "3.1.9" = {

@@ -174,4 +174,15 @@
       default = "r0";
     };
   };
+  "0.7.0.2" = {
+    sha256 = "984173cb8753b4b9957374b150116d3c43f2fb87a3d587e215a86386c025fb47";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/incipit-base-0.7.0.2-r0-edb100c6ea57491bcfbcccc193992095ca8d8c5d927eef01ff062bf15496ca34.nix;
+        revNum = 0;
+        sha256 = "edb100c6ea57491bcfbcccc193992095ca8d8c5d927eef01ff062bf15496ca34";
+      };
+      default = "r0";
+    };
+  };
 }

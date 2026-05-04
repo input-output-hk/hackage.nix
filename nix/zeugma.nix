@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.11.0.0" = {
+    sha256 = "e568f9d82cef95ac450e491893c9597cf5b7cdccc7ca10be7e5902b270bab5db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zeugma-0.11.0.0-r0-6b670a68ff536ca65125c80c64bcc7bfd4538d95b3416acd81c042fd8d8428bf.nix;
+        revNum = 0;
+        sha256 = "6b670a68ff536ca65125c80c64bcc7bfd4538d95b3416acd81c042fd8d8428bf";
+      };
+      default = "r0";
+    };
+  };
   "0.7.0.0" = {
     sha256 = "0218bd47462c02fc0474411cbcc3874409c3f7a58cb6cffcf3122ee052d33fdf";
     revisions = {
