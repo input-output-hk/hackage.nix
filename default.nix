@@ -5409,6 +5409,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ehs" = import ./nix/ehs.nix;
   "eibd-client-simple" = import ./nix/eibd-client-simple.nix;
   "eigen" = import ./nix/eigen.nix;
+  "eigen-hhlo" = import ./nix/eigen-hhlo.nix;
   "eio" = import ./nix/eio.nix;
   "either" = import ./nix/either.nix;
   "either-both" = import ./nix/either-both.nix;
@@ -13734,6 +13735,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "punycode" = import ./nix/punycode.nix;
   "pup" = import ./nix/pup.nix;
   "puppetresources" = import ./nix/puppetresources.nix;
+  "pure-borrow" = import ./nix/pure-borrow.nix;
   "pure-cdb" = import ./nix/pure-cdb.nix;
   "pure-fft" = import ./nix/pure-fft.nix;
   "pure-io" = import ./nix/pure-io.nix;

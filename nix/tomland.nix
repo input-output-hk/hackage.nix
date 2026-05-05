@@ -327,7 +327,12 @@
         revNum = 4;
         sha256 = "3ce1f694528a91219b240aa2798a6dc20c0bc5cec2bfed26e1b0b3d482fd1589";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/tomland-1.3.3.3-r5-5eadc3f8a81e543c360c3d8369b15ca9bbf17ab919d96c9e7857710be1d4156b.nix;
+        revNum = 5;
+        sha256 = "5eadc3f8a81e543c360c3d8369b15ca9bbf17ab919d96c9e7857710be1d4156b";
+      };
+      default = "r5";
     };
   };
 }
