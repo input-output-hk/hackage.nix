@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "565b8d2836b980d45cd14287b7b6716f72264a7d93da5871530a13164fc3b4a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/louter-0.1.1.2-r0-78d4c43c6ca340655c29c5839a0406c6cc0b80669116350dc58b34879c3f813f.nix;
+        revNum = 0;
+        sha256 = "78d4c43c6ca340655c29c5839a0406c6cc0b80669116350dc58b34879c3f813f";
+      };
+      default = "r0";
+    };
+  };
 }

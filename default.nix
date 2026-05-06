@@ -11087,6 +11087,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mdp" = import ./nix/mdp.nix;
   "mealstrom" = import ./nix/mealstrom.nix;
   "mealy" = import ./nix/mealy.nix;
+  "mealy-arrow" = import ./nix/mealy-arrow.nix;
   "means" = import ./nix/means.nix;
   "mecab" = import ./nix/mecab.nix;
   "mech" = import ./nix/mech.nix;

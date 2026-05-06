@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "6b60961b535d6be28dcc64f339bb6546711e4337203b61e78c25fea034191e7b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/antlr-haskell-0.1.0.2-r0-b901684f6d61cd52b11cec193bf9af5dc3b1ff355dba65d81ecdc57e06da047e.nix;
+        revNum = 0;
+        sha256 = "b901684f6d61cd52b11cec193bf9af5dc3b1ff355dba65d81ecdc57e06da047e";
+      };
+      default = "r0";
+    };
+  };
 }

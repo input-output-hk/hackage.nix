@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "871928378d4185e5b07ce31bdcc9b5b2cf9b58fe31eca6b44dfe3ebd76164ba4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/holidays-0.3.0.1-r0-485b59dae0811a82e99484d09ca3312277fb51a93eeae7a6e247d157a4c8bf6c.nix;
+        revNum = 0;
+        sha256 = "485b59dae0811a82e99484d09ca3312277fb51a93eeae7a6e247d157a4c8bf6c";
+      };
+      default = "r0";
+    };
+  };
 }
