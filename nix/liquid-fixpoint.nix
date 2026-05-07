@@ -382,6 +382,17 @@
       default = "r0";
     };
   };
+  "0.9.6.3.6" = {
+    sha256 = "3edd7d9783643c32799b561e6b7245a6591ed72cbd03fd14b161498e47291d6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/liquid-fixpoint-0.9.6.3.6-r0-8d6e2add4bc0bdb483df069482addcc4fdeda8296731442172c6f0fd8a5b514a.nix;
+        revNum = 0;
+        sha256 = "8d6e2add4bc0bdb483df069482addcc4fdeda8296731442172c6f0fd8a5b514a";
+      };
+      default = "r0";
+    };
+  };
   "8.10.7" = {
     sha256 = "d5bf111f6e0c3d27a102bdcf21ac0ab54560da70a8a54a68d024ed393082f10b";
     revisions = {

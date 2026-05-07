@@ -114,4 +114,15 @@
       default = "r0";
     };
   };
+  "1.7.0.0" = {
+    sha256 = "f40289662766bd2d8ebb87870a35955d570fa9cc4112e67e50491001a99c5d3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cuddle-1.7.0.0-r0-0cb6e29f2aea24b12e0e61983d725ae691874fe5923857242ffa80ae2b085d1f.nix;
+        revNum = 0;
+        sha256 = "0cb6e29f2aea24b12e0e61983d725ae691874fe5923857242ffa80ae2b085d1f";
+      };
+      default = "r0";
+    };
+  };
 }

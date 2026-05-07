@@ -677,7 +677,12 @@
         revNum = 0;
         sha256 = "fd560d4f31fc9b9b234cdb2aa1ce0b1a20db565801304a4778b8e44c8b599d28";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghcide-2.14.0.0-r1-6d6a6fd1d3ab01ddbcf0931cde591e987f13c57232f7c3b0d08c0e0ee03b5efb.nix;
+        revNum = 1;
+        sha256 = "6d6a6fd1d3ab01ddbcf0931cde591e987f13c57232f7c3b0d08c0e0ee03b5efb";
+      };
+      default = "r1";
     };
   };
   "2.2.0.0" = {

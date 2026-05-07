@@ -13149,6 +13149,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-application-service" = import ./nix/pms-application-service.nix;
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
+  "pms-infra-agent-process" = import ./nix/pms-infra-agent-process.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
   "pms-infra-filesystem" = import ./nix/pms-infra-filesystem.nix;
   "pms-infra-procspawn" = import ./nix/pms-infra-procspawn.nix;
