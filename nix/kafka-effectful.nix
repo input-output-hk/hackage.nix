@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "4683eca33cbf0835ec8d1e4771a4af5a0e3d1be02a8a471c217669618b62cd1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kafka-effectful-0.2.0.0-r0-4ebd05a2d14a05c5988cefc8b66a7ccfbdf81a828c017041b9d74f880a99e239.nix;
+        revNum = 0;
+        sha256 = "4ebd05a2d14a05c5988cefc8b66a7ccfbdf81a828c017041b9d74f880a99e239";
+      };
+      default = "r0";
+    };
+  };
 }
