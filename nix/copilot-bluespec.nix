@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "4.7.1" = {
+    sha256 = "8ce4519544658dce4e0a8ce2a17a3197a8e53eeabfa91dda8aa69a5adc3655f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/copilot-bluespec-4.7.1-r0-ac022484e0350c726e9fb5b90c8b08fbad3ba95f04d9057f17445d928236f351.nix;
+        revNum = 0;
+        sha256 = "ac022484e0350c726e9fb5b90c8b08fbad3ba95f04d9057f17445d928236f351";
+      };
+      default = "r0";
+    };
+  };
 }
