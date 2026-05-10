@@ -103,4 +103,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "7cabc2e4655daa29bc7df63d8a257731815620e0ee20d3942aaf0fb79862b119";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/riichi-scoring-0.4.1.0-r0-021471662a3b045b0bf1755cd86a1216f1fd57e9232313d7e5994959e332e779.nix;
+        revNum = 0;
+        sha256 = "021471662a3b045b0bf1755cd86a1216f1fd57e9232313d7e5994959e332e779";
+      };
+      default = "r0";
+    };
+  };
 }
