@@ -96,4 +96,15 @@
       default = "r0";
     };
   };
+  "0.0.20260427" = {
+    sha256 = "50c317c10ad9ce561198a6e93f56a5ad524c675d4dee43e82d6477788a9aa437";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lucid2-0.0.20260427-r0-567b9175d2776859ebd57e20cb3b95ffde03d3181583a9c553f611fcaa3fc54e.nix;
+        revNum = 0;
+        sha256 = "567b9175d2776859ebd57e20cb3b95ffde03d3181583a9c553f611fcaa3fc54e";
+      };
+      default = "r0";
+    };
+  };
 }
