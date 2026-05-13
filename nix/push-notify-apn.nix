@@ -205,7 +205,12 @@
         revNum = 0;
         sha256 = "7b138d3f991be28d72c6e0f03297a7d3cb8df57fb78e9c8eefced72c543d18a1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/push-notify-apn-0.5.0.0-r1-069c71952e9167a63dc7c9fe53fcb841e99b5d70a4c5a1f62b7dfff9e4b1b879.nix;
+        revNum = 1;
+        sha256 = "069c71952e9167a63dc7c9fe53fcb841e99b5d70a4c5a1f62b7dfff9e4b1b879";
+      };
+      default = "r1";
     };
   };
 }

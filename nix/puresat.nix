@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "7a94775e44adc977ee82a6f2ef7f0f0694d1e449a4b3e9a3440488cba1927ce6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/puresat-0.1.0.1-r0-4481263d8cebca7ad3c3f0792474c42629972764c4012bb5b13dd988a870ecd6.nix;
+        revNum = 0;
+        sha256 = "4481263d8cebca7ad3c3f0792474c42629972764c4012bb5b13dd988a870ecd6";
+      };
+      default = "r0";
+    };
+  };
 }

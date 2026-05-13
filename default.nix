@@ -3523,8 +3523,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "changelogged" = import ./nix/changelogged.nix;
   "changeset" = import ./nix/changeset.nix;
   "changeset-containers" = import ./nix/changeset-containers.nix;
+  "changeset-fused-effects" = import ./nix/changeset-fused-effects.nix;
   "changeset-lens" = import ./nix/changeset-lens.nix;
   "changeset-reflex" = import ./nix/changeset-reflex.nix;
+  "changeset-time" = import ./nix/changeset-time.nix;
   "chapelure" = import ./nix/chapelure.nix;
   "char-boxdrawing" = import ./nix/char-boxdrawing.nix;
   "char-decode" = import ./nix/char-decode.nix;
@@ -7343,6 +7345,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "grisette" = import ./nix/grisette.nix;
   "grisette-monad-coroutine" = import ./nix/grisette-monad-coroutine.nix;
   "grm" = import ./nix/grm.nix;
+  "groan" = import ./nix/groan.nix;
   "groom" = import ./nix/groom.nix;
   "groot" = import ./nix/groot.nix;
   "gross" = import ./nix/gross.nix;
@@ -7958,6 +7961,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasparql-client" = import ./nix/hasparql-client.nix;
   "haspell" = import ./nix/haspell.nix;
   "hasql" = import ./nix/hasql.nix;
+  "hasql-auto" = import ./nix/hasql-auto.nix;
   "hasql-backend" = import ./nix/hasql-backend.nix;
   "hasql-class" = import ./nix/hasql-class.nix;
   "hasql-cursor-query" = import ./nix/hasql-cursor-query.nix;
@@ -10567,6 +10571,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "linear-generics" = import ./nix/linear-generics.nix;
   "linear-geo" = import ./nix/linear-geo.nix;
   "linear-grammar" = import ./nix/linear-grammar.nix;
+  "linear-locks" = import ./nix/linear-locks.nix;
   "linear-maps" = import ./nix/linear-maps.nix;
   "linear-massiv" = import ./nix/linear-massiv.nix;
   "linear-opengl" = import ./nix/linear-opengl.nix;
@@ -14123,6 +14128,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "record-syntax" = import ./nix/record-syntax.nix;
   "record-wrangler" = import ./nix/record-wrangler.nix;
   "records" = import ./nix/records.nix;
+  "records-edsl" = import ./nix/records-edsl.nix;
+  "records-edsl-core" = import ./nix/records-edsl-core.nix;
+  "records-edsl-deriving-aeson" = import ./nix/records-edsl-deriving-aeson.nix;
+  "records-edsl-deriving-openapi3" = import ./nix/records-edsl-deriving-openapi3.nix;
+  "records-edsl-deriving-optics" = import ./nix/records-edsl-deriving-optics.nix;
+  "records-edsl-deriving-quickcheck" = import ./nix/records-edsl-deriving-quickcheck.nix;
   "records-sop" = import ./nix/records-sop.nix;
   "records-th" = import ./nix/records-th.nix;
   "recover-rtti" = import ./nix/recover-rtti.nix;
@@ -15638,6 +15649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "soap" = import ./nix/soap.nix;
   "soap-openssl" = import ./nix/soap-openssl.nix;
   "soap-tls" = import ./nix/soap-tls.nix;
+  "soccer-table" = import ./nix/soccer-table.nix;
   "sock2stream" = import ./nix/sock2stream.nix;
   "sockaddr" = import ./nix/sockaddr.nix;
   "socket" = import ./nix/socket.nix;

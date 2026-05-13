@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "1a44edea050d8186bae77eb068d4cd4358ea43da45c21124b8dc4a9d37168f55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-openapi-record-as-tuple-1.0.0.1-r0-e827e1c01aeeb465e2efcd213339431203468fa57d37645b1a75044d430069ca.nix;
+        revNum = 0;
+        sha256 = "e827e1c01aeeb465e2efcd213339431203468fa57d37645b1a75044d430069ca";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -360,4 +360,15 @@
       default = "r0";
     };
   };
+  "1.1.1" = {
+    sha256 = "7c9acfcc2a4aefffbf3915fba621e7b7e8af4ea628a97c1b5b2a3bc0df643105";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ansi-wl-pprint-1.1.1-r0-9e6f479f27ecb84d365135ed0aab3c598792afdffe1a5be01c815d90e242e91c.nix;
+        revNum = 0;
+        sha256 = "9e6f479f27ecb84d365135ed0aab3c598792afdffe1a5be01c815d90e242e91c";
+      };
+      default = "r0";
+    };
+  };
 }

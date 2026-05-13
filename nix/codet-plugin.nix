@@ -26,4 +26,15 @@
       default = "r1";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "f3b8f843341f7b5ff7589c75f8f8c2e17979635f187baf206e5817bdd29b37ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/codet-plugin-0.1.0.2-r0-2c06d21b04d8cff29e2cd6bcb5d2ac0aa284e79437894bc67cb9e2b889c7c509.nix;
+        revNum = 0;
+        sha256 = "2c06d21b04d8cff29e2cd6bcb5d2ac0aa284e79437894bc67cb9e2b889c7c509";
+      };
+      default = "r0";
+    };
+  };
 }

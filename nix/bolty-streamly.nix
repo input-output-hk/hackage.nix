@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "33538d142c6920798d2735f06d3685abc4ba04271db43274fd4e78930a915711";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bolty-streamly-0.1.0.2-r0-f00705c30492ed3d1bf34def22db21379701668654660d9921e2b23c1d420de2.nix;
+        revNum = 0;
+        sha256 = "f00705c30492ed3d1bf34def22db21379701668654660d9921e2b23c1d420de2";
+      };
+      default = "r0";
+    };
+  };
 }

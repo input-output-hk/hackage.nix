@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "c3f19a3753a2295dae12a6bf499c8b64d75347b5aad45a2b011cce060584f2e8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bolty-0.2.0.0-r0-fe9c7ff7d6caaabda04d653db4a9a31c223e96f7ff4542b10ea82cac50609e8e.nix;
+        revNum = 0;
+        sha256 = "fe9c7ff7d6caaabda04d653db4a9a31c223e96f7ff4542b10ea82cac50609e8e";
+      };
+      default = "r0";
+    };
+  };
 }
