@@ -112,4 +112,15 @@
       default = "r0";
     };
   };
+  "0.8.0" = {
+    sha256 = "6d661d99b67503c42365930c08bf8b0ad6deffd74e22d9cce35ce9f829ff1448";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/linear-base-0.8.0-r0-77d4cde7a63ded82a5521b12f2e43d5e09bd59dc5af600e6b8d71bde6930065c.nix;
+        revNum = 0;
+        sha256 = "77d4cde7a63ded82a5521b12f2e43d5e09bd59dc5af600e6b8d71bde6930065c";
+      };
+      default = "r0";
+    };
+  };
 }

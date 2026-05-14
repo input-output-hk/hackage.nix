@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.1.4.1" = {
+    sha256 = "37061a97a27072efa6e21d83997b6dd13fef25cdc0fd02976717e5d1bad7087d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-strut-0.1.4.1-r0-f78af49f145cdbb2697bfb279e81ef6b6eb9906a9bd16d2c7afa32963e19cfcf.nix;
+        revNum = 0;
+        sha256 = "f78af49f145cdbb2697bfb279e81ef6b6eb9906a9bd16d2c7afa32963e19cfcf";
+      };
+      default = "r0";
+    };
+  };
 }

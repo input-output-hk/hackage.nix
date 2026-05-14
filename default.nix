@@ -3347,6 +3347,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "caledon" = import ./nix/caledon.nix;
   "calendar-recycling" = import ./nix/calendar-recycling.nix;
   "calenderweek" = import ./nix/calenderweek.nix;
+  "caliper" = import ./nix/caliper.nix;
   "call" = import ./nix/call.nix;
   "call-alloy" = import ./nix/call-alloy.nix;
   "call-haskell-from-anything" = import ./nix/call-haskell-from-anything.nix;
@@ -6848,6 +6849,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "gi-webkit2" = import ./nix/gi-webkit2.nix;
   "gi-webkit2webextension" = import ./nix/gi-webkit2webextension.nix;
   "gi-webkitwebprocessextension" = import ./nix/gi-webkitwebprocessextension.nix;
+  "gi-wireplumber" = import ./nix/gi-wireplumber.nix;
   "gi-wnck" = import ./nix/gi-wnck.nix;
   "gi-xlib" = import ./nix/gi-xlib.nix;
   "giak" = import ./nix/giak.nix;
@@ -8658,6 +8660,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpc-tracer" = import ./nix/hpc-tracer.nix;
   "hpdft" = import ./nix/hpdft.nix;
   "hpg" = import ./nix/hpg.nix;
+  "hpgsql" = import ./nix/hpgsql.nix;
   "hpio" = import ./nix/hpio.nix;
   "hpke" = import ./nix/hpke.nix;
   "hplayground" = import ./nix/hplayground.nix;

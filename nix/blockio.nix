@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "802eccfd5438f45cfbf5a60251f5514815198ae5ca817de446e7789193f611ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/blockio-0.2.0.0-r0-9c40d34be2ff59d581afefa28626d79451fc2cebc39ae0728c0c466498cce0ad.nix;
+        revNum = 0;
+        sha256 = "9c40d34be2ff59d581afefa28626d79451fc2cebc39ae0728c0c466498cce0ad";
+      };
+      default = "r0";
+    };
+  };
 }

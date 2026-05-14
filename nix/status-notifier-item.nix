@@ -197,6 +197,17 @@
       default = "r0";
     };
   };
+  "0.3.2.14" = {
+    sha256 = "f3eebc26f68720c72ad78fdbac7297ac33d00245bcc57cbed8ae718293032e37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/status-notifier-item-0.3.2.14-r0-6ceb72ef529267e033acf8e45d993b82ddb5e9340607ec32ed3ba1e4c914ed84.nix;
+        revNum = 0;
+        sha256 = "6ceb72ef529267e033acf8e45d993b82ddb5e9340607ec32ed3ba1e4c914ed84";
+      };
+      default = "r0";
+    };
+  };
   "0.3.2.2" = {
     sha256 = "afb8b1119a0d516772d08710d80afd1ab15fd6508e3c03fd457c663a27fa91e2";
     revisions = {

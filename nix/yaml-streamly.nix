@@ -97,7 +97,12 @@
         revNum = 0;
         sha256 = "61b4d2d16c4be3aa2ebcc0af3d1a15e0c8302d14da3b91faf3b181573acd35c5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/yaml-streamly-0.12.5-r1-6cd6f7a4b08ecbe44d289f784c808f4b4bc212164cdad9f791a67ebd31b1af36.nix;
+        revNum = 1;
+        sha256 = "6cd6f7a4b08ecbe44d289f784c808f4b4bc212164cdad9f791a67ebd31b1af36";
+      };
+      default = "r1";
     };
   };
 }

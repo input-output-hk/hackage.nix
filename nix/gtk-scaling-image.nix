@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "fb18aa6b98028fb431691280aa593d5fc7f00b1bef3b8b2e065a7b9d22a53c1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gtk-scaling-image-0.1.0.1-r0-b68b8778543c91b5d5a2ca7c2ad7e4aaad4f303a955805a0cdae3f67e6ff3e22.nix;
+        revNum = 0;
+        sha256 = "b68b8778543c91b5d5a2ca7c2ad7e4aaad4f303a955805a0cdae3f67e6ff3e22";
+      };
+      default = "r0";
+    };
+  };
 }
