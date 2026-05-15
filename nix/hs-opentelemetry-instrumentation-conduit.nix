@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "0fe1aaa43cab1b3e439f30772cb8fd40e7ac7ad865a5eca75bb5ac060a32c123";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-conduit-0.1.0.2-r0-52fb2088875f5aa0e1aa36a17d926d3e6ddb7c9ea4b3f89bf17e1c4648e835a6.nix;
+        revNum = 0;
+        sha256 = "52fb2088875f5aa0e1aa36a17d926d3e6ddb7c9ea4b3f89bf17e1c4648e835a6";
+      };
+      default = "r0";
+    };
+  };
 }

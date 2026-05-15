@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "839c118adcef6c3b583ad2bf6a1c4bd6382dfac8c045139a8158849f7dd5ed49";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-persistent-0.1.0.2-r0-16859836759ab667f198a7697de6a7c7c175e8fc1bba023be1e584fe784b40e3.nix;
+        revNum = 0;
+        sha256 = "16859836759ab667f198a7697de6a7c7c175e8fc1bba023be1e584fe784b40e3";
+      };
+      default = "r0";
+    };
+  };
 }

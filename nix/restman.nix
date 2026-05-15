@@ -10,6 +10,17 @@
       default = "r0";
     };
   };
+  "0.7.1.2" = {
+    sha256 = "6dfcd81517b31e0b744c373a29d3f4cfb9b1df1755146dcebdeccd4b07cac73e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/restman-0.7.1.2-r0-940b085313f9df5e1364cf26e5784f7cb525fc5971dcc11be60e85991963f981.nix;
+        revNum = 0;
+        sha256 = "940b085313f9df5e1364cf26e5784f7cb525fc5971dcc11be60e85991963f981";
+      };
+      default = "r0";
+    };
+  };
   "0.7.2.0" = {
     sha256 = "7d485de05c561351e03904aa613489c46a53f7f7e2af482e85f2897fda42d194";
     revisions = {
@@ -83,6 +94,28 @@
         nix = import ../hackage/restman-0.7.5.0-r0-e74e4833bf393233b5cd88a8f15c422d84c48cb46018fd78f6d0f4c13d3731e4.nix;
         revNum = 0;
         sha256 = "e74e4833bf393233b5cd88a8f15c422d84c48cb46018fd78f6d0f4c13d3731e4";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.5.1" = {
+    sha256 = "390ccd60fb45f1736506b36d16befdb1c468ecafa36edcca7649d5beab83387c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/restman-0.7.5.1-r0-d51039a23f2070d85062490290c76d0b9fda9d472bcfb455279f064bea4d1490.nix;
+        revNum = 0;
+        sha256 = "d51039a23f2070d85062490290c76d0b9fda9d472bcfb455279f064bea4d1490";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.6.0" = {
+    sha256 = "55be0af8104958999b75afe8d8e0d8fb72a77a82d5606e8967a7ca1ab0f9ab47";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/restman-0.7.6.0-r0-b475a055784197449f0319617d3c33e69b6bf83e3ad755cd4335d53a45bff9ac.nix;
+        revNum = 0;
+        sha256 = "b475a055784197449f0319617d3c33e69b6bf83e3ad755cd4335d53a45bff9ac";
       };
       default = "r0";
     };
