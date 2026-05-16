@@ -43,4 +43,26 @@
       default = "r0";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "57400bf3dad745e65f97d00c71521e696a950bad4a2b82bfa3ab865691c93e9e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-alerts-0.1.4.0-r0-997954c61dae9b2b8b081c59e994edd885842d680c02a152a66af9d06355697e.nix;
+        revNum = 0;
+        sha256 = "997954c61dae9b2b8b081c59e994edd885842d680c02a152a66af9d06355697e";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.5.0" = {
+    sha256 = "c6d88d4a83bb4adf59d90ca736cdb5d9b927399f90a0215dc4a39e8fb7be79db";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-alerts-0.1.5.0-r0-0b0eeeb8611f2dc081d1ad58aa9ffe3c5761abac9406a096244e0fb9b0286d75.nix;
+        revNum = 0;
+        sha256 = "0b0eeeb8611f2dc081d1ad58aa9ffe3c5761abac9406a096244e0fb9b0286d75";
+      };
+      default = "r0";
+    };
+  };
 }

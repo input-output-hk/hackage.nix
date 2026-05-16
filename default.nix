@@ -4420,6 +4420,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "css" = import ./nix/css.nix;
   "css-class-bindings" = import ./nix/css-class-bindings.nix;
   "css-easings" = import ./nix/css-easings.nix;
+  "css-parser" = import ./nix/css-parser.nix;
   "css-selectors" = import ./nix/css-selectors.nix;
   "css-simple" = import ./nix/css-simple.nix;
   "css-syntax" = import ./nix/css-syntax.nix;
@@ -8673,6 +8674,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpdft" = import ./nix/hpdft.nix;
   "hpg" = import ./nix/hpg.nix;
   "hpgsql" = import ./nix/hpgsql.nix;
+  "hpgsql-simple-compat" = import ./nix/hpgsql-simple-compat.nix;
   "hpio" = import ./nix/hpio.nix;
   "hpke" = import ./nix/hpke.nix;
   "hplayground" = import ./nix/hplayground.nix;
