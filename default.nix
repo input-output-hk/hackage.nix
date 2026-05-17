@@ -11099,6 +11099,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mcmc-synthesis" = import ./nix/mcmc-synthesis.nix;
   "mcmc-types" = import ./nix/mcmc-types.nix;
   "mcp" = import ./nix/mcp.nix;
+  "mcp-hoogle" = import ./nix/mcp-hoogle.nix;
   "mcp-server" = import ./nix/mcp-server.nix;
   "mcp-types" = import ./nix/mcp-types.nix;
   "mcpi" = import ./nix/mcpi.nix;
@@ -13426,6 +13427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-aead" = import ./nix/ppad-aead.nix;
   "ppad-base16" = import ./nix/ppad-base16.nix;
   "ppad-base58" = import ./nix/ppad-base58.nix;
+  "ppad-base64" = import ./nix/ppad-base64.nix;
   "ppad-bech32" = import ./nix/ppad-bech32.nix;
   "ppad-bip32" = import ./nix/ppad-bip32.nix;
   "ppad-bip39" = import ./nix/ppad-bip39.nix;
@@ -18529,6 +18531,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "winery" = import ./nix/winery.nix;
   "winio" = import ./nix/winio.nix;
   "wire-streams" = import ./nix/wire-streams.nix;
+  "wireform-core" = import ./nix/wireform-core.nix;
+  "wireform-derive" = import ./nix/wireform-derive.nix;
+  "wireform-proto" = import ./nix/wireform-proto.nix;
   "wireguard-hs" = import ./nix/wireguard-hs.nix;
   "wires" = import ./nix/wires.nix;
   "wiring" = import ./nix/wiring.nix;
