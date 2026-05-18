@@ -1596,6 +1596,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
+  "ai-agent-diff-patch" = import ./nix/ai-agent-diff-patch.nix;
   "aig" = import ./nix/aig.nix;
   "aip" = import ./nix/aip.nix;
   "aip-version" = import ./nix/aip-version.nix;

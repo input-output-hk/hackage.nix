@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.4.0" = {
+    sha256 = "5f36e93980a19924a248390abb4ffe72b01d68471e81b1ef39c2b5edb27871e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/submark-0.4.0-r0-fc0f7c0c78b723a71c15f1df44b29e1b9740d512be96d48272a5e0f5f25cc4c2.nix;
+        revNum = 0;
+        sha256 = "fc0f7c0c78b723a71c15f1df44b29e1b9740d512be96d48272a5e0f5f25cc4c2";
+      };
+      default = "r0";
+    };
+  };
 }
