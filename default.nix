@@ -5734,6 +5734,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "exceptionfree-readfile" = import ./nix/exceptionfree-readfile.nix;
   "exceptions" = import ./nix/exceptions.nix;
   "exceptiot" = import ./nix/exceptiot.nix;
+  "exchangealgebra" = import ./nix/exchangealgebra.nix;
   "exchangerates" = import ./nix/exchangerates.nix;
   "execs" = import ./nix/execs.nix;
   "executable-hash" = import ./nix/executable-hash.nix;
@@ -9021,6 +9022,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hsqml-morris" = import ./nix/hsqml-morris.nix;
   "hsreadability" = import ./nix/hsreadability.nix;
   "hsrelp" = import ./nix/hsrelp.nix;
+  "hsrs" = import ./nix/hsrs.nix;
   "hsseccomp" = import ./nix/hsseccomp.nix;
   "hssh" = import ./nix/hssh.nix;
   "hsshellscript" = import ./nix/hsshellscript.nix;

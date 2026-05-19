@@ -152,4 +152,15 @@
       default = "r0";
     };
   };
+  "1.5.0" = {
+    sha256 = "52f937af76e9b536115fc8c9035867f0eb594ecda282ce9ca0f95b598f6dca8b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proto3-wire-1.5.0-r0-3e0df857172c27443b4006de4d7dbd207f2ed8a916594fe32fbd871c5693c340.nix;
+        revNum = 0;
+        sha256 = "3e0df857172c27443b4006de4d7dbd207f2ed8a916594fe32fbd871c5693c340";
+      };
+      default = "r0";
+    };
+  };
 }

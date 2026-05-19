@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "14e184d815d6577a61ff9ef148b8f4f3790c0868585dcd336fefc885c34c6bb4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/polytree-0.1.2-r0-d0cfd65d6b9f8e53935d2ed558ded4937917150643ee9675167822c9b59bd02d.nix;
+        revNum = 0;
+        sha256 = "d0cfd65d6b9f8e53935d2ed558ded4937917150643ee9675167822c9b59bd02d";
+      };
+      default = "r0";
+    };
+  };
 }
