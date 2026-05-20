@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "d4acacd9f5769a1ab1bc85cb528a3d67a6d008616eebad8a3a48ce5a4ed48060";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/repl-alliance-0.1.1.0-r0-f3539ac54f0b6b209043097148ae71585a3fed1e6deb17d31bde690bc4e7e8f1.nix;
+        revNum = 0;
+        sha256 = "f3539ac54f0b6b209043097148ae71585a3fed1e6deb17d31bde690bc4e7e8f1";
+      };
+      default = "r0";
+    };
+  };
 }

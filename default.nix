@@ -3672,6 +3672,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "clash-shockwaves" = import ./nix/clash-shockwaves.nix;
   "clash-systemverilog" = import ./nix/clash-systemverilog.nix;
   "clash-verilog" = import ./nix/clash-verilog.nix;
+  "clash-vexriscv" = import ./nix/clash-vexriscv.nix;
   "clash-vhdl" = import ./nix/clash-vhdl.nix;
   "clashilator" = import ./nix/clashilator.nix;
   "classify" = import ./nix/classify.nix;
@@ -7632,6 +7633,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hamusic" = import ./nix/hamusic.nix;
   "han2zen" = import ./nix/han2zen.nix;
   "hanabi-dealer" = import ./nix/hanabi-dealer.nix;
+  "hanalyze" = import ./nix/hanalyze.nix;
   "handa-data" = import ./nix/handa-data.nix;
   "handa-gdata" = import ./nix/handa-gdata.nix;
   "handa-geodata" = import ./nix/handa-geodata.nix;
@@ -14775,6 +14777,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "satchmo-funsat" = import ./nix/satchmo-funsat.nix;
   "satchmo-minisat" = import ./nix/satchmo-minisat.nix;
   "satchmo-toysat" = import ./nix/satchmo-toysat.nix;
+  "satplus" = import ./nix/satplus.nix;
   "saturn" = import ./nix/saturn.nix;
   "satyros" = import ./nix/satyros.nix;
   "sauron" = import ./nix/sauron.nix;
