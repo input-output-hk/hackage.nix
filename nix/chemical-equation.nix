@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.2" = {
+    sha256 = "d8d81b894171477b49b769cd63ef3c232cf6a18c4fdce817cf22af5d83677fa0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chemical-equation-0.0.2-r0-8412a0ea5fa846deda5c031fbf21a6dfe72ff1abde26d8d2e0e1ba6a0ce64e60.nix;
+        revNum = 0;
+        sha256 = "8412a0ea5fa846deda5c031fbf21a6dfe72ff1abde26d8d2e0e1ba6a0ce64e60";
+      };
+      default = "r0";
+    };
+  };
 }

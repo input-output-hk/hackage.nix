@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "d7ee35df63572f0e45eaee1c8b44f84ecaaf0afb5e604a3fefd10e8068125760";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Aoide-2.0.0.0-r0-282ae526f9cb26b8122e7b6c2cdffcfbbdc302b9e9d6a208f50f6dbe93c43b0d.nix;
+        revNum = 0;
+        sha256 = "282ae526f9cb26b8122e7b6c2cdffcfbbdc302b9e9d6a208f50f6dbe93c43b0d";
+      };
+      default = "r0";
+    };
+  };
 }

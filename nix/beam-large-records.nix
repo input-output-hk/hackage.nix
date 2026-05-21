@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.4" = {
+    sha256 = "5a1cebb98a434656ec9bf082044478cc8e08266c33c032c8a8f18453d9f455d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-large-records-0.1.4-r0-80f1ab4e10491f71891de749ea891fc38392cbcddde96fe85b4ddf6bff5e12e9.nix;
+        revNum = 0;
+        sha256 = "80f1ab4e10491f71891de749ea891fc38392cbcddde96fe85b4ddf6bff5e12e9";
+      };
+      default = "r0";
+    };
+  };
 }

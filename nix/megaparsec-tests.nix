@@ -227,7 +227,17 @@
         revNum = 3;
         sha256 = "3d78fb0ea8734a66c832d4dbe26d90c626ed98ba2439ce908824f7da3401201b";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/megaparsec-tests-9.7.0-r4-0c3d6985d008952277eefc16f3e451a98835568c4bac69b089f1c730e6557ce3.nix;
+        revNum = 4;
+        sha256 = "0c3d6985d008952277eefc16f3e451a98835568c4bac69b089f1c730e6557ce3";
+      };
+      r5 = {
+        nix = import ../hackage/megaparsec-tests-9.7.0-r5-7a9896dc82ea82d4a5be0e9f26fb5ec534ff6f8be780e99b172abc923c58e242.nix;
+        revNum = 5;
+        sha256 = "7a9896dc82ea82d4a5be0e9f26fb5ec534ff6f8be780e99b172abc923c58e242";
+      };
+      default = "r5";
     };
   };
 }

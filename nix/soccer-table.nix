@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "6b01fab4b9976fbda08e03decb9461f7709a2d72bd68e0044c71cd47a8e5d9ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/soccer-table-0.1.0.2-r0-53b91112f65d5392e30e21cefd3a2d9dd0ec08a715e1effc49bc6044e15c663e.nix;
+        revNum = 0;
+        sha256 = "53b91112f65d5392e30e21cefd3a2d9dd0ec08a715e1effc49bc6044e15c663e";
+      };
+      default = "r0";
+    };
+  };
 }

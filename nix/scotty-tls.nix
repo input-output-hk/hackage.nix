@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.6.1" = {
+    sha256 = "a146c523afd8a0eeff0dc96f6578ddcffe45f0f3e33444a9e7183dc70756d2ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scotty-tls-0.6.1-r0-b6eb32827535199fefa1ef2281b13b28dec3093e2d0e01e4a825988f3d80a059.nix;
+        revNum = 0;
+        sha256 = "b6eb32827535199fefa1ef2281b13b28dec3093e2d0e01e4a825988f3d80a059";
+      };
+      default = "r0";
+    };
+  };
 }

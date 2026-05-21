@@ -109,6 +109,28 @@
       default = "r0";
     };
   };
+  "0.0.19.1" = {
+    sha256 = "9f82b1cf617cba5d2e199caaf589caf6ce127d9fe94c117235cb4063089e098f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/utxorpc-0.0.19.1-r0-7f9b8e96c267dbf37828d80f9b1bce3cd133c79268af12b86c8f91d5d13f04e5.nix;
+        revNum = 0;
+        sha256 = "7f9b8e96c267dbf37828d80f9b1bce3cd133c79268af12b86c8f91d5d13f04e5";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.19.2" = {
+    sha256 = "5d6e87d2b86f524f535450e5a783287283b3a5aa80258df82d61dc16466f8774";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/utxorpc-0.0.19.2-r0-8896938526a85abbc1fa508e10dc7493b8cdd7ea56775644e53f2373deefecb7.nix;
+        revNum = 0;
+        sha256 = "8896938526a85abbc1fa508e10dc7493b8cdd7ea56775644e53f2373deefecb7";
+      };
+      default = "r0";
+    };
+  };
   "0.0.3.0" = {
     sha256 = "32c9a650a08e90705a6a73983235912c57172c04723a39e9188624daf7f9a8db";
     revisions = {
