@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "27e8392373b3e52e0f90132cabbe52a411ce6cea487971819ebc6b3a7338ed59";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/ghc-stack-profiler-0.2.0.0-r1-27a30ff415bb2fbc74c175726912a4471b6dd69994b2948a3bed7575b75baa7e.nix;
+        revNum = 1;
+        sha256 = "27a30ff415bb2fbc74c175726912a4471b6dd69994b2948a3bed7575b75baa7e";
+      };
+      default = "r1";
     };
   };
 }

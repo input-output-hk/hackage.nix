@@ -132,4 +132,15 @@
       default = "r3";
     };
   };
+  "0.1.3" = {
+    sha256 = "0e95862e63818f078e199e29a723098d19eed5c329a2172be968ab94c7f8c3c6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-flatpak-0.1.3-r0-4127e6d5b63f0853a8bce35bcdcd60f1cfdee4e0176d3905d26bc7c230eae340.nix;
+        revNum = 0;
+        sha256 = "4127e6d5b63f0853a8bce35bcdcd60f1cfdee4e0176d3905d26bc7c230eae340";
+      };
+      default = "r0";
+    };
+  };
 }

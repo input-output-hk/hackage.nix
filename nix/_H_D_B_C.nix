@@ -405,4 +405,15 @@
       default = "r0";
     };
   };
+  "2.4.0.5" = {
+    sha256 = "250c585fdbfaaf8d9681e106c5bf92accd3a9c81027acb9492f5a254a8748bff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/HDBC-2.4.0.5-r0-826a511695f077bce01c043f5db9f426774214525ea17b75cdb3fed650fbcf1c.nix;
+        revNum = 0;
+        sha256 = "826a511695f077bce01c043f5db9f426774214525ea17b75cdb3fed650fbcf1c";
+      };
+      default = "r0";
+    };
+  };
 }

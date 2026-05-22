@@ -91,7 +91,12 @@
         revNum = 0;
         sha256 = "5f4a967fd064dee0431e110a6b7007e0a4c6d7eb4901e043804acf5cc194340a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/beam-duckdb-0.3.1.0-r1-f6303631308cdeaa36f69d57faae9f66eb8b362c11fddfc022545e99f20106ce.nix;
+        revNum = 1;
+        sha256 = "f6303631308cdeaa36f69d57faae9f66eb8b362c11fddfc022545e99f20106ce";
+      };
+      default = "r1";
     };
   };
 }

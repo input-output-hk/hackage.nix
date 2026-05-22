@@ -6321,6 +6321,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "from-env" = import ./nix/from-env.nix;
   "from-string" = import ./nix/from-string.nix;
   "from-sum" = import ./nix/from-sum.nix;
+  "from-text" = import ./nix/from-text.nix;
   "fromhtml" = import ./nix/fromhtml.nix;
   "front" = import ./nix/front.nix;
   "frontmatter" = import ./nix/frontmatter.nix;
