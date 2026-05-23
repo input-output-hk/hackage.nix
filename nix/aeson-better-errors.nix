@@ -380,4 +380,15 @@
       default = "r0";
     };
   };
+  "0.9.1.4" = {
+    sha256 = "9b1dd9c3d9c96f014d305ef4293934a24c80c1a41dd261d49e86d8495e6a954d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aeson-better-errors-0.9.1.4-r0-36e220e6191a9b7f07790204b9ea809a70c68d7b1782686d26a6101c64499691.nix;
+        revNum = 0;
+        sha256 = "36e220e6191a9b7f07790204b9ea809a70c68d7b1782686d26a6101c64499691";
+      };
+      default = "r0";
+    };
+  };
 }

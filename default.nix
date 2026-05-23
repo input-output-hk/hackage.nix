@@ -18683,6 +18683,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "xcffib" = import ./nix/xcffib.nix;
   "xcframework" = import ./nix/xcframework.nix;
   "xchat-plugin" = import ./nix/xchat-plugin.nix;
+  "xcodec" = import ./nix/xcodec.nix;
   "xcp" = import ./nix/xcp.nix;
   "xdcc" = import ./nix/xdcc.nix;
   "xdg-basedir" = import ./nix/xdg-basedir.nix;
