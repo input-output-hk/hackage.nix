@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.1.5" = {
+    sha256 = "c4518981fdca47b8406c4bd3885d20ba7bc3186e01b331de041b7ed614e4ca3a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/anitomata-aseprite-0.1.1.5-r0-7cde9ed738bb5200e76283a76e4bec4ae5dc6425665e5808171085af5e0a6f76.nix;
+        revNum = 0;
+        sha256 = "7cde9ed738bb5200e76283a76e4bec4ae5dc6425665e5808171085af5e0a6f76";
+      };
+      default = "r0";
+    };
+  };
 }

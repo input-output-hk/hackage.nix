@@ -3373,6 +3373,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "canteven-template" = import ./nix/canteven-template.nix;
   "cantor" = import ./nix/cantor.nix;
   "cantor-pairing" = import ./nix/cantor-pairing.nix;
+  "canvhs" = import ./nix/canvhs.nix;
   "cao" = import ./nix/cao.nix;
   "cap" = import ./nix/cap.nix;
   "capability" = import ./nix/capability.nix;
@@ -9496,6 +9497,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "imprint" = import ./nix/imprint.nix;
   "improve" = import ./nix/improve.nix;
   "impure-containers" = import ./nix/impure-containers.nix;
+  "imsos-monad" = import ./nix/imsos-monad.nix;
   "in-other-words" = import ./nix/in-other-words.nix;
   "in-other-words-plugin" = import ./nix/in-other-words-plugin.nix;
   "inbox" = import ./nix/inbox.nix;
@@ -10115,6 +10117,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kind-rational" = import ./nix/kind-rational.nix;
   "kindly-functors" = import ./nix/kindly-functors.nix;
   "kinds" = import ./nix/kinds.nix;
+  "kiroku-otel" = import ./nix/kiroku-otel.nix;
+  "kiroku-store" = import ./nix/kiroku-store.nix;
+  "kiroku-store-migrations" = import ./nix/kiroku-store-migrations.nix;
   "kit" = import ./nix/kit.nix;
   "kleene" = import ./nix/kleene.nix;
   "kleene-list" = import ./nix/kleene-list.nix;
@@ -15292,6 +15297,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shh-extras" = import ./nix/shh-extras.nix;
   "shibuya-core" = import ./nix/shibuya-core.nix;
   "shibuya-kafka-adapter" = import ./nix/shibuya-kafka-adapter.nix;
+  "shibuya-kiroku-adapter" = import ./nix/shibuya-kiroku-adapter.nix;
   "shibuya-metrics" = import ./nix/shibuya-metrics.nix;
   "shibuya-pgmq-adapter" = import ./nix/shibuya-pgmq-adapter.nix;
   "shift" = import ./nix/shift.nix;
