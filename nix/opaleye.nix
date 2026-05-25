@@ -205,7 +205,12 @@
         revNum = 0;
         sha256 = "90e02ac0b8ffad55cab2207b872678fa8d08319005c55c026c6785e3aef08d27";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/opaleye-0.10.8.0-r1-11b7bf379da7d8328e69ad3cc39ba97ebb6f9841e1349931123751c7f68b71d5.nix;
+        revNum = 1;
+        sha256 = "11b7bf379da7d8328e69ad3cc39ba97ebb6f9841e1349931123751c7f68b71d5";
+      };
+      default = "r1";
     };
   };
   "0.2" = {

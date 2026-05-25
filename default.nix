@@ -13454,6 +13454,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-fixed" = import ./nix/ppad-fixed.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;
+  "ppad-lmdb" = import ./nix/ppad-lmdb.nix;
   "ppad-pbkdf" = import ./nix/ppad-pbkdf.nix;
   "ppad-poly1305" = import ./nix/ppad-poly1305.nix;
   "ppad-ripemd160" = import ./nix/ppad-ripemd160.nix;
