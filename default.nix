@@ -6301,6 +6301,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freer-simple-time" = import ./nix/freer-simple-time.nix;
   "freesect" = import ./nix/freesect.nix;
   "freesound" = import ./nix/freesound.nix;
+  "freestyle" = import ./nix/freestyle.nix;
   "freetype-simple" = import ./nix/freetype-simple.nix;
   "freetype2" = import ./nix/freetype2.nix;
   "fregel" = import ./nix/fregel.nix;

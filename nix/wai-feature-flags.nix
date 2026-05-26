@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.0.9" = {
+    sha256 = "f197b17917864ee97a998cf201d09cb4632dc2ab6fb960002e64480f50142ea9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-feature-flags-0.1.0.9-r0-0463c96b05b2efc23749f00c194419bebbef0fe78c7ade1e06e3a8112879a11c.nix;
+        revNum = 0;
+        sha256 = "0463c96b05b2efc23749f00c194419bebbef0fe78c7ade1e06e3a8112879a11c";
+      };
+      default = "r0";
+    };
+  };
 }

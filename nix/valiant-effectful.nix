@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "01fb9881c39b98c2a9b71960d22886e7fb183d72ff860545587e143229550bd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/valiant-effectful-0.1.0.2-r0-0f9539b7e2aedf42b13bf45f9ed5f6c5e20e0c910eca6deee48fcc31acdd8094.nix;
+        revNum = 0;
+        sha256 = "0f9539b7e2aedf42b13bf45f9ed5f6c5e20e0c910eca6deee48fcc31acdd8094";
+      };
+      default = "r0";
+    };
+  };
 }
