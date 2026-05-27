@@ -1076,6 +1076,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "SMTPClient" = import ./nix/_S_M_T_P_Client.nix;
   "SNet" = import ./nix/_S_Net.nix;
   "SQLDeps" = import ./nix/_S_Q_L_Deps.nix;
+  "SQLiteDAV" = import ./nix/_S_Q_Lite_D_A_V.nix;
   "SSTG" = import ./nix/_S_S_T_G.nix;
   "STL" = import ./nix/_S_T_L.nix;
   "STLinkUSB" = import ./nix/_S_T_Link_U_S_B.nix;
@@ -3633,6 +3634,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "circlehs" = import ./nix/circlehs.nix;
   "circuit-breaker" = import ./nix/circuit-breaker.nix;
   "circuit-notation" = import ./nix/circuit-notation.nix;
+  "circuits" = import ./nix/circuits.nix;
   "circular" = import ./nix/circular.nix;
   "circular-enum" = import ./nix/circular-enum.nix;
   "circus" = import ./nix/circus.nix;
@@ -10124,6 +10126,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kit" = import ./nix/kit.nix;
   "kleene" = import ./nix/kleene.nix;
   "kleene-list" = import ./nix/kleene-list.nix;
+  "kleisli" = import ./nix/kleisli.nix;
   "kmeans" = import ./nix/kmeans.nix;
   "kmeans-par" = import ./nix/kmeans-par.nix;
   "kmeans-vector" = import ./nix/kmeans-vector.nix;
