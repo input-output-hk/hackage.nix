@@ -127,4 +127,15 @@
       default = "r1";
     };
   };
+  "0.7.1.0" = {
+    sha256 = "3abbf3a303de9f6dbd0341e5a9fc8ed863e9404205a754881186afa98a184f7f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arrayfire-0.7.1.0-r0-d71843bc854a2e1a46a1777aef74f982e1fcbe703a73f2cdf75db5291aba8cce.nix;
+        revNum = 0;
+        sha256 = "d71843bc854a2e1a46a1777aef74f982e1fcbe703a73f2cdf75db5291aba8cce";
+      };
+      default = "r0";
+    };
+  };
 }

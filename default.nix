@@ -1599,6 +1599,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agum" = import ./nix/agum.nix;
   "ai-agent-diff-patch" = import ./nix/ai-agent-diff-patch.nix;
   "aig" = import ./nix/aig.nix;
+  "aihc-cpp" = import ./nix/aihc-cpp.nix;
   "aip" = import ./nix/aip.nix;
   "aip-version" = import ./nix/aip-version.nix;
   "air" = import ./nix/air.nix;
@@ -5410,6 +5411,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effectful-postgresql" = import ./nix/effectful-postgresql.nix;
   "effectful-st" = import ./nix/effectful-st.nix;
   "effectful-th" = import ./nix/effectful-th.nix;
+  "effectful-tracing" = import ./nix/effectful-tracing.nix;
   "effectful-zoo" = import ./nix/effectful-zoo.nix;
   "effective-aspects" = import ./nix/effective-aspects.nix;
   "effective-aspects-mzv" = import ./nix/effective-aspects-mzv.nix;

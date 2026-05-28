@@ -119,4 +119,15 @@
       default = "r1";
     };
   };
+  "1.1.2" = {
+    sha256 = "ddcc10399bca1dac73e4dd7d4a7643fb956590f97276391706275fb8ce912477";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prometheus-client-1.1.2-r0-b06dfc40cd01ef97160324190dc4a77bafd0d6024b32ee2cc234f5f2220681ec.nix;
+        revNum = 0;
+        sha256 = "b06dfc40cd01ef97160324190dc4a77bafd0d6024b32ee2cc234f5f2220681ec";
+      };
+      default = "r0";
+    };
+  };
 }
