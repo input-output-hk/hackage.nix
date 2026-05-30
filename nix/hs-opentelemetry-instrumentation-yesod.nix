@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "88142ae424412a131e5d4e5a93639833bee9ff7660ba89d3e53e849d9606c19e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-yesod-1.0.0.0-r0-f05ff3b227ed29cbccd780cd841f896b68f203febb2834405cff10729ae1e6df.nix;
+        revNum = 0;
+        sha256 = "f05ff3b227ed29cbccd780cd841f896b68f203febb2834405cff10729ae1e6df";
+      };
+      default = "r0";
+    };
+  };
 }

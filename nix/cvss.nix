@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "f1df3b0c3c4f6f01e6862a2b7ca18f4b42c2ab8a9426317c9d4c497feaefbef8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cvss-0.3.0.0-r0-0e97d8c9d5c734b7b38b6b1bc9d4c8433c8241caff8fe2e989dcba0ec1686ac7.nix;
+        revNum = 0;
+        sha256 = "0e97d8c9d5c734b7b38b6b1bc9d4c8433c8241caff8fe2e989dcba0ec1686ac7";
+      };
+      default = "r0";
+    };
+  };
 }

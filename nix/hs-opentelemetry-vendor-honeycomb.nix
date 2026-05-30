@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "3c41bcb4d25c6e3f17b72d62cac0d085d78ae14acd62bda44e962d7a13533562";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-vendor-honeycomb-1.0.0.0-r0-0d76f6c0232f73b3c3fde905076d03383a9bbe22c3419eef9d7b9ee560fd0164.nix;
+        revNum = 0;
+        sha256 = "0d76f6c0232f73b3c3fde905076d03383a9bbe22c3419eef9d7b9ee560fd0164";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.40.0.0" = {
+    sha256 = "c9ba86a46a91a314df57506cab3154d5feae7c38eea345f70e8b5b20b7130ef1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-semantic-conventions-1.40.0.0-r0-7bb8cdd2d9facde4613c1b271b1a57ac218ed471b05943f6fcbf38b509913d24.nix;
+        revNum = 0;
+        sha256 = "7bb8cdd2d9facde4613c1b271b1a57ac218ed471b05943f6fcbf38b509913d24";
+      };
+      default = "r0";
+    };
+  };
 }

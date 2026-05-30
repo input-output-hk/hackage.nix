@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "44055152f226225862595d3ac5e0cca75c5f467b11097ea4f1088e46e7c309b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-hspec-1.0.0.0-r0-6cdc87b83dea6a39af0b990f12ebcb5211198b8868d87022a47b58e9bd3d8bac.nix;
+        revNum = 0;
+        sha256 = "6cdc87b83dea6a39af0b990f12ebcb5211198b8868d87022a47b58e9bd3d8bac";
+      };
+      default = "r0";
+    };
+  };
 }

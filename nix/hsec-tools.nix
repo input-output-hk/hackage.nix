@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "ff3612c16c9b59bbad98bb2abe65e127df14987527e872ad3adffb5125f6afed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsec-tools-0.3.0.2-r0-2abc0a6f1ce1d95bcd6464ef4ff5c9a2515650a31c4d0b207c73a52ce1fdb295.nix;
+        revNum = 0;
+        sha256 = "2abc0a6f1ce1d95bcd6464ef4ff5c9a2515650a31c4d0b207c73a52ce1fdb295";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.0" = {
+    sha256 = "5c134186bf0785171a5c654fe7a137695fda87d9ebaedcdf9a97c36226367ff7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsec-tools-0.4.0.0-r0-8fe6e33b214754352ba4b8ca81356bd6cb4e743ae87d05beea0ff0d559637b8e.nix;
+        revNum = 0;
+        sha256 = "8fe6e33b214754352ba4b8ca81356bd6cb4e743ae87d05beea0ff0d559637b8e";
+      };
+      default = "r0";
+    };
+  };
 }

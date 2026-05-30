@@ -394,7 +394,12 @@
         revNum = 0;
         sha256 = "7af4a9b70977383b1966bb556335c45cb4ab9a458998a6d729749d49e96e7b50";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cayley-client-0.4.19.5-r1-85ee68275803fe787819d17976bf6d0acafcab801d4cc9c07221318f62ed9c4b.nix;
+        revNum = 1;
+        sha256 = "85ee68275803fe787819d17976bf6d0acafcab801d4cc9c07221318f62ed9c4b";
+      };
+      default = "r1";
     };
   };
   "0.4.2" = {
