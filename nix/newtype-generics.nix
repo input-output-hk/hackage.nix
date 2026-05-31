@@ -219,4 +219,15 @@
       default = "r5";
     };
   };
+  "0.6.3" = {
+    sha256 = "5f5add0d21c5d54c09b1f8c2a14e0e36c2c507b44b1b706270fd508afb690a01";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/newtype-generics-0.6.3-r0-3c5e3a2e0a34ef416a889a593624d7349799222a270500cda928fda7194f28dd.nix;
+        revNum = 0;
+        sha256 = "3c5e3a2e0a34ef416a889a593624d7349799222a270500cda928fda7194f28dd";
+      };
+      default = "r0";
+    };
+  };
 }

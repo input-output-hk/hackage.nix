@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "1.1.3.0" = {
+    sha256 = "ce5510c38a827f0e5af82308f47ef1a03e64626fddae8a1eb11c46089c5682c9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/himari-1.1.3.0-r0-b97b5223ef7fe46f81364595fd5046ab7a8aa25ffdd70c002eb3b1d628562dd9.nix;
+        revNum = 0;
+        sha256 = "b97b5223ef7fe46f81364595fd5046ab7a8aa25ffdd70c002eb3b1d628562dd9";
+      };
+      default = "r0";
+    };
+  };
 }
