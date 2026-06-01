@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.1.1" = {
+    sha256 = "93b8d36bce9a43ebe3d701a0eeb66d9a7359ec334d60a23c6c13158033701da9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/commonmark-cli-0.2.1.1-r0-a4baf048affb0aed5b1b3c843d0ad90bcee0c2ce6d0331366300f78040782148.nix;
+        revNum = 0;
+        sha256 = "a4baf048affb0aed5b1b3c843d0ad90bcee0c2ce6d0331366300f78040782148";
+      };
+      default = "r0";
+    };
+  };
 }

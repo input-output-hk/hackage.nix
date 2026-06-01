@@ -10133,6 +10133,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kind-rational" = import ./nix/kind-rational.nix;
   "kindly-functors" = import ./nix/kindly-functors.nix;
   "kinds" = import ./nix/kinds.nix;
+  "kiroku-cli" = import ./nix/kiroku-cli.nix;
   "kiroku-otel" = import ./nix/kiroku-otel.nix;
   "kiroku-store" = import ./nix/kiroku-store.nix;
   "kiroku-store-migrations" = import ./nix/kiroku-store-migrations.nix;
