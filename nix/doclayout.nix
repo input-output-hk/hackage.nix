@@ -136,4 +136,15 @@
       default = "r0";
     };
   };
+  "0.5.0.2" = {
+    sha256 = "072587f7665cbfe239d038d21181fa9baacc8217033c36b6a127d4c8d0309b4d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doclayout-0.5.0.2-r0-d7666cbdce56316120397dbfb6b41083e4de2ae445fadfebd071b76cee0dbe9d.nix;
+        revNum = 0;
+        sha256 = "d7666cbdce56316120397dbfb6b41083e4de2ae445fadfebd071b76cee0dbe9d";
+      };
+      default = "r0";
+    };
+  };
 }

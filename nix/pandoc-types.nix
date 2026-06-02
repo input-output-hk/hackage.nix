@@ -785,6 +785,17 @@
       default = "r0";
     };
   };
+  "1.23.1.2" = {
+    sha256 = "81ddadbca8c524dce6cc5d94422598e2ccd72e12a67d8bf242fdcc4ab901519b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-types-1.23.1.2-r0-c24c01af6d8b785d1cf711f22ad89a710a7d1b9ee458fdd911a1bdc0d857e361.nix;
+        revNum = 0;
+        sha256 = "c24c01af6d8b785d1cf711f22ad89a710a7d1b9ee458fdd911a1bdc0d857e361";
+      };
+      default = "r0";
+    };
+  };
   "1.7" = {
     sha256 = "600e17d33e1ae7992cc5fd24f5164bab5189b894d0b56b39470e9401a049d97d";
     revisions = {
