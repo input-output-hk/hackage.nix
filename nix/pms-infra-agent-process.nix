@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "000e7bcb7e3fa5f83a9568b20d54ff0b80f39451f4095196d784557fae2ebded";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pms-infra-agent-process-0.0.2.0-r0-0b5ee37035a7ee5f0d25203e101829faef8e4aa6e6e7506c09124d21e25e11ed.nix;
+        revNum = 0;
+        sha256 = "0b5ee37035a7ee5f0d25203e101829faef8e4aa6e6e7506c09124d21e25e11ed";
+      };
+      default = "r0";
+    };
+  };
 }

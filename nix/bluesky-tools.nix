@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.6.0.6" = {
+    sha256 = "76465048c85d5ffecc8a3762b5f7a6b8894276104e6f405f334d16c0082cb1bc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluesky-tools-0.6.0.6-r0-fc0fb00bc42e0e925630fb2e09da788a0813c1d6ab249059ade167e0c958e1df.nix;
+        revNum = 0;
+        sha256 = "fc0fb00bc42e0e925630fb2e09da788a0813c1d6ab249059ade167e0c958e1df";
+      };
+      default = "r0";
+    };
+  };
 }

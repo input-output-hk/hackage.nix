@@ -11351,6 +11351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "miso" = import ./nix/miso.nix;
   "miso-action-logger" = import ./nix/miso-action-logger.nix;
   "miso-aeson" = import ./nix/miso-aeson.nix;
+  "miso-css" = import ./nix/miso-css.nix;
   "miso-examples" = import ./nix/miso-examples.nix;
   "miso-from-html" = import ./nix/miso-from-html.nix;
   "miso-optics" = import ./nix/miso-optics.nix;
@@ -13202,6 +13203,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-domain-model" = import ./nix/pms-domain-model.nix;
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "pms-infra-agent-process" = import ./nix/pms-infra-agent-process.nix;
+  "pms-infra-agent-serial" = import ./nix/pms-infra-agent-serial.nix;
+  "pms-infra-agent-socket" = import ./nix/pms-infra-agent-socket.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
   "pms-infra-filesystem" = import ./nix/pms-infra-filesystem.nix;
   "pms-infra-procspawn" = import ./nix/pms-infra-procspawn.nix;
@@ -14863,6 +14866,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scientist" = import ./nix/scientist.nix;
   "scion" = import ./nix/scion.nix;
   "scion-browser" = import ./nix/scion-browser.nix;
+  "scip" = import ./nix/scip.nix;
   "scons2dot" = import ./nix/scons2dot.nix;
   "scope" = import ./nix/scope.nix;
   "scope-cairo" = import ./nix/scope-cairo.nix;
@@ -16745,6 +16749,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tagging" = import ./nix/tagging.nix;
   "taggy" = import ./nix/taggy.nix;
   "taggy-lens" = import ./nix/taggy-lens.nix;
+  "tagliatelle" = import ./nix/tagliatelle.nix;
   "taglib" = import ./nix/taglib.nix;
   "taglib-api" = import ./nix/taglib-api.nix;
   "tagset-positional" = import ./nix/tagset-positional.nix;

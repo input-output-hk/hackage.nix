@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "2528c78e2f679fdb88e19f1b27da38f1289ed65654a6cf1219b450a1ad0e5348";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/enumset-0.1.0.1-r0-382d0454df3fa85a5e6f83c4b17aeb4887cd0e050814a21d21f0bfffa5c8b0d5.nix;
+        revNum = 0;
+        sha256 = "382d0454df3fa85a5e6f83c4b17aeb4887cd0e050814a21d21f0bfffa5c8b0d5";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.2" = {
+    sha256 = "a0c61bb3471b89eb2c7b516799473771b4847d67a72b1777219dcb1d8240c5d4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/enumset-0.1.0.2-r0-6dc6f7c63acbb56c97d2fabe589a60fe19c7e66fc3ce047f67a9d6928222f6ea.nix;
+        revNum = 0;
+        sha256 = "6dc6f7c63acbb56c97d2fabe589a60fe19c7e66fc3ce047f67a9d6928222f6ea";
+      };
+      default = "r0";
+    };
+  };
 }

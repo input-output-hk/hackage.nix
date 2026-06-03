@@ -107,4 +107,26 @@
       default = "r1";
     };
   };
+  "0.0.2.3" = {
+    sha256 = "dea55cc457dcd28808a7667f1016ec7276b0aa3583f7c132b880548a2cac42ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/audacity-0.0.2.3-r0-e36858715c62961d4c6982f681825f8dc8142ad304daee993f9013767930a37c.nix;
+        revNum = 0;
+        sha256 = "e36858715c62961d4c6982f681825f8dc8142ad304daee993f9013767930a37c";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.2.4" = {
+    sha256 = "43c7272be4eb307346b3da19706433f950e755151268085f8f3efee96daf5a0c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/audacity-0.0.2.4-r0-5e16a079f6b167b49833f0107927634b1cf2329fc7d3483be11de3ab95d5cbb8.nix;
+        revNum = 0;
+        sha256 = "5e16a079f6b167b49833f0107927634b1cf2329fc7d3483be11de3ab95d5cbb8";
+      };
+      default = "r0";
+    };
+  };
 }

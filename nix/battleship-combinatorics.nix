@@ -74,4 +74,26 @@
       default = "r3";
     };
   };
+  "0.0.1.1" = {
+    sha256 = "c18c365b839d18bb3176a02ba1dfeffc970571d5d32ee626b36577ff616b9e92";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/battleship-combinatorics-0.0.1.1-r0-92a859f022b464f5c9c2535139cd391fc69b598d9f3eecf57fdac58c9653efd8.nix;
+        revNum = 0;
+        sha256 = "92a859f022b464f5c9c2535139cd391fc69b598d9f3eecf57fdac58c9653efd8";
+      };
+      default = "r0";
+    };
+  };
+  "0.0.1.2" = {
+    sha256 = "d702666d767bb0035547ad6d1691cc10627aee9f3f1364305240a3a469ad5b03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/battleship-combinatorics-0.0.1.2-r0-3d855a027592f569ecf1aa4a0e88c8df6d7e6a9e0456a4de6bbc60ac8a7bd37d.nix;
+        revNum = 0;
+        sha256 = "3d855a027592f569ecf1aa4a0e88c8df6d7e6a9e0456a4de6bbc60ac8a7bd37d";
+      };
+      default = "r0";
+    };
+  };
 }

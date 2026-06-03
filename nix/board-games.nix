@@ -151,4 +151,26 @@
       default = "r0";
     };
   };
+  "0.4.0.2" = {
+    sha256 = "d788395f207514519e549d482a38a80cf12ed4cf6fcf469f14eaf96e3747f06a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/board-games-0.4.0.2-r0-5f76751d33c23ee6466aa2914a8596a477c54989006df3da241558fbf53fb872.nix;
+        revNum = 0;
+        sha256 = "5f76751d33c23ee6466aa2914a8596a477c54989006df3da241558fbf53fb872";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.3" = {
+    sha256 = "0e6c0529f27285d2e3d7627f89e7ef4a9a5b9ed80e6a0c14f07da4fb338e40e7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/board-games-0.4.0.3-r0-98c4a8b49936e3caf33d291e41e859174964b1f4e8756ec31f6ed8ef2fd062f0.nix;
+        revNum = 0;
+        sha256 = "98c4a8b49936e3caf33d291e41e859174964b1f4e8756ec31f6ed8ef2fd062f0";
+      };
+      default = "r0";
+    };
+  };
 }

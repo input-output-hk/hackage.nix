@@ -1,0 +1,59 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.0";
+      identifier = { name = "miso-css"; version = "0.0.2"; };
+      license = "BSD-3-Clause";
+      copyright = "Daniil Iaitkov 2026";
+      maintainer = "dyaitskov@gmail.com";
+      author = "Daniil Iaitskov";
+      homepage = "http://github.com/yaitskov/miso-css";
+      url = "";
+      synopsis = "wrapper over miso checking CSS classes applicability through dependent types";
+      description = "== Motivation\n#motivation#\n\n__miso-css__ is an evolutionary step ahead from\n<https://github.com/yaitskov/css-class-bindings css-class-bindings>.\n\nCSS class of an atomic selector can be applied to any DOM element, but\nthat is not true for classes used in composite selectors. Rules with\npartially matched selectors are silently ignored by browser and this\nopen a door for introducing bugs during consequent changes.\nCss-class-binding just cannot cope with such problem and miso-css uses\ndependent types to track what CSS classes can applied to HTML elements.\n\n== Usage\n#usage#\n\nmiso-css runs a css parser to extract CSS selectors and generates\nHaskell constants for every CSS class with correspondent name that is\nfound in the input. A type of such constant describes all possible ways\nthe class can used in DOM.\n\nBesides that the library ships __E__ type representing an HTML element\nand a set of operators for constructing tags and combining them in DOM\ntree. E is miso\n<https://hackage-content.haskell.org/package/miso/docs/Miso-Types.html#t:View VNode>\ntype protected with a few type parameters.\n\n=== Composing tags\n#composing-tags#\n\nBefore jumping straight to style application lets get familiar with\nsyntax for tag composition because it is different in vanilla\n<https://hackage-content.haskell.org/package/miso miso>.\n\n==== Appending a child\n#appending-a-child#\n\n> div_ </ p_\n\n> <div>\n>   <p></p>\n> </div>\n\n==== Adding a sibling\n#adding-a-sibling#\n\n> ul_ </ li_ </ li_\n\n> <ul>\n>   <li></li>\n>   <li></li>\n> </ul>\n\n==== Appending a child to child\n#appending-a-child-to-child#\n\n> body_ </ (section_ </ p_)\n\n> <body>\n>   <section>\n>     <p></p>\n>   </section>\n> </body>\n\n==== Adding CDATA\n#adding-cdata#\n\n> a_ <@ \"click\"\n\n> <a>click</a>\n\n==== Adding a raw miso DOM chunk\n#adding-a-raw-miso-dom-chunk#\n\n> import Miso.Html qualified as MH\n> import Miso.Html.Property qualified as MH\n>\n> go = div_ =< MH.p_ [] [ \"h\" ]\n\n> <div>\n>   <p>h</p>\n> </div>\n\n==== Adding tag attribute\n#adding-tag-attribute#\n\n> a_ =<| atr @\"href\" \"http://link.com\"\n\n> <a href=\"http://link.com\"></a>\n\n==== Binding event handler\n#binding-event-handler#\n\n> button_ =! onClick YourActionDc\n\n==== Applying CSS class\n#applying-css-class#\n\n> {-# LANGUAGE QuasiQuotes #-}\n> {-# OPTIONS_GHC -Wno-missing-signatures #-}\n> [css|.red { color: red; }|]\n>\n> div_ =. red\n\n> <div class=\"red\"></div>\n\n==== Adding tag ID\n#adding-tag-id#\n\nHandmade tag id:\n\n> div_ =# ElementId \"footer\"\n\nGenerated tag id:\n\n> {-# LANGUAGE QuasiQuotes #-}\n> {-# OPTIONS_GHC -Wno-missing-signatures #-}\n> [css|#footer { color: red; }|]\n>\n> div_ =# Footer\n\n> <div id=\"footer\"></div>\n\n==== Mix all at once\n#mix-all-at-once#\n\n> {-# LANGUAGE QuasiQuotes #-}\n> {-# OPTIONS_GHC -Wno-missing-signatures #-}\n> [css|.form .red { color: red; }|]\n>\n> div_ =. form =# ElementId \"footer\"\n>   </ (a_ =. red =<| atr @\"href\" \"/click.php?x=1\"\n>       </ (span_ <@ \"Click me\"))\n\n> <div class=\"form\" id=\"footer>\n>   <a class=\"red\" href=\"/click.php?x=1\">\n>     <span>Click me</span>\n>   </a>\n> </div>\n\n=== Breaking rules\n#breaking-rules#\n\nUntil now all above samples must be valid and should type check. This\nsection enumerates HTML snippets with ill-applied classes, expected\nerrors and comments.\n\n==== There can be only one\n#there-can-be-only-one#\n\nAn element ID can be used once in a HTML document.\n\n> div_ =# ElementId \"Duncan MacLeod\"\n>   </ div_ =# ElementId \"Duncan MacLeod\"\n\n> Couldn't match type: '[DuplicatedId \"Duncan MacLeod\"]\n>                with: '[]\n\n==== Parent class is missing\n#parent-class-is-missing#\n\n> [css|.a .b {}|]\n>\n> div_ =. b\n\nThe error message is a list of triples where first element is a list of\nnot applied classes, ids (hashes), tag names or attribute names.\n\n> [([C \"a\"], [], [])]\n\nClass __a__ and __b__ are missing:\n\n> [css|.a .b .c {}|]\n>\n> div_ =. c\n\n> [ ([C \"b\"], [], [])\n> , ([C \"a\"], [], [])\n> ]\n\n==== B element\n#b-element#\n\nWhen selector with a child relation is partially applied the triple\ncontains B element. It is a synthetic element preventing the failed rule\nfrom matching later somewhere upper in DOM by an accident.\n\n> [css|.a > .b {}|]\n>\n> div_ </ div_ =. b\n\n> [([B, C \"a\"], [], [])]\n\n==== One of classes is missing\n#one-of-classes-is-missing#\n\nSecond element of triple is a list of applied classes. It helps to\nunderstand what worked out and what didn’t in a composite selector.\n\n> [css|.a.b > .c {}|]\n>\n> div_ =. a </ div_ =. c\n\n> [([B, C \"b\"], [C \"a\"], [])]\n\n===== Sibling is missing\n#sibling-is-missing#\n\nThe third element of triple explains sibling errors.\n\n> [css|.a + .b {}|]\n>\n> div_ </ div_ =. b\n\nClass __a__ is not applied:\n\n> [([B], [], [[ [B], [C \"a\"]]])]\n\n=== Non-leaf classes constraints\n#non-leaf-classes-constraints#\n\nBy default non-leaf classes in selector don’t contribute to constraints.\ne.g.\n\n> .a > .b .c\n\n@b@ doesn’t require @a@ as immediate parent it is handled by constraints\nform @c@.\n\nIt is possible to generate constraints for @b@ to make checking even\nstricter, though in such mode following DOM can’t pass type check:\n\n> enableRulesForNonLeafClasses\n>\n> [css|.a > .b .c {}|]\n> test_t = testGroup cssAsLiteralText\n>   [ doNotTcNoBr [] [[[(JustNow, [B], [C \"a\"], [])]]] $\n>       div_ =. a </ (div_ =. b </ (div_ =. b </ div_ =. c))\n>   ]\n\n=== E type\n#e-type#\n\n> data E\n>      model\n>      action\n>      (en :: Symbol)\n>      (es :: ElementStructure)\n>      (re :: Maybe Root)\n>      (ei :: Maybe Symbol)\n>      (atrs :: [Symbol])\n>      (knownIds :: KnownIDS)\n>      (cls :: [Symbol])\n>      (l :: [[[Seg]]])\n>      (children :: [[SubSeg]])\n\nFirst two parameters __model__ and __action__ are forwarded to miso\n<https://hackage-content.haskell.org/package/miso/docs/Miso-Types.html#t:View VNode>\ntype.\n\n==== en - tag name\n#en---tag-name#\n\nIn ghci session:\n\n> :t div_\n> div_\n>   :: E model\n>        action\n>        \"div\"\n> ...\n\n==== es - element structure\n#es---element-structure#\n\nMost often its value is __Composite__ which means that the element could\nhave children. /Es/ parameter of /CDATA/ element is __Atomic__.\n\n==== re - root indicator\n#re---root-indicator#\n\nIt is a root tag indicator. A root tag cannot be adopted.\n\n> [css|:root > .a {}|]\n\n==== ei - HTML tag hash\n#ei---html-tag-hash#\n\n> div_ =# ElementId \"Duncan\"\n\n==== atrs - names of tag attributes\n#atrs---names-of-tag-attributes#\n\n> :t a_ =# ElementId \"x\" =<| atr @\"href\" \"/click.php?x=1\"\n> ...\n>        [\"href\", \"id\"]\n> ...\n\n==== knownIds - hashes used in tag descendants\n#knownids---hashes-used-in-tag-descendants#\n\n> :t div_ =# ElementId \"x\" </ div_ =# ElementId \"y\" </ div_ =# ElementId \"z\"\n> ...\n>        (KnownIds '[] [\"x\", \"y\", \"z\"])\n> ...\n\n==== cls - classes applied to tag\n#cls---classes-applied-to-tag#\n\nClasses applied to children and descendants are not included.\n\n> :t div_ =. a =. b </ div_ =. c\n> ...\n>        [\"b\", \"a\"]\n> ...\n\n==== l - ancestor constraints\n#l---ancestor-constraints#\n\nThe parameter describes requirements to be satisfied in ancestors of the\ntag.\n\n> [css|.a .b {}|]\n\n> :t div_ =. b\n> ...\n>        '[ '[['(AutoClean, '[], '[], '[]),\n>              '(NowOrLater, '[C \"a\"], '[], '[])]]]\n> ...\n\n==== children\n#children#\n\nList of lists of children subselectors in reverse order.\n\n> [css|.a {} .b {}|]\n\n> :t div_ </ ul_ =. a =. b </ ol_ =# ElementId \"x\"\n> ...\n>        [[I \"x\", T \"ol\"], [T \"ul\", C \"b\", C \"a\"]]\n> ...\n\n=== Hello World\n#hello-world#\n\n> {-# LANGUAGE QuasiQuotes #-}\n> {-# OPTIONS_GHC -Wno-missing-signatures #-}\n> module Miso.Css.Test.HelloWorld where\n>\n> import Miso ( component, App, CSS(Style), Component(styles), View )\n> import Miso.Css\n> import Prelude\n>\n> type Model = ()\n> type Action = ()\n>\n> -- default name is \"cssAsLiteralText\"\n> renameCssTextConst \"cssFromQq\"\n>\n> [css|\n> .c .b .a {\n>   color: #fc2c2c;\n> }\n> |]\n>\n> -- instead of quasi-quoted CSS\n> -- the whole CSS file can be included with:\n> --   includeCss \"assets/style.css\"\n>\n> app :: App Model Action\n> app = (component () pure viewModel)\n>   { styles = [ Style cssFromQq ] }\n>\n> {-\n> viewModel produce following HTML snippet:\n>\n>     <div class=\"c\">\n>       <div class=\"b\">\n>         <button class=\"a\">\n>           Submit\n>         </button>\n>       </div>\n>     </div>\n>\n> html_ and body_ don't produce tags,\n> because miso mount cannot be higher than body tag.\n>\n> they serve just for type checking purpose\n> (e.g. html_ satisfies :root pseudo class)\n>\n> -}\n> viewModel :: Model -> View Model Action\n> viewModel () = toView . html_ . body_ $\n>   div_ =. c\n>   </ (div_ =. b\n>        </ (button_ =. a\n>             <@ \"Submit\"))\n\n== Development environment\n#development-environment#\n\nHLS should be available inside the default dev shell.\n\n> $ nix develop\n> $ emacs src/*/*/Qq.hs &\n> $ cabal build\n> $ cabal test --test-option=--hide-successes\n\nmiso-css was developed with miso v1.9";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+          (hsPkgs."add-dependent-file" or (errorHandler.buildDepError "add-dependent-file"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."css-parser" or (errorHandler.buildDepError "css-parser"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
+          (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
+          (hsPkgs."tagged" or (errorHandler.buildDepError "tagged"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+        ];
+        buildable = true;
+      };
+      tests = {
+        "test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
+            (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
+            (hsPkgs."miso" or (errorHandler.buildDepError "miso"))
+            (hsPkgs."miso-css" or (errorHandler.buildDepError "miso-css"))
+            (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-discover" or (errorHandler.buildDepError "tasty-discover"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-quickcheck" or (errorHandler.buildDepError "tasty-quickcheck"))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }
