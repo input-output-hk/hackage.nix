@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "643251b73118b97a2c6e2e19e3044955160dbffbfde83485f75376aa4d57d499";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/cabal-matrix-1.0.2.0-r1-9acbb10bafdb4e0f70e63c72e7246303aa23f93f3d1bf590a7e7ae745194717c.nix;
+        revNum = 1;
+        sha256 = "9acbb10bafdb4e0f70e63c72e7246303aa23f93f3d1bf590a7e7ae745194717c";
+      };
+      default = "r1";
     };
   };
 }

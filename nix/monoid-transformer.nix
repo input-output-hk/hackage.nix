@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.0.4.1" = {
+    sha256 = "17f7ef7f101c8f0d7eeb8cf83645e5de73adbe3574058d898efc011ef03debce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoid-transformer-0.0.4.1-r0-37acd449e1edf01dbc5947844de50d2d53450a06e4e2d9190f14de20e700d601.nix;
+        revNum = 0;
+        sha256 = "37acd449e1edf01dbc5947844de50d2d53450a06e4e2d9190f14de20e700d601";
+      };
+      default = "r0";
+    };
+  };
 }

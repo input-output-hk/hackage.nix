@@ -74,4 +74,20 @@
       default = "r0";
     };
   };
+  "1.9.1" = {
+    sha256 = "8fcb83401114c7f694d84c543e8f7f96cea60c543a30a770903741d336eece3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypton-x509-validation-1.9.1-r0-37c80ec43e82a31ef6e082207a9086fddf91b651700ed155e5300a8d240afbc0.nix;
+        revNum = 0;
+        sha256 = "37c80ec43e82a31ef6e082207a9086fddf91b651700ed155e5300a8d240afbc0";
+      };
+      r1 = {
+        nix = import ../hackage/crypton-x509-validation-1.9.1-r1-7fd1231e0ce13be7bbb95a348da58919174d341572309ff4471e39c3b3f4e68a.nix;
+        revNum = 1;
+        sha256 = "7fd1231e0ce13be7bbb95a348da58919174d341572309ff4471e39c3b3f4e68a";
+      };
+      default = "r1";
+    };
+  };
 }

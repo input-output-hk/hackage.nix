@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "73f921c091eb0b2c9fe91c3bdbe216b278ec80a067cc46d21f337edb910fa5fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nerd-font-icons-0.1.0.1-r0-78a734a761c3229ad523a315f0ba4db00c045c6fabe6cc3ab098ddf952b46820.nix;
+        revNum = 0;
+        sha256 = "78a734a761c3229ad523a315f0ba4db00c045c6fabe6cc3ab098ddf952b46820";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.5.10.0" = {
+    sha256 = "3cd7f7bc18ab3caead43e1d47ecc1f500b31c660f8247446fef56ecb1ca4903f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/MicroCabal-0.5.10.0-r0-1cf8a3cd5ed99e7bf0dc223c49019660812df971e08210d6eb24bfac312b419a.nix;
+        revNum = 0;
+        sha256 = "1cf8a3cd5ed99e7bf0dc223c49019660812df971e08210d6eb24bfac312b419a";
+      };
+      default = "r0";
+    };
+  };
 }

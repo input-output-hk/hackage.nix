@@ -6662,6 +6662,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-bignum-orphans" = import ./nix/ghc-bignum-orphans.nix;
   "ghc-boot" = import ./nix/ghc-boot.nix;
   "ghc-boot-th" = import ./nix/ghc-boot-th.nix;
+  "ghc-build-stats" = import ./nix/ghc-build-stats.nix;
+  "ghc-build-stats-plugin" = import ./nix/ghc-build-stats-plugin.nix;
   "ghc-byteorder" = import ./nix/ghc-byteorder.nix;
   "ghc-call-stack-extras" = import ./nix/ghc-call-stack-extras.nix;
   "ghc-check" = import ./nix/ghc-check.nix;

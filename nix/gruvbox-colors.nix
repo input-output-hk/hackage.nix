@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "c147c1867ffaa73ec970241479f015658be6242b4fbe669bc08ebd348391e3d7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gruvbox-colors-0.1.0.1-r0-fd1c3273d16b5646569afbde6b055c495a076e4bbab1211d42f094256d7afe37.nix;
+        revNum = 0;
+        sha256 = "fd1c3273d16b5646569afbde6b055c495a076e4bbab1211d42f094256d7afe37";
+      };
+      default = "r0";
+    };
+  };
 }
