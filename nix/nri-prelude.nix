@@ -219,4 +219,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "9a3c47e0edadf222189cde1cc4a34c113735d5d9daed6246fe98ad07e284bcd4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nri-prelude-0.7.0.0-r0-394ce68e0e39c9aa4448b84315cb46d6a8072a114dc6604c039a7037ecac34f4.nix;
+        revNum = 0;
+        sha256 = "394ce68e0e39c9aa4448b84315cb46d6a8072a114dc6604c039a7037ecac34f4";
+      };
+      default = "r0";
+    };
+  };
 }

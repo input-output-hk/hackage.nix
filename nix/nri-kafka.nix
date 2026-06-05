@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "4076c9d689c76db25f1cb7aaab90567a64700eac814bf7e6bebcdc2ce035fcc7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nri-kafka-0.4.0.1-r0-9b24c182a1372a77f07ebdfb749b0c80c8f16a7021a022924d0c43a729fb9ddb.nix;
+        revNum = 0;
+        sha256 = "9b24c182a1372a77f07ebdfb749b0c80c8f16a7021a022924d0c43a729fb9ddb";
+      };
+      default = "r0";
+    };
+  };
 }

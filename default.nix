@@ -2331,6 +2331,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "async-refresh-tokens" = import ./nix/async-refresh-tokens.nix;
   "async-timer" = import ./nix/async-timer.nix;
   "asynchronous-exceptions" = import ./nix/asynchronous-exceptions.nix;
+  "atelier-core" = import ./nix/atelier-core.nix;
+  "atelier-db" = import ./nix/atelier-db.nix;
+  "atelier-prelude" = import ./nix/atelier-prelude.nix;
+  "atelier-testing" = import ./nix/atelier-testing.nix;
   "aterm" = import ./nix/aterm.nix;
   "aterm-utils" = import ./nix/aterm-utils.nix;
   "atl" = import ./nix/atl.nix;
@@ -13474,6 +13478,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bolt8" = import ./nix/ppad-bolt8.nix;
   "ppad-bolt9" = import ./nix/ppad-bolt9.nix;
   "ppad-chacha" = import ./nix/ppad-chacha.nix;
+  "ppad-eproc" = import ./nix/ppad-eproc.nix;
   "ppad-fixed" = import ./nix/ppad-fixed.nix;
   "ppad-hkdf" = import ./nix/ppad-hkdf.nix;
   "ppad-hmac-drbg" = import ./nix/ppad-hmac-drbg.nix;

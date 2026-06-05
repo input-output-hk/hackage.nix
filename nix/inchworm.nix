@@ -99,7 +99,12 @@
         revNum = 2;
         sha256 = "0a95be3534b9928441a00503d2b67c959d0c886616075acc0c0e303cdc8dfe55";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/inchworm-1.1.1.2-r3-a65d4556b1896d7bbe817648283012bdde4ca206a4cbddecaf014e92eb2f166f.nix;
+        revNum = 3;
+        sha256 = "a65d4556b1896d7bbe817648283012bdde4ca206a4cbddecaf014e92eb2f166f";
+      };
+      default = "r3";
     };
   };
 }

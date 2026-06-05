@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "b1e1d5803ebe8d4d3934b826bb2620af479a4723ba96af844aa9f5297dd7512a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nri-observability-0.4.0.1-r0-c6981a0e32441c950527420a1865e3ed1331bbcc2a0ff175530c4622fdb08548.nix;
+        revNum = 0;
+        sha256 = "c6981a0e32441c950527420a1865e3ed1331bbcc2a0ff175530c4622fdb08548";
+      };
+      default = "r0";
+    };
+  };
 }
