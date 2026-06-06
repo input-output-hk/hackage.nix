@@ -120,4 +120,26 @@
       default = "r0";
     };
   };
+  "0.1.9.0" = {
+    sha256 = "c6759cb78a081687136f89cf335143e700e5ded3745557bc6a28d831f40b331a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nova-nix-0.1.9.0-r0-871667b2e92b3ed364e6e32938bbc60809bbfc8b63d01b029cdcb062735df4a8.nix;
+        revNum = 0;
+        sha256 = "871667b2e92b3ed364e6e32938bbc60809bbfc8b63d01b029cdcb062735df4a8";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.0" = {
+    sha256 = "59335d4c7f683d12ab3c4c71feaf2ecd9807e11516cc29d2ff40e3d504d2b9da";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nova-nix-0.2.0.0-r0-a5c08184662dd5a9889886c9f6cfbe726d43d56f79d8c0d8593d54a29e555bfa.nix;
+        revNum = 0;
+        sha256 = "a5c08184662dd5a9889886c9f6cfbe726d43d56f79d8c0d8593d54a29e555bfa";
+      };
+      default = "r0";
+    };
+  };
 }

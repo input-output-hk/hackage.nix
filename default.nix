@@ -2536,6 +2536,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "backward-state" = import ./nix/backward-state.nix;
   "bacteria" = import ./nix/bacteria.nix;
   "bag" = import ./nix/bag.nix;
+  "baikai" = import ./nix/baikai.nix;
+  "baikai-claude" = import ./nix/baikai-claude.nix;
+  "baikai-openai" = import ./nix/baikai-openai.nix;
+  "baikai-trace-otel" = import ./nix/baikai-trace-otel.nix;
   "bake" = import ./nix/bake.nix;
   "balkon" = import ./nix/balkon.nix;
   "ballast" = import ./nix/ballast.nix;
@@ -4902,6 +4906,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "detrospector" = import ./nix/detrospector.nix;
   "deunicode" = import ./nix/deunicode.nix;
   "devanagari-transliterations" = import ./nix/devanagari-transliterations.nix;
+  "devforms" = import ./nix/devforms.nix;
   "devil" = import ./nix/devil.nix;
   "devtools" = import ./nix/devtools.nix;
   "dewdrop" = import ./nix/dewdrop.nix;
@@ -17511,6 +17516,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "trial-optparse-applicative" = import ./nix/trial-optparse-applicative.nix;
   "trial-tomland" = import ./nix/trial-tomland.nix;
   "triangulation" = import ./nix/triangulation.nix;
+  "tricorder" = import ./nix/tricorder.nix;
   "trie-simple" = import ./nix/trie-simple.nix;
   "tries" = import ./nix/tries.nix;
   "trifecta" = import ./nix/trifecta.nix;

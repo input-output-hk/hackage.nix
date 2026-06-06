@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "2a26dfd23a5d6f15f1b8a92d85e73607ac1ecfe0928533e6ec38d7b54d9c771b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tuispec-0.3.1.0-r0-88edcd4f3ee548a614be2ece2e74d14036d8b4d94f1e4ebdf534257b6b299e4a.nix;
+        revNum = 0;
+        sha256 = "88edcd4f3ee548a614be2ece2e74d14036d8b4d94f1e4ebdf534257b6b299e4a";
+      };
+      default = "r0";
+    };
+  };
 }
