@@ -170,4 +170,15 @@
       default = "r2";
     };
   };
+  "1.0.2.0" = {
+    sha256 = "b2e7a6cacc88b9e6a2f1bbeddcff5bfd99276739f16d5a0867dd84fd6e0da59f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bitwise-enum-1.0.2.0-r0-ea708f92c131abe6734803156ff88b9dba13be096c882375897b3498e0613edb.nix;
+        revNum = 0;
+        sha256 = "ea708f92c131abe6734803156ff88b9dba13be096c882375897b3498e0613edb";
+      };
+      default = "r0";
+    };
+  };
 }

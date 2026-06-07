@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.2.0.2" = {
+    sha256 = "21647c6e7300be16b58f8b86550a94bf89be9bac1b0c91abc6d8fe0486f8f2ae";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/katip-wai-0.2.0.2-r0-ebea68fbb2e593380adb13b20a4ad7fb600b90bbece54ea93a5183392833eb2e.nix;
+        revNum = 0;
+        sha256 = "ebea68fbb2e593380adb13b20a4ad7fb600b90bbece54ea93a5183392833eb2e";
+      };
+      default = "r0";
+    };
+  };
 }

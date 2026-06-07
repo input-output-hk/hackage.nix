@@ -119,4 +119,15 @@
       default = "r2";
     };
   };
+  "0.1.3.7" = {
+    sha256 = "ec7f75d635486d760bf45d2093ff380b1dad4146ceee39107d66cd00af713c57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unicode-collation-0.1.3.7-r0-9f60a466283d45930c77c4f497fa7291a5dfea9acf7469933f8e6085dc0b754e.nix;
+        revNum = 0;
+        sha256 = "9f60a466283d45930c77c4f497fa7291a5dfea9acf7469933f8e6085dc0b754e";
+      };
+      default = "r0";
+    };
+  };
 }

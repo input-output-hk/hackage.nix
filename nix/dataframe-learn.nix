@@ -21,4 +21,20 @@
       default = "r0";
     };
   };
+  "1.0.2.0" = {
+    sha256 = "4d522cdaa176bedcfeef8efe291e325f5a7fd51861e98afb8efa1850bc179034";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-learn-1.0.2.0-r0-5ba43fbd27e068e05674de725b091a073711aec40e05f21038c6b0436f6a2ab2.nix;
+        revNum = 0;
+        sha256 = "5ba43fbd27e068e05674de725b091a073711aec40e05f21038c6b0436f6a2ab2";
+      };
+      r1 = {
+        nix = import ../hackage/dataframe-learn-1.0.2.0-r1-472bbac8a8394b60f79e04306d68267abcfaeed3817d08a6eacd56ccec7204c0.nix;
+        revNum = 1;
+        sha256 = "472bbac8a8394b60f79e04306d68267abcfaeed3817d08a6eacd56ccec7204c0";
+      };
+      default = "r1";
+    };
+  };
 }

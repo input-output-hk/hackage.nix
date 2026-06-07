@@ -43,4 +43,37 @@
       default = "r0";
     };
   };
+  "0.4.0.2" = {
+    sha256 = "a65f0718fa869270e4dd6aabfcbb97b57a8e7aba6bbc434979ca5d1c9c0587bf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-0.4.0.2-r0-8d240d50bce38c7f1538f6b6a0e5e76ebd4bea6d85acf126a4b70dffacdf2234.nix;
+        revNum = 0;
+        sha256 = "8d240d50bce38c7f1538f6b6a0e5e76ebd4bea6d85acf126a4b70dffacdf2234";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.1" = {
+    sha256 = "1ad8297ebc64319dfc14ed5a65df56f62dcd18da1bda5e38a900fd84840582b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-0.4.1-r0-8ed8d59bcd047ad175782fd424d28ba53ac7a7c23eaaf20e6fb34412298a6493.nix;
+        revNum = 0;
+        sha256 = "8ed8d59bcd047ad175782fd424d28ba53ac7a7c23eaaf20e6fb34412298a6493";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.1.1" = {
+    sha256 = "4ea9b8bdce4a24a3007c25c1857cf49b7d4413e4f820125f92c493f8caf31985";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-0.4.1.1-r0-85d3fd12e904c15bb179a8e29e11c6a4cb0fa74d7a0bb5d31d6cd34fc43648cf.nix;
+        revNum = 0;
+        sha256 = "85d3fd12e904c15bb179a8e29e11c6a4cb0fa74d7a0bb5d31d6cd34fc43648cf";
+      };
+      default = "r0";
+    };
+  };
 }

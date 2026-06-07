@@ -129,4 +129,26 @@
       default = "r0";
     };
   };
+  "0.5.1.2" = {
+    sha256 = "751eff87bebb40f3be07ca61d9754c29e302803751cc0f45422dceaba4862c24";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-tf-0.5.1.2-r0-67f423016fdc1665707070a61a12fbd2b0b4870cc4080f1847027cfac3808c4f.nix;
+        revNum = 0;
+        sha256 = "67f423016fdc1665707070a61a12fbd2b0b4870cc4080f1847027cfac3808c4f";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.1.3" = {
+    sha256 = "d1174bd6bd767f128d3931ba84a9973a9b07087d868bf99f59d94232103a106a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/unique-logic-tf-0.5.1.3-r0-edbfe28ef4355683a67b0fc576e30864c8f325f1590fb68fac2522cb058172ec.nix;
+        revNum = 0;
+        sha256 = "edbfe28ef4355683a67b0fc576e30864c8f325f1590fb68fac2522cb058172ec";
+      };
+      default = "r0";
+    };
+  };
 }

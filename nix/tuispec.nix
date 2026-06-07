@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.1.1" = {
+    sha256 = "5b0260ab44d86ffba5e5fb974dada4483bc4eee2b741b28a834e64d0a75a1fb0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tuispec-0.3.1.1-r0-8d8c3f42f8f40ed554717fb313e2588e744a671387d25abb602c97b65cc73801.nix;
+        revNum = 0;
+        sha256 = "8d8c3f42f8f40ed554717fb313e2588e744a671387d25abb602c97b65cc73801";
+      };
+      default = "r0";
+    };
+  };
 }

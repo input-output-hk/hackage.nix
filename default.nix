@@ -14506,6 +14506,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "retroclash-sim" = import ./nix/retroclash-sim.nix;
   "retry" = import ./nix/retry.nix;
   "retry-effectful" = import ./nix/retry-effectful.nix;
+  "retry-io-classes" = import ./nix/retry-io-classes.nix;
   "retryer" = import ./nix/retryer.nix;
   "rev-scientific" = import ./nix/rev-scientific.nix;
   "rev-state" = import ./nix/rev-state.nix;
