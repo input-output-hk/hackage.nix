@@ -5144,6 +5144,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dnf-repo" = import ./nix/dnf-repo.nix;
   "dns" = import ./nix/dns.nix;
   "dns-patterns" = import ./nix/dns-patterns.nix;
+  "dnsbase" = import ./nix/dnsbase.nix;
   "dnscache" = import ./nix/dnscache.nix;
   "dnsrbl" = import ./nix/dnsrbl.nix;
   "dnssd" = import ./nix/dnssd.nix;
@@ -10100,6 +10101,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keid-resource-gltf" = import ./nix/keid-resource-gltf.nix;
   "keid-sound-openal" = import ./nix/keid-sound-openal.nix;
   "keid-ui-dearimgui" = import ./nix/keid-ui-dearimgui.nix;
+  "keiki" = import ./nix/keiki.nix;
+  "keiki-codec-json" = import ./nix/keiki-codec-json.nix;
+  "keiki-codec-json-test" = import ./nix/keiki-codec-json-test.nix;
   "keiretsu" = import ./nix/keiretsu.nix;
   "kempe" = import ./nix/kempe.nix;
   "kerry" = import ./nix/kerry.nix;
@@ -10328,6 +10332,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "language-sally" = import ./nix/language-sally.nix;
   "language-sh" = import ./nix/language-sh.nix;
   "language-slice" = import ./nix/language-slice.nix;
+  "language-smtlib" = import ./nix/language-smtlib.nix;
   "language-spelling" = import ./nix/language-spelling.nix;
   "language-spir-v" = import ./nix/language-spir-v.nix;
   "language-sqlite" = import ./nix/language-sqlite.nix;
@@ -12181,6 +12186,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "normalization-insensitive" = import ./nix/normalization-insensitive.nix;
   "normalize" = import ./nix/normalize.nix;
   "normalize-imports" = import ./nix/normalize-imports.nix;
+  "nostr" = import ./nix/nostr.nix;
   "not-gloss" = import ./nix/not-gloss.nix;
   "not-gloss-examples" = import ./nix/not-gloss-examples.nix;
   "not-in-base" = import ./nix/not-in-base.nix;
@@ -14988,6 +14994,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "selenium-server" = import ./nix/selenium-server.nix;
   "self-extract" = import ./nix/self-extract.nix;
   "selfrestart" = import ./nix/selfrestart.nix;
+  "seline" = import ./nix/seline.nix;
   "selinux" = import ./nix/selinux.nix;
   "semantic" = import ./nix/semantic.nix;
   "semantic-source" = import ./nix/semantic-source.nix;

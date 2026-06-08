@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "19ea678d1c92e617f003a20f8516f427e07b8398ed799bbd8ee13a0248e64de9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nova-nix-0.3.0.0-r0-64595028e7fe51050e951e516d1855cc87ab0f3b218fd641d12c4c4d04160f12.nix;
+        revNum = 0;
+        sha256 = "64595028e7fe51050e951e516d1855cc87ab0f3b218fd641d12c4c4d04160f12";
+      };
+      default = "r0";
+    };
+  };
 }

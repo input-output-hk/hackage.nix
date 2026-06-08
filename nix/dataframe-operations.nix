@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "51ca295260958a88e73ca793b0d5f91593689fbed96f1c9a4b1a1c53982e937d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dataframe-operations-1.0.1.1-r1-81a9f8df4b1beaf0651c5b2c4faf4f44eda7d3291ccd178a7542bdab16d7558c.nix;
+        revNum = 1;
+        sha256 = "81a9f8df4b1beaf0651c5b2c4faf4f44eda7d3291ccd178a7542bdab16d7558c";
+      };
+      default = "r1";
     };
   };
   "1.1.0.1" = {
@@ -40,7 +45,12 @@
         revNum = 0;
         sha256 = "58a6e33b6b683a9d02675c6394083a01c473cb5a94c7e91b4043c052ed07f6c6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dataframe-operations-1.1.0.1-r1-934d4503d7dbc0df50d4d714a4b8d823227351f95dc1c064b952b9ff698e046f.nix;
+        revNum = 1;
+        sha256 = "934d4503d7dbc0df50d4d714a4b8d823227351f95dc1c064b952b9ff698e046f";
+      };
+      default = "r1";
     };
   };
 }

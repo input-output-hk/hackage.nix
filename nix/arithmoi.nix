@@ -224,6 +224,17 @@
       default = "r0";
     };
   };
+  "0.13.4.0" = {
+    sha256 = "cb79b0f34fdb3ecca4a456d13d8025416740d331dc9edc04d3f37af2af6ff787";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/arithmoi-0.13.4.0-r0-33ede482968353b7d72ed7da8deca438fce5228c99ae03046031c3417370bb02.nix;
+        revNum = 0;
+        sha256 = "33ede482968353b7d72ed7da8deca438fce5228c99ae03046031c3417370bb02";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "fc8e14bb495e82a2e3fcac920ce239ea19c00e7ca01174a48f8d8c3c219c684c";
     revisions = {

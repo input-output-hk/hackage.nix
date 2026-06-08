@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "1.10.2" = {
+    sha256 = "84c2b0b66e05e2cf0c503fc504bc5201c1d93cd0f38cbdcaf8088794756b1d1d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tidal-core-1.10.2-r0-d056372e8f7186a77ba53e34d9d3eedf1abd0381f3be42edcba87ed3764c851f.nix;
+        revNum = 0;
+        sha256 = "d056372e8f7186a77ba53e34d9d3eedf1abd0381f3be42edcba87ed3764c851f";
+      };
+      default = "r0";
+    };
+  };
   "1.9.6" = {
     sha256 = "71bcdfbdf6100aa41e526b539e24a14f4432643fd42d4e390ba6efcc8a4bde52";
     revisions = {

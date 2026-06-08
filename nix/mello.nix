@@ -65,4 +65,26 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "e2ce894919b9beb4eb9d2327c49fca12f546d3636e1017dcb7abd7ecc78e3c46";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mello-0.7.0-r0-be82eb931a55c773e45acddf3102c86df364e17b95a4931f0f01ce35f7c2a694.nix;
+        revNum = 0;
+        sha256 = "be82eb931a55c773e45acddf3102c86df364e17b95a4931f0f01ce35f7c2a694";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.1" = {
+    sha256 = "c7cf472e1463c72000d2a4da2f60942a65c9b58f95e52a70416f0e3fe14f980d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mello-0.7.1-r0-9f04ec0b095c4f7aa4877816391bf18d7506bc31f102eb5f10781b7bfb491aea.nix;
+        revNum = 0;
+        sha256 = "9f04ec0b095c4f7aa4877816391bf18d7506bc31f102eb5f10781b7bfb491aea";
+      };
+      default = "r0";
+    };
+  };
 }

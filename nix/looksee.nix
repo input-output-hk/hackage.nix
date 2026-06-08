@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "0.8.4" = {
+    sha256 = "0d70f7ef725bbd602675dd119bc251cc9fce01c9eed616e65751294fd3953a32";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/looksee-0.8.4-r0-cfbe494ffb9a5686271da60c79062180ed85747e56a672e8876a8577e8e5bcaa.nix;
+        revNum = 0;
+        sha256 = "cfbe494ffb9a5686271da60c79062180ed85747e56a672e8876a8577e8e5bcaa";
+      };
+      default = "r0";
+    };
+  };
 }

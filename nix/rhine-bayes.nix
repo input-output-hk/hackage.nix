@@ -109,4 +109,26 @@
       default = "r0";
     };
   };
+  "1.7" = {
+    sha256 = "ddbbc7273ef0442796c57c71d035b54c852ee7469d5dab8fb1a7ba471c408d8a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhine-bayes-1.7-r0-3ee89d5b13571edcfe340800880d537cd639d8c093efcf5e0dac4509aac54422.nix;
+        revNum = 0;
+        sha256 = "3ee89d5b13571edcfe340800880d537cd639d8c093efcf5e0dac4509aac54422";
+      };
+      default = "r0";
+    };
+  };
+  "1.8" = {
+    sha256 = "0494aac1fea59daa1e9fa770bb00715a7cc6af0b659baca68f7829ecdf2c014c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rhine-bayes-1.8-r0-c3f5f32d0c6154dc1b4bb13ace679c0fb1c17daaeb3322aaa896c00c4c1ed87a.nix;
+        revNum = 0;
+        sha256 = "c3f5f32d0c6154dc1b4bb13ace679c0fb1c17daaeb3322aaa896c00c4c1ed87a";
+      };
+      default = "r0";
+    };
+  };
 }
