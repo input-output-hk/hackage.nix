@@ -3101,6 +3101,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "brotli-conduit" = import ./nix/brotli-conduit.nix;
   "brotli-streams" = import ./nix/brotli-streams.nix;
   "browscap" = import ./nix/browscap.nix;
+  "browse" = import ./nix/browse.nix;
   "brush-strokes" = import ./nix/brush-strokes.nix;
   "brush-stroking" = import ./nix/brush-stroking.nix;
   "bsb-http-chunked" = import ./nix/bsb-http-chunked.nix;
@@ -3198,6 +3199,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bytestring-handle" = import ./nix/bytestring-handle.nix;
   "bytestring-lexing" = import ./nix/bytestring-lexing.nix;
   "bytestring-mmap" = import ./nix/bytestring-mmap.nix;
+  "bytestring-mmap-compat" = import ./nix/bytestring-mmap-compat.nix;
   "bytestring-nums" = import ./nix/bytestring-nums.nix;
   "bytestring-plain" = import ./nix/bytestring-plain.nix;
   "bytestring-progress" = import ./nix/bytestring-progress.nix;
@@ -4725,6 +4727,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dawgdic" = import ./nix/dawgdic.nix;
   "day-comonoid" = import ./nix/day-comonoid.nix;
   "daytripper" = import ./nix/daytripper.nix;
+  "db-pipe" = import ./nix/db-pipe.nix;
   "dbcleaner" = import ./nix/dbcleaner.nix;
   "dbf" = import ./nix/dbf.nix;
   "dbjava" = import ./nix/dbjava.nix;
@@ -16539,6 +16542,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "success" = import ./nix/success.nix;
   "successors" = import ./nix/successors.nix;
   "succinct" = import ./nix/succinct.nix;
+  "suckless-conf" = import ./nix/suckless-conf.nix;
   "suffix" = import ./nix/suffix.nix;
   "suffix-array" = import ./nix/suffix-array.nix;
   "suffixarray" = import ./nix/suffixarray.nix;

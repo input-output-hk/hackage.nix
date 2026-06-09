@@ -83,6 +83,22 @@
         revNum = 0;
         sha256 = "c3b2c2757f4950a42663f2bc1693c0b81ca37885955ac1702e59dcee87900b49";
       };
+      r1 = {
+        nix = import ../hackage/retroclash-lib-0.1.2.3-r1-7a08f3471a5f959da47d20623f795c35451e355c50278e477f4fd6177caa3f2c.nix;
+        revNum = 1;
+        sha256 = "7a08f3471a5f959da47d20623f795c35451e355c50278e477f4fd6177caa3f2c";
+      };
+      default = "r1";
+    };
+  };
+  "0.1.2.4" = {
+    sha256 = "a2c68335778a4c93f6bf45b53ab9e18b275b6a2a7d4bed7e372e9c89264fb0ff";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/retroclash-lib-0.1.2.4-r0-55af9d8c8af8e1373caebf73fa5633e274f04506c4963c1532aa0b6912338df3.nix;
+        revNum = 0;
+        sha256 = "55af9d8c8af8e1373caebf73fa5633e274f04506c4963c1532aa0b6912338df3";
+      };
       default = "r0";
     };
   };

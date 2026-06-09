@@ -29,7 +29,17 @@
         revNum = 0;
         sha256 = "ae17848bf3bc505f953b30de3a604673acddb8f381712dbb173dcaf61b335797";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dnsbase-1.0.2.0-r1-4aa21a0d24f343528e09e264b6c5ab4fc172f8dcc4d851d04674bd6ea76f55fe.nix;
+        revNum = 1;
+        sha256 = "4aa21a0d24f343528e09e264b6c5ab4fc172f8dcc4d851d04674bd6ea76f55fe";
+      };
+      r2 = {
+        nix = import ../hackage/dnsbase-1.0.2.0-r2-a19d3183e1efacaccb42004579f8ee48183bb145add249ece5e50cc8bf6dcef9.nix;
+        revNum = 2;
+        sha256 = "a19d3183e1efacaccb42004579f8ee48183bb145add249ece5e50cc8bf6dcef9";
+      };
+      default = "r2";
     };
   };
 }

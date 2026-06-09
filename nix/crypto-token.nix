@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "d675ce76686c255c61cfbda1824819b9c4199313ba84fd09d809d20f4c2d94d5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-token-0.0.0.0-r1-18006d70492f8ed2b7b56dedf278018551c4c37fa7b9009b362ed6be54b4c8e6.nix;
+        revNum = 1;
+        sha256 = "18006d70492f8ed2b7b56dedf278018551c4c37fa7b9009b362ed6be54b4c8e6";
+      };
+      default = "r1";
     };
   };
   "0.0.1" = {
@@ -29,7 +34,12 @@
         revNum = 0;
         sha256 = "b16b253c96e4cf1f030f891c407155ae927e7fe6e053d00a12cce2072bfe9e01";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-token-0.0.2-r1-dc1abe8a5c9bc5dffa2232f517f658e12569a8e9d8455b7069a6fa45b6100533.nix;
+        revNum = 1;
+        sha256 = "dc1abe8a5c9bc5dffa2232f517f658e12569a8e9d8455b7069a6fa45b6100533";
+      };
+      default = "r1";
     };
   };
   "0.1.0" = {
@@ -40,7 +50,12 @@
         revNum = 0;
         sha256 = "79752abb8c09ad6a5f3f278041c1401fb8b44d2619c1bedeac3ad1bb0f4348f6";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-token-0.1.0-r1-0cd9b69c07fb78442a45904bd060824b273dea667906ef94237d0a1159b341a1.nix;
+        revNum = 1;
+        sha256 = "0cd9b69c07fb78442a45904bd060824b273dea667906ef94237d0a1159b341a1";
+      };
+      default = "r1";
     };
   };
   "0.1.1" = {
@@ -51,7 +66,12 @@
         revNum = 0;
         sha256 = "899e9aa9f51d77f5014031321c0f1b4dae5916fbb1fbe699bb3aa16eeb2250ec";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-token-0.1.1-r1-aae44ab944ec851ca5d39b285ace685e8f346659f496c9af120b3258fab092c7.nix;
+        revNum = 1;
+        sha256 = "aae44ab944ec851ca5d39b285ace685e8f346659f496c9af120b3258fab092c7";
+      };
+      default = "r1";
     };
   };
   "0.1.2" = {
@@ -62,7 +82,12 @@
         revNum = 0;
         sha256 = "3798fddf45be68a3be1d06102f24dd2a867c60526381f946f0e99d1f8eb5657b";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crypto-token-0.1.2-r1-fab96a6eadcc9847b3ea56c51eb905faa948ffb20a648aae03fef52a15a8c8b9.nix;
+        revNum = 1;
+        sha256 = "fab96a6eadcc9847b3ea56c51eb905faa948ffb20a648aae03fef52a15a8c8b9";
+      };
+      default = "r1";
     };
   };
   "0.2.0" = {
