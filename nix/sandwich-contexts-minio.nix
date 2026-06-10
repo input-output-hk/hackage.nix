@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "83a27e86717c6a9cb3207768a4f2f62a84931d8f45b10f69d8d9d7c9a239bf40";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-minio-0.1.0.0-r1-851f835f97568e0654008a4b60beb1b99d66f4a0f91a15bc91a049776cc70ec8.nix;
+        revNum = 1;
+        sha256 = "851f835f97568e0654008a4b60beb1b99d66f4a0f91a15bc91a049776cc70ec8";
+      };
+      default = "r1";
     };
   };
   "0.1.0.1" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "1fe269b7d2ef0a89855b8423bdfd9ad471af91eee023c1d2d649440a8c7fb190";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-minio-0.1.0.1-r1-fda5069e7fe827e2663c1422b23efb00a80886e5dec31f4f572dd103859efc04.nix;
+        revNum = 1;
+        sha256 = "fda5069e7fe827e2663c1422b23efb00a80886e5dec31f4f572dd103859efc04";
+      };
+      default = "r1";
     };
   };
   "0.1.0.2" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "8ab703a7e77a1e8ad010c8b76e39e064ede49d4cf5f0b8b1c5d84012aba14e9c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-minio-0.1.0.2-r1-66e4a94804916f2d279391d28896ae709c7b365263684fa1c833da75380a0300.nix;
+        revNum = 1;
+        sha256 = "66e4a94804916f2d279391d28896ae709c7b365263684fa1c833da75380a0300";
+      };
+      default = "r1";
     };
   };
   "0.1.0.3" = {

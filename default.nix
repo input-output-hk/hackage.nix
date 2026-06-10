@@ -4519,6 +4519,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dahdit-test" = import ./nix/dahdit-test.nix;
   "daino" = import ./nix/daino.nix;
   "damnpacket" = import ./nix/damnpacket.nix;
+  "danecheck" = import ./nix/danecheck.nix;
   "dani-optics-dot" = import ./nix/dani-optics-dot.nix;
   "dani-servant-lucid2" = import ./nix/dani-servant-lucid2.nix;
   "dani-sqlite" = import ./nix/dani-sqlite.nix;
@@ -9343,7 +9344,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hybrid" = import ./nix/hybrid.nix;
   "hybrid-vectors" = import ./nix/hybrid-vectors.nix;
   "hydra" = import ./nix/hydra.nix;
+  "hydra-haskell" = import ./nix/hydra-haskell.nix;
   "hydra-hs" = import ./nix/hydra-hs.nix;
+  "hydra-kernel" = import ./nix/hydra-kernel.nix;
   "hydra-print" = import ./nix/hydra-print.nix;
   "hydrogen" = import ./nix/hydrogen.nix;
   "hydrogen-cli" = import ./nix/hydrogen-cli.nix;
@@ -11268,6 +11271,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "microbench" = import ./nix/microbench.nix;
   "microc" = import ./nix/microc.nix;
   "microdns" = import ./nix/microdns.nix;
+  "microecta" = import ./nix/microecta.nix;
   "microformats2-parser" = import ./nix/microformats2-parser.nix;
   "microformats2-types" = import ./nix/microformats2-types.nix;
   "microgroove" = import ./nix/microgroove.nix;

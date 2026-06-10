@@ -728,6 +728,17 @@
       default = "r0";
     };
   };
+  "0.16.1" = {
+    sha256 = "612ff083338996ae7c568934274129b6d380cbe2305440c69dd63bb96d11461e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hedis-0.16.1-r0-3735575ffaaa28a57d04f1e9f10c230ff2be5d28765f697bc38c1f485a4ea254.nix;
+        revNum = 0;
+        sha256 = "3735575ffaaa28a57d04f1e9f10c230ff2be5d28765f697bc38c1f485a4ea254";
+      };
+      default = "r0";
+    };
+  };
   "0.2" = {
     sha256 = "35b62c921e4fd7072aee14f0c51372ee060b2b4048aeeeb82b9fd905dbb8652e";
     revisions = {

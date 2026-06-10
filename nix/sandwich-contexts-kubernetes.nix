@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "d80c9b82214784234c6b34477d052b0c6aed9aae36a43a61c994559a5b33b144";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-kubernetes-0.1.0.0-r1-45996a5debc20b7f497146c59bcca7300f912469a5795a90bce2217078a283cd.nix;
+        revNum = 1;
+        sha256 = "45996a5debc20b7f497146c59bcca7300f912469a5795a90bce2217078a283cd";
+      };
+      default = "r1";
     };
   };
   "0.1.1.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "68368489a35b620d33668df4be4e70f5fa2e75325a5335af8a26eab6cbbb74bc";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-kubernetes-0.1.1.0-r1-75830d07795bf321166da0866ea0149f31bd062df5a168e7e0f7d2f0e5129205.nix;
+        revNum = 1;
+        sha256 = "75830d07795bf321166da0866ea0149f31bd062df5a168e7e0f7d2f0e5129205";
+      };
+      default = "r1";
     };
   };
   "0.1.1.1" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "9a1448c8252dd00a2228ab4d0e767d2a617bd28562962e6b6c75698c32933e97";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-kubernetes-0.1.1.1-r1-76b979955beca71527b311d5ae98ebdbe9e52a09688b7c8a1b2dc2c40ff6c808.nix;
+        revNum = 1;
+        sha256 = "76b979955beca71527b311d5ae98ebdbe9e52a09688b7c8a1b2dc2c40ff6c808";
+      };
+      default = "r1";
     };
   };
   "0.1.2.0" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "1433bb56a7f6a0d46edc0fc0ef01de914e0d810ce49ece3ea2afbdfd381c4dd5";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/sandwich-contexts-kubernetes-0.1.2.0-r1-8b26cb1fcf1446f54c219621fd25706b0a29bcb063d9c566b549d5b286d6252b.nix;
+        revNum = 1;
+        sha256 = "8b26cb1fcf1446f54c219621fd25706b0a29bcb063d9c566b549d5b286d6252b";
+      };
+      default = "r1";
     };
   };
   "0.1.3.0" = {
