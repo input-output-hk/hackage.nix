@@ -42,4 +42,26 @@
       default = "r2";
     };
   };
+  "1.0.2.1" = {
+    sha256 = "4340756f9cb2cd247e71831398c0a3bfb5dad09c9f034b3d4c8dd6a39208b0e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dnsbase-1.0.2.1-r0-7d1279a01bef88c5bad3a07a12ad674bce4e3948bfdfead06b55e10b767cf2e9.nix;
+        revNum = 0;
+        sha256 = "7d1279a01bef88c5bad3a07a12ad674bce4e3948bfdfead06b55e10b767cf2e9";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.2.2" = {
+    sha256 = "22ae1c439c882be8d37270cc5c2ad4939c024815084778d7bd136ab5ba1a2ae8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dnsbase-1.0.2.2-r0-b83f30874936bf1162bbbfcc6fff4e36d4437a5889916fdc271fb774030734b9.nix;
+        revNum = 0;
+        sha256 = "b83f30874936bf1162bbbfcc6fff4e36d4437a5889916fdc271fb774030734b9";
+      };
+      default = "r0";
+    };
+  };
 }

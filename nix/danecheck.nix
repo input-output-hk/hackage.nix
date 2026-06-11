@@ -10,4 +10,26 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "678af3893e19fc98a307d4f5403dc650f67ff80d0201b6580ce8a1654a6cf34b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/danecheck-1.0.0.1-r0-850ade7f3c2f00171c784c03a138fd0714742decd7b8c3b58f154f91120603e7.nix;
+        revNum = 0;
+        sha256 = "850ade7f3c2f00171c784c03a138fd0714742decd7b8c3b58f154f91120603e7";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.2" = {
+    sha256 = "b151dbd15edb20e585776975d19c1b6e2cfdd6bfb776b871a41de6cca6fa5a00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/danecheck-1.0.0.2-r0-d67e3c55fdff86ca7f296f79ad853dd5767756aa2d47081fa79e56314265bd56.nix;
+        revNum = 0;
+        sha256 = "d67e3c55fdff86ca7f296f79ad853dd5767756aa2d47081fa79e56314265bd56";
+      };
+      default = "r0";
+    };
+  };
 }

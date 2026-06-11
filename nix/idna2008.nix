@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "d6bf359a671971ac5e039c3d620c8580d0a76f0d534e4255b4e9cc2ae79a426b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/idna2008-1.0.0.1-r0-19ccd921ec84555ae2f434082b19de6e8e54060bd01d33c89820c9288348ef48.nix;
+        revNum = 0;
+        sha256 = "19ccd921ec84555ae2f434082b19de6e8e54060bd01d33c89820c9288348ef48";
+      };
+      default = "r0";
+    };
+  };
 }
