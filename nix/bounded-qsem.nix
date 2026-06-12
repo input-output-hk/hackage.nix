@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.0.5" = {
+    sha256 = "0e59bf9e36cc91a350849c39da00717c6ee82ddf8c8729c49cef1b0544440442";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bounded-qsem-0.1.0.5-r0-4636288a2efbb6e7a4d49107a82734c6baeef5d599ac3f7458e418d825f135d2.nix;
+        revNum = 0;
+        sha256 = "4636288a2efbb6e7a4d49107a82734c6baeef5d599ac3f7458e418d825f135d2";
+      };
+      default = "r0";
+    };
+  };
 }

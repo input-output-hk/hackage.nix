@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4.1.2" = {
+    sha256 = "0ee97c133a2b907ace0dc56c465b7152de98213b110e290fd2354b9def07f3fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exchangealgebra-0.4.1.2-r0-7f3c4345647ecc82d4390a3fde8a4a92d5991aae9e4bd3e57a7440d5406e2915.nix;
+        revNum = 0;
+        sha256 = "7f3c4345647ecc82d4390a3fde8a4a92d5991aae9e4bd3e57a7440d5406e2915";
+      };
+      default = "r0";
+    };
+  };
 }

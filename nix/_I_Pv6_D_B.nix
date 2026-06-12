@@ -199,7 +199,12 @@
         revNum = 0;
         sha256 = "fe46105fca17c87f64bce2c4128190bb2cd2dfc9332087d49edd39bd493c3cd2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/IPv6DB-0.3.3.5-r1-f0e4f022b3dbba663914ce56a2b3e7034a28fa185c1481bf8d922ed2fd8dd1fd.nix;
+        revNum = 1;
+        sha256 = "f0e4f022b3dbba663914ce56a2b3e7034a28fa185c1481bf8d922ed2fd8dd1fd";
+      };
+      default = "r1";
     };
   };
 }

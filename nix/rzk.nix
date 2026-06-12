@@ -347,7 +347,12 @@
         revNum = 0;
         sha256 = "6faa1f53735cd55ff03f715473a0c87db11980b368954dba21ae64762285e71c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/rzk-0.8.0-r1-ef1194ef236dfc8f664004f68657f1d89b70ec6ab6e261f6c315cc48fb976121.nix;
+        revNum = 1;
+        sha256 = "ef1194ef236dfc8f664004f68657f1d89b70ec6ab6e261f6c315cc48fb976121";
+      };
+      default = "r1";
     };
   };
 }
