@@ -2538,6 +2538,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bag" = import ./nix/bag.nix;
   "baikai" = import ./nix/baikai.nix;
   "baikai-claude" = import ./nix/baikai-claude.nix;
+  "baikai-effectful" = import ./nix/baikai-effectful.nix;
   "baikai-openai" = import ./nix/baikai-openai.nix;
   "baikai-trace-otel" = import ./nix/baikai-trace-otel.nix;
   "bake" = import ./nix/bake.nix;

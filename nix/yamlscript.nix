@@ -43,6 +43,39 @@
       default = "r0";
     };
   };
+  "0.2.15.0" = {
+    sha256 = "163d2796a76f73df8ed89e60c4dede1adc8520a32f23352d881a862cc246451f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.2.15.0-r0-4208af80cb3f4e4afd34557d9ddc8515d8b9f0e12d7a3695c839f69f6aa5d617.nix;
+        revNum = 0;
+        sha256 = "4208af80cb3f4e4afd34557d9ddc8515d8b9f0e12d7a3695c839f69f6aa5d617";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.16.0" = {
+    sha256 = "bb7b56e1d34cc9de33f07b62f401c15df8e9f7df35c9c2984c077b86093e2e2b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.2.16.0-r0-0e07a4968a478fbc9c49daeb3a1f640ccf9cbb71032afcbe31dbe749103a4c82.nix;
+        revNum = 0;
+        sha256 = "0e07a4968a478fbc9c49daeb3a1f640ccf9cbb71032afcbe31dbe749103a4c82";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.17.0" = {
+    sha256 = "5068dd1bea9d90905a55f59e3524b4b1c472a3322d57f3384386a46222fecc24";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.2.17.0-r0-e78739397e06a7cb56f8df92d2ec15a68c9499fe42d8f5f54380e3d6ef8eb9f3.nix;
+        revNum = 0;
+        sha256 = "e78739397e06a7cb56f8df92d2ec15a68c9499fe42d8f5f54380e3d6ef8eb9f3";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2.0" = {
     sha256 = "e2859fa217e4a3998ea23d0264d2b4f08f65901efed6db7c861f7f8b9055346d";
     revisions = {

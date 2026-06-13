@@ -546,6 +546,27 @@
         revNum = 0;
         sha256 = "408e1f96ac6134965484c891b5fae35c7303fa841b09ce5baea52ddb078eef6b";
       };
+      r1 = {
+        nix = import ../hackage/cgi-3001.5.1.0-r1-7e7e7255bbc045cd2239d29d477ffcabe9f123a12798a38e64d2f0157bcc520c.nix;
+        revNum = 1;
+        sha256 = "7e7e7255bbc045cd2239d29d477ffcabe9f123a12798a38e64d2f0157bcc520c";
+      };
+      r2 = {
+        nix = import ../hackage/cgi-3001.5.1.0-r2-140d8451c80b5cfd05f92c4f22a424dffe7411d46d18bf54093d66baae3fb679.nix;
+        revNum = 2;
+        sha256 = "140d8451c80b5cfd05f92c4f22a424dffe7411d46d18bf54093d66baae3fb679";
+      };
+      default = "r2";
+    };
+  };
+  "3001.5.2.0" = {
+    sha256 = "0eefa70b577dd778a9d5f22ec2e08ab44d6bb49d70769ac81a9704b15f68ac9a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cgi-3001.5.2.0-r0-d02510e1b20f71b03d651da30e20334dbeacc23376404dd48a19153a3cd23b6e.nix;
+        revNum = 0;
+        sha256 = "d02510e1b20f71b03d651da30e20334dbeacc23376404dd48a19153a3cd23b6e";
+      };
       default = "r0";
     };
   };

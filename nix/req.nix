@@ -325,7 +325,12 @@
         revNum = 1;
         sha256 = "5b6c2c0d7bae271bf0a4b0fd02b99a50b34c608960bc14d3a3ed2e29e40def47";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/req-3.13.0-r2-e8f6b430d086f624e3ca3aee75d6a52e56496db603f3693c1c21c8964681024f.nix;
+        revNum = 2;
+        sha256 = "e8f6b430d086f624e3ca3aee75d6a52e56496db603f3693c1c21c8964681024f";
+      };
+      default = "r2";
     };
   };
   "3.13.1" = {
@@ -351,7 +356,12 @@
         revNum = 3;
         sha256 = "d739acc001086ba2d8d9169f398a9fdb354cd75b83deb1f51237cbad78462b36";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/req-3.13.1-r4-c6b9d7d9c0f95e643f2a1c1fb7ac235b22647b0ea24798b692f95c4d5621fbb2.nix;
+        revNum = 4;
+        sha256 = "c6b9d7d9c0f95e643f2a1c1fb7ac235b22647b0ea24798b692f95c4d5621fbb2";
+      };
+      default = "r4";
     };
   };
   "3.13.2" = {
@@ -382,7 +392,12 @@
         revNum = 4;
         sha256 = "ad6b98b2a7a7687c8f0cfdf5b328fe5e46cfb29407a79af4f8f45e6478a1fdfd";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/req-3.13.2-r5-f5c1d22d89ae168d20708eff17264201b06802c5a3dcd6bf62db0c6188058bd6.nix;
+        revNum = 5;
+        sha256 = "f5c1d22d89ae168d20708eff17264201b06802c5a3dcd6bf62db0c6188058bd6";
+      };
+      default = "r5";
     };
   };
   "3.13.3" = {
@@ -393,7 +408,12 @@
         revNum = 0;
         sha256 = "c29f4395350a0d675d2a4590eb1c35d338f55fb6710f55697a1bf7a9481ebf5d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/req-3.13.3-r1-32c5492f6de855a5787e4a75cd93f686d56ccb277630f8c57e3f2b403885c14e.nix;
+        revNum = 1;
+        sha256 = "32c5492f6de855a5787e4a75cd93f686d56ccb277630f8c57e3f2b403885c14e";
+      };
+      default = "r1";
     };
   };
   "3.13.4" = {
@@ -449,7 +469,12 @@
         revNum = 9;
         sha256 = "4f4162faa1591ace42b1bd3039a69a58102e5c5fbcd2fdfdd9dfbf31bb28c9dd";
       };
-      default = "r9";
+      r10 = {
+        nix = import ../hackage/req-3.13.4-r10-027dde94d8016f574c3be2b27e98820766661cb5f19b9e3b2937aaecfedcfc66.nix;
+        revNum = 10;
+        sha256 = "027dde94d8016f574c3be2b27e98820766661cb5f19b9e3b2937aaecfedcfc66";
+      };
+      default = "r10";
     };
   };
   "3.2.0" = {
