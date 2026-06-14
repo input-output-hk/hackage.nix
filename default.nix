@@ -15353,6 +15353,16 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shibuya-pgmq-adapter" = import ./nix/shibuya-pgmq-adapter.nix;
   "shift" = import ./nix/shift.nix;
   "shikensu" = import ./nix/shikensu.nix;
+  "shikumi" = import ./nix/shikumi.nix;
+  "shikumi-cache" = import ./nix/shikumi-cache.nix;
+  "shikumi-cache-postgres" = import ./nix/shikumi-cache-postgres.nix;
+  "shikumi-cache-redis" = import ./nix/shikumi-cache-redis.nix;
+  "shikumi-compile" = import ./nix/shikumi-compile.nix;
+  "shikumi-eval" = import ./nix/shikumi-eval.nix;
+  "shikumi-optimize" = import ./nix/shikumi-optimize.nix;
+  "shikumi-tools" = import ./nix/shikumi-tools.nix;
+  "shikumi-trace" = import ./nix/shikumi-trace.nix;
+  "shikumi-trace-otel" = import ./nix/shikumi-trace-otel.nix;
   "shimmer" = import ./nix/shimmer.nix;
   "shine" = import ./nix/shine.nix;
   "shine-examples" = import ./nix/shine-examples.nix;

@@ -76,6 +76,28 @@
       default = "r0";
     };
   };
+  "0.2.18.0" = {
+    sha256 = "7a19fea12b13ff2d2149b051b05d59404430c5941115c1a53f167b205026bdfd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.2.18.0-r0-1165a77f0bb8f1a9b4167227d6948a7a2a17208fc3616aa51463c03f74f93209.nix;
+        revNum = 0;
+        sha256 = "1165a77f0bb8f1a9b4167227d6948a7a2a17208fc3616aa51463c03f74f93209";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.19.0" = {
+    sha256 = "3628cac52208915760a46a734ffcda3fd8547ea312691467a70a471e0f895790";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.2.19.0-r0-63df113ba2d4976662fbfeab8428e68a5646f85d70e6a6dae48cbd4f6417af6f.nix;
+        revNum = 0;
+        sha256 = "63df113ba2d4976662fbfeab8428e68a5646f85d70e6a6dae48cbd4f6417af6f";
+      };
+      default = "r0";
+    };
+  };
   "0.2.2.0" = {
     sha256 = "e2859fa217e4a3998ea23d0264d2b4f08f65901efed6db7c861f7f8b9055346d";
     revisions = {

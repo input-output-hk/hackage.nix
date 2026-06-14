@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2" = {
+    sha256 = "876785cf05b6fa72448df13c36b53af47f37f3a8cc6d40cb295b1003c4522534";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openal-ffi-0.0.2-r0-036512ab0102dbd18c2981e589627934802260bcbeba9de70586ade81a7dacc2.nix;
+        revNum = 0;
+        sha256 = "036512ab0102dbd18c2981e589627934802260bcbeba9de70586ade81a7dacc2";
+      };
+      default = "r0";
+    };
+  };
 }
