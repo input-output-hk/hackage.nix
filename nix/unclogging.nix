@@ -40,7 +40,12 @@
         revNum = 0;
         sha256 = "c5c59cf6d5265c5bfe8bbdaa77b9e0f5a80cac9f04eadc7a0cb98a8434525396";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/unclogging-0.1.0.3-r1-52b9fe1855bdd88ec70cb8b7e9e8ca7adb2cea3bf9c0a1f48c4d1b6a05cf1203.nix;
+        revNum = 1;
+        sha256 = "52b9fe1855bdd88ec70cb8b7e9e8ca7adb2cea3bf9c0a1f48c4d1b6a05cf1203";
+      };
+      default = "r1";
     };
   };
 }
