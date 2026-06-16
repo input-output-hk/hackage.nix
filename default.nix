@@ -11593,6 +11593,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monoid-map" = import ./nix/monoid-map.nix;
   "monoid-owns" = import ./nix/monoid-owns.nix;
   "monoid-record" = import ./nix/monoid-record.nix;
+  "monoid-semiring" = import ./nix/monoid-semiring.nix;
   "monoid-statistics" = import ./nix/monoid-statistics.nix;
   "monoid-subclasses" = import ./nix/monoid-subclasses.nix;
   "monoid-transformer" = import ./nix/monoid-transformer.nix;
@@ -15911,6 +15912,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sqlite" = import ./nix/sqlite.nix;
   "sqlite-easy" = import ./nix/sqlite-easy.nix;
   "sqlite-simple" = import ./nix/sqlite-simple.nix;
+  "sqlite-simple-effectful" = import ./nix/sqlite-simple-effectful.nix;
   "sqlite-simple-errors" = import ./nix/sqlite-simple-errors.nix;
   "sqlite-simple-interpolate" = import ./nix/sqlite-simple-interpolate.nix;
   "sqlite-simple-typed" = import ./nix/sqlite-simple-typed.nix;

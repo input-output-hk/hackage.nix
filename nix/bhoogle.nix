@@ -244,7 +244,12 @@
         revNum = 8;
         sha256 = "2415ea53fd1a203fde96f2b967eeced2d7af754dcfc05897a7ad063d11496a3c";
       };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/bhoogle-0.1.4.4-r9-4520e99119e0d3269545dff0b7db81c210e538556528a8411e5b0edeff5c230c.nix;
+        revNum = 9;
+        sha256 = "4520e99119e0d3269545dff0b7db81c210e538556528a8411e5b0edeff5c230c";
+      };
+      default = "r9";
     };
   };
 }

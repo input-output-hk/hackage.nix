@@ -106,4 +106,15 @@
       default = "r2";
     };
   };
+  "0.1.0.7" = {
+    sha256 = "21ace60d66f71a515e550147c1ea85cb65b0d6dc87ce5b25683eeac6a93b6fdf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/QuickCheck-safe-0.1.0.7-r0-325180c02a8ed72568cfee48760f022fd83c26876349e5aeafb6eaffe1f9591b.nix;
+        revNum = 0;
+        sha256 = "325180c02a8ed72568cfee48760f022fd83c26876349e5aeafb6eaffe1f9591b";
+      };
+      default = "r0";
+    };
+  };
 }
