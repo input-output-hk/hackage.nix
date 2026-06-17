@@ -155,7 +155,12 @@
         revNum = 1;
         sha256 = "fe91dbd8f6dee45f77bf0848064cb7d30398afa4b2d88913d71e122f83ac9be1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/effectful-core-2.4.0.0-r2-fd799704b5a8bc3a7b7709a5ffa33584602b98e5f3b8b1e9c770816dd9f8ccc3.nix;
+        revNum = 2;
+        sha256 = "fd799704b5a8bc3a7b7709a5ffa33584602b98e5f3b8b1e9c770816dd9f8ccc3";
+      };
+      default = "r2";
     };
   };
   "2.5.0.0" = {
@@ -166,7 +171,12 @@
         revNum = 0;
         sha256 = "a34cf1f3b33cf77314d54baec81b61b1c98c67dacb1123605fd7441943e2d904";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-core-2.5.0.0-r1-18d8cd8257206f2fe317aca51262d0af93226b4a62d3ebbe7c5392e96f149803.nix;
+        revNum = 1;
+        sha256 = "18d8cd8257206f2fe317aca51262d0af93226b4a62d3ebbe7c5392e96f149803";
+      };
+      default = "r1";
     };
   };
   "2.5.1.0" = {
@@ -177,7 +187,12 @@
         revNum = 0;
         sha256 = "252d6c7641d8ecf16d7d228ad2aced011b92f36e175acdf6ccac528e576cf7cb";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-core-2.5.1.0-r1-e4c49d40a323f115b7b5193fc03e47577f68e44784b85aa277d604bf52a185fe.nix;
+        revNum = 1;
+        sha256 = "e4c49d40a323f115b7b5193fc03e47577f68e44784b85aa277d604bf52a185fe";
+      };
+      default = "r1";
     };
   };
   "2.6.0.0" = {
@@ -188,7 +203,12 @@
         revNum = 0;
         sha256 = "821c5120e1ef7c01ccb0be25320fa429bb488b7b2e2463bb922c866e5a1f2eb3";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-core-2.6.0.0-r1-a9013296bf19bfa8a5fd04b4264b268372a8d784ebd458afe499523be6d225d0.nix;
+        revNum = 1;
+        sha256 = "a9013296bf19bfa8a5fd04b4264b268372a8d784ebd458afe499523be6d225d0";
+      };
+      default = "r1";
     };
   };
   "2.6.1.0" = {
@@ -199,7 +219,12 @@
         revNum = 0;
         sha256 = "329f7bd7319217b668ca00331b31f683af93ba18423462918217b2becec3d6f0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/effectful-core-2.6.1.0-r1-1305376587c18202cf517377b22bf24eb76fbbdd37aaf3863cdfd5f401d9cb15.nix;
+        revNum = 1;
+        sha256 = "1305376587c18202cf517377b22bf24eb76fbbdd37aaf3863cdfd5f401d9cb15";
+      };
+      default = "r1";
     };
   };
 }

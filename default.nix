@@ -10156,6 +10156,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kindly-functors" = import ./nix/kindly-functors.nix;
   "kinds" = import ./nix/kinds.nix;
   "kiroku-cli" = import ./nix/kiroku-cli.nix;
+  "kiroku-metrics" = import ./nix/kiroku-metrics.nix;
   "kiroku-otel" = import ./nix/kiroku-otel.nix;
   "kiroku-store" = import ./nix/kiroku-store.nix;
   "kiroku-store-migrations" = import ./nix/kiroku-store-migrations.nix;
