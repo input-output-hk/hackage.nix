@@ -153,4 +153,15 @@
       default = "r0";
     };
   };
+  "1.6.0.1" = {
+    sha256 = "f19f933dd8e8ae4b03ae5b3076b50135a85b8c7128113b56b0c7fd4e950fdd67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-sitemap-1.6.0.1-r0-102f6e20ac6b09a7517adab52f16ab7d34973b9976ffa159b6c1ea93daceab51.nix;
+        revNum = 0;
+        sha256 = "102f6e20ac6b09a7517adab52f16ab7d34973b9976ffa159b6c1ea93daceab51";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "0.3.0.4" = {
+    sha256 = "edca6d6da2391081e1162bb7899ff31519dc535cd6c331bc71ab049cb23499fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-websockets-0.3.0.4-r0-522370bf5205cf32bfe746432afd4832605c0a02dc01f265f114f84b80990fb5.nix;
+        revNum = 0;
+        sha256 = "522370bf5205cf32bfe746432afd4832605c0a02dc01f265f114f84b80990fb5";
+      };
+      default = "r0";
+    };
+  };
 }

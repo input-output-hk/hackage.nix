@@ -29,6 +29,22 @@
         revNum = 0;
         sha256 = "8d20a73dec41f2a4917f18ee0c85ef9f086f7f693eef6933357135072919ed45";
       };
+      r1 = {
+        nix = import ../hackage/dataframe-parsing-1.0.2.0-r1-35ad84dc5ae75d0fa0cbb8221b527471e9db0179e646730f7b892c18c94dead9.nix;
+        revNum = 1;
+        sha256 = "35ad84dc5ae75d0fa0cbb8221b527471e9db0179e646730f7b892c18c94dead9";
+      };
+      default = "r1";
+    };
+  };
+  "1.0.2.1" = {
+    sha256 = "3ffe6e98000bb1f186acd3821abc4237f031f12f981554a598966c2838751a10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-parsing-1.0.2.1-r0-ac675cb108ada29f901ef93848f977104a7dc40ab5a1e3eb3d17b235b79dfb21.nix;
+        revNum = 0;
+        sha256 = "ac675cb108ada29f901ef93848f977104a7dc40ab5a1e3eb3d17b235b79dfb21";
+      };
       default = "r0";
     };
   };

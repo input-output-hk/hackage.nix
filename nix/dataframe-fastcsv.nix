@@ -29,7 +29,17 @@
         revNum = 0;
         sha256 = "f428b610481dfa0cd398cd7b61c38c59a5248010830676f2597e3fa8b6eeec7a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dataframe-fastcsv-1.1.1.0-r1-ca6db3d35772b953d2e2ac34e24d1142e1e71e92630768a1fafa570805cfe272.nix;
+        revNum = 1;
+        sha256 = "ca6db3d35772b953d2e2ac34e24d1142e1e71e92630768a1fafa570805cfe272";
+      };
+      r2 = {
+        nix = import ../hackage/dataframe-fastcsv-1.1.1.0-r2-29093c30dbc3c47c59d77543b31de163d61ba970d8dfffaa8b24858b8e4cc009.nix;
+        revNum = 2;
+        sha256 = "29093c30dbc3c47c59d77543b31de163d61ba970d8dfffaa8b24858b8e4cc009";
+      };
+      default = "r2";
     };
   };
 }

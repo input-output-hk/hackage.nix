@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "1.6.0.2" = {
+    sha256 = "31bb72158403746a0995818cad9a8a4d75cd804383df37ef22c52c1e6c611b43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yesod-eventsource-1.6.0.2-r0-bd69efc98408c675870306debbab9e7fd6a19e6015d8eaadf0f1d1fca31c9878.nix;
+        revNum = 0;
+        sha256 = "bd69efc98408c675870306debbab9e7fd6a19e6015d8eaadf0f1d1fca31c9878";
+      };
+      default = "r0";
+    };
+  };
 }
