@@ -12419,6 +12419,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "openai-servant" = import ./nix/openai-servant.nix;
   "openai-servant-gen" = import ./nix/openai-servant-gen.nix;
   "openal-ffi" = import ./nix/openal-ffi.nix;
+  "openapi-hs" = import ./nix/openapi-hs.nix;
   "openapi-petstore" = import ./nix/openapi-petstore.nix;
   "openapi-typed" = import ./nix/openapi-typed.nix;
   "openapi3" = import ./nix/openapi3.nix;
@@ -13516,6 +13517,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pprecord" = import ./nix/pprecord.nix;
   "pptable" = import ./nix/pptable.nix;
   "pqc" = import ./nix/pqc.nix;
+  "pqi" = import ./nix/pqi.nix;
+  "pqi-conformance" = import ./nix/pqi-conformance.nix;
+  "pqi-ffi" = import ./nix/pqi-ffi.nix;
+  "pqi-native" = import ./nix/pqi-native.nix;
   "pqueue" = import ./nix/pqueue.nix;
   "pqueue-mtl" = import ./nix/pqueue-mtl.nix;
   "pr-tools" = import ./nix/pr-tools.nix;

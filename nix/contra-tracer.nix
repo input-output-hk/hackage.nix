@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.2.1.1" = {
+    sha256 = "c2bfb73aca6f8e363f8c98ce1dc1c26ca84e0db51060766fd39272e99e04e124";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/contra-tracer-0.2.1.1-r0-7dd9f2e302975c390c777528d064320f8987f2a23cd25e054bb7cc48c029757e.nix;
+        revNum = 0;
+        sha256 = "7dd9f2e302975c390c777528d064320f8987f2a23cd25e054bb7cc48c029757e";
+      };
+      default = "r0";
+    };
+  };
 }
