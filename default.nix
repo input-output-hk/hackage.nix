@@ -5239,6 +5239,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "download-curl" = import ./nix/download-curl.nix;
   "download-media-content" = import ./nix/download-media-content.nix;
   "downloader" = import ./nix/downloader.nix;
+  "doxygen-parser" = import ./nix/doxygen-parser.nix;
   "dozenal" = import ./nix/dozenal.nix;
   "dozens" = import ./nix/dozens.nix;
   "dpapi" = import ./nix/dpapi.nix;
@@ -12352,6 +12353,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "oidc-client" = import ./nix/oidc-client.nix;
   "ois-input-manager" = import ./nix/ois-input-manager.nix;
   "okapi" = import ./nix/okapi.nix;
+  "okf-cli" = import ./nix/okf-cli.nix;
+  "okf-core" = import ./nix/okf-core.nix;
   "old-locale" = import ./nix/old-locale.nix;
   "old-time" = import ./nix/old-time.nix;
   "old-version" = import ./nix/old-version.nix;
@@ -13232,6 +13235,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pms-domain-service" = import ./nix/pms-domain-service.nix;
   "pms-infra-agent-process" = import ./nix/pms-infra-agent-process.nix;
   "pms-infra-agent-serial" = import ./nix/pms-infra-agent-serial.nix;
+  "pms-infra-agent-server" = import ./nix/pms-infra-agent-server.nix;
   "pms-infra-agent-socket" = import ./nix/pms-infra-agent-socket.nix;
   "pms-infra-cmdrun" = import ./nix/pms-infra-cmdrun.nix;
   "pms-infra-filesystem" = import ./nix/pms-infra-filesystem.nix;

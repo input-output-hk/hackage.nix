@@ -653,6 +653,17 @@
       default = "r7";
     };
   };
+  "3.9.11" = {
+    sha256 = "d4b9157928167e30136fa4439d8942a130cadbbf1172fd1442e34a66d4d7536c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/text-show-instances-3.9.11-r0-dbdbb71896b67facbbc5d5bb2a242596559bc3f624d3a4a5b70b02eb1b9a8d35.nix;
+        revNum = 0;
+        sha256 = "dbdbb71896b67facbbc5d5bb2a242596559bc3f624d3a4a5b70b02eb1b9a8d35";
+      };
+      default = "r0";
+    };
+  };
   "3.9.2" = {
     sha256 = "7e408e59ef5ba8f30e237c60b5e25edf70c1b45e03815de1ae0e1e9a786535c8";
     revisions = {

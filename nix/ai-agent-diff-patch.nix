@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "fa26b5eaf57ce18a4d34e202370cab59fbb93d7d9ce2a0e4c6d458616d13ada3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ai-agent-diff-patch-0.0.2.0-r0-72eb7675f22fa0e74179367094398d38f12ef2458b20b8b11e21ca3c588b2b21.nix;
+        revNum = 0;
+        sha256 = "72eb7675f22fa0e74179367094398d38f12ef2458b20b8b11e21ca3c588b2b21";
+      };
+      default = "r0";
+    };
+  };
 }
