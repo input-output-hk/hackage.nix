@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.104.350.0" = {
+    sha256 = "9a4df6c5297b02875e8ae8d206827dfc9d1e2559a6e4268c42f654c602c62570";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spirv-enum-1.104.350.0-r0-dcea3dc38071237ca6426b244de9db61dcedeeb91f9b820fc13da303f427180c.nix;
+        revNum = 0;
+        sha256 = "dcea3dc38071237ca6426b244de9db61dcedeeb91f9b820fc13da303f427180c";
+      };
+      default = "r0";
+    };
+  };
 }

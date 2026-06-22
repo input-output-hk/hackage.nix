@@ -37,4 +37,15 @@
       default = "r1";
     };
   };
+  "1.0.1.2" = {
+    sha256 = "c90bf1716c35f8194a51c3633b98ccf8b37e8ddc7018731cdd8bcdc8a51b9fb6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-parquet-th-1.0.1.2-r0-7c172ba531790e66ae0b170df269c49353e0922ea6568a54e1ba29389aeefc89.nix;
+        revNum = 0;
+        sha256 = "7c172ba531790e66ae0b170df269c49353e0922ea6568a54e1ba29389aeefc89";
+      };
+      default = "r0";
+    };
+  };
 }
