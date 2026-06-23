@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4" = {
+    sha256 = "8b961a9f3a48a3cda217f4ec326312c2faeba5cd0335f74b8e9c0f118b901072";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/spirv-reflect-ffi-0.4-r0-6f76fd0b2482b9afb737e5de89be587f42726a7139f949ed5c9542ba5416c227.nix;
+        revNum = 0;
+        sha256 = "6f76fd0b2482b9afb737e5de89be587f42726a7139f949ed5c9542ba5416c227";
+      };
+      default = "r0";
+    };
+  };
 }

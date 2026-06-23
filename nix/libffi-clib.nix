@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "3.6.0" = {
+    sha256 = "3fc489c342ea5306e2ca45c7f1d78c17bad384f1cc2187dda407c7fd251ff7b0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libffi-clib-3.6.0-r0-e84545cbb93246c2368141bb7e867aa0f544567e8a78c4bf403d1ae9cb6d953d.nix;
+        revNum = 0;
+        sha256 = "e84545cbb93246c2368141bb7e867aa0f544567e8a78c4bf403d1ae9cb6d953d";
+      };
+      default = "r0";
+    };
+  };
 }

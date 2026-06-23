@@ -246,4 +246,15 @@
       default = "r0";
     };
   };
+  "0.7.3.1" = {
+    sha256 = "ef41de0fa77b1e2d1063525fc07ccec9abbf8dc7d153ee3651d6c47da15d08be";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/granite-0.7.3.1-r0-5888ce65c5c00f5df076f0bf1b703b95f99ca70fa810721d066d6be19400c8ec.nix;
+        revNum = 0;
+        sha256 = "5888ce65c5c00f5df076f0bf1b703b95f99ca70fa810721d066d6be19400c8ec";
+      };
+      default = "r0";
+    };
+  };
 }
