@@ -127,7 +127,12 @@
         revNum = 1;
         sha256 = "3e84cf0d906698f97859bf6e6dd7a083c70581d0d5207e18f05be22ba2e461aa";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/apecs-physics-0.4.6-r2-f012d8b346e442f417d3b1db62874e16f4040e0a817756610aa036b6d2b135f5.nix;
+        revNum = 2;
+        sha256 = "f012d8b346e442f417d3b1db62874e16f4040e0a817756610aa036b6d2b135f5";
+      };
+      default = "r2";
     };
   };
 }

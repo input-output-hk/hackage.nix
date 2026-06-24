@@ -16105,6 +16105,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stm-tlist" = import ./nix/stm-tlist.nix;
   "stmcontrol" = import ./nix/stmcontrol.nix;
   "stochastic" = import ./nix/stochastic.nix;
+  "stock" = import ./nix/stock.nix;
+  "stock-aeson" = import ./nix/stock-aeson.nix;
+  "stock-deepseq" = import ./nix/stock-deepseq.nix;
+  "stock-hashable" = import ./nix/stock-hashable.nix;
+  "stock-profunctors" = import ./nix/stock-profunctors.nix;
+  "stock-quickcheck" = import ./nix/stock-quickcheck.nix;
   "stocks" = import ./nix/stocks.nix;
   "stomp-conduit" = import ./nix/stomp-conduit.nix;
   "stomp-patterns" = import ./nix/stomp-patterns.nix;
@@ -18944,6 +18950,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yamlkeysdiff" = import ./nix/yamlkeysdiff.nix;
   "yamlparse-applicative" = import ./nix/yamlparse-applicative.nix;
   "yamlscript" = import ./nix/yamlscript.nix;
+  "yamlstar" = import ./nix/yamlstar.nix;
   "yampa-canvas" = import ./nix/yampa-canvas.nix;
   "yampa-glfw" = import ./nix/yampa-glfw.nix;
   "yampa-gloss" = import ./nix/yampa-gloss.nix;

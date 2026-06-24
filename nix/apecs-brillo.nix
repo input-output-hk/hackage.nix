@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "2b20617dd81026e3c3153f6bf44cd099e7d8e2d833b03ff5d8f3b8f779e736a2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/apecs-brillo-0.1.1-r1-4b2a952ee720572b9efb4d8cfb348a9714692c9bc060c5073ccb046cff5137b1.nix;
+        revNum = 1;
+        sha256 = "4b2a952ee720572b9efb4d8cfb348a9714692c9bc060c5073ccb046cff5137b1";
+      };
+      default = "r1";
     };
   };
 }
