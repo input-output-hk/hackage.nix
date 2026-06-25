@@ -57,7 +57,12 @@
         revNum = 10;
         sha256 = "6dbb5be319377477dabf73c961e6323895b67c39a5e7f1bf6ce9632b18416273";
       };
-      default = "r10";
+      r11 = {
+        nix = import ../hackage/stock-profunctors-0.1.0.0-r11-1301caf57fa2b2b10fcc4caec7e2bad2f760cff815a0cfe0c50edfaf1e4ec2df.nix;
+        revNum = 11;
+        sha256 = "1301caf57fa2b2b10fcc4caec7e2bad2f760cff815a0cfe0c50edfaf1e4ec2df";
+      };
+      default = "r11";
     };
   };
 }

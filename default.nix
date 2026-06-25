@@ -423,6 +423,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "GeBoP" = import ./nix/_Ge_Bo_P.nix;
   "GenI" = import ./nix/_Gen_I.nix;
   "GenSmsPdu" = import ./nix/_Gen_Sms_Pdu.nix;
+  "GenZ" = import ./nix/_Gen_Z.nix;
   "Genbank" = import ./nix/_Genbank.nix;
   "Gene-CluEDO" = import ./nix/_Gene-_Clu_E_D_O.nix;
   "GeneralTicTacToe" = import ./nix/_General_Tic_Tac_Toe.nix;

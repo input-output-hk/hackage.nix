@@ -27,7 +27,12 @@
         revNum = 4;
         sha256 = "13d220c621b67f2ca4601f0985442688b75a06ed43634a672ec4be93a0c97de9";
       };
-      default = "r4";
+      r5 = {
+        nix = import ../hackage/stock-hashable-0.1.0.0-r5-ba1bceac5b550b61c5935f25a0010a9026e3e53a252ab4124f7c04cb802c0f4a.nix;
+        revNum = 5;
+        sha256 = "ba1bceac5b550b61c5935f25a0010a9026e3e53a252ab4124f7c04cb802c0f4a";
+      };
+      default = "r5";
     };
   };
 }

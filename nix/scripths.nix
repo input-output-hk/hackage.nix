@@ -175,4 +175,15 @@
       default = "r0";
     };
   };
+  "0.5.3.0" = {
+    sha256 = "b6374bc3655c1bb35e08efe87d59bd21abbad287c73e52a03c247cc8edbb4e5a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scripths-0.5.3.0-r0-370f970c8a7107112edc657613540e2892de794ef600a9b314650a43b3efc962.nix;
+        revNum = 0;
+        sha256 = "370f970c8a7107112edc657613540e2892de794ef600a9b314650a43b3efc962";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -1,0 +1,43 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {
+      zlib = true;
+      iconv = false;
+      lz4 = false;
+      zstd = false;
+      lzma = false;
+      bz2lib = false;
+      acl = false;
+      xattr = false;
+    };
+    package = {
+      specVersion = "3.8";
+      identifier = { name = "libarchive-clib"; version = "3.8.8"; };
+      license = "BSD-2-Clause";
+      copyright = "Copyright: (c) 2018-2020 Vanessa McHale";
+      maintainer = "vamchale@gmail.com";
+      author = "Vanessa McHale";
+      homepage = "";
+      url = "";
+      synopsis = "Haskell interface to libarchive (C sources)";
+      description = "Bundled libarchive C sources for use with the libarchive Haskell bindings.";
+      buildType = "Configure";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."zlib-clib" or (errorHandler.buildDepError "zlib-clib"))
+        ];
+        libs = pkgs.lib.optional (system.isWindows) (pkgs."bcrypt" or (errorHandler.sysDepError "bcrypt"));
+        buildable = true;
+      };
+    };
+  }

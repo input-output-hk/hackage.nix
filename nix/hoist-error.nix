@@ -144,7 +144,12 @@
         revNum = 0;
         sha256 = "b0cf9a36e0b2827673523b18c765e22cf5b664203ed370bbd008812292ceb3e1";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hoist-error-0.3.1.0-r1-ccdb8ecf7bbaa11b81fa9bbefbe381e8a0a21f04b321efc656e595a6c6722f97.nix;
+        revNum = 1;
+        sha256 = "ccdb8ecf7bbaa11b81fa9bbefbe381e8a0a21f04b321efc656e595a6c6722f97";
+      };
+      default = "r1";
     };
   };
 }
