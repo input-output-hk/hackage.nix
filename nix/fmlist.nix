@@ -218,4 +218,15 @@
       default = "r0";
     };
   };
+  "0.9.5" = {
+    sha256 = "c7a19a27340b6e0fd77934482985244e9850873b55acc51d5ec72dfb7569c00c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fmlist-0.9.5-r0-cf10714f01ee84a470a79e0eaccb5caba675cb5fb7245ec2084c4785e53af6aa.nix;
+        revNum = 0;
+        sha256 = "cf10714f01ee84a470a79e0eaccb5caba675cb5fb7245ec2084c4785e53af6aa";
+      };
+      default = "r0";
+    };
+  };
 }

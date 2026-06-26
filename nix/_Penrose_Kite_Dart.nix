@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "1.10" = {
+    sha256 = "77fd231ff460fbd89c6f4c71f0f95fb6cd453132df6d6be65a3b08b77ebfc07f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PenroseKiteDart-1.10-r0-d59949e72958cedab8961fb5d7e9b5262a925fbd87ffd8d41a0a272e8e18b25b.nix;
+        revNum = 0;
+        sha256 = "d59949e72958cedab8961fb5d7e9b5262a925fbd87ffd8d41a0a272e8e18b25b";
+      };
+      default = "r0";
+    };
+  };
   "1.2" = {
     sha256 = "6a48674913494967653d6b7262f9b4d1a22d324470461b13e270d58abd9fe927";
     revisions = {
