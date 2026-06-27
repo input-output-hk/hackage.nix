@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "1.1.0.2" = {
+    sha256 = "2984c81a298f89721f99678120a9e67e5dd5cc7d1a517415108a268a04189e30";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-lazy-1.1.0.2-r0-60a6db502344eac7f2577c2e13cdf0afb6b928a5b3195e42fe112efa8028b003.nix;
+        revNum = 0;
+        sha256 = "60a6db502344eac7f2577c2e13cdf0afb6b928a5b3195e42fe112efa8028b003";
+      };
+      default = "r0";
+    };
+  };
 }

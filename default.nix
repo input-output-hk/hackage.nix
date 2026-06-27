@@ -2421,6 +2421,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "auto-lift-classes" = import ./nix/auto-lift-classes.nix;
   "auto-split" = import ./nix/auto-split.nix;
   "auto-update" = import ./nix/auto-update.nix;
+  "auto-update-unliftio" = import ./nix/auto-update-unliftio.nix;
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
   "autodocodec-exact" = import ./nix/autodocodec-exact.nix;
@@ -18301,6 +18302,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vinyl-vectors" = import ./nix/vinyl-vectors.nix;
   "virthualenv" = import ./nix/virthualenv.nix;
   "visibility" = import ./nix/visibility.nix;
+  "visie" = import ./nix/visie.nix;
   "vision" = import ./nix/vision.nix;
   "visual-graphrewrite" = import ./nix/visual-graphrewrite.nix;
   "visual-prof" = import ./nix/visual-prof.nix;

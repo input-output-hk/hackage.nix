@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "1.0.0.6" = {
+    sha256 = "7f5ab7253ab9f8df86490b858e60994e75151cfd58bdfbab32143d27bd6454cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/om-socket-1.0.0.6-r0-c4d7600e1405d96ebfa3696abc2b6caf6a6907a88b675ec8b7dcbffbf2ec7f95.nix;
+        revNum = 0;
+        sha256 = "c4d7600e1405d96ebfa3696abc2b6caf6a6907a88b675ec8b7dcbffbf2ec7f95";
+      };
+      default = "r0";
+    };
+  };
 }
