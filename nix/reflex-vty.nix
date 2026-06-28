@@ -339,7 +339,23 @@
         revNum = 1;
         sha256 = "29d68cd54bc7d8267f9450002a2d4693a82766af886efc21cc374ad8c34fb203";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/reflex-vty-1.0.0.1-r2-b851b86684af4e60d7537d893deb5a7a802929e19f29bba4e515457831ccfaf1.nix;
+        revNum = 2;
+        sha256 = "b851b86684af4e60d7537d893deb5a7a802929e19f29bba4e515457831ccfaf1";
+      };
+      default = "r2";
+    };
+  };
+  "1.1.0.0" = {
+    sha256 = "7ba845a272335336ce057f9007ab66fed6ae0f0f96e707379ea2c1062295779d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-vty-1.1.0.0-r0-7fc01120ccfe48d48a1b4d8ddf2cb9599cf99d211b087bd2d47164f109d07927.nix;
+        revNum = 0;
+        sha256 = "7fc01120ccfe48d48a1b4d8ddf2cb9599cf99d211b087bd2d47164f109d07927";
+      };
+      default = "r0";
     };
   };
 }

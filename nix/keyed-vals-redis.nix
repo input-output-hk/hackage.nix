@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.2.5.0" = {
+    sha256 = "577575f6baed0b6ce8eca36bfa958a9fb7e3cb5ff25119ca0327b4aceaf4a9b2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keyed-vals-redis-0.2.5.0-r0-dca67c2218efb1bed0fdbdc527b6a3674aa6c14922c10657f5eb0cc7aab99b44.nix;
+        revNum = 0;
+        sha256 = "dca67c2218efb1bed0fdbdc527b6a3674aa6c14922c10657f5eb0cc7aab99b44";
+      };
+      default = "r0";
+    };
+  };
 }

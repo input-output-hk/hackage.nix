@@ -116,4 +116,15 @@
       default = "r0";
     };
   };
+  "0.3" = {
+    sha256 = "dbb22b98657e48fa0941469bea4f045d8cef36ed508cdd927de29f5280e596d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/diagrams-solve-0.3-r0-506086fca64588c105b5fd0ab9534eeabafaac8735fb736b4c51fe8ded29221b.nix;
+        revNum = 0;
+        sha256 = "506086fca64588c105b5fd0ab9534eeabafaac8735fb736b4c51fe8ded29221b";
+      };
+      default = "r0";
+    };
+  };
 }
