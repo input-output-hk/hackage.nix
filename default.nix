@@ -15375,6 +15375,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "shikumi-cache-redis" = import ./nix/shikumi-cache-redis.nix;
   "shikumi-compile" = import ./nix/shikumi-compile.nix;
   "shikumi-eval" = import ./nix/shikumi-eval.nix;
+  "shikumi-okf" = import ./nix/shikumi-okf.nix;
   "shikumi-optimize" = import ./nix/shikumi-optimize.nix;
   "shikumi-tools" = import ./nix/shikumi-tools.nix;
   "shikumi-trace" = import ./nix/shikumi-trace.nix;

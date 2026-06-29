@@ -20,4 +20,15 @@
       default = "r2";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "fdafe97ff0e46cb42e8c5317d837494137dd8b3c4542d255de9aad37e7258768";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strip-ansi-escape-0.1.0.1-r0-d8319da49397b97ad72b4d9c4f73aacf55cceae93ca681f8fa6ac6424ed5689c.nix;
+        revNum = 0;
+        sha256 = "d8319da49397b97ad72b4d9c4f73aacf55cceae93ca681f8fa6ac6424ed5689c";
+      };
+      default = "r0";
+    };
+  };
 }

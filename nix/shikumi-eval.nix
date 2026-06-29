@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "43ca3406ec16f9ae45ed440875d9f8bb6bcfea055ac4226411e51256b4cd8014";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shikumi-eval-0.1.1.0-r0-beab1a2b6e14d9604fb1352065818b3c95b6604d13f4e4aacf056c5a9de10735.nix;
+        revNum = 0;
+        sha256 = "beab1a2b6e14d9604fb1352065818b3c95b6604d13f4e4aacf056c5a9de10735";
+      };
+      default = "r0";
+    };
+  };
 }

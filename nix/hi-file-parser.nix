@@ -123,4 +123,15 @@
       default = "r0";
     };
   };
+  "0.1.9.0" = {
+    sha256 = "9065194f9dda5c50df6edb68afc8a1961454d6ad2dc205fb0152568731f83ae7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hi-file-parser-0.1.9.0-r0-a6f4cce3c5cfdd5c88f1145bad6fd0932ba5084591142956c30ee47a1d78eac5.nix;
+        revNum = 0;
+        sha256 = "a6f4cce3c5cfdd5c88f1145bad6fd0932ba5084591142956c30ee47a1d78eac5";
+      };
+      default = "r0";
+    };
+  };
 }
