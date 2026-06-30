@@ -9374,6 +9374,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hyper-extra" = import ./nix/hyper-extra.nix;
   "hyper-haskell-server" = import ./nix/hyper-haskell-server.nix;
   "hyperbole" = import ./nix/hyperbole.nix;
+  "hyperbole-oauth2" = import ./nix/hyperbole-oauth2.nix;
   "hyperdrive" = import ./nix/hyperdrive.nix;
   "hyperfunctions" = import ./nix/hyperfunctions.nix;
   "hypergeomatrix" = import ./nix/hypergeomatrix.nix;

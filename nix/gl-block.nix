@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1" = {
+    sha256 = "7ec33210fc6bf037e8226cf77febbbf62df364f047ad0313277b68f97159def9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gl-block-1.1-r0-b60a3f3746445226f42f7db3ab6ebc4125b7b0e7e960cbb7ce41d285eebd9990.nix;
+        revNum = 0;
+        sha256 = "b60a3f3746445226f42f7db3ab6ebc4125b7b0e7e960cbb7ce41d285eebd9990";
+      };
+      default = "r0";
+    };
+  };
 }

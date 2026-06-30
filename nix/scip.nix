@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.9.0" = {
+    sha256 = "d443d8b4c87a3d405994d2bae7c05092f86a6bca91147156c0d61e8e3e13322d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scip-0.9.0-r0-ab8d0472da1c817ca14e8c19de67b59d99036f2e897a55f287826fda07ca1c27.nix;
+        revNum = 0;
+        sha256 = "ab8d0472da1c817ca14e8c19de67b59d99036f2e897a55f287826fda07ca1c27";
+      };
+      default = "r0";
+    };
+  };
 }
