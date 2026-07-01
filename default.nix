@@ -4962,6 +4962,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dia-functions" = import ./nix/dia-functions.nix;
   "diagnose" = import ./nix/diagnose.nix;
   "diagnostician" = import ./nix/diagnostician.nix;
+  "diagnostician-html" = import ./nix/diagnostician-html.nix;
+  "diagnostician-terminal" = import ./nix/diagnostician-terminal.nix;
   "diagrams" = import ./nix/diagrams.nix;
   "diagrams-boolean" = import ./nix/diagrams-boolean.nix;
   "diagrams-braille" = import ./nix/diagrams-braille.nix;
@@ -9750,6 +9752,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "iptadmin" = import ./nix/iptadmin.nix;
   "ipynb" = import ./nix/ipynb.nix;
   "ipython-kernel" = import ./nix/ipython-kernel.nix;
+  "ir-builder" = import ./nix/ir-builder.nix;
   "irc" = import ./nix/irc.nix;
   "irc-bytestring" = import ./nix/irc-bytestring.nix;
   "irc-client" = import ./nix/irc-client.nix;

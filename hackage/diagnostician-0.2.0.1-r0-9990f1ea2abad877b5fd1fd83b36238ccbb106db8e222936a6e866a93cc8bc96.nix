@@ -1,0 +1,47 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "3.4";
+      identifier = { name = "diagnostician"; version = "0.2.0.1"; };
+      license = "(Apache-2.0 OR MIT)";
+      copyright = "";
+      maintainer = "root@owenlynch.org";
+      author = "Coln contributors";
+      homepage = "";
+      url = "";
+      synopsis = "";
+      description = "A minimal, opinionated library for compiler error messages";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+        ];
+        buildable = true;
+      };
+      tests = {
+        "diagnostician-test" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."diagnostician" or (errorHandler.buildDepError "diagnostician"))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }

@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "d0f56dacc66b547ac57dac07bc06312f5f83c2d8584cb0dfe0b6859b199c859a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fnotation-0.2.0.1-r0-7f6efae37875dbf1ed7601278051a4beb7bbb09a5b1261d774b68e387db719e3.nix;
+        revNum = 0;
+        sha256 = "7f6efae37875dbf1ed7601278051a4beb7bbb09a5b1261d774b68e387db719e3";
+      };
+      default = "r0";
+    };
+  };
 }
