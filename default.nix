@@ -16658,6 +16658,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "swift-lda" = import ./nix/swift-lda.nix;
   "swish" = import ./nix/swish.nix;
   "swiss" = import ./nix/swiss.nix;
+  "swiss-army-knife" = import ./nix/swiss-army-knife.nix;
   "swiss-ephemeris" = import ./nix/swiss-ephemeris.nix;
   "swisstable" = import ./nix/swisstable.nix;
   "switch" = import ./nix/switch.nix;
@@ -16887,6 +16888,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tasty-discover" = import ./nix/tasty-discover.nix;
   "tasty-expected-failure" = import ./nix/tasty-expected-failure.nix;
   "tasty-fail-fast" = import ./nix/tasty-fail-fast.nix;
+  "tasty-falsify" = import ./nix/tasty-falsify.nix;
   "tasty-flaky" = import ./nix/tasty-flaky.nix;
   "tasty-focus" = import ./nix/tasty-focus.nix;
   "tasty-golden" = import ./nix/tasty-golden.nix;

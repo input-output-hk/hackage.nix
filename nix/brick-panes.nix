@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "1.0.4.0" = {
+    sha256 = "278f6834352177755689ca63353fa588fe7f782c49f1b38c553f37d3b55bdc2a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-panes-1.0.4.0-r0-d0dfba3f88e7a9f4e656d081c4a333a36371afab2bb6a3a36c32a911764d8252.nix;
+        revNum = 0;
+        sha256 = "d0dfba3f88e7a9f4e656d081c4a333a36371afab2bb6a3a36c32a911764d8252";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.5.0" = {
+    sha256 = "ded7d94fc06c13c0b7e89f2cd3ce16ade465858db287b70dd9e9a827c25b2d6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/brick-panes-1.0.5.0-r0-699fddb5e19e84acb81a863dc5ec49489d0bb06e102bfd15c5fede7ce105d8cd.nix;
+        revNum = 0;
+        sha256 = "699fddb5e19e84acb81a863dc5ec49489d0bb06e102bfd15c5fede7ce105d8cd";
+      };
+      default = "r0";
+    };
+  };
 }
