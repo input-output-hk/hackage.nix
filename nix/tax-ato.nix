@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "2026.1.1" = {
+    sha256 = "5481116f49b5ab4947f41bfd69f1ca57b374eca528f882c0902ba4beff74f89f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tax-ato-2026.1.1-r0-ed70cc78b82dd85fdfe4e40620f2b39e3868447e8f05c5f7bfc4cee898acef8f.nix;
+        revNum = 0;
+        sha256 = "ed70cc78b82dd85fdfe4e40620f2b39e3868447e8f05c5f7bfc4cee898acef8f";
+      };
+      default = "r0";
+    };
+  };
 }

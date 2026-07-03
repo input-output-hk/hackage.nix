@@ -294,4 +294,15 @@
       default = "r0";
     };
   };
+  "0.3.2.0" = {
+    sha256 = "8ee4c8e71feb26841e667ee23e41d7a380f64c14703da93b3a4ea9164da79023";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vault-0.3.2.0-r0-ef8c56be9bdb8f657461355aa98c659a2b116b8be6447a05ffcab853990d10be.nix;
+        revNum = 0;
+        sha256 = "ef8c56be9bdb8f657461355aa98c659a2b116b8be6447a05ffcab853990d10be";
+      };
+      default = "r0";
+    };
+  };
 }

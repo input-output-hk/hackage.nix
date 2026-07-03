@@ -142,4 +142,15 @@
       default = "r0";
     };
   };
+  "0.1.6.0" = {
+    sha256 = "2906601b3ee94ac70af5695bf307b744aaf418ad017f3bea52f81c2e209f218b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/distributed-process-p2p-0.1.6.0-r0-ffdb6819ee6521fe53e30c03f8fd31ed50b94f7cde60404be0e3baa371a65c60.nix;
+        revNum = 0;
+        sha256 = "ffdb6819ee6521fe53e30c03f8fd31ed50b94f7cde60404be0e3baa371a65c60";
+      };
+      default = "r0";
+    };
+  };
 }

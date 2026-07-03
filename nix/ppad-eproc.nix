@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "e283da8ea8bd843740a366d3c8a29941220a6c38a9439178a67e6aafa113f3b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-eproc-0.2.1-r0-3b2dd82b87a9975e623e2af56cf7fc2478c4ac13ebff20cf22650d3d6d3aa779.nix;
+        revNum = 0;
+        sha256 = "3b2dd82b87a9975e623e2af56cf7fc2478c4ac13ebff20cf22650d3d6d3aa779";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.2" = {
+    sha256 = "65403df8256f692dddb4c81d2305091da402d586809e7b38f281de3c7b8903f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-eproc-0.2.2-r0-263c15ee77673a1c6a7cb5fe61015aec4681c299b74e1c90163b49e8d6753cd9.nix;
+        revNum = 0;
+        sha256 = "263c15ee77673a1c6a7cb5fe61015aec4681c299b74e1c90163b49e8d6753cd9";
+      };
+      default = "r0";
+    };
+  };
 }

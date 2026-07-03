@@ -41,4 +41,15 @@
       default = "r0";
     };
   };
+  "2.0.1" = {
+    sha256 = "ec8764d146db62e8a5dc56fa78fffd2487931235df0e16519c6f993c81420919";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/semaphore-compat-2.0.1-r0-4f18e702a467ab65a808fdcdd7b88d92cc6c5e277bfd9759d3c361e8b8b0ac30.nix;
+        revNum = 0;
+        sha256 = "4f18e702a467ab65a808fdcdd7b88d92cc6c5e277bfd9759d3c361e8b8b0ac30";
+      };
+      default = "r0";
+    };
+  };
 }

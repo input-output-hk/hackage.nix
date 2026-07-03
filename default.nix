@@ -14721,6 +14721,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rstream" = import ./nix/rstream.nix;
   "rt" = import ./nix/rt.nix;
   "rtcm" = import ./nix/rtcm.nix;
+  "rtk" = import ./nix/rtk.nix;
   "rtld" = import ./nix/rtld.nix;
   "rtlsdr" = import ./nix/rtlsdr.nix;
   "rtnetlink" = import ./nix/rtnetlink.nix;
@@ -16420,6 +16421,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "stream-monad" = import ./nix/stream-monad.nix;
   "streamdeck" = import ./nix/streamdeck.nix;
   "streamed" = import ./nix/streamed.nix;
+  "streamgraph" = import ./nix/streamgraph.nix;
   "streaming" = import ./nix/streaming.nix;
   "streaming-attoparsec" = import ./nix/streaming-attoparsec.nix;
   "streaming-base64" = import ./nix/streaming-base64.nix;
