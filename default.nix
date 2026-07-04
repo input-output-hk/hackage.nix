@@ -2541,6 +2541,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "baikai" = import ./nix/baikai.nix;
   "baikai-claude" = import ./nix/baikai-claude.nix;
   "baikai-effectful" = import ./nix/baikai-effectful.nix;
+  "baikai-kit" = import ./nix/baikai-kit.nix;
   "baikai-openai" = import ./nix/baikai-openai.nix;
   "baikai-trace-otel" = import ./nix/baikai-trace-otel.nix;
   "bake" = import ./nix/bake.nix;
@@ -9351,10 +9352,23 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hybrid" = import ./nix/hybrid.nix;
   "hybrid-vectors" = import ./nix/hybrid-vectors.nix;
   "hydra" = import ./nix/hydra.nix;
+  "hydra-bench" = import ./nix/hydra-bench.nix;
+  "hydra-coq" = import ./nix/hydra-coq.nix;
+  "hydra-ext" = import ./nix/hydra-ext.nix;
+  "hydra-go" = import ./nix/hydra-go.nix;
   "hydra-haskell" = import ./nix/hydra-haskell.nix;
   "hydra-hs" = import ./nix/hydra-hs.nix;
+  "hydra-java" = import ./nix/hydra-java.nix;
+  "hydra-jvm" = import ./nix/hydra-jvm.nix;
   "hydra-kernel" = import ./nix/hydra-kernel.nix;
+  "hydra-lisp" = import ./nix/hydra-lisp.nix;
+  "hydra-pg" = import ./nix/hydra-pg.nix;
   "hydra-print" = import ./nix/hydra-print.nix;
+  "hydra-python" = import ./nix/hydra-python.nix;
+  "hydra-rdf" = import ./nix/hydra-rdf.nix;
+  "hydra-scala" = import ./nix/hydra-scala.nix;
+  "hydra-typescript" = import ./nix/hydra-typescript.nix;
+  "hydra-wasm" = import ./nix/hydra-wasm.nix;
   "hydrogen" = import ./nix/hydrogen.nix;
   "hydrogen-cli" = import ./nix/hydrogen-cli.nix;
   "hydrogen-cli-args" = import ./nix/hydrogen-cli-args.nix;
@@ -9432,6 +9446,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "idn" = import ./nix/idn.nix;
   "idna" = import ./nix/idna.nix;
   "idna2008" = import ./nix/idna2008.nix;
+  "idnaparse" = import ./nix/idnaparse.nix;
   "idringen" = import ./nix/idringen.nix;
   "idris" = import ./nix/idris.nix;
   "ieee" = import ./nix/ieee.nix;
@@ -15001,6 +15016,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "secp256k1-legacy" = import ./nix/secp256k1-legacy.nix;
   "secret-santa" = import ./nix/secret-santa.nix;
   "secret-sharing" = import ./nix/secret-sharing.nix;
+  "secretspec" = import ./nix/secretspec.nix;
   "secrm" = import ./nix/secrm.nix;
   "secure-memory" = import ./nix/secure-memory.nix;
   "secure-sockets" = import ./nix/secure-sockets.nix;

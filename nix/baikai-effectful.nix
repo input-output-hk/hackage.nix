@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "889cb6642db09a46003c54fca19d5611fb518b3fda6be463ee8486bbec73e88c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/baikai-effectful-0.3.0.0-r0-5e3b55b8d3bc4a39dd4529083dc7033b8d420cef4c9afda7e14aa4229bbfcc93.nix;
+        revNum = 0;
+        sha256 = "5e3b55b8d3bc4a39dd4529083dc7033b8d420cef4c9afda7e14aa4229bbfcc93";
+      };
+      default = "r0";
+    };
+  };
 }
