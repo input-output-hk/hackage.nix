@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "4.1.0" = {
+    sha256 = "797e8d473941f0ea9ecf8aab67ff0673e79c455f50043104dbaee0efd33c447a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openapi-hs-4.1.0-r0-ea2bd0078b43ca4902bcce57c949e925057cd3d6e83ed18fa847f741c407ad6c.nix;
+        revNum = 0;
+        sha256 = "ea2bd0078b43ca4902bcce57c949e925057cd3d6e83ed18fa847f741c407ad6c";
+      };
+      default = "r0";
+    };
+  };
 }

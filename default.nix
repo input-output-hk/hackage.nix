@@ -4388,6 +4388,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "crypto-rng-effectful" = import ./nix/crypto-rng-effectful.nix;
   "crypto-simple" = import ./nix/crypto-simple.nix;
   "crypto-sodium" = import ./nix/crypto-sodium.nix;
+  "crypto-srp" = import ./nix/crypto-srp.nix;
   "crypto-token" = import ./nix/crypto-token.nix;
   "crypto-totp" = import ./nix/crypto-totp.nix;
   "cryptocipher" = import ./nix/cryptocipher.nix;
