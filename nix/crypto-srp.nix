@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "dc388c2e28b6d514989ea8df192b97bf3de846eb1d86cf1c1e81261402bd404d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypto-srp-0.1.0.1-r0-162f37f5a45932f7d41925015529261dff14a63412e7d7727b81738f7c1d9ce3.nix;
+        revNum = 0;
+        sha256 = "162f37f5a45932f7d41925015529261dff14a63412e7d7727b81738f7c1d9ce3";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -11232,6 +11232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "memfd" = import ./nix/memfd.nix;
   "meminfo" = import ./nix/meminfo.nix;
   "memis" = import ./nix/memis.nix;
+  "memo-io" = import ./nix/memo-io.nix;
   "memo-map" = import ./nix/memo-map.nix;
   "memo-ptr" = import ./nix/memo-ptr.nix;
   "memo-sqlite" = import ./nix/memo-sqlite.nix;
@@ -11418,6 +11419,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mkbndl" = import ./nix/mkbndl.nix;
   "mkcabal" = import ./nix/mkcabal.nix;
   "ml-w" = import ./nix/ml-w.nix;
+  "mldsa" = import ./nix/mldsa.nix;
   "mlist" = import ./nix/mlist.nix;
   "mlkem" = import ./nix/mlkem.nix;
   "mltool" = import ./nix/mltool.nix;
@@ -17642,6 +17644,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tuple" = import ./nix/tuple.nix;
   "tuple-append" = import ./nix/tuple-append.nix;
   "tuple-append-instances" = import ./nix/tuple-append-instances.nix;
+  "tuple-classes" = import ./nix/tuple-classes.nix;
   "tuple-fields" = import ./nix/tuple-fields.nix;
   "tuple-gen" = import ./nix/tuple-gen.nix;
   "tuple-generic" = import ./nix/tuple-generic.nix;
