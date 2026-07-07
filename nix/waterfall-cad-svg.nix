@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.6.3.0" = {
+    sha256 = "44b8e8ac6fa399d46e1b351c1164ed98d8dffb521183f042ad50fe9d55dcaf17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/waterfall-cad-svg-0.6.3.0-r0-eacbf1966e585b985c13c5dcc7c597dedf261d42d835da7cb374f971ddfe6292.nix;
+        revNum = 0;
+        sha256 = "eacbf1966e585b985c13c5dcc7c597dedf261d42d835da7cb374f971ddfe6292";
+      };
+      default = "r0";
+    };
+  };
 }

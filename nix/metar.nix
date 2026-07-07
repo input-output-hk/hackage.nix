@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.0.4" = {
+    sha256 = "1cb00252a1df1c370fa87e0385e6122381e61b9048f69a5cc21a9caaf77dd0a2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/metar-0.0.4-r0-f28d52bd28397987a4a6357e74f05bfb4969a2d5316e59cd06e1d1ff0d8eb0e2.nix;
+        revNum = 0;
+        sha256 = "f28d52bd28397987a4a6357e74f05bfb4969a2d5316e59cd06e1d1ff0d8eb0e2";
+      };
+      default = "r0";
+    };
+  };
 }

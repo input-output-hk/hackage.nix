@@ -4722,6 +4722,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "datarobot" = import ./nix/datarobot.nix;
   "datasets" = import ./nix/datasets.nix;
   "datastar-hs" = import ./nix/datastar-hs.nix;
+  "datastar-hs-brotli" = import ./nix/datastar-hs-brotli.nix;
+  "datastar-hs-zlib" = import ./nix/datastar-hs-zlib.nix;
   "dataurl" = import ./nix/dataurl.nix;
   "date-cache" = import ./nix/date-cache.nix;
   "date-conversions" = import ./nix/date-conversions.nix;
@@ -9152,6 +9154,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-client-auth" = import ./nix/http-client-auth.nix;
   "http-client-brread-timeout" = import ./nix/http-client-brread-timeout.nix;
   "http-client-conduit" = import ./nix/http-client-conduit.nix;
+  "http-client-effectful" = import ./nix/http-client-effectful.nix;
   "http-client-extra" = import ./nix/http-client-extra.nix;
   "http-client-lens" = import ./nix/http-client-lens.nix;
   "http-client-multipart" = import ./nix/http-client-multipart.nix;
@@ -10347,6 +10350,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "language-lua" = import ./nix/language-lua.nix;
   "language-lua-qq" = import ./nix/language-lua-qq.nix;
   "language-lua2" = import ./nix/language-lua2.nix;
+  "language-lustre" = import ./nix/language-lustre.nix;
   "language-mixal" = import ./nix/language-mixal.nix;
   "language-ninja" = import ./nix/language-ninja.nix;
   "language-nix" = import ./nix/language-nix.nix;
@@ -18352,6 +18356,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "void" = import ./nix/void.nix;
   "vorbiscomment" = import ./nix/vorbiscomment.nix;
   "vowpal-utils" = import ./nix/vowpal-utils.nix;
+  "voxgig-struct" = import ./nix/voxgig-struct.nix;
   "voyeur" = import ./nix/voyeur.nix;
   "vp-tree" = import ./nix/vp-tree.nix;
   "vpn-router" = import ./nix/vpn-router.nix;
