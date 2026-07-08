@@ -9213,6 +9213,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http-wget" = import ./nix/http-wget.nix;
   "http2" = import ./nix/http2.nix;
   "http2-client" = import ./nix/http2-client.nix;
+  "http2-client-effectful" = import ./nix/http2-client-effectful.nix;
   "http2-client-exe" = import ./nix/http2-client-exe.nix;
   "http2-client-grpc" = import ./nix/http2-client-grpc.nix;
   "http2-grpc-proto-lens" = import ./nix/http2-grpc-proto-lens.nix;
@@ -10646,6 +10647,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lighttpd-conf-qq" = import ./nix/lighttpd-conf-qq.nix;
   "lilypond" = import ./nix/lilypond.nix;
   "lima" = import ./nix/lima.nix;
+  "limcalc" = import ./nix/limcalc.nix;
   "limp" = import ./nix/limp.nix;
   "limp-cbc" = import ./nix/limp-cbc.nix;
   "lin-alg" = import ./nix/lin-alg.nix;
