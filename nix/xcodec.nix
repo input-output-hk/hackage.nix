@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "49164f5087f386fb0ac216f2e922e75b9d33ffb12baeb9840322528167cc738f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/xcodec-1.1.0.0-r0-750ca27746e0a097e881c91db3b31d277ef6fc6bb05a8b38c08d439bdfc10be1.nix;
+        revNum = 0;
+        sha256 = "750ca27746e0a097e881c91db3b31d277ef6fc6bb05a8b38c08d439bdfc10be1";
+      };
+      default = "r0";
+    };
+  };
 }

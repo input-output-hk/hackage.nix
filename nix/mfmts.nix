@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "6e0b0719993a2683c8fa97429f06078c01a2f51a27b60e1906672dfb8979b93c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/mfmts-1.1.0.0-r1-4cae248f7de08fe89f3d7fce5fa9d104c25fd1ae35eb8717f15cde9c491a1687.nix;
+        revNum = 1;
+        sha256 = "4cae248f7de08fe89f3d7fce5fa9d104c25fd1ae35eb8717f15cde9c491a1687";
+      };
+      default = "r1";
     };
   };
 }

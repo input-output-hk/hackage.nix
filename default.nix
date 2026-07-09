@@ -6449,6 +6449,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "futhark-manifest" = import ./nix/futhark-manifest.nix;
   "futhark-server" = import ./nix/futhark-server.nix;
   "futhask" = import ./nix/futhask.nix;
+  "futhask-base" = import ./nix/futhask-base.nix;
   "futun" = import ./nix/futun.nix;
   "future" = import ./nix/future.nix;
   "future-resource" = import ./nix/future-resource.nix;

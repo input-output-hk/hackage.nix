@@ -48,4 +48,15 @@
       default = "r1";
     };
   };
+  "0.2.2" = {
+    sha256 = "6f36d4371ef94e354fb97d6fc94440de3b4e188a79326dbb0113088289ea53dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/regression-simple-0.2.2-r0-4ccfd4fe38808be448843f4ea8f12652729ff5cad409c882c30acd1463a8fd4f.nix;
+        revNum = 0;
+        sha256 = "4ccfd4fe38808be448843f4ea8f12652729ff5cad409c882c30acd1463a8fd4f";
+      };
+      default = "r0";
+    };
+  };
 }

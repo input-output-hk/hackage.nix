@@ -58,4 +58,15 @@
       default = "r1";
     };
   };
+  "1.0" = {
+    sha256 = "67579ed3d07dc61592d5c5b89a09e82629df30110eb3276e602ced498fa2686f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/openpgp-asciiarmor-1.0-r0-6a7f142cb38b961555ce7211d280e6c0a626aa5cd1cee4175bd7075268e0d39c.nix;
+        revNum = 0;
+        sha256 = "6a7f142cb38b961555ce7211d280e6c0a626aa5cd1cee4175bd7075268e0d39c";
+      };
+      default = "r0";
+    };
+  };
 }

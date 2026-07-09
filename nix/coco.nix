@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.0.1" = {
+    sha256 = "1322d4c55c07b776e9cc39f00a0ff5cf7fb21bf5973b54115434d5cc25b69138";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coco-1.0.1-r0-704e7386b2bdf3345859244c0cb9ec405e3168fe9f4def5f0b230536088ba844.nix;
+        revNum = 0;
+        sha256 = "704e7386b2bdf3345859244c0cb9ec405e3168fe9f4def5f0b230536088ba844";
+      };
+      default = "r0";
+    };
+  };
 }
