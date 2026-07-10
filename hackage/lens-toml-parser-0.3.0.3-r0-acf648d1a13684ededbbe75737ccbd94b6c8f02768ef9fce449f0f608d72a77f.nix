@@ -1,0 +1,52 @@
+{ system
+  , compiler
+  , flags
+  , pkgs
+  , hsPkgs
+  , pkgconfPkgs
+  , errorHandler
+  , config
+  , ... }:
+  {
+    flags = {};
+    package = {
+      specVersion = "2.4";
+      identifier = { name = "lens-toml-parser"; version = "0.3.0.3"; };
+      license = "ISC";
+      copyright = "Copyright (c) 2017-2026, Henry Till";
+      maintainer = "henrytill@gmail.com";
+      author = "Henry Till";
+      homepage = "https://github.com/henrytill/lens-toml-parser";
+      url = "";
+      synopsis = "Lenses for toml-parser";
+      description = "This library provides lenses for toml-parser.";
+      buildType = "Simple";
+    };
+    components = {
+      "library" = {
+        depends = [
+          (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."profunctors" or (errorHandler.buildDepError "profunctors"))
+          (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
+        ];
+        buildable = true;
+      };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."dwergaz" or (errorHandler.buildDepError "dwergaz"))
+            (hsPkgs."microlens" or (errorHandler.buildDepError "microlens"))
+            (hsPkgs."microlens-ghc" or (errorHandler.buildDepError "microlens-ghc"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            (hsPkgs."toml-parser" or (errorHandler.buildDepError "toml-parser"))
+            (hsPkgs."lens-toml-parser" or (errorHandler.buildDepError "lens-toml-parser"))
+          ];
+          buildable = true;
+        };
+      };
+    };
+  }

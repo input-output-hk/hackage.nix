@@ -108,4 +108,26 @@
       default = "r2";
     };
   };
+  "0.7" = {
+    sha256 = "310828e666f88329777c0874850125a4b02af15036ba92a91910a407dbb111f5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/synthesizer-midi-0.7-r0-f9e5d6b2dd049eea8b840d36dc43731570a42e0e21f833f70412066c4012d2f1.nix;
+        revNum = 0;
+        sha256 = "f9e5d6b2dd049eea8b840d36dc43731570a42e0e21f833f70412066c4012d2f1";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.0.1" = {
+    sha256 = "2de59d0a7e9fc8142734e78e242b3ddf8300dd1b3d08399f2f0671c670e225fe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/synthesizer-midi-0.7.0.1-r0-50a1e806d61af24a8604a90709ad5d8b1bb210e8416506a21feb64cd59bad4e5.nix;
+        revNum = 0;
+        sha256 = "50a1e806d61af24a8604a90709ad5d8b1bb210e8416506a21feb64cd59bad4e5";
+      };
+      default = "r0";
+    };
+  };
 }

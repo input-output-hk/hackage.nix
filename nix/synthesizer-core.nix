@@ -386,4 +386,15 @@
       default = "r0";
     };
   };
+  "0.9.0.1" = {
+    sha256 = "8db3a8ebe24ce15873b16ffe0fd64da8ac6a75e888a7b53f7d76fde1044149d8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/synthesizer-core-0.9.0.1-r0-51ad09bc5e1d7819ef4ba96bc4d2352bc7696ad6bd906fbf88c92d5723932f12.nix;
+        revNum = 0;
+        sha256 = "51ad09bc5e1d7819ef4ba96bc4d2352bc7696ad6bd906fbf88c92d5723932f12";
+      };
+      default = "r0";
+    };
+  };
 }

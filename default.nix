@@ -9217,6 +9217,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "http2-client-effectful" = import ./nix/http2-client-effectful.nix;
   "http2-client-exe" = import ./nix/http2-client-exe.nix;
   "http2-client-grpc" = import ./nix/http2-client-grpc.nix;
+  "http2-client-grpc-effectful" = import ./nix/http2-client-grpc-effectful.nix;
   "http2-grpc-proto-lens" = import ./nix/http2-grpc-proto-lens.nix;
   "http2-grpc-proto3-wire" = import ./nix/http2-grpc-proto3-wire.nix;
   "http2-grpc-types" = import ./nix/http2-grpc-types.nix;
@@ -9766,6 +9767,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ipfs" = import ./nix/ipfs.nix;
   "ipfs-api" = import ./nix/ipfs-api.nix;
   "ipld-cid" = import ./nix/ipld-cid.nix;
+  "ipldm" = import ./nix/ipldm.nix;
   "ipopt-hs" = import ./nix/ipopt-hs.nix;
   "ipprint" = import ./nix/ipprint.nix;
   "iproute" = import ./nix/iproute.nix;

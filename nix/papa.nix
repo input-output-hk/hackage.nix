@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.5.0" = {
+    sha256 = "a0d884df77df669e130fc570649e20dd46b8ee22f3c8b07fd978c27837e1aa16";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/papa-0.5.0-r0-30a7997347ea4c5009fbc3a8de3a5015c079b7ca361d71b470d4b2979d038467.nix;
+        revNum = 0;
+        sha256 = "30a7997347ea4c5009fbc3a8de3a5015c079b7ca361d71b470d4b2979d038467";
+      };
+      default = "r0";
+    };
+  };
 }
