@@ -1,0 +1,13 @@
+{
+  "1.0.0.0" = {
+    sha256 = "c51757637806576876216b036a9eb3e2a13b17c42175756d0c055e99d7694c00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-migrate-import-hasql-migration-1.0.0.0-r0-b463d3bed13eab3a1d84237a243ef608638018e8f5091da9f3e8f061862ac4e5.nix;
+        revNum = 0;
+        sha256 = "b463d3bed13eab3a1d84237a243ef608638018e8f5091da9f3e8f061862ac4e5";
+      };
+      default = "r0";
+    };
+  };
+}

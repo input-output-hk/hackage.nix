@@ -4132,6 +4132,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "constrained-categories" = import ./nix/constrained-categories.nix;
   "constrained-category" = import ./nix/constrained-category.nix;
   "constrained-dynamic" = import ./nix/constrained-dynamic.nix;
+  "constrained-generators" = import ./nix/constrained-generators.nix;
   "constrained-monads" = import ./nix/constrained-monads.nix;
   "constrained-normal" = import ./nix/constrained-normal.nix;
   "constrained-platform-instances" = import ./nix/constrained-platform-instances.nix;
@@ -9003,6 +9004,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hspec-dirstream" = import ./nix/hspec-dirstream.nix;
   "hspec-discover" = import ./nix/hspec-discover.nix;
   "hspec-discover-discover" = import ./nix/hspec-discover-discover.nix;
+  "hspec-effectful" = import ./nix/hspec-effectful.nix;
+  "hspec-effectful-discover" = import ./nix/hspec-effectful-discover.nix;
   "hspec-expectations" = import ./nix/hspec-expectations.nix;
   "hspec-expectations-json" = import ./nix/hspec-expectations-json.nix;
   "hspec-expectations-lens" = import ./nix/hspec-expectations-lens.nix;
@@ -9249,6 +9252,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hums" = import ./nix/hums.nix;
   "hunch" = import ./nix/hunch.nix;
   "hunit-dejafu" = import ./nix/hunit-dejafu.nix;
+  "hunit-effectful" = import ./nix/hunit-effectful.nix;
   "hunit-gui" = import ./nix/hunit-gui.nix;
   "hunit-parsec" = import ./nix/hunit-parsec.nix;
   "hunit-rematch" = import ./nix/hunit-rematch.nix;
@@ -13026,6 +13030,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pg-harness" = import ./nix/pg-harness.nix;
   "pg-harness-client" = import ./nix/pg-harness-client.nix;
   "pg-harness-server" = import ./nix/pg-harness-server.nix;
+  "pg-migrate" = import ./nix/pg-migrate.nix;
+  "pg-migrate-cli" = import ./nix/pg-migrate-cli.nix;
+  "pg-migrate-embed" = import ./nix/pg-migrate-embed.nix;
+  "pg-migrate-import-codd" = import ./nix/pg-migrate-import-codd.nix;
+  "pg-migrate-import-hasql-migration" = import ./nix/pg-migrate-import-hasql-migration.nix;
+  "pg-migrate-test-support" = import ./nix/pg-migrate-test-support.nix;
   "pg-query" = import ./nix/pg-query.nix;
   "pg-recorder" = import ./nix/pg-recorder.nix;
   "pg-schema" = import ./nix/pg-schema.nix;
