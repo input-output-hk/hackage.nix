@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "1.2.8" = {
+    sha256 = "6b61f7e3d77e060f19a2fe35daa3409167ca2b3f166f003f644d58b8ebbf8afc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-posix-1.2.8-r0-4b1457bc54ab8f3050e568181b6fe55adabbcef8df1f1cb683b139c2700205bb.nix;
+        revNum = 0;
+        sha256 = "4b1457bc54ab8f3050e568181b6fe55adabbcef8df1f1cb683b139c2700205bb";
+      };
+      default = "r0";
+    };
+  };
 }

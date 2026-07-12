@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.3" = {
+    sha256 = "57c3fd937120f2d9bcc6e5e8ddb833b0c54a50b9ceaba877a073514b2141b702";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-hdf5-0.1.3-r0-854fe55365d36ad9e39fb79f2b1945d98d8290a0b2683ad26acf59516027d8de.nix;
+        revNum = 0;
+        sha256 = "854fe55365d36ad9e39fb79f2b1945d98d8290a0b2683ad26acf59516027d8de";
+      };
+      default = "r0";
+    };
+  };
 }

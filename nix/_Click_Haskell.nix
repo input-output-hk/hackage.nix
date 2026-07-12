@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "c00dc1b4b95457e6f6ef61643a8dc547355628b9cb98c37d68f0d29fc42df9f7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ClickHaskell-1.1.0-r0-8caced909e7bb007ded70bd3730bc30e49cf0d0b082dffb3a86a2c5c978eab87.nix;
+        revNum = 0;
+        sha256 = "8caced909e7bb007ded70bd3730bc30e49cf0d0b082dffb3a86a2c5c978eab87";
+      };
+      default = "r0";
+    };
+  };
 }

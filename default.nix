@@ -10791,6 +10791,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ll-picosat" = import ./nix/ll-picosat.nix;
   "llama-cpp-haskell" = import ./nix/llama-cpp-haskell.nix;
   "llama-cpp-hs" = import ./nix/llama-cpp-hs.nix;
+  "llm-simple" = import ./nix/llm-simple.nix;
   "llm-with-context" = import ./nix/llm-with-context.nix;
   "llrbtree" = import ./nix/llrbtree.nix;
   "llsd" = import ./nix/llsd.nix;

@@ -46,4 +46,15 @@
       default = "r3";
     };
   };
+  "0.0.0.2" = {
+    sha256 = "23fbe597076b31282d186aa81d22c376c87c5fcdda63c1c0bee57ff0438d57e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/align-audio-0.0.0.2-r0-4199f568e1509ec91e3a5ea3beb04627c41c5e2d148ba1f84a8bc682e4d54bc3.nix;
+        revNum = 0;
+        sha256 = "4199f568e1509ec91e3a5ea3beb04627c41c5e2d148ba1f84a8bc682e4d54bc3";
+      };
+      default = "r0";
+    };
+  };
 }

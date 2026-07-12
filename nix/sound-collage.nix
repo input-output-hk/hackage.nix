@@ -90,4 +90,15 @@
       default = "r5";
     };
   };
+  "0.2.1.1" = {
+    sha256 = "0fe481156ffbef9422e07131734b0345af4429212cffb9ad7b20f8aa4df467cd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sound-collage-0.2.1.1-r0-1221478e37beec5dc0b4dcb238790613d30a4f17bb7849e0da60880bbfe6cf3c.nix;
+        revNum = 0;
+        sha256 = "1221478e37beec5dc0b4dcb238790613d30a4f17bb7849e0da60880bbfe6cf3c";
+      };
+      default = "r0";
+    };
+  };
 }

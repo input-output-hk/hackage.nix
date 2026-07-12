@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1" = {
+    sha256 = "1ae07911537d304a643a7d73d87baf3f10a9a2caee823ee80fd24e69c3c9e8af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-libcddb-0.3.1-r0-e3992befe99c31191e9617f32ad8a80ff1386b7bca60f75a0596e8d4967e6c03.nix;
+        revNum = 0;
+        sha256 = "e3992befe99c31191e9617f32ad8a80ff1386b7bca60f75a0596e8d4967e6c03";
+      };
+      default = "r0";
+    };
+  };
 }

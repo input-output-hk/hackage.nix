@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.2" = {
+    sha256 = "100b2025e4981036ac170703357e2413ac60078a06c464137d13e7647d9dfb5e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-gsl-0.2.2-r0-e8c4e3565f6e0115c5a8f22846f8927d52c3f8215bd5581406e36e627f4cc200.nix;
+        revNum = 0;
+        sha256 = "e8c4e3565f6e0115c5a8f22846f8927d52c3f8215bd5581406e36e627f4cc200";
+      };
+      default = "r0";
+    };
+  };
 }

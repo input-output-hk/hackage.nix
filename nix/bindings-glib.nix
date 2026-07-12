@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.1.7" = {
+    sha256 = "963536679e7c134ac0692cf46e9f6c22759537d3b6c135c26e274186f287a60e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-glib-0.1.7-r0-1783e8582721151637f21132d19cdf41c98eed3239f82e88952014aeff6a99c3.nix;
+        revNum = 0;
+        sha256 = "1783e8582721151637f21132d19cdf41c98eed3239f82e88952014aeff6a99c3";
+      };
+      default = "r0";
+    };
+  };
 }

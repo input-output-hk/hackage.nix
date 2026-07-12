@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "dc6dc74a79e11cc68c203d8d51fe066db064e9f131081b91dbb96ea401d1dc56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-directfb-0.2.1-r0-a2665c3fcac76ff240dde07b0a1d874dfd889019c9122d49cb925b85065c1de3.nix;
+        revNum = 0;
+        sha256 = "a2665c3fcac76ff240dde07b0a1d874dfd889019c9122d49cb925b85065c1de3";
+      };
+      default = "r0";
+    };
+  };
 }

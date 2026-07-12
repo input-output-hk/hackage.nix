@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.0.5" = {
+    sha256 = "3eb5ebaa6b15a99d56b6eef28a6d14365cf816523eaebf3624a81f09102bcefb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bindings-sqlite3-1.0.5-r0-135004d7857178603e88a2ebd75078362a268314a853f6d0f01751250fbc286b.nix;
+        revNum = 0;
+        sha256 = "135004d7857178603e88a2ebd75078362a268314a853f6d0f01751250fbc286b";
+      };
+      default = "r0";
+    };
+  };
 }
