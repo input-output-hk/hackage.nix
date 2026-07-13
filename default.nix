@@ -13052,6 +13052,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pgmq-hasql" = import ./nix/pgmq-hasql.nix;
   "pgmq-migration" = import ./nix/pgmq-migration.nix;
   "pgp-wordlist" = import ./nix/pgp-wordlist.nix;
+  "pgqueuer-hs" = import ./nix/pgqueuer-hs.nix;
   "pgrep" = import ./nix/pgrep.nix;
   "pgsql-simple" = import ./nix/pgsql-simple.nix;
   "pgstream" = import ./nix/pgstream.nix;

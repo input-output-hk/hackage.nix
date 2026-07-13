@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.14.0" = {
+    sha256 = "107658189ccceb7e13c520842284868da1e2d85e516daa0a5be41c7961ce0349";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlstar-0.1.14.0-r0-b138650de1b9c11fef8b40d7dd05f6f40732ac624714997c4e274865c5559b9f.nix;
+        revNum = 0;
+        sha256 = "b138650de1b9c11fef8b40d7dd05f6f40732ac624714997c4e274865c5559b9f";
+      };
+      default = "r0";
+    };
+  };
 }

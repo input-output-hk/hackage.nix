@@ -37,4 +37,15 @@
       default = "r0";
     };
   };
+  "0.0.2" = {
+    sha256 = "cd7c1f74de885394c2ebdc4f89287f025a2e09879a6c8c838ba12c0a6ac22a7c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/llvm-ffi-tools-0.0.2-r0-f63edf83f912e8677c4d8ba3ac6c3b88d4e839c92559b6ef48d23ee03529d477.nix;
+        revNum = 0;
+        sha256 = "f63edf83f912e8677c4d8ba3ac6c3b88d4e839c92559b6ef48d23ee03529d477";
+      };
+      default = "r0";
+    };
+  };
 }

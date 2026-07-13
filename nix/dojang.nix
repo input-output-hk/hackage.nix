@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.1" = {
+    sha256 = "3139eb27357ca7c1eb55e49f5725b5be968ba76b9506a9651cb34ba36cdec421";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dojang-0.2.1-r0-6ef8e30f42e799024b134fa4910b6269ea50e0fc085c47e9b1d61e126b8e41f0.nix;
+        revNum = 0;
+        sha256 = "6ef8e30f42e799024b134fa4910b6269ea50e0fc085c47e9b1d61e126b8e41f0";
+      };
+      default = "r0";
+    };
+  };
 }
