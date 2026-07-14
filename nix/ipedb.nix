@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "7b6ed51cb44bb0691f597f598b15233111dc7979b218b7c2dcc91abee44291c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ipedb-0.2.0.0-r0-5a00908f676dded12831d8a84d9fb7acddad7c7d37480bb117b3b581c58487ec.nix;
+        revNum = 0;
+        sha256 = "5a00908f676dded12831d8a84d9fb7acddad7c7d37480bb117b3b581c58487ec";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "ea06e952712da164e5418e1f1476b724a6f38b1c532eca61def71c16e6d71a6d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/canvhs-0.2.1.0-r0-03e5cbf40c5ee99866b1e9725daf0198e0888da1fbc3865d03de3b942345d5f3.nix;
+        revNum = 0;
+        sha256 = "03e5cbf40c5ee99866b1e9725daf0198e0888da1fbc3865d03de3b942345d5f3";
+      };
+      default = "r0";
+    };
+  };
 }

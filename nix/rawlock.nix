@@ -44,7 +44,12 @@
         revNum = 1;
         sha256 = "293e0590ac6f7a0a2793ce590e68b368ab9e8adc45388b26268e4a680df40636";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/rawlock-0.1.2.0-r2-7c7425df4c04470b3a7f6e9cb141cafb606aafa43a098f35ee8bd02ae257b11c.nix;
+        revNum = 2;
+        sha256 = "7c7425df4c04470b3a7f6e9cb141cafb606aafa43a098f35ee8bd02ae257b11c";
+      };
+      default = "r2";
     };
   };
 }

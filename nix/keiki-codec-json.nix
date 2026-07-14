@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "566b5e7975f1416428183231ccc8e2c198786722f73060431e319c856ef6857a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiki-codec-json-0.2.0.0-r0-3506be9a91a008cc4391de23d85f79fd2932b9308584d451a13519d44f4ec643.nix;
+        revNum = 0;
+        sha256 = "3506be9a91a008cc4391de23d85f79fd2932b9308584d451a13519d44f4ec643";
+      };
+      default = "r0";
+    };
+  };
 }

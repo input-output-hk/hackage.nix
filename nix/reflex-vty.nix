@@ -358,4 +358,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "9fdf930bb1b61c47639c85fb01583f98645241f81ec93e0e5ed6ded23a07e039";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/reflex-vty-1.2.0.0-r0-4ba8fc65c7df7673f1daad4aacc0375553353e3f4a50d044700fc4d0a1f863f6.nix;
+        revNum = 0;
+        sha256 = "4ba8fc65c7df7673f1daad4aacc0375553353e3f4a50d044700fc4d0a1f863f6";
+      };
+      default = "r0";
+    };
+  };
 }

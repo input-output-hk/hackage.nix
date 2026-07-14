@@ -4705,6 +4705,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dataframe-core" = import ./nix/dataframe-core.nix;
   "dataframe-csv" = import ./nix/dataframe-csv.nix;
   "dataframe-csv-th" = import ./nix/dataframe-csv-th.nix;
+  "dataframe-expr-serializer" = import ./nix/dataframe-expr-serializer.nix;
   "dataframe-fastcsv" = import ./nix/dataframe-fastcsv.nix;
   "dataframe-hasktorch" = import ./nix/dataframe-hasktorch.nix;
   "dataframe-huggingface" = import ./nix/dataframe-huggingface.nix;

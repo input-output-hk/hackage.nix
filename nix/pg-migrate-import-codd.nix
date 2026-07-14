@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "95034070deff11b0cda8161b73a74b0966b2f519ef24bfa474924712be07c8ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-migrate-import-codd-1.1.0.0-r0-02a6e505486b28b850bf2406d4e2027116a84cc46a9b766fc3711a8815327131.nix;
+        revNum = 0;
+        sha256 = "02a6e505486b28b850bf2406d4e2027116a84cc46a9b766fc3711a8815327131";
+      };
+      default = "r0";
+    };
+  };
 }
