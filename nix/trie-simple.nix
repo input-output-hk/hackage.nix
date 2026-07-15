@@ -113,4 +113,15 @@
       default = "r2";
     };
   };
+  "0.4.5" = {
+    sha256 = "52060aefee8bed7253b2b98dd75b75b245c0e51207d362652f1029a2c36b8b96";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/trie-simple-0.4.5-r0-4b45923316fe41d903878b2bf42499789fd8a0da629f286012dd20efce0c773b.nix;
+        revNum = 0;
+        sha256 = "4b45923316fe41d903878b2bf42499789fd8a0da629f286012dd20efce0c773b";
+      };
+      default = "r0";
+    };
+  };
 }

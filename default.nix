@@ -10148,6 +10148,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keiki-codec-json" = import ./nix/keiki-codec-json.nix;
   "keiki-codec-json-test" = import ./nix/keiki-codec-json-test.nix;
   "keiretsu" = import ./nix/keiretsu.nix;
+  "keiro" = import ./nix/keiro.nix;
+  "keiro-core" = import ./nix/keiro-core.nix;
+  "keiro-dsl" = import ./nix/keiro-dsl.nix;
+  "keiro-migrations" = import ./nix/keiro-migrations.nix;
+  "keiro-pgmq" = import ./nix/keiro-pgmq.nix;
   "kempe" = import ./nix/kempe.nix;
   "kerry" = import ./nix/kerry.nix;
   "kesha" = import ./nix/kesha.nix;
@@ -10192,6 +10197,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kind-rational" = import ./nix/kind-rational.nix;
   "kindly-functors" = import ./nix/kindly-functors.nix;
   "kinds" = import ./nix/kinds.nix;
+  "kioku-api" = import ./nix/kioku-api.nix;
+  "kioku-cli" = import ./nix/kioku-cli.nix;
+  "kioku-core" = import ./nix/kioku-core.nix;
+  "kioku-migrate" = import ./nix/kioku-migrate.nix;
+  "kioku-migrations" = import ./nix/kioku-migrations.nix;
   "kiroku-cli" = import ./nix/kiroku-cli.nix;
   "kiroku-metrics" = import ./nix/kiroku-metrics.nix;
   "kiroku-otel" = import ./nix/kiroku-otel.nix;
@@ -10415,6 +10425,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "latex-svg-pandoc" = import ./nix/latex-svg-pandoc.nix;
   "lathe" = import ./nix/lathe.nix;
   "lathe-time" = import ./nix/lathe-time.nix;
+  "lattest-lib" = import ./nix/lattest-lib.nix;
   "lattices" = import ./nix/lattices.nix;
   "launchdarkly-server-sdk" = import ./nix/launchdarkly-server-sdk.nix;
   "launchdarkly-server-sdk-redis-hedis" = import ./nix/launchdarkly-server-sdk-redis-hedis.nix;
@@ -11102,6 +11113,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "marching-cubes2" = import ./nix/marching-cubes2.nix;
   "marihana" = import ./nix/marihana.nix;
   "marionetta" = import ./nix/marionetta.nix;
+  "marionette" = import ./nix/marionette.nix;
+  "marionette-effectful" = import ./nix/marionette-effectful.nix;
   "markdown" = import ./nix/markdown.nix;
   "markdown-kate" = import ./nix/markdown-kate.nix;
   "markdown-pap" = import ./nix/markdown-pap.nix;

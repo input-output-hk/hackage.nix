@@ -65,4 +65,26 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "b03ab4a0f96e85ae852e357c4184778ac4b0e7440bd715ae34b5f05f1947cd05";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pgmq-migration-0.4.0.0-r0-21b165b8ce08340484754c7ff0ced71093c8b1c6c2d121c26e9952f64ad90032.nix;
+        revNum = 0;
+        sha256 = "21b165b8ce08340484754c7ff0ced71093c8b1c6c2d121c26e9952f64ad90032";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.1" = {
+    sha256 = "370e562c7d60dab5b2726c5f4beb2fe20804b3a11f0c24c67ba14b78907a5942";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pgmq-migration-0.4.0.1-r0-e6132f3a6cf2fe770306cdaf12301586d551cd8886da0bb6beac6ea281acfce0.nix;
+        revNum = 0;
+        sha256 = "e6132f3a6cf2fe770306cdaf12301586d551cd8886da0bb6beac6ea281acfce0";
+      };
+      default = "r0";
+    };
+  };
 }
