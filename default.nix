@@ -8082,6 +8082,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hax" = import ./nix/hax.nix;
   "haxl" = import ./nix/haxl.nix;
   "haxl-amazonka" = import ./nix/haxl-amazonka.nix;
+  "haxl-effectful" = import ./nix/haxl-effectful.nix;
   "haxl-facebook" = import ./nix/haxl-facebook.nix;
   "haxparse" = import ./nix/haxparse.nix;
   "haxr" = import ./nix/haxr.nix;
@@ -12183,6 +12184,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nix-eval" = import ./nix/nix-eval.nix;
   "nix-freeze-tree" = import ./nix/nix-freeze-tree.nix;
   "nix-graph" = import ./nix/nix-graph.nix;
+  "nix-lang" = import ./nix/nix-lang.nix;
+  "nix-lang-qq" = import ./nix/nix-lang-qq.nix;
   "nix-narinfo" = import ./nix/nix-narinfo.nix;
   "nix-paths" = import ./nix/nix-paths.nix;
   "nix-serve-ng" = import ./nix/nix-serve-ng.nix;
@@ -15061,6 +15064,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "secureUDP" = import ./nix/secure_U_D_P.nix;
   "securemem" = import ./nix/securemem.nix;
   "sednaDBXML" = import ./nix/sedna_D_B_X_M_L.nix;
+  "seihou-cli" = import ./nix/seihou-cli.nix;
+  "seihou-core" = import ./nix/seihou-core.nix;
+  "seihou-okf-extension" = import ./nix/seihou-okf-extension.nix;
   "seitz-symbol" = import ./nix/seitz-symbol.nix;
   "sel" = import ./nix/sel.nix;
   "selda" = import ./nix/selda.nix;
