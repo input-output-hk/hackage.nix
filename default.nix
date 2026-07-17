@@ -9366,6 +9366,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hybrid-vectors" = import ./nix/hybrid-vectors.nix;
   "hydra" = import ./nix/hydra.nix;
   "hydra-bench" = import ./nix/hydra-bench.nix;
+  "hydra-build" = import ./nix/hydra-build.nix;
   "hydra-coq" = import ./nix/hydra-coq.nix;
   "hydra-ext" = import ./nix/hydra-ext.nix;
   "hydra-go" = import ./nix/hydra-go.nix;
@@ -14472,6 +14473,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "relational-record-examples" = import ./nix/relational-record-examples.nix;
   "relational-schemas" = import ./nix/relational-schemas.nix;
   "relative-date" = import ./nix/relative-date.nix;
+  "relay-pagination" = import ./nix/relay-pagination.nix;
+  "relay-pagination-conformance" = import ./nix/relay-pagination-conformance.nix;
+  "relay-pagination-hasql" = import ./nix/relay-pagination-hasql.nix;
+  "relay-pagination-servant" = import ./nix/relay-pagination-servant.nix;
   "releaser" = import ./nix/releaser.nix;
   "relevant-time" = import ./nix/relevant-time.nix;
   "reliable-io" = import ./nix/reliable-io.nix;

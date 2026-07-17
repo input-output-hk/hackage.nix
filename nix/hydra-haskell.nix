@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.17.1" = {
+    sha256 = "911cf467e038bcee03f5b5da18efc8a1c93131371522e3fa822e79a92d49e675";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-haskell-0.17.1-r0-23d4dea206c97d7b6d00db30421664244b46274885137374d155ddea2672ad2e.nix;
+        revNum = 0;
+        sha256 = "23d4dea206c97d7b6d00db30421664244b46274885137374d155ddea2672ad2e";
+      };
+      default = "r0";
+    };
+  };
 }

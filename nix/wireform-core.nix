@@ -10,4 +10,26 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "0d1b98a856609cee86823bf08aefe93d615f857f48930a967cbe615044af7869";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wireform-core-0.2.0.0-r0-ef744bf452294b999af37215afce59d4c35db195a706da6f80ecf9d442eecc76.nix;
+        revNum = 0;
+        sha256 = "ef744bf452294b999af37215afce59d4c35db195a706da6f80ecf9d442eecc76";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "50cfaf8ff2352171e96f9b9397c2c05449d1261a70f367d741c33315f0c00166";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wireform-core-0.2.0.1-r0-6732689959fe78a705e90c98f93c362a75647799ed651ecf99d59c8d579cbcd5.nix;
+        revNum = 0;
+        sha256 = "6732689959fe78a705e90c98f93c362a75647799ed651ecf99d59c8d579cbcd5";
+      };
+      default = "r0";
+    };
+  };
 }

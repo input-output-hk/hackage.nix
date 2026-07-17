@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.17.1" = {
+    sha256 = "1e078d7902b9eb03eecb26e6718b537dce3d70fc76301b99b1afca39ceb40ce5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-typescript-0.17.1-r0-2a0f0df74f2c553e2d6443316f30ebf79ec8250eece7e8d0e714102328fceb00.nix;
+        revNum = 0;
+        sha256 = "2a0f0df74f2c553e2d6443316f30ebf79ec8250eece7e8d0e714102328fceb00";
+      };
+      default = "r0";
+    };
+  };
 }

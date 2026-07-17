@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.17.1" = {
+    sha256 = "95e9933f324848a3eced331f6da769f991b62347b195b5952d6c38fd711e3cb2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-python-0.17.1-r0-255207b390fdf769eb45623925dd04b35bb8beb6b081acdb50e6a2dfa9bc9796.nix;
+        revNum = 0;
+        sha256 = "255207b390fdf769eb45623925dd04b35bb8beb6b081acdb50e6a2dfa9bc9796";
+      };
+      default = "r0";
+    };
+  };
 }
