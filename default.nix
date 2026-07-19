@@ -8332,6 +8332,17 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hgeometry-svg" = import ./nix/hgeometry-svg.nix;
   "hgeos" = import ./nix/hgeos.nix;
   "hgettext" = import ./nix/hgettext.nix;
+  "hgg" = import ./nix/hgg.nix;
+  "hgg-3d" = import ./nix/hgg-3d.nix;
+  "hgg-analyze-bridge" = import ./nix/hgg-analyze-bridge.nix;
+  "hgg-core" = import ./nix/hgg-core.nix;
+  "hgg-custom" = import ./nix/hgg-custom.nix;
+  "hgg-frame" = import ./nix/hgg-frame.nix;
+  "hgg-ihaskell" = import ./nix/hgg-ihaskell.nix;
+  "hgg-latex" = import ./nix/hgg-latex.nix;
+  "hgg-pdf" = import ./nix/hgg-pdf.nix;
+  "hgg-rasterific" = import ./nix/hgg-rasterific.nix;
+  "hgg-svg" = import ./nix/hgg-svg.nix;
   "hgis" = import ./nix/hgis.nix;
   "hgithub" = import ./nix/hgithub.nix;
   "hgl-example" = import ./nix/hgl-example.nix;
