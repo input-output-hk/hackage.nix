@@ -521,7 +521,12 @@
         revNum = 6;
         sha256 = "81fba9c7dd41029d54c4b41d31d71e997355da8868d12bc8f7fd5384b9f45dce";
       };
-      default = "r6";
+      r7 = {
+        nix = import ../hackage/reactive-banana-1.3.2.0-r7-6df2a7e257e445416f787fdb6c9e458958d463bc351847740ea371e119d4dccc.nix;
+        revNum = 7;
+        sha256 = "6df2a7e257e445416f787fdb6c9e458958d463bc351847740ea371e119d4dccc";
+      };
+      default = "r7";
     };
   };
 }

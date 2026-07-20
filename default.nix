@@ -15348,6 +15348,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "setop" = import ./nix/setop.nix;
   "setops" = import ./nix/setops.nix;
   "sets" = import ./nix/sets.nix;
+  "settei" = import ./nix/settei.nix;
+  "settei-dhall" = import ./nix/settei-dhall.nix;
+  "settei-env" = import ./nix/settei-env.nix;
+  "settei-kdl" = import ./nix/settei-kdl.nix;
+  "settei-optparse-applicative" = import ./nix/settei-optparse-applicative.nix;
+  "settei-yaml" = import ./nix/settei-yaml.nix;
   "setters" = import ./nix/setters.nix;
   "settings" = import ./nix/settings.nix;
   "sexp" = import ./nix/sexp.nix;

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.16.0" = {
+    sha256 = "ae7328edc7d81a8ddd0399aec71933f9ff7ca69cfd6fcb3e43a0e3c55a9c9024";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libasterix-0.16.0-r0-35c98796fa608436350de8b76186c762c407c5276ad834dfc717a270cf140557.nix;
+        revNum = 0;
+        sha256 = "35c98796fa608436350de8b76186c762c407c5276ad834dfc717a270cf140557";
+      };
+      default = "r0";
+    };
+  };
 }

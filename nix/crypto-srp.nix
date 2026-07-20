@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "25071713ff0fe7a0fab60449b157a01c06653724c0a5e57b4f20c2096e7d0666";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypto-srp-0.1.0.2-r0-d0d54a91635fbdef2f9216bdd7f2fb7b94db07d5f2ba8e7b44e1edb45f55c383.nix;
+        revNum = 0;
+        sha256 = "d0d54a91635fbdef2f9216bdd7f2fb7b94db07d5f2ba8e7b44e1edb45f55c383";
+      };
+      default = "r0";
+    };
+  };
 }
