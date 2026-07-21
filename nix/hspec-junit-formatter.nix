@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "1.3.1.0" = {
+    sha256 = "79031cb96d2437291184a420a8dfdebba3480551114d16fd85896a808d0568b4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-junit-formatter-1.3.1.0-r0-7f0fb6a265ff60157c6aacaddbe0fb8cc5c3f9e30a75dbfc162d9ea198b30363.nix;
+        revNum = 0;
+        sha256 = "7f0fb6a265ff60157c6aacaddbe0fb8cc5c3f9e30a75dbfc162d9ea198b30363";
+      };
+      default = "r0";
+    };
+  };
 }

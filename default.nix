@@ -3707,6 +3707,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "classy-prelude-yesod" = import ./nix/classy-prelude-yesod.nix;
   "classyplate" = import ./nix/classyplate.nix;
   "claude" = import ./nix/claude.nix;
+  "claude-gate" = import ./nix/claude-gate.nix;
   "clay" = import ./nix/clay.nix;
   "clckwrks" = import ./nix/clckwrks.nix;
   "clckwrks-cli" = import ./nix/clckwrks-cli.nix;
@@ -5555,6 +5556,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "emojis" = import ./nix/emojis.nix;
   "empty" = import ./nix/empty.nix;
   "empty-monad" = import ./nix/empty-monad.nix;
+  "encapsule" = import ./nix/encapsule.nix;
   "enchant" = import ./nix/enchant.nix;
   "enclosed-exceptions" = import ./nix/enclosed-exceptions.nix;
   "encode-string" = import ./nix/encode-string.nix;
@@ -10588,6 +10590,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libarchive-clib" = import ./nix/libarchive-clib.nix;
   "libarchive-conduit" = import ./nix/libarchive-conduit.nix;
   "libasterix" = import ./nix/libasterix.nix;
+  "libclang-bindings" = import ./nix/libclang-bindings.nix;
   "libconfig" = import ./nix/libconfig.nix;
   "libcspm" = import ./nix/libcspm.nix;
   "libexpect" = import ./nix/libexpect.nix;
@@ -11691,6 +11694,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "monzo" = import ./nix/monzo.nix;
   "moo" = import ./nix/moo.nix;
   "moo-nad" = import ./nix/moo-nad.nix;
+  "moonlight-algebra" = import ./nix/moonlight-algebra.nix;
+  "moonlight-core" = import ./nix/moonlight-core.nix;
+  "moonlight-delta" = import ./nix/moonlight-delta.nix;
   "moonshine" = import ./nix/moonshine.nix;
   "more-containers" = import ./nix/more-containers.nix;
   "more-extensible-effects" = import ./nix/more-extensible-effects.nix;
@@ -15351,7 +15357,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "settei" = import ./nix/settei.nix;
   "settei-dhall" = import ./nix/settei-dhall.nix;
   "settei-env" = import ./nix/settei-env.nix;
+  "settei-formats" = import ./nix/settei-formats.nix;
   "settei-kdl" = import ./nix/settei-kdl.nix;
+  "settei-kubernetes" = import ./nix/settei-kubernetes.nix;
   "settei-optparse-applicative" = import ./nix/settei-optparse-applicative.nix;
   "settei-yaml" = import ./nix/settei-yaml.nix;
   "setters" = import ./nix/setters.nix;

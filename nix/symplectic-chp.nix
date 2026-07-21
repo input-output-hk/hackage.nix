@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "866c2090adb2fa914ff02e2c4f11bf617ed55d2c32bf39c248e91d591b597cde";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/symplectic-chp-0.2.0.0-r0-787ca41bba90ad421d65b337e0a804dad461dff8ebbd33cb1547497fab270f7a.nix;
+        revNum = 0;
+        sha256 = "787ca41bba90ad421d65b337e0a804dad461dff8ebbd33cb1547497fab270f7a";
+      };
+      default = "r0";
+    };
+  };
 }

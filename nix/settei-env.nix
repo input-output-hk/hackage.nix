@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "4344c4429b91147c45b7d4771579a7d4f0d86821e45b5ffeb3eedcdbce78f479";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-env-0.2.0.0-r0-dcbadbad56e3a76d99d11d527972f286d4f940e3395bab233e442ad0dc3edc8f.nix;
+        revNum = 0;
+        sha256 = "dcbadbad56e3a76d99d11d527972f286d4f940e3395bab233e442ad0dc3edc8f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "2d8152e2a8957bb9f1ed1b8c6292b6b9e69f5ef7415d7f1c15983b345f234649";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-dhall-0.2.0.0-r0-cccd15cd2f882133ac0120ca975354a819cb89d349f13234fb5ab48d8bac7eb5.nix;
+        revNum = 0;
+        sha256 = "cccd15cd2f882133ac0120ca975354a819cb89d349f13234fb5ab48d8bac7eb5";
+      };
+      default = "r0";
+    };
+  };
 }

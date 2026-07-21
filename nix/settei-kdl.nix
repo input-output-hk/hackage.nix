@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "faa144edbc91a405c9b342e20911605f2f95a7c8550c1b53445c382b51486766";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-kdl-0.2.0.0-r0-156bbe107c234f0e60e435876609631356c79562eeaae0df6f627ecda8963a64.nix;
+        revNum = 0;
+        sha256 = "156bbe107c234f0e60e435876609631356c79562eeaae0df6f627ecda8963a64";
+      };
+      default = "r0";
+    };
+  };
 }

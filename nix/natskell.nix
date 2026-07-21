@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "ea5ba2485ef4bbf7af4da3a552f062ab96e58b32de80f23190da3aa3cecd429c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/natskell-1.2.0.0-r0-880781321baf7f7c195e70350e75ccefddf57e7a449a4d0337af41d5061ea1dd.nix;
+        revNum = 0;
+        sha256 = "880781321baf7f7c195e70350e75ccefddf57e7a449a4d0337af41d5061ea1dd";
+      };
+      default = "r0";
+    };
+  };
 }

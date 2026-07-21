@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "09a381a6dafade62dfc1daef4c5587eeefa399c0b7bb2e44c828f4f537487de0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/circuits-0.2.0.0-r0-d8cdce79b8af52b3fcb1225231f6b69ce8cf21df9b3490ae97ae100b1a1bd257.nix;
+        revNum = 0;
+        sha256 = "d8cdce79b8af52b3fcb1225231f6b69ce8cf21df9b3490ae97ae100b1a1bd257";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -637,6 +637,17 @@
       default = "r0";
     };
   };
+  "10.20260717" = {
+    sha256 = "e0802511e0c90852f52997520668b70cfa1e57fc268d996564c24a289ea6e406";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/git-annex-10.20260717-r0-0a02d9eec0a754ee0626178a8845404e2115d489aa31370bea4c46336b9e216e.nix;
+        revNum = 0;
+        sha256 = "0a02d9eec0a754ee0626178a8845404e2115d489aa31370bea4c46336b9e216e";
+      };
+      default = "r0";
+    };
+  };
   "3.20110702" = {
     sha256 = "22c53bf1e32f9b5092678a7ea24b514d1bb5c43a7f602d90e69f54767ddf5916";
     revisions = {
