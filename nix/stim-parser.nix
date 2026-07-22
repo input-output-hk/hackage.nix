@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.4.1.0" = {
+    sha256 = "48a2018b66ec6b543ed4986173620c8cded78e4e180f33686799988e112c2c50";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/stim-parser-0.4.1.0-r0-dc8435d3f7c42ce2b5631629503269b5cf02ae61db2a0697c97ee3c4ec07622e.nix;
+        revNum = 0;
+        sha256 = "dc8435d3f7c42ce2b5631629503269b5cf02ae61db2a0697c97ee3c4ec07622e";
+      };
+      default = "r0";
+    };
+  };
 }

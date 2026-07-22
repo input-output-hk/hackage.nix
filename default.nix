@@ -6278,6 +6278,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fraction" = import ./nix/fraction.nix;
   "fractionizer" = import ./nix/fractionizer.nix;
   "frag" = import ./nix/frag.nix;
+  "fragr" = import ./nix/fragr.nix;
   "frame" = import ./nix/frame.nix;
   "frame-markdown" = import ./nix/frame-markdown.nix;
   "franchise" = import ./nix/franchise.nix;

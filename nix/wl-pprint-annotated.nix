@@ -106,4 +106,15 @@
       default = "r4";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "11733e10da682613cf6649878cf42a7118502e7a2363a54681128f61c8298494";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wl-pprint-annotated-0.1.0.2-r0-9f865eb75591303c0f5568dc6a9634453e05cc96c219a749bdcf16d44bd682be.nix;
+        revNum = 0;
+        sha256 = "9f865eb75591303c0f5568dc6a9634453e05cc96c219a749bdcf16d44bd682be";
+      };
+      default = "r0";
+    };
+  };
 }

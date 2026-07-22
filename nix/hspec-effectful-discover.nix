@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.1" = {
+    sha256 = "18ce473b6c3fe287073fb63d5294992ec503cbec6dc86685f137648e547680a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-effectful-discover-1.0.1-r0-5ada46a55854194b61a856d70d1630e04996827dc01eb6d2cc3f96fd2372d4ac.nix;
+        revNum = 0;
+        sha256 = "5ada46a55854194b61a856d70d1630e04996827dc01eb6d2cc3f96fd2372d4ac";
+      };
+      default = "r0";
+    };
+  };
 }
