@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "5.1.0" = {
+    sha256 = "bdea68aeb9b9dfbb601a3ad02aedd182c1e46c25576c41b3ccb41f13cdbf6a21";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-openapi-hs-5.1.0-r0-359b86dbb75d41e9d9cb586364ce770b972051c57801395ccde721ff5c3cab54.nix;
+        revNum = 0;
+        sha256 = "359b86dbb75d41e9d9cb586364ce770b972051c57801395ccde721ff5c3cab54";
+      };
+      default = "r0";
+    };
+  };
 }

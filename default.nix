@@ -3233,6 +3233,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bzlib-conduit-jappie" = import ./nix/bzlib-conduit-jappie.nix;
   "c-dsl" = import ./nix/c-dsl.nix;
   "c-enum" = import ./nix/c-enum.nix;
+  "c-expr-dsl" = import ./nix/c-expr-dsl.nix;
+  "c-expr-runtime" = import ./nix/c-expr-runtime.nix;
   "c-io" = import ./nix/c-io.nix;
   "c-mosquitto" = import ./nix/c-mosquitto.nix;
   "c-storable" = import ./nix/c-storable.nix;
