@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "3094832ec2249bde04f52383ee5f7a7c98adaf58039b8ddac71d73db3ba88dd7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-expr-serializer-1.2.0.0-r0-969d02a25161a0aa80d0c2c2d6f36c2c391cebcd75207765cf5c876b1eda93b4.nix;
+        revNum = 0;
+        sha256 = "969d02a25161a0aa80d0c2c2d6f36c2c391cebcd75207765cf5c876b1eda93b4";
+      };
+      default = "r0";
+    };
+  };
 }

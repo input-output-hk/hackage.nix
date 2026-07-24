@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "8.7.1" = {
+    sha256 = "d46ae148a3d328a7583d8dffa1b84e1332d8738267b044df644cb118075c81ef";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ip2location-8.7.1-r0-5c12522db643dc8df97e86e886ba9477051d6817a753fb7ff3157a26fee714ff.nix;
+        revNum = 0;
+        sha256 = "5c12522db643dc8df97e86e886ba9477051d6817a753fb7ff3157a26fee714ff";
+      };
+      default = "r0";
+    };
+  };
 }

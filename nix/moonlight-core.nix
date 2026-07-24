@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "d384afd2ff5fffe65b0162265ee5b8bbe4ffec65417fff3d77d4e39224fde8b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-core-0.1.0.2-r0-c574f1eec12a2f62d6537ccfabec7396cf76f736bcca112f2d5a54c61c81dd76.nix;
+        revNum = 0;
+        sha256 = "c574f1eec12a2f62d6537ccfabec7396cf76f736bcca112f2d5a54c61c81dd76";
+      };
+      default = "r0";
+    };
+  };
 }

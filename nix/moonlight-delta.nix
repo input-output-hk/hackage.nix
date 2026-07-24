@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.2" = {
+    sha256 = "45c40e684856ce938ca7d23301a2a5e75212b676a4fcf241939cf3d8661cdc56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-delta-0.1.0.2-r0-c9ac2d1974f359a32b29704469545c06524cf3c3d0900380a2a11d7ae0aa1f67.nix;
+        revNum = 0;
+        sha256 = "c9ac2d1974f359a32b29704469545c06524cf3c3d0900380a2a11d7ae0aa1f67";
+      };
+      default = "r0";
+    };
+  };
 }
