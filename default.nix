@@ -14848,6 +14848,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "safe-coloured-text-gen" = import ./nix/safe-coloured-text-gen.nix;
   "safe-coloured-text-layout" = import ./nix/safe-coloured-text-layout.nix;
   "safe-coloured-text-layout-gen" = import ./nix/safe-coloured-text-layout-gen.nix;
+  "safe-coloured-text-parsing" = import ./nix/safe-coloured-text-parsing.nix;
+  "safe-coloured-text-parsing-gen" = import ./nix/safe-coloured-text-parsing-gen.nix;
   "safe-coloured-text-terminfo" = import ./nix/safe-coloured-text-terminfo.nix;
   "safe-coupling" = import ./nix/safe-coupling.nix;
   "safe-decimal" = import ./nix/safe-decimal.nix;
@@ -15230,6 +15232,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-github-webhook" = import ./nix/servant-github-webhook.nix;
   "servant-hateoas" = import ./nix/servant-hateoas.nix;
   "servant-haxl-client" = import ./nix/servant-haxl-client.nix;
+  "servant-health" = import ./nix/servant-health.nix;
   "servant-hmac-auth" = import ./nix/servant-hmac-auth.nix;
   "servant-htmx" = import ./nix/servant-htmx.nix;
   "servant-http-streams" = import ./nix/servant-http-streams.nix;
@@ -16782,6 +16785,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sydtest-process" = import ./nix/sydtest-process.nix;
   "sydtest-rabbitmq" = import ./nix/sydtest-rabbitmq.nix;
   "sydtest-servant" = import ./nix/sydtest-servant.nix;
+  "sydtest-sqitch-postgres" = import ./nix/sydtest-sqitch-postgres.nix;
+  "sydtest-sqitch-postgres-persistent" = import ./nix/sydtest-sqitch-postgres-persistent.nix;
   "sydtest-typed-process" = import ./nix/sydtest-typed-process.nix;
   "sydtest-wai" = import ./nix/sydtest-wai.nix;
   "sydtest-webdriver" = import ./nix/sydtest-webdriver.nix;

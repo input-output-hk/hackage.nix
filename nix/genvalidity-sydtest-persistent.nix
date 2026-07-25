@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "82f01d7c6f0064c2ada91cb9d72ca23664b91aac08ad9eab0b68292c586be99f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-sydtest-persistent-1.0.0.1-r0-31d10043cdc3b944afdfae60b75662b736676ee39a9ba1f1578210f4771f1412.nix;
+        revNum = 0;
+        sha256 = "31d10043cdc3b944afdfae60b75662b736676ee39a9ba1f1578210f4771f1412";
+      };
+      default = "r0";
+    };
+  };
 }

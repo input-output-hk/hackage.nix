@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "1.1.0.0" = {
+    sha256 = "928fff0de27b477bf66447c3c906fba29755edca9e130d57d244faae83696389";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-aeson-1.1.0.0-r0-bbd926e81a34622528960d421901d14a428daa21fdbf3c910babecf290fb3649.nix;
+        revNum = 0;
+        sha256 = "bbd926e81a34622528960d421901d14a428daa21fdbf3c910babecf290fb3649";
+      };
+      default = "r0";
+    };
+  };
 }

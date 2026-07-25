@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.0.0.1" = {
+    sha256 = "b333428b4e6db368e7d72b7515651b86d4d3b7495b45a8931f190873dc188c2b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/genvalidity-sydtest-aeson-1.0.0.1-r0-c3b6367483422420cae3dcf0bae2304c05ef5e3d53910a3b02397d80bf7c265f.nix;
+        revNum = 0;
+        sha256 = "c3b6367483422420cae3dcf0bae2304c05ef5e3d53910a3b02397d80bf7c265f";
+      };
+      default = "r0";
+    };
+  };
 }

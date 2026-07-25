@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "ad29a356533ecaaefbf680b91c2894fbbd5c396806bbece1fc0e428fe557cf5d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relay-pagination-servant-0.1.1.0-r0-699866f29f09cacfcca2ce9644ffa63d0618fd80e92f1a9ddcd977187134fae3.nix;
+        revNum = 0;
+        sha256 = "699866f29f09cacfcca2ce9644ffa63d0618fd80e92f1a9ddcd977187134fae3";
+      };
+      default = "r0";
+    };
+  };
 }

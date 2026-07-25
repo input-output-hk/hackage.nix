@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.2" = {
+    sha256 = "4ae5d6b5e36bddd8b0af484812dfecdf2c55d9c26c10726a1ecb4ccfbbc208a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fast-myers-diff-0.0.2-r0-a9c6b7a88d022d01b25e2c140c5e5e6655e5a3b262afd7aa0946c6b1e38bb62d.nix;
+        revNum = 0;
+        sha256 = "a9c6b7a88d022d01b25e2c140c5e5e6655e5a3b262afd7aa0946c6b1e38bb62d";
+      };
+      default = "r0";
+    };
+  };
 }
