@@ -14289,6 +14289,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rec-def" = import ./nix/rec-def.nix;
   "rec-smallarray" = import ./nix/rec-smallarray.nix;
   "recaptcha" = import ./nix/recaptcha.nix;
+  "recollections" = import ./nix/recollections.nix;
   "recommender-als" = import ./nix/recommender-als.nix;
   "record" = import ./nix/record.nix;
   "record-aeson" = import ./nix/record-aeson.nix;

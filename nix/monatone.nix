@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "69ee5475de9d7800f2c59ed179de91ce45d82db4850038bbeca62f297740c0c0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monatone-0.4.0.1-r0-e1095298f0439e7ab950fa88efb0615aaa8719c28e63c6cbc3ff7fab4c270938.nix;
+        revNum = 0;
+        sha256 = "e1095298f0439e7ab950fa88efb0615aaa8719c28e63c6cbc3ff7fab4c270938";
+      };
+      default = "r0";
+    };
+  };
 }

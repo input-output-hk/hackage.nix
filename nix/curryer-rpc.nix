@@ -175,4 +175,15 @@
       default = "r0";
     };
   };
+  "0.5.2" = {
+    sha256 = "6d8e35e824df735dac16047aa54d27fa0db929c7fe868d94d37092fec43f023f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/curryer-rpc-0.5.2-r0-df087d49513b1a38c108744665a2a29ae3d21f52917564290f36ea0afd2f990c.nix;
+        revNum = 0;
+        sha256 = "df087d49513b1a38c108744665a2a29ae3d21f52917564290f36ea0afd2f990c";
+      };
+      default = "r0";
+    };
+  };
 }
