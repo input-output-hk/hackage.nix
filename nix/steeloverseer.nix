@@ -309,4 +309,15 @@
       default = "r0";
     };
   };
+  "2.1.1.0" = {
+    sha256 = "f317398d6ec0cdfcdad2ba8d2bebee32a37d6904490525de25564d9f50bbe2ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/steeloverseer-2.1.1.0-r0-46018f18f2ddbeac1e3121dbac2ec2f20771110e653ebb9df3848f8a48d4deae.nix;
+        revNum = 0;
+        sha256 = "46018f18f2ddbeac1e3121dbac2ec2f20771110e653ebb9df3848f8a48d4deae";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "0.1.5.0" = {
+    sha256 = "aa6ca4c713829ab1d0d44e1e31a0ac0cd2090f73c5d4d68234965056d6a8a4c4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postgresql-types-0.1.5.0-r0-635f2544a06a028f13ecf131d3a3a9a14c8cde855b5cc128614733d5b0c9b4a2.nix;
+        revNum = 0;
+        sha256 = "635f2544a06a028f13ecf131d3a3a9a14c8cde855b5cc128614733d5b0c9b4a2";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.5.1" = {
+    sha256 = "1c3685c7a34c3f635834a060e762ab8392fbbd1a4ef799fdf9362ffa19c5a3c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/postgresql-types-0.1.5.1-r0-1bd5b55c3c260fbed459608211d7bf53b5923e69f8ff58858a7677c0930d0016.nix;
+        revNum = 0;
+        sha256 = "1bd5b55c3c260fbed459608211d7bf53b5923e69f8ff58858a7677c0930d0016";
+      };
+      default = "r0";
+    };
+  };
 }

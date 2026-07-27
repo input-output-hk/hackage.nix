@@ -14180,6 +14180,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rank2classes" = import ./nix/rank2classes.nix;
   "rapid" = import ./nix/rapid.nix;
   "rapid-term" = import ./nix/rapid-term.nix;
+  "rapidhash" = import ./nix/rapidhash.nix;
   "rasa" = import ./nix/rasa.nix;
   "rasa-example-config" = import ./nix/rasa-example-config.nix;
   "rasa-ext-bufs" = import ./nix/rasa-ext-bufs.nix;
@@ -16780,6 +16781,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sydtest-hedis" = import ./nix/sydtest-hedis.nix;
   "sydtest-hspec" = import ./nix/sydtest-hspec.nix;
   "sydtest-mongo" = import ./nix/sydtest-mongo.nix;
+  "sydtest-mutation" = import ./nix/sydtest-mutation.nix;
+  "sydtest-mutation-driver" = import ./nix/sydtest-mutation-driver.nix;
+  "sydtest-mutation-driver-gen" = import ./nix/sydtest-mutation-driver-gen.nix;
+  "sydtest-mutation-plugin" = import ./nix/sydtest-mutation-plugin.nix;
+  "sydtest-mutation-runtime" = import ./nix/sydtest-mutation-runtime.nix;
   "sydtest-persistent" = import ./nix/sydtest-persistent.nix;
   "sydtest-persistent-postgresql" = import ./nix/sydtest-persistent-postgresql.nix;
   "sydtest-persistent-sqlite" = import ./nix/sydtest-persistent-sqlite.nix;

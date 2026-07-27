@@ -43,4 +43,37 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "ad6c5738e14ea45845846e2f1e49928309c79f6e2f6602e0582b1c239f774374";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-postgresql-types-0.2.1.0-r0-a748c1fb45fa7125c7cb90e8ec600c5378a6ab319009181eb0b0c8af83c69306.nix;
+        revNum = 0;
+        sha256 = "a748c1fb45fa7125c7cb90e8ec600c5378a6ab319009181eb0b0c8af83c69306";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.1.1" = {
+    sha256 = "d713d44fd8b17baaa0f0653c7d3edab5e27423b67674b2f972e0ab784535dd10";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-postgresql-types-0.2.1.1-r0-3cda857f331847c260cacd71cb803922a98bd8e96b099c8153d7b1f797a85135.nix;
+        revNum = 0;
+        sha256 = "3cda857f331847c260cacd71cb803922a98bd8e96b099c8153d7b1f797a85135";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.1.2" = {
+    sha256 = "7ec9657dda85bba9ab3931b144419e8a0fd4c429cc2dc7050bfbb65185269b43";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasql-postgresql-types-0.2.1.2-r0-8f43b4d911220e34268f515cdc25ea9ae60d2b48f3ba77b0d29cc724e372ffb5.nix;
+        revNum = 0;
+        sha256 = "8f43b4d911220e34268f515cdc25ea9ae60d2b48f3ba77b0d29cc724e372ffb5";
+      };
+      default = "r0";
+    };
+  };
 }
