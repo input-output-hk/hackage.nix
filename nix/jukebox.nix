@@ -596,6 +596,17 @@
       default = "r0";
     };
   };
+  "0.5.14" = {
+    sha256 = "71972177ad01051c5ccc8e245ad5c2c79fc4bf1d9b30b4337d66990dca7e66f9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jukebox-0.5.14-r0-d9041602fedebf1ac4e59dd10b0f69b01657edf274ee9ed6401ad822bc51092e.nix;
+        revNum = 0;
+        sha256 = "d9041602fedebf1ac4e59dd10b0f69b01657edf274ee9ed6401ad822bc51092e";
+      };
+      default = "r0";
+    };
+  };
   "0.5.2" = {
     sha256 = "c64f5b0365aa729f5fdfdf6cc42e5be1c58e7750112608e085f9338d5c3e1fda";
     revisions = {

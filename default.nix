@@ -4506,6 +4506,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "custom-interpolation" = import ./nix/custom-interpolation.nix;
   "custom-prelude" = import ./nix/custom-prelude.nix;
   "cut-the-crap" = import ./nix/cut-the-crap.nix;
+  "cutesetup" = import ./nix/cutesetup.nix;
   "cutter" = import ./nix/cutter.nix;
   "cv-combinators" = import ./nix/cv-combinators.nix;
   "cve" = import ./nix/cve.nix;
@@ -7004,6 +7005,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "glazier-react-examples" = import ./nix/glazier-react-examples.nix;
   "glazier-react-widget" = import ./nix/glazier-react-widget.nix;
   "glean" = import ./nix/glean.nix;
+  "glean-hs" = import ./nix/glean-hs.nix;
   "glean-lsp" = import ./nix/glean-lsp.nix;
   "glfw-group" = import ./nix/glfw-group.nix;
   "gli" = import ./nix/gli.nix;
@@ -9107,6 +9109,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hstorchat" = import ./nix/hstorchat.nix;
   "hstox" = import ./nix/hstox.nix;
   "hstradeking" = import ./nix/hstradeking.nix;
+  "hstratus-auth" = import ./nix/hstratus-auth.nix;
   "hstyle" = import ./nix/hstyle.nix;
   "hstzaar" = import ./nix/hstzaar.nix;
   "hsubconvert" = import ./nix/hsubconvert.nix;
@@ -14040,6 +14043,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-classes-base" = import ./nix/quickcheck-classes-base.nix;
   "quickcheck-combinators" = import ./nix/quickcheck-combinators.nix;
   "quickcheck-dynamic" = import ./nix/quickcheck-dynamic.nix;
+  "quickcheck-effectful" = import ./nix/quickcheck-effectful.nix;
   "quickcheck-enum-instances" = import ./nix/quickcheck-enum-instances.nix;
   "quickcheck-extras" = import ./nix/quickcheck-extras.nix;
   "quickcheck-groups" = import ./nix/quickcheck-groups.nix;
@@ -15057,6 +15061,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sdl2-mixer" = import ./nix/sdl2-mixer.nix;
   "sdl2-sprite" = import ./nix/sdl2-sprite.nix;
   "sdl2-ttf" = import ./nix/sdl2-ttf.nix;
+  "sdl3-bindgen-sys" = import ./nix/sdl3-bindgen-sys.nix;
   "sdnv" = import ./nix/sdnv.nix;
   "sdp" = import ./nix/sdp.nix;
   "sdp-binary" = import ./nix/sdp-binary.nix;
@@ -18476,6 +18481,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-devel" = import ./nix/wai-devel.nix;
   "wai-digestive-functors" = import ./nix/wai-digestive-functors.nix;
   "wai-dispatch" = import ./nix/wai-dispatch.nix;
+  "wai-effectful" = import ./nix/wai-effectful.nix;
   "wai-enforce-https" = import ./nix/wai-enforce-https.nix;
   "wai-env" = import ./nix/wai-env.nix;
   "wai-eventsource" = import ./nix/wai-eventsource.nix;
@@ -18580,6 +18586,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "warlock" = import ./nix/warlock.nix;
   "warp" = import ./nix/warp.nix;
   "warp-dynamic" = import ./nix/warp-dynamic.nix;
+  "warp-effectful" = import ./nix/warp-effectful.nix;
   "warp-grpc" = import ./nix/warp-grpc.nix;
   "warp-quic" = import ./nix/warp-quic.nix;
   "warp-s2n-tls" = import ./nix/warp-s2n-tls.nix;

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "3a8bc32c017c4b19610ad52e377af7c8ea227d763b1aeaf94f626b26b712c94e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kindly-functors-0.2.0.0-r0-f15ed4a750699fe4ebec6b8a8e7423010f97ceb05be12b23cf5f4397a46b2c9a.nix;
+        revNum = 0;
+        sha256 = "f15ed4a750699fe4ebec6b8a8e7423010f97ceb05be12b23cf5f4397a46b2c9a";
+      };
+      default = "r0";
+    };
+  };
 }
