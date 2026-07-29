@@ -9109,7 +9109,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hstorchat" = import ./nix/hstorchat.nix;
   "hstox" = import ./nix/hstox.nix;
   "hstradeking" = import ./nix/hstradeking.nix;
+  "hstratus" = import ./nix/hstratus.nix;
   "hstratus-auth" = import ./nix/hstratus-auth.nix;
+  "hstratus-drive" = import ./nix/hstratus-drive.nix;
+  "hstratus-notes" = import ./nix/hstratus-notes.nix;
   "hstyle" = import ./nix/hstyle.nix;
   "hstzaar" = import ./nix/hstzaar.nix;
   "hsubconvert" = import ./nix/hsubconvert.nix;
@@ -15222,6 +15225,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "servant-docs" = import ./nix/servant-docs.nix;
   "servant-docs-simple" = import ./nix/servant-docs-simple.nix;
   "servant-ede" = import ./nix/servant-ede.nix;
+  "servant-effectful" = import ./nix/servant-effectful.nix;
   "servant-ekg" = import ./nix/servant-ekg.nix;
   "servant-elm" = import ./nix/servant-elm.nix;
   "servant-errors" = import ./nix/servant-errors.nix;
