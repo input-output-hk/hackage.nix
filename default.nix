@@ -14010,6 +14010,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quadratic-irrational" = import ./nix/quadratic-irrational.nix;
   "qualified-imports-plugin" = import ./nix/qualified-imports-plugin.nix;
   "quandl-api" = import ./nix/quandl-api.nix;
+  "quantex" = import ./nix/quantex.nix;
   "quantfin" = import ./nix/quantfin.nix;
   "quantification" = import ./nix/quantification.nix;
   "quantification-aeson" = import ./nix/quantification-aeson.nix;
