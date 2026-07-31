@@ -177,7 +177,12 @@
         revNum = 13;
         sha256 = "b59c26cb4bbf9ba1e19c68a165331a4148624e88ee750fcf186f7f58d0a4d3e8";
       };
-      default = "r13";
+      r14 = {
+        nix = import ../hackage/servant-swagger-ui-core-0.3.5-r14-a519a9c33db4a01acd91d8bd396faf7eff415c0eb6bc335825cba4c9a08319ff.nix;
+        revNum = 14;
+        sha256 = "a519a9c33db4a01acd91d8bd396faf7eff415c0eb6bc335825cba4c9a08319ff";
+      };
+      default = "r14";
     };
   };
 }

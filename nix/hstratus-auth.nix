@@ -21,4 +21,37 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "ebfa15c5c6e60e89f07fb63e615ea7380f746f9291c7ea96d3fac58b7bf1ad11";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hstratus-auth-0.2.0.0-r0-f289c65d092a2329a0d39ed96cd66ce5eb946192dea6048850ada8f63dcfbf60.nix;
+        revNum = 0;
+        sha256 = "f289c65d092a2329a0d39ed96cd66ce5eb946192dea6048850ada8f63dcfbf60";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "feca0623a7a7b79e4f8cb52ecdc40ab8630ea78338f573651e0c1bf80c126537";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hstratus-auth-0.2.0.1-r0-603245a35335a183584a17c4097b6095ca78834738ecc8fd4f8cfb48c3bf7bc3.nix;
+        revNum = 0;
+        sha256 = "603245a35335a183584a17c4097b6095ca78834738ecc8fd4f8cfb48c3bf7bc3";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.2" = {
+    sha256 = "0e470227eac3321b61aa5674a149afaae1daa424164fa00ec94cc5fa94179ece";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hstratus-auth-0.2.0.2-r0-0516a0f318ccff2b88c3fffacac9da3f8f15b8db4fe5fd244396e9f8ff90e4f8.nix;
+        revNum = 0;
+        sha256 = "0516a0f318ccff2b88c3fffacac9da3f8f15b8db4fe5fd244396e9f8ff90e4f8";
+      };
+      default = "r0";
+    };
+  };
 }

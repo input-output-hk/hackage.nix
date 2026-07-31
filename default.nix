@@ -12351,6 +12351,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "numerical" = import ./nix/numerical.nix;
   "numerical-integration" = import ./nix/numerical-integration.nix;
   "numericpeano" = import ./nix/numericpeano.nix;
+  "numerus-closus" = import ./nix/numerus-closus.nix;
   "numhask" = import ./nix/numhask.nix;
   "numhask-array" = import ./nix/numhask-array.nix;
   "numhask-free" = import ./nix/numhask-free.nix;

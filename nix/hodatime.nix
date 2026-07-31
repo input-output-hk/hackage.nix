@@ -26,4 +26,15 @@
       default = "r1";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "b214165eb77cae5e39df28f0ad20d360f48ce04fd086708bac49b3bd93b3811c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hodatime-1.0.0.0-r0-527c813b4c4ca4aa2b224c9c10338194256ed5f8639c4e7fe92a24da22b660f4.nix;
+        revNum = 0;
+        sha256 = "527c813b4c4ca4aa2b224c9c10338194256ed5f8639c4e7fe92a24da22b660f4";
+      };
+      default = "r0";
+    };
+  };
 }
