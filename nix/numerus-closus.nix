@@ -10,4 +10,26 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "f73ce0526861ae76999f79ee94c2b2692f8739a100b92096c4c9b782ad1660ba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/numerus-closus-0.2.0.0-r0-085b99c1407f0322a5720eb617c710d55d45a687c3bad9842c3dd0d2d3c98e7d.nix;
+        revNum = 0;
+        sha256 = "085b99c1407f0322a5720eb617c710d55d45a687c3bad9842c3dd0d2d3c98e7d";
+      };
+      default = "r0";
+    };
+  };
+  "0.3.0.0" = {
+    sha256 = "b8338a1b0b8622ab8c1b06405bdd05c0e39cc2f0785b6f05b72c76d28dddd467";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/numerus-closus-0.3.0.0-r0-9d19f06dfba6c5797b44adcc81e8b1b80b7691a7aee0557f29b26882ff53e10a.nix;
+        revNum = 0;
+        sha256 = "9d19f06dfba6c5797b44adcc81e8b1b80b7691a7aee0557f29b26882ff53e10a";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -257,4 +257,15 @@
       default = "r0";
     };
   };
+  "0.8.0.1" = {
+    sha256 = "11d78d9c01af5b0f2794264f801eea848d820a0fe6f28c9265b72de8e5bbcaf5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/chatty-0.8.0.1-r0-c96c21e1ce6875be9e3358afb9b9981626840c114b548a36b379c6dae02c78a4.nix;
+        revNum = 0;
+        sha256 = "c96c21e1ce6875be9e3358afb9b9981626840c114b548a36b379c6dae02c78a4";
+      };
+      default = "r0";
+    };
+  };
 }

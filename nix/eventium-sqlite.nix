@@ -76,4 +76,26 @@
       default = "r0";
     };
   };
+  "0.5.1" = {
+    sha256 = "1bea2d452280d850f19f5b61733e63f12dada84b971f66553623fd0417cfa7e7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-sqlite-0.5.1-r0-cf5bb2d02e16f942959e7beda3a89a33282c319d8e440d4db659437cc103fae6.nix;
+        revNum = 0;
+        sha256 = "cf5bb2d02e16f942959e7beda3a89a33282c319d8e440d4db659437cc103fae6";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.2" = {
+    sha256 = "135b6ca7616f02ef07d5cbadbb5b1f6e4b25617ae9f1bdf55f5010db475ba57f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-sqlite-0.5.2-r0-481ef8ff443be0b559ba73a167738161224ad53ff491ae744c2cd4b7aefab365.nix;
+        revNum = 0;
+        sha256 = "481ef8ff443be0b559ba73a167738161224ad53ff491ae744c2cd4b7aefab365";
+      };
+      default = "r0";
+    };
+  };
 }

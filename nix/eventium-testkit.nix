@@ -65,4 +65,26 @@
       default = "r0";
     };
   };
+  "0.5.1" = {
+    sha256 = "bd0870f9f33464d0ea2426bb9a98f76fc495c499d93a273f0dec7813da4db822";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-testkit-0.5.1-r0-b743778305562669ea3dc65a7e867f9267bd8b2b4644c149ecf9218d98a060bb.nix;
+        revNum = 0;
+        sha256 = "b743778305562669ea3dc65a7e867f9267bd8b2b4644c149ecf9218d98a060bb";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.2" = {
+    sha256 = "d231ab657c817937e7eec6129fb00626d9ccbd7cdc5b6a2b9aceee0f6e656165";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-testkit-0.5.2-r0-036058e6248e0b224327527e0c2d61ed71d26a2e8966ed124ca4e043b1a3ab56.nix;
+        revNum = 0;
+        sha256 = "036058e6248e0b224327527e0c2d61ed71d26a2e8966ed124ca4e043b1a3ab56";
+      };
+      default = "r0";
+    };
+  };
 }
