@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.17.3" = {
+    sha256 = "58863be19b2b72d8ad43d778526c56059b177815305639843ddfc729af8d015c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-java-0.17.3-r0-d51bf175b3740b2a3964709bd57b2e501140b5f6c7f48754747aa2a5aa56daa8.nix;
+        revNum = 0;
+        sha256 = "d51bf175b3740b2a3964709bd57b2e501140b5f6c7f48754747aa2a5aa56daa8";
+      };
+      default = "r0";
+    };
+  };
 }

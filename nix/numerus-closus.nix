@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "891026ffee4c59aff3b3a2e96fbf547517ed3b4d973b6d9a961332829e8dd640";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/numerus-closus-0.4.0.0-r0-ab39947e3be74591f815b29c8dafbb5cb3534258ac8296dce5c08af97bb88172.nix;
+        revNum = 0;
+        sha256 = "ab39947e3be74591f815b29c8dafbb5cb3534258ac8296dce5c08af97bb88172";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -468,4 +468,15 @@
       default = "r0";
     };
   };
+  "1.2.2" = {
+    sha256 = "6dad890dd1ea5be2ab992d2987645fae14e3290a4439ad24bf3984bf72e83f5b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/smallcheck-1.2.2-r0-b666975ee4605244528eb4ef218929ff8880365337d387856b28441d1e4fd440.nix;
+        revNum = 0;
+        sha256 = "b666975ee4605244528eb4ef218929ff8880365337d387856b28441d1e4fd440";
+      };
+      default = "r0";
+    };
+  };
 }

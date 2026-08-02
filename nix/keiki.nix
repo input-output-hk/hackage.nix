@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "75ab80d6fce25316c57c78ceb2f1765e6dfac49f681029eeffbe8ea5142db949";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiki-0.7.0.0-r0-b51a743b8851e87602a8acc9844d166d12a3714ebcad480ee28c2e5fabcd5342.nix;
+        revNum = 0;
+        sha256 = "b51a743b8851e87602a8acc9844d166d12a3714ebcad480ee28c2e5fabcd5342";
+      };
+      default = "r0";
+    };
+  };
 }

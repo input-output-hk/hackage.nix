@@ -4417,6 +4417,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "crypton-conduit" = import ./nix/crypton-conduit.nix;
   "crypton-connection" = import ./nix/crypton-connection.nix;
   "crypton-pem" = import ./nix/crypton-pem.nix;
+  "crypton-pubkey-types" = import ./nix/crypton-pubkey-types.nix;
   "crypton-socks" = import ./nix/crypton-socks.nix;
   "crypton-x509" = import ./nix/crypton-x509.nix;
   "crypton-x509-store" = import ./nix/crypton-x509-store.nix;
