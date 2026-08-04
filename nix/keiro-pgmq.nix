@@ -1,4 +1,15 @@
 {
+  "0.10.0.0" = {
+    sha256 = "d91d660aff21b148c912319194c2fd202971668329e52025eebaa687c0c54a50";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-pgmq-0.10.0.0-r0-7d2864d98ac3bd3177584f55c5a6eabac6af2ab058893fdbab395d9dbff635b2.nix;
+        revNum = 0;
+        sha256 = "7d2864d98ac3bd3177584f55c5a6eabac6af2ab058893fdbab395d9dbff635b2";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "5a3b81eea9ef4604990bde3735101bac0d91309899e240058374e2f8b20e2664";
     revisions = {
@@ -72,6 +83,17 @@
         nix = import ../hackage/keiro-pgmq-0.8.0.0-r0-f9858ac0986bb0008934c8e5f404584f6c16a93948a55f0029f97d532f5f1e24.nix;
         revNum = 0;
         sha256 = "f9858ac0986bb0008934c8e5f404584f6c16a93948a55f0029f97d532f5f1e24";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.0.0" = {
+    sha256 = "3f3b3bacb54e389b4c3567e5a3e564b8efa2279bbe98ce6a0ef22de8e3a6ae52";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-pgmq-0.9.0.0-r0-846952100cb514f0d01a1dbc79b1a33a297a9ccab86c9b5204c8f9c91db40aa7.nix;
+        revNum = 0;
+        sha256 = "846952100cb514f0d01a1dbc79b1a33a297a9ccab86c9b5204c8f9c91db40aa7";
       };
       default = "r0";
     };

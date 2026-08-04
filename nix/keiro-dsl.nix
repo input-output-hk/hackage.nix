@@ -1,4 +1,15 @@
 {
+  "0.10.0.0" = {
+    sha256 = "42fc08d51f4aee0da3a2801a5d49974c30f518e83501ce300cb2ada92fe5e824";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-dsl-0.10.0.0-r0-4a8201f59c464390e9f2728638ce2f22861c89ff59682f110a04368d9f724cd0.nix;
+        revNum = 0;
+        sha256 = "4a8201f59c464390e9f2728638ce2f22861c89ff59682f110a04368d9f724cd0";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "ce857539036058223cdda128093259338a727ba5e011ab9c2305208bdde6186e";
     revisions = {
@@ -72,6 +83,17 @@
         nix = import ../hackage/keiro-dsl-0.8.0.0-r0-e96494397d8221efb768d6230c840024ee933b56193c9efd13c063926e90d617.nix;
         revNum = 0;
         sha256 = "e96494397d8221efb768d6230c840024ee933b56193c9efd13c063926e90d617";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.0.0" = {
+    sha256 = "8e9c861b8b816225c0c191c7a4ce46418a0a15ea542b4e4d51c90b92ff9801c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-dsl-0.9.0.0-r0-a14bd666c2ac5e3fdd2cbd5caa1679e93e69de30aafb4fa3eed651df9d7e72ff.nix;
+        revNum = 0;
+        sha256 = "a14bd666c2ac5e3fdd2cbd5caa1679e93e69de30aafb4fa3eed651df9d7e72ff";
       };
       default = "r0";
     };
