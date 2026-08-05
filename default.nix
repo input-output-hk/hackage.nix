@@ -12114,6 +12114,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "network-info" = import ./nix/network-info.nix;
   "network-interfacerequest" = import ./nix/network-interfacerequest.nix;
   "network-ip" = import ./nix/network-ip.nix;
+  "network-light" = import ./nix/network-light.nix;
   "network-manager-tui" = import ./nix/network-manager-tui.nix;
   "network-messagepack-rpc" = import ./nix/network-messagepack-rpc.nix;
   "network-messagepack-rpc-websocket" = import ./nix/network-messagepack-rpc-websocket.nix;

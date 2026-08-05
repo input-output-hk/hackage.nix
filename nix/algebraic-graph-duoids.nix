@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "6e854dca8367fe99a0a5059eb213507248351e0df295a704f6d0a8e161ee27ce";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/algebraic-graph-duoids-0.0.2.0-r0-0a8d4cd219a7d53a224b41bbfdcaa65e1620978aedccf4fbba4c891e58a0ab27.nix;
+        revNum = 0;
+        sha256 = "0a8d4cd219a7d53a224b41bbfdcaa65e1620978aedccf4fbba4c891e58a0ab27";
+      };
+      default = "r0";
+    };
+  };
 }

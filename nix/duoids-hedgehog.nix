@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "bbe8f4902693657425225bbc8e7b2f8de1a3ee7c4ab75f34029d11b6acd747b6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/duoids-hedgehog-0.0.2.0-r0-452d394867b17c5a88abf5ea1f498fd8d9bdf5314ad1adcca0f2193b5444c2f8.nix;
+        revNum = 0;
+        sha256 = "452d394867b17c5a88abf5ea1f498fd8d9bdf5314ad1adcca0f2193b5444c2f8";
+      };
+      default = "r0";
+    };
+  };
 }

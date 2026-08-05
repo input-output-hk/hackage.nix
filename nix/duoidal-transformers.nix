@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "080541316e6093c4d687233753c69a12e4cedeee90e33f833335df2340f7160a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/duoidal-transformers-0.0.2.0-r0-5543a8a4c8e78f153cf9412e8fb945e1f75a615b03a6313f2ef74140e71e31a2.nix;
+        revNum = 0;
+        sha256 = "5543a8a4c8e78f153cf9412e8fb945e1f75a615b03a6313f2ef74140e71e31a2";
+      };
+      default = "r0";
+    };
+  };
 }
