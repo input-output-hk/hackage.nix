@@ -6463,6 +6463,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "future" = import ./nix/future.nix;
   "future-resource" = import ./nix/future-resource.nix;
   "futures" = import ./nix/futures.nix;
+  "fuyu-gpio-direct" = import ./nix/fuyu-gpio-direct.nix;
   "fuzzcheck" = import ./nix/fuzzcheck.nix;
   "fuzzily" = import ./nix/fuzzily.nix;
   "fuzzy" = import ./nix/fuzzy.nix;
@@ -8345,6 +8346,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hgg-analyze-bridge" = import ./nix/hgg-analyze-bridge.nix;
   "hgg-core" = import ./nix/hgg-core.nix;
   "hgg-custom" = import ./nix/hgg-custom.nix;
+  "hgg-dataframe" = import ./nix/hgg-dataframe.nix;
   "hgg-frame" = import ./nix/hgg-frame.nix;
   "hgg-ihaskell" = import ./nix/hgg-ihaskell.nix;
   "hgg-latex" = import ./nix/hgg-latex.nix;

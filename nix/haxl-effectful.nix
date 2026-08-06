@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "c43805be05e034b241e2677c33ce32ac9213ce4aa81829eeebdafb7daf8d123a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haxl-effectful-1.1.0-r0-0966e49843ba3a8841fa6b50cfcbe2fdd5779f4ee63ff4d0b63c30eb4ccdce23.nix;
+        revNum = 0;
+        sha256 = "0966e49843ba3a8841fa6b50cfcbe2fdd5779f4ee63ff4d0b63c30eb4ccdce23";
+      };
+      default = "r0";
+    };
+  };
 }

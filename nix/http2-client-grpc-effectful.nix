@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.0.1" = {
+    sha256 = "1e318ac34e482efbdf90a74312269d1a69e2fbc50b3f73491b9847d056d58279";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/http2-client-grpc-effectful-1.0.1-r0-ca0367e20ae7d08e75d25761ba42f160b5ba6ea45dd388f4ba7fd4b49508927f.nix;
+        revNum = 0;
+        sha256 = "ca0367e20ae7d08e75d25761ba42f160b5ba6ea45dd388f4ba7fd4b49508927f";
+      };
+      default = "r0";
+    };
+  };
 }
