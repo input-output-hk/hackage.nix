@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "989755cb3926d20684d58db67866bd6fdcbf1a886d03c2da8c3e08fe3c301c8c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kioku-cli-0.3.0.0-r0-85cad54d4287526320591f9e5e2b98b0d65e2af6592f7e7af3e0041cf58820b1.nix;
+        revNum = 0;
+        sha256 = "85cad54d4287526320591f9e5e2b98b0d65e2af6592f7e7af3e0041cf58820b1";
+      };
+      default = "r0";
+    };
+  };
 }

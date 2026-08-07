@@ -2539,6 +2539,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bacteria" = import ./nix/bacteria.nix;
   "bag" = import ./nix/bag.nix;
   "baikai" = import ./nix/baikai.nix;
+  "baikai-agent" = import ./nix/baikai-agent.nix;
   "baikai-claude" = import ./nix/baikai-claude.nix;
   "baikai-effectful" = import ./nix/baikai-effectful.nix;
   "baikai-kit" = import ./nix/baikai-kit.nix;
@@ -9575,6 +9576,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "immortal-worker" = import ./nix/immortal-worker.nix;
   "immutaball-core" = import ./nix/immutaball-core.nix;
   "imp" = import ./nix/imp.nix;
+  "imp-ppl" = import ./nix/imp-ppl.nix;
   "imparse" = import ./nix/imparse.nix;
   "imperative-edsl" = import ./nix/imperative-edsl.nix;
   "imperative-edsl-vhdl" = import ./nix/imperative-edsl-vhdl.nix;
@@ -14071,6 +14073,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quickcheck-rematch" = import ./nix/quickcheck-rematch.nix;
   "quickcheck-report" = import ./nix/quickcheck-report.nix;
   "quickcheck-script" = import ./nix/quickcheck-script.nix;
+  "quickcheck-silent" = import ./nix/quickcheck-silent.nix;
   "quickcheck-simple" = import ./nix/quickcheck-simple.nix;
   "quickcheck-special" = import ./nix/quickcheck-special.nix;
   "quickcheck-state-machine" = import ./nix/quickcheck-state-machine.nix;

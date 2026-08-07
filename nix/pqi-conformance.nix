@@ -87,4 +87,37 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "e43894b63d3bd40b7f68ce10c11dc8db901fc58dbdc72a4920595fa4e0e392f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-conformance-1.0.0.0-r0-69bdce2031072081487ad9033a45a8d9e1dfebcca1bd51be3f2b3856cdc8625c.nix;
+        revNum = 0;
+        sha256 = "69bdce2031072081487ad9033a45a8d9e1dfebcca1bd51be3f2b3856cdc8625c";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.1" = {
+    sha256 = "97e00be48a371d692b725649246884a3d5808427c17e69e4cba6b318e6d55f73";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-conformance-1.0.0.1-r0-2cbdb648664e4e730fdcc86b9b2a96a5911efa7b40edf53e55a48381e28bc7b2.nix;
+        revNum = 0;
+        sha256 = "2cbdb648664e4e730fdcc86b9b2a96a5911efa7b40edf53e55a48381e28bc7b2";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.1.0" = {
+    sha256 = "81155942beafe80b7ed335613bab74fa4cb8e12fe1c5f180c00b4a1f6425b7a0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-conformance-1.0.1.0-r0-23d1e8463e72410eb7d62a628599723e25ba5234835a1bd21d0833ccade65ec4.nix;
+        revNum = 0;
+        sha256 = "23d1e8463e72410eb7d62a628599723e25ba5234835a1bd21d0833ccade65ec4";
+      };
+      default = "r0";
+    };
+  };
 }

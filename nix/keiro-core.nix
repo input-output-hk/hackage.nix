@@ -10,6 +10,17 @@
       default = "r0";
     };
   };
+  "0.11.0.0" = {
+    sha256 = "8276341f7c725626b23441eb9fe7b75bd48318bd5002525c3598bff4fcbe8ba2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-core-0.11.0.0-r0-30983af760d41a1b7533443850e9e26d75bcfdc093c08eed95f26dd7a12eba5e.nix;
+        revNum = 0;
+        sha256 = "30983af760d41a1b7533443850e9e26d75bcfdc093c08eed95f26dd7a12eba5e";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "a8259f9b97077fe04108bf0aa6e5e76b72b57ce106005db522969ae8822f43e5";
     revisions = {

@@ -54,4 +54,59 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "443429ab47555c7b4620c9a5ddf081092a8bcd3f16ed36fe6af6c3054e15e5e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-1.0.0.0-r0-6092d8214a04470eafc7b8f0d5380b135a65af09c25cf96090b31f168891ddde.nix;
+        revNum = 0;
+        sha256 = "6092d8214a04470eafc7b8f0d5380b135a65af09c25cf96090b31f168891ddde";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.1" = {
+    sha256 = "320cd625ed5b193744b97a6c097923e99a98a209d9ac51a32e942327f9602478";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-1.0.0.1-r0-fec475fd0ec7a3141242a4cd6c4dca44fe7de3657edc47097e39ccce362b795e.nix;
+        revNum = 0;
+        sha256 = "fec475fd0ec7a3141242a4cd6c4dca44fe7de3657edc47097e39ccce362b795e";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.2" = {
+    sha256 = "903381701c21f30b556243f2043e8cdc9100c7e146409860f7dc8a61006874a7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-1.0.0.2-r0-0581c49609763dd8ac7ccd6e000fabac8ba26ba9c6f549623ce08867aa356f74.nix;
+        revNum = 0;
+        sha256 = "0581c49609763dd8ac7ccd6e000fabac8ba26ba9c6f549623ce08867aa356f74";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.3" = {
+    sha256 = "60b11062281594d7b19c0e2bf04178e8fe59f860cc8729da33916cc0bfe53c33";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-1.0.0.3-r0-4f245b8b5baaa879bdc6033c89303a6f060948d109092974dc2d19cc8ff080ce.nix;
+        revNum = 0;
+        sha256 = "4f245b8b5baaa879bdc6033c89303a6f060948d109092974dc2d19cc8ff080ce";
+      };
+      default = "r0";
+    };
+  };
+  "1.1.0.0" = {
+    sha256 = "5cfaf40c3cd356cc879507f459c36485ecfa6bace09982b09261c65b4f08ca0a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-1.1.0.0-r0-4995e8213e6e11fc4a8af59d1303436d46d90ac524d6c786d9eb87115f597fa8.nix;
+        revNum = 0;
+        sha256 = "4995e8213e6e11fc4a8af59d1303436d46d90ac524d6c786d9eb87115f597fa8";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.6" = {
+    sha256 = "46352fa3ffc98ce721e64736e4b5a04b45f921015d99dcc44c66b3b5f6b67298";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/network-light-0.1.0.6-r0-5dc047721ab48f6c07b324a3b7a9834de0fe71196e8beb868a1815287ec1fe74.nix;
+        revNum = 0;
+        sha256 = "5dc047721ab48f6c07b324a3b7a9834de0fe71196e8beb868a1815287ec1fe74";
+      };
+      default = "r0";
+    };
+  };
 }

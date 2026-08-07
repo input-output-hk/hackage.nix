@@ -43,4 +43,37 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "1f2de2ca96f5aa79a75f53f3db61998b57289ffd63768baf87e9bcb08f402d68";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-ffi-1.0.0.0-r0-c2a5a884b6b7c3dcc422dbf018c8b3a058e97d52d00546796569af4fc40a7832.nix;
+        revNum = 0;
+        sha256 = "c2a5a884b6b7c3dcc422dbf018c8b3a058e97d52d00546796569af4fc40a7832";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.0.1" = {
+    sha256 = "588225f1494559d2cc2dbf0666220819a735c7825d5d076603bd96e91958417d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-ffi-1.0.0.1-r0-6e0f423f7ae7f0f503e5b0fdfda58289f1597f30d3c087042f6ab130ffe2c12b.nix;
+        revNum = 0;
+        sha256 = "6e0f423f7ae7f0f503e5b0fdfda58289f1597f30d3c087042f6ab130ffe2c12b";
+      };
+      default = "r0";
+    };
+  };
+  "1.0.1.0" = {
+    sha256 = "18484d37ab84cba34607091f296eed14fed531d1d0eddbec386fd1b94f0e4a7e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-ffi-1.0.1.0-r0-b4a9bb95999faa599ed26d1df37ccb4b979db06ddadd464d134282ccc2a70177.nix;
+        revNum = 0;
+        sha256 = "b4a9bb95999faa599ed26d1df37ccb4b979db06ddadd464d134282ccc2a70177";
+      };
+      default = "r0";
+    };
+  };
 }
