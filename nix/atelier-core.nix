@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "05c1c1a2b95b441a234ea768d275ddf57e9402b471853b392d070bf5e50296c2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atelier-core-0.3.0.0-r0-ccd506abec9d87d3f3832d3ddaa214189b0a6f6d4b844bd29ffa4eedb164edbb.nix;
+        revNum = 0;
+        sha256 = "ccd506abec9d87d3f3832d3ddaa214189b0a6f6d4b844bd29ffa4eedb164edbb";
+      };
+      default = "r0";
+    };
+  };
 }

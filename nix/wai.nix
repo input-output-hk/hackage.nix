@@ -639,4 +639,15 @@
       default = "r0";
     };
   };
+  "3.2.5" = {
+    sha256 = "7add19f5371a1850f8d785db2401edb144dfb2755a7b1ac4d2337ebc771ed46a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-3.2.5-r0-7062b30e536bee3502c07cf0e8a7a52b0bd33475e6066e4b5039e0efd6126c63.nix;
+        revNum = 0;
+        sha256 = "7062b30e536bee3502c07cf0e8a7a52b0bd33475e6066e4b5039e0efd6126c63";
+      };
+      default = "r0";
+    };
+  };
 }

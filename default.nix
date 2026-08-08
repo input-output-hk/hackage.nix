@@ -13196,6 +13196,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ping-wrapper" = import ./nix/ping-wrapper.nix;
   "pinned-warnings" = import ./nix/pinned-warnings.nix;
   "pinpon" = import ./nix/pinpon.nix;
+  "pinterest-url-normalizer" = import ./nix/pinterest-url-normalizer.nix;
   "pipe-enumerator" = import ./nix/pipe-enumerator.nix;
   "pipeclip" = import ./nix/pipeclip.nix;
   "piped" = import ./nix/piped.nix;
