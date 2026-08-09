@@ -263,4 +263,15 @@
       default = "r0";
     };
   };
+  "3.0.1" = {
+    sha256 = "5b52166ce102d9cc9f00707792c180c153399d12dae06803f5fc7a7286d7afbe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/adblock2privoxy-3.0.1-r0-e35ad20a5af2f9a6532b99b7c1bb2cbef825dabcb2e11496e290ea46098a9fcf.nix;
+        revNum = 0;
+        sha256 = "e35ad20a5af2f9a6532b99b7c1bb2cbef825dabcb2e11496e290ea46098a9fcf";
+      };
+      default = "r0";
+    };
+  };
 }

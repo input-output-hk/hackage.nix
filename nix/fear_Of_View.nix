@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "0d3e0ed7f5819b24530fde1162e37fe9836827beebc367db72fd8dc42797d50f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fearOfView-0.2.0.0-r0-9233e79bdfd48f0dedca1bcfb9835b567b92be9cf45629fc5b011ab075ae79e8.nix;
+        revNum = 0;
+        sha256 = "9233e79bdfd48f0dedca1bcfb9835b567b92be9cf45629fc5b011ab075ae79e8";
+      };
+      default = "r0";
+    };
+  };
 }
