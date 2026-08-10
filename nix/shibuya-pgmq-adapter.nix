@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.13.0.0" = {
+    sha256 = "857b54454fad34fca80bc6e48fc82bd04cf38062591532ac8b1f1f84220d1e0d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-pgmq-adapter-0.13.0.0-r0-674a9dce4e7357b47a9b8b6dc84b5277a0ea8c12ac1e4ace31fda75b71013d2e.nix;
+        revNum = 0;
+        sha256 = "674a9dce4e7357b47a9b8b6dc84b5277a0ea8c12ac1e4ace31fda75b71013d2e";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "95c07a30a0a09478fa2ee2025e0f8f67e1a75f85bafe1062e061396e2fbfd12d";
     revisions = {
