@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.9.0.0" = {
+    sha256 = "59d2c165c102116ebb766675b4f51fcd0bda427645cbcec9b48200962ea20432";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-core-0.9.0.0-r0-95ce29320b8560aed65da3e6105842ff9041bb76ade777e4e8a8ae2de065e4f8.nix;
+        revNum = 0;
+        sha256 = "95ce29320b8560aed65da3e6105842ff9041bb76ade777e4e8a8ae2de065e4f8";
+      };
+      default = "r0";
+    };
+  };
 }
