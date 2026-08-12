@@ -11451,6 +11451,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mintty" = import ./nix/mintty.nix;
   "mios" = import ./nix/mios.nix;
   "mirror-tweet" = import ./nix/mirror-tweet.nix;
+  "mischief-ecs" = import ./nix/mischief-ecs.nix;
   "misfortune" = import ./nix/misfortune.nix;
   "mismi-core" = import ./nix/mismi-core.nix;
   "mismi-kernel" = import ./nix/mismi-kernel.nix;
@@ -11711,6 +11712,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moonlight-algebra" = import ./nix/moonlight-algebra.nix;
   "moonlight-core" = import ./nix/moonlight-core.nix;
   "moonlight-delta" = import ./nix/moonlight-delta.nix;
+  "moonlight-triangulation" = import ./nix/moonlight-triangulation.nix;
   "moonshine" = import ./nix/moonshine.nix;
   "more-containers" = import ./nix/more-containers.nix;
   "more-extensible-effects" = import ./nix/more-extensible-effects.nix;
@@ -15902,6 +15904,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "sofetch" = import ./nix/sofetch.nix;
   "sofetch-otel" = import ./nix/sofetch-otel.nix;
   "softfloat-hs" = import ./nix/softfloat-hs.nix;
+  "solana-haskell-sdk" = import ./nix/solana-haskell-sdk.nix;
   "solana-staking-csvs" = import ./nix/solana-staking-csvs.nix;
   "solar" = import ./nix/solar.nix;
   "solga" = import ./nix/solga.nix;
