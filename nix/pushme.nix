@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "3.1.0" = {
+    sha256 = "0e459222e1ac9d6f550b1c13b318f08942f79a945fa4dc3ae83d0872095ca43c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pushme-3.1.0-r0-8f75ab7c2db43a953334a16b58bd1c70376e13e51f03ec09332bc70e647241e5.nix;
+        revNum = 0;
+        sha256 = "8f75ab7c2db43a953334a16b58bd1c70376e13e51f03ec09332bc70e647241e5";
+      };
+      default = "r0";
+    };
+  };
 }

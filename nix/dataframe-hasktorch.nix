@@ -84,7 +84,12 @@
         revNum = 0;
         sha256 = "b87f8e544d462a410503fed51e25d8c57f67ea4057c7021d906250b89c2152e8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dataframe-hasktorch-0.4.0.1-r1-88bcdacd6284acbaadff8f86e8fe9e41f6df84179f699b4d89c08b8c2f0c5288.nix;
+        revNum = 1;
+        sha256 = "88bcdacd6284acbaadff8f86e8fe9e41f6df84179f699b4d89c08b8c2f0c5288";
+      };
+      default = "r1";
     };
   };
 }

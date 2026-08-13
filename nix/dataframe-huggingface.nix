@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.2.0.2" = {
+    sha256 = "f5f4e54c4c735387a25e165767e1173feb5e0c3e6eedb763a2b15ac4e26cc4b9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-huggingface-1.2.0.2-r0-c2e7da6d802621a44fe9b0d0cee7e2df02c6ca1950fae9faef4ea6e35ef1f986.nix;
+        revNum = 0;
+        sha256 = "c2e7da6d802621a44fe9b0d0cee7e2df02c6ca1950fae9faef4ea6e35ef1f986";
+      };
+      default = "r0";
+    };
+  };
 }

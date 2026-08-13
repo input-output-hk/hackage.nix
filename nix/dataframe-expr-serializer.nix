@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "19b61714546313804434763d3f6aa5aa3e74697ef1e74394a47988e2c6494a4c";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dataframe-expr-serializer-1.2.0.1-r1-a38e5b7e1ff74105513fec946f0f395a4bded7c0fed0e82e394ee856fbe62816.nix;
+        revNum = 1;
+        sha256 = "a38e5b7e1ff74105513fec946f0f395a4bded7c0fed0e82e394ee856fbe62816";
+      };
+      default = "r1";
     };
   };
 }

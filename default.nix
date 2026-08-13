@@ -3648,6 +3648,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cipher-rc5" = import ./nix/cipher-rc5.nix;
   "ciphersaber2" = import ./nix/ciphersaber2.nix;
   "circ" = import ./nix/circ.nix;
+  "circe" = import ./nix/circe.nix;
   "circle" = import ./nix/circle.nix;
   "circle-packing" = import ./nix/circle-packing.nix;
   "circlehs" = import ./nix/circlehs.nix;
