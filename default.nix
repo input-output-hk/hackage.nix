@@ -6465,6 +6465,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "future" = import ./nix/future.nix;
   "future-resource" = import ./nix/future-resource.nix;
   "futures" = import ./nix/futures.nix;
+  "fuyu-gpio" = import ./nix/fuyu-gpio.nix;
   "fuyu-gpio-direct" = import ./nix/fuyu-gpio-direct.nix;
   "fuzzcheck" = import ./nix/fuzzcheck.nix;
   "fuzzily" = import ./nix/fuzzily.nix;
@@ -7683,6 +7684,14 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "han2zen" = import ./nix/han2zen.nix;
   "hanabi-dealer" = import ./nix/hanabi-dealer.nix;
   "hanalyze" = import ./nix/hanalyze.nix;
+  "hanalyze-bayes" = import ./nix/hanalyze-bayes.nix;
+  "hanalyze-cli" = import ./nix/hanalyze-cli.nix;
+  "hanalyze-core" = import ./nix/hanalyze-core.nix;
+  "hanalyze-design" = import ./nix/hanalyze-design.nix;
+  "hanalyze-frame" = import ./nix/hanalyze-frame.nix;
+  "hanalyze-models" = import ./nix/hanalyze-models.nix;
+  "hanalyze-plot" = import ./nix/hanalyze-plot.nix;
+  "hanalyze-viz" = import ./nix/hanalyze-viz.nix;
   "handa-data" = import ./nix/handa-data.nix;
   "handa-gdata" = import ./nix/handa-gdata.nix;
   "handa-geodata" = import ./nix/handa-geodata.nix;
@@ -11128,6 +11137,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mangle" = import ./nix/mangle.nix;
   "mangopay" = import ./nix/mangopay.nix;
   "mangrove" = import ./nix/mangrove.nix;
+  "mangrove-cli" = import ./nix/mangrove-cli.nix;
   "manifold-random" = import ./nix/manifold-random.nix;
   "manifolds" = import ./nix/manifolds.nix;
   "manifolds-core" = import ./nix/manifolds-core.nix;
@@ -13763,6 +13773,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prob" = import ./nix/prob.nix;
   "prob-fx" = import ./nix/prob-fx.nix;
   "probability" = import ./nix/probability.nix;
+  "probability-dist" = import ./nix/probability-dist.nix;
   "probability-polynomial" = import ./nix/probability-polynomial.nix;
   "probable" = import ./nix/probable.nix;
   "proc" = import ./nix/proc.nix;
@@ -19126,6 +19137,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaya-unsafe" = import ./nix/yaya-unsafe.nix;
   "yaya-unsafe-test" = import ./nix/yaya-unsafe-test.nix;
   "ycextra" = import ./nix/ycextra.nix;
+  "ychr" = import ./nix/ychr.nix;
   "yeamer" = import ./nix/yeamer.nix;
   "yeganesh" = import ./nix/yeganesh.nix;
   "yeller" = import ./nix/yeller.nix;

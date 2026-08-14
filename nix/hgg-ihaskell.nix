@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "4a9a53cb93f2aa10f6c9afae100852a36c6dffc200acd8e1039c0e843b66eb65";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hgg-ihaskell-0.2.0.0-r0-4125534610365e9678f0b246b5d729931f54179147d03a3cd89362edfc12500e.nix;
+        revNum = 0;
+        sha256 = "4125534610365e9678f0b246b5d729931f54179147d03a3cd89362edfc12500e";
+      };
+      default = "r0";
+    };
+  };
 }

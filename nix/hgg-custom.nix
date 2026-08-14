@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "5d02816abf5d44ba5543985d2d5b13ac888b632d5b558f799d77d8970cf9ef9b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hgg-custom-0.2.0.0-r0-4cedd447079f3452d3c41c22a0e41dc52d0fa7236a70894e9727e561f986f168.nix;
+        revNum = 0;
+        sha256 = "4cedd447079f3452d3c41c22a0e41dc52d0fa7236a70894e9727e561f986f168";
+      };
+      default = "r0";
+    };
+  };
 }

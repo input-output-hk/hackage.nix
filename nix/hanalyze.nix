@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "6c3d9c8414dc5437216715395af521a6c1cacae352e1f447191f55fc45a76ba8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hanalyze-0.2.0.1-r0-6658211de55900534048fdd3b7d0842f55f8bd4c8bbfe8d22fdbbf1b4ff67c1f.nix;
+        revNum = 0;
+        sha256 = "6658211de55900534048fdd3b7d0842f55f8bd4c8bbfe8d22fdbbf1b4ff67c1f";
+      };
+      default = "r0";
+    };
+  };
 }

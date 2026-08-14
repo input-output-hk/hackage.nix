@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.2.0.4" = {
+    sha256 = "6b2c9e50158a41143a0aa414d4f8a2e8fe977ca0c431d9307fd4cb659a18949f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-cli-0.2.0.4-r0-2113fce33b04bc0afd17411edd2f0c8b36a6c014b58d4d883a0ae04c8acd52a7.nix;
+        revNum = 0;
+        sha256 = "2113fce33b04bc0afd17411edd2f0c8b36a6c014b58d4d883a0ae04c8acd52a7";
+      };
+      default = "r0";
+    };
+  };
 }
