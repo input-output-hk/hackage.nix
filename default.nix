@@ -2334,6 +2334,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "asynchronous-exceptions" = import ./nix/asynchronous-exceptions.nix;
   "atelier-core" = import ./nix/atelier-core.nix;
   "atelier-db" = import ./nix/atelier-db.nix;
+  "atelier-monitoring" = import ./nix/atelier-monitoring.nix;
   "atelier-prelude" = import ./nix/atelier-prelude.nix;
   "atelier-testing" = import ./nix/atelier-testing.nix;
   "aterm" = import ./nix/aterm.nix;
@@ -4709,6 +4710,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dataflow" = import ./nix/dataflow.nix;
   "dataflower" = import ./nix/dataflower.nix;
   "dataframe" = import ./nix/dataframe.nix;
+  "dataframe-arrow" = import ./nix/dataframe-arrow.nix;
   "dataframe-core" = import ./nix/dataframe-core.nix;
   "dataframe-csv" = import ./nix/dataframe-csv.nix;
   "dataframe-csv-th" = import ./nix/dataframe-csv-th.nix;
@@ -8679,6 +8681,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hoogle" = import ./nix/hoogle.nix;
   "hoogle-index" = import ./nix/hoogle-index.nix;
   "hooks-dir" = import ./nix/hooks-dir.nix;
+  "hooks-exe" = import ./nix/hooks-exe.nix;
   "hookup" = import ./nix/hookup.nix;
   "hoop" = import ./nix/hoop.nix;
   "hoopl" = import ./nix/hoopl.nix;
@@ -10191,6 +10194,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keiro-core" = import ./nix/keiro-core.nix;
   "keiro-dsl" = import ./nix/keiro-dsl.nix;
   "keiro-migrations" = import ./nix/keiro-migrations.nix;
+  "keiro-ops" = import ./nix/keiro-ops.nix;
   "keiro-pgmq" = import ./nix/keiro-pgmq.nix;
   "kempe" = import ./nix/kempe.nix;
   "kerry" = import ./nix/kerry.nix;

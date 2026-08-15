@@ -72,7 +72,12 @@
         revNum = 1;
         sha256 = "17634a3ebed7876c1ae8c3c24a5f59797096783b819b5be7a99c5e62ae53078c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dataframe-json-1.2.0.1-r2-27399b15e88573ff476e624bb15caba1c635f06e2e0d3f20e2a307f446eb029b.nix;
+        revNum = 2;
+        sha256 = "27399b15e88573ff476e624bb15caba1c635f06e2e0d3f20e2a307f446eb029b";
+      };
+      default = "r2";
     };
   };
 }

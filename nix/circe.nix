@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "c7f2d0a6c4ba9f38fefa929a53bd15f45b7d6251a114c2233a8d2521a2be76dc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/circe-0.2.0.0-r0-c0e05bd7ceffa183dc7c53675185c2051fd82bf8a37a885e33585973872e988f.nix;
+        revNum = 0;
+        sha256 = "c0e05bd7ceffa183dc7c53675185c2051fd82bf8a37a885e33585973872e988f";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "60852cb0052d26c9df459a011ed15a4fbe1bd2084e9a332f285fb1dbdf5a7eba";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atelier-core-0.4.0.0-r0-d773a5679e9f3d565f39571ba3f07688be047aec9929c9f68a5ba083b8ef7e64.nix;
+        revNum = 0;
+        sha256 = "d773a5679e9f3d565f39571ba3f07688be047aec9929c9f68a5ba083b8ef7e64";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.0.1" = {
+    sha256 = "76cda1dd1c9b23132cc0acf49d69a2dfb52717c5128d766d3dca7d1f5b34c95d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atelier-core-0.4.0.1-r0-01f4e4280bada434e056357cd0b5bd33a714576a509a1448fd11d4bc2ff70b9d.nix;
+        revNum = 0;
+        sha256 = "01f4e4280bada434e056357cd0b5bd33a714576a509a1448fd11d4bc2ff70b9d";
+      };
+      default = "r0";
+    };
+  };
 }
