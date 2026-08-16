@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.5" = {
+    sha256 = "57d2bafd79ea3b5ab385fd91be7c14911dd279954ead596e41941c257e8bd0a4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/primdata-0.1.2.5-r0-85cbbef0810eed40a3eb4c4374b7f70f8ffffca58c63229febd4fac03c2a0f38.nix;
+        revNum = 0;
+        sha256 = "85cbbef0810eed40a3eb4c4374b7f70f8ffffca58c63229febd4fac03c2a0f38";
+      };
+      default = "r0";
+    };
+  };
 }

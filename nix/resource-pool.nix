@@ -232,4 +232,15 @@
       default = "r0";
     };
   };
+  "0.5.1.0" = {
+    sha256 = "9322cab39729b865683c391246a49e1e57973f205013b0b015e2bcdccf493c56";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/resource-pool-0.5.1.0-r0-d335648228caccd4ee8ba23e85db089df07b016e672f235e8078ac97f1debd19.nix;
+        revNum = 0;
+        sha256 = "d335648228caccd4ee8ba23e85db089df07b016e672f235e8078ac97f1debd19";
+      };
+      default = "r0";
+    };
+  };
 }

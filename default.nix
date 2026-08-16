@@ -10146,6 +10146,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kawaii" = import ./nix/kawaii.nix;
   "kawhi" = import ./nix/kawhi.nix;
   "kazura-queue" = import ./nix/kazura-queue.nix;
+  "kb-text-layout" = import ./nix/kb-text-layout.nix;
   "kb-text-shape" = import ./nix/kb-text-shape.nix;
   "kbq-gu" = import ./nix/kbq-gu.nix;
   "kcd" = import ./nix/kcd.nix;
