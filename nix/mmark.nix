@@ -518,4 +518,15 @@
       default = "r3";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "59b98431fc8a2fb4d8d991311c2f409672d8f326fb3cb0ac988ca058ab8696ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mmark-0.1.0.0-r0-7a69122e04c0ca74c741504c37a28af102b5032d585fdf5936a02a606eaf1478.nix;
+        revNum = 0;
+        sha256 = "7a69122e04c0ca74c741504c37a28af102b5032d585fdf5936a02a606eaf1478";
+      };
+      default = "r0";
+    };
+  };
 }

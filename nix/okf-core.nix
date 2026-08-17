@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.6.0.1" = {
+    sha256 = "6c53575b0cba0e9a919ef19d175d0709b732cc80bad6f09d9f11fe951b468ddc";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/okf-core-0.6.0.1-r0-be873db25ffeeda75cf138724fc0d2d51fb6c510970ae81ac5c997c9efa98a2a.nix;
+        revNum = 0;
+        sha256 = "be873db25ffeeda75cf138724fc0d2d51fb6c510970ae81ac5c997c9efa98a2a";
+      };
+      default = "r0";
+    };
+  };
 }

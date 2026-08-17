@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "26bd8e4dcc11901d4875c12ba25d3ff74d4980c152ab1b959a6ac44f790dd21d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mldsa-0.1.1.0-r0-7b0c270fe3ac8882a99a5069feb43690ab28b3a7a7fe5a259831e7c99991ae5c.nix;
+        revNum = 0;
+        sha256 = "7b0c270fe3ac8882a99a5069feb43690ab28b3a7a7fe5a259831e7c99991ae5c";
+      };
+      default = "r0";
+    };
+  };
 }

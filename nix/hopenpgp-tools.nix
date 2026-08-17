@@ -681,6 +681,17 @@
       default = "r0";
     };
   };
+  "0.25.6" = {
+    sha256 = "91727808b23c6aa528dac7bd97429483e812cf86e1268be56ba81ce9208372d9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hopenpgp-tools-0.25.6-r0-731eb683bf6332936bdaad3feabf3433d95c994b09d8e17d84c5652b6684edce.nix;
+        revNum = 0;
+        sha256 = "731eb683bf6332936bdaad3feabf3433d95c994b09d8e17d84c5652b6684edce";
+      };
+      default = "r0";
+    };
+  };
   "0.3" = {
     sha256 = "59428f5c55981737f7361e77f50fc9bcfead368d001d61039ba0b9905acc6c92";
     revisions = {

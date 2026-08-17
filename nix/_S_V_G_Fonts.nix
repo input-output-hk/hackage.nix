@@ -332,4 +332,15 @@
       default = "r0";
     };
   };
+  "1.8.2" = {
+    sha256 = "bfb22dd800355412411695129a0e7e182f721e2270023da6881ed0e063ace607";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/SVGFonts-1.8.2-r0-fd0e75e039e56314f9514f8959a3ad34a4524d4cf963a8b8df692798734ef253.nix;
+        revNum = 0;
+        sha256 = "fd0e75e039e56314f9514f8959a3ad34a4524d4cf963a8b8df692798734ef253";
+      };
+      default = "r0";
+    };
+  };
 }

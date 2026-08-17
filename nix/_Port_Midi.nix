@@ -125,4 +125,15 @@
       default = "r1";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "04f42c17a3a3ce3e55bd1699e11a8f616ae6ae9da21d1f64e422af0450101501";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PortMidi-0.2.0.1-r0-7ea234c4b9789a822f8228015995e3bc5abfaf02b5c02b49bffa272c07a59e69.nix;
+        revNum = 0;
+        sha256 = "7ea234c4b9789a822f8228015995e3bc5abfaf02b5c02b49bffa272c07a59e69";
+      };
+      default = "r0";
+    };
+  };
 }

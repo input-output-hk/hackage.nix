@@ -3334,6 +3334,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabin" = import ./nix/cabin.nix;
   "cabocha" = import ./nix/cabocha.nix;
   "cache" = import ./nix/cache.nix;
+  "cache-effectful" = import ./nix/cache-effectful.nix;
   "cache-polysemy" = import ./nix/cache-polysemy.nix;
   "cached" = import ./nix/cached.nix;
   "cached-io" = import ./nix/cached-io.nix;

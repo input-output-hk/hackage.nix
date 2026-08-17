@@ -64,4 +64,15 @@
       default = "r0";
     };
   };
+  "0.2.3.0" = {
+    sha256 = "bb6b24fcf337d0480a64c8b5152d97ecf2820872824d792ab46a9fb45acb0829";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mlkem-0.2.3.0-r0-302c52d7c880efdc567d812e2e7490dc08a85e155daaa9c12d157d997c8568d2.nix;
+        revNum = 0;
+        sha256 = "302c52d7c880efdc567d812e2e7490dc08a85e155daaa9c12d157d997c8568d2";
+      };
+      default = "r0";
+    };
+  };
 }
