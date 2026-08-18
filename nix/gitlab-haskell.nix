@@ -400,4 +400,15 @@
       default = "r0";
     };
   };
+  "1.4.1.0" = {
+    sha256 = "3bbe78b0635e7f59cd25fa7fe0ca44367d1724a3b3f50eebb1c75d30237d880d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/gitlab-haskell-1.4.1.0-r0-20d39761570076e0a5ff6b2b54813dde4ffb3e625ace84e8cf89db944385e9f9.nix;
+        revNum = 0;
+        sha256 = "20d39761570076e0a5ff6b2b54813dde4ffb3e625ace84e8cf89db944385e9f9";
+      };
+      default = "r0";
+    };
+  };
 }

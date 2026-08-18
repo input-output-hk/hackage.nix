@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "0d56c7e59c9917223deff0ccdf052c9502ebe84afd60419784e94353ae31802e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/seihou-cli-0.7.0.0-r0-27f24d9bebae8978c72e4b6c62a5ab0372ee9391c297a34eb9af87f6bd21e527.nix;
+        revNum = 0;
+        sha256 = "27f24d9bebae8978c72e4b6c62a5ab0372ee9391c297a34eb9af87f6bd21e527";
+      };
+      default = "r0";
+    };
+  };
 }
