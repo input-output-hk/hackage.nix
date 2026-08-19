@@ -1595,6 +1595,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda2lagda" = import ./nix/agda2lagda.nix;
   "agda2train" = import ./nix/agda2train.nix;
   "age" = import ./nix/age.nix;
+  "agent-push-kit" = import ./nix/agent-push-kit.nix;
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
@@ -16094,6 +16095,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "srt-dhall" = import ./nix/srt-dhall.nix;
   "srt-formatting" = import ./nix/srt-formatting.nix;
   "srtree" = import ./nix/srtree.nix;
+  "srtree-db" = import ./nix/srtree-db.nix;
   "srv" = import ./nix/srv.nix;
   "sscan" = import ./nix/sscan.nix;
   "sscgi" = import ./nix/sscgi.nix;
