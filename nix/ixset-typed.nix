@@ -203,4 +203,15 @@
       default = "r0";
     };
   };
+  "0.6" = {
+    sha256 = "2057a7f5be38eba9f22651aa17c6295a19bf669ee9adaf66473b3d0a13eeb8a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ixset-typed-0.6-r0-4e99987d84b12daffb5e3316d08e1586af4d533e855245f68209a4a628b15e35.nix;
+        revNum = 0;
+        sha256 = "4e99987d84b12daffb5e3316d08e1586af4d533e855245f68209a4a628b15e35";
+      };
+      default = "r0";
+    };
+  };
 }

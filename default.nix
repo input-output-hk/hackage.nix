@@ -10158,6 +10158,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kdl-hs" = import ./nix/kdl-hs.nix;
   "kdt" = import ./nix/kdt.nix;
   "keccak" = import ./nix/keccak.nix;
+  "keel" = import ./nix/keel.nix;
+  "keel-abi" = import ./nix/keel-abi.nix;
+  "keel-dyn" = import ./nix/keel-dyn.nix;
+  "keel-linalg" = import ./nix/keel-linalg.nix;
+  "keel-onnx" = import ./nix/keel-onnx.nix;
   "keelung" = import ./nix/keelung.nix;
   "keenser" = import ./nix/keenser.nix;
   "keep-alive" = import ./nix/keep-alive.nix;

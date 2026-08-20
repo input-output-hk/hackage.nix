@@ -56,7 +56,12 @@
         revNum = 0;
         sha256 = "ceeefcd257d2491ee61786a39dda2cd59d1c9757e43c16546a4354e2bef5c4c0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/nvim-hs-ghcid-2.0.1.0-r1-a4d9859bbdc130eaf537f3decb4db2bd842bc60b30811a3b8155ab26b37532fb.nix;
+        revNum = 1;
+        sha256 = "a4d9859bbdc130eaf537f3decb4db2bd842bc60b30811a3b8155ab26b37532fb";
+      };
+      default = "r1";
     };
   };
 }

@@ -26,4 +26,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "c4094420c46fa21e6c01d04a470a27c26619a8ca0505b76cf8758a0f03762de2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/strict-mutable-base-2.0.0.0-r0-7cbceaa3af3bbc3d0d472b7cd71cb7083d332d42d4db280e5f029a766746d1bf.nix;
+        revNum = 0;
+        sha256 = "7cbceaa3af3bbc3d0d472b7cd71cb7083d332d42d4db280e5f029a766746d1bf";
+      };
+      default = "r0";
+    };
+  };
 }

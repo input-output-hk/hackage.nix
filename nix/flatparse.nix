@@ -340,4 +340,59 @@
       default = "r0";
     };
   };
+  "0.5.4.0" = {
+    sha256 = "fa84cc2a307c1b6451ea6930ada6932cebe637db75ded86146c7e972cbe9a7ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.4.0-r0-4688d41a4860739a1d0181d8e77542812c4334e18839dc26ee4fa1eeda64051f.nix;
+        revNum = 0;
+        sha256 = "4688d41a4860739a1d0181d8e77542812c4334e18839dc26ee4fa1eeda64051f";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.4.1" = {
+    sha256 = "1d9c1cdeb34aad3ffe0c4cc327cda0b3786ed27164d2d3d46059105b51865a6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.4.1-r0-2bf06e2ea6d42e284ceb75fa7a113ecabb41a627ed722949a17218543fdcb2e5.nix;
+        revNum = 0;
+        sha256 = "2bf06e2ea6d42e284ceb75fa7a113ecabb41a627ed722949a17218543fdcb2e5";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.4.2" = {
+    sha256 = "38884661e80789624097a2072d3c9c2df760d2a22202e309ea3eeffc8d86728f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.4.2-r0-e9dcb8dd2830e06e5ce1604d7ad529372d41fdb2a1f5bc46bf0d1e18782a9116.nix;
+        revNum = 0;
+        sha256 = "e9dcb8dd2830e06e5ce1604d7ad529372d41fdb2a1f5bc46bf0d1e18782a9116";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.4.3" = {
+    sha256 = "507e949aa6008b186f8a38700b45adb2a75ecd19356fa800c1fc5e6a5a59a595";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.4.3-r0-0efdb11e5cc676756ff6abcbe0e64446aa3e275786fadb7da862f06905492a56.nix;
+        revNum = 0;
+        sha256 = "0efdb11e5cc676756ff6abcbe0e64446aa3e275786fadb7da862f06905492a56";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.4.4" = {
+    sha256 = "565b489e13ba9b94a8996ee806a12d548bfb9d1c5898966c0937a4e11732ef18";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/flatparse-0.5.4.4-r0-043fddc5f14de663a9c8700c1e7baea54731e52d5505b334752fb2f70be8a2d5.nix;
+        revNum = 0;
+        sha256 = "043fddc5f14de663a9c8700c1e7baea54731e52d5505b334752fb2f70be8a2d5";
+      };
+      default = "r0";
+    };
+  };
 }

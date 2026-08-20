@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "a00a4c965281267c3832bfea2ca52ceee9acbf9c05298c64d0e70b64fcd1c017";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/okf-cli-0.8.0.0-r0-865106649ff9bbdd63bffecde150243b342789eeefb15d58439a9f1ea379073d.nix;
+        revNum = 0;
+        sha256 = "865106649ff9bbdd63bffecde150243b342789eeefb15d58439a9f1ea379073d";
+      };
+      default = "r0";
+    };
+  };
 }
