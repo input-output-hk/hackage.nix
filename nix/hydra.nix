@@ -142,6 +142,17 @@
       default = "r0";
     };
   };
+  "0.17.5" = {
+    sha256 = "79f7dd88abe328371845046ec8295ec1bbfc9a991a16901dbc28083c20fa9d1c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-0.17.5-r0-e0e0bcebfc8a5203048ac554c4a468ac9ebc33287381af77a7de2ee9646018fb.nix;
+        revNum = 0;
+        sha256 = "e0e0bcebfc8a5203048ac554c4a468ac9ebc33287381af77a7de2ee9646018fb";
+      };
+      default = "r0";
+    };
+  };
   "0.5.0" = {
     sha256 = "3b09df6cd1fcdaa4928a8576372e2bdd5a15a6aaa2c176acc1f75b2338fd732f";
     revisions = {

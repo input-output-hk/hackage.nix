@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "e3e20bceeba7943818ae85baef08cc73e73f68afe999d40d3bba52b740351ff7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sqlc-hs-0.3.0.0-r0-cb4b11ebd7d190d782f99f0f4988a93921dca7db2a182b99d2d993b62aaf7873.nix;
+        revNum = 0;
+        sha256 = "cb4b11ebd7d190d782f99f0f4988a93921dca7db2a182b99d2d993b62aaf7873";
+      };
+      default = "r0";
+    };
+  };
 }

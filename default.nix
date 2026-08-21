@@ -11735,6 +11735,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moonlight-algebra" = import ./nix/moonlight-algebra.nix;
   "moonlight-core" = import ./nix/moonlight-core.nix;
   "moonlight-delta" = import ./nix/moonlight-delta.nix;
+  "moonlight-pale" = import ./nix/moonlight-pale.nix;
   "moonlight-triangulation" = import ./nix/moonlight-triangulation.nix;
   "moonshine" = import ./nix/moonshine.nix;
   "more-containers" = import ./nix/more-containers.nix;
