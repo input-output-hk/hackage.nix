@@ -32,4 +32,26 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "6f5af81225df4d819494888d5ee54c23a0274b66209da8d952c7c5291bc6228f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-core-0.1.0.3-r0-73e5864ecd56ed7a5559cb1c3a0abe74ccee7960cb09fba1a9b2a9713c8d782f.nix;
+        revNum = 0;
+        sha256 = "73e5864ecd56ed7a5559cb1c3a0abe74ccee7960cb09fba1a9b2a9713c8d782f";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.4" = {
+    sha256 = "8f9cee5915671a3a5473e5cc7e0d714bddfc8746392d53b22e5f2d7ea0af140e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-core-0.1.0.4-r0-81b932e41dedb287cc1c6689b0f77eb68c4174a0637247fb6d74e5f406701e3b.nix;
+        revNum = 0;
+        sha256 = "81b932e41dedb287cc1c6689b0f77eb68c4174a0637247fb6d74e5f406701e3b";
+      };
+      default = "r0";
+    };
+  };
 }

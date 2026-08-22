@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "8b7683659290435915942c2026ff9eec41a5c6146f58c18db5a5c08f620cbb06";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-core-0.7.0-r0-b68f0f8c5531bdbf12036c6cbf3553d3368999a7c690be3832dc356ddfb9ba4f.nix;
+        revNum = 0;
+        sha256 = "b68f0f8c5531bdbf12036c6cbf3553d3368999a7c690be3832dc356ddfb9ba4f";
+      };
+      default = "r0";
+    };
+  };
 }

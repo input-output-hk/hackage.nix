@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "f796efb24a6223cde8acf785778ace10b3b7f6e9eea7b9b2c4477d9d9fe49bd2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eventium-sqlite-0.7.0-r0-d7c898024a19eb098dc6351a59384a9cc4683126fc0825d580b05198331413f5.nix;
+        revNum = 0;
+        sha256 = "d7c898024a19eb098dc6351a59384a9cc4683126fc0825d580b05198331413f5";
+      };
+      default = "r0";
+    };
+  };
 }

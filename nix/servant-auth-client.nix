@@ -272,7 +272,12 @@
         revNum = 0;
         sha256 = "8fc28152956619cab538cebe2f2d74a0a26af8a9737e6ce3228faf65c02aee40";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/servant-auth-client-0.4.10.0-r1-01a6450015683916fc6a362aab8753038af8247ef890a4dff76f5ac44fb7fe45.nix;
+        revNum = 1;
+        sha256 = "01a6450015683916fc6a362aab8753038af8247ef890a4dff76f5ac44fb7fe45";
+      };
+      default = "r1";
     };
   };
   "0.4.2.0" = {

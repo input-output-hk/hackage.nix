@@ -7866,6 +7866,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "haskell-fake-user-agent" = import ./nix/haskell-fake-user-agent.nix;
   "haskell-ffprobe" = import ./nix/haskell-ffprobe.nix;
   "haskell-formatter" = import ./nix/haskell-formatter.nix;
+  "haskell-fsrs" = import ./nix/haskell-fsrs.nix;
   "haskell-ftp" = import ./nix/haskell-ftp.nix;
   "haskell-generate" = import ./nix/haskell-generate.nix;
   "haskell-gettext" = import ./nix/haskell-gettext.nix;
@@ -8080,6 +8081,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-url" = import ./nix/hasql-url.nix;
   "hasqlator-mysql" = import ./nix/hasqlator-mysql.nix;
   "hasqly-mysql" = import ./nix/hasqly-mysql.nix;
+  "hasquant" = import ./nix/hasquant.nix;
   "hastache" = import ./nix/hastache.nix;
   "hastache-aeson" = import ./nix/hastache-aeson.nix;
   "haste" = import ./nix/haste.nix;
@@ -10204,6 +10206,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keiro-migrations" = import ./nix/keiro-migrations.nix;
   "keiro-ops" = import ./nix/keiro-ops.nix;
   "keiro-pgmq" = import ./nix/keiro-pgmq.nix;
+  "keiro-test-support" = import ./nix/keiro-test-support.nix;
   "kempe" = import ./nix/kempe.nix;
   "kerry" = import ./nix/kerry.nix;
   "kesha" = import ./nix/kesha.nix;
@@ -11733,8 +11736,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moo" = import ./nix/moo.nix;
   "moo-nad" = import ./nix/moo-nad.nix;
   "moonlight-algebra" = import ./nix/moonlight-algebra.nix;
+  "moonlight-category" = import ./nix/moonlight-category.nix;
   "moonlight-core" = import ./nix/moonlight-core.nix;
   "moonlight-delta" = import ./nix/moonlight-delta.nix;
+  "moonlight-homology" = import ./nix/moonlight-homology.nix;
+  "moonlight-linalg" = import ./nix/moonlight-linalg.nix;
   "moonlight-pale" = import ./nix/moonlight-pale.nix;
   "moonlight-triangulation" = import ./nix/moonlight-triangulation.nix;
   "moonshine" = import ./nix/moonshine.nix;
