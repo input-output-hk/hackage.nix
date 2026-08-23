@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "530bd43761968a9ef24e89b879e66309e44ac3e1c692fd31774a0f71f8e07fd5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/setdown-0.2.1.0-r0-763ff86cd3432a2d003845f59cff13bdb58d51ed64fa6dcbe67cadd985f74f7e.nix;
+        revNum = 0;
+        sha256 = "763ff86cd3432a2d003845f59cff13bdb58d51ed64fa6dcbe67cadd985f74f7e";
+      };
+      default = "r0";
+    };
+  };
 }

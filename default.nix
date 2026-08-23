@@ -18511,7 +18511,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vty-windows" = import ./nix/vty-windows.nix;
   "vulkan" = import ./nix/vulkan.nix;
   "vulkan-api" = import ./nix/vulkan-api.nix;
+  "vulkan-init-glfw" = import ./nix/vulkan-init-glfw.nix;
+  "vulkan-init-sdl2" = import ./nix/vulkan-init-sdl2.nix;
   "vulkan-utils" = import ./nix/vulkan-utils.nix;
+  "vulkan-utils-framegraph" = import ./nix/vulkan-utils-framegraph.nix;
+  "vulkan-utils-spirv" = import ./nix/vulkan-utils-spirv.nix;
   "waargonaut" = import ./nix/waargonaut.nix;
   "wacom-daemon" = import ./nix/wacom-daemon.nix;
   "waddle" = import ./nix/waddle.nix;

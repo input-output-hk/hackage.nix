@@ -257,7 +257,12 @@
         revNum = 7;
         sha256 = "c090c1c0d08f9a58c2c0e2b333ad385fe158767b95f4d011fc88e31129415f10";
       };
-      default = "r7";
+      r8 = {
+        nix = import ../hackage/servant-js-0.9.4.2-r8-f55fe7484ad8db78573614b7b2f8be216a20c10474560ec7a4a8f776e880e69f.nix;
+        revNum = 8;
+        sha256 = "f55fe7484ad8db78573614b7b2f8be216a20c10474560ec7a4a8f776e880e69f";
+      };
+      default = "r8";
     };
   };
 }

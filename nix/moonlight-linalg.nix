@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.1" = {
+    sha256 = "f9442b42dbd25f4163440c547345fe46e5ea806d7d8a24f3fa31b7614ecd8167";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-linalg-0.1.0.1-r0-560d2f34468c68f6022f2d6533cb7c42c8e808f40b89bffbd67457a7bfcc3ec0.nix;
+        revNum = 0;
+        sha256 = "560d2f34468c68f6022f2d6533cb7c42c8e808f40b89bffbd67457a7bfcc3ec0";
+      };
+      default = "r0";
+    };
+  };
 }
