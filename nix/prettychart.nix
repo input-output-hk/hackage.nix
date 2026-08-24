@@ -103,4 +103,15 @@
       default = "r0";
     };
   };
+  "0.3.0.4" = {
+    sha256 = "840e9b26c2bcbdcabee0ac782b223f28ce35fdab6d69e8b6e6bd5e2e311ff0d9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prettychart-0.3.0.4-r0-e324191b29babfc2db0ca888b524e3fe8ecb3629a2d8048acba39f8c37b32ce9.nix;
+        revNum = 0;
+        sha256 = "e324191b29babfc2db0ca888b524e3fe8ecb3629a2d8048acba39f8c37b32ce9";
+      };
+      default = "r0";
+    };
+  };
 }
