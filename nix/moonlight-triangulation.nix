@@ -92,4 +92,15 @@
       default = "r1";
     };
   };
+  "1.4.0.1" = {
+    sha256 = "7b3fb3642d3bcc319b9cc8d04831e8cd0ae98d53deca3bfb3ec93697674be694";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-triangulation-1.4.0.1-r0-4eb59a34dcba381c4d4e5abb70104abd351437bedb75ef965ee90a32f887f776.nix;
+        revNum = 0;
+        sha256 = "4eb59a34dcba381c4d4e5abb70104abd351437bedb75ef965ee90a32f887f776";
+      };
+      default = "r0";
+    };
+  };
 }

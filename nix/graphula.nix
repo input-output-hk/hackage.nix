@@ -152,4 +152,15 @@
       default = "r0";
     };
   };
+  "2.1.3.0" = {
+    sha256 = "1e845765469973c7b424cf6e1032243fa91b0652f59744f4572e6d462f746f85";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphula-2.1.3.0-r0-98773d9936b9acc0d8599cdeae1abda8d173cd6f78434c2b0eae57677df8a592.nix;
+        revNum = 0;
+        sha256 = "98773d9936b9acc0d8599cdeae1abda8d173cd6f78434c2b0eae57677df8a592";
+      };
+      default = "r0";
+    };
+  };
 }

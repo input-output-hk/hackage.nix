@@ -59,4 +59,15 @@
       default = "r0";
     };
   };
+  "4.1.0.1" = {
+    sha256 = "a283f09f59a389b92bf57d0e1b764e0691032c51690f1021acbb016993cdedd5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/eflint-4.1.0.1-r0-23e78a33032c104b304b492ac5bab2aa0f2fa07ab83e70d726afed99cb087fbf.nix;
+        revNum = 0;
+        sha256 = "23e78a33032c104b304b492ac5bab2aa0f2fa07ab83e70d726afed99cb087fbf";
+      };
+      default = "r0";
+    };
+  };
 }

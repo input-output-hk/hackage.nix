@@ -2427,6 +2427,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "autoapply" = import ./nix/autoapply.nix;
   "autodocodec" = import ./nix/autodocodec.nix;
   "autodocodec-exact" = import ./nix/autodocodec-exact.nix;
+  "autodocodec-http-api-data" = import ./nix/autodocodec-http-api-data.nix;
   "autodocodec-nix" = import ./nix/autodocodec-nix.nix;
   "autodocodec-openapi3" = import ./nix/autodocodec-openapi3.nix;
   "autodocodec-schema" = import ./nix/autodocodec-schema.nix;
@@ -17735,6 +17736,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "trial-tomland" = import ./nix/trial-tomland.nix;
   "triangulation" = import ./nix/triangulation.nix;
   "tricorder" = import ./nix/tricorder.nix;
+  "tricorder-mcp" = import ./nix/tricorder-mcp.nix;
+  "tricorder-types" = import ./nix/tricorder-types.nix;
   "trie-simple" = import ./nix/trie-simple.nix;
   "tries" = import ./nix/tries.nix;
   "trifecta" = import ./nix/trifecta.nix;
