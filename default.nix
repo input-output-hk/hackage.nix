@@ -14156,6 +14156,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "quoridor-hs" = import ./nix/quoridor-hs.nix;
   "quote-quot" = import ./nix/quote-quot.nix;
   "quotet" = import ./nix/quotet.nix;
+  "qute" = import ./nix/qute.nix;
+  "qute-cli" = import ./nix/qute-cli.nix;
+  "qute-symex" = import ./nix/qute-symex.nix;
+  "qute-syntax" = import ./nix/qute-syntax.nix;
   "qux" = import ./nix/qux.nix;
   "r-glpk-phonetic-languages-ukrainian-durations" = import ./nix/r-glpk-phonetic-languages-ukrainian-durations.nix;
   "r-tree" = import ./nix/r-tree.nix;
