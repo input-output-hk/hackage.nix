@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.0.5.0" = {
+    sha256 = "fa37c757571f20fe3564e33e882684ae6f092b52d1dc5e4d0d3c2c22aab5bd13";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/utxorpc-client-0.0.5.0-r0-6bc46ea9e54a3152b18c4d83b61c865e46840619b518325431031956e07195ec.nix;
+        revNum = 0;
+        sha256 = "6bc46ea9e54a3152b18c4d83b61c865e46840619b518325431031956e07195ec";
+      };
+      default = "r0";
+    };
+  };
 }

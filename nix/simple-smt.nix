@@ -240,4 +240,15 @@
       default = "r0";
     };
   };
+  "0.9.9" = {
+    sha256 = "b76f862acb726210dd0c5eb09b469c987c261e4a13d05d65e9222a46e38cca0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/simple-smt-0.9.9-r0-4c4ab96f1d502c433ab59c54af8250161f3065783f4420a2c2e2a1000fb7e069.nix;
+        revNum = 0;
+        sha256 = "4c4ab96f1d502c433ab59c54af8250161f3065783f4420a2c2e2a1000fb7e069";
+      };
+      default = "r0";
+    };
+  };
 }
