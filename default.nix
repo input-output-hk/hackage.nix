@@ -8989,6 +8989,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hslibsvm" = import ./nix/hslibsvm.nix;
   "hslinks" = import ./nix/hslinks.nix;
   "hslogger" = import ./nix/hslogger.nix;
+  "hslogger-colorfmt" = import ./nix/hslogger-colorfmt.nix;
   "hslogger-reader" = import ./nix/hslogger-reader.nix;
   "hslogger-template" = import ./nix/hslogger-template.nix;
   "hslogger4j" = import ./nix/hslogger4j.nix;

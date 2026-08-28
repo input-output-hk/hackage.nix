@@ -218,4 +218,15 @@
       default = "r0";
     };
   };
+  "2.7.1" = {
+    sha256 = "102149bb9cb5ffd13c1ca6b418392ff6d3c71f50dca531c7fa2b4ad91f958c08";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/twee-lib-2.7.1-r0-562bdd0e15a8dea515291c37bfaedccfebc1064b27f62bbfab60ab00c1778b52.nix;
+        revNum = 0;
+        sha256 = "562bdd0e15a8dea515291c37bfaedccfebc1064b27f62bbfab60ab00c1778b52";
+      };
+      default = "r0";
+    };
+  };
 }
