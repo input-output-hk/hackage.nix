@@ -428,4 +428,15 @@
       default = "r0";
     };
   };
+  "1.2.0" = {
+    sha256 = "cf3a9791d958ff7534907103833ac594a55e0acdb19c9eedb7105d334a9dfd63";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-kbgen-1.2.0-r0-3aba149a57d5d1cb03ab6e242fdac48d99b92a993b3787ecef28e6687b626ebc.nix;
+        revNum = 0;
+        sha256 = "3aba149a57d5d1cb03ab6e242fdac48d99b92a993b3787ecef28e6687b626ebc";
+      };
+      default = "r0";
+    };
+  };
 }

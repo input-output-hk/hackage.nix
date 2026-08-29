@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "4ee9cb1fe64247c300e48fbb88a72f8c7e922c35f0876710807f899e6982fa81";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/baikai-claude-0.6.0.0-r0-9a6c0d851264f46a17c19fba58cbb49dc9773cbaff09a7c1d6f33f7053bddfd7.nix;
+        revNum = 0;
+        sha256 = "9a6c0d851264f46a17c19fba58cbb49dc9773cbaff09a7c1d6f33f7053bddfd7";
+      };
+      default = "r0";
+    };
+  };
 }
