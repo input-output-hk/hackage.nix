@@ -141,4 +141,15 @@
       default = "r0";
     };
   };
+  "0.7.1" = {
+    sha256 = "9c8429bdbba83b698ab31b08c428e4b05e96973a38bc37be1cfb977268fea832";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-saml2-0.7.1-r0-d5fca002a90452cd2b204032f1bc8a5dd36ba72f51776168948892f6a7a1c860.nix;
+        revNum = 0;
+        sha256 = "d5fca002a90452cd2b204032f1bc8a5dd36ba72f51776168948892f6a7a1c860";
+      };
+      default = "r0";
+    };
+  };
 }

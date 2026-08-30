@@ -23,7 +23,12 @@
         revNum = 1;
         sha256 = "91eed02b2d7836b0a7f6cff671fbb257088d564dccdbfcb5e8e841ca11a4e9fd";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/dataframe-huggingface-1.2.0.2-r2-3b0879f96645f042da609a8c66c98e470e1ae721113b0e39b23faa2b700316c9.nix;
+        revNum = 2;
+        sha256 = "3b0879f96645f042da609a8c66c98e470e1ae721113b0e39b23faa2b700316c9";
+      };
+      default = "r2";
     };
   };
 }

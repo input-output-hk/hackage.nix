@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.0.3" = {
+    sha256 = "33136d5f87c06e95d4171e4aa8be51617b5637906d9f2fd836ab11b4edb1ea37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-homology-0.1.0.3-r0-fa05b40a07a7290b7a6a8ec95828135affaf377de334473919905b8803013776.nix;
+        revNum = 0;
+        sha256 = "fa05b40a07a7290b7a6a8ec95828135affaf377de334473919905b8803013776";
+      };
+      default = "r0";
+    };
+  };
 }

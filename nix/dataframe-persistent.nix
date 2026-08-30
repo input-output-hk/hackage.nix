@@ -77,7 +77,12 @@
         revNum = 2;
         sha256 = "5696cc7ae05f1621721e658cd836b3e8ed44525672c4902a947f041f89d20077";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/dataframe-persistent-0.5.0.0-r3-b2e6bd9fa4ec84b8dfaffa4d44388c36f1db3e75500d013879ed7eb09b9962d8.nix;
+        revNum = 3;
+        sha256 = "b2e6bd9fa4ec84b8dfaffa4d44388c36f1db3e75500d013879ed7eb09b9962d8";
+      };
+      default = "r3";
     };
   };
 }

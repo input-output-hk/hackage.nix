@@ -105,4 +105,15 @@
       default = "r0";
     };
   };
+  "1.4.0.1" = {
+    sha256 = "8755c7d02be1b8f71518ae2a1e4b158aed1bffeb72ff80430cc1a207a6b5ecc4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-llvm-1.4.0.1-r0-9aede4fba1d8e11026853de946e536ccb8982f76a017c26f11deb0d533ef41fe.nix;
+        revNum = 0;
+        sha256 = "9aede4fba1d8e11026853de946e536ccb8982f76a017c26f11deb0d533ef41fe";
+      };
+      default = "r0";
+    };
+  };
 }

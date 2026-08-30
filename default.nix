@@ -4714,11 +4714,13 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dataflower" = import ./nix/dataflower.nix;
   "dataframe" = import ./nix/dataframe.nix;
   "dataframe-arrow" = import ./nix/dataframe-arrow.nix;
+  "dataframe-arrow-bridge" = import ./nix/dataframe-arrow-bridge.nix;
   "dataframe-core" = import ./nix/dataframe-core.nix;
   "dataframe-csv" = import ./nix/dataframe-csv.nix;
   "dataframe-csv-th" = import ./nix/dataframe-csv-th.nix;
   "dataframe-expr-serializer" = import ./nix/dataframe-expr-serializer.nix;
   "dataframe-fastcsv" = import ./nix/dataframe-fastcsv.nix;
+  "dataframe-fusion" = import ./nix/dataframe-fusion.nix;
   "dataframe-hasktorch" = import ./nix/dataframe-hasktorch.nix;
   "dataframe-huggingface" = import ./nix/dataframe-huggingface.nix;
   "dataframe-json" = import ./nix/dataframe-json.nix;
