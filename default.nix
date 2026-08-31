@@ -18422,6 +18422,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "vector-instances" = import ./nix/vector-instances.nix;
   "vector-instances-collections" = import ./nix/vector-instances-collections.nix;
   "vector-mmap" = import ./nix/vector-mmap.nix;
+  "vector-pull" = import ./nix/vector-pull.nix;
   "vector-quicksort" = import ./nix/vector-quicksort.nix;
   "vector-random" = import ./nix/vector-random.nix;
   "vector-read-instances" = import ./nix/vector-read-instances.nix;

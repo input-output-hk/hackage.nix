@@ -153,4 +153,26 @@
       default = "r0";
     };
   };
+  "0.2.0.3" = {
+    sha256 = "73493815a08021614999008d602223f692180c23c48bfc09c4d05c48e70bb154";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.3-r0-f5ea4f0aa3a0c99dfab367055b13e539ed4296e5b4c461c078e94e40c454a39b.nix;
+        revNum = 0;
+        sha256 = "f5ea4f0aa3a0c99dfab367055b13e539ed4296e5b4c461c078e94e40c454a39b";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.4" = {
+    sha256 = "b5e9800af0f0dd89f4743901182fbaf62105e25468b2397cf49ee8a65447b1b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.4-r0-c08522f07243acb95f8d91321ead665cc319085ca83a7ffaaebd6294e82a590c.nix;
+        revNum = 0;
+        sha256 = "c08522f07243acb95f8d91321ead665cc319085ca83a7ffaaebd6294e82a590c";
+      };
+      default = "r0";
+    };
+  };
 }

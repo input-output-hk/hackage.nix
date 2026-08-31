@@ -131,7 +131,23 @@
         revNum = 3;
         sha256 = "1d4f397b5459c8f7ec74b41b16e7b575f0ace77a600a946fab7a9cdbc25880ae";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/dataframe-parquet-1.5.0.0-r4-d43c84a8147dc495a396618250234e8124e91db912b330b65835dab656170d86.nix;
+        revNum = 4;
+        sha256 = "d43c84a8147dc495a396618250234e8124e91db912b330b65835dab656170d86";
+      };
+      default = "r4";
+    };
+  };
+  "1.5.0.1" = {
+    sha256 = "14a80b0f1386224555fe173e576ba236ba002505535c4b77d9b9e63b04c52ab5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dataframe-parquet-1.5.0.1-r0-04e37b2431ad8fabf9d9bbb40e0e914e66cc5d57603f0ffc4f3c999c2ec40218.nix;
+        revNum = 0;
+        sha256 = "04e37b2431ad8fabf9d9bbb40e0e914e66cc5d57603f0ffc4f3c999c2ec40218";
+      };
+      default = "r0";
     };
   };
 }
