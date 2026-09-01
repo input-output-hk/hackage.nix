@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.17.6" = {
+    sha256 = "73f87ed6d864285868e575cad63f0e8ebd64973e18555a0d45f56bcc41190da2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-ext-0.17.6-r0-3f3424ab88e2740170c22e20413d3b771be69e8ba70f00b308dc546d59a0aaae.nix;
+        revNum = 0;
+        sha256 = "3f3424ab88e2740170c22e20413d3b771be69e8ba70f00b308dc546d59a0aaae";
+      };
+      default = "r0";
+    };
+  };
 }

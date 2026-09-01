@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "770e87b262bc5d52e1155c938cce7e61fa1bb7147c94fa3bf2e3ef1882074645";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vcs-ignore-0.1.0.0-r0-25e599fa1f76e5ac82b45861dd64b2dc76656ea38c61d47830cc91be09b42e0c.nix;
+        revNum = 0;
+        sha256 = "25e599fa1f76e5ac82b45861dd64b2dc76656ea38c61d47830cc91be09b42e0c";
+      };
+      default = "r0";
+    };
+  };
 }

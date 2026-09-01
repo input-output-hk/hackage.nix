@@ -11746,6 +11746,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "moonlight-homology" = import ./nix/moonlight-homology.nix;
   "moonlight-linalg" = import ./nix/moonlight-linalg.nix;
   "moonlight-pale" = import ./nix/moonlight-pale.nix;
+  "moonlight-planar" = import ./nix/moonlight-planar.nix;
   "moonlight-triangulation" = import ./nix/moonlight-triangulation.nix;
   "moonshine" = import ./nix/moonshine.nix;
   "more-containers" = import ./nix/more-containers.nix;
@@ -14695,6 +14696,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "rewrite-inspector" = import ./nix/rewrite-inspector.nix;
   "rewriting" = import ./nix/rewriting.nix;
   "rex" = import ./nix/rex.nix;
+  "rexparse" = import ./nix/rexparse.nix;
   "rezoom" = import ./nix/rezoom.nix;
   "rfc" = import ./nix/rfc.nix;
   "rfc-env" = import ./nix/rfc-env.nix;

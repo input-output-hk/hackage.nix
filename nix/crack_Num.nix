@@ -650,4 +650,15 @@
       default = "r0";
     };
   };
+  "4.4" = {
+    sha256 = "1275ce9cc726f0de0b19bfaf189c4a3e4efbfe4b7af1abd67e977d4ba63a9727";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crackNum-4.4-r0-250f6c6442ba09e74eafc0e74ebc49ba8cf6aa62706714de04d0beeb3c00a6c0.nix;
+        revNum = 0;
+        sha256 = "250f6c6442ba09e74eafc0e74ebc49ba8cf6aa62706714de04d0beeb3c00a6c0";
+      };
+      default = "r0";
+    };
+  };
 }

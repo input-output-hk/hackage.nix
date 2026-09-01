@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.17.6" = {
+    sha256 = "10f7c665edb11fb41cbc1ce4b6997e8882f59747dd752715cadff440d817ee1a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-lisp-0.17.6-r0-afa9a816bd99ad8cc0eb9265920ac477719638e18aa1c7b9c5335f0fd20ff1ec.nix;
+        revNum = 0;
+        sha256 = "afa9a816bd99ad8cc0eb9265920ac477719638e18aa1c7b9c5335f0fd20ff1ec";
+      };
+      default = "r0";
+    };
+  };
 }
