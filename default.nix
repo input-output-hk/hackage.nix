@@ -13024,6 +13024,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pedersen-commitment" = import ./nix/pedersen-commitment.nix;
   "pedestrian-dag" = import ./nix/pedestrian-dag.nix;
   "peg" = import ./nix/peg.nix;
+  "peg-matching" = import ./nix/peg-matching.nix;
   "peggy" = import ./nix/peggy.nix;
   "pell" = import ./nix/pell.nix;
   "pem" = import ./nix/pem.nix;
@@ -17943,6 +17944,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typed-encoding-encoding" = import ./nix/typed-encoding-encoding.nix;
   "typed-fsm" = import ./nix/typed-fsm.nix;
   "typed-gui" = import ./nix/typed-gui.nix;
+  "typed-peg" = import ./nix/typed-peg.nix;
   "typed-process" = import ./nix/typed-process.nix;
   "typed-process-effectful" = import ./nix/typed-process-effectful.nix;
   "typed-protocols" = import ./nix/typed-protocols.nix;
@@ -18790,6 +18792,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wgpu-hs" = import ./nix/wgpu-hs.nix;
   "wgpu-raw-hs" = import ./nix/wgpu-raw-hs.nix;
   "what4" = import ./nix/what4.nix;
+  "what4-domains" = import ./nix/what4-domains.nix;
   "wheb-mongo" = import ./nix/wheb-mongo.nix;
   "wheb-redis" = import ./nix/wheb-redis.nix;
   "wheb-strapped" = import ./nix/wheb-strapped.nix;
