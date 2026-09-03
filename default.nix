@@ -8658,6 +8658,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hold-em" = import ./nix/hold-em.nix;
   "hole" = import ./nix/hole.nix;
   "holey-format" = import ./nix/holey-format.nix;
+  "holeyexp" = import ./nix/holeyexp.nix;
   "holidays" = import ./nix/holidays.nix;
   "holmes" = import ./nix/holmes.nix;
   "holy-project" = import ./nix/holy-project.nix;

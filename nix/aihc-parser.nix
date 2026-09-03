@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.0.6" = {
+    sha256 = "cd64f9478313789ed48ba2be5bba69ef1cd229cc8d250400cbff485b26e33b13";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aihc-parser-1.0.0.6-r0-b151fad075363bce379f6ab32a49aa3b1ffbf81e50cae5af134af9a17cff1616.nix;
+        revNum = 0;
+        sha256 = "b151fad075363bce379f6ab32a49aa3b1ffbf81e50cae5af134af9a17cff1616";
+      };
+      default = "r0";
+    };
+  };
 }

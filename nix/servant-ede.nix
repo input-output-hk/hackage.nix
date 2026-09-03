@@ -64,4 +64,15 @@
       default = "r0";
     };
   };
+  "1.0.0.0" = {
+    sha256 = "5f181af348ee0aadf42adcb5af73f8a89bea4087e6e29183a88948090dcf1425";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-ede-1.0.0.0-r0-63fb0f374a7dc71503475f92e2667ba7878ed5ca2b5bc74ec0433a69a01f903a.nix;
+        revNum = 0;
+        sha256 = "63fb0f374a7dc71503475f92e2667ba7878ed5ca2b5bc74ec0433a69a01f903a";
+      };
+      default = "r0";
+    };
+  };
 }
