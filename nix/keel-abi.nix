@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "bda25390eab0f6dcb690c059976b4cc7ff427e4a4f3e96f3ca193e9979a2fec1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keel-abi-0.1.1.0-r0-8aa5ada846f79e9ab3f1dfae0e3b4d40d6df6eca12f2330020846a64c64a47af.nix;
+        revNum = 0;
+        sha256 = "8aa5ada846f79e9ab3f1dfae0e3b4d40d6df6eca12f2330020846a64c64a47af";
+      };
+      default = "r0";
+    };
+  };
 }

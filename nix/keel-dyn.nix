@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "843ad90222a68b53096e764f5aeae42dd0fe24a5e734af20f9b1809840f2c43b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keel-dyn-0.1.1.0-r0-7b4deddda0cdaa238d71975a671afb81cd3c7d99cc76ba658406aab8b13f2b4b.nix;
+        revNum = 0;
+        sha256 = "7b4deddda0cdaa238d71975a671afb81cd3c7d99cc76ba658406aab8b13f2b4b";
+      };
+      default = "r0";
+    };
+  };
 }

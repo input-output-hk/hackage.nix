@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "8d81882add5538a29e95d888b490c280b3926a383051bb4f576404a47dfd1a40";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keel-linalg-0.1.1.0-r0-82f63d9f6c30a5f24742f618c47427ba9f562e42c8c52c0d24d07d9130efcc06.nix;
+        revNum = 0;
+        sha256 = "82f63d9f6c30a5f24742f618c47427ba9f562e42c8c52c0d24d07d9130efcc06";
+      };
+      default = "r0";
+    };
+  };
 }

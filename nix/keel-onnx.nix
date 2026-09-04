@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "c5d75eb2bf2613d5fe73258133111975416cd60edd31b658a599f38bb479baa7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keel-onnx-0.1.1.0-r0-ab624110f026132b11fafb464855ca5eb8274dc2c875c0d7f3df8c6addab05ea.nix;
+        revNum = 0;
+        sha256 = "ab624110f026132b11fafb464855ca5eb8274dc2c875c0d7f3df8c6addab05ea";
+      };
+      default = "r0";
+    };
+  };
 }

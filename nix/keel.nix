@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "ea2dd84e01b083b9be1b21735a27c5fd955de58f7eb6035edfff66e4a9e411ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keel-0.1.1.0-r0-9dcfb92d12138358ccecf717fc2c4bb6f4e38692ca0b38384d1ab3ee96f9c9b0.nix;
+        revNum = 0;
+        sha256 = "9dcfb92d12138358ccecf717fc2c4bb6f4e38692ca0b38384d1ab3ee96f9c9b0";
+      };
+      default = "r0";
+    };
+  };
 }
