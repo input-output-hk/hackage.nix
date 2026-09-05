@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.5.0" = {
+    sha256 = "c12f33f7554a2f492275daecb7e427dc0919cd8b111af72f45ff98335f103903";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ditto-0.5.0-r0-886c1208312242614fa546aa4ec40b819f12b404b034a1a41bd317c80a0c98b8.nix;
+        revNum = 0;
+        sha256 = "886c1208312242614fa546aa4ec40b819f12b404b034a1a41bd317c80a0c98b8";
+      };
+      default = "r0";
+    };
+  };
 }

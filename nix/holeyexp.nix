@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.1" = {
+    sha256 = "b4ba0575e29b2415020ea4aae46aec6440350d369e2ebc0e79cce8b4b9440804";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/holeyexp-0.3.0.1-r0-5468a9e53810d0d6242760cc9a7be6eb8e6442ace94b35922e4297d6dab899b9.nix;
+        revNum = 0;
+        sha256 = "5468a9e53810d0d6242760cc9a7be6eb8e6442ace94b35922e4297d6dab899b9";
+      };
+      default = "r0";
+    };
+  };
 }

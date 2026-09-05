@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "86f55fd7306a511c43bf8c834684c6e0b52cfe92fd14a7b42c5e2b4e4c8eea37";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/scotty-form-0.5.0.0-r0-765a6f6187d744006bb4756c88773fca9e8c06005c8994e229d9bf5e95fc6d25.nix;
+        revNum = 0;
+        sha256 = "765a6f6187d744006bb4756c88773fca9e8c06005c8994e229d9bf5e95fc6d25";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -3137,6 +3137,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bugsnag" = import ./nix/bugsnag.nix;
   "bugsnag-haskell" = import ./nix/bugsnag-haskell.nix;
   "bugsnag-hs" = import ./nix/bugsnag-hs.nix;
+  "bugsnag-types" = import ./nix/bugsnag-types.nix;
   "bugsnag-wai" = import ./nix/bugsnag-wai.nix;
   "bugsnag-yesod" = import ./nix/bugsnag-yesod.nix;
   "bugzilla" = import ./nix/bugzilla.nix;
@@ -13972,6 +13973,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "puppetresources" = import ./nix/puppetresources.nix;
   "pure-borrow" = import ./nix/pure-borrow.nix;
   "pure-cdb" = import ./nix/pure-cdb.nix;
+  "pure-cdt" = import ./nix/pure-cdt.nix;
   "pure-fft" = import ./nix/pure-fft.nix;
   "pure-io" = import ./nix/pure-io.nix;
   "pure-noise" = import ./nix/pure-noise.nix;

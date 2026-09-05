@@ -1593,4 +1593,37 @@
       default = "r0";
     };
   };
+  "3.6.7" = {
+    sha256 = "da9551ec25d068043616e031e964cf83b33b59969decd54920c9b81a93aa2b7d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hOpenPGP-3.6.7-r0-fac9971723fed306c48335ac399ce5d7cf78fb1cb1267d25b73271b05a7785b0.nix;
+        revNum = 0;
+        sha256 = "fac9971723fed306c48335ac399ce5d7cf78fb1cb1267d25b73271b05a7785b0";
+      };
+      default = "r0";
+    };
+  };
+  "3.6.8" = {
+    sha256 = "dcefb0920c9844e9fd1fdbaec1b9d79861da74bdf95830d06f36668aeb13b3a3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hOpenPGP-3.6.8-r0-2a16c08c6968f543a650c3cbd5269d5532178e18758c5df1769b8d9ec15b6071.nix;
+        revNum = 0;
+        sha256 = "2a16c08c6968f543a650c3cbd5269d5532178e18758c5df1769b8d9ec15b6071";
+      };
+      default = "r0";
+    };
+  };
+  "3.6.9" = {
+    sha256 = "3fde5e107567ef58f3e62ff803a8496fc34d3514782b6ecf5210fc7877404cc5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hOpenPGP-3.6.9-r0-eff8b0704dab94f00a13428666695e6c3973f91ebcc3f53c549a9d9e8ffb7fa5.nix;
+        revNum = 0;
+        sha256 = "eff8b0704dab94f00a13428666695e6c3973f91ebcc3f53c549a9d9e8ffb7fa5";
+      };
+      default = "r0";
+    };
+  };
 }
