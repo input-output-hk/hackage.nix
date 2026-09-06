@@ -4677,6 +4677,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "data-repr" = import ./nix/data-repr.nix;
   "data-result" = import ./nix/data-result.nix;
   "data-rev" = import ./nix/data-rev.nix;
+  "data-rfc5280" = import ./nix/data-rfc5280.nix;
   "data-rope" = import ./nix/data-rope.nix;
   "data-rtuple" = import ./nix/data-rtuple.nix;
   "data-serializer" = import ./nix/data-serializer.nix;

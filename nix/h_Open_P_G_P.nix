@@ -1538,6 +1538,17 @@
       default = "r0";
     };
   };
+  "3.6.10" = {
+    sha256 = "fa7a8fbd02f8c220476d58ad4516df0326b0f18e5b8581073319d87552ef19c8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hOpenPGP-3.6.10-r0-e0ccab4e9b7a39bea011224557a633dd6a31cd4dac5c493b9024e3b478e4258f.nix;
+        revNum = 0;
+        sha256 = "e0ccab4e9b7a39bea011224557a633dd6a31cd4dac5c493b9024e3b478e4258f";
+      };
+      default = "r0";
+    };
+  };
   "3.6.2" = {
     sha256 = "2c7b3cddfc9090fa0188cfc8d2a833663a2e2abdb6fd3cfc358dd86fdee0e1c6";
     revisions = {

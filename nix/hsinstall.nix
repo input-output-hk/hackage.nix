@@ -186,4 +186,15 @@
       default = "r0";
     };
   };
+  "3.1" = {
+    sha256 = "6f01319ce01582edd2ba31d64701332f41d4aa948aaf13022e64eb5ba5ec30a8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hsinstall-3.1-r0-90bdc6d97ceb4abd1c4d8bc7187a56136ff8f9146a5b3e88e82ab8f49bd42a31.nix;
+        revNum = 0;
+        sha256 = "90bdc6d97ceb4abd1c4d8bc7187a56136ff8f9146a5b3e88e82ab8f49bd42a31";
+      };
+      default = "r0";
+    };
+  };
 }
