@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.4.0" = {
+    sha256 = "d6a1eef4d8a5f8ef2ff388552e7e453deb5130c6868ac21eefaeeb0ab4c2e45c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/zstd-0.1.4.0-r0-b93f03afbebae248276a9056720f1efcad34538bcf6dc30f7621d538edcb84d4.nix;
+        revNum = 0;
+        sha256 = "b93f03afbebae248276a9056720f1efcad34538bcf6dc30f7621d538edcb84d4";
+      };
+      default = "r0";
+    };
+  };
 }

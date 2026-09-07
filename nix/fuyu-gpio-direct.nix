@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "cf085ca323fbc090d1446e4c0fa96ec9c8d112167edaf15ab243afacd53b0a6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fuyu-gpio-direct-0.2.0.0-r0-2e8e981beb495929e5638ae2ad3afaecc30cff2bf7c9a8d291756b5f9fe058c8.nix;
+        revNum = 0;
+        sha256 = "2e8e981beb495929e5638ae2ad3afaecc30cff2bf7c9a8d291756b5f9fe058c8";
+      };
+      default = "r0";
+    };
+  };
 }

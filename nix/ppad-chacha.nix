@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.0" = {
+    sha256 = "d1a23d841f707bcec5bf0d56df47b66384aeca0d1041ef3c1eb4619493526166";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-chacha-0.3.0-r0-63a5fb88e2eb13125c59077da33eaedf9ee0c054cc1cc9c5fcf1d102d3b484e5.nix;
+        revNum = 0;
+        sha256 = "63a5fb88e2eb13125c59077da33eaedf9ee0c054cc1cc9c5fcf1d102d3b484e5";
+      };
+      default = "r0";
+    };
+  };
 }

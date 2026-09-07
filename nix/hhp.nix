@@ -109,4 +109,15 @@
       default = "r0";
     };
   };
+  "1.0.5" = {
+    sha256 = "8a32772fcfbf5974e78dbc72f6900bf71ec1a0b3aebcaa545cf5743a7f256f49";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hhp-1.0.5-r0-d5a6fc021895165d52d1b1d47f37c462f05a8f02cf6921b0d8c84b12d1e0fbcc.nix;
+        revNum = 0;
+        sha256 = "d5a6fc021895165d52d1b1d47f37c462f05a8f02cf6921b0d8c84b12d1e0fbcc";
+      };
+      default = "r0";
+    };
+  };
 }

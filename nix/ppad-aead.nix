@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.3.6" = {
+    sha256 = "482372ba3e94fe48ef7b48e9172976421ae2d03d8ff121016dc10fc3eaeb9cf6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-aead-0.3.6-r0-500a567bdde02ebc3f1918b8b0156e292337f76b7e315a350350a704daa121b7.nix;
+        revNum = 0;
+        sha256 = "500a567bdde02ebc3f1918b8b0156e292337f76b7e315a350350a704daa121b7";
+      };
+      default = "r0";
+    };
+  };
 }

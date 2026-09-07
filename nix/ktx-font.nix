@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "341d43cf6efe7996c0ba16b14836dcea14f09e5097dab626f3479bde5dfc6651";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ktx-font-0.2.0.1-r0-0f56059e958ec66201e01a0398c32f7817e2c0a3ba48078a850c1ebfafef3926.nix;
+        revNum = 0;
+        sha256 = "0f56059e958ec66201e01a0398c32f7817e2c0a3ba48078a850c1ebfafef3926";
+      };
+      default = "r0";
+    };
+  };
 }
