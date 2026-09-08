@@ -5315,6 +5315,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "dtd" = import ./nix/dtd.nix;
   "dtd-text" = import ./nix/dtd-text.nix;
   "dtd-types" = import ./nix/dtd-types.nix;
+  "dtmc" = import ./nix/dtmc.nix;
   "dtrace" = import ./nix/dtrace.nix;
   "dtw" = import ./nix/dtw.nix;
   "dual" = import ./nix/dual.nix;
