@@ -15156,6 +15156,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "secret-sharing" = import ./nix/secret-sharing.nix;
   "secretspec" = import ./nix/secretspec.nix;
   "secrm" = import ./nix/secrm.nix;
+  "sectile" = import ./nix/sectile.nix;
   "secure-memory" = import ./nix/secure-memory.nix;
   "secure-sockets" = import ./nix/secure-sockets.nix;
   "secureUDP" = import ./nix/secure_U_D_P.nix;

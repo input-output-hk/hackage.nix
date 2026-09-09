@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "80fc0ec36c10e982c929323b050cdba86f23c7fcb58443afe030564e7fcd0a95";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shikumi-okf-0.2.1.0-r0-c0d116084a2b047396ef9d4db0434d73c0db895f47fe60bbc21fcb89f6d35cd1.nix;
+        revNum = 0;
+        sha256 = "c0d116084a2b047396ef9d4db0434d73c0db895f47fe60bbc21fcb89f6d35cd1";
+      };
+      default = "r0";
+    };
+  };
 }

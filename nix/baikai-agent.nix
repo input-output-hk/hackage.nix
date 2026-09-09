@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "294922463878fac7f07a62177d2a200a3aad61c5f338268cc279e4df37fa14f8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/baikai-agent-0.2.0.1-r0-c65a9c29bf14d31d02d818e3ae020f534258970b3c303afcf925069a7f2d7980.nix;
+        revNum = 0;
+        sha256 = "c65a9c29bf14d31d02d818e3ae020f534258970b3c303afcf925069a7f2d7980";
+      };
+      default = "r0";
+    };
+  };
 }
