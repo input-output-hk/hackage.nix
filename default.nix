@@ -4742,6 +4742,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "datastar-hs" = import ./nix/datastar-hs.nix;
   "datastar-hs-brotli" = import ./nix/datastar-hs-brotli.nix;
   "datastar-hs-zlib" = import ./nix/datastar-hs-zlib.nix;
+  "datastar-hs-zstd" = import ./nix/datastar-hs-zstd.nix;
   "dataurl" = import ./nix/dataurl.nix;
   "date-cache" = import ./nix/date-cache.nix;
   "date-conversions" = import ./nix/date-conversions.nix;
@@ -10648,6 +10649,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "libgit" = import ./nix/libgit.nix;
   "libgraph" = import ./nix/libgraph.nix;
   "libhbb" = import ./nix/libhbb.nix;
+  "libheif-hs" = import ./nix/libheif-hs.nix;
   "libinfluxdb" = import ./nix/libinfluxdb.nix;
   "libiserv" = import ./nix/libiserv.nix;
   "libjenkins" = import ./nix/libjenkins.nix;
@@ -15108,6 +15110,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "scrz" = import ./nix/scrz.nix;
   "scubature" = import ./nix/scubature.nix;
   "scuttlebutt-types" = import ./nix/scuttlebutt-types.nix;
+  "scxml-statecharts" = import ./nix/scxml-statecharts.nix;
   "scythe" = import ./nix/scythe.nix;
   "scyther-proof" = import ./nix/scyther-proof.nix;
   "sd-jwt" = import ./nix/sd-jwt.nix;
