@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "682cea903590e92baee77f67c6bacead638e17543feb4c18b4034146d0751f7f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aihc-cpp-2.0.0.0-r0-70b7f8538cd816475b406ea45fa74cea113697e1f610be031816ec101b55f950.nix;
+        revNum = 0;
+        sha256 = "70b7f8538cd816475b406ea45fa74cea113697e1f610be031816ec101b55f950";
+      };
+      default = "r0";
+    };
+  };
 }

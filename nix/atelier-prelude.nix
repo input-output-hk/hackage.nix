@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "714aed4ee85e4a11a8164f6ed02adaed780278f4445732998e031f89e39f59d5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/atelier-prelude-0.3.0.0-r0-1cfcaf17c8d784291dc1e2498370cebcac702cdf11657476c179d95dccbf1555.nix;
+        revNum = 0;
+        sha256 = "1cfcaf17c8d784291dc1e2498370cebcac702cdf11657476c179d95dccbf1555";
+      };
+      default = "r0";
+    };
+  };
 }

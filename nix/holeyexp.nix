@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "35217f0a1b1286c638acda079e143288f5fe40d9078f040823729c37ea6f7457";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/holeyexp-0.3.0.2-r0-0536b097ed8aeecbd57189d6e93c357142ccd3b8d1e2a82d7ac0591ae78ddc24.nix;
+        revNum = 0;
+        sha256 = "0536b097ed8aeecbd57189d6e93c357142ccd3b8d1e2a82d7ac0591ae78ddc24";
+      };
+      default = "r0";
+    };
+  };
 }
