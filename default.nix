@@ -6254,6 +6254,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "forma" = import ./nix/forma.nix;
   "formal" = import ./nix/formal.nix;
   "format" = import ./nix/format.nix;
+  "format-heavy" = import ./nix/format-heavy.nix;
   "format-numbers" = import ./nix/format-numbers.nix;
   "format-status" = import ./nix/format-status.nix;
   "formatn" = import ./nix/formatn.nix;

@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.2.2.3" = {
+    sha256 = "13ebae08ee145902bb608b77ec7e5f507df78ba53fa3f1ef527be433035c4714";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tricorder-0.2.2.3-r0-9a6fd79ebac7079aa85b7343423e33e11523edd5e9ece98c1a05692eb3fd201c.nix;
+        revNum = 0;
+        sha256 = "9a6fd79ebac7079aa85b7343423e33e11523edd5e9ece98c1a05692eb3fd201c";
+      };
+      default = "r0";
+    };
+  };
 }
