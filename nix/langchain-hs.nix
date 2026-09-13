@@ -42,4 +42,15 @@
       default = "r0";
     };
   };
+  "0.0.5.0" = {
+    sha256 = "65cfea5550433044a185b6d60c686533db57ab5c586fdda6c5ec0958c45ba4c7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/langchain-hs-0.0.5.0-r0-6de99dfeda8571ac40796559d0b670ee657fa0446f4b346311c4ce1a31b7236f.nix;
+        revNum = 0;
+        sha256 = "6de99dfeda8571ac40796559d0b670ee657fa0446f4b346311c4ce1a31b7236f";
+      };
+      default = "r0";
+    };
+  };
 }

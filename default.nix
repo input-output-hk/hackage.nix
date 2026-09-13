@@ -10389,6 +10389,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "landlock" = import ./nix/landlock.nix;
   "lang" = import ./nix/lang.nix;
   "langchain-hs" = import ./nix/langchain-hs.nix;
+  "langchain-hs-core" = import ./nix/langchain-hs-core.nix;
+  "langchain-hs-graph" = import ./nix/langchain-hs-graph.nix;
   "language-Modula2" = import ./nix/language-_Modula2.nix;
   "language-asn" = import ./nix/language-asn.nix;
   "language-asn1" = import ./nix/language-asn1.nix;
