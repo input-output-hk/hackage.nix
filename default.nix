@@ -16992,6 +16992,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tabs" = import ./nix/tabs.nix;
   "tabular" = import ./nix/tabular.nix;
   "taco" = import ./nix/taco.nix;
+  "tadka" = import ./nix/tadka.nix;
   "taffybar" = import ./nix/taffybar.nix;
   "tag-bits" = import ./nix/tag-bits.nix;
   "tag-stream" = import ./nix/tag-stream.nix;

@@ -527,6 +527,17 @@
       default = "r0";
     };
   };
+  "1.14.0.0" = {
+    sha256 = "f5c25b1a0bd8deaa77403a6dabd2e5cca2ae07ddadc3cf9f23ddd6738a631017";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/miso-1.14.0.0-r0-aa5b647267052c09f4fd4d18fd44f008cd8534d2018f1455ef4b0b2ed427de0e.nix;
+        revNum = 0;
+        sha256 = "aa5b647267052c09f4fd4d18fd44f008cd8534d2018f1455ef4b0b2ed427de0e";
+      };
+      default = "r0";
+    };
+  };
   "1.2.0.0" = {
     sha256 = "c224712081c23397499ba351e6ff2a18e9d3631d527c2f066bf8eddc61c9d023";
     revisions = {

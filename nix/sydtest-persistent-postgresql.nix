@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "0f59b0e66f8cf60965aaeffa55de9dacdf57958fd573102127d062fd7db3848f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-persistent-postgresql-0.5.0.0-r0-9a9925fdd5087153f22fdfe20693f6241516fa673b2fe31e1a27eefdf4cff351.nix;
+        revNum = 0;
+        sha256 = "9a9925fdd5087153f22fdfe20693f6241516fa673b2fe31e1a27eefdf4cff351";
+      };
+      default = "r0";
+    };
+  };
 }
