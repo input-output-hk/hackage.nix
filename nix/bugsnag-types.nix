@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.1.1.0" = {
+    sha256 = "43db0a08acaa8b5f82ab93d507fa6b91a279e5fea2a8ad76d866b7c3192dc62e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bugsnag-types-1.1.1.0-r0-4391c5f59844c2f649e25eefc430b9a7887d106cec7c1e7d6d2db2aa23f0fbf0.nix;
+        revNum = 0;
+        sha256 = "4391c5f59844c2f649e25eefc430b9a7887d106cec7c1e7d6d2db2aa23f0fbf0";
+      };
+      default = "r0";
+    };
+  };
 }

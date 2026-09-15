@@ -6805,6 +6805,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ghc-typelits-knownnat" = import ./nix/ghc-typelits-knownnat.nix;
   "ghc-typelits-natnormalise" = import ./nix/ghc-typelits-natnormalise.nix;
   "ghc-typelits-presburger" = import ./nix/ghc-typelits-presburger.nix;
+  "ghc-typenats-bits" = import ./nix/ghc-typenats-bits.nix;
   "ghc-usage" = import ./nix/ghc-usage.nix;
   "ghc-vis" = import ./nix/ghc-vis.nix;
   "ghcflags" = import ./nix/ghcflags.nix;

@@ -55,7 +55,12 @@
         revNum = 0;
         sha256 = "6f43389926a2f937268596e468fbe88029d815fa9e48e14e8814e8219b40557a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/crux-llvm-0.13-r1-6e7ad49028354226f31072c032f0d9302ae5b530f9161d2ee0112505f6815389.nix;
+        revNum = 1;
+        sha256 = "6e7ad49028354226f31072c032f0d9302ae5b530f9161d2ee0112505f6815389";
+      };
+      default = "r1";
     };
   };
   "0.8" = {
