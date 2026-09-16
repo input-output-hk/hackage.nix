@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.17.7" = {
+    sha256 = "5b47621270bb0a5cd58cb14b17813364ac85cc598bed75f0d309ee11e9768f7e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-build-0.17.7-r0-abc65ed9838174f2d4db628d0084cfbeee0ef0fe602cf0ea34121350efc486dd.nix;
+        revNum = 0;
+        sha256 = "abc65ed9838174f2d4db628d0084cfbeee0ef0fe602cf0ea34121350efc486dd";
+      };
+      default = "r0";
+    };
+  };
 }

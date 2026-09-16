@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.3.1.0" = {
+    sha256 = "8a5e8dfbdc4b93dd37ff6a66bc4dad6322dd5e627e96308f78c2a3e3450d685d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tricorder-types-0.3.1.0-r0-6db05d0a23ebe2791834efecccffa7e41954472f264aeba89cc44b7d8f565b74.nix;
+        revNum = 0;
+        sha256 = "6db05d0a23ebe2791834efecccffa7e41954472f264aeba89cc44b7d8f565b74";
+      };
+      default = "r0";
+    };
+  };
 }
