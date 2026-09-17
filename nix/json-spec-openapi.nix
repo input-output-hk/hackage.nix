@@ -241,4 +241,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "7d6c01b8f6c3ca507236d3adcac43a97ce2b740bbaf25b98359594dc3a613eb3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/json-spec-openapi-2.0.0.0-r0-f86e45cede0264ab0fd3f4a07f872478bdbbf44af5bb6b8982dc1c47d290355c.nix;
+        revNum = 0;
+        sha256 = "f86e45cede0264ab0fd3f4a07f872478bdbbf44af5bb6b8982dc1c47d290355c";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.9.0.1" = {
+    sha256 = "1918bae0c591ab47ba45d044a50170e7a340bddb1b562752cd16f556e86314e6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-kafka-adapter-0.9.0.1-r0-ab6bd8bb639f5a081ed0d8f59651bccaf981040d7e46527a44898a4b1c103c65.nix;
+        revNum = 0;
+        sha256 = "ab6bd8bb639f5a081ed0d8f59651bccaf981040d7e46527a44898a4b1c103c65";
+      };
+      default = "r0";
+    };
+  };
 }

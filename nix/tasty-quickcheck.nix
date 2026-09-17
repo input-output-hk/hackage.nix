@@ -145,7 +145,12 @@
         revNum = 5;
         sha256 = "12ea6b6fecccc146b69aac3c4810fd5d135564245e9c0708df9b24071a8b0588";
       };
-      default = "r5";
+      r6 = {
+        nix = import ../hackage/tasty-quickcheck-0.11.1-r6-daf940fd14a401c4ca6c847b0a8583cf4ed4b048a07367efc6a2b3913f9683b3.nix;
+        revNum = 6;
+        sha256 = "daf940fd14a401c4ca6c847b0a8583cf4ed4b048a07367efc6a2b3913f9683b3";
+      };
+      default = "r6";
     };
   };
   "0.2" = {

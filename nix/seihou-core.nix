@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "0.9.0.0" = {
+    sha256 = "5396fab23f715ef569ecba0b0bdc8413aef3df3e4ed26b7a71d54323285071ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/seihou-core-0.9.0.0-r0-46e20d412c52eb889467db494b27f315d1ec4f8e4e111fca80308c7ea878761f.nix;
+        revNum = 0;
+        sha256 = "46e20d412c52eb889467db494b27f315d1ec4f8e4e111fca80308c7ea878761f";
+      };
+      default = "r0";
+    };
+  };
 }

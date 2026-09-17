@@ -11923,6 +11923,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "multiset" = import ./nix/multiset.nix;
   "multiset-comb" = import ./nix/multiset-comb.nix;
   "multisetrewrite" = import ./nix/multisetrewrite.nix;
+  "multisets" = import ./nix/multisets.nix;
   "multistate" = import ./nix/multistate.nix;
   "multivariant" = import ./nix/multivariant.nix;
   "multivector" = import ./nix/multivector.nix;
@@ -14557,6 +14558,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "reify" = import ./nix/reify.nix;
   "reinterpret-cast" = import ./nix/reinterpret-cast.nix;
   "rel8" = import ./nix/rel8.nix;
+  "rel8-internal" = import ./nix/rel8-internal.nix;
   "relacion" = import ./nix/relacion.nix;
   "relapse" = import ./nix/relapse.nix;
   "relation" = import ./nix/relation.nix;
@@ -17482,6 +17484,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "tiktoken" = import ./nix/tiktoken.nix;
   "tikzsd" = import ./nix/tikzsd.nix;
   "tile" = import ./nix/tile.nix;
+  "tilia" = import ./nix/tilia.nix;
   "tilings" = import ./nix/tilings.nix;
   "timberc" = import ./nix/timberc.nix;
   "time" = import ./nix/time.nix;
@@ -18650,6 +18653,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-session-alt" = import ./nix/wai-session-alt.nix;
   "wai-session-clientsession" = import ./nix/wai-session-clientsession.nix;
   "wai-session-clientsession-deferred" = import ./nix/wai-session-clientsession-deferred.nix;
+  "wai-session-hasql" = import ./nix/wai-session-hasql.nix;
   "wai-session-maybe" = import ./nix/wai-session-maybe.nix;
   "wai-session-mysql" = import ./nix/wai-session-mysql.nix;
   "wai-session-postgresql" = import ./nix/wai-session-postgresql.nix;
@@ -18668,6 +18672,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wait-handle" = import ./nix/wait-handle.nix;
   "waitfree" = import ./nix/waitfree.nix;
   "waitra" = import ./nix/waitra.nix;
+  "waiz" = import ./nix/waiz.nix;
   "wakame" = import ./nix/wakame.nix;
   "waldo" = import ./nix/waldo.nix;
   "wallpaper" = import ./nix/wallpaper.nix;

@@ -103,4 +103,15 @@
       default = "r0";
     };
   };
+  "0.3.0.2" = {
+    sha256 = "9ff377d65b04927b661cca693a5e81971405085ebb56ab95e1bd1a0777bb1d76";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypto-rng-0.3.0.2-r0-873b70fe8bcaa09ee4af5e7bde700d3f94fb92245db6d114f572190b9ee47eb4.nix;
+        revNum = 0;
+        sha256 = "873b70fe8bcaa09ee4af5e7bde700d3f94fb92245db6d114f572190b9ee47eb4";
+      };
+      default = "r0";
+    };
+  };
 }

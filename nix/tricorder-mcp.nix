@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.2.2" = {
+    sha256 = "c4888b7cbeef8b47ab24d77a10f3394917e9d216fb3892bb607ac9a6c5dcc5e3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tricorder-mcp-0.1.2.2-r0-14b21e9409a2340c81c6d59e35314edaf82b4827e0f0005eac148d39a565738d.nix;
+        revNum = 0;
+        sha256 = "14b21e9409a2340c81c6d59e35314edaf82b4827e0f0005eac148d39a565738d";
+      };
+      default = "r0";
+    };
+  };
 }

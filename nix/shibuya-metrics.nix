@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.9.0.1" = {
+    sha256 = "1d408230c1f6e05a37342b2999ff470a77f878239759a7d3ba7b6bcf1f996a3d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-metrics-0.9.0.1-r0-566d4ace8159da3a6507fc98d687e3861a74db0cb903e0811f768a4a2187ff78.nix;
+        revNum = 0;
+        sha256 = "566d4ace8159da3a6507fc98d687e3861a74db0cb903e0811f768a4a2187ff78";
+      };
+      default = "r0";
+    };
+  };
 }
