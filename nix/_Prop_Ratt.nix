@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.0.1" = {
+    sha256 = "89086f5d3f66aa9d4a13ec0cf4a748828e745f339affb5544a3faccf97df540d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/PropRatt-0.2.0.1-r0-78fd58c54149291b6ee3ef1f4a8043a7acc542df5ed39de7990581ca35af50a7.nix;
+        revNum = 0;
+        sha256 = "78fd58c54149291b6ee3ef1f4a8043a7acc542df5ed39de7990581ca35af50a7";
+      };
+      default = "r0";
+    };
+  };
 }

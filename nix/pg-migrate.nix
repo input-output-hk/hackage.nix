@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "07728d7087b90b03f480ea6036aed57ad185e1f70342f214365c67cae01bafaa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-migrate-1.2.0.0-r0-b5a3296f3a06440e280cd908fbf8a2b1c7b9bcdcaeaaceb2d762e29fce00f15a.nix;
+        revNum = 0;
+        sha256 = "b5a3296f3a06440e280cd908fbf8a2b1c7b9bcdcaeaaceb2d762e29fce00f15a";
+      };
+      default = "r0";
+    };
+  };
 }

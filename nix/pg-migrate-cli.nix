@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "9d8cf3d0f86b9270af72d0f9bff86b65f10941286d6e10f7e32903ce35025c34";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-migrate-cli-1.2.0.0-r0-7f1e525c7a4427a8ecfc1e78f2328b3bcc01d591c139a8b7541a84e5d192762c.nix;
+        revNum = 0;
+        sha256 = "7f1e525c7a4427a8ecfc1e78f2328b3bcc01d591c139a8b7541a84e5d192762c";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -175,4 +175,37 @@
       default = "r0";
     };
   };
+  "0.2.0.5" = {
+    sha256 = "b15be344ebd148b74dacc31b96a31db15d5adf1abedf819e61acb1c3065c50e1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.5-r0-d44bf2ffd27c5d37073fd2ab8875402d8aec131c67e2e2d092aba1b3d40c75b4.nix;
+        revNum = 0;
+        sha256 = "d44bf2ffd27c5d37073fd2ab8875402d8aec131c67e2e2d092aba1b3d40c75b4";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.6" = {
+    sha256 = "a91862fd9a022da4ddb5ee720f35439c5cca76f3fd2139ecd5a084605b27b43f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.6-r0-330a9159f0be87245321ac8d57554df3139994800053f2f4a4e48c4612b5b134.nix;
+        revNum = 0;
+        sha256 = "330a9159f0be87245321ac8d57554df3139994800053f2f4a4e48c4612b5b134";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.7" = {
+    sha256 = "12eeafa7524177bba4c6c08a8274612bf87793720efbea6d5ceb0fa375948de5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/Craft3e-0.2.0.7-r0-c30ea1beaf09377bab456d22cdeb81023d0f003e1fcb03ffb82f026ec515c488.nix;
+        revNum = 0;
+        sha256 = "c30ea1beaf09377bab456d22cdeb81023d0f003e1fcb03ffb82f026ec515c488";
+      };
+      default = "r0";
+    };
+  };
 }

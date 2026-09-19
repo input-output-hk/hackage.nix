@@ -4471,6 +4471,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ctpl" = import ./nix/ctpl.nix;
   "ctrie" = import ./nix/ctrie.nix;
   "cube" = import ./nix/cube.nix;
+  "cube-hs" = import ./nix/cube-hs.nix;
   "cubical" = import ./nix/cubical.nix;
   "cubicbezier" = import ./nix/cubicbezier.nix;
   "cubicspline" = import ./nix/cubicspline.nix;
@@ -12035,6 +12036,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nano-erl" = import ./nix/nano-erl.nix;
   "nano-hmac" = import ./nix/nano-hmac.nix;
   "nano-md5" = import ./nix/nano-md5.nix;
+  "nano-ui" = import ./nix/nano-ui.nix;
+  "nano-ui-diagrams" = import ./nix/nano-ui-diagrams.nix;
+  "nano-ui-form" = import ./nix/nano-ui-form.nix;
+  "nano-ui-sdl" = import ./nix/nano-ui-sdl.nix;
   "nanoAgda" = import ./nix/nano_Agda.nix;
   "nanocurses" = import ./nix/nanocurses.nix;
   "nanomsg" = import ./nix/nanomsg.nix;

@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.2.0.0" = {
+    sha256 = "3845d027fff5f182d99dec32e43f75766685b71315dc573e68008d599920d419";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pg-migrate-embed-1.2.0.0-r0-dd1766befb8774b16a6742bd0ba425091897a1705ac0885e1e84d6ef178f7bd6.nix;
+        revNum = 0;
+        sha256 = "dd1766befb8774b16a6742bd0ba425091897a1705ac0885e1e84d6ef178f7bd6";
+      };
+      default = "r0";
+    };
+  };
 }

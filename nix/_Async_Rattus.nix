@@ -97,4 +97,15 @@
       default = "r0";
     };
   };
+  "0.2.2" = {
+    sha256 = "5c7f018e6906ee3518a6e04bc85c599e52988af08e9cec3b73993cfac25b3af5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/AsyncRattus-0.2.2-r0-a6a4e49822a4a9dc0dfa62662b817609355feab66b2e6f5dc37763617acd0e3c.nix;
+        revNum = 0;
+        sha256 = "a6a4e49822a4a9dc0dfa62662b817609355feab66b2e6f5dc37763617acd0e3c";
+      };
+      default = "r0";
+    };
+  };
 }
