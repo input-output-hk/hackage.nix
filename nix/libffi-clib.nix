@@ -21,4 +21,26 @@
       default = "r0";
     };
   };
+  "3.7.1" = {
+    sha256 = "57776fca2464da8b0e3a12483ddee8ac076686880d2f00b2737890e4ae1ae7b5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libffi-clib-3.7.1-r0-22ede7b9d0375dca807a1ac909e27c8091b02b70b277e27209b241d010936146.nix;
+        revNum = 0;
+        sha256 = "22ede7b9d0375dca807a1ac909e27c8091b02b70b277e27209b241d010936146";
+      };
+      default = "r0";
+    };
+  };
+  "3.8.0" = {
+    sha256 = "0dc05c6be6b297784728dd47352fa005c7cb42b8ab48811651833538d4b92977";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libffi-clib-3.8.0-r0-791849a37ea756620ca3ec316f12c24cd1ac31c7f1bacfe9eb6f5b5637b08f82.nix;
+        revNum = 0;
+        sha256 = "791849a37ea756620ca3ec316f12c24cd1ac31c7f1bacfe9eb6f5b5637b08f82";
+      };
+      default = "r0";
+    };
+  };
 }
