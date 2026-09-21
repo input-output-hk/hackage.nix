@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0.0" = {
+    sha256 = "0ee0382e2ba705345824be222b7ae6af818b0ffe32116c6c3ef64015f4a30d69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pure-borrow-0.1.0.0-r0-1b5d3b08722785859f557ce9996e9b7c6565ee820f117bd1b5b334c0b7e06faf.nix;
+        revNum = 0;
+        sha256 = "1b5d3b08722785859f557ce9996e9b7c6565ee820f117bd1b5b334c0b7e06faf";
+      };
+      default = "r0";
+    };
+  };
 }

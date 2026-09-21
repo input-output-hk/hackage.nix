@@ -12036,6 +12036,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "nano-erl" = import ./nix/nano-erl.nix;
   "nano-hmac" = import ./nix/nano-hmac.nix;
   "nano-md5" = import ./nix/nano-md5.nix;
+  "nano-rope" = import ./nix/nano-rope.nix;
+  "nano-svg" = import ./nix/nano-svg.nix;
   "nano-ui" = import ./nix/nano-ui.nix;
   "nano-ui-diagrams" = import ./nix/nano-ui-diagrams.nix;
   "nano-ui-form" = import ./nix/nano-ui-form.nix;
