@@ -3833,6 +3833,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "co-log-simple" = import ./nix/co-log-simple.nix;
   "co-log-sys" = import ./nix/co-log-sys.nix;
   "coalpit" = import ./nix/coalpit.nix;
+  "coapplicative" = import ./nix/coapplicative.nix;
   "cobot" = import ./nix/cobot.nix;
   "cobot-io" = import ./nix/cobot-io.nix;
   "cobot-tools" = import ./nix/cobot-tools.nix;
