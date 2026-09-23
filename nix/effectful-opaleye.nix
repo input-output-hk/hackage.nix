@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "58822174b18ed20e15ab38c55c2913fad5eb113a5e1e9f6e0c5b80aae126a22b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/effectful-opaleye-0.2.0.0-r0-6009d69fa626f40518c0ddbe4b9614dc56150491f67c9451b142fe0313a59ee3.nix;
+        revNum = 0;
+        sha256 = "6009d69fa626f40518c0ddbe4b9614dc56150491f67c9451b142fe0313a59ee3";
+      };
+      default = "r0";
+    };
+  };
 }

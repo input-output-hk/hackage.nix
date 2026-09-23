@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.8.0.2" = {
+    sha256 = "1c3e799817813c37f92fd1ddac6c25ee7cc041e7b706056675ff697e542fe7ad";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-store-0.8.0.2-r0-e1d4a0945dfa223bc3b3513f7aa2ad234a56a18349f689c92fe8260a0e186060.nix;
+        revNum = 0;
+        sha256 = "e1d4a0945dfa223bc3b3513f7aa2ad234a56a18349f689c92fe8260a0e186060";
+      };
+      default = "r0";
+    };
+  };
 }

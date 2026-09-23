@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "8aab7ebc732664690d509bc5d95ec0c306cf77c65872677188a7f2d2f58425d6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bluefin-postgresql-0.2.0.0-r0-171d694f18101b69264d689f52ed8d585fa7cfdcb99ab5a0660de1e4e0a00e96.nix;
+        revNum = 0;
+        sha256 = "171d694f18101b69264d689f52ed8d585fa7cfdcb99ab5a0660de1e4e0a00e96";
+      };
+      default = "r0";
+    };
+  };
 }

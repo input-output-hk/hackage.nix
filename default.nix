@@ -9975,6 +9975,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "jespresso" = import ./nix/jespresso.nix;
   "jet" = import ./nix/jet.nix;
   "jet-stream" = import ./nix/jet-stream.nix;
+  "jev" = import ./nix/jev.nix;
   "jinquantities" = import ./nix/jinquantities.nix;
   "jira-wiki-markup" = import ./nix/jira-wiki-markup.nix;
   "jl" = import ./nix/jl.nix;
@@ -10240,6 +10241,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "keyed-vals-redis" = import ./nix/keyed-vals-redis.nix;
   "keylayouts" = import ./nix/keylayouts.nix;
   "keymapp" = import ./nix/keymapp.nix;
+  "keynub-licdongle" = import ./nix/keynub-licdongle.nix;
   "keyring" = import ./nix/keyring.nix;
   "keys" = import ./nix/keys.nix;
   "keysafe" = import ./nix/keysafe.nix;
@@ -12805,6 +12807,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "pandoc-lua-engine" = import ./nix/pandoc-lua-engine.nix;
   "pandoc-lua-marshal" = import ./nix/pandoc-lua-marshal.nix;
   "pandoc-markdown-ghci-filter" = import ./nix/pandoc-markdown-ghci-filter.nix;
+  "pandoc-md-slides" = import ./nix/pandoc-md-slides.nix;
   "pandoc-placetable" = import ./nix/pandoc-placetable.nix;
   "pandoc-plantuml-diagrams" = import ./nix/pandoc-plantuml-diagrams.nix;
   "pandoc-plot" = import ./nix/pandoc-plot.nix;
@@ -18000,6 +18003,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "typerbole" = import ./nix/typerbole.nix;
   "typerep-map" = import ./nix/typerep-map.nix;
   "types-compat" = import ./nix/types-compat.nix;
+  "typesafe-ai" = import ./nix/typesafe-ai.nix;
+  "typesafe-ai-core" = import ./nix/typesafe-ai-core.nix;
   "typesafe-endian" = import ./nix/typesafe-endian.nix;
   "typesafe-precure" = import ./nix/typesafe-precure.nix;
   "typescript-docs" = import ./nix/typescript-docs.nix;

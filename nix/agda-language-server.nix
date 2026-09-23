@@ -92,4 +92,15 @@
       default = "r0";
     };
   };
+  "8" = {
+    sha256 = "f3b3dfa8cada685353d106a0daa5d63ce67e30ff7a8fd21da3efc38cd1722b3c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agda-language-server-8-r0-8c06c2b972f8f44d9fb897bd44697a3da5ce675cafba005b64fc49a38a9f83e7.nix;
+        revNum = 0;
+        sha256 = "8c06c2b972f8f44d9fb897bd44697a3da5ce675cafba005b64fc49a38a9f83e7";
+      };
+      default = "r0";
+    };
+  };
 }

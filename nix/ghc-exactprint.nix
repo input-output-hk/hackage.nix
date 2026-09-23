@@ -469,6 +469,17 @@
       default = "r0";
     };
   };
+  "1.12.1.0" = {
+    sha256 = "7301dc5d9d3b9fb618b0b8c16f40f1b5c2131b3fe27047697674f69dd12106e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-exactprint-1.12.1.0-r0-cdae852b932b2cb147fc4907b2ecd5e6014a73810bc74a3809e2343f3618d408.nix;
+        revNum = 0;
+        sha256 = "cdae852b932b2cb147fc4907b2ecd5e6014a73810bc74a3809e2343f3618d408";
+      };
+      default = "r0";
+    };
+  };
   "1.14.0.0" = {
     sha256 = "eeff7c7356497f1bf0d630a724f9459ed9ffd073df24d0c76449d1ce6b6b81db";
     revisions = {
@@ -487,6 +498,17 @@
         nix = import ../hackage/ghc-exactprint-1.14.1.0-r0-c577774edc716dd18a20a25ed9951388b10a208520e2f3027d1a4bf4ab8cb5ff.nix;
         revNum = 0;
         sha256 = "c577774edc716dd18a20a25ed9951388b10a208520e2f3027d1a4bf4ab8cb5ff";
+      };
+      default = "r0";
+    };
+  };
+  "1.14.2.0" = {
+    sha256 = "5a41cb6cb1b5af51f1c0052fb2701c5eeddfa179972c860000857961f4aa87aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ghc-exactprint-1.14.2.0-r0-9389e4cfed113266ac809371b757e70abcf36e66cc713b4755eec3a249e999cb.nix;
+        revNum = 0;
+        sha256 = "9389e4cfed113266ac809371b757e70abcf36e66cc713b4755eec3a249e999cb";
       };
       default = "r0";
     };
