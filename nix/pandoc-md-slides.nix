@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.1.2.0" = {
+    sha256 = "49bdeca4cfee2669a46e9c9b25536ea5af7ab527412007df6369bbfd6d86cd2e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pandoc-md-slides-1.1.2.0-r0-6a9f7aa048f0f5a92affaca4167bfab6c419aa058c54f3743e8a6bb575d6397b.nix;
+        revNum = 0;
+        sha256 = "6a9f7aa048f0f5a92affaca4167bfab6c419aa058c54f3743e8a6bb575d6397b";
+      };
+      default = "r0";
+    };
+  };
 }

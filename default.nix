@@ -3390,6 +3390,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "canon" = import ./nix/canon.nix;
   "canonical-filepath" = import ./nix/canonical-filepath.nix;
   "canonical-json" = import ./nix/canonical-json.nix;
+  "canontra" = import ./nix/canontra.nix;
   "canteven-config" = import ./nix/canteven-config.nix;
   "canteven-http" = import ./nix/canteven-http.nix;
   "canteven-listen-http" = import ./nix/canteven-listen-http.nix;
@@ -11287,6 +11288,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mdapi" = import ./nix/mdapi.nix;
   "mdcat" = import ./nix/mdcat.nix;
   "mdo" = import ./nix/mdo.nix;
+  "mdoc" = import ./nix/mdoc.nix;
   "mdp" = import ./nix/mdp.nix;
   "mealstrom" = import ./nix/mealstrom.nix;
   "mealy" = import ./nix/mealy.nix;

@@ -185,7 +185,12 @@
         revNum = 1;
         sha256 = "2ae5a3e77ef16bffe9f2dd2b328cd79444cd1c193386007260aa6b0af0f957b2";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/config-ini-0.2.7.0-r2-caec2dd513772f24b61d0b756dbf33e58f187596a4a6abbeefd08175f6c14e36.nix;
+        revNum = 2;
+        sha256 = "caec2dd513772f24b61d0b756dbf33e58f187596a4a6abbeefd08175f6c14e36";
+      };
+      default = "r2";
     };
   };
 }
