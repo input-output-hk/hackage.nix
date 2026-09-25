@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "4983558cbb9f99e2c8d983beaa4fa1394f45a177a37c438606c23032395ed781";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-algebra-0.1.1.0-r0-5aea812fbdb38e84a5cf05b429d6aadb68b0f6a9cc8df7c56843d5e7c7507583.nix;
+        revNum = 0;
+        sha256 = "5aea812fbdb38e84a5cf05b429d6aadb68b0f6a9cc8df7c56843d5e7c7507583";
+      };
+      default = "r0";
+    };
+  };
 }

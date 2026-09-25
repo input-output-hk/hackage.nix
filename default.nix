@@ -12477,6 +12477,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "odbc" = import ./nix/odbc.nix;
   "odd-jobs" = import ./nix/odd-jobs.nix;
   "oden-go-packages" = import ./nix/oden-go-packages.nix;
+  "odid" = import ./nix/odid.nix;
   "odpic-raw" = import ./nix/odpic-raw.nix;
   "ods2csv" = import ./nix/ods2csv.nix;
   "oeis" = import ./nix/oeis.nix;
