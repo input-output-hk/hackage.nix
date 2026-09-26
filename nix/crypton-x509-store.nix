@@ -124,7 +124,12 @@
         revNum = 1;
         sha256 = "2042c4ed15dc3a0cc26c55ad58ecbc396b28d17a3a4075ac99b0bbcaa444418c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/crypton-x509-store-1.9.0-r2-ad388a99b25d8c11727d96f9f933341aaba0ef8cbfee1dccf3c1a09568674cc4.nix;
+        revNum = 2;
+        sha256 = "ad388a99b25d8c11727d96f9f933341aaba0ef8cbfee1dccf3c1a09568674cc4";
+      };
+      default = "r2";
     };
   };
 }

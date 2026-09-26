@@ -40,4 +40,15 @@
       default = "r6";
     };
   };
+  "0.13.0" = {
+    sha256 = "2f1605e8ddddbc17131e3be509bdfd51ada6c332198c45e1cf1bd3360583b876";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/servant-multipart-api-0.13.0-r0-999d6546ff75eb76539552adae49756d66c26e3d320c45024993481ce7d5d43e.nix;
+        revNum = 0;
+        sha256 = "999d6546ff75eb76539552adae49756d66c26e3d320c45024993481ce7d5d43e";
+      };
+      default = "r0";
+    };
+  };
 }

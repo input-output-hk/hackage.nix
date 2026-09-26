@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "0.2.0.10" = {
+    sha256 = "18a36452be6df836055d396bf16b302a95ffb3d847efcb19eb94ce39ff4d7c12";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-otel-0.2.0.10-r0-4768b925b8f1534ef5fbce004dfe9b317a314aa01544aee359691adb8616e2f0.nix;
+        revNum = 0;
+        sha256 = "4768b925b8f1534ef5fbce004dfe9b317a314aa01544aee359691adb8616e2f0";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.2" = {
     sha256 = "92976df2344aa05e202cf928ed0566f34a7504e6e79cafab0719b6c3b3b88f89";
     revisions = {
@@ -105,6 +116,17 @@
         nix = import ../hackage/kiroku-otel-0.2.0.8-r0-c7e51ac15cc0c2bc56dd529e1fb3b4ddf2b2fc62270e225376515ea9dafcbc90.nix;
         revNum = 0;
         sha256 = "c7e51ac15cc0c2bc56dd529e1fb3b4ddf2b2fc62270e225376515ea9dafcbc90";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.9" = {
+    sha256 = "c53bb04eafc8d85cabc50c3ec7013527ffa961ac43ccc9fefe250fcf107e3158";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-otel-0.2.0.9-r0-420d191c42585697b7f53f68cda2ba2fb649520e800dd4393b7d8723bdb35f57.nix;
+        revNum = 0;
+        sha256 = "420d191c42585697b7f53f68cda2ba2fb649520e800dd4393b7d8723bdb35f57";
       };
       default = "r0";
     };

@@ -92,7 +92,12 @@
         revNum = 2;
         sha256 = "791c13c1e87c7511a49347573520d0f9f1e311eb9b7d2851beb62273e5cdfc0e";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/crypton-x509-validation-1.9.1-r3-4d3d2161752cde314f0f70bc5f40afd2d7bfafbd7213e47c8e1876d444d1cdd0.nix;
+        revNum = 3;
+        sha256 = "4d3d2161752cde314f0f70bc5f40afd2d7bfafbd7213e47c8e1876d444d1cdd0";
+      };
+      default = "r3";
     };
   };
 }

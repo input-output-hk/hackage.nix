@@ -29,7 +29,12 @@
         revNum = 0;
         sha256 = "1cfcaf17c8d784291dc1e2498370cebcac702cdf11657476c179d95dccbf1555";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/atelier-prelude-0.3.0.0-r1-67682e4d24ce65bd8295852d24be8480db9062fa983359aced13081c6dfba1e3.nix;
+        revNum = 1;
+        sha256 = "67682e4d24ce65bd8295852d24be8480db9062fa983359aced13081c6dfba1e3";
+      };
+      default = "r1";
     };
   };
   "0.3.1.0" = {
@@ -40,7 +45,12 @@
         revNum = 0;
         sha256 = "1f2a660159042aa2755930a59cf89f745620b44b37937f421629303c491ce464";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/atelier-prelude-0.3.1.0-r1-4e257b7e0c8e7ffbd291fd4bca6fc49de6be8159cb3e4411fe3633ae003ae2db.nix;
+        revNum = 1;
+        sha256 = "4e257b7e0c8e7ffbd291fd4bca6fc49de6be8159cb3e4411fe3633ae003ae2db";
+      };
+      default = "r1";
     };
   };
   "0.4.0.0" = {
@@ -51,7 +61,12 @@
         revNum = 0;
         sha256 = "65de43e741b3cd10c27d44aa1ecb779910ec2d9f0c33ebab56130af189fc55be";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/atelier-prelude-0.4.0.0-r1-bcae91359f476911527342bdab0050dd16ec00a5333ea0befd9d246479705953.nix;
+        revNum = 1;
+        sha256 = "bcae91359f476911527342bdab0050dd16ec00a5333ea0befd9d246479705953";
+      };
+      default = "r1";
     };
   };
   "0.4.1.0" = {
@@ -62,7 +77,12 @@
         revNum = 0;
         sha256 = "8e85f378ea4966dda54fd6429a01a9501cead3f486d29dd3f5d5ab008dbfc753";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/atelier-prelude-0.4.1.0-r1-3ef385eb7966676c6896f45862b5f144023b01e982a0c809c410a2a2a1aa3782.nix;
+        revNum = 1;
+        sha256 = "3ef385eb7966676c6896f45862b5f144023b01e982a0c809c410a2a2a1aa3782";
+      };
+      default = "r1";
     };
   };
 }

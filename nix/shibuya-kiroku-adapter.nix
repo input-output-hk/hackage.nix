@@ -120,4 +120,26 @@
       default = "r0";
     };
   };
+  "0.5.1.4" = {
+    sha256 = "d90d6de291e25beebd290dcef5184536718fff2ab673201536a319d3a2360bc4";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-kiroku-adapter-0.5.1.4-r0-254c2146a5956c18aa49937b2013c33656fd82468e1af3d081cc25203c2aaeb0.nix;
+        revNum = 0;
+        sha256 = "254c2146a5956c18aa49937b2013c33656fd82468e1af3d081cc25203c2aaeb0";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.1.5" = {
+    sha256 = "d688e8c939688fe7a630ef405ac1e5cbde196ef3f38b37eb403faed4153e453c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shibuya-kiroku-adapter-0.5.1.5-r0-1ce0c72098111b45399463757fe55738ded2e7447d589af36c1ea1e79f8638ba.nix;
+        revNum = 0;
+        sha256 = "1ce0c72098111b45399463757fe55738ded2e7447d589af36c1ea1e79f8638ba";
+      };
+      default = "r0";
+    };
+  };
 }

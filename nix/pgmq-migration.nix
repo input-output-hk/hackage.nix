@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "0.6.1.1" = {
+    sha256 = "2c61310896cf15f64a887b5b05b71182ff6a79737d0d1f78c9def09ce195a04e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pgmq-migration-0.6.1.1-r0-99ec6ac2cc58565efced7c638e68c3e01e080881cc161fdc0d5d5d23a669d5ae.nix;
+        revNum = 0;
+        sha256 = "99ec6ac2cc58565efced7c638e68c3e01e080881cc161fdc0d5d5d23a669d5ae";
+      };
+      default = "r0";
+    };
+  };
 }

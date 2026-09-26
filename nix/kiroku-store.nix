@@ -142,4 +142,26 @@
       default = "r0";
     };
   };
+  "0.9.0.0" = {
+    sha256 = "849dc7788058b0b5b9b45d141de9a90ec7d153cd55ea4039e0b1f3b2d2366e2f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-store-0.9.0.0-r0-f750f400bc6ec6cb2bd3699bdd99bb00b209a414fe730e3c3bacbf68b4c8f5cd.nix;
+        revNum = 0;
+        sha256 = "f750f400bc6ec6cb2bd3699bdd99bb00b209a414fe730e3c3bacbf68b4c8f5cd";
+      };
+      default = "r0";
+    };
+  };
+  "0.9.0.1" = {
+    sha256 = "0625101bb9cad9427e936193756b23cce527b20bf40230937777e4f21c196b58";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-store-0.9.0.1-r0-b8df05b02167e21247ea965926a770b0dd90f25ddb3b79124e30ee748b80cef4.nix;
+        revNum = 0;
+        sha256 = "b8df05b02167e21247ea965926a770b0dd90f25ddb3b79124e30ee748b80cef4";
+      };
+      default = "r0";
+    };
+  };
 }

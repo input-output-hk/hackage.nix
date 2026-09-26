@@ -7,7 +7,12 @@
         revNum = 0;
         sha256 = "28517fcce97f3d9d6508ff8e7cfbe65c6f4a8cce913f118a7f5119b948a06cc8";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tricorder-mcp-0.1.0.0-r1-baad3d9c8986396913f0a3308bb12857790eae6f1baf1a98255d7eae43b569bb.nix;
+        revNum = 1;
+        sha256 = "baad3d9c8986396913f0a3308bb12857790eae6f1baf1a98255d7eae43b569bb";
+      };
+      default = "r1";
     };
   };
   "0.1.1.0" = {
@@ -18,7 +23,12 @@
         revNum = 0;
         sha256 = "0032dd9ff6984351eb10031245814b17ca283a0c4178ebeb7f7d7f929f3ea4a0";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tricorder-mcp-0.1.1.0-r1-45c27ad18aa1bd30b638d2ace0faea156046154be54ed5ef8818d0ed0739bf31.nix;
+        revNum = 1;
+        sha256 = "45c27ad18aa1bd30b638d2ace0faea156046154be54ed5ef8818d0ed0739bf31";
+      };
+      default = "r1";
     };
   };
   "0.1.2.1" = {
@@ -29,7 +39,12 @@
         revNum = 0;
         sha256 = "f582ddd35db7b039571ddebe93f8ff80527c7f243d9a7c72f268f8886e93c6ee";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tricorder-mcp-0.1.2.1-r1-13aec273960ced6b48e2d06bef6b4285e1473f9ebbd2e333db97fef0a8eb95ba.nix;
+        revNum = 1;
+        sha256 = "13aec273960ced6b48e2d06bef6b4285e1473f9ebbd2e333db97fef0a8eb95ba";
+      };
+      default = "r1";
     };
   };
   "0.1.2.2" = {
@@ -40,7 +55,12 @@
         revNum = 0;
         sha256 = "14b21e9409a2340c81c6d59e35314edaf82b4827e0f0005eac148d39a565738d";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tricorder-mcp-0.1.2.2-r1-8cc7e898d1ce4f0b7c6ee53ff511b832026d81ec8662fe0ca400f25470b47d5a.nix;
+        revNum = 1;
+        sha256 = "8cc7e898d1ce4f0b7c6ee53ff511b832026d81ec8662fe0ca400f25470b47d5a";
+      };
+      default = "r1";
     };
   };
   "0.1.3.0" = {
@@ -51,7 +71,12 @@
         revNum = 0;
         sha256 = "2929c6cc80e846db39f58052be0a284bc9644be18db258bc0555dcb02bf9102f";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/tricorder-mcp-0.1.3.0-r1-bcfc29973d81fd5aae03dfb1ff637b7f9410a554c95724dabcf5d81fe7033de1.nix;
+        revNum = 1;
+        sha256 = "bcfc29973d81fd5aae03dfb1ff637b7f9410a554c95724dabcf5d81fe7033de1";
+      };
+      default = "r1";
     };
   };
 }

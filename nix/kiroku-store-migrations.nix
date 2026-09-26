@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "8c0d8e9b98e39c332457a0d34d37c8e909e3c2618dc6d334b6a16cc98fc353de";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-store-migrations-0.6.0.0-r0-1591ff381f8fb5420b0bfe2dbce8db775309cf55aabdcf8dadb71e6436596ef1.nix;
+        revNum = 0;
+        sha256 = "1591ff381f8fb5420b0bfe2dbce8db775309cf55aabdcf8dadb71e6436596ef1";
+      };
+      default = "r0";
+    };
+  };
 }

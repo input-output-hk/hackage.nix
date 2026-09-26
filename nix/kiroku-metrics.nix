@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.1.0.10" = {
+    sha256 = "3e3a5b77ce2f400e0f3b03667f4e9a0929382b64a36c9327ec99a4b76b7b8142";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-metrics-0.1.0.10-r0-14909d890bab0c0517ecc331a849948910e538be92fc83a14852bc662237eb37.nix;
+        revNum = 0;
+        sha256 = "14909d890bab0c0517ecc331a849948910e538be92fc83a14852bc662237eb37";
+      };
+      default = "r0";
+    };
+  };
   "0.1.0.3" = {
     sha256 = "f6d7f43b4c721db37e64a3dcb389a8dce3f3bfa79913aaee54122890618a7eaf";
     revisions = {
@@ -83,6 +94,17 @@
         nix = import ../hackage/kiroku-metrics-0.1.0.8-r0-2a3b490e8caaa35b41b598d1a2410142a4b7abaff23ba2ef882d11de963edf21.nix;
         revNum = 0;
         sha256 = "2a3b490e8caaa35b41b598d1a2410142a4b7abaff23ba2ef882d11de963edf21";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.0.9" = {
+    sha256 = "c305fcda674bc67cfafac0625eb49924a8d7f74ba0c276a5684b3b2dcd25e919";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-metrics-0.1.0.9-r0-0322973598302f6d11a9ab67e1c2ad73cae035df15b3d2571198e9fc81c9c947.nix;
+        revNum = 0;
+        sha256 = "0322973598302f6d11a9ab67e1c2ad73cae035df15b3d2571198e9fc81c9c947";
       };
       default = "r0";
     };
