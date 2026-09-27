@@ -114,4 +114,15 @@
       default = "r1";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "3a84884b3c3a40b13be8781fbbbb088d0b599976fdea40f0e5e4436f99a3b8eb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kioku-migrations-0.8.0.0-r0-c2e0643666d733e5e6ac02ad6c4f406b66c1ca70b99ea97dc2a9c7b81a3c311d.nix;
+        revNum = 0;
+        sha256 = "c2e0643666d733e5e6ac02ad6c4f406b66c1ca70b99ea97dc2a9c7b81a3c311d";
+      };
+      default = "r0";
+    };
+  };
 }

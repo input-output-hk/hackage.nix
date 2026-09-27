@@ -69,6 +69,17 @@
       default = "r1";
     };
   };
+  "0.12.0" = {
+    sha256 = "dcbd0a7ac5465f21a78e85c8d06291b8e5e9e1c0f0fd91b295004fe599bad542";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/jwt-0.12.0-r0-4b0d678793a4e58a722cc03e4a2373672e97b7c425e8a701e74f683e614ff6f7.nix;
+        revNum = 0;
+        sha256 = "4b0d678793a4e58a722cc03e4a2373672e97b7c425e8a701e74f683e614ff6f7";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0" = {
     sha256 = "d1ed6d6b3ef6620d68234a795cfaa8a87ba669416e99629b4deea6e86487fa71";
     revisions = {

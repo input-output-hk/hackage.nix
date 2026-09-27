@@ -547,7 +547,12 @@
         revNum = 0;
         sha256 = "92e4200dd04ac0470fc075c4e27e36a02142908682ccab43bef9c9b43cc4eaad";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/doctest-0.25.0.2-r1-48eb7fc7a72576edf75b5b165dd12d6b20264f8671e3608345cf4518bd0f28ec.nix;
+        revNum = 1;
+        sha256 = "48eb7fc7a72576edf75b5b165dd12d6b20264f8671e3608345cf4518bd0f28ec";
+      };
+      default = "r1";
     };
   };
   "0.3.0" = {
