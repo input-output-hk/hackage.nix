@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "4f35020ed4e8153411b2ea44cb69b457f211bbe571cdb53d4ec37dd4f5803fed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/biscuit-servant-0.5.0.0-r0-e71c86b4ee18e774a161b6199729ccbb13d1f995dd7b5a3d5c62bf82667c8dcc.nix;
+        revNum = 0;
+        sha256 = "e71c86b4ee18e774a161b6199729ccbb13d1f995dd7b5a3d5c62bf82667c8dcc";
+      };
+      default = "r0";
+    };
+  };
 }

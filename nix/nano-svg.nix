@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "ffa495b570c4389ded3b8305c56cecaa89560362398b9c57ccc8fd60dc19b823";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/nano-svg-0.2.0.0-r0-72f59584460b68cc33bbc1ef4f57c9ed3a246d0a5db96e8b3122c173dceed711.nix;
+        revNum = 0;
+        sha256 = "72f59584460b68cc33bbc1ef4f57c9ed3a246d0a5db96e8b3122c173dceed711";
+      };
+      default = "r0";
+    };
+  };
 }

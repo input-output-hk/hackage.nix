@@ -87,4 +87,26 @@
       default = "r0";
     };
   };
+  "0.4.0.1" = {
+    sha256 = "81d6949e3f694edbaee2cff667a67519732897df7c1488a5eaea2fc06f4bf02f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/biscuit-haskell-0.4.0.1-r0-31cf5ee29fcd8e48d4689f26610edc9bf21441606317174d6faacbcd9c3a2a1b.nix;
+        revNum = 0;
+        sha256 = "31cf5ee29fcd8e48d4689f26610edc9bf21441606317174d6faacbcd9c3a2a1b";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.0.0" = {
+    sha256 = "dcddc0caa93575088f68e9d33efe2a945d73a2bebe303ba41d231f30a2738795";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/biscuit-haskell-0.5.0.0-r0-f9c1902beb7ddae17ce2524b92ad691bfd21f97929f528c7bd4f7e028249eef8.nix;
+        revNum = 0;
+        sha256 = "f9c1902beb7ddae17ce2524b92ad691bfd21f97929f528c7bd4f7e028249eef8";
+      };
+      default = "r0";
+    };
+  };
 }

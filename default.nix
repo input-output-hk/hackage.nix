@@ -2853,6 +2853,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bisc" = import ./nix/bisc.nix;
   "biscuit-haskell" = import ./nix/biscuit-haskell.nix;
   "biscuit-servant" = import ./nix/biscuit-servant.nix;
+  "biscuit-wai" = import ./nix/biscuit-wai.nix;
   "bisect-binary" = import ./nix/bisect-binary.nix;
   "bishbosh" = import ./nix/bishbosh.nix;
   "bit-array" = import ./nix/bit-array.nix;
