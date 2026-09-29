@@ -315,6 +315,22 @@
         revNum = 0;
         sha256 = "00c6ea85dab90ca1a4136d376a9606d50d784d65c140131cc7c85f4209ad81eb";
       };
+      r1 = {
+        nix = import ../hackage/beam-postgres-0.6.3.0-r1-0a38db0b4afc6a331f4694c5bb74daf85ef7b50b9eccb8db4e0b6547ca915732.nix;
+        revNum = 1;
+        sha256 = "0a38db0b4afc6a331f4694c5bb74daf85ef7b50b9eccb8db4e0b6547ca915732";
+      };
+      default = "r1";
+    };
+  };
+  "0.6.4.0" = {
+    sha256 = "2f078391a90e61886510ffa20563e0d89e60f87e072e9d0c29f375428fc75c67";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/beam-postgres-0.6.4.0-r0-48a67d2d43d39db4065b6f67059abb426caa4122a45d098a8c190851f8ec58fd.nix;
+        revNum = 0;
+        sha256 = "48a67d2d43d39db4065b6f67059abb426caa4122a45d098a8c190851f8ec58fd";
+      };
       default = "r0";
     };
   };

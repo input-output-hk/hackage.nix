@@ -75,4 +75,15 @@
       default = "r0";
     };
   };
+  "0.4.0.3" = {
+    sha256 = "2fccbdc139d7b79ee2f001e0b69567230c028141e82227c5f37c25334c08a5e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/rounded-hw-0.4.0.3-r0-552b27834906477456b11d7e3189ea8542f7b7d7426777be71a747aa1935d557.nix;
+        revNum = 0;
+        sha256 = "552b27834906477456b11d7e3189ea8542f7b7d7426777be71a747aa1935d557";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -334,7 +334,12 @@
         revNum = 0;
         sha256 = "49f3a153002345570abff49c881fae51e379efcf98d1733b11ed8abc07689ed2";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/one-liner-2.1.1-r1-a7dce923191e61918afb6ed8727c38452a4c7462b72963b08b7b20c5580a6946.nix;
+        revNum = 1;
+        sha256 = "a7dce923191e61918afb6ed8727c38452a4c7462b72963b08b7b20c5580a6946";
+      };
+      default = "r1";
     };
   };
 }

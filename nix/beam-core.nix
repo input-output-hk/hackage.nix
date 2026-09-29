@@ -135,7 +135,12 @@
         revNum = 1;
         sha256 = "438ee4fb3082ffb6893b9fd8153c05ae77976e39333785cd060f257b0894c6e5";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/beam-core-0.11.1.0-r2-a9b99ee11806af6f8d9eefa9067577280a79d7b23577515530a106978c09ea21.nix;
+        revNum = 2;
+        sha256 = "a9b99ee11806af6f8d9eefa9067577280a79d7b23577515530a106978c09ea21";
+      };
+      default = "r2";
     };
   };
   "0.6.0.0" = {

@@ -5455,6 +5455,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effect-stack" = import ./nix/effect-stack.nix;
   "effectful" = import ./nix/effectful.nix;
   "effectful-core" = import ./nix/effectful-core.nix;
+  "effectful-data-cache" = import ./nix/effectful-data-cache.nix;
   "effectful-opaleye" = import ./nix/effectful-opaleye.nix;
   "effectful-plugin" = import ./nix/effectful-plugin.nix;
   "effectful-poolboy" = import ./nix/effectful-poolboy.nix;
@@ -13822,6 +13823,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "prizm" = import ./nix/prizm.nix;
   "pro-abstract" = import ./nix/pro-abstract.nix;
   "pro-source" = import ./nix/pro-source.nix;
+  "proarrow" = import ./nix/proarrow.nix;
   "prob" = import ./nix/prob.nix;
   "prob-fx" = import ./nix/prob-fx.nix;
   "probability" = import ./nix/probability.nix;
