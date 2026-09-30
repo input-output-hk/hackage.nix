@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "c1506e81437916a43284369a84ca69cac93f7313f38566993567afd181113a20";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/exact-combinatorics-0.2.1.0-r0-fccd0e7bbbeba96992f20d0df221db55b3e44bbb3858ab92e190e001195ad39e.nix;
+        revNum = 0;
+        sha256 = "fccd0e7bbbeba96992f20d0df221db55b3e44bbb3858ab92e190e001195ad39e";
+      };
+      default = "r0";
+    };
+  };
 }

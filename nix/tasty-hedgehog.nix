@@ -331,7 +331,12 @@
         revNum = 8;
         sha256 = "d1e63a4e9f57fc8a9f8cb8a36cccf3cc887aceebc874d12967bbe9af70652c1a";
       };
-      default = "r8";
+      r9 = {
+        nix = import ../hackage/tasty-hedgehog-1.4.0.2-r9-b88a66922f85df181fa3462cad160b354aaf9745e6bdd2c00aee32ff3c0ce142.nix;
+        revNum = 9;
+        sha256 = "b88a66922f85df181fa3462cad160b354aaf9745e6bdd2c00aee32ff3c0ce142";
+      };
+      default = "r9";
     };
   };
 }

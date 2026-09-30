@@ -296,4 +296,15 @@
       default = "r0";
     };
   };
+  "0.2.7.7" = {
+    sha256 = "1788da91e28248388223e0770fc1b66d190faf178c4f3f43fc5a7bd739e62297";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/bytestring-trie-0.2.7.7-r0-7eaa9b11ee480a732cfc19463380cebc000ba5ac21c66e39e98395f9571ce037.nix;
+        revNum = 0;
+        sha256 = "7eaa9b11ee480a732cfc19463380cebc000ba5ac21c66e39e98395f9571ce037";
+      };
+      default = "r0";
+    };
+  };
 }

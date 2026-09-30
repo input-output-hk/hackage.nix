@@ -1601,6 +1601,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agum" = import ./nix/agum.nix;
   "ai-agent-diff-patch" = import ./nix/ai-agent-diff-patch.nix;
   "aig" = import ./nix/aig.nix;
+  "aihc-cabal-syntax" = import ./nix/aihc-cabal-syntax.nix;
   "aihc-cpp" = import ./nix/aihc-cpp.nix;
   "aihc-parser" = import ./nix/aihc-parser.nix;
   "aip" = import ./nix/aip.nix;

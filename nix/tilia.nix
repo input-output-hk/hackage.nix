@@ -20,4 +20,15 @@
       default = "r2";
     };
   };
+  "0.0.2.0" = {
+    sha256 = "2f8e89f83ebcc7ad7751f28d9a614b17f1e99b512b01639a1db8e303e272dc03";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tilia-0.0.2.0-r0-8d33d794c3c884a8f3b35ac792247fc45f4246f89f3af74f2f16a85039d9f7ee.nix;
+        revNum = 0;
+        sha256 = "8d33d794c3c884a8f3b35ac792247fc45f4246f89f3af74f2f16a85039d9f7ee";
+      };
+      default = "r0";
+    };
+  };
 }
