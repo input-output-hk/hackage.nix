@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.18.0" = {
+    sha256 = "370cf1c16e0bf68383cf607560fe3918f7f8f1cbfce27f8a342769c1304bf140";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hydra-scala-0.18.0-r0-329679049a7a56630afb82281a26daf906f5c3c449c6665240af02da50c3fd3d.nix;
+        revNum = 0;
+        sha256 = "329679049a7a56630afb82281a26daf906f5c3c449c6665240af02da50c3fd3d";
+      };
+      default = "r0";
+    };
+  };
 }

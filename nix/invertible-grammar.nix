@@ -170,7 +170,12 @@
         revNum = 3;
         sha256 = "87f1e9242a9990000446fff270504ded47658aa17f44a6a639065312ce41f36f";
       };
-      default = "r3";
+      r4 = {
+        nix = import ../hackage/invertible-grammar-0.1.3.5-r4-85529a73314acdd66a8c004364f6c2581475827efb7b279fe3766a40bd79a5cb.nix;
+        revNum = 4;
+        sha256 = "85529a73314acdd66a8c004364f6c2581475827efb7b279fe3766a40bd79a5cb";
+      };
+      default = "r4";
     };
   };
 }

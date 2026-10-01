@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "e0274850e81801d268fa18d4a5256dd15c782f1bf6838bc82a1fd2611673cc12";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/prodapi-proxy-0.2.0.0-r0-5251c8f7f80d4740a109167fec1239caa72023289eb38b6fa144886177ce600e.nix;
+        revNum = 0;
+        sha256 = "5251c8f7f80d4740a109167fec1239caa72023289eb38b6fa144886177ce600e";
+      };
+      default = "r0";
+    };
+  };
 }

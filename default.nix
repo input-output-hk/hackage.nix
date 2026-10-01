@@ -13853,8 +13853,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "procstat" = import ./nix/procstat.nix;
   "proctest" = import ./nix/proctest.nix;
   "prodapi" = import ./nix/prodapi.nix;
+  "prodapi-core" = import ./nix/prodapi-core.nix;
+  "prodapi-pg" = import ./nix/prodapi-pg.nix;
   "prodapi-proxy" = import ./nix/prodapi-proxy.nix;
   "prodapi-userauth" = import ./nix/prodapi-userauth.nix;
+  "prodapi-web" = import ./nix/prodapi-web.nix;
   "producer" = import ./nix/producer.nix;
   "product" = import ./nix/product.nix;
   "product-isomorphic" = import ./nix/product-isomorphic.nix;

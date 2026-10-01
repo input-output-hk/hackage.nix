@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "2.0.0.0" = {
+    sha256 = "e4b4ab8054ee542913b271f724d8b64ffa5685bd6a8c897876c1d9878550157d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/aihc-cabal-syntax-2.0.0.0-r0-025357cfda4dbfa9e35b3813304b3fa95f791ab8c83e7552aaf89872baebed7f.nix;
+        revNum = 0;
+        sha256 = "025357cfda4dbfa9e35b3813304b3fa95f791ab8c83e7552aaf89872baebed7f";
+      };
+      default = "r0";
+    };
+  };
 }
