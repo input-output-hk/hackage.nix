@@ -334,4 +334,15 @@
       default = "r1";
     };
   };
+  "1.5.0.3" = {
+    sha256 = "b86b041127eda81af17479ec2c271fd1d6539e5b0cb91951a38dcd96b3a1670d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/graphql-1.5.0.3-r0-8acc78a4f8f17c2d2cf6f473bd74f60fe9f10db613673ac3dbf026fec80602a0.nix;
+        revNum = 0;
+        sha256 = "8acc78a4f8f17c2d2cf6f473bd74f60fe9f10db613673ac3dbf026fec80602a0";
+      };
+      default = "r0";
+    };
+  };
 }

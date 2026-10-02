@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "43445a9107d636790e74398200154e24bf3e59a1d6131dae92afa5ce28e4dec7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-mutation-driver-0.3.0.0-r0-be7e466e128ef5e62a336658752e72ce666e7c1793f469354889bc41ec9ad6d9.nix;
+        revNum = 0;
+        sha256 = "be7e466e128ef5e62a336658752e72ce666e7c1793f469354889bc41ec9ad6d9";
+      };
+      default = "r0";
+    };
+  };
 }

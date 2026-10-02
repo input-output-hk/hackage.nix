@@ -26,4 +26,15 @@
       default = "r1";
     };
   };
+  "1.1.1" = {
+    sha256 = "382d6877ce82f351a25877c186ae0d4a698599bd02ef0acbb6523cdd6edbd7df";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haxl-effectful-1.1.1-r0-c607f95b47db9d690278db5cf654c36bd4445b4c980b4cde9075461c06f08afb.nix;
+        revNum = 0;
+        sha256 = "c607f95b47db9d690278db5cf654c36bd4445b4c980b4cde9075461c06f08afb";
+      };
+      default = "r0";
+    };
+  };
 }

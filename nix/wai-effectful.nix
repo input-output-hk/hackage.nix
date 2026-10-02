@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.0.1" = {
+    sha256 = "d392ee9740613486dbbb4800fca866131201f208a83418248ea4988862553cf7";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/wai-effectful-1.0.1-r0-0730d7cedf809fdef1eef9cbefd6f5fd172202c4bce8e5634cf5d62c8d66084a.nix;
+        revNum = 0;
+        sha256 = "0730d7cedf809fdef1eef9cbefd6f5fd172202c4bce8e5634cf5d62c8d66084a";
+      };
+      default = "r0";
+    };
+  };
 }

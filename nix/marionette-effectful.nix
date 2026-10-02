@@ -15,4 +15,15 @@
       default = "r1";
     };
   };
+  "1.0.1" = {
+    sha256 = "903e9e2d501990981ae94b749fddfa01b7f93ba012070ef15c835a8aa1be2668";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/marionette-effectful-1.0.1-r0-16ed4e64d135455f1d3d6b757bd05cc87f71d601b9ec8b83c7b4cb38c23e0927.nix;
+        revNum = 0;
+        sha256 = "16ed4e64d135455f1d3d6b757bd05cc87f71d601b9ec8b83c7b4cb38c23e0927";
+      };
+      default = "r0";
+    };
+  };
 }

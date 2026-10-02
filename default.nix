@@ -1596,6 +1596,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "agda2train" = import ./nix/agda2train.nix;
   "age" = import ./nix/age.nix;
   "agent-push-kit" = import ./nix/agent-push-kit.nix;
+  "agentic" = import ./nix/agentic.nix;
+  "agentic-aeson" = import ./nix/agentic-aeson.nix;
+  "agentic-anthropic" = import ./nix/agentic-anthropic.nix;
+  "agentic-io" = import ./nix/agentic-io.nix;
+  "agentic-jev" = import ./nix/agentic-jev.nix;
+  "agentic-openai" = import ./nix/agentic-openai.nix;
   "agentx" = import ./nix/agentx.nix;
   "agreeing" = import ./nix/agreeing.nix;
   "agum" = import ./nix/agum.nix;
@@ -6196,8 +6202,12 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fltkhs-fluid-examples" = import ./nix/fltkhs-fluid-examples.nix;
   "fltkhs-hello-world" = import ./nix/fltkhs-hello-world.nix;
   "fltkhs-themes" = import ./nix/fltkhs-themes.nix;
+  "fluent" = import ./nix/fluent.nix;
+  "fluent-effectful" = import ./nix/fluent-effectful.nix;
+  "fluent-icu" = import ./nix/fluent-icu.nix;
   "fluent-logger" = import ./nix/fluent-logger.nix;
   "fluent-logger-conduit" = import ./nix/fluent-logger-conduit.nix;
+  "fluent-syntax" = import ./nix/fluent-syntax.nix;
   "fluffy" = import ./nix/fluffy.nix;
   "fluffy-parser" = import ./nix/fluffy-parser.nix;
   "fluid-idl" = import ./nix/fluid-idl.nix;
@@ -10281,6 +10291,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "kiroku-store" = import ./nix/kiroku-store.nix;
   "kiroku-store-migrations" = import ./nix/kiroku-store-migrations.nix;
   "kit" = import ./nix/kit.nix;
+  "kitchen-sink" = import ./nix/kitchen-sink.nix;
   "kleene" = import ./nix/kleene.nix;
   "kleene-list" = import ./nix/kleene-list.nix;
   "kleisli" = import ./nix/kleisli.nix;
@@ -11512,6 +11523,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "miso-aeson" = import ./nix/miso-aeson.nix;
   "miso-css" = import ./nix/miso-css.nix;
   "miso-examples" = import ./nix/miso-examples.nix;
+  "miso-fluent" = import ./nix/miso-fluent.nix;
   "miso-from-html" = import ./nix/miso-from-html.nix;
   "miso-optics" = import ./nix/miso-optics.nix;
   "miss" = import ./nix/miss.nix;
@@ -12731,6 +12743,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "osv" = import ./nix/osv.nix;
   "osx-ar" = import ./nix/osx-ar.nix;
   "ot" = import ./nix/ot.nix;
+  "otel-effectful" = import ./nix/otel-effectful.nix;
   "otp-authenticator" = import ./nix/otp-authenticator.nix;
   "ottparse-pretty" = import ./nix/ottparse-pretty.nix;
   "oughta" = import ./nix/oughta.nix;
@@ -14991,6 +15004,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "salak" = import ./nix/salak.nix;
   "salak-toml" = import ./nix/salak-toml.nix;
   "salak-yaml" = import ./nix/salak-yaml.nix;
+  "salmon-apps" = import ./nix/salmon-apps.nix;
+  "salmon-core" = import ./nix/salmon-core.nix;
+  "salmon-ops" = import ./nix/salmon-ops.nix;
+  "salmon-ops-recipes" = import ./nix/salmon-ops-recipes.nix;
   "saltine" = import ./nix/saltine.nix;
   "saltine-quickcheck" = import ./nix/saltine-quickcheck.nix;
   "salve" = import ./nix/salve.nix;
@@ -17705,6 +17722,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "trade-journal" = import ./nix/trade-journal.nix;
   "traildb" = import ./nix/traildb.nix;
   "trajectory" = import ./nix/trajectory.nix;
+  "tramaj-hs" = import ./nix/tramaj-hs.nix;
   "trans-fx-core" = import ./nix/trans-fx-core.nix;
   "trans-fx-data" = import ./nix/trans-fx-data.nix;
   "trans-fx-io" = import ./nix/trans-fx-io.nix;
@@ -18658,6 +18676,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "wai-middleware-travisci" = import ./nix/wai-middleware-travisci.nix;
   "wai-middleware-validation" = import ./nix/wai-middleware-validation.nix;
   "wai-middleware-verbs" = import ./nix/wai-middleware-verbs.nix;
+  "wai-otel-effectful" = import ./nix/wai-otel-effectful.nix;
   "wai-predicates" = import ./nix/wai-predicates.nix;
   "wai-problem-details" = import ./nix/wai-problem-details.nix;
   "wai-rate-limit" = import ./nix/wai-rate-limit.nix;

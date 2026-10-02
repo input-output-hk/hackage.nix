@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2.0" = {
+    sha256 = "c20eeb4a3f08506ce23ebd2c15d44a184a67f2646b835322bbafc73f0a593c6b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sydtest-mutation-runtime-0.1.2.0-r0-9827ff084e549ba5dad921f045a4e12439557b9ff336a0e6c113a50bdd1232d5.nix;
+        revNum = 0;
+        sha256 = "9827ff084e549ba5dad921f045a4e12439557b9ff336a0e6c113a50bdd1232d5";
+      };
+      default = "r0";
+    };
+  };
 }
