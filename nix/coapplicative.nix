@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "76af07ae4727aa41b463820be6d344fbd4f5c40eb87b2b6b67af5ad5bac77d3f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/coapplicative-0.2.0.0-r0-8c83ff0ddb9e93c5739d516e1be6412bcc2a666e0adfb894cb29cad2e7b50345.nix;
+        revNum = 0;
+        sha256 = "8c83ff0ddb9e93c5739d516e1be6412bcc2a666e0adfb894cb29cad2e7b50345";
+      };
+      default = "r0";
+    };
+  };
 }

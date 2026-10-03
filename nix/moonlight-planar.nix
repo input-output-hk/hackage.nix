@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "1.2.0.1" = {
+    sha256 = "54b150a5de64e8b2a03a48b999e17807eca1a57c7959ec395cbc720b88ed82c0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/moonlight-planar-1.2.0.1-r0-5bdc3484a2fc4be6922ffd10a015acc8acd3d41d6d0723b814111a7d48b99d7c.nix;
+        revNum = 0;
+        sha256 = "5bdc3484a2fc4be6922ffd10a015acc8acd3d41d6d0723b814111a7d48b99d7c";
+      };
+      default = "r0";
+    };
+  };
 }

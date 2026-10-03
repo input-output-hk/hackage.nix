@@ -5495,6 +5495,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "either" = import ./nix/either.nix;
   "either-both" = import ./nix/either-both.nix;
   "either-list-functions" = import ./nix/either-list-functions.nix;
+  "either-n" = import ./nix/either-n.nix;
   "either-result" = import ./nix/either-result.nix;
   "either-semigroup" = import ./nix/either-semigroup.nix;
   "either-unwrap" = import ./nix/either-unwrap.nix;

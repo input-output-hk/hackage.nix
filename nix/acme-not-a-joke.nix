@@ -12,7 +12,12 @@
         revNum = 1;
         sha256 = "980a82a0ec228969af2f17a0443bdf1861855e94bab76814b18595349dd67ecc";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/acme-not-a-joke-0.1.0.0-r2-57fbd99c6ed98416d558652cca4d6bec4786f763dc8145b36090376afe4e3fc8.nix;
+        revNum = 2;
+        sha256 = "57fbd99c6ed98416d558652cca4d6bec4786f763dc8145b36090376afe4e3fc8";
+      };
+      default = "r2";
     };
   };
 }

@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.5.3.0" = {
+    sha256 = "fd0caab205afeb87f956b7e92037cbb445d2f943caab21beab720e4106daf1e5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/duckdb-ffi-1.5.3.0-r0-c2e3410e79c58bfc168dfe1e76cd9e06dabfa35068e9457de1fc7f3d98be5c87.nix;
+        revNum = 0;
+        sha256 = "c2e3410e79c58bfc168dfe1e76cd9e06dabfa35068e9457de1fc7f3d98be5c87";
+      };
+      default = "r0";
+    };
+  };
 }

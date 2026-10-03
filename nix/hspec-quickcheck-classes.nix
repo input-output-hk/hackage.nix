@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.0.0.1" = {
+    sha256 = "987021022a45f8338e2c1fb941df8ac48a3ecea93d8727dd22315b1f0d4597af";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hspec-quickcheck-classes-0.0.0.1-r0-ea6856370af294131c329bb485ba46a2ff01783d2b5b007ed16713df78139052.nix;
+        revNum = 0;
+        sha256 = "ea6856370af294131c329bb485ba46a2ff01783d2b5b007ed16713df78139052";
+      };
+      default = "r0";
+    };
+  };
 }

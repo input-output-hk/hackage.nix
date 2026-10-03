@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.0.1.10" = {
+    sha256 = "819d2c7d1438be307ae662f43d59bbd05eb177e4fd35c743ec61b1363bbce8e0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/quickcheck-quid-0.0.1.10-r0-88389d8382aef87b10b887a04d19de77874b66f61381d8c84f4628a2cd3564de.nix;
+        revNum = 0;
+        sha256 = "88389d8382aef87b10b887a04d19de77874b66f61381d8c84f4628a2cd3564de";
+      };
+      default = "r0";
+    };
+  };
   "0.0.1.2" = {
     sha256 = "de22c76f2444b0a1009a0014e8ebf241208ef7e0c26cf698b1346915da5c0db2";
     revisions = {

@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.1.1.4" = {
+    sha256 = "cd1ddc794d1703e7325f562dcb32e3e1831cde71ccfd98b2d2681ac93dba8baf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/taiwan-id-0.1.1.4-r0-82175515806bf0b002b8b309419eb3d0939bff026c0472954838880239da93d3.nix;
+        revNum = 0;
+        sha256 = "82175515806bf0b002b8b309419eb3d0939bff026c0472954838880239da93d3";
+      };
+      default = "r0";
+    };
+  };
 }
