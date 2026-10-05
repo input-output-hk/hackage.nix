@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "f0adf34fce35363efb5b8fdc1724ca8216b4bc316e3068f63f9b32ee2b2098c0";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/proarrow-0.2.0.0-r0-1b6855c46c95442df17330607c77d8f9f5182ebc3c017dd96c503d99cc1cedfc.nix;
+        revNum = 0;
+        sha256 = "1b6855c46c95442df17330607c77d8f9f5182ebc3c017dd96c503d99cc1cedfc";
+      };
+      default = "r0";
+    };
+  };
 }

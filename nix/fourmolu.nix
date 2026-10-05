@@ -280,6 +280,17 @@
       default = "r1";
     };
   };
+  "0.21.0.0" = {
+    sha256 = "db321715aa08d24fbf58276dd6f705911d5ced07c00379e9ad10c09aaa064078";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fourmolu-0.21.0.0-r0-9a8226edc781e1a1a1cc20a297cd2ff5c0ba69361eeaf7abfaf3d7a154aae23c.nix;
+        revNum = 0;
+        sha256 = "9a8226edc781e1a1a1cc20a297cd2ff5c0ba69361eeaf7abfaf3d7a154aae23c";
+      };
+      default = "r0";
+    };
+  };
   "0.3.0.0" = {
     sha256 = "ba7201c78ee61665eaf1fce10cd297dd5383d36053cd3984e41a5094d96e096d";
     revisions = {
