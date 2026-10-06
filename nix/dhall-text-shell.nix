@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.2.1.0" = {
+    sha256 = "b5f46d2d4182905f800070341e81fde82764dfe7eaaac3aa8935f11e7cda360b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhall-text-shell-0.2.1.0-r0-9c5729d69ab1ac0eac43da787d0c78195152fdd65d86f4851b1a31c79f08a2e6.nix;
+        revNum = 0;
+        sha256 = "9c5729d69ab1ac0eac43da787d0c78195152fdd65d86f4851b1a31c79f08a2e6";
+      };
+      default = "r0";
+    };
+  };
 }

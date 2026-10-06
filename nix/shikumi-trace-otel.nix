@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.1.2.1" = {
+    sha256 = "8b5be48e7a7140e2dc786d94fad44848bb9424dd62dad4682ccce4da6c256c57";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shikumi-trace-otel-0.1.2.1-r0-a074e828213ca7a033a204cbe598160c416f41fcd0c037bbed5c8c116d5ee402.nix;
+        revNum = 0;
+        sha256 = "a074e828213ca7a033a204cbe598160c416f41fcd0c037bbed5c8c116d5ee402";
+      };
+      default = "r0";
+    };
+  };
 }

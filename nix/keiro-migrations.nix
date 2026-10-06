@@ -109,6 +109,17 @@
       default = "r0";
     };
   };
+  "0.19.0.1" = {
+    sha256 = "c2c077a8d758295008d1bd0684ee94a5ee04895c7cd533fe0958ec66cc68f395";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-migrations-0.19.0.1-r0-7678a6244730199114bccf04b0ea856c323ac3683ed823a66259422522381988.nix;
+        revNum = 0;
+        sha256 = "7678a6244730199114bccf04b0ea856c323ac3683ed823a66259422522381988";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "808bcd4d8916178951732e5e83f7349b643a1c3ccb4bd6f1926cbe43b1dbbffa";
     revisions = {

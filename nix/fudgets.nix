@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.18.4.1" = {
+    sha256 = "242895c5abe0b7b168f4a5eb13bceff3bc9be0099cfd096ed22bb55108260c55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fudgets-0.18.4.1-r0-3e8cc94db278f616518c9bb8dcaf964a835df7548fa8935d9cbddf7ac5649993.nix;
+        revNum = 0;
+        sha256 = "3e8cc94db278f616518c9bb8dcaf964a835df7548fa8935d9cbddf7ac5649993";
+      };
+      default = "r0";
+    };
+  };
 }
