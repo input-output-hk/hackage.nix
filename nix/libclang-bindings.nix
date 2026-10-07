@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "d93a2c16fc545f09af43b26ae6ac26294462b81b8808d749fa4d4288c0648521";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/libclang-bindings-0.2.0.0-r0-6af6e69c9d42bb0018ee568bcb484fa6d276a1d7d5e78960039ddc150b2393d8.nix;
+        revNum = 0;
+        sha256 = "6af6e69c9d42bb0018ee568bcb484fa6d276a1d7d5e78960039ddc150b2393d8";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.1.0" = {
+    sha256 = "08a74f6ac8b07ff9081ad28d12448466548b0d09f720b4109ac36c11ec9ba84d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/autodocodec-nix-0.1.1.0-r0-b15ed8acf6a992fb075b1bbbca4b7e99b1b49e560d630d5abbe994c9ebcf76a8.nix;
+        revNum = 0;
+        sha256 = "b15ed8acf6a992fb075b1bbbca4b7e99b1b49e560d630d5abbe994c9ebcf76a8";
+      };
+      default = "r0";
+    };
+  };
 }

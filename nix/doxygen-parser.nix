@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.1.2" = {
+    sha256 = "f734d40aacf73ea25b151ba62e68b09549b71a934f506160a5014b770422e6f2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/doxygen-parser-0.1.2-r0-f7f192756d071e694d73704bc02963365eb4c2167c36d6f25b529fd329dd93d1.nix;
+        revNum = 0;
+        sha256 = "f7f192756d071e694d73704bc02963365eb4c2167c36d6f25b529fd329dd93d1";
+      };
+      default = "r0";
+    };
+  };
 }

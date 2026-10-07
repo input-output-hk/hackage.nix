@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.1.3.2" = {
+    sha256 = "35453abf6e52dfb9bab601673a3255ed8c5704c38aa594ab2f164926b0e976ee";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/shikumi-cache-postgres-0.1.3.2-r0-16f5888d34daea5c75b45b431e13bd06979cba2af766d153ff92916adf5fb29e.nix;
+        revNum = 0;
+        sha256 = "16f5888d34daea5c75b45b431e13bd06979cba2af766d153ff92916adf5fb29e";
+      };
+      default = "r0";
+    };
+  };
 }

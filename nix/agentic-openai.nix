@@ -32,4 +32,37 @@
       default = "r0";
     };
   };
+  "0.2.0.3" = {
+    sha256 = "26b9fc24514912022e26e265a1ad3853644fe29df7dc7cb18a19423ec268aa00";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agentic-openai-0.2.0.3-r0-b0fddb672ffbb41dd8b4ff71554eeb5bc38b8d816194e38146baaf0ba0a337df.nix;
+        revNum = 0;
+        sha256 = "b0fddb672ffbb41dd8b4ff71554eeb5bc38b8d816194e38146baaf0ba0a337df";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.4" = {
+    sha256 = "7cdec660bf038a060689d43fdd4ed3446a9b87474ea52e3d4276027c8950c69c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agentic-openai-0.2.0.4-r0-c2ca646892a3d70b376d1f7c1d5482b40188610e1aabddaca6f682395fc41bcd.nix;
+        revNum = 0;
+        sha256 = "c2ca646892a3d70b376d1f7c1d5482b40188610e1aabddaca6f682395fc41bcd";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.5" = {
+    sha256 = "7ee294733f7f29f23e512fa52e462b91298ba97f4e1a093f8584f29f70bed65c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/agentic-openai-0.2.0.5-r0-510ea8c73bc7c24d5e1b9fb632db75dd8f508aa816db14ba1765abafe04476ac.nix;
+        revNum = 0;
+        sha256 = "510ea8c73bc7c24d5e1b9fb632db75dd8f508aa816db14ba1765abafe04476ac";
+      };
+      default = "r0";
+    };
+  };
 }

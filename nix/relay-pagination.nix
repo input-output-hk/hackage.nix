@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.1.1.2" = {
+    sha256 = "96a0867a473a32ab7d7f54744ba86f0b2ea80461a57316fab6aef266ce9159ab";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/relay-pagination-0.1.1.2-r0-6d1e6c9d79c1cb2de019def6483ec2ad40167717acd4ce02fe5975af4a5f7b04.nix;
+        revNum = 0;
+        sha256 = "6d1e6c9d79c1cb2de019def6483ec2ad40167717acd4ce02fe5975af4a5f7b04";
+      };
+      default = "r0";
+    };
+  };
 }

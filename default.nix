@@ -6710,6 +6710,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "geom2d" = import ./nix/geom2d.nix;
   "geomancy" = import ./nix/geomancy.nix;
   "geomancy-layout" = import ./nix/geomancy-layout.nix;
+  "geometry-simple" = import ./nix/geometry-simple.nix;
   "geos" = import ./nix/geos.nix;
   "gerrit" = import ./nix/gerrit.nix;
   "getemx" = import ./nix/getemx.nix;
