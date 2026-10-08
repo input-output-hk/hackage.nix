@@ -2703,6 +2703,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "bert" = import ./nix/bert.nix;
   "besout" = import ./nix/besout.nix;
   "bet" = import ./nix/bet.nix;
+  "betacalendars-calendar-layout" = import ./nix/betacalendars-calendar-layout.nix;
   "betacode" = import ./nix/betacode.nix;
   "betris" = import ./nix/betris.nix;
   "between" = import ./nix/between.nix;
@@ -3271,6 +3272,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cabal-audit" = import ./nix/cabal-audit.nix;
   "cabal-auto-expose" = import ./nix/cabal-auto-expose.nix;
   "cabal-bounds" = import ./nix/cabal-bounds.nix;
+  "cabal-buck2" = import ./nix/cabal-buck2.nix;
   "cabal-build-programs" = import ./nix/cabal-build-programs.nix;
   "cabal-bundle-clib" = import ./nix/cabal-bundle-clib.nix;
   "cabal-cache" = import ./nix/cabal-cache.nix;

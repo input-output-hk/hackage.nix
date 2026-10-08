@@ -95,7 +95,12 @@
         revNum = 0;
         sha256 = "245efb0573f14193488c8baa08a5e1384f76fecfc149deecbbe15427b4d71844";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/HasCacBDD-0.4.0.0-r1-ee93d1781c5c25532465bc1ac3d415d9e202334efa1162994835145ef4a0b5b0.nix;
+        revNum = 1;
+        sha256 = "ee93d1781c5c25532465bc1ac3d415d9e202334efa1162994835145ef4a0b5b0";
+      };
+      default = "r1";
     };
   };
 }
