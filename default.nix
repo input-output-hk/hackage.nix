@@ -8827,6 +8827,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hs-asapo" = import ./nix/hs-asapo.nix;
   "hs-aws-lambda" = import ./nix/hs-aws-lambda.nix;
   "hs-bibutils" = import ./nix/hs-bibutils.nix;
+  "hs-bindgen" = import ./nix/hs-bindgen.nix;
+  "hs-bindgen-runtime" = import ./nix/hs-bindgen-runtime.nix;
   "hs-blake2" = import ./nix/hs-blake2.nix;
   "hs-brotli" = import ./nix/hs-brotli.nix;
   "hs-captcha" = import ./nix/hs-captcha.nix;

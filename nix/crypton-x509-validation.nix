@@ -1,4 +1,15 @@
 {
+  "1.10.0" = {
+    sha256 = "d9fa8626b5e67b97b94397b7320cea08d41398e161ed64cea4956ec94730a80d";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/crypton-x509-validation-1.10.0-r0-4ed88cc643fe167a0c353f75317b0eaf19533300d6f87064fd4587b426d67279.nix;
+        revNum = 0;
+        sha256 = "4ed88cc643fe167a0c353f75317b0eaf19533300d6f87064fd4587b426d67279";
+      };
+      default = "r0";
+    };
+  };
   "1.6.12" = {
     sha256 = "0e60b7e237a4fd5e7e6e7200018c7947314292ef63751cbb51877836ebe650f6";
     revisions = {

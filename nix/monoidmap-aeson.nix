@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.0.0.10" = {
+    sha256 = "6f76b7c90f1bfce86075b0cf8a53226d11291a1fa09b3e4be51c4590336dcf74";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/monoidmap-aeson-0.0.0.10-r0-87de180743cc591e8ad0bac14feadf023d193cf95a4e77d4899e33c8c043caa6.nix;
+        revNum = 0;
+        sha256 = "87de180743cc591e8ad0bac14feadf023d193cf95a4e77d4899e33c8c043caa6";
+      };
+      default = "r0";
+    };
+  };
   "0.0.0.2" = {
     sha256 = "6fcb0c3ebfe9ce16b0f7978e5f9864b895009c1e89bffd6021d1441c64585686";
     revisions = {

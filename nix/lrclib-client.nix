@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "0.3.2" = {
+    sha256 = "6ca4c7b11c50762dcafe7aa8e1c5f74875013ae35d6097c9b018b2e1f1221018";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/lrclib-client-0.3.2-r0-2c2dff7f1de784efb81adc23ae4889a9520cf45401c9033d74650d9316cca31f.nix;
+        revNum = 0;
+        sha256 = "2c2dff7f1de784efb81adc23ae4889a9520cf45401c9033d74650d9316cca31f";
+      };
+      default = "r0";
+    };
+  };
 }

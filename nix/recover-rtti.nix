@@ -168,4 +168,15 @@
       default = "r1";
     };
   };
+  "0.6.2" = {
+    sha256 = "536aea8cf93471efb11f34b0c5638ba9e1a461484026adf69e4a23fc231ce016";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/recover-rtti-0.6.2-r0-95838750351e3e8bb7e9ba17efd4555061507d41ba3264e43b1e087b8289a88a.nix;
+        revNum = 0;
+        sha256 = "95838750351e3e8bb7e9ba17efd4555061507d41ba3264e43b1e087b8289a88a";
+      };
+      default = "r0";
+    };
+  };
 }
