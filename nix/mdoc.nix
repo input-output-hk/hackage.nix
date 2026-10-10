@@ -208,4 +208,15 @@
       default = "r0";
     };
   };
+  "0.4.1.4" = {
+    sha256 = "7e63b4f8fe601896d50f17134f3c073c1064d071110375ba3654d0b0408829a9";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/mdoc-0.4.1.4-r0-6e1deacecec9283a58b1eba2c7f527ee3f3abd81b7ab9e5d92005338c374f135.nix;
+        revNum = 0;
+        sha256 = "6e1deacecec9283a58b1eba2c7f527ee3f3abd81b7ab9e5d92005338c374f135";
+      };
+      default = "r0";
+    };
+  };
 }

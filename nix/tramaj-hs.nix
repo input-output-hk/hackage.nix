@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "724513e3bc0bbf9d032339a17b2e8c57a422fb221d83428eab417c4c47158291";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/tramaj-hs-0.4.0.0-r0-8a77ab83addebafc78bdc5d267321add2c68dacdbaf41c9be726c9f7cbcce599.nix;
+        revNum = 0;
+        sha256 = "8a77ab83addebafc78bdc5d267321add2c68dacdbaf41c9be726c9f7cbcce599";
+      };
+      default = "r0";
+    };
+  };
 }
