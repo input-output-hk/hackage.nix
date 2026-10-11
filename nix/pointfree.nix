@@ -198,7 +198,12 @@
         revNum = 1;
         sha256 = "ce5321d333c96d1c795a43ee8343872611dd117a5fb9739ea48536f2e6ca82da";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/pointfree-1.1.1.12-r2-c2dca4f279ad9c6b7cbb92f554ddcd27863da70fb77368151e55bb6f3cdbb9c8.nix;
+        revNum = 2;
+        sha256 = "c2dca4f279ad9c6b7cbb92f554ddcd27863da70fb77368151e55bb6f3cdbb9c8";
+      };
+      default = "r2";
     };
   };
   "1.1.1.2" = {

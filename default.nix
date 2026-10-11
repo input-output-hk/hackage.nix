@@ -13549,6 +13549,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "popenhs" = import ./nix/popenhs.nix;
   "popkey" = import ./nix/popkey.nix;
   "poppler" = import ./nix/poppler.nix;
+  "poppy" = import ./nix/poppy.nix;
+  "poppy-codegen" = import ./nix/poppy-codegen.nix;
   "populate-setup-exe-cache" = import ./nix/populate-setup-exe-cache.nix;
   "porcupine-core" = import ./nix/porcupine-core.nix;
   "porcupine-http" = import ./nix/porcupine-http.nix;
@@ -13688,6 +13690,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ppad-bolt7" = import ./nix/ppad-bolt7.nix;
   "ppad-bolt8" = import ./nix/ppad-bolt8.nix;
   "ppad-bolt9" = import ./nix/ppad-bolt9.nix;
+  "ppad-censor" = import ./nix/ppad-censor.nix;
   "ppad-chacha" = import ./nix/ppad-chacha.nix;
   "ppad-eproc" = import ./nix/ppad-eproc.nix;
   "ppad-fixed" = import ./nix/ppad-fixed.nix;

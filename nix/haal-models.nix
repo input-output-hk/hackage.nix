@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.3.0" = {
+    sha256 = "939af3717bb14946e4a19819514cf8d0c8e987573f3d7cbc50f60427478378ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haal-models-0.1.3.0-r0-6bdcc190898ba84fb4bb0fd0d747245feb2f4c4cb5d33d96b1507e4dbdffe1c5.nix;
+        revNum = 0;
+        sha256 = "6bdcc190898ba84fb4bb0fd0d747245feb2f4c4cb5d33d96b1507e4dbdffe1c5";
+      };
+      default = "r0";
+    };
+  };
 }

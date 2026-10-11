@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.7.0.0" = {
+    sha256 = "22b8f9f1e293f2cebffa89a79c402ce16b4558cec84dcd6538c2b58486de0e86";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/haal-0.7.0.0-r0-00ad52b5755ab664f164959517ee997d683480e3f0cfe8f6924d61d750dd4906.nix;
+        revNum = 0;
+        sha256 = "00ad52b5755ab664f164959517ee997d683480e3f0cfe8f6924d61d750dd4906";
+      };
+      default = "r0";
+    };
+  };
 }

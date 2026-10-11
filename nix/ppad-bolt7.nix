@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.1.0" = {
+    sha256 = "d8581c561ce31a708e96494937d310080c4f0da28aa5936047b147c9177d54f3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-bolt7-0.1.0-r0-f1be70a553e4445f9b3dd60fb4a0e189f1d04d7d6220e2c88a02719642602940.nix;
+        revNum = 0;
+        sha256 = "f1be70a553e4445f9b3dd60fb4a0e189f1d04d7d6220e2c88a02719642602940";
+      };
+      default = "r0";
+    };
+  };
 }
