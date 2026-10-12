@@ -180,7 +180,12 @@
         revNum = 2;
         sha256 = "235f9c49f8d1caff4ec1bbbefd38b0adf03fb613c8fd529ccee1f880564bafa0";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/MonadRandom-0.1.4-r3-31aa9da1ada0202dff113cc4aac76e9f34d104b3de56b787897b2221d1e55be4.nix;
+        revNum = 3;
+        sha256 = "31aa9da1ada0202dff113cc4aac76e9f34d104b3de56b787897b2221d1e55be4";
+      };
+      default = "r3";
     };
   };
   "0.1.5" = {
@@ -201,7 +206,12 @@
         revNum = 2;
         sha256 = "a7c201ff7c62e767b5a5908eb2824cfcb7586bf05f4afc8b1ae01c908cb13051";
       };
-      default = "r2";
+      r3 = {
+        nix = import ../hackage/MonadRandom-0.1.5-r3-0ebc3e9946fc446419263201ca1ac44c4945b86a80870d40d675f4b37e4990ce.nix;
+        revNum = 3;
+        sha256 = "0ebc3e9946fc446419263201ca1ac44c4945b86a80870d40d675f4b37e4990ce";
+      };
+      default = "r3";
     };
   };
   "0.1.6" = {
@@ -217,7 +227,12 @@
         revNum = 1;
         sha256 = "ff14b7df43aa65ec4b604abc074ee52ea475cab7bd6a2b1448d4a8c386614d76";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/MonadRandom-0.1.6-r2-616facd62a3f3e20e79b92cca3abd6e7acd7f334a025990e701ca7d157eb1190.nix;
+        revNum = 2;
+        sha256 = "616facd62a3f3e20e79b92cca3abd6e7acd7f334a025990e701ca7d157eb1190";
+      };
+      default = "r2";
     };
   };
   "0.1.7" = {
@@ -233,7 +248,12 @@
         revNum = 1;
         sha256 = "9b13ab123be929a9bb8c5c3d074f3218a94698d856cee8208985e7e72a72f60c";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/MonadRandom-0.1.7-r2-1909e11a2e8f066bd12ce865ec897a159e3f9c9a7e35902dc3a49b2e12635bd0.nix;
+        revNum = 2;
+        sha256 = "1909e11a2e8f066bd12ce865ec897a159e3f9c9a7e35902dc3a49b2e12635bd0";
+      };
+      default = "r2";
     };
   };
   "0.1.8" = {
@@ -249,7 +269,12 @@
         revNum = 1;
         sha256 = "2f090838fbd871ea94c484e42e59ad3fdca26fe578f9646a23f111d9491672b1";
       };
-      default = "r1";
+      r2 = {
+        nix = import ../hackage/MonadRandom-0.1.8-r2-2677d0ce87c3c6d5e8e89ce16cd49d4c54089824ca424442ca9b50524a81d67a.nix;
+        revNum = 2;
+        sha256 = "2677d0ce87c3c6d5e8e89ce16cd49d4c54089824ca424442ca9b50524a81d67a";
+      };
+      default = "r2";
     };
   };
   "0.1.9" = {

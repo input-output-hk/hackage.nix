@@ -48,4 +48,15 @@
       default = "r0";
     };
   };
+  "0.5.0.0" = {
+    sha256 = "0326dce8f7ab4280306ce8ff852b12889a3031587b76def5a6ee8aa10143e07c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/vty-unix-0.5.0.0-r0-0745ab9312e8523bea97ebd14e9e8eaf7a4d44db9507789775e027bd8131e5ef.nix;
+        revNum = 0;
+        sha256 = "0745ab9312e8523bea97ebd14e9e8eaf7a4d44db9507789775e027bd8131e5ef";
+      };
+      default = "r0";
+    };
+  };
 }

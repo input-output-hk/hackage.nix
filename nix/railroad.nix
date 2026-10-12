@@ -76,4 +76,75 @@
       default = "r0";
     };
   };
+  "0.1.1.5" = {
+    sha256 = "2dab58588fedd26f474299ca78aa1df61db55f6b0013e143de880e7d93145ec3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.1.1.5-r0-3cbbf045281120a9214f8e616197ca5d94f5ac7c5a8174d2c5eae5b5793dc303.nix;
+        revNum = 0;
+        sha256 = "3cbbf045281120a9214f8e616197ca5d94f5ac7c5a8174d2c5eae5b5793dc303";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.2.0" = {
+    sha256 = "0c886c7217f5cfc5ab7fd7d4e9798017bba90199724479a2fcbd718adb6c52a1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.1.2.0-r0-269ab310a5e2683ad656346cbc834e2b3382d56957ac7f3b49f4fd67bdf54e19.nix;
+        revNum = 0;
+        sha256 = "269ab310a5e2683ad656346cbc834e2b3382d56957ac7f3b49f4fd67bdf54e19";
+      };
+      default = "r0";
+    };
+  };
+  "0.1.2.1" = {
+    sha256 = "954e7c8a422a0e598de628d63bd4be2323de2db8f13331b4533497b14e1b3c69";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.1.2.1-r0-ec8cfbecbcca47e234b34c3e91204ea922a72df83ff82c3f1cd41ed1cf7c4669.nix;
+        revNum = 0;
+        sha256 = "ec8cfbecbcca47e234b34c3e91204ea922a72df83ff82c3f1cd41ed1cf7c4669";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.0" = {
+    sha256 = "13b06fe73602773a6995d16710600ee98dbadf248427159ec9bfa3dc32b92746";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.2.0.0-r0-f920966c9f814959a7b9c071d150e2ae1a8393d47053462e7b57fe710b9ad681.nix;
+        revNum = 0;
+        sha256 = "f920966c9f814959a7b9c071d150e2ae1a8393d47053462e7b57fe710b9ad681";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "1c1392b384489763d74aa19e33d013274bd642c89e8d5385d1a1e92b9d755973";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.2.0.1-r0-706460e7531fd9c38da21fc0597463a18555f3161ecea6646b85f3be69a513d7.nix;
+        revNum = 0;
+        sha256 = "706460e7531fd9c38da21fc0597463a18555f3161ecea6646b85f3be69a513d7";
+      };
+      r1 = {
+        nix = import ../hackage/railroad-0.2.0.1-r1-8b752df4f283027cfed23030abba201f771f8090ec740d9ec5fd5551de27796b.nix;
+        revNum = 1;
+        sha256 = "8b752df4f283027cfed23030abba201f771f8090ec740d9ec5fd5551de27796b";
+      };
+      default = "r1";
+    };
+  };
+  "0.2.1.0" = {
+    sha256 = "82e1e7cb644ac10bdb44cd25adb0331616765399e95f512090db0d7a5e67f0aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.2.1.0-r0-adcf08454acfbf17ad0d7e5addd442677698ca840b840beba6f8480f6a98d9d3.nix;
+        revNum = 0;
+        sha256 = "adcf08454acfbf17ad0d7e5addd442677698ca840b840beba6f8480f6a98d9d3";
+      };
+      default = "r0";
+    };
+  };
 }

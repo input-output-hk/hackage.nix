@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.5.1" = {
+    sha256 = "4410d53b6f3ebb35211ef3e799569f72fa0d787e5ad7bd41b5691f05ffa99bf1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/ppad-eproc-0.5.1-r0-3cd67661a776913ce5a72834fb13c8e85f5a55efd7da12898d19a779c98c007e.nix;
+        revNum = 0;
+        sha256 = "3cd67661a776913ce5a72834fb13c8e85f5a55efd7da12898d19a779c98c007e";
+      };
+      default = "r0";
+    };
+  };
 }

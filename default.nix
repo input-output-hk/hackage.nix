@@ -11845,6 +11845,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "mptcp" = import ./nix/mptcp.nix;
   "mptcp-pm" = import ./nix/mptcp-pm.nix;
   "mptcpanalyzer" = import ./nix/mptcpanalyzer.nix;
+  "mpv-bindgen-sys" = import ./nix/mpv-bindgen-sys.nix;
   "mpvguihs" = import ./nix/mpvguihs.nix;
   "mqtt" = import ./nix/mqtt.nix;
   "mqtt-hs" = import ./nix/mqtt-hs.nix;
@@ -17276,6 +17277,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "termbox-tea" = import ./nix/termbox-tea.nix;
   "termcolor" = import ./nix/termcolor.nix;
   "terminal" = import ./nix/terminal.nix;
+  "terminal-3d-graphics" = import ./nix/terminal-3d-graphics.nix;
   "terminal-progress-bar" = import ./nix/terminal-progress-bar.nix;
   "terminal-punch" = import ./nix/terminal-punch.nix;
   "terminal-size" = import ./nix/terminal-size.nix;
@@ -19221,6 +19223,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "yaml-union" = import ./nix/yaml-union.nix;
   "yaml-unscrambler" = import ./nix/yaml-unscrambler.nix;
   "yaml2owl" = import ./nix/yaml2owl.nix;
+  "yamlet" = import ./nix/yamlet.nix;
+  "yamlet-aeson" = import ./nix/yamlet-aeson.nix;
   "yamlkeysdiff" = import ./nix/yamlkeysdiff.nix;
   "yamlparse-applicative" = import ./nix/yamlparse-applicative.nix;
   "yamlscript" = import ./nix/yamlscript.nix;

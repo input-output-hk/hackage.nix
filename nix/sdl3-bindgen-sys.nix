@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.0.1.0" = {
+    sha256 = "2055f2c1ea583b4a4f79865d1b44a24fb08e025b47a3ee3204d1ebe7b78c3444";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/sdl3-bindgen-sys-0.0.1.0-r0-e6e0cb6a4501fcaf0d367155d3d06dd2a0701bdd576d211d88ae217bd25808b5.nix;
+        revNum = 0;
+        sha256 = "e6e0cb6a4501fcaf0d367155d3d06dd2a0701bdd576d211d88ae217bd25808b5";
+      };
+      default = "r0";
+    };
+  };
 }

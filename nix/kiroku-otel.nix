@@ -54,6 +54,17 @@
       default = "r0";
     };
   };
+  "0.2.0.12" = {
+    sha256 = "d92f389e97951b026723f571d53eda36aaea603e265f429b2a883bf5b89f09b1";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kiroku-otel-0.2.0.12-r0-5413ad6964344e7d8abd3a984f19a2668a2747484840d612ac01bcd3d13cd237.nix;
+        revNum = 0;
+        sha256 = "5413ad6964344e7d8abd3a984f19a2668a2747484840d612ac01bcd3d13cd237";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.2" = {
     sha256 = "92976df2344aa05e202cf928ed0566f34a7504e6e79cafab0719b6c3b3b88f89";
     revisions = {
