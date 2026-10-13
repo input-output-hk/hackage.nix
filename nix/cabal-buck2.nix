@@ -10,4 +10,26 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "79e1c733c703985c13d72ed0b7fe1078778e358fdab1937a482efc26cf08ff32";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-buck2-0.2.0.0-r0-56a6caa89e404702ea978557b1cda2d92161ba44eb7e6d6643957fc18e112db5.nix;
+        revNum = 0;
+        sha256 = "56a6caa89e404702ea978557b1cda2d92161ba44eb7e6d6643957fc18e112db5";
+      };
+      default = "r0";
+    };
+  };
+  "0.2.0.1" = {
+    sha256 = "3125e7afa6f42b13fdbd4863601a99662a1b81be04d679edd4bba59a374f67fd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/cabal-buck2-0.2.0.1-r0-edadefe158d9f7dae2ea2d412435c4faa522b45486dd3ab953b79602eb5ec29d.nix;
+        revNum = 0;
+        sha256 = "edadefe158d9f7dae2ea2d412435c4faa522b45486dd3ab953b79602eb5ec29d";
+      };
+      default = "r0";
+    };
+  };
 }

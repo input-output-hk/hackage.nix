@@ -18,7 +18,12 @@
         revNum = 0;
         sha256 = "f9dbd80fdcf17f7bb00a6afc400f303b7998971cdd61e7efbca9046ee7477140";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/hs-opentelemetry-instrumentation-tasty-1.0.0.0-r1-97d18380b33913f57ae469cdc502faf38eee8e7702cf991bc0129e45c29a8a23.nix;
+        revNum = 1;
+        sha256 = "97d18380b33913f57ae469cdc502faf38eee8e7702cf991bc0129e45c29a8a23";
+      };
+      default = "r1";
     };
   };
 }

@@ -6332,6 +6332,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "freckle-otel" = import ./nix/freckle-otel.nix;
   "freckle-prelude" = import ./nix/freckle-prelude.nix;
   "freckle-stats" = import ./nix/freckle-stats.nix;
+  "freckle-ua-parser" = import ./nix/freckle-ua-parser.nix;
   "freddy" = import ./nix/freddy.nix;
   "free" = import ./nix/free.nix;
   "free-alacarte" = import ./nix/free-alacarte.nix;

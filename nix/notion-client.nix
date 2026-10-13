@@ -131,4 +131,15 @@
       default = "r0";
     };
   };
+  "0.9.0.0" = {
+    sha256 = "78deb19af5cfa6c7c2c2faeb92cb05cf6f073189898bafaed827f42d7a91ae55";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/notion-client-0.9.0.0-r0-1bb28ea17d8d929d31efe04f776e585f7e0fc6804707baf131c34e5a442aeb38.nix;
+        revNum = 0;
+        sha256 = "1bb28ea17d8d929d31efe04f776e585f7e0fc6804707baf131c34e5a442aeb38";
+      };
+      default = "r0";
+    };
+  };
 }

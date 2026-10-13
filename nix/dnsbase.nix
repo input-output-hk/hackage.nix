@@ -72,7 +72,12 @@
         revNum = 0;
         sha256 = "31569e3d7b902b85b1b29cefa321ec45e1a86797fa4fe577f1d7aca18989ed9a";
       };
-      default = "r0";
+      r1 = {
+        nix = import ../hackage/dnsbase-1.0.2.3-r1-5bf6812b8ebefb7ece2c841bce1b6686a398e42d3c7fb48afee376dab2d18143.nix;
+        revNum = 1;
+        sha256 = "5bf6812b8ebefb7ece2c841bce1b6686a398e42d3c7fb48afee376dab2d18143";
+      };
+      default = "r1";
     };
   };
 }

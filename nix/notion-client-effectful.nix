@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "31df76472e586077c18a295b91d7c0baa2c91f75127804763cc6829cc81cee8b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/notion-client-effectful-0.3.0.0-r0-2030914500076741c42ca55c86652aacd9f44c4208323aeeb9e1906d9e757e8b.nix;
+        revNum = 0;
+        sha256 = "2030914500076741c42ca55c86652aacd9f44c4208323aeeb9e1906d9e757e8b";
+      };
+      default = "r0";
+    };
+  };
 }
