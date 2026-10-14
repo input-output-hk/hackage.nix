@@ -109,6 +109,17 @@
       default = "r0";
     };
   };
+  "0.3.10" = {
+    sha256 = "6deb56d7b0293bdc8543be3ebc3311900a7ad930fdee4288c036ac6cd5f00506";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hercules-ci-cli-0.3.10-r0-f5fd1824092ab619f9c1a2b3999468f1be1ca0656b56a4a1d60204a7d09bdb1a.nix;
+        revNum = 0;
+        sha256 = "f5fd1824092ab619f9c1a2b3999468f1be1ca0656b56a4a1d60204a7d09bdb1a";
+      };
+      default = "r0";
+    };
+  };
   "0.3.2" = {
     sha256 = "ec2523f10073c5d04e3afb99dd030196f42b15a56384b362f0a5e09f425427d3";
     revisions = {

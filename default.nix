@@ -8090,6 +8090,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hasql-migration" = import ./nix/hasql-migration.nix;
   "hasql-mover" = import ./nix/hasql-mover.nix;
   "hasql-notifications" = import ./nix/hasql-notifications.nix;
+  "hasql-opentelemetry" = import ./nix/hasql-opentelemetry.nix;
   "hasql-optparse-applicative" = import ./nix/hasql-optparse-applicative.nix;
   "hasql-pipes" = import ./nix/hasql-pipes.nix;
   "hasql-pool" = import ./nix/hasql-pool.nix;

@@ -241,4 +241,15 @@
       default = "r0";
     };
   };
+  "0.5.2.0" = {
+    sha256 = "2b27232f087de5f25411989ef508020213d48dfcfaacd89f21bcb513a93afb02";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hercules-ci-cnix-expr-0.5.2.0-r0-edfad6aae35cf27e336075dcbc108882e9e339c9ea56365f7314227febcf811c.nix;
+        revNum = 0;
+        sha256 = "edfad6aae35cf27e336075dcbc108882e9e339c9ea56365f7314227febcf811c";
+      };
+      default = "r0";
+    };
+  };
 }

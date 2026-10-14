@@ -186,6 +186,17 @@
       default = "r0";
     };
   };
+  "1.0.1.14" = {
+    sha256 = "0d0db9e1e91a6aca995071e7e3e2a7482047fc9b420e372c88c7df551115432c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/pqi-native-1.0.1.14-r0-4d7e3b060c2cfe22512e5d72e8f29c53d746bcddc2c01f2c3b4fccf3f68314b9.nix;
+        revNum = 0;
+        sha256 = "4d7e3b060c2cfe22512e5d72e8f29c53d746bcddc2c01f2c3b4fccf3f68314b9";
+      };
+      default = "r0";
+    };
+  };
   "1.0.1.2" = {
     sha256 = "0a868d3d14841ebe554f301ea1eaf5305e558748460b0b4808c13b6b0081e4ca";
     revisions = {

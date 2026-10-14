@@ -147,4 +147,20 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "439a9809e4eb1960909ee9554aa46f51c3aee99a0863a9543e2d77a5ba7d068c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/railroad-0.3.0.0-r0-fc67d660e2ee587d3ae39e879019a4c27ecc602f0c56be0605c2479581f97c3f.nix;
+        revNum = 0;
+        sha256 = "fc67d660e2ee587d3ae39e879019a4c27ecc602f0c56be0605c2479581f97c3f";
+      };
+      r1 = {
+        nix = import ../hackage/railroad-0.3.0.0-r1-e07197223610473af09fe305dcb0d0efe0bbb038e4124e85524c851f6dae04c2.nix;
+        revNum = 1;
+        sha256 = "e07197223610473af09fe305dcb0d0efe0bbb038e4124e85524c851f6dae04c2";
+      };
+      default = "r1";
+    };
+  };
 }
