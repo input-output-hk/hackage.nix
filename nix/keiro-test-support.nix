@@ -87,4 +87,15 @@
       default = "r0";
     };
   };
+  "0.21.0.0" = {
+    sha256 = "58194c79deb4cb8d9c3f8f2fbc31bc393b433bad2b70fa9a8345f5fc4a693e0e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/keiro-test-support-0.21.0.0-r0-5b1e77cedbb24e346528386defc32135694942e2353b82aa36d5a505052d7c3e.nix;
+        revNum = 0;
+        sha256 = "5b1e77cedbb24e346528386defc32135694942e2353b82aa36d5a505052d7c3e";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -98,4 +98,15 @@
       default = "r0";
     };
   };
+  "0.6.0.0" = {
+    sha256 = "61826eb0fe458becb3e1b82d65f59e0a0d2526499159ef87ba228d8e921d1dfe";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/currycarbon-0.6.0.0-r0-98bb369ba0ab6130d101592a6744437e7be66b5048879c2effde81f3d1c9560d.nix;
+        revNum = 0;
+        sha256 = "98bb369ba0ab6130d101592a6744437e7be66b5048879c2effde81f3d1c9560d";
+      };
+      default = "r0";
+    };
+  };
 }

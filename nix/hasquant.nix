@@ -32,4 +32,15 @@
       default = "r0";
     };
   };
+  "0.8.0.0" = {
+    sha256 = "ed7f962dbb6b54855fa17720ae722db33444c247ef36df5a192ce3d91b0fe8dd";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hasquant-0.8.0.0-r0-7dd9ff89eecf2b7193235432c11e80be4877da926e98111dce68020cf9d059ba.nix;
+        revNum = 0;
+        sha256 = "7dd9ff89eecf2b7193235432c11e80be4877da926e98111dce68020cf9d059ba";
+      };
+      default = "r0";
+    };
+  };
 }

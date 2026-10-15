@@ -373,4 +373,15 @@
       default = "r0";
     };
   };
+  "0.3.5.0" = {
+    sha256 = "44585943b329bbbba34511ec23f81d3703c54579bb61a5f1274ec5e25956e25c";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/yamlscript-0.3.5.0-r0-778cd5224b0f5b9709a352624d14ddfa99df5c904ab55473caa7fdc24dbc7a42.nix;
+        revNum = 0;
+        sha256 = "778cd5224b0f5b9709a352624d14ddfa99df5c904ab55473caa7fdc24dbc7a42";
+      };
+      default = "r0";
+    };
+  };
 }

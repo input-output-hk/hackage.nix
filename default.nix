@@ -10418,7 +10418,11 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "lang" = import ./nix/lang.nix;
   "langchain-hs" = import ./nix/langchain-hs.nix;
   "langchain-hs-core" = import ./nix/langchain-hs-core.nix;
+  "langchain-hs-gemini" = import ./nix/langchain-hs-gemini.nix;
   "langchain-hs-graph" = import ./nix/langchain-hs-graph.nix;
+  "langchain-hs-mcp" = import ./nix/langchain-hs-mcp.nix;
+  "langchain-hs-ollama" = import ./nix/langchain-hs-ollama.nix;
+  "langchain-hs-openai" = import ./nix/langchain-hs-openai.nix;
   "language-Modula2" = import ./nix/language-_Modula2.nix;
   "language-asn" = import ./nix/language-asn.nix;
   "language-asn1" = import ./nix/language-asn1.nix;

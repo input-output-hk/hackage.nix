@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "5939b693f6268a49fca7e7b6f05b957b20526a8a6ba7b511996a2e79e70089b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/JuicyPixels-blp-0.3.0.0-r0-6ab89f2a7dad4f526c9e5467c886153b813c71f39007b6b3a4f11981afe30942.nix;
+        revNum = 0;
+        sha256 = "6ab89f2a7dad4f526c9e5467c886153b813c71f39007b6b3a4f11981afe30942";
+      };
+      default = "r0";
+    };
+  };
 }

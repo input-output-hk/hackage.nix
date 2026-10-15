@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "f59a18ea5ce8756482aa0c0ec0a4751d02ac5cf03d2ecd8389b9cccb46164c98";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/freckle-ua-parser-0.2.0.0-r0-35d9c5d6480bed2d0d9bf62168bd41bb8d148c2c69404458573998d3b6b31258.nix;
+        revNum = 0;
+        sha256 = "35d9c5d6480bed2d0d9bf62168bd41bb8d148c2c69404458573998d3b6b31258";
+      };
+      default = "r0";
+    };
+  };
 }
