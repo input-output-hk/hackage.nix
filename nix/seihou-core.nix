@@ -1,4 +1,26 @@
 {
+  "0.10.0.0" = {
+    sha256 = "7ade5e290090f402f43459045e9aa2f5d1702c0c604d377895b14be80bc7c090";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/seihou-core-0.10.0.0-r0-1c76b8cc0ca15e16d7322f058c2a041e5c00cc00d865c8dc22b7ddc83ebb0f01.nix;
+        revNum = 0;
+        sha256 = "1c76b8cc0ca15e16d7322f058c2a041e5c00cc00d865c8dc22b7ddc83ebb0f01";
+      };
+      default = "r0";
+    };
+  };
+  "0.10.1.0" = {
+    sha256 = "c2f93af4fef73e6c5e9ef72b992ce516abd9a95b985d1d625135df971094d161";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/seihou-core-0.10.1.0-r0-92ceb9a1ebde4113db06e6bdd7c0d921ffb8b5f647fe6f7f3a4eb0f35e59bf61.nix;
+        revNum = 0;
+        sha256 = "92ceb9a1ebde4113db06e6bdd7c0d921ffb8b5f647fe6f7f3a4eb0f35e59bf61";
+      };
+      default = "r0";
+    };
+  };
   "0.4.0.0" = {
     sha256 = "da7b641824fe58cf124ec0ea67bd94422ecd31e3eba464a726ba8ef0597ae596";
     revisions = {

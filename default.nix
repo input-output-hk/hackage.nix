@@ -727,6 +727,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "KiCS-prophecy" = import ./nix/_Ki_C_S-prophecy.nix;
   "Kleislify" = import ./nix/_Kleislify.nix;
   "Konf" = import ./nix/_Konf.nix;
+  "KpqC" = import ./nix/_Kpq_C.nix;
   "Kriens" = import ./nix/_Kriens.nix;
   "Kulitta" = import ./nix/_Kulitta.nix;
   "KyotoCabinet" = import ./nix/_Kyoto_Cabinet.nix;

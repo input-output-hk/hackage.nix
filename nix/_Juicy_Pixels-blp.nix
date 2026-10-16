@@ -76,4 +76,37 @@
       default = "r0";
     };
   };
+  "0.4.0.0" = {
+    sha256 = "645dba6b9ab6eeceddc3cd132462352e5b93b96d5de484fc4277179100868292";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/JuicyPixels-blp-0.4.0.0-r0-ea8f9b555480545793409ed4205153fc4f79de4feeea16ad53b5e06cd5a155b6.nix;
+        revNum = 0;
+        sha256 = "ea8f9b555480545793409ed4205153fc4f79de4feeea16ad53b5e06cd5a155b6";
+      };
+      default = "r0";
+    };
+  };
+  "0.4.1.0" = {
+    sha256 = "ae851c4599c6f988b384dca59a438a5c0cad65793c5981c44781920fe7cbbd1b";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/JuicyPixels-blp-0.4.1.0-r0-b74b25ec762dc046aec2cd78cc6151e043e0ec830f8fc4396078f2ab821b6979.nix;
+        revNum = 0;
+        sha256 = "b74b25ec762dc046aec2cd78cc6151e043e0ec830f8fc4396078f2ab821b6979";
+      };
+      default = "r0";
+    };
+  };
+  "0.5.0.0" = {
+    sha256 = "38676fa055c6afaf6ad06125fe9c7a420bee9d67b59e3362873910b221e8c306";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/JuicyPixels-blp-0.5.0.0-r0-95b0dd0e4a21ecfc6cc55233a78da56c22e7eab52f93f2285c2d7b7d894e53ab.nix;
+        revNum = 0;
+        sha256 = "95b0dd0e4a21ecfc6cc55233a78da56c22e7eab52f93f2285c2d7b7d894e53ab";
+      };
+      default = "r0";
+    };
+  };
 }
