@@ -3762,6 +3762,10 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "cli-setup" = import ./nix/cli-setup.nix;
   "click-clack" = import ./nix/click-clack.nix;
   "clickhouse-haskell" = import ./nix/clickhouse-haskell.nix;
+  "clickhouse-migrate" = import ./nix/clickhouse-migrate.nix;
+  "clickhouse-migrate-cli" = import ./nix/clickhouse-migrate-cli.nix;
+  "clickhouse-migrate-embed" = import ./nix/clickhouse-migrate-embed.nix;
+  "clickhouse-migrate-test-support" = import ./nix/clickhouse-migrate-test-support.nix;
   "clientsession" = import ./nix/clientsession.nix;
   "clif" = import ./nix/clif.nix;
   "clifford" = import ./nix/clifford.nix;

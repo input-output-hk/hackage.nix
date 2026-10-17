@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "831f276a37cca89171b9cebf6352f1038451bd4a68ee91f4c236b0510e2e6985";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/c-expr-runtime-0.2.0.0-r0-0b22b2f1ec0a7bf25d03cc73189ade7bdfce633798111b09865f027ecf417e98.nix;
+        revNum = 0;
+        sha256 = "0b22b2f1ec0a7bf25d03cc73189ade7bdfce633798111b09865f027ecf417e98";
+      };
+      default = "r0";
+    };
+  };
 }
