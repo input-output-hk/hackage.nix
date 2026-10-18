@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.0.3" = {
+    sha256 = "06cdae95baee50c4001ca2e4a1555a9725910e692de586c1162c19692bf2acf8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/miso-css-0.0.3-r0-e2bd2178650a370832c3df71c735ce082c90559bee5e87a14a554a479fe12a11.nix;
+        revNum = 0;
+        sha256 = "e2bd2178650a370832c3df71c735ce082c90559bee5e87a14a554a479fe12a11";
+      };
+      default = "r0";
+    };
+  };
 }

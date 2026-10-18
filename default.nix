@@ -9510,6 +9510,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hzulip" = import ./nix/hzulip.nix;
   "i" = import ./nix/i.nix;
   "i18n" = import ./nix/i18n.nix;
+  "i2c-bus" = import ./nix/i2c-bus.nix;
   "i3blocks-hs-contrib" = import ./nix/i3blocks-hs-contrib.nix;
   "i3ipc" = import ./nix/i3ipc.nix;
   "iCalendar" = import ./nix/i_Calendar.nix;
