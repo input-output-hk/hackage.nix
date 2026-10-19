@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.1" = {
+    sha256 = "6d124f9f7eec9cfc6e765f81b22dd6a2361d6ef43f37ef4f8ddfaf38f42da94f";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-utility-1.1-r0-797d2c2dfaece0549d50a1a44854a856bcfa47bf1ae8daeb38e40bd99abca13c.nix;
+        revNum = 0;
+        sha256 = "797d2c2dfaece0549d50a1a44854a856bcfa47bf1ae8daeb38e40bd99abca13c";
+      };
+      default = "r0";
+    };
+  };
 }

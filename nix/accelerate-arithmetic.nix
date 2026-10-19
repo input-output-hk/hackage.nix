@@ -54,4 +54,15 @@
       default = "r0";
     };
   };
+  "1.0.0.2" = {
+    sha256 = "65bc651317385fbb35349b8e79d56d2bb98563a2c21d7c81956089b2a85920cf";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-arithmetic-1.0.0.2-r0-931a89c9e6bb72c67ce00970b3bc4d359d10db920f5db833103207b0f07107e1.nix;
+        revNum = 0;
+        sha256 = "931a89c9e6bb72c67ce00970b3bc4d359d10db920f5db833103207b0f07107e1";
+      };
+      default = "r0";
+    };
+  };
 }

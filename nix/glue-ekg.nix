@@ -142,4 +142,26 @@
       default = "r0";
     };
   };
+  "0.7.0" = {
+    sha256 = "f5ccef607db71273d5718d5577cabe7c6882eb57703d9ee64996b28543bf7ea8";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glue-ekg-0.7.0-r0-ab46323b3d8426f4775b13d1c77bf7afb3c1eebc782e5a022622e1642ba4aa64.nix;
+        revNum = 0;
+        sha256 = "ab46323b3d8426f4775b13d1c77bf7afb3c1eebc782e5a022622e1642ba4aa64";
+      };
+      default = "r0";
+    };
+  };
+  "0.7.0.1" = {
+    sha256 = "7b1eff3135b37d66820bdfac3239c9bb8472713b44cfafde09f99f317deeb6b3";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/glue-ekg-0.7.0.1-r0-52459d64f27b51f89284dddf9aeaa9d34c435587f20ea1dc62b128766d30e8bc.nix;
+        revNum = 0;
+        sha256 = "52459d64f27b51f89284dddf9aeaa9d34c435587f20ea1dc62b128766d30e8bc";
+      };
+      default = "r0";
+    };
+  };
 }

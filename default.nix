@@ -5468,6 +5468,8 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effect-monad" = import ./nix/effect-monad.nix;
   "effect-stack" = import ./nix/effect-stack.nix;
   "effectful" = import ./nix/effectful.nix;
+  "effectful-config-file" = import ./nix/effectful-config-file.nix;
+  "effectful-config-file-secretspec" = import ./nix/effectful-config-file-secretspec.nix;
   "effectful-core" = import ./nix/effectful-core.nix;
   "effectful-data-cache" = import ./nix/effectful-data-cache.nix;
   "effectful-opaleye" = import ./nix/effectful-opaleye.nix;
@@ -8466,6 +8468,9 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "himerge" = import ./nix/himerge.nix;
   "himg" = import ./nix/himg.nix;
   "himpy" = import ./nix/himpy.nix;
+  "hinagata-cli" = import ./nix/hinagata-cli.nix;
+  "hinagata-core" = import ./nix/hinagata-core.nix;
+  "hinagata-postgres" = import ./nix/hinagata-postgres.nix;
   "hindent" = import ./nix/hindent.nix;
   "hindley-milner" = import ./nix/hindley-milner.nix;
   "hindley-milner-type-check" = import ./nix/hindley-milner-type-check.nix;
@@ -8815,6 +8820,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hpyrg" = import ./nix/hpyrg.nix;
   "hpython" = import ./nix/hpython.nix;
   "hq" = import ./nix/hq.nix;
+  "hq-json" = import ./nix/hq-json.nix;
   "hqcsim" = import ./nix/hqcsim.nix;
   "hquantlib" = import ./nix/hquantlib.nix;
   "hquantlib-time" = import ./nix/hquantlib-time.nix;

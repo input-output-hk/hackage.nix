@@ -76,4 +76,15 @@
       default = "r0";
     };
   };
+  "1.0.0.6" = {
+    sha256 = "eeae1bdf231db14a6d2b4245fc6359b306f06780ca85c9e780039b5d5304eaa6";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-fourier-1.0.0.6-r0-76fab0724dcee2e7c4a9380406cfe173f28b8a77b4e638066636ea7775e16f05.nix;
+        revNum = 0;
+        sha256 = "76fab0724dcee2e7c4a9380406cfe173f28b8a77b4e638066636ea7775e16f05";
+      };
+      default = "r0";
+    };
+  };
 }
