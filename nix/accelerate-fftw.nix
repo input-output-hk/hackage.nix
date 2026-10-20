@@ -43,4 +43,15 @@
       default = "r0";
     };
   };
+  "1.0.2" = {
+    sha256 = "cf739b6e19db3d4108324b55af240b00ff69afff35b2220c2d5a452ead2b176a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-fftw-1.0.2-r0-cfc6912bb244c5998fe945240ce7dcbc5183f360835cd07d337f051c5e480bd0.nix;
+        revNum = 0;
+        sha256 = "cfc6912bb244c5998fe945240ce7dcbc5183f360835cd07d337f051c5e480bd0";
+      };
+      default = "r0";
+    };
+  };
 }

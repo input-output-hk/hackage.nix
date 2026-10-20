@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "1.4.0.0" = {
+    sha256 = "f55a0f6fbd15bd46a0f103c9890ad04335af5b49f70512e3b1fa9267fd683e17";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/solana-haskell-sdk-1.4.0.0-r0-8166d5e53d4c8de6c325771f077dbb4bc675c7430d90a9d08157332988e63398.nix;
+        revNum = 0;
+        sha256 = "8166d5e53d4c8de6c325771f077dbb4bc675c7430d90a9d08157332988e63398";
+      };
+      default = "r0";
+    };
+  };
 }
