@@ -119,4 +119,15 @@
       default = "r1";
     };
   };
+  "0.4.2.0" = {
+    sha256 = "aec67823357e97caf7aaffdb9094066cf3197aeef29a20cd10469bb040dcb7aa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/memcache-0.4.2.0-r0-1aa271847ea66ab931d625fb067f1366cc22c03dc10c15e5c7caa4eaa4e62d9e.nix;
+        revNum = 0;
+        sha256 = "1aa271847ea66ab931d625fb067f1366cc22c03dc10c15e5c7caa4eaa4e62d9e";
+      };
+      default = "r0";
+    };
+  };
 }

@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "9c4e3715b1811429fdc45d319cee9f815625c90e7629df5644428c75536dcf72";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fluent-1.1.0-r0-187ee24caa632c43f2ed393c24f8d1b76cde4288806b3248d1643412c89974ca.nix;
+        revNum = 0;
+        sha256 = "187ee24caa632c43f2ed393c24f8d1b76cde4288806b3248d1643412c89974ca";
+      };
+      default = "r0";
+    };
+  };
 }

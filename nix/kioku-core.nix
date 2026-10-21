@@ -21,6 +21,17 @@
       default = "r0";
     };
   };
+  "0.11.0.0" = {
+    sha256 = "0f63e1fdbf59511631ab52e849b1b2209a8da5945f4779bdc18135a680c337ac";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/kioku-core-0.11.0.0-r0-b3d7868b4d697c3f39147a9c6632082bd1d95af5234d128d6afd5145845b1e95.nix;
+        revNum = 0;
+        sha256 = "b3d7868b4d697c3f39147a9c6632082bd1d95af5234d128d6afd5145845b1e95";
+      };
+      default = "r0";
+    };
+  };
   "0.2.0.0" = {
     sha256 = "ce90173fe9f2300be33a3b6acd5ae59ec196f7e5f3254a56d4fe0b2c1c0c6f87";
     revisions = {

@@ -32,6 +32,17 @@
       default = "r0";
     };
   };
+  "3.15.0" = {
+    sha256 = "ee3080eff52d01293c41fe0eb5fc12f16daa51672e4ebc42b69c1926af92bd6e";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/plexus-synapse-3.15.0-r0-4fb0148da98bde182b4c056b847f3f3e07651f7572c5a7a1cd460860f48918e6.nix;
+        revNum = 0;
+        sha256 = "4fb0148da98bde182b4c056b847f3f3e07651f7572c5a7a1cd460860f48918e6";
+      };
+      default = "r0";
+    };
+  };
   "3.5.0" = {
     sha256 = "679cce940be6fe07b94931ca39434962029251015baaa46709e5030d388b7e09";
     revisions = {

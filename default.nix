@@ -5468,6 +5468,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "effect-monad" = import ./nix/effect-monad.nix;
   "effect-stack" = import ./nix/effect-stack.nix;
   "effectful" = import ./nix/effectful.nix;
+  "effectful-cli" = import ./nix/effectful-cli.nix;
   "effectful-config-file" = import ./nix/effectful-config-file.nix;
   "effectful-config-file-secretspec" = import ./nix/effectful-config-file-secretspec.nix;
   "effectful-core" = import ./nix/effectful-core.nix;
@@ -6215,6 +6216,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "fluent" = import ./nix/fluent.nix;
   "fluent-effectful" = import ./nix/fluent-effectful.nix;
   "fluent-icu" = import ./nix/fluent-icu.nix;
+  "fluent-lint" = import ./nix/fluent-lint.nix;
   "fluent-logger" = import ./nix/fluent-logger.nix;
   "fluent-logger-conduit" = import ./nix/fluent-logger-conduit.nix;
   "fluent-syntax" = import ./nix/fluent-syntax.nix;
@@ -16982,6 +16984,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "symbols" = import ./nix/symbols.nix;
   "symengine" = import ./nix/symengine.nix;
   "symengine-hs" = import ./nix/symengine-hs.nix;
+  "symmetric-list" = import ./nix/symmetric-list.nix;
   "symmetric-properties" = import ./nix/symmetric-properties.nix;
   "symmetry-operations-symbols" = import ./nix/symmetry-operations-symbols.nix;
   "symon" = import ./nix/symon.nix;

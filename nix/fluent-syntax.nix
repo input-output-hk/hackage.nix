@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "1.1.0" = {
+    sha256 = "ec49b1204702cdfca90a63643e7580675fdeb4e318d02c332d54aa163e6e65d2";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/fluent-syntax-1.1.0-r0-c3d1f0b623cd2cd934facc808215a331c12f655984544edf57941328530d2ad5.nix;
+        revNum = 0;
+        sha256 = "c3d1f0b623cd2cd934facc808215a331c12f655984544edf57941328530d2ad5";
+      };
+      default = "r0";
+    };
+  };
 }
