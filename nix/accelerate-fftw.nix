@@ -65,4 +65,15 @@
       default = "r0";
     };
   };
+  "1.1" = {
+    sha256 = "7e9ef3b554ebbd297c52d7dc05634dff60493c9c70182db50bf1dc92fb1ce495";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/accelerate-fftw-1.1-r0-0aaca7bbdfaad3331a90e50c8951c5a71f7f1e022f9d39fccf98edb16733c9bc.nix;
+        revNum = 0;
+        sha256 = "0aaca7bbdfaad3331a90e50c8951c5a71f7f1e022f9d39fccf98edb16733c9bc";
+      };
+      default = "r0";
+    };
+  };
 }

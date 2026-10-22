@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.2.0.0" = {
+    sha256 = "ae3f0fdef7175c4d690eb009040acbe9dc2245980e8676f847b6664fe88424c5";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/hnix-store-readonly-0.2.0.0-r0-1b9e85b190a57b926564b36efb2417ecc4af394ff116d645137ffe0ecdbc9001.nix;
+        revNum = 0;
+        sha256 = "1b9e85b190a57b926564b36efb2417ecc4af394ff116d645137ffe0ecdbc9001";
+      };
+      default = "r0";
+    };
+  };
 }

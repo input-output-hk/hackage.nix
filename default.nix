@@ -2093,6 +2093,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "ansi-terminal-game" = import ./nix/ansi-terminal-game.nix;
   "ansi-terminal-types" = import ./nix/ansi-terminal-types.nix;
   "ansi-wl-pprint" = import ./nix/ansi-wl-pprint.nix;
+  "ansiform" = import ./nix/ansiform.nix;
   "ansigraph" = import ./nix/ansigraph.nix;
   "antagonist" = import ./nix/antagonist.nix;
   "antelude" = import ./nix/antelude.nix;
@@ -5235,6 +5236,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "doctest-lib" = import ./nix/doctest-lib.nix;
   "doctest-parallel" = import ./nix/doctest-parallel.nix;
   "doctest-prop" = import ./nix/doctest-prop.nix;
+  "document-build" = import ./nix/document-build.nix;
   "docusign-base" = import ./nix/docusign-base.nix;
   "docusign-base-minimal" = import ./nix/docusign-base-minimal.nix;
   "docusign-client" = import ./nix/docusign-client.nix;
@@ -8658,6 +8660,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "hmumps" = import ./nix/hmumps.nix;
   "hnetcdf" = import ./nix/hnetcdf.nix;
   "hnix" = import ./nix/hnix.nix;
+  "hnix-store-aterm" = import ./nix/hnix-store-aterm.nix;
   "hnix-store-core" = import ./nix/hnix-store-core.nix;
   "hnix-store-db" = import ./nix/hnix-store-db.nix;
   "hnix-store-json" = import ./nix/hnix-store-json.nix;
@@ -9334,6 +9337,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "huckleberry" = import ./nix/huckleberry.nix;
   "huff" = import ./nix/huff.nix;
   "huffman" = import ./nix/huffman.nix;
+  "huggingface" = import ./nix/huggingface.nix;
   "hugs2yc" = import ./nix/hugs2yc.nix;
   "huihua" = import ./nix/huihua.nix;
   "hulk" = import ./nix/hulk.nix;
@@ -13548,6 +13552,26 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "polyseq" = import ./nix/polyseq.nix;
   "polysoup" = import ./nix/polysoup.nix;
   "polytree" = import ./nix/polytree.nix;
+  "polytropos-aeson" = import ./nix/polytropos-aeson.nix;
+  "polytropos-beam" = import ./nix/polytropos-beam.nix;
+  "polytropos-cassava" = import ./nix/polytropos-cassava.nix;
+  "polytropos-cbor" = import ./nix/polytropos-cbor.nix;
+  "polytropos-core" = import ./nix/polytropos-core.nix;
+  "polytropos-dhall" = import ./nix/polytropos-dhall.nix;
+  "polytropos-docrecords" = import ./nix/polytropos-docrecords.nix;
+  "polytropos-generics" = import ./nix/polytropos-generics.nix;
+  "polytropos-hasql" = import ./nix/polytropos-hasql.nix;
+  "polytropos-lens" = import ./nix/polytropos-lens.nix;
+  "polytropos-mcp" = import ./nix/polytropos-mcp.nix;
+  "polytropos-microlens" = import ./nix/polytropos-microlens.nix;
+  "polytropos-openapi3" = import ./nix/polytropos-openapi3.nix;
+  "polytropos-optics" = import ./nix/polytropos-optics.nix;
+  "polytropos-persistent" = import ./nix/polytropos-persistent.nix;
+  "polytropos-plugin" = import ./nix/polytropos-plugin.nix;
+  "polytropos-profunctors" = import ./nix/polytropos-profunctors.nix;
+  "polytropos-quickcheck" = import ./nix/polytropos-quickcheck.nix;
+  "polytropos-reader-soup" = import ./nix/polytropos-reader-soup.nix;
+  "polytropos-rel8" = import ./nix/polytropos-rel8.nix;
   "polytypeable" = import ./nix/polytypeable.nix;
   "polytypeable-utils" = import ./nix/polytypeable-utils.nix;
   "polytyped" = import ./nix/polytyped.nix;
@@ -15517,6 +15541,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "settei-kdl" = import ./nix/settei-kdl.nix;
   "settei-kubernetes" = import ./nix/settei-kubernetes.nix;
   "settei-optparse-applicative" = import ./nix/settei-optparse-applicative.nix;
+  "settei-preflight" = import ./nix/settei-preflight.nix;
   "settei-yaml" = import ./nix/settei-yaml.nix;
   "setters" = import ./nix/setters.nix;
   "settings" = import ./nix/settings.nix;

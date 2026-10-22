@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "a4588e23778f994695d1b43046559dbf25c553027d172a024bd16e2efe9253ca";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-yaml-0.3.0.0-r0-3bb85e15b7c9457f61dbbaaf4b933b4f6870f236699f1e418275901dea1f915d.nix;
+        revNum = 0;
+        sha256 = "3bb85e15b7c9457f61dbbaaf4b933b4f6870f236699f1e418275901dea1f915d";
+      };
+      default = "r0";
+    };
+  };
 }

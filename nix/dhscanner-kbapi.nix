@@ -120,4 +120,15 @@
       default = "r0";
     };
   };
+  "1.1.4" = {
+    sha256 = "0be77908c883f42934d8b83da7b98a5a604a2be1ff28d86dc6e5b70ac7c451ed";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/dhscanner-kbapi-1.1.4-r0-5610f7a25daaa4d3699f45e61cda643cdc3783ebacba94025500d2bfaefe208b.nix;
+        revNum = 0;
+        sha256 = "5610f7a25daaa4d3699f45e61cda643cdc3783ebacba94025500d2bfaefe208b";
+      };
+      default = "r0";
+    };
+  };
 }

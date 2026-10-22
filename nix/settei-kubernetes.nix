@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "3afb88cf6a7dbd21046cbf0c0adf8a0144be15476fa16dfdfbd4d0c8d8273bbb";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-kubernetes-0.3.0.0-r0-a99dbb04d1b319529daaae0a5858b56cba3372eba5b7a47d9373dcb9e813720b.nix;
+        revNum = 0;
+        sha256 = "a99dbb04d1b319529daaae0a5858b56cba3372eba5b7a47d9373dcb9e813720b";
+      };
+      default = "r0";
+    };
+  };
 }

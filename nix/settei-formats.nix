@@ -10,4 +10,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "2929c49ec4ea931bfa1b5bd61aa2f2178ccbc2672248cebe41b2902d46ad7dfa";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-formats-0.3.0.0-r0-7198b5b23a495a4e5dc92226b76b0c35db8d7e7d0a17a7190b1d870369cb7852.nix;
+        revNum = 0;
+        sha256 = "7198b5b23a495a4e5dc92226b76b0c35db8d7e7d0a17a7190b1d870369cb7852";
+      };
+      default = "r0";
+    };
+  };
 }

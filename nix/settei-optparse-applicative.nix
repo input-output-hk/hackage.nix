@@ -21,4 +21,15 @@
       default = "r0";
     };
   };
+  "0.3.0.0" = {
+    sha256 = "460a541972d1b099d906519704067fd7d32764207c02fb1bf3c4d4fc72ccb48a";
+    revisions = {
+      r0 = {
+        nix = import ../hackage/settei-optparse-applicative-0.3.0.0-r0-424766ee9c87de8bca124413756d89eb297d479ce6da8947ac3aaa19cf07a2b0.nix;
+        revNum = 0;
+        sha256 = "424766ee9c87de8bca124413756d89eb297d479ce6da8947ac3aaa19cf07a2b0";
+      };
+      default = "r0";
+    };
+  };
 }
