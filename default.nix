@@ -4293,6 +4293,7 @@ with builtins; mapAttrs (_: mapAttrs (_: data: rec {
   "coroutine-enumerator" = import ./nix/coroutine-enumerator.nix;
   "coroutine-iteratee" = import ./nix/coroutine-iteratee.nix;
   "coroutine-object" = import ./nix/coroutine-object.nix;
+  "cot" = import ./nix/cot.nix;
   "couch-hs" = import ./nix/couch-hs.nix;
   "couch-simple" = import ./nix/couch-simple.nix;
   "couchdb-conduit" = import ./nix/couchdb-conduit.nix;
